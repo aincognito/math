@@ -1,0 +1,154 @@
+\documentclass{ximera}
+
+\input{../preamble}
+
+\outcome{Find the Average Value of a Function}
+
+\title{Average Value}
+
+\begin{document}
+
+\begin{abstract}
+We find the average value of a function.
+\end{abstract}
+
+\maketitle
+
+\begin{center}
+\textbf{Average Value}
+\end{center}
+
+We will find the average value of a function on an interval 
+and find the value(s) of $x$ for which the function equals the 
+average (MVT for Integrals).
+
+\begin{theorem} Mean Value Theorem for Integrals 
+\[
+If
+\]
+\end{theorem}
+
+
+
+
+
+
+\begin{example} %example #1
+Find the average...
+ \[
+  f(x) = 
+  \]
+\end{example}
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of Example 1}
+%\youtube{Yy6QXnFlnXs} %vid of example 1
+\end{foldable}
+\end{center}
+
+
+\begin{problem} %problem #1
+  Find the average...
+  \[
+  f(x)
+  \]
+    \begin{hint}
+      compute a definite integral
+    \end{hint}
+    
+		
+		The average value is
+		 $\answer[given]{0}$
+\end{problem}
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a detailed, lecture style video on average value:}
+\youtube{gRJTe1i1muo}
+\end{foldable}
+\end{center}
+
+
+
+
+
+\end{document}
+
+
+\begin{example} %example #15
+Find $h'(x)$ if $h(x) = x^{\sin(x)}$.\\
+We will use the fact that the exponential and logarithm functions are inverses,
+\[e^{\ln(x)} = x,\]
+and the exponent property of logarithms, 
+\[\ln(x^n) = n\ln(x),\]
+to rewrite $h(x)$.  We have 
+\[h(x) = x^{\sin(x)} = e^{\ln(x^{\sin(x)})} = e^{\sin(x)\ln(x)}\]
+and we can now compute $h'(x)$ using a combination of the chain rule and product rule.
+We can write $h(x)$ as a composition, $f(g(x))$ with 
+\[g(x) = \sin(x)\ln(x) \quad \text{and} \quad f(x) = e^x.\]
+Then to find $g'(x)$ we us the product rule and we get $g'(x) = \frac{\sin(x)}{x} + \cos(x)\ln(x)$.
+Next $f'(x) = e^x$ and 
+hence $f'(g(x)) = e^{g(x)} = e^{\sin(x)\ln(x)} = x^{\sin(x)}$.
+We can then conclude $h'(x) = f'(g(x))g'(x) = x^{\sin(x)} \left[ \frac{\sin(x)}{x} + \cos(x)\ln(x)\right]$.
+\end{example}
+
+%more question formats below
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\begin{verbatim}
+\begin{question}
+What is your favorite color?
+\begin{multipleChoice}
+\choice[correct]{Rainbow}
+\choice{Blue}
+\choice{Green}
+\choice{Red}
+\end{multipleChoice}
+\begin{freeResponse}
+Hello
+\end{freeResponse}
+\end{question}
+%\end{verbatim}
+
+
+
+
+
+\begin{question}
+  Which one will you choose?
+  \begin{multipleChoice}
+    \choice[correct]{I'm correct.}
+    \choice{I'm wrong.}
+    \choice{I'm wrong too.}
+  \end{multipleChoice}
+\end{question}
+
+
+\begin{question}
+  Which one will you choose?
+  \begin{selectAll}
+    \choice[correct]{I'm correct.}
+    \choice{I'm wrong.}
+    \choice[correct]{I'm also correct.}
+    \choice{I'm wrong too.}
+  \end{selectAll}
+\end{question}
+
+
+\begin{freeResponse}
+What is the chain rule used for?
+\end{freeResponse}
+
