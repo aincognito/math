@@ -2,29 +2,27 @@
 
 \input{../preamble}
 
-\outcome{Find the Average Value of a Function}
+\outcome{Compute an integral using integration by parts}
 
-\title{Average Value}
+\title{Integration by Parts}
 
 \begin{document}
 
 \begin{abstract}
-We find the average value of a function.
+We will compute integrals using the integration by parts technique.
 \end{abstract}
 
 \maketitle
 
-\begin{center}
-\textbf{Average Value}
-\end{center}
+%\begin{center}
+%\textbf{Integration by Parts}
+%\end{center}
 
-We will find the average value of a function on an interval 
-and find the value(s) of $x$ for which the function equals the 
-average (MVT for Integrals).
+We will use the integration by parts (IBP) formula to compute integrals involving products of unrelated factors.
 
-\begin{theorem} Mean Value Theorem for Integrals 
+\begin{theorem}[Integration by Parts]
 \[
-If
+\int u \; dv = uv - \int v \; du
 \]
 \end{theorem}
 
@@ -34,10 +32,40 @@ If
 
 
 \begin{example} %example #1
-Find the average...
- \[
-  f(x) = 
+Compute the integral using IBP:
+  \[
+  \int x\sin(x) \;dx.
   \]
+  
+  The integrand is the product of two factors, $x$ and $\sin(x)$.  We consider one factor to differentiate and the other factor to anti-differentiate.
+  The factor we prefer to differentiate is $x$ since the derivative of $x$ is a constant and constants are easy to deal with in integrals.
+  As for the $\sin(x)$ factor, whether we differentiate it or anti-differentiate it makes little difference.  In fact, only a change in sign occurs,
+  as 
+  \[\frac{d}{dx}{\sin(x)} = \cos(x)    \text{ \;\;   and \;\;   }   \int \sin(x) \;dx = -\cos(x) + C.\]
+  Thus to apply the IBP formula, we let
+  \[u=x \text{  and  }  dv = \sin(x) \;dx.\]
+  Next, we compute
+  \[du = dx  \text{  \;\;  and \;\;   }  v = -\cos(x).\]
+  \begin{remark} 
+  We do not need to add the constant of integration to v, as any anti-derivative will suffice 
+  for our purpose and we choose the constant of integration to be zero.
+  \end{remark}
+  Now we use the Integration by Parts formula, $\int u\;dv = uv-\int v\; du$:
+  \[
+  \int x\sin(x) = -x\cos(x) - \int -\cos(x) \;dx = -x\cos(x) + \int \cos(x) \;dx
+  \]
+  \[
+  = -x\cos(x) + \sin(x) + C.
+  \]
+  We have found an answer, but at this stage we should prove that it is the correct answer by differentiating it.  The result should be $x\sin(x)$.
+  Note that the differentiation requires the product rule on the $uv$ term: $-x\cos(x)$.
+  We have
+  \[
+  \frac{d}{dx}{\left(-x\cos(x) + \sin(x) + C\right)} = [-\cos(x) + x\sin(x)] + \cos(x) = x\sin(x)
+  \]
+  which proves that our answer was correct.
+  
+    
 \end{example}
 
 \begin{center}
@@ -49,24 +77,56 @@ Find the average...
 
 
 \begin{problem} %problem #1
-  Find the average...
+  Compute the integral using IBP:
   \[
-  f(x)
+  \int xe^x \;dx.
   \]
-    \begin{hint}
-      compute a definite integral
-    \end{hint}
+  
+  Let $u = \answer{x}$   and   $dv = \answer{e^x dx}$.\\
+  Then $du = \answer{dx}$   and   $v = \answer{e^x}$.\\
+  Thus 
+  \[
+  \int xe^x dx = xe^x - \int \answer{e^x} dx = \answer{xe^x - e^x} + C.
+  \]
+  
+
+
+  %\begin{hint}
+   %   $\int udv = uv-\int vdu$
+  %\end{hint}
     
-		
-		The average value is
-		 $\answer[given]{0}$
+
 \end{problem}
+
+
+\begin{problem} %problem #1
+  Compute the integral using IBP:
+  \[
+  \int x\cos(x) \;dx.
+  \]
+  
+  Let $u = \answer{x}$   and   $dv = \answer{\cos(x) \;dx}$.\\
+  Then $du = \answer{dx}$   and   $v = \answer{\sin(x)}$.\\
+  Thus 
+  \[
+  \int x\cos(x) dx = x\sin(x) - \int \answer{\sin(x)} \;dx = \answer{x\sin(x) + \cos(x)} + C.
+  \]
+  
+
+
+  %\begin{hint}
+   %   $\int udv = uv-\int vdu$
+  %\end{hint}
+    
+
+\end{problem}
+
 
 
 \begin{center}
 \begin{foldable}
-\unfoldable{Here is a detailed, lecture style video on average value:}
-\youtube{gRJTe1i1muo}
+\unfoldable{Here is a detailed, lecture style video on integration by parts:}
+\youtube{2jSr68xaAfs}
 \end{foldable}
 \end{center}
 
@@ -151,4 +211,3 @@ Hello
 \begin{freeResponse}
 What is the chain rule used for?
 \end{freeResponse}
-

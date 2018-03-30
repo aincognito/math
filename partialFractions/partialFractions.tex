@@ -2,42 +2,107 @@
 
 \input{../preamble}
 
-\outcome{Find the Average Value of a Function}
+\outcome{Integrate rational functions using a partial fraction decomposition}
 
-\title{Average Value}
+\title{Partial Fractions}
 
 \begin{document}
 
 \begin{abstract}
-We find the average value of a function.
+We will integrate rational functions using partial fraction decompositions.
 \end{abstract}
 
 \maketitle
 
 \begin{center}
-\textbf{Average Value}
+\textbf{Partial Fractions}
 \end{center}
 
-We will find the average value of a function on an interval 
-and find the value(s) of $x$ for which the function equals the 
-average (MVT for Integrals).
+In this section we will learn an important method for integrating rational functions.
+Recall that a rational function is a ratio of polynomial functions. The key background skill is the ability to factor polynomials.
+We will look at three examples that cover the scenarios that we will encounter in our integrals. 
 
-\begin{theorem} Mean Value Theorem for Integrals 
+First, consider the cubic polynomial  $x^3 - x$.  
+We can factor out an $x$ and then factor again using the difference of two perfect squares:
 \[
-If
+x^3 - x = x(x^2-1) = x(x+1)(x-1).
 \]
-\end{theorem}
+
+This is a \textbf{complete factorization} as there are three linear factors, $x, x-1$ and $x+1$, none of which has a constant factor.
+We can say that the original cubic polynomial factored into three \textbf{distinct linear factors}.
+
+Second, consider the cubic polynomial $x^3 + 2x^2 + x$.  This polynomial factors as $x(x^2 + 2x + 1)$ but this is not a complete factorization since
+the quadratic $x^2 + 2x + 1$ is a perfect square we can be factored further.  The complete factorization is 
+\[
+x^3 + 2x^2 + x= x(x^2 + 2x + 1) = x(x+1)(x+1) = x(x+1)^2.
+\]
+In this case, our original cubic polynomial factored into a linear factor and a \textbf{repeated linear factor}.
+
+Last, consider the cubic polynomial $x^3 + x^2$.  This polynomial factors as $x(x^2 + 1)$.
+The quadratic $x^2 + 1$ does not factor (unless you are willing to 
+use \link[imaginary numbers]{https://en.wikipedia.org/wiki/Imaginary_number}) and is called 
+an \textbf{irreducible quadratic} polynomial.
+So we say that the original cubic polynomial factored into a linear factor and an irreducible quadratic factor.
+
+
+
+Now we will investigate the three decomposition forms we will encounter in our integrals.
+
+\begin{itemize}
+
+\item{\textbf{Distinct Linear Factors}} A rational function whose denominator factors into a product of distinct linear factors
+can be decomposed into a sum of rational functions whose numerators are constants and whose denominators are the factors of the denominator.
+For example 
+\[
+\frac{x^2 + 3x -5}{x^3 -x} = \frac{x^2 + 3x -5}{x(x-1)(x+1)} = \frac{A}{x} + \frac{B}{x-1} + \frac{C}{x+1},
+\]
+where $A, B$ and $C$ are constants.
 
 
 
 
+\item{\textbf{Repeated Linear Factor}} The repeated linear factor will contribute a number of terms to the partial fraction 
+decomposition equal to the \textbf{multiplicity} of the factor. Each of these terms will have a constant in the numerator and a 
+distinct power of the repeated factor in the denominator.
+For example 
+\[
+\frac{x^2 + 3x -5}{x^3 + x^2} = \frac{x^2 + 3x -5}{x^2(x+1)} = \frac{A}{x} + \frac{B}{x^2} + \frac{C}{x+1},
+\]
+where $A, B$ and $C$ are constants. Note how the repeated linear factor $x^2$ contributed two terms whose denominators were $x$ and $x^2$
+and whose numerators were constants.
 
 
+\item{\textbf{Irreducible Quadratic Factor}} An irreducible quadratic factor in the denominator will contribute one term to the decomposition whose numerator
+is a linear polynomial and whose denomiator is the irreducible quadratic factor.
+For example 
+\[
+\frac{x^2 + 3x -5}{x^3 +x} = \frac{x^2 + 3x -5}{x(x^2+1)} = \frac{A}{x} + \frac{Bx + C}{x^2 + 1},
+\]
+where $A, B$ and $C$ are constants.
+
+
+\end{itemize}
+
+Before we move on to integrating the special rational functions seen in the above decompositions, 
+we will look at one more example consisting of all three of the ideas mentioned above:
+ 
 \begin{example} %example #1
-Find the average...
- \[
-  f(x) = 
-  \]
+Find the partial fraction decomposition of
+\[
+  f(x) = \frac{x^2 + 3x -5}{x(x-2)^3(x^2 + 4)}. 
+\]
+The denominator is already in a completely factored form.  This form consists of a linear factor $x$, 
+a repeated linear factor $(x-2)^3$ and an irreducible quadratic $x^2 + 4$. 
+The partial fraction decomposition will consist of one term for the factor $x$ and three terms for the factor
+$(x-2)^3$.  Each of these terms will have a constant in the numerator.  
+The decomposition will also contain one term for the irreducible quadratic and this term 
+will have a linear polynomial in the numerator and the irreducible quadratic in the denominator.
+The form of the decomposition is:
+\[
+  \frac{x^2 + 3x -5}{x(x-2)^3(x^2 + 4)} = \frac{A}{x} + \frac{B}{x-2} + \frac{C}{(x-2)^2} + \frac{D}{(x-2)^3} +\frac{Ex+F}{x^2+4},
+\]
+where $A, B, C, D, E$ and $F$ are constants.
+
 \end{example}
 
 \begin{center}
@@ -151,4 +216,3 @@ Hello
 \begin{freeResponse}
 What is the chain rule used for?
 \end{freeResponse}
-
