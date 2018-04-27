@@ -218,93 +218,119 @@ Compute the integral using IBP:
 
 Integrals of the form $\int x^n f(x) \,dx$ require IBP $n$ times when $f(x)$ is sine, cosine or exponential function.
 A notational shortcut called tabular integration can be used to streamline the process of using IBP multiple times.
+As an example, let's revisit the following problem found above:
+
+\begin{example}[Tabular Integration]
+Compute the integral using Tabular Integration:
+  \[
+  \int x^2\sin(3x) \;dx.
+  \]
+
+We will construct a table that lists the derivatives of $u$ and the anti-derivatives of $dv$.
+We can then obtain the final answer by a series of multiplications and additions or subtractions, as indicated
+by the arrows in the table.
 
 
-
-\[
-\begin{array}{|c|c|c|}\hline
- u & \times & dv \\ \hline \hline
-  --- &  & \sin(x) \\ \hline
-  x^2 & \overset{+}{\longrightarrow} & -\cos(x) \\ \hline
-  2x &  \overset{-}{\longrightarrow} & -\sin(x) \\ \hline
-  2 &  \overset{+}{\longrightarrow}  & \cos(x) \\ \hline
-  0 &    & --- \\ \hline
-\end{array}
-\]
-
-\[
-\begin{array}{|ccc|}\hline
- u & \times & dv \\ \hline \hline
-  x^2 & & \sin(x) \\ 
-  2x & \overset{-}{\searrow} & -\cos(x) \\ 
-  2 & \overset{+}{\searrow}  & -\sin(x) \\ 
-  0 &    & \cos(x) \\ \hline
- 
-\end{array}
-\]
-
-\begin{tikzpicture}   
-\matrix (A) { % First table (it is called A)
-   $u$ \\
-   $x^2$            \\
-   $2x$         \\
-   $2$  \\
-   $0$\\
-};
-
-
-\matrix[right=of A] (B) { % Second table (it is called B)
-   $dv$ & \\
-   $\sin(x)$ & \\
-   $-\cos(x)$ & \\
-   $-\sin(x)$ & \\
-   $\cos(x)$ & \\
-};
-
-
-% Drawing arrows between particular cells of each table is easy:
-%\draw[->] (A-2) -- (B-3);
-%\draw[->] (A-3) -- (B-4);
-%\draw[->] (A-4) -- (B-5);
-\end{tikzpicture}
-
-\usetikzlibrary{calc,shadows,matrix}
-\usepgflibrary{shapes.misc}
-
-\tikzset{
-    myShape background/.style = {  % For the first phase
-        circle, minimum size=1.5em, fill, drop shadow={opacity=1},
-        name prefix ..
-    },
-    myShape edge/.style = { % For the second phase
-        draw, circle, minimum size=1.5em, thick,
-    },
-    myCross/.style = {
-        draw, cross out, minimum size=1.0em, thin, draw=gray!50,
-    },
-    bSum/.pic = {
-        \node [myShape background] at (0,0) {};  % First phase
-        \node [myCross] at (0,0) {};
-        \foreach \t [count=\i] in {#1}{
-            \pgfmathsetmacro{\angle}{\i*90}
-            \node[anchor=center] at (\angle:0.45em) {\tiny$\t$};
-         }
-        \node [myShape edge]      % Second phase, give it a name
-            (-\the\pgfmatrixcurrentrow-\the\pgfmatrixcurrentcolumn)
-            at (0,0) {}; 
-    },
-}
-
+\begin{image}[5cm]
 \begin{tikzpicture}
  \matrix (m) [matrix of nodes, ampersand replacement=\&,
-            column sep = 1.5cm, row sep = 1.2cm, nodes={anchor=center}]{
-    \draw pic[fill=white] (m) {bSum={+,+,-,}};     \&                  B \\
-     A  \& \draw pic[fill=green!10] (m) {bSum={,\odot,\smile,\prec}}; \\
+            column sep = 1.5cm]{
+    u     \&                  dv \\\hline
+    $x^2$ \& $\sin(3x)$ \\ [8pt]
+     $2x$  \& $-\frac13\cos(3x)$ \\ [8pt]
+      $2$ \& $-\frac19\sin(3x)$ \\ [8pt]
+       $0$ \& $\frac{1}{27}\cos(3x)$ \\
  };
- \draw[-latex] (m-2-1) -- (m-2-2);  % <-- It works!
- \draw[-latex] (m-1-1) -- (m-2-2);  % <-- It works!
+ \draw[-latex] (m-2-1) -- (m-3-2) node[midway,above]{$+$};  % <-- It works!
+ \draw[-latex] (m-3-1) -- (m-4-2) node[midway,above]{$-$};  % <-- It works!
+ \draw[-latex] (m-4-1) -- (m-5-2) node[midway,above]{$+$};  % <-- It works!
+ %\node at (-.6, 1.5){$+$};
+ %\node at (-.6, 0.3){$-$};
+ %\node at (-.6, -0.9){$+$};
+ %\draw (,) -- (,);
 \end{tikzpicture}
+\end{image}
 
+Thus,
+\[
+  \int x^2\sin(3x) \;dx = -\frac13 x^2\cos(3x) + \frac29x\sin(3x) + \frac{2}{27} \cos(3x) + C.
+  \]
+
+\end{example}
+
+
+
+\begin{example}[Tabular Integration]
+Compute the integral using Tabular Integration:
+  \[
+  \int x^4 e^{-2x} \;dx.
+  \]
+We construct a table with the derivatives of $u = x^4$ and the anti-derivatives of $dv = e^{-2x} \, dx$.
+We add arrows which indicate multiplication of an element of the $u$ column with elements in the $dv$ column one row lower.
+We adorn the arrows with alternating $+$ and $-$ signs to indicate either addition or subtraction of terms.
+\begin{image}[5cm]
+\begin{tikzpicture}
+ \matrix (m) [matrix of nodes, ampersand replacement=\&,
+            column sep = 1.5cm]{
+    u     \&                  dv \\\hline
+    $x^4$ \& $e^{-2x}$ \\ [8pt]
+     $4x^3$  \& $-\frac12 e^{-2x}$ \\ [8pt]
+      $12x^2$ \& $\frac14 e^{-2x}$ \\ [8pt]
+       $24x$ \& $-\frac18 e^{-2x}$ \\[8pt]
+       $24$ \& $\frac{1}{16} e^{-2x}$ \\[8pt]
+       $0$ \& $-\frac{1}{32} e^{-2x}$ \\
+ };
+ \draw[-latex] (m-2-1) -- (m-3-2) node[midway,above]{$+$};  % <-- It works!
+ \draw[-latex] (m-3-1) -- (m-4-2) node[midway,above]{$-$};  % <-- It works!
+ \draw[-latex] (m-4-1) -- (m-5-2) node[midway,above]{$+$};  % <-- It works!
+ \draw[-latex] (m-5-1) -- (m-6-2) node[midway,above]{$-$};  % <-- It works!
+ \draw[-latex] (m-6-1) -- (m-7-2) node[midway,above]{$+$};  % <-- It works!
+ %\node at (-.6, 1.5){$+$};
+ %\node at (-.6, 0.3){$-$};
+ %\node at (-.6, -0.9){$+$};
+ %\draw (,) -- (,);
+\end{tikzpicture}
+\end{image}
+
+Thus,
+\[
+  \int x^4 e^{-2x} \;dx = -\frac12 x^4 e^{-2x} - \frac44x^3 e^{-2x} - \frac{12}{8} x^2 e^{-2x} - \frac{24}{16}x e^{-2x} - \frac{24}{32} e^{-2x} + C.
+  \]
+\[
+= \left(-\frac12 x^4 - x^3  - \frac{3}{2} x^2  - \frac{3}{2}x  - \frac{3}{4}\right) e^{-2x} + C.
+\]
+\end{example}
+
+
+\begin{problem}[Tabular Integration]
+Compute the integral using Tabular Integration:
+  \[
+  \int x^3 \cos(5x) \;dx.
+  \]
+
+\begin{image}
+\begin{tikzpicture}
+ \matrix (m) [matrix of nodes, ampersand replacement=\&,
+            column sep = 1.5cm]{
+    u     \&                  dv \\\hline
+    $x^3$ \& $\cos(5x)$ \\ [8pt]
+     $\answer{3x^2}$  \& $\answer{\frac15 \sin(5x)}$ \\ [8pt]
+      $\answer{6x}$ \& $\answer{-\frac{1}{25} \cos(5x)}$ \\ [8pt]
+       $\answer{6}$ \& $\answer{-\frac{1}{125} \sin(5x)}$ \\[8pt]
+       $0$ \& $\answer{\frac{1}{625} \cos(5x)}$\\     
+ };
+ \draw[-latex] (m-2-1) -- (m-3-2) node[midway,above]{$+$};  % <-- It works!
+ \draw[-latex] (m-3-1) -- (m-4-2) node[midway,above]{$-$};  % <-- It works!
+ \draw[-latex] (m-4-1) -- (m-5-2) node[midway,above]{$+$};  % <-- It works!
+ \draw[-latex] (m-5-1) -- (m-6-2) node[midway,above]{$-$};  % <-- It works!
+\end{tikzpicture}
+\end{image}
+
+Thus,
+\[
+  \int x^3 \cos(5x) \;dx = \answer{\frac15 x^3\sin(5x) + \frac{3}{25}x^2 \cos(5x) - \frac{6}{125}\sin(5x) -\frac{6}{625}\cos(5x)} +C.
+  \]
+\end{problem}
 
 
 \begin{center}
