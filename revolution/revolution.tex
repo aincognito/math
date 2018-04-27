@@ -2,74 +2,156 @@
 
 \input{../preamble}
 
-\outcome{Find the Average Value of a Function}
+\outcome{Find the volume of a solid}
 
-\title{Average Value}
+\title{Volumes of solids}
 
 \begin{document}
 
 \begin{abstract}
-We find the average value of a function.
+We find the volumes of a variety of solids.
 \end{abstract}
 
 \maketitle
 
 \begin{center}
-\textbf{Average Value}
+\textbf{Volume of Solids}
 \end{center}
 
-We will find the average value of a function on an interval 
-and find the value(s) of $x$ for which the function equals the 
-average (MVT for Integrals).
+We have learned that the integral can be used to compute areas of regions in the plane.  
+We will now learn that integrals can be used to compute volumes as well.
+The integral notation suggests that we compute area in the plane by summing the areas of  infinitely thin line segments.
+Of course this perspective is only the result of a limit of Riemann Sums of areas of rectangles.
+The volume of a solid can be similarly conceptualized as resulting from pasting together infinitely many cross-sections,
+each of which possesses area. Hence the integral can be used in a similar fashion to compute the volume of a solid.
+In the case of volume, the defining Riemann Sums involve irregularly formed cylinders rather than rectangles
+in our approximation process.
 
-\begin{theorem} Mean Value Theorem for Integrals 
+%replacing the line segments which when pasted together form a region,
+%with cross-sectional areas which when themselves pasted together form a solid.
+
+%visual aid here
+
+Suppose that a solid be placed atop an axis, say the $x-$axis, as shown in the figure below.
+
+%visual aid here
+
+For each $x$ between $a$ and $b$, there is a cross-section of the solid whose area we will denote by $A(x)$.
+Then our astonishing result is that the volume of the solid can be computed as
+
 \[
-If
+V = \int_a^b A(x) \; dx.
 \]
-\end{theorem}
+
+\begin{remark}
+We can also re-orient our axis so that it would be more aptly, named $y$, and with respect to this vertical axis, 
+we could compute the volume with the exact same idea as
+\[
+V = \int_a^b A(y) \; dy.
+\]
+
+\end{remark}
+
+%visual aid here with y-axis
+
+
+\begin{explanation}
+To be precise, we will next define the volume in terms of the limit of a Riemann Sums.  
+Let us reconsider the solid above, from the perspective of the x-axis. Suppose that at
+each $x-value$ there is a cross-sectional area $A(x)$. Then to approximate the volume of the solid we 
+can use a Riemann sum as follows. Subdivide $[0,1]$ into $n$ equal sub-intervals each of length $\Delta x = 1/n$.
+For each sub-interval (whose form is $[\frac{i-1}{n}, \frac{i}{n}]$) we choose a sample point and call it $x_i^*$, where 
+the index $i$ runs from $1$ to $n$. 
+Corresponding to these $n$ values of $x$, there are cross-sections whose areas are given by $A(x_i^*)$.
+From these cross-sections we can construct an irregular cylinder as shown below.
+
+%visual aid here of irregular cylinder
+
+The volume of each of these $n$ cylinders is given by
+\[
+V = \text{area of base} \times \text{height} = A(x_i^*) \cdot \frac{1}{n} = A(x_i^*) \cdot \Delta x.
+\]
+Summing the volumes of these $n$ cylinders gives an approximation to the volume as a Riemann Sum
+\[
+V \approx \sum_{i=1}^n A(x_i^*) \Delta x.
+\]
+The exact volume is then defined in terms of a limit these Riemann Sums as $n$ tends to infinity,
+\[
+V = \int_0^1 A(x) \; dx = \lim_{n \to \infty} \sum_{i=1}^n A(x_i^*) \Delta x.
+\]
+
+\end{explanation}
+
+We generalize this explanation in the definition below.
+
+\begin{definition}[Volume of a Solid]
+The exact volume of a solid whose cross-sectional area at an $x$ value between $a$ and $b$ is given by
+\[
+V = \int_a^b A(x) \; dx = \lim_{n \to \infty} \sum_{i=1}^n A(x_i^*) \Delta x.
+\]
+In this context, 
+\[
+\Delta x = \frac{b-a}{n}
+\] 
+and $x_i^*$ is a sample point in the $i$-th sub-interval
+\[
+[a + (i-1)\Delta x, a + i\Delta x],
+\]
+where $i = 1, 2, \dots, n$.
+\end{definition}
 
 
 
 
 
 
-\begin{example} %example #1
-Find the average...
- \[
-  f(x) = 
-  \]
-\end{example}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \begin{center}
 \begin{foldable}
 \unfoldable{Here is a video of Example 1}
-%\youtube{Yy6QXnFlnXs} %vid of example 1
+%\youtube{} %vid of example 1
 \end{foldable}
 \end{center}
-
-
-\begin{problem} %problem #1
-  Find the average...
-  \[
-  f(x)
-  \]
-    \begin{hint}
-      compute a definite integral
-    \end{hint}
-    
-		
-		The average value is
-		 $\answer[given]{0}$
-\end{problem}
-
-
-\begin{center}
-\begin{foldable}
-\unfoldable{Here is a detailed, lecture style video on average value:}
-\youtube{gRJTe1i1muo}
-\end{foldable}
-\end{center}
-
 
 
 
@@ -77,36 +159,9 @@ Find the average...
 \end{document}
 
 
-\begin{example} %example #15
-Find $h'(x)$ if $h(x) = x^{\sin(x)}$.\\
-We will use the fact that the exponential and logarithm functions are inverses,
-\[e^{\ln(x)} = x,\]
-and the exponent property of logarithms, 
-\[\ln(x^n) = n\ln(x),\]
-to rewrite $h(x)$.  We have 
-\[h(x) = x^{\sin(x)} = e^{\ln(x^{\sin(x)})} = e^{\sin(x)\ln(x)}\]
-and we can now compute $h'(x)$ using a combination of the chain rule and product rule.
-We can write $h(x)$ as a composition, $f(g(x))$ with 
-\[g(x) = \sin(x)\ln(x) \quad \text{and} \quad f(x) = e^x.\]
-Then to find $g'(x)$ we us the product rule and we get $g'(x) = \frac{\sin(x)}{x} + \cos(x)\ln(x)$.
-Next $f'(x) = e^x$ and 
-hence $f'(g(x)) = e^{g(x)} = e^{\sin(x)\ln(x)} = x^{\sin(x)}$.
-We can then conclude $h'(x) = f'(g(x))g'(x) = x^{\sin(x)} \left[ \frac{\sin(x)}{x} + \cos(x)\ln(x)\right]$.
-\end{example}
-
-%more question formats below
 
 
-
-
-
-
-
-
-
-
-
-
+%multiple choice format; note the question environment; what is free response? what is verbatim?
 
 %\begin{verbatim}
 \begin{question}
@@ -124,8 +179,7 @@ Hello
 %\end{verbatim}
 
 
-
-
+%note the indentation
 
 \begin{question}
   Which one will you choose?
@@ -136,6 +190,8 @@ Hello
   \end{multipleChoice}
 \end{question}
 
+
+%selectAll
 
 \begin{question}
   Which one will you choose?
@@ -151,4 +207,3 @@ Hello
 \begin{freeResponse}
 What is the chain rule used for?
 \end{freeResponse}
-

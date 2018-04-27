@@ -2,6 +2,31 @@
 
 \input{../preamble}
 
+
+%below is for tabular integration
+\usepackage{booktabs}
+\usepackage{xparse}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\tikzset{Arrow Style/.style={text=black, font=\boldmath}}
+
+\newcommand{\tikzmark}[1]{%
+    \tikz[overlay, remember picture, baseline] \node (#1) {};%
+}
+\newcommand*{\XShift}{0.5em}
+\newcommand*{\YShift}{0.5ex}
+\NewDocumentCommand{\DrawArrow}{s O{} m m m}{%
+    \begin{tikzpicture}[overlay,remember picture]
+        \draw[->, thick, Arrow Style, #2] 
+                ($(#3.west)+(\XShift,\YShift)$) -- 
+                ($(#4.east)+(-\XShift,\YShift)$)
+        node [midway,above] {#5};
+    \end{tikzpicture}%
+}
+%above is for tabular integration
+
+
 \outcome{Compute an integral using integration by parts}
 
 \title{Integration by Parts}
@@ -19,6 +44,7 @@ We will compute integrals using the integration by parts technique.
 %\end{center}
 
 We will use the integration by parts (IBP) formula to compute integrals involving products of unrelated factors.
+
 
 \begin{theorem}[Integration by Parts]
 \[
@@ -51,17 +77,17 @@ Compute the integral using IBP:
   for our purpose and we choose the constant of integration to be zero.
   \end{remark}
   Now we use the Integration by Parts formula, $\int u\;dv = uv-\int v\; du$:
-  \[
-  \int x\sin(x) = -x\cos(x) - \int -\cos(x) \;dx = -x\cos(x) + \int \cos(x) \;dx
-  \]
-  \[
-  = -x\cos(x) + \sin(x) + C.
-  \]
+  \begin{align*}
+  \int x\sin(x) &= -x\cos(x) - \int -\cos(x) \;dx\\
+                &= -x\cos(x) + \int \cos(x) \;dx\\
+                &= -x\cos(x) + \sin(x) + C.
+ \end{align*}
+ 
   We have found an answer, but at this stage we should prove that it is the correct answer by differentiating it.  The result should be $x\sin(x)$.
   Note that the differentiation requires the product rule on the $uv$ term: $-x\cos(x)$.
   We have
   \[
-  \frac{d}{dx}{\left(-x\cos(x) + \sin(x) + C\right)} = [-\cos(x) + x\sin(x)] + \cos(x) = x\sin(x)
+  \frac{d}{dx}{\left[-x\cos(x) + \sin(x) + C\right]} = [-\cos(x) + x\sin(x)] + \cos(x) = x\sin(x)
   \]
   which proves that our answer was correct.
   
@@ -120,6 +146,132 @@ Compute the integral using IBP:
     
 
 \end{problem}
+
+
+\begin{example}
+Compute the integral using IBP:
+  \[
+  \int 3x\sin(4x) \;dx.
+  \]
+
+Let $u = 3x$ and $dv = \sin(4x) \,dx$.\\
+Then $du = 3 \,dx$ and $v = -\frac14 \cos(4x)$.
+Next, the IBP formula gives
+\begin{align*}
+  \int 3x\sin(4x) \;dx &= (3x)(-\frac14 \cos(4x)) - \int -\frac14 \cos(4x) \cdot 3 \; dx \\
+                       &= -\frac34 x\cos(4x) + \frac34 \int \cos(4x) \; dx \\
+                       &= -\frac34 x\cos(4x) + \frac34 \cdot \frac 14 \sin(4x) + C\\
+                       &= -\frac34 x\cos(4x) + \frac{3}{16}\sin(4x) + C.
+\end{align*}
+
+\end{example}
+
+
+\begin{problem}
+Compute the integral using IBP:
+  \[
+  \int 2x\sin(5x)\;dx.
+  \]
+
+\end{problem}
+
+
+\begin{problem}
+Compute the integral using IBP:
+  \[
+  \int 6xe^{-3x} \;dx.
+  \]
+
+\end{problem}
+
+
+\begin{problem}
+Compute the integral using IBP:
+  \[
+  \int x\sin(x/2) \;dx.
+  \]
+
+\end{problem}
+
+
+\begin{example}[IBP twice]
+Compute the integral using IBP:
+  \[
+  \int x^2\sin(3x) \;dx.
+  \]
+
+\[
+\text{Let} \;\; u = x^2 \;\; \text{and} \;\; dv = \sin(3x) \,dx,
+\]
+\[
+\text{then} \;\; du = 2x \,dx \;\; \text{and} \;\; v = -\frac13 \cos(3x).
+\]
+
+Next, the IBP formula gives
+\begin{align*}
+\int x^2\sin(3x) \;dx &= (x^2)\left[-\frac13 \cos(3x)\right] - \int -\frac13 \cos(3x) \cdot 2x \; dx \\
+                       &= -\frac13 x^2\cos(3x) + \frac13 \int 2x\cos(3x) \; dx\\                               
+\text{we now use IBP} & \text{ again with \; $u = 2x$ \; and \; $dv = \cos(3x) \, dx$}\\
+& \qquad \qquad \quad \text{$du = 2 \, dx$ \; and \; $v=\frac13 \sin(3x)$}\\
+                       &= -\frac13 x^2\cos(3x) + \frac29x\sin(3x) - \frac13 \int \frac13 \sin(3x)\cdot 2 \; dx\\
+                       &= -\frac13 x^2\cos(3x) + \frac29x\sin(3x) + \frac{2}{27} \cos(3x) + C.
+\end{align*}
+
+\end{example}
+
+
+\begin{problem}
+Compute the integral using IBP:
+  \[
+  \int x^2\cos(2x) \;dx.
+  \]
+
+\end{problem}
+
+\begin{problem}
+Compute the integral using IBP:
+  \[
+  \int x^2e^{-x} \;dx.
+  \]
+
+\end{problem}
+
+\begin{center}
+\textbf{Tabular Integration}
+\end{center}
+
+Integrals of the form $\int x^n f(x) \,dx$ require IBP $n$ times when $f(x)$ is a sine, cosine or exponential function.
+A notational shortcut called tabular integration can be used to streamline the process of using IBP multiple times.
+
+
+
+
+\begin{enumerate}
+    \item $\displaystyle{\int x^6\cdot e^x dx}$
+
+    Make a table of $u$ and its derivatives \& $\mathrm{d}v$ and its integrals\dots
+   \[\renewcommand{\arraystretch}{1.5}
+    \begin{array}{c @{\hspace*{2.0cm}} c}\toprule
+       D & I \\\cmidrule(lr){1-2}
+       x^6  \tikzmark{Left 1} & \tikzmark{Right 1} e^x \\
+      6x^5  \tikzmark{Left 2} & \tikzmark{Right 2} e^x \\
+      30x^4 \tikzmark{Left 3} & \tikzmark{Right 3} e^x \\
+     120x^3 \tikzmark{Left 4} & \tikzmark{Right 4} e^x \\
+     360x^2 \tikzmark{Left 5} & \tikzmark{Right 5} e^x \\
+     720x   \tikzmark{Left 6} & \tikzmark{Right 6} e^x \\
+     720    \tikzmark{Left 7} & \tikzmark{Right 7} e^x \\
+       0    \tikzmark{Left 8} & \tikzmark{Right 8} e^x \\\bottomrule
+    \end{array}%
+    \]
+    % --------
+    \DrawArrow{Left 1}{Right 2}{$+$}% <-- Don't forget there.
+    \DrawArrow{Left 2}{Right 3}{$-$}%
+    \DrawArrow{Left 3}{Right 4}{$+$}%
+    \DrawArrow{Left 4}{Right 5}{$-$}%
+    \DrawArrow{Left 5}{Right 6}{$+$}%
+    \DrawArrow{Left 6}{Right 7}{$-$}%
+    \DrawArrow{Left 7}{Right 8}{$+$}%
+\end{enumerate}
 
 
 

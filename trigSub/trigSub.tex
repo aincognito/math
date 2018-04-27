@@ -2,153 +2,124 @@
 
 \input{../preamble}
 
-\outcome{Find the Average Value of a Function}
+\outcome{Anti-differentiation via Indefinite Integrals}
 
-\title{Average Value}
+\title{Anti-differentiation via Indefinite Integrals}
 
 \begin{document}
 
 \begin{abstract}
-We find the average value of a function.
+We will compute Anti-differentiation via Indefinite Integrals
 \end{abstract}
 
 \maketitle
 
-\begin{center}
-\textbf{Average Value}
-\end{center}
+\begin{example}
 
-We will find the average value of a function on an interval 
-and find the value(s) of $x$ for which the function equals the 
-average (MVT for Integrals).
+\begin{itemize}
 
-\begin{theorem} Mean Value Theorem for Integrals 
+\item[given f', find f (all f)]
+
+\item[given f' and f(0), find f]
+
+\item[given f'' and f'(0), f(0), find f]
+
+\item[Indefinite integrals]
 \[
-If
+\int f'(x) \; dx = f(x) + C \;\; \text{or} \;\; \int f(x) \; dx = F(x) + C.
 \]
-\end{theorem}
+
+\item[Interaction with Constants]
+\[
+\int [af'(x) + bg'(x)] \; dx = a \int f'(x) \; dx + b \int g'(x) \; dx.
+\]
+
+\item[Trig Functions]
+\[
+\int \cos(x) \; dx = \sin(x) + C \:\:  \text{and} \;\; \int \sec^2(x) \; dx = \tan(x) + C.
+\]
+
+\item[Power Functions]
+\[
+\int x^2 \; dx = \frac{x^3}{3} + C \;\; \text{and} \;\; \int \frac{1}{x} \; dx = \ln|x| + C.
+\]
+
+\item[Power Rule for Indefinite Integrals]
+\[
+\int x^n \; dx = \frac{x^{n+1}}{n+1} + C, n\neq -1.
+\]
+
+\item[examples for the power rule]
+\[
+\int \frac{1}{2\sqrt x} \; dx = \sqrt x + C \;\; \text{and} \;\; \int x^{-3} \; dx = -\frac{x^{-2}}{2} + C = -\frac{1}{2x^2} + C.
+\]
+
+\item[exponential functions]
+\[
+\int be^{ax} \; dx = \frac{b}{a} e^{ax} + C
+\]
+
+\item[other examples]
+\[
+\int \frac{1}{x^2 + a^2} \; dx = \frac{1}{a} \tan^{-1}(\frac{x}{a}) + C \;\; \text{and} \;\; \int f'(ax) \; dx = \frac{1}{a} f(ax) + C.
+\]
+
+\item[compositions]
+\[
+\int f(g(x))g'(x) \; dx = F(g(x)) + C.
+\]
+
+\item[products]
+\[
+\int f(x)g'(x) \; dx = f(x)g(x) + \int f'(x)g(x) \; dx \;\; \text{or} \;\; \int u\; dv = uv - \int v \; du.
+\]
+
+\item[rational functions]
+\[
+\int \frac{p(x)}{(x-a)^n(x^2 + b^2)} \; dx = \int \frac{A_1}{x-a} + \frac{A_2}{(x-a)^2} + \cdots + \frac{A_n}{(x-a)^n} + \frac{Bx+C}{x^2 + b^2} \; dx.
+\]
+
+\item[trig integrals]
+\[
+\int \sin^m(x) \cos^n(x) \; dx \;\; \text{and} \int\frac{1}{x^2\sqrt{x^2-a^2}} \; dx = \frac{1}{a^2} \int \cos \theta \; d\theta.
+\]
 
 
+\end{itemize}
 
-
-
-
-\begin{example} %example #1
-Find the average...
- \[
-  f(x) = 
-  \]
 \end{example}
-
-\begin{center}
-\begin{foldable}
-\unfoldable{Here is a video of Example 1}
-%\youtube{Yy6QXnFlnXs} %vid of example 1
-\end{foldable}
-\end{center}
-
-
-\begin{problem} %problem #1
-  Find the average...
-  \[
-  f(x)
-  \]
-    \begin{hint}
-      compute a definite integral
-    \end{hint}
-    
-		
-		The average value is
-		 $\answer[given]{0}$
-\end{problem}
-
-
-\begin{center}
-\begin{foldable}
-\unfoldable{Here is a detailed, lecture style video on average value:}
-\youtube{gRJTe1i1muo}
-\end{foldable}
-\end{center}
-
-
-
 
 
 \end{document}
 
+Integration by parts in economics
 
-\begin{example} %example #15
-Find $h'(x)$ if $h(x) = x^{\sin(x)}$.\\
-We will use the fact that the exponential and logarithm functions are inverses,
-\[e^{\ln(x)} = x,\]
-and the exponent property of logarithms, 
-\[\ln(x^n) = n\ln(x),\]
-to rewrite $h(x)$.  We have 
-\[h(x) = x^{\sin(x)} = e^{\ln(x^{\sin(x)})} = e^{\sin(x)\ln(x)}\]
-and we can now compute $h'(x)$ using a combination of the chain rule and product rule.
-We can write $h(x)$ as a composition, $f(g(x))$ with 
-\[g(x) = \sin(x)\ln(x) \quad \text{and} \quad f(x) = e^x.\]
-Then to find $g'(x)$ we us the product rule and we get $g'(x) = \frac{\sin(x)}{x} + \cos(x)\ln(x)$.
-Next $f'(x) = e^x$ and 
-hence $f'(g(x)) = e^{g(x)} = e^{\sin(x)\ln(x)} = x^{\sin(x)}$.
-We can then conclude $h'(x) = f'(g(x))g'(x) = x^{\sin(x)} \left[ \frac{\sin(x)}{x} + \cos(x)\ln(x)\right]$.
-\end{example}
-
-%more question formats below
+Present value of a flow
+Suppose P(t) is the annual rate at which income is flowing at time
+t. Given r the interest rate. Consider a period between a and b, if
+we partition the time interval with subintervals [t i−1 , t i ], for
+i = 1, .., n with t 0 = a and t n = b we know that we can
+approximate the income in any subinterval as P(t i )(t i − t i−1 ). The
+discount factor will be e −rt i .
+Using integral to get the present value of the flow on the whole
+period
+Z b
+e −rt P(t)dt
 
 
 
+An example of improper integral in economics
+Denoting by c(t) consumption at time t, by U the instantaneous
+utility function and r a discount rate. An integral
+Z ∞
+U(c(t))e −rt dt
+t 0
+represents the present value of future cumulative utility coming
+from consumption.
 
-
-
-
-
-
-
-
-
-
-%\begin{verbatim}
-\begin{question}
-What is your favorite color?
-\begin{multipleChoice}
-\choice[correct]{Rainbow}
-\choice{Blue}
-\choice{Green}
-\choice{Red}
-\end{multipleChoice}
-\begin{freeResponse}
-Hello
-\end{freeResponse}
-\end{question}
-%\end{verbatim}
-
-
-
-
-
-\begin{question}
-  Which one will you choose?
-  \begin{multipleChoice}
-    \choice[correct]{I'm correct.}
-    \choice{I'm wrong.}
-    \choice{I'm wrong too.}
-  \end{multipleChoice}
-\end{question}
-
-
-\begin{question}
-  Which one will you choose?
-  \begin{selectAll}
-    \choice[correct]{I'm correct.}
-    \choice{I'm wrong.}
-    \choice[correct]{I'm also correct.}
-    \choice{I'm wrong too.}
-  \end{selectAll}
-\end{question}
-
-
-\begin{freeResponse}
-What is the chain rule used for?
-\end{freeResponse}
+Applications in mathematics
+laplace transform
+gamma function
+prob density function (doubly improper integral) int 1/(1+x^2)
+computer science int of download speed = amount downloaded
 
