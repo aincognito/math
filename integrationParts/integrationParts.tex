@@ -1,7 +1,7 @@
 \documentclass{ximera}
 
 \input{../preamble}
-
+\usetikzlibrary{matrix,positioning}
 
 \outcome{Compute an integral using integration by parts}
 
@@ -243,20 +243,69 @@ A notational shortcut called tabular integration can be used to streamline the p
 \end{array}
 \]
 
-\[
-    \renewcommand{\arraystretch}{1.5}
-    \begin{array}{c @{\hspace*{1.0cm}} c}\toprule
-       D & I \\\cmidrule{1-2}
-      x^2\tikzmark{Left 1} & \tikzmark{Right 1}e^2x \\
-      2x \tikzmark{Left 2} & \tikzmark{Right 2}\frac{1}{2} e^{2x} \\      
-      2  \tikzmark{Left 3} & \tikzmark{Right 3}\frac{1}{4} e^{2x} \\      
-      0  \tikzmark{Left 4} & \tikzmark{Right 4}\frac{1}{8} e^{2x} \\\bottomrule
-    \end{array}
-\]
-%-----------------------------------------
-\DrawArrow[draw=red]{Left 1}{Right 2}{$+$}%
-\DrawArrow[draw=brown]{Left 2}{Right 3}{$-$}%
-\DrawArrow[draw=blue]{Left 3}{Right 4}{$+$}%
+\begin{tikzpicture}   
+\matrix (A) { % First table (it is called A)
+   $u$ \\
+   $x^2$            \\
+   $2x$         \\
+   $2$  \\
+   $0$\\
+};
+
+
+\matrix[right=of A] (B) { % Second table (it is called B)
+   $dv$ & \\
+   $\sin(x)$ & \\
+   $-\cos(x)$ & \\
+   $-\sin(x)$ & \\
+   $\cos(x)$ & \\
+};
+
+
+% Drawing arrows between particular cells of each table is easy:
+%\draw[->] (A-2) -- (B-3);
+%\draw[->] (A-3) -- (B-4);
+%\draw[->] (A-4) -- (B-5);
+\end{tikzpicture}
+
+\usetikzlibrary{calc,shadows,matrix}
+\usepgflibrary{shapes.misc}
+
+\tikzset{
+    myShape background/.style = {  % For the first phase
+        circle, minimum size=1.5em, fill, drop shadow={opacity=1},
+        name prefix ..
+    },
+    myShape edge/.style = { % For the second phase
+        draw, circle, minimum size=1.5em, thick,
+    },
+    myCross/.style = {
+        draw, cross out, minimum size=1.0em, thin, draw=gray!50,
+    },
+    bSum/.pic = {
+        \node [myShape background] at (0,0) {};  % First phase
+        \node [myCross] at (0,0) {};
+        \foreach \t [count=\i] in {#1}{
+            \pgfmathsetmacro{\angle}{\i*90}
+            \node[anchor=center] at (\angle:0.45em) {\tiny$\t$};
+         }
+        \node [myShape edge]      % Second phase, give it a name
+            (-\the\pgfmatrixcurrentrow-\the\pgfmatrixcurrentcolumn)
+            at (0,0) {}; 
+    },
+}
+
+\begin{tikzpicture}
+ \matrix (m) [matrix of nodes, ampersand replacement=\&,
+            column sep = 1.5cm, row sep = 1.2cm, nodes={anchor=center}]{
+    \draw pic[fill=white] (m) {bSum={+,+,-,}};     \&                  B \\
+     A  \& \draw pic[fill=green!10] (m) {bSum={,\odot,\smile,\prec}}; \\
+ };
+ \draw[-latex] (m-2-1) -- (m-2-2);  % <-- It works!
+ \draw[-latex] (m-1-1) -- (m-2-2);  % <-- It works!
+\end{tikzpicture}
+
+
 
 \begin{center}
 \begin{foldable}
