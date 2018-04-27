@@ -28,7 +28,11 @@ We will use the integration by parts (IBP) formula to compute integrals involvin
 \]
 \end{theorem}
 
-
+\begin{remark}
+The integration by Parts formula does not give a final answer to a problem. 
+Instead, it replaces one integral with another, which still has to be solved.
+The goal is for this new integral to be easier than the original one.
+\end{remark}
 
 
 
@@ -43,18 +47,18 @@ Compute the integral using IBP:
   The factor we prefer to differentiate is $x$ since the derivative of $x$ is a constant and constants are easy to deal with in integrals.
   As for the $\sin(x)$ factor, whether we differentiate it or anti-differentiate it makes little difference.  In fact, only a change in sign occurs,
   as 
-  \[\frac{d}{dx}{\sin(x)} = \cos(x)    \text{ \;\;   and \;\;   }   \int \sin(x) \;dx = -\cos(x) + C.\]
+  \[\frac{d}{dx}{\sin(x)} = \cos(x) \;\;  \text{ and }\;\;   \int \sin(x) \;dx = -\cos(x) + C.\]
   Thus to apply the IBP formula, we let
   \[u=x \text{  and  }  dv = \sin(x) \;dx.\]
   Next, we compute
-  \[du = dx  \text{  \;\;  and \;\;   }  v = -\cos(x).\]
+  \[du = dx  \;\;  \text{  and  }\;\;    v = -\cos(x).\]
   \begin{remark} 
   We do not need to add the constant of integration to v, as any anti-derivative will suffice 
   for our purpose and we choose the constant of integration to be zero.
   \end{remark}
   Now we use the Integration by Parts formula, $\int u\;dv = uv-\int v\; du$:
   \begin{align*}
-  \int x\sin(x) &= -x\cos(x) - \int -\cos(x) \;dx\\
+  \int x\sin(x) &= \overbrace{x}^{u}\overbrace{[-\cos(x)]}^{v} - \int \overbrace{-\cos(x)}^{v} \;\overbrace{dx}^{du}\\
                 &= -x\cos(x) + \int \cos(x) \;dx\\
                 &= -x\cos(x) + \sin(x) + C.
  \end{align*}
@@ -134,7 +138,7 @@ Let $u = 3x$ and $dv = \sin(4x) \,dx$.\\
 Then $du = 3 \,dx$ and $v = -\frac14 \cos(4x)$.
 Next, the IBP formula gives
 \begin{align*}
-  \int 3x\sin(4x) \;dx &= (3x)(-\frac14 \cos(4x)) - \int -\frac14 \cos(4x) \cdot 3 \; dx \\
+  \int 3x\sin(4x) \;dx &= \overbrace{3x}^{u}\overbrace{(-\frac14 \cos(4x))}^{v} - \int \overbrace{-\frac14 \cos(4x)}^{v}  \cdot \overbrace{3 \; dx}^{du} \\
                        &= -\frac34 x\cos(4x) + \frac34 \int \cos(4x) \; dx \\
                        &= -\frac34 x\cos(4x) + \frac34 \cdot \frac 14 \sin(4x) + C\\
                        &= -\frac34 x\cos(4x) + \frac{3}{16}\sin(4x) + C.
@@ -322,6 +326,209 @@ Complete the table and then enter the final answer.
 \end{center}
 
 
+
+Thus,
+\[
+  \int x^3 \cos(5x) \;dx = \answer{\frac15 x^3\sin(5x) + \frac{3}{25}x^2 \cos(5x) - \frac{6}{125}\sin(5x) -\frac{6}{625}\cos(5x)} +C.
+  \]
+\end{problem}
+
+
+
+\begin{center}
+\textbf{Inverse Functions}
+\end{center}
+We will now look at some examples involving inverse functions like $\ln(x), \tan^{-1}(x), \sin^{-1}(x)$ and $\cos^{-1}(x)$.
+We do not (yet) know anti-derivatives for these functions, so we will have to let $u$ equal the inverse function.
+ 
+\begin{example}
+Compute the integral using IBP:
+  \[
+  \int x^5\ln(x) \;dx.
+  \]
+In our previous examples, we would have let $u = x^5$ and $dv = \ln(x) \, dx$.
+But notice that,in this case, we do not know an anti-derivative of $\ln(x)$, so 
+we would be stumped in finding $v$. Instead, we will let 
+\[
+u = \ln(x)  \text{  and  } dv = x^5 \, dx\]
+then
+\[
+du = \frac{1}{x} \, dx \text{  and  } v = \frac{x^6}{6}.
+\]
+The power of $x$ has increased, rather than decreased, as in previous examples, but this 
+is offset by the fact that the derivative of the natural log has a completely different form
+which is easier to work with. Now, by IBP, we have,
+
+\begin{align*}
+  \int x^5\ln(x) \;dx &= \frac{x^6}{6}\ln(x) - \int \frac{x^6}{6}\cdot \frac{1}{x} \, dx\\
+\text{Now, the integrand } & \text{ can be simplified by canceling $x$ allowing us to integrate}\\
+&= \frac{x^6}{6}\ln(x) - \frac16\int x^5 \, dx\\
+&= \frac{x^6}{6}\ln(x) -  \frac{x^6}{36} + C\\
+\end{align*}
+
+\end{example}
+
+
+
+\begin{problem} 
+  Compute the integral using IBP:
+  \[
+  \int x^8 \ln(x) \;dx.
+  \]
+  
+  \begin{hint}
+      include $dx$ where appropriate
+  \end{hint}
+  Let $u = \answer{\ln(x)}$   and   $dv = \answer{x^8 \;dx}$.\\
+  Then $du = \answer{\frac{1}{x} dx}$   and   $v = \answer{x^9/9}$.\\
+  Thus 
+  \[
+  \int x^8 \ln(x) dx = \frac{x^9}{9}\ln(x) - \int \answer{\frac{x^8}{9}} \;dx = \answer{\frac{x^9}{9}\ln(x) -\frac{x^9}{81}} + C.
+  \]
+
+\end{problem}
+
+This method can be used to anti-differentiate $\ln(x)$ as well.
+
+
+\begin{problem} 
+  Compute the integral using IBP:
+  \[
+  \int \ln(x) \;dx.
+  \]
+  
+  \begin{hint}
+      include $dx$ where appropriate
+  \end{hint}
+  Let $u = \answer{\ln(x)}$   and   $dv = \answer{dx}$.\\
+  Then $du = \answer{\frac{1}{x} dx}$   and   $v = \answer{x}$.\\
+  Thus 
+  \[
+  \int  \ln(x) dx = x\ln(x) - \int \answer{1} \;dx = \answer{x\ln(x) -x} + C.
+  \]
+
+\end{problem}
+
+\begin{problem} 
+  Compute the integral using IBP:
+  \[
+  \int \frac{\ln(x)}{\sqrt x} \;dx.
+  \]
+  
+  \begin{hint}
+      include $dx$ where appropriate
+  \end{hint}
+  \begin{hint}
+      rewrite $\frac{1}{\!\sqrt x}$ as a power of $x$
+  \end{hint}
+  Let $u = \answer{\ln(x)}$   and   $dv = \answer{x^{-1/2} \;dx}$.\\
+  Then $du = \answer{\frac{1}{x} dx}$   and   $v = \answer{2x^{1/2}}$.\\
+  Thus 
+  \[
+  \int \frac{\ln(x)}{\!\sqrt x} dx = 2\sqrt x \ln(x) - \int \answer{\frac{2}{\sqrt x}} \;dx = \answer{2\sqrt x \ln(x) -4\sqrt x} + C.
+  \]
+
+\end{problem}
+
+
+\begin{example}
+Compute the integral:
+  \[
+  \int \tan^{-1}(2x) \;dx.
+  \]
+Let $u = \tan^{-1}(2x)$   and   $dv = dx$.\\
+  Then $du = \frac{2}{1+4x^2}\, dx$   and   $v = x$.\\
+By IBP,
+  \begin{align*}
+  \int  \tan^{-1}(2x) dx &= x\tan^{-1}(2x) - \int \frac{2x}{1+4x^2} \;dx\\
+  \text{we can use $u$-} & \text{substitution on this integral} \\
+  \text{with $u =$} &  1+4x^2 \text{ and } du = 8x \, dx \\
+  &= x\tan^{-1}(2x) - \frac14 \int \frac{1}{u} \; du\\
+  &= x\tan^{-1}(2x) - \frac14 \ln|u| + C\\
+  &= x\tan^{-1}(2x) - \frac14 \ln(1+4x^2) + C
+  \end{align*}
+  
+\end{example}
+
+\begin{problem}
+Compute the integral:
+  \[
+  \int \tan^{-1}(x) \;dx.
+  \]
+
+\end{problem}
+
+\begin{problem}
+Compute the integral:
+  \[
+  \int \sin^{-1}(4x) \;dx.
+  \]
+
+\end{problem}
+
+\begin{example}
+Compute the integral:
+  \[
+  \int x^3\tan^{-1}(x) \;dx.
+  \]
+Let $u = \tan^{-1}(x)$   and   $dv = x^3 \, dx$.\\
+  Then $du = \frac{1}{1+x^2}\, dx$   and   $v = \frac14 x^4$.\\
+By IBP,
+  \begin{align*}
+  \int  \tan^{-1}(x) dx &= \frac14 x^4\tan^{-1}(x) - \frac14\int \frac{x^4}{1+x^2} \;dx\\
+  & \text{now use polynomial long division to get} \\
+  &= \frac14 x^4\tan^{-1}(x) - \frac14 \int x^2 - 1 + \frac{1}{1+x^2} \; dx\\
+  &= \frac14 x^4\tan^{-1}(x) - \frac14\left(\frac{x^3}{3} - x + \tan^{-1}(x)\right) + C\\
+  &= \frac14 x^4\tan^{-1}(x) - \frac{x^3}{12} - \frac{x}{4} + \frac14 \tan^{-1}(x) + C
+  \end{align*}
+  
+\end{example}
+
+\begin{problem}
+Compute the integral:
+  \[
+  \int x^2\tan^{-1}(x) \;dx.
+  \]
+\begin{hint}
+      include $dx$ where appropriate
+  \end{hint}
+  Let $u = \answer{\tan^{-1}(x)}$   and   $dv = \answer{x^2 \;dx}$.\\
+  Then $du = \answer{\frac{1}{1+x^2} dx}$   and   $v = \answer{x^3/3}$.\\
+  Thus 
+  \[
+  \int x^2 \tan^{-1}(x) \; dx = \frac13 x^3 \tan^{-1}(x) - \int \answer{\frac13 \frac{x^3}{1+x^2}} \;dx = 
+  \answer{\frac13 x^3 \tan^{-1}(x) - \frac{x^2}{6} + \frac16\ln(1+x^2)} + C.
+  \]
+\end{problem}
+
+
+%Other interesting examples: e^x cos(x), sec^3(x)
+%gamma function
+%reduction of powers
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a detailed, lecture style video on integration by parts:}
+\youtube{2jSr68xaAfs}
+\end{foldable}
+\end{center}
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
 \begin{image}
 \begin{tikzpicture}
  \matrix (m) [matrix of nodes, ampersand replacement=\&,
@@ -340,28 +547,6 @@ Complete the table and then enter the final answer.
 \end{tikzpicture}
 \end{image}
 
-Thus,
-\[
-  \int x^3 \cos(5x) \;dx = \answer{\frac15 x^3\sin(5x) + \frac{3}{25}x^2 \cos(5x) - \frac{6}{125}\sin(5x) -\frac{6}{625}\cos(5x)} +C.
-  \]
-\end{problem}
-
-
-
-
-
-\begin{center}
-\begin{foldable}
-\unfoldable{Here is a detailed, lecture style video on integration by parts:}
-\youtube{2jSr68xaAfs}
-\end{foldable}
-\end{center}
-
-
-
-
-
-\end{document}
 
 
 \begin{example} %example #15
