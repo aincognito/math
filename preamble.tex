@@ -18,8 +18,30 @@
 %\usepackage{xy}
 %\usepackage{fancyhdr}
 %\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{xparse}
 \usepackage{tikz}
 \usepackage{tkz-euclide}
+\usetikzlibrary{calc}
 \usetkzobj{all}
 
 \tikzstyle geometryDiagrams=[ultra thick,color=blue!50!black]
+
+\tikzset{Arrow Style/.style={text=black, font=\boldmath}}
+
+\newcommand{\tikzmark}[1]{%
+    \tikz[overlay, remember picture, baseline] \node (#1) {};%
+}
+
+\newcommand*{\XShift}{0.5em}
+\newcommand*{\YShift}{0.5ex}
+
+\NewDocumentCommand{\DrawArrow}{s O{} m m m}{%
+    \begin{tikzpicture}[overlay,remember picture]
+        \draw[->, thick, Arrow Style, #2] 
+                ($(#3.west)+(\XShift,\YShift)$) -- 
+                ($(#4.east)+(-\XShift,\YShift)$)
+        node [midway,above] {#5};
+    \end{tikzpicture}%
+}
