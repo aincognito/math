@@ -307,8 +307,22 @@ Compute the integral using Tabular Integration:
   \[
   \int x^3 \cos(5x) \;dx.
   \]
+Complete the table and then enter the final answer.
+\begin{center}
+\[
+\begin{array}{c|c}
+		u & dv  \\\hline 
+		x^3 & \cos(5x) \\ 
+     \answer{3x^2} & \answer{\frac15 \sin(5x)} \\ 
+      \answer{6x} & \answer{-\frac{1}{25} \cos(5x)} \\ 
+       \answer{6} & \answer{-\frac{1}{125} \sin(5x)} \\
+       0 & \answer{\frac{1}{625} \cos(5x)} 
+	\end{array}
+    \]
+\end{center}
 
 
+\begin{image}
 \begin{tikzpicture}
  \matrix (m) [matrix of nodes, ampersand replacement=\&,
             column sep = 1.5cm]{
@@ -324,7 +338,7 @@ Compute the integral using Tabular Integration:
  \draw[-latex] (m-4-1) -- (m-5-2) node[midway,above]{$+$};  % <-- It works!
  \draw[-latex] (m-5-1) -- (m-6-2) node[midway,above]{$-$};  % <-- It works!
 \end{tikzpicture}
-
+\end{image}
 
 Thus,
 \[
