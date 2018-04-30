@@ -15,11 +15,58 @@ We will compute integrals using the integration by parts technique.
 
 \maketitle
 
-%\begin{center}
-%\textbf{Integration by Parts}
-%\end{center}
+\section{INTRODUCTION}
+We are interested in integrating products.  
+We have some experience with this from our exposure to $u$-substitution problems such as
+\[
+\int 2x \cos(1 + x^2) \; dx.
+\]
+In this scenario, the factor of $2x$ in the integrand is of great significance 
+as it is the derivative of the inside of the composition, $1 + x^2$.
+We will now turn to problems where the factors in the product making up the integrand
+are unrelated in this or any other significant way, i.e., they are functionally independent of one another.
+We will effectively create a product rule for integrals and interestingly, we will 
+use the product rule for derivatives to help us. One stark difference between this product rule for
+integrals, know as \index{\textbf{integration by parts}} (IBP), is that IBP does not give us a final answer, but rather
+simply transforms our problem into another, hopefully easier one, which we then have to solve.
+In this last respect, IBP is similar to $u$-substitution. The following integrals can be computed using IBP:
 
-We will use the integration by parts (IBP) formula to compute integrals involving products of unrelated factors.
+\[
+\int 3x\sin(4x) \; dx, \int x^2 e^{-x} \; dx, \int \ln(x) \; dx,
+\]
+\[
+\int e^{2x}\cos(3x) \; dx, \int x^{n-1} e^{-x} \; dx.
+\]
+The last integral is part of the famous Gamma function
+\[
+\Gamma(n) = \int_0^\infty e^{n-1} e^{-x} \; dx.
+\]
+This special function leads us to study the coming topic, Improper Integrals.
+But, for now, let's discover the IBP formula! 
+
+
+\section{IBP FORMULA}
+
+Recall the product rule: $(uv)' = u'v+uv'$ (where $u$ and $v$ are functions of $x$).
+Integrating both sides of this equation with respect to $x$ gives
+\[
+\int (uv)' = \int u'v + \int uv',
+\]
+where the $dx$ has intentionally been suppressed from the notation for brevity.
+Now the integral on the left hand side is simply $uv + C$ by the anti-differentiation
+definition of the integral symbol. So,
+\[
+\int u'v + \int uv' = uv + C.
+\]
+Subtracting the second integral from both sides gives
+\[
+\int uv' = uv - \int u'v,
+\]
+which can be condensed as
+\[
+\int u \; dv = uv - \int v \; du,
+\]
+the famous integration by parts formula.
 
 
 \begin{theorem}[Integration by Parts]
@@ -29,13 +76,22 @@ We will use the integration by parts (IBP) formula to compute integrals involvin
 \end{theorem}
 
 \begin{remark}
-The integration by Parts formula does not give a final answer to a problem. 
-Instead, it replaces one integral with another, which still has to be solved.
-The goal is for this new integral to be easier than the original one.
+\begin{enumerate}
+\item[1.] To use the IBP formula, the original problem must be written in the form $\int u \; dv$. This means that $u$ and $dv$
+must be declared (similar to declaring $u$ in $u$-substitution), and then we compute $du$ by differentiating $u$, and $v$ by anti-differentiating $dv$.
+\item[2.] The constant of integration does not appear on the right hand side of the IBP formula
+(it mysteriously disappeared in the above derivation) because it was taken into account by the constant of integration implied in 
+the integral on the right hand side, $\int v \,du$.
+\item[3.] The IBP formula does not give a final answer to a problem. 
+It replaces one integral with another another integral (which still has to be computed).
+%The goal is for this new integral to be easier than the original one.
+\end{enumerate}
 \end{remark}
 
+We will now use the integration by parts (IBP) formula to compute integrals involving products of unrelated factors, like the ones
+shown above. 
 
-
+\section{BASIC EXAMPLES}
 
 \begin{example} %example #1
 Compute the integral using IBP:
@@ -77,6 +133,7 @@ Compute the integral using IBP:
 \begin{center}
 \begin{foldable}
 \unfoldable{Here is a video of Example 1}
+%\foldable{Here is a video of Example 1}
 %\youtube{Yy6QXnFlnXs} %vid of example 1
 \end{foldable}
 \end{center}
@@ -175,7 +232,7 @@ Compute the integral using IBP:
 
 
 \begin{example}[IBP twice]
-Compute the integral using IBP:
+Compute the integral:
   \[
   \int x^2\sin(3x) \;dx.
   \]
@@ -201,7 +258,7 @@ Next, the IBP formula gives
 
 
 \begin{problem}
-Compute the integral using IBP:
+Compute the integral:
   \[
   \int x^2\cos(2x) \;dx.
   \]
@@ -209,19 +266,17 @@ Compute the integral using IBP:
 \end{problem}
 
 \begin{problem}
-Compute the integral using IBP:
+Compute the integral:
   \[
   \int x^2e^{-x} \;dx.
   \]
 
 \end{problem}
 
-\begin{center}
-\textbf{Tabular Integration}
-\end{center}
+\section{TABULAR INTEGRATION}
 
 Integrals of the form $\int x^n f(x) \,dx$ require IBP $n$ times when $f(x)$ is a sine, cosine or exponential function.
-A notational shortcut called \textbf{tabular integration} can be used to streamline the process of using IBP multiple times.
+A notational shortcut called \index{\textbf{tabular integration}} can be used to streamline the process of using IBP multiple times.
 As an example, let's revisit the previous example:
 
 \begin{example}[Tabular Integration]
@@ -335,14 +390,13 @@ Thus,
 
 
 
-\begin{center}
-\textbf{Inverse Functions}
-\end{center}
+\section{INVERSE FUNCTIONS}
+
 We will now look at some examples involving inverse functions like $\ln(x), \tan^{-1}(x), \sin^{-1}(x)$ and $\cos^{-1}(x)$.
 We do not (yet) know anti-derivatives for these functions, so we will have to let $u$ equal the inverse function.
  
 \begin{example}
-Compute the integral using IBP:
+Compute the integral:
   \[
   \int x^5\ln(x) \;dx.
   \]
@@ -371,7 +425,7 @@ which is easier to work with. Now, by IBP, we have,
 
 
 \begin{problem} 
-  Compute the integral using IBP:
+  Compute the integral:
   \[
   \int x^8 \ln(x) \;dx.
   \]
@@ -392,7 +446,7 @@ This method can be used to anti-differentiate $\ln(x)$ as well.
 
 
 \begin{problem} 
-  Compute the integral using IBP:
+  Compute the integral:
   \[
   \int \ln(x) \;dx.
   \]
@@ -410,7 +464,7 @@ This method can be used to anti-differentiate $\ln(x)$ as well.
 \end{problem}
 
 \begin{problem} 
-  Compute the integral using IBP:
+  Compute the integral:
   \[
   \int \frac{\ln(x)}{\sqrt x} \;dx.
   \]
@@ -501,10 +555,364 @@ Compute the integral:
   \]
 \end{problem}
 
+\section{SPECIAL EXAMPLES}
 
-%Other interesting examples: e^x cos(x), sec^3(x)
-%gamma function
-%reduction of powers
+\begin{example}
+Compute the integral:
+\[
+\int e^{-6x}\cos(2x) \; dx.
+\]
+This classic problem requires IBP twice with the interesting twist that we will not get a final answer, but rather 
+a full circle back to the original integral, which we will call $I$.  The final answer will then be obtained by solving an equation 
+of the form
+\[
+I = f(x) + cI,
+\]
+where $c$ is a constant (not equal to 1).
+We begin by letting 
+\[
+I = \int e^{-6x}\cos(2x) \; dx.
+\]
+We will now use IBP twice with $u$ being the trig function both times.
+First pass, with
+\[
+u = \cos(2x), \quad dv = e^{-6x} \; dx
+\]
+\[
+du = -2\sin(2x) \; dx,  \quad v = -\frac16 e^{-6x},
+\]
+gives
+\[
+I = \int e^{-2x}\cos(6x) \; dx = \overbrace{\cos(2x)}^{u} \cdot 
+\overbrace{\left(-\frac16 e^{-6x}\right)}^{v} - \int \overbrace{-\frac16 e^{-6x}}^{v} \overbrace{[-2\sin(2x)] \; dx}^{du}
+\]
+\[
+= -\frac16 e^{-6x}\cos(2x) - \frac13\int  e^{-6x}\sin(2x) \; dx.
+\]
+Second pass, with
+\[
+u = \sin(2x), \quad dv = e^{-6x} \; dx
+\]
+\[
+du = 2\cos(2x) \; dx,  \quad v = -\frac16 e^{-6x},
+\]
+we get
+\[
+I = -\frac16 e^{-6x}\cos(2x) - \frac13\Big[ -\frac16 e^{-6x}\sin(2x) - \int  \overbrace{-\frac16 e^{-6x}}^{v} \overbrace{ 2\cos(2x)}^{du} \; dx    \Big]
+\]
+\[
+= -\frac16 e^{-6x}\cos(2x) + \frac{1}{18} e^{-6x}\sin(2x) - \frac19 \int e^{-6x} \cos(2x) \; dx. 
+\]
+But this last integral is $I$ itself, thus
+\[
+I = -\frac16 e^{-6x}\cos(2x) + \frac{1}{18} e^{-6x}\sin(2x) - \frac19 I.
+\]
+We now solve for $I$ to obtain our final answer:
+\[
+I + \frac19 I = -\frac16 e^{-6x}\cos(2x) + \frac{1}{18} e^{-6x}\sin(2x) + C
+\]
+and so 
+\[
+I = \frac{9}{10} \left[-\frac16 e^{-6x}\cos(2x) + \frac{1}{18} e^{-6x}\sin(2x)\right] + C
+\]
+\[
+= -\frac{3}{20} e^{-6x}\cos(2x) + \frac{1}{20} e^{-6x}\sin(2x) + C.
+\]
+We can check this answer by differentiation. It will make this slightly easier if we rewrite our answer first as
+\[
+\int \frac{1}{20} e^{-6x} \left[\sin(2x) - 3\cos(2x)\right] + C.
+\]
+\[
+\frac{d}{dx}\left\{\frac{1}{20} e^{-6x} \left[\sin(2x) - 3\cos(2x)\right]\right\}    = \frac{1}{20} e^{-6x}\left[2\cos(2x) + 6\sin(2x)\right] 
+- \frac{6}{20} e^{-6x} \left[\sin(2x) - 3\cos(2x)\right] 
+\]
+\[
+= \frac{1}{20} e^{-6x} \cdot 20\cos(2x) = e^{-6x} \cos(2x),
+\]
+as required.
+\end{example}
+
+\begin{problem}
+Compute the integral:
+\[
+\int e^x\sin(x) \; dx.
+\]
+\end{problem}
+
+
+\begin{problem}
+Compute the integral:
+\[
+\int e^{x/2}\sin(2x) \; dx.
+\]
+\end{problem}
+
+Our next example involves the function $\sec^3(x)$ and arises in the calculation of arc length 
+of the parabola $y = x^2$.
+
+At the end of our computation, we will need to recall the following integral
+\[
+\int \sec(x) \; dx = \ln|\sec(x) + \tan(x)| \; dx.
+\]
+
+\begin{example}
+Compute the integral:
+\[
+\int \sec^3(x) \; dx.
+\]
+
+We will call the original integral $I$ and use IBP, arriving back at the original integral (as in the previous example).
+Let
+\[
+u = \sec(x), \quad dv = \sec^2(x) \; dx
+\]
+\[
+du = \sec(x)\tan(x) \; dx, \quad v = \tan(x).
+\]
+Then,
+\[
+I = \int \sec^3(x) \; dx = \int \overbrace{\sec(x)}^u \cdot \overbrace{\sec^2(x) \; dx}^{dv} = \sec(x) \tan(x) - \int \sec(x) \tan^2(x) \; dx.
+\]
+Using the trig identity $1 + \tan^2(x) = \sec^2(x)$, gives
+\[
+I = \sec(x) \tan(x) - \int \sec(x) [\sec^2(x) -1] \; dx
+\]
+\[
+=\sec(x) \tan(x) - \int  [\sec^3(x) -\sec(x)] \; dx 
+\]
+\[
+= \sec(x) \tan(x) + \int \sec(x)\; dx -I,
+\]
+and so
+\[
+2I = \sec(x) \tan(x) + \ln|\sec(x) + \tan(x)| + C
+\]
+and finally,
+\[
+I = \int \sec^3(x) \; dx = \frac12 \sec(x) \tan(x) + \frac12 \ln|\sec(x) + \tan(x)| + C.
+\]
+\end{example}
+
+\begin{problem}
+Compute the integral
+\[
+\int 30\sec^3(5x) \; dx = 3\sec(5x) \tan(5x) +  \answer{3\ln|\sec(5x) + \tan(5x)|} + C.
+\]
+\end{problem}
+
+%Other interesting examples: e^x cos(x), sec^3(x), gamma function, laplace transform
+
+\section{REDUCTION OF POWERS}
+
+
+\begin{example}
+Create a reduction of powers formula for the integral:
+\[
+\int x^n e^x \; dx.
+\]
+Use IBP with
+\[
+u = x^n, \quad dv = e^x \; dx
+\]
+\[
+du = nx^{n-1}\; dx,  \quad v = e^x.
+\]
+This gives
+\[
+\int x^n e^x \; dx = x^n e^x - n\int x^{n-1} e^x \; dx.
+\]
+\end{example}
+
+\begin{problem}
+Create a reduction of powers formula for the integral:
+\[
+\int x^{n-1}e^{-x} \; dx.
+\]
+\begin{remark}
+This integral is the foundation of the Gamma function,
+\[
+\Gamma(n) = \int_0^\infty x^{n-1}e^{-x} \; dx,
+\]
+which will be studied in the section on Improper Integrals.
+\end{remark}
+To create the reduction formula, we will use IBP with
+\[
+u = \answer{x^{n-1}}, \quad dv = \answer{e^{-x}} \; dx
+\]
+\[
+du = \answer{(n-1)x^{n-2}}\; dx,  \quad v = \answer{-e^{-x}}.
+\]
+This gives the reduction formula:
+\[
+\int x^{n-1}e^{-x} \; dx = -x^{n-1}e^{-x} + (n-1)\int \answer{x^{n-2}e^{-x}} \; dx
+\]
+\begin{remark}
+We will see that $\Gamma(n) = (n-1)! = n(n-1)(n-2)\cdot \ldots \cdot 2 \cdot 1$.
+\end{remark}
+
+\end{problem}
+
+
+
+
+\begin{example}
+Create a reduction of powers formula for the integral:
+\[
+\int \sec^n(x) \; dx.
+\]
+Use IBP with
+\[
+u = \sec^{n-2}(x), \quad dv = \sec^2(x) \; dx
+\]
+\[
+du = (n-2)\sec^{n-3}(x) \cdot \sec(x)\tan(x)\; dx,  \quad v = \tan(x).
+\]
+This gives
+\[
+\int \sec^n(x) \; dx = \sec^{n-2}(x)\tan(x) - (n-2)\int \sec^{n-2}(x)\tan^2(x) \; dx
+\]
+\[
+= \sec^{n-2}(x)\tan(x) - (n-2)\int \sec^{n-2}(x)[\sec^2(x) - 1] \; dx
+\]
+\[
+= \sec^{n-2}(x)\tan(x) - (n-2)\int [\sec^n(x)-\sec^{n-2}(x)]\; dx,
+\]
+
+and so,
+
+\[
+\int \sec^n(x) \; dx = \frac{1}{n-1}\sec^{n-2}(x)\tan(x) + \frac{n-2}{n-1}\int \sec^{n-2}(x) \; dx.
+\]
+
+\end{example}
+
+
+
+\begin{problem}
+Create a reduction of powers formula for the integral:
+\[
+\int \sin^n(x) \; dx.
+\]
+\end{problem}
+
+
+
+\begin{example}
+Create a reduction of powers formula for the integral
+\[
+\int x^n\sin(x) \; dx.
+\]
+Use IBP with
+\[
+u = x^n, \quad dv = \sin(x) \; dx
+\]
+\[
+du = nx^{n-1}\; dx,  \quad v = -\cos(x).
+\]
+This gives
+\[
+\int x^n\sin(x) \; dx = -x^n\cos(x) + n\int x^{n-1}\cos(x) \; dx
+\]
+\end{example}
+
+\begin{problem}
+Create a reduction of powers formula for the integral
+\[
+\int x^n\cos(x) \; dx.
+\]
+Use IBP with
+\[
+u = \answer{x^n}, \quad dv = \answer{\cos(x)} \; dx
+\]
+\[
+du = \answer{nx^{n-1}}\; dx,  \quad v = \answer{\sin(x)}.
+\]
+This gives the reduction formula:
+\[
+\int x^n\cos(x) \; dx = x^n\sin(x) - n\int \answer{x^{n-1}\sin(x)} \; dx
+\]
+\end{problem}
+
+
+
+%reduction of powers formulas for gamma, powers of sec, x^n sine or cosine
+
+\section{APPLICATIONS}
+
+\begin{example}
+Find the volume of the solid of revolution obtained by revolving the region between the curves $y = e^x, y = 0, x = 0$
+and $x = 1$ about the $y$-axis.\\
+
+%insert graphic
+
+We use the method of shells and the formula
+\[
+V = \int_a^b 2\pi r(x)h(x) \; dx
+\]
+with
+\[
+a = 0,\; b = 1, \; r(x) = x \; \text{ and } \; h(x) = e^x.
+\]
+We get
+\[
+V = \int_0^1 2\pi xe^x \; dx,
+\]
+which we compute using integration by parts with
+\[
+u = 2\pi x, \; dv = e^x \; dx
+\]
+\[
+du = 2\pi \;dx, \; v = e^x.
+\]
+This leads to 
+\[
+V = 2\pi xe^x \Big|_0^1 - \int_0^1 2\pi e^x \; dx
+\] 
+\[
+= 2\pi e - 2\pi (e-1) = 2\pi.
+\]
+\end{example} 
+
+\begin{problem}
+Find the volume of the solid of revolution obtained by revolving the region between the curves $y = \cos(x), y = 0, x = 0$
+and $x = \pi/2$ about the $y$-axis.\\
+
+%insert graphic
+
+We use the method of shells and the formula
+\[
+V = \int_a^b 2\pi r(x)h(x) \; dx
+\]
+with
+\[
+a = 0,\; b = \pi/2, \; r(x) = x \; \text{ and } \; h(x) = \cos(x).
+\]
+We get
+\[
+V = \int_0^{\pi/2} \answer{2\pi x \cos(x)} \; dx,
+\]
+which we compute using integration by parts with
+\[
+u = 2\pi x, \; dv = \cos(x) \; dx
+\]
+\[
+du = 2\pi \;dx, \; v = \sin(x).
+\]
+This leads to 
+\[
+V = 2\pi x\sin(x) \Big|_0^{\pi/2} - \int_0^{\pi/2} \answer{2\pi \sin(x)} \; dx
+\] 
+\[
+= \answer{\pi^2 - 2\pi}.
+\]
+\end{problem} 
+
+
+%an area, volume and length each requiring IBP.
+
+%\section{MORE PROBLEMS}
+
+%\section{QUIZ}
 
 \begin{center}
 \begin{foldable}
@@ -518,6 +926,100 @@ Compute the integral:
 
 
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
