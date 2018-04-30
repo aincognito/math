@@ -172,8 +172,10 @@ Compute the integral using IBP:
   Then $du = \answer{dx}$   and   $v = \answer{\sin(x)}$.\\
   Thus 
   \[
-  \int x\cos(x) dx = x\sin(x) - \int \answer{\sin(x)} \;dx = \answer{x\sin(x) + \cos(x)} + C.
+  \int x\cos(x) dx = = \answer{x\sin(x) + \cos(x)} + C.
   \]
+  
+  %x\sin(x) - \int \answer{\sin(x)} \;dx 
   
 
 
@@ -210,6 +212,13 @@ Compute the integral using IBP:
   \int 2x\sin(5x)\;dx.
   \]
 
+Let $u = \answer{2x}$   and   $dv = \answer{\sin(5x) dx}$.\\
+  Then $du = \answer{2 dx}$   and   $v = \answer{-\frac15 \cos(5x)}$.\\
+  Thus 
+  \[
+  \int 2x\sin(5x) dx = -\frac25 x\cos(5x) + \int \answer{\frac25 \cos(5x)-} dx = \answer{xe^x - e^x} + C.
+  \]
+  
 \end{problem}
 
 
@@ -250,7 +259,8 @@ Next, the IBP formula gives
                        &= -\frac13 x^2\cos(3x) + \frac13 \int 2x\cos(3x) \; dx\\                               
 \text{we now use IBP} & \text{ again with } \;\; u = 2x \;\text{ and } \; dv = \cos(3x) \, dx\\
 & \qquad \qquad \quad du = 2 \, dx \; \text{ and } \; v=\frac13 \sin(3x)\\
-                       &= -\frac13 x^2\cos(3x) + \frac29x\sin(3x) - \frac13 \int \frac13 \sin(3x)\cdot 2 \; dx\\
+                       &= -\frac13 x^2\cos(3x) + \frac13\left[\frac23x\sin(3x) -  \int \frac13 \sin(3x)\cdot 2 \; dx\right]\\
+                       &= -\frac13 x^2\cos(3x) + \frac29x\sin(3x) - \frac29 \int  \sin(3x) \; dx\\
                        &= -\frac13 x^2\cos(3x) + \frac29x\sin(3x) + \frac{2}{27} \cos(3x) + C.
 \end{align*}
 
