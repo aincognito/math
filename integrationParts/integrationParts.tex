@@ -16,7 +16,7 @@ We will compute integrals using the integration by parts technique.
 \maketitle
 
 \section{INTRODUCTION}
-We are interested in integrating products.  
+In this section, we are interested in integrating products.  
 We have some experience with this from our exposure to $u$-substitution problems such as
 \[
 \int 2x \cos(1 + x^2) \; dx.
@@ -52,7 +52,7 @@ Integrating both sides of this equation with respect to $x$ gives
 \[
 \int (uv)' = \int u'v + \int uv',
 \]
-where the $dx$ has intentionally been suppressed from the notation for brevity.
+where the $dx$ has intentionally been suppressed from the notation for simplicity.
 Now the integral on the left hand side is simply $uv + C$ by the anti-differentiation
 definition of the integral symbol. So,
 \[
@@ -584,14 +584,14 @@ We begin by letting
 I = \int e^{-6x}\cos(2x) \; dx.
 \]
 We will now use IBP twice with $u$ being the trig function both times.
-First pass, with
+For the first application
 \[
 u = \cos(2x), \quad dv = e^{-6x} \; dx
 \]
 \[
 du = -2\sin(2x) \; dx,  \quad v = -\frac16 e^{-6x},
 \]
-gives
+which gives
 \[
 I = \int e^{-2x}\cos(6x) \; dx = \overbrace{\cos(2x)}^{u} \cdot 
 \overbrace{\left(-\frac16 e^{-6x}\right)}^{v} - \int \overbrace{-\frac16 e^{-6x}}^{v} \overbrace{[-2\sin(2x)] \; dx}^{du}
@@ -599,39 +599,41 @@ I = \int e^{-2x}\cos(6x) \; dx = \overbrace{\cos(2x)}^{u} \cdot
 \[
 = -\frac16 e^{-6x}\cos(2x) - \frac13\int  e^{-6x}\sin(2x) \; dx.
 \]
-Second pass, with
+For the second application of IBP
 \[
 u = \sin(2x), \quad dv = e^{-6x} \; dx
 \]
 \[
 du = 2\cos(2x) \; dx,  \quad v = -\frac16 e^{-6x},
 \]
-we get
+we continue with
 \[
 I = -\frac16 e^{-6x}\cos(2x) - \frac13\Big[ -\frac16 e^{-6x}\sin(2x) - \int  \overbrace{-\frac16 e^{-6x}}^{v} \overbrace{ 2\cos(2x)}^{du} \; dx    \Big]
 \]
 \[
 = -\frac16 e^{-6x}\cos(2x) + \frac{1}{18} e^{-6x}\sin(2x) - \frac19 \int e^{-6x} \cos(2x) \; dx. 
 \]
-But this last integral is $I$ itself, thus
+At this point in the computation we must observe that this last integral is the original integral, $I$ (with a coefficient of 1/9). 
+Thus we can substitute in $I$ to get
 \[
-I = -\frac16 e^{-6x}\cos(2x) + \frac{1}{18} e^{-6x}\sin(2x) - \frac19 I.
+I = -\frac16 e^{-6x}\cos(2x) + \frac{1}{18} e^{-6x}\sin(2x) - \frac19 I,
 \]
-We now solve for $I$ to obtain our final answer:
+from which we can solve for $I$:
 \[
 I + \frac19 I = -\frac16 e^{-6x}\cos(2x) + \frac{1}{18} e^{-6x}\sin(2x) + C
 \]
-and so 
+and since $1+\frac19 = \frac{10}{9}$, 
 \[
 I = \frac{9}{10} \left[-\frac16 e^{-6x}\cos(2x) + \frac{1}{18} e^{-6x}\sin(2x)\right] + C
 \]
 \[
 = -\frac{3}{20} e^{-6x}\cos(2x) + \frac{1}{20} e^{-6x}\sin(2x) + C.
 \]
-We can check this answer by differentiation. It will make this slightly easier if we rewrite our answer first as
+We will now check our answer. It will be slightly easier if we factor out the common factors first:
 \[
-\int \frac{1}{20} e^{-6x} \left[\sin(2x) - 3\cos(2x)\right] + C.
+I = \int e^{-6x}\cos(2x) \; dx = \frac{1}{20} e^{-6x} \left[\sin(2x) - 3\cos(2x)\right] + C.
 \]
+The derivative of the RHS should yield the integrand:
 \[
 \frac{d}{dx}\left\{\frac{1}{20} e^{-6x} \left[\sin(2x) - 3\cos(2x)\right]\right\}    = \frac{1}{20} e^{-6x}\left[2\cos(2x) + 6\sin(2x)\right] 
 - \frac{6}{20} e^{-6x} \left[\sin(2x) - 3\cos(2x)\right] 
@@ -639,7 +641,7 @@ We can check this answer by differentiation. It will make this slightly easier i
 \[
 = \frac{1}{20} e^{-6x} \cdot 20\cos(2x) = e^{-6x} \cos(2x),
 \]
-as required.
+which is the integrand, so our answer is correct.
 \end{example}
 
 \begin{problem}
