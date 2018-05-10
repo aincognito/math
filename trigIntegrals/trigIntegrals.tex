@@ -2,43 +2,219 @@
 
 \input{../preamble}
 
-\outcome{Find the Average Value of a Function}
+\outcome{Compute integrals involving powers and products of trigonometric functions}
 
-\title{Average Value}
+\title{Trig Integrals}
 
 \begin{document}
 
 \begin{abstract}
-We find the average value of a function.
+We compute integrals involving powers and products of trigonometric functions.
 \end{abstract}
 
 \maketitle
 
-\begin{center}
-\textbf{Average Value}
-\end{center}
+\section{Trig identities}
 
-We will find the average value of a function on an interval 
-and find the value(s) of $x$ for which the function equals the 
-average (MVT for Integrals).
-
-\begin{theorem} Mean Value Theorem for Integrals 
+The following are the Pythagorean Trigonometric Identities (named for \link[Pythagoras of Samos]{https://en.wikipedia.org/wiki/Pythagoras}) which hold for all angles,
+$\theta$, in the domains of the functions involved:
 \[
-If
+\sin^2(\theta) + \cos^2(\theta) = 1,
 \]
-\end{theorem}
+\[
+1 + \tan^2(\theta) = \sec^2(\theta),
+\]
+and
+\[
+1 + \cot^2(\theta) = \csc^2(\theta).
+\]
+You can learn more about these well know identities here, here and here (with the last being my own).
 
+Next, we have the double-angle formulas:
 
+\[
+\sin^2(\theta) = \frac{1-\cos(2\theta)}{2}
+\]
 
+and
 
+\[
+\cos^2(\theta) = \frac{1+\cos(2\theta)}{2}
+\]
+We will find these useful for integrating even powers of sine and cosine.
 
+\section{U-substitution}
+Let's compute some basic trig integrals using $u$-substitution.
 
-\begin{example} %example #1
-Find the average...
- \[
-  f(x) = 
-  \]
+\begin{example}
+Compute
+\[
+\int \sin^3(x) \cos(x) \, dx.
+\]
+To find an anti-derivative, we will make the substitution $u = \sin(x)$ as it is the inside of a composition
+and its differential, $du = \cos(x) \, dx$ is present as a factor. 
+This substitution transforms the original integral as follows:
+\[
+\int \sin^3(x) \cos(x) \, dx = \int u^3 \, du,
+\]
+which is an integral that can be computed from the power rule giving
+\begin{align*}
+\int \sin^3(x) \cos(x) \, dx &= \int u^3 \, du\\
+                             &= \frac{u^4}{4} + C\\
+                             &= \frac14 \sin^4(x) + C.
+\end{align*}
+
 \end{example}
+
+\begin{example}
+Compute
+\[
+\int \sec^5(x) \tan(x) \, dx.
+\]
+To find an anti-derivative, we will make the substitution $u = \sec(x)$ as it is the inside of a composition
+and its differential, $du = \sec(x)\tan(x) \, dx$ is present as a factor. 
+This substitution transforms the original integral as follows:
+\[
+\int \sec^5(x) \tan(x) \, dx = \int \sec^4(x) \sec(x) \tan(x) \, dx= \int u^4 \, du,
+\]
+which is an integral that can be computed from the power rule giving
+\begin{align*}
+\int \sec^5(x) \tan(x) \, dx &= \int \sec^4(x) \sec(x) \tan(x) \, dx
+                             &= \int u^4 \, du\\
+                             &= \frac{u^5}{5} + C\\
+                             &= \frac15 \sec^5(x) + C.
+\end{align*}
+
+\end{example}
+
+\begin{problem}
+Make a $u$-substitution to compute each of the following indefinite integrals:
+\begin{itemize}
+\item $\displaystyle{\int 5\sin^{14}\cos(x) \, dx}$
+\item $\displaystyle{\int 12\cos^{3}\sin(x) \, dx}$
+\item $\displaystyle{\int 4\tan^{7}\sec^2(x) \, dx}$
+\item $\displaystyle{\int 10 \sec^{5}\tan(x) \, dx}$
+\item $\displaystyle{\int 16\csc^{16}\cot(x) \, dx}$
+\end{itemize}
+\end{problem}
+
+\section{Powers of Sine and Cosine}
+We now consider integrals of the form 
+\[
+\int \sin^m(x) \cos^n(x) \; dx,
+\]
+where $m$ and $n$ are positive integers.
+There are two main cases to be considered.
+In the first case, $m$ and/or $n$ is odd.
+The solution to problems of this type involves $u$-substitution,
+as we saw above.
+In the second case $m$ and $n$ are both even. The double angle formulas above are used to 
+compute integrals of this type. We will also need the basic formula:
+\[
+\int \cos(ax) \; dx = \frac{1}{a} \sin(ax) + C.
+\]
+
+\subsection{Case 1: $m$ or $n$ is odd}
+\begin{example}
+Compute the indefinite integral:
+\[
+\int \sin^4(x)\cos^3(x) \; dx.
+\]
+We will use the substitution $u = \sin(x)$ because of the even power.
+Then $du = \cos(x) \, dx$ and so $dx = \frac{du}{\cos(x)}$ and the integral becomes
+\begin{align*}
+\int \sin^4(x)\cos^3(x) \; dx &= \int u^4 \cos^3(x) \frac{du}{\cos(x)}\\
+   &= \int u^4 \cos^2(x) \; du &
+   \text{(use a Pythagorean identity)}\\
+   &= \int u^4 (1-\sin^2(x)) \; du\\
+   &= \int u^4 (1-u^2) \; du\\
+   &= \int (u^4 -u^6) \; du &
+  \text{(now integrate)}\\
+  &= \frac{u^5}{5} - \frac{u^7}{7} + C &  \text{(finally, back substitute)}\\
+  &= \frac15 \sin^5(x) - \frac17 \sin^7(x) + C.
+\end{align*}
+  
+\end{example}
+
+\begin{problem}
+Compute the indefinite integrals:
+\[
+\int \cos^6(x)\sin^3(x) \; dx = \answer{\frac19 \cos^9(x) - \frac17 \cos^7(x)} + C.
+\]
+\[
+\int \sin^4(x)\cos^5(x) \; dx = \answer{\frac15 \sin^5(x) - \frac27 \sin^7(x)+\frac19 \sin^9(x)} + C.
+\]
+\end{problem}
+
+\subsection{Case 2: $m$ and $n$ are both even}
+\begin{example}
+Compute the indefinite integral:
+\[
+\int \sin^2(x)\cos^2(x) \; dx.
+\]
+We will use the double angle formulas
+\[
+\sin^2(\theta) = \frac{1-\cos(2\theta)}{2} \; \text{ and } \; \cos^2(\theta) = \frac{1+\cos(2\theta)}{2},
+\]
+to rewrite the integral as
+\begin{align*}
+\int \sin^2(x)\cos^2(x) \; dx &= \int \frac{1-\cos(2x)}{2}\cdot \frac{1+\cos(2x)}{2} \; dx\\
+  &= \frac14 \int \left[1 - \cos^2(2x)\right] \; dx &
+  \text{(double angle formula again)}\\
+  &= \frac14 \int \left[ 1- \frac{1+\cos(4x)}{2}\right] \; dx\\
+  &= \frac14 \int \left[1-\frac12 - \frac12\cos(4x)\right] \; dx\\
+  &= \frac14 \int \left[\frac12 - \frac12\cos(4x)\right] \; dx & (finally, integrate)\\
+  &= \frac14 \left[\frac12 x  - \frac18\sin(4x)\right] + C\\
+  &= \frac{x}{8}  - \frac{1}{32}\sin(4x) + C.
+\end{align*}
+\end{example}
+
+
+
+
+
+\begin{problem}
+Compute the indefinite integrals:
+\[
+\int \sin^2(x) \; dx = \answer{\frac12 x - \frac14 \sin(2x)} + C.
+\]
+\[
+\int \cos^4(x) \; dx = \answer{\frac{3x}{8} +\frac14 \sin(2x) + \frac{1}{32}\sin(4x)} + C.
+\]
+\end{problem}
+
+\section{Powers of Secant and Tangent}
+We consider integrals of the form
+\[
+\int \tan^m(x)\sec^n(x) \; dx,
+\]
+where either $m$ is odd or $n$ is even. In both cases, a $u$-substitution
+can solve the problem. 
+
+\subsection{Case 1: $m$ is odd}
+\begin{example}
+Compute the indefinite integral:
+\[
+\int \tan^5(x) \sec^3(x)\;dx.
+\]
+When $m$ is odd, we use the substitution $u = \sec(x)$,
+which implies $du = \sec(x) \tan(x) \; dx$ or $dx = \frac{du}{\sec(x)\tan(x)}$.
+We begin by just substituting for $dx$:
+\begin{align*}
+\int \tan^5(x) \sec^3(x)\;dx &= \int \tan^5(x) \sec^3(x) \frac{du}{\sec(x)\tan(x)}\\
+&= \int \tan^4(x) \sec^2(x) \; du & \text{(cancelling)}\\
+&= \int \tan^4(x) u^2 \; du & \text{(use Pythagorean identity)}\\
+&= \int \left[\tan^2(x)\right]^2 u^2 \; du \\
+&= \int \left[\sec^2(x) -1\right]^2 u^2 \; du \\
+&= \int \left(u^2 -1\right)^2 u^2 \; du \\
+&= \int \left(u^4 - 2u^2 +1\right) u^2 \; du & \text{(distribute $u^2$)}\\
+&= \int \left(u^6 - 2u^4 +u^2\right) \; du & \text{(now integrate)}\\
+&=  \frac{u^7}{7} - \frac{2u^5}{5} + \frac{u^3}{3} + C  \\
+&= \frac17\sec^7(x) - \frac25 \sec^5(x) + \frac13 \sec^3(x) + C & \text{(back substituting)}
+\end{align*}
+\end{example}
+
+
 
 \begin{center}
 \begin{foldable}
@@ -151,4 +327,3 @@ Hello
 \begin{freeResponse}
 What is the chain rule used for?
 \end{freeResponse}
-
