@@ -2,124 +2,599 @@
 
 \input{../preamble}
 
-\outcome{Anti-differentiation via Indefinite Integrals}
+\outcome{Compute integrals involving square roots of sums and differences}
 
-\title{Anti-differentiation via Indefinite Integrals}
+\title{Trigonometric Substitution}
 
 \begin{document}
 
 \begin{abstract}
-We will compute Anti-differentiation via Indefinite Integrals
+We compute integrals involving square roots of sums and differences.
 \end{abstract}
 
 \maketitle
 
+\section{Trig identities}
+
+The following are the Pythagorean Trigonometric Identities (named for \link[Pythagoras of Samos]{https://en.wikipedia.org/wiki/Pythagoras}) which hold for all angles,
+$\theta$, in the domains of the functions involved:
+\[
+\sin^2(\theta) + \cos^2(\theta) = 1,
+\]
+\[
+1 + \tan^2(\theta) = \sec^2(\theta),
+\]
+and
+\[
+1 + \cot^2(\theta) = \csc^2(\theta).
+\]
+%You can learn more about these well know identities here (link).
+
+
+
+\section{Integrands involving $\sqrt{a^2 - x^2}$}
+
 \begin{example}
-
-\begin{itemize}
-
-\item[given f', find f (all f)]
-
-\item[given f' and f(0), find f]
-
-\item[given f'' and f'(0), f(0), find f]
-
-\item[Indefinite integrals]
+Compute the indefinite integral
 \[
-\int f'(x) \; dx = f(x) + C \;\; \text{or} \;\; \int f(x) \; dx = F(x) + C.
+\int x^3 \sqrt{1-x^2} \; dx
+\]
+The key to the solution is to replace the variable $x$ with a trigonometric function 
+in order to eliminate the square root.
+Since $1-\cos^2(\theta)$ and the radicand, $1-x^2$,
+have the same algebraic form, we will try the substitution $x = \cos(\theta)$.
+In order to apply this to the integral, we also need to compute the differential, 
+$dx = -\sin(\theta) \; d\theta$.
+Substituting gives,
+\[
+\int x^3 \sqrt{1-x^2} \; dx = \int \cos^3(\theta) \sqrt{1-\cos^2(\theta)} [-\sin(\theta)] \; d\theta.
+\]
+Now, the point of this substitution is that the square root can be computed by
+using a
+Pythagorean trig identity. From there, we can compute the integral
+using the skills developed in the section on trig integrals.
+We have
+\begin{align*}
+\int x^3 \sqrt{1-x^2} \; dx &= \int \cos^3(\theta) \sqrt{1-\cos^2(\theta)} [-\sin(\theta)] \; d\theta\\
+                           &= -\int \cos^3(\theta) \sqrt{\sin^2(\theta)} \sin(\theta) \; d\theta\\
+                           &= -\int \cos^3(\theta) \sin(\theta) \sin(\theta) \; d\theta\\
+                           &= -\int \cos^3(\theta) \sin^2(\theta) \; d\theta\\
+                           \text{now, u-sub, with} \; & \; \text{  $u = \sin(\theta), \; du = \cos(\theta) \, d\theta$}\\
+                           &=-\int \cos^3(\theta) u^2 \; \frac{du}{\cos(\theta)}\\
+                           &=-\int \cos^2(\theta) u^2 \; du\\
+                           &=-\int (1-\sin^2(\theta)) u^2 \; du\\
+                           &=-\int (1-u^2)u^2 \; du\\
+                           &=\int (u^2 -1)u^2 \; du\\
+                           &=\int (u^4 - u^2) \; du\\
+                           \text{now we can} & \text{ integrate (finally)}\\
+                           &=\frac{u^5}{5} - \frac{u^3}{3} + C\\
+                           &= \frac15 \sin^5(\theta) - \frac13 \sin^3(\theta) + C.
+\end{align*}
+At this point we have an answer in terms of the variable $\theta$, but we require the variable $x$.
+We will use the triangle below to convert back to $x$.
+
+%need triangle showing x = cos(theta)
+
+From the triangle, we see that $\sin(\theta) = \sqrt{1 - x^2}$ and we back-substitute 
+to get the final answer:
+\[
+\int x^3 \sqrt{1-x^2} \; dx = \frac15 \sin^5(\theta) - \frac13 \sin^3(\theta) + C = \frac15 (1-x^2)^{5/2} - \frac13 (1-x^2)^{3/2} + C.
 \]
 
-\item[Interaction with Constants]
+\end{example}
+
+\begin{remark}
+Technically, $\sqrt{\sin^2(\theta)} = |\sin(\theta)|$ but in the substitution
+$x = \cos(\theta)$, we can choose the angle $\theta$ to be in the interval
+$[0, \pi]$ so that $\sin(\theta) \geq 0$ and hence $|\sin(\theta)| = \sin(\theta)$.
+\end{remark}
+
+
+
+\begin{example}
+Compute the indefinite integral
 \[
-\int [af'(x) + bg'(x)] \; dx = a \int f'(x) \; dx + b \int g'(x) \; dx.
+\int \frac{\sqrt{4-x^2}}{x^2} \; dx
 \]
+We choose the substitution $x = 2\cos(\theta)$ so that $dx = -2\sin(\theta) \, d\theta$.
+The integral becomes
+\begin{align*}
+\int \frac{\sqrt{4-x^2}}{x} \; dx &= \int \frac{\sqrt{4-4\cos^2(\theta)}}{\cos^2(\theta)} [-2\sin(\theta)] \; d\theta\\
+                                  &= -2\int \frac{\sqrt{4\sin^2(\theta)}}{\cos^2(\theta)}  \sin(\theta) \; d\theta\\
+                                  &= -2\int \frac{2\sin(\theta)}{\cos^2(\theta)}  \sin(\theta) \; d\theta\\
+ &= -4\int \frac{\sin^2(\theta)}{\cos^2(\theta)}  \; d\theta\\
+ &= -4\int \tan^2(\theta)  \; d\theta\\
+&= -4\int [\sec^2(\theta) - 1] \; d\theta\\
+&= -4\tan(\theta) + 4\theta + C.
+\end{align*}
 
-\item[Trig Functions]
+%need triangle with x = 2 cos(theta)
+From the triangle above, we can see that $\tan(\theta) = \frac{\sqrt{4-x^2}}{x}$ so that:
 \[
-\int \cos(x) \; dx = \sin(x) + C \:\:  \text{and} \;\; \int \sec^2(x) \; dx = \tan(x) + C.
+\int \frac{\sqrt{4-x^2}}{x^2} \; dx = -4\tan(\theta) + 4\theta + C = -\frac{4\sqrt{4-x^2}}{x} + 4\cos^{-1}\left(\frac{x}{2}\right) + C. 
 \]
-
-\item[Power Functions]
-\[
-\int x^2 \; dx = \frac{x^3}{3} + C \;\; \text{and} \;\; \int \frac{1}{x} \; dx = \ln|x| + C.
-\]
-
-\item[Power Rule for Indefinite Integrals]
-\[
-\int x^n \; dx = \frac{x^{n+1}}{n+1} + C, n\neq -1.
-\]
-
-\item[examples for the power rule]
-\[
-\int \frac{1}{2\sqrt x} \; dx = \sqrt x + C \;\; \text{and} \;\; \int x^{-3} \; dx = -\frac{x^{-2}}{2} + C = -\frac{1}{2x^2} + C.
-\]
-
-\item[exponential functions]
-\[
-\int be^{ax} \; dx = \frac{b}{a} e^{ax} + C
-\]
-
-\item[other examples]
-\[
-\int \frac{1}{x^2 + a^2} \; dx = \frac{1}{a} \tan^{-1}(\frac{x}{a}) + C \;\; \text{and} \;\; \int f'(ax) \; dx = \frac{1}{a} f(ax) + C.
-\]
-
-\item[compositions]
-\[
-\int f(g(x))g'(x) \; dx = F(g(x)) + C.
-\]
-
-\item[products]
-\[
-\int f(x)g'(x) \; dx = f(x)g(x) + \int f'(x)g(x) \; dx \;\; \text{or} \;\; \int u\; dv = uv - \int v \; du.
-\]
-
-\item[rational functions]
-\[
-\int \frac{p(x)}{(x-a)^n(x^2 + b^2)} \; dx = \int \frac{A_1}{x-a} + \frac{A_2}{(x-a)^2} + \cdots + \frac{A_n}{(x-a)^n} + \frac{Bx+C}{x^2 + b^2} \; dx.
-\]
-
-\item[trig integrals]
-\[
-\int \sin^m(x) \cos^n(x) \; dx \;\; \text{and} \int\frac{1}{x^2\sqrt{x^2-a^2}} \; dx = \frac{1}{a^2} \int \cos \theta \; d\theta.
-\]
-
-
-\end{itemize}
 
 \end{example}
 
 
+
+
+
+
+
+
+\begin{example}
+Compute the indefinite integral
+\[
+\int \frac{1}{x\sqrt{9-4x^2}} \; dx
+\]
+We choose the substitution $x = \frac32\cos(\theta)$ so that $dx = -\frac32\sin(\theta) \, d\theta$.
+The integral becomes
+\begin{align*}
+\int \frac{1}{x\sqrt{9-4x^2}}\; dx &= \int \frac{1}{\frac32\cos(\theta)\sqrt{9-9\cos^2(\theta)}} \left[-\frac32\sin(\theta)\right]\; d\theta\\
+                                  &= -\int \frac{\sin(\theta)}{\cos(\theta)\sqrt{9\sin^2(\theta)}}   \; d\theta\\
+                                 &= -\int \frac{\sin(\theta)}{\cos(\theta)\cdot 3\sin(\theta)}   \; d\theta\\
+                                  &= -\frac13\int \frac{1}{\cos(\theta)}  \; d\theta\\
+                                  &= -\frac13\int \sec(\theta) \; d\theta\\                                 
+                                 &= -\frac13 \ln|\sec(\theta) + \tan(\theta)| + C.  
+\end{align*}
+
+%need triangle with x = 3/2 cos(theta)
+From the triangle above, we can see that $\sec(\theta) = \frac{3}{2x}$ and $\tan(\theta) = \frac{\sqrt{9-4x^2}}{2x}$ so that:
+\[
+\int \frac{1}{x\sqrt{9-4x^2}} \; dx = -\frac13 \ln|\sec(\theta) + \tan(\theta)| + C = 
+ - \frac13\ln\bigg|\frac{3 + \sqrt{9-4x^2}}{2x}\bigg| + C.  
+\]
+
+\end{example}
+
+
+\begin{problem}
+Compute the following indefinite integrals:
+\begin{itemize}
+\item $\displaystyle{\int   x^3 \sqrt{16-x^2} \; dx}$
+\item $\displaystyle{\int   x^5 \sqrt{4-x^2} \; dx}$
+\item $\displaystyle{\int \frac{\sqrt{1-9x^2}}{x^2}\; dx}$
+\item $\displaystyle{\int \frac{1}{x\sqrt{9-x^2}} \; dx}$
+\item $\displaystyle{\int \frac{1}{x\sqrt{4-25x^2}} \; dx}$
+\end{itemize}
+
+\end{problem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Integrands involving $\sqrt{x^2 - a^2}$}
+
+\begin{example}
+Compute the indefinite integral
+\[
+\int \frac{1}{\sqrt{x^2-1}} \; dx.
+\]
+We will use the substitution $x = \sec(\theta)$,
+so that $dx = \sec(\theta)\tan(\theta) \, d\theta$.
+
+The integral becomes
+\begin{align*}
+\int \frac{1}{\sqrt{x^2-1}}\; dx &= \int \frac{\sec(\theta)\tan(\theta)}{\sqrt{\sec^2(\theta)-1}}\; d\theta\\
+                                 &= \int \frac{\sec(\theta)\tan(\theta)}{\sqrt{\tan^2(\theta)}}\; d\theta\\
+                                 &= \int \frac{\sec(\theta)\tan(\theta)}{\tan(\theta)}\; d\theta\\
+                                  &= \int \sec(\theta)\; d\theta\\
+                                  &= \ln|\sec(\theta)+ \tan(\theta)| + C.
+\end{align*}
+
+
+%need triangle with x = sec(theta)
+From the triangle above, we can see that $\sec(\theta) = x$ and $\tan(\theta) = \sqrt{x^2-1}$ so that:
+\[
+\int \frac{1}{\sqrt{x^2-1}} \; dx = \ln|\sec(\theta)+ \tan(\theta)| + C = \ln|x+\sqrt{x^2-1}| + C.
+\]
+
+\end{example}
+
+\begin{remark}
+Technically, $\sqrt{\tan^2(\theta)} = |\tan(\theta)|$, but in the substitution $x = \sec(\theta)$ we 
+choose the angle $\theta$ to be in the interval 
+$[0, \pi/2)$ or $[\pi, 3\pi/2)$ so that $\tan(\theta) \geq 0$ and hence $|\tan(\theta)| = \tan(\theta)$.
+\end{remark}
+
+
+
+
+
+
+\begin{example}
+Compute the indefinite integral
+\[
+\int x^3\sqrt{x^2-4} \; dx.
+\]
+We will use the substitution $x = 2\sec(\theta)$,
+so that $dx = 2\sec(\theta)\tan(\theta) \, d\theta$.
+
+The integral becomes
+\begin{align*}
+\int x^3\sqrt{x^2-4}\; dx &= \int \sec^3(\theta)\sqrt{4\sec^2(\theta)-4}\cdot 2\sec(\theta)\tan(\theta)\, d\theta\\
+                           &=  2\int \sec^4(\theta)\sqrt{4\tan^2(\theta)}\cdot \tan(\theta)\, d\theta\\   
+                            &=  2\int \sec^4(\theta)\cdot2\tan(\theta)\cdot \tan(\theta)\, d\theta\\ 
+                            &=  4\int \sec^4(\theta)\tan^2(\theta)\, d\theta\\ 
+                            &=  4\int \sec^2(\theta)\cdot \sec^2(\theta) \cdot \tan^2(\theta)\, d\theta\\  
+                            &=  4\int \sec^2(\theta)\cdot [1 + \tan^2(\theta)] \cdot \tan^2(\theta)\, d\theta\\  
+                            \text{let } \; & u = \tan(\theta), \; du = \sec^2(\theta) \, d\theta\\
+                            &=  4\int [1 + u^2]u^2\, du\\ 
+                             &=  4\int (u^2 + u^4) \, du\\ 
+                             &= \frac43 u^3 + \frac45 u^5 + C\\
+                             &= \frac43 \tan^3(\theta) + \frac45 \tan^5(\theta) + C                            
+\end{align*}
+
+
+%need triangle with x = 2sec(theta)
+From the triangle above, we can see that $\tan(\theta) = \frac{\sqrt{x^2-4}}{2}$ so that:
+\[
+\int x^3\sqrt{x^2-4} \; dx =  \frac43 \tan^3(\theta) + \frac45 \tan^5(\theta) + C =  \frac16 (x^2 - 4)^{3/2} + 
+\frac{1}{40} (x^2 - 4)^{5/2} + C.
+\]
+
+\end{example}
+
+
+
+
+
+
+\begin{example}
+Compute the indefinite integral
+\[
+\int \frac{1}{x\sqrt{x^2-16}} \; dx.
+\]
+We will use the substitution $x = 4\sec(\theta)$,
+so that $dx = 4\sec(\theta)\tan(\theta) \, d\theta$.
+
+The integral becomes
+\begin{align*}
+\int \frac{1}{x\sqrt{x^2-16}}\; dx &= \int \frac{4\sec(\theta)\tan(\theta)}{4\sec(\theta)\sqrt{16\sec^2(\theta)-16}}\; d\theta\\
+                                 &=  \int \frac{\tan(\theta)}{\sqrt{16\tan^2(\theta)}}\; d\theta\\
+                                 &=  \int \frac{\tan(\theta)}{4\tan(\theta)}\; d\theta\\
+                                  &=  \int \frac14 \; d\theta\\
+                                  &= \frac14 \theta + C\\
+                                  &= \frac14 \sec^{-1}\left(\frac{x}{4}\right)+C.
+\end{align*}
+
+\end{example}
+
+
+
+\begin{example}
+Compute the indefinite integral
+\[
+\int \frac{1}{x^2\sqrt{9x^2-4}} \; dx.
+\]
+We will use the substitution $x = \frac23\sec(\theta)$,
+so that $dx = \frac23\sec(\theta)\tan(\theta) \, d\theta$.
+
+The integral becomes
+\begin{align*}
+\int \frac{1}{x^2\sqrt{9x^2-4}}\; dx &= \int \frac{(2/3)\sec(\theta)\tan(\theta)}{(2/3)^2\sec^2(\theta)\sqrt{4\sec^2(\theta)-4}}\; d\theta\\
+                                 &=  \frac32\int \frac{\tan(\theta)}{\sec(\theta)\sqrt{4\tan^2(\theta)}}\; d\theta\\
+                                 &=  \frac32\int \frac{\tan(\theta)}{2\sec(\theta)\tan(\theta)}\; d\theta\\
+                                  &=  \frac34 \int \frac{1}{\sec(\theta)} \; d\theta\\
+                                  &= \frac34 \int \cos(\theta)  \; d\theta\\
+                                  &= \frac34 \sin(\theta) + C.
+\end{align*}
+%need triangle with x = 2/3 sec(theta)
+From the triangle above, we can see that $\sin(\theta) = \frac{\sqrt{9x^2-4}}{3x}$ so that:
+\[
+\int \frac{1}{x^2\sqrt{9x^2-4}} \; dx =  \frac34 \sin(\theta) + C =  \frac{\sqrt{9x^2 - 4}}{4x} + C.
+\]
+
+\end{example}
+
+
+\begin{example}
+Compute the indefinite integral
+\[
+\int \frac{1}{x^3\sqrt{x^2-25}} \; dx.
+\]
+We will use the substitution $x = 5\sec(\theta)$,
+so that $dx = 5\sec(\theta)\tan(\theta) \, d\theta$.
+
+The integral becomes
+\begin{align*}
+\int \frac{1}{x^3\sqrt{x^2-25}}\; dx &= \int \frac{5\sec(\theta)\tan(\theta)}{5^3\sec^3(\theta)\sqrt{25\sec^2(\theta)-25}}\; d\theta\\
+                                 &=  \frac{1}{25}\int \frac{\tan(\theta)}{\sec^2(\theta)\sqrt{25\tan^2(\theta)}}\; d\theta\\
+                                 &=  \frac{1}{25}\int \frac{\tan(\theta)}{5\sec^2(\theta)\tan(\theta)}\; d\theta\\
+                                  &=  \frac{1}{125} \int \frac{1}{\sec^2(\theta)} \; d\theta\\
+                                  &= \frac{1}{125} \int \cos^2(\theta)  \; d\theta\\
+                                  &= \frac{1}{125} \int \frac{1+\cos(2\theta)}{2} \; d\theta\\
+                                  &= \frac{1}{250}\left[\theta + \frac12 \sin(2\theta)\right] + C\\
+                                  &= \frac{1}{250} \theta + \frac{1}{500} \cdot 2\sin(\theta)\cos(\theta) + C.
+\end{align*}
+%need triangle with x = 5 sec(theta)
+From the triangle above, we can see that $\sin(\theta) = \frac{\sqrt{x^2-25}}{x}$ so that:
+\begin{align*}
+\int \frac{1}{x^3\sqrt{x^2-25}} \; dx &=  \frac{\theta}{250}  + \frac{\sin(\theta)\cos(\theta)}{250} + C \\
+&= \frac{1}{250} \sec^{-1}\left(\frac{x}{5}\right) + \frac{1}{250} \cdot \frac{\sqrt{x^2 - 25}}{x}\cdot \frac{5}{x} + C\\
+&= \frac{1}{250} \sec^{-1}\left(\frac{x}{5}\right) + \frac{\sqrt{x^2 - 25}}{50x^2}+ C.
+\end{align*}
+
+\end{example}
+
+
+
+
+\begin{problem}
+Compute the following indefinite integrals:
+\begin{itemize}
+\item $\displaystyle{\int   \frac{1}{\sqrt{x^2 - 4}} \; dx}$
+\item $\displaystyle{\int   x^3 \sqrt{x^2 - 9} \; dx}$
+\item $\displaystyle{\int \frac{1}{x\sqrt{4x^2 - 1}}\; dx}$
+\item $\displaystyle{\int \frac{1}{x^2\sqrt{25x^2-16}} \; dx}$
+\item $\displaystyle{\int \frac{1}{x^3\sqrt{x^2-1}} \; dx}$
+\end{itemize}
+
+\end{problem}
+
+
+
+
+
+\section{Integrands involving $\sqrt{a^2 + x^2}$}
+
+\begin{example}
+Compute the indefinite integral:
+\[
+\int x^2\sqrt{1+x^2} \; dx.
+\]
+We will use the substitution $x = \tan(\theta)$.  Then the differential, 
+$dx = \sec^2(\theta) \, d\theta$.  Substituting these gives
+\begin{align*}
+\int x^3\sqrt{1+x^2} \; dx &= \int \tan^3(\theta) \sqrt{1+\tan^2(\theta)} \cdot \sec^2(\theta) \; d\theta\\
+                           &= \int \tan^3(\theta) \sqrt{\sec^2(\theta)} \cdot \sec^2(\theta) \; d\theta\\
+                           &= \int \tan^3(\theta) \cdot \sec(\theta) \cdot \sec^2(\theta) \; d\theta\\
+                           &= \int \tan^3(\theta) \sec^3(\theta) \; d\theta\\
+                           \text{u-sub with } \; & u=\sec(\theta), \, du = \sec(\theta) \tan(\theta) d\theta\\
+                           &= \int \tan^2(\theta) \sec^2(\theta) \cdot \sec(\theta) \tan(\theta)\; d\theta\\
+                           &= \int \left(\sec^2(\theta)-1 \right) \sec^2(\theta) \cdot \sec(\theta) \tan(\theta)\; d\theta\\ 
+                           &= \int (u^2 -1)u^2 \; du\\ 
+                           &= \int (u^4 -u^2) \; du\\
+                           &\text{now we can integrate}\\
+                           &= \frac{u^5}{5} - \frac{u^3}{3} + C\\
+                           &= \frac15 \sec^5(\theta)  - \frac13 \sec^3(\theta) + C.
+\end{align*}
+
+%need triangle with x = tan(theta)
+
+From the triangle above, we see that $\sec(\theta)= \sqrt{1+x^2}$.  Back-substituting gives
+\[
+\int x^3\sqrt{1+x^2} \; dx = \frac15 \sec^5(\theta)  - \frac13 \sec^3(\theta) + C = \frac15 (1+x^2)^{5/2}  - \frac13 (1+x^2)^{3/2} + C
+\]
+
+\end{example}
+
+
+\begin{remark}
+Technically, $\sqrt{\sec^2(\theta)} = |\sec(\theta)|$, but in our substitution, $x = \tan(\theta)$,
+we can specify that the angle $\theta$ be in the interval $(-\pi/2, \pi/2)$ so that 
+$\sec(\theta) > 0$ and $\sqrt{\sec^2(\theta)} = |\sec(\theta)| = \sec(\theta)$.
+\end{remark}
+
+
+
+\begin{example}
+Compute the indefinite integral
+\[
+\int \frac{x^3}{\sqrt{9 + x^2}} \; dx.
+\]
+We will let $x = 3\tan(\theta)$. Then the differential
+$dx = 3\sec^2(\theta) \, d\theta$.  Substituting these, we get
+\begin{align*}
+\int \frac{x^3}{\sqrt{9 + x^2}} \; dx &= \int \frac{27\tan^3(\theta)}{\sqrt{9 + 9\tan^2(\theta)}} \cdot 3\sec^2(\theta) \; d\theta\\
+                                      &= \int \frac{27\tan^3(\theta)}{\sqrt{9\sec^2(\theta)}} \cdot 3\sec^2(\theta) \; d\theta\\
+                                      &= \int \frac{27\tan^3(\theta)}{3\sec(\theta)} \cdot 3\sec^2(\theta) \; d\theta\\
+                                      &= 27\int \tan^3(\theta) \sec(\theta) \; d\theta\\
+                                      & \text{let} \; u = \sec(\theta), \, du = \sec(\theta) \tan(\theta) \, d\theta\\
+                                      &= 27\int \tan^2(\theta) \cdot \sec(\theta) \tan(\theta) \; d\theta\\
+                                      &= 27\int \left(\sec^2(\theta)-1\right) \cdot \sec(\theta) \tan(\theta) \; d\theta\\
+                                      &= 27\int (u^2-1) \; du\\
+                                      &= 9u^3 - \frac{u}{27} + C\\
+                                      &= 9\sec^3(\theta) - \frac{1}{27} \sec(\theta) + C.
+\end{align*}
+
+%need triangle with x = 3 tan(theta)
+
+From the triangle above, we can see that $\sec(\theta) = \frac{3}{\sqrt{9+x^2}}$ and so
+
+\[
+\int \frac{x^3}{\sqrt{9 + x^2}} \; dx = 9\sec^3(\theta) - \frac{1}{27} \sec(\theta) + C = \frac{243}{(9+x^2)^{3/2}} - \frac{1}{9(1+x^2)^{1/2}} + C.
+\]
+\end{example}
+
+
+\begin{example}
+Compute the indefinite integral
+\[
+\int \sqrt{16 + 9x^2} \; dx.
+\]
+Let $x = \frac43 \tan(\theta)$. Then $dx = \frac43 \sec^2(\theta) \, d\theta$.
+Substituting these, the integral becomes,
+\begin{align*}
+\int \sqrt{16 + 9x^2} \; dx &= \int \sqrt{16+16\tan^2(\theta)} \cdot \sec^2(\theta) \; d\theta\\
+                            &= \int \sqrt{16\sec^2(\theta)} \cdot \sec^2(\theta) \; d\theta\\
+                            &= \int 4\sec(\theta) \cdot \sec^2(\theta) \; d\theta\\
+                            &= 4\int \sec^3(\theta) \; d\theta\\
+                            &\;\;\;\;\;\text{(see the IBP section for this integral).}\\
+                            &= 2 \sec(x) \tan(x) + 2 \ln|\sec(x) + \tan(x)| + C
+\end{align*}
+                            
+%need triangle with x = 4/3 tan(theta)
+
+From the triangle above, we can see that $\sec(\theta) = \frac{\sqrt{16+9x^2}}{4 }$. Back substitution gives
+\begin{align*}
+\int \sqrt{16 + 9x^2} \; dx &= 2 \sec(x) \tan(x) + 2 \ln|\sec(x) + \tan(x)| + C\\
+                            &=  2 \cdot\frac{\sqrt{16+9x^2}}{4 } \cdot \frac{3x}{4}  + 2 \ln\bigg|\frac{\sqrt{16+9x^2}}{4 } + \frac{3x}{4}\bigg| + C\\
+                            &=   \frac38 x\sqrt{16+9x^2}  + 2 \ln\left(3x +  \sqrt{16+9x^2}\right) + C\\
+\end{align*}
+Note that the absolute value bars were removed because $3x +  \sqrt{16+9x^2} > 0$ for any $x$. Also note that the $1/4$ was removed from inside the log 
+because $\ln(u/v) = \ln(u) - \ln(v)$ and $2\ln(1/4)$ can become part of the constant of integration.
+\end{example}
+
+
+
+\begin{problem}
+Compute the following indefinite integrals:
+\begin{itemize}
+\item $\displaystyle{\int   x^3\sqrt{9 + x^2}\; dx}$
+\item $\displaystyle{\int   \frac{x^3}{\sqrt{4 + x^2}} \; dx}$
+\item $\displaystyle{\int \sqrt{9 + 49x^2} \; dx}$
+%\item $\displaystyle{\int \frac{1}{x^2\sqrt{25x^2-16}} \; dx}$
+%\item $\displaystyle{\int \frac{1}{x^3\sqrt{x^2-1}} \; dx}$
+\end{itemize}
+
+\end{problem}
+
+
+
+
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a detailed, lecture style video on trigonometric substitution:}
+\youtube{mVQ3ce08VzI&t}
+\end{foldable}
+\end{center}
+
+
+
+
+
 \end{document}
 
-Integration by parts in economics
-
-Present value of a flow
-Suppose P(t) is the annual rate at which income is flowing at time
-t. Given r the interest rate. Consider a period between a and b, if
-we partition the time interval with subintervals [t i−1 , t i ], for
-i = 1, .., n with t 0 = a and t n = b we know that we can
-approximate the income in any subinterval as P(t i )(t i − t i−1 ). The
-discount factor will be e −rt i .
-Using integral to get the present value of the flow on the whole
-period
-Z b
-e −rt P(t)dt
 
 
 
-An example of improper integral in economics
-Denoting by c(t) consumption at time t, by U the instantaneous
-utility function and r a discount rate. An integral
-Z ∞
-U(c(t))e −rt dt
-t 0
-represents the present value of future cumulative utility coming
-from consumption.
 
-Applications in mathematics
-laplace transform
-gamma function
-prob density function (doubly improper integral) int 1/(1+x^2)
-computer science int of download speed = amount downloaded
 
+
+
+
+
+
+
+
+
+\begin{remark}
+In the previous example, we claimed that
+\[
+\sqrt{\sin^2(\theta)} = \sin(\theta).
+\]
+However, in general,
+\[
+\sqrt{\sin^2(\theta)} = |\sin(\theta)|.
+\]
+To resolve this difference, we go back to the original substitution
+$x = \cos(\theta)$ and we add the additional stipulation
+$0 \leq \theta \leq \pi$. This interval allows $\cos(\theta)$ to 
+take on all of its values from $-1$ to $1$ with the additional benefit,
+that for values of $\theta$ in this interval, $\sin(\theta) \geq 0$.
+This last fact is what allows us to drop the absolute value bars and write
+\[
+\sqrt{\sin^2(\theta)} = \sin(\theta).
+\]
+\end{remark}
+
+
+
+
+
+
+\begin{example} %example #15
+Find $h'(x)$ if $h(x) = x^{\sin(x)}$.\\
+We will use the fact that the exponential and logarithm functions are inverses,
+\[e^{\ln(x)} = x,\]
+and the exponent property of logarithms, 
+\[\ln(x^n) = n\ln(x),\]
+to rewrite $h(x)$.  We have 
+\[h(x) = x^{\sin(x)} = e^{\ln(x^{\sin(x)})} = e^{\sin(x)\ln(x)}\]
+and we can now compute $h'(x)$ using a combination of the chain rule and product rule.
+We can write $h(x)$ as a composition, $f(g(x))$ with 
+\[g(x) = \sin(x)\ln(x) \quad \text{and} \quad f(x) = e^x.\]
+Then to find $g'(x)$ we us the product rule and we get $g'(x) = \frac{\sin(x)}{x} + \cos(x)\ln(x)$.
+Next $f'(x) = e^x$ and 
+hence $f'(g(x)) = e^{g(x)} = e^{\sin(x)\ln(x)} = x^{\sin(x)}$.
+We can then conclude $h'(x) = f'(g(x))g'(x) = x^{\sin(x)} \left[ \frac{\sin(x)}{x} + \cos(x)\ln(x)\right]$.
+\end{example}
+
+%more question formats below
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\begin{verbatim}
+\begin{question}
+What is your favorite color?
+\begin{multipleChoice}
+\choice[correct]{Rainbow}
+\choice{Blue}
+\choice{Green}
+\choice{Red}
+\end{multipleChoice}
+\begin{freeResponse}
+Hello
+\end{freeResponse}
+\end{question}
+%\end{verbatim}
+
+
+
+
+
+\begin{question}
+  Which one will you choose?
+  \begin{multipleChoice}
+    \choice[correct]{I'm correct.}
+    \choice{I'm wrong.}
+    \choice{I'm wrong too.}
+  \end{multipleChoice}
+\end{question}
+
+
+\begin{question}
+  Which one will you choose?
+  \begin{selectAll}
+    \choice[correct]{I'm correct.}
+    \choice{I'm wrong.}
+    \choice[correct]{I'm also correct.}
+    \choice{I'm wrong too.}
+  \end{selectAll}
+\end{question}
+
+
+\begin{freeResponse}
+What is the chain rule used for?
+\end{freeResponse}

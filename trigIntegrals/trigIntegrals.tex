@@ -28,7 +28,7 @@ and
 \[
 1 + \cot^2(\theta) = \csc^2(\theta).
 \]
-You can learn more about these well know identities here, here and here (with the last being my own).
+%You can learn more about these well know identities here (link).
 
 Next, we have the double-angle formulas:
 
@@ -79,7 +79,7 @@ This substitution transforms the original integral as follows:
 \]
 which is an integral that can be computed from the power rule giving
 \begin{align*}
-\int \sec^5(x) \tan(x) \, dx &= \int \sec^4(x) \sec(x) \tan(x) \, dx
+\int \sec^5(x) \tan(x) \, dx &= \int \sec^4(x) \sec(x) \tan(x) \, dx\\
                              &= \int u^4 \, du\\
                              &= \frac{u^5}{5} + C\\
                              &= \frac15 \sec^5(x) + C.
@@ -90,11 +90,11 @@ which is an integral that can be computed from the power rule giving
 \begin{problem}
 Make a $u$-substitution to compute each of the following indefinite integrals:
 \begin{itemize}
-\item $\displaystyle{\int 5\sin^{14}\cos(x) \, dx}$
-\item $\displaystyle{\int 12\cos^{3}\sin(x) \, dx}$
-\item $\displaystyle{\int 4\tan^{7}\sec^2(x) \, dx}$
-\item $\displaystyle{\int 10 \sec^{5}\tan(x) \, dx}$
-\item $\displaystyle{\int 16\csc^{16}\cot(x) \, dx}$
+\item $\displaystyle{\int 5\sin^{14}(x)\cos(x) \, dx}$
+\item $\displaystyle{\int 12\cos^{3}(x)\sin(x) \, dx}$
+\item $\displaystyle{\int 4\tan^{7}(x)\sec^2(x) \, dx}$
+\item $\displaystyle{\int 10 \sec^{3}(x)\tan(x) \, dx}$
+\item $\displaystyle{\int 16\csc^{16}(x)\cot(x) \, dx}$
 \end{itemize}
 \end{problem}
 
@@ -211,6 +211,123 @@ We begin by just substituting for $dx$:
 &= \int \left(u^6 - 2u^4 +u^2\right) \; du & \text{(now integrate)}\\
 &=  \frac{u^7}{7} - \frac{2u^5}{5} + \frac{u^3}{3} + C  \\
 &= \frac17\sec^7(x) - \frac25 \sec^5(x) + \frac13 \sec^3(x) + C & \text{(back substituting)}
+\end{align*}
+\end{example}
+
+\begin{problem}
+Compute the indefinite integral:
+\[
+\int \tan^3(x) \sec^5(x)\;dx = \answer{\frac17 \sec^7(x) - \frac15 \sec^5(x)} + C.
+\]
+\end{problem}
+
+\begin{problem}
+Compute the indefinite integral:
+\[
+\int \tan^5(x) \sec^7(x)\;dx = \answer{\frac{1}{11} \sec^{11}(x) + \frac17 \sec^7(x) -\frac29 \sec^9(x)} + C.
+\]
+\end{problem}
+
+
+
+\subsection{Case 2: $n$ is even}
+\begin{example}
+Compute the indefinite integral:
+\[
+\int \tan^4(x) \sec^4(x)\;dx.
+\]
+When $n$ is even, we use the substitution $u = \tan(x)$,
+which implies $du = \sec^2(x) \; dx$ or $dx = \frac{du}{\sec^2(x)}$.
+We begin by just substituting for $dx$:
+\begin{align*}
+\int \tan^4(x) \sec^4(x)\;dx &= \int \tan^4(x) \sec^4(x) \frac{du}{\sec^2(x)}\\
+&= \int \tan^4(x) \sec^2(x) \; du & \text{(cancelling)}\\
+&= \int u^4 \sec^2(x) \; du & \text{(use Pythagorean identity)}\\
+&= \int u^4\left[1 + \tan^2(x)\right] \; du \\
+&= \int u^4(1+u^2) \; du & \text{(distribute $u^4$)}\\
+&= \int (u^4 + u^6) \; du & \text{(now integrate)}\\
+&=  \frac{u^5}{5} + \frac{u^7}{7} + C  \\
+&= \frac15\tan^5(x)  + \frac17 \tan^7(x) + C & \text{(back substituting)}
+\end{align*}
+\end{example}
+
+\begin{problem}
+Compute the indefinite integral:
+\[
+\int \tan^6(x) \sec^4(x)\;dx = \answer{\frac17 \tan^7(x) + \frac19 \tan^9(x)} + C.
+\]
+\end{problem}
+
+\begin{problem}
+Compute the indefinite integral:
+\[
+\int \tan^{1/3}(x) \sec^4(x)\;dx = \answer{\frac34 \tan^{4/3}(x) + \frac{3}{10} \tan^{10/3}(x)} + C.
+\]
+\end{problem}
+
+\begin{problem}
+Compute the indefinite integral:
+\[
+\int  \sec^4(x)\;dx = \answer{\tan(x) + \frac13 \tan^3(x)} + C.
+\]
+\end{problem}
+
+
+\section{Odd Powers of Secant}
+\begin{example}
+Compute the indefinite integral:
+\[
+\int \sec(x) \; dx.
+\]
+This integral is computed by using a $u$-substitution after rewriting the integrand
+by multiplying by 1 in the following way:
+\[
+\int \sec(x) \; dx = \int \sec(x) \cdot \frac{\sec(x) + \tan(x)}{\sec(x) + \tan(x)} \; dx.
+\]
+After distributing $\sec(x)$ we get
+\[
+\int \sec(x) \; dx = \int \frac{\sec^2(x) + \sec(x)\tan(x)}{\sec(x) + \tan(x)} \; dx.
+\]
+Now we observe that the numerator is the derivative of the denominator which suggests the substitution
+$u = \sec(x) + \tan(x)$. We have $du = [ \sec(x)\tan(x) + \sec^2(x)] \; dx$ and the integral becomes
+\begin{align*}
+\int \sec(x) \; dx &= \int \frac{\sec^2(x) + \sec(x)\tan(x)}{\sec(x) + \tan(x)} \; dx\\
+&= \int \frac{1}{u} \; du\\
+&= \ln|u| + C\\
+&= \ln|\sec(x) + \tan(x)|.
+\end{align*}
+
+\end{example}
+
+%The integral of $\sec^3(x)$ was handled in the Integration by parts section
+%yielding
+%\[
+%\int \sec^3(x) \; dx = \frac12 \sec(x) \tan(x) + \frac12 \ln|\sec(x) + \tan(x)| + C.
+%\]
+Furthermore, IBP also gave a reduction formula for higher powers of $\sec(x)$:
+\[
+\int \sec^n(x) \; dx =  \frac{1}{n-1}\sec^{n-2}(x)\tan(x) + \frac{n-2}{n-1}\int \sec^{n-2}(x) \; dx. 
+\]
+This formula is particularly useful if
+the power is odd since if $n$ is odd, $n-2$ is also meaning that if we repeat the formula enough times, 
+we will eventually be left with $\int \sec(x) \, dx$
+which we have just solved.
+
+\begin{example}
+Use the above reduction of powers formula twice to compute the indefinite integral
+\[
+\int \sec^5(x) \; dx.
+\]
+We have $n =5$ and the formula gives
+\[
+\int \sec^5(x) \; dx = \frac14 \sec^3(x)\tan(x) + \frac34 \int \sec^3(x) \; dx.
+\]
+We will use the reduction of powers formula once again, this time with $n=3$:
+\begin{align*}
+\int \sec^5(x) \; dx &= \frac14 \sec^3(x)\tan(x) + \frac34 \int \sec^3(x) \; dx\\
+&= \frac14 \sec^3(x)\tan(x) + \frac34\left(\frac12\sec(x)\tan(x) + \frac12\int \sec(x) \; dx\right)\\
+&=\frac14 \sec^3(x)\tan(x) + \frac38\sec(x)\tan(x) + \frac38 \int \sec(x) \; dx \\
+&=\frac14 \sec^3(x)\tan(x) + \frac38\sec(x)\tan(x) + \frac38\ln|\sec(x) + \tan(x)| + C
 \end{align*}
 \end{example}
 
