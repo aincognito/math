@@ -16,7 +16,8 @@ We compute integrals involving square roots of sums and differences.
 
 \section{Trig identities}
 
-The following are the Pythagorean Trigonometric Identities (named for \link[Pythagoras of Samos]{https://en.wikipedia.org/wiki/Pythagoras}) which hold for all angles,
+The following are the Pythagorean Trigonometric Identities (named for \link[Pythagoras of Samos]{https://en.wikipedia.org/wiki/Pythagoras}) 
+which hold for all angles,
 $\theta$, in the domains of the functions involved:
 \[
 \sin^2(\theta) + \cos^2(\theta) = 1,
@@ -395,6 +396,49 @@ $\sec(\theta) > 0$ and $\sqrt{\sec^2(\theta)} = |\sec(\theta)| = \sec(\theta)$.
 
 
 
+
+\begin{problem}
+Compute the indefinite integral
+\[
+\int   x^3\sqrt{9 + x^2}\; dx.
+\]
+Use a trig sub with\\
+\[
+x = \answer{3\tan(\theta)}
+\]
+The differential is\\
+\[
+dx = \answer{3\sec^2(\theta)}d\theta
+\]
+Substituting these and simplifying the integrand gives\\
+\[
+\int   x^3\sqrt{9 + x^2}\; dx = 81\int \answer{\tan^3(\theta)\sec^3(\theta)} d\theta
+\]
+Computing this integral gives
+\[
+\int \tan^3(\theta)\sec^3(\theta) \; d\theta = \answer{(1/5)\sec^5(\theta) - (1/3)\sec^3(\theta)} + C.
+\]
+Based on the substitution $x = 3\tan(\theta)$, \\
+\[
+\sec(\theta) = \answer{\sqrt{9+x^2}/3}
+\]
+The final answer is
+\[
+\int   x^3\sqrt{9 + x^2}\; dx = 
+\]
+\begin{multipleChoice}
+\choice[correct]{$\frac{1}{15}(9+x^2)^{5/2} - (9+x^2)^{3/2} + C$}
+\choice{$\frac{1}{15}(9+x^2)^{5/2} + (9+x^2)^{3/2} + C$}
+\choice{$\frac{1}{15}(9+x^2)^{3/2} - (9+x^2)^{5/2} + C$}
+\choice{$\frac{1}{15}(9+x^2)^{3/2} + (9+x^2)^{5/2} + C$}
+\end{multipleChoice}
+
+\end{problem}
+
+
+
+
+
 \begin{example}
 Compute the indefinite integral
 \[
@@ -452,7 +496,6 @@ From the triangle above, we can see that $\sec(\theta) = \frac{\sqrt{16+9x^2}}{4
 Note that the absolute value bars were removed because $3x +  \sqrt{16+9x^2} > 0$ for any $x$. Also note that the $1/4$ was removed from inside the log 
 because $\ln(u/v) = \ln(u) - \ln(v)$ and $2\ln(1/4)$ can become part of the constant of integration.
 \end{example}
-
 
 
 \begin{problem}
