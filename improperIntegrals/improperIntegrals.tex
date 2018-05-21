@@ -1,0 +1,322 @@
+\documentclass{ximera}
+
+\input{../preamble}
+
+\outcome{Compute definite integrals involving infinity}
+
+\title{Improper Integrals}
+
+\begin{document}
+
+\begin{abstract}
+We will compute definite integrals involving infinity.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+In this section we will consider definite integrals involving infinity.
+There are two fundamentally different types of improper integrals.  The first involves infinity as an ``endpoint"
+of integration and the second involves vertical asymptotes at or between the endpoints of integration.
+Examples of the first type include
+\[
+\int_0^\infty e^{-2x} \; dx, \; \text{ and } \;  \int_{-\infty}^\infty \frac{1}{1+x^2}\; dx.
+\]
+The second of the above examples is called ``doubly improper" since it involves both $\infty$ and $-\infty$.
+Examples of the second type include
+\[
+\int_0^{\pi/2} \tan(x)\; dx \; \text{ and } \; \int_0^1 \frac{1}{x} \; dx.
+\]
+If the value of an improper integral is a finite number, then we say that the integral \textbf{converges}.
+Otherwise, we say that the integral \textbf{diverges}.
+The method of computing improper integrals involves replacing an endpoint with a variable 
+and then taking an appropriate limit as we will see in the examples below.
+
+
+
+
+\section{Infinity as an endpoint}
+\begin{definition}[Type 1 Improper Integral]
+Suppose $f(x)$ is continuous on the interval $[a, \infty)$. Then we compute the improper integral at infinity as follows:
+\[
+\int_a^\infty f(x) \; dx = \lim_{b \to \infty} \int_a^b f(x) \; dx.
+\]
+The improper integral at negative infinity is defined similarly.
+\end{definition}
+
+
+\begin{example}
+Compute the improper integral
+\[
+\int_0^\infty e^{-2x} \; dx.
+\]
+
+We will begin by replacing $\infty$ in the improper integral with the variable $b$, a typical choice for an upper endpoint of integration.
+We compute
+\begin{align*}
+\int_0^b e^{-2x} \; dx &= \left(-\frac12 e^{-2x} \right) \bigg|_0^b\\
+                       &= \left(-\frac12 e^{-2b} \right) - \left(-\frac12 e^{0} \right)\\
+                       &=\frac12 -\frac12 e^{-2b}.
+\end{align*}
+                       
+To complete the problem, we now take a limit as $b \to \infty$.
+\begin{align*}
+\int_0^\infty e^{-2x} \; dx &= \lim_{b \to \infty}\int_0^b e^{-2x} \; dx\\
+                       &=\lim_{b \to \infty} \left(\frac12 -\frac12 e^{-2b}\right)\\
+                       &= \frac12 -\frac12 e^{-\infty}\\
+                       &= \frac12 - 0 \\
+                       &= \frac12.
+\end{align*}
+Since the answer is a finite number we say that the integral converges.
+More precisely, we can say that the integral converges to $1/2$.
+
+\end{example}
+
+
+
+
+\begin{problem}
+Compute the improper integral
+\[
+\int_0^\infty 2e^{-5x} \; dx = \answer{2/5}
+\]
+
+\end{problem}
+
+
+
+
+
+
+\begin{example}
+Compute the improper integral
+\[
+\int_1^\infty \frac{3}{x^2} \; dx.
+\]
+
+We will begin by replacing $\infty$ in the improper integral with the variable $b$, a typical choice for an upper endpoint of integration.
+We compute
+\begin{align*}
+\int_1^b \frac{3}{x^2} \; dx &= \int_1^b 3x^{-2} \; dx\\
+                           &= \left(3\cdot \frac{x^{-1}}{-1} \right) \bigg|_1^b\\
+                           &= \left(-\frac{3}{x} \right) \bigg|_1^b\\
+                       &= \left(-\frac{3}{b} \right) - \left(-\frac{3}{1} \right)\\
+                       &=3 - \frac{3}{b}.
+\end{align*}
+                       
+To complete the problem, we now take a limit as $b \to \infty$.
+\begin{align*}
+\int_1^\infty \frac{3}{x^2} \; dx &= \lim_{b \to \infty}\int_1^b \frac{3}{x^2} \; dx\\
+                       &=\lim_{b \to \infty} \left(3 - \frac{3}{b}\right)\\
+                       &= 3 -\frac{3}{\infty}\\
+                       &= 3 - 0 \\
+                       &= 3.
+\end{align*}
+Since the answer is a finite number we say that the integral converges.
+More precisely, we can say that the integral converges to $3$.
+
+\end{example}
+
+
+
+\begin{problem}
+Compute the improper integral
+\[
+\int_2^\infty \frac{5}{x^3} \; dx = \answer{5/8}
+\]
+
+\end{problem}
+
+
+
+
+\begin{example}
+Compute the improper integral
+\[
+\int_1^\infty \frac{4}{x} \; dx.
+\]
+
+We will begin by replacing $\infty$ in the improper integral with the variable $b$, a typical choice for an upper endpoint of integration.
+We compute
+\begin{align*}
+\int_1^b \frac{4}{x} \; dx &= \int_1^b \frac{4}{x} \; dx\\
+                           &= \left(4\ln|x| \right) \bigg|_1^b\\
+                       &= \left(4\ln|b| \right) - \left(4\ln|1| \right)\\
+                       &=4\ln|b|.
+\end{align*}
+                       
+To complete the problem, we now take a limit as $b \to \infty$.
+\begin{align*}
+\int_1^\infty \frac{4}{x} \; dx &= \lim_{b \to \infty}\int_1^b \frac{4}{x} \; dx\\
+                       &=\lim_{b \to \infty} 4\ln|b|\\
+                       &= 4\ln(\infty)\\
+                       &= \infty.
+\end{align*}
+Since the answer is a \textbf{not} a finite number we say that the integral diverges.
+
+\end{example}
+
+
+\begin{problem}
+Show that the improper integral diverges:
+\[
+\int_3^\infty \frac{7}{\sqrt x}.
+\]
+\end{problem}
+
+Based on the previous examples and problems, we can expect the following theorem about integrals of the form
+\[
+\int_1^\infty \frac{1}{x^p} \; dx.
+\]
+
+\begin{theorem}[p-integrals]
+The improper p-integral $\int_1^\infty \frac{1}{x^p} \; dx$
+ converges if $p>1$ and diverges if $p \leq 1$
+The result is the same if lower endpoint is replaced by any other positive number.
+\end{theorem}
+This theorem will be of value to us in future sections, but for now, we use it to help us with another improper integral.
+
+
+\begin{example}
+Compute the improper integral
+\[
+\int_2^\infty \frac{1}{x\ln(x)} \; dx.
+\]
+Using a u-substitution with $u = \ln(x)$ and $du = \frac{1}{x} \, dx$, the integral becomes
+\[
+\int_2^\infty \frac{1}{x\ln(x)} \; dx = \int_{\ln(2)}^\infty \frac{1}{u} \; du.
+\]
+This is a $p$-integral in the variable $u$ with $p=1$. Since $p \leq 1$, the theorem says that this integral diverges, and hence
+\[
+\int_2^\infty \frac{1}{x\ln(x)} \; dx \;\; \text{ diverges}.
+\]
+\end{example}
+
+
+
+\section{Type 2 Improper Integrals}
+
+In this section we examine definite integrals in which the integrand has a vertical asymptote at an endpoint of integration.
+
+\begin{definition}[Type 2 Improper Integral]
+Suppose $f(x)$ is continuous on the interval $(a, b]$ and that $f(x)$ has a vertical asymptote at $x = a$.
+Then
+\[
+\int_a^b f(x) \; dx = \lim_{t \to a^+} \int_t^b f(x) \; dx.
+\]
+The improper integral is defined similarly if the vertical asymptote is at the upper endpoint of integration.
+\end{definition}
+
+\begin{example}
+Compute the improper integral
+\[
+\int_0^1 \frac{3}{\sqrt x} \; dx.
+\]
+The integral is improper because the integrand has a vertical asymptote at $x = 0$. Hence
+\begin{align*}
+\int_0^1 \frac{3}{\sqrt x} \; dx &= \lim_{a \to 0^+} \int_a^1 \frac{3}{\sqrt x} \; dx\\
+                                 &= \lim_{a \to 0^+} \int_a^1 3x^{-1/2} \; dx\\
+                                 &= \lim_{a \to 0^+} \left( 6x^{1/2}  \right) \bigg|_a^1\\
+                                 &= \lim_{a \to 0^+} \left( 6\sqrt{1} - 6\sqrt{a}  \right) \\
+                                 &= \left( 6 - 6\sqrt{0}  \right) \\
+                                 &= 6.
+\end{align*}
+ Hence the improper integral converges to 6.
+ \end{example}
+ 
+\begin{problem}
+Compute the improper integral
+\[
+\int_2^6 \frac{4}{\sqrt{x-2}} \; dx = \answer{16}
+\]
+\end{problem}
+
+                                 
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a detailed, lecture style video on improper integrals:}
+\youtube{gRJTe1i1muo}
+\end{foldable}
+\end{center}
+
+
+
+
+
+\end{document}
+
+
+\begin{example} %example #15
+Find $h'(x)$ if $h(x) = x^{\sin(x)}$.\\
+We will use the fact that the exponential and logarithm functions are inverses,
+\[e^{\ln(x)} = x,\]
+and the exponent property of logarithms, 
+\[\ln(x^n) = n\ln(x),\]
+to rewrite $h(x)$.  We have 
+\[h(x) = x^{\sin(x)} = e^{\ln(x^{\sin(x)})} = e^{\sin(x)\ln(x)}\]
+and we can now compute $h'(x)$ using a combination of the chain rule and product rule.
+We can write $h(x)$ as a composition, $f(g(x))$ with 
+\[g(x) = \sin(x)\ln(x) \quad \text{and} \quad f(x) = e^x.\]
+Then to find $g'(x)$ we us the product rule and we get $g'(x) = \frac{\sin(x)}{x} + \cos(x)\ln(x)$.
+Next $f'(x) = e^x$ and 
+hence $f'(g(x)) = e^{g(x)} = e^{\sin(x)\ln(x)} = x^{\sin(x)}$.
+We can then conclude $h'(x) = f'(g(x))g'(x) = x^{\sin(x)} \left[ \frac{\sin(x)}{x} + \cos(x)\ln(x)\right]$.
+\end{example}
+
+%more question formats below
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\begin{verbatim}
+\begin{question}
+What is your favorite color?
+\begin{multipleChoice}
+\choice[correct]{Rainbow}
+\choice{Blue}
+\choice{Green}
+\choice{Red}
+\end{multipleChoice}
+\begin{freeResponse}
+Hello
+\end{freeResponse}
+\end{question}
+%\end{verbatim}
+
+
+
+
+
+\begin{question}
+  Which one will you choose?
+  \begin{multipleChoice}
+    \choice[correct]{I'm correct.}
+    \choice{I'm wrong.}
+    \choice{I'm wrong too.}
+  \end{multipleChoice}
+\end{question}
+
+
+\begin{question}
+  Which one will you choose?
+  \begin{selectAll}
+    \choice[correct]{I'm correct.}
+    \choice{I'm wrong.}
+    \choice[correct]{I'm also correct.}
+    \choice{I'm wrong too.}
+  \end{selectAll}
+\end{question}
+
+
+\begin{freeResponse}
+What is the chain rule used for?
+\end{freeResponse}
