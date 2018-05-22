@@ -19,7 +19,7 @@ We will integrate rational functions using partial fraction decompositions.
 \end{center}
 
 In this section we will learn an important method for integrating rational functions.
-Recall that a rational function is a ratio of polynomial functions. The key background skill is the ability to factor polynomials.
+Recall that a rational function is a ratio of polynomials. The key background skill is the ability to factor polynomials.
 We will look at three examples that cover the scenarios that we will encounter in our integrals. 
 
 First, consider the cubic polynomial  $x^3 - x$.  
@@ -28,8 +28,8 @@ We can factor out an $x$ and then factor again using the difference of two perfe
 x^3 - x = x(x^2-1) = x(x+1)(x-1).
 \]
 
-This is a \textbf{complete factorization} as there are three linear factors, $x, x-1$ and $x+1$, none of which has a constant factor.
-We can say that the original cubic polynomial factored into three \textbf{distinct linear factors}.
+This is a \textbf{complete factorization} consisting of three different linear factors, $x, x-1$ and $x+1$.
+We can say that the original cubic polynomial factored into \textbf{distinct linear factors}.
 
 Second, consider the cubic polynomial $x^3 + 2x^2 + x$.  This polynomial factors as $x(x^2 + 2x + 1)$ but this is not a complete factorization since
 the quadratic $x^2 + 2x + 1$ is a perfect square we can be factored further.  The complete factorization is 
@@ -64,14 +64,14 @@ decomposition equal to the \textbf{multiplicity} of the factor. Each of these te
 distinct power of the repeated factor in the denominator.
 For example 
 \[
-\frac{x^2 + 3x -5}{x^3 + x^2} = \frac{x^2 + 3x -5}{x^2(x+1)} = \frac{A}{x} + \frac{B}{x^2} + \frac{C}{x+1},
+\frac{x^2 + 3x -5}{x^3 + 2x^2 + x} = \frac{x^2 + 3x -5}{x(x+1)^2} = \frac{A}{x} + \frac{B}{x+1} + \frac{C}{(x+1)^2},
 \]
 where $A, B$ and $C$ are constants. Note how the repeated linear factor $x^2$ contributed two terms whose denominators were $x$ and $x^2$
 and whose numerators were constants.
 
 
 \item{\textbf{Irreducible Quadratic Factor}} An irreducible quadratic factor in the denominator will contribute one term to the decomposition whose numerator
-is a linear polynomial and whose denomiator is the irreducible quadratic factor.
+is a linear polynomial and whose denominator is the irreducible quadratic factor.
 For example 
 \[
 \frac{x^2 + 3x -5}{x^3 +x} = \frac{x^2 + 3x -5}{x(x^2+1)} = \frac{A}{x} + \frac{Bx + C}{x^2 + 1},
@@ -103,41 +103,312 @@ where $A, B, C, D, E$ and $F$ are constants.
 
 \end{example}
 
+\section{Special Integrals}
+The point of a partial fraction decomposition is to replace a complicated rational function by a sum of simpler ones which we can integrate.
+We will now look at some of these simpler forms and learn how to integrate them.
+
+\begin{example}
+Compute the indefinite integral
+\[
+\int \frac{1}{ax+b} \; dx.
+\]
+Using a $u$-substitution with $u = ax+b$ and $du = a \, dx$,
+we get
+\[
+\int \frac{1}{ax+b} \; dx = \frac{1}{a} \int \frac{1}{u} \; du = \frac{1}{a} \ln|u| + C = \frac{1}{a} \ln|ax+b| + C.
+\]
+In future examples, we will not perform the substitution.  Instead, we will just write
+\[
+\int \frac{1}{ax+b} \; dx = \frac{1}{a} \ln|ax+b| + C.
+\]
+\end{example}
+
+\begin{problem}
+Compute the indefinite integral
+\[
+\int \frac{3}{2x+5} \; dx = \answer{\frac32 \ln|2x+5|} + C.
+\]
+\end{problem}
+
+\begin{example}
+Compute the following indefinite integral, assuming that $n > 1$:
+\[
+\int \frac{1}{(ax+b)^n} \; dx.
+\]
+Using a $u$-substitution with $u = ax+b$ and $du = a \, dx$,
+we get
+\begin{align*}
+\int \frac{1}{(ax+b)^n} \; dx &= \frac{1}{a} \int \frac{1}{u^n} \; du \\
+                              &= \frac{1}{a} \int u^{-n} \; du \\
+                              &= \frac{1}{a} \cdot \frac{u^{-n+1}}{-n+1} + C \\
+                              &= -\frac{1}{a} \cdot \frac{1}{(n-1)u^{n-1}} + C\\
+                              &= -\frac{1}{a(n-1)u^{n-1}} + C\\
+                              &= -\frac{1}{a(n-1)(ax+b)^{n-1}} + C.
+\end{align*}
+In short, we use the power rule with exponent `$-n$' and we multiply by $1/a$.
+\end{example}
+
+\begin{problem}
+Compute the indefinite integral
+\[
+\frac{4}{(6x+ 5)^3} = \answer{-\frac{1}{3(6x+5)^2}} + C.
+\]
+
+\end{problem}
+
+
+\begin{example}
+Compute the indefinite integral
+\[
+\int \frac{1}{a^2 + x^2} \; dx.
+\]
+Using a substitution with $u = x/a$ and $du = (1/a) \, dx$, so that $x = au$ and $dx = a \, du$, we get
+
+ \[
+ \int \frac{1}{a^2 + x^2} \; dx = a\int \frac{1}{a^2 + a^2u^2} \; du   = \frac{1}{a} \int \frac{1}{1+u^2} \; du = \frac{1}{a} \tan^{-1}(u) + C =    
+ \frac{1}{a} \tan^{-1}\left(\frac{x}{a}\right) + C.
+ \]
+ In summary,
+ \[
+\int \frac{1}{a^2 + x^2} \; dx =  \frac{1}{a} \tan^{-1}\left(\frac{x}{a}\right) + C
+\]
+ \end{example}
+ 
+ \begin{problem}
+ Compute the indefinite integral
+ \[
+ \int \frac{3}{4+x^2} \; dx = \answer{\frac34 \tan^{-1}(x/2)} + C.
+\]
+
+ \end{problem}
+ 
+ 
+ \begin{example}
+Compute the indefinite integral
+\[
+\int \frac{x}{a^2 + x^2} \; dx.
+\]
+Using a substitution with $u = a^2 + x^2$ and $du = 2x \, dx$, we get
+
+ \[
+ \int \frac{x}{a^2 + x^2} \; dx = \frac12 \int \frac{1}{u} \; du   =  \frac{1}{2} \ln|u| + C =    
+ \frac{1}{2} \ln(a^2 + x^2) + C.
+ \]
+ In summary,
+ \[
+\int \frac{x}{a^2 + x^2} \; dx =  \frac{1}{2}\ln(a^2 + x^2)  + C
+\]
+ \end{example}
+ 
+ \begin{problem}
+ Compute the indefinite integral
+ \[
+ \int \frac{3x}{9+x^2} \; dx = \answer{\frac32 \ln(9+ x^2)} + C.
+\]
+
+ \end{problem}
+               
+                    
+We are now ready to tackle more general scenarios.
+
+\section{Distinct Linear Factors}
+
+
+\begin{example}
+
+Compute the indefinite integral
+\[
+\int \frac{2x+3}{x^3 -x} \; dx.
+\]
+We begin by factoring the denominator and writing the partial fraction decomposition:
+\[
+\int \frac{2x+3}{x^3 -x} \; dx = \int \frac{2x+3}{x(x-1)(x+1)} \; dx = \int \left( \frac{A}{x} + \frac{B}{x-1} + \frac{C}{x+1} \right) \; dx.
+\]
+We can now integrate using the results of the special integrals section above:
+\[
+\int \left( \frac{A}{x} + \frac{B}{x-1} + \frac{C}{x+1} \right) \; dx = A\ln|x| + B\ln|x-1| + C\ln|x+1| + K.
+\]
+We have used $K$ for the constant of integration since the letter $C$ was already in use.  We will convert back to $C$ in our final answer, below.
+Now, it remains to determine the values of the parameters $A, B, $ and $C$ using algebraic methods.
+Going back to the original decomposition, we have
+\[
+\frac{2x+3}{x(x-1)(x+1)} = \frac{A}{x}  + \frac{B}{x-1} + \frac{C}{x+1}.
+\]
+Multiplying both sides of this equation by $x(x-1)(x+1)$ we have
+\[
+2x+3 = A(x-1)(x+1) + Bx(x+1) + Cx(x-1).
+\]
+Now, we will plug in the values $0, 1, $ and $-1$ for $x$ to determine $A, B, $ and $C$ respectively.
+Letting $x = 0$ in the equation above zeros out the $B$ and $C$ terms yielding
+\[
+3 = A(-1)(1),
+\]
+so that $A = -3$.
+Next, letting $x = 1$ zeros out the $A$ and $C$ terms, yielding
+\[
+5 = B(1)(2),
+\]
+so that $B = 5/2$. Finally, letting $x = -1$ zeros out the $A$ and $B$ terms, yielding
+\[
+1 = C(-1)(-2),
+\]
+so that $C = 1/2$.
+We can now write our final answer:
+\[
+\int \frac{2x+3}{x^3 -x} \; dx = A\ln|x| + B\ln|x-1| + C\ln|x+1| + K
+\]
+\[
+ = -3\ln|x| + \frac52 \ln|x-1| + \frac12 \ln|x+1| + C.
+\]
+
+\end{example}
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a detailed, lecture style video on distinct linear factors:}
+\youtube{q2AlzXZ3zUA}
+\end{foldable}
+\end{center}
+
+
+\section{Repeated Linear Factors}
+
+\begin{example}
+Compute the indefinite integral
+\[
+\int \frac{3x - 4}{x^3 + 2x^2 + x} \; dx.
+\]
+We begin by factoring the denominator and writing the partial fraction decomposition:
+\[
+\int \frac{3x - 4}{x^3 + 2x^2 + x} \; dx = \int \frac{3x - 4}{x(x+1)^2} \; dx = \int \left(\frac{A}{x} + \frac{B}{x+1} + \frac{C}{(x+1)^2} \right) \; dx.
+\]
+We can now integrate using the results of the special integrals section above:
+\[
+\int \left(\frac{A}{x} + \frac{B}{x+1} + \frac{C}{(x+1)^2} \right) \; dx = A\ln|x| + B\ln|x+1| - \frac{C}{x+1} + K.
+\]
+Now, it remains to determine the values of the parameters $A, B, $ and $C$ using algebraic methods.
+Going back to the original decomposition, we have
+\[
+\frac{3x - 4}{x(x+1)^2} = \frac{A}{x} + \frac{B}{x+1} + \frac{C}{(x+1)^2}.
+\]
+Multiplying both sides of this equation by $x(x+1)^2$ gives
+\[
+3x-4 = A(x+1)^2 + B(x+1) + Cx.
+\]
+Letting $x = -1$ will zero out the $A$ and $B$ terms allowing us to find $C$:
+\[
+-7 = C(-1),
+\]
+which implies that $C = 1/7$.  If we let $x = 0$ the $C$ term gets zeroed out and we are left with:
+\[
+-4 = A + B.
+\]
+Choosing another $x$-value will leave us with another equation involving $A$ and $B$.  Since $C = 1/7$, choosing $x = 7$ yields
+\[
+17 = 64A + 8B + 1,
+\]
+which can be written as 
+\[
+16 = 64A + 8B.
+\]
+Dividing this by 8 and then substituting $B = -A - 4$ (from the equation -4 = A + B), we can find $A$:
+\[
+2 = 8A + B = 8A + (-A-4) = 7A -4,
+\]
+which means $7A = 6$, or $A = 6/7$.
+Now that we know $A$, we can use $-4 = A + B$ to find $B$:
+\[
+-4 = (6/7) + B,
+\]
+so that $B = -4 - (6/7) = -34/7$. The final answer is thus:
+\[
+\int \frac{3x - 4}{x^3 + 2x^2 + x} \; dx = A\ln|x| + B\ln|x+1| - \frac{C}{x+1} + K.
+\]
+\[
+= \frac67\ln|x| -\frac{34}{7}\ln|x+1| - \frac{1}{7(x+1)} + C.
+\]
+
+
+\end{example}
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a detailed, lecture style video on repeated linear factors:}
+\youtube{w8fw4l1RN64}
+\end{foldable}
+\end{center}
+
+\section{Irreducible Quadratic Factors}
+
+\begin{example}
+Compute the indefinite integral:
+\[
+\int \frac{x^2 + 5x + 2}{x^3 + 4x} \; dx.
+\]
+
+We begin by factoring the denominator and writing the partial fraction decomposition:
+\[
+\int \frac{x^2 + 5x + 2}{x^3 + 4x} \; dx = \int \frac{x^2 + 5x + 2}{x(x^2 + 4)} \; dx = \int \left(\frac{A}{x} + \frac{Bx+C}{x^2+4} \right) \; dx.
+\]
+We can now integrate using the results of the special integrals section above:
+\[
+\int \left(\frac{A}{x} + \frac{Bx}{x^2+4} + \frac{C}{x^2+4} \right) \; dx = A\ln|x| + \frac{B}{2}\ln(x^2 +4 ) + \frac{C}{2}\tan^{-1}\left(\frac{x}{2}\right) + K.
+\]
+Now, it remains to determine the values of the parameters $A, B, $ and $C$ using algebraic methods.
+Going back to the original decomposition, we have
+\[
+\frac{x^2 + 5x + 2}{x(x^2 + 4)} = \frac{A}{x} + \frac{Bx+C}{x^2+4}.
+\]
+Multiplying both sides of this equation by $x(x^2 +4)$ gives
+\[
+x^2 + 5x + 2 = A(x^2 +4)+ (Bx + C)x.
+\]
+Rather than plugging in certain values for $x$, we can find $A, B$ and $C$ by another method, called ``equating coefficients".
+We will rewrite the right hand side in standard polynomial form:
+\[
+x^2 + 5x + 2 = Ax^2 + 4A + Bx^2 + Cx = (A+B)x^2 + Cx + 4A.
+\]
+Since these polynomials are equal, their coefficients must match.  Hence
+\[
+A+B = 1,\; C = 5, \text { and } \; 4A = 2.
+\]
+The third of these equations gives $A = 1/2$ and using this in the first equation gives $B = 1/2$ also.
+The final answer is thus:
+\[
+\int \frac{x^2 + 5x + 2}{x^3 + 4x} \; dx = A\ln|x| + \frac{B}{2}\ln(x^2 +4 ) + \frac{C}{2}\tan^{-1}\left(\frac{x}{2}\right) + K
+\]
+\[
+= \frac12\ln|x| + \frac{1}{4}\ln(x^2 +4 ) + \frac{5}{2}\tan^{-1}\left(\frac{x}{2}\right) + C.
+\]
+
+
+
+
+\end{example}
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a detailed, lecture style video on irreducible quadratic factors:}
+\youtube{abuPElILOZw&t}
+\end{foldable}
+\end{center}
+
+
+\end{document}
+
+
 \begin{center}
 \begin{foldable}
 \unfoldable{Here is a video of Example 1}
 %\youtube{Yy6QXnFlnXs} %vid of example 1
 \end{foldable}
 \end{center}
-
-
-\begin{problem} %problem #1
-  Find the average...
-  \[
-  f(x)
-  \]
-    \begin{hint}
-      compute a definite integral
-    \end{hint}
-    
-		
-		The average value is
-		 $\answer[given]{0}$
-\end{problem}
-
-
-\begin{center}
-\begin{foldable}
-\unfoldable{Here is a detailed, lecture style video on average value:}
-\youtube{gRJTe1i1muo}
-\end{foldable}
-\end{center}
-
-
-
-
-
-\end{document}
 
 
 \begin{example} %example #15
