@@ -14,28 +14,125 @@ We compute the area between two curves.
 
 \maketitle
 
-\begin{center}
-\textbf{Area Between Curves}
-\end{center}
+\section{Area Between Curves}
 
 In this section use definite integrals to find the area of a region 
-in the $xy$-plane bounded by two or more curves.
+in the $xy$-plane bounded by two or more curves. Reacll that if $f(x)$ is a positive, continuous function 
+over the interval $[a, b]$ then the area bounded below the curve, above the $x$-axis and between the lines $x = a$
+and $x = b$ is given by the definite integral, $\int_a^b f(x) \, dx$. If we modify this slightly, 
+we can find the area of a region between two continuous functions $f(x)$ and $g(x)$. First, suppose $f(x)$ and $g(x)$
+are positive, continuous functions on the interval $[a,b]$ with $f(x) \geq g(x)$.
+Then the area between the curves is the difference between the area under $f(x)$ and the area under $g(x)$.
+
+(INSERT FIGURE HERE)
+
+Hence
+\[
+\text{Area} = \int_a^b f(x) \; dx - \int_a^b g(x) \; dx.
+\]
+We can simplify this formula slightly by combining these two integrals into a single integral, as in the theorem below. 
+
+
 \begin{theorem}
-If $g(x) \leq f(x)$ for all $x$ in the interval $[a,b]$, then the area between their graphs is given by  
+Suppose $f(x)$ and $g(x)$ are continuous on the interval $[a,b]$. If $f(x) \geq g(x)$ for all $x$ in the interval $[a,b]$, 
+then the area of the region bounded by the graphs of $y = f(x), y=g(x), x=a,$ and $x=b$ is given by  
 \[
 \text{Area} = \int_a^b \left[f(x) -g(x)\right] \; dx.
 \]
 \end{theorem}
 
 
+\begin{remark}
+There is no need to assume that $f(x)$ and $g(x)$ are positive in the theorem.  It suffices that $f(x) \geq g(x)$ on $[a,b]$ since the area of the region between 
+$f(x) + k$ and $g(x) + k$ is the same for any constant $k$ and if $k$ is large enough then both $f(x) + k$ and $g(x) + k$ are positive
+on the closed interval $[a,b]$.
+\end{remark}
+
 
 
 
 \begin{example} %example #1
-Find the area between...
-
+Find the area of the region bounded by curves $y = 5 - x^2$ and $y = x-4$ over the interval $[1,2]$.
+Since $5 - x^2 > x-4$ over the interval $[1,2]$, the area is
+\begin{align*}
+\int_1^2 \left[(5-x^2) - (x-4)\right] \; dx &= \int_1^2 \left(9-x-x^2\right) \; dx \\
+                                           &= \left(9x - \frac12 x^2 - \frac13 x^3 \right) \bigg|_1^2 \\
+                                           &= \left(18 - 2 - \frac83 \right) - \left(9 - \frac12 - \frac13 \right)\\
+                                           &= 7 - \frac73 + \frac12 \\
+                                           & = \frac{31}{6}.
+\end{align*}
+                                           
+(INSERT FIGURE HERE)
 
 \end{example}
+
+\begin{example}
+Find the area of the region bounded by the curves $y = \cos(x)$ and $y = \sin(x)$ from $x = 0$ to $x = \frac{\pi}{4}$.
+Since $\cos(x) \geq \sin(x)$ on the interval $\left[0, \frac{\pi}{4}\right]$ (see the figure below), the area of the region is given by
+\begin{align*}
+\int_0^{\pi/4} [\cos(x) - \sin(x)] \; dx &= [\sin(x) + \cos(x)]\Big|_0^{\pi/4} \\
+                                         &= [\sin(\pi/4) + \cos(\pi/4)] - [\sin(0) + \cos(0)]\\
+                                          &= \left(\tfrac{\sqrt 2}{2} + \tfrac{\sqrt 2}{2} \right) - (0 + 1) \\
+                                         &= \sqrt 2 - 1.
+\end{align*}
+
+(INSERT FIGURE HERE)
+
+\end{example}
+                                         
+
+In some cases, the left and right boundaries of the region are determined by points of intersection between the curves in question.
+
+\begin{example}
+Find the area between the parabola $y = x^2 + x - 3$ and the line $y = 2x - 1$. The left and right boundaries of the region between the line and the parabola are 
+the points of intersection of the two curves. To find these points of intersection, we set them equal and solve for $x$:
+\[
+x^2 + x - 3 = 2x-1.
+\]
+Moving the terms to the left gives
+\[
+ x^2 -x -2 = 0.
+ \]
+ Then factor:
+ \[
+  (x+1)(x-2) = 0,
+  \]
+  which gives
+  \[
+   x = -1 \;\text{and}\; x= 2
+   \]
+   as the solutions.
+Noting that the line is above the parabola (see the figure below), the area between the curves is 
+
+\begin{align*}
+\int_1^2 \left[(2x - 1) - (x^2 + x - 3)\right] \; dx &= \int_{-1}^2 \left(2 + x - x^2\right) \; dx \\
+                                           &= \left(2x + \frac12 x^2 - \frac13 x^3 \right) \bigg|_{-1}^2 \\
+                                           &= \left(4 + 2 - \frac83 \right) - \left(2 + \frac12 - \frac13 \right)\\
+                                           &= 4 - \frac73 + \frac12 \\
+                                           & = \frac{13}{6}.
+\end{align*}
+
+(INSERT FIGURE HERE)
+
+\end{example}
+
+\begin{example}
+Find the area of the region bounded by the curves $y = \sqrt x$ and $y = x^2$.
+We find the points of intersection of the curves by solving the equation $\sqrt x = x^2$.
+We can square both sides, move the terms to one side, and factor, but the elementary nature of this equation allows up 
+to find the two solutions by inspection.  The curves intersect at $x = 0$ and at $x = 1$.
+Noting that $\sqrt x \geq x^2$ on the interval $[0,1]$, we can calculate the area of the region as
+\begin{align*}
+\int_0^1 \left(\sqrt x - x^2 \right) \; dx &= \int_0^1 \left(x^{1/2} - x^2 \right) \; dx  \\
+                                          &=  \left(\frac23 x^{3/2} - \frac13 x^3 \right) \bigg|_0^1 \\
+                                          &=  \left( \tfrac23 - \tfrac13 \right) - (0-0) \\
+                                          &= \frac13.
+\end{align*}
+
+(INSERT FIGURE HERE)
+
+\end{example}
+
 
 \begin{center}
 \begin{foldable}
@@ -155,4 +252,3 @@ Hello
 \begin{freeResponse}
 What is the chain rule used for?
 \end{freeResponse}
-
