@@ -17,7 +17,7 @@ We compute the area between two curves.
 \section{Area Between Curves}
 
 In this section use definite integrals to find the area of a region 
-in the $xy$-plane bounded by two or more curves. Reacll that if $f(x)$ is a positive, continuous function 
+in the $xy$-plane bounded by two or more curves. Recall that if $f(x)$ is a positive, continuous function 
 over the interval $[a, b]$ then the area bounded below the curve, above the $x$-axis and between the lines $x = a$
 and $x = b$ is given by the definite integral, $\int_a^b f(x) \, dx$. If we modify this slightly, 
 we can find the area of a region between two continuous functions $f(x)$ and $g(x)$. First, suppose $f(x)$ and $g(x)$
@@ -133,6 +133,149 @@ Noting that $\sqrt x \geq x^2$ on the interval $[0,1]$, we can calculate the are
 
 \end{example}
 
+In the next example, we explore the area bounded between two curves which are intertwined.
+
+\begin{example}
+Find the area between the curves $y = \cos(x)$ and $y=\sin(x)$ over the interval $[0, \pi]$.
+It is important to observe that the curves intersect at $\pi/4$  
+($\sin(\pi/4) = \cos(\pi/4) = \sqrt2 / 2$) which is in the interval $[0, \pi]$. 
+We must also observe that $\cos(x) \geq \sin(x)$ on the interval $[0, \pi/4]$ and
+that the reverse is true on the interval $[\pi/4, \pi]$.
+Thus the area bounded between the two curves from $x = 0$ to $x = \pi$ is in the form of two separate regions and hence 
+we will need two separate integrals to compute the total area:
+\[
+\text{Area} = \int_0^{\pi/4} \left[\cos(x) - \sin(x)\right] \; dx + \int_{\pi/4}^\pi \left[\sin(x) -\cos(x)\right] \; dx.
+\]
+We will compute these integrals separately and then add the results.
+For the first integral,
+\begin{align*}
+\int_0^{\pi/4} \left[\cos(x) - \sin(x)\right] \; dx &= \left[\sin(x) + \cos(x)\right]\bigg|_0^{\pi/4}\\
+                                                    &= \left[\sin(\tfrac{\pi}{4}) + \cos(\tfrac{\pi}{4})\right]-\left[\sin(0) + \cos(0)\right]\\
+                                                    &= \tfrac{\sqrt 2}{2} + \tfrac{\sqrt 2}{2} - 1\\
+                                                    &= \sqrt{2} - 1.
+\end{align*}
+For the second integral,
+\begin{align*}
+\int_{\pi/4}^\pi \left[\sin(x) -\cos(x)\right] \; dx &= \left[-\cos(x) - \sin(x) \right]\bigg|_{\pi/4}^{\pi} \\
+                                                     &= \left[\cos(x) + \sin(x)\right]\bigg|_{\pi}^{\pi/4}\\
+                                                     &= \left[\cos(\tfrac{\pi}{4}) + \sin(\tfrac{\pi}{4})\right]-\left[\cos(\pi) + \sin(\pi)\right]\\
+                                                     &= \tfrac{\sqrt 2}{2} + \tfrac{\sqrt 2}{2} - (-1)\\
+                                                     &= \sqrt{2} + 1.
+\end{align*}                                             
+To obtain the total area, we now add the values of these definite integrals:
+\[
+\text{Area} = 2\sqrt{2}.
+\]
+
+(INSERT FIGURE HERE)
+
+
+\end{example}
+
+In the next example, we find the area of a region bounded by three curves. In this situation, we will need to use two separate integrals to determine the total area.
+
+\begin{example}
+Find the area of the region bounded by the curves $y = 2-x^2, y = -2x-1,$ and $y = x$.
+First, we need to find the points of intersection of the the curves. The intersection of the lines is at
+\[
+-2x-1 = x 
+\]
+\[
+x = -\tfrac13.
+\]
+Now the intersection of the parabola and the first line:
+\[
+ 2-x^2 = -2x-1
+\]
+\[
+   0 = x^2 -2x -3 
+\]
+\[
+   0 = (x+1)(x-3)
+\]
+\[
+    x = -1, \; x = 3.
+\]
+
+And the intersection of the parabola and the second line:
+
+\[
+ 2-x^2 = x
+\]
+\[
+   0 =x^2 +x -2
+\]
+\[
+   0 =(x+2)(x-1)
+\]
+\[
+   x = -2, \; x = 1.
+\]
+
+We can now see that the region is bounded by $x = -1$ on the left, and  $x = 1$ on the right.
+Furthermore, the parabola, $y = 2 - x^2$ is the top curve while the line $y = -2x-1$ is the bottom curve 
+from $x = -1$ to $x = -\frac13$ and the line $y = x$ is the bottom curve from $x = -\frac13$ to $x = 1$.
+Hence the area is the sum of two integrals:
+\[
+\text{Area} = \int_{-1}^{-1/3} \left[(2 - x^2) - (-2x-1)\right] \; dx + \int_{-1/3}^1 \left[(2 - x^2) - (x)\right] \; dx.
+\]
+The value of the first integral is
+\begin{align*}
+\int_{-1}^{-1/3} \left[(2 - x^2) - (-2x-1)\right] \; dx &= \int_{-1}^{-1/3} \left((3 - x^2 +2x)\right) \; dx \\
+                                                        &= \left(3x - \frac{x^3}{3} + x^2 \right)\bigg|_{-1}^{-1/3} \\
+                                                        &= \left(-1 + \tfrac{1}{81} + \tfrac19 \right) - \left(-3 + \tfrac13 + 1 \right) \\
+                                                        &= \tfrac{64}{81}
+\end{align*}
+
+And the value of the second integral is
+\begin{align*}
+\int_{-1/3}^{1} \left[(2 - x^2) - (x)\right] \; dx &= \int_{-1/3}^{1} \left((2 - x^2 - x)\right) \; dx \\
+                                                        &= \left(2x - \frac{x^3}{3} -\frac{x^2}{2} \right)\bigg|_{-1/3}^{1} \\
+                                                        &= \left(2 + \tfrac{1}{3} - \tfrac12 \right) - \left(-tfrac23 + \tfrac{1}{81} -tfrac{1}{18} \right) \\
+                                                        &= \tfrac{206}{81}.
+\end{align*}
+Thus the total area of the region is the sum of these two integrals:
+\[
+\text{Area} = \frac{64}{81} + \frac{206}{81} = \frac{10}{3}.
+\]
+
+(INSERT FIGURE HERE)
+
+\end{example}
+
+In our next example, we consider curves of the form $x = f(y)$. In this situation, the formula for area is similar to the $y = f(x)$ situation.
+If $x = f(y)$ and $x=g(y)$ are two curves on the interval from $y = c$ to $y = d$ with $f(y) \geq g(y)$
+then the area between them is given by the formula
+\[
+\text{Area} = \int_c^d [f(y) - g(y)] \; dy.
+\]
+\begin{example}
+Find the area between the curves $x = y^2 + y$ and $x = 2y + 6$.
+First, we find the $y$ coordinates of the points of intersection of the line $x = 2y+6$ 
+and the parabola $x=y^2 + y$ (which opens to the right), by setting these formulas equal and solving for $y$:
+\begin{align*}
+y^2 + y &= 2y + 6 \\
+y^2 - y - 6 &= 0 \\
+(y+2)(y-3) &= 0 \\
+y = -2, & y = 3.
+\end{align*}
+The bigger function is the line $x = 2y+6$ as we can see by plugging in any value between $y = -2$ and $y=3$.
+The area is given by
+\begin{align*}
+\text{Area} &= \int_{-2}^3 \left[(2y+6) - (y^2+y) \right] \; dy \\
+            &= \int_{-2}^3 \left(y - y^2 + 6\right) \; dy \\
+            &= \left(\frac{y^2}{2} - \frac{y^3}{3} + 6y \right) \bigg|_{-2}^{3} \\
+            &= \left(\tfrac92 - 9 + 18\right) - \left(2 + \tfrac83 - 12\right)\\
+            &= \tfrac{157}{6}         
+\end{align*}
+
+(INSERT FIGURE HERE)
+
+
+\end{example}
+
+
+%Need example with curves crossing, three curves, functions of y, velocity and distance.
 
 \begin{center}
 \begin{foldable}
