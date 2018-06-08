@@ -151,7 +151,7 @@ In short, we use the power rule with exponent `$-n$' and we multiply by $1/a$.
 \begin{problem}
 Compute the indefinite integral
 \[
-\frac{4}{(6x+ 5)^3} = \answer{-\frac{1}{3(6x+5)^2}} + C.
+\int \frac{4}{(6x+ 5)^3} \; dx = \answer{-\frac{1}{3(6x+5)^2}} + C.
 \]
 
 \end{problem}
@@ -164,10 +164,13 @@ Compute the indefinite integral
 \]
 Using a substitution with $u = x/a$ and $du = (1/a) \, dx$, so that $x = au$ and $dx = a \, du$, we get
 
- \[
- \int \frac{1}{a^2 + x^2} \; dx = a\int \frac{1}{a^2 + a^2u^2} \; du   = \frac{1}{a} \int \frac{1}{1+u^2} \; du = \frac{1}{a} \tan^{-1}(u) + C =    
- \frac{1}{a} \tan^{-1}\left(\frac{x}{a}\right) + C.
- \]
+\begin{align*}
+ \int \frac{1}{a^2 + x^2} \; dx &= \int \frac{1}{a^2 + (au)^2} \cdot a\, du   \\
+ &= a\int \frac{1}{a^2 + a^2u^2} \; du   \\
+ &= \frac{a}{a^2} \int \frac{1}{1+u^2} \; du \\
+ &= \frac{1}{a} \tan^{-1}(u) + C \\
+ &= \frac{1}{a} \tan^{-1}\left(\frac{x}{a}\right) + C.
+ \end{align*}
  In summary,
  \[
 \int \frac{1}{a^2 + x^2} \; dx =  \frac{1}{a} \tan^{-1}\left(\frac{x}{a}\right) + C
