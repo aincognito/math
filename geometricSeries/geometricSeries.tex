@@ -2,71 +2,150 @@
 
 \input{../preamble}
 
-\outcome{Find the Average Value of a Function}
+\outcome{Find the sum of a geometric series}
 
-\title{Average Value}
+\title{Geometric Series}
 
 \begin{document}
 
 \begin{abstract}
-We find the average value of a function.
+We find the sum of a geometric series.
 \end{abstract}
 
 \maketitle
 
-\begin{center}
-\textbf{Average Value}
-\end{center}
+\section{Geometric Series}
 
-We will find the average value of a function on an interval 
-and find the value(s) of $x$ for which the function equals the 
-average (MVT for Integrals).
-
-\begin{theorem} Mean Value Theorem for Integrals 
+\begin{definition}[Geometric Series] A \textbf{geometric series} is an infinite series of the form
 \[
-If
+\sum_{n=0}^\infty ar^n = a + ar + ar^2 + ar^3 + \cdots
+\]
+The parameter $r$ is called the \textbf{common ratio}.
+\end{definition}
+
+\begin{example}
+Consider the series:
+\[
+ \sum_{n=0}^\infty \frac{3}{2^n} 
+ \]
+ Write out the first four terms of the series. If the series is geometric, find the common ratio.
+ 
+ The first four terms are $3 + \frac32 + \frac34 + \frac38 + \cdots$
+ The series is geometric and the common ratio is $\frac12$.
+ \end{example}
+ 
+ \begin{example}
+ Consider the series:
+\[
+ \sum_{n=1}^\infty \frac{3}{n^2} 
+ \]
+ Write out the first four terms of the series. If the series is geometric, find the common ratio.
+ 
+ The first four terms are $3 + \frac34 + \frac39 + \frac{3}{16} + \cdots$
+ The ratio of the second term to the first is $\frac14$ but the ratio of the third term to the second is $\frac49$.
+ The series is not geometric because it fails to have a common ratio between the successive terms.
+ 
+ \end{example}
+
+\section{Convergence}
+
+\begin{theorem} Convergence of Geometric Series 
+The geometric series
+\[
+\sum_{n=0}^\infty ar^n
+\]
+converges if and only if the common ratio $r$ satisfies the condition $-1 < r < 1$.
+This condition can also be written as $|r| < 1$.
+\end{theorem}
+
+\begin{example}
+Does the geometric series $\displaystyle{\sum_{n=0}^\infty \frac{3}{2^n}}$ converge or diverge?\\
+The common ratio of this geometric series is $r = \frac12$. Since $-1 < \frac 12 < 1$,
+the series converges.
+\end{example}
+
+
+
+\begin{example}
+Does the geometric series $\displaystyle{\sum_{n=0}^\infty \frac{3^n}{2^{n+1}}}$ converge or diverge?\\
+The common ratio of this geometric series is $r = \frac32$. Since $\frac32$ is not between $-1$ and $1$,
+the series does not converge, i.e., it diverges.
+\end{example}
+
+
+
+\begin{example}
+Does the geometric series $\displaystyle{\sum_{n=0}^\infty \left(-\frac23\right)^n }$ converge or diverge?\\
+The common ratio of this geometric series is $r = -\frac23$. Since $-1 < -\frac23 < 1$,
+the series converges.
+\end{example}
+
+\section{Sum of a Geometric Series}
+
+Consider the geometric series $\sum_{n=0}^\infty ar^n$ where $|r| < 1$ (so that the series converges).
+The $N^{th}$ partial sum of this series is given by
+\[
+S_N = \sum_{n=0}^N ar^n = a + ar + ar^2 + \cdots + ar^{N-1} + ar^N.
+\]
+Multiply both sides by $r$:
+\[
+rS_N =  ar + ar^2 + + ar^3 + \cdots  + ar^N + ar^{N+1}.
+\] 
+Now subtract $rS_N$ from $S_N$:
+\begin{align*}
+S_N - rS_N &= \left(a + ar + \cdots + ar^{N-1} + ar^N\right) - \left(ar + ar^2 + \cdots  + ar^N + ar^{N+1} \right)\\
+           &= a - ar^{N+1}.
+\end{align*}
+We can factor out $S_N$ on the left side and then divide by $1-r$ to obtain
+\[
+S_N = \frac{a - ar^{N+1}}{1-r}.
+\]
+We can now compute the sum of the geometric series by taking the limit as $N \to \infty$:
+\[
+S = \sum_{n=0}^\infty ar^n = \lim_{N \to \infty} \sum_{n=0}^N ar^n = \lim_{N \to \infty} S_N = \lim_{N \to \infty} \frac{a - ar^{N+1}}{1-r} = \frac{a}{1-r}.
+\]
+We present this formula in the theorem below.
+
+\begin{theorem}[Sum of a Geometric Series]
+If $-1 < r < 1$, then the sum of the geometric series $\sum_{n=0}^\infty ar^n$ is given by $\frac{a}{1-r}$, i.e.,
+\[
+\sum_{n=0}^\infty ar^n = \frac{a}{1-r}.
 \]
 \end{theorem}
 
-
-
-
-
-
-\begin{example} %example #1
-Find the average...
- \[
-  f(x) = 
-  \]
+\begin{example}
+Find the sum of the geometric series 
+\[
+\sum_{n=0}^\infty \frac{3}{2^n}.
+\]
+The first term is $a = 3$, and the common ratio is $r = \frac12$. The sum of the series is
+\[
+\sum_{n=0}^\infty \frac{3}{2^n} = \frac{3}{1-\frac12} = \frac{3}{\left(\frac12\right)} = 6.
+\]
 \end{example}
 
-\begin{center}
-\begin{foldable}
-\unfoldable{Here is a video of Example 1}
-%\youtube{Yy6QXnFlnXs} %vid of example 1
-\end{foldable}
-\end{center}
 
 
-\begin{problem} %problem #1
-  Find the average...
-  \[
-  f(x)
-  \]
-    \begin{hint}
-      compute a definite integral
-    \end{hint}
-    
-		
-		The average value is
-		 $\answer[given]{0}$
-\end{problem}
+\begin{example}
+Find the sum of the geometric series 
+\[
+\sum_{n=0}^\infty \left(-\frac23\right)^n.
+\]
+The first term is $a = 1$, and the common ratio is $r = -\frac23$. The sum of the series is
+\[
+\sum_{n=0}^\infty \left(-\frac23\right)^n = \frac{1}{1-\left(-\frac23\right)} = \frac{1}{1 + \frac23} = \frac{1}{\left(\frac53\right)} = \frac35.
+\]
+\end{example}
+
+
+
+
 
 
 \begin{center}
 \begin{foldable}
 \unfoldable{Here is a detailed, lecture style video on average value:}
-\youtube{gRJTe1i1muo}
+\youtube{oM28tybb_AE}
 \end{foldable}
 \end{center}
 
@@ -151,4 +230,3 @@ Hello
 \begin{freeResponse}
 What is the chain rule used for?
 \end{freeResponse}
-
