@@ -2,71 +2,126 @@
 
 \input{../preamble}
 
-\outcome{Find the Average Value of a Function}
+\outcome{Use the DCT to determine the behavior of an infinite series}
 
-\title{Average Value}
+\title{Direct Comparison Test}
 
 \begin{document}
 
 \begin{abstract}
-We find the average value of a function.
+We will use the DCT to determine if an infinite series converges or diverges.
 \end{abstract}
 
 \maketitle
 
-\begin{center}
-\textbf{Average Value}
-\end{center}
+\section{Direct Comparison Test}
 
-We will find the average value of a function on an interval 
-and find the value(s) of $x$ for which the function equals the 
-average (MVT for Integrals).
+In this section, we will determine whether a given series converges or diverges by comparing it to a series whose behavior is known.
+Note that we will only be working with series of positive terms in this section. The idea behind the Direct Comparison Test (DCT).
+The first is that if the (positive) terms of one series are less than the corresponding terms of another, 
+convergent series, then the original series must also converge. And conversely, if the terms of one series are greater than 
+the terms of another, divergent series, then the original series must diverge also.
+In short, the DCT can be summarized by saying "less than a convergent series is convergent" 
+and "greater than a divergent series is divergent".
+We state this formally in the theorem below, in which the original series is denoted by $\sum_{n=0}^\infty a_n$ 
+and the second series whose behavior is know is denoted by $\sum_{n=0}^\infty b_n$.
 
-\begin{theorem} Mean Value Theorem for Integrals 
-\[
-If
-\]
+
+\begin{theorem}[Direct Comparison Test]
+ Suppose $a_n \geq 0$ and $b_n \geq 0$ for all values of $n$.\\
+(Convergence) If $a_n \leq b_n$ for all values of $n$, \textbf{and} if $\sum_{n=0}^\infty b_n$ converges, 
+then the series $\sum_{n=0}^\infty a_n$ also converges.\\
+(Divergence) If $b_n \leq a_n$ for all values of $n$, \textbf{and} if $\sum_{n=0}^\infty b_n$ diverges, 
+then the series $\sum_{n=0}^\infty a_n$ also diverges.
 \end{theorem}
 
 
+\begin{remark}
+If $a_n > b_n \geq 0$ for all $n$ and $\sum_{n=0}^\infty b_n$ converges, then the DCT gives \textbf{no conclusion} about $\sum_{n=0}^\infty a_n$.
+Also, If $0 \leq a_n < b_n$ for all $n$ and $\sum_{n=0}^\infty b_n$ diverges, then the DCT gives \textbf{no conclusion} about $\sum_{n=0}^\infty a_n$.
+\end{remark}
 
+
+\begin{example} %example #1
+Determine if the series $\sum_{n=1}^\infty \frac{1}{2n^2 + 3}$ converges or diverges.\\
+We will use the DCT with the convergent p-series $\sum_{n=1}^\infty \frac{1}{n^2}$. 
+To make the comparison, first note that $2n^2 + 3 > n^2 > 0$ for all $n \geq 1$. By taking the reciprocal of both sides,
+we have 
+\[
+\frac{1}{2n^2 + 3} < \frac{1}{n^2} \; \; \text{ for } \; \; n \geq 1,
+\]
+and so by the DCT, $\sum_{n=1}^\infty \frac{1}{2n^2 + 3}$ also converges.
+\end{example}
+
+\begin{example} %example #1
+Determine if the series $\sum_{n=0}^\infty \frac{3^n}{4^n + 1}$ converges or diverges.\\
+We will use the DCT with the convergent geometric series $\sum_{n=0}^\infty \left(\frac34\right)^n$. 
+To make the comparison, first note that $4^n + 1 > 4^n > 0$ for all $n \geq 0$. By taking the reciprocal of both sides,
+we have 
+\[
+\frac{1}{4^n + 1} < \frac{1}{4^n} \; \; \text{ for } \;\; n \geq 0,
+\]
+and multiplying by $3^n$ we get
+\[
+\frac{3^n}{4^n + 1} < \frac{3^n}{4^n} = \left(\frac34\right)^n \;\; \text{ for } \;\; n \geq 0.
+\]
+Therefore, by the DCT, $\sum_{n=0}^\infty \frac{3^n}{4^n + 1}$ also converges.
+\end{example}
 
 
 
 \begin{example} %example #1
-Find the average...
- \[
-  f(x) = 
-  \]
+Determine if the series $\sum_{n=1}^\infty \frac{\sin^2(n)}{n^3}$ converges or diverges.\\
+We will use the DCT with the convergent p-series $\sum_{n=1}^\infty \frac{1}{n^3}$. 
+To make the comparison, first note that $0 \leq \sin^2(n) \leq 1$ for all $n \geq 1$. Dividing by $n^3$,
+we have 
+\[
+\frac{\sin^2(n)}{n^3} \leq \frac{1}{n^3} \; \; \text{ for } \; \; n \geq 1,
+\]
+and so by the DCT, $\sum_{n=1}^\infty \frac{\sin^2(n)}{n^3}$ also converges.
 \end{example}
 
+
+\begin{example}
+Determine if the series $\sum_{n=2}^\infty \frac{1}{\sqrt{n^2 -1}}$ converges or diverges.\\
+We will use the DCT with the divergent harmonic series $\sum_{n=2}^\infty \frac{1}{n}$. 
+To make the comparison, first note that $0 < \sqrt{n^2 -1} < \sqrt{n^2} = n$ for all $n \geq 2$. By taking the reciprocal of both sides,
+we have 
+\[
+\frac{1}{\sqrt{n^2 -1}} > \frac{1}{n},
+\]
+and so by the DCT, $\sum_{n=2}^\infty \frac{1}{\sqrt{n^2 -1}}$ also diverges.
+\end{example}
+
+
+\begin{example} %example #1
+Determine if the series $\sum_{n=0}^\infty \frac{3^n + 5}{2^n}$ converges or diverges.\\
+We will use the DCT with the divergent geometric series $\sum_{n=0}^\infty \left(\frac32\right)^n$. 
+To make the comparison, first note that $3^n + 5 > 3^n > 0$ for all $n \geq 0$. Dividing by $2^n$, we have 
+\[
+\frac{3^n + 5}{2^n} > \frac{3^n}{2^n} = \left(\frac32\right)^n \;\; \text{ for } \;\; n \geq 0,
+\]
+and so by the DCT, $\sum_{n=0}^\infty \frac{2^n + 5}{3^n}$ also diverges.
+\end{example}
+
+
+\begin{example} %example #1
+Determine if the series $\sum_{n=2}^\infty \frac{1}{\ln(n)}$ converges or diverges.\\
+We will use the DCT with the series $\sum_{n=2}^\infty \frac{1}{n\ln(n)}$ which diverges (as shown in the section on the Integral Test).
+To make the comparison, first note that $0 < \ln(n) < n\ln(n)$ for all $n \geq 2$. Taking reciprocals, we have 
+\[
+\frac{1}{\ln(n)} > \frac{1}{n\ln(n)}  \;\; \text{ for } \;\; n \geq 2,
+\]
+and so by the DCT, $\sum_{n=2}^\infty \frac{1}{\ln(n)}$ also diverges.
+\end{example}
+
+
+
+
 \begin{center}
 \begin{foldable}
-\unfoldable{Here is a video of Example 1}
-%\youtube{Yy6QXnFlnXs} %vid of example 1
-\end{foldable}
-\end{center}
-
-
-\begin{problem} %problem #1
-  Find the average...
-  \[
-  f(x)
-  \]
-    \begin{hint}
-      compute a definite integral
-    \end{hint}
-    
-		
-		The average value is
-		 $\answer[given]{0}$
-\end{problem}
-
-
-\begin{center}
-\begin{foldable}
-\unfoldable{Here is a detailed, lecture style video on average value:}
-\youtube{gRJTe1i1muo}
+\unfoldable{Here is a detailed, lecture style video on the Direct Comparison Test:}
+\youtube{2IQC8-9HP1w}
 \end{foldable}
 \end{center}
 
@@ -151,4 +206,3 @@ Hello
 \begin{freeResponse}
 What is the chain rule used for?
 \end{freeResponse}
-
