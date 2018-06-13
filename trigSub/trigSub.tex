@@ -36,6 +36,27 @@ and
 
 \section{Integrands involving $\sqrt{a^2 - x^2}$}
 
+For integrals involving $\sqrt[]{a^2-u^2}$,
+\setlength{\parskip}{\baselineskip}
+
+\begin{tikzpicture}[thick]
+\coordinate (O) at (0,0);
+\coordinate (A) at (4,0);
+\coordinate (B) at (0,2);
+\coordinate [label=right:$\theta$] (D) at (2.5,.3);
+\draw (O)--(A)--(B)--cycle;
+
+\tkzLabelSegment[below=2pt](O,A){\textit{$\sqrt[]{a^2-u^2}$}}
+\tkzLabelSegment[left=2pt](O,B){\textit{u}}
+\tkzLabelSegment[above right=2pt](A,B){\textit{a}}
+
+\tkzMarkRightAngle(A,O,B)% square angle here
+
+\end{tikzpicture}
+
+Then $\sqrt[]{a^2-u^2}$=$acos\theta$, 
+where $\frac{-\pi}{2}$ $\leq$ $\theta$ $\leq$ $\frac{\pi}{2}$.
+
 \begin{example}
 Compute the indefinite integral
 \[
