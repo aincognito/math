@@ -15,65 +15,429 @@ We will use the LCT to determine if a series converges or diverges.
 \maketitle
 
 \section{Limit Comparison Test}
-In this section, we will determine the convergence or divergence of a series by comparing it to another series whose behavior is known.
+We have seen that the Direct Comparison Test can be inconclusive if the comparison goes in the wrong direction. 
+In these cases, the Limit Comparison Test (LCT) can be used instead.
+As its name suggests, the LCT involves computing a limit. More precisely, it involves computing the limit of the ratio of a given series with 
+another series whose behavior is known.  The idea is that if the limit of the ratio of these two series is a positive number, $L$, then the two series
+will have the same behavior, as one of them is essentially a multiple of the other. We state this in the following theorem.
 
-We will find the average value of a function on an interval 
-and find the value(s) of $x$ for which the function equals the 
-average (MVT for Integrals).
-
-\begin{theorem} Mean Value Theorem for Integrals 
+\begin{theorem}[Limit Comparison Test]
+Suppose $a_n \geq 0$ and $b_n \geq 0$ for all values of $n$.
+If 
 \[
-If
+\lim_{n \to \infty} \frac{a_n}{b_n} = L
 \]
+where
+\[
+0<L<\infty,
+\]
+then the two infinite series 
+\[
+\sum_{n=0}^\infty a_n \;\; \text{ and } \;\; \sum_{n=0}^\infty b_n
+\]
+have the same behavior, i.e., they either both converge or both diverge.
 \end{theorem}
 
 
+\begin{remark}
+In practical applications of the LCT, the given series is $\displaystyle{\sum_{n=0}^\infty a_n}$
+and the series we choose to compare it with is $\displaystyle{\sum_{n=0}^\infty b_n}$.
+\end{remark}
 
 
+\begin{remark}
+If $L = 0$ and $\displaystyle{\sum_{n=0}^\infty b_n}$ converges, then so does $\displaystyle{\sum_{n=0}^\infty a_n}$
+and if $L = \infty$ and $\displaystyle{\sum_{n=0}^\infty b_n}$ diverges, then so does $\displaystyle{\sum_{n=0}^\infty a_n}$.
+\end{remark}
 
 
-\begin{example} %example #1
-Find the average...
- \[
-  f(x) = 
-  \]
+\begin{example}
+Determine if the series 
+\[
+\sum_{n=1}^\infty \frac{n+2}{n^3}
+\]
+converges or diverges.(We saw this series in the section on the DCT and were not able to make a conclusion).\\
+We will use the LCT with the convergent p-series $\displaystyle{\sum_{n=1}^\infty \frac{1}{n^2}}$. We have:
+\[
+\lim_{n \to \infty} \frac{\left(\frac{n+2}{n^3}\right)}{\left(\frac{1}{n^2}\right)} = \lim_{n \to \infty} \frac{(n+2)n^2}{n^3}
+\]
+\[
+= \lim_{n \to \infty} \frac{n^3 +2n^2}{n^3} = 1,
+\]
+using the ratio of the lead coefficients. We now make our conclusion using the value $L = 1$. Since $0 < 1 < \infty$ and the series $\displaystyle{\sum_{n=1}^\infty \frac{1}{n^2}}$
+converges, the series $\displaystyle{\sum_{n=1}^\infty \frac{n+2}{n^3}}$ also converges by the LCT.
 \end{example}
 
-\begin{center}
-\begin{foldable}
-\unfoldable{Here is a video of Example 1}
-%\youtube{Yy6QXnFlnXs} %vid of example 1
-\end{foldable}
-\end{center}
 
 
-\begin{problem} %problem #1
-  Find the average...
-  \[
-  f(x)
-  \]
-    \begin{hint}
-      compute a definite integral
-    \end{hint}
-    
-		
-		The average value is
-		 $\answer[given]{0}$
+
+\begin{problem}
+Consider the series $\displaystyle{\sum_{n=1}^\infty \frac{5n^2 + 1}{3n^4 - 2}}$.\\
+Which series should we compare this to?
+
+\begin{multipleChoice}
+\choice{$\displaystyle{\sum_{n=1}^\infty \frac{1}{n}}$}
+\choice[correct]{$\displaystyle{\sum_{n=1}^\infty \frac{1}{n^2}}$}
+\choice{$\displaystyle{\sum_{n=1}^\infty \frac{1}{n^3}}$}
+\end{multipleChoice}
+
+What is the value of the limit in the LCT?
+\begin{multipleChoice}
+\choice{$L = 0$}
+\choice{$L = 2$}
+\choice[correct]{$L = 5/3$}
+\end{multipleChoice}
+
+Describe the behavior of the series $\displaystyle{\sum_{n=1}^\infty \frac{5n^2 + 1}{3n^4 - 2}:}$
+\begin{multipleChoice}
+\choice[correct]{Converges by LCT}
+\choice{Diverges by LCT}
+\choice{No Conclusion from LCT}
+\end{multipleChoice}
+
 \end{problem}
 
 
+
+\begin{example}
+Determine if the series 
+\[
+\sum_{n=0}^\infty \frac{2^n + 4}{3^n + 1}
+\]
+converges or diverges.\\
+We will use the LCT with the convergent geometric series $\displaystyle{\sum_{n=1}^\infty \left(\frac23\right)^n}$. We have:
+\begin{align*}
+\lim_{n \to \infty} \frac{\left(\frac{2^n + 4}{3^n + 1}\right)}{\left(\frac23\right)^n} &= \lim_{n \to \infty} \frac{\left(\frac{2^n + 4}{3^n + 1}\right)}{\left(\frac{2^n}{3^n}\right)}\\
+&=\lim_{n \to \infty} \frac{(2^n + 4)3^n}{(3^n + 1)2^n}\\
+&= \lim_{n \to \infty} \frac{2^n + 4}{2^n} \cdot \lim_{n \to \infty}\frac{3^n}{3^n + 1}\\
+&= 1 \cdot 1 \\
+&= 1
+\end{align*}
+
+using L'Hopital's rule on each of the last two limits. We now make our conclusion using the value $L = 1$. Since $0 < 1 < \infty$ and the series $\displaystyle{\sum_{n=0}^\infty \left(\frac23\right)^n}$
+converges, the series $\displaystyle{\sum_{n=0}^\infty \frac{2^n + 4}{3^n + 1}}$ also converges by the LCT.
+\end{example}
+
+
+
+
+\begin{problem}
+Consider the series $\displaystyle{\sum_{n=0}^\infty \frac{5^n + 1}{2^n + 3}}$.
+Which series should we compare this to?
+
+\begin{multipleChoice}
+\choice{$\displaystyle{\sum_{n=0}^\infty \left(\frac13\right)^n}$}
+\choice{$\displaystyle{\sum_{n=0}^\infty \left(\frac53\right)^n}$}
+\choice[correct]{$\displaystyle{\sum_{n=0}^\infty \left(\frac52\right)^n}$}
+\end{multipleChoice}
+
+What is the value of the limit in the LCT?
+\begin{multipleChoice}
+\choice{$L = 0$}
+\choice[correct]{$L = 1$}
+\choice{$L = 2$}
+\end{multipleChoice}
+
+Describe the behavior of the series $\displaystyle{\sum_{n=0}^\infty \frac{5^n + 1}{2^n + 3}:}$
+\begin{multipleChoice}
+\choice{Converges by LCT}
+\choice[correct]{Diverges by LCT}
+\choice{No Conclusion from LCT}
+\end{multipleChoice}
+
+\end{problem}
+
+
+
+
+
+\begin{example}
+Determine if the series 
+\[
+\sum_{n=1}^\infty \frac{n^2 + 5n + 12}{n^3 + 6n^2 + 2n}
+\]
+converges or diverges.\\
+We will use the LCT with the divergent harmonic series $\displaystyle{\sum_{n=1}^\infty \frac{1}{n}}$. We have:
+\[
+\lim_{n \to \infty} \frac{\left(\frac{n^2 + 5n + 12}{n^3 + 6n^2 + 2n}\right)}{\left(\frac{1}{n}\right)} = \lim_{n \to \infty} \frac{(n^2 + 5n + 12)n}{n^3 + 6n^2 + 2n}
+\]
+\[
+= \lim_{n \to \infty} \frac{n^3 + 5n^2 + 12n}{n^3 + 6n^2 + 2n} = 1,
+\]
+using the ratio of the lead coefficients. We now make our conclusion using the value $L = 1$. Since $0 < 1 < \infty$ and the series $\displaystyle{\sum_{n=1}^\infty \frac{1}{n}}$
+diverges, the series $\displaystyle{\sum_{n=1}^\infty \frac{n^2 + 5n + 12}{n^3 + 6n^2 + 2n}}$ also diverges by the LCT.
+\end{example}
+
+
+
+
+\begin{problem}
+Consider the series $\displaystyle{\sum_{n=1}^\infty \frac{4n^3 -3}{5n^4 + n}}$.
+Which series should we compare this to?
+
+\begin{multipleChoice}
+\choice[correct]{$\displaystyle{\sum_{n=1}^\infty \frac{1}{n}}$}
+\choice{$\displaystyle{\sum_{n=1}^\infty \frac{1}{n^2}}$}
+\choice{$\displaystyle{\sum_{n=1}^\infty \frac{1}{n^3}}$}
+\end{multipleChoice}
+
+What is the value of the limit in the LCT?
+\begin{multipleChoice}
+\choice[correct]{$L = 4/5$}
+\choice{$L = 5/3$}
+\choice{$L = 1$}
+\end{multipleChoice}
+
+Describe the behavior of the series $\displaystyle{\sum_{n=1}^\infty \frac{4n^3 -3}{5n^4 +n}:}$
+\begin{multipleChoice}
+\choice{Converges by LCT}
+\choice[correct]{Diverges by LCT}
+\choice{No Conclusion from LCT}
+\end{multipleChoice}
+
+\end{problem}
+
+
+
+
+
+\begin{example}
+Determine if the series 
+\[
+\sum_{n=1}^\infty \frac{1}{\sqrt{n^2 + 1}}
+\]
+converges or diverges.\\
+We will use the LCT with the divergent harmonic series $\displaystyle{\sum_{n=1}^\infty \frac{1}{n}}$. We have:
+\[
+\lim_{n \to \infty} \frac{\left(\frac{1}{\sqrt{n^2 + 1}}\right)}{\left(\frac{1}{n}\right)} = \lim_{n \to \infty} \frac{n}{\sqrt{n^2 + 1}}
+\]
+\[
+= \lim_{n \to \infty} \frac{n}{n\sqrt{1 + \frac{1}{n^2}}} = \lim_{n \to \infty} \frac{1}{\sqrt{1 + \frac{1}{n^2}}} = 1.
+\]
+We now make our conclusion using the value $L = 1$. Since $0 < 1 < \infty$ and the series $\displaystyle{\sum_{n=1}^\infty \frac{1}{n}}$
+diverges, the series $\displaystyle{\sum_{n=1}^\infty \frac{1}{\sqrt{n^2 + 1}}}$ also diverges by the LCT.
+\end{example}
+
+
+
+
+\begin{problem}
+Consider the series $\displaystyle{\sum_{n=1}^\infty \frac{1}{\sqrt{2n^6 - 1}}}$.
+Which series should we compare this to?
+
+\begin{multipleChoice}
+\choice{$\displaystyle{\sum_{n=1}^\infty \frac{1}{n^2}}$}
+\choice[correct]{$\displaystyle{\sum_{n=1}^\infty \frac{1}{n^3}}$}
+\choice{$\displaystyle{\sum_{n=1}^\infty \frac{1}{n^6}}$}
+\end{multipleChoice}
+
+What is the value of the limit in the LCT?
+\begin{multipleChoice}
+\choice{$L = 1$}
+\choice{$L = 1/2$}
+\choice[correct]{$L = 1/\sqrt2$}
+\end{multipleChoice}
+
+Describe the behavior of the series $\sum_{n=1}^\infty \frac{4n^3 -3}{5n^4 +n}:$
+\begin{multipleChoice}
+\choice[correct]{Converges by LCT}
+\choice{Diverges by LCT}
+\choice{No Conclusion from LCT}
+\end{multipleChoice}
+
+\end{problem}
+
+
+\begin{remark}
+Since the limits
+\[
+\lim_{n \to \infty} \sin(n) \;\; \text{ and } \;\; \lim_{n \to \infty} \cos(n)
+\]
+do not exist (due to oscillation), the LCT is generally not effective in problems involving $\sin(n)$ and $\cos(n)$. Try the DCT instead.
+\end{remark}
+
+\section{Video Lesson}
+
 \begin{center}
 \begin{foldable}
-\unfoldable{Here is a detailed, lecture style video on average value:}
-\youtube{gRJTe1i1muo}
+\unfoldable{Here is a detailed, lecture style video on the Limit Comparison Test:}
+\youtube{d2ei8EG-hyo}
 \end{foldable}
 \end{center}
 
+
+\section{More Problems}
+
+
+\begin{problem}
+Consider the series $\displaystyle{\sum_{n=0}^\infty \frac{6^n + 5}{3^n + 2}}$.
+Which series should we compare this to?
+
+\begin{multipleChoice}
+\choice[correct]{$\displaystyle{\sum_{n=0}^\infty 2^n}$}
+\choice{$\displaystyle{\sum_{n=0}^\infty 3^n}$}
+\choice{$\displaystyle{\sum_{n=0}^\infty \left(\frac52\right)^n}$}
+\end{multipleChoice}
+
+What is the value of the limit in the LCT?
+\begin{multipleChoice}
+\choice{$L = 0$}
+\choice{$L = 2/5$}
+\choice[correct]{$L = 1$}
+\end{multipleChoice}
+
+Describe the behavior of the series $\displaystyle{\sum_{n=0}^\infty \frac{6^n + 5}{3^n + 2}:}$
+\begin{multipleChoice}
+\choice{Converges by LCT}
+\choice[correct]{Diverges by LCT}
+\choice{No Conclusion from LCT}
+\end{multipleChoice}
+
+\end{problem}
+
+
+
+
+\begin{problem}
+Consider the series $\displaystyle{\sum_{n=1}^\infty \frac{3n^5 + 4}{2n^7 - 1}}$.
+Which series should we compare this to?
+
+\begin{multipleChoice}
+\choice{$\displaystyle{\sum_{n=1}^\infty \frac{1}{n}}$}
+\choice[correct]{$\displaystyle{\sum_{n=1}^\infty \frac{1}{n^2}}$}
+\choice{$\displaystyle{\sum_{n=1}^\infty \frac{1}{n^7}}$}
+\end{multipleChoice}
+
+What is the value of the limit in the LCT?
+\begin{multipleChoice}
+\choice{$L = 1$}
+\choice[correct]{$L = 3/2$}
+\choice{$L = 4$}
+\end{multipleChoice}
+
+Describe the behavior of the series $\displaystyle{\sum_{n=1}^\infty \frac{3n^5 + 4}{2n^7 - 1}:}$
+\begin{multipleChoice}
+\choice[correct]{Converges by LCT}
+\choice{Diverges by LCT}
+\choice{No Conclusion from LCT}
+\end{multipleChoice}
+
+\end{problem}
+
+
+
+
+\begin{problem}
+Consider the series $\displaystyle{\sum_{n=1}^\infty \frac{3n^4 -2}{4n^5 + 3n^4}}$.
+Which series should we compare this to?
+
+\begin{multipleChoice}
+\choice[correct]{$\displaystyle{\sum_{n=1}^\infty \frac{1}{n}}$}
+\choice{$\displaystyle{\sum_{n=1}^\infty \frac{1}{n^4}}$}
+\choice{$\displaystyle{\sum_{n=1}^\infty \frac{1}{n^5}}$}
+\end{multipleChoice}
+
+What is the value of the limit in the LCT?
+\begin{multipleChoice}
+\choice[correct]{$L = 1/2$}
+\choice{$L = 3/4$}
+\choice{$L = 1$}
+\end{multipleChoice}
+
+Describe the behavior of the series $\displaystyle{\sum_{n=1}^\infty \frac{3n^4 -2}{4n^5 + 3n^4}:}$
+\begin{multipleChoice}
+\choice{Converges by LCT}
+\choice[correct]{Diverges by LCT}
+\choice{No Conclusion from LCT}
+\end{multipleChoice}
+
+\end{problem}
+
+
+
+
+
+\begin{problem}
+Consider the series $\displaystyle{\sum_{n=1}^\infty \frac{n^2}{\sqrt{4n^8 - 3}}}$.
+Which series should we compare this to?
+
+\begin{multipleChoice}
+\choice[correct]{$\displaystyle{\sum_{n=1}^\infty \frac{1}{n^2}}$}
+\choice{$\displaystyle{\sum_{n=1}^\infty \frac{1}{n^4}}$}
+\choice{$\displaystyle{\sum_{n=1}^\infty \frac{1}{n^8}}$}
+\end{multipleChoice}
+
+What is the value of the limit in the LCT?
+\begin{multipleChoice}
+\choice{$L = 1/\sqrt3$}
+\choice{$L = 1/4$}
+\choice[correct]{$L = 1/2$}
+\end{multipleChoice}
+
+Describe the behavior of the series $\displaystyle{\sum_{n=1}^\infty \frac{4n^3 -3}{5n^4 +n}:}$
+\begin{multipleChoice}
+\choice[correct]{Converges by LCT}
+\choice{Diverges by LCT}
+\choice{No Conclusion from LCT}
+\end{multipleChoice}
+
+\end{problem}
 
 
 
 
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \begin{example} %example #15
