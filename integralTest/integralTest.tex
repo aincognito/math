@@ -2,75 +2,105 @@
 
 \input{../preamble}
 
-\outcome{Find the Average Value of a Function}
+\outcome{Determine series behavior based on a definite integral}
 
-\title{Average Value}
+\title{Integral Test}
 
 \begin{document}
 
 \begin{abstract}
-We find the average value of a function.
+We determine the convergence or divergence of an infinite series using a related improper integral.
 \end{abstract}
 
 \maketitle
 
-\begin{center}
-\textbf{Average Value}
-\end{center}
+\section{Integral Test}
 
-We will find the average value of a function on an interval 
-and find the value(s) of $x$ for which the function equals the 
-average (MVT for Integrals).
-
-\begin{theorem} Mean Value Theorem for Integrals 
+\begin{theorem}[Integral Test]
+Suppose that the function $f(x)$ is continuous, positive, and decreasing on the interval $(1, \infty)$ and 
+suppose that the terms of an infinite series
+are given by the corresponding function values, i.e., $a_n = f(n)$. \\
+Then the improper integral
 \[
-If
+\int_1^\infty f(x) \; dx.
 \]
+and the associated infinite series
+\[
+\sum_{n=1}^\infty a_n
+\]
+both converge or both diverge. In other words, the behavior of the improper integral 
+determines the behavior of the associated series.
+\end{theorem}
+
+\begin{example}
+Determine whether the series
+\[
+\sum_{n=0}^\infty \frac{1}{1+n^2}
+\]
+converges or diverges.\\
+Consider the function, $f(x) = \frac{1}{1+x^2}$, so that $a_n = f(n)$.
+This function is positive and continuous on the interval $(0, \infty)$.
+To see that the function is decreasing, we recall that if the derivative is negative then the function is decreasing.
+Using the Quotient Rule, we can see that the derivative is given by 
+\[
+f'(x) = -\frac{2x}{(1+x^2)^2}.
+\]
+Since $f'(x)$ is negative on the interval $(0, \infty)$, the original function $f(x)$ is decreasing on that interval.
+Hence the conditions of the Integral Test are met and the behavior of the series is determined by the behavior of the improper integral:
+\begin{align*}
+\int_0^\infty \frac{1}{1+x^2} \; dx &= \lim_{b \to \infty} \int_0^b \frac{1}{1+x^2} \; dx\\
+&= \lim_{b \to \infty} \tan^{-1}(x) \bigg|_0^b \\
+&= \lim_{b \to \infty} \left[\tan^{-1}(b) - \tan^{-1}(0)\right]\\
+&= \lim_{b \to \infty} \left[\tan^{-1}(b)\right]\\
+&= \frac{\pi}{2}.
+\end{align*}
+We see that the improper integral converges. By the Integral Test, the associated infinite series
+\[
+\sum_{n=0}^\infty \frac{1}{1+n^2}
+\]
+also converges.
+\end{example}
+
+
+\begin{definition}[p-series]
+Let $p > 0$. The infinite series
+\[
+\sum_{n=1}^\infty \frac{1}{n^p}
+\]
+is called a \textbf{$p$-series}. In the special case $p = 1$, the series is known as the \textbf{harmonic series}.
+\end{definition}
+
+We have seen in the section on improper integrals that the $p$-integral
+
+\[
+\int_1^\infty \frac{1}{x^p} \; dx.
+\]
+converges if $p > 1$ and diverges if $p \leq 1$.
+Since the function $f(x) = 1/x^p \; (p > 0)$ is continuous, positive, and decreasing on the interval $(1, \infty)$,
+the integral test can be applied to conclude that the associated $p$-series has the same behavior.  This is stated in the following theorem.
+
+
+\begin{theorem}[$p$-series]
+The series
+\[
+\sum_{n=1}^\infty \frac{1}{n^p}
+\]
+converges if $p > 1$ and diverges if $p \leq 1$.
 \end{theorem}
 
 
-
-
-
-
-\begin{example} %example #1
-Find the average...
- \[
-  f(x) = 
-  \]
-\end{example}
+\section{Video Lesson}
 
 \begin{center}
 \begin{foldable}
-\unfoldable{Here is a video of Example 1}
-%\youtube{Yy6QXnFlnXs} %vid of example 1
+\unfoldable{Here is a detailed, lecture style video on the Integral Test:}
+\youtube{db7NqcbCO4w&t}
 \end{foldable}
 \end{center}
 
 
-\begin{problem} %problem #1
-  Find the average...
-  \[
-  f(x)
-  \]
-    \begin{hint}
-      compute a definite integral
-    \end{hint}
-    
-		
-		The average value is
-		 $\answer[given]{0}$
-\end{problem}
 
-
-\begin{center}
-\begin{foldable}
-\unfoldable{Here is a detailed, lecture style video on average value:}
-\youtube{gRJTe1i1muo}
-\end{foldable}
-\end{center}
-
-
+\section{More Problems}
 
 
 
@@ -151,4 +181,3 @@ Hello
 \begin{freeResponse}
 What is the chain rule used for?
 \end{freeResponse}
-
