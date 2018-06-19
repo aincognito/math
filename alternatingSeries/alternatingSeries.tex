@@ -14,54 +14,328 @@ We use the Alternating Series Test to determine convergence of infinite series.
 
 \maketitle
 
-\begin{center}
-\textbf{The Alternating Series Test}
-\end{center}
+\section{The Alternating Series Test}
 
-A series of the form
-\[\sum_{n=1}^\infty (-1)^n a_n\]
-is called an \textbf{alternating series}.
-
-\begin{theorem} Alternating Series Test (AST)
+An alternating series is an infinite series whose terms alternate signs.
+A typical \textbf{alternating series} has the form 
 \[
-If
+\sum_{n=1}^\infty (-1)^n a_n,
 \]
+where $a_n > 0$ for all $n$. We will refer to the factor $(-1)^n$ as the \textbf{alternating symbol}.
+
+Some examples of alternating series are
+\begin{itemize}
+
+\item $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{1}{n} = 1 - \frac12 + \frac13 - \frac14 + \cdots  }\, .$  This is the \textbf{Alternating Harmonic Series}.
+
+\item $\displaystyle{\sum_{n=0}^\infty \left(-\frac12\right)^n = 1 - \frac12 + \frac14 - \frac18 + \cdots }\, .$  This is an alternating geometric series with $r=-1/2$.
+Since $-1 < -\frac12 < 1$, we know from our earlier study of geometric series that this alternating series converges.
+
+\item $\displaystyle{\sum_{n=0}^\infty \frac{\cos(n\pi)}{(n+1)^2} = 1 - \frac14 + \frac19 - \frac{1}{16} + \cdots}\, .$ 
+In this example, $\cos(n\pi)$ could be replaced by the standard alternating symbol $(-1)^n$.
+
+
+\item $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{1}{n^p} = 1 - \frac{1}{2^p} + \frac{1}{3^p} - \frac{1}{4^p} + \cdots  }\, .$  This is an \textbf{Alternating $p$-Series}.
+
+
+\end{itemize}
+
+\begin{theorem} Alternating Series Test (AST)\\
+The alternating series, $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} a_n}$ converges if the following two conditions are met:
+\begin{itemize}
+\item[1.] $\displaystyle{\lim_{n\to\infty} a_n = 0}$,
+\item[2.] the terms $a_n$ are decreasing, i.e., $a_{n+1} \leq a_n$.
+\end{itemize}
 \end{theorem}
 
 
+\begin{remark} If the first condition does not hold, i.e., if 
+$\displaystyle{\lim_{n\to\infty} a_n \neq 0}$, 
+then the alternating series diverges (by the Test for Divergence).
+\end{remark}
 
+\begin{remark}
+The second condition can be weakened to say the terms $a_n$ are eventually decreasing, i.e., decreasing from some term onward.
+\end{remark}
 
+\begin{remark} 
+If the first condition is satisfied but the second condition is not, then the AST gives \textbf{no conclusion} about the alternating series.
+\end{remark}
 
-
-\begin{example} %example #1
-Use the AST to show that the series converges
- \[
-  \sum_{n=1}^\infty (-1)^n \frac{1}{n}
-  \]
+\begin{example}[Alternating Harmonic Series] The alternating harmonic series, 
+$\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{1}{n}}$ converges by the AST. 
+To see this, first, 
+\[
+\lim_{n\to\infty} \frac{1}{n} = 0,
+\]
+and second,
+the terms are decreasing since 
+\[
+\frac{1}{n+1} < \frac{1}{n}
+\]
+for all $n \geq 1$. Since both conditions are satisfied, the alternating harmonic series converges by the AST.
+Moreover, it is known that the alternating harmonic series converges to the value $\ln(2)$ as we will see in the section on Power Series.
 \end{example}
 
-\begin{center}
-\begin{foldable}
-\unfoldable{Here is a video of Example 1}
-%\youtube{Yy6QXnFlnXs} %vid of example 1
-\end{foldable}
-\end{center}
+\begin{problem}
+Consider the series $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{1}{\sqrt n}}$.\\
+First, find the limit:
+\[
+\lim_{n\to\infty} \frac{1}{\sqrt n} = \answer{0}.
+\]
+Which of the following is true?
+\begin{multipleChoice}
+\choice[correct]{$\displaystyle{\frac{1}{\sqrt{n+1}} < \frac{1}{\sqrt n}}$ for $n \geq 1$}
+\choice{$\displaystyle{\frac{1}{\sqrt{n+1}} > \frac{1}{\sqrt n}}$ for $n \geq 1$}
+\choice{neither}
+\end{multipleChoice}
 
-The series in the above example is the well known \textbf{alternating harmonic series}.  We showed that this series converges and more precisely, it is known that it converges to the value $\ln(2)$.  We will see this when we study Power Series.
 
-\begin{problem} %problem #1
-  We will use the AST to show the following series converges:
-  \[
-  \sum_{n=1}^\infty (-1)^n \frac{1}{n^2}
-  \]
-    \begin{hint}
-      we need $a_n \to 0$
-    \end{hint}
-    
-		
-		The series
-		 $\answer[given]{converges}$
+Describe the behavior of the series $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{1}{\sqrt n}:}$
+\begin{multipleChoice}
+\choice[correct]{Converges by AST}
+\choice{Diverges by Test for Divergence}
+\choice{No Conclusion from AST}
+\end{multipleChoice}
+
 \end{problem}
+
+
+
+\begin{problem}
+Consider the series $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{1}{n^2}}$.\\
+First, find the limit:
+\[
+\lim_{n\to\infty} \frac{1}{n^2} = \answer{0}.
+\]
+Which of the following is true?
+\begin{multipleChoice}
+\choice[correct]{$\displaystyle{\frac{1}{(n+1)^2} < \frac{1}{n^2}}$ for $n \geq 1$}
+\choice{$\displaystyle{\frac{1}{(n+1)^2} > \frac{1}{n^2}}$ for $n \geq 1$}
+\choice{neither}
+\end{multipleChoice}
+
+
+Describe the behavior of the series $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{1}{n^2}:}$
+\begin{multipleChoice}
+\choice[correct]{Converges by AST}
+\choice{Diverges by Test for Divergence}
+\choice{No Conclusion from AST}
+\end{multipleChoice}
+
+\end{problem}
+
+
+
+\begin{problem}
+Consider the series $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{n}{n+1}}$.\\
+First, find the limit:
+\[
+\lim_{n\to\infty} \frac{n}{n+1} = \answer{1}.
+\]
+Which of the following is true?
+\begin{multipleChoice}
+\choice{$\displaystyle{\frac{n+1}{n+2} < \frac{n}{n+1}}$ for $n \geq 1$}
+\choice[correct]{$\displaystyle{\frac{n+1}{n+2} > \frac{n}{n+1}}$ for $n \geq 1$}
+\choice{neither}
+\end{multipleChoice}
+
+
+Describe the behavior of the series $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{n}{n+1}:}$
+\begin{multipleChoice}
+\choice{Converges by AST}
+\choice[correct]{Diverges by Test for Divergence}
+\choice{No Conclusion from AST}
+\end{multipleChoice}
+
+\end{problem}
+
+
+\begin{problem}
+Consider the series $\displaystyle{\sum_{n=2}^\infty (-1)^n \frac{1}{\ln n}}$.\\
+First, find the limit:
+\[
+\lim_{n\to\infty} \frac{1}{\ln n} = \answer{0}.
+\]
+Which of the following is true?
+\begin{multipleChoice}
+\choice[correct]{$\displaystyle{\frac{1}{\ln(n+1)} < \frac{1}{\ln n}}$ for $n \geq 2$}
+\choice{$\displaystyle{\frac{1}{\ln(n+1)} > \frac{1}{\ln n}}$ for $n \geq 2$}
+\choice{neither}
+\end{multipleChoice}
+
+
+Describe the behavior of the series $\displaystyle{\sum_{n=2}^\infty (-1)^n \frac{1}{\ln n}:}$
+\begin{multipleChoice}
+\choice[correct]{Converges by AST}
+\choice{Diverges by Test for Divergence}
+\choice{No Conclusion from AST}
+\end{multipleChoice}
+
+\end{problem}
+
+
+
+\begin{example}[Alternating $p$-Series]
+For $p > 0$, the alternating $p$-series, 
+$\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{1}{n^p}}$ converges by the AST. 
+To see this, first, 
+\[
+\lim_{n\to\infty} \frac{1}{n^p} = 0,
+\]
+and second,
+the terms are decreasing since 
+\[
+\frac{1}{(n+1)^p} < \frac{1}{n^p}
+\]
+for all $n \geq 1$. Since both conditions are satisfied, the alternating $p$-series converges by the AST.
+\end{example}
+
+\section{Absolute Versus Conditional Convergence}
+In general, the presence of the alternating symbol, $(-1)^n$, helps a series to converge. The alternating harmonic series and its non-alternating counterpart, the harmonic series, provide the quintessential example of this.
+The harmonic series diverges, but with the addition of the alternating symbol, the alternating harmonic series converges. 
+This leads us to investigate alternating series further by asking the question ``does a convergent alternating series require the alternating symbol to converge''?
+If an alternating series converges without the alternating symbol, then we say that it is \textbf{absolutely convergent}.  On the other hand, if a convergent alternating series
+diverges without the alternating symbol (like the harmonic series), then we say that the alternating series is \textbf{conditionally convergent}.
+We formalize these terms in the definition below.
+
+\begin{definition}[Absolute vs Conditional Convergence]
+Consider the alternating series
+\[
+S = \sum_{n=1}^\infty (-1)^{n+1} a_n,
+\]
+where $a_n > 0$ for all $n$.
+\begin{itemize}
+\item If the non-alternating counterpart, $\displaystyle{\sum_{n=1}^\infty a_n}$, converges, then we say that the original alternating series, $S$,
+\textbf{converges absolutely}.
+\item If the non-alternating counterpart, $\displaystyle{\sum_{n=1}^\infty  a_n}$, diverges, then we say that the original alternating series, $S$,  
+\textbf{converges conditionally}.
+\end{itemize}
+
+\end{definition}
+
+\begin{example}[Alternating $p$-series and the nature of their convergence]
+Consider the alternating $p$-series
+\[
+\sum_{n=1}^\infty (-1)^{n+1} \frac{1}{n^p},
+\]
+where $p > 0$. In our study of non-alternating $p$-series in the section on the Integral Test, we discovered that 
+the standard $p$-series, $\displaystyle{\sum_{n=1}^\infty \frac{1}{n^p}}$. converges if $p>1$ and diverges if $0 < p \leq 1$.
+In the above discussion, we noted that alternating $p$-series converge for all $p>0$. 
+Hence in the terminology of absolute and conditional convergence, we can say that 
+if $p>1$, the alternating $p$-series converges absolutely and if $0<p\leq 1$, the alternating $p$-series converges conditionally.
+\end{example}
+
+
+
+\begin{example}
+Determine whether the alternating series
+\[
+\sum_{n=0}^\infty (-1)^n \frac{n^2 + 2}{n^3 + 3}.
+\]
+converges absolutely, converges conditionally or diverges.\\
+First, we consider the non-alternating counterpart of the given series:
+\[
+\sum_{n=0}^\infty \frac{n^2 + 2}{n^3 + 3}.
+\]
+This series diverges by the Limit Comparison Test with the divergent Harmonic Series since,
+
+\[
+\lim_{n\to\infty} \frac{\left(\frac{n^2 + 2}{n^3 + 3} \right)}{\left(\frac{1}{n} \right)} = \lim_{n\to\infty} \frac{n^3 + 2n}{n^3 + 3} = 1,
+\]
+by the ratio of the lead coefficients. Since $0 < 1< \infty$ the non-alternating counterpart also diverges by the LCT.
+Next, we check for Conditional Convergence using the Alternating Series Test.
+The first condition is satisfied since
+\[
+\lim_{n\to\infty} \frac{n^2 + 2}{n^3 + 3} = 0.
+\]
+For the second condition, we must determine if the terms are (eventually) decreasing.  To do this, we will compute the derivative (using the quotient rule) and check to see if it is negative:
+\begin{align*}
+\frac{d}{dn} \left(\frac{n^2 + 2}{n^3 + 3} \right) &= \frac{(n^3 + 3)(2n) - (n^2 + 2)(3n^2)}{(n^3 + 3)^2}\\
+                                                            &= \frac{(2n^4 + 6n)-(3n^4+6n^2)}{(n^3 + 3)^2}\\
+                                                            &= \frac{6n - 6n^2 - n^4}{(n^3 + 3)^2}.
+\end{align*}
+The derivative is negative for $n>1$ since the numerator is negative and the denominator is positive when $n>1$.
+Hence the terms of the series are eventually decreasing and the second condition is also satisfied. Finally, since both conditions of the AST are satisfied,
+we can conclude that the original alternating series converges conditionally.
+
+\end{example}
+
+
+
+
+\begin{problem}
+Consider the series $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{n^3}{n^4 + 2}}$.\\
+Does its non-alternating counterpart converge?
+\begin{hint} 
+Consider the series without the alternating symbol.
+\end{hint}
+\begin{multipleChoice}
+\choice{Yes}
+\choice[correct]{No}
+\end{multipleChoice}
+
+Why?
+\begin{multipleChoice}
+\choice[correct]{Limit Comparison Test with the Harmonic Series}
+\choice{$p$-series with $0 <  p \leq 1$}
+\choice{geometric series with $|r| \geq 1$}
+\end{multipleChoice}
+
+
+
+
+Does the original alternating series converge absolutely?
+\begin{multipleChoice}
+\choice{Yes}
+\choice[correct]{No}
+\end{multipleChoice}
+
+We now use the AST to check for conditional convergence.
+
+First, find the limit:
+\[
+\lim_{n\to\infty} \frac{n^3}{n^4 + 2} = \answer{0}.
+\]
+
+The derivative of $\displaystyle{\frac{n^3}{n^4 + 2}}$ is  
+
+\begin{multipleChoice}
+\choice[correct]{$\displaystyle{\frac{6n^2 - n^6 }{(n^4 + 2)^2}}$}
+\choice{$\displaystyle{\frac{n^ 6 - 6n^2}{(n^4 + 2)^2}}$}
+\end{multipleChoice}
+
+
+The derivative is negative for $n > \answer{\sqrt[4]6}$.
+\begin{hint}
+Rewrite the numerator as $n^2(6-n^4)$
+\end{hint}
+\begin{hint}
+Solve $6 - n^4 = 0$
+\end{hint}
+
+Are the terms eventually decreasing?
+\begin{multipleChoice}
+\choice[correct]{Yes}
+\choice{No}
+\end{multipleChoice}
+
+
+Does the original alternating series converge conditionally?
+\begin{multipleChoice}
+\choice[correct]{Yes}
+\choice{No}
+\end{multipleChoice}
+
+
+\end{problem}
+
+
+
+
+\section{Video Lesson}
+
+
 
 
 \begin{center}
@@ -72,10 +346,311 @@ The series in the above example is the well known \textbf{alternating harmonic s
 \end{center}
 
 
+\section{More Problems}
+
+
+
+\begin{problem}
+Consider the series $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{1}{n\sqrt n}}$.\\
+Does its non-alternating counterpart converge?
+\begin{hint} 
+Consider the series without the alternating symbol.
+\end{hint}
+\begin{multipleChoice}
+\choice[correct]{Yes}
+\choice{No}
+\end{multipleChoice}
+
+Why?
+\begin{multipleChoice}
+\choice{$p$-series with $0< p \leq 1$}
+\choice[correct]{geometric series with $|r| \geq 1$}
+\end{multipleChoice}
+
+
+Does the original alternating series converge absolutely?
+\begin{multipleChoice}
+\choice[correct]{Yes}
+\choice{No}
+\end{multipleChoice}
+
+\end{problem}
+
+
+
+
+\begin{problem}
+Consider the series $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{1}{\sqrt[3] n}}$.\\
+Does its non-alternating counterpart converge?
+\begin{hint} 
+Consider the series without the alternating symbol.
+\end{hint}
+\begin{multipleChoice}
+\choice{Yes}
+\choice[correct]{No}
+\end{multipleChoice}
+
+Why?
+\begin{multipleChoice}
+\choice[correct]{$p$-series with $0< p \leq 1$}
+\choice{$p$-series with $ p > 1$}
+\end{multipleChoice}
+
+
+
+
+Does the original alternating series converge absolutely?
+\begin{multipleChoice}
+\choice{Yes}
+\choice[correct]{No}
+\end{multipleChoice}
+
+We now use the AST to check for conditional convergence.
+
+First, find the limit:
+\[
+\lim_{n\to\infty} \frac{1}{\sqrt[3] n} = \answer{0}.
+\]
+Which of the following is true?
+\begin{multipleChoice}
+\choice[correct]{$\displaystyle{\frac{1}{\sqrt[3]{n+1}} < \frac{1}{\sqrt[3] n}}$ for $n \geq 1$}
+\choice{$\displaystyle{\frac{1}{\sqrt[3]{n+1}} > \frac{1}{\sqrt[3] n}}$ for $n \geq 1$}
+\choice{neither}
+\end{multipleChoice}
+
+
+Does the series $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{1}{\sqrt[3] n}}$ converge conditionally?
+\begin{multipleChoice}
+\choice[correct]{Yes}
+\choice{No}
+\end{multipleChoice}
+
+\end{problem}
+
+
+
+
+\begin{problem}
+Consider the series $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{n}{n^2 + 1}}$.\\
+Does its non-alternating counterpart converge?
+\begin{hint} 
+Consider the series without the alternating symbol.
+\end{hint}
+\begin{multipleChoice}
+\choice{Yes}
+\choice[correct]{No}
+\end{multipleChoice}
+
+Why?
+\begin{multipleChoice}
+\choice[correct]{Limit Comparison Test with the Harmonic Series}
+\choice{$p$-series with $0 <  p \leq 1$}
+\choice{geometric series with $|r| \geq 1$}
+\end{multipleChoice}
+
+
+
+
+Does the original alternating series converge absolutely?
+\begin{multipleChoice}
+\choice{Yes}
+\choice[correct]{No}
+\end{multipleChoice}
+
+We now use the AST to check for conditional convergence.
+
+First, find the limit:
+\[
+\lim_{n\to\infty} \frac{n}{n^2 + 1} = \answer{0}.
+\]
+Which of the following is true? 
+\begin{hint}
+Use the derivative to check for decreasing
+\end{hint}
+\begin{multipleChoice}
+\choice[correct]{$\displaystyle{\frac{n+1}{(n+1)^2 + 1} < \frac{n}{n^2 + 1}}$ for $n \geq 1$}
+\choice{$\displaystyle{\frac{n+1}{(n+1)^2 + 1} > \frac{n}{n^2 + 1}}$ for $n \geq 1$}
+\choice{neither}
+\end{multipleChoice}
+
+
+Does the series $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{n}{n^2 + 1}}$ converge conditionally?
+\begin{multipleChoice}
+\choice[correct]{Yes}
+\choice{No}
+\end{multipleChoice}
+
+\end{problem}
+
+
+
+\begin{problem}
+Consider the series $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{n}{n^3 + 1}}$.\\
+Does its non-alternating counterpart converge?
+\begin{hint} 
+Consider the series without the alternating symbol.
+\end{hint}
+\begin{multipleChoice}
+\choice[correct]{Yes}
+\choice{No}
+\end{multipleChoice}
+
+Why?
+\begin{multipleChoice}
+\choice[correct]{Direct Comparison Test with $p$-series}
+\choice{$p$-series with $p > 1$}
+\choice{geometric series with $|r| < 1$}
+\end{multipleChoice}
+
+
+
+Does the original alternating series converge absolutely?
+\begin{multipleChoice}
+\choice[correct]{Yes}
+\choice{No}
+\end{multipleChoice}
+
+\end{problem}
+
+
+
+
+\begin{problem}
+Consider the series $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{\sqrt n}{n + 1}}$.\\
+Does its non-alternating counterpart converge?
+\begin{hint} 
+Consider the series without the alternating symbol.
+\end{hint}
+\begin{multipleChoice}
+\choice{Yes}
+\choice[correct]{No}
+\end{multipleChoice}
+
+Why?
+\begin{multipleChoice}
+\choice[correct]{Limit Comparison Test with $p$-series}
+\choice{$p$-series with $0 < p \leq 1$}
+\choice{geometric series with $|r| \geq 1$}
+\end{multipleChoice}
+
+
+
+
+Does the original alternating series converge absolutely?
+\begin{multipleChoice}
+\choice{Yes}
+\choice[correct]{No}
+\end{multipleChoice}
+
+We now use the AST to check for conditional convergence.
+
+First, find the limit:
+\[
+\lim_{n\to\infty} \frac{\sqrt n}{n + 1} = \answer{0}.
+\]
+Which of the following is true? 
+\begin{hint}
+Use the derivative to check for decreasing
+\end{hint}
+\begin{multipleChoice}
+\choice[correct]{$\displaystyle{\frac{\sqrt{n+1}}{n+2} < \frac{\sqrt n}{n + 1}}$ for $n \geq 1$}
+\choice{$\displaystyle{\frac{\sqrt{n+1}}{n+2} > \frac{\sqrt n}{n + 1}}$ for $n \geq 1$}
+\choice{neither}
+\end{multipleChoice}
+
+
+Does the series $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{\sqrt n}{n + 1}}$ converge conditionally?
+\begin{multipleChoice}
+\choice[correct]{Yes}
+\choice{No}
+\end{multipleChoice}
+
+\end{problem}
+
+
+
+
+
+
+\begin{problem}
+Consider the series $\displaystyle{\sum_{n=0}^\infty (-1)^n \frac{n^2 + 1}{n^2 + n + 1}}$.\\
+Does its non-alternating counterpart converge?
+\begin{hint} 
+Consider the series without the alternating symbol.
+\end{hint}
+\begin{multipleChoice}
+\choice{Yes}
+\choice[correct]{No}
+\end{multipleChoice}
+
+Why?
+\begin{multipleChoice}
+\choice{Limit Comparison Test with $p$-series}
+\choice{$p$-series with $0 < p \leq 1$}
+\choice[correct]{Test for Divergence}
+\end{multipleChoice}
+
+
+
+
+Does the original alternating series converge absolutely?
+\begin{multipleChoice}
+\choice{Yes}
+\choice[correct]{No}
+\end{multipleChoice}
+
+
+
+Find the limit:
+\[
+\lim_{n\to\infty} \frac{n^2 + 1}{n^2 + n + 1} = \answer{1}.
+\]
+
+Do we need to check the second condition of the AST?
+\begin{multipleChoice}
+\choice{Yes}
+\choice[correct]{No}
+\end{multipleChoice}
+
+
+What can we say about the series $\displaystyle{\sum_{n=0}^\infty (-1)^n \frac{n^2 + 1}{n^2 + n + 1}}$?
+\begin{multipleChoice}
+\choice{Converges Conditionally}
+\choice[correct]{Diverges}
+\choice{No Conclusion}
+\end{multipleChoice}
+
+\end{problem}
+
+
 
 
 
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \begin{example} %example #15
@@ -152,4 +727,3 @@ Hello
 \begin{freeResponse}
 What is the chain rule used for?
 \end{freeResponse}
-
