@@ -33,7 +33,7 @@ Suppose that a solid be placed atop an axis, say the $x-$axis, as shown in the f
 
 %visual aid here
 
-For each $x$ between $a$ and $b$, there is a cross-section of the solid whose area we will denote by $A(x)$.
+For each $x$-value between $x = a$ and $x = b$,  there is a cross-section of the solid whose area is $A(x)$.
 Then our astonishing result is that the volume of the solid can be computed as
 
 \[
@@ -41,7 +41,7 @@ V = \int_a^b A(x) \; dx.
 \]
 
 \begin{remark}
-We can also re-orient our axis so that it would be more aptly, named $y$, and with respect to this vertical axis, 
+We can also re-orient our axis so that it would be more aptly, named `$y$', and with respect to this vertical axis, 
 we could compute the volume with the exact same idea as
 \[
 V = \int_a^b A(y) \; dy.
@@ -54,27 +54,27 @@ V = \int_a^b A(y) \; dy.
 
 \begin{explanation}
 To be precise, we will next define the volume in terms of the limit of a Riemann Sums.  
-Let us reconsider the solid above, from the perspective of the x-axis. Suppose that at
-each $x-value$ there is a cross-sectional area $A(x)$. Then to approximate the volume of the solid we 
-can use a Riemann sum as follows. Subdivide $[0,1]$ into $n$ equal sub-intervals each of length $\Delta x = 1/n$.
-For each sub-interval (whose form is $\left[\frac{i-1}{n}, \frac{i}{n}\right]$) we choose a sample point and call it $x_i^*$, where 
-the index $i$ runs from $1$ to $n$. 
-Corresponding to these $n$ values of $x$, there are cross-sections whose areas are given by $A(x_i^*)$.
+Let us reconsider the solid above, from the perspective of the $x$-axis. Suppose that at
+each $x$-value there is a cross-sectional area $A(x)$. Then to approximate the volume of the solid we 
+can use a Riemann sum as follows. Subdivide $[0,1]$ into `$n$' equal sub-intervals each of length $\Delta x = 1/n$.
+From the $i^\text{th}$ sub-interval,$\left[\frac{i-1}{n}, \frac{i}{n}\right]$, we choose a sample point, $x_i^*$, where 
+the index, $i$, runs from $1$ to $n$. 
+Corresponding to these $n$ values, $x_i^*$, there are cross-sections whose areas are given by $A(x_i^*)$.
 From these cross-sections we can construct an irregular cylinder as shown below.
 
-%visual aid here of irregular cylinder
+INSERT FIGURE OF IRREGULAR CYLINDER HERE
 
-The volume of each of these $n$ cylinders is given by
+The volume of each of the $i^\text{th}$ cylinder is given by
 \[
-V = \text{area of base} \times \text{height} = A(x_i^*) \cdot \frac{1}{n} = A(x_i^*) \cdot \Delta x.
+V_i = \text{area of base} \times \text{height} = A(x_i^*) \cdot \frac{1}{n} = A(x_i^*) \cdot \Delta x.
 \]
-Summing the volumes of these $n$ cylinders gives an approximation to the volume as a Riemann Sum
+Summing the volumes of these cylinders gives an approximation to the volume as a Riemann Sum
 \[
-V \approx \sum_{i=1}^n A(x_i^*) \Delta x.
+V \approx \sum_{i=1}^n V_i = \sum_{i=1}^n A(x_i^*) \Delta x.
 \]
-The exact volume is then defined in terms of a limit these Riemann Sums as $n$ tends to infinity,
+The exact volume is then defined in terms of a limit these Riemann Sums:
 \[
-V = \int_0^1 A(x) \; dx = \lim_{n \to \infty} \sum_{i=1}^n A(x_i^*) \Delta x.
+V = \lim_{n \to \infty} \sum_{i=1}^n A(x_i^*) \Delta x = \int_0^1 A(x) \; dx.
 \]
 
 \end{explanation}
@@ -90,12 +90,99 @@ In this context,
 \[
 \Delta x = \frac{b-a}{n}
 \] 
-and $x_i^*$ is a sample point in the $i$-th sub-interval
+and $x_i^*$ is a sample point in the $i^\text{th}$ sub-interval
 \[
 [a + (i-1)\Delta x, a + i\Delta x],
 \]
 where $i = 1, 2, \dots, n$.
 \end{definition}
+
+
+\begin{example} Compute the volume of a pyramid of height $h$ with a square base of side length $b$.\\
+We will place the $y$-axis through the pyramid so that the apex passes through the axis at $h$ and the center of the base passes through 
+the axis at $0$.
+
+INSERT FIGURE HERE
+
+The cross sections of the pyramid are squares and the area of a square of side $s$ is $A = s^2$.
+The side length depends on $y$, so we will denote it by $s(y)$ to emphasize this fact. For example, $s(0) = b$ since at the height $0$, the square is 
+the base of the pyramid which has side length $b$. Also $s(h) = 0$ since the apex (a single point) is at the height $h$ on the $y$-axis.
+Also, $s(y) = 0$ if $y>h$ or $y<0$ since the pyramid only exists for $y$ values between $0$ and $h$.
+From the definition of volume given above, we can express the volume of the pyramid by the definite integral 
+\[
+V = \int_0^h s(y)^2 \; dy.
+\]
+In order to compute this integral, we need to find an explicit formula for $s(y)$.
+The method for finding $s(y)$ involves using \textbf{similar triangles}. We will create two triangles- 
+the first is a vertical cross section of the pyramid through the apex and has height $h$ (the height of the pyramid) 
+and base $b$ (the base of the pyramid). 
+
+INSERT FIGURE HERE
+
+The second triangle is positioned inside the first in such a way that it has height $h-y$, extending from $y$ up to $h$ on the $y$-axis,
+and base $s(y)$ measured through the $y$-axis perpendicular to the side of the square cross section at height $y$.
+
+INSERT FIGURE HERE
+
+These two triangles are similar because they have the same angles. Because the triangles are similar, the ratio of the base to 
+the height of each triangle is the same, 
+i.e.,
+\[
+\frac{s(y)}{h-y} = {b}{h}.
+\]
+ Solving for $s(y)$ gives
+ \[
+ s(y) = \frac{(h-y)b}{h} = \frac{h-y}{h} \cdot b = \left(1-\frac{y}{h}\right)b.
+ \]
+ We can now compute the volume of the pyramid by computing the definite integral given above:
+ \begin{align*}
+ V &= \int_0^h s(y)^2 \; dy\\
+   &= \int_0^h \left(1-\frac{y}{h}\right)^2b^2 \; dy
+   &= b^2 \int_0^h \left(1 - \frac{2y}{h} + \frac{y^2}{h^2}\right)\; dy
+   &= b^2 \left(y - \frac{y^2}{h} + \frac{y^3}{3h^2}\right)\bigg|_0^h\\
+   &= b^2 \left(h - \frac{h^2}{h} + \frac{h^3}{3h^2}\right)\\
+   &= b^2 \left(h - h + \frac{h}{3}\right)\\
+   &= \frac13 b^2h.
+\end{align*}
+
+\end{example}
+ 
+ 
+ 
+
+
+\begin{example}  Find the volume of the intersection of two cylinders of radius $r$ show in the figure.
+
+INSERT FIGURE HERE
+
+Place the $x$-axis through the center of one of the cylinders, with the center of the other cylinder at $x = 0$.
+For values of $x$ in the interval $[-r, r]$, cross sections of the region taken perpendicular 
+to the $x$-axis are squares with side length $s(x)$ (see the interactive diagram). 
+
+The volume of the region is then given by the definite integral
+\[
+V = \int_{-r}^r s(x)^2 \; dx.
+\]
+
+To find the side length of the square cross-section, $s(x)$, consider the circle of radius $r$ centered at the origin, $x^2 + y^2 = r^2$. For a given value of $x$, the side 
+length $s(x)$ is the difference between the corresponding $y$-coordinates on this circle (see the figure below). Solving for $y$, we see that those coordinates are 
+$\sqrt{r^2 - x^2}$ and $-\sqrt{r^2 - x^2}$ so that the difference is 
+\[
+s(x) = \sqrt{r^2 - x^2}-(-\sqrt{r^2 - x^2}) = 2\sqrt{r^2 - x^2}.
+\]
+The volume of the region  is then
+\begin{align*}
+V &= \int_{-r}^r s(x)^2 \; dx\\
+  &= \int_{-r}^r \left(2\sqrt{r^2 - x^2}\right)^2 \; dx\\
+  &= \int_{-r}^r 4(r^2 - x^2) \; dx\\
+  &= \int_{-r}^r (4r^2 - 4x^2) \; dx\\
+  &= \left(4r^2x - \frac43x^3\right)\bigg|_{-r}^r\\
+  &= \left(4r^3 - \frac43r^3\right) - \left(-4r^3 + \frac43 r^3\right)\\
+  &= 8r^3 - \frac83 r^3\\
+  &= \frac{16}{3} r^3.
+\end{align*}
+
+\end{example}
 
 
 

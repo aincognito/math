@@ -9,65 +9,116 @@
 \begin{document}
 
 \begin{abstract}
-We find the Taylor Series of a function.
+We find the Taylor Series for a function.
 \end{abstract}
 
 \maketitle
 
 \section{Taylor Series}
 
-We will find the average value of a function on an interval 
-and find the value(s) of $x$ for which the function equals the 
-average (MVT for Integrals).
+In this section, we will find a power series expansion centered at $x = a$ for a given infinitely differentiable function, $f(x)$.
+Such a series is called a Taylor Series.  In the case that $a = 0$, we call the series a Maclaurin Series.
 
-\begin{theorem} Mean Value Theorem for Integrals 
+In other words, for a given function $f(x)$ and a given center, $x = a$, we wish to create a power series so that
 \[
-If
+f(x) = \sum_{n=0}^\infty c_n (x-a)^n = c_0 + c_1(x-a) + c_2(x-a)^2 + \cdots,
 \]
+where the series converges in an interval of the form $(a-r, a+r)$ for some $r >0$. This is an interval centered at $x = a$ of radius $r$.
+The key to creating the Taylor Series is to find the coefficients, $c_n$.
+To find $c_0$, simply plug $x = a$ into both sides of the equation above. We get:
+\[
+f(a) = \sum_{n=0}^\infty c_n (a-a)^n = c_0 + c_1(a-a) + c_2(a-a)^2 + \cdots = c_0.
+\]
+Next, to find $c_1$, we differentiate both sides of the equation above, and then plug in $x = a$.
+Differentiating gives
+\[
+f'(x) = c_1 + 2c_2(x-a) + 3c_3(x-a)^2 + \cdots,
+\]
+and plugging in $x = a$, this simplifies to 
+\[
+f'(a) = c_1 + 2c_2(a-a) + 3c_3(a-a)^2 + \cdots = c_1.
+\]
+
+Next, to find $c_2$, we differentiate both sides of the equation above, and then plug in $x = a$.
+Differentiating gives
+\[
+f''(x) = 2c_2 + 3\cdot 2 c_3(x-a) + 4\cdot 3 c_4(x-a)^2 + \cdots,
+\]
+and plugging in $x = a$, this simplifies to 
+\[
+f''(a) = 2c_2 + 3\cdot 2 c_3(a-a) + 4\cdot 3 c_4(a-a)^2 + \cdots = 2c_2,
+\]
+so that $c_2 = \frac{f''(a)}{2}$.
+
+Continuing in this fashion, we can find $c_3$:
+\[
+f'''(x) = 3 \cdot 2 \cdot 1 c_3 + 4\cdot 3 \cdot 2 c_4 (x-a) + 5 \cdot 4 \cdot 3 c_5 (x-a)^2 + \cdots,
+\]
+and plugging in $x = a$ gives
+\[
+f'''(a) = 3 \cdot 2 \cdot 1 c_3 + 4\cdot 3 \cdot 2 c_4 (a-a) + 5 \cdot 4 \cdot 3 c_5 (a-a)^2 + \cdots = 6c_3,
+\]
+so that $c_3 = \frac{f'''(a)}{6}$.
+The pattern continues, so that $c_4 = \frac{f^{(4)}(a)}{4\cdot 3 \cdot 2 \cdot 1} = \frac{f^{(4)}(a)}{24}$
+and $c_5 = \frac{f^{(5)}(a)}{5\cdot 4 \cdot 3 \cdot 2 \cdot 1} = \frac{f^{(5)}(a)}{120}$.
+In general, we have $c_n = \frac{f^{(n)}(a)}{n\cdot (n-1) \cdot (n-2) \cdot \dots \cdot 1} = \frac{f^{(n)}(a)}{n!}$.
+We present this results in the following theorem.
+
+\begin{theorem}[Taylor Series]
+Given a function $f(x)$ with derivatives of all orders at $x = a$, we can write $f(x)$ as a power series,
+\[
+f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n.
+\]
+This is called the \textbf{Taylor Series} for $f(x)$ centered at $x = a$. In the case that $a = 0$, the series has the form
+\[
+ f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(0)}{n!} x^n,
+\]
+and is called the \textbf{Maclaurin Series} for $f(x)$.
 \end{theorem}
 
+\begin{example} Find the first four terms of the Taylor Series $f(x) = \sqrt x$ centered at $x = 4$.\\
+Since we are asked to find the first four terms, we must find the coefficients $c _0, c_1, c_2$ and $c_3$
+and the answer will have the form 
+\[
+\sqrt x = c_0 + c_1(x-4) + c_2(x-4)^2 + c_3(x-4)^3 + \cdots .
+\]
+To find the coefficients, we create the following table:
 
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$n$ & $f^{(n)}(x)$ & $f^{(n)}(4)$ & $c_n$ \\
+\hline
+$0$ & $x^{1/2}$ & $4^{1/2} = 2$ & $2$ \\[8pt]
+\hline
+$1$ & $\frac12 x^{-1/2}$ & $\frac12 \cdot 4^{-1/2} = \frac14$ & $\frac14$ \\[9pt]
+\hline
+$2$ & $-\frac14 x^{-3/2}$ & $-\frac14 \cdot 4^{-3/2} = -\frac14 \cdot \frac18 = -\frac{1}{32}$ & $-\frac{1}{64}$ \\[9pt]
+\hline
+$3$ & $\frac38 x^{-5/2}$ & $\frac38 \cdot 4^{-5/2} = \frac38 \cdot \frac{1}{32} = -\frac{3}{256}$ & $-\frac{1}{512}$ \\[9pt]
+\hline
+\end{tabular}
+\end{center}
 
-
-
-
-\begin{example} %example #1
-Find the average...
- \[
-  f(x) = 
-  \]
 \end{example}
 
+\section{Video Lessons}
+
 \begin{center}
 \begin{foldable}
-\unfoldable{Here is a video of Example 1}
-%\youtube{Yy6QXnFlnXs} %vid of example 1
+\unfoldable{Here is a detailed, lecture style video on Taylor Series:}
+\youtube{YMTCxncDa4k}
 \end{foldable}
 \end{center}
 
 
-\begin{problem} %problem #1
-  Find the average...
-  \[
-  f(x)
-  \]
-    \begin{hint}
-      compute a definite integral
-    \end{hint}
-    
-		
-		The average value is
-		 $\answer[given]{0}$
-\end{problem}
-
 
 \begin{center}
 \begin{foldable}
-\unfoldable{Here is a detailed, lecture style video on average value:}
-\youtube{gRJTe1i1muo}
+\unfoldable{Here is a detailed, lecture style video on Maclaurin Series:}
+\youtube{aa9rcfNJrfk}
 \end{foldable}
 \end{center}
-
 
 
 

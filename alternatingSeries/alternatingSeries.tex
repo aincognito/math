@@ -29,7 +29,11 @@ Some examples of alternating series are
 \item $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{1}{n} = 1 - \frac12 + \frac13 - \frac14 + \cdots  }\, .$  This is the \textbf{Alternating Harmonic Series}.
 
 \item $\displaystyle{\sum_{n=0}^\infty \left(-\frac12\right)^n = 1 - \frac12 + \frac14 - \frac18 + \cdots }\, .$  This is an alternating geometric series with $r=-1/2$.
-Since $-1 < -\frac12 < 1$, we know from our earlier study of geometric series that this alternating series converges.
+Since $-1 < -\frac12 < 1$, we know from our earlier study of geometric series that this alternating series converges and 
+the sum is 
+\[
+S = \frac{a}{1-r} = \frac{1}{1-(-1/2)} = \frac23.
+\]
 
 \item $\displaystyle{\sum_{n=0}^\infty \frac{\cos(n\pi)}{(n+1)^2} = 1 - \frac14 + \frac19 - \frac{1}{16} + \cdots}\, .$ 
 In this example, $\cos(n\pi)$ could be replaced by the standard alternating symbol $(-1)^n$.
@@ -41,10 +45,14 @@ In this example, $\cos(n\pi)$ could be replaced by the standard alternating symb
 \end{itemize}
 
 \begin{theorem} Alternating Series Test (AST)\\
-The alternating series, $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} a_n}$ converges if the following two conditions are met:
+The alternating series, 
+\[
+\sum_{n=1}^\infty (-1)^{n+1} a_n = a_1 - a_2 + a_3 - a_4 + \cdots
+\]
+\textbf{converges} if the following two conditions are met:
 \begin{itemize}
 \item[1.] $\displaystyle{\lim_{n\to\infty} a_n = 0}$,
-\item[2.] the terms $a_n$ are decreasing, i.e., $a_{n+1} \leq a_n$.
+\item[2.] the terms, $a_n$, are decreasing, i.e., $a_{n+1} \leq a_n$ for all $n$.
 \end{itemize}
 \end{theorem}
 
@@ -55,7 +63,7 @@ then the alternating series diverges (by the Test for Divergence).
 \end{remark}
 
 \begin{remark}
-The second condition can be weakened to say the terms $a_n$ are eventually decreasing, i.e., decreasing from some term onward.
+The second condition can be weakened to say the terms, $a_n$, are eventually decreasing, i.e., decreasing from some term onward.
 \end{remark}
 
 \begin{remark} 
