@@ -84,51 +84,30 @@ and the answer will have the form
 \]
 To find the coefficients, we create the following table:
 
-\begin{center}
-\begin{tabular}{|c|c|c|c|}
+\[
+\begin{array}{|c|c|c|c|} 
 \hline
-
-$n$ & $f^{(n)}(x)$ & $f^{(n)}(a), a = 4$ & $c_n$ \\[8pt]
-
-$0$ & $x^{1/2}$ & $4^{1/2} = 2$ & $2$ \\[8pt]
-
-$1$ & $\frac12 x^{-1/2}$ & $\frac12 \cdot 4^{-1/2} = \frac14$ & $\frac14$ \\[8pt]
-
-$2$ & $-\frac14 x^{-3/2}$ & $-\frac14 \cdot 4^{-3/2} = -\frac14 \cdot \frac18 = -\frac{1}{32}$ & $-\frac{1}{64}$ \\[8pt]
-
-$3$ & $\frac38 x^{-5/2}$ & $\frac38 \cdot 4^{-5/2} = \frac38 \cdot \frac{1}{32} = -\frac{3}{256}$ & $-\frac{1}{512}$ \\[8pt]
-
-\end{tabular}
-\end{center}
-
-
-\begin{table}[ht]
-\caption{Finding the Coefficients, $c_n$}
-\centering
-\begin{tabular}{|c|c|c|c|}
+\raisebox{7pt}{\phantom{i}}\textbf{$n$} & \textbf{$f^{(n)}(x)$} & \textbf{$f^{(n)}(a), a = 4$} & \textbf{$c_n$} \\[1em] 
 \hline
-\raisebox{12pt}{\phantom{i}}\textbf{$n$} & \textbf{$f^{(n)}(x)$} & \textbf{$f^{(n)}(a), a = 4$} & \textbf{$c_n$} \\[1em]
+\raisebox{7pt}{\phantom{i}} 0 & x^{1/2} & 4^{1/2} = 2 & 2 \\[1em]
 \hline
-\raisebox{12pt}{\phantom{i}}$0$ & $x^{1/2}$ &\raisebox{8pt}{\phantom{M}} $4^{1/2} = 2$ & $2$ \\[1em]
+\raisebox{12pt}{\phantom{i}} 1 & \frac12 x^{-1/2} & \frac12 \cdot 4^{-1/2} = \frac14 & \frac14 \\[1em]
 \hline
-\raisebox{12pt}{\phantom{i}}$1$ & $\frac12 x^{-1/2}$ & \raisebox{8pt}{\phantom{M}}$\displaystyle{\frac12 \cdot 4^{-1/2} = \frac14}$ & $\frac14$ \\[1em]
+\raisebox{12pt}{\phantom{i}}  2 & -\frac14 x^{-3/2} & -\frac14 \cdot 4^{-3/2} 
+= -\frac14 \cdot \frac18 = -\frac{1}{32} & -\frac{1}{64} \\[1em]
 \hline
-\raisebox{12pt}{\phantom{i}} $2$ & \raisebox{12pt}{\phantom{i}}$-\frac14 x^{-3/2}$ & $\begin{aligned}-\frac14 \cdot 4^{-3/2} 
-= -\frac14 \cdot \frac18 = -\frac{1}{32}\end{aligned}$ & $-\frac{1}{64}$ \\[1em]
+\raisebox{12pt}{\phantom{i}}  3 & \frac38 x^{-5/2} & \frac38 \cdot 4^{-5/2} = \frac38 \cdot \frac{1}{32} = -\frac{3}{256} & -\frac{1}{512}\\[1em]
 \hline
-\raisebox{12pt}{\phantom{i}} $3$ & $\frac38 x^{-5/2}$ & $\frac38 \cdot 4^{-5/2} = \frac38 \cdot \frac{1}{32} = -\frac{3}{256}$ & $-\frac{1}{512}$ \\[1em]
-\hline
-\end{tabular}
-\end{table}
+\end{array}
+\]
 
 
 
-
-
-
-
-
-
+We can now use the coefficients in the right-hand column of the table to write the final answer:
+\begin{align*}
+\sqrt x &= c_0 + c_1(x-4) + c_2(x-4)^2 + c_3(x-4)^3 + \cdots \\
+        &= 2 + \frac14(x-4) -\frac{1}{64}(x-4)^2 - \frac{1}{512}(x-4)^3 + \cdots
+\end{align*}
 
 \end{example}
 
@@ -154,6 +133,48 @@ $3$ & $\frac38 x^{-5/2}$ & $\frac38 \cdot 4^{-5/2} = \frac38 \cdot \frac{1}{32} 
 
 
 \end{document}
+
+
+
+\begin{table}[ht]
+\caption{Finding the Coefficients, $c_n$}
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\raisebox{7pt}{\phantom{i}}\textbf{$n$} & \textbf{$f^{(n)}(x)$} & \textbf{$f^{(n)}(a), a = 4$} & \textbf{$c_n$} \\
+\hline
+\raisebox{7pt}{\phantom{i}}$0$ & $x^{1/2}$ &\raisebox{8pt}{\phantom{M}} $4^{1/2} = 2$ & $2$ \\
+\hline
+\raisebox{7pt}{\phantom{i}}$1$ & $\frac12 x^{-1/2}$ & \raisebox{8pt}{\phantom{M}}$\displaystyle{\frac12 \cdot 4^{-1/2} = \frac14}$ & $\frac14$ \\
+\hline
+\raisebox{7pt}{\phantom{i}} $2$ & \raisebox{12pt}{\phantom{i}}$-\frac14 x^{-3/2}$ & $-\frac14 \cdot 4^{-3/2} 
+= -\frac14 \cdot \frac18 = -\frac{1}{32}$ & $-\frac{1}{64}$ \\
+\hline
+\raisebox{7pt}{\phantom{i}} $3$ & $\frac38 x^{-5/2}$ & $\frac38 \cdot 4^{-5/2} = \frac38 \cdot \frac{1}{32} = -\frac{3}{256}$ & $-\frac{1}{512}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+
+\begin{array}{|c|c|c|c|}  
+\hline
+\textbf{$n$} & \textbf{$f^{(n)}(x)$} & \textbf{$f^{(n)}(a), a = 4$} & \textbf{$c_n$} \\
+\hline
+$0$ & $x^{1/2}$ & $4^{1/2} = 2$ & $2$ \\
+\hline
+$1$ & $\frac12 x^{-1/2}$ & $\frac12 \cdot 4^{-1/2} = \frac14$ & $\frac14$ \\
+\hline
+ $2$ & $-\frac14 x^{-3/2}$ & $-\frac14 \cdot 4^{-3/2} 
+= -\frac14 \cdot \frac18 = -\frac{1}{32}$ & $-\frac{1}{64}$ \\
+\hline
+ $3$ & $\frac38 x^{-5/2}$ & $\frac38 \cdot 4^{-5/2} = \frac38 \cdot \frac{1}{32} = -\frac{3}{256}$ & $-\frac{1}{512}$
+\hline
+\end{array}
+
+
+
 
 
 \begin{example} %example #15
