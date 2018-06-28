@@ -87,7 +87,7 @@ To find the coefficients, we create the following table:
 \[
 \begin{array}{|c|c|c|c|} 
 \hline
-\mathbf{n} & \mathbf{f^{(n)}(x)} & \textbf{$f^{(n)}(a), a = 4$} & \textbf{$c_n$} \\[1em] 
+\mathbf{n} & \mathbf{f^{(n)}(x)} & \mathbf{f^{(n)}(a), a = 4} & \bf{c_n} \\[1em] 
 \hline
  0 & x^{1/2} & 4^{1/2} = 2 & 2 \\[1em]
 \hline
@@ -103,7 +103,8 @@ To find the coefficients, we create the following table:
 
 
 
-We can now use the coefficients in the right-hand column of the table to write the final answer:
+We can now use the coefficients in the right-hand column of the table to write the final answer. 
+The first four terms of the Taylor Series for the function $f(x) = \sqrt x$ centered at $x = 4$ are
 \begin{align*}
 \sqrt x &= c_0 + c_1(x-4) + c_2(x-4)^2 + c_3(x-4)^3 + \cdots \\
         &= 2 + \frac14(x-4) -\frac{1}{64}(x-4)^2 - \frac{1}{512}(x-4)^3 + \cdots
