@@ -87,7 +87,7 @@ To find the coefficients, we create the following table:
 \[
 \begin{array}{|c|c|c|c|} 
 \hline
-\mathbf{n} & \mathbf{f^{(n)}(x)} & \mathbf{f^{(n)}(a), a = 4} & \bf{c_n} \\[1em] 
+\bf{n} & \bf{f^{(n)}(x)} & \bf{f^{(n)}(a), a = 4} & \bf{c_n} \\[1em] 
 \hline
  0 & x^{1/2} & 4^{1/2} = 2 & 2 \\[1em]
 \hline
@@ -96,7 +96,7 @@ To find the coefficients, we create the following table:
  2 & -\frac14 x^{-3/2} & -\frac14 \cdot 4^{-3/2} 
 = -\frac14 \cdot \frac18 = -\frac{1}{32} & -\frac{1}{64} \\[1em]
 \hline
- 3 & \frac38 x^{-5/2} & \frac38 \cdot 4^{-5/2} = \frac38 \cdot \frac{1}{32} = -\frac{3}{256} & -\frac{1}{512}\\[1em]
+ 3 & \frac38 x^{-5/2} & \frac38 \cdot 4^{-5/2} = \frac38 \cdot \frac{1}{32} = \frac{3}{256} & \frac{1}{512}\\[1em]
 \hline
 \end{array}
 \]
@@ -107,10 +107,51 @@ We can now use the coefficients in the right-hand column of the table to write t
 The first four terms of the Taylor Series for the function $f(x) = \sqrt x$ centered at $x = 4$ are
 \begin{align*}
 \sqrt x &= c_0 + c_1(x-4) + c_2(x-4)^2 + c_3(x-4)^3 + \cdots \\
-        &= 2 + \frac14(x-4) -\frac{1}{64}(x-4)^2 - \frac{1}{512}(x-4)^3 + \cdots
+        &= 2 + \frac14(x-4) -\frac{1}{64}(x-4)^2 + \frac{1}{512}(x-4)^3 + \cdots
 \end{align*}
 
 \end{example}
+
+
+
+\begin{problem} Find the first four terms of the Taylor Series $f(x) = \sqrt x$ centered at $x = 1$.\\
+
+The final answer has the form:
+\begin{multipleChoice}
+\choice{$\sqrt x = c_0 + c_1(x-1) + c_2(x-1) + c_3(x-1) + \cdots$ }
+\choice{$\sqrt x = c_0 + c_1(x- \sqrt 1) + c_2(x-\sqrt 2) + c_3(x-\sqrt 3) + \cdots$ }
+\choice{$\sqrt x = c_0 + c_1(\sqrt x-1) + c_2(\sqrt x -1)^2 + c_3(\sqrt x-1)^3 + \cdots$ }
+\choice[correct]{$\sqrt x = c_0 + c_1(x-1) + c_2(x-1)^2 + c_3(x-1)^3 + \cdots$ }
+\end{multipleChoice}
+
+
+Fill in the following table to find the coefficients:
+
+\[
+\begin{array}{|c|c|c|c|} 
+\hline
+\bf{n} & \bf{f^{(n)}(x)} & \bf{f^{(n)}(a), a = 4} & \bf{c_n} \\[1em] 
+\hline
+ 0 & f(x) = x^{1/2} & f(1) = 1 & c_0 = \answer{1} \\[1em]
+\hline
+1 & f'(x) = \answer{\frac12 x^{-1/2}} & f'(1) = \answer{1/2} & c_1 = \answer{\frac12} \\[1em]
+\hline
+ 2 & f''(x) =\answer{-\frac14 x^{-3/2}} & f''(1) = \answer{-1/4} & c_2 = \answer{-\frac{1}{4}} \\[1em]
+\hline
+ 3 & f'''(x) =\answer{\frac38 x^{-5/2}} & f'''(1) = \answer{\frac38 } & c_3 = \answer{\frac{1}{16}}\\[1em]
+\hline
+\end{array}
+\]
+
+
+The first four terms of the Taylor Series for the function $f(x) = \sqrt x$ centered at $x = 1$ are
+\[
+\sqrt x = \answer{1 + \frac12(x-1) -\frac{1}{4}(x-1)^2 + \frac{1}{16}(x-1)^3} + \cdots
+\]
+
+
+\end{problem}
+
 
 \section{Video Lessons}
 
