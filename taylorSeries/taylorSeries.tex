@@ -131,10 +131,144 @@ The first four terms of the Taylor Series for the function $f(x) = \sqrt x$ cent
 The final answer has the form:
 \begin{center}
 \begin{multipleChoice}
-\choice{a) \;\; $\sqrt x = c_0 + c_1(x-1) + c_2(x-1) + c_3(x-1) + \cdots$ }
-\choice{b) \;\; $\sqrt x = c_0 + c_1(x- \sqrt 1) + c_2(x-\sqrt 2) + c_3(x-\sqrt 3) + \cdots$ }
-\choice{c) \;\; $\sqrt x = c_0 + c_1(\sqrt x-1) + c_2(\sqrt x -1)^2 + c_3(\sqrt x-1)^3 + \cdots$ }
-\choice[correct]{d) \;\; $\sqrt x = c_0 + c_1(x-1) + c_2(x-1)^2 + c_3(x-1)^3 + \cdots$ }
+\choice{a) \;\;\; $\sqrt x = c_0 + c_1(x-1) + c_2(x-1) + c_3(x-1) + \cdots$ }
+\choice{b) \;\;\; $\sqrt x = c_0 + c_1(x- \sqrt 1) + c_2(x-\sqrt 2) + c_3(x-\sqrt 3) + \cdots$ }
+\choice{c) \;\;\; $\sqrt x = c_0 + c_1(\sqrt x-1) + c_2(\sqrt x -1)^2 + c_3(\sqrt x-1)^3 + \cdots$ }
+\choice[correct]{d) \;\;\; $\sqrt x = c_0 + c_1(x-1) + c_2(x-1)^2 + c_3(x-1)^3 + \cdots$ }
+\end{multipleChoice}
+\end{center}
+
+Fill in the following table to find the coefficients:
+
+\[
+\begin{array}{|c|c|c|c|} 
+\hline
+\bf{n} & \bf{f^{(n)}(x)} & \bf{f^{(n)}(a),\; a = 1} & \bf{c_n} \\[1em] 
+\hline
+ 0 & f(x) = x^{1/3} & f(1) = 1 & c_0 = \answer{1} \\[1em]
+\hline
+1 & f'(x) = \answer{\frac13 x^{-2/3}} & f'(1) = \answer{1/3} & c_1 = \answer{\frac13} \\[1em]
+\hline
+ 2 & f''(x) =\answer{-\frac29 x^{-5/3}} & f''(1) = \answer{-2/9} & c_2 = \answer{-\frac{1}{9}} \\[1em]
+\hline
+ 3 & f'''(x) =\answer{\frac{10}{27} x^{-8/3}} & f'''(1) = \answer{\frac{10}{27} } & c_3 = \answer{\frac{5}{81}}\\[1em]
+\hline
+\end{array}
+\]
+
+
+The first four terms of the Taylor Series for the function $f(x) = \sqrt x$ centered at $x = 1$ are
+\[
+\sqrt x = \answer{1 + \frac13(x-1) -\frac{1}{9}(x-1)^2 + \frac{5}{81}(x-1)^3} + \cdots
+\]
+
+
+\end{problem}
+
+
+
+
+\begin{example} Find the first four terms of the Taylor Series $f(x) = \sqrt[3] x$ centered at $x = -1$.\\
+Since we are asked to find the first four terms, we must find the coefficients $c _0, c_1, c_2$ and $c_3$
+and the answer will have the form 
+\[
+\sqrt x = c_0 + c_1(x+1) + c_2(x+1)^2 + c_3(x+1)^3 + \cdots .
+\]
+To find the coefficients, we create the following table:
+
+\[
+\begin{array}{|c|c|c|c|} 
+\hline
+\bf{n} & \bf{f^{(n)}(x)} & \bf{f^{(n)}(a), \; a = -1} & \bf{c_n} \\[1em] 
+\hline
+ 0 & x^{1/3} & (-1)^{1/3} = -1 & -1 \\[1em]
+\hline
+1 & \frac13 x^{-2/3} & \frac13 \cdot (-1)^{-2/3} = \frac13 & \frac13 \\[1em]
+\hline
+ 2 & -\frac29 x^{-5/3} & -\frac29 \cdot (-1)^{-5/3} 
+= -\frac29 \cdot (-1) = \frac29 & \frac{1}{9} \\[1em]
+\hline
+ 3 & \frac{10}{27} x^{-8/3} & \frac{10}{27} \cdot (-1)^{-8/3} = \frac{10}{27} \cdot (1) = \frac{10}{27} & \frac{5}{81}\\[1em]
+\hline
+\end{array}
+\]
+
+
+
+We can now use the coefficients in the right-hand column of the table to write the final answer. 
+The first four terms of the Taylor Series for the function $f(x) = \sqrt x$ centered at $x = 4$ are
+\begin{align*}
+\sqrt x &= c_0 + c_1(x+1) + c_2(x+1)^2 + c_3(x+1)^3 + \cdots \\
+        &= -1 + \frac13(x+1) + \frac{1}{9}(x+1)^2 + \frac{5}{81}(x+1)^3 + \cdots
+\end{align*}
+
+\end{example}
+
+
+
+
+\begin{problem} Find the first four terms of the Taylor Series $f(x) = \sqrt[3] x$ centered at $x = 8$.\\
+
+The final answer has the form:
+\begin{center}
+\begin{multipleChoice}
+\choice{a) \;\;\; $\sqrt[3] x = c_0 + c_1(x-8) + c_2(x-8) + c_3(x-8) + \cdots$ }
+\choice{b) \;\;\; $\sqrt[3] x = c_0 + c_1(x- \sqrt[3] 1) + c_2(x-\sqrt[3] 2) + c_3(x-\sqrt[3] 3) + \cdots$ }
+\choice[correct]{c) \;\;\; $\sqrt[3] x = c_0 + c_1(x-8) + c_2(x-8)^2 + c_3(x-8)^3 + \cdots$ }
+\choice{d) \;\;\; $\sqrt[3] x = c_0 + c_1(\sqrt[3]x-8) + c_2(\sqrt[3] x -8)^2 + c_3(\sqrt[3] x-8)^3 + \cdots$ }
+\end{multipleChoice}
+\end{center}
+
+Fill in the following table to find the coefficients:
+
+\[
+\begin{array}{|c|c|c|c|} 
+\hline
+\bf{n} & \bf{f^{(n)}(x)} & \bf{f^{(n)}(a), a = 8} & \bf{c_n} \\[1em] 
+\hline
+ 0 & f(x) = x^{1/3} & f(8) = 2 & c_0 = \answer{2} \\[1em]
+\hline
+1 & f'(x) = \answer{\frac13 x^{-2/3}} & f'(8) = \answer{1/12} & c_1 = \answer{1/12} \\[1em]
+\hline
+ 2 & f''(x) =\answer{-\frac29 x^{-5/3}} & f''(8) = \answer{-1/144} & c_2 = \answer{-\frac{1}{288}} \\[1em]
+\hline
+ 3 & f'''(x) =\answer{\frac{10}{27} x^{-8/3}} & f'''(8) = \answer{5/3456 } & c_3 = \answer{\frac{5}{20736}}\\[1em]
+\hline
+\end{array}
+\]
+
+
+The first four terms of the Taylor Series for the function $f(x) = \sqrt[3] x$ centered at $x = 8$ are
+\[
+\sqrt[3] x = \answer{2 + \frac{1}{12}(x-8) -\frac{1}{288}(x-8)^2 + \frac{5}{20736}(x-8)^3} + \cdots
+\]
+
+
+\end{problem}
+
+
+
+
+
+\begin{problem} Find the first four terms of the Taylor Series $f(x) = x\sqrt x$ centered at $x = 4$.\\
+
+The function $f(x) = x\sqrt x$ can be written as a power function, $x^k$, for an appropriate value of $k$.
+Write $x\sqrt x$ as a power function:
+\begin{hint}
+$x\sqrt x = x*x^{1/2}$; add exponents
+\end{hint}
+\[
+x\sqrt x = \answer{x^{3/2}}
+\]
+
+
+The final answer has the form:
+\begin{center}
+\begin{multipleChoice}
+\choice{a) \;\;\; $x\sqrt x = c_0 + c_1(x-4) + c_2(x-4) + c_3(x-4) + \cdots$ }
+\choice{b) \;\;\; $x\sqrt x = c_0 + c_1(x- 1\sqrt1) + c_2(x-2\sqrt2) + c_3(x-3\sqrt3) + \cdots$ }
+\choice{c) \;\;\; $x\sqrt x = c_0 + c_1(x\sqrt x -4) + c_2(x\sqrt x -4)^2 + c_3(x\sqrt x-4)^3 + \cdots$ }
+\choice{d)[correct] \;\;\; $x\sqrt x = c_0 + c_1(x-4) + c_2(x-4)^2 + c_3(x-4)^3 + \cdots$ }
 \end{multipleChoice}
 \end{center}
 
@@ -145,25 +279,111 @@ Fill in the following table to find the coefficients:
 \hline
 \bf{n} & \bf{f^{(n)}(x)} & \bf{f^{(n)}(a), a = 4} & \bf{c_n} \\[1em] 
 \hline
- 0 & f(x) = x^{1/2} & f(1) = 1 & c_0 = \answer{1} \\[1em]
+ 0 & f(x) = x^{3/2} & f(4) = 8 & c_0 = \answer{8} \\[1em]
 \hline
-1 & f'(x) = \answer{\frac12 x^{-1/2}} & f'(1) = \answer{1/2} & c_1 = \answer{\frac12} \\[1em]
+1 & f'(x) = \answer{\frac32 x^{1/2}} & f'(4) = \answer{3} & c_1 = \answer{3} \\[1em]
 \hline
- 2 & f''(x) =\answer{-\frac14 x^{-3/2}} & f''(1) = \answer{-1/4} & c_2 = \answer{-\frac{1}{8}} \\[1em]
+ 2 & f''(x) =\answer{\frac34 x^{-1/2}} & f''(4) = \answer{3/8} & c_2 = \answer{3/16} \\[1em]
 \hline
- 3 & f'''(x) =\answer{\frac38 x^{-5/2}} & f'''(1) = \answer{\frac38 } & c_3 = \answer{\frac{1}{16}}\\[1em]
+ 3 & f'''(x) =\answer{-\frac38 x^{-3/2}} & f'''(4) = \answer{-3/64} & c_3 = \answer{-\frac{1}{128}}\\[1em]
 \hline
 \end{array}
 \]
 
 
-The first four terms of the Taylor Series for the function $f(x) = \sqrt x$ centered at $x = 1$ are
+The first four terms of the Taylor Series for the function $f(x) = x\sqrt x$ centered at $x = 4$ are
 \[
-\sqrt x = \answer{1 + \frac12(x-1) -\frac{1}{8}(x-1)^2 + \frac{1}{16}(x-1)^3} + \cdots
+x\sqrt x = \answer{8 + 3(x-4) +\frac{3}{16}(x-4)^2 - \frac{1}{128}(x-4)^3} + \cdots
 \]
 
 
 \end{problem}
+
+
+
+
+
+\begin{example} Find the first four terms of the Taylor Series $f(x) = \ln(x)$ centered at $x = 1$.\\
+Since we are asked to find the first four terms, we must find the coefficients $c _0, c_1, c_2$ and $c_3$
+and the answer will have the form 
+\[
+\ln(x) = c_0 + c_1(x-1) + c_2(x-1)^2 + c_3(x-1)^3 + \cdots .
+\]
+To find the coefficients, we create the following table:
+
+\[
+\begin{array}{|c|c|c|c|} 
+\hline
+\bf{n} & \bf{f^{(n)}(x)} & \bf{f^{(n)}(a), \; a = 1} & \bf{c_n} \\[1em] 
+\hline
+ 0 & \ln(x) & \ln(1) = 0 & 0 \\[1em]
+\hline
+1 & \frac{1}{x} & 1 & 1 \\[1em]
+\hline
+ 2 & -\frac{1}{x^2} & -1  & -1/2 \\[1em]
+\hline
+ 3 & \frac{2}{x^3} & 2 & \frac13\\[1em]
+\hline
+\end{array}
+\]
+
+
+
+We can now use the coefficients in the right-hand column of the table to write the final answer. 
+The first four terms of the Taylor Series for the function $f(x) = \ln(x)$ centered at $x = 1$ are
+\begin{align*}
+\sqrt x &= c_0 + c_1(x-4) + c_2(x-4)^2 + c_3(x-4)^3 + \cdots \\
+        &= 0 + 1(x-1) -\frac{1}{2}(x-1)^2 + \frac{1}{3}(x-1)^3 + \cdots\\
+        &= (x-1) -\frac{1}{2}(x-1)^2 + \frac{1}{3}(x-1)^3 + \cdots
+\end{align*}
+
+\end{example}
+
+
+
+
+\begin{problem} Find the first four terms of the Taylor Series $f(x) = \ln(2x)$ centered at $x = 1$.\\
+
+
+The final answer has the form:
+\begin{center}
+\begin{multipleChoice}
+\choice{a) \;\;\; $\ln(2x) = c_0 + c_1(x-1) + c_2(x-1) + c_3(x-1) + \cdots$ }
+\choice{b)[correct] \;\;\; $\ln(2x) = c_0 + c_1(x-1) + c_2(x-1)^2 + c_3(x-1)^3 + \cdots$ }
+\choice{c) \;\;\; $\ln(2x) = c_0 + c_1(\ln(2x) -4) + c_2(\ln(2x) -4)^2 + c_3(\ln(2x)-4)^3 + \cdots$ }
+\choice{d) \;\;\;  $\ln(2x) = c_0 + c_1(x- \ln(1)) + c_2(x-\ln(2)) + c_3(x-\ln(3)) + \cdots$}
+\end{multipleChoice}
+\end{center}
+
+Fill in the following table to find the coefficients:
+
+\[
+\begin{array}{|c|c|c|c|} 
+\hline
+\bf{n} & \bf{f^{(n)}(x)} & \bf{f^{(n)}(a), a = 1} & \bf{c_n} \\[1em] 
+\hline
+ 0 & f(x) = \ln(2x) & f(1) = \ln(2) & c_0 = \answer{\ln(2)} \\[1em]
+\hline
+1 & f'(x) = \answer{\frac{1}{x}} & f'(1) = \answer{1} & c_1 = \answer{1} \\[1em]
+\hline
+ 2 & f''(x) =\answer{-\frac{1}{x^2}} & f''(1) = \answer{-1} & c_2 = \answer{-1/2} \\[1em]
+\hline
+ 3 & f'''(x) =\answer{\frac{2}{x^3}} & f'''(1) = \answer{2} & c_3 = \answer{1/3}\\[1em]
+\hline
+\end{array}
+\]
+
+
+The first four terms of the Taylor Series for the function $f(x) = \ln(2x)$ centered at $x = 1$ are
+\[
+\ln(2x) = \answer{\ln(2) + (x-1) -\frac12(x-1)^2 + \frac13(x-1)^3} + \cdots
+\]
+
+
+\end{problem}
+
+
+
 
 
 \section{Video Lessons}
