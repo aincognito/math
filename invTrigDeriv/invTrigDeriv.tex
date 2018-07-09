@@ -1,0 +1,331 @@
+\documentclass{ximera}
+\usepackage{tcolorbox}
+\input{../preamble}
+\outcome{Compute derivatives involving inverse trig functions.}
+
+
+\title{2.9 Derivatives of Inverse Trig Functions}
+
+
+\begin{document}
+
+\begin{abstract}
+In this section we compute derivatives involving $\tan^{-1}(x), \sin^{-1}(x)$ and $\cos^{-1}(x)$.
+\end{abstract}
+
+\maketitle
+
+
+We begin by computing the derivative of the inverse trigonometric function $f(x) = \tan^{-1}(x)$.  
+The following Pythagorean trigonometric identity will be needed:
+
+
+\[
+1 + \tan^2(\theta) = \sec^2(\theta).
+\]
+This identity follows from $\cos^2(\theta) + \sin^2(\theta) = 1$ by dividing both sides by $\cos^2(\theta)$.
+
+We begin the derivation by using the fact that $\tan(x)$ and $\tan^{-1}(x)$ are inverse functions, so that:
+
+\[
+\tan(\tan^{-1}(x)) = x.
+\]
+
+We differentiate both sides of this equation with respect to $x$:
+
+\[
+\dd{x} \tan(\tan^{-1}(x)) = \ddx x.
+\]
+
+Using the Chain Rule on the left side gives:
+
+\[
+\sec^2(\tan^{-1}(x)) \ddx \left[\tan^{-1}(x)\right] = 1.
+\]
+
+Now, we can solve this for the derivative of $tan^{-1}(x)$:
+
+\[
+ \ddx \left[\tan^{-1}(x)\right] = \frac{1}{\sec^2\left(\tan^{-1}(x)\right)}.
+\]
+
+Next, we use the Pythagorean Identity:
+
+\[
+ \ddx \left[\tan^{-1}(x)\right] = \frac{1}{1 + \tan^2\left(\tan^{-1}(x)\right)}.
+\]
+
+Finally, using the property of inverse functions:
+
+\[
+ \ddx \left[\tan^{-1}(x)\right] = \frac{1}{1 + x^2}.
+\]
+
+
+Similar arguments can show that:
+
+\[
+ \ddx \left[\sin^{-1}(x)\right] = \frac{1}{\sqrt{1 - x^2}} \;\;\text{  and  } \;\;\ddx \left[\cos^{-1}(x)\right] = -\frac{1}{\sqrt{1 - x^2}}.
+\]
+
+
+
+\begin{foldable}
+\unfoldable{Below is a graph of $f(x) = \tan^{-1}(x)$ (in blue) and its derivative, $f'(x) = \tfrac{1}{1+x^2}$ (in purple).
+Notice that the slope of the tangent line to $f(x)$ (in red) is the height of the corresponding 
+point on $f'(x)$. Use it to see a graphical representation of the answers to the problem above.}
+\includeinteractive{invtanwithderiv.js}
+\end{foldable}
+
+
+
+
+
+
+
+\begin{example} %problem #1
+
+Find the equation of the tangent line to the graph of $f(x) = \tan^{-1}(x)$ at $x=0.$\\
+The point of tangency is $(0, f(0)) = (0, 0)$ since $\tan^{-1}(0) = 0$.
+The slope of the tangent line is given by  $m = f'(0) = \tfrac{1}{1+0^2} = 1$.
+To create the equation of the line we use the
+Point slope form: $y-y_0 = m(x-x_0)$ and we get $y-0 = 1(x-0)$ or $y=x$.
+
+\end{example}
+
+
+
+
+
+\begin{problem} %problem #1
+
+Find the equation of the tangent line to the graph of $f(x) = \tan^{-1}(x)$ at $x=1.$
+
+\begin{hint}
+The point of tangency is $(1, f(1))$
+\end{hint}
+\begin{hint}
+Use the derivative to find the slope, $m$
+\end{hint}
+\begin{hint}
+Point slope form: $y-y_0 = m(x-x_0)$
+\end{hint}
+
+The equation of the tangent line is \ $y = \answer{x/2 + \pi/4 - 1/2}$
+
+\end{problem}
+
+
+
+\begin{problem} %problem #2
+
+Find the equation of the tangent line to the graph of $f(x) = \sin^{-1}(x)$ at $x=0.$
+
+\begin{hint}
+The point of tangency is $(0, f(0))$
+\end{hint}
+\begin{hint}
+Use the derivative to find the slope, $m$
+\end{hint}
+\begin{hint}
+Point slope form: $y-y_0 = m(x-x_0)$
+\end{hint}
+
+The equation of the tangent line is \ $y = \answer{x}$
+
+\end{problem}
+
+
+
+\begin{problem} %problem #2
+
+Find the equation of the tangent line to the graph of $f(x) = \cos^{-1}(x)$ at $x=0.$
+
+\begin{hint}
+The point of tangency is $(0, f(0))$
+\end{hint}
+\begin{hint}
+Use the derivative to find the slope, $m$
+\end{hint}
+\begin{hint}
+Point slope form: $y-y_0 = m(x-x_0)$
+\end{hint}
+
+The equation of the tangent line is \ $y = \answer{-x + \pi/2}$
+
+\end{problem}
+
+
+\begin{example} %example 6
+Find $h'(x)$ if $h(x) = (1+x^2)\tan^{-1}(x)$.\\
+We write $h(x)$ as a product: $h(x) = f(x)\cdot g(x)$ with
+\[f(x) = 1+x^2 \quad \text{and} \quad g(x) = \tan^{-1}(x).\]
+To use the product rule we need the derivatives:
+\[f'(x) = 2x \quad \text{and} \quad g'(x) = \frac{1}{1+x^2}.\]
+We can now write the derivative:
+\begin{align*}
+h'(x) &= f'(x)g(x) + f(x)g'(x) \\
+&= 2x\tan^{-1}(x)  + (1+x^2)\frac{1}{1+x^2} \\
+&=  2x\tan^{-1}(x) + 1.
+\end{align*}
+\end{example}
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of the preceding example}
+\youtube{NvlgmABasiQ} %vid of example 6
+\end{foldable}
+\end{center}
+
+
+
+\begin{problem} %problem 6a
+  Compute
+  \[
+  \frac{d}{dx} x^3 \tan^{-1}(x)
+  \]
+  
+    \begin{hint}
+      Use the Product Rule with $x^3$ and $\tan^{-1}(x)$.
+    \end{hint}
+    \begin{hint}
+      $(fg)' = f'g+g'f$.
+    \end{hint}
+    \begin{hint}
+      The derivative of $x^3$ is $3x^2$
+    \end{hint}
+    \begin{hint}
+      The derivative of $\tan^{-1}(x)$ is $\frac{1}{1+x^2}$
+    \end{hint}
+		The derivative of $x^3\tan^{-1}(x)$ with respect to $x$ is
+		 $\answer[given]{3x^2 \tan^{-1}(x) + \frac{x^3}{1+x^2}}$
+		
+\end{problem}
+
+\begin{problem} %problem 6b
+  Compute
+  \[
+  \frac{d}{dx} (1-x^2) \sin^{-1}(x)
+  \]
+  
+    \begin{hint}
+      Use the Product Rule with $1-x^2$ and $\sin^{-1}(x)$.
+    \end{hint}
+    \begin{hint}
+      $(fg)' = f'g+g'f$.
+    \end{hint}
+    \begin{hint}
+      The derivative of $1 - x^2$ is $-2x$
+    \end{hint}
+    \begin{hint}
+      The derivative of $\sin^{-1}(x)$ is $\frac{1}{\sqrt{1-x^2}}$
+    \end{hint}
+		\begin{hint}
+       $(1-x^2) \frac{1}{\sqrt{1-x^2}} = \sqrt{1-x^2}$
+    \end{hint}
+		The derivative of $(1-x^2)\sin^{-1}(x)$ with respect to $x$ is
+		 $\answer[given]{-2x \sin^{-1}(x) + \sqrt{1-x^2}}$
+		
+\end{problem}
+
+
+The Chain Rule versions of these formulas are:
+
+
+\[
+ \ddx \left[\tan^{-1}(g(x))\right] = \frac{g'(x)}{1 + g^2(x)},
+\]
+\[
+ \ddx \left[\sin^{-1}(g(x))\right] = \frac{g'(x)}{\sqrt{1 - g^2(x)}}
+\]
+
+and
+
+\[
+ \ddx \left[\cos^{-1}(g(x))\right] = -\frac{g'(x)}{\sqrt{1 - g^2(x)}}.
+\]
+
+
+\begin{example} %example #14
+Find $h'(x)$ if $h(x) = \tan^{-1}(4x)$.\\
+We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
+\[g(x) = 4x  \quad \text{and} \quad  f(x) = \tan^{-1}(x).\]
+ To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First, 
+\[g'(x) = 4; \quad \text{next} \] 
+\[f'(x) = \frac{1}{1+x^2} , \quad \text{so}\]
+\[ f'(g(x)) = \frac{1}{1+g^2(x)} =\frac{1}{1+(4x)^2}=\frac{1}{1+16x^2}.\]
+By the chain rule,
+\[h'(x) = f'(g(x))g'(x) = \frac{1}{1+16x^2} \cdot 4 = \frac{4}{1+16x^2}.\]
+\end{example}
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of the example}
+\youtube{-0ZwkfU9Xec}  %vid of example 14
+\end{foldable}
+\end{center}
+
+
+\begin{problem} %problem #14
+  Compute
+  \[
+  \frac{d}{dx} \tan^{-1}(3x)
+  \]
+  
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The outside function is $f(x) = \tan^{-1}(x)$ and the inside
+      function is $g(x) = 3x$.
+    \end{hint}
+    \begin{hint}
+		  Leave the inside in, $f'(g(x))$
+		\end{hint}
+		\begin{hint}
+		  Multiply by the derivative of the inside, $g'(x)$
+		\end{hint}
+    
+		The derivative of $\tan^{-1}(3x)$ with respect to $x$ is
+		 $\answer[given]{\frac{3}{1+(3x)^2}}$
+		
+\end{problem}
+
+
+
+\begin{problem} %problem #8a
+Find the equation of the tangent line to the graph of $f(x) = \cos(x)$ at $x=\pi/2.$
+
+
+\begin{hint}
+The point of tangency is $(\pi/2, f(\pi/2))$
+\end{hint}
+\begin{hint}
+Use the derivative to find the slope, $m$
+\end{hint}
+\begin{hint}
+Point slope form: $y-y_0 = m(x-x_0)$
+\end{hint}
+
+The equation of the tangent line is \ $y = \answer{-x + \pi/2}$
+
+\end{problem}
+
+
+
+
+\end{document}
+
+
+
+
+
+
+%\newcommand{\ffrac}[2]{\frac{\mbox{\footnotesize $#1$}}{\mbox{\footnotesize $#2$}}}
+%\newcommand{\vasymptote}[2][]{
+ %   \draw [densely dashed,#1] ({rel axis cs:0,0} -| {axis cs:#2,0}) -- ({rel axis cs:0,1} -| {axis cs:#2,0});
+%}

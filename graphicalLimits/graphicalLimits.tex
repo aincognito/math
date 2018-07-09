@@ -1,0 +1,561 @@
+
+\documentclass{ximera}
+\input{../preamble}
+
+\outcome{Find limits using graphs}
+
+\title{1.3 Graphical Limits}
+
+
+\begin{document}
+
+\begin{abstract}
+In this section we use the graph of a function to find limits.
+\end{abstract}
+
+\maketitle
+
+
+
+
+
+
+
+
+\begin{center}
+\textbf{Finding Limits Graphically}
+\end{center}
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here are some detailed, lecture style videos on graphical limits:}
+\youtube{PZCrPXqjUBI}
+\youtube{qHQgMRXI4-k}
+\end{foldable}
+\end{center}
+
+
+%\includeinteractive{desmos.js}
+
+
+
+%\[
+%\interactive{
+%var calc = Desmos.Calculator( holderElementFromSomewhereMagical );
+%calc.setExpression({latex:"(x^2-1)/(x-1)",color:"blue"});
+%calc.setExpression({latex:"(1,2)",color:"blue",style:"open"});
+%}
+%\]
+
+
+In this section, functions will be presented graphically. Recall that the graph of a 
+function must pass the \textbf{vertical line test} which states that a vertical line 
+can intersect the graph of a function in at most one point.
+To understand graphical representations of functions, consider the following graph of a function, $y = f(x)$.
+
+
+
+\includeinteractive{gl00b.js}
+
+%\[\graph[xmin=-9, xmax=4, ymin=-5, ymax=11]{y=(x^3 +7x^2)/6}\]
+
+
+
+%\begin{center}
+%\includegraphics[width = 4 in, height = 3 in, angle= 1]{parabola.jpeg}
+%\end{center}
+
+The graph of a function is created by letting the $x$-coordinate represent 
+the input of the function and the $y$-coordinate represent the corresponding output, i.e., $y = f(x)$.  The general form of a point on the graph of $y = f(x)$ is 
+$(x_0, f(x_0))$ for any input value, $x_0$, in the \textbf{domain} of $f$.\\
+
+Notice that the point $(-1,2)$ is on the graph of $f$, shown above.  This means that $f(-1) = 2$.  
+Similarly, since the points $(3,-2)$ and $(5,1)$ are also on the graph, we have $f(3) = -2$ and $f(5) = 1$.  
+
+
+We now consider several examples of limits of functions presented graphically.
+
+
+
+\begin{example} %example 1
+
+For the function, $f$, whose graph is shown below, determine the value of the \textbf{one-sided limit}, 
+\[
+\lim_{x\to 3^-} f(x).
+\]
+Note that this is called a one-sided limit because $x$ is approaching $3$ from the left hand side.
+%\includeinteractive{gl02.js}
+\includeinteractive{gl01b.js}
+%\includeinteractive{gl01.js}
+
+%\[\graph[xmin=-5, xmax=8, ymin=-1.5, ymax=5.5]{2^x \left\{ -1 \leq x \leq 1.97 \right\}, (x-2)^2 + (y-4)^2 = 0.01}\]
+
+
+%\begin{center}
+%\includegraphics[width = 4 in, height = 2.5 in]{graphical-limit01}
+%\end{center}
+
+
+\vspace{.25in}
+Solution: Since $x \to 3^-$ we know that the $x$-value is approaching $3$ and we also know that $x<3$. 
+Looking at the graph, we can see that for $x$-values slightly less than $3$ (to the left of 3), 
+the $y$-values on the graph are very close to $2$. And as the $x$-value moves toward 3, the corresponding $y$-value on the graph moves toward 2. We can express this using limits as 
+
+\[
+\lim_{x\to 3^-} f(x) = 2.
+\]
+
+In this example, it is important to note that the open circle at the point $(3,2)$ indicates that that point is not on the graph.  Furthermore, there are no points on the graph with $x$-coordinate equal to 3, which means that $f(3)$ is undefined.
+Thus, we see in this example that a function can have a limit as $x$ approaches a value that is not in the domain of the function. 
+Interactivity note: if you click on the graph,
+a dot will appear on the graph.  
+%on the graph will pop-up at the place where you clicked.  
+You can then drag that dot along the curve with your mouse.
+
+\end{example}
+
+
+\begin{problem} %problem #1
+
+
+
+
+Use the graph of $y = f(x)$ given below to determine
+  \[
+  \lim_{x\to -4^+} f(x).
+  \]
+  
+    \begin{hint}
+      $x$ is to the right of -4
+    \end{hint}
+    \begin{hint}
+      The y-coordinates determine the limit
+    \end{hint}
+		\begin{hint}
+		  Click on the graph and move the dot
+		\end{hint}
+		The value of the limit is
+		 $\answer[given]{3}$
+
+\includeinteractive{glp01.js}
+\end{problem}
+
+
+\begin{example} %example 2
+For the function, $f$, whose graph is shown below, determine the value of the \textbf{two-sided limit}, 
+\[
+\lim_{x\to 3} f(x).
+\]
+Note that this is called a two-sided limit because $x$ can 
+approach $3$ from either the left hand side or the right hand side.
+
+%\begin{center}
+%\includegraphics[width = 4 in, height = 3 in]{graphical-limit02}
+%\end{center}
+
+\includeinteractive{gl02.js}
+%\[
+%\graph[xmin=-5, xmax=12, ymin=-1, ymax=6]{
+%x-1 \left\{-10 \leq x \leq 2.94 \right\}, 
+%x-1 \left\{3.06 \leq x \leq 10 \right\}, (x-3)^2 + (y-2)^2 = 0.01,
+%(x-3)^2 + (y-4)^2 = 0.01, (x-3)^2 + (y-4)^2 = 0.001, (x-3)^2 + (y-4)^2 = 0.0001,
+%(x-3)^2 + (y-4)^2 = 0.009, (x-3)^2 + (y-4)^2 = 0.007, (x-3)^2 + (y-4)^2 = 0.005,
+%}
+%\]
+
+\vspace{.25in}
+Solution: Since $x \to 3$ we know that the $x$-value is approaching $3$ and we also know 
+that $x$ can be on either side of $3$ (but not equal to 3). 
+Looking at the graph, we can see that for $x$-values either slightly less than $3$ or slightly greater than $3$, 
+the $y$-values on the graph are very close to $2$. Thus, 
+
+\[
+\lim_{x\to 3} f(x) = 2.
+\]
+
+In this example it is important to observe that, even though the function value at $x= 3$ is $4$, 
+as indicated by the dot at the point $(3,4)$, the limit of the function as $x$ approaches $3$ is $2$ and not $4$.  
+The limit of a function is determined by the behavior of the function \textit{near} the 
+indicated $x$-value and not \textit{at} that $x$-value.\\
+
+\end{example}
+
+\begin{problem} %problem #2
+
+
+
+
+Use the graph of $y = f(x)$ given below to determine
+  \[
+  \lim_{x\to 3} f(x).
+  \]
+  
+    \begin{hint}
+      This is a two-sided limit
+    \end{hint}
+    \begin{hint}
+      The y-coordinates determine the limit
+    \end{hint}
+		\begin{hint}
+		  Click on the graph and move the dot
+		\end{hint}
+		The value of the limit is
+		 $\answer[given]{1}$
+
+\includeinteractive{glp02.js}
+	
+\end{problem}
+
+\begin{example} %example 3
+For the function, $f$, whose graph is shown below, find the one-sided limits,
+\[\lim_{x \to 1^-}f(x), \lim_{x \to 1^+}f(x),
+\] 
+and discuss the two-sided limit, 
+\[\lim_{x \to 1} f(x).
+\]
+
+\includeinteractive{gl03.js}
+
+%\[
+%\graph{
+%2^x -3 \left\{-10 \leq x \leq 0.93 \right\}, 
+%-1/x +3 \left\{1 < x \leq 10 \right\}, (x-1)^2 + (y+1)^2 = 0.015, (x-1)^2 + (y-2)^2 = 0.005,
+%(x-1)^2 + (y-2)^2 = 0.015, (x-1)^2 + (y-2)^2 = 0.01, (x-1)^2 + (y-2)^2 = 0.001, (x-1)^2 + (y-2)^2 = 0.0001,
+%}
+%\]
+
+
+%\begin{center}
+%\includegraphics[width = 4 in, height = 3 in]{graphical-limit03}
+%\end{center}
+
+\vspace{.25in}
+Solution: As in example 1, we can determine the value of the left hand limit, $\lim_{x \to 1^-}f(x)$, 
+by observing that if $x$ is on the left side of 1 and very close to 1 then the $y$-values on the 
+graph are very close to -1 and hence, 
+
+\[
+\lim_{x \to 1^-}f(x) = -1.
+\]
+
+For the right hand limit $\lim_{x \to 1^+}f(x)$, we inspect the $y$-values on the 
+graph that correspond to $x$-values on the right side of 1 and very close to $1$.  
+We see that these $y$-values are very close to 2, hence
+
+\[
+\lim_{x \to 1^+}f(x) = 2.
+\]
+
+We see that the one-sided limits as $x$ approaches 1 have different values, and we therefore 
+conclude that the two-sided limit, $\lim_{x \to 1}f(x)$, \textbf{does not exist}.  We write
+
+\[
+\lim_{x \to 1}f(x) \;\;\text{DNE}.
+\]
+
+\end{example}
+
+In general, when the one-sided limits are different then the 
+corresponding two-sided limit does not exist.
+
+\begin{problem} %problem #3
+
+
+  Use the graph of $y = f(x)$ given below to determine
+  \[
+  \lim_{x\to -1^-} f(x), \lim_{x\to -1^+} f(x) \ \text{and}
+	\]
+	\[
+	\lim_{x\to -1} f(x).
+	\]
+  
+  
+    \begin{hint}
+      The y-coordinates determine the limit
+    \end{hint}
+		\begin{hint}
+		  Click on the graph and move the dot
+		\end{hint}
+		\begin{hint}
+		  It is possible that a limit DNE
+		\end{hint}
+		The value are $\lim_{x\to -1^-} f(x)=\answer[given]{-2}$, 
+		$\lim_{x\to -1^+} f(x)=\answer[given]{3}$ and 
+		$\lim_{x\to -1} f(x)=\answer[given]{DNE}$
+
+
+\includeinteractive{glp03.js}
+
+	
+\end{problem}
+
+
+\begin{example} %example 4
+For the function, $f$, whose graph is shown below, find the one-sided limit,
+\[
+\lim_{x \to 3^+}f(x).
+\]
+
+\includeinteractive{gl04.js}
+
+%\[\graph[xmin=2, xmax=6, ymin=-10, ymax=3]{2+log(x-3.01)}\]
+
+%\begin{center}
+%\includegraphics[width = 4 in, height = 2.5 in]{graphical-limit04}
+%\end{center}
+
+\vspace{.25in}
+Solution: From the graph, we can see that as the $x$-values approach 3 from the right hand side, the $y$-values decrease without bound.  In this case we write
+
+\[
+\lim_{x \to 3^+}f(x) = -\infty.
+\]
+
+To describe the phenomenon of an \textbf{infinite limit} as $x$ approaches a finite value (in this case, 3), 
+we say that the line $x = 3$ is a \textbf{vertical asymptote} for the graph of $f$.
+
+\end{example}
+
+
+\begin{problem} %problem #4
+
+  Use the graph of $y = f(x)$ given below to determine
+  \[
+  \lim_{x\to 2^-} f(x).
+  \]
+  
+    \begin{hint}
+      $x$ is to the left of 2
+    \end{hint}
+    \begin{hint}
+      The y-coordinates determine the limit
+    \end{hint}
+		\begin{hint}
+		  Click on the graph and move the dot
+		\end{hint}
+		\begin{hint}
+		 Type infinity for $\infty$ and -infinity for $-\infty$
+		\end{hint}
+		The value of the limit is
+		 $\answer[given]{\infty}$
+
+\includeinteractive{glp04.js}
+
+	
+\end{problem}
+
+\begin{example} %example 5
+For the function, $f$, whose graph is shown below, find the limit,
+\[
+\lim_{x \to \infty}f(x).
+\] 
+This is an example of a \textbf{limit at infinity} and it is used to help 
+us describe the end behavior of the function.
+
+\includeinteractive{gl05.js}
+
+%\[\graph[xmin=-5, xmax=20, ymin=-3, ymax=4]{4arctan(x)/\pi}\]
+
+%\begin{center}
+%\includegraphics[width = 4 in, height = 3 in, angle= -3]{graphical-limit05}
+%\end{center}
+
+\vspace{.25in}
+Solution:  Since $x$ is approaching infinity, we look for a pattern on the right end of the graph.  
+From the graph, we can see that the $y$-values are getting closer and closer to $2$ as the $x$ values 
+increase without bound. We can conclude that 
+
+\[
+\lim_{x \to \infty}f(x) = 2,
+\]
+
+and we can describe the end behavior by saying that the line $y = 2$ is a \textbf{horizontal asymptote} for the graph of $f$.
+
+
+\end{example}
+
+
+\begin{problem} %problem #5
+
+  Use the graph of $y = f(x)$ given below to determine
+  \[
+  \lim_{x\to -\infty} f(x).
+  \]
+  
+    \begin{hint}
+      Look at the left end of the graph
+    \end{hint}
+    \begin{hint}
+      The y-coordinates determine the limit
+    \end{hint}
+		\begin{hint}
+		  Click on the graph and move the dot
+		\end{hint}
+		The value of the limit is
+		 $\answer[given]{0}$
+
+\includeinteractive{glp05.js}
+	
+\end{problem}
+
+Here is a problem that encompasses all of the ideas in this section.
+
+\begin{problem} %problem #6
+  \includeinteractive{glproblem.js}
+	\begin{leash}{220}
+	Use the above graph of $y = f(x)$ to answer the following questions.\\
+	
+  
+  What are the following function values (undefined is a possibility)?  
+		 \[f(-4) = \answer[given]{3}, \ f(-1) = \answer[given]{-1} \]
+		 \[f(0) = \answer[given]{undefined}, \ f(1) = \answer[given]{2} \]
+	   \[f(4) = \answer[given]{3}, \ f(6) = \answer[given]{-3} \]
+	Find the following one-sided limits. (You can click on the graph a drag a point along it.)
+	\[\lim_{x\to -4^-} f(x) = \answer[given]{3}, \ \lim_{x\to -4^+} f(x) = \answer[given]{1}\]
+	\[\lim_{x\to -1^-} f(x) = \answer[given]{4}, \ \lim_{x\to -1^+} f(x) = \answer[given]{-1}\]
+	Type infinity for $\infty$ and -infinity for $-\infty$.
+	\[\lim_{x\to 0^-} f(x) = \answer[given]{-\infty}, \ \lim_{x\to 0^+} f(x) = \answer[given]{\infty}\]
+	\[\lim_{x\to 1^-} f(x) = \answer[given]{1}, \ \lim_{x\to 1^+} f(x) = \answer[given]{2}\]
+	\[\lim_{x\to 4^-} f(x) = \answer[given]{3}, \ \lim_{x\to 4^+} f(x) = \answer[given]{2}\]
+	\[\lim_{x\to 6^-} f(x) = \answer[given]{0}, \ \lim_{x\to 6^+} f(x) = \answer[given]{2}\]
+	Find the following limits at infinity. (Click on the grid and drag it if necessary.  
+	Press the home button on the right to reset the grid.)
+	\[\lim_{x\to -\infty} f(x) = \answer[given]{2}, \ \lim_{x\to \infty} f(x) = \answer[given]{1}\]
+	
+	\end{leash}
+\end{problem}
+
+
+
+
+\end{document}
+
+
+\begin{tikzpicture}
+\begin{axis}
+\addplot[domain=-11:-5.1] {1/(x+5)};
+\addplot[domain=-4.9:0] {-1/(x+5)};
+\addplot[domain=0:2] {x^3+2};
+\addplot[domain=2:10] {abs(x-7)-7};
+\addplot[mark=*,only marks] coordinates {(-3,4)(0,-3)(2,10)};
+\addplot[mark=*,fill=white,only marks] coordinates {(-3,-.5)
+(0,-.2)(0,2)(2,-2)};
+\end{axis}
+\end{tikzpicture}
+
+
+\[
+\graph{(-3,1), (-2, 1), (-1, 1), (-1, 2),  (-1, 3), (-2, 2), (-3, 2); x^2}
+\]
+
+\[
+\graph{2^x -3 \left\{ -10 \leq x \leq 1 \right\}, x^2 \left\{1 \leq x < 2 \right\}, x/4 \left\{ 2 \leq x < 3\right\}, 1/x \left\{3 \leq x \leq 10 \right\}}
+\]
+
+\[
+\graph{(1,2); x^2}
+\]
+
+
+%fiddling around with sage
+
+From Sage
+\begin{sageOutput}
+    show(diff(x^2))
+\end{sageOutput}
+
+From Geogebra
+\geogebra{J4fcjvP9}{640}{480}
+
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center, title={A Removable Discontinuity at $x=1$}]
+\addplot[domain=0:0.98, 
+    samples=100, color=blue]{x+1};
+\addplot[smooth,mark=*,blue] plot coordinates {(1,1.5)};
+\addplot[domain=1.02:2, 
+    samples=100, color=blue]{x+1};
+\addplot[smooth,mark=o,blue] plot coordinates {(1,2)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center, title={A Removable Discontinuity at $x=2$}]
+\addplot[domain=1:1.985, 
+    samples=100, color=blue]{x^2 - 3};
+\addplot[smooth,mark=o,blue] plot coordinates {(2,1)};
+\addplot[domain=2.015:3, 
+    samples=100, color=blue]{x^2 - 3};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center, title={A Jump Discontinuity at $x=1$}]
+\addplot[domain=-1:1, 
+    samples=100, color=blue]{x^2};
+\addplot[smooth,mark=*,blue] plot coordinates {(1,1)};
+\addplot[domain=1.02:2, 
+    samples=100, color=blue]{x+1};
+\addplot[smooth,mark=o,blue] plot coordinates {(1,2)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center, title={A Jump Discontinuity at $x=2$}]
+\addplot[domain=0:1.99, 
+    samples=100, color=blue]{x^2 - 1};
+\addplot[smooth,mark=o,blue] plot coordinates {(2,3)};
+\addplot[domain=2:4, 
+    samples=100, color=blue]{3-x};
+\addplot[smooth,mark=*,blue] plot coordinates {(2,1)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center, title={A Jump Discontinuity at $x=2$}]
+\addplot[domain=0:1.99, 
+    samples=100, color=blue]{x^2 - 1};
+\addplot[smooth,mark=o,blue] plot coordinates {(2,3)};
+\addplot[domain=2:4, 
+    samples=100, color=blue]{3-x};
+\addplot[smooth,mark=*,blue] plot coordinates {(2,1)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center, title={A Jump Discontinuity at $x=-1$}]
+\addplot[domain=-3:-1.02, 
+    samples=100, color=blue]{x+3};
+\addplot[smooth,mark=o,blue] plot coordinates {(-1,2)};
+\addplot[domain=-0.99:1, 
+    samples=100, color=blue]{-x^2 + 2};
+\addplot[smooth,mark=o,blue] plot coordinates {(-1,1)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center, title={An infinite discontinuity at $x=1$}]
+\addplot[domain=-1:0.9, 
+    samples=100, color=blue]{1/(x-1)^2};
+\addplot[domain=1.1:3, 
+    samples=100, color=blue]{1/(x-1)^2};
+\vasymptote {1}
+\end{axis}
+\end{tikzpicture}
+\end{center}

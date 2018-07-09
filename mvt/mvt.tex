@@ -1,0 +1,513 @@
+\documentclass{ximera}
+
+\input{../preamble}
+
+\outcome{Learn the Mean Value Theorem and apply it to examples}
+
+\title{3.5 Mean Value Theorem}
+
+\begin{document}
+
+\begin{abstract}
+We apply the Mean Value Theorem.
+\end{abstract}
+
+\maketitle
+
+\begin{center}
+\textbf{The Mean Value Theorem}
+\end{center}
+
+
+The Mean Value Theorem is one of the most far-reaching theorems in calculus. It states that for a continuous 
+and differentiable function, the average rate of change over an interval is attained as an 
+instantaneous rate of change at some point inside the interval. The precise mathematical statement is as follows.\\
+
+\begin{theorem}[Mean Value Theorem]
+If $f(x)$ is continuous on the closed interval $[a,b]$ and differentiable on the 
+open interval $(a,b)$, then the Mean Value Equation:
+\[f'(c) = \frac{f(b) - f(a)}{b-a}\]
+holds for some value $c$ between $a$ and $b$.\\
+\end{theorem}
+
+
+
+
+The left hand side of the Mean Value Theorem equation represents the instantaneous rate of change of $f(x)$ at $x = c$ and the
+right hand side represents the average rate of change of $f(x)$ over the interval from $x=a$ to $x=b$.
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  center, axis y line = none, xtick={-1, 0.5, 2}, xticklabels={$a$,$c$,$b$}, 
+legend pos=outer north east, title={MVT for $f(x) $ on $[a,b]$}]
+\addplot[domain=-1.4:2.4, 
+    samples=100, color=black]{-x^2 + 5 };
+\addplot[smooth,mark=*,blue] plot coordinates {(-1,4)  (2,1)};
+\addplot[domain=-1:2, 
+    samples=100, color=blue]{-x + 3};
+\addplot[domain=-1:2, 
+    samples=100, color=red]{-x + 5.25 };
+\addplot[smooth,mark=*,red] plot coordinates {(0.5, 4.75)};
+\legend{$y = f(x)$, , secant line, tangent line, };
+\addplot[dashed] coordinates{(-1,0)(-1,4)};
+\addplot[dashed] coordinates{(0.5,0)(0.5,4.75)};
+\addplot[dashed] coordinates{(2,0)(2,1)};
+node[label=below]{some label};
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
+
+
+
+
+
+
+
+The Mean Value Equation is also frequently presented in the form:
+\[f(b) - f(a)=f'(c)(b-a).\]
+
+As a real life example, if a car averages 57.4 miles per hour on a long trip, then by the MVT the car must have been 
+traveling at exactly 57.4 miles per hour at some instant during the trip.
+
+The MVT is considered an existence theorem because it asserts that there exists a special value $c$ inside the interval $(a,b)$
+that satisfies Mean Value Equation 
+\[f'(c) = \frac{f(b) - f(a)}{b-a}.\]
+In our examples, we will determine the exact value of $c$. 
+
+\begin{example} %example 1
+We will verify that the function $f(x) = x^2$ satisfies the hypotheses of the MVT
+on the interval $[0,3]$ and we will find the special value of $c$ that satisfies the Mean Value Equation.
+Since $x^2$ is a polynomial function, it is continuous and differentiable on any interval. 
+Hence, it is continuous on the closed interval $[0, 3]$ and differentiable on the open interval $(0, 3)$. 
+Then, by the MVT,  the Mean Value Equation holds for some number 
+$c$ in the interval $(0, 3)$. To find $c$, we first compute
+\[\frac{f(b) - f(a)}{b-a},\]
+then we compute $f'(x)$
+and finally we solve the equation
+\[f'(x) = \frac{f(b) - f(a)}{b-a}\]
+for $x$, discarding any solutions that do not lie in the interval $(0, 3)$.  
+Keep in mind that the MVT guarantees that we will find at least one solution in this interval.
+Let's begin:
+\[\frac{f(b) - f(a)}{b-a} = \frac{f(3) - f(0)}{3-0} \]
+\[= \frac{3^2 - 0^2}{3}= \frac{9 - 0}{3} = 3.\]
+Next, $f'(x) = 2x$
+and finally, we solve the equation
+\[2x = 3\]
+which gives
+\[x = \frac{3}{2}.\]
+Note that the value $\frac32$ is in the interval $(0,3)$ and so the special value, $c$, guaranteed to exist by the MVT,
+is $\frac32$ in this example.
+
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center, legend pos=outer north east, title={MVT for $f(x) = x^2$ on $[0,3]$}]
+\addplot[domain=0:3, 
+    samples=100, color=black]{x^2};
+\addplot[smooth,mark=*,blue] plot coordinates {(0,0)  (3,9)};
+\addplot[domain=0:3, 
+    samples=100, color=blue]{3*x};
+\addplot[domain=0:3, 
+    samples=100, color=red]{3*x - 2.25 };
+\addplot[smooth,mark=*,red] plot coordinates {(1.5, 2.25)};
+\legend{$y=x^2$, , \text{secant line}, \text{tangent line}, }
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
+In the above figure, the blue line in the secant line for $f(x) = x^2$ on the interval $[0, 3]$, 
+and the red line is the tangent line at $x = \frac32$. The Mean Value Equation asserts that these lines are parallel, and this
+is clear in the figure.
+\end{example}
+
+\begin{question} %problem #1
+  Given that the function $f(x) = x^2 + 2$ satisfies the hypotheses of the MVT on the
+	interval $[1,3]$, find the value of $c$ in the open interval $(1,3)$ which satisfies 
+	the conclusion of the theorem.
+	
+    \begin{hint}
+      Compute $f'(x)$ and $\dfrac{f(3) - f(1)}{3-1}$
+    \end{hint}
+		\begin{hint}
+		  Solve $f'(x) = \dfrac{f(3) - f(1)}{3-1}$
+		\end{hint}
+		
+		The value of $c$ is:
+		 $\answer[given]{2}$
+\end{question}
+
+\begin{question} %problem #2
+  Given that the function $f(x) = x^2 -3x + 5$ satisfies the hypotheses of the MVT on the
+	interval $[-1,2]$, find the value of $c$ in the open interval $(-1,2)$ which satisfies 
+	the conclusion of the theorem.
+	
+    \begin{hint}
+      Compute $f'(x)$ and $\dfrac{f(2) - f(-1)}{2-(-1)}$
+    \end{hint}
+		\begin{hint}
+		  Solve $f'(x) = \dfrac{f(2) - f(-1)}{2-(-1)}$
+		\end{hint}
+		
+		The value of $c$ is:
+		 $\answer[given]{1/2}$
+\end{question}
+
+\begin{question} %problem #2
+  Given that the function $f(x) = 3x^2 -5x + 8$ satisfies the hypotheses of the MVT on the
+	interval $[1,6]$, find the value of $c$ in the open interval $(1,6)$ which satisfies 
+	the conclusion of the theorem.
+	
+    \begin{hint}
+      Compute $f'(x)$ and $\dfrac{f(6) - f(1)}{6-1}$
+    \end{hint}
+		\begin{hint}
+		  Solve $f'(x) = \dfrac{f(6) - f(1)}{6-1}$
+		\end{hint}
+		
+		The value of $c$ is:
+		 $\answer[given]{7/2}$
+\end{question}
+
+\begin{question} %problem #2
+  Given that the function $f(x) = x^3 + 2x -9$ satisfies the hypotheses of the MVT on the
+	interval $[-2,2]$, find the values of $c$ in the open interval $(-2,2)$ which satisfy 
+	the conclusion of the theorem.
+	
+    \begin{hint}
+      Compute $f'(x)$ and $\dfrac{f(2) - f(-2)}{2-(-2)}$
+    \end{hint}
+		\begin{hint}
+		  Solve $f'(x) = \dfrac{f(2) - f(-2)}{2-(-2)}$
+		\end{hint}
+		
+		The values of $c$ in ascending order are:
+		 $\answer[given]{-2/\sqrt 3}$ and $\answer[given]{2/\sqrt 3}$
+\end{question}
+
+
+
+
+\begin{example} %example 2
+We will verify that the function $f(x) = \sqrt x$ satisfies the hypotheses of the MVT
+on the interval $[0,4]$ and we will find the special value of $c$ that satisfies the Mean Value Equation.
+The function $\sqrt x$ is continuous on the interval $[0, \infty)$  and differentiable on the interval $(0, \infty)$. 
+Hence, it is continuous on the closed interval $[0, 4]$ and differentiable on the open interval $(0, 4)$. 
+Then, by the MVT,  the Mean Value Equation holds for some number 
+$c$ in the interval $(0, 4)$. To find $c$, we first compute
+\[\frac{f(b) - f(a)}{b-a} = \frac{\sqrt 4 - \sqrt 0}{4-0} = \frac{2}{4} = \frac{1}{2}.\]
+Next we compute
+\[f'(x) = \frac{d}{dx} \sqrt x = \frac{d}{dx} x^{1/2} = (1/2)x^{-1/2} = \frac{1}{2\sqrt x}.\]
+Finally we solve the equation
+\[\frac{1}{2\sqrt x} = \frac{1}{2}\]
+which gives
+\[\sqrt x = 1\]
+and so 
+\[ x=1.\]
+Note that the value $x = 1$ is in the interval $(0,4)$ and so the special value, $c$, guaranteed to exist by the MVT,
+is $1$ in this example.
+
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center, legend pos=outer north east, title={MVT for $f(x) = \sqrt x$ on $[0,4]$}]
+\addplot[domain=0:4, 
+    samples=100, color=black]{sqrt(x)};
+\addplot[smooth,mark=*,blue] plot coordinates {(0,0)  (4,2)};
+\addplot[domain=0:3, 
+    samples=100, color=blue]{0.5*x};
+\addplot[domain=0:3, 
+    samples=100, color=red]{0.5*x + 0.5 };
+\addplot[smooth,mark=*,red] plot coordinates {(1, 1)};
+\legend{$y=\sqrt x$, , secant line, tangent line, }
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
+In the above figure, the blue line in the secant line for $f(x) = \sqrt x$ on the interval $[0, 4]$, 
+and the red line is the tangent line at $x = 1$. The Mean Value Equation asserts that these lines are parallel, and this
+is clear in the figure.
+\end{example}
+
+\begin{question} %problem #3
+  Given that the function $f(x) = \sqrt x$ satisfies the hypotheses of the MVT on the
+	interval $[0,9]$, find the value of $c$ in the open interval $(0,9)$ which satisfies 
+	the conclusion of the theorem.
+	
+    \begin{hint}
+      Compute $f'(x)$ and $\dfrac{f(9) - f(0)}{9-0}$
+    \end{hint}
+		\begin{hint}
+		  Solve $f'(x) = \dfrac{f(9) - f(0)}{9-0}$
+		\end{hint}
+		
+		The value of $c$ is:
+		 $\answer[given]{9/4}$
+\end{question}
+
+
+\begin{question} %problem #4
+  Given that the function $f(x) = \sqrt x$ satisfies the hypotheses of the MVT on the
+	interval $[4,16]$, find the value of $c$ in the open interval $(4,16)$ which satisfies 
+	the conclusion of the theorem.
+	
+    \begin{hint}
+      Compute $f'(x)$ and $\dfrac{f(16) - f(4)}{16-4}$
+    \end{hint}
+		\begin{hint}
+		  Solve $f'(x) = \dfrac{f(16) - f(4)}{16-4}$
+		\end{hint}
+		
+		The value of $c$ is:
+		 $\answer[given]{9}$
+\end{question}
+
+
+\begin{question} %problem #4
+  Given that the function $f(x) = \sqrt{2x+1}$ satisfies the hypotheses of the MVT on the
+	interval $[0,4]$, find the value of $c$ in the open interval $(0,4)$ which satisfies 
+	the conclusion of the theorem.
+	
+    \begin{hint}
+      Compute $f'(x)$ and $\dfrac{f(4) - f(0)}{4-0}$
+    \end{hint}
+		\begin{hint}
+		  Solve $f'(x) = \dfrac{f(4) - f(0)}{4-0}$
+		\end{hint}
+		
+		The value of $c$ is:
+		 $\answer[given]{3/2}$
+\end{question}
+
+
+
+\begin{example} %example 3
+We will verify that the function $f(x) = e^x$ satisfies the hypotheses of the MVT
+on the interval $[0,2]$ and we will find the special value of $c$ that satisfies the Mean Value Equation.
+The function $e^x$ is continuous and differentiable on the interval $(-\infty, \infty)$. 
+Hence, it is continuous on the closed interval $[0, 2]$ and differentiable on the open interval $(0, 2)$. 
+Then, by the MVT,  the Mean Value Equation holds for some number 
+$c$ in the interval $(0, 2)$. To find $c$, we first compute
+\[\frac{f(b) - f(a)}{b-a} = \frac{e^2 - e^0}{2-0} = \frac{e^2 - 1}{2}.\]
+Next we compute
+\[f'(x) = \frac{d}{dx} e^x = e^x.\]
+Finally we solve the equation
+\[e^x = \frac{e^2 - 1}{2}\]
+which gives
+\[ x = \ln(\frac{e^2 - 1}{2}) \approx 1.16.\]
+
+Note that the value $\ln(\frac{e^2 - 1}{2})$ is in the interval $(0,4)$ and so the special value, $c$, 
+guaranteed to exist by the MVT,
+is $\ln(\frac{e^2 - 1}{2})$ in this example.
+
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center, legend pos=outer north east, title={MVT for $f(x) = e^x$ on $[0,2]$}]
+\addplot[domain=0:2, 
+    samples=100, color=black]{e^x};
+\addplot[smooth,mark=*,blue] plot coordinates {(0,1)  (2,e^2)};
+\addplot[domain=0:2, 
+    samples=100, color=blue]{3.194528049*x + 1};
+\addplot[domain=0:2, 
+    samples=100, color=red]{3.194528049*x - 0.51572257};
+\addplot[smooth,mark=*,red] plot coordinates {(1.161439362, 3.194528049)};
+\legend{$y=e^x$, , secant line, tangent line, }
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
+In the above figure, the blue line in the secant line for $f(x) = e^x$ on the interval $[0, 2]$, 
+and the red line is the tangent line at $x = \ln(\frac{e^2 - 1}{2})$. 
+The Mean Value Equation asserts that these lines are parallel, and this
+is clear in the figure.
+\end{example}
+
+
+\begin{question} %problem #4
+  Given that the function $f(x) = e^{2x}$ satisfies the hypotheses of the MVT on the
+	interval $[0,1]$, find the value of $c$ in the open interval $(0,1)$ which satisfies 
+	the conclusion of the theorem.
+	
+    \begin{hint}
+      Compute $f'(x)$ and $\dfrac{f(1) - f(0)}{1-0}$
+    \end{hint}
+		\begin{hint}
+		  Solve $f'(x) = \dfrac{f(1) - f(0)}{1-0}$
+		\end{hint}
+		
+		The value of $c$ is:
+		 $\answer[given]{(1/2) \ln((e^2 -1)/2)}$
+\end{question}
+
+
+\begin{example} %example 4
+We will verify that the function $f(x) = \ln(x)$ satisfies the hypotheses of the MVT
+on the interval $[1,e]$ and we will find the special value of $c$ that satisfies the Mean Value Equation.
+The function $\ln(x)$ is continuous and differentiable on the interval $(0, \infty)$. 
+Hence, it is continuous on the closed interval $[1, e]$ and differentiable on the open interval $(1, e)$. 
+Then, by the MVT,  the Mean Value Equation holds for some number 
+$c$ in the interval $(1, e)$. To find $c$, we first compute
+\[\frac{f(b) - f(a)}{b-a} = \frac{\ln(e) - \ln(1)}{e-1} = \frac{1 - 0}{e-1} = \frac{1}{e-1}.\]
+Next we compute
+\[f'(x) = \frac{d}{dx} \ln(x) = \frac{1}{x}.\]
+Finally we solve the equation
+\[\frac{1}{x} = \frac{1}{e-1}\]
+which gives
+\[ x = e-1 \approx 1.72.\]
+
+Note that the value $x = e-1$ is in the interval $(1,e)$ and so the special value, $c$, 
+guaranteed to exist by the MVT,
+is $e-1$ in this example.
+
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center, legend pos=outer north east, title={MVT for $f(x) = \ln(x)$ on $[1,e]$}]
+\addplot[domain=1:e, 
+    samples=100, color=black]{ln(x)};
+\addplot[smooth,mark=*,blue] plot coordinates {(1,0)  (e,1)};
+\addplot[domain=1:e, 
+    samples=100, color=blue]{0.581976707*x - 0.581976707};
+\addplot[domain=1:e, 
+    samples=100, color=red]{0.581976707*x - 0.458675145};
+\addplot[smooth,mark=*,red] plot coordinates {(1.718281828, 0.541324855)};
+\legend{$y=\ln(x)$, , secant line, tangent line, }
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
+In the above figure, the blue line in the secant line for $f(x) = \ln(x)$ on the interval $[1, e]$, 
+and the red line is the tangent line at $x = e-1$. 
+The Mean Value Equation asserts that these lines are parallel, and this
+is clear in the figure.
+\end{example}
+
+\begin{question} %problem #4
+  Given that the function $f(x) = \ln(x)$ satisfies the hypotheses of the MVT on the
+	interval $[1,e]$, find the value of $c$ in the open interval $(1,e)$ which satisfies 
+	the conclusion of the theorem.
+	
+    \begin{hint}
+      Compute $f'(x)$ and $\dfrac{f(e) - f(1)}{e-1}$
+    \end{hint}
+		\begin{hint}
+		  Solve $f'(x) = \dfrac{f(e) - f(1)}{e-1}$
+		\end{hint}
+		
+		The value of $c$ is:
+		 $\answer[given]{e-1}$
+\end{question}
+%example with |x| to show MVE does not always have a solution
+
+\begin{question} %problem #4
+  Given that the function $f(x) = \sin(x)$ satisfies the hypotheses of the MVT on the
+	interval $[0, \pi]$, find the value of $c$ in the open interval $(0, \pi)$ which satisfies 
+	the conclusion of the theorem.
+	
+    \begin{hint}
+      Compute $f'(x)$ and $\dfrac{f(\pi) - f(0)}{\pi - 0}$
+    \end{hint}
+		\begin{hint}
+		  Solve $f'(c) = \dfrac{f(\pi) - f(0)}{\pi - 0}$
+		\end{hint}
+		
+		The value of $c$ is:
+		 $\answer[given]{\pi /2}$
+\end{question}
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a detailed, lecture style video on the Mean Value Theorem:}
+\youtube{suJx3pB_cVI}
+\end{foldable}
+\end{center}
+
+\end{document}
+
+
+
+
+
+%\begin{image}
+%\begin{tikzpicture}
+%\begin{axis}[
+ %           ymin=-5,
+	%		ymax=5,
+   %         axis lines =center, xlabel=$k$, ylabel=$P$,
+    %          every axis y label/.style={at=(current axis.above origin),anchor=south},
+     %         every axis x label/.style={at=(current axis.right of origin),anchor=west},
+      %      domain=-5:5,
+       %     grid = major,
+        %    xtick={-4,...,4},
+         %   ytick={-4,...,4},
+          %]
+          %\addplot [very thick, smooth] {1 + (3.5 + x)*(-0.5714285714285714 + (-3.5 + x)*(0.16326530612244897 + (-0.3327149041434756 + (-0.20522334808049095 + 0.04019472590901159*(-3 + x))*(-2 + x))*x))};
+%        \end{axis}
+%\end{tikzpicture}
+%\end{image}
+
+
+%\begin{image}
+%\begin{tikzpicture}
+%\begin{axis}[
+%            ymin=-5,
+%			ymax=5,
+%            axis lines =center, xlabel=$k$, ylabel=$P$,
+%              every axis y label/.style={at=(current axis.above origin),anchor=south},
+%              every axis x label/.style={at=(current axis.right of origin),anchor=west},
+%            domain=-5:5,
+%            grid = major,
+%            xtick={-4,...,4},
+%            ytick={-4,...,4},
+%          ]
+%          \addplot [very thick, smooth] {x^2};
+%        \end{axis}
+%\end{tikzpicture}
+%\end{image}
+
+
+
+\begin{image}
+\begin{tikzpicture}%[scale=\thescale*1.2]
+    \draw[thick] (1,1) node[point,fill=black] (a) {} parabola bend (3,3) (4,2.5) node[point,fill=black] (b) {};
+    \draw[thick] (1,1) -- (4,2.5);
+    \draw (1,1+9/8) -- (4,2.5+9/8) coordinate (topright);
+    \node[point,fill=black] (x0) at (2.5,2.875) {};
+
+    \coordinate (origin) at (0,0);
+    \draw[<->] (topright -| origin) -- (origin) -- (origin -| topright) -- +(1,0);
+    \draw[dotted,very thick] (a) -- (a|-origin) node[below,black] {$a$};
+    \draw[dotted,very thick] (b) -- (b|-origin) node[below] {$b$};
+    \draw[dashed] (x0) -- (x0|-origin) node[below] {$c$};
+\end{tikzpicture}
+}
+\end{image}
+
+\begin{image}
+\subcaptionbox{two choices for $c$}{
+\begin{tikzpicture}[scale=\thescale]
+    \begin{scope}
+    \clip (-3,-2) rectangle (3,2);
+    \draw[thick,smooth,domain=-3:3] plot (\x,{\x^3/3 - \x});
+    \end{scope}
+    \node[point,fill=black] (a) at (-2,-2/3) {};
+    \node[point,fill=black] (b) at (2,2/3) {};
+    \draw[thick] (a) -- (b);
+    \coordinate (origin) at (-4,-3);
+    \coordinate (topright) at (4,2);
+    \draw[<->] (topright -| origin) -- (origin) -- (origin -| topright);
+    \draw[dotted,very thick] (a) -- (a|-origin) node[below] {$a$};
+    \draw[dotted,very thick] (b) -- (b|-origin) node[below] {$b$};
+
+    \node[point,fill=black] (x0) at ({-2/sqrt(3)},{(1/3)*(-2/sqrt(3))^3+2/sqrt(3)}) {};
+    \draw (x0) +(-1,-1/3) -- +(1,1/3);
+    \node[point,fill=black] (x1) at ({2/sqrt(3)},{(1/3)*(2/sqrt(3))^3-2/sqrt(3)}) {};
+    \draw (x1) +(-1,-1/3) -- +(1,1/3);
+    \draw[dashed] (x0) -- (x0 |- origin) node[below]{$c_1$};
+    \draw[dashed] (x1) -- (x1 |- origin) node[below]{$c_2$};
+\end{tikzpicture}
+}
+
+
+\end{image}

@@ -1,0 +1,952 @@
+\documentclass{ximera}
+
+\input{../preamble}
+
+\outcome{Compute the derivative of an implicit function}
+
+\title{2.13 Implicit Differentiation}
+
+
+\begin{document}
+
+\begin{abstract}
+We learn to compute the derivative of an implicit function.
+\end{abstract}
+
+\maketitle
+
+\section{Implicit Differentiation}
+
+Implicit Differentiation is used to find $\frac{dy}{dx}$ in situations where $y$ is not written 
+as an explicit function of $x$. 
+Some examples of equations where implicit differentiation is necessary are:
+
+\[x^2 + y^2 = 1, \text{ the unit circle} \]
+\[4x^2 + 9y^2 = 36, \text{ an ellipse} \]
+\[x^3 + y^3 =6xy, \text{ the Folium of Descartes}\]
+\[x^2(x^2 + y^2) =y^2,  \text{ the kappa curve and}\]
+\[(x^2 + y^2)^2 =50xy, \text{ a lemniscate}.\]
+
+To compute $\frac{dy}{dx}$ in these situations, we make the assumption that $y$ is an unspecified 
+function of $x$ and in most cases,
+we employ the chain rule  with $y$ as the inside function.
+
+\section{Warm-up Examples of Implicit Differentiation}
+
+\begin{example} %example w1
+Find $\frac{d}{dx} y^2$ where $y$ is an unspecified function of $x$.\\
+We use the chain rule,
+\[\displaystyle{[f(g(x))]' = f'(g(x))g'(x)}\]
+with $g(x) = y$ and $f(x) = x^2$. Then 
+\[g'(x) = \frac{dy}{dx} \text{ and}\]
+\[f'(x) = 2x, \text{ so } f'(g(x)) = 2g(x) = 2y\]
+and we can conclude that
+\[\frac{d}{dx} y^2 = 2y \frac{dy}{dx}.\]
+\end{example}
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of Warm-up 1}
+\youtube{Tk3Ykf3TOfQ} %vid of warm-up 1
+\end{foldable}
+\end{center}
+
+
+\begin{question} %problem #1
+  Compute
+  \[
+  \frac{d}{dx} y^3
+  \]
+  
+	  \begin{hint}
+		  Notice the mismatched letters, $x$ and $y$, so this is not an ordinary derivative.
+    \end{hint}
+		\begin{hint}
+      Treat $y$ as an unspecified function of $x$, i.e., $y = g(x)$.
+    \end{hint}
+    \begin{hint}
+      Use the Chain Rule with $y$ as the inside function.
+    \end{hint}
+    \begin{hint}
+      The Chain Rule says $\dfrac{d}{dx} f(g(x)) = f'(g(x)) g'(x).$
+    \end{hint}
+		\begin{hint}
+		  The derivative of the inside is written as $\dfrac{dy}{dx}$ or $y'$.
+    \end{hint}
+		\begin{hint}
+      We have
+      \[
+      \frac{d}{dx} y^3 =  3y^2 \dfrac{dy}{dx}.
+      \]
+    \end{hint}
+    
+		The derivative of $y^3$ with respect to $x$ is
+		 $\answer[given]{3y^2 \frac{dy}{dx}}$
+		
+\end{question}
+
+
+  
+
+\begin{example} %example w2
+Find $\frac{d}{dx} \sin(y)$ where $y$ is an unspecified function of $x$.\\
+We use the chain rule,
+\[\displaystyle{[f(g(x))]' = f'(g(x))g'(x)}\]
+with $g(x) = y$ and $f(x) = \sin(x)$. Then 
+\[g'(x) = \frac{dy}{dx} \text{ and}\]
+\[f'(x) = \cos(x), \text{ so } f'(g(x)) = \cos(g(x)) = \cos(y)\]
+and we can conclude that
+\[\frac{d}{dx} \sin(y) = \cos(y) \frac{dy}{dx}.\]
+\end{example}
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of Warm-up 2}
+\youtube{1PCYgMMkiOA} %vid of warm-up 2
+\end{foldable}
+\end{center}
+
+\begin{question} %problem #2a
+  Compute
+  \[
+  \frac{d}{dx} \cos(y)
+  \]
+  
+	  
+    \begin{hint}
+      Consider $y$ to be a function of $x$.
+    \end{hint}
+    \begin{hint}
+      Use the chain rule with $y$ as the inside function.
+    \end{hint}
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The derivative of the inside is 
+      \[
+      \frac{dy}{dx}
+      \]
+    \end{hint}
+    
+		The derivative of $\cos(y)$ with respect to $x$ is
+		 $\answer[given]{-\sin(y) \frac{dy}{dx}}$
+		
+\end{question}
+
+\begin{question} %problem #2b
+  Compute
+  \[
+  \frac{d}{dx} \sec(y)
+  \]
+  
+	  
+    \begin{hint}
+      Consider $y$ to be a function of $x$.
+    \end{hint}
+    \begin{hint}
+     The derivative of $\sec(x)$ with respect to x is $\sec(x)\tan(x)$.
+    \end{hint}
+		\begin{hint}
+      Use the chain rule with $y$ as the inside function.
+    \end{hint}
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The derivative of the inside is 
+      \[
+      \frac{dy}{dx}
+      \]
+    \end{hint}
+    
+		The derivative of $\sec(y)$ with respect to $x$ is
+		 $\answer[given]{\sec(y)\tan(y) \frac{dy}{dx}}$
+		
+\end{question}
+
+
+\begin{question} %problem #2a
+  Compute
+  \[
+  \frac{d}{dx} e^y
+  \]
+  
+	  
+    \begin{hint}
+      Consider $y$ to be a function of $x$.
+    \end{hint}
+    \begin{hint}
+      Use the chain rule with $y$ as the inside function.
+    \end{hint}
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The derivative of the inside is 
+      \[
+      \frac{dy}{dx}
+      \]
+    \end{hint}
+    
+		The derivative of $e^y$ with respect to $x$ is
+		 $\answer[given]{e^y \frac{dy}{dx}}$
+		
+\end{question}
+
+
+\begin{question} %problem #2a
+  Compute
+  \[
+  \frac{d}{dx} 3^y
+  \]
+  
+	  
+    \begin{hint}
+      Consider $y$ to be a function of $x$.
+    \end{hint}
+    \begin{hint}
+      Use the chain rule with $y$ as the inside function.
+    \end{hint}
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The derivative of the inside is 
+      \[
+      \frac{dy}{dx}
+      \]
+    \end{hint}
+    
+		The derivative of $3^y$ with respect to $x$ is
+		 $\answer[given]{3^y \ln(3) \frac{dy}{dx}}$
+		
+\end{question}
+
+
+\begin{question} %problem #2a
+  Compute
+  \[
+  \frac{d}{dx} \ln(y)
+  \]
+  
+	  
+    \begin{hint}
+      Consider $y$ to be a function of $x$.
+    \end{hint}
+    \begin{hint}
+      Use the chain rule with $y$ as the inside function.
+    \end{hint}
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The derivative of the inside is 
+      \[
+      \frac{dy}{dx}
+      \]
+    \end{hint}
+    
+		The derivative of $\ln(y)$ with respect to $x$ is
+		 $\answer[given]{\frac{1}{y} \frac{dy}{dx}}$
+		
+\end{question}
+
+
+\begin{question} %problem #2a
+  Compute
+  \[
+  \frac{d}{dx} \log(y)
+  \]
+  
+	  
+    \begin{hint}
+      Consider $y$ to be a function of $x$.
+    \end{hint}
+    \begin{hint}
+      Use the chain rule with $y$ as the inside function.
+    \end{hint}
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The derivative of the inside is 
+      \[
+      \frac{dy}{dx}
+      \]
+    \end{hint}
+    
+		The derivative of $\log(y)$ with respect to $x$ is
+		 $\answer[given]{\frac{1}{y \ln(10)} \frac{dy}{dx}}$
+		
+\end{question}
+
+
+\begin{question} %problem #2c
+  Compute
+  \[
+  \frac{d}{dx} \tan^{-1}(y)
+  \]
+  
+	  
+    \begin{hint}
+      Consider y to be a function of x.
+    \end{hint}
+		\begin{hint}
+     The derivative of $\tan^{-1}(x)$ with respect to x is $\frac{1}{1+x^2}$.
+    \end{hint}
+    \begin{hint}
+      Use the chain rule with $y$ as the inside function.
+    \end{hint}
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The derivative of the inside is 
+      \[
+      \frac{dy}{dx}
+      \]
+    \end{hint}
+    
+		The derivative of $\tan^{-1}(y)$ with respect to $x$ is
+		 $\answer[given]{\frac{1}{1+y^2} \frac{dy}{dx}}$
+		
+\end{question}
+
+
+
+\begin{example} %example w3
+Find $\frac{d}{dx} \big(\frac{1}{y}\big)$ where $y$ is an unspecified function of $x$.\\
+We use the chain rule,
+\[\displaystyle{[f(g(x))]' = f'(g(x))g'(x)}\]
+with $g(x) = y$ and $f(x) = \frac{1}{x}$. Then 
+\[g'(x) = \frac{dy}{dx} \text{ and}\]
+\[f'(x) = -\frac{1}{x^2}, \text{ so } f'(g(x)) = -\frac{1}{g^2(x)} = -\frac{1}{y^2}\]
+and we can conclude that
+\[\frac{d}{dx} \Big(\frac{1}{y}\Big) = -\frac{1}{y^2} \frac{dy}{dx}.\]
+\end{example}
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of Warm-up 3}
+\youtube{kqg8PlpHRCw} %vid of warm-up 3
+\end{foldable}
+\end{center}
+
+
+\begin{question} %problem #3
+  Compute
+  \[
+  \frac{d}{dx} \left( \frac{1}{y^2} \right)
+  \]
+  
+	  \begin{hint}
+      \[\frac{1}{y^2} = y^{-2}\]
+    \end{hint}
+    \begin{hint}
+      Consider $y$ to be a function of $x$.
+    \end{hint}
+    \begin{hint}
+      Use the chain rule with $y$ as the inside function.
+    \end{hint}
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The derivative of the inside is 
+      \[
+      \frac{dy}{dx}
+      \]
+    \end{hint}
+    
+		The derivative of $\frac{1}{y^2}$ with respect to $x$ is
+		 $\answer[given]{-\frac{2}{y^3} \frac{dy}{dx}}$
+		
+\end{question}
+
+
+\begin{example} %example w4
+Find $\frac{d}{dx} (6xy)$ where $y$ is an unspecified function of $x$.\\
+We use the product rule,
+\[\displaystyle{[f(x) + g(x)]' = f(x)g'(x) + g(x)f'(x)}\]
+with $f(x) = 6x$ and $g(x) = y$. Then 
+\[f'(x) = 6 \text{ and } g'(x) = \frac{dy}{dx}.\]
+We conclude that
+\[\frac{d}{dx} (6xy) = 6x \frac{dy}{dx} + 6y.\]
+\end{example}
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of Warm-up 4}
+\youtube{P8maNTP-hjk} %vid of warm-up 4
+\end{foldable}
+\end{center}
+
+
+\begin{question} %problem #4
+  Compute
+  \[
+  \frac{d}{dx} 3x^2y
+  \]
+  
+	  
+    \begin{hint}
+      Consider $y$ to be a function of $x$.
+    \end{hint}
+		\begin{hint}
+      Use the product rule with $3x^2$ and $y$.
+    \end{hint}
+    
+    
+		The derivative of $3x^2y$ with respect to $x$ is
+		 $\answer[given]{3x^2  \frac{dy}{dx} + 6xy}$
+		
+\end{question}
+
+
+\begin{example} %example w5
+Find $\frac{d}{dx} (x^2y^3)$ where $y$ is an unspecified function of $x$.\\
+We use the product rule,
+\[\displaystyle{[f(x) + g(x)]' = f(x)g'(x) + g(x)f'(x)}\]
+with $f(x) = x^2$ and $g(x) = y^3$. Then 
+\[f'(x) = 2x \]
+and by the chain rule,
+\[g'(x) = 3y^2\frac{dy}{dx}.\]
+We conclude that
+\[\frac{d}{dx} (x^2y^3) = 3x^2y^2\frac{dy}{dx} + 2xy^3.\]
+\end{example}
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of Warm-up 5}
+\youtube{Rp5WcRCuGJg} %vid of warm-up 5
+\end{foldable}
+\end{center}
+
+\begin{question} %problem #5
+  Compute
+  \[
+  \frac{d}{dx} x^3y^4
+  \]
+  
+	  
+    \begin{hint}
+      Consider $y$ to be a function of $x$.
+    \end{hint}
+		\begin{hint}
+      Use the product rule with $x^3$ and $y^4$.
+    \end{hint}
+    \begin{hint}
+      Use the chain rule on $y^4$ with $y$ as the inside function.
+    \end{hint}
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The derivative of the inside is 
+      \[
+      \frac{dy}{dx}
+      \]
+    \end{hint}
+    
+		The derivative of $x^3 y^4$ with respect to $x$ is
+		 $\answer[given]{4x^3 y^3 \frac{dy}{dx} + 3x^2y^4}$
+		
+\end{question}
+
+
+\begin{problem} %problem #4
+  Compute
+  \[
+  \frac{d}{dx} x^2e^y
+  \]
+  
+	  
+    \begin{hint}
+      Consider $y$ to be a function of $x$.
+    \end{hint}
+		\begin{hint}
+      Use the product rule with $x^2$ and $e^y$.
+    \end{hint}
+    \begin{hint}
+      Use the chain rule on $e^y$ with $y$ as the inside function.
+    \end{hint}
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The derivative of the inside is 
+      \[
+      \frac{dy}{dx}
+      \]
+    \end{hint}
+    
+		The derivative of $x^2 e^y$ with respect to $x$ is
+		 $\answer[given]{x^2 e^y \frac{dy}{dx} + 2xe^y}$
+		
+\end{problem}
+
+
+
+
+
+
+
+We are now ready to find $\frac{dy}{dx}$ in situations where the formula describing a curve in the $x,y$-plane 
+is not given in the form $y = f(x)$.
+
+\section{Examples of Implicit Differentiation}
+
+
+\begin{example} %example 1
+Find $\displaystyle{\frac{dy}{dx}}$ if $x^2 + y^2 = 1$.\\
+We assume that $y$ is a 
+function of $x$ and we differentiate both 
+sides with respect to $x$:
+\[\frac{d}{dx}(x^2 + y^2)  = \frac{d}{dx} (1) \]
+\[\frac{d}{dx}(x^2) + \frac{d}{dx} (y^2) = 0\]
+\[2x + 2y\frac{dy}{dx} = 0.\]
+We can now solve for $\displaystyle{\frac{dy}{dx}}$ algebraically:
+\[2y\frac{dy}{dx} = -2x\]
+\[\frac{dy}{dx} = -\frac{2x}{2y}= -\frac{x}{y}.\]
+\end{example}
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of Example 1}
+\youtube{8QioZEjtOgE} %vid of example 1
+\end{foldable}
+\end{center}
+
+\begin{problem}
+Use the result of the example above to find the equation of the tangent line to the unit circle $x^2 + y^2 = 1$ at the point $(-\tfrac35,\tfrac45).$
+
+\begin{hint}
+$y-y_0 = m(x-x_0)$
+\end{hint}
+\begin{hint}
+$m = \frac{dy}{dx}\bigg|_{(-\frac35, \frac45)}$
+\end{hint}
+The equation of the tangent line is $y = \answer{\frac34 x+\frac54}.$
+\end{problem}
+
+
+\begin{problem} %problem #1
+  Find $\frac{dy}{dx}$ if
+  \[
+  x^2 + y^2 = 25
+  \]
+  
+	  
+    \begin{hint}
+      Consider $y$ to be a function of $x$.
+    \end{hint}
+		\begin{hint}
+		  Differentiate both sides with respect to $x$.
+		\end{hint}
+    \begin{hint}
+      Use the chain rule on $y^2$ with $y$ as the inside function.
+    \end{hint}
+    \begin{hint}
+      The derivative of the inside is 
+      \[
+      \frac{dy}{dx}
+      \]
+    \end{hint}
+		\begin{hint}
+		  \[
+			2x + 2y\frac{dy}{dx} = 0
+			\]
+		\end{hint}
+		\begin{hint}
+		  Solve for $\frac{dy}{dx}$ by moving the terms with $\frac{dy}{dx}$
+			to one side and the 
+			rest of the terms to the other side.
+		\end{hint}
+    
+		If $x^2 + y^2 = 25$ then $\frac{dy}{dx}$ is
+		 $\answer[given]{-\frac{x}{y}}$
+		
+\end{problem}
+
+
+
+
+\begin{example} %example 2
+Find  $\frac{dy}{dx}$ if $4x^2 + 9y^2 = 36$.\\
+We assume that $y$ is a function of $x$ and we differentiate both 
+sides with respect to $x$:
+\[\frac{d}{dx}(4x^2 + 9y^2)  = \frac{d}{dx} (36)\]
+\[\frac{d}{dx}(4x^2) + \frac{d}{dx} (9y^2) = 0\]
+\[8x + 18y\frac{dy}{dx} = 0.\]
+We can now solve for $\displaystyle{\frac{dy}{dx}}$ algebraically:
+\[18y\frac{dy}{dx} = -8x\]
+\[\frac{dy}{dx} = -\frac{8x}{18y}= -\frac{4x}{9y}.\]
+\end{example}
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of Example 2}
+\youtube{FjHRnCfmuuQ} %vid of example 2
+\end{foldable}
+\end{center}
+
+
+\begin{problem} %problem #2
+  Find $\frac{dy}{dx}$ if
+  \[
+  3x^2 + 5y^2 = 11
+  \]
+  
+	  
+    \begin{hint}
+      Consider $y$ to be a function of $x$.
+    \end{hint}
+		\begin{hint}
+		  Differentiate both sides with respect to $x$.
+		\end{hint}
+    \begin{hint}
+      Use the chain rule on $y^2$ with $y$ as the inside function.
+    \end{hint}
+    \begin{hint}
+      The derivative of the inside is 
+      \[
+      \frac{dy}{dx}
+      \]
+    \end{hint}
+		\begin{hint}
+		  \[
+			6x + 10y\frac{dy}{dx} = 0
+			\]
+		\end{hint}
+		\begin{hint}
+		  Solve for $\frac{dy}{dx}$ by moving the terms with $\frac{dy}{dx}$ to one side and the 
+			rest of the terms to the other side.
+		\end{hint}
+    
+		If $3x^2 + 5y^2 = 11$ then $\frac{dy}{dx}$ is
+		 $\answer[given]{-\frac{3x}{5y}}$
+		
+\end{problem}
+
+
+\begin{problem}
+Use the result of the problem above to find the equation of the tangent line to the ellipse $3x^2 + 5y^2 = 11$ at the point $(\sqrt 2,1).$
+
+\begin{hint}
+$y-y_0 = m(x-x_0)$
+\end{hint}
+\begin{hint}
+$m = \frac{dy}{dx}\bigg|_{(\sqrt 2, 1)}$
+\end{hint}
+The equation of the tangent line is $y = \answer{-\frac{3\sqrt 2}{5} x + \frac{11}{5}}.$
+\end{problem}
+
+
+
+\begin{example} %example 3
+Find  $\frac{dy}{dx}$ if $x^3 + y^3 =6xy$.\\
+We assume that $y$ is a function of $x$ and we differentiate both 
+sides with respect to $x$:
+\[\frac{d}{dx}(x^3 + y^3)  = \frac{d}{dx} (6xy)\]
+\[\frac{d}{dx}(x^3) + \frac{d}{dx}(y^3)  = 6x\frac{dy}{dx} + 6y\]
+\[3x^2 + 3y^2\frac{dy}{dx}  = 6x\frac{dy}{dx} + 6y.\]
+We can now solve for $\displaystyle{\frac{dy}{dx}}$ algebraically:
+\[3y^2\frac{dy}{dx}  - 6x\frac{dy}{dx} = 6y-3x^2\]
+\[(3y^2- 6x)\frac{dy}{dx}   = 6y-3x^2\]
+\[\frac{dy}{dx}   = \frac{6y-3x^2}{3y^2- 6x} = \frac{2y-x^2}{y^2- 2x}.\]
+\end{example}
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of Example 3}
+\youtube{6pr31E5ggyA} %vid of example 3
+\end{foldable}
+\end{center}
+
+
+\begin{problem}
+Use the result of the example above to find the equation of the tangent line to the curve $x^3 + y^3 = 6xy$ at the point $(3,3).$
+
+\begin{hint}
+$y-y_0 = m(x-x_0)$
+\end{hint}
+\begin{hint}
+$m = \frac{dy}{dx}\bigg|_{(3,3)}$
+\end{hint}
+The equation of the tangent line is $y = \answer{-x + 6}.$
+\end{problem}
+
+
+
+
+\begin{problem} %problem #3
+  Find $\frac{dy}{dx}$ if
+  \[
+  x^5 + y^5 = 3x^2y
+  \]
+  
+	  
+    \begin{hint}
+      Consider $y$ to be a function of $x$.
+    \end{hint}
+		\begin{hint}
+		  Differentiate both sides with respect to $x$.
+		\end{hint}
+    \begin{hint}
+      Use the chain rule on $y^5$ with $y$ as the inside function.
+    \end{hint}
+    \begin{hint}
+      The derivative of the inside is 
+      \[
+      \frac{dy}{dx}
+      \]
+    \end{hint}
+		\begin{hint}
+      Use the product rule on the right hand side.
+    \end{hint}
+		\begin{hint}
+		  \[
+			5x^4 + 5y^4\frac{dy}{dx} = 3x^2\frac{dy}{dx} + 6xy
+			\]
+		\end{hint}
+		\begin{hint}
+		  Solve for $\frac{dy}{dx}$ by moving the terms with $\frac{dy}{dx}$ 
+			to one side and the 
+			rest of the terms to the other side.
+		\end{hint}
+    
+		If $x^5 + y^5 = 3x^2y$ then $\frac{dy}{dx}$ is
+		 $\answer[given]{\frac{6xy - 5x^4}{5y^4 - 3x^2}}$
+		
+\end{problem}
+
+
+
+\begin{example} %example 4
+Find  $\frac{dy}{dx}$ if $x^2(x^2 + y^2) =y^2$.\\
+We assume that $y$ is a function of $x$ and we differentiate both 
+sides with respect to $x$:
+\[\frac{d}{dx}[x^2(x^2 + y^2)]  = \frac{d}{dx} (y^2 )\]
+\[\frac{d}{dx}(x^4 + x^2y^2) = 2y\frac{dy}{dx}\]
+\[\frac{d}{dx}(x^4) + \frac{d}{dx}(x^2y^2)  = 2y\frac{dy}{dx}\]
+\[4x^3 + 2x^2y\frac{dy}{dx} + 2xy^2  = 2y\frac{dy}{dx}.\]
+
+We can now solve for $\displaystyle{\frac{dy}{dx}}$ algebraically:
+\[2x^2y\frac{dy}{dx} - 2y\frac{dy}{dx}= -4x^3 - 2xy^2\]
+\[(2x^2y- 2y)\frac{dy}{dx}= -4x^3 - 2xy^2\]
+\[\frac{dy}{dx}= \frac{-4x^3 - 2xy^2}{2x^2y- 2y}\]
+\[\frac{dy}{dx}= -\frac{2x^3 + xy^2}{x^2y- y}= 
+\frac{2x^3 + xy^2}{y - x^2y}.\]
+\end{example}
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of Example 4}
+\youtube{mctk6cD4m2Q} %vid of example 4
+\end{foldable}
+\end{center}
+
+
+
+\begin{problem} %problem #4
+  Find $\frac{dy}{dx}$ if
+  \[
+  x\sin(y) - y\cos(x) = xy
+  \]
+  
+	  
+    \begin{hint}
+      Consider $y$ to be a function of $x$.
+    \end{hint}
+		\begin{hint}
+		  Differentiate both sides with respect to $x$.
+		\end{hint}
+    \begin{hint}
+      Use the chain rule on $\sin(y)$ with $y$ as the inside function.
+    \end{hint}
+    \begin{hint}
+      The derivative of the inside is 
+      \[
+      \frac{dy}{dx}
+      \]
+    \end{hint}
+		\begin{hint}
+      Use the product rule on both terms on the left hand side and the term on the right hand side.
+    \end{hint}
+		\begin{hint}
+		  \[
+			x\cos(y)\frac{dy}{dx} + \sin(y) + y\sin(x) - \cos(x)\frac{dy}{dx} = 
+			x\frac{dy}{dx} + y
+			\]
+		\end{hint}
+		\begin{hint}
+		  Solve for $\frac{dy}{dx}$ by moving the terms with $\frac{dy}{dx}$ to one side and the 
+			rest of the terms to the other side.
+		\end{hint}
+    
+		If $x\sin(y) - y\cos(x) = xy$ then $\frac{dy}{dx}$ is
+		 $\answer[given]{\frac{y - \sin(y) - y\sin(x)}{x\cos(y) -\cos(x) -x}}$
+		
+\end{problem}
+
+
+
+\begin{example} %example 5
+Find  $\frac{dy}{dx}$ if $(x^2 + y^2)^2 =50xy$.\\
+We assume that $y$ is a function of $x$ and we 
+differentiate both sides with respect to $x$:
+\[\frac{d}{dx}[(x^2 + y^2)^2]  = \frac{d}{dx} (50xy )\]
+\[\frac{d}{dx}(x^4 + 2x^2y^2 + y^4) = 50x\frac{dy}{dx} + 50y\]
+\[\frac{d}{dx}(x^4) + \frac{d}{dx}(2x^2y^2) + \frac{d}{dx}(y^4) = 50x\frac{dy}{dx} + 50y\]
+\[4x^3 + 4x^2y\frac{dy}{dx} + 4xy^2 + 4y^3 \frac{dy}{dx}  = 50x\frac{dy}{dx} + 50y.\]
+
+We can now solve for $\displaystyle{\frac{dy}{dx}}$ algebraically:
+\[4x^2y\frac{dy}{dx} + 4y^3 \frac{dy}{dx}  - 50x\frac{dy}{dx} = 50y - 4x^3 - 4xy^2\]
+\[(4x^2y + 4y^3  - 50x)\frac{dy}{dx} = 50y - 4x^3 - 4xy^2\]
+\[\frac{dy}{dx} = \frac{50y - 4x^3 - 4xy^2}{4x^2y + 4y^3  - 50x}= \frac{25y - 2x^3 - 2xy^2}{2x^2y + 2y^3  - 25x}.\]
+\end{example}
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of Example 5}
+\youtube{hWNqzQsShTA} %vid of example 5
+\end{foldable}
+\end{center}
+
+
+
+
+\begin{example} %example 6
+Find  $\frac{dy}{dx}$ if $\frac{1}{x} + \frac{1}{y} =e^{2y}$.\\
+We assume that $y$ is a 
+function of $x$ and we differentiate both 
+sides with respect to $x$:
+\[\frac{d}{dx}\big(\frac{1}{x} + \frac{1}{y}\big)  = \frac{d}{dx} (e^{2y} )\]
+\[\frac{d}{dx}\big(\frac{1}{x}\big) + \frac{d}{dx}\big(\frac{1}{y}\big)  = \frac{d}{dx} (e^{2y} )\]
+\[-\frac{1}{x^2} - \frac{1}{y^2} \ \frac{dy}{dx}  = 2e^{2y} \ \frac{dy}{dx}. \]
+We can now solve for $\displaystyle{\frac{dy}{dx}}$ algebraically:
+
+\[-\frac{1}{x^2}    = 2e^{2y} \ \frac{dy}{dx}+ \frac{1}{y^2}\ \frac{dy}{dx} \]
+\[-\frac{1}{x^2}    = \Big(2e^{2y}+ \frac{1}{y^2}\Big) \ \frac{dy}{dx} \]
+\[-\frac{y^2}{x^2}    = (2y^2e^{2y}+ 1) \ \frac{dy}{dx} \]
+\[\frac{dy}{dx} = -\frac{y^2}{x^2 (1+ 2y^2e^{2y})}. \]
+\end{example}
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of Example 6}
+\youtube{38AVwfIwgIM} %vid of example 6
+\end{foldable}
+\end{center}
+
+
+
+\begin{question} %problem #6
+  Find $\frac{dy}{dx}$ if
+  \[
+  e^{xy} + x^2y^2 = 1
+  \]
+  
+	  
+    \begin{hint}
+      Consider $y$ to be a function of $x$.
+    \end{hint}
+		\begin{hint}
+		  Differentiate both sides with respect to $x$.
+		\end{hint}
+    \begin{hint}
+      Use the chain rule on $e^{xy}$ with $xy$ as the inside function.
+    \end{hint}
+    \begin{hint}
+      The derivative of the inside is 
+      \[
+      x\frac{dy}{dx} + y
+      \]
+			by the product rule.
+    \end{hint}
+		\begin{hint}
+      Use the product rule on the $x^2y^2$ term.
+    \end{hint}
+		\begin{hint}
+		  \[
+			e^{xy} \left( x\frac{dy}{dx} + y\right) + 2x^2y \frac{dy}{dx} + 2xy^2 = 0
+			\]
+		\end{hint}
+		\begin{hint}
+		  Solve for $\frac{dy}{dx}$ by moving the terms with $\frac{dy}{dx}$ to one side and the 
+			rest of the terms to the other side.
+		\end{hint}
+    
+		If $e^{xy} + x^2y^2 = 1$ then $\frac{dy}{dx}$ is
+		 $\answer[given]{-\frac{ye^{xy} +2xy^2}{xe^{xy} + 2x^2y}}$
+		
+\end{question}
+
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here are some detailed, lecture style videos on implicit differentiation:}
+\youtube{5s7UfylRtPE}
+\youtube{TTfTemnYkg8}
+\end{foldable}
+\end{center}
+
+
+
+
+
+
+
+
+
+\end{document}

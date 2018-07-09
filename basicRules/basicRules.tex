@@ -1,0 +1,588 @@
+\documentclass{ximera}
+
+\input{../preamble}
+
+\outcome{Compute derivatives using the constant multiple, sum and difference rules}
+
+\title{2.2 Basic Differentiation Rules}
+
+\begin{document}
+
+\begin{abstract}
+The following rules allow us the find the derivative of multiples, sums and differences of functions 
+whose derivatives are already known.
+\end{abstract}
+
+
+\maketitle
+
+
+\begin{center}
+\bf{The Constant Multiple Rule}
+\end{center}
+
+
+\begin{theorem} If $f(x)$ is differentiable and $c$ is any constant, then
+\[[cf(x)]' = c f'(x)\]
+\end{theorem}
+
+In words, the derivative of a constant times a function is the constant times the derivative of the function.\\
+
+
+
+\begin{example} %example 1
+ If $f(x) = 5x^2$ then  we use the constant multiple rule with $c = 5$ and we get 
+\[
+f'(x) = 5(2x)  = 10x.
+\]
+\end{example}
+
+
+\begin{problem} %problem #1a
+  Compute 
+  \[
+  \frac{d}{dx} \left(4x^2\right)
+  \]
+  
+    \begin{hint}
+      The derivative of $x^2$ is $2x$
+    \end{hint}    
+		The derivative of $4x^2$ with respect to $x$ is
+		 $\answer[given]{8x}$
+	
+\end{problem}
+
+
+
+\begin{problem} %problem #2a
+  Compute 
+  \[
+  \frac{d}{dx} \left(5x^3\right)
+  \]
+  
+    \begin{hint}
+      Use the Power Rule on $x^3$
+    \end{hint}
+    \begin{hint}
+      The Power Rule says:
+      \[
+      \frac{d}{dx} x^n = nx^{n-1}
+      \]
+    \end{hint}
+		\begin{hint}
+		  Don't forget to multiply by $5$
+		\end{hint}
+		The derivative of $5x^3$ with respect to $x$ is
+		 $\answer[given]{15x^2}$
+	
+\end{problem}
+
+
+
+\begin{example} %example 2
+ If $f(x) = \frac{x^3}{9}$ then  we use the constant multiple rule with $c = \frac19$ and we get 
+\[
+f'(x) = \tfrac19 \cdot 3x^2 
+= \frac{x^2}{3}.
+\]
+\end{example}
+
+\begin{problem} %problem #1c
+  Compute 
+  \[
+  \frac{d}{dx} \left(\frac{x^2}{2}\right)
+  \]
+  
+    \begin{hint}
+      The derivative of $x^2$ is $2x$
+    \end{hint}    
+		The derivative of $\frac{x^2}{2}$ with respect to $x$ is
+		 $\answer[given]{x}$
+	
+\end{problem}
+
+\begin{problem} %problem #2b
+  Compute 
+  \[
+  \frac{d}{dx} \left(8x^{1/2}\right)
+  \]
+  
+    \begin{hint}
+      Use the Power Rule on $x^{1/2}$
+    \end{hint}
+    \begin{hint}
+      The Power Rule says:
+      \[
+      \frac{d}{dx} x^n = nx^{n-1}
+      \]
+    \end{hint}
+		\begin{hint}
+		  Don't forget to multiply by $8$
+		\end{hint}
+		The derivative of $8x^{1/2}$ with respect to $x$ is
+		 $\answer[given]{4x^{-1/2}}$
+	
+\end{problem}
+
+\begin{problem} %problem #2c
+  Compute 
+  \[
+  \frac{d}{dx} \left(\frac{x^5}{10}\right)
+  \]
+  
+    \begin{hint}
+      Use the Power Rule on $x^5$
+    \end{hint}
+    \begin{hint}
+      The Power Rule says:
+      \[
+      \frac{d}{dx} x^n = nx^{n-1}
+      \]
+    \end{hint}
+		\begin{hint}
+		  Don't forget to multiply by $1/10$
+		\end{hint}
+		
+		The derivative of $\frac{x^5}{10}$ with respect to $x$ is
+		 $\answer[given]{\frac{x^4}{2}}$
+	
+\end{problem}
+
+
+\begin{example} %example 3
+ If $f(x) = \frac{4}{x^2}$ then we rewrite $f(x)$ as $4x^{-2}$  and we use the constant multiple rule with $c = 4$, 
+giving 
+\[f'(x) = 4 (-2x^{-3}) = -8x^{-3} = -\frac{8}{x^3}.
+\]
+\end{example}
+
+\begin{problem} %problem #3a
+  Compute 
+  \[
+  \frac{d}{dx} \left(\frac{10}{x^5}\right)
+  \]
+  
+    \begin{hint}
+		  Rewrite using $\frac{1}{x^n} = x^{-n}$
+		\end{hint}
+		\begin{hint}
+      Use the Power Rule on $x^{-5}$
+    \end{hint}
+    \begin{hint}
+      The Power Rule says:
+      \[
+      \frac{d}{dx} x^n = nx^{n-1}
+      \]
+    \end{hint}
+		\begin{hint}
+		  Don't forget to multiply by 10
+		\end{hint}
+		
+		The derivative of $\frac{10}{x^5}$ with respect to $x$ is
+		 $\answer[given]{-50x^{-6}}$
+	
+\end{problem}
+
+
+\begin{problem} %problem #3b
+  Compute 
+  \[
+  \frac{d}{dx} \left(6\sqrt x\right)
+  \]
+  
+    \begin{hint}
+		  Rewrite using $\sqrt[n] x = x^{1/n}$
+		\end{hint}
+		\begin{hint}
+      Use the Power Rule on $x^{1/2}$
+    \end{hint}
+    \begin{hint}
+      The Power Rule says:
+      \[
+      \frac{d}{dx} x^n = nx^{n-1}
+      \]
+    \end{hint}
+		\begin{hint}
+		  Don't forget to multiply by 6
+		\end{hint}
+		
+		The derivative of $6\sqrt x$ with respect to $x$ is
+		 $\answer[given]{3x^{-1/2}}$
+	
+\end{problem}
+
+
+\begin{theorem} If $f(x)$ and $g(x)$ are differentiable functions then
+\[[f(x) + g(x)]' =  f'(x) +  g'(x)\]
+\end{theorem}
+
+In words, the derivative of a sum is the sum of the derivatives.
+
+
+\begin{example} %example 1
+If $f(x) = x^3 + x^2$ then $f'(x) = 3x^2 + 2x$.
+\end{example}
+
+\begin{problem} %problem #1a
+  Compute 
+  \[
+  \frac{d}{dx} (x^5 + x^4)
+  \]
+  
+    \begin{hint}
+      Use the Power Rule on each term
+    \end{hint}
+    \begin{hint}
+      The Power Rule says:
+      \[
+      \frac{d}{dx} x^n = nx^{n-1}
+      \]
+    \end{hint}    
+		The derivative of $x^5 + x^4$ with respect to $x$ is
+		 $\answer[given]{5x^4 + 4x^3}$
+	
+\end{problem}
+
+\begin{problem} %problem #1b
+  Compute 
+  \[
+  \frac{d}{dx} (x^{1000} + x^{100} + x^{10})
+  \]
+  
+    \begin{hint}
+		  The Sum Rule can be used on more than two terms
+		\end{hint}
+		\begin{hint}
+      Use the Power Rule on each term
+    \end{hint}
+    \begin{hint}
+      The Power Rule says:
+      \[
+      \frac{d}{dx} x^n = nx^{n-1}
+      \]
+    \end{hint}    
+		The derivative of $x^{1000} + x^{100} + x^{10}$ with respect to $x$ is
+		 $\answer[given]{1000x^{999} + 100x^{99} + 10x^9}$
+	
+\end{problem}
+
+\begin{example} %example 2
+ If $f(x) = \frac{1}{x} + \frac{1}{x^2}$ then we rewrite $f(x)$ as $x^{-1} + x^{-2}$ and 
+\[f'(x) = -x^{-2} -2x^{-3} = -\frac{1}{x^2} - \frac{2}{x^3} = - \frac{x + 2}{x^3}.\]
+\end{example}
+
+\begin{problem} %problem #2a
+  Compute 
+  \[
+  \frac{d}{dx} \left(\frac{1}{x^3} + \frac{1}{x^4}\right)
+  \]
+  
+    \begin{hint}
+		 $\frac{1}{x^n} = x^{-n}$
+		\end{hint}
+		\begin{hint}
+      Use the Power Rule on each term
+    \end{hint}
+    \begin{hint}
+      The Power Rule says:
+      \[
+      \frac{d}{dx} x^n = nx^{n-1}
+      \]
+    \end{hint}    
+		The derivative of $\frac{1}{x^3} + \frac{1}{x^4}$ with respect to $x$ is
+		 $\answer[given]{-3x^{-4} -4x^{-5}}$
+	
+\end{problem}
+
+
+\begin{problem} %problem #2b
+  Compute 
+  \[
+  \frac{d}{dx} \left(\frac{1}{x^5} + \frac{1}{x^6} + \frac{1}{x^7}\right)
+  \]
+  
+    \begin{hint}
+		 $\frac{1}{x^n} = x^{-n}$
+		\end{hint}
+		\begin{hint}
+		  The Sum Rule can be used on more than two terms
+		\end{hint}
+		\begin{hint}
+      Use the Power Rule on each term
+    \end{hint}
+    \begin{hint}
+      The Power Rule says:
+      \[
+      \frac{d}{dx} x^n = nx^{n-1}
+      \]
+    \end{hint}    
+		The derivative of $\frac{1}{x^5} + \frac{1}{x^6} + \frac{1}{x^7}$ with respect to $x$ is
+		 $\answer[given]{-5x^{-6} -6x^{-7} - 7x^{-8}}$
+	\
+\end{problem}
+
+
+
+\begin{example} %example 3
+ If $f(x) = \sqrt x + \sqrt[3] x$ then we rewrite $f(x)$ as $x^{1/2} + x^{1/3}$ and
+\begin{align*}
+f'(x) &= \tfrac12 x^{-1/2} + \tfrac13 x^{-2/3} \\
+&= \tfrac12 \cdot \frac{1}{x^{1/2}} + \tfrac13 \cdot \frac{1}{x^{2/3}}\\
+&= \frac{1}{2\sqrt x} + \frac{1}{3\sqrt[3] {x^2}}.
+\end{align*}
+\end{example}
+
+
+\begin{problem} %problem #3a
+  Compute 
+  \[
+  \frac{d}{dx} \left(\sqrt[4] x + \sqrt[5] x\right)
+  \]
+  
+    \begin{hint}
+		 $\sqrt[n] x = x^{1/n}$
+		\end{hint}
+		\begin{hint}
+      Use the Power Rule on each term
+    \end{hint}
+    \begin{hint}
+      The Power Rule says:
+      \[
+      \frac{d}{dx} x^n = nx^{n-1}
+      \]
+    \end{hint}    
+		The derivative of $\sqrt[4] x + \sqrt[5] x$ with respect to $x$ is
+		 $\answer[given]{\frac14 x^{-3/4} + \frac15 x^{-4/5}}$
+	
+\end{problem}
+
+
+\begin{problem} %problem #3b
+  Compute 
+  \[
+  \frac{d}{dx} \left(\sqrt[6] x + \sqrt[7] x + \sqrt[8] x\right)
+  \]
+  
+    \begin{hint}
+		 $\sqrt[n] x = x^{1/n}$
+		\end{hint}
+		\begin{hint}
+		  The Sum Rule can be used on more than two terms
+		\end{hint}
+		\begin{hint}
+      Use the Power Rule on each term
+    \end{hint}
+    \begin{hint}
+      The Power Rule says:
+      \[
+      \frac{d}{dx} x^n = nx^{n-1}
+      \]
+    \end{hint}    
+		The derivative of $\sqrt[6] x + \sqrt[7] x + \sqrt[8] x$ with respect to $x$ is
+		 $\answer[given]{\frac16 x^{-5/6} + \frac17 x^{-6/7} + \frac18 x^{-7/8}}$
+	
+\end{problem}
+
+
+
+
+\begin{theorem} If $f(x)$ and $g(x)$ are differentiable functions, then
+\[ [f(x) - g(x)]' =  f'(x) -  g'(x)\]
+\end{theorem}
+
+In words, the derivative of a difference is the difference of the derivatives.\\
+
+
+
+\begin{example} %example 1
+ If $f(x) = x^5 - x$ then $f'(x) = 5x^4 - 1$.
+\end{example}
+
+\begin{problem} %problem #1a
+  Compute 
+  \[
+  \frac{d}{dx} \left(x^7 - x^4\right)
+  \]
+  
+    \begin{hint}
+      Use the Power Rule on each term
+    \end{hint}
+    \begin{hint}
+      The Power Rule says:
+      \[
+      \frac{d}{dx} x^n = nx^{n-1}
+      \]
+    \end{hint}    
+		The derivative of $x^7 - x^4$ with respect to $x$ is
+		 $\answer[given]{7x^6 - 4x^3}$
+	
+\end{problem}
+
+\begin{problem} %problem #1b
+  Compute 
+  \[
+  \frac{d}{dx} \left(x^{1000} - x^{100} - x^{10}\right)
+  \]
+  
+    \begin{hint}
+		  The Difference Rule can be used on more than two terms
+		\end{hint}
+		\begin{hint}
+      Use the Power Rule on each term
+    \end{hint}
+    \begin{hint}
+      The Power Rule says:
+      \[
+      \frac{d}{dx} x^n = nx^{n-1}
+      \]
+    \end{hint}    
+		The derivative of $x^{1000} - x^{100} - x^{10}$ with respect to $x$ is
+		 $\answer[given]{1000x^{999} - 100x^{99} - 10x^9}$
+	
+\end{problem}
+
+
+\begin{problem} %problem #1c
+  Compute 
+  \[
+  \frac{d}{dx} \left(4x^4 - 5x^3 + 8x^2 - 15x - 4\right)
+  \]
+  
+    \begin{hint}
+		  The Difference Rule can be used on more than two terms
+		\end{hint}
+		\begin{hint}
+		  The Sum, Difference and Constant Multiple Rules are often used together 
+		\end{hint}
+		\begin{hint}
+      Use the Power Rule on each term
+    \end{hint}
+    \begin{hint}
+      The Power Rule says:
+      \[
+      \frac{d}{dx} x^n = nx^{n-1}
+      \]
+    \end{hint}    
+		The derivative of $4x^4 - 5x^3 + 8x^2 - 15x - 4$ with respect to $x$ is
+		 $\answer[given]{16x^3 - 15x^2 + 16x - 15}$
+	
+\end{problem}
+
+
+\begin{example} %example 2
+ If $f(x) = \frac{1}{x^3} - \frac{1}{x^4}$ then we rewrite $f(x)$ as $x^{-3} - x^{-4}$ and 
+$f'(x) = -3x^{-4} + 4x^{-5} = -\frac{3}{x^4} + \frac{4}{x^5} = \frac{4}{x^5}-\frac{3}{x^4} = 
+\frac{4x^4 - 3x^5}{x^9} = \frac{4 - 3x}{x^5}$.
+\end{example}
+
+
+\begin{problem} %problem #2a
+  Compute 
+  \[
+  \frac{d}{dx} \left(\frac{1}{x^5} - \frac{1}{x}\right)
+  \]
+  
+    \begin{hint}
+		 $\frac{1}{x^n} = x^{-n}$
+		\end{hint}
+		\begin{hint}
+      Use the Power Rule on each term
+    \end{hint}
+    \begin{hint}
+      The Power Rule says:
+      \[
+      \frac{d}{dx} x^n = nx^{n-1}
+      \]
+    \end{hint}    
+		The derivative of $\frac{1}{x^5} - \frac{1}{x}$ with respect to $x$ is
+		 $\answer[given]{-5x^{-6} + x^{-2}}$
+	
+\end{problem}
+
+
+\begin{problem} %problem #2b
+  Compute 
+  \[
+  \frac{d}{dx} \left(\frac{1}{x^2} - \frac{1}{x^6} - \frac{1}{x^7}\right)
+  \]
+  
+    \begin{hint}
+		 $\frac{1}{x^n} = x^{-n}$
+		\end{hint}
+		\begin{hint}
+		  The Difference Rule can be used on more than two terms
+		\end{hint}
+		\begin{hint}
+      Use the Power Rule on each term
+    \end{hint}
+    \begin{hint}
+      The Power Rule says:
+      \[
+      \frac{d}{dx} x^n = nx^{n-1}
+      \]
+    \end{hint}    
+		The derivative of $\frac{1}{x^2} - \frac{1}{x^6} - \frac{1}{x^7}$ with respect to $x$ is
+		 $\answer[given]{-2x^{-3} + 6x^{-7} + 7x^{-8}}$
+	
+\end{problem}
+
+
+\begin{example} %example 3
+ If $f(x) = \sqrt x - \sqrt[4] {x^3}$ then we rewrite $f(x)$ as $x^{1/2} + x^{3/4}$ and
+$f'(x) = \tfrac12 x^{-1/2} - \tfrac34 x^{-1/4} = \tfrac12 \cdot \frac{1}{x^{1/2}} - \tfrac34 \cdot \frac{1}{x^{1/4}} 
+= \frac{1}{2\sqrt x} - \frac{3}{4\sqrt[4] x}$.
+\end{example}
+
+
+\begin{problem} %problem #3a
+  Compute 
+  \[
+  \frac{d}{dx} \left(\sqrt[3] x - \sqrt[5] x\right)
+  \]
+  
+    \begin{hint}
+		 $\sqrt[n] x = x^{1/n}$
+		\end{hint}
+		\begin{hint}
+      Use the Power Rule on each term
+    \end{hint}
+    \begin{hint}
+      The Power Rule says:
+      \[
+      \frac{d}{dx} x^n = nx^{n-1}
+      \]
+    \end{hint}    
+		The derivative of $\sqrt[3] x - \sqrt[5] x$ with respect to $x$ is
+		 $\answer[given]{\frac13 x^{-2/3} - \frac15 x^{-4/5}}$
+	
+\end{problem}
+
+
+\begin{problem} %problem #3b
+  Compute 
+  \[
+  \frac{d}{dx} (\sqrt[6] {x^5} - \sqrt[7] {x^6} + \sqrt[8] {x^7})
+  \]
+  
+    \begin{hint}
+		 $\sqrt[n] x^m = x^{m/n}$
+		\end{hint}
+		\begin{hint}
+		  The Sum and Difference Rules can be used on more than two terms
+		\end{hint}
+		\begin{hint}
+      Use the Power Rule on each term
+    \end{hint}
+    \begin{hint}
+      The Power Rule says:
+      \[
+      \frac{d}{dx} x^n = nx^{n-1}
+      \]
+    \end{hint}    
+		The derivative of $\sqrt[6] {x^5} - \sqrt[7] {x^6} + \sqrt[8] {x^7}$ with respect to $x$ is
+		 $\answer[given]{\frac56 x^{-1/6} - \frac67 x^{-1/7} + \frac78 x^{-1/8}}$
+	
+\end{problem}
+
+
+\end{document}

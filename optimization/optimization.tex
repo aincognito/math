@@ -1,0 +1,564 @@
+\documentclass{ximera}
+
+\input{../preamble}
+
+\outcome{Optimize a function which models a real world situation}
+
+\title{3.8 Optimization}
+
+\begin{document}
+
+\begin{abstract}
+We find extremes of functions which model real world situations.
+\end{abstract}
+
+\maketitle
+
+\begin{center}
+\textbf{Optimization}
+\end{center}
+ 
+
+\begin{example} %example 1
+Farmer Bob has 2400 linear feet of fence with which to build a rectangular enclosure with a vertical partition, as shown below.  What dimensions will maximize the total area covered by the enclosure and what is the maximum area?
+\begin{center}
+\begin{tikzpicture}
+\draw (0,0) --(5, 0) -- (5, 3) -- (0, 3) -- (0, 0);
+\draw (3, 0) -- (3, 3);
+\end{tikzpicture}
+\end{center}
+Let $x$ be the length of the enclosure and $y$ the width.  The total area of the enclosure is then
+\[A= xy.\]
+This is called the {\it objective} function.
+To maximize the area, Farmer Bob should use all 2400 linear feet of fence.  Since there are two horizontal strips of length $x$ and three vertical strips of length $y$ (because of the partition), we get the {\it constraint} equation:
+\[2x+3y=2400.\]
+In the standard language of optimization, we can now state the problem as follows.
+
+Maximize the objective
+\[A = xy,\]
+subject to the constraint 
+\[2x+3y = 2400.\]
+To find the maximum area, we need to eliminate one of the variables $x, y$ from the objective function.
+We use the constraint to do this.  Solve the constraint for either $x$ or $y$, whichever is easier.
+In this case, solving the constraint for $y$ gives
+\[y = 800 - \frac23 x.\]
+We now {\it substitute} this expression of $y$ into the objective function to get 
+\[A = xy = x(800 - \frac23 x) = 800x - \frac23 x^2.\]
+Now we can find the maximum area by finding the critical numbers:
+\[A' = 800 - \frac43 x = 0 \]
+which yields
+\[x= 600 \,\mbox{ft.}\]
+Note that this gives a maximum since the graph of $A$ is a parabola that opens down.
+To finish off the problem, we find $y$ by plugging $x = 600$ into the constraint, which we already solved for $y$:
+\[y = 800 - \frac23 x = 800 - \frac23(600) = 400 \,\mbox{ft.}\]
+Finally the maximum area of the enclosure is
+\[A = xy = (600)(400) = 240{,}000 \,\mbox{ sq.ft.}\]
+\end{example}
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of the example above}
+\youtube{jNTcXGVWbbY} 
+\end{foldable}
+\end{center}
+
+
+
+
+\begin{problem}
+Farmer Bob has 1000 linear feet of fence with which to build a rectangular enclosure.  What dimensions will maximize the total area covered by the enclosure and what is the maximum area?
+
+\begin{hint}
+Let $x$ be the length and $y$ the width
+\end{hint}
+\begin{hint}
+The material constraint is $2x+2y = 1000$
+\end{hint}
+\begin{hint}
+Write the area as a function of $x$
+\end{hint}
+\begin{hint}
+Set the derivative equal to zero
+\end{hint}
+
+The optimal length is $x= \answer{250}$ ft.\\
+The optimal width is $y = \answer{250}$ ft.\\
+The maximum area is $\answer{62500}$ sq. ft.
+
+
+\end{problem}
+
+
+\begin{problem}
+Farmer Bob has 3200 linear feet of fence with which to build a rectangular enclosure with two vertical partitions, as shown below.
+What dimensions will maximize the total area covered by the enclosure and what is the maximum area?
+
+\begin{center}
+\begin{tikzpicture}
+\draw (0,0) --(5, 0) -- (5, 3) -- (0, 3) -- (0, 0);
+\draw (1.5, 0) -- (1.5, 3);
+\draw (3, 0) -- (3, 3);
+\end{tikzpicture}
+\end{center}
+\begin{hint}
+Let $x$ be the length and $y$ the width
+\end{hint}
+\begin{hint}
+The material constraint is $2x+4y = 3200$
+\end{hint}
+\begin{hint}
+Write the area as a function of $x$
+\end{hint}
+\begin{hint}
+Set the derivative equal to zero
+\end{hint}
+
+The optimal length is $x= \answer{800}$ ft.\\
+The optimal width is $y = \answer{400}$ ft.\\
+The maximum area is $\answer{320000}$ sq. ft.
+ 
+\end{problem}
+
+\begin{problem}
+Farmer Bob has 400 linear feet of fence with which to build a 
+rectangular enclosure along the bank of a straight river, as shown below.  
+If no fence is required along the river bank, what dimensions will maximize the total area 
+covered by the enclosure and what is the maximum area?
+\begin{center}
+\text{river}\\
+\begin{tikzpicture}
+\draw (0,0) --(5, 0) -- (5, 3) -- (0, 3) -- (0, 0);
+%\node[above]{river};
+\draw (-1, 3) -- (6, 3);
+\end{tikzpicture}
+\end{center}
+\begin{hint}
+Let $x$ be the length and $y$ the width
+\end{hint}
+\begin{hint}
+The material constraint is $x+2y = 400$
+\end{hint}
+\begin{hint}
+Write the area as a function of $x$
+\end{hint}
+\begin{hint}
+Set the derivative equal to zero
+\end{hint}
+
+The optimal length is $x= \answer{200}$ ft.\\
+The optimal width is $y = \answer{100}$ ft.\\
+The maximum area is $\answer{20000}$ sq. ft.
+
+
+\end{problem}
+
+\begin{example} %example 4
+A box with a square base and an open top are to be constructed using 4800 sq. in. of cardboard.  Find the dimensions of the box that will maximize its volume.  What is the maximum volume?\\
+
+If we let $x$ represent the length and width of the box, and $y$ its height, then our objective is to maximize 
+the volume,
+
+
+\begin{center}
+\begin{tikzpicture}
+\draw (0,0) --node[below] {$x$} (4, 0) -- (4, 3) -- (0, 3)--(0,0);
+\draw (2,1) --(6, 1) -- node[right] {$y$}(6, 4) -- (2, 4) -- (2, 1);
+\draw (0, 0)--(2,1);
+\draw (4, 0)--node[right] {\; $x$}(6,1);
+\draw (4,3 )--(6,4);
+\draw (0,3)--(2,4);
+\end{tikzpicture}
+\end{center}
+
+\[V = \text{length times width times height} = x^2y.\]
+
+We have a material constraint which says that the surface area of the box should be 4800 sq. in:
+\[\text{area of base + area of 4 sides} = x^2 + 4xy = 4800.\]
+Solving the constraint for $y$ gives
+\[y = \frac{4800 - x^2}{4x},\]
+and substituting this into the objective gives:
+\[V = x^2y = x^2 \left(\frac{4800 - x^2}{4x}\right).\]
+This simplifies to 
+\[V = 1200x - \frac14 x^3\]
+which has a maximum when its derivative is zero.
+Solving $V' = 0$ for $x$ gives
+\[V' = 1200 - \frac34 x^2 = 0,\]
+so
+\[ \frac34 x^2 = 1200, \]
+and 
+\[x^2 = 1600,\]
+\[x = \pm 40,\]
+so our answer is 
+\[x = 40 \mbox{ in.}\]
+Plugging this into the constraint equation, we can find $y$:
+\[y = \frac{4800 - x^2}{4x} = \frac{4800 - 1600}{160} = 20 \mbox{ in.}\]
+The volume of the box with these dimensions is
+\[V = x^2y = (40)^2 (20) = 32{,}000 \mbox{ cubic inches}.\]
+
+\end{example}
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of the example above}
+\youtube{eFutZtccyck} 
+\end{foldable}
+\end{center}
+
+
+
+
+\begin{problem}
+A box with a square base and an open top are to be constructed using 7500 sq. in. of cardboard.  
+Find the dimensions of the box that will maximize its volume.  What is the maximum volume?
+\begin{hint}
+Let $x$ be the length and width of the square base
+\end{hint}
+\begin{hint}
+Let $y$ be the height of the box
+\end{hint}
+\begin{hint}
+The material constraint is $x^2 + 4xy = 7500$
+\end{hint}
+\begin{hint}
+The volume is $x^2 y$; replace $y$ using the constraint
+\end{hint}
+\begin{hint}
+Set the derivative equal to zero
+\end{hint}
+
+The optimal length and width are $x = \answer{50}$ inches.\\
+The optimal height is $y = \answer{25}$ inches.\\
+The maximum volume is $ \answer{62500}$ cubic inches.
+\end{problem}
+
+
+\begin{example} %example 3
+Scientist Sam wants to know how close a comet moving in a parabolic trajectory will get to the sun. 
+We will assume that the sun is located at the origin, 
+the path of the comet follows the parabola $y = x^2 - 5$ and that the units 
+on the axes are in millions of miles.
+
+Using the distance formula, we can see that if the comet is at a point $(x, y)$, 
+then its distance to the sun at $(0, 0)$ is
+\[d = \sqrt{x^2 + y^2}.\]
+Since the comet is on the parabola $y = x^2 - 5$, we can substitute this into the equation for $d$ giving
+\[d = \sqrt{x^2 + (x^2 - 5)^2}.\]
+Now, we would like to minimize $d$. A convenient trick when minimizing a square root is to minimize the radicand.
+So, we want to minimize $f(x) = x^2 + (x^2 - 5)^2$. The min occurs when the derivative is 0, so we solve
+$f'(x) = 0$ for $x$ yielding
+\[f'(x) = 2x + 2(x^2 - 5)(2x) = 2x[1+ 2(x^2 - 5)] = 2x(2x^2 - 9) = 0\]
+which gives either 
+\[2x = 0 \mbox{\;\; or \;\;} 2x^2 - 9 = 0.\]
+The three solutions are $x = 0, \pm 3/\sqrt2$.
+The corresponding $y$-values can be found by plugging these $x$-values into the parabola $y = x^2 - 5$
+giving the three points
+\[(0, -5), (-3/\sqrt2, -1/2) \mbox{ and } (3/\sqrt2, -1/2).\]
+If the comet is at $(0, -5)$ then its distance to the sun is 5 million miles.  If the comet is at 
+either $(\pm 3/\sqrt2, -1/2)$ then the distance is 
+\[d = \sqrt{x^2 + y^2} = \sqrt{{\frac{9}{2} + \frac14}} = \frac{\sqrt {19}}{2} \mbox{ million miles}.\]
+Hence the minimum distance is $\sqrt{19}/2$ million miles when the comet is at either of the points 
+$(\pm 3/ \sqrt 2, -1/2)$.
+\end{example}
+
+\begin{problem} %example 3
+Scientist Sam wants to know how close a comet moving in a parabolic trajectory will get to the sun. 
+We will assume that the sun is located at the origin, 
+the path of the comet follows the parabola $y = x^2 - 1$ and that the units 
+on the axes are in millions of miles.
+
+
+\begin{hint}
+The distance formula is $d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$
+\end{hint}
+\begin{hint}
+The sun is at $(0,0)$
+\end{hint}
+\begin{hint}
+The comet is on the parabola, so it is at $(x, x^2 - 1)$
+\end{hint}
+\begin{hint}
+To minimize a square root function, minimize the radicand
+\end{hint}
+\begin{hint}
+Set the derivative equal to zero
+\end{hint}
+
+The comet is closest to the sun at two points.
+ The x-coordinates of these points are (in ascending order)\\
+$x =  \answer{1/\sqrt2}$ and $x = - \answer{1/\sqrt2}$.\\
+The minimum distance is $d = \answer{\sqrt{3/4}}$ million miles.
+\end{problem}
+
+
+
+\begin{example} %example 2
+Gardner Harold wants to construct a 1600 square foot  rectangular enclosure that has both a 
+horizontal and a vertical partition. What dimensions will require the minimum amount of fencing?  
+How much fence will he need?
+
+Let $x$ be the length of the enclosure and $y$ the width. Because of the partitions, there are 3 horizontal and 3 vertical sections of fence. Hence the total amount of fence needed can be expressed as 
+\[F = 3x + 3y.\]
+ This is our objective function. Since the area of the enclosure needs to be 1600 sq. ft., we have the constraint 
+\[xy = 1600.\]
+Solving the constraint for $y$ gives $y = 1600/x$.  Substituting this into the objective yields
+\[F= 3x + 3y = 3x + 3\left(\frac{1600}{x}\right) = 3x + \frac{4800}{x}.\]
+The minimum value of $F$ occurs when $F' = 0$. Solving $F' = 0$ for $x$ gives
+\[F' = 3 - \frac{4800}{x^2} = 0\]
+which means $3x^2 = 4800$ and so $x = \pm 40$ ft.  Since $x>0$ from context, we have $x = 40$ ft. as our solution.
+Plugging this value of $x$ into the constraint equation gives
+\[y = \frac{1600}{x} = \frac{1600}{40} = 40 \mbox{ ft.}\]
+So the solution is for the gardener to build a square, 40 feet on a side, using a total of $F = 3x+ 3y = 3(40) + 3(40)
+= 240$ feet of fence.
+\end{example}
+
+\begin{problem}
+Gardner Harold wants to construct a 600 square foot  rectangular enclosure that has a 
+vertical partition. What dimensions will require the minimum amount of fencing?  
+How much fence will he need?
+
+\begin{hint}
+Let $x$ be the length and $y$ the width
+\end{hint}
+\begin{hint}
+The size constraint is $xy = 600$
+\end{hint}
+\begin{hint}
+Write the amount of fence used as a function of $x$
+\end{hint}
+\begin{hint}
+Set the derivative equal to zero
+\end{hint}
+
+The optimal length is $x= \answer{30}$ ft.\\
+The optimal width is $y = \answer{20}$ ft.\\
+The minimum amount of fence needed is $\answer{120}$ ft.
+\end{problem}
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+             
+						 Maximize vol of box with square base
+						 Minimize material in a 1L cylindrical can
+						 Minimize travel time across and downstream a river by rowing and running
+						 Maximize volume of box created by cutting corners and folding up edges
+						 Maximize printed area on poster with margin
+						 Maximize volume of square base box with fixed girth l + w + h = 64
+						 Maximize area of rectangle inscribed in circle
+						 
+
+\item[RR 2.] The volume of a cube is given by $V = s^3$. If $V$ and $s$ are functions of time, $t$, 
+then their rates of change are related as follows:
+\[\frac{d}{dt} (V) = \frac{d}{dt}(s^3)\]
+\[\frac{dV}{dt}  = 3s^2 \ \frac{ds}{dt}.\]
+
+
+\item[RR 3.] The surface area of a cube is given by $S = 6s^2$. If $S$ and $s$ are functions of time, $t$, 
+then their rates of change with respect to $t$ are related as follows:
+\[\frac{d}{dt} (S) = \frac{d}{dt}(6s^2) \]
+\[\frac{dS}{dt}  = 12s\frac{ds}{dt}.\]
+
+\item[RR 4.] The circumference of a circle is given by $C = 2\pi r$. If $C$ and $r$ are functions of time, $t$, 
+then their rates of change are related as follows:
+\[\frac{d}{dt} (C) = \frac{d}{dt}(2\pi r)\]
+\[\frac{dC}{dt}  = 2\pi \frac{dr}{dt}.\]
+
+\item[RR 5.] The area of a circle is given by $A = \pi r^2$. If $A$ and $r$ are functions of time, $t$, 
+then their rates of change are related as follows:
+\[\frac{d}{dt} (A) = \frac{d}{dt}(\pi r^2)\]
+\[\frac{dA}{dt}  = 2\pi r \frac{dr}{dt}.\]
+
+\item[RR 6.] The volume of a sphere is given by $V = \tfrac{4}{3}\pi r^3$. If $V$ and $r$ are functions of time, $t$, 
+then their rates of change are related as follows:
+\[\frac{d}{dt} (V) = \frac{d}{dt}(\tfrac{4}{3}\pi r^3)\]
+\[\frac{dV}{dt}  = 4\pi r^2 \ \frac{dr}{dt}.\]
+
+\item[RR 7.] The surface area of a sphere is given by $S = 4\pi r^2$. If $S$ and $r$ are functions of time, $t$, 
+then their rates of change are related as follows:
+\[\frac{d}{dt} (S) = \frac{d}{dt}(4\pi r^2)\]
+\[\frac{dS}{dt}  = 8\pi r\frac{dr}{dt}.\]
+
+
+\item[RR 8.] The lengths of the sides of a right triangle are related by $x^2 + y^2 = z^2$. 
+If $x, y$ and $z$ are functions of time, $t$, 
+then their rates of change are related as follows:
+\[\frac{d}{dt} (x^2 + y^2 ) = \frac{d}{dt}( z^2)\]
+\[\frac{d}{dt} (x^2) +\frac{d}{dt}(y^2 ) = \frac{d}{dt}( z^2)\]
+\[2x\frac{dx}{dt} + 2y\frac{dy}{dt} = 2z\frac{dz}{dt}\]
+\[x\frac{dx}{dt} + y\frac{dy}{dt} = z\frac{dz}{dt}.\]
+
+\item[RR 9.] In a right triangle with angle $\theta$, adjacent side $5$ and opposite side $x$, then 
+$\theta$ and $x$ are related by $\tan (\theta) = \frac{x}{5}$. If $\theta$ and $x$ are functions of time, $t$, 
+then their rates of change are related as follows:
+\[\frac{d}{dt}[\tan (\theta)] = \frac{d}{dt} \big(\frac{x}{5}\big)\]
+\[\sec^2(\theta) \frac{d\theta}{dt} = \frac{1}{5} \cdot \frac{dx}{dt}.\]
+
+\item[RR 10.] The area of a triangle is given by $A = \frac{1}{2} bh$. If $A, b$ and $h$ are functions of time, $t$, 
+then their rates of change are related as follows:
+\[\frac{d}{dt}(A) = \frac{d}{dt}(\tfrac{1}{2} bh)\]
+\[\frac{dA}{dt} = \frac{b}{2} \cdot \frac{dh}{dt}+ \frac{h}{2} \cdot \frac{db}{dt}.\]
+
+\item[RR 11.] The volume of a cylinder is given by $V = \pi r^2h$. If $V, r$ and $h$ are functions of time, $t$, 
+then their rates of change are related as follows:
+\[\frac{d}{dt}(V) = \frac{d}{dt}(\pi r^2h)\]
+\[\frac{dV}{dt} = \pi r^2\frac{dh}{dt} + 2\pi rh \frac{dr}{dt}. \]
+
+\item[RR 12.] The volume of a cone is given by $V = \frac13 \pi r^2h$. If $V, r$ and $h$ are functions of time, $t$, 
+then their rates of change are related as follows:
+\[\frac{d}{dt}(V) = \frac{d}{dt}(\tfrac13\pi r^2h)\]
+\[\frac{dV}{dt} = \tfrac13 \pi r^2\frac{dh}{dt} + \tfrac23\pi rh \frac{dr}{dt}. \]
+
+\end{description}
+
+\begin{center}
+\bf{Related Rates Word Problems}
+\end{center}
+
+\begin{description}
+
+\item[WP 1.] The radius of a circular ripple wave is increasing at a rate of 2m/s. How fast is the area of the wave 
+increasing when the radius is 5m? \\
+In mathematical notation, we are given $\frac{dr}{dt} = 2$ and we need to find
+\[\frac{dA}{dt}\Big|_{r = 5}.\]
+We find the relationship between 
+\[\frac{dA}{dt} \text{ and } \frac{dr}{dt}\]
+and then we plug in the given numerical information.
+Since $A = \pi r^2$, we have
+\[\frac{d}{dt} (A) = \frac{d}{dt}(\pi r^2) \text{ \ \ and hence} \]
+\[\frac{dA}{dt}  = 2\pi r \frac{dr}{dt}.\]
+Finally,
+\[\frac{dA}{dt}\Big|_{r = 5}  = 2\pi (5) (2) = 20\pi.\]
+Thus, when the radius of the spill is 5m, the area is growing at a rate of $20\pi$ m/s.
+
+
+\item[WP 2.] A ten foot ladder is sliding down a wall at a rate of 1 ft/sec.  How fast is the base of the 
+ladder sliding away from the wall when the top of the ladder is six feet above the ground?\\
+ The ladder, 
+wall and ground make a right triangle with $x$ being the distance from the base of the ladder 
+to the wall and $y$ being the distance between the top of the ladder and the ground. The hypotenuse is the length of the
+ladder, which is 10 ft. The variables are related by the Pythagorean Theorem: $x^2 + y^2 = 10^2$. Since the ladder is
+sliding down the wall, $x$ and $y$ are functions of time, $t$. Furthermore, we are given the rate $\frac{dy}{dt} = -1$ 
+and we need to find the related rate
+\[\frac{dx}{dt}\Big|_{y = 6}.\]
+We first find the relationship between 
+\[\frac{dx}{dt} \text{ and } \frac{dy}{dt}\]
+and then we plug in the given numerical information.
+Since $x^2 + y^2 = 100$, we have
+\[\frac{d}{dt} (x^2 + y^2 ) = \frac{d}{dt}(100)\]
+\[\frac{d}{dt} (x^2) +\frac{d}{dt}(y^2 ) = 0\]
+\[2x\frac{dx}{dt} + 2y\frac{dy}{dt} = 0\]
+\[x\frac{dx}{dt} + y\frac{dy}{dt} = 0\]
+\[\frac{dx}{dt} =- \frac{y}{x}\cdot \frac{dy}{dt}. \]
+Finally, when $y= 6$ we have $x=8$ since $x^2 + y^2 = 100$ and
+\[\frac{dx}{dt}\Big|_{y = 6}= -\frac68 (-1) = \frac34.\]
+Thus, when the top of the ladder is six feet above the ground, the base of the ladder is sliding away from the wall 
+at a rate of 3/4 ft/sec.
+
+
+\item[WP 3.] A snowball is melting at a rate of 20 cm$^3$/min. How fast is the radius of the snowball
+decreasing when it is 10 cm. in diameter?\\
+In mathematical notation, we are given $\frac{dV}{dt} = -20$ and we need to find
+\[\frac{dr}{dt}\Big|_{d = 10}.\]
+We find the relationship between 
+\[\frac{dr}{dt} \text{ and } \frac{dV}{dt}\]
+and then we plug in the given numerical information.
+Assuming the snowball is a sphere, $V = \tfrac43 \pi r^3$, and we have
+\[\frac{d}{dt} (V) = \frac{d}{dt}(\tfrac43 \pi r^3). \text{ \ \ Hence} \]
+\[\frac{dV}{dt}  = 4\pi r^2 \  \frac{dr}{dt}.\]
+
+Finally, when $d = 10$ we have $r = 5$ and
+\[-20  = 4\pi (5)^2 \ \frac{dr}{dt}\Big|_{d = 10}\]
+and
+\[\frac{dr}{dt}\Big|_{d = 10} = -\frac{20}{4\pi (5)^2} = -\frac{1}{5\pi} \]
+Thus, when the diameter of the snowball is  10 cm, the radius is decreasing at a rate of $\frac{1}{5\pi}$ cm/min.
+
+
+
+\item[WP 4.] A camera is filming the launch of a hot air balloon from 100 feet away. 
+If the balloon rises at a rate of 15 ft/sec, how fast is the camera angle increasing when the balloon is 50 feet in the air?\\
+Let $h$ be the height of the balloon and $\theta$ be the camera angle. Then, by right triangle trigonometry, 
+\[\tan(\theta) = \frac{h}{100}\]
+where both $\theta$ and $h$ are functions of time, $t$.
+We are given $\frac{dh}{dt} = 15$ and we have to find
+\[\frac{d\theta}{dt}\Big|_{h = 50}.\]
+We find the relationship between 
+\[\frac{d\theta}{dt} \text{ and } \frac{dh}{dt}\]
+and then we plug in the given numerical information.
+Since $\tan(\theta) = \frac{h}{100}$, we have
+\[\frac{d}{dt}[\tan(\theta)] = \frac{d}{dt} \Big(\frac{h}{100}\Big)\]
+ \[\sec^2(\theta) \frac{d\theta}{dt} = \tfrac{1}{100} \frac{dh}{dt}\]
+\[ \frac{d\theta}{dt} = \tfrac{1}{100}\cos^2(\theta) \frac{dh}{dt}.\]
+Now, when the balloon is 50 feet in the air, the hypotenuse of the right triangle is 
+\[\sqrt{100^2 + 50^2} = 50\sqrt{2^2 + 1^2} = 50\sqrt 5\]
+which means 
+\[\cos^2(\theta) = \left(\frac{100}{50\sqrt 5}\right)^2 = \left(\frac{2}{\sqrt 5}\right)^2 = \frac45.\]
+Finally,
+\[\frac{d\theta}{dt}\Big|_{h = 50}= \tfrac{1}{100} \cdot \tfrac45 \cdot \mbox{ \footnotesize{$15$}} = \tfrac{3}{25}.\]
+Thus, when the balloon is 50 feet in the air, the camera angle is increasing at a rate of 3/25 radians per second.
+
+\item[WP 5.] Oil is being spilled into the ocean at a rate of 75 cubic meters per hour.  
+Assuming that the layer of oil on the oceans surface makes a cylinder  2 cm in height, 
+how fast is the radius of the spill increasing when the radius is 300 m?\\
+Let $V, r$ and $h$ be the volume, radius and height of the spill.  Then $V = \pi r^2 h = 0.02 \ \pi r^2$,
+where $V$ and $r$ are functions of time, $t$. We are given
+\[\frac{dV}{dt} = 75 \text{\ \  and we need \ \ } \frac{dr}{dt}\Big|_{r = 300}.\]
+
+We find the relationship between 
+\[\frac{dr}{dt} \text{ and } \frac{dV}{dt}\]
+and then we plug in the given numerical information.
+Since $V =  0.02\  \pi r^2$,
+\[\frac{d}{dt}(V) = \frac{d}{dt}(0.02 \ \pi r^2)\]
+\[\frac{dV}{dt} = 0.04 \pi r \frac{dr}{dt}.\]
+Finally, when $r = 300$ we have
+\[75 = 0.04 \ \pi \cdot 300 \cdot \frac{dr}{dt}\Big|_{r= 300} = 12 \pi \frac{dr}{dt}\Big|_{r= 300} \]
+and
+\[\frac{dr}{dt}\Big|_{r= 300} = \frac{\mbox{\footnotesize $75$}}{\mbox{\footnotesize $12\pi$}} = 
+\frac{\mbox{\footnotesize $25$}}{\mbox{\footnotesize $4\pi$}}.\]
+
+\[\frac{dr}{dt}\Big|_{r= 300} = \ffrac{75}{12\pi} = 
+\ffrac{25}{4\pi}.\]
+
+\[\ffrac{2x}{34} \ \ \ \frac {2x}{34} \]
+
+
+Thus, when the radius of the spill is 300 meters, the radius is increasing at a rate of $\frac{25}{4\pi}$ m/hr.
+
+\item[WP 6.] Sand is being dumped into a conical pile. The consistency of the sand is such that the 
+diameter of the cone is always equal to its height. After a few minutes,  the pile is 6 feet high and
+increasing at a rate of 1 ft/min. How fast is sand being added to the pile at that time?\\
+
+Let $h, r$ and $V$ be the height, radius and volume of the cone of sand. Then we are given
+\[\frac{dh}{dt}\Big|_{h = 6} = 1\]
+and due to the consistency of the sand, $h = 2r$, so $r = h/2$.
+We need to find 
+\[\frac{dV}{dt}\Big|_{h = 6}.\]
+We find the relationship between 
+\[\frac{dV}{dt} \text{ and } \frac{dh}{dt}\]
+and then we plug in the given numerical information.
+Since 
+\[V = \tfrac13 \pi r^2 h = \tfrac13 \pi \big(\tfrac{h}{2}\big)^2 h = \tfrac{1}{12}\pi h^3\]
+where $V$ and $h$ are functions of $t$, we have
+\[\frac{d}{dt}(V) = \frac{d}{dt}(\tfrac{1}{12}\pi h^3)\]
+\[\frac{dV}{dt} = \tfrac{3}{12}\pi h^2 \  \frac{dh}{dt} = \tfrac{1}{4}\pi h^2 \ \frac{dh}{dt}.\]
+Finally,
+
+\[\frac{dV}{dt}\Big|_{h = 6} = \tfrac{1}{4}\pi \cdot (6)^2 \cdot(1) = 9\pi.\]
+Thus, when the pile is 6 feet high, sand is being added at a rate of $9\pi$ cubic feet per minute.
+
+
+
+\end{description}
+
+
+\end{document}

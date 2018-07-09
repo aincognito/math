@@ -1,0 +1,379 @@
+\documentclass{ximera}
+
+\input{../preamble}
+
+\outcome{Compute the derivative of the difference of two or more functions}
+
+\title{Difference Rule}
+
+\begin{document}
+
+\begin{abstract}
+The following rule allows us the find the derivative of the difference of functions 
+whose derivatives are already known.
+\end{abstract}
+
+
+\maketitle
+
+\begin{theorem} If $f(x)$ and $g(x)$ are differentiable functions, then
+\[ [f(x) - g(x)]' =  f'(x) -  g'(x)\]
+\end{theorem}
+
+In words, the derivative of a difference is the difference of the derivatives.\\
+
+testtesttest
+
+\begin{example} %example 1
+ If $f(x) = x^5 - x$ then $f'(x) = 5x^4 - 1$.
+\end{example}
+
+\begin{problem} %problem #1a
+  Compute 
+  \[
+  \frac{d}{dx} \left(x^7 - x^4\right)
+  \]
+  
+    \begin{hint}
+      Use the Power Rule on each term
+    \end{hint}
+    \begin{hint}
+      The Power Rule says:
+      \[
+      \frac{d}{dx} x^n = nx^{n-1}
+      \]
+    \end{hint}    
+		The derivative of $x^7 - x^4$ with respect to $x$ is
+		 $\answer[given]{7x^6 - 4x^3}$
+	
+\end{problem}
+
+\begin{problem} %problem #1b
+  Compute 
+  \[
+  \frac{d}{dx} \left(x^{1000} - x^{100} - x^{10}\right)
+  \]
+  
+    \begin{hint}
+		  The Difference Rule can be used on more than two terms
+		\end{hint}
+		\begin{hint}
+      Use the Power Rule on each term
+    \end{hint}
+    \begin{hint}
+      The Power Rule says:
+      \[
+      \frac{d}{dx} x^n = nx^{n-1}
+      \]
+    \end{hint}    
+		The derivative of $x^{1000} - x^{100} - x^{10}$ with respect to $x$ is
+		 $\answer[given]{1000x^{999} - 100x^{99} - 10x^9}$
+	
+\end{problem}
+
+
+\begin{problem} %problem #1c
+  Compute 
+  \[
+  \frac{d}{dx} \left(4x^4 - 5x^3 + 8x^2 - 15x - 4\right)
+  \]
+  
+    \begin{hint}
+		  The Difference Rule can be used on more than two terms
+		\end{hint}
+		\begin{hint}
+		  The Sum, Difference and Constant Multiple Rules are often used together 
+		\end{hint}
+		\begin{hint}
+      Use the Power Rule on each term
+    \end{hint}
+    \begin{hint}
+      The Power Rule says:
+      \[
+      \frac{d}{dx} x^n = nx^{n-1}
+      \]
+    \end{hint}    
+		The derivative of $4x^4 - 5x^3 + 8x^2 - 15x - 4$ with respect to $x$ is
+		 $\answer[given]{16x^3 - 15x^2 + 16x - 15}$
+	
+\end{problem}
+
+
+\begin{example} %example 2
+ If $f(x) = \frac{1}{x^3} - \frac{1}{x^4}$ then we rewrite $f(x)$ as $x^{-3} - x^{-4}$ and 
+$f'(x) = -3x^{-4} + 4x^{-5} = -\frac{3}{x^4} + \frac{4}{x^5} = \frac{4}{x^5}-\frac{3}{x^4} = 
+\frac{4x^4 - 3x^5}{x^9} = \frac{4 - 3x}{x^5}$.
+\end{example}
+
+
+\begin{problem} %problem #2a
+  Compute 
+  \[
+  \frac{d}{dx} \left(\frac{1}{x^5} - \frac{1}{x}\right)
+  \]
+  
+    \begin{hint}
+		 $\frac{1}{x^n} = x^{-n}$
+		\end{hint}
+		\begin{hint}
+      Use the Power Rule on each term
+    \end{hint}
+    \begin{hint}
+      The Power Rule says:
+      \[
+      \frac{d}{dx} x^n = nx^{n-1}
+      \]
+    \end{hint}    
+		The derivative of $\frac{1}{x^5} - \frac{1}{x}$ with respect to $x$ is
+		 $\answer[given]{-5x^{-6} + x^{-2}}$
+	
+\end{problem}
+
+
+\begin{problem} %problem #2b
+  Compute 
+  \[
+  \frac{d}{dx} \left(\frac{1}{x^2} - \frac{1}{x^6} - \frac{1}{x^7}\right)
+  \]
+  
+    \begin{hint}
+		 $\frac{1}{x^n} = x^{-n}$
+		\end{hint}
+		\begin{hint}
+		  The Difference Rule can be used on more than two terms
+		\end{hint}
+		\begin{hint}
+      Use the Power Rule on each term
+    \end{hint}
+    \begin{hint}
+      The Power Rule says:
+      \[
+      \frac{d}{dx} x^n = nx^{n-1}
+      \]
+    \end{hint}    
+		The derivative of $\frac{1}{x^2} - \frac{1}{x^6} - \frac{1}{x^7}$ with respect to $x$ is
+		 $\answer[given]{-2x^{-3} + 6x^{-7} + 7x^{-8}}$
+	
+\end{problem}
+
+
+\begin{example} %example 3
+ If $f(x) = \sqrt x - \sqrt[4] {x^3}$ then we rewrite $f(x)$ as $x^{1/2} + x^{3/4}$ and
+$f'(x) = \tfrac12 x^{-1/2} - \tfrac34 x^{-1/4} = \tfrac12 \cdot \frac{1}{x^{1/2}} - \tfrac34 \cdot \frac{1}{x^{1/4}} 
+= \frac{1}{2\sqrt x} - \frac{3}{4\sqrt[4] x}$.
+\end{example}
+
+
+\begin{problem} %problem #3a
+  Compute 
+  \[
+  \frac{d}{dx} \left(\sqrt[3] x - \sqrt[5] x\right)
+  \]
+  
+    \begin{hint}
+		 $\sqrt[n] x = x^{1/n}$
+		\end{hint}
+		\begin{hint}
+      Use the Power Rule on each term
+    \end{hint}
+    \begin{hint}
+      The Power Rule says:
+      \[
+      \frac{d}{dx} x^n = nx^{n-1}
+      \]
+    \end{hint}    
+		The derivative of $\sqrt[3] x - \sqrt[5] x$ with respect to $x$ is
+		 $\answer[given]{\frac13 x^{-2/3} - \frac15 x^{-4/5}}$
+	
+\end{problem}
+
+
+\begin{problem} %problem #3b
+  Compute 
+  \[
+  \frac{d}{dx} (\sqrt[6] {x^5} - \sqrt[7] {x^6} + \sqrt[8] {x^7})
+  \]
+  
+    \begin{hint}
+		 $\sqrt[n] x^m = x^{m/n}$
+		\end{hint}
+		\begin{hint}
+		  The Sum and Difference Rules can be used on more than two terms
+		\end{hint}
+		\begin{hint}
+      Use the Power Rule on each term
+    \end{hint}
+    \begin{hint}
+      The Power Rule says:
+      \[
+      \frac{d}{dx} x^n = nx^{n-1}
+      \]
+    \end{hint}    
+		The derivative of $\sqrt[6] {x^5} - \sqrt[7] {x^6} + \sqrt[8] {x^7}$ with respect to $x$ is
+		 $\answer[given]{\frac56 x^{-1/6} - \frac67 x^{-1/7} + \frac78 x^{-1/8}}$
+	
+\end{problem}
+
+
+
+\begin{example} %example 4
+ If $f(x) = 2\sin(x) - 3\cos(x)$ then $f'(x) = 2\cos(x) - (-3\sin(x)) = 2\cos(x) + 3\sin(x)$.
+\end{example}
+
+
+\begin{problem} %problem #4a
+  Compute 
+  \[
+  \frac{d}{dx} \left[3\sin(x) - 7\cos(x)\right]
+  \]
+  
+		\begin{hint}
+      Use the Constant Multiple Rule on each term
+    \end{hint}
+    \begin{hint}
+      The Constant Multiple Rule says:
+      \[
+      \frac{d}{dx} cf(x) = cf'(x)
+      \]
+    \end{hint}    
+		The derivative of $3\sin(x) - 7\cos(x)$ with respect to $x$ is
+		 $\answer[given]{3\cos(x) + 7\sin(x)}$
+	
+\end{problem}
+
+\begin{problem} %problem #4b
+  Compute 
+  \[
+  \frac{d}{dx} \left[6\cos(x) - 8\sin(x)\right]
+  \]
+  
+		\begin{hint}
+      Use the Constant Multiple Rule on each term
+    \end{hint}
+    \begin{hint}
+      The Constant Multiple Rule says:
+      \[
+      \frac{d}{dx} cf(x) = cf'(x)
+      \]
+    \end{hint}    
+		The derivative of $6\cos(x) - 8\sin(x)$ with respect to $x$ is
+		 $\answer[given]{-6\sin(x) - 8\cos(x)}$
+	
+\end{problem}
+
+
+
+\begin{example} %example 5
+ If $f(x) = e^{x+ 1} - e^{x+2}$ then we rewrite $f(x)$ as $ e\cdot e^x - e^2 \cdot e^x$ and 
+we use the constant multiple rule with constants $e$ and $e^2$ together with the difference rule to get 
+$f'(x) = e\cdot e^x - e^2 \cdot e^x = e^{x+1} - e^{x+2}$.
+\end{example}
+
+
+\begin{problem} %problem #5a
+  Compute 
+  \[
+  \frac{d}{dx} \left(10^x - 2^x\right)
+  \]
+  
+    \begin{hint}
+      \[
+      \frac{d}{dx} a^x = a^x \ln(a)
+      \]
+    \end{hint}    
+		The derivative of $10^x - 2^x$ with respect to $x$ is
+		 $\answer[given]{10^x \ln(10) - 2^x \ln(2)}$
+	
+\end{problem}
+
+\begin{problem} %problem #5b
+  Compute 
+  \[
+  \frac{d}{dx} \left(e^{x + 3} - \pi^x\right)
+  \]
+  
+  	\begin{hint}
+		  Use $a^{m+n} = a^m \cdot a^n$ on the first term
+		\end{hint}
+		\begin{hint}
+		  The derivative of $e^x$ is itself
+		\end{hint}
+		\begin{hint}
+      \[
+      \frac{d}{dx} a^x = a^x \ln(a)
+      \]
+    \end{hint}
+		The derivative of $e^{x+3} - \pi^x$ with respect to $x$ is
+		 $\answer[given]{e^{x+3}  - \pi^x \ln(\pi)}$
+	
+\end{problem}
+
+
+
+\begin{example} %example 6
+ If $f(x) = \log(x) - \sin^{-1}(x)$ then $f'(x) = \frac{1}{x\ln(10)} - \frac{1}{\sqrt{1-x^2}}$.
+\end{example}
+
+
+\begin{problem} %problem #6a
+  Compute 
+  \[
+  \frac{d}{dx} \left[\log_2(x) - \tan^{-1}(x)\right]
+  \]
+  
+    \begin{hint}
+      \[
+      \frac{d}{dx} \log_a(x) = \frac{1}{x\ln(a)}
+      \]
+    \end{hint}
+		\begin{hint}
+		  \[
+      \frac{d}{dx} \tan^{-1}(x) = \frac{1}{1+x^2}
+      \]
+		\end{hint}
+		The derivative of $\log_2(x) - \tan^{-1}(x)$ with respect to $x$ is
+		 $\answer[given]{\frac{1}{x\ln(2)}  - \frac{1}{1+x^2}}$
+	
+\end{problem}
+
+
+\begin{problem} %problem #6b
+  Compute 
+  \[
+  \frac{d}{dx} \left[5\ln(x) - 3\cos^{-1}(x) - 6\right]
+  \]
+  
+    \begin{hint}
+      \[
+      \frac{d}{dx} \ln(x) = \frac{1}{x}
+      \]
+    \end{hint}
+		\begin{hint}
+		  \[
+      \frac{d}{dx} \cos^{-1}(x) = -\frac{1}{\sqrt{1-x^2}}
+      \]
+		\end{hint}
+		\begin{hint}
+		  The derivative of a constant is zero
+		\end{hint}
+		
+		The derivative of $5\ln(x) - 3\cos^{-1}(x) - 6$ with respect to $x$ is
+		 $\answer[given]{\frac{5}{x} + \frac{3}{\sqrt{1-x^2}}}$
+	
+\end{problem}
+
+We close this section with an example involving rectilinear motion.
+
+\begin{example}[Rectilinear Motion]
+The position of a point on a guitar string is given by $s = 2\cos(t)$.  Find the velocity and acceleration of the point.\\
+The velocity of the point is given by $v = s' = -2\sin(t),$ and its acceleration is given by $a = s'' = -2\cos(t).$
+\end{example}
+
+\begin{problem}
+The position of a point on a guitar string is given by $s = -\sin(t)$.  Find the velocity and acceleration of the point.\\
+The velocity of the point is given by $v = \answer{ -\cos(t)},$ \\
+and its acceleration is given by $a = \answer{\sin(t)}.$
+\end{problem}
+
+
+\end{document}

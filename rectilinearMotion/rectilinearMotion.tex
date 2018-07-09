@@ -1,0 +1,409 @@
+\documentclass{ximera}
+
+\input{../preamble}
+
+\outcome{Analyze the position, velocity and acceleration of an object moving in a straight line.}
+
+\title{2.16 Rectilinear Motion}
+
+
+
+\begin{document}
+
+\begin{abstract}
+In this section we analyze the motion of a particle moving in a straight line. Our
+analysis includes the position, velocity and acceleration of the particle.
+\end{abstract}
+
+\maketitle
+
+
+\section{Rectilinear Motion}
+
+In this section we analyze the motion of a particle moving in a straight line. Our
+analysis includes the position, velocity and acceleration of the particle.
+We assume that the line is a horizontal number line with the origin in a fixed position, although, in some situations, 
+the line is more naturally placed vertically. We will consider the relationship between the position, 
+velocity and acceleration as functions of time using a rate of change perspective. \\
+Given a \textbf{position function}, $s(t)$, the \textbf{instantaneous velocity} of the particle at time $t$, 
+denoted $v(t)$, is the rate of change of position 
+with respect to time:
+\[v(t) = s'(t).\]
+Similarly, the \textbf{instantaneous acceleration} of the particle at time $t, a(t)$, is the rate of change of 
+velocity with respect to time:
+\[a(t) = v'(t).\]
+The connection between position and acceleration is thus:
+\[a(t) = s''(t).\]
+
+\begin{center}
+\bf{Examples of Rectilinear Motion}
+\end{center}
+
+
+
+\begin{example}
+Suppose that the position of a particle in motion along a straight line is given by:
+\[s(t) = t^3 - 3t^2 + 2.\]
+Find the initial position of the particle and the position at time $t = 2$ seconds.
+Then, use these to find the \textbf{displacement} of the particle during the first two seconds.\\
+
+The intial position is given by plugging $t=0$ into the position function: 
+\[s(0) = 0^3 -3(0)^2 + 2 = 2.\]
+Interpretation: assuming that the motion is taking place along a horizontal line,
+with the positive direction to the right and the negative direction to the left, then the initial position 
+of the particle is 2 units to the right of the origin.
+At time $t=2$ the particle is at position
+\[s(2) = 2^3 -3(2)^2 + 2 = 8 - 12 + 2 = -2,\]
+so that at time $t = 2$, the particle is 2 units to the left of the origin.
+\begin{center}
+\begin{tikzpicture}
+\draw[<->] (-3,0) -- (3,0);
+\draw (-2,-.2) -- (-2,.2); %tick mark
+\draw (0,-.2) -- (0,.2);
+\draw (2,-.2) -- (2,.2);
+\draw[fill] (-2,0) circle [radius=0.07];
+\draw[fill] (2,0) circle [radius=0.07];
+\node [above] at (-2,.3) {$s(2)$};
+\node [above] at (2,.3) {$s(0)$};
+\node[below] at (-2.1,-.3) {$-2$};
+\node[below] at (0,-.3) {$0$};
+\node[below] at (2,-.3) {$2$};
+\node[below] at (0,-.8) {position axis};
+\end{tikzpicture}
+\end{center}
+
+From this information, one might be tempted to conclude that the particle has traveled a distance  of 4 units
+during the time interval [0,2].  However, we cannot be certain that the particle did not change direction 
+during this time interval and so that conclusion might be false. 
+One thing that we can conclude at this point is that the displacement from 
+time $t = 0$ to time $t = 2$ is
+\[s(2) - s(0) = -2 - 2 = -4,\]
+meaning that the particle has been displaced 4 units to the left. To determine the distance traveled, we need to analyze the velocity function.  
+\end{example}
+
+\begin{problem}
+A particle moving along a straight line has position function
+\[s(t) = t^3 - 5t -3.\]
+where $s$ is measured in feet and $t$ is measured in seconds.
+Find the initial position, the position at time $t = 3$ 
+and the displacement over the time interval $[0,3]$.
+
+The initial position is $\answer{-3}$ feet.\\
+The position at time $t=3$ is $\answer{9}$ feet.\\
+The displacement over the interval $[0,3]$ is $\answer{12}$ feet.\\
+
+\end{problem}
+
+ 
+\begin{example} Let's compute the velocity of the particle in the preceding example, where
+\[s(t) = t^3 - 3t^2 + 2.\]
+Since 
+\[v(t) = s'(t),\]
+we have
+\[v(t) = 3t^2 - 6t.\]
+From this we can note that
+\[v(0) = 3(0)^2 - 6(0) = 0.\]
+This means that the initial velocity of the particle was 0.  
+
+It is interesting to solve the equation 
+\[v(t) = 0\]
+for $t$. The solutions will tell us all of the times that the particle was at rest. These times are significant, 
+because assuming that the motion of the particle is continuous, 
+these are the only times that the particle can change direction.
+We have
+\[v(t) = 0\]
+\[3t^2 - 6t = 0\]
+\[3t(t-2) = 0\]
+\[3t = 0 \ \ \text{or} \ \ t-2 = 0\]
+\[t = 0 \ \ \text{or} \ \ t = 2.\]
+
+Since the particle can only change directions at $t=0$ and $t=2$, we can now conclude that the 
+total distance traveled by the particle from time $t=0$ to time $t=2$ is 
+
+\[|s(2) - s(0)| = |-2 - 2| = |-4| = 4 \ \text{units.}\]
+
+When the velocity function is negative, that means the particle is moving to the left and when the 
+velocity is positive that means that the particle is moving to the right. Since $v(t)$ can be written as
+\[v(t) = 3t(t-2)\]
+we can conclude that the velocity is negative when $0<t<2$ and positive when $t>2$.
+Thus the particle begins at rest, then moves to the left between $t = 0$ and $t = 2$, comes to rest again at $t=2$
+and moves to the right for $t>2$.
+
+To find the total distance the particle traveled from time $t = 1$ to time $t = 3$, we would need to take into consideration
+the fact that it changes direction at $t = 2$:
+\[ \text{distance} \  = |s(2) - s(1)| + |s(3) -s(2)|\]
+\[= |-2-0|+|2-(-2)| = 2 + 4 = 6 \ \text{units}.\]
+Notice that the absolute value is used in computing distance but not when computing displacement.
+
+
+
+
+\begin{center}
+\begin{tikzpicture}
+\draw[<->] (-3,0) -- (3,0);
+\draw (-2,-.2) -- (-2,.2); %tick mark
+\draw (0,-.2) -- (0,.2);
+\draw (2,-.2) -- (2,.2);
+\draw[fill] (-2,0) circle [radius=0.07];
+\draw[fill] (0,0) circle [radius=0.07];
+\draw[fill] (2,0) circle [radius=0.07];
+\node [above] at (-2,.3) {$s(2)$};
+\node [above] at (0,.3) {$s(1)$};
+\node [above] at (2,.3) {$s(3)$};
+\node[below] at (-2.1,-.3) {$-2$};
+\node[below] at (0,-.3) {$0$};
+\node[below] at (2,-.3) {$2$};
+\draw[<-, thick] (-2,-1) -- (0,-1);
+\draw[->, thick] (-2,-1.3) -- (2,-1.3);
+\node[below] at (0,-1.6) {motion of the particle};
+\end{tikzpicture}
+\end{center}
+
+\end{example}
+
+
+
+\begin{problem}
+A particle moving along a straight line has position function
+\[s(t) = t^3 - 5t -3.\]
+where $s$ is measured in feet and $t$ is measured in seconds.
+Find the velocity function, initial velocity, and the velocity at $t = 3$ seconds.
+
+The velocity function is $v(t) = \answer{3t^2 -5}$ (measured in ft/sec).\\
+The initial velocity is $\answer{-5}$ ft/sec.\\
+The velocity at time $t=3$ is $\answer{22}$ ft/sec.\\
+
+
+\end{problem}
+
+ 
+
+\begin{example}
+Next, we will analyze the acceleration of the particle from the first example where:
+\[s(t) = t^3 - 3t^2 + 2.\]
+We have
+\[a(t) = s''(t) = 6t -6.\]
+Plugging in $t=0$ gives,
+\[a(0) = -6.\]
+The negative sign tells us that the particle is accelerating to the left. 
+This is compatible with our previous knowledge that the particle begins at rest and then starts moving to the left. 
+A leftward acceleration is necessary in order for this to occur.
+Next, when $t=1$ the acceleration is $a(1) = 6-6 = 0$, so the particle is not undergoing acceleration at this time.
+Between $t=1$ and $t = 2$ the acceleration is positive, meaning to the right. 
+This makes sense since the particle is moving to the left but coming to rest when $t = 2$.
+In general, when the velocity and the acceleration are in the same direction (i.e. have the same sign), 
+then the particle is speeding up and when
+the velocity and the acceleration are in opposite directions (i.e. have opposite signs),  then the particle is slowing down.
+\end{example}
+
+\begin{problem}
+A particle moving along a straight line has position function
+\[s(t) = t^3 - 5t -3.\]
+where $s$ is measured in feet and $t$ is measured in seconds.
+Find the acceleration function, initial acceleration, and the acceleration at $t = 3$ seconds.\\
+
+The acceleration function is a(t)$ = \answer{6t}$ (measured in ft/sec$^2$).\\
+The initial acceleration is $\answer{0}$ ft/sec$^2$.\\
+The acceleration at time $t=3$ is $\answer{18}$ ft/sec$^2$.
+
+
+\end{problem}
+
+
+%\item[strat] Re-organize projectile motion.  3 position functions. each example explores one facet. 
+%Cycle through the three examples, then move on to next facet.
+%facets: initial position, initial velocity, initial acceleration; how long in the air; max height; 
+%total distance traveled; distance traveled in certain time interval;  velocity at a certain height.
+
+\begin{example}
+A projectile is launched vertically with position function given by:
+\[s(t) = 128t - 16t^2,\]
+where $t$ is measured in seconds and $s(t)$ is measured in feet.
+Determine the initial height and the initial velocity of the object.\\
+
+To find the initial height, we plug $t = 0$ into $s(t)$:
+\[s(0) = 128(0) - 16(0)^2 = 0.\]
+Since the initial height is zero feet, the object was launched from the ground.
+
+To compute the initial velocity, we first find the velocity function and then we plug in $t=0$.
+We have
+\[v(t) = s'(t) = 128 - 32t\]
+and 
+\[v(0) = 128 - 32(0) = 128.\]
+Hence the initial velocity of the projectile was 128 ft/sec.
+
+\end{example}
+
+
+
+
+\begin{example}
+Determine its maximum height
+of an object that is launched straight up into the air with position function:
+\[s(t) = 12 + 20t - 16t^2,\]
+where $t$ is measured in seconds and $s(t)$ is measured in feet. 
+In this scenario, the positive direction is up and our position function measures the height of the object.\\
+%The object is launched from a height of 12 ft. since 
+%\[s(0) = 12 + 20(0) - 16(0)^2 = 12.\]
+%The instantaneous velocity of the object at time $t$ is given by
+%\[v(t) = s'(t) = 20-32t\]
+%and the initial velocity is
+%\[v(0) = 20 - 32(0) = 20 \ \text{ft/sec}.\]
+%The only force acting on the object is gravity and
+%\[a(t) = v'(t) = -32 \ \text{ft/sec$^2$}.\]
+%The object is undergoing a constant acceleration in the downward direction.
+To find the maximum height of the object we observe that at the maximum height the object is momentarily at rest. 
+In other words, at the maximum height, the velocity is 0. We therefore begin by solving the equation
+\[v(t) = 0  \  \ \text{for $t$.}\]
+ We get 
+\[20-32t = 0\]
+\[t = \frac{20}{32} = \frac{5}{8} = 0.625 \ \text{seconds}.\]
+The maximum height is then obtained by plugging this time into the position function:
+\[s\Big(\frac{5}{8}\Big) = 12 + 20\Big(\frac{5}{8}\Big) - 16\Big(\frac{5}{8}\Big)^2 \]
+\[= 12 + \frac{25}{2} - \frac{25}{4} = \frac{73}{4} = 18.25\  \text{feet}. \]
+\end{example}
+
+
+\begin{problem}
+Determine the maximum height
+of an object that is launched straight up into the air with position function:
+\[s(t) = 24 + 96t - 16t^2,\]
+where $t$ is measured in seconds and $s(t)$ is measured in feet. 
+
+\begin{hint}
+The maximum height occurs when the velocity is zero
+\end{hint}
+\begin{hint}
+The maximum height is obtained by plugging a time into the position function
+\end{hint}
+
+The maximum height is $\answer{168}$ feet.
+
+\end{problem}
+
+
+\begin{problem}
+Determine its maximum height
+of an object that is launched straight up into the air on Planet X with position function:
+\[s(t) = 6 + 36t - 12t^2,\]
+where $t$ is measured in seconds and $s(t)$ is measured in feet. 
+
+\begin{hint}
+The maximum height occurs when the velocity is zero
+\end{hint}
+\begin{hint}
+The maximum height is obtained by plugging a time into the position function
+\end{hint}
+
+The maximum height is $\answer{33}$ feet.
+
+\end{problem}
+ 
+ 
+\begin{example}
+Determine the total distance traveled by
+an object that is sent straight up into the air with position function:
+\[s(t) = 32 + 48t - 16t^2,\]
+where $t$ is measured in seconds and $s(t)$ is measured in feet. \\
+The object is launched from a height of 32 ft. since 
+\[s(0) = 32 + 48(0) - 16(0)^2 = 32.\]
+The instantaneous velocity of the object at time $t$ is given by
+\[v(t) = s'(t) = 48-32t.\]
+To determine the total distance traveled by the object, we need to find its maximum height, so
+we set the velocity equal to zero and solve for $t$:
+\[v(t) = 0  \] 
+\[48-32t = 0\]
+\[t = \frac{48}{32} = \frac{3}{2} \ \text{seconds}.\]
+The maximum height is then obtained by plugging this time into the position function:
+\[s\Big(\frac{3}{2}\Big) = 32 + 48\Big(\frac{3}{2}\Big) - 16\Big(\frac{3}{2}\Big)^2 \]
+\[= 32 + 72 - 36 = 68 \  \text{feet}. \]
+
+The total distance traveled is the distance up plus the distance down.  The distance down is the maximum height of the object,
+$68$ feet.  The distance up is the maximum height minus the initial height, $68 - 32$ feet.
+Thus the total distance traveled is  
+\[68 + (68 - 32) = 68 + 36 = 104 \ \text{feet}.\]
+\end{example}
+
+\begin{problem}
+Determine the total distance traveled by an object that is launched straight up into the air on Planet X with position function:
+\[s(t) = 6 + 36t - 12t^2,\]
+where $t$ is measured in seconds and $s(t)$ is measured in feet. 
+
+\begin{hint}
+The total distance traveled is the distance rising plus the distance falling
+\end{hint}
+\begin{hint}
+Assume the object lands on the ground, at height zero feet.
+\end{hint}
+
+The distance traveled is $\answer{60}$ feet.
+
+\end{problem}
+
+\begin{example}
+Suppose the position of a vertical projectile is given by 
+\[s(t) = 80 + 64t-16t^2, \]
+where $t$ is measured in seconds and $s(t)$ is measured in feet. 
+Find the total time that the object is in the air, and find its velocity when its height is 128 feet.\\
+ 
+To find the time in the air we need to solve $s(t) = 0$ for $t$. We get:
+\[80 + 64t-16t^2 = 0\]
+\[5 + 4t-t^2 = 0\]
+\[t^2 -4t -5  = 0\]
+\[(t-5)(t+1)  = 0\]
+and so, $t =  5$ or $-1$ seconds. Since $-1$ seconds does not make sense in this situation, we conclude that
+the total time that the object was in the air was 5 seconds.
+Next, to determine the instantaneous velocity when the object was 128 ft. up, 
+we need to first figure out the times when this occurred and then plug them into the velocity function, 
+\[v(t) = s'(t) = 64 - 32t.\]
+We have
+\[s(t) = 128 \]
+\[80 + 64t -16t^2 = 128\]
+\[  16t^2 - 64t + 48 = 0\]
+\[  t^2 - 4t + 3 = 0\]
+\[  (t-1)(t-3) = 0\]
+and so $t= 1$ or $3$ seconds.
+In words, the object is at a height of 128 feet after 1 second (while it is on the way up) and after 3 seconds (on the way down).
+The instantaneous velocities at these times are
+\[v(1) = 64 - 32(1) = 32 \ \text{ft/sec}\]
+\begin{center}
+  and
+\end{center}
+\[ \ v(3) = 64 - 32(3) = -32 \text{ft/sec.}\]
+The positive velocity at $t= 1$ second indicates that the object was on the way up and the negative velocity 
+at time $t=3$ seconds indicates 
+that the object was on its way down.  The absolute value of the velocity tells us the objects' speed. 
+Hence the object is going at the same speed of 32 ft/sec at the height of 128 feet when it is on the way up as it 
+is on the way down.
+This is a general phenomenon of projectiles. The object loses speed on the way up and 
+regains it at exactly the same rate on its way down so that at a given height it is going at the same 
+speed on the way up as it is on the way down.
+\end{example}
+
+
+\begin{problem}
+Suppose the position of a vertical projectile on Planet X is given by 
+\[s(t) = 36t - 12t^2, \]
+where $t$ is measured in seconds and $s(t)$ is measured in feet. 
+Find the total time that the object is in the air, and find its velocity when its height is 24 feet and falling.
+\begin{hint}
+When was the projectile at the specified height?
+\end{hint}
+\begin{hint}
+Plug the appropriate time into the velocity function
+\end{hint}
+
+The time in the air is $\answer{3}$ seconds.\\
+The velocity at 24 feet and falling is $\answer{-12}$ ft/sec.
+
+\end{problem}
+
+
+%Total time in air, max height, velocity at a certain height, 
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,595 @@
+\documentclass{ximera}
+
+\input{../preamble}
+
+\outcome{Find limits using the Squeeze Theorem}
+
+\title{1.7 Squeeze Theorem}
+
+
+\begin{document}
+
+\begin{abstract}
+Find limits using the Squeeze Theorem.
+\end{abstract}
+
+\maketitle
+
+\section{Squeeze Theorem}
+ 
+
+In this section we find limits using the Squeeze Theorem.
+
+\begin{theorem}[The Squeeze Theorem] 
+Suppose that the compound inequality
+\[
+g_1(x) \leq f(x) \leq g_2(x)
+\]
+holds for all values of $x$ in some open interval about $x=a$, except possibly for $a$ itself.\\
+If
+\[\lim_{x\to a} g_1(x) = \lim_{x\to a} g_2(x) = L,
+\]
+then we can conclude that
+\[
+\lim_{x\to a} f(x) = L
+\]
+as well.
+
+\end{theorem}
+
+
+\begin{example}
+Suppose 
+\[
+ 2x-1 \leq f(x) \leq x^2
+\]
+for all $x$ except $x=1$.
+Find
+\[
+\lim_{x\to 1} f(x).
+\]
+
+Since
+\[
+\lim_{x\to 1} (2x-1) = 1
+\]
+and
+\[
+\lim_{x\to 1} x^2 = 1
+\]
+we can use the Squeeze Theorem to conclude that
+\[
+\lim_{x\to 1} f(x) = 1
+\]
+as well.
+
+\end{example}
+
+\begin{problem}
+Suppose that 
+\[
+ 5-x^2\leq f(x) \leq 9-4x
+\]
+for all $x$ except $x=2$.
+Find
+\[
+\lim_{x\to 2} f(x).
+\]
+First, we find the limits of the bounds:
+\[
+\lim_{x \to 2} 5 - x^2 = \answer{1} \text{ and } \lim_{x \to 2} 9-4x = \answer{1}.
+\]
+Since these answers are the same, the Squeeze Theorem allows us to conclude that 
+\[
+\lim_{x \to 2} f(x) = \answer{1} \text{as well}.
+\]
+
+\end{problem}
+
+\begin{example}
+Find
+\[
+\lim_{x\to 0} x^2 \sin\Big(\frac{1}{x}\Big).
+\]
+Since $\frac{1}{0}$ is undefined, plugging in $x=0$
+does not give a definitive answer.
+Using the fact that 
+\[
+-1 \leq \sin(\theta) \leq 1
+\]
+for all values of $theta$, we can create a compound inequality for
+the function
+\[
+f(x) = x^2 \sin\Big(\frac{1}{x}\Big)
+\]
+and find the limit using the Squeeze Theorem.
+To begin, note that
+\[
+-1 \leq \sin\Big(\frac{1}{x}\Big) \leq 1
+\]
+for all values of $x$ except $x=0$.
+Multiplying this compound inequality by the non-negative quantity $x^2$
+we have
+\[
+-x^2 \leq x^2\sin\Big(\frac{1}{x}\Big) \leq x^2
+\]
+for all values of $x$ except $x=0$.
+Next, note that
+\[
+\lim_{x\to 0} -x^2 = 0
+\]
+and
+\[
+\lim_{x\to 0} x^2 = 0.
+\]
+Finally, by the Squeeze Theorem, we can conclude that
+\[
+\lim_{x\to 0} x^2\sin\Big(\frac{1}{x}\Big) = 0
+\]
+as well. The graph below also shows that the limit is zero.
+Zoom in on the origin to get the full effect.
+
+\[
+\graph{x^2, -x^2, x^2 \sin(1/x)}
+\]
+
+\end{example}
+
+\begin{problem}
+Find
+\[
+\lim_{x \to 0} x^4 \cos(2/x)
+\]
+using the Squeeze Theorem.
+First, we need to find bounds. Since $-1 \leq \cos \theta \leq 1$ for all $\theta$, 
+\[
+\answer{-x^4} \leq x^4\cos(2/x) \leq \answer{x^4}
+\]
+for all $x$ except $x=0$.
+Next, we need to find the limits of those bounds:
+\[
+\lim_{x \to 0}  - x^4 = \answer{0} \text{and    } \lim_{x \to 0} x^4 = \answer{0}.
+\]
+Since these answers are the same, the Squeeze Theorem allows us to conclude that 
+\[
+\lim_{x \to 0} x^4\cos(2/x) = \answer{0} \text{as well}.
+\]
+
+\end{problem}
+
+The Squeeze Theorem can also be used if $x \to \pm \infty$.
+
+\begin{problem}
+Find
+\[
+\lim_{x \to \infty} \frac{\sin x}{x}
+\]
+using the Squeeze Theorem.
+First, we need to find bounds. Since $-1 \leq \sin \theta \leq 1$ for all $\theta$, 
+\[
+\answer{-1/x} \leq \frac{\sin x}{x} \leq \answer{1/x}
+\]
+for all $x>0$.
+Next, we need to find the limits of those bounds:
+\[
+\lim_{x \to \infty}  -\frac{1}{x} = \answer{0} \text{and    } \lim_{x \to \infty} \frac{1}{x} = \answer{0}.
+\]
+Since these answers are the same, the Squeeze Theorem allows us to conclude that 
+\[
+\lim_{x \to \infty} \frac{\sin x}{x} = \answer{0} \text{as well}.
+\]
+
+\end{problem}
+
+We conclude this section by using the Squeeze Theorem to find a special limit, $\lim_{\theta \to 0} \frac{\sin(\theta)}{\theta}$.
+
+\begin{image}
+\begin{tikzpicture}
+\draw[thin](0,0) -- (4,0) -- (4, 4) -- cycle;
+\draw[thin] (2.828, 0) -- (2.828, 2.828);
+\draw[thin] (4,0) arc (0: 45:4);
+\node[right] at (0.2,0.2) {$\theta$};
+\node[below] at (1.5,0) {$\cos(\theta)$};
+\node[left] at (2.8,1.2) {$\sin(\theta)$};
+\node[right] at (4.1,2) {$\tan(\theta)$};
+\node[above] at (1.3,1.4) {$1$};
+%\node[below] at (-.1,0) {$(0,0)$};
+%\node[below] at (4,0) {$1$};
+\end{tikzpicture}
+\end{image}
+
+
+
+
+
+
+Consider the figure above.  It consists of a small triangle, a sector of a circle of radius $1$ and a large triangle.\\
+The area of the small triangle is 
+\[
+A = \frac12 bh = \frac12 \cos(\theta) \sin(\theta).
+\]
+The area of the sector is 
+\[
+A = \frac12 \theta r^2 = \frac12 \theta.
+\]
+The area of the large triangle is 
+\[
+A = \frac12 bh = \frac12 \cdot 1 \cdot \tan(\theta) = \frac12 \tan(\theta).
+\]
+
+We can use the areas of these figures to create a compound inequality like the one found in the Squeeze theorem.
+Since the area of the small triangle is less than the area of the sector which is less than the area of the large triangle, we have:
+\[
+\frac12 \cos(\theta) \sin(\theta) < \frac12 \theta < \frac12 \tan(\theta).
+\]
+
+Multiply through by 2:
+
+\[
+\cos(\theta) \sin(\theta) < \theta < \tan(\theta).
+\]
+
+Divide through by $\sin(\theta)$.  Note that if $\theta$ is a small positive angle, then $\sin(\theta) >0$ so the direction of the inequality symbols remains unchanged:
+
+\[
+\cos(\theta)  < \frac{ \theta}{\sin(\theta)} < \frac{1}{\cos(\theta)}.
+\]
+
+Next we take reciprocals (this will change the direction of the inequalitiy symbols):
+
+\[
+\frac{1}{\cos(\theta)}  > \frac{\sin(\theta)}{\theta} > \cos(\theta),
+\]
+which is equivalent to 
+
+\[
+\cos(\theta)  < \frac{\sin(\theta)}{\theta} < \frac{1}{\cos(\theta)}.
+\]
+
+We now compute the limits of the upper and lower bounds:
+\[
+\lim_{\theta \to 0^+} \cos(\theta) = \cos(0) = 1 \text{   and   } \lim_{\theta \to 0^+} \frac{1}{\cos(\theta)} = \frac{1}{\cos(0)} = 1. 
+\]
+
+Since the above limits are equal, the Squeeze Theorem applies and 
+\[
+\lim_{\theta \to 0^+} \frac{\sin(\theta)}{\theta} =1 \text{  as well.}
+\]
+
+To compute the left-hand limit, we note that $\sin(-\theta) = -\sin(\theta)$ for any angle $\theta$.
+Therefore,
+\[
+\frac{\sin(-\theta)}{-\theta} = \frac{-\sin(\theta)}{-\theta} = \frac{\sin(\theta)}{\theta},
+\]
+which implies that the left-hand limit and the right-hand limit are equal:
+
+\[
+\lim_{\theta \to 0^-} \frac{\sin(\theta)}{\theta} =\lim_{\theta \to 0^+} \frac{\sin(\theta)}{\theta} = 1. 
+\]
+
+Thus the two-sided limit exists and
+
+\[
+\lim_{\theta \to 0} \frac{\sin(\theta)}{\theta} =1. 
+\]
+
+\end{document}
+
+
+
+(1) If the limit
+\[
+\lim_{x \to \infty} f(x) = L_1,
+\]
+then the line $y=L_1$ is a horizontal asymptote for the graph of $y = f(x)$ on the right end.\\
+(2) If the limit
+\[
+\lim_{x \to -\infty} f(x) = L_2,
+\]
+then the line $y=L_2$ is a horizontal asymptote for the graph of $y = f(x)$ on the left end.
+\end{theorem}
+
+
+
+\begin{example} %example 1
+Find $\lim_{x \to \infty} \dfrac{1}{x}.$
+  We argue as follows. If $x$ is a very large number, 
+	then $1/x$ will be a very small number, near zero.  Furthermore, as $x$ increases, $1/x$ will decrease.
+	
+	Hence
+	\[\lim_{x \to \infty} \frac{1}{x}= 0.\]
+	This is evident from the graph of $y=1/x$ shown below.
+	
+	%\[\graph[panel, xAxisLabel=``x'', yAxisLabel=``y'', xmin=-3, xmax=75]{y = 1/x}\]
+	
+	The graph of the function $f(x) = \frac{1}{x}$ also provides evidence for this conclusion.  
+	
+	\[\graph{y=1/x}\]
+	
+	Lastly, the value of the limit corresponds to the horizontal asymptote of the graph, namely
+	$y = 0$ in this example.
+\end{example}
+
+
+
+
+\begin{problem} %problem #1
+  Compute the limit:
+  \[
+  \lim_{x \to \infty} \frac{7}{x^2}
+  \]
+  
+    \begin{hint}
+      As $x$ goes to infinity, so does $x^2$
+    \end{hint}
+    \begin{hint}
+      As the denominator grows, the fraction shrinks
+    \end{hint}
+    \begin{hint}
+      The fraction never shrinks below 0
+    \end{hint}
+		The value of the limit is
+		 $\answer[given]{0}$
+		
+\end{problem}
+
+An important generalization of the last example and problem, which follows from a similar analysis is 
+\[\lim_{x \to \pm \infty} \frac{a}{x^n} = 0 \]
+for any constant, $a$, and any positive exponent, $n$.
+
+We will exploit this important fact in the next two examples.
+
+
+\begin{example} %example 2
+Compute 
+\[
+\lim_{x \to \infty} \frac{3x^2 + 5x + 2}{2x^2 -x- 4}.
+\]
+
+First note that as $x\to \pm \infty$, a polynomial, $p(x) \to \pm \infty$ according to it leading term.
+In this example, since the lead terms $3x^2$ and $2x^2$ both go to $\infty$ as $x \to \infty$, 
+our limit has the indeterminate form
+$\frac{\infty}{\infty}$.
+To resolve this issue, we will factor out of both the numerator and the denominator 
+the highest power of $x$ seen in the denominator.  So, in this example, we will factor $x^2$ from both.
+In the numerator, 
+\[3x^2 + 5x + 2 = x^2(3 + \frac{5}{x} + \frac{2}{x^2})\]
+and in the denominator,
+\[2x^2 -x -4 = x^2(2- \frac{1}{x} - \frac{4}{x^2}).\]
+
+With these factorizations, our limit becomes
+
+\begin{align*}
+\lim_{x \to \infty} \frac{3x^2 + 5x + 2}{2x^2 -x- 4} &= 
+\lim_{x \to \infty} \frac{x^2(3 + \frac{5}{x} + \frac{2}{x^2})}{x^2(2- \frac{1}{x} - \frac{4}{x^2})} \\ \\
+&=\lim_{x \to \infty} \frac{3 + \frac{5}{x} + \frac{2}{x^2}}{2- \frac{1}{x} - \frac{4}{x^2}} \\ \\
+&=\frac{3 + 0 + 0}{2- 0 - 0} \\ \\
+&= \frac32.
+\end{align*}
+
+The result of this limit means that the line $y = 3/2$ is a horizontal asymptote
+for the graph of $y = \dfrac{3x^2 + 5x + 2}{2x^2 -x- 4}$ on the right end.
+\end{example}
+
+\begin{problem} %problem #2
+  Compute the limit:
+  \[
+  \lim_{x \to \infty} \frac{3 + 2x^3 - x^3}{5x^3 - 2x -4}
+  \]
+  
+    \begin{hint}
+      When you `plug in' $x = \infty$, you get $\frac{-\infty}{\infty}$
+    \end{hint}
+    \begin{hint}
+      Determine the highest power of $x$ in the denominator
+    \end{hint}
+    \begin{hint}
+      Factor this power from both the numerator and denominator and cancel it
+    \end{hint}
+    \begin{hint}
+      $\frac{a}{x^n} \to 0$ as $x \to \infty$.
+    \end{hint}
+		The value of the limit is
+		 $\answer[given]{-\frac15}$
+		
+\end{problem}
+
+
+
+
+\begin{example} %example 3
+Compute $\displaystyle{\lim_{x \to -\infty} \frac{4x^2 - 3x - 6}{x^3 +8x^2 -3x + 7}}.$
+
+First note that as $x\to \pm \infty$, a polynomial, $p(x) \to \pm \infty$ according to it leading term.
+In this example, the lead terms $4x^2$ and $x^3$  go to $\infty$ and $-\infty$ respectively, as $x \to -\infty$. 
+Hence, our limit has the indeterminate form
+$\frac{\infty}{-\infty}$.
+To resolve this indeterminate form, we will factor out 
+the highest power of $x$ in the denominator, namely $x^3$, from both the numerator and the denominator.  
+In the numerator we get, 
+\[4x^2 - 3x - 6 = x^3(\frac{4}{x} - \frac{3}{x^2} - \frac{6}{x^3})\]
+and in the denominator we get,
+\[x^3 +8x^2 -3x + 7 = x^3(1 +  \frac{8}{x} - \frac{3}{x^2} + \frac{7}{x^3}).\]
+
+Factoring the $x^3$ and canceling, the limit can be resolved as follows:
+
+\begin{align*}
+\lim_{x \to -\infty}\frac{4x^2 - 3x - 6}{x^3 +8x^2 -3x + 7} &= 
+\lim_{x \to -\infty} \frac{x^3(\frac{4}{x}-\frac{3}{x^2} -\frac{6}{x^3})}
+{x^3(1 + \frac{8}{x}-\frac{3}{x^2}+\frac{7}{x^3})} \\ \\
+&=\lim_{x \to -\infty} \frac{\frac{4}{x}-\frac{3}{x^2} -\frac{6}{x^3}}{1 + \frac{8}{x}-\frac{3}{x^2}+\frac{7}{x^3}} \\ \\
+&=\frac{0 - 0 - 0}{1 +0- 0 + 0} \\ \\
+&= \frac01 \\
+&= 0.
+\end{align*}
+
+The result of this limit means that the line $y = 0$ (the $x$-axis) is a horizontal asymptote
+for the graph of $y = \dfrac{4x^2 - 3x - 6}{x^3 +8x^2 -3x + 7}$ on the right end.
+\end{example}
+
+\begin{problem} %problem #3
+  Compute the limit:
+  \[
+  \lim_{x \to \infty} \frac{3x^3 - 5x + 6}{3-x+ 2x^3- x^4}
+  \]
+  
+    \begin{hint}
+      When you `plug in' $x = \infty$, you get $\frac{\infty}{-\infty}$
+    \end{hint}
+    \begin{hint}
+      Determine the highest power of $x$ in the denominator
+    \end{hint}
+    \begin{hint}
+      Factor this power from both the numerator and denominator
+    \end{hint}
+    \begin{hint}
+      Cancel the power of $x$ that was factored out
+    \end{hint}
+    \begin{hint}
+      $\frac{a}{x^n} \to 0$ as $x \to \infty$.
+    \end{hint}
+		The value of the limit is
+		 $\answer[given]{0}$
+		
+\end{problem}
+
+\begin{example}
+
+Find 
+\[
+\lim_{x\to -\infty} e^x.
+\]
+
+Suppose $x$ is a large negative number.  Then $x = -|x|$ and so
+\[
+e^x = e^{-|x|} = \frac{1}{e^|x|},
+\]
+using the definition of negative exponents: $x^{-n} = \frac{1}{x^n}$.
+
+Now note that as $x\to -\infty, |x| \to \infty$ and so 
+\[
+e^{|x|} \to \infty.
+\]
+
+Thus, 
+\[
+\frac{1}{e^|x|} \to 0,
+\]
+hence
+
+\[
+\lim_{x\to -\infty} e^x = 0.
+\]
+
+This means that the line $y=0$ is a horizontal asymptote of the graph of $y = e^x$,
+as shown in the graph below.
+
+\[
+\graph{y=e^x}
+\]
+
+\end{example}
+
+\begin{example}
+Discuss
+\[
+\lim_{x\to \infty} \sin(x).
+\]
+
+As $x$ increases, the sine function oscillates between -1 and 1 without approaching any particular value.
+Hence
+\[
+\lim_{x\to \infty} \sin(x) \ \text{DNE}
+\]
+due to oscillation.
+This is illustrated in the graph of $y=\sin(x)$ shown below.
+
+\[
+\graph{y=\sin(x)}
+\]
+
+\end{example}
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a detailed, lecture style video on finding limits at infinity:}
+\youtube{FyhXNtLGr2o}
+\end{foldable}
+\end{center}
+
+
+
+\end{document}
+
+
+\begin{example} %example 9
+Analyze the limit:
+\[
+\lim_{x\to -1} 
+\frac{1}{x^2}
+\]
+Plugging $x = 0$ into the rational function
+\[f(x) = \frac{1}{x^2}\]
+gives the undefined expression $\frac{1}{0}$. From this information, we can conclude that the graph 
+of the function has a vertical asymptote at $x = 0$. This means that the one-sided limits as $x$ approaches 0
+will give either $\infty$ or $-\infty$, i.e., 
+\[\lim_{x \to -1^-} \frac{1}{x^2}= \infty \ \text{or} \ -\infty.\]
+and
+\[\lim_{x \to -1^+} \frac{1}{x^2}= \infty \ \text{or} \ -\infty.\]
+To determine which, we will do a sign analysis as follows. Because of the perfect square, 
+we can consider both case simultaneously.
+The numerator is 1, which is positive and the denominator is $x^2$ which is positive whether $x \to 0^-$
+or $x \to 0^+$.  Hence 
+\[\lim_{x \to 0^-} \frac{1}{x^2} =\frac{\text{pos}}{\text{pos}} = \infty,\]
+and
+\[\lim_{x \to 0^+} \frac{1}{x^2} =\frac{\text{pos}}{\text{pos}} = \infty,\]
+since the choices were only $\infty$ and $-\infty$.
+The graph of $f(x) = \frac{1}{x^2}$ near $x = 0$ looks like this:
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center, xlabel = $x$,
+    ylabel = {$f(x)$}]
+\addplot[domain=-2:-0.1, 
+    samples=100, color=blue]{1/x^2};
+\addplot[domain=0.1:2, 
+    samples=100, color=blue]{1/x^2};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{example}
+
+
+Here is a cool truth table
+
+\begin{problem}
+Fill in the truth table below using your amazing logic skillz!
+
+\begin{prompt}
+\begin{center}
+\[
+\begin{array}{c|c|c|c}
+		p & q & p \implies q & p \vee (p \implies q) \\
+		\hline
+		T & T & T & \answer{T} \\
+		T & F & F & \answer{T} \\
+		F & T & T & \answer{T} \\
+		F & F & T & \answer{T}
+	\end{array}
+    \]
+\end{center}
+\end{prompt}
+\end{problem}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center, xlabel = $x$,
+    ylabel = {$f(x)$}]
+\addplot[domain= 0.5:100, 
+    samples=1000, color=blue]{1/x};
+
+\end{axis}
+\end{tikzpicture}
+\end{center}

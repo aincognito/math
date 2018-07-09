@@ -1,0 +1,283 @@
+\documentclass{ximera}
+
+\input{../preamble}
+
+\outcome{Use the logarithm to compute the derivative of a function}
+
+\title{2.12 Logarithmic Differentiation}
+
+\begin{document}
+
+\begin{abstract}
+We use the logarithm to compute the derivative of a function.
+\end{abstract}
+
+\maketitle
+
+\begin{center}
+\textbf{Logarithmic Differentiation}
+\end{center}
+
+In this section we use the natural logarithm and its properties to help us to compute the 
+derivative of some special functions as well as some complicated functions.
+From the chain rule, we have
+\[
+\frac{d}{dx}\left[\ln(g(x))\right] = \frac{g'(x)}{g(x)}.
+\]
+If we solve this equation for $g'(x)$ we get the \textbf{logarithmic differentiation formula}:
+\[
+g'(x)= g(x)\cdot\frac{d}{dx}\left[\ln(g(x))\right].
+\]
+It says that we can find the derivative of a function by multiplying the original 
+function by the derivative of its logarithm.
+The reason that this formula is potentially useful is that the logarithm function has 
+three calculus friendly properties:
+
+\begin{align*}
+1.\;\; &\ln(uv) = \ln(u) + \ln(v)\\
+2.\;\; &\ln\left(\frac{u}{v}\right) = \ln(u) - \ln(v)\\
+3.\;\; &\ln(u^n) = n\ln(u).
+\end{align*}
+
+
+In these pre-calculus formulas, the expressions $u, v$ and $n$ can be functions as well as constants.
+
+\begin{example}
+Use logarithmic differentiation to find the derivative of 
+\[
+g(x) = x^x.
+\]
+We begin by computing the logarithm of $g(x)$ using the properties of the logarithm.
+\[
+\ln(g(x)) = \ln(x^x) = x\ln(x).
+\]
+Now we can use the product rule to compute the derivative of $\ln(g(x))$.
+We have
+\[
+\frac{d}{dx} \left[\ln(g(x))\right] = \frac{d}{dx}\left[ x\ln(x)\right]
+\]
+\[
+= 1\cdot \ln(x) + x \cdot \frac{1}{x} = \ln(x) + 1 = 1+ \ln(x).
+\]
+Finally, we use the logarithmic differentiation formula to obtain $g'(x)$.
+We have:
+\[
+g'(x) = g(x) \frac{d}{dx} \left[\ln(g(x))\right] = x^x [1+\ln(x)].
+\]
+
+\end{example}
+
+
+\begin{problem} %problem #14
+  Compute
+  \[
+  \frac{d}{dx} \left(x^{2x}\right)
+  \]
+  
+    \begin{hint}
+      Use logarithmic differentiation
+    \end{hint}
+    \begin{hint}
+      Use property 3 of logarithms
+    \end{hint}
+    \begin{hint}
+		  Use the product rule to find the derivative of $\ln(g(x))$
+		\end{hint}
+		\begin{hint}
+		  Remember to multiply by the original function
+		\end{hint}
+    
+		The derivative of $x^{2x}$ with respect to $x$ is
+		 $\answer[given]{x^{2x} (2+2\ln(x))}$
+		
+\end{problem}
+
+\begin{example}
+Use logarithmic differentiation to find the derivative of 
+\[
+g(x) = x^{\sin(x)}.
+\]
+We begin by computing the logarithm of $g(x)$ using the properties of the logarithm.
+\[
+\ln(g(x)) = \ln\left(x^{\sin(x)}\right) = \sin(x)\ln(x).
+\]
+Now we can use the product rule to compute the derivative of $\ln(g(x))$.
+We have
+\[
+\frac{d}{dx} \left[\ln(g(x))\right] = \frac{d}{dx} \left[\sin(x)\ln(x)\right]
+\]
+\[
+= \cos(x)\cdot \ln(x) + \sin(x) \cdot \frac{1}{x}.
+\]
+Finally, we use the logarithmic differentiation formula to obtain $g'(x)$.
+We have:
+\[
+g'(x) = g(x) \frac{d}{dx} \left[\ln(g(x))\right] = x^{\sin(x)} \left[\cos(x)\ln(x) + \frac{\sin(x)}{x}\right].
+\]
+
+\end{example}
+
+
+\begin{problem} %problem #14
+  Compute
+  \[
+  \frac{d}{dx} \left(x^{\tan(x)}\right)
+  \]
+  
+    \begin{hint}
+      Use logarithmic differentiation
+    \end{hint}
+    \begin{hint}
+      Use property 3 of logarithms
+    \end{hint}
+    \begin{hint}
+		  Use the product rule to find the derivative of $\ln(g(x))$
+		\end{hint}
+		\begin{hint}
+		  Remember to multiply by the original function
+		\end{hint}
+    
+		The derivative of $x^{\tan(x)}$ with respect to $x$ is
+		 $\answer[given]{x^{\tan(x)} (\sec^2(x)\ln(x) + \frac{\tan(x)}{x})}$
+		
+\end{problem}
+
+
+\begin{example}
+Use logarithmic differentiation to find the derivative of 
+\[
+g(x) = \frac{e^x \sin^4(x)}{\sqrt{x^4 + x^2 + 1}}.
+\]
+We begin by computing the logarithm of $g(x)$ using the properties of the logarithm.
+\begin{align*}
+\ln(g(x)) &= \ln\left(\frac{e^x \sin^4(x)}{\sqrt{x^4 + x^2 + 1}}\right)\\
+&= \ln\left(e^x \sin^4(x)\right) - \ln\left(\sqrt{x^4 + x^2 + 1}\right)\\
+&= \ln(e^x) + \ln(\sin^4(x)) - \ln[(x^4 + x^2 + 1)^{1/2}]\\
+&= x + 4\ln(\sin(x)) - \frac12 \ln(x^4 + x^2 + 1).
+\end{align*}
+
+Note that we used the fact that the logarithm and the exponential functions are 
+inverses in the last line
+to write $\ln(e^x) = x$.
+Now we can use the chain rule to compute the derivative of $\ln(g(x))$.
+We have
+\begin{align*}
+\frac{d}{dx}\left[ \ln(g(x))\right] &= \frac{d}{dx}\left[ x + 4\ln(\sin(x)) - \frac12 \cdot \ln(x^4 + x^2 + 1)\right]\\
+&= 1+ 4 \cdot \frac{\cos(x)}{\sin(x)} - \frac12 \cdot \frac{4x^3 + 2x}{x^4 + x^2 + 1}.
+\end{align*}
+
+
+Finally, we use the logarithmic differentiation formula to obtain $g'(x)$.
+With a couple of minor simplifications, we have:
+\[
+g'(x) = \frac{e^x \sin^4(x)}{\sqrt{x^4 + x^2 + 1}} \left[1+ 4 \cot(x) - 
+ \frac{2x^3 + x}{x^4 + x^2 + 1}\right].
+\]
+
+\end{example}
+
+\begin{problem}
+  If 
+	\[
+	g(x) = \frac{\sqrt[4]{x^8 + x^4 + 2}}{e^{2x} \sec^2(x)}
+	\]
+	then which of the following is equal to $\ln(g(x))$?
+  \begin{multipleChoice}
+    \choice[correct]{$\frac14 \cdot \ln(x^8 + x^4 + 2) - 2x - 2\ln(\sec(x))$}
+    \choice{$\frac14 \cdot \ln(x^8 + x^4 + 2) - 2x + 2\ln(\sec(x))$}
+    \choice{$\frac14 \cdot \ln(x^8 + x^4 + 2) - 2x\ln(\sec(x))$}
+  \end{multipleChoice}
+\end{problem}
+
+
+
+\begin{problem} %problem #14
+  Which of the following is equal to 
+  \[
+  \frac{d}{dx} \frac{\sqrt[4]{x^8 + x^4 + 2}}{e^{2x} \sec^2(x)}?
+  \]
+
+  \begin{multipleChoice}
+    \choice{\[\frac{2x^7 + x^3}{x^8+x^4 +2} -2 -2 \tan(x)\]}
+    \choice[correct]{\[\frac{\sqrt[4]{x^8 + x^4 + 2}}{e^{2x} \sec^2(x)} \cdot
+		                                    \left[\frac{2x^7 + x^3}{x^8+x^4 +2} -2 -2 \tan(x)\right]\]}
+    \choice{\[\frac{\sqrt[4]{x^8 + x^4 + 2}}{e^{2x} \sec^2(x)} \cdot
+		                                           \left[\frac{2x^7 + x^3}{x^8+x^4 +2} -2 -2 \sec(x)\right]\]}
+  \end{multipleChoice}
+   
+		
+\end{problem}
+
+As a final note, even though $\ln(x)$ is only defined for $x>0$, the logarithmic differentiation formula given above 
+will yield the correct result even in situations where $g(x) <0$. This is because 
+\[
+\frac{d}{dx} \ln|x| = \frac{1}{x},
+\]
+and so, by the chain rule,
+\[
+\frac{d}{dx} \ln|g(x)| = \frac{g'(x)}{g(x)}.
+\]
+
+
+
+
+\end{document}
+
+
+%more question formats below
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\begin{verbatim}
+\begin{question}
+What is your favorite color?
+\begin{multipleChoice}
+\choice[correct]{Rainbow}
+\choice{Blue}
+\choice{Green}
+\choice{Red}
+\end{multipleChoice}
+\begin{freeResponse}
+Hello
+\end{freeResponse}
+\end{question}
+%\end{verbatim}
+
+
+
+
+
+\begin{question}
+  Which one will you choose?
+  \begin{multipleChoice}
+    \choice[correct]{I'm correct.}
+    \choice{I'm wrong.}
+    \choice{I'm wrong too.}
+  \end{multipleChoice}
+\end{question}
+
+
+\begin{question}
+  Which one will you choose?
+  \begin{selectAll}
+    \choice[correct]{I'm correct.}
+    \choice{I'm wrong.}
+    \choice[correct]{I'm also correct.}
+    \choice{I'm wrong too.}
+  \end{selectAll}
+\end{question}
+
+
+\begin{freeResponse}
+What is the chain rule used for?
+\end{freeResponse}

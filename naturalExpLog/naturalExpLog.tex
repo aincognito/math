@@ -1,0 +1,213 @@
+\documentclass{ximera}
+\usepackage{tcolorbox}
+\input{../preamble}
+\outcome{Compute derivatives involving exp(x) and ln(x).}
+
+
+\title{2.3 Derivatives of Natural Exponential and Log}
+
+%\newcommand{\ffrac}[2]{\frac{\mbox{\footnotesize $#1$}}{\mbox{\footnotesize $#2$}}}
+%\newcommand{\vasymptote}[2][]{
+ %   \draw [densely dashed,#1] ({rel axis cs:0,0} -| {axis cs:#2,0}) -- ({rel axis cs:0,1} -| {axis cs:#2,0});
+%}
+
+
+\begin{document}
+
+\begin{abstract}
+In this section we compute derivatives involving $e^x$ and $\ln(x)$.
+\end{abstract}
+
+\maketitle
+
+
+
+
+
+
+We begin by computing the derivative of the exponential function $f(x) = e^x$.  Recall that $e$ is a number whose value is approximately 2.72.
+Like $\pi$ and $\sqrt 2$, $e$ is an irrational number, meaning that its decimal representation is non-terminating and non-repeating. The significance of the number $e$ in mathematics
+is underscored by the simplicity of the differentiation formula we are about to discover. 
+The result hinges on a limit that we analyzed in the Numerical Limits section:
+\[
+\lim_{x \to 0} \frac{e^x - 1}{x} = 1.
+\]
+
+The derivative of $f(x) = e^x$ is found as follows:
+
+\begin{center}
+$\begin{aligned}
+f'(x) &= \lim_{h \to 0} \frac{f(x+h)-f(x)}{h} \\[5pt]
+&= \lim_{h \to 0}\frac{e^{x+h}-e^x}{h}\\[5pt]
+&= \lim_{h \to 0} \frac{e^x e^h-e^x}{h}\\[5pt]
+&= \lim_{h \to 0} \frac{e^x (e^h-1)}{h}\\[5pt]
+&= e^x \cdot 1 = e^x.\\[-5pt]
+\end{aligned}$
+\end{center}
+
+Thus the derivative of $e^x$ is itself!
+
+
+
+
+\begin{problem} %problem #9
+Find the equation of the tangent line to the graph of $f(x) = e^x$ at $x = 0$.
+\begin{hint}
+Use the derivative to find the slope, $m$
+\end{hint}
+\begin{hint}
+The point of tangency is $(0, f(0))$
+\end{hint}
+\begin{hint}
+Use the point slope form: $y-y_0 = m(x-x_0)$
+\end{hint}
+
+The equation of the tangent line is \ $y = \answer{x+1}$
+\end{problem}
+
+\begin{problem} %problem #10
+Find the equation of the tangent line to the graph of $f(x) = e^x$ at $x = 1$.
+\begin{hint}
+Use the derivative to find the slope, $m$
+\end{hint}
+\begin{hint}
+The point of tangency is $(1, f(1))$
+\end{hint}
+\begin{hint}
+Use the point slope form: $y-y_0 = m(x-x_0)$
+\end{hint}
+
+The equation of the tangent line is \ $y = \answer{ex}$
+\end{problem}
+
+
+\begin{problem}
+Find the following derivatives involving $e^x$:
+
+$\frac{d}{dx} \left(5e^x\right) = \answer{5e^x}.$\\
+$\frac{d}{dx} \left(-2e^x\right) = \answer{-2e^x}.$\\
+$\frac{d}{dx} \left(\frac{e^x}{2}\right) = \answer{\frac{e^x}{2}}.$\\
+$\frac{d}{dx} \left(x^2 + e^x\right) = \answer{2x + e^x}.$\\
+$\frac{d}{dx} \left(\sqrt x - 3e^x\right) = \answer{(1/2)x^{-1/2} - 3e^x}.$\\
+$\frac{d}{dx} \left(4e^x + \frac{1}{x^2}\right) = \answer{4e^x -\frac{2}{x^3}}.$
+
+
+\end{problem}
+
+
+Next, we use the definition of the derivative to find the derivative of the natural logarithm.
+
+
+
+We will need the special limit 
+
+\[
+\lim_{x \to 0} \frac{\ln(1 + x)}{x} = 1.
+\]
+
+We can use a table of values to verify this limit:
+\[
+\begin{array}{ c | c | c | c | c }
+  x & 0.1 & 0.01  & 0.001 & 0.0001 \\ 
+	\hline
+	 \frac{\ln(1+x)}{x} & 0.953 & 0.995 & 0.9995 & 0.99995
+\end{array}
+\]
+and
+\[
+\begin{array}{ c | c | c | c | c }
+  x & -0.1 & -0.01  & -0.001 & -0.0001 \\ 
+	\hline
+	 \frac{\ln(1+x)}{x} & 1.054 & 1.005 & 1.0005 & 1.00005
+\end{array}
+\]
+Now we are prepared to use the definition to find the derivative of $\ln(x)$:
+
+If $f(x) = \ln(x)$ then\\[10pt]
+\begin{center}
+$\begin{aligned}
+f'(x) &= \lim_{h \to 0} \frac{f(x+h)-f(x)}{h}\\[5pt]
+&= \lim_{h \to 0}\frac{\ln(x+h)-\ln(x)}{h}\\[5pt]
+&= \lim_{h \to 0} \frac{\ln(\frac{x+h}{x})}{h}\\[5pt]
+&= \lim_{h \to 0}\frac{\ln(1 + \frac{h}{x})}{h}\\[5pt]
+&= \lim_{k \to 0} \frac{\ln(1 + k)}{kx} \\[5pt]
+&= \frac{1}{x}.
+\end{aligned}$
+\end{center}
+
+Note that we made the substitution $k =\frac{h}{x}$ so that $h = kx$ and  also note 
+that $h\to 0$ is equivalent to $k\to 0$.
+To recap, 
+\[
+\frac{d}{dx} \ln(x) = \frac{1}{x}
+\]
+which gives a memorable mathematical relationship between the \textbf{transcendental} natural logarithm function 
+the \textbf{rational} reciprocal function.
+
+
+\begin{example} %example 7
+ If $f(x) = \frac{\ln(x)}{\ln(4)}$ then we use the constant multiple rule with $c = \frac{1}{\ln(4)}$ 
+and we get 
+\[
+f'(x) = \tfrac{1}{\ln(4)} \cdot \frac{1}{x} = \frac{1}{x\ln(4)}.
+\]
+\end{example}
+
+
+
+\begin{problem}
+Find the following derivatives involving $\ln(x)$:
+
+$\frac{d}{dx} \left(5\ln(x)\right) = \answer{5/x}.$\\
+$\frac{d}{dx} \left(-2\ln(x)\right) = \answer{-2/x}.$\\
+$\frac{d}{dx} \left(\frac{\ln(x)}{2}\right) = \answer{1/(2x)}.$\\
+$\frac{d}{dx} \left(x^3 + \ln(x)\right) = \answer{3x^2 + 1/x}.$\\
+$\frac{d}{dx} \left(\sqrt x - 3\ln(x)\right) = \answer{(1/2)x^{-1/2} - 3/x}.$\\
+$\frac{d}{dx} \left(4\ln(x) + \frac{1}{x^2}\right) = \answer{4/x -\frac{2}{x^3}}.$
+
+
+\end{problem}
+
+
+
+
+
+In the formula $\tfrac{d}{dx} \ln(x) = \tfrac{1}{x}$, the domains of the functions do not match.  The domain of $1/x$ is all non-zero $x$, but the domain of 
+$\ln(x)$  is only $x >0$.  This leads us to ask if there is a function defined for $x<0$ whose derivative is $1/x$. The answer is yes and the function is 
+$\ln|x|$. In other words,
+\[
+\dd{x} \ln|x| = \frac{1}{x}.
+\]
+This result follows from the definition of the derivative exactly as it was used above.  
+The absolute value bars will eventually drop in the computation because $1+h/x$ becomes positive as $h \to 0$.
+ 
+%\begin{center}
+\begin{foldable}
+\unfoldable{Below is a graph of $f(x) = \ln|x|$ (in blue) and its derivative, $f'(x) = 1/x$ (in purple).
+Notice that the slope of the tangent line to $f(x)$ (in red) is the height of the corresponding 
+point on $f'(x)$.}
+\includeinteractive{lnwithderiv.js}
+\end{foldable}
+%\end{center}
+
+
+\end{document}
+
+
+
+
+
+
+\begin{example} %example 4
+Find $h'(x)$ if $h(x) = x\ln(x)$.\\
+We write $h(x)$ as a product: $h(x) = f(x) \cdot g(x)$ with
+\[f(x) = x \quad \text{and} \quad g(x) = \ln(x).\]
+To use the product rule, we need the derivatives:
+\[f'(x) = 1 \quad \text{and} \quad g'(x)= \frac{1}{x}.\]
+We can now write the derivative:
+\begin{align*}
+h'(x) &= f'(x)g(x) + f(x)g'(x) \\
+&=  1 \cdot \ln(x) + x\left(\frac{1}{x}\right)  \\
+&=  \ln(x) + 1.
+\end{align*}
+\end{example}

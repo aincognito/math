@@ -1,0 +1,642 @@
+\documentclass{ximera}
+
+\input{../preamble}
+
+\outcome{Determine when a limit is infinite}
+
+\title{1.5 Infinite Limits}
+
+
+\begin{document}
+
+\begin{abstract}
+Determine when a limit is infinite.
+\end{abstract}
+
+\maketitle
+
+Infinite limits have a direct connection to vertical asymptotes.
+\begin{theorem}
+If 
+\[
+\lim_{x \to a^-} f(x) = \pm \infty
+\]
+or
+\[
+\lim_{x \to a^+} f(x) = \pm \infty
+\]
+then the line $x=a$ is a vertical asymptote for the graph of $y=f(x)$.\\
+\end{theorem}
+
+%This situation arises frequently when dealing with \textbf{rational functions}. At points where 
+%the denominator is zero, but the numerator is not, a fraction of the form 
+%\[
+%\frac{c}{0}
+%\]
+%where $c\neq 0$, arises and one-sided limits in this case are either $\pm \infty$.
+
+
+
+In the next few examples, we will investigate infinite limits of rational functions. 
+These typically occur at points where the denominator of the rational function is approaching zero, 
+but the numerator is not approaching zero, leading to the \textbf{undefined} fraction form
+\[
+\frac{c}{0}, \ \text{where} \ c \neq 0.
+\]
+
+\begin{example} %example 1
+Compute the limit: 
+
+\[
+\lim_{x \to 0^+} \frac{1}{x}.
+\]
+
+Plugging in $x=0$ yields the  expression $\frac{1}{0}$ which is undefined. 
+As the denominator heads to zero, it gets smaller and smaller and so it will divide into the numerator 
+more and more times.  This causes the fraction to ``blow up". In terms of the limit, it is therefore 
+reasonable to expect an answer of either $\infty$ or $-\infty$.  
+To determine which, we do a \textbf{sign analysis} as follows.
+Since the values of $x$ are positive as $x \to 0^+$, the values of $f(x) = \frac{1}{x}$ are also positive.
+%Furthermore, as the values of $x$ decrease towards zero, the values of the reciprocal, 
+%$\frac{1}{x}$ increase without bound.
+
+Hence, we can conclude that 
+
+\[\lim_{x \to 0^+} \frac{1}{x} =  \infty. \]
+
+The geometric significance of this result is that the line $x=0$ (the $y$-axis) 
+is a vertical asymptote for the graph of the function $f(x) = \frac{1}{x}$, as shown below.
+
+
+%\begin{tikzpicture}
+%\begin{axis}
+%\addplot[domain=.01:4, 
+ %   samples=100, color=red]{1/x};
+%\end{axis}
+%\end{tikzpicture}
+%\end{example}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center, title={The graph of $y=\dfrac{1}{x}$}]
+\addplot[domain=-3:-.1, 
+    samples=100, color=blue]{1/x};
+\addplot[domain=.1:3, 
+    samples=100, color=blue]{1/x};
+\vasymptote {0}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{example}
+
+
+
+\begin{problem} %problem #1
+  
+	Determine the limit:
+  \[
+  \lim_{x \to 0^-} \frac{3}{x}.
+  \]
+		
+		\begin{hint}
+      $\frac{c}{0}$ gives $\pm \infty$
+    \end{hint}
+    \begin{hint}
+      $x \to 0^-$ means $x<0$
+    \end{hint}
+    \begin{hint}
+      Is $\frac{3}{x}$ positive or negative?
+    \end{hint}
+    
+		The value of the limit  is
+		(type infinity for $\infty$ or -infinity for $-\infty$)
+		 $\answer[given]{-\infty}$
+		
+\end{problem}
+In general, when the undefined fraction form $c/0, (c\neq 0)$
+arises in a one-sided limit, the answer is typically $\pm \infty$ and
+a \textbf{sign analysis} of the denominator will determine which of these is correct.
+
+\begin{example} %example 2
+Determine the limit: 
+\[
+\lim_{x \to 3^-} \frac{2}{x-3}.
+\] 
+
+
+First we observe that plugging in the value $x=3$ gives $\frac{2}{0}$ which is undefined and 
+the fraction is ``blowing up" in the limit.  A sign analysis will tell us if the limit is $\pm\infty$.
+Since $x \to 3^-$, we have $x<3$ and hence $x-3 <0$. 
+Since the numerator is positive and the denominator is approaching $0$ through negative values,
+the values of $f(x) = \frac{2}{x-3}$ in this limit are negative.  We conclude that
+
+\[
+\lim_{x \to 3^-} \frac{2}{x-3} =  -\infty. 
+\]
+
+This geometric significance of the result is that the line $x=3$ is a vertical asymptote for the 
+graph of the function $f(x) = \frac{2}{x-3}$, as shown below.
+
+%\begin{center}
+%\begin{tikzpicture}
+%\begin{axis}[axis lines = center, xlabel = $x$,
+%    ylabel = {$f(x)$}]
+%\addplot[domain=1:2.9, 
+%    samples=100, color=blue]{2/(x-3)};
+
+%\end{axis}
+%\end{tikzpicture}
+%\end{center}
+%\end{example}
+
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center, title={The graph of $y=\dfrac{2}{x-3}$}]
+\addplot[domain=0:2.9, 
+    samples=100, color=blue]{2/(x-3)};
+\addplot[domain=3.1:6, 
+  samples=100, color=blue]{2/(x-3)};
+\vasymptote {3}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{example}
+
+
+\begin{problem} %problem #2
+  
+	Determine the limit:
+  \[
+  \lim_{x \to 2^+} \frac{4}{x-2}.
+  \]
+		
+		\begin{hint}
+      $\frac{c}{0}$ gives $\pm \infty$
+    \end{hint}
+    \begin{hint}
+      $x \to 2^+$ means $x>2$
+    \end{hint}
+    \begin{hint}
+      Is $\frac{4}{x-2}$ positive or negative?
+    \end{hint}
+    
+		The value of the limit is
+		(type infinity for $\infty$ or -infinity for $-\infty$)
+		 $\answer[given]{\infty}$
+		
+\end{problem}
+
+\begin{example} %example 3
+Analyze the two-sided limit:
+\[
+\lim_{x\to 2} 
+\frac{x + 1}{x-2}
+\]
+
+Plugging $x = 2$ into the rational function
+\[f(x) = \frac{x + 1}{x-2}\]
+gives the undefined expression $\frac{3}{0}$. From this information, we can conclude that the 
+one-sided limits as $x$ approaches 2
+will give either $\infty$ or $-\infty$, i.e., 
+\[\lim_{x \to 2^-} \frac{x+1}{x-2}= \pm \infty\]
+and
+\[\lim_{x \to 2^+} \frac{x+1}{x-2}= \pm \infty.\]
+To determine which, we will do a sign analysis on each one-sided limit. Consider the left hand limit first:
+\[\lim_{x \to 2^-} \frac{x+1}{x-2}.\]
+The numerator is approaching 3, which is positive. The denominator is approaching zero which is neither 
+positive nor negative, but since $x \to 2^-$, we know that $x<2$ and therefore $x-2 <0$.  
+Hence the denominator is negative in this limit. Since a positive divided by a 
+negative is negative, we get:
+\[\lim_{x \to 2^-} \frac{x+1}{x-2}  = -\infty.\]
+
+Now, we will do a sign analysis on the right hand limit:
+\[\lim_{x \to 2^-} \frac{x+1}{x-2}.\]
+The numerator is approaching 3, which is positive. In the denominator, since $x \to 2^+$, 
+we know that $x>2$ and therefore $x-2 >0$.  
+Hence the denominator is positive in this limit. Since a positive divided by a 
+positive is positive, we get:
+\[\lim_{x \to 2^-} \frac{x+1}{x-2} = \infty.\]
+
+The one-sided limits were different, so the two-sided limit does not exist:
+\[\lim_{x \to 2} \frac{x+1}{x-2} \ \text{DNE}.\]
+The graph of $f(x) = \frac{x+1}{x-2}$ has a vertical asymptote at $x = 2$, as shown below.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center, title={The graph of $y=\dfrac{x+1}{x-2}$}]
+\addplot[domain=0:1.9, 
+    samples=100, color=blue]{(x+1)/(x-2)};
+\addplot[domain=2.1:4, 
+    samples=100, color=blue]{(x+1)/(x-2)};
+\vasymptote {2}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{example}
+
+
+
+\begin{problem} %problem #3
+  
+	Analyze the two-sided limit:
+  \[
+  \lim_{x \to 3} \frac{x-1}{x-3}.
+  \]
+  
+    \begin{hint}
+      Check the one-sided limits separately
+    \end{hint}
+    \begin{hint}
+      Both one-sided limits involve division by zero
+    \end{hint}
+    \begin{hint}
+      The one-sided limits are either $\pm \infty$
+    \end{hint}
+		\begin{hint}
+		  If the one-sided limits are different, then the two-sided limit DNE
+		\end{hint}	
+		The value of the limit is
+		(type infinity for $\infty$, -infinity for $-\infty$ or DNE)
+		 $\answer[given]{DNE}$
+		
+\end{problem}
+
+
+
+
+
+\begin{example} %example 4
+Analyze the two-sided limit:
+\[
+\lim_{x\to -1} 
+\frac{2x}{(x+1)^3}
+\]
+
+Plugging $x = -1$ into the rational function
+\[f(x) = \frac{2x}{(x+1)^3}\]
+gives the undefined expression $\frac{-2}{0}$. From this information, we can conclude 
+that the one-sided limits
+will give either $\infty$ or $-\infty$, i.e., 
+\[\lim_{x \to -1^-} \frac{2x}{(x+1)^3}= \pm \infty,\]
+and
+\[\lim_{x \to -1^+} \frac{2x}{(x+1)^3}= \pm \infty.\]
+To determine which, we will do a sign analysis on each of the one-sided limits. 
+Consider the left hand limit first:
+\[\lim_{x \to -1^-} \frac{2x}{(x+1)^3}.\]
+The numerator is approaching $-2$, which is negative. In the denominator, since $x \to -1^-$, 
+we know that $x<-1$ and therefore $x+1 <0$. Since $x+1$ is negative, so is $(x+1)^3$. Negative divided by 
+negative is positive, so we get:
+\[
+\lim_{x \to -1^-} \frac{2x}{(x+1)^3} = \infty.
+\]
+
+Now, we will do a sign analysis on the right hand limit:
+\[\lim_{x \to -1^+} \frac{2x}{(x+1)^3}.\]
+The numerator is still approaching $-2$. In the denominator, since $x \to -1^+$, 
+we know that $x>-1$ and therefore $x+1 >0$. Since $x+1$ is positive, so is $(x+1)^3$. Negative divided by 
+positive is negative, so we get:
+
+\[
+\lim_{x \to -1^+} \frac{2x}{(x+1)^3} = -\infty.
+\]
+
+The one-sided limits were different, so the two-sided limit does not exist:
+\[\lim_{x \to 2} \frac{2x}{(x+1)^3} \ \text{DNE}.\]
+
+The graph of $f(x) = \frac{2x}{(x+1)^3}$ has a vertical asymptote at $x = -1$, as shown below.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center,  title={The graph of $y=\dfrac{2x}{(x+1)^3}$}]
+\addplot[domain=-3:-1.1, 
+    samples=100, color=blue]{(2*x)/(x+1)^3};
+\addplot[domain=-0.9:1, 
+    samples=100, color=blue]{(2*x)/(x+1)^3};
+\vasymptote {-1}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{example}
+
+
+\begin{problem} %problem #4
+  
+	Analyze the limit:
+  \[
+  \lim_{x \to -3} \frac{x+1}{(x+3)^2}.
+  \]
+  
+    \begin{hint}
+      This is a two-sided limit. Check the one-sided limits separately
+    \end{hint}
+    \begin{hint}
+      Both one-sided limits involve division by zero
+    \end{hint}
+    \begin{hint}
+      The one-sided limits are either $\pm \infty$
+    \end{hint}
+		\begin{hint}
+		  If the one-sided limits are different, then the two-sided limit DNE
+		\end{hint}	
+		The value of the limit is
+		(type infinity for $\infty$, -infinity for $-\infty$ or DNE)
+		 $\answer[given]{-\infty}$
+		
+\end{problem}
+
+The functions $\ln(x)$ and $\tan(x)$ also have infinite limits.
+
+\begin{example}
+The graph of $f(x) = \ln(x)$ has a vertical asymptote at $x=0$
+and 
+\[
+\lim_{x\to 0^+} \ln(x) = -\infty,
+\]
+as shown in the graph below.
+
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center,  title={The graph of $y=\ln(x)$}]
+\addplot[domain=0.01:5, 
+    samples=100, color=blue]{ln(x)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+%\[\graph{y=\ln(x)}\]
+\end{example}
+
+
+\begin{problem} %problem #4
+  
+	Compute the limit:
+  \[
+  \lim_{x \to {2^+}} \ln(x-2).
+  \]
+		\begin{hint}
+		  $\ln(x) \to -\infty \quad \text{as} \quad x \to 0^+$
+		\end{hint}	
+		The value of the limit is
+		(type infinity for $\infty$, -infinity for $-\infty$ or DNE)
+		 $\answer[given]{-\infty}$
+		
+\end{problem}
+
+\begin{problem} %problem #4
+  
+	Compute the limit:
+  \[
+  \lim_{x \to {1^-}} 1 - \ln(1-x).
+  \]
+		\begin{hint}
+		  $\ln(x) \to -\infty \quad \text{as} \quad x \to 0^+$
+		\end{hint}	
+		The value of the limit is
+		(type infinity for $\infty$, -infinity for $-\infty$ or DNE)
+		 $\answer[given]{\infty}$
+		
+\end{problem}
+
+\begin{example}
+The graph of $f(x) = \tan(x)$ has a vertical asymptotes at multiples of $\pi/2$ and
+%$x=-\pi/2$ and $x=\pi/2$.
+we have the following limits: 
+\[
+\lim_{x\to -\pi/2^+} \tan(x) = -\infty,
+\]
+and
+\[
+\lim_{x\to \pi/2^-} \tan(x) = \infty,
+\]
+
+as shown in the graph below.
+%\begin{center}
+%\begin{tikzpicture}
+%\begin{axis}[axis lines = center,  title={The graph of $y=\tan(x)$}]
+%\addplot[domain=-1.55:1.55, 
+%    samples=100, color=blue]{tan(deg(x))};
+		
+%\addplot[domain=1.6:4.7, 
+%    samples=100, color=blue]{tan(deg(x))};
+%\addplot[domain=-4.7:-1.6, 
+%    samples=100, color=blue]{tan(deg(x))};		
+%\vasymptote{-1.57}
+%\vasymptote{1.57}	
+			
+%\end{axis}
+%\end{tikzpicture}
+%\end{center}
+\[
+\graph{tan(x)}
+\]
+\end{example}
+
+\begin{problem} %problem #4
+  
+	Compute the limit:
+  \[
+  \lim_{x \to {0^+}} \cot(x).
+  \]
+		\begin{hint}
+		  $\cot(x) = \frac{\cos(x)}{\sin(x)}$
+		\end{hint}	
+		\begin{hint}
+		  $\cos(0) = 1$ and $\sin(0) = 0$
+		\end{hint}
+		
+		The value of the limit is
+		(type infinity for $\infty$, -infinity for $-\infty$ or DNE)
+		 $\answer[given]{\infty}$
+		
+\end{problem}
+
+\begin{problem} %problem #4
+  
+	Compute the limit:
+  \[
+  \lim_{x \to {\pi^-}} \csc(x).
+  \]
+		\begin{hint}
+		  $\sec(x) = \frac{1}{\sin(x)}$
+		\end{hint}	
+		\begin{hint}
+		  $\sin(\pi) = 0$
+		\end{hint}
+		The value of the limit is
+		(type infinity for $\infty$, -infinity for $-\infty$ or DNE)
+		 $\answer[given]{\infty}$
+		
+\end{problem}
+
+\begin{problem} %problem #4
+  
+	Compute the limit:
+  \[
+  \lim_{x \to {\pi^+}} \csc(x).
+  \]
+		\begin{hint}
+		  $\sec(x) = \frac{1}{\sin(x)}$
+		\end{hint}	
+		\begin{hint}
+		  $\sin(\pi) = 0$
+		\end{hint}
+		The value of the limit is
+		(type infinity for $\infty$, -infinity for $-\infty$ or DNE)
+		 $\answer[given]{-\infty}$
+		
+\end{problem}
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a detailed, lecture style video on infinite limits:}
+\youtube{AkYCqV75EOw}
+\end{foldable}
+\end{center}
+
+
+
+\end{document}
+
+
+\begin{example} %example 5
+Compute the limit: $\displaystyle{\lim_{x \to 3^{-}} \frac{|x-3|}{x-3}}$.\\
+Plugging in $x = 3$ gives the indeterminate form $0/0$. To resolve this limit, 
+we will do a sign analysis on the quantity in the absolute value bars, $x-3$.
+
+Since $x \to 3^-$, we have $x<3$ and hence $x-3 <0$. Since the quantity in the absolute value bars is negative, 
+we can compute its absolute value as follows:
+
+\[|x-3| = -(x-3).\]
+
+Using this in the limit, we get
+
+\begin{align*}
+\lim_{x \to 3^-} \frac{|x-3|}{x-3} &= \lim_{x \to 3^-} \frac{-(x-3)}{x-3} \\
+&= \lim_{x \to 3^-} (-1) \\
+&= -1.
+\end{align*}
+\end{example}
+
+\begin{question} %problem #5a
+  Compute the limit:
+  \[
+  \lim_{x \to 4^-} \frac{4-x}{|x-4|}
+  \]
+  
+    \begin{hint}
+      Since $x \to 4^-$, we have $x<4$
+    \end{hint}
+    \begin{hint}
+      Is $x-4$ positive or negative?
+    \end{hint}
+    \begin{hint}
+      Remove the absolute value bars; include a negative sign if necessary
+    \end{hint}
+		\begin{hint}
+      Simplify the fraction
+    \end{hint}
+		The value of the limit is
+		 $\answer[given]{1}$
+		
+\end{question}
+
+
+\begin{question} %problem #5b
+  Compute the limit:
+  \[
+  \lim_{x \to -3^-} \frac{|x+3|}{2x+6}
+  \]
+  
+    \begin{hint}
+      Since $x \to -3^-$, we have $x<-3$
+    \end{hint}
+    \begin{hint}
+      Is $x+3$ positive or negative?
+    \end{hint}
+    \begin{hint}
+      Remove the absolute value bars; include a negative sign if necessary
+    \end{hint}
+		\begin{hint}
+      Simplify the fraction
+    \end{hint}
+		The value of the limit is
+		 $\answer[given]{-1/2}$
+		
+\end{question}
+
+
+
+
+\begin{example} %example 1
+Analyze the limit:
+\[
+\lim_{x\to -1} 
+\frac{1}{x^2}
+\]
+Plugging $x = 0$ into the rational function
+\[f(x) = \frac{1}{x^2}\]
+gives the undefined expression $\frac{1}{0}$. From this information, we can conclude that the graph 
+of the function has a vertical asymptote at $x = 0$. This means that the one-sided limits as $x$ approaches 0
+will give either $\infty$ or $-\infty$, i.e., 
+\[\lim_{x \to -1^-} \frac{1}{x^2}= \infty \ \text{or} \ -\infty.\]
+and
+\[\lim_{x \to -1^+} \frac{1}{x^2}= \infty \ \text{or} \ -\infty.\]
+To determine which, we will do a sign analysis as follows. Because of the perfect square, 
+we can consider both case simultaneously.
+The numerator is 1, which is positive and the denominator is $x^2$ which is positive whether $x \to 0^-$
+or $x \to 0^+$.  Hence 
+\[\lim_{x \to 0^-} \frac{1}{x^2} =\frac{\text{pos}}{\text{pos}} = \infty,\]
+and
+\[\lim_{x \to 0^+} \frac{1}{x^2} =\frac{\text{pos}}{\text{pos}} = \infty,\]
+since the choices were only $\infty$ and $-\infty$.
+The graph of $f(x) = \frac{1}{x^2}$ near $x = 0$ looks like this:
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center, xlabel = $x$,
+    ylabel = {$f(x)$}]
+\addplot[domain=-2:-0.1, 
+    samples=100, color=blue]{1/x^2};
+\addplot[domain=0.1:2, 
+    samples=100, color=blue]{1/x^2};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{example}
+
+
+Here is a cool truth table
+
+\begin{problem}
+Fill in the truth table below using your amazing logic skillz!
+
+\begin{prompt}
+\begin{center}
+\[
+\begin{array}{c|c|c|c}
+		p & q & p \implies q & p \vee (p \implies q) \\
+		\hline
+		T & T & T & \answer{T} \\
+		T & F & F & \answer{T} \\
+		F & T & T & \answer{T} \\
+		F & F & T & \answer{T}
+	\end{array}
+    \]
+\end{center}
+\end{prompt}
+\end{problem}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center, xlabel = $x$,
+    ylabel = {$f(x)$}]
+\addplot[domain= 0.5:100, 
+    samples=1000, color=blue]{1/x};
+
+\end{axis}
+\end{tikzpicture}
+\end{center}

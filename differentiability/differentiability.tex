@@ -1,0 +1,1235 @@
+\documentclass{ximera}
+
+\input{../preamble}
+
+\outcome{Determine differentiability}
+
+\title{1.11 Differentiability}
+
+\begin{document}
+
+\begin{abstract}
+We determine differentiability at a point
+\end{abstract}
+
+\maketitle
+
+\begin{center}
+\textbf{Differentiability}
+\end{center}
+
+
+\begin{definition}[Differentiability].  The function $f(x)$ is said to be 
+\textbf{differentiable} at the point $x= x_0$
+if the following limit exists:
+\[
+\lim_{h\to 0} \frac{f(x_0+h) -f(x_0)}{h}.
+\]
+We denote the limit by $f'(x_0)$, the derivative of $f$ at $x_0$.
+
+\end{definition}
+
+Geometrically, the derivative $f'(x_0)$ gives us the \it{slope} of a tangent line.  
+Conceptually, it represents an \it{instantaneous} rate of change.
+In this section, we will explore the three main reasons that a function is \textbf{not} differentiable at a point. These are
+discontinuities, corner points, and vertical tangent lines.
+
+\begin{theorem}
+If $f(x)$ is differentiable at $x = x_0$, then $f(x)$ is continuous at $x=x_0$, i.e.,
+differentiability implies continuity.
+\end{theorem}
+
+An immediate consequence of this theorem is that if $f(x)$ is \textbf{not} continuous at $x = x_0$,
+then it cannot be differentiable there.  
+
+\begin{corollary}
+If $f(x)$ is not continuous at $x = x_0$ then $f(x)$ is not differentiable at $x = x_0$.
+\end{corollary}
+
+If the graph of a function has a removable, jump or infinite discontinuity, 
+then the function is not differentiable at the corresponding point.
+
+There are two other common reasons that a function might \textbf{not} be differentiable.
+
+\begin{definition}[Corner Point] The function $f(x)$ has a \textbf{corner point} at $x = x_0$ if
+the difference quotient has a jump discontinuity at $x = x_0$, i.e.,
+\[
+\lim_{h\to 0^-} \frac{f(x_0 +h)-f(x_0)}{h} \text{  and  }  \lim_{h\to 0^+} \frac{f(x_0 +h)-f(x_0)}{h}
+\]
+both exist, but are unequal.
+
+\end{definition}
+
+\begin{example}
+The function $f(x) = |x|$ has a corner point at $x = 0$.
+The left-hand limit, 
+\[
+\lim_{h\to 0^-} \frac{f(x_0 +h)-f(x_0)}{h} = \lim_{h\to 0^-} \frac{|h|}{h} = -1
+\]
+whereas the right-hand limit,
+\[
+\lim_{h\to 0^+} \frac{f(x_0 +h)-f(x_0)}{h} = \lim_{h\to 0^+} \frac{|h|}{h} = 1.
+\]
+
+\[
+\graph{abs(x)}
+\]
+\end{example}
+
+The other common occurrence of a point of non-differentiability is at a vertical tangent line.
+
+
+\begin{definition}[Vertical Tangent Line] The function $f(x)$ has a \textbf{vertical tangent line} at $x = x_0$ if
+the vertical line $x = x_0$ is tangent to the graph of $y = f(x)$ at the point $(x_0, f(x_0))$.
+\end{definition}
+
+\begin{example}
+The function $f(x) = \sqrt[3] x$ has a vertical tangent line at $x = 0$.
+\[
+\graph{x^{1/3}}
+\]
+\end{example}
+
+
+\begin{problem}
+Below is the graph of $y = f(x)$.  Answer the questions below the graph.  You can zoom in on the graph if you need to.
+\[
+\graph{x^2}
+\]
+Is $f(x)$ differentiable at $x = 1$?
+\begin{multipleChoice}
+\choice[correct]{Yes}
+\choice{No}
+\end{multipleChoice}
+If yes, is $f'(1)$ positive, negative or zero?
+\begin{multipleChoice}
+\choice[correct]{$f'(1) > 0$}
+\choice{$f'(1) < 0$}
+\choice{$f'(1) = 0$}
+\end{multipleChoice}
+\end{problem}
+
+
+
+
+\begin{problem}
+Below is the graph of $y = f(x)$.  Answer the questions below the graph.  You can zoom in on the graph if you need to.
+\[
+\graph{3-abs(x-1)}
+\]
+Is $f(x)$ differentiable at $x = 1$?
+\begin{multipleChoice}
+\choice{Yes}
+\choice[correct]{No}
+\end{multipleChoice}
+If no, why not?
+\begin{multipleChoice}
+\choice{discontinuity at $x = 1$}
+\choice[correct]{corner point at $x = 1$}
+\choice{vertical tangent line at $x = 1$}
+\end{multipleChoice}
+\end{problem}
+
+
+
+\begin{problem}
+Below is the graph of $y = f(x)$.  Answer the questions below the graph.  You can zoom in on the graph if you need to.
+\[
+\graph{1 - (x-1)^{1/3}}
+\]
+Is $f(x)$ differentiable at $x = 1$?
+\begin{multipleChoice}
+\choice{Yes}
+\choice[correct]{No}
+\end{multipleChoice}
+If no, why not?
+\begin{multipleChoice}
+\choice{discontinuity at $x = 1$}
+\choice{corner point at $x = 1$}
+\choice[correct]{vertical tangent line at $x = 1$}
+\end{multipleChoice}
+\end{problem}
+
+
+
+\begin{problem}
+Below is the graph of $y = f(x)$.  Answer the questions below the graph.  You can zoom in on the graph if you need to.
+\[
+\graph{(x-2)^2}
+\]
+Is $f(x)$ differentiable at $x = 1$?
+\begin{multipleChoice}
+\choice[correct]{Yes}
+\choice{No}
+\end{multipleChoice}
+If yes, is $f'(1)$ positive, negative or zero?
+\begin{multipleChoice}
+\choice{$f'(1) > 0$}
+\choice[correct]{$f'(1) < 0$}
+\choice{$f'(1) = 0$}
+\end{multipleChoice}
+\end{problem}
+
+
+\begin{problem}
+Below is the graph of $y = f(x)$.  Answer the questions below the graph.  You can zoom in on the graph if you need to.
+\[
+\graph{1/(x-1)}
+\]
+Is $f(x)$ differentiable at $x = 1$?
+\begin{multipleChoice}
+\choice{Yes}
+\choice[correct]{No}
+\end{multipleChoice}
+If no, why not?
+\begin{multipleChoice}
+\choice[correct]{discontinuity at $x = 1$}
+\choice{corner point at $x = 1$}
+\choice{vertical tangent line at $x = 1$}
+\end{multipleChoice}
+\end{problem}
+
+
+
+\begin{problem}
+Below is the graph of $y = f(x)$.  Answer the questions below the graph.  You can zoom in on the graph if you need to.
+\[
+\graph{1 + (x-1)^2}
+\]
+Is $f(x)$ differentiable at $x = 1$?
+\begin{multipleChoice}
+\choice[correct]{Yes}
+\choice{No}
+\end{multipleChoice}
+If yes, is $f'(1)$ positive, negative or zero?
+\begin{multipleChoice}
+\choice{$f'(1) > 0$}
+\choice{$f'(1) < 0$}
+\choice[correct]{$f'(1) = 0$}
+\end{multipleChoice}
+\end{problem}
+
+
+
+
+\[
+\graph{2^x \left \{-2<x<2\right \}}
+\]
+
+\[
+\graph{2^x \left \{-2<x<2\right \}, x \left \{2<x<4 \right \}}
+\]
+
+
+\[
+\graph[color:red]{2^x}
+\]
+
+\[
+\graph[style:dashed]{2^x}
+\]
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+\begin{problem}
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center, title={Graph of $y=f(x)$}]
+\addplot[domain= -1: 2, color=blue]{2-abs(x-1)};
+\end{axis}
+\end{tikzpicture}
+\end{image}
+Is $f(x)$ differentiable at $x = 1$?
+\begin{multipleChoice}
+\choice{Yes}
+\choice[correct]{No}
+\end{multipleChoice}
+If no, why not?
+\begin{multipleChoice}
+\choice{discontinuity at $x = 1$}
+\choice[correct]{corner point at $x = 1$}
+\choice{vertical tangent line at $x = 1$}
+\end{multipleChoice}
+\end{problem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\addplot[smooth,mark=o,blue] plot coordinates {(-4,3)};
+\addplot[domain=-3:-.16, color=blue]{-1/x};
+\addplot[smooth,mark=*,blue] plot coordinates {(-4,-4)};
+\addplot[domain=.16:2,color=blue]{-1/x}
+
+
+
+\begin{leash}{220}
+Is $f(x)$ differentiable at $x = -2$?
+
+
+Is $f(x)$ differentiable at $x = 0$?
+\begin{multipleChoice}
+\choice[correct]{Yes}
+\choice{No}
+\end{multipleChoice}
+Is $f'(0)$ positive, negative or zero?
+\begin{multipleChoice}
+\choice[correct]{$f'(0) > 0$}
+\choice{$f'(0) < 0$}
+\choice{$f'(0) = 0$}
+\end{multipleChoice}
+
+
+\end{leash}
+
+
+
+
+
+
+\[
+\lim_{h\to 0^-} \frac{f(x_0 +h)-f(x_0)}{h} \text{  and  }  \lim_{h\to 0^+} \frac{f(x_0 +h)-f(x_0)}{h}}
+both exist, but are unequal.
+\end{definition}
+
+
+  
+
+
+\begin{theorem} If $f(x)$ and $g(x)$ are differentiable functions and $h(x) = f(g(x))$, then
+\[
+h'(x) = f'(g(x))g'(x).
+\]
+This important differentiation rule can also be written as 
+\[
+f(g(x))' = f'(g(x))g'(x)
+\]
+or, using Leibniz notation, as
+\[
+\frac{d}{dx}f(g(x)) = f'(g(x))g'(x).
+\]
+\end{theorem}
+
+
+
+In words, the derivative of a composition is the derivative of the outside, with the inside left in,   
+times the derivative of the inside. Or, we can shorten the phrasing slightly to simply `the derivative of the outside   
+times the derivative of the inside'.
+
+
+
+\begin{example} %example #1
+Find $h'(x)$ if $h(x) = \sin(2x)$.\\
+We write $h(x)$ as a composition: $h(x)=f(g(x))$ with
+\[g(x) = 2x   \quad \text{and} \quad  f(x) = \sin(x).\]
+
+
+To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$. First,
+\[g'(x) = 2; \quad \text{next} \]
+\[f'(x) = \cos(x), \quad \text{so}\]
+\[f'(g(x)) =\cos(g(x)) = \cos(2x).\]
+By the chain rule,
+\[h'(x) = f'(g(x))g'(x) = \cos(2x) \cdot 2 = 2\cos(2x).\]
+\end{example}
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of Example 1}
+\youtube{Yy6QXnFlnXs} %vid of example 1
+\end{foldable}
+\end{center}
+
+\begin{question} %problem #1
+  Compute
+  \[
+  \frac{d}{dx} \sin(5x)
+  \]
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The ``outside'' function is $f(x) = \sin(x)$ and the ``inside''
+      function is $g(x) = 5x$.
+    \end{hint}
+    \begin{hint}
+		  Leave the inside in, $f'(g(x))$
+		\end{hint}
+		\begin{hint}
+		  Multiply by the derivative of the inside, $g'(x)$
+		\end{hint}
+		
+		The derivative of $\sin(5x)$ with respect to $x$ is
+		 $\answer[given]{5\cos(5x)}$
+\end{question}
+
+\begin{example} %example #2
+Find $h'(x)$ if $h(x) = e^{5x}$.\\
+We write $h(x)$ as a composition: $h(x)=f(g(x))$ with
+\[
+g(x) = 5x  \quad \text{and} \quad f(x) = e^x.
+\]
+To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$. First:
+\[
+g'(x) = 5; \quad \text{next} 
+\]
+\[
+f'(x) = e^x, \quad \text{so}
+\]
+\[
+f'(g(x)) =e^{g(x)} = e^{5x}.
+\]
+By the chain rule,
+\[
+h'(x) = f'(g(x))g'(x) = e^{5x} \cdot 5 = 5e^{5x}.
+\]
+\end{example}
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of the example}
+\youtube{BG63VLFnlsA} %vid of example 2
+\end{foldable}
+\end{center}
+
+
+
+\begin{question} %problem #2
+  Compute
+  \[
+  \frac{d}{dx} e^{3x}
+  \]
+  
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The outside function is $f(x) = e^x$ and the inside
+      function is $g(x) = 3x$.
+    \end{hint}
+    \begin{hint}
+		  Leave the inside in, $f'(g(x))$
+		\end{hint}
+		\begin{hint}
+		  Multiply by the derivative of the inside, $g'(x)$
+		\end{hint}
+    
+		The derivative of $e^{3x}$ with respect to $x$ is
+		 $\answer[given]{3e^{3x}}$
+		
+\end{question}
+
+
+\begin{example} %example 3
+Find $h'(x)$ if $h(x) = \cos(x^2 + 1)$.\\
+We write $h(x)$ as a composition: $h(x)=f(g(x))$ with
+\[
+g(x) = x^2 + 1  \quad \text{and} \quad  f(x) = \cos(x).
+\]
+To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$. First,
+\[
+g'(x) = 2x; \quad \text{next}
+\]
+\[
+f'(x) = -\sin(x), \quad \text{so}
+\]
+\[
+f'(g(x))= -\sin(g(x)) = -\sin(x^2 + 1).
+\]
+By the chain rule,
+\[
+h'(x) = f'(g(x))g'(x) = -\sin(x^2 + 1) \cdot 2x = -2x\sin(x^2 + 1).
+\]
+
+\end{example}
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of the example}
+\youtube{W1adUySCZxM} %vid of example 3
+\end{foldable}
+\end{center}
+
+\begin{question} %problem #3
+  Compute
+  \[
+  \frac{d}{dx} \cos(2-x^3)
+  \]
+  
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The outside function is $f(x) = \cos(x)$ and the inside
+      function is $g(x) = 2-x^3$.
+    \end{hint}
+    \begin{hint}
+		  Leave the inside in, $f'(g(x))$
+		\end{hint}
+		\begin{hint}
+		  Multiply by the derivative of the inside, $g'(x)$
+		\end{hint}
+    
+		The derivative of $\cos(2-x^3)$ with respect to $x$ is
+		 $\answer[given]{3x^2\sin(2-x^3)}$
+		
+\end{question}
+
+
+
+\begin{example} %example #4
+
+Find $h'(x)$ if $h(x) = (x^3 - 4x + 2)^7$.\\
+We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
+\[
+g(x) = x^3 - 4x + 2  \quad \text{and} \quad  f(x) = x^7.
+\]
+To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First,
+\[
+g'(x) =3x^2 - 4; \quad \text{next} 
+\]
+\[
+f'(x) = 7x^6 , \quad \text{so}
+\]
+\[
+f'(g(x)) = 7[g(x)]^6 = 7(x^3 - 4x + 2)^6 .
+\]
+By the chain rule,
+\[
+h'(x) = f'(g(x))g'(x) = 7(x^3 + 4x + 2)^6(3x^2 - 4)=7(3x^2 - 4)(x^3 - 4x + 2)^6.
+\]
+\end{example}
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of the example}
+\youtube{FKoN4Ul8XcM}  %vid of example 4
+\end{foldable}
+\end{center}
+
+
+
+
+\begin{question} %problem #4
+  Compute
+  \[
+  \frac{d}{dx} (x^3 - 4x + 5)^8
+  \]
+  
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The outside function is $f(x) = x^8$ and the inside
+      function is $x^3 - 4x + 5$.
+    \end{hint}
+    \begin{hint}
+		  Leave the inside in, $f'(g(x))$
+		\end{hint}
+		\begin{hint}
+		  Multiply by the derivative of the inside, $g'(x)$
+		\end{hint}
+    
+		The derivative of $(x^3 - 4x + 5)^8$ with respect to $x$ is
+		 $\answer[given]{8(3x^2 - 4)(x^3 - 4x + 5)^7 }$
+		
+\end{question}
+
+
+
+
+\begin{example} %example #5
+
+Find $h'(x)$ if $h(x) = \sqrt{x^2 + 4}$.\\
+We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
+\[
+g(x) = x^2 + 4  \quad \text{and} \quad  f(x) = \sqrt x.
+\] 
+To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First,
+\[
+g'(x) = 2x; \quad \text{next} 
+\]
+\[
+f'(x) = \frac{1}{2\sqrt x} , \quad \text{so}
+\] 
+\[
+f'(g(x)) = \frac{1}{2\sqrt {g(x)}}=\frac{1}{2\sqrt {x^2 + 4}}.
+\]
+By the chain rule,
+\begin{align*}
+h'(x) &= f'(g(x))g'(x)\\
+&= \frac{1}{2\sqrt {x^2 + 4}}\cdot 2x\\
+&= \frac{2x}{2\sqrt {x^2 + 4}}\\
+=\frac{x}{\sqrt {x^2 + 4}}.
+\end{align*}
+\end{example}
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of the example}
+\youtube{bmUe8uKxxos} %vid of example 5
+\end{foldable}
+\end{center}
+
+
+
+\begin{question} %problem #5
+  Compute
+  \[
+  \frac{d}{dx} \sqrt{x^2 - 3}
+  \]
+  
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The outside function is $f(x) = \sqrt{x}$ and the inside
+      function is $g(x) = x^2 - 3$.
+    \end{hint}
+    
+    \begin{hint}
+		  Leave the inside in, $f'(g(x))$
+		\end{hint}
+		\begin{hint}
+		  Multiply by the derivative of the inside, $g'(x)$
+		\end{hint}
+    
+		The derivative of $\sqrt{x^2 - 3}$ with respect to $x$ is
+		 $\answer[given]{\frac{x}{\sqrt{x^2 - 3}}}$
+		
+\end{question}
+
+
+
+
+\begin{example} %example #6
+
+Find $h'(x)$ if $h(x) = \tan(3x)$.\\
+We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
+\[
+g(x) = 3x  \quad \text{and} \quad  f(x) =\tan(x).
+\]
+To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First, 
+\[
+g'(x) =3; \quad \text{next} 
+\]
+\[
+f'(x) =\sec^2(x) , \quad \text{so}
+\]
+\[
+f'(g(x)) = \sec^2(g(x)) = \sec^2(3x).
+\]
+By the chain rule, 
+\[
+h'(x) = f'(g(x))g'(x) = \sec^2(3x) \cdot 3= 3\sec^2(3x).
+\]
+\end{example}
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of the example}
+\youtube{1L1z-e7yvRo} %vid of example 6
+\end{foldable}
+\end{center}
+
+
+\begin{question} %problem #6a
+  Compute
+  \[
+  \frac{d}{dx} \tan(x^4)
+  \]
+  
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The outside function is $f(x) = \tan(x)$ and the inside
+      function is $g(x) = x^4$.
+    \end{hint}
+    \begin{hint}
+		  Leave the inside in, $f'(g(x))$
+		\end{hint}
+		\begin{hint}
+		  Multiply by the derivative of the inside, $g'(x)$
+		\end{hint}
+    
+		The derivative of $\tan(x^4)$ with respect to $x$ is
+		 $\answer[given]{4x^3 \sec^2(x^4)}$
+		
+\end{question}
+
+\begin{question} %problem 6b
+What is the derivative of $\sec(2x)$?
+\begin{multipleChoice}
+  \choice{$\sec(2x)\tan(2x)$}
+  \choice{$2\sec(x)\tan(x)$}
+  \choice{$-2\sec(2x)\tan(2x)$}
+  \choice[correct]{$2\sec(2x)\tan(2x)$}
+\end{multipleChoice}
+\end{question}
+
+
+
+\begin{example} %example #7
+Find $h'(x)$ if $h(x) = \frac{3}{(2x + 5)^4}$.\\
+We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
+\[
+g(x) = 2x+ 5  \quad \text{and} \quad  f(x) = \frac{3}{x^4} = 3x^{-4}.
+\]
+ To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First,
+\[g'(x) = 2; \quad \text{next}\]
+\[f'(x) = -12x^{-5}, \quad \text{so}\]
+\[f'(g(x)) = -12[g(x)]^{-5} = -12(2x+5)^{-5} = -\frac{12}{(2x+5)^5}.\]
+By the chain rule,
+\[h'(x) = f'(g(x))g'(x) = -\frac{12}{(2x+5)^5}\cdot 2 = -\frac{24}{(2x+5)^5}.\]
+\end{example}
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of the example}
+\youtube{kddUPQBZJEM} %vid of example 7
+\end{foldable}
+\end{center}
+
+
+
+\begin{question} %problem #7
+  Compute
+  \[
+  \frac{d}{dx} \frac{2}{(3x - 8)^5}
+  \]
+  
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The outside function is $f(x) = 2x^{-5}$ and the inside
+      function is $g(x) = 3x - 8$.
+    \end{hint}
+    
+    \begin{hint}
+		  Leave the inside in, $f'(g(x))$
+		\end{hint}
+		\begin{hint}
+		  Multiply by the derivative of the inside, $g'(x)$
+		\end{hint}
+    
+		The derivative of $\frac{2}{(3x - 8)^5}$ with respect to $x$ is
+		 $\answer[given]{\frac{-30}{(3x - 8)^6}}$
+		
+\end{question}
+
+
+\begin{example} %example #8
+Find $h'(x)$ if $h(x) = \sin(x^3)$.\\
+We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
+\[g(x) = x^3  \quad \text{and} \quad  f(x) = \sin(x).\] 
+To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First, 
+\[g'(x) = 3x^2; \quad \text{next} \]
+\[f'(x) =\cos(x) , \quad \text{so}\]
+\[ f'(g(x)) = \cos(g(x)) = \cos(x^3).\]
+By the chain rule,
+\[h'(x) = f'(g(x))g'(x) = \cos(x^3)\cdot 3x^2 = 3x^2\cos(x^3).\]
+\end{example}
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of the example}
+\youtube{rA8RotbzDJ0} %vid of example 8
+\end{foldable}
+\end{center}
+
+
+\begin{question} %problem #8
+  Compute
+  \[
+  \frac{d}{dx} \sin(3x^5)
+  \]
+  
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The outside function is $f(x) = \sin(x)$ and the inside
+      function is $g(x) = 3x^5$.
+    \end{hint}
+    \begin{hint}
+		  Leave the inside in, $f'(g(x))$
+		\end{hint}
+		\begin{hint}
+		  Multiply by the derivative of the inside, $g'(x)$
+		\end{hint}
+    
+		The derivative of $\sin(3x^5)$ with respect to $x$ is
+		 $\answer[given]{\cos(3x^5)\cdot 15x^4}$
+		
+\end{question}
+
+
+
+\begin{example} %example #9
+Find $h'(x)$ if $h(x) = \sin^3(x)$.\\
+We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
+\[g(x) =\sin(x)   \quad \text{and} \quad  f(x) = x^3.\]
+ To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First, 
+\[g'(x) =\cos(x); \quad \text{next} \] 
+\[f'(x) = 3x^2, \quad \text{so}\] 
+\[f'(g(x)) = 3g^2(x) = 3\sin^2(x).\]
+By the chain rule,
+\[h'(x) = f'(g(x))g'(x) =  3\sin^2(x)\cos(x).\]
+\end{example}
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of the example}
+\youtube{2xh2g1f5Ysc} %vid of example 9
+\end{foldable}
+\end{center}
+ 
+
+
+\begin{question} %problem #9
+  Compute
+  \[
+  \frac{d}{dx} \sin^4(x)
+  \]
+  
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The outside function is $f(x) = x^4$ and the inside
+      function is $g(x) = \sin(x)$.
+    \end{hint}
+    \begin{hint}
+		  Leave the inside in, $f'(g(x))$
+		\end{hint}
+		\begin{hint}
+		  Multiply by the derivative of the inside, $g'(x)$
+		\end{hint}
+    
+		The derivative of $\sin^4(x)$ with respect to $x$ is
+		 $\answer[given]{4\sin^3(x)\cos(x)}$
+		
+\end{question}
+
+
+
+\begin{example} %example #10
+Find $h'(x)$ if $h(x) = e^{-x^2}$.\\
+We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
+\[g(x) = -x^2  \quad \text{and} \quad  f(x) =e^x.\]
+ To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$. First, 
+\[g'(x) = -2x; \quad \text{next} \] 
+\[f'(x) = e^x, \quad \text{so} \]
+\[f'(g(x)) = e^{g(x)} = e^{-x^2}.\]
+By the chain rule,
+\[h'(x) = f'(g(x))g'(x) = e^{-x^2} (-2x) \quad \text{or} \quad -2xe^{-x^2}.\]
+\end{example}
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of the example}
+\youtube{ubKbCULGXDg} %vid of example 10
+\end{foldable}
+\end{center}
+ 
+
+\begin{question} %problem #10
+  Compute
+  \[
+  \frac{d}{dx} e^{\sqrt x}
+  \]
+  
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The outside function is $f(x) = e^x$ and the inside
+      function is $g(x) = \sqrt x$.
+    \end{hint}
+    \begin{hint}
+		  Leave the inside in, $f'(g(x))$
+		\end{hint}
+		\begin{hint}
+		  Multiply by the derivative of the inside, $g'(x)$
+		\end{hint}
+    
+		The derivative of $e^{\sqrt x}$ with respect to $x$ is
+		 $\answer[given]{\frac{e^{\sqrt x}}{2\sqrt x}}$
+		
+\end{question}
+
+
+
+\begin{example} %example #11
+Find $h'(x)$ if $h(x) = \ln(x^4 +1)$.\\
+We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
+\[g(x) = x^4 + 1  \quad \text{and} \quad  f(x) = \ln(x).\]
+ To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First, 
+\[g'(x) = 4x^3; \quad \text{next} \] 
+\[f'(x) = \frac{1}{x}, \quad \text{so}\]
+\[ f'(g(x)) =\frac{1}{g(x)} = \frac{1}{x^4 + 1} .\]
+By the chain rule,
+\[h'(x) = f'(g(x))g'(x) = \frac{1}{x^4 + 1} \cdot 4x^3 = \frac{4x^3}{x^4 + 1}.\]
+\end{example}
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of the example}
+\youtube{7FOx5dq88NI} %vid of example 11
+\end{foldable}
+\end{center}
+ 
+
+
+\begin{question} %problem #11
+  Compute
+  \[
+  \frac{d}{dx} \ln(x^3 -2)
+  \]
+  
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The outside function is $f(x) = \ln(x)$ and the inside
+      function is $g(x) = x^3 - 2$.
+    \end{hint}
+    \begin{hint}
+		  Leave the inside in, $f'(g(x))$
+		\end{hint}
+		\begin{hint}
+		  Multiply by the derivative of the inside, $g'(x)$
+		\end{hint}
+    
+		The derivative of $\ln(x^3 - 2)$ with respect to $x$ is
+		 $\answer[given]{\frac{3x^2}{x^3 - 2}}$
+		
+\end{question}
+
+
+
+\begin{example} %example #12
+Find $h'(x)$ if $h(x) = \ln^5(x)$.\\
+We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
+\[g(x) = \ln(x)  \quad \text{and} \quad  f(x) = x^5.\]
+ To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First, 
+\[g'(x) = \frac{1}{x}; \quad \text{next} \] 
+\[f'(x) = 5x^4, \quad \text{so} \]
+\[f'(g(x)) = 5g^4(x) = 5\ln^4(x).\]
+By the chain rule,
+\[h'(x) = f'(g(x))g'(x) = 5\ln^4(x)\cdot \frac{1}{x}  = \frac{5\ln^4(x)}{x}.\]
+\end{example}
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of the example}
+\youtube{5Fb6cph_7jE}  %vid of example 12
+\end{foldable}
+\end{center}
+
+
+\begin{question} %problem #12
+  Compute
+  \[
+  \frac{d}{dx} \ln^3(x)
+  \]
+  
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The outside function is $f(x) = x^3$ and the inside
+      function is $g(x) = \ln(x)$.
+    \end{hint}
+    \begin{hint}
+		  Leave the inside in, $f'(g(x))$
+		\end{hint}
+		\begin{hint}
+		  Multiply by the derivative of the inside, $g'(x)$
+		\end{hint}
+    
+		The derivative of $\ln^3(x)$ with respect to $x$ is
+		 $\answer[given]{\frac{3\ln^2(x)}{x}}$
+		
+\end{question}
+
+
+
+\begin{example} %example #13
+Find $h'(x)$ if $h(x) = \ln(\sin(x))$.\\
+We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
+\[g(x) = \sin(x)  \quad \text{and} \quad  f(x) = \ln(x).\]
+ To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First,
+\[g'(x) = \cos(x); \quad \text{next} \]
+\[f'(x) = \frac{1}{x}, \quad \text{so}\]
+\[f'(g(x)) = \frac{1}{g(x)} = \frac{1}{\sin(x)}.\]
+By the chain rule,
+\[h'(x) = f'(g(x))g'(x) = \frac{1}{\sin(x)} \cdot \cos(x) = \frac{\cos(x)}{\sin(x)} = \cot(x).\]
+\end{example}
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of the example}
+\youtube{sVXyra9ElKo}  %vid of example 13
+\end{foldable}
+\end{center}
+
+
+\begin{question} %problem #13a
+  Compute
+  \[
+  \frac{d}{dx} \ln(\sec(x))
+  \]
+  
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The outside function is $f(x) = \ln(x)$ and the inside
+      function is $g(x) = \sec(x)$.
+    \end{hint}
+    \begin{hint}
+		  Leave the inside in, $f'(g(x))$
+		\end{hint}
+		\begin{hint}
+		  Multiply by the derivative of the inside, $g'(x)$
+		\end{hint}
+    
+		The derivative of $\ln(\sec(x))$ with respect to $x$ is
+		 $\answer[given]{\tan(x)}$
+		
+\end{question}
+
+\begin{question} %problem #13b
+  Compute
+  \[
+  \frac{d}{dx} \cos(\ln(x))
+  \]
+  
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The outside function is $f(x) = \cos(x)$ and the inside
+      function is $g(x) = \ln(x)$.
+    \end{hint}
+    \begin{hint}
+		  Leave the inside in, $f'(g(x))$
+		\end{hint}
+		\begin{hint}
+		  Multiply by the derivative of the inside, $g'(x)$
+		\end{hint}
+    
+		The derivative of $\cos(\ln(x))$ with respect to $x$ is
+		 $\answer[given]{\frac{-\sin(\ln(x))}{x}}$
+		
+\end{question}
+
+
+\begin{example} %example #14
+Find $h'(x)$ if $h(x) = \tan^{-1}(4x)$.\\
+We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
+\[g(x) = 4x  \quad \text{and} \quad  f(x) = \tan^{-1}(x).\]
+ To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First, 
+\[g'(x) = 4; \quad \text{next} \] 
+\[f'(x) = \frac{1}{1+x^2} , \quad \text{so}\]
+\[ f'(g(x)) = \frac{1}{1+g^2(x)} =\frac{1}{1+(4x)^2}=\frac{1}{1+16x^2}.\]
+By the chain rule,
+\[h'(x) = f'(g(x))g'(x) = \frac{1}{1+16x^2} \cdot 4 = \frac{4}{1+16x^2}.\]
+\end{example}
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of the example}
+\youtube{-0ZwkfU9Xec}  %vid of example 14
+\end{foldable}
+\end{center}
+
+
+\begin{question} %problem #14
+  Compute
+  \[
+  \frac{d}{dx} \tan^{-1}(3x)
+  \]
+  
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The outside function is $f(x) = \tan^{-1}(x)$ and the inside
+      function is $g(x) = 3x$.
+    \end{hint}
+    \begin{hint}
+		  Leave the inside in, $f'(g(x))$
+		\end{hint}
+		\begin{hint}
+		  Multiply by the derivative of the inside, $g'(x)$
+		\end{hint}
+    
+		The derivative of $\tan^{-1}(3x)$ with respect to $x$ is
+		 $\answer[given]{\frac{3}{1+(3x)^2}}$
+		
+\end{question}
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here are some detailed, lecture style videos on the chain rule:}
+\youtube{WkiZcDAwlYE}
+\youtube{DiXsWYXXI00}
+\youtube{hLAV8r9ARzU}
+\end{foldable}
+\end{center}
+
+
+
+
+
+\end{document}
+
+
+\begin{example} %example #15
+Find $h'(x)$ if $h(x) = x^{\sin(x)}$.\\
+We will use the fact that the exponential and logarithm functions are inverses,
+\[e^{\ln(x)} = x,\]
+and the exponent property of logarithms, 
+\[\ln(x^n) = n\ln(x),\]
+to rewrite $h(x)$.  We have 
+\[h(x) = x^{\sin(x)} = e^{\ln(x^{\sin(x)})} = e^{\sin(x)\ln(x)}\]
+and we can now compute $h'(x)$ using a combination of the chain rule and product rule.
+We can write $h(x)$ as a composition, $f(g(x))$ with 
+\[g(x) = \sin(x)\ln(x) \quad \text{and} \quad f(x) = e^x.\]
+Then to find $g'(x)$ we us the product rule and we get $g'(x) = \frac{\sin(x)}{x} + \cos(x)\ln(x)$.
+Next $f'(x) = e^x$ and 
+hence $f'(g(x)) = e^{g(x)} = e^{\sin(x)\ln(x)} = x^{\sin(x)}$.
+We can then conclude $h'(x) = f'(g(x))g'(x) = x^{\sin(x)} \left[ \frac{\sin(x)}{x} + \cos(x)\ln(x)\right]$.
+\end{example}
+
+%more question formats below
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\begin{verbatim}
+\begin{question}
+What is your favorite color?
+\begin{multipleChoice}
+\choice[correct]{Rainbow}
+\choice{Blue}
+\choice{Green}
+\choice{Red}
+\end{multipleChoice}
+\begin{freeResponse}
+Hello
+\end{freeResponse}
+\end{question}
+%\end{verbatim}
+
+
+
+
+
+\begin{question}
+  Which one will you choose?
+  \begin{multipleChoice}
+    \choice[correct]{I'm correct.}
+    \choice{I'm wrong.}
+    \choice{I'm wrong too.}
+  \end{multipleChoice}
+\end{question}
+
+
+\begin{question}
+  Which one will you choose?
+  \begin{selectAll}
+    \choice[correct]{I'm correct.}
+    \choice{I'm wrong.}
+    \choice[correct]{I'm also correct.}
+    \choice{I'm wrong too.}
+  \end{selectAll}
+\end{question}
+
+
+\begin{freeResponse}
+What is the chain rule used for?
+\end{freeResponse}

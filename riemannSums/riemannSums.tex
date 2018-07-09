@@ -1,0 +1,569 @@
+\documentclass{ximera}
+\usepgfplotslibrary{fillbetween}
+\input{../preamble}
+
+\outcome{Use Riemann sums to approximate the area under a curve}
+
+\title{4.4 Riemann Sums}
+
+\begin{document}
+
+\begin{abstract}
+We compute Riemann Sums to approximate the area under a curve.
+\end{abstract}
+
+\maketitle
+
+The first major problem in calculus was the tangent line problem. We now turn to the second major problem in calculus, the area problem.
+We saw that the derivative solved the tangent line problem and it turns out that the anti-derivative solves the area problem.
+\begin{center}
+\textbf{The Area Problem}
+\end{center}
+
+Let $f(x)$ be a non-negative, continuous function on the interval $[a,b]$. The \textbf{area problem} asks us to find the area under the graph of $y = f(x)$
+over the interval $[a,b]$.
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  center, axis y line = none, xtick={-1, 1}, 
+xticklabels={$x=a$, $x=b$}, title={The Area Problem}] 
+
+\addplot[name path = A, domain=-1:1, samples = 100, color=black, thick]{x^3-x+1};
+\addplot[name path = B, domain=-1:1, samples=100, color=black]{0};
+%\addplot[ domain=.3:0.473, 
+%    samples=100, color=black]{(x-1.5)^3 -(x+.5)^2 /3 + 1.4};
+%\addplot[name path = B, domain=0.473:1.549, 
+%    samples=100, color=black]{(x-1.5)^3 -(x+.5)^2 /3 + 1.4};
+%\addplot[name path = D, domain=1.549:2.811, 
+%    samples=100, color=black]{(x-1.5)^3 -(x+.5)^2 /3 + 1.4};
+%\addplot[domain=2.811:3, 
+%    samples=100, color=black]{(x-1.5)^3 -(x+.5)^2 /3 + 1.4};
+		
+%\addplot[name path = A, domain=0.473:1.549, samples=100, color=black]{0};
+%\addplot[name path = C, domain=1.549:2.811, samples=100, color=black]{0};
+\addplot[blue!10] fill between[of=A and B];
+%\addplot[red!10] fill between[of=C and D];
+\addplot[thick] coordinates {(-1,0) (-1, 1)};
+\addplot[thick] coordinates {(1,0) (1, 1)};
+%\addplot[white] coordinates {(1.5,-0.3) (1.8,-.3)};
+\addplot[<->] coordinates {(-1.5,-.5) (-1.5, 2)};
+\addplot[<-] coordinates {(-1.7,0) (1.5, 0)};
+
+%\addplot [domain= .1:.2, samples=10, color=black]{-x + .2};
+%\addplot [domain= .2:.24, samples=10, color=black]{.04-(x- .2)};
+%\addplot [domain= .3:.39, samples=10, color=black]{.09-(x- .3)};
+%\addplot [domain= .4:.56, samples=10, color=black]{.16-(x- .4)};
+%\addplot [domain= .5:.75, samples=10, color=black]{.25-(x- .5)};
+%\addplot [domain= .6:.96, samples=10, color=black]{.36-(x- .6)};
+\node at (axis cs: 0,-.45){Find the area of the shaded region};
+\node at (axis cs: 0.2,1.25){$y = f(x)$};
+%\node at (axis cs: 1.6,0){$x$};
+\node at (axis cs: -1.5,2.1){$y$};
+%\node at (axis cs: 2.2,-.25){Area = 6};
+%\node at (axis cs: 1.5,.5){$y=f(x)$};
+%\addplot [domain= .7:1, samples=10, color=black]{.49-(x- .7)};
+%\addplot [domain= .8:1, samples=10, color=black]{.64-(x- .8)};
+%\addplot [domain= .9:1, samples=10, color=black]{.81-(x- .9)};
+
+%\addplot [domain= .2:.4, samples=10, color=black]{-x + .05};
+%
+%\addplot[thin, samples = 100, color=black] coordinates {(0,0) (0,1)};
+
+\end{axis}
+%\legend{$y = f(x)$, , secant line, tangent line, };
+\end{tikzpicture}
+\end{image}
+
+To solve this problem, we begin by approximating the area under the curve using rectangles. The sum of the areas of these rectangles is called a Riemann Sum.
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  center, axis y line = none, xtick={-1, 1}, 
+xticklabels={$a$, $b$}, title={Riemann Sum}] 
+
+\addplot[domain=-1:1, samples = 100, color=black, thick]{x^3-x+1};
+\addplot[name path = A, thick, domain=-1:-0.5, samples=100, color=black]{1.1};
+\addplot[name path = B, thick, domain=-0.5:0, samples=100, color=black]{1.3};
+\addplot[name path = C, thick, domain= 0:0.5, samples=100, color=black]{0.8};
+\addplot[name path = D, thick, domain= 0.5:1, samples=100, color=black]{1};
+\addplot[name path = E, domain=-1:-.5, samples=100, color=black]{0};
+\addplot[name path = F, domain=-.5:0, samples=100, color=black]{0};
+\addplot[name path = G, domain=0:.5, samples=100, color=black]{0};
+\addplot[name path = H, domain=.5:1, samples=100, color=black]{0};
+
+\addplot[blue!10] fill between[of=A and E];
+\addplot[blue!10] fill between[of=B and F];
+\addplot[blue!10] fill between[of=C and G];
+\addplot[blue!10] fill between[of=D and H];
+
+\addplot[thick] coordinates {(-1,0) (-1, 1.1)};
+\addplot[thick] coordinates {(-0.5,0) (-0.5, 1.3)};
+\addplot[thick] coordinates {(0,0) (0, 1.3)};
+\addplot[thick] coordinates {(0.5,0) (0.5, 1)};
+\addplot[thick] coordinates {(1,0) (1, 1)};
+
+\addplot[<->] coordinates {(-1.5,-.5) (-1.5, 2)};
+\addplot[<-] coordinates {(-1.7,0) (1.5, 0)};
+
+\node at (axis cs: 0,-.45){Sum of the areas of the rectangles};
+%\node at (axis cs: 0.2,1.25){$y = f(x)$};
+\node at (axis cs: -1.5,2.1){$y$};
+
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
+
+To find the exact area under the curve we will need to use infinitely many rectangles.  This will lead us into the next section on the Definite Integral.
+For now, we begin with a special notation that will allow us to write the sum of the areas of many rectangles in a compact form.
+
+\begin{center}
+\textbf{Summation Notation}
+\end{center}
+
+In mathematics, the symbol $\sum$ is used to denote summation.
+\begin{definition}[Summation Notation]
+\[\sum_{i = 1}^n \ a_i = a_1 + a_2 + \dots + a_n.\]
+The parameter $i$ is called the \textbf{index of summation} and it begins at the indicated value, $i=1$ in this case; 
+and it increments by one unit until it reaches the terminal value (in this case, $n$).
+\end{definition}
+
+\begin{example}
+\[\sum_{i = 1}^4 \ (i^2 + 3) = 4 + 7 + 12 + 19 = 42.\]
+\end{example}
+
+\begin{example}
+\[\sum_{i = 2}^7 \ (2i +5) = 9 + 11 + 13 + 15 + 17 + 19 = 84.\]
+\end{example}
+
+\begin{problem}
+Find the value of the sum:
+\[\sum_{i = 1}^5 \ (4i -1).\]
+The sum is $\answer{55}.$
+\end{problem}
+
+\begin{problem}
+Find the value of the sum:
+\[\sum_{i = 3}^6 \ (i^2 - i + 1).\]
+The sum is $\answer{72}.$
+\end{problem}
+
+
+\begin{theorem}[Special Sums] Sums of powers of $i$:
+
+%\begin{align*}
+%\sum_{i = 1}^n \ i &= 1 + 2 + 3+ \cdots + n = \frac{n(n+1)}{2},\\
+%\sum_{i = 1}^n \ i^2 &= 1^2 + 2^2 + 3^2 + \cdots + n^2 = \frac{n(n+1)(2n+1)}{6}\; \; \text{and}\\
+%\sum_{i = 1}^n \ i^3 &= 1^3 + 2^3+ 3^3 + \cdots + n^3 = \frac{n^2(n+1)^2}{4}.
+%\end{align*}
+
+
+\begin{itemize}
+\item[1.] $\displaystyle{\sum_{i = 1}^n \ i = 1 + 2 + 3+ \cdots + n = \frac{n(n+1)}{2}},$
+\item[2.] $\displaystyle{\sum_{i = 1}^n \ i^2 = 1^2 + 2^2 + 3^2 + \cdots + n^2 = \frac{n(n+1)(2n+1)}{6}}$ and
+\item[3.] $\displaystyle{\sum_{i = 1}^n \ i^3 = 1^3 + 2^3+ 3^3 + \cdots + n^3 = \frac{n^2(n+1)^2}{4}}$.
+\end{itemize}
+\end{theorem}
+
+\begin{problem}
+Find the value of the sum:
+\[\sum_{i = 1}^{100} \ i.\]
+The sum is $\answer{5050}.$
+\end{problem}
+
+\begin{problem}
+Find the value of the sum:
+\[\sum_{i = 1}^{10} \ i^2.\]
+The sum is $\answer{385}.$
+\end{problem}
+
+\begin{problem}
+Find the value of the sum:
+\[\sum_{i = 1}^5 \ i^3.\]
+The sum is $\answer{225}.$
+\end{problem}
+
+\begin{center}
+\textbf{Riemann Sums}
+\end{center}
+
+Let $f(x)$ be defined on a closed interval $[a,b]$. Partition the interval 
+$[a,b]$ into $n$ sub-intervals, each of width
+\[\Delta x = \frac{b-a}{n}.\]
+ Denote the endpoints of the sub-intervals by $x_i$, 
+so that 
+\[x_i =  a + i\cdot \Delta x,\]
+ where $i = 0, 1, 2, \ldots, n$. (Note that $x_0 = a$ and $x_n = b$.)  
+
+\begin{image}
+\begin{tikzpicture}
+\node at (5,1.2) {A partition of $[a,b]$ into $n$ sub-intervals};
+\draw(0,0)--(10,0);
+%\draw(5,0)--(6,0) node[below] {$\ldots$};
+\node at (6,-.4){$\dots$};
+\draw[<-](3,.4)--(3.75,.4) node[above] {$\Delta x$};
+\draw[->](3.75,.4)--(4.5,.4);
+
+  \draw(0,5pt)--(0,-5pt) node[below] {$a = x_0$};
+	\draw(1.5,5pt)--(1.5,-5pt) node[below] {$x_1$};
+	\draw(3,5pt)--(3,-5pt) node[below] {$x_{2}$};
+	\draw(4.5,5pt)--(4.5,-5pt) node[below] {$x_{3}$};
+	\draw(8.5,5pt)--(8.5,-5pt) node[below] {$x_{n-1}$};
+	\draw(10,5pt)--(10,-5pt);
+\node at (10, -.35){$x_n=b$};
+ \end{tikzpicture}
+\end{image}
+
+
+To create rectangles under the curve, we next select \textbf{sample points}- one in each sub-interval
+so as to space them out roughly evenly over the interval $[a,b]$. The sample points are denoted by an asterisk,
+like $x_4^*$ for the fourth sample point and $x_i^*$ for the $i$-th sample point.
+
+
+\begin{image}
+\begin{tikzpicture}
+\node at (5,1.2) {The sample points, $x_i^*$};
+\draw(0,0)--(10,0);
+%\draw(5,0)--(6,0) node[below] {$\ldots$};
+\node at (6,-.4){$\dots$};
+
+
+  \draw(0,5pt)--(0,-5pt) node[below] {$a$};
+  \draw[thick](.6,-5pt)--(.6,5pt) node[above] {$x_1^*$};
+	\draw(1.5,5pt)--(1.5,-5pt) node[below] {$x_1$};
+	\draw[thick](2.1,-5pt)--(2.1,5pt) node[above] {$x_2^*$};
+	\draw(3,5pt)--(3,-5pt) node[below] {$x_{2}$};
+	\draw[thick](3.9,-5pt)--(3.9,5pt) node[above] {$x_3^*$};
+	\draw(4.5,5pt)--(4.5,-5pt) node[below] {$x_{3}$};
+	\draw(8.5,5pt)--(8.5,-5pt) node[below] {$x_{n-1}$};
+	\draw[thick](9.1,-5pt)--(9.1,5pt) node[above] {$x_n^*$};
+	\draw(10,5pt)--(10,-5pt);
+\node at (10, -.35){$b$};
+ \end{tikzpicture}
+\end{image}
+
+In general, the $i$-th sample point, $x_i^*$ lies in the interval $[x_{i-1}, x_i]$. The sample points 
+are used to determine the heights of the rectangles used in our Riemann Sum. Specifically, the height of the first rectangle
+will be $f(x_1^*)$, the height of the second rectangle will be $f(x_2^*)$ and so on until we reach the $n$-th and final rectangle, 
+whose height will be $f(x_n^*)$.
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  center, axis y line = none, xtick={-0.87, -0.32, 0.21, 1}, 
+xticklabels={$x_1^*$, $x_2^*$, $x_3^*$,  $x_4^*=b$}, title={Riemann Sum}] 
+
+\addplot[domain=-1:1, samples = 100, color=black, thick]{x^3-x+1};
+\addplot[name path = A, thick, domain=-1:-0.5, samples=100, color=black]{1.2};
+\addplot[name path = B, thick, domain=-0.5:0, samples=100, color=black]{1.3};
+\addplot[name path = C, thick, domain= 0:0.5, samples=100, color=black]{0.8};
+\addplot[name path = D, thick, domain= 0.5:1, samples=100, color=black]{1};
+\addplot[name path = E, domain=-1:-.5, samples=100, color=black]{0};
+\addplot[name path = F, domain=-.5:0, samples=100, color=black]{0};
+\addplot[name path = G, domain=0:.5, samples=100, color=black]{0};
+\addplot[name path = H, domain=.5:1, samples=100, color=black]{0};
+
+\addplot[blue!10] fill between[of=A and E];
+\addplot[blue!10] fill between[of=B and F];
+\addplot[blue!10] fill between[of=C and G];
+\addplot[blue!10] fill between[of=D and H];
+
+\addplot[thick] coordinates {(-1,0) (-1, 1.2)};
+\addplot[dashed] coordinates {(-0.87,0) (-0.87, 1.2)};
+\addplot[dashed] coordinates {(-1.5,1.2) (-1,1.2)};
+\node at (axis cs: -1.8, 1.2){$f(x_1^*)$};
+\addplot[thick] coordinates {(-0.5,0) (-0.5, 1.3)};
+\addplot[dashed] coordinates {(-0.32,0) (-0.32, 1.3)};
+\addplot[thick] coordinates {(0,0) (0, 1.3)};
+\addplot[dashed] coordinates {(0.21,0) (0.21, 0.8)};
+\addplot[thick] coordinates {(0.5,0) (0.5, 1)};
+\addplot[thick] coordinates {(1,0) (1, 1)};
+
+%axes
+\addplot[<->] coordinates {(-1.5,-.5) (-1.5, 2)};
+\addplot[<-] coordinates {(-2,0) (1.8, 0)};
+
+\node at (axis cs: 0.3,-.5){The height of the $i$-th rectangle is $f(x_i^*)$};
+\node at (axis cs: -.7,1.5){$y = f(x)$};
+\node at (axis cs: -1.5,2.1){$y$};
+
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
+%select one sample point from each subinterval
+%call the sample points x_1^*, x_2^* etc
+%in general, the i^{th} sample point is x_i^*
+%plot the sample points on the curve y = f(x)
+%over the first sub interval, construct a rectangle with height f(x_1^*)
+% over the second subinterval, create a rectangle...
+%over the nth subinterval...
+%over the i^{th} sub interval...
+
+%now add the sample points and the rectangles
+%include a figure or 2 with sample points and rectangles.
+
+\begin{definition}[Riemann Sum]
+The \textbf{Riemann Sum} of $f(x)$ on $[a,b]$ with $n$ sub-intervals is given by 
+\[\sum_{i = 1}^n \ f(x_i^*) \Delta x,\]
+where $x_{i-1} \leq x_i^* \leq x_i$.  The numbers $x_i^*$ are called \textbf{sample points} for the sub-intervals $[x_{i-1}, x_i]$.
+\end{definition}
+
+\begin{remark}
+For a function $f(x)$ which is positive on the interval $[a,b]$
+the Riemann Sum represents the sum of the areas of $n$ rectangles.  
+The heights of the rectangles are given by the function values at the sample points, $f(x_i^*)$ and the widths are given by $\Delta x = (b-a)/n$.
+\end{remark}
+
+
+\begin{example}
+Below is an interactive graph of the parabola $y=x^2$.  The Riemann Sum uses the rectangles in the figure to approximate the area under the curve.
+The sample points $x_i^*$ are taken to be endpoints of the sub-interval $[x_{i-1}, x_i]$. The orange rectangles use $x_i^* = x_{i-1}$, i.e., 
+a \textbf{left-endpoint} approximation and the purple rectangles use a \textbf{right-endpoint} approximation with $x_i^* = x_i$.
+Use the slider to convince yourself that as the number of rectangles, $n$ increases, the width $\Delta x$ decreases and
+the area of the rectangles approaches the area under the curve. 
+\begin{onlineOnly}
+  \begin{center}
+    \desmos{j9hdqgwiwg}{800}{600}
+  \end{center}
+\end{onlineOnly}
+\end{example}
+
+
+
+
+%Below is an applet that shows Riemann Sums visually.  You can select the number of rectangles, $n$ and the location of the sample points $x_i^*$ within the sub-intervals.
+
+
+%\begin{foldable}
+%\geogebra{bsC9Pwu3}{900}{600}
+%\end{foldable}
+
+%\begin{center}
+%\textbf{Left and Right Riemann Sums}
+%\end{center}
+%Typically, the sample points $x_i^*$ are chosen according to a prescribed rule, such as ``$x_i^* = $ left end point'', i.e. $x_i^* = x_{i-1}$, or 
+%``$x_i^* = $ right  end point'', i.e. $x_i^* = x_i$.\\
+%Below is an applet that shows Riemann Sums using left and right endpoints as the sample points.
+
+%``$x_i^* = $ mid-point'', i.e. $x_i^* = (x_{i-1} + x_i)/2$
+
+%\begin{foldable}
+%\geogebra{Q54eSw2n}{900}{600}
+%\end{foldable}
+
+%\begin{center}
+%\textbf{Upper and Lower Sums}
+%\end{center}
+%We can also choose the sample points $x_i^*$ to be at locations where the function $f(x)$ has a certain property.  For example, we can choose $x_i^*$
+%such that $f(x)$ has an absolute max or min on the interval $[x_{i-1}, x_i]$ 
+%at $x = x_i^*$.  The Riemann sums in these cases are called upper or lower sums, respectively. \\
+%Below is an applet where the sample points are chosen so that the Riemann Sums are upper and lower sums.
+
+
+%\begin{foldable}
+%\geogebra{Z5Nvhks7}{900}{600}
+%\end{foldable}
+
+
+
+%\geogebra{jF23GzmS}{800}{600}
+
+
+
+\begin{example}
+
+Below is the graph corresponding to a Riemann Sum for the curve $f(x) = e^{-x}$ over the interval $[-1,1]$ using 4 rectangles 
+and left endpoints as the sample points.
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  bottom, axis y line = center, xtick={-1, -0.5, 0, 0.5, 1},  
+ytick={0, 1, 2}, title={Riemann Sum for $f(x)=e^{-x} $ on $[-1,1]$ with $n=4$ using Left Endpoints}]
+\addplot[domain=-1:1, 
+    samples=100, color=black]{1/e^x};
+\addplot[smooth,mark=*,black] plot coordinates {(0,0)};
+\addplot[smooth,mark=*,blue] plot coordinates {(-1,e)};
+\addplot[smooth,mark=*,blue] plot coordinates {(-0.5,sqrt e)};      
+\addplot[smooth,mark=*,blue] plot coordinates {(0,1)};
+\addplot[smooth,mark=*,blue] plot coordinates {(0.5,1/ sqrt e)};
+%\addplot[smooth,mark=*,blue] plot coordinates {(1,1.64)};
+%\legend{$y = f(x)$, , secant line, tangent line, };
+\addplot[blue] coordinates {(-1, e)  (-0.5, e)};
+\addplot[blue] coordinates {(-0.5,sqrt e) (0, sqrt e)};
+\addplot[blue] coordinates {(0, 1) (0.5,1)};
+\addplot[blue] coordinates {(0.5,1/ sqrt e) (1, 1/sqrt e)};
+\addplot[blue] coordinates {(-1, 0) (-1, e)};
+\addplot[blue] coordinates {(-0.5,0) (-0.5, e)};
+\addplot[blue] coordinates {(0,0) (0, sqrt e)};
+\addplot[blue] coordinates {(0.5,0) (0.5,1)};
+\addplot[blue] coordinates {(1,0) (1, 1/ sqrt e)};
+\end{axis}
+\end{tikzpicture}
+\end{image}
+The value of this Left Riemann Sum is 
+\[f(-1) \Delta x + f(-0.5) \Delta x +f(0) \Delta x +f(0.5) \Delta x,\]
+which equals
+\[e^{1} (0.5) + e^{0.5} (0.5) + e^0 (0.5) + e^{-0.5} (0.5) \approx 2.987.\]
+\end{example}
+
+
+\begin{problem}
+Below is the graph corresponding to a Riemann Sum for the curve $f(x) = x^2 + 1$ over the interval $[0,1]$ using 5 rectangles 
+and left endpoints as the sample points.
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  bottom, axis y line = left, xtick={0, 0.2, 0.4, 0.6, 0.8, 1},  
+ytick={0, 1, 2}, title={Riemann Sum for $f(x)=x^2 + 1 $ on $[0,1]$ with $n=5$ using Left Endpoints}]
+\addplot[domain=0:1, 
+    samples=100, color=black]{x^2 + 1};
+\addplot[smooth,mark=*,black] plot coordinates {(0,0)};
+\addplot[smooth,mark=*,blue] plot coordinates {(0,1)};
+\addplot[smooth,mark=*,blue] plot coordinates {(0.2,1.04)};      
+\addplot[smooth,mark=*,blue] plot coordinates {(0.4,1.16)};
+\addplot[smooth,mark=*,blue] plot coordinates {(0.6,1.36)};
+\addplot[smooth,mark=*,blue] plot coordinates {(0.8,1.64)};
+%\legend{$y = f(x)$, , secant line, tangent line, };
+\addplot[blue] coordinates {(0,1)  (0.2,1)};
+\addplot[blue] coordinates {(0.2,1.04) (0.4,1.04)};
+\addplot[blue] coordinates {(0.4,1.16) (0.6,1.16)};
+\addplot[blue] coordinates {(0.6,1.36) (0.8,1.36)};
+\addplot[blue] coordinates {(0.8, 1.64) (1,1.64)};
+\addplot[blue] coordinates {(0.2,0) (0.2,1.04)};
+\addplot[blue] coordinates {(0.4,0) (0.4, 1.16)};
+\addplot[blue] coordinates {(0.6,0) (0.6,1.36)};
+\addplot[blue] coordinates {(0.8,0)  (0.8, 1.64)};
+\addplot[blue] coordinates {(1,0) (1, 1.64)};
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
+Compute the Riemann Sum for the function $f(x) = x^2 + 1$ on the interval $[0, 1]$ using $n = 5$ rectangles and choosing the sample points to be left end-points.\\
+
+The Left Riemann Sum is $\answer{1.24}$.
+\end{problem} 
+
+
+\begin{example}
+Below is the graph corresponding to the Riemann Sum for the curve $f(x) = e^{-x}$ over the interval $[-1,1]$ using 4 rectangles
+and right endpoints as the sample points.
+
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  bottom, axis y line = center, xtick={-1, -0.5,0,0.5,1},  
+ytick={0, 1, 2}, title={Riemann Sum for $f(x)=e^{-x} $ on $[-1,1]$ with $n=4$ using Right Endpoints}]
+\addplot[domain=-1:1, 
+    samples=100, color=black]{1/e^x};
+\addplot[smooth,mark=*,black] plot coordinates {(0,0)};
+\addplot[smooth,mark=*,purple] plot coordinates {(-0.5,sqrt e)}; 
+\addplot[smooth,mark=*,purple] plot coordinates {(0,1)};  
+\addplot[smooth,mark=*,purple] plot coordinates {(0.5,1/ sqrt e)};  
+\addplot[smooth,mark=*,purple] plot coordinates {(1,1/e)};
+\addplot[purple] coordinates {(-1,sqrt e)  (-0.5,sqrt e)};
+\addplot[purple] coordinates {(-0.5,1) (0,1)};
+\addplot[purple] coordinates {(0,1/ sqrt e) (0.5,1/sqrt e)};
+\addplot[purple] coordinates {(0.5,1/e) (1, 1/e)};
+\addplot[purple] coordinates {(-1,0) (-1,sqrt e)};
+\addplot[purple] coordinates {(-0.5,0) (-0.5,sqrt e)};
+\addplot[purple] coordinates {(0,0) (0,1)};
+\addplot[purple] coordinates {(0.5,0) (0.5, 1/sqrt e)};
+\addplot[purple] coordinates {(1,0) (1,1/e)};
+
+\end{axis}
+%\legend{$y = f(x)$, , secant line, tangent line, };
+\end{tikzpicture}
+\end{image}
+The value of this Right Riemann Sum is 
+\[ f(-0.5) \Delta x + f(0) \Delta x +f(0.5) \Delta x + f(1) \Delta x ,\]
+which equals
+\[e^{0.5} (0.5) + e^0 (0.5) + e^{-0.5} (0.5) +  e^{-1} (0.5) \approx 1.812.\]
+\end{example}
+
+
+\begin{problem}
+Below is the graph corresponding to a Riemann Sum for the curve $f(x) = x^2 + 1$ over the interval $[0,1]$ using 5 rectangles 
+and right endpoints as the sample points.
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  bottom, axis y line = left, xtick={0, 0.2,0.4,0.6,0.8,1},  
+ytick={0, 1, 2}, title={Riemann Sum for $f(x)=x^2 + 1 $ on $[0,1]$ with $n=5$ using Right Endpoints}]
+\addplot[domain=0:1, 
+    samples=100, color=black]{x^2 + 1};
+\addplot[smooth,mark=*,black] plot coordinates {(0,0)};
+\addplot[smooth,mark=*,purple] plot coordinates {(0.2,1.04)};
+\addplot[smooth,mark=*,purple] plot coordinates {(0.4,1.16)}; 
+\addplot[smooth,mark=*,purple] plot coordinates {(0.6,1.36)};  
+\addplot[smooth,mark=*,purple] plot coordinates {(0.8,1.64)};  
+\addplot[smooth,mark=*,purple] plot coordinates {(1,2)};
+\addplot[purple] coordinates {(0,1.04)  (0.2,1.04)};
+\addplot[purple] coordinates {(0.2,1.16) (0.4,1.16)};
+\addplot[purple] coordinates {(0.4,1.36) (0.6,1.36)};
+\addplot[purple] coordinates {(0.6,1.64) (0.8,1.64)};
+\addplot[purple] coordinates {(0.8, 2) (1,2)};
+\addplot[purple] coordinates {(0.2,0) (0.2,1.16)};
+\addplot[purple] coordinates {(0.4,0) (0.4,1.36)};
+\addplot[purple] coordinates {(0.6,0) (0.6,1.64)};
+\addplot[purple] coordinates {(0.8,0) (0.8, 2)};
+\addplot[purple] coordinates {(1,2) (1,0)};
+
+\end{axis}
+%\legend{$y = f(x)$, , secant line, tangent line, };
+\end{tikzpicture}
+\end{image}
+Compute the Riemann Sum for the function $f(x) = x^2 + 1$ on the interval $[0, 1]$ using $n = 5$ rectangles and choosing the sample points to be right end-points.\\
+
+The Right Riemann Sum is $\answer{1.44}$.
+\end{problem} 
+
+
+
+
+\end{document}
+
+
+\begin{image}
+
+\begin{tikzpicture}
+\foreach \x in {1,2,...,5,7,8,...,12}
+\foreach \y in {1,...,5}
+{
+\draw (\x,\y) +(-.5,-.5) rectangle ++(.5,.5);
+\draw (\x,\y) node{\x,\y};
+}
+\end{tikzpicture}
+\end{image}
+
+
+\begin{image}
+\begin{tikzpicture}
+\foreach \x in {1,2,...,10}
+{
+\draw (\x,0) -- (\x ,1/ \x);
+\draw (\x -1, 1/ \x) -- ( \x,  1/ \x);
+}
+\end{tikzpicture}
+\end{image}
+
+
+
+
+[color=blue]
+
+\draw (0,0) --(0,1.04);
+\draw (0,1.04) --(0.2,1.04);
+\draw (0.2,0) --(0.2,1.16);
+\draw[color=blue] (0.2,1.16) --(0.4,1.16);
+\draw[color=blue] (0.4,0) --(0.4,1.36);
+\draw[color=blue] (0.4,1.36) --(0.6,1.36);
+\draw[color=blue] (0.6,0) --(0.6,1.64);
+\draw[color=blue] (0.6,1.64) --(0.8,1.64);
+\draw[color=blue] (0.8,0) --(0.8,2);
+\draw[color=blue] (0.8,2) --(1,2);
+\draw[color=blue] (1,0) --(1,2);
+
+$x_0$, $x_1$, $x_2$, $x_3$, $x_4$, $x_5$
+xticklabels={$x_0$,$x_1$,$x_2$,$x_3$,$x_4$,$x_5$},
+
+xticklabels={0, 0.2, 0.4, 0.6, 0.8, 1},

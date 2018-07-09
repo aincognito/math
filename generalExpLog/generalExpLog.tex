@@ -1,0 +1,233 @@
+\documentclass{ximera}
+\usepackage{tcolorbox}
+\input{../preamble}
+\outcome{Compute derivatives involving general exponential and logarithmic functions.}
+
+
+\title{2.8 Derivatives of General Exponential and Log}
+
+%\newcommand{\ffrac}[2]{\frac{\mbox{\footnotesize $#1$}}{\mbox{\footnotesize $#2$}}}
+%\newcommand{\vasymptote}[2][]{
+ %   \draw [densely dashed,#1] ({rel axis cs:0,0} -| {axis cs:#2,0}) -- ({rel axis cs:0,1} -| {axis cs:#2,0});
+%}
+
+
+\begin{document}
+
+\begin{abstract}
+In this section we compute derivatives involving $a^x$ and $\log_a(x)$.
+\end{abstract}
+
+\maketitle
+
+
+
+
+\begin{center}
+\textbf{The derivative of $a^x$}
+\end{center}
+
+
+We begin by computing the derivative of exponential functions of the form  $f(x) = a^x$ where $a > 1$. 
+To do this we will use the chain rule and a conversion formula to the natural base, $e$.
+The conversion formula is 
+\[
+a^x = e^{x\ln(a)}.
+\]
+
+Now, by the chain rule,
+
+\[
+\dd{x} a^x = \dd{x} e^{x\ln(a)}  = e^{x\ln(a)}\cdot \ln(a) = a^x \ln(a).
+\]
+
+
+
+\begin{example} %example 17
+If $f(x) = 2^x$ then $f'(x) = 2^x \ln(2)$
+and if $f(x) = 10^x$ then $f'(x) = 10^x \ln(10)$.
+\end{example}
+
+
+
+\begin{problem}
+Compute
+\[
+\frac{d}{dx} \left(5^x\right).
+\]
+\begin{hint}
+Use the exponential rule with $a = 5$
+\end{hint}
+\begin{hint}
+The derivative of $a^x$ is $a^x\ln(a)$
+\end{hint}
+The derivative of $5^x$ is $\answer{5^x\ln(5)}$.
+\end{problem}
+
+
+
+
+\begin{example} %example 5
+ Find $f'(x)$ if $f(x) = 2^x + 3^x + 5^x.$
+Using the Sum Rule we have, $f'(x) = 2^x\ln(2) + 3^x\ln(3) + 5^x\ln(5)$.
+\end{example}
+
+
+\begin{problem} %problem #5a
+  Compute 
+  \[
+  \frac{d}{dx} \left(10^x + 100^x\right)
+  \]
+  
+    \begin{hint}
+      Use the Sum Rule
+    \end{hint}    
+		The derivative of $10^x + 100^x$ with respect to $x$ is
+		 $\answer[given]{10^x \ln(10) + 100^x \ln(100)}$
+	
+\end{problem}
+
+\begin{problem} %problem #5b
+  Compute 
+  \[
+  \frac{d}{dx} \left(e^x + \pi^x\right)
+  \]
+  
+    \begin{hint}
+      \[
+      \frac{d}{dx} \left(a^x\right) = a^x \ln(a)
+      \]
+    \end{hint}
+		\begin{hint}
+		  The derivative of $e^x$ is itself
+		\end{hint}
+		The derivative of $e^x + \pi^x$ with respect to $x$ is
+		 $\answer[given]{e^x  + \pi^x \ln(\pi)}$
+	
+\end{problem}
+
+
+\begin{problem} %problem #6b
+  Compute 
+  \[
+  \frac{d}{dx} \left(3\cdot 2^x\right)
+  \]
+    
+    \begin{hint}
+		  Use the Constant Multiple Rule
+		\end{hint}
+    
+		
+		The derivative of $3\cdot 2^x$ with respect to $x$ is
+		 $\answer[given]{3\cdot 2^x \ln(2)}$
+	
+\end{problem}
+
+
+
+\begin{problem} %problem 3b
+  Compute
+  \[
+  \frac{d}{dx} \left[(x^4 + 5)2^x\right]
+  \]
+  
+    \begin{hint}
+      Use the Product Rule with $x^4 + 5$ and $2^x$.
+    \end{hint}
+    \begin{hint}
+      $(fg)' = f'g+fg'$.
+    \end{hint}
+    \begin{hint}
+      The derivative of $x^4 + 5$ is $4x^3$
+    \end{hint}
+    \begin{hint}
+      The derivative of $2^x$ is $2^x \ln(2)$
+    \end{hint}
+		The derivative of $(x^4 + 5)2^x$ with respect to $x$ is
+		 $\answer[given]{4x^3 2^x + (x^4 + 5) 2^x \ln(2)}$
+		
+\end{problem}
+
+
+The Chain Rule applied to a general exponential function, $a^x$, yields the following:
+
+\[
+\dd{x} \left[a^{g(x)}\right] = a^{g(x)} \ln(a) \cdot g(x).
+\]
+
+\begin{example}
+Find $y'$ if $y = 3^{\cos(x)}$
+We use the chain rule with $\cos(x)$ as the inside function:
+\[
+\dd{x} \left[3^{\cos(x)}\right] = 3^{\cos(x)} \ln(3) \cdot (-\sin(x)) = -3^{\cos(x)} \ln(3) \sin(x).
+\]
+\end{example}
+
+\begin{problem}
+Compute
+\[
+\dd{x} \left[ 4^{\sin(x)}\right] = \answer{4^{\sin(x)}\ln(4) \cos(x)}.
+\]
+\end{problem}
+
+
+
+\begin{center}
+\textbf{The derivative of $\log_a(x)$}
+\end{center}
+
+To find the derivative of $\log_a(x)$ with $a > 1$, we use the following change of base formula:
+\[
+\log_a(x) = \frac{\ln(x)}{\ln(a)}.
+\]
+
+Since the denominator in the above formula is a constant, we can use the Constant Multiple Rule to find the derivative:
+\[
+\dd{x} \left[\log_a(x)\right] = \dd{x} \left(\frac{\ln(x)}{\ln(a)}\right) = \frac{1}{\ln(a)}\cdot \dd{x} \left[\ln(x)\right] = \frac{1}{\ln(a)} \cdot \frac{1}{x} = \frac{1}{x\ln(a)}.
+\]
+
+
+\begin{example} %example 20
+The common log has base 10 and is usually written $\log(x)$.
+So, if $f(x) = \log(x)$ then $f'(x) = \frac{1}{x\ln(10)}.$
+\end{example}
+
+
+
+\begin{problem}
+Compute
+\[
+\ddx \left[\log_5(x)\right] = \answer{\frac{1}{x\ln(5)}}.
+\]
+\end{problem}
+
+
+\begin{problem} %problem #7b
+  Compute 
+  \[
+  \frac{d}{dx} \left[2\log(x)\right]
+  \]
+  
+		\begin{hint}
+		  Common log: $\log(x) = \log_{10}(x)$ 
+		\end{hint}
+	
+		
+		The derivative of $2\log(x)$ with respect to $x$ is
+		 $\answer[given]{\frac{2}{x\ln(10)}}$
+	
+\end{problem}
+
+
+\begin{problem}
+Find $f'(1)$ if $f(x) = x^2 \log_2(x)$.
+
+\[
+f'(1) = \answer{1/\ln(2)}.
+\]
+
+\end{problem}
+
+
+
+\end{document}

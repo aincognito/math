@@ -1,0 +1,419 @@
+\documentclass{ximera}
+\usepgfplotslibrary{fillbetween}
+\input{../preamble}
+
+\outcome{Compute and interpret definite integrals}
+
+\title{4.7 Properties of Definite Integrals}
+
+%\newcommand{\ffrac}[2]{\frac{\mbox{\footnotesize $#1$}}{\mbox{\footnotesize $#2$}}}
+%\newcommand{\vasymptote}[2][]{\draw [densely dashed,#1] 
+%({rel axis cs:0,0} -| {axis cs:#2,0}) -- ({rel axis cs:0,1} -| {axis cs:#2,0});}
+
+
+\begin{document}
+
+\begin{abstract}
+In this section we use properties of definite integrals to compute and interpret them.
+\end{abstract}
+
+\maketitle
+
+
+
+\section{Properties of Definite Integrals}
+
+We begin with some basic properties of definite integrals- many of which are familiar from our study of derivatives and their basic properties.
+
+\begin{proposition}
+If $f(x)$ and $g(x)$ are continuous on the interval $[a,b]$ then 
+\begin{enumerate}
+\item $\displaystyle{\int_a^b \Big[f(x) \pm g(x) \Big] \ dx = \int_a^b f(x) \ dx \pm \int_a^b g(x) \ dx}$
+\item $\displaystyle{\int_a^b cf(x) \ dx = c\int_a^b f(x) \ dx}$
+\item $\displaystyle{\int_a^a f(x) \ dx = 0}$
+\item $\displaystyle{\int_b^a f(x) \ dx = -\int_a^b f(x) \ dx}$\\
+\end{enumerate}
+and if $f(x) \leq g(x)$ on $[a,b]$, then
+\begin{enumerate}[resume]
+\item $\displaystyle{\int_a^b f(x) \ dx \leq \int_a^b g(x) \ dx.}$
+\end{enumerate}
+\end{proposition}
+
+Recall that if $f(x) \geq 0$ on an interval $[a, b]$ then the definite integral, $\int_a^b f(x) \ dx$,
+gives the area under the curve and if $f(x) \leq 0$ on an interval $[a, b]$ then 
+the definite integral, $\int_a^b f(x) \ dx$, gives -1 times the area above the curve. 
+We now consider the situation where the integrand $f(x)$ changes sign on the interval $[a,b]$.
+The key to handling this situation is to use the following property.
+\begin{proposition}[Additivity]
+If $f(x)$ is continuous on the interval $[a,b]$ and $c$ is a number between $a$ and $b$, i.e., $a<c<b$ then
+\[\int_a^b f(x) \ dx = \int_a^c f(x) \ dx  + \int_c^b f(x) \ dx.\]
+\end{proposition}
+
+We apply this proposition in the following examples.
+
+\begin{example}
+Use the figure below to determine the value of the definite integral $\displaystyle{\int_a^b f(x) \ dx}$.
+\\
+%title={The Area Above $f(x)=-\sin(x)$ on $[0,\pi]$}]
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  center, axis y line = none, xtick={0, 0.473, 1.549, 2.811}, 
+xticklabels={0, $a$, $c$, $b$}] 
+\addplot[ domain=.3:0.473, 
+    samples=100, color=black]{(x-1.5)^3 -(x+.5)^2 /3 + 1.4};
+\addplot[name path = B, domain=0.473:1.549, 
+    samples=100, color=black]{(x-1.5)^3 -(x+.5)^2 /3 + 1.4};
+\addplot[name path = D, domain=1.549:2.811, 
+    samples=100, color=black]{(x-1.5)^3 -(x+.5)^2 /3 + 1.4};
+\addplot[domain=2.811:3, 
+    samples=100, color=black]{(x-1.5)^3 -(x+.5)^2 /3 + 1.4};
+		
+\addplot[name path = A, domain=0.473:1.549, samples=100, color=black]{0};
+\addplot[name path = C, domain=1.549:2.811, samples=100, color=black]{0};
+\addplot[blue!10] fill between[of=A and B];
+\addplot[red!10] fill between[of=C and D];
+%\addplot[<->] coordinates {(0.3,-1) (0.3, 1)};
+%\addplot [domain= .1:.2, samples=10, color=black]{-x + .2};
+%\addplot [domain= .2:.24, samples=10, color=black]{.04-(x- .2)};
+%\addplot [domain= .3:.39, samples=10, color=black]{.09-(x- .3)};
+%\addplot [domain= .4:.56, samples=10, color=black]{.16-(x- .4)};
+%\addplot [domain= .5:.75, samples=10, color=black]{.25-(x- .5)};
+%\addplot [domain= .6:.96, samples=10, color=black]{.36-(x- .6)};
+\node at (axis cs: .95,.15){Area = 4};
+\node at (axis cs: 2.2,-.25){Area = 6};
+\node at (axis cs: 1.5,.5){$y=f(x)$};
+%\addplot [domain= .7:1, samples=10, color=black]{.49-(x- .7)};
+%\addplot [domain= .8:1, samples=10, color=black]{.64-(x- .8)};
+%\addplot [domain= .9:1, samples=10, color=black]{.81-(x- .9)};
+
+%\addplot [domain= .2:.4, samples=10, color=black]{-x + .05};
+%
+%\addplot[thin, samples = 100, color=black] coordinates {(0,0) (0,1)};
+
+\end{axis}
+%\legend{$y = f(x)$, , secant line, tangent line, };
+\end{tikzpicture}
+\end{image}
+
+By additivity, we can write
+\[\int_a^b f(x) \ dx = \int_a^c f(x) \ dx  + \int_c^b f(x) \ dx.\]
+Next, we can determine the definite integrals on the right hand side of the above equation
+by relating them to area.
+On the interval $[a,c], f(x) \geq 0$ and so 
+\[\int_a^c f(x) \ dx = \text{area under the curve} = 4.\]
+On the interval $[c,b], f(x) \leq 0$ and so 
+\[\int_c^b f(x) \ dx = (-1)\cdot \text{area above the curve} = -6.\]
+Now, by the additivity of the definite integral,
+\[\int_a^b f(x) \ dx = 4 + (-6) = -2.\]
+
+
+\end{example}
+
+
+\begin{problem}
+Use the figure below to determine the definite integrals.
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  center, axis y line = none, xtick={0, 3.14, 6.28}, xticklabels={$a$, $c$, $b$}] 
+\addplot[name path = B, domain=0:3.14, 
+   samples=100, color=black]{2*sin(deg(x))};
+\addplot[name path = D, domain=3.14:6.28, 
+    samples=100, color=black]{1.5*sin(deg(x))};		
+\addplot[name path = A, domain=0:3.14, samples=100, color=black]{0};
+\addplot[name path = C, domain=3.14:6.28, samples=100, color=black]{0};
+\addplot[blue!10] fill between[of=A and B];
+\addplot[red!10] fill between[of=C and D];
+\node at (axis cs: 1.57,.6){Area = 5};
+\node at (axis cs: 4.71,-.5){Area = 3};
+\node at (axis cs: 3,1.6){$y=f(x)$};
+
+
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
+
+\[\int_a^c f(x) = \answer{5}.\]
+\[\int_c^b f(x) = \answer{-3}.\]
+\[\int_a^b f(x) = \answer{2}.\]
+\end{problem}
+
+
+\begin{problem}
+Use the figure below to determine the definite integrals.
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  center, axis y line = none, xtick={0, 3.14, 6.28, 9.42}, 
+xticklabels={$a$, $c$, $d$, $b$}] 
+\addplot[name path = B, domain=0:3.14, 
+   samples=100, color=black]{2.5*sin(deg(x))};
+\addplot[name path = D, domain=3.14:6.28, 
+    samples=100, color=black]{2*sin(deg(x))};
+\addplot[name path = F, domain=6.28:9.42, 
+    samples=100, color=black]{1.5*sin(deg(x))};		
+\addplot[name path = A, domain=0:3.14, samples=100, color=black]{0};
+\addplot[name path = C, domain=3.14:6.28, samples=100, color=black]{0};
+\addplot[name path = E, domain=6.28:9.42, samples=100, color=black]{0};
+\addplot[blue!10] fill between[of=A and B];
+\addplot[red!10] fill between[of=C and D];
+\addplot[blue!10] fill between[of=E and F];
+\node at (axis cs: 1.57,.6){Area = 6};
+\node at (axis cs: 4.71,-.6){Area = 5};
+\node at (axis cs: 7.85,.4){Area = 4};
+\node at (axis cs: 3.4,1.9){$y=f(x)$};
+
+
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
+\[\int_a^c f(x) = \answer{6}.\]
+\[\int_c^d f(x) = \answer{-5}.\]
+\[\int_d^b f(x) = \answer{4}.\]
+\[\int_a^d f(x) = \answer{1}.\]
+\[\int_c^b f(x) = \answer{-1}.\]
+\[\int_a^b f(x) = \answer{5}.\]
+\end{problem}
+
+
+\begin{example} Use geometry and additivity of the definite integral to compute  
+$\displaystyle{\int_0^5  (3-x)  \ dx}$.
+The graph of $y = 3-x$ is a line with slope $-1$ passing through the points $(0,3)$ and $(5,-2)$. To compute the integral,
+we need to determine where $3-x$ is positive and where it is negative. We accomplish this by first finding the $x$-intercept(s)
+by solving $3-x = 0$.  The solution is clearly, $x = 3$.  Now, if $x < 3$, then $3 - x >0$ and if
+$x >3$, then $3-x <0$.
+We now use the additivity property:
+\[\int_0^5 (3-x) \ dx = \int_0^3 (3-x) \ dx  + \int_3^5 (3-x) \ dx.\]
+We can now take an area approach to evaluate the two integrals on the right-hand side.
+\[\int_0^3 (3-x) \ dx = \text{area of triangle under the curve} = \tfrac12bh = \tfrac12(3)(3) = \tfrac92,\]
+and
+\[\int_3^5 (3-x) \ dx = (-1)\cdot\text{area of triangle above the curve} = -\tfrac12(2)(2) = -2\]
+Thus
+\[\int_0^5 (3-x) \ dx = \tfrac92  + (-2) = \tfrac52.\]
+
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  center, axis y line = left, xtick={0, 1, 2, 3, 4, 5}] 
+\addplot[name path = B, domain=0:3, 
+    samples=100, color=black]{3-x};
+\addplot[name path = D, domain=3:5, 
+    samples=100, color=black]{3-x};
+		
+\addplot[name path = A, domain=0:3, samples=100, color=black]{0};
+\addplot[name path = C, domain=3:5, samples=100, color=black]{0};
+\addplot[blue!10] fill between[of=A and B];
+\addplot[red!10] fill between[of=C and D];
+%\addplot[<->] coordinates {(0.3,-1) (0.3, 1)};
+%\addplot [domain= .1:.2, samples=10, color=black]{-x + .2};
+%\addplot [domain= .2:.24, samples=10, color=black]{.04-(x- .2)};
+%\addplot [domain= .3:.39, samples=10, color=black]{.09-(x- .3)};
+%\addplot [domain= .4:.56, samples=10, color=black]{.16-(x- .4)};
+%\addplot [domain= .5:.75, samples=10, color=black]{.25-(x- .5)};
+%\addplot [domain= .6:.96, samples=10, color=black]{.36-(x- .6)};
+\node at (axis cs: 1,.7){Area = 9/2};
+\node at (axis cs: 4.4,-.7){Area = 2};
+\node at (axis cs: 1.75,2){$y=3-x$};
+%\addplot [domain= .7:1, samples=10, color=black]{.49-(x- .7)};
+%\addplot [domain= .8:1, samples=10, color=black]{.64-(x- .8)};
+%\addplot [domain= .9:1, samples=10, color=black]{.81-(x- .9)};
+
+%\addplot [domain= .2:.4, samples=10, color=black]{-x + .05};
+%
+%\addplot[thin, samples = 100, color=black] coordinates {(0,0) (0,1)};
+
+\end{axis}
+%\legend{$y = f(x)$, , secant line, tangent line, };
+\end{tikzpicture}
+\end{image}
+
+\end{example}
+
+\begin{problem}
+Use geometry and additivity of the definite integral to compute the definite integral.  
+\[\int_0^3  (x-2)  \ dx= \answer{-3/2}.\]
+\begin{hint}
+$y=x-2$ is a line with slope $1$ passing thru $(0,-2), (2,0)$ and $(3,1)$
+\end{hint}
+\begin{hint}
+If $f(x) \geq 0$ then the integral gives the area under the curve
+\end{hint}
+\begin{hint}
+If $f(x) \leq 0$ then the integral gives $(-1)$ times the area above the curve
+\end{hint}
+
+\end{problem}
+
+Since the definite integral is related to area, there are situations where 
+computing these integrals can be facilitated by observing a pattern of symmetry 
+in a region. To aid us in our discussion, we will have to recall the idea of 
+even and odd functions.
+
+\begin{definition}[Even and Odd Functions]
+$f(x)$ is called \textbf{even} if $f(-x) = f(x)$ and\\
+$f(x)$ is called \textbf{odd} if $f(-x) = -f(x)$.
+\end{definition}
+The terms even and odd come from the observation that
+functions of the form $f(x) = x^n$ are even functions if $n$ is even and they are
+odd functions if $n$ is odd. Furthermore, $\cos(x)$ is an even function, while $\sin(x)$ is an odd function.
+The graph of an 
+even function is symmetric about the $y$-axis and the graph of an odd function is symmetric about the origin.
+The following proposition describes how these symmetries affect the definite integral.
+
+\begin{proposition}
+Let $a>0$ and suppose $f(x)$ is continuous on the interval $[-a, a]$.
+If $f(x)$ is an even function then
+\[\int_{-a}^a f(x) \ dx = 2 \int_0^a f(x) \ dx,\]
+and if $f(x)$ is an odd function, then 
+\[\int_{-a}^a f(x) \ dx = 0.\]
+\end{proposition}  
+
+%xtick={0, 0.473, 1.549, 2.811}, 
+%xticklabels={0, $a$, $c$, $b$}
+%
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[title={The Graph of an Even Function},axis x line=  center, axis y line = center,
+xticklabels=none, yticklabels=none]; 
+\addplot[name path=B, domain=-1:0, 
+    samples=100, color=black]{.5 + x^2-x^4};
+\addplot[name path = D, domain=0:1, 
+    samples=100, color=black]{.5+x^2-x^4};
+
+		
+\addplot[name path = A, domain=-1:0, samples=100, color=black]{0};
+\addplot[name path = C, domain=0:1, samples=100, color=black]{0};
+\addplot[blue!20] fill between[of=A and B];
+\addplot[blue!10] fill between[of=C and D];
+\addplot[white] coordinates {(0,-.21) (0, -.39)};
+
+\node at (axis cs: 0,-.3){The two blue regions have the same area};
+%\node at (axis cs: 2.2,-.25){Area = 6};
+%\node at (axis cs: 1.5,.5){$y=f(x)$};
+
+%\addplot[thin, samples = 100, color=black] coordinates {(0,0) (0,1)};
+
+\end{axis}
+%\legend{$y = f(x)$, , secant line, tangent line, };
+\end{tikzpicture}
+\end{image}
+
+
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[title={The Graph of an Odd Function},axis x line=  center, axis y line = center,
+xticklabels=none, yticklabels=none]; 
+\addplot[name path=B, domain=-1:0, 
+    samples=100, color=black]{x-x^3};
+\addplot[name path = D, domain=0:1, 
+    samples=100, color=black]{x-x^3};
+
+		
+\addplot[name path = A, domain=-1:0, samples=100, color=black]{0};
+\addplot[name path = C, domain=0:1, samples=100, color=black]{0};
+\addplot[red!10] fill between[of=A and B];
+\addplot[blue!10] fill between[of=C and D];
+\addplot[white] coordinates {(0,-.41) (0, -.59)};
+
+\node at (axis cs: 0,-.5){The red and blue regions have the same area};
+%\node at (axis cs: 2.2,-.25){Area = 6};
+%\node at (axis cs: 1.5,.5){$y=f(x)$};
+
+%\addplot[thin, samples = 100, color=black] coordinates {(0,0) (0,1)};
+
+\end{axis}
+%\legend{$y = f(x)$, , secant line, tangent line, };
+\end{tikzpicture}
+\end{image}
+
+
+This result is especially important for odd functions, since the calculation of definite integrals in this case
+becomes trivial. For even functions the advantage of this result less significant.  It allows us to work with the number
+$0$ instead of the negative number $-a$, thereby simplifying any arithmetic associated with the 
+Fundamental Theorem of Calculus.
+
+\begin{example}
+Since $x^2$ is an even function, 
+\[\int_{-3}^3 x^2 \ dx = 2\int_0^3 x^2 \ dx = \tfrac{2}{3}x^3\Bigg|_0^3 = 18.\]
+\end{example}
+
+\begin{example}
+Since $\cos(x)$ is an even function, 
+\[\int_{-\pi/2}^{\pi/2} \cos(x) \ dx = 2\int_0^{\pi/2} \cos(x) \ dx = 2\sin(x)\Bigg|_0^{\pi/2} = 2.\]
+\end{example}
+
+\begin{problem}
+Use the fact that the integrand is even to compute the definite integral.
+\[\int_{-1}^1 \left(x^4 + 5x^2 + 3 \right) \ dx =\answer {146/15}.\]
+\end{problem}
+
+
+
+Note that in the last two examples, plugging in the value zero gave zero.  This is not a coincidence.
+An even function always has an odd anti-derivative and odd functions must pass thru the origin.\\
+Now we look at some examples of odd functions.
+
+\begin{example}
+The following definite integrals are all equal to zero, since in each case, the integrand is an odd function and the 
+interval of integration has the form $[-a, a]$:
+
+\[\int_{-2}^2 \left(2x^5 - 4x^3 + 6x \right)\ dx, \int_{-1}^1 \left(\sqrt[3] x + \sqrt[5]x\right) \ dx  \; \text{and} \; \int_{-\pi}^\pi \Big[\sin(x) + \sin^3(x)\Big] \ dx.\]
+\end{example}
+
+\begin{problem}
+\[\int_{-5}^5 \left(x^5 - 8x^3 +2x \right) \ dx =\answer {0}.\]
+\begin{hint}
+The integrand is odd
+\end{hint}
+\end{problem}
+
+\begin{problem}
+\[\int_{-1}^1 \Big[x\cos(x) - x^2\sin(x) \Big] \ dx =\answer {0}.\]
+\begin{hint}
+An odd function times an even function is an odd function
+\end{hint}
+\end{problem}
+
+\begin{problem}
+\[\int_{-\pi}^\pi \Big[\sin^3(x) + \sin(x^3)\Big] \ dx =\answer {0}.\]
+\begin{hint}
+The composition of two odd functions is odd
+\end{hint}
+\end{problem}
+
+
+In the next example, we combine an even function and an odd function.
+
+\begin{example}
+The function $x^4$ is even and the function $x^5$ is odd.  Therefore,
+\[\int_{-2}^2 (x^4 + x^5) \ dx = \int_{-2}^2 x^4 \ dx + \int_{-2}^2 x^5 \ dx = 2\int_0^2 x^4 \ dx + 0 = \tfrac{2}{5}x^5\Bigg|_0^2 = \frac{64}{5}.\]
+\end{example}
+%Furthermore,the sum, product and composition of even functions is even. 
+
+\begin{problem}
+\[\int_{-3}^3 \Big[x^2 - \sqrt[3]x +2\sin(x) \Big] \ dx =\answer {18}.\]
+\begin{hint}
+$x^2$ is even and $\sqrt[3]x$ and $2\sin(x)$ are odd
+\end{hint}
+\end{problem}
+
+\begin{problem}
+\[\int_{-1}^{1} x^4\Big[1 + \sin(x)\Big] \ dx =\answer {2/5}.\]
+\begin{hint}
+$x^4$ is even and $x^4\sin(x)$ is odd
+\end{hint}
+\end{problem}
+
+
+\end{document}
+
+
+What if f changes sign?
+int ab = int ac + int cb
+\int_a^a = 0
+\int_b^a = -\int_a^b
+f<g implies \int f < \int g
+if f is even on [-a, a] then \int f = 2 int f_0^a
+if f is odd...

@@ -1,0 +1,422 @@
+\documentclass{ximera}
+
+\input{../preamble}
+
+\outcome{Approximate function values using the tangent line}
+
+\title{3.7 Linear Approximation}
+
+\begin{document}
+
+\begin{abstract}
+In this lesson we will use the tangent line to approximate the value of a 
+function near the point of tangency.
+\end{abstract}
+
+\maketitle
+
+
+Given a function $y=f(x)$, the equation of the tangent line
+at the point where $x = a$ is given by
+\[y-f(a) = f'(a)(x - a)\]
+or
+\[y = f(a) + f'(a)(x - a).\]
+The main idea of this section is that if we let 
+\[L(x) = f(a) + f'(a)(x - a)\] then 
+\[f(a) = L(a)\]
+and
+\[f(x) \approx L(x)\]
+for values of $x$ close to $a$. The function $L(x)$ is called the \textbf{linearization} of $f(x)$ at $x = a$. 
+The advantage of working with $L(x)$ is that values of a linear 
+function are usually easy to compute.
+In a typical linear approximation problem, we are trying to approximate a value of $f(x)$. We need to choose $a$ and create
+$L(x)$. Once we have accomplished this, our solution is 
+\[f(x) \approx L(x).\]
+There are two keys to choosing $a$. First $a$ should be close to the $x$-value of interest and second, 
+we must be able to compute the exact value of $f(a)$.
+
+
+
+\begin{image}
+\begin{tikzpicture}[scale=.7]
+\draw[<->] (0,6)-- (0,0) --(8,0);
+\draw[blue, thin]   plot[smooth,domain=0:8] (\x, {\x^2/10});
+\draw[red, thin]   plot[smooth,domain=2.7:7.3] (\x, {(2.5)+(\x -5)});
+%\draw [<->,thick, cyan] (0,0) to [out=90,in=199] (9,3);
+\draw[mark=square] (5,2.5);
+\node at (6, 2.5) {$(a,f(a)$};
+%\draw[<->] (4, 0) --(7, 0);
+%\node at (3.2, 0) {$x$};
+%\draw (5.5,2) parabola (6.75,.25);
+%\draw (5.5,2) parabola (4.25,.25);
+
+%\draw (1.5, .1) -- (1.5, -.1) node[below] {$x_0$};
+\node at (5,7) {Linear Approximation};
+\node at (5,-1) {$f(x) \approx L(x)$ for $x$ near $a$};
+\node at (11, 4.5) {$y=L(x)=f(a) + f'(a)(x-a)$};
+%\draw[<->] (0, 0) --(3, 0);
+\node at (9, 6) {$y = f(x)$};
+\node at (5,-.35) {$a$};
+\node at (-.7, 2.5) {$f(a)$};
+\draw (5, .1) -- (5,-.1);
+\draw (-0.1, 2.5)-- (.1,2.5);
+\draw[blue, fill] (5,2.5) circle [radius=0.07];
+
+
+%\draw (1.5,.25) parabola (0.25,2);
+%\draw (1.5,.25) parabola (2.75,2);
+%\draw (5.5, .1) -- (5.5, -.1) node[below] {$x_0$};
+%\node at (5.5, -.9) {$f''(x_0) > 0$};
+\end{tikzpicture}
+\end{image}
+
+ 
+
+\begin{example} %example 1
+Approximate $\sqrt{5}$ using a linear approximation.\\ 
+Let $f(x) = \sqrt x$ and since 4 is near 5 and $\sqrt{4} = 2$, we let 
+$a = 4$. To create $L(x)$ we also need to compute $f'(4)$. 
+Since 
+\[f'(x) = \frac{d}{dx} \sqrt x = \frac{d}{dx}(x^{1/2})= \frac{1}{2}x^{-1/2}   = \frac{1}{2\sqrt x},\] 
+we have
+\[f'(4) = \frac{1}{2\sqrt{4}} = \frac{1}{4}.\]
+
+The linearization of $\sqrt x$ at $x=4$ is now given by
+\begin{align*}
+L(x) &= f(a) + f'(a)(x - a) \\
+&= f(4) + f'(4)(x - 4) \\
+&= 2 + \frac{1}{4}(x - 4).
+\end{align*}
+Finally, if $x$ is near 4, then $\sqrt x \approx L(x)$, so
+\[\sqrt{5} \approx L(5) = 2 + \frac{1}{4}(5-4)\]
+\[ = 2+ \frac{1}{4} = \frac{9}{4} = 2.25.\]
+\end{example}
+
+
+\begin{image}
+\begin{tikzpicture}[scale=.7]
+\draw[<->] (0,4)-- (0,0) --(10,0);
+\draw[blue, thin]   plot[smooth, samples = 200, domain=0:10] (\x, {\x^(1/2)});
+\draw[red, thin]   plot[smooth,domain=.1:9.7] (\x, {2+(1/4)*(\x -4)});
+%\draw [<->,thick, cyan] (0,0) to [out=90,in=199] (9,3);
+\draw[mark=square] (4,2);
+\node at (4, 2.5) {$(4,2)$};
+%\draw[<->] (4, 0) --(7, 0);
+%\node at (3.2, 0) {$x$};
+%\draw (5.5,2) parabola (6.75,.25);
+%\draw (5.5,2) parabola (4.25,.25);
+
+%\draw (1.5, .1) -- (1.5, -.1) node[below] {$x_0$};
+\node at (4.5,5.5) {Linear Approximation};
+\node at (4.5,-1.4) {$\sqrt x \approx 2 + \frac14(x-4)$ for $x$ near $4$};
+\node at (9.5, 4) {$y=L(x)=2 + \frac14(x-4)$};
+%\draw[<->] (0, 0) --(3, 0);
+\node at (9.5, 2.5) {$y = \sqrt x$};
+\node at (4,-.35) {$4$};
+\node at (-.7, 2) {$2$};
+\draw (4, .1) -- (4,-.1);
+\draw (-0.1, 2)-- (.1,2);
+\draw[blue, fill] (4,2) circle [radius=0.07];
+
+
+%\draw (1.5,.25) parabola (0.25,2);
+%\draw (1.5,.25) parabola (2.75,2);
+%\draw (5.5, .1) -- (5.5, -.1) node[below] {$x_0$};
+%\node at (5.5, -.9) {$f''(x_0) > 0$};
+\end{tikzpicture}
+\end{image}
+
+ 
+
+\begin{example} %example 2
+Approximate $\sqrt{99}$ using linear approximation. \\
+Let $f(x) = \sqrt x$ and since 100 is near 99 and $\sqrt{100} = 10$, we let 
+$a = 100$. To create $L(x)$ we also need to compute $f'(100)$. 
+Since 
+\[f'(x) = \frac{d}{dx} \sqrt x = \frac{d}{dx}(x^{1/2})= \frac{1}{2}x^{-1/2}   = \frac{1}{2\sqrt x},\] 
+we have
+\[f'(100) = \frac{1}{2\sqrt{100}} = \frac{1}{20}.\]
+
+The linearization of $\sqrt x$ at $x=100$ is now given by
+\begin{align*}
+L(x) &= f(a) + f'(a)(x - a) \\
+&= f(100) + f'(100)(x - 100) \\
+&= 10 + \frac{1}{20}(x - 100).
+\end{align*}
+Finally, if $x$ is near 100, then $\sqrt x \approx L(x)$, so
+\[\sqrt{99} \approx L(99) = 10 + \frac{1}{20}(99 - 100)\]
+\[ = 10 - \frac{1}{20} = \frac{199}{20} = 9.95.\]
+\end{example}
+
+\begin{problem}
+Find the linearization of $f(x) = \sqrt x$ at $x = 16$ and use it to approximate $\sqrt{18}$.
+
+The linearization is  $L(x) = \answer{4 + .125 (x-16)}$.
+
+The approximation is $\sqrt{18} \approx \answer{4.25}$.
+\end{problem}
+
+\begin{problem}
+Find the linearization of $f(x) = \sqrt x$ at $x = 34$ and use it to approximate $\sqrt{34}$.
+
+The linearization is  $L(x) = \answer{6 + (1/12) (x-36)}$.
+
+The approximation is $\sqrt{34} \approx \answer{35/6)}$.
+\end{problem}
+
+\begin{example} %example 3
+Approximate $\sqrt[3]{10}$ using linear approximation.\\ 
+Let $f(x) = \sqrt[3] x$ and since 10 is near 8 and $\sqrt[3]{8} = 2$, we let 
+$a = 8$. To create $L(x)$ we also need to compute $f'(8)$. 
+Since 
+\[f'(x) = \frac{d}{dx} \sqrt[3] x = \frac{d}{dx}(x^{1/3})= \frac{1}{3}x^{-2/3}   = \frac{1}{3\sqrt[3] {x^2}},\] 
+we have
+\[f'(8) = \frac{1}{3\sqrt[3]{8^2}} =\frac{1}{3\sqrt[3]{64}}= \frac{1}{12}.\]
+
+Next, 
+\begin{align*}
+L(x) &= f(a) + f'(a)(x - a) \\
+&= f(8) + f'(8)(x - 8) \\
+&= 2 + \frac{1}{12}(x - 8)
+\end{align*}
+and finally,
+\[\sqrt[3]{10} \approx L(10) = 2 + \frac{1}{12}(10 - 8)\]
+\[ = 2 + \frac{2}{12} = \frac{13}{6} = 2.1{\overline 6}.\]
+\end{example}
+
+\begin{problem}
+Find the linearization of $f(x) = \sqrt[3] x$ at $x = 27$ and use it to approximate $\sqrt[3]{25}$.
+
+The linearization is  $L(x) = \answer{3 + (1/27 (x-27)}$.
+
+The approximation is $\sqrt[3]{25} \approx \answer{79/27}$.
+\end{problem}
+
+\begin{example} %example 4
+We can approximate $e^{-0.1}$ using linear approximation as follows. 
+Let $f(x) = e^x$ and since 0 is near $-0.1$ and $e^0 = 1$, we let 
+$a = 0$. To create $L(x)$ we also need to compute $f'(0)$. 
+Since 
+\[f'(x) = \frac{d}{dx} e^x = e^x,\] 
+we have
+\[f'(0) = e^0 = 1.\]
+
+Next, 
+\begin{align*}
+L(x) &= f(a) + f'(a)(x - a) \\
+&= f(0) + f'(0)(x - 0) \\
+&= 1 + 1(x - 0)\\
+& = 1 + x
+\end{align*}
+and finally,
+\[
+e^{-0.1} \approx L(-0.1) = 1 - 0.1 = 0.9.
+\]
+
+We conclude this example by computing \textbf{relative error}. Expressed as a percentage, the relative error is given by
+\[
+\text{relative error} = \Big|\frac{\text{actual} - \text{estimate}}{\text{actual}}\Big| \times 100\%.
+\]
+For the actual value, we will use the value of $e^{-0.1}$ from a calculator.
+We have
+\[
+\text{relative error} = \Big|\frac{0.90483741803 - 0.9}{0.90483741803}\Big| \times 100\% = 0.534617373\%.
+\]
+
+\end{example}
+
+
+\begin{image}
+\begin{tikzpicture}[scale=.7]
+\draw[<-] (0,4)-- (0,0);
+\draw[<->] (-4,0) --(4,0);
+\draw[blue, thin]   plot[smooth,domain=-3:1.3] (\x, {e^\x});
+\draw[red, thin]   plot[smooth,domain=-1.4:1.4] (\x, {\x +1});
+%\draw [<->,thick, cyan] (0,0) to [out=90,in=199] (9,3);
+%\draw[mark=square] (4,2);
+%\node at (4, 2.5) {$(4,2)$};
+%\draw[<->] (4, 0) --(7, 0);
+%\node at (3.2, 0) {$x$};
+%\draw (5.5,2) parabola (6.75,.25);
+%\draw (5.5,2) parabola (4.25,.25);
+
+%\draw (1.5, .1) -- (1.5, -.1) node[below] {$x_0$};
+\node at (0,4.5) {Linear Approximation};
+\node at (0,-1.4) {$e^x \approx 1+x$ for $x$ near $0$};
+\node at (3, 1.8) {$y=L(x)=1 + x$};
+%\draw[<->] (0, 0) --(3, 0);
+\node at (2, 3.1) {$y = e^x$};
+\node at (0,-.35) {$0$};
+\node at (-.7, 1) {$1$};
+\draw (0, .1) -- (0,-.1);
+\draw (-0.15, 1)-- (.15,1);
+\draw[blue, fill] (0,1) circle [radius=0.07];
+
+
+%\draw (1.5,.25) parabola (0.25,2);
+%\draw (1.5,.25) parabola (2.75,2);
+%\draw (5.5, .1) -- (5.5, -.1) node[below] {$x_0$};
+%\node at (5.5, -.9) {$f''(x_0) > 0$};
+\end{tikzpicture}
+\end{image}
+
+ 
+ 
+ 
+
+\begin{problem}
+Find the linearization of $f(x) = e^x$ at $x = 0$ and use it to approximate $e^{0.2}$.
+Also, find the relative error.
+
+The linearization is  $L(x) = \answer{1 + x}$.
+
+The approximation is $e^{0.2} \approx \answer{1.2}$.
+
+The relative error in this approximation is $\answer{1.75230963}\%$.
+
+
+\end{problem}
+
+\begin{example} %example 5
+Approximate $\ln(1.1)$ using linear approximation.\\ 
+Let $f(x) = \ln x$ and since 1 is near 1.1 and $\ln(1) = 0$, we let 
+$a = 1$. To create $L(x)$ we also need to compute $f'(1)$. 
+Since 
+\[f'(x) = \frac{d}{dx} \ln x = \frac{1}{x},\] 
+we have
+\[f'(1) = \frac{1}{1} = 1.\]
+
+Next, 
+\begin{align*}
+L(x) &= f(a) + f'(a)(x - a) \\
+&= f(1) + f'(1)(x - 1) \\
+&= 0 + 1(x - 1)\\
+&=x-1
+\end{align*}
+and finally,
+\[\ln(1.1) \approx L(1.1) = 1.1 - 1 = 0.1.\]
+
+
+\end{example}
+
+\begin{problem}
+Find the linearization of $f(x) = \ln x$ at $x = 1$ and use it to approximate $\ln(0.8)$.
+
+The linearization is  $L(x) = \answer{x-1}$.
+
+The approximation is $\ln(0.8) \approx \answer{-0.2}$.
+\end{problem}
+
+\begin{example} %example 6
+Approximate $1.9^3$ using linear approximation.\\ 
+Let $f(x) = x^3$ and since 2 is near 1.9 and $2^3 = 8$, we let 
+$a = 2$. To create $L(x)$ we also need to compute $f'(2)$. 
+Since 
+\[f'(x) = \frac{d}{dx} (x^3) = 3x^2,\] 
+we have
+\[f'(2) = 3(2^2) = 12.\]
+
+Next, 
+\begin{align*}
+L(x) &= f(a) + f'(a)(x - a) \\
+&= f(2) + f'(2)(x - 2) \\
+&= 8 + 12(x - 2)
+\end{align*}
+and finally,
+\[1.9^3 \approx L(2) = 8 + 12(1.9 - 2) \]
+\[= 8 - 12(.1) = 8-(1.2) = 6.8.\]
+\end{example}
+
+\begin{problem}
+Find the linearization of $f(x) = x^4$ at $x = 1$ and use it to approximate $1.1^4$.
+
+The linearization is  $L(x) = \answer{1 + 4 (x-1)}$.
+
+The approximation is $1.1^4 \approx \answer{1.4}$.
+\end{problem}
+
+\begin{example} %example 7
+Approximate $\sin(1^{\circ})$ using linear approximation.\\
+In the formula 
+\[ \frac{d}{dx} \sin(x) = \cos(x) \]
+it is understood that the angle is measured in radians. Therefore, in order to use our linear approximation 
+formula we need to restate our problem in radians as:  
+\[\text{approximate} \ \ \sin\big(\frac{\pi}{180}\big).\]
+
+We let $f(x) = \sin x$ and since 0 is near $\frac{\pi}{180}$ and $\sin(0) = 0$, we let 
+$a = 0$. To create $L(x)$ we also need to compute $f'(0)$. 
+Since 
+\[f'(x) = \frac{d}{dx} \sin(x) = \cos(x),\] 
+we have
+\[f'(0) = \cos(0) = 1.\]
+
+Next, 
+\begin{align*}
+L(x) &= f(a) + f'(a)(x - a) \\
+&= f(0) + f'(0)(x - 0) \\
+&= 0 + 1(x - 0)\\
+&= x
+\end{align*}
+and finally,
+\[\sin(1^{\circ}) = \sin\big(\frac{\pi}{180}\big) \approx L\big(\frac{\pi}{180}\big) = \frac{\pi}{180}.\]
+\end{example}
+
+
+ 
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a detailed, lecture style video on linear approximation:}
+\youtube{yKMlhij92i8}
+\end{foldable}
+\end{center}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{image}
+\begin{tikzpicture}[scale = 1.2]
+\begin{axis}[axis x line=bottom, axis y line= middle, ymin=0, ymax=4,
+ xtick={4}, xticklabels={$a$}, ytick={1}, yticklabels={$f(a)$},
+axis equal, title={Linear Approximation}]
+\addplot[domain=0:10, thick, blue!65]{-1 + x^(1/2)};
+\addplot[dashed, thick] coordinates{(4, 1)};
+\addplot[domain=0:10, thick]{1+(1/4)*(x-4)};
+\addplot[color=blue, mark=*] coordinates {(4,1)};
+\end{axis}
+\node at (8,4.5) {$y=L(x) = f(a) + f'(a)(x-a)$ };	
+\node at (4,.5) {$f(x) \approx L(x)$ for $x$ near $a$ };	
+\node at (7, 3) {$y = f(x)$};
+\node at (3,3.5) {$(a,f(a)$};
+\end{tikzpicture}
+\end{image}

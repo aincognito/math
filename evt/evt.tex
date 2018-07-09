@@ -1,0 +1,391 @@
+\documentclass{ximera}
+\usepackage{tcolorbox}
+\input{../preamble}
+
+\outcome{Find the extreme values of a function.}
+
+\title{3.2 Extreme Value Theorem}
+
+%\newcommand{\ffrac}[2]{\frac{\mbox{\footnotesize $#1$}}{\mbox{\footnotesize $#2$}}}
+%\newcommand{\vasymptote}[2][]{
+ %   \draw [densely dashed,#1] ({rel axis cs:0,0} -| {axis cs:#2,0}) -- ({rel axis cs:0,1} -| {axis cs:#2,0});
+%}
+
+
+\begin{document}
+
+\begin{abstract}
+In this section we learn the Extreme Value Theorem and we find the extremes of a function.
+\end{abstract}
+
+\maketitle
+
+
+\section{The Extreme Value Theorem}
+In this section we will solve the problem of finding the maximum and minimum values of a 
+continuous function on a closed interval.
+
+\begin{theorem}
+{\bf Extreme Value Theorem}
+If $f(x)$ is continuous on the closed interval $[a,b]$, then $f(x)$ has both an absolute maximum and an absolute minimum 
+on the interval.
+\end{theorem}
+
+It is important to note that the theorem contains two hypothesis.  
+The first is that $f(x)$ is continuous and the second is that the interval is closed.  
+If either of these conditions fails to hold, then $f(x)$ {\it might} fail to have either an 
+absolute max or an absolute min (or both). It is also important to note that the theorem 
+tells us that the max and the min occur in the interval, but it does not tell us how to find them.  
+
+
+\begin{theorem}
+(Closed Interval Method)
+If $f(x)$ is continuous on the closed 
+interval $[a,b]$, then the absolute extremes occur at either the endpoints 
+or at critical numbers inside the interval. 
+\end{theorem}
+
+
+By the Closed Interval Method, finding the absolute extremes of a
+continuous function, $f(x)$, on a closed interval $[a,b]$ is a three 
+step process.
+\begin{itemize}
+\item[1.] Find the critical numbers of $f(x)$ inside the interval $[a, b]$.
+\item[2.] Compute the values of $f(x)$ at the critical numbers and 
+at the endpoints.
+\item[3.] The largest of the values from step 2 is the absolute 
+maximum of $f(x)$ on the closed interval $[a,b]$, and the smallest 
+of these values is the absolute minimum.
+\end{itemize}
+The largest of these function values is the absolute max and the smallest is the absolute min of $f(x)$ on $[a,b]$. 
+
+
+
+\begin{center}
+{\bf Examples of the Closed Interval Method}
+\end{center}
+
+\begin{description}
+
+\item[CI1.] Find the absolute max and the absolute min of $f(x) = x^2 - 4x + 7$ on the closed interval $[0, 3]$.
+
+Solution:  First, we find the critical numbers of $f(x)$ in the interval $[0, 3]$. 
+The function is a polynomial, so it is differentiable everywhere.  
+We solve the equation $f'(x) =0$.  This becomes $2x-4 = 0$ and the solution is $x=2$.
+Hence $f(x)$ has one critical number in the interval and it occurs at $x = 2$.
+The absolute extremes occur at either the endpoints, $x=0, 3$ or the critical number $x = 2$.  
+Plugging these special values into the original function $f(x)$ yields:
+\begin{eqnarray*}
+f(0) &=& 0^2 - 4(0) + 7 =7\\
+f(2) &=& 2^2 - 4(2) + 7 = 3\\
+f(3) &=& 3^2 - 4(3) + 7 = 4.
+\end{eqnarray*}
+From this data we conclude that the absolute maximum of $f(x)$ on the interval is $7$ occurring 
+at the left endpoint $x = 0$ and the absolute minimum of $f(x)$ in the interval is $3$
+occurring at the critical number $x = 2$.
+
+\begin{problem}
+Find the absolute maximum and the absolute minimum of $f(x) = x^2 - 4x + 2$
+on the closed interval $[0, 3]$.
+
+The absolute maximum is $\answer{2}$ and it occurs at $x = \answer{0}.$\\
+The absolute minimum is $\answer{-2}$ and it occurs at $x = \answer{2}.$ 
+
+\end{problem}
+
+\item[CI2.] Find the absolute max and the absolute min of $f(x) = x^3 - 6x^2 + 5$ on the closed interval $[\text{-}1, 6]$.
+
+Solution:  First, we find the critical numbers of $f(x)$ in the interval $[\text{-}1, 6]$. 
+The function is a polynomial, so it is differentiable everywhere.  
+We solve the equation $f'(x) =0$.  This becomes $3x^2 -12x= 0$ which has two solutions $x=0$ and $x = 4$ (verify).
+Hence $f(x)$ has two critical numbers in the interval.
+The absolute extremes occur at either the endpoints, $x=\text{-}1, 6$ or the critical numbers $x = 0, 4$.  
+Plugging these special values into the original function $f(x)$ yields:
+\begin{eqnarray*}
+f(\text{-}1) &=& (\text{-}1)^3 -6(\text{-}1)^2 + 5 = \text{-}2\\
+f(0) &=& 0^3 - 6(0)^2 + 5 =5\\
+f(4) &=& 4^3 - 6(4)^2 + 5 = \text{-}27\\
+f(6) &=& 6^3 - 6(6)^2 + 5 = 5.
+\end{eqnarray*}
+From this data we conclude that the absolute maximum of $f(x)$ on the interval is $5$ occurring 
+at both the critical number $x = 0$ and the right endpoint $x = 6$ and 
+the absolute minimum of $f(x)$ in the interval is $-27$
+occurring at the critical number $x = 4$.
+
+\begin{problem}
+Find the absolute maximum and the absolute minimum of $f(x) = x^3 - 12x + 1$
+on the closed interval $[-3, 3]$.
+
+The absolute maximum is $\answer{17}$ and it occurs at $x = \answer{-2}.$\\
+The absolute minimum is $\answer{-15}$ and it occurs at $x = \answer{2}.$ 
+\end{problem}
+
+\begin{problem}
+Find the absolute maximum and the absolute minimum of $f(x) = x^3 + 3x^2$
+on the closed interval $[-3, 1]$.
+
+(If the max/min occurs in more than one place, list them in 
+ascending order).\\
+The absolute maximum is $\answer{4}$ and it occurs at $x = \answer{-2}$
+and $x=\answer{1}.$
+\\
+The absolute minimum is $\answer{0}$ and it occurs at $x = \answer{-3}$
+and $x=\answer{0}.$ 
+\end{problem}
+
+
+\item[CI3.] Find the absolute max and the absolute min of $f(x) = \frac14 x^4 - 2x^3 + 4x^2 - 3$ on the 
+closed interval $[\text{-}1, 3]$.
+
+
+Solution:  First, we find the critical numbers of $f(x)$ in the interval $[\text{-}1, 3]$. 
+The function is a polynomial, so it is differentiable everywhere.  
+We solve the equation $f'(x) =0$.  This becomes $x^3 -6x^2 + 8x = 0$ and the solutions are $x=0, x=2$ and $x=4$ (verify). 
+Noting that $x = 4$ is not in the interval $[\text{-}1,3]$ we see that 
+$f(x)$ has two critical numbers in the interval, namely $x = 0$ and $x = 2$.
+The absolute extremes occur at either the endpoints, $x=\text{-}1, 3$ or the critical numbers $x = 0,2$.  
+Plugging these special values into the original function $f(x)$ yields:
+\begin{eqnarray*}
+f(\text{-}1) &=& \frac14(\text{-}1)^4 -2(\text{-}1)^3 + 4(\text{-}1)^2 - 3 = \frac14 + 2 + 4 - 3 = \frac{13}{4}\\
+f(0) &=& \frac14 (0)^4 -2(0)^3 + 4(0)^2 - 3 = \text{-}3\\
+f(2) &=& \frac14(2)^4 -2(2)^3 + 4(2)^2 - 3 = 4 -8 + 16 -3 = 9\\
+f(3) &=& \frac14(3)^4 -2(3)^3 + 4(3)^2 - 3 = \frac{81}{4} - 54 + 36 - 3 = \text{-}\frac34.
+\end{eqnarray*}
+
+
+From this data we conclude that the absolute maximum of $f(x)$ on the interval is $9$ occurring 
+at the critical number $x = 2$ and the absolute minimum of $f(x)$ in the interval is $\text{-}3$
+occurring at the critical number $x = 0$.
+
+
+\item[CI4.] Find the absolute max and the absolute min of $f(x) = xe^{3x}$ on the closed interval $[-1, 0]$.
+
+Solution:  First, we find the critical numbers of $f(x)$ in the 
+interval $[-1, 0]$.   
+We solve the equation $f'(x) =0$.  
+Using the product rule and the chain rule, we have $f'(x) = 1\cdot e^{3x} + x\cdot e^{3x} \cdot 3$ which simplifies to $(3x+1)e^{3x}$. 
+Thus we need to solve $(3x+1)e^{3x} = 0$ (verify) and the only solution is $x=\text{-}1/3$ (verify).
+Hence $f(x)$ has one critical number in the interval and it occurs at $x = -1/3$.
+The absolute extremes occur at either the endpoints, $x=-1, 2$ or the critical number $x = -1/3$.  
+Plugging these special values into the original function $f(x)$ yields:
+\begin{eqnarray*}
+f(-1) &=& (-1)e^{-3} = -\frac{1}{e^3} \approx -0.0498\\
+f(-1/3) &=& (-1/3)e^{-1} = -\frac{1}{3e} \approx -0.1226\\
+f(0) &=& 0.
+\end{eqnarray*}
+From this data we conclude that the absolute maximum of $f(x)$ on the interval is $0$ occurring 
+at the right endpoint $x = 0$ and the absolute minimum of $f(x)$ in the interval is $-\frac{1}{3e}$
+occurring at the critical number $x = -1/3$.
+
+
+
+\end{description}
+
+\begin{problem}
+Find the absolute maximum and the absolute minimum of $f(x) = xe^{2x}$
+on the closed interval $[-3, 2]$.
+\begin{hint}
+$f'(x) = (2x+1)e^{2x}$
+\end{hint}
+
+The absolute maximum is $\answer{2e^4}$ and it occurs at $x = \answer{2}.$\\
+The absolute minimum is $\answer{-1/(2e)}$ and it occurs at $x = \answer{-1/2}.$ 
+\end{problem}
+
+\begin{problem}
+Find the absolute maximum and the absolute minimum of $f(x) = \frac{3x}{x^2+4}$
+on the closed interval $[0, 4]$.
+
+\begin{hint}
+use the quotient rule to find $f'(x)$
+\end{hint}
+\begin{hint}
+$f'(x) = \frac{12-3x^2}{(x^2+4)^2}$
+\end{hint}
+
+The absolute maximum is $\answer{3/4}$ and it occurs at $x = \answer{2}.$\\
+The absolute minimum is $\answer{0}$ and it occurs at $x = \answer{0}.$\\
+Note that the critical number $x= -2$ is not in the interval $[0, 4]$. 
+\end{problem}
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a detailed, lecture style video on the Extreme Value Theorem:}
+\youtube{tBRx9Q02wxs}
+\end{foldable}
+\end{center}
+
+
+
+\end{document}
+
+\section{Critical Numbers}
+
+Critical numbers come in two main types, and keep in mind when considering the following definition 
+that either type could describe a local extreme.  Here is the definition of {\bf critical number}.  
+
+\begin{tcolorbox}
+\begin{center}
+{\bf Definition of Critical Number}
+\end{center}
+A critical number for the function $f(x)$ is a number 
+$x_0$ in the domain of the function $f(x)$ (i.e. $f(x_0)$ is defined) such that either
+
+\[f'(x_0) = 0\]
+
+%\center{or}
+
+%\[f'(x_0) \;\; \textbox{is undefined}.\]
+\end{tcolorbox}
+
+
+In other words, at a critical number $x_0$ we have  $f(x_0)$ exists and either 
+$f'(x_0) = 0$ (think "horizontal tangent line") or $f(x)$ is not differentiable at $x_0$ (think "corner point").
+
+An example of the first type is $x_0 = 0$ for the function $f(x) = x^2$ since $f(0)$ is defined (it equals 0)
+and $f'(0) = 0$ since $f'(x) = 2x$.
+
+An example of the second type is $x_0 = 0$ for the function $f(x) = |x|$ since $f(0)$ is defined (it equals 0)
+and $f'(0)$ is undefined since $f(x) = |x|$ has a corner point at $x = 0$ and hence it is not differentiable there.
+
+\begin{description}
+
+\item[CN 1] Find the critical numbers of the function $f(x) = \dfrac{x^3}{3} - \dfrac{x^2}{2} - 6x - 3$.
+We need to compute $f'(x)$.  We have
+\[f'(x) = x^2 - x - 6.\]
+Noting that $f'(x)$ exists for all values of $x$, there are no critical numbers of the second type.
+To find critical numbers of the first type, we solve the equation
+\[f'(x) = 0\]
+for $x$. Geometrically, these are the points where the graph of $f(x)$ has horizontal tangent lines.
+We get
+\[ x^2 - x - 6 =0\]
+\[ (x+2)(x-3) =0\]
+\[x = -2 \;\;\textbox{or} \;\; x = 3.\]
+
+
+\item[CN 2] Find the critical numbers of the function $f(x) = x^2e^{3x}$.
+We need to compute $f'(x)$ using the product and chain rules.  We have
+\[f'(x) = (3x^2 +2x)e^{3x} \;\; \textbox{verify}.\]
+Noting that $f'(x)$ exists for all values of $x$, there are no critical numbers of the second type.
+To find critical numbers of the first type, we solve the equation
+\[f'(x) = 0\]
+for $x$. Geometrically, these are the points where the graph of $f(x)$ has horizontal tangent lines.
+We get
+\[ (3x^2 +2x)e^{3x} =0\]
+\[ x(3x+2)e^{3x} =0\]
+\[x = 0 \;\;\textbox{or} \;\; x = -2/3.\]
+Note that the equation $e^{3x} = 0$ has no solutions since an exponential function is always positive.
+
+
+\item[CN 3] Find the critical numbers of the function $f(x) = \dfrac{x}{x^2 +1}$.
+We need to compute $f'(x)$ using the quotient rule.  We have
+\[f'(x) = \frac{1-x^2}{(x^2+1)^2} \;\; \textbox{verify}.\]
+Noting that $f'(x)$ exists for all values of $x$ (since the denominator is never equal to 0), 
+there are no critical numbers of the second type.
+To find critical numbers of the first type, we solve the equation
+\[f'(x) = 0\]
+for $x$. Geometrically, these are the points where the graph of $f(x)$ has horizontal tangent lines.
+We get
+\[ \frac{1-x^2}{(x^2+1)^2} =0\]
+\[ 1-x^2 =0\]
+\[x = \pm 1.\]
+
+Hence $f(x) = \dfrac{x}{x^2 +1}$ has two critical numbers, and they are both of the first type. 
+They are $-1$ and $1$.
+
+
+\item[CN 4] Find the critical numbers of the function $f(x) = \sqrt[3] x}$.
+We need to compute $f'(x)$.  We have
+\[f'(x) = \frac{1}{3\sqrt x^3} \;\; \textbox{verify}.\]
+In this case, $f'(0)$ is undefined (division by zero). Hence $x=0$ is a critical number {\bf if}
+$f(0)$ is defined.  We can easily check this: $f(0) = \sqrt[3] 0 = 0$, so it is defined and now we can conclude 
+that $x=0$ is a critical number.
+To find critical numbers of the first type, we solve the equation
+\[f'(x) = 0\]
+for $x$. Geometrically, these are the points where the graph of $f(x)$ has horizontal tangent lines.
+We get
+\[ \frac{1}{3\sqrt x^3 =0\]
+\[ 1 =0.\]
+So there are no solutions.  The function has no critical number of the first type.
+
+
+Hence $f(x) = \sqrt[3] x$ has only one critical number, 0, and it is of the second type, 
+where the function is not differentiable. 
+Geometrically, the function $f(x) = \sqrt[3] x$ has a vertical tangent line at the critical number $x = 0$.
+
+
+
+
+In this section, we use the derivative to determine intervals on which a given function is increasing or decreasing.  
+We can then also determine the location of local extremes of the function.
+
+
+
+
+
+
+A function $f(x)$ is called {\bf increasing} on an interval $I$ if given any two numbers, $x_1$ and $x_2$ in $I$ such that 
+$x_1 < x_2$, we have $f(x_1) < f(x_2)$.  For example, the function $x^2$ is increasing on the interval $(0, \infty)$ since if $0 < x_1 < x_2$ then $(x_1)^2 < (x_2)^2$.
+
+Similarly, a function $f(x)$ is called {\bf decreasing} on an interval $I$ if given any two numbers, $x_1$ and $x_2$ in $I$ such that 
+$x_1 < x_2$, we have $f(x_1) > f(x_2)$.  For example, the function $x^2$ is increasing on the interval $(-\infty, 0)$ since if $ x_1 < x_2 < 0$ then $(x_1)^2 > (x_2)^2$.
+
+Theorem:  If $f'(x) > 0$ on an interval $I$, then $f(x)$ is increasing on that interval.
+Proof: Let $x_1$ and $x_2$ be in the interval $I$ with $x_1 < x_2$.  Then since $f$ is differentiable on the closed interval 
+$[x_1, x_2]$, it is also continuous there.  Hence we can apply the MVT on to $f(x)$ on $[x_1, x_2]$ and conclude that
+\[f(x_2) - f(x_1) = f'(c) (x_2 - x_1).\]
+Both factors on the right hand side are positive, hence $f(x_2) - f(x_1)$ is positive and $f(x_2)> f(x_1)$.  Hence $x_1 < x_2$implies $f(x_1)< f(x_2)$ which means that $f(x)$ is increasing on $I$.
+
+Theorem: If $f'(x) < 0$ on an interval $I$, then $f(x)$ is decreasing on that interval.
+The proof is similar to the other case, above.
+
+\begin{description}
+
+\item[ID 1]  Determine intervals on which $f(x) = \dfrac{x^3}{3} - \dfrac{x^2}{2} - 6x + 2$ is increasing and decreasing.
+To determine where $f'$ is either positive or negative, it is usually easier to consider places where $f'(x) = 0$ or 
+$f'(x)$ is undefined. In this example, 
+\[f'(x) = x^2 - x -6\] 
+which exists for all $x$. We solve the equation
+\[f'(x) = x^2 - x -6 = 0\] 
+which yields 
+\[(x+2)(x-3) = 0\] 
+and hence, $x=-2$ or $x=3$.
+These two $x$-values break the real number line into three open intervals: $(-\infty, -2), (-2, 3)$ and $(3, \infty)$.
+On each of these intervals, $f'$ will be either strictly positive or strictly negative.  
+To determine which, we will use test points. For the interval, $(-\infty, -2)$ consider $f'(-3) = (-3)^2 - (-3) -6 = 6 >0$.
+This means that $f'(x) > 0$ for every $x$ value in the interval $(-\infty, -2)$ and by the theorem, 
+$f(x)$ is increasing on this interval.
+
+Next, for the interval $(-2, 3)$, consider $f'(0) = (0)^2 - (0) -6 = -6 <0$. 
+This means that $f'(x) < 0$ for every $x$ value in the interval $(-2, 3)$ and by the theorem, 
+$f(x)$ is decreasing on this interval.
+
+
+Finally, for the interval $(3, \infty)$, consider $f'(4) = (4)^2 - (4) -6 = 10>0$. 
+This means that $f'(x) > 0$ for every $x$ value in the interval $(3, \infty)$ and by the theorem, 
+$f(x)$ is increasing on this interval.
+
+\end{description}
+
+The work that was done in the previous example can actually give us slightly more information about $f(x)$.  We can determine the {\bf local extremes} of $f(x)$.
+
+Definition:  We say that $f(x)$ has a {\bf local maximum} at $x = x_0$ if there is an open interval $I$ containing $x_0$ 
+such that $f(x) \leq f(x_0)$ for all values of $x$ in $I$.  Similarly, we say that $f(x)$ has a 
+{\bf local minimum} at $x = x_0$ if there is an open interval $I$ containing $x_0$ 
+such that $f(x) \geq f(x_0)$ for all values of $x$ in $I$.
+
+First Derivative Test for Local Extremes:  If $f'(x)$ changes sign at a critical number $x_0$, then $f(x)$ has a local 
+extreme at $x=x_0$.  More specifically, if the sign changes from positive to negative then the local extreme is a max and if the sign changes from negative to positive, then the local extreme is a min.
+
+\begin{description}
+
+\item[ID 2]
+In the previous example, we determined that $-2$ and $3$ were critical numbers for the function 
+$f(x) = \dfrac{x^3}{3} - \dfrac{x^2}{2} - 6x + 2$ and that $f(x)$
+was increasing on the interval $(-\infty, -2)$, decreasing on $(-2, 3)$ and increasing on $(3, \infty)$.
+By the First Derivative Test, we can conclude that $f(x)$ has a local maximum at $x = -2$ and a local minimum at $x = 3$.
+
+\item[ID 3]  $f(x) = xe^{-2x}$.
+
+\end{description}

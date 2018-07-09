@@ -1,0 +1,890 @@
+\documentclass{ximera}
+
+
+\input{../preamble}
+
+\outcome{Estimate limits using numerical information}
+
+\title{1.2 Numerical Limits}
+
+\begin{document}
+
+\begin{abstract}
+We find limits using numerical information.
+\end{abstract}
+
+\maketitle
+
+\begin{center}
+\bf{Numerical Limits}
+\end{center}
+
+
+In what follows, functions will be presented using formulas.  
+We will determine the limit of a function by making an appropriate \textbf{table of values}.
+ 
+%In the following problem, the variable $x$ is approaching the 
+%value $3$ from the left-hand side. Meanwhile, 
+%the behavior of the quantity $x^2 + 2$ is of interest.  
+
+
+\begin{example} %example 1
+Determine the following one-sided limit: 
+\[\lim_{x \to 3^{+}} x^2 + 2.\]
+First,  $x \to 3^{+}$ means that $x$ is approaching the number $3$ from the right, so $x > 3$. 
+To represent this numerically, consider the following values for $x$: $3.1, 3.01, 3.001, 3.0001$.
+These numbers are each greater than 3 and they are getting closer to 3.
+ 
+Now, to determine the limit numerically,  we will plug these four values of $x$ into the function $x^2 + 2$ and  
+look for a pattern in the outputs.
+
+Here is the analysis:\\
+If $x = 3.1$ then $x^2 + 2 = 11.61$.\\
+If $x = 3.01$ then $x^2 + 2 = 11.0601$.\\
+If $x = 3.001$ then $x^2 + 2 = 11.006001$.\\
+If $x = 3.001$ then $x^2 + 2 = 11.00060001$.\\
+
+We can summarize this information in a table:
+  
+\[
+%\setlength{\extrarowheight}{5pt}
+\begin{array}{ c | c | c | c | c }
+  x & 3.1 & 3.01 & 3.001 & 3.0001 \\ 
+	\hline
+	x^2 + 2 & 11.61 & 11.0601 & 11.006001 & 11.00060001
+\end{array}
+\]
+
+
+The outputs appear to be approaching the number 11, leading us to conclude that
+
+\[\lim_{x \to 3^+} x^2 + 2 = 11.\] 
+ 
+In this particular example, we could have arrived at the answer by simply plugging the number $x = 3$
+into the function $x^2 + 2$ since $3^2 + 2 = 11$.  
+\end{example}
+
+In general, when \textbf{plugging in} the value that $x$ is approaching yields a number, 
+that number is usually the correct answer.  
+
+
+
+\begin{problem} %problem #1
+Compute the limit by plugging in the terminal value.
+\[
+\lim_{x \to -4} x^2 -3x -1.
+\]
+
+The limit is $\answer{27}$.
+\end{problem}
+
+We now turn our attention to examples where the shortcut of ``plugging in'' does not work.
+
+\begin{example} %example 1
+Determine the following one-sided limit: 
+\[\lim_{x \to 1^{+}} \frac{x^3 - 1}{x^2 -1}.\]
+If we plug $x = 1$ into the function, we get the fraction  $0/0$, which is called an \textbf{indeterminate form}. 
+This means that the answer can be anything and so a deeper analysis is required.
+
+%In this particular example, we could not have arrived at the answer by simply plugging the number $x = 1$
+%into the function $\frac{x^3 - 1}{x^2-1}$ since $\frac{1^3 - 1}{1^2-1} 
+%= \frac00$, which is not a number. 
+
+Since  $x \to 1^{+}$ we know that $x$ is approaching the number $1$ from the right side, so $x > 1$. 
+To represent this numerically, consider the following values for $x$: $1.1, 1.01, 1.001, 1.0001$.
+These numbers are each greater than 1 and they are getting closer to 1.
+ 
+To determine the limit numerically,  we will plug these four values of $x$ into the function $\frac{x^3 - 1}{x^2-1}$ and  
+look for a pattern in the outputs.
+
+Here is the analysis:\\
+If $x = 1.1$ then $\frac{x^3 - 1}{x^2-1}= 1.57619$.\\
+If $x = 1.01$ then $\frac{x^3 - 1}{x^2-1} = 1.507512$.\\
+If $x = 1.001$ then $\frac{x^3 - 1}{x^2-1}= 1.500751$.\\
+If $x = 1.0001$ then $\frac{x^3 - 1}{x^2-1}= 1.5000750$.\\
+If $x = 1.00001$ then $\frac{x^3 - 1}{x^2-1}= 1.5000075$.\\
+
+We can summarize this information in a table:
+  
+\[
+%\setlength{\extrarowheight}{5pt}
+\begin{array}{ c | c | c | c | c | c}
+  x & 1.1 & 1.01 & 1.001 & 1.0001 & 1.00001\\ 
+	\hline
+	\frac{x^3 - 1}{x^2-1} & 1.57619 & 1.507512 & 1.500751 & 1.500075 & 1.5000075
+\end{array}
+\]
+
+
+The outputs appear to be approaching the number 1.5, leading us to conclude that
+
+\[\lim_{x \to 1^+} \frac{x^3 - 1}{x^2-1} = 1.5.\] 
+ 
+ 
+\end{example}
+
+
+\begin{problem} %problem #2
+Fill in the table below with 5 decimal places of accuracy and use it to find the limit:
+\[\lim_{x \to 2^+} \frac{x^3 - 8}{x^2 - 4}.\]
+
+\begin{prompt}
+\begin{center}
+\[
+\begin{array}{ c | c | c }
+  x & 2.1 & 2.01   \\ 
+	\hline 
+	 \frac{x^3 - 8}{x^2 - 4} & \answer{3.07561} & \answer{3.00751} 
+\end{array}
+\]
+\[
+\begin{array}{ c | c | c  }
+  x  & 2.001 & 2.0001 \\ 
+	\hline 
+	 \frac{x^3 - 8}{x^2 - 4}  & \answer{3.00075} & \answer{3.00008}
+\end{array}
+\]
+\end{center}
+Now determine the limit:
+\[
+\lim_{x \to 2^+} \frac{x^3 - 8}{x^2 - 4} = \answer[given]{3}
+\]
+\end{prompt}
+\end{problem}
+
+
+\begin{example} %example 2
+Compute the following one-sided limit: 
+\[\lim_{x \to 3^{-}} \frac{|x-3|}{x-3}.\]
+In this limit, $x$ is approaching $3$ from the left, so $x<3$. 
+We therefore consider the following numerical values for $x$: $2.9, 2.99, 2.999, 2.9999$.
+These values are all less than three and they are getting closer to $3$.
+Plugging these values into the function $|x-3|/(x-3)$ yields the
+following table of values: 
+
+  
+\[
+%\setlength{\extrarowheight}{5pt}
+\begin{array}{ c | c | c | c | c }
+  x & 2.9 & 2.99 & 2.999 & 2.9999 \\ 
+	\hline
+	 \frac{|x-3|}{x-3} & -1 & -1 & -1 & -1  
+\end{array}
+\]
+
+The values of the function are are all equal to $-1$, 
+and so we can conclude that 
+\[\lim_{x \to 3^{-}} \frac{|x-3|}{x-3} = -1.\]
+It should be noticed that the shortcut of plugging in $x=3$ yields the 
+meaningless \textbf{indeterminate form} $\frac00$.\\
+\end{example}
+
+
+
+\begin{problem} %problem #2
+Fill in the table below with 5 decimal places of accuracy and use it to find the limit:
+\[\lim_{x \to -3^-} \frac{2x+6}{|x+3|}.\]
+
+\begin{prompt}
+\begin{center}
+\[
+\begin{array}{ c | c | c }
+  x & -3.1 & -3.01   \\ 
+	\hline 
+	 \frac{2x+6}{|x+3|} & \answer{-2} & \answer{-2} 
+\end{array}
+\]
+\[
+\begin{array}{ c | c | c  }
+  x  & -3.001 & -3.0001 \\ 
+	\hline 
+	 \frac{2x+6}{|x+3|}  & \answer{-2} & \answer{-2}
+\end{array}
+\]
+\end{center}
+Now determine the limit:
+\[
+\lim_{x \to -3^-} \frac{2x+6}{|x+3|} = \answer[given]{-2}
+\]
+\end{prompt}
+\end{problem}
+
+
+The next example comes from solving a tangent line problem.
+
+
+
+\begin{example} %example 3
+Compute the following limit:
+\[\lim_{x \to 0^{+}} \frac{e^x-1}{x}.\]
+In this example, $x$ is near $0$ and $x>0$.  The values of $x$ we will use to 
+generate a table of values are: $0.1, 0.01, 0.001$ and $0.0001.$
+
+\[
+%\setlength{\extrarowheight}{5pt}
+\begin{array}{ c | c | c | c | c }
+  x & 0.1 & 0.01  & 0.001 & 0.0001 \\ 
+	\hline
+	 \frac{e^x - 1}{x} & 1.052 & 1.005 & 1.0005 & 1.00005
+\end{array}
+\]
+
+Based on the numerical information provided in the table above, we conclude that 
+
+\[\lim_{x \to 0^+} \frac{e^x - 1}{x} = 1.\]
+
+
+Observe that plugging $x=0$ into the 
+function $\displaystyle{f(x)= \frac{e^x -1}{x}}$ yields the indeterminate form $\frac{0}{0}$, which is not
+the answer we sought.
+
+\end{example}
+
+
+\begin{problem} %problem #3a
+Fill in the table below with 5 decimal places of accuracy and use it to find the limit:
+\[\lim_{x \to 0^-} \frac{e^x - 1}{x}.\]
+
+\begin{prompt}
+\begin{center}
+\[
+\begin{array}{ c | c | c }
+  x & -0.1 & -0.01   \\ 
+	\hline 
+	 \frac{e^x - 1}{x} & \answer{0.95163} & \answer{0.99502} 
+\end{array}
+\]
+\[
+\begin{array}{ c | c | c  }
+  x  & -0.001 & -0.0001 \\ 
+	\hline 
+	 \frac{e^x - 1}{x}  & \answer{0.9995} & \answer{0.99995}
+\end{array}
+\]
+\end{center}
+Now determine the limit:
+\[
+\lim_{x \to 0^-} \frac{e^x - 1}{x} = \answer[given]{1}
+\]
+\end{prompt}
+
+Based on the example above and the result of this problem, determine the two-sided limit:
+\[
+\lim_{x \to 0} \frac{e^x - 1}{x}.
+\]
+
+The limit is (DNE is a possibility) $\answer{1}$
+
+\end{problem}
+
+
+\begin{problem} %problem #3a
+Fill in the table below with 5 decimal places of accuracy and use it to find the limit:
+\[\lim_{x \to 0^+} \frac{e^{2x} - 1}{x}.\]
+
+\begin{prompt}
+\begin{center}
+\[
+\begin{array}{ c | c | c }
+  x & 0.1 & 0.01   \\ 
+	\hline 
+	 \frac{e^{2x} - 1}{x} & \answer{2.21403} & \answer{2.02013} 
+\end{array}
+\]
+\[
+\begin{array}{ c | c | c  }
+  x  & 0.001 & 0.0001 \\ 
+	\hline 
+	 \frac{e^{2x} - 1}{x}  & \answer{2.002} & \answer{2.0002}
+\end{array}
+\]
+\end{center}
+Now determine the limit:
+\[
+\lim_{x \to 0^+} \frac{e^{2x} - 1}{x} = \answer[given]{2}
+\]
+\end{prompt}
+\end{problem}
+
+
+
+\begin{example} %example 4
+Compute the following limit: 
+\[\lim_{x \to 0^+} \frac{\sin(x)}{x}.\]
+
+%This is a two-sided limit.  We begin be computing each of the corresponding one-sided limits.
+First, note that the shortcut of plugging $x=0$ into the 
+function $\displaystyle{f(x)= \frac{\sin(x)}{x}}$ yields the indeterminate form $\frac{0}{0}$.\\
+Hence, to compute this one-sided limit, we consider the following values for $x$: $0.1, 0.01, 0.001$ and $0.0001$.
+Plugging these values into the function, we generate the following table of values:
+
+\[
+%\setlength{\extrarowheight}{5pt}
+\begin{array}{ c | c | c | c | c }
+  x & 0.1 & 0.01  & 0.001 & 0.0001 \\ 
+	\hline 
+	 \frac{\sin(x)}{x} & 0.9983 & 0.99998 & 0.9999998 & 0.999999998
+\end{array}
+\]  
+
+Based on this numerical evidence, 
+it would be reasonable to guess that 
+\[\lim_{x \to 0^{+}} \frac{\sin(x)}{x} = 1.\]
+
+%To compute the left side limit, we can consider the 
+%following values for $x$: $-0.1, -0.01, -0.001$ and $-0.0001$.
+
+%However, we can also make the following observation about the sine function:
+%\[\sin(-x) = -\sin(x),\]
+%which is to say that the sine is an \textbf{odd function}.
+
+%As a result, we have the following
+
+%\[\frac{\sin(-x)}{-x} = \frac{-\sin(x)}{-x} = \frac{\sin(x)}{x},\]
+
+%which means that the suggested negative values for $x$ in the left side limit 
+%will produce exactly the same values 
+%as their positive counterparts that were used in the right side limit.
+
+%Thus,
+%\[[\lim_{x \to 0^{-}} \frac{\sin(x)}{x} =\lim_{x \to 0^{+}} \frac{\sin(x)}{x} = 1.\]
+
+%Moreover, since both one sided limits are the same, we can dispense with the direction and conclude
+
+%\[\lim_{x \to 0} \frac{\sin(x)}{x} = 1.\]
+
+
+
+
+
+\end{example}
+
+	   
+
+\begin{problem} %problem 4a
+Fill in the table below with 5 decimal places of accuracy and use it to find the limit:
+\[\lim_{x \to 0^-} \frac{\sin(x)}{x}.\]
+
+\begin{prompt}
+\begin{center}
+\[
+\begin{array}{ c | c | c }
+  x & -0.1 & -0.01   \\ 
+	\hline 
+	 \frac{\sin(x)}{x} & \answer{0.9983} & \answer{0.99998} 
+\end{array}
+\]
+\[
+\begin{array}{ c | c | c  }
+  x  & -0.001 & -0.0001 \\ 
+	\hline 
+	 \frac{\sin(x)}{x}  & \answer{0.999998} & \answer{0.9999998}
+\end{array}
+\]
+\end{center}
+Now determine the limit:
+\[
+\lim_{x \to 0^-} \frac{\sin(x)}{x} = \answer[given]{1}
+\]
+\end{prompt}
+
+Based on the example above and the result of this problem, determine the two-sided limit:
+\[
+\lim_{x \to 0} \frac{\sin(x)}{x}.
+\]
+
+The limit is (DNE is a possibility) $\answer{1}$
+\end{problem}
+
+
+
+\begin{problem} %problem 4b
+Fill in the table below with 5 decimal places of accuracy and use it to find the limit:
+\[\lim_{x \to 0^+} \frac{\sin(3x)}{x}.\]
+
+\begin{prompt}
+\begin{center}
+\[
+\begin{array}{ c | c | c }
+  x & 0.1 & 0.01   \\ 
+	\hline 
+	 \frac{\sin(3x)}{x} & \answer{2.9552} & \answer{2.99955} 
+\end{array}
+\]
+\[
+\begin{array}{ c | c | c  }
+  x  & 0.001 & 0.0001 \\ 
+	\hline 
+	 \frac{\sin(3x)}{x}  & \answer{3} & \answer{3}
+\end{array}
+\]
+\end{center}
+Now determine the limit:
+\[
+\lim_{x \to 0^+} \frac{\sin(3x)}{x} = \answer[given]{3}
+\]
+\end{prompt}
+\end{problem}
+
+
+
+\begin{example} %example 5
+Consider the limit:
+\[\lim_{x \to -2^-} \frac{3}{x+2}. \]
+First we observe that plugging in the value $x=-2$ gives $\frac{3}{0}$ which is undefined. 
+Thus we are required to make a deeper analysis to determine the limit.
+Since the values of $x$ are less than $-2$, we consider values for $x$ such as 
+$-2.1, -2.01, -2.001,$ and $-2.0001$ to make the following table of values:\\
+
+\[
+%\setlength{\extrarowheight}{5pt}
+\begin{array}{ c | c | c | c | c| c| c}
+  x & -2.1 & -2.01 & -2.001 & -2.0001 & -2.00001 & -2.000001\\ 
+	\hline  
+	 \frac{3}{x+2} & -30 & -300 & -3,000 & -30,000 & -300,000 & -3,000,000
+\end{array}
+\] 
+
+The numerical evidence suggests that as $x$ approaches $-2$ from the left, 
+the values of $f(x) = \frac{2}{x-3}$ are decreasing without bound. We conclude that 
+
+\[\lim_{x \to -2^-} \frac{3}{x+2} =  -\infty. \]
+
+This result has geometric significance.  
+It means that the line $x=-2$ is a vertical asymptote for the graph of the function $f(x) = \frac{3}{x+2}.$
+\end{example}
+
+
+
+\begin{problem} %problem 5
+Fill in the table below and use it to find the limit:
+\[\lim_{x \to 3^+} \frac{x}{x-3}.\]
+
+\begin{prompt}
+\begin{center}
+\[
+\begin{array}{ c | c | c }
+  x & 3.1 & 3.01   \\ 
+	\hline 
+	 \frac{x}{x-3} & \answer{31} & \answer{301} 
+\end{array}
+\]
+\[
+\begin{array}{ c | c | c  }
+  x  & 3.001 & 3.0001 \\ 
+	\hline 
+	 \frac{x}{x-3}  & \answer{3001} & \answer{30001}
+\end{array}
+\]
+\end{center}
+Now determine the limit (type infinity for $\infty$ and -infinity for $-\infty$):
+\[
+\lim_{x \to 3^+} \frac{x}{x-3} = \answer[given]{\infty}
+\]
+\end{prompt}
+\end{problem}
+
+
+\begin{example} %example 6
+Consider the limit:
+\[\lim_{x \to \frac{\pi}{2}^-} \tan(x). \]
+Since
+\[\tan(x) = \frac{\sin(x)}{\cos(x)},\]
+\[\sin\big(\frac{\pi}{2}\big) = 1 \ \text{and} \ \cos\big(\frac{\pi}{2}\big) = 0\]
+we have
+ \[\tan\big(\frac{\pi}{2}\big) = \frac{1}{0}\]
+which is undefined, so a deeper analysis is required to determine the limit.
+To understand the behavior of the tangent function for values of $x$ near $\frac{\pi}{2}$, 
+use a calculator to make a table of values noting that $\frac{\pi}{2} \approx 1.570796327$.\\
+
+\[
+%\setlength{\extrarowheight}{5pt}
+\begin{array}{ c | c | c | c | c | c}
+  x & 1.5 & 1.57 & 1.5707  & 1.57079 & 1.570796 \\ 
+	\hline
+  \tan(x) & 14.101 & 1,255.77 & 10,381.33 & 158,057.91  & 3,060,023.31 
+\end{array}
+\] 
+
+The numerical evidence suggests that as $x$ approaches $\frac{\pi}{2}$ from the left, 
+the values of $f(x) = \tan(x)$ are 
+increasing without bound.
+Therefore, we are led to conclude that 
+
+\[\lim_{x \to \frac{\pi}{2}^-} \tan(x) = \infty. \]
+
+This result has geometric significance.  It means that the graph of the function $f(x) = \tan(x)$ has a 
+vertical asymptote at $x=\frac{\pi}{2}.$
+\end{example}
+
+
+
+\begin{problem} %problem 6
+Fill in the table below with two decimal places of accuracy and use it to find the limit:
+\[\lim_{x \to \frac{\pi}{2}^+} \tan(x).\]
+
+\begin{prompt}
+\begin{center}
+\[
+\begin{array}{ c | c | c }
+  x & 1.6 & 1.58   \\ 
+	\hline 
+	 \tan(x) & \answer{-34.23} & \answer{-108.65} 
+\end{array}
+\]
+\[
+\begin{array}{ c | c | c  }
+  x  & 1.571 & 1.5708 \\ 
+	\hline 
+	 \tan(x)  & \answer{-4909.83} & \answer{-272241.81}
+\end{array}
+\]
+\end{center}
+Now determine the limit (type infinity for $\infty$ and -infinity for $-\infty$):
+\[
+\lim_{x \to \frac{\pi}{2}^+} \tan(x) = \answer[given]{-\infty}
+\]
+\end{prompt}
+\end{problem}
+
+In the following examples, we discuss limits as the input approaches either $\infty$ or $-\infty$.
+If $x \to \infty$ then $x$ is \textbf{increasing without bound} and we can use very large numbers for $x$ in our table.
+Similarly, for $x \to -\infty$.
+
+\begin{example} %example 6.5
+Consider the limit:
+\[\lim_{x \to \infty} \frac{3x -2}{x + 3}. \]
+
+Since $x \to \infty$, we will use powers of ten to generate large values of $x$ when constructing 
+our table: 
+%$100,\; 1{,}000 ,\; 10{,}000,\; 100{,}000$ and $1{,}000{,}000$
+
+\[
+%\setlength{\extrarowheight}{5pt}
+\begin{array}{ c | c | c | c | c|c}
+  x & 100 & 1{,}000 & 10{,}000 & 100{,}000 & 1{,}000{,}000\\ 
+	\hline
+	 \frac{3x-2}{x+3} & 2.8932 & 2.9890 & 2.9989 & 2.99989 & 2.999989
+	\end{array}
+\] 
+
+The numerical evidence suggests that as $x$ approaches $\infty$, that is, 
+as $x$ increases without bound, the values of $\frac{3x -2}{x +3}$ are approaching the number $3$. Hence,
+
+
+
+\[\lim_{x \to \infty} \frac{3x -2}{x +3} = 3. \]
+
+This result has geometric significance.  It means that the line $y = 3$ is a horizontal 
+asymptote for the graph of the function $f(x) = \frac{3x -2}{x +3}.$
+\end{example}
+
+
+\begin{example} %example 7
+Consider the limit:
+\[\lim_{x \to -\infty} \frac{2x + 1}{3x -4}. \]
+
+Since $x \to -\infty$, we will use negative powers of ten when constructing 
+our table: 
+%$-100,\; -1{,}000,\; -10{,}000 , \; -100{,}000$ and $-1{,}000{,}000.$
+
+\[
+%\setlength{\extrarowheight}{5pt}
+\begin{array}{ c | c | c | c | c |c}
+  x & -100 & -1{,}000 & -10{,}000 & -100{,}000 & -1{,}000{,}000\\ 
+	\hline
+	 \frac{2x + 1}{3x -4} &  .6546 & .6654 & .6665 & .66665  & .666665
+	\end{array}
+\] 
+
+The numerical evidence suggests that as $x$ approaches $-\infty$, that is, 
+as $x$ decreases without bound, the values of $\frac{2x + 1}{3x -4}$ are approaching 
+the decimal $0.6666...$ which we recognize as the fraction $2/3$.  Hence,
+
+
+
+\[\lim_{x \to -\infty} \frac{2x + 1}{3x -4} = \frac{2}{3}. \]
+
+This result has geometric significance.  It means that the line $y = 2/3$ is a horizontal 
+asymptote for the graph of the function $f(x) = \frac{2x + 1}{3x -4}.$
+\end{example}
+
+
+\begin{problem} %problem 7
+Fill in the table below using fractions and use it to find the limit:
+\[\lim_{x \to \infty} \frac{3x-2}{5x+6}.\]
+
+\begin{prompt}
+\begin{center}
+\[
+\begin{array}{ c | c | c }
+  x & 10 & 100   \\ 
+	\hline 
+	 \frac{3x-2}{5x+6} & \answer{28/56} & \answer{298/506} 
+\end{array}
+\]
+\[
+\begin{array}{ c | c | c  }
+  x  & 1000 & 10000 \\ 
+	\hline 
+	 \frac{3x-2}{5x+6}  & \answer{2998/5006} & \answer{29998/50006}
+\end{array}
+\]
+\end{center}
+Now determine the limit:
+\[
+\lim_{x \to \infty} \frac{3x-2}{5x+6} = \answer[given]{3/5}
+\]
+\end{prompt}
+\end{problem}
+
+
+\begin{center}
+{\bf Compound Interest and the Number ${\bf e}$}
+\end{center}
+\begin{example}
+We now consider a famous example involving compound interest and the number $e$.
+The compound interest formula says 
+\[ A = P\left(1+\frac{r}{n}\right)^{nt} \]
+where $A$ represents the amount of money resulting from investing a principle $P$ at an annual rate $r$ with 
+the interest compounded $n$ times per year for $t$ years.  A basic fact about compound interest is that the more frequently 
+the interest is compounded, the faster the amount of money will grow. 
+So, a natural question is ``what happens as $n \to \infty?$''
+To answer this question, we will simplify matters by letting the principle, $P$ be $1$, the interest rate be $100\%$
+(so that $r = 1$) and $t = 1$ year. In this case, 
+\[A = \left(1+\frac{1}{n}\right)^n,\]
+
+and we will try to find
+\[\lim_{n \to \infty} \left(1+\frac{1}{n}\right)^n.\]
+
+To do this, let's construct a table of values with large numbers for $n$:
+
+
+\[
+%\setlength{\extrarowheight}{5pt}
+\begin{array}{ c | c | c | c | c|c}
+  n & 100 & 1,000 & 10,000 & 100,000 & 1,000,000\\ 
+	\hline
+	A & 2.70481 & 2.71692 & 2.71815 & 2.71827 & 2.71828
+	\end{array}
+\] 
+
+What we can see from this table is that even with the number of compounding periods being as large as 1,000,000 per year, the principle of \$1 will not even grow to \$3 by the end of the year.  So there appears to be a limit to the effect of increasing the number of compounding periods on the amount of money generated by compound interest at a rate of 100\%. This limit is the famous number $e$ that we see in the exponential function $e^x$ and as the base of the natural logarithm, $\ln x$.
+
+In conclusion, we have discovered the famous limit
+
+\[\lim_{n \to \infty} \left(1+\frac{1}{n}\right)^n = e.\]
+
+This limit is one way to define the number $e$.
+
+This number was coined by the renowned Swiss mathematician Leonhard Euler in the eighteenth century. He used the symbol $e$ to stand for "exponential" and to fifteen decimal places, the (irrational) number $e$ is:
+
+\[ e = 2.718281828459045... \]
+
+\end{example}
+
+\begin{problem} %problem 7
+Fill in the table below with 5 decimal places of accuracy and use it to find the limit:
+\[\lim_{x \to -\infty} \left(1+\frac{1}{x}\right)^x.\]
+
+\begin{prompt}
+\begin{center}
+\[
+\begin{array}{ c | c | c }
+  x & -100 & -1,000   \\ 
+	\hline 
+	 \left(1+\frac{1}{x}\right)^x & \answer{2.73200} & \answer{2.71964} 
+\end{array}
+\]
+\[
+\begin{array}{ c | c | c  }
+  x  & -10,000 & -100,000 \\ 
+	\hline 
+	 (1+\frac{1}{x})^x  & \answer{2.71842} & \answer{2.71830}
+\end{array}
+\]
+\end{center}
+Now determine the limit (the answer is a well known number, denoted by a single letter):
+\[
+\lim_{x \to -\infty} (1+\frac{1}{x})^x = \answer[given]{e}
+\]
+\end{prompt}
+\end{problem}
+
+\begin{center}
+{\bf Rectilinear Motion and Instantaneous Velocity}
+\end{center}
+
+\textbf{Rectilinear motion} is motion along a straight line. We will consider an object to be in motion along a number line to keep track of its location.
+We let the function $s(t)$ denote the \textbf{position} of the object at time $t$. Then the displacement of the object over a time interval,
+$[t_1, t_2]$ is given by $s(t_2) - s(t_1)$.  If we divide the displacement by the duration of the time interval, we get the 
+\textbf{average velocity} of the object over that time interval:
+\[
+\text{average velocity} = \frac{s(t_2) - s(t_1)}{t_2 -t_1}.
+\]
+
+\begin{problem}
+Suppose the position of a falling object is given by $s(t) = 100-16t^2$ where $t$ is measured in seconds and $s(t)$ is measured in feet.
+Find the average velocity of the object over the time interval $[1.5, 2]$.\\
+
+\begin{hint}
+A negative velocity indicates that the object is falling.
+\end{hint}
+
+The average velocity is $\answer{-56}$ ft/sec.
+\end{problem}
+
+
+
+Our goal is to determine the \textbf{instantaneous velocity} of the 
+object at a given time.  To do this, we will consider time intervals of shorter and shorter duration.
+
+
+\begin{example}
+Suppose the position of a falling object is given by $s(t) = 100-16t^2$ where $t$ is measured in seconds and $s(t)$ is measured in feet.
+Find the instantaneous velocity of the object at time $t = 2$ seconds.\\
+The average velocity of the object over the time interval $[t,2]$ is given by 
+\[
+\text{ave vel} = \frac{s(2)-s(t)}{2-t} = \frac{36-s(t)}{2-t},
+\]
+since $s(2) = 100 - 16(2^2) = 36$ feet.
+To obtain the instantaneous velocity, we will look for a pattern in the average velocity as the time interval $[t, 2]$ gets shorter and shorter:
+\[
+\begin{array}{ c | c | c | c | c }
+ t & 1.9 & 1.99  & 1.999 & 1.9999 \\ 
+	\hline 
+	 \text{ave vel} & -62.4 & -63.84 & -63.984 & -63.9984
+\end{array}
+\]  
+It appears that as the average velocities are approaching the value $-64$ ft/sec, as the time intervals 
+get shorter and shorter (negative velocity just means the object is falling).  Hence we conclude that the instantaneous velocity at time $t = 2$ seconds is $-64$ ft/sec.
+Moreover, in terms of limits, the instantaneous velocity is a limit of average velocities:
+\[\text{inst vel} = \lim_{t\to 2} \frac{s(2) - s(t)}{2-t}.\]
+Technically, in this example we only considered the left hand limit, $t\to 2^-$.
+In the next problem, we will verify that the right hand limit gives the same value. 
+\end{example}
+
+\begin{problem}
+Suppose the position of a falling object is given by $s(t) = 100-16t^2$ where $t$ is measured in seconds and $s(t)$ is measured in feet.
+Find the value of the limit
+\[
+\lim_{t\to 2^+} \frac{s(t) - s(2)}{t-2},
+\]
+by filling in the table below.
+
+\begin{prompt}
+\begin{center}
+\[
+\begin{array}{ c | c | c }
+  t & 2.1 & 2.01   \\ 
+	\hline 
+	 \text{ave vel} & \answer{-65.6} & \answer{-64.16} 
+\end{array}
+\]
+\[
+\begin{array}{ c | c | c  }
+  t  & 2.001 & 2.0001 \\ 
+	\hline 
+	 \text{ave vel} & \answer{-64.016} & \answer{-64.0016}
+\end{array}
+\]
+\end{center}
+Now determine the instantaneous velocity as a limit of the average velocities:
+\[
+\lim_{t\to 2^+} \frac{s(t) - s(2)}{t-2} = \answer[given]{-64} \text{ft/sec}.
+\]
+\end{prompt}
+
+
+
+\end{problem}
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a detailed, lecture style video on numerical limits:}
+\youtube{YX-gSPKPCTU}
+\end{foldable}
+\end{center}
+
+
+\end{document}
+
+
+\begin{example}
+Given that the position of an object moving along a straight line is given by $s(t) = t^2 + t$ (feet), 
+find the instantaneous velocity of the object at time $t = 2$ (seconds). \\
+To accomplish this, we will compute the average velocity of the object over the time intervals $[2, 2.1], [2, 2.01],[2, 2.001]$ and $[2, 2.0001]$.
+If we use the variable $h$ to denote the duration of the time interval, then the values of $h$ are $0.1, 0.01, 0.001$ and $0.0001$ seconds, and we find the instantaneous velocity by letting $h \to 0$. In effect, we will be computing the following limit numerically:
+\[
+\lim_{h \to 0^+} \frac{s(2+h) - s(2)}{h}.
+\]
+As in the previous examples, we will set up a table of values. Note that $s(2) = 2^2 + 2 = 6$.
+
+\[
+%\setlength{\extrarowheight}{5pt}
+\begin{array}{ c | c | c | c | c }
+ h & 0.1 & 0.01  & 0.001 & 0.0001 \\ 
+	\hline 
+	 \frac{s(2+h) - s(2)}{h} & 5.1 & 5.01 & 5.001 & 5.0001
+\end{array}
+\]  
+
+From this numerical information, it seems clear that
+
+\[
+\lim_{h \to 0^+} \frac{s(2+h) - s(2)}{h} = 5
+\]
+
+and hence the instantaneous velocity of the object at time $t = 2$ is 5 ft/sec. 
+It should be noted that the instantaneous velocity could have also been obtained by using a left hand limit, i.e., with $h \to 0^-$.
+\end{example}
+
+\begin{problem}
+Given that the position of an object moving along a straight line is given by $s(t) = t^2 + 2t$ (feet), 
+find the instantaneous velocity of the object at time $t = 3$ (seconds). \\
+
+Begin by filling in the following table of average velocities over time intervals of the form $[3, 3+h]$.
+Note that $h$ represents the duration of the time interval.
+\begin{prompt}
+\begin{center}
+\[
+\begin{array}{ c | c | c }
+  h & 0.1 & 0.01   \\ 
+	\hline 
+	 \frac{s(3+h) - s(3)}{h} & \answer{8.1} & \answer{8.01} 
+\end{array}
+\]
+\[
+\begin{array}{ c | c | c  }
+  h  & 0.001 & 0.0001 \\ 
+	\hline 
+	 \frac{s(3+h) - s(3)}{h} & \answer{8.001} & \answer{8.0001}
+\end{array}
+\]
+\end{center}
+Now determine the instantaneous velocity as a limit of the average velocities:
+\[
+\lim_{h \to 0^+} \frac{s(3+h) - s(3)}{h} = \answer[given]{8} \text{ft/sec}
+\]
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Fill in the truth table below using your amazing logic skillz!
+
+\begin{prompt}
+\begin{center}
+\[
+\begin{array}{c|c|c|c}
+		p & q & p \implies q & p \vee (p \implies q) \\
+		\hline
+		T & T & T & \answer{T} \\
+		T & F & F & \answer{T} \\
+		F & T & T & \answer{T} \\
+		F & F & T & \answer{T}
+	\end{array}
+    \]
+\end{center}
+\end{prompt}
+\end{problem}

@@ -1,0 +1,1167 @@
+\documentclass{ximera}
+
+
+\input{../preamble}
+
+\outcome{Compute an indefinite integral}
+
+\title{4.1 Indefinite Integrals}
+
+
+\begin{document}
+
+\begin{abstract}
+In this section we learn to compute general anti-derivatives, also known as indefinite integrals.
+\end{abstract}
+
+\maketitle
+
+\section{Anti-derivatives}
+In a typical differentiation problem, we are given a function $f(x)$ and
+we are asked to compute the derivative, $f'(x)$.
+In a typical \textbf{anti-differentiation} problem, we are given the derivative of a function, $f'(x)$
+and we are asked to compute the original function $f(x)$.  Anti-differentiation is thus the reverse process of differentiation.
+There is a small twist, however as we will see in our first example.
+
+\begin{example}
+Given that $f'(x) = 2x$, find $f(x)$. \\
+By now, we are all familiar with the differentiation formula:
+\[
+\frac{d}{dx} x^2 = 2x,
+\]
+and this leads us the the answer:
+\[
+f(x) = x^2.
+\]
+So, the anti-derivative of $2x$ (with respect to $x$) is $x^2$.
+But wait, notice that the derivative of $f(x) = x^2 + 5$ is also $2x$.
+so $f(x) = x^2 + 5$ is also a solution to this anti-differentiation problem.
+We now recognize that there are actually infinitely many solutions to this problem, 
+because if $C$ is any constant, then
+\[
+\frac{d}{dx} \left(x^2 + C\right) = 2x.
+\]
+Thus the answer to the anti-differentiation problem is actually not just a single function but a family of functions each differing by a constant.
+The graph below shows several members of this family.
+\[
+\graph{x^2 - 5, x^2 - 4, x^2 - 3, x^2 - 2, x^2 - 1, x^2, x^2 +1, x^2 +2, x^2 +3, x^2 +4, x^2 +5}
+\]
+
+\end{example}
+
+Anti-differentiation problems arise naturally in projectile motion scenarios.
+\begin{example}
+Suppose the velocity of a projectile is given by the equation $v(t) = 40 - 32t$. Find the position function $s(t)$.\\
+We recall from previous discussions of rectilinear motion, of which projectile motion is a special case, that
+\[
+s'(t) = v(t).
+\]
+Hence to recover $s(t)$ from $v(t)$ as in this problem, we must anti-differentiate $v(t)$.
+Restating the problem in terms of differentiation, we need to find the function $s(t)$ such that $s'(t) = 40 - 32t$.
+Our familiarity with differentiating polynomials leads us to guess
+\[
+s(t) = 40t - 16t^2.
+\]
+We can verify that this is a correct answer by differentiating it:
+\[
+\frac{d}{dt}\left(40t - 16t^2\right) = 40 - 32t.
+\]
+But let us not forget the lesson of the previous example: there is more than one answer.  There answer is a family of functions
+each pair differing by a constant. So a complete solution set to our problem is
+\[
+s(t) = 40t - 16t^2 + C.
+\]
+Noting that the constant in this equation represents the position of the object at time $t = 0$,
+we denote this particular constant as $s_0$, the \textbf{initial position} of the object and we can write our answer as 
+$s(t) = s_0 + 40t - 16t^2$.
+
+
+\end{example}
+
+
+
+
+
+
+We see from the previous example that in order to know the exact position of the object, 
+we need more information than just the velocity function.
+If we were also given the initial position of the object (or the position at any time), 
+then we can find the precise position function.
+We do this in the next example.
+
+\begin{example}
+Suppose the velocity of a projectile (in ft/sec) is given by the equation $v(t) = 40 - 32t$. 
+Find the height of the projectile at time $t = 1.5$ seconds, 
+given that the projectile lands at time $t = 3$ seconds. \\
+
+We recall from previous example that 
+\[
+s(t) = s_0 + 40t - 16t^2.
+\]
+The problem requires us to find $s(1.5)$ and in order to do this, we must first find $s_0$, 
+the initial launch height of the projectile.
+We are given that the object lands after three seconds, so $s(3) = 0$. We can use this to find $s_0$
+by plugging $t=3$ into the position function:
+\[
+s(3) = s_0 + 40(3) - 16(3^2) = 0.
+\]
+Solving the second equation for $s_0$ yields $s_0 = 144 - 120 = 24$ ft.
+Thus the position function is
+\[
+s(t) = 24 + 40t - 16t^2.
+\]
+Finally, we can find the position at time $t=1.5$ seconds
+\[
+s(1.5) = 24 + 40(1.5) - 16(1.5^2) = 24 + 60 - 16(2.25) = 84 - 36 = 48 \; \text{ft}.
+\]
+\end{example}
+
+
+\begin{problem}
+Given $f'(x)$, find the family of anti-derivatives. Don't forget to add $+C$ to your answers.
+\[
+f'(x) = 3x + 5; \;\; f(x) = \answer{3/2x^2 + 5x +C}.
+\]
+\[
+f'(x) = 2\cos(x) - 7\sin(x); \;\; f(x) = \answer{2\sin(x) + 7\cos(x) +C}.
+\]
+\[
+f'(x) = e^{4x}; \;\; f(x) = \answer{1/4e^{4x} +C}.
+\]
+
+\end{problem}
+
+
+
+\begin{problem}
+Find the precise anti-derivatives satisfying the given initial condition:
+\[
+f'(x) = x^3 + x, f(0) = 1;\;\; f(x) = \answer{1/4x^4 + 1/2x^2 + 1}.
+\]
+\[
+f'(x) = 2\sec^2(x), f(\pi/4) = 1; \;\; f(x) = \answer{2\tan(x) - 1}.
+\]
+\[
+f'(x) = 1/x, f(1) = 7/4; \;\; f(x) = \answer{7/4 + \ln(x)}.
+\]
+
+\end{problem}
+
+
+
+\begin{problem}
+Find the height of the projectile at time $t = 2$ seconds if the total time in the air is 5 seconds 
+and the velocity at time $t$ seconds is given in ft/sec as $v(t) = 80-32t$.\\
+The initial height of the projectile is $s_0 = \answer{0}$ft.\\
+The position at time $t$ is given by $s(t) = \answer{80t - 16t^2}$.\\
+The height at time $t = 2$ seconds is $\answer{96}$ft.\\
+\end{problem}
+
+
+
+It turns out that the process of anti-differentiation is directly tied to finding the area under a curve.
+We will study the area problem in detail in an upcoming lesson, but for now, we will learn an important notation that
+is used in the discussion of the area problem.
+
+
+
+\section{The Indefinite Integral}
+
+The \textbf{indefinite integral} is denoted by $\int f(x) \ dx$ and it is read ``the integral of $f(x)$ dx." To compute an indefinite integral we need to 
+find all anti-derivatives, $F(x) + C$ of $f(x)$. Notice the change in the notation from $f'(x)$ and $f(x)$
+to $f(x)$ and $F(x)$. The process of computing an integral is called \textbf{integration} in addition to anti-differentiation.  
+Since any two (continuous) functions that have the same derivative differ by a constant, 
+if we can find one example of a function $F(x)$ whose derivative is $f(x)$, i.e., $F'(x) = f(x)$, then we can write
+\[\int f(x) \ dx = F(x) + C\]
+where C is any constant.  The symbol $\int$ is called the \textbf{integral sign}, 
+the function $f(x)$ is called the \textbf{integrand} and $C$ is called the \textbf{constant of integration}.  
+
+\section{Examples of Basic Indefinite Integrals}
+
+A \textbf{basic indefinite integral} is one that can be computed either by recognizing the integrand as the 
+derivative of a familiar function or by reversing the Power Rule for Derivatives.
+
+
+
+\begin{example} %example 1
+\[
+\int \cos(x) \ dx = \sin(x) + C,
+\]
+because the derivative of $\sin(x)$ is $\cos(x)$.
+
+\end{example}
+
+\begin{problem} %problem 1
+
+\begin{hint}
+\[
+\frac{d}{dx} \cos(x) = -\sin(x)
+\]
+\end{hint}
+\begin{hint}
+\begin{center}
+Do not add the +C to your answer
+\end{center}
+\end{hint}
+
+\[
+\int \sin(x) \ dx =
+\answer[given]{-\cos(x)} \ + C
+\]
+\end{problem}
+
+\begin{problem} %problem 1
+
+\begin{hint}
+\[
+\frac{d}{dx} \sin(3x) = 3\cos(3x)
+\]
+\end{hint}
+\begin{hint}
+The answer is a minor modification of $\sin(3x)$
+\end{hint}
+\begin{hint}
+\begin{center}
+Do not add the +C to your answer
+\end{center}
+\end{hint}
+
+\[
+\int \cos(3x) \ dx =
+\answer[given]{\frac13 \sin(3x)} \ + C
+\]
+\end{problem}
+
+\begin{example} %example 2
+\[
+\int \sec^2(x) \ dx = \tan(x) + C,
+\]
+because the derivative of $\tan(x)$ is $\sec^2(x)$.
+
+\end{example}
+
+\begin{problem} %problem 2
+Compute 
+%\[
+%\int \csc^2(x) \ dx.
+%\]
+
+\begin{hint}
+\[
+\frac{d}{dx} \cot(x) = -\csc^2(x)
+\]
+\end{hint}
+\begin{hint}
+\begin{center}
+Do not add the +C to your answer
+\end{center}
+\end{hint}
+
+\[
+\int \csc^2(x) \ dx =
+\answer[given]{-\cot(x)} \ + C
+\]
+\end{problem}
+
+\begin{problem} %problem 2
+Compute 
+%\[
+%\int \sec^2(4x) \ dx.
+%\]
+
+\begin{hint}
+\[
+\frac{d}{dx} \tan(4x) = 4\sec^2(4x)
+\]
+\end{hint}
+\begin{hint}
+The answer is a minor modification of $\tan(4x)$
+\end{hint}
+\begin{hint}
+\begin{center}
+Do not add the +C to your answer
+\end{center}
+\end{hint}
+
+\[
+\int \sec^2(4x) \ dx =
+\answer[given]{\frac14\tan(4x)} \ + C
+\]
+\end{problem}
+
+\begin{example} %example 3
+\[
+\int \sec(x)\tan(x) \ dx = \sec(x) + C,
+\]
+because the derivative of $\sec(x)$ is $\sec(x)\tan(x)$.
+
+\end{example}
+
+
+\begin{problem} %problem 3
+Compute 
+%\[
+%\int \csc(x)\cot(x) \ dx.
+%\]
+
+\begin{hint}
+\[
+\frac{d}{dx} \csc(x) = -\csc(x)\cot(x)
+\]
+\end{hint}
+\begin{hint}
+\begin{center}
+Do not add the +C to your answer
+\end{center}
+\end{hint}
+
+\[
+\int \csc(x)\cot(x) \ dx =
+\answer[given]{-\csc(x)} \ + C
+\]
+\end{problem}
+
+
+
+\begin{example} %example 4
+\[
+\int e^x \ dx = e^x + C,
+\]
+because the derivative of $e^x$ is $e^x$.
+
+\end{example}
+
+\begin{example} %example 4
+\[
+\int e^{2x} \ dx = \frac12 e^{2x} + C,
+\]
+because the derivative of $e^{2x}$ is $2e^{2x}$, by the chain rule,
+and hence the derivative of $\frac12 e^{2x}$ is $e^{2x}$, by the constant multiple rule.
+
+\end{example}
+
+\begin{problem} %problem 4
+Compute 
+%\[
+%\int 2^x \ln(2) \ dx.
+%\]
+
+\begin{hint}
+\[
+\frac{d}{dx} 2^x = 2^x \ln(2)
+\]
+\end{hint}
+\begin{hint}
+\begin{center}
+Do not add the +C to your answer
+\end{center}
+\end{hint}
+
+\[
+\int 2^x \ln(2) \ dx =
+\answer[given]{2^x} \ + C
+\]
+\end{problem}
+
+\begin{problem} %problem 2
+Compute 
+%\[
+%\int e^{5x} \ dx.
+%\]
+
+\begin{hint}
+\[
+\frac{d}{dx} e^{5x} = 5e^{5x}
+\]
+\end{hint}
+\begin{hint}
+The answer is a minor modification of $e^{5x}$
+\end{hint}
+\begin{hint}
+\begin{center}
+Do not add the +C to your answer
+\end{center}
+\end{hint}
+
+\[
+\int e^{5x} \ dx =
+\answer[given]{\frac15 e^{5x}} \ + C
+\]
+\end{problem}
+
+\begin{problem} %problem 2
+Compute 
+%\[
+%\int e^{-x/2} \ dx.
+%\]
+
+\begin{hint}
+\[
+\frac{d}{dx} e^{-x/2} = -\frac12 e^{-x/2}
+\]
+\end{hint}
+\begin{hint}
+The answer is a minor modification of $e^{-x/2}$
+\end{hint}
+\begin{hint}
+\begin{center}
+Do not add the +C to your answer
+\end{center}
+\end{hint}
+
+\[
+\int e^{-x/2} \ dx =
+\answer[given]{-2 e^{-x/2}} \ + C
+\]
+\end{problem}
+
+\begin{example} %example 5
+\[
+\int 2x \ dx = x^2 + C,
+\]
+because the derivative of $x^2$ is $2x$.
+
+\end{example}
+
+
+\begin{problem} %problem 5
+Compute 
+%\[
+%\int 3x^2 \ dx.
+%\]
+
+\begin{hint}
+\[
+\frac{d}{dx} x^3 = 3x^2
+\]
+\end{hint}
+\begin{hint}
+\begin{center}
+Do not add the +C to your answer
+\end{center}
+\end{hint}
+
+\[
+\int 3x^2 \ dx =
+\answer[given]{x^3} \ + C
+\]
+\end{problem}
+
+
+\begin{example} %example 6
+\[
+\int \frac{1}{2\sqrt x} \ dx = \sqrt x + C,
+\]
+because the derivative of $\sqrt x$ is $\frac{1}{2\sqrt x}$.
+
+\end{example}
+
+
+
+\begin{problem} %problem 6
+Compute 
+%\[
+%\int \frac{1}{2\sqrt w} \ dw.
+%\]
+
+\begin{hint}
+\[
+\frac{d}{dx} \sqrt x = \frac{1}{2\sqrt x}
+\]
+\end{hint}
+\begin{hint}
+Note that the variable is $w$
+\end{hint}
+\begin{hint}
+Write your answer as $w$ to a power.
+\end{hint}
+\begin{hint}
+\begin{center}
+Do not add the +C to your answer
+\end{center}
+\end{hint}
+
+\[
+\int \frac{1}{2\sqrt w} \ dx =
+\answer[given]{w^{1/2}} \ + C
+\]
+\end{problem}
+
+
+
+\begin{example} %example 7
+\[
+\int \frac{1}{1 + x^2} \ dx = \tan^{-1}(x) + C,
+\]
+because the derivative 
+of $\tan^{-1}(x)$ is $\frac{1}{1 + x^2}$.
+
+\end{example}
+
+\begin{problem} %problem 7
+Compute 
+%\[
+%\int \frac{1}{1+u^2} \ du.
+%\]
+
+\begin{hint}
+\[
+\frac{d}{dx} tan^{-1}(x) = \frac{1}{1+x^2}
+\]
+\end{hint}
+\begin{hint}
+Note that the variable is $u$
+\end{hint}
+\begin{hint}
+\begin{center}
+Do not add the +C to your answer
+\end{center}
+\end{hint}
+
+\[
+\int \frac{1}{1+u^2} \ du =
+\answer[given]{\tan^{-1}(u)} \ + C
+\]
+\end{problem}
+
+
+\begin{example} %example 8
+\[
+\int \frac{1}{\sqrt{1 - x^2}} \ dx = \sin^{-1}(x) + C,
+\]
+because the derivative of $\sin^{-1}(x)$ 
+is $\frac{1}{\sqrt{1 - x^2}}$.
+
+\end{example}
+
+\begin{problem} %problem 8
+Compute 
+%\[
+%\int \frac{1}{\sqrt{1 - t^2}} \ dt.
+%\]
+
+\begin{hint}
+\[
+\frac{d}{dx} \sin^{-1}(x) = \frac{1}{\sqrt{1 - x^2}}
+\]
+\end{hint}
+\begin{hint}
+Note that the variable is $t$
+\end{hint}
+\begin{hint}
+\begin{center}
+Do not add the +C to your answer
+\end{center}
+\end{hint}
+
+\[
+\int -\frac{1}{\sqrt{1 - t^2}} \ dt =
+\answer[given]{\sin^{-1}(t)} \ + C
+\]
+\end{problem}
+
+\section{Power Rule for Indefinite Integrals}
+
+The Power Rule for Indefinite Integrals reverses the Power Rule for Derivatives.
+Instead of subtracting 1 from the exponent, we add 1 and instead of multiplying by the exponent, we divide.
+
+\begin{theorem} Power Rule for Indefinite Integrals
+\[
+\int x^n \ dx = \frac{x^{n+1}}{n+1} +C 
+\]
+where $n$ is any number except $-1$.
+\end{theorem}
+
+%\begin{center}
+%\bf{Examples of the Power Rule for Indefinite Integrals}
+%\end{center}
+
+
+
+\begin{example} %example 1
+Compute $$\int x^3 \ dx.$$
+We use the Power Rule with $n= 3$ and we get
+\[\int x^3 \ dx = \frac{x^4}{4} + C.\]  The answer can be confirmed by observing that the 
+derivative of $\frac{x^4}{4} +C$ is $x^3$ (using the Constant Multiple Rule and the Power Rule for Derivatives).
+\end{example}
+
+\begin{problem} %problem 1a
+Compute 
+%\[
+%\int x^4 \ dx.
+%\]
+
+\begin{hint}
+Use the Power Rule with $n=4$
+\end{hint}
+\begin{hint}
+The Power Rule says $\int x^n \ dx = \frac{x^{n+1}}{n+1} +$ C
+\end{hint}
+\begin{hint}
+\begin{center}
+Do not add the +C to your answer
+\end{center}
+\end{hint}
+
+\[
+\int x^4 \ dx =
+\answer[given]{x^5 /5} \ + C
+\]
+\end{problem}
+
+
+\begin{problem} %problem 1b
+Compute 
+%\[
+%\int x^6 \ dx.
+%\]
+
+\begin{hint}
+Use the Power Rule with $n=6$
+\end{hint}
+\begin{hint}
+The Power Rule says $\int x^n \ dx = \frac{x^{n+1}}{n+1} +$ C
+\end{hint}
+\begin{hint}
+\begin{center}
+Do not add the +C to your answer
+\end{center}
+\end{hint}
+
+\[
+\int x^6 \ dx =
+\answer[given]{x^7 /7} \ + C
+\]
+\end{problem}
+
+
+\begin{example} %example 2
+Compute $$\int 1 \ dx.$$
+We use the Power Rule with $n= 0$  ($x^0 = 1$) and we get
+\[\int 1 \ dx = \int x^0 \ dx =\frac{x^1}{1} + C = x+C.\] The answer can be confirmed by observing that the 
+derivative of $x + C$ is $1$ 
+\end{example}
+
+\begin{problem} %problem 2a
+Compute 
+%\[
+%\int 1 \ dt.
+%\]
+
+
+\begin{hint}
+Use the Power Rule with $n=0$
+\end{hint}
+\begin{hint}
+The Power Rule says $\int x^n \ dx = \frac{x^{n+1}}{n+1} +$ C
+\end{hint}
+\begin{hint}
+Note that the variable is $t$
+\end{hint}
+\begin{hint}
+\begin{center}
+Do not add the +C to your answer
+\end{center}
+\end{hint}
+
+\[
+\int 1 \ dt =
+\answer[given]{t} \ + C
+\]
+\end{problem}
+
+
+\begin{problem} %problem 2b
+Compute 
+\[
+\int 1 \ du.
+\]
+
+
+\begin{hint}
+Use the Power Rule with $n=0$
+\end{hint}
+\begin{hint}
+The Power Rule says $\int x^n \ dx = \frac{x^{n+1}}{n+1} +$ C
+\end{hint}
+\begin{hint}
+Note that the variable is $u$
+\end{hint}
+\begin{hint}
+\begin{center}
+Do not add the +C to your answer
+\end{center}
+\end{hint}
+
+\[
+\int 1 \ du =
+\answer[given]{u} \ + C
+\]
+\end{problem}
+
+
+\begin{example} %example 3
+Compute $$\int x \ dx.$$
+We use the Power Rule with $n= 1$ and we get
+\[\int x \ dx = \frac{x^2}{2} + C.\] The answer can be confirmed by observing that the 
+derivative of $\frac{x^2}{2} +C$ is $x$ (using the constant multiple rule and the Power Rule for Derivatives).
+\end{example}
+
+
+\begin{problem} %problem 3a
+Compute 
+%\[
+%\int t \ dt.
+%\]
+
+\begin{hint}
+Use the Power Rule with $n=1$
+\end{hint}
+\begin{hint}
+The Power Rule says $\int x^n \ dx = \frac{x^{n+1}}{n+1} +$ C
+\end{hint}
+\begin{hint}
+Note that the variable is $t$
+\end{hint}
+\begin{hint}
+\begin{center}
+Do not add the +C to your answer
+\end{center}
+\end{hint}
+
+\[
+\int t \ dt =
+\answer[given]{t^2 /2} \ + C
+\]
+\end{problem}
+
+
+
+\begin{problem} %problem 3b
+Compute 
+%\[
+%\int u \ du.
+%\]
+
+\begin{hint}
+Use the Power Rule with $n=1$
+\end{hint}
+\begin{hint}
+The Power Rule says $\int x^n \ dx = \frac{x^{n+1}}{n+1} +$ C
+\end{hint}
+\begin{hint}
+Note that the variable is $u$
+\end{hint}
+\begin{hint}
+\begin{center}
+Do not add the +C to your answer
+\end{center}
+\end{hint}
+
+\[
+\int u \ du =
+\answer[given]{u^2 /2} \ + C
+\]
+\end{problem}
+
+
+\begin{example} %example 4
+Compute $$\int \sqrt x \ dx.$$
+We rewrite $\sqrt x$ as $x^{1/2}$ and we use the Power Rule with $n= 1/2$ and we get
+\begin{align*}
+\int \sqrt x \ dx &= \int x^{1/2} \ dx\\
+&= \frac{x^{3/2}}{3/2} + C\\
+&= \tfrac{2}{3}x^{3/2} + C\\ 
+&= \tfrac23 \sqrt {x^3} + C\\
+&= \tfrac23 x\sqrt {x} + C.
+\end{align*}
+\end{example}
+
+\begin{problem} %problem 4a
+Compute 
+%\[
+%\int \sqrt[3]x \ dx.
+%\]
+
+\begin{hint}
+Rational exponents: $\sqrt[3]x = x^{1/3}$
+\end{hint}
+\begin{hint}
+Use the Power Rule with $n=1/3$
+\end{hint}
+\begin{hint}
+The Power Rule says $\int x^n \ dx = \frac{x^{n+1}}{n+1} +$ C
+\end{hint}
+\begin{hint}
+\begin{center}
+Do not add the +C to your answer
+\end{center}
+\end{hint}
+
+\[
+\int \sqrt[3]x \ dx =
+\answer[given]{3x^{4/3} /4} \ + C
+\]
+\end{problem}
+
+
+\begin{problem} %problem 4b
+Compute 
+%\[
+%\int \sqrt[4]x \ dx.
+%\]
+
+\begin{hint}
+Rational exponents: $\sqrt[4]x = x^{1/4}$
+\end{hint}
+\begin{hint}
+Use the Power Rule with $n=1/4$
+\end{hint}
+\begin{hint}
+The Power Rule says $\int x^n \ dx = \frac{x^{n+1}}{n+1} +$ C
+\end{hint}
+\begin{hint}
+\begin{center}
+Do not add the +C to your answer
+\end{center}
+\end{hint}
+
+\[
+\int \sqrt[4]x \ dx =
+\answer[given]{4x^{5/4} /5} \ + C
+\]
+\end{problem}
+
+
+
+\begin{example} %example 5
+Compute $$\int \frac{1}{x^3} \ dx.$$
+We rewrite $\frac{1}{x^3}$ as $x^{-3}$ and use the Power Rule with $n= -3$.
+We get
+\begin{align*}
+\int \frac{1}{x^3} \ dx &= \int x^{-3} \ dx \\
+&= \frac{x^{-2}}{-2} + C\\ 
+&= -\tfrac{1}{2}x^{-2} + C \\
+&= -\tfrac{1}{2}\cdot\frac{1}{x^2} + C \\
+&= -\frac{1}{2x^2} +C.
+\end{align*}
+\end{example}
+
+\begin{problem} %problem 5a
+Compute 
+%\[
+%\int \frac{1}{x^4} \ dx.
+%\]
+
+\begin{hint}
+Negative exponents: $\frac{1}{x^4} = x^{-4}$
+\end{hint}
+\begin{hint}
+Use the Power Rule with $n=-4$
+\end{hint}
+\begin{hint}
+The Power Rule says $\int x^n \ dx = \frac{x^{n+1}}{n+1} +$ C
+\end{hint}
+\begin{hint}
+\begin{center}
+Do not add the +C to your answer
+\end{center}
+\end{hint}
+
+\[
+\int \frac{1}{x^4} \ dx =
+\answer[given]{-x^{-3} /3} \ + C
+\]
+\end{problem}
+
+
+\begin{problem} %problem 5b
+Compute 
+%\[
+%\int \frac{1}{x^7} \ dx.
+%\]
+
+\begin{hint}
+Negative exponents: $\frac{1}{x^7} = x^{-7}$
+\end{hint}
+\begin{hint}
+Use the Power Rule with $n=-7$
+\end{hint}
+\begin{hint}
+The Power Rule says $\int x^n \ dx = \frac{x^{n+1}}{n+1} +$ C
+\end{hint}
+\begin{hint}
+\begin{center}
+Do not add the +C to your answer
+\end{center}
+\end{hint}
+
+\[
+\int \frac{1}{x^7} \ dx =
+\answer[given]{-x^{-6} /6} \ + C
+\]
+\end{problem}
+
+
+
+\begin{example} %example 6
+Compute $$\int \frac{1}{\sqrt x} \ dx.$$
+We rewrite $\frac{1}{\sqrt x}$ as $x^{-1/2}$ and use the Power Rule 
+with $n= -1/2$.
+We get
+\begin{align*}
+\int \frac{1}{\sqrt x} \ dx &= \int x^{-1/2} \ dx \\
+&= \frac{x^{1/2}}{1/2} + C \\ 
+&=  2x^{1/2} + C \\
+&= 2\sqrt x +C.
+\end{align*} 
+
+\end{example}
+
+
+\begin{problem} %problem 6a
+Compute 
+%\[
+%\int \frac{1}{\sqrt[3]x} \ dx.
+%\]
+
+\begin{hint}
+Negative rational exponents: $\frac{1}{\sqrt[3]x} = x^{-1/3}$
+\end{hint}
+\begin{hint}
+Use the Power Rule with $n=-1/3$
+\end{hint}
+\begin{hint}
+The Power Rule says $\int x^n \ dx = \frac{x^{n+1}}{n+1} +$ C
+\end{hint}
+\begin{hint}
+\begin{center}
+Do not add the +C to your answer
+\end{center}
+\end{hint}
+
+\[
+\int \frac{1}{\sqrt[3]x} \ dx =
+\answer[given]{3x^{2/3} /2} \ + C
+\]
+\end{problem}
+
+
+
+\begin{problem} %problem 6b
+Compute 
+%\[
+%\int \frac{1}{\sqrt[6]x} \ dx.
+%\]
+
+\begin{hint}
+Negative rational exponents: $\frac{1}{\sqrt[6]x} = x^{-1/6}$
+\end{hint}
+\begin{hint}
+Use the Power Rule with $n=-1/6$
+\end{hint}
+\begin{hint}
+The Power Rule says $\int x^n \ dx = \frac{x^{n+1}}{n+1} +$ C
+\end{hint}
+\begin{hint}
+\begin{center}
+Do not add the +C to your answer
+\end{center}
+\end{hint}
+
+\[
+\int \frac{1}{\sqrt[6]x} \ dx =
+\answer[given]{6x^{5/6} /5} \ + C
+\]
+\end{problem}
+
+
+
+\begin{center}
+\textbf{Special Case}
+\end{center}
+
+The Power Rule does not work when $n = -1$ so we consider this as a special case:
+
+\[\int x^{-1} \ dx = \int \frac{1}{x}  \ dx = \ln |x| +C.\]
+We can verify this by noting that the derivative of $\ln|x| + C$ is $\displaystyle{\frac{1}{x}}$.
+
+
+\begin{problem} %problem 7a
+Compute 
+%\[
+%\int \frac{1}{t} \ dt.
+%\]
+
+\begin{hint}
+Negative exponents: $\frac{1}{x} = x^{-1}$
+\end{hint}
+\begin{hint}
+The Power Rule does not apply when $n = -1$
+\end{hint}
+\begin{hint}
+Recall $\frac{d}{dx} \ln|x| = \frac{1}{x}$
+\end{hint}
+\begin{hint}
+\begin{center}
+Do not add the +C to your answer
+\end{center}
+\end{hint}
+
+\[
+\int \frac{1}{t} \ dt =
+\answer[given]{\ln|t|} \ + C
+\]
+\end{problem}
+
+\begin{problem} %problem 7a
+Compute 
+%\[
+%\int \frac{1}{u} \ du.
+%\]
+
+\begin{hint}
+Negative exponents: $\frac{1}{x} = x^{-1}$
+\end{hint}
+\begin{hint}
+The Power Rule does not apply when $n = -1$
+\end{hint}
+\begin{hint}
+Recall $\frac{d}{dx} \ln|x| = \frac{1}{x}$
+\end{hint}
+\begin{hint}
+\begin{center}
+Do not add the +C to your answer
+\end{center}
+\end{hint}
+
+\[
+\int \frac{1}{u} \ du =
+\answer[given]{\ln|u|} \ + C
+\]
+\end{problem}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+We can handle sums, differences and constant multiples in indefinite integrals 
+the exact same way we handle them in differentiation.
+
+
+Examples
+
+\begin{center}
+\bf{Constant Multiples}
+\end{center}
+
+\begin{description}
+
+\item[CM 1.] $\displaystyle{\int 5\cos(x) \ dx =  5\sin(x) +C}$.
+
+\item[CM 2.] $\displaystyle{\int 3\sec^2(x) \ dx =  3\tan(x) +C}$.
+
+\item[CM 3.] $\displaystyle{\int 2e^x \ dx =  2e^x +C}$.
+
+\item[CM 4.] $\displaystyle{\int \ffrac{4}{1+x^2} \ dx  = 4\tan^{-1}(x) +C}$.
+
+\item[CM 5.] $\displaystyle{\int \ffrac{7}{12x} \ dx =  \ffrac{7}{12} \ln|x| +C}$.
+
+\item[CM 6.] $\displaystyle{\int 4x^7 \ dx  = 4\cdot \frac{x^8}{\mbox{\footnotesize $8$}} +C 
+= \frac{x^8}{\mbox{\footnotesize $2$}}}$.
+
+\item[CM 7.] $\begin{aligned}[t]
+\int \frac{3}{5x^2} \ dx &= \int \ffrac{3}{5}x^{-2} \ dx \\[3pt]
+&= \ffrac{3}{5} \cdot \ffrac{x^{-1}}{-1} +C \\[5pt]
+&= -\ffrac{3}{5} \cdot \ffrac{1}{x} +C \\[5pt]
+&= -\ffrac{3}{5x} +C.
+\end{aligned}$
+
+
+\item[CM 8.] $\displaystyle{\int 4\sin(x) \ dx  = -4\cos(x) +C}$.
+
+\item[CM 9.] $\displaystyle{\int 3\csc(x)\cot(x) \ dx = -3\csc(x) +C}$.
+
+
+\item[CM 10.] $\begin{aligned}[t]
+\int 4\sqrt[3]x  \ dx &=  \int 4x^{1/3} \ dx \\
+&= 4 \cdot \frac{x^{4/3}}{\mbox{\footnotesize $4/3$}} +C \\[3pt]
+&= 4 \cdot \ffrac{3}{4} \cdot x^{4/3} +C \\[3pt]
+&= 3x^{4/3} +C \\
+&= 3\sqrt[3] {x^4} +C \\
+&= 3x\sqrt[3] x +C.
+\end{aligned}$
+
+
+\end{description}
+
+
+\begin{center}
+\bf{Sums}
+\end{center}
+
+\begin{description}
+
+\item[SR 1.] $\int \cos(x) + e^x \ dx = \sin(x) + e^x + C.$
+
+\item[SR 2.] $\int x + 2\sec^2(x) \ dx = \frac{x^2}{2} + 2\tan(x) + C.$
+
+\item[SR 3.] $\int x^2 + \frac{1}{x^2} \ dx = \int x^2 + x^{-2} \ dx = \frac{x^3}{3} + \frac{x^{-1}}{\mbox{\footnotesize $-1$}} + C 
+= \frac{x^3}{3} - \frac{1}{x} + C$
+
+\item[SR 4.] $\int \frac{x+2}{x} \ dx = \int \frac{x}{x} + \frac{2}{x} \ dx = \int 1 + \frac{2}{x} \ dx = x + 2\ln|x| +C.$
+
+\item[SR 5.] $\begin{aligned}[t]
+\int \sqrt x + \sqrt[3] x\ dx &= \int x^{1/2} + x^{1/3} \ dx \\
+&= \frac{x^{3/2}}{\mbox{\footnotesize $3/2$}} + \frac{x^{4/3}}{\mbox{\footnotesize $4/3$}} + C \\
+&= \tfrac{2}{3} x^{3/2} + \tfrac{3}{4} x^{4/3} + C \\
+&= \tfrac{2}{3} \sqrt {x^3} + \tfrac{3}{4}  \sqrt[3] {x^4} + C \\
+&= \tfrac{2}{3} x\sqrt x + \tfrac{3}{4} x \sqrt[3] x + C.
+\end{aligned}$
+
+\item[SR 6.] $\int x^2 + 3x + 4 \ dx = \frac{x^3}{\mbox{\footnotesize $3$}} + \frac{3x^2}{\mbox{\footnotesize $2$}} + 4x + C.$
+
+\end{description}
+
+\begin{center}
+\bf{Differences}
+\end{center}
+
+\begin{description}
+
+\item[DR 1.] $\int (1 - e^x) \ dx = x - e^x + C.$
+
+\item[DR 2.] $\int (x^2 - x) \ dx = \frac{x^3}{\mbox{\footnotesize $3$}} - \frac{x^2}{\mbox{\footnotesize $2$}} + C.$
+
+\item[DR 3.] $\int [3\cos(x) - 2\sin(x)] \ dx = 3\sin(x) + 2\cos(x) + C.$
+
+\item[DR 4.] $\int (3x^2 - \tfrac{3}{x} - \tfrac{1}{1+x^2}) \ dx = x^3 - 3\ln|x| - \tan^{-1}(x) + C.$
+
+\item[DR 5.] $\int [4\csc(x)(\csc(x) - \cot(x))] \ dx = \int [4\csc^2(x)  - 4\csc(x)\cot(x)] \ dx = -4\cot(x) + 4\csc(x) + C
+= 4\csc(x) - 4 \cot(x) + C.$
+
+\end{description}
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a detailed, lecture style video on indefinite integrals:}
+\youtube{NAY2sGMKi5U}
+\end{foldable}
+\end{center}
+
+\end{document}

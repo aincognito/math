@@ -1,0 +1,89 @@
+\documentclass{ximera}
+\usepackage{tcolorbox}
+\input{../preamble}
+
+\outcome{Compute the derivative of a composition}
+
+\title{2.14 Rates of Change}
+
+
+
+\begin{document}
+
+\begin{abstract}
+In this section we interpret the derivative as an instantaneous rate of change.
+\end{abstract}
+
+\maketitle
+
+\section{Rates of Change}
+
+We begin by comparing the notion instantaneous rate of change to average rate of change. 
+For two points $(x_1, y_1)$ and $(x_2, y_2)$ with $x_1 < x_2$ on the graph of a function
+$y = f(x)$, the slope of the secant line connecting them is 
+\[m = \frac{\text{rise}}{\text{run}} = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1}.\]
+This slope can be interpreted as the average rate of change of $y$ with respect to $x$ over the interval $[x_1, x_2]$.
+
+The instantaneous rate of change of $y$ with respect to $x$ at $x = x_1$ is denoted by
+\[\frac{dy}{dx}\Big{|}_{x=x_1},\]
+and it is obtained by letting $x_2$ approach $x_1$ in the formula for $\frac{\Delta y}{\Delta x}.$
+Graphically, 
+\[\frac{dy}{dx}\Big{|}_{x=x_1}\]
+is the slope of the tangent line to the graph of $y = f(x)$ at $x=x_1$.
+Generally speaking, $\frac{\Delta y}{\Delta x}$
+represents the average rate of change of $y$ relative to $x$ whereas
+$\frac{dy}{dx}$
+represents the instantaneous rate of change of $y$ relative to $x$.
+
+%More generally, $\frac{dy}{dx}$ is a formula for the instantaneous rate of change of $y$ with respect to $x$.
+
+\begin{center}
+\bf{Examples of Rates of Change}
+\end{center}
+ 
+\begin{example}
+
+If $y = f(t)$ is the distance traveled by an object as a function of time, then 
+\[\frac{\Delta y}{\Delta t}\]
+is the average speed of the object and
+\[\frac{dy}{dt}\]
+is the instantaneous speed of the object.
+\end{example}
+
+\begin{example} If $V = f(t)$ is the volume of water in a tank as a function of time, then 
+\[\frac{\Delta V}{\Delta t}\]
+is the average rate that water is entering (or leaving, if this is negative) the tank and
+\[\frac{dV}{dt}\]
+is the instantaneous rate that water is entering (or leaving) the tank.
+ \end{example}
+
+\begin{example} If $C = f(x)$ is the cost of producing $x$ units then $\frac{dC}{dx}$ represents the instantaneous rate of change 
+of cost with respect to the number of units produced.  This is called the {\it marginal cost} of production. 
+\end{example}
+
+
+\begin{example} If $P(t)$ represents population at time $t$, then 
+\[\frac{\Delta P}{\Delta t}\]
+is the average growth rate of the population and
+\[\frac{dP}{dt}\]
+is the instantaneous growth rate of the population. If the population of a certain bacteria is 50 (thousand) and it doubles every hour, 
+then what is the population after 3 hours?  How fast is the population growing at $t = 3$ hours? First, from the description of the population, 
+we have $P(t) = 50 \cdot 2^t$.  Hence the population after 3 hours is given by $P(3) = 50\cdot 2^3 = 400$ (thousand) bacteria.
+The growth rate at time $t=3$ is given by
+\[\frac{dP}{dt}\Big{|}_{t=3}.\]
+Computing the derivative, we have 
+\[\frac{dP}{dt}= 50 \cdot 2^t \cdot \ln(2),\]
+and hence,
+\[\frac{dP}{dt}\Big{|}_{t=3} = 50 \cdot 2^3 \cdot \ln(2) = 400\ln(2) \approx 277.26 \mbox{(thousand) bacteria per hour}.\]
+\end{example}
+
+\begin{example} If $Q(t)$ represents the quantity of a (medical) drug in the bloodstream at time $t$, then 
+\[\frac{\Delta Q}{\Delta t}\]
+is the average rate of change of the quantity in the bloodstream and
+\[\frac{dQ}{dt}\]
+is the instantaneous rate of change of the quantity in the bloodstream.
+
+
+\end{example}
+
+\end{document}

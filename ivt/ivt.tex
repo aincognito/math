@@ -1,0 +1,295 @@
+\documentclass{ximera}
+
+\input{../preamble}
+
+\outcome{Apply the IVT.}
+
+\title{1.9 Intermediate Value Theorem}
+
+
+
+\begin{document}
+
+\begin{abstract}
+In this section we learn a theoretically important existence theorem called the Intermediate Value Theorem
+and we investigate some applications.
+\end{abstract}
+
+\maketitle
+
+\section{Intermediate Value Theorem}
+
+
+
+In this section we discuss an important theorem related to continuous functions. Before we present the theorem, 
+lets consider two real life situations and observe an important difference in their behavior. 
+First, consider the ambient temperature and second, consider the amount of money in a bank account.
+
+First, suppose that the temperature is $65^{\circ}$ at 8am and then suppose it is $75^{\circ}$ at noon. 
+Because of the continuous nature of temperature variation, we can be sure that at some time 
+between 8am and noon  the temperature was exactly $70^{\circ}$.
+Can we make a similar claim about money in a bank account?  
+Suppose the account has \$65  in it at 8am and then it has \$75 in it at noon.  
+Did it have exactly \$70 in it at some time between 8 am and noon? 
+We cannot answer that question with any certainty from the given information.  
+On one hand, it is possible that a \$10 deposit was made at 11am and so the total in the 
+bank would have jumped from \$65 dollars to \$75 without ever being exactly \$70. 
+On the other hand, it is possible that the \$10 was added in \$5 increments. In this case, the account did have 
+exactly \$70 in it at some time.
+The fundamental reason why we can make certain conclusions in the first case but cannot in the second, 
+is that temperature varies continuously, whereas money in a bank account does not 
+(it will have jump discontinuities).  
+When a quantity is known to vary continuously, then if the quantity is observed to have different 
+values at different times then we can conclude that the quantity took on any given value between these 
+two at some time between our two observations. Mathematically, this property is stated in the 
+Intermediate Value Theorem.
+
+
+\begin{theorem}[Intermediate Value Theorem]
+
+
+If the function $f(x)$ is continuous on the closed interval $[a, b]$ 
+and $I$ is a number between $f(a)$ and $f(b)$,
+then the equation $f(x) = I$ has a solution in the open interval $(a,b)$. 
+\end{theorem}
+
+
+The value $I$ in the theorem is called an \textbf{intermediate value} for the function $f(x)$ 
+on the interval $[a,b]$. Note that if a function is \textit{not continuous} on an interval, 
+then the equation $f(x) = I$ may or may not have a solution on the interval. \\
+
+\textbf{Remark:} saying that $f(x)$ has a solution in $(a,b)$ is equivalent to saying that 
+there exists a number $x_0$ between $a$ and $b$ such that $f(x_0) = I$.
+
+
+%Also note that saying that $I$ is a number between $f(a)$ and $f(b)$
+%means that either
+%\[
+%f(a) < I < f(b) \text{  or}  f(b) < I < f(a).
+%\]
+
+The following figure illustrates the IVT.
+
+\begin{image}
+\begin{tikzpicture}[scale = 1.2]
+\begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal, xtick={1, 2.1, 3},
+xticklabels={$a$, $x_0$, $b$}, ytick={.914, 1.6, 2.328}, yticklabels={$f(a)$, $I$, $f(b)$}, title={Intermediate Value Theorem}]
+
+\addplot[domain=-.5:3.5, thick, blue!65]{2^(x/2)-.5};
+\addplot[dashed, thick] coordinates{(1, 0)  (1, .914)};
+\addplot[dashed, thick] coordinates{ (1, .914) (0, .914)};
+\addplot[dashed, thick] coordinates{(3, 0) (3, 2.328)};
+\addplot[dashed, thick] coordinates{(3, 2.328) (0, 2.328)};
+\addplot[dashed, red, thick] coordinates{(2.1, 0) (2.1, 1.6)};
+\addplot[dashed, red, thick] coordinates{(0, 1.6) (2.1, 1.6)};
+\end{axis}
+%\addplot[mark=*,fill=white] coordinates {(0,0)}
+\node at (3.5, -.5) {$f(x)$ is continuous on $[a,b]$ and $I$ is between $f(a)$ and $f(b)$, };	
+\node at (3.5,-1) {so there is an $x_0$ between $a$ and $b$ such that $f(x_0) = I$  };	
+\node at (7.5, 4.8) {$y = f(x)$};
+\end{tikzpicture}
+\end{image}
+
+
+
+
+
+
+\begin{example} %example 1
+Show that the equation $x^3 = 10$ has a solution between $x = 2$ and $x = 3$.\\
+First, the function $f(x) = x^3$  is continuous on the interval $[2,3]$ 
+since is a polynomial. 
+Second, observe that 
+\[
+f(2) = 2^3 = 8,
+\]
+and 
+\[
+f(3) = 3^3 = 27,
+\] 
+so that 10 is an intermediate value, i.e.,
+\[f(2) < 10 < f(3).\]
+Now we can apply the Intermediate Value Theorem to
+conclude that the equation $x^3 = 10$ has a least one solution between $x=2$ and $x=3$. 
+In this example, the number 10 is playing the role of $I$ in the statement of the theorem.
+\end{example}
+
+
+\begin{problem}
+Determine whether the IVT can be used to show that the equation $x^4 = 50$ has a solution in the open interval $(2,3)$.
+
+Is $f(x) = x^4$ continuous on the closed interval $[2,3]$? 
+\begin{center}
+\begin{multipleChoice}
+  \choice[correct]{Yes}
+  \choice{No}
+\end{multipleChoice}
+\end{center}
+
+
+$f(2) = \answer{16}, f(3) = \answer{81}$ and $I = \answer{50}.$
+
+Is $I$ an intermendiate value? 
+\begin{multipleChoice}
+  \choice[correct]{Yes}
+  \choice{No}
+\end{multipleChoice}
+
+Can we apply the IVT to conclude that the equation $x^4 = 50$ has a solution in the open interval $(2, 3)$?
+\begin{multipleChoice}
+  \choice[correct]{Yes}
+  \choice{No}
+\end{multipleChoice}
+\end{problem}
+
+
+\begin{example}
+Show that the equation $e^x =2$ has a solution between $x = 0$ and $x = 1$.\\
+
+First, note that the function $f(x) = e^x$ is continuous on the 
+interval $(-\infty, \infty)$ and hence it is continuous on the sub-interval, $[0, 1]$. 
+Next, observe that 
+\[
+f(0) = e^0 = 1,
+\]
+and 
+\[
+f(1) = e^1 = e \approx 2.7,
+\]
+ so that 2 is an intermediate value, i.e.,
+\[f(0) < 2 < f(1).\]
+Finally, by the Intermediate Value Theorem we can 
+conclude that the equation $e^x = 2$ has a solution on the open interval $(0,1)$.
+In this example, the number 2 is playing the role of $I$ in the statement of the theorem.
+\end{example}
+
+\begin{problem}
+Determine whether the IVT can be used to show that the equation $\frac{1}{x} = 0$ has a solution in the open interval $(-1, 1).$
+Is $f(x) = \frac{1}{x}$ continuous on the closed interval $[-1,1]$? 
+\begin{center}
+\begin{multipleChoice}
+  \choice{Yes}
+  \choice[correct]{No}
+\end{multipleChoice}
+\end{center}
+
+
+$f(-1) = \answer{-1}, f(1) = \answer{1}$ and $I = \answer{0}.$
+
+Is $I$ an intermendiate value? 
+\begin{multipleChoice}
+  \choice[correct]{Yes}
+  \choice{No}
+\end{multipleChoice}
+
+Does the IVT imply that the equation $\frac{1}{x} = 0$ has a solution in the open interval $(-1, 1)$?
+\begin{multipleChoice}
+  \choice{Yes}
+  \choice[correct]{No}
+\end{multipleChoice}
+\end{problem}
+
+\begin{example}  %example 3
+Show that the function $f(x) = x^4 - 3x - 7$ has a root in the open interval $(-2, 1)$.\\
+
+Recall that a root occurs when $f(x) = 0$. Since $f(x)$ is a polynomial, it is continuous on the interval 
+$[-2, 1]$. Plugging in the endpoints shows that 0 is an intermediate value:
+\[f(-2) = (-2)^4 - 3(-2) - 7 = 16 + 6 - 7 = 15 \]
+and
+\[f(1) = (1)^4 - 3(1) - 7 = 1 -3 - 7 = -9 \]
+so 
+\[f(1) < 0 < f(-2).\]
+By the IVT, we can conclude that the equation $x^4 - 3x - 7 = 0$ has a solution (and hence $f(x)$ has a root) 
+on the open interval $(-2, 1)$.
+\end{example}
+
+
+\begin{problem}
+Determine whether the IVT can be used to show that the function $f(x) = e^x$ has a root in the open interval $(0,1)$.
+
+Is $f(x) = e^x$ continuous on the closed interval $[0,1]$? 
+\begin{center}
+\begin{multipleChoice}
+  \choice[correct]{Yes}
+  \choice{No}
+\end{multipleChoice}
+\end{center}
+
+
+$f(0) = \answer{1}, f(1) = \answer{e}$ and $I = \answer{0}.$
+
+Is $I$ an intermendiate value? 
+\begin{multipleChoice}
+  \choice{Yes}
+  \choice[correct]{No}
+\end{multipleChoice}
+
+Does the IVT imply that the function $f(x) = e^x$ has a root in the open interval $(0, 1)$?
+\begin{multipleChoice}
+  \choice{Yes}
+  \choice[correct]{No}
+\end{multipleChoice}
+\end{problem}
+
+
+\begin{example} %example 4
+ Show that the equation $\cos(x) = x$ has a solution 
+between $x = 0$ and $x = \frac{\pi}{2}$. \\
+Note that the equation $\cos(x) = x$ is equivalent to the equation $x - \cos(x) =0$.
+The latter is the prefered form for using the IVT.
+So let 
+\[f(x) = x - \cos(x).\] 
+ Since $f(x)$ is the difference between two continuous functions,
+it is continuous on the closed interval $[0, \frac{\pi}{2}]$. 
+Next, we compute $f(0)$ and $f(\frac{\pi}{2})$ and show that 0 is an intermediate value:
+\[f(0) = 0 - \cos(0) = 0-1 = -1 \]
+and
+\[f\big(\frac{\pi}{2}\big) = \frac{\pi}{2} - \cos\big(\frac{\pi}{2}\big) = \frac{\pi}{2}-0 = \frac{\pi}{2} \]
+and so,
+\[f(0) < 0 < f(\frac{\pi}{2}).\]
+By the IVT, the equation $ x - \cos(x) =0$ has a solution in the open 
+interval $(0, \frac{\pi}{2})$. Hence the equivalent equation $\cos(x) = x$ 
+has a solution on the same interval.
+\end{example}
+
+\begin{example} %example 5
+Use the IVT four times to approximate a root of the polynomial 
+\[p(x) = x^3 - 3x^2 + 4x - 6.\]
+First, $p(x)$ is a polynomial, so it is continuous on any closed interval.
+Next, note that 
+\[p(0) = -6 < 0 \ \text{and} \ p(8) = 346 > 0.\]
+By the IVT $p(x)$ has a root in the interval $(0, 8)$. 
+To use the IVT a second time, we now determine the midpoint of this interval: $(0+8)/2 = 4$ and we 
+plug this in to $p(x)$:
+\[p(4) =  14 > 0.\]
+Combining this with
+\[p(0) < 0,\]
+we can use the IVT again to conclude that $p(x)$ has a root on the interval $(0, 4)$. 
+This interval is half of the original interval- the original interval has been bisected. 
+We now use the IVT a third time. The midpoint of the interval $(0, 4)$ is $x=2$. We plug this into $p(x)$:
+\[p(2) =  -2 < 0.\]
+Combining this with
+\[p(4) > 0,\]
+we can use the IVT to conclude that $p(x)$ has a root on the interval $(2,4)$. 
+This interval is half of the previous interval- the previous interval has been bisected. 
+We will do this a fourth and final time. Note that $x = 3$ is the midpoint of the interval $(2,4)$ and
+\[p(3) = 6 > 0.\]
+Combining this with
+\[p(2) < 0,\]
+we can use the IVT a fourth time to conclude that $p(x)$ has a root on the interval $(2, 3)$. 
+At this stage, our approximation of the root is $x = 2.5$ which is the midpoint of this interval. 
+Our error is then no more than $0.5$, which is half the width of the interval.
+We will stop here, but the method could theoretically be continued indefinitely giving a better 
+approximation to the root each time. This method of approximating roots is called the 
+\textbf{Method of Continued Bisection}.
+\end{example}
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a detailed, lecture style video on the Intermediate Value Theorem:}
+\youtube{961hYy7RjpE}
+\end{foldable}
+\end{center}
+
+\end{document}

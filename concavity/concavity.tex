@@ -1,0 +1,652 @@
+\documentclass{ximera}
+
+
+\input{../preamble}
+
+\outcome{Determine concavity}
+
+\title{3.4 Concavity}
+
+\begin{document}
+
+\begin{abstract}
+In this section we learn about the two types of curvature and determine the curvature of a function.
+\end{abstract}
+
+\maketitle
+
+\section{Concavity}
+
+In this section we will discuss the {\bf curvature} of the graph of a given function. 
+There are two types of curvature: {\bf concave up} and {\bf concave down}.  
+The main tool for discussing curvature is the second derivative, $f''(x)$.
+
+
+
+
+
+\begin{definition}[Concavity]
+Suppose $f(x)$ is differentiable on an open interval, $I$.
+If $f'(x)$ is increasing on $I$, then $f(x)$ is \textbf{concave up} on $I$ and
+if $f'(x)$ is decreasing on $I$, then $f(x)$ is \textbf{concave down} on $I$.
+\end{definition} 
+
+
+\begin{image}
+\begin{tikzpicture}
+\node at (5.5, 2.5) {concave down};
+%\draw[<->] (4, 0) --(7, 0);
+%\node at (3.2, 0) {$x$};
+\draw (5.5,2) parabola (6.75,.25);
+\draw (5.5,2) parabola (4.25,.25);
+
+%\draw (1.5, .1) -- (1.5, -.1) node[below] {$x_0$};
+%\node at (1.5, -.9) {$f''(x_0) < 0$};
+
+\node at (1.5, 2.5) {concave up};
+%\draw[<->] (0, 0) --(3, 0);
+%\node at (3.2, 0) {$x$};
+
+\draw (1.5,.25) parabola (0.25,2);
+\draw (1.5,.25) parabola (2.75,2);
+\draw[white] (0,0)--(0,0.1);
+%\draw (5.5, .1) -- (5.5, -.1) node[below] {$x_0$};
+%\node at (5.5, -.9) {$f''(x_0) > 0$};
+\end{tikzpicture}
+\end{image}
+
+
+%Graphically, the above definitions correspond to the following.  
+%If $f(x)$ is concave up on $I$, then the graph of $y=f(x)$
+%lies above its tangent lines, and if $f(x)$ is concave down on $I$, 
+%then the graph lies below its tangent lines.
+
+%The simplest examples to illustrate this are $f(x) = x^2$, which is concave up everywhere and $f(x) = -x^2$
+%which is concave down everywhere. 
+%Make a rough sketch of each of these functions including a few tangent lines to see this.
+
+The following theorem helps us to determine where a function is concave up and where it is concave down.\\
+
+\begin{theorem}[Concavity]
+If $f''(x) > 0$ on and interval $I$, then $f(x)$ is concave up on $I$ and
+if $f''(x) < 0$ on an interval $I$, then $f(x)$ is concave down on $I$.
+\end{theorem}
+
+
+
+\begin{example} %example 1
+Consider the function $f(x) = x^2$.  It is concave up on the interval $(-\infty, \infty)$ since $f''(x) = 2 > 0$
+for all $x$.
+\end{example}
+
+\begin{example} %example 2
+Consider the function $f(x) = e^x$.  It is concave up on the interval $(-\infty, \infty)$ since $f''(x) = e^x > 0$
+for all $x$.
+\end{example}
+
+
+\begin{example} %example 3
+Consider the function $f(x) = x^3$.  Its second derivative is $f''(x) = 6x$ 
+which has the same sign as $x$ itself. Thus $f(x) = x^3$ is concave up on the interval $(0, \infty)$
+and concave down on the interval $(-\infty, 0)$.
+\end{example}
+
+
+
+The last example brings up a new concept.  The function $f(x) = x^3$ changes concavity at $x = 0$.  
+We call this an {\bf inflection point} of the function.\\
+
+\begin{definition}
+If $f(x)$ is continuous at $x=a$ and $f(x)$ changes concavity at $x = a$, then
+we say that $f(x)$ has an \textbf{inflection point} at $x = a$.
+\end{definition} 
+
+In the next two examples, we will discuss the curvature of the given functions and find their inflection points.
+
+
+\begin{image}
+\begin{tikzpicture}[scale=.7]
+\draw[<->, thick] (-2, 3)-- (-2,.5)--(5,.5);
+\draw[blue, thick]   plot[smooth,domain=-1.79:4.71] (\x, {2 + cos(deg(\x))});
+\node at (1.57,4) {Inflection Point at $(a,f(a))$};
+%\node at (.6,1.7) {$(a,f(a))$};
+\node at (5.8, 2.2) {$y = f(x)$};
+\draw[thin] (1.57, .4)--(1.57,.6);
+\node at (1.57,.2) {$a$};
+\draw[thin] (-2.1, 2)--(-1.9,2);
+\node at (-2.7,2) {$f(a)$};
+\draw[blue, fill] (1.57,2) circle [radius=0.07];
+
+\end{tikzpicture}
+\end{image}
+
+ 
+ 
+
+\begin{example} %example 4
+Determine where the cubic polynomial $f(x) = x^3 + 12x^2 - 7x - 4$ is concave up, concave down and find the inflection points.\\
+The second derivative of $f(x)$ is 
+$f''(x) = 6x + 24$.  To determine where $f''(x)$ is positive and where it is negative, 
+we will first determine where it is zero. Hence, we will solve the equation
+\[f''(x) = 0\]
+for $x$.
+
+We have $6x + 24 = 0$ so $x = -4$.
+This value breaks the real number line into two intervals, $(-\infty, -4)$ and $(-4, \infty)$.
+The second derivative maintains the same sign throughout each of these intervals.  
+To determine whether it is positive or negative, we choose a test point in each interval.
+For the interval, $(-\infty, -4)$, we choose $x = -5$.  Plugging this into the second derivative, we get
+$f''(-5) = 6(-5) + 24 = -6 < 0$.  Since this value is negative, we can conclude that the original function,
+$f(x) = x^3 + 12x^2 - 7x - 4$ is concave down on the interval $(-\infty, -4)$. \\
+
+Next, we choose the test point 
+$x = 0$ for the interval $(-4, \infty)$.  Plugging this into the second derivative gives $f''(0) = 6(0) + 24 = 24 > 0$.
+Since this value is positive, we can conclude that the original function,
+$f(x) = x^3 + 12x^2 - 7x - 4$ is concave up on the interval $(-4, \infty)$.
+Finally, noting that the original polynomial is continuous everywhere and changes concavity at $x = -4$, we can say that
+$f(x) = x^3 + 12x^2 - 7x - 4$ has an inflection point at $x = -4$.
+\end{example}
+
+
+\begin{problem} %problem #4a
+  Find the inflection point(s) of the function
+  \[
+     f(x) = x^3 - 6x^2 + 8x - 2.
+  \]
+ 
+    \begin{hint}
+      Find the second derivative, $f''$
+    \end{hint}
+    \begin{hint}
+      Where does $f''$ change sign?
+    \end{hint}
+    \begin{hint}
+      Is $f$ continuous there?
+    \end{hint}    
+		The function $f(x) = x^3 - 6x^2 + 8x - 2$ has an inflection point at $x =$
+		 $\answer[given]{2}$
+	
+\end{problem}
+
+
+\begin{problem} %problem #4b
+  Find the inflection point(s) of the function
+  \[
+     f(x) = x^2 - x^3.
+  \]
+  
+    \begin{hint}
+      Find the second derivative, $f''$
+    \end{hint}
+    \begin{hint}
+      Where does $f''$ change sign?
+    \end{hint}
+    \begin{hint}
+      Is $f$ continuous there?
+    \end{hint}    
+		The function $f(x) = x^2 - x^3$ has an inflection point at $x =$
+		 $\answer[given]{1/3}$
+		
+\end{problem}
+
+
+\begin{example} %example 5
+Consider the cubic polynomial $f(x) = 2x^3 + 3x^2 - 36x +2$.  Its second derivative is 
+$f''(x) = 12x + 6$.  To determine where $f''(x)$ is positive and where it is negative, 
+we will first determine where it is zero. Hence, we will solve the equation
+\[f''(x) = 0\]
+for $x$.
+
+We have $12x + 6 = 0$ so $x = -1/2$.
+This value breaks the real number line into two intervals, $(-\infty, -1/2)$ and $(-1/2, \infty)$.
+The second derivative maintains the same sign throughout each of these intervals.  
+To determine whether it is positive or negative, we choose a test point in each interval.
+For the interval, $(-\infty, -1/2)$, we choose $x = -1$.  Plugging this into the second derivative, we get
+$f''(-1) = 12(-1) + 6 = -6 < 0$.  Since this value is negative, we can conclude that the original function,
+$f(x) = 2x^3 + 3x^2 - 36x + 2$ is concave down on the interval $(-\infty, -1/2)$. \\
+
+Next, for the interval $(-1/2, \infty)$, we choose the test point 
+$x = 0$.  Plugging this into the second derivative gives $f''(0) = 12(0) + 6 = 6 > 0$.
+Since this value is positive, we can conclude that the original function,
+$f(x) = 2x^3 + 3x^2 - 36x + 2$ is concave up on the interval $(-1/2, \infty)$.
+Finally, noting that the original polynomial is continuous everywhere and changes concavity at $x = -1/2$, we can say that
+the original function, 
+$f(x) = 2x^3 + 3x^2 - 36x + 2$ has an inflection point at $x = -1/2$.
+\end{example}
+
+\begin{problem} %problem #5a
+  Find the inflection point(s) of the function
+  \[
+     f(x) = x^4 - 4x^3.
+  \]
+  
+    \begin{hint}
+      Find the second derivative, $f''$
+    \end{hint}
+    \begin{hint}
+      Where does $f''$ change sign?
+    \end{hint}
+    \begin{hint}
+      Is $f$ continuous there?
+    \end{hint}  
+		
+		List multiple answers in ascending order.\\
+		The function $f(x) = x^4 - 4x^3$ has inflection points at 
+		$x =\answer{0}$ and $x = \answer{2}$.
+		
+	
+\end{problem}
+
+
+\begin{problem} %problem #5b
+  Find the inflection point(s) of the function
+  \[
+     f(x) = x^4 + 6x^2 - 5x + 2.
+  \]
+  
+    \begin{hint}
+      Find the second derivative, $f''$
+    \end{hint}
+    \begin{hint}
+      Where does $f''$ change sign?
+    \end{hint}
+    \begin{hint}
+      Is $f$ continuous there?
+    \end{hint}  
+		If there are no inflection points, type ``none".\\ 
+		The function $f(x) = x^4 + 6x^2 - 5x + 2$ has inflection 
+		point(s) at $x =\answer[given]{none}$
+	
+\end{problem}
+
+
+\begin{example} %example 6
+Consider the function $f(x) = x^2e^{3x}$.  To find its second derivative, 
+we will need to use the product rule twice. First, 
+\[f'(x) = x^2 \cdot 3e^{3x} + 2xe^{3x} = (3x^2 + 2x)e^{3x},\]
+and second
+\[f''(x) = (3x^2 + 2x)\cdot 3e^{3x} + (6x + 2)e^{3x} = (9x^2 + 12x + 2)e^{3x}.\]
+Now that we have the second derivative, we set it equal to zero.  Solve
+\[(9x^2 + 12x + 2)e^{3x}=0\]
+for $x$.
+Since the exponential $e^{3x}$ is never equal to zero, the only solutions come from setting the quadratic to zero:
+\[9x^2 + 12x + 2=0.\]
+This quadratic does not factor, so we need to use the quadratic formula.
+The solutions are 
+\[x = \frac{-12 \pm \sqrt{12^2 - 4(9)(2)}}{2(9)} = \frac{-2 \pm \sqrt{2}}{3}.\]
+For simplicity, we will call these two roots $\alpha$ and $\beta$.
+So 
+\[\alpha = \frac{-2 - \sqrt{2}}{3} \approx \]
+and
+\[\beta = \frac{-2 + \sqrt{2}}{3} \approx .\]
+
+These two values break the real number line into three intervals: $(-\infty, \alpha), 
+(\alpha, \beta)$ and $(\beta, \infty)$ with test points
+$x = -2, x = -1$ and $x = 0$, respectively.
+Plugging these into the second derivative gives
+\[f''(-2) = (9(-2)^2 + 12(-2) + 2)e^{3(-2)} = 14e^{-6} > 0,\]
+\[f''(-1) = (9(-1)^2 + 12(-1) + 2)e^{3(-1)} = -e^{-3} < 0,\]
+and
+\[f''(0) = (9(0)^2 + 12(0) + 2)e^{3(0)} = 2 > 0.\]
+Hence $f(x) = x^2 e^{3x}$ is concave up on the intervals $(-\infty, \alpha)$ 
+and $(\beta, \infty)$ and it is concave down on the interval 
+$(\alpha, \beta)$.
+Finally, we can infer from this that the continuous function $f(x) = x^2 e^{3x}$ has inflection points at 
+\[
+x = \alpha= \dfrac{-2 - \sqrt{2}}{3} \quad \text{and} \quad x = \beta = \dfrac{-2 + \sqrt{2}}{3}.
+\]
+\end{example}
+
+\begin{problem} %problem #6a
+  Find the inflection point(s) of the function
+  \[
+     f(x) = xe^x
+  \]
+  
+    \begin{hint}
+      Find the second derivative, $f''$
+    \end{hint}
+    \begin{hint}
+      Use the product rule to compute the derivatives
+    \end{hint}
+		\begin{hint}
+      $f'(x) = (x+1)e^x$ and $f''(x)$ is similar
+    \end{hint}
+		\begin{hint}
+      Where does $f''$ change sign?
+    \end{hint}
+    \begin{hint}
+      Is $f$ continuous there?
+    \end{hint}  
+		The function $f(x) = xe^x$ has an inflection 
+		point at $x =\answer[given]{-2}$
+		
+\end{problem}
+
+\begin{problem} %problem #6a
+  Find the inflection point(s) of the function
+  \[
+     f(x) = x^4e^x
+  \]
+  
+    \begin{hint}
+      Find the second derivative, $f''$
+    \end{hint}
+    \begin{hint}
+      Use the product rule to compute the derivatives
+    \end{hint}
+		\begin{hint}
+      $f'(x) = (x^4+4x^3)e^x$ and $f''(x)$ is similar
+    \end{hint}
+		\begin{hint}
+      Where does $f''$ change sign?
+    \end{hint}
+    \begin{hint}
+      Is $f$ continuous there?
+    \end{hint} 
+		List multiple answers in ascending order.\\
+		The function $f(x) = x^4e^x$ has inflection points at 
+		$x =\answer[given]{-6}$ and $x =\answer[given]{-2}$
+		
+\end{problem}
+
+
+\begin{question} %problem #6b
+  Find the inflection point(s) of the function 
+  \[
+     f(x) = \cos(x)
+  \]
+	in the interval $[0, 2\pi].$\\
+ 
+    \begin{hint}
+      Find the second derivative, $f''$
+    \end{hint}
+		\begin{hint}
+      Where does $f''$ change sign?
+    \end{hint}
+    \begin{hint}
+      Is $f$ continuous there?
+    \end{hint}  
+		List multiple answers in ascending order.\\
+	On the interval $[0, 2\pi]$, the function $f(x) = \cos(x)$ has inflection points at $x =\answer{\pi/2}$ and $x=\answer{3\pi/2}$.
+		
+	
+\end{question}
+
+
+
+\begin{example} %example 7
+Consider the function $f(x) = e^{-x^2}.$ By the chain rule, its derivative is 
+\[
+f'(x) = -2xe^{-x^2}
+\]
+and by the product rule (and the chain rule again, as well), its second derivative is
+\[
+f''(x) = (-2x)(-2x)e^{-x^2} + (-2)e^{-x^2} = (4x^2 - 2)e^{-x^2}.
+\]
+Setting the second derivative equal to zero and noting that the exponential $e^{-x^2}$ is
+always positive, we get
+\[
+4x^2 - 2 = 0.
+\]
+Solving for $x$ gives
+\[
+x^2 = \tfrac 12 \implies  x = \pm \tfrac{1}{\sqrt{2}}.
+\]
+
+These two values of $x$ break the real number line into three intervals: $(-\infty, -\tfrac{1}{\sqrt 2}),
+(-\tfrac{1}{\sqrt 2}, \tfrac{1}{\sqrt 2})$ and $(\tfrac{1}{\sqrt 2}, \infty)$. 
+The sign of $f''(x)$ will remain the same on each of these intervals. 
+To determine the sign on each interval, we use the test points
+$x = -1, x = 0$ and $x = 1$ respectively.
+Plugging the test points into the second derivative gives
+\[
+f''(-1) = (4(-1)^2 - 2) e^{-(-1)^2} = 2e^{-1} > 0
+\]
+\[
+f''(0) = (4(0)^2 - 2) e^{-(0)^2} = -2 < 0
+\]
+and
+\[
+f''(1) = (4(1)^2 - 2) e^{-(1)^2} = 2e^{-1} > 0.
+\]
+From this information we can conclude that the original function, $f(x) = e^{-x^2}$
+is concave up on the intervals $(-\infty, -1/\sqrt 2)$ and $(1/\sqrt 2, \infty)$ and 
+concave down on the interval $(-1/\sqrt 2, 1/\sqrt 2)$. 
+Finally, since the original function is continuous everywhere, we can
+say that $x = \pm 1/\sqrt 2$ are inflection points for $f(x) = e^{-x^2}$.
+\end{example}
+
+\begin{problem} %problem #7
+  Find the inflection point(s) of the function
+  \[
+     f(x) = \frac{1}{1+x^2}
+  \]
+ 
+    \begin{hint}
+      Find the second derivative, $f''$
+    \end{hint}
+    \begin{hint}
+      Use the Quotient Rule to compute the derivatives
+    \end{hint}
+		\begin{hint}
+      $f'(x) = -\frac{2x}{1+2x^2+x^4}$
+    \end{hint}
+		\begin{hint}
+      Where does $f'' = 0$?
+    \end{hint}
+		\begin{hint}
+		 To solve the equation $3x^4 + 2x^2 - 1 = 0$, \\
+		 let $u = x^2$ and solve for $u$ first
+    \end{hint}
+		\begin{hint}
+      Is $f$ continuous there?
+    \end{hint}  
+		List multiple answers in ascending order.\\
+		The function $f(x) = \frac{1}{1+x^2}$ has inflection 
+		points at $x =\answer[given]{-1/\sqrt 3}$ and $x=\answer{1/\sqrt 3}$.
+		
+		%2+4x^2 +2x^4 - (8x^2 + 8x^4) 2 - 4x^2 - 6x^4}$  3u^2 + 2u - 1 = 0  (3u - 1)(u + 1)
+		
+\end{problem}
+
+
+
+\begin{example} %example 8
+Consider the function $f(x) = \dfrac{1}{x}.$ Its derivative is 
+\[
+f'(x) = -\frac{1}{x^2}
+\]
+and its second derivative is
+\[
+f''(x) = \frac{2}{x^3}.
+\]
+Now we make the observation that $x^3$ has the same sign as $x$ and so $f''(x)$ will have the same sign as $x$
+in this example. Thus $f''(x) > 0$ on the interval $(0, \infty)$ and $f''(x) < 0$ on the interval $(-\infty,0).$
+We conclude that $f(x)$ is concave up on $(0, \infty)$ and concave down on the interval $(-\infty, 0).$ 
+Since $f(x) = \frac{1}{x}$ is \textbf{not} continuous at $x=0$ (it has an infinite discontinuity there), 
+there is no inflection point there.  
+
+%\begin{image}
+%\begin{tikzpicture}
+%\begin{axis}[axis lines=middle,samples=200]
+%\addplot[blue,domain=-2:-0.15] {1/x};
+%\addplot[blue,domain=0.15:2] {1/x};
+%\draw[red!20,dashed] (axis cs:2,-4) -- (axis cs:2,10); (draws vertical asymtote at x = 2)
+%\node at (axis cs:1.25,2) {concave up};
+%\node at (axis cs:-1.25,-3) {concave down};
+%\end{axis}
+%\end{tikzpicture}
+%\caption{Concavity of y = 1/x}
+%\end{image}
+\end{example}
+
+
+\begin{problem} %problem #8
+  Find the inflection point(s) of the function
+  \[
+     f(x) = \tan(x)
+  \]
+	on the interval $(-\pi/2, \pi/2)$.\\
+  
+    \begin{hint}
+      Find the second derivative, $f''$
+    \end{hint}
+    \begin{hint}
+      The derivative of $\tan(x)$ is $\sec^2(x)$
+    \end{hint}
+		\begin{hint}
+      Use the Chain Rule to find the derivative of $\sec^2(x)$
+    \end{hint}
+		\begin{hint}
+      Where does $f'' = 0$?
+    \end{hint}
+	On the interval $(-\pi/2, \pi/2)$, the function $f(x) = \tan(x)$ \\
+	has an inflection point at $x =\answer[given]{0}$.
+ 
+\end{problem}
+
+
+%2\sec(x) \sec(x) \tan(x) 
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a detailed, lecture style video on concavity:}
+\youtube{zc6tD-g3ue8}
+\end{foldable}
+\end{center}
+
+
+We next explore a special relationship between concavity and local extremes.
+
+\begin{theorem}[Second Derivative Test]
+Suppose $f'(a) = 0$.
+If $f''(a) < 0$, then $f(x)$ has a local maximum at $x = a$, and
+if $f''(a) > 0$, then $f(x)$ has a local minimum at $x = a$
+\end{theorem}
+
+The following figure should convince the reader of the validity of the Second Derivative Test.
+
+
+\begin{image}
+\begin{tikzpicture}
+\node at (4, 3.5) {The Second Derivative Test};
+\node at (1.5, 2.5) {Local Maximum at $x=a$};
+\draw[<->] (0, 0) --(3, 0);
+%\node at (3.2, 0) {$x$};
+\draw[blue] (1.5,2) parabola (2.75,.25);
+\draw[blue] (1.5,2) parabola (0.25,.25);
+\draw[blue, fill] (1.5,2) circle [radius=0.07];
+\draw[red] (0.5,2)--(2.5,2);
+
+\draw (1.5, .1) -- (1.5, -.1) node[below] {$a$};
+\node at (1.5, -.9) {$f'(a) = 0 \text{ and } f''(a) < 0$};
+
+\node at (6.5, 2.5) {Local Minimum at $x=a$};
+\draw[<->] (5, 0) --(8, 0);
+%\node at (3.2, 0) {$x$};
+
+\draw[blue] (6.5,.25) parabola (5.25,2);
+\draw[blue] (6.5,.25) parabola (7.75,2);
+\draw (6.5, .1) -- (6.5, -.1) node[below] {$a$};
+\node at (6.5, -.9) {$f'(a) = 0 \text{ and } f''(a) > 0$};
+\draw[blue, fill] (6.5,.25) circle [radius=0.07];
+\draw[red] (5.5,0.25)--(7.5,0.25);
+\end{tikzpicture}
+\end{image}
+
+
+\begin{example}
+Use the Second Derivative Test to find the local extremes of 
+\[
+f(x) = 2x^3 - 3x^2 - 36x +2.
+\]
+The critical numbers of $f(x)$ are $x = -2$ and $x = 3$ (verify).
+Next, $f''(x) = 12x - 6$ (verify).
+Plugging the critical numbers into the second derivative gives,
+\[f''(-2) = -30 < 0 \; \text{and} \; f''(3) = 30 >0.\]
+By the Second Derivative Test, $f(x) = 2x^3 - 3x^2 -36x +2$ has a local maximum at $x = -2$ and a local minimum at $x =3$.
+
+\end{example}
+
+\begin{problem}
+Use the Second derivative Test to find the local extremes of
+\[
+f(x) = x^3 - 9x^2 + 24x - 5.
+\]
+The critical numbers are (list in ascending order) $x= \answer{2}$ and $\answer{4}$.\\
+$f(x)$ has a local maximum at $x = \answer{2}$ and a local minimum at $x = \answer{4}.$
+\end{problem}
+
+
+
+\end{document}
+
+
+add second derivative test
+
+add problems where the graph of the derivative is given
+
+add multiple choice problems where the students select a graph with given properties
+
+
+Here is a graph of the derivative $f'(x)$:
+\begin{center}
+$y=f'(x)$\\
+\begin{tikzpicture}[scale=.5]
+\draw [<->,thick] (-8,0) to (8,0);
+\draw [<->,thick] (0,-4) to (0, 6);
+\draw[dotted] (-8,-4) grid (8, 6);
+\foreach \x in {-8,-6,-4,-2,0,1,3,5,7}
+\draw (\x,1pt) -- (\x,-3pt)
+			node[below] {\x};
+    \foreach \y in {-4,-2,1,3,5}
+     \draw (1pt,\y) -- (-3pt,\y)
+     	node[anchor=east] {\y};
+\draw [<->,thick] (-8,0) -- (8,0) node[right] {$x$};
+\draw [<->,thick] (0,-4) to (0, 6);
+\draw [<->,ultra thick] (-8,6) to [out=292,in=168] (-4,0) to [out=12,in=186] (0,4) to [out=352,in=95] (2,0) to [out=276,in=176](4,-3) to [out=10,in=250] (6,0) to (7.5,6) ;
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal, xtick={2},
+xticklabels={$x_0$}, title={A local maximum}]
+%\addplot[<->] coordinates{0.75, 0) (3.25, 0)};
+\node at (3.25, 0.3) {$x$};
+\addplot[domain=1:3]{3 - (x -2)^2};
+%\addplot[dashed] coordinates{(0.75, 0)  (0.75, 1.682)};
+%\addplot[dashed] coordinates{ (0.75, 1.682) (0, 1.682)};
+%\addplot[dashed] coordinates{(1.5, 0) (1.5, 2.828)};
+%\addplot[dashed] coordinates{(1.5, 2.828) (0, 2.828)};
+
+\end{axis}
+%\addplot[mark=*,fill=white] coordinates {(0,0)}
+\node at (4, -1) {$f''(x_0) < 0$};				
+\node at (6.5, 5) {$y = f(x)$};
+ 
+
+\end{tikzpicture}
+\hspace{1 in}
+\begin{tikzpicture}
+\begin{axis}[axis x line=none, axis y line= none, xlabel={$x$}, ylabel={$y$}, axis equal, xtick={2},
+xticklabels={$x_0$}, title={A local minimum}]
+%\addplot[<->] coordinates{0.75, 0) (3.25, 0)};
+\addplot[domain=1:3]{1 + (x-2)^2};
+%\addplot[dashed] coordinates{(0.5, 0)  (0.5, 0.707)};
+%\addplot[dashed] coordinates{ (0.5, 0.707) (0, 0.707)};
+%\addplot[dashed] coordinates{(1.5, 0) (1.5, 0.3536)};
+%\addplot[dashed] coordinates{(1.5, 0.3536) (0, 0.3536)};
+
+\end{axis}
+%\addplot[mark=*,fill=white] coordinates {(0,0)}
+\node at (4, -1) {$f''(x_0) > 0$};				
+\node at (-0.7, 4.5) {$y = f(x)$};
+ 
+
+\end{tikzpicture}
+
+\end{center}
+%align=flush ce

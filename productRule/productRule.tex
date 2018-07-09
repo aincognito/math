@@ -1,0 +1,609 @@
+\documentclass{ximera}
+\usepackage{tcolorbox}
+\input{../preamble}
+
+\outcome{Compute the derivative of a product.}
+
+\title{2.5 Product Rule}
+
+
+\begin{document}
+
+\begin{abstract}
+We compute the derivative of a product.
+\end{abstract}
+
+\maketitle
+
+
+\begin{center}
+\bf{The Product Rule}
+\end{center}
+
+
+\[[f(x) \cdot g(x)]' = f'(x)g(x) + f(x)g'(x)\]
+
+In words, the derivative of a product is the derivative of the first times the second plus the first 
+times the derivative of the second.\\
+
+\begin{example}
+Find 
+\[
+\frac{d}{dx} [(x^2 + 5x+3)(x^3 - 6x^2 -7)]
+\]
+
+Use the product rule with 
+\[
+f(x) = x^2 + 5x+3
+\]
+and
+\[
+g(x) = x^3 -6x^2 -7.
+\]
+With these choices, we have
+\[
+f'(x) = 2x + 5
+\]
+and 
+\[
+g'(x) = 3x^2 - 12x.
+\]
+The product rule then gives
+\[
+\frac{d}{dx} [(x^2 + 5x+3)(x^3 - 6x^2 -7)]\\
+=(2x+5)(x^3-6x^2 -7) + (x^2 + 5x+3)(3x^2 -12x).
+\]
+\end{example}
+
+
+\begin{problem} %problem 0a
+  Compute
+  \[
+  \frac{d}{dx}[(x^2 - 3x +1)(x^3 + 4x^2 -2)]
+  \]
+  
+    \begin{hint}
+      Use the Product Rule with $x^2 -3x+1$ and $x^3 +4x^2-2$.
+    \end{hint}
+    \begin{hint}
+      $(fg)' = f'g+g'f$.
+    \end{hint}
+    \begin{hint}
+      The derivative of $x^2 -3x+1$ is $2x-3$
+    \end{hint}
+    \begin{hint}
+      The derivative of $x^3 + 4x^2 -2$ is $3x^2 +8x$
+    \end{hint}
+    
+		The derivative of $(x^2 - 3x +1)(x^3 + 4x^2 -2)$ with respect to $x$ is
+		 $\answer[given]{(2x-3)(x^3+4x^2-2)+(x^2-3x+1)(3x^2+8x)}$
+		
+\end{problem}
+
+
+
+
+\begin{example}
+Find 
+\[
+\frac{d}{dx} x^3e^x
+\]
+
+Use the product rule with 
+\[
+f(x) = x^3
+\]
+and
+\[
+g(x) = e^x.
+\]
+With these choices, we have
+\[
+f'(x) = 3x^2
+\]
+and 
+\[
+g'(x) = e^x.
+\]
+The product rule then gives
+\[
+\frac{d}{dx}x^3e^x = 3x^2e^x + x^3e^x\\
+=(x^3 + 3x^2)e^x.
+\]
+\end{example}
+
+\begin{problem} %problem 0b
+  Compute
+  \[
+  \frac{d}{dx} \sqrt x e^x
+  \]
+  
+    \begin{hint}
+      Use the Product Rule with $\sqrt x$ and $e^x$.
+    \end{hint}
+    \begin{hint}
+      $(fg)' = f'g+g'f$.
+    \end{hint}
+    \begin{hint}
+      The derivative of $\sqrt x$ is $\frac{1}{2\sqrt x}$
+    \end{hint}
+    \begin{hint}
+      The derivative of $e^x$ is $e^x$
+    \end{hint}
+    
+		The derivative of $\sqrt x e^x$ with respect to $x$ is
+		 $\answer[given]{(\sqrt x + 1/(2\sqrt x))e^x}$
+		
+\end{problem}
+
+
+
+
+\begin{example} %example 1
+Find $h'(x)$ if $h(x) = x^3\sin(x)$.\\
+We write $h(x)$ as a product: $h(x) = f(x)\cdot g(x)$ with 
+\[f(x) = x^3 \quad \text{and} \quad g(x) = \sin(x).\]
+To use the product rule, we need the derivatives:
+\[f'(x) = 3x^2 \quad \text{and} \quad g'(x) = \cos(x).\]
+We can now write the derivative:
+\begin{align*}
+h'(x) &= f'(x)g(x) + f(x)g'(x) \\
+&= 3x^2\sin(x) + x^3\cos(x).
+\end{align*}
+\end{example}
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of the preceding example}
+\youtube{1BEIrnZ_OkU} %vid of example 1
+\end{foldable}
+\end{center}
+
+
+
+\begin{problem} %problem 1a
+  Compute
+  \[
+  \frac{d}{dx} x^4\sin(x)
+  \]
+  
+    \begin{hint}
+      Use the Product Rule with $x^4$ and $\sin(x)$.
+    \end{hint}
+    \begin{hint}
+      $(fg)' = f'g+g'f$.
+    \end{hint}
+    \begin{hint}
+      The derivative of $x^4$ is $4x^3$
+    \end{hint}
+    \begin{hint}
+      The derivative of $\sin(x)$ is $\cos(x)$
+    \end{hint}
+    
+		The derivative of $x^4\sin(x)$ with respect to $x$ is
+		 $\answer[given]{4x^3\sin(x) + x^4\cos(x)}$
+		
+\end{problem}
+
+
+\begin{problem} %problem 1b
+  Compute
+  \[
+  \frac{d}{dx} 2\sqrt x\sin(x)
+  \]
+  
+    \begin{hint}
+      Use the Product Rule with $2\sqrt x$ and $\sin(x)$.
+    \end{hint}
+    \begin{hint}
+      $(fg)' = f'g+g'f$.
+    \end{hint}
+    \begin{hint}
+      The derivative of $2\sqrt x$ is $\frac{1}{\sqrt x}$
+    \end{hint}
+    \begin{hint}
+      The derivative of $\sin(x)$ is $\cos(x)$
+    \end{hint}
+    
+		The derivative of $2\sqrt x\sin(x)$ with respect to $x$ is
+		 $\answer[given]{\frac{\sin(x)}{\sqrt x} + 2\sqrt x\cos(x)}$
+		
+\end{problem}
+
+
+\begin{example} %example 2
+Find $h'(x)$ if $h(x) = 3x^5\cos(x)$.\\
+We write $h(x)$ as a product: $h(x) = f(x)\cdot g(x)$ with
+ \[f(x) = 3x^5 \quad \text{and} \quad g(x) = \cos(x).\] 
+To use the product rule, we need the derivatives
+\[f'(x) = 15x^4 \quad \text{and} \quad g'(x) = -\sin(x).\] 
+We can now write the derivative:
+\begin{align*}
+h'(x) &= f'(x)g(x) + f(x)g'(x)\\
+&=  15x^4 \cos(x) +3x^5(-\sin(x)) \\
+&= 15x^4 \cos(x) - 3x^5\sin(x).
+\end{align*}
+\end{example}
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of the preceding example}
+\youtube{3Ka_23hiuXc} %vid of example 2
+\end{foldable}
+\end{center}
+
+
+\begin{problem} %problem 2a
+  Compute
+  \[
+  \frac{d}{dx} x^5\cos(x)
+  \]
+  
+    \begin{hint}
+      Use the Product Rule with $x^5$ and $\cos(x)$.
+    \end{hint}
+    \begin{hint}
+      $(fg)' = f'g+g'f$.
+    \end{hint}
+    \begin{hint}
+      The derivative of $x^5$ is $5x^4$
+    \end{hint}
+    \begin{hint}
+      The derivative of $\cos(x)$ is $-\sin(x)$
+    \end{hint}
+    
+		The derivative of $x^5\cos(x)$ with respect to $x$ is
+		 $\answer[given]{5x^4\cos(x) - x^5\sin(x)}$
+		
+\end{problem}
+
+
+
+\begin{problem} %problem 2b
+  Compute
+  \[
+  \frac{d}{dx} \sqrt[3]x \cos(x)
+  \]
+  
+    \begin{hint}
+      Use the Product Rule with $\sqrt[3] x$ and $\cos(x)$.
+    \end{hint}
+    \begin{hint}
+      $(fg)' = f'g+g'f$.
+    \end{hint}
+    \begin{hint}
+      The derivative of $\sqrt[3]x$ is $\frac{1}{3\sqrt[3]x^2}$
+    \end{hint}
+    \begin{hint}
+      The derivative of $\cos(x)$ is $-\sin(x)$
+    \end{hint}
+    
+		The derivative of $\sqrt[3]x\cos(x)$ with respect to $x$ is
+		 $\answer[given]{-x^{1/3}\sin(x) + (1/3)x^{-2/3}\cos(x)}$
+		
+\end{problem}
+
+
+\begin{example} %example 3
+Find $h'(x)$ if $h(x) = (x^2 - 5x - 2)e^x$.\\
+We write $h(x)$ as a product: $h(x) = f(x) \cdot g(x)$ with
+\[f(x) = x^2 - 5x -2 \quad \text{and} \quad g(x) = e^x.\]
+To use the product rule, we need the derivatives:
+\[f'(x) = 2x - 5 \quad \text{and} \quad g'(x)= e^x.\]
+We can now write the derivative:
+\begin{align*}
+h'(x) &= f'(x)g(x) + f(x)g'(x) \\
+&= (2x - 5)e^x+ (x^2 - 5x - 2)e^x  \\
+&= (x^2 - 5x - 2 + 2x - 5)e^x \\
+&= (x^2 - 3x - 7)e^x.
+\end{align*}
+\end{example}
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of the preceding example}
+\youtube{DaVxKhW7ZGY} %vid of example 3
+\end{foldable}
+\end{center}
+
+
+\begin{problem} %problem 3a
+  Compute
+  \[
+  \frac{d}{dx} (x^3 - 5x^2 + 3x -2)e^x
+  \]
+  
+    \begin{hint}
+      Use the Product Rule with $x^3 - 5x^2 + 3x -2$ and $e^x$.
+    \end{hint}
+    \begin{hint}
+      $(fg)' = f'g+g'f$.
+    \end{hint}
+    \begin{hint}
+      The derivative of $x^3 - 5x^2 + 3x -2$ is $3x^2 - 10x + 3$
+    \end{hint}
+    \begin{hint}
+      The derivative of $e^x$ is itself
+    \end{hint}
+    \begin{hint}
+      Factor out $e^x$ and combine like terms 
+    \end{hint}
+		The derivative of $(x^3 - 5x^2 + 3x -2)e^x$ with respect to $x$ is
+		 $\answer[given]{(x^3 - 2x^2 - 7x +1)e^x}$
+		
+\end{problem}
+
+
+
+
+\begin{example} %example 4
+Find $h'(x)$ if $h(x) = x\ln(x)$.\\
+We write $h(x)$ as a product: $h(x) = f(x) \cdot g(x)$ with
+\[f(x) = x \quad \text{and} \quad g(x) = \ln(x).\]
+To use the product rule, we need the derivatives:
+\[f'(x) = 1 \quad \text{and} \quad g'(x)= \frac{1}{x}.\]
+We can now write the derivative:
+\begin{align*}
+h'(x) &= f'(x)g(x) + f(x)g'(x) \\
+&=  1 \cdot \ln(x) + x\frac{1}{x}  \\
+&=  \ln(x) + 1.
+\end{align*}
+\end{example}
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of the preceding example}
+\youtube{mJXBsi0uZWA} %vid of example 4
+\end{foldable}
+\end{center}
+
+
+
+\begin{problem} %problem 4a
+  Compute
+  \[
+  \frac{d}{dx} x^3\ln(x)
+  \]
+  
+    \begin{hint}
+      Use the Product Rule with $x^3$ and $\ln(x)$.
+    \end{hint}
+    \begin{hint}
+      $(fg)' = f'g+g'f$.
+    \end{hint}
+    \begin{hint}
+      The derivative of $x^3$ is $3x^2$
+    \end{hint}
+    \begin{hint}
+      The derivative of $\ln(x)$ is $1/x$
+    \end{hint}
+		The derivative of $x^3\ln(x)$ with respect to $x$ is
+		 $\answer[given]{x^2(3 \ln(x) + 1)}$
+		
+\end{problem}
+
+
+\begin{example} %example 5
+Find $h'(x)$ if $h(x) = e^x\sin(x)$.\\
+We write $h(x)$ as a product: $h(x) = f(x)\cdot g(x)$ with
+\[f(x) = e^x \quad \text{and} \quad g(x) = \sin(x).\]
+To use the product rule, we need the derivatives:
+\[f'(x) = e^x \quad \text{and} \quad g'(x) = \cos(x).\]
+We can now write the derivative:
+\begin{align*}
+h'(x) &= f'(x)g(x) + f(x)g'(x) \\
+&= e^x \sin(x) + e^x \cos(x) \\
+&= e^x[\sin(x) +  \cos(x)].
+\end{align*}
+\end{example}
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of the preceding example}
+\youtube{hZC3kMNKHa0} %vid of example 5
+\end{foldable}
+\end{center}
+
+
+
+\begin{problem} %problem 5a
+  Compute
+  \[
+  \frac{d}{dx} 3e^x \cos(x)
+  \]
+  
+    \begin{hint}
+      Use the Product Rule with $3e^x$ and $\cos(x)$.
+    \end{hint}
+    \begin{hint}
+      $(fg)' = f'g+g'f$.
+    \end{hint}
+    \begin{hint}
+      The derivative of $3e^x$ is itself
+    \end{hint}
+    \begin{hint}
+      The derivative of $\cos(x)$ is $-\sin(x)$
+    \end{hint}
+		\begin{hint}
+      Factor out $3e^x$
+    \end{hint}
+		The derivative of $3e^x\cos(x)$ with respect to $x$ is
+		 $\answer[given]{3e^x(\cos(x) - \sin(x))}$
+		
+\end{problem}
+
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a detailed, lecture style video on the Product Rule:}
+\youtube{gK9hyA8kcJc}
+\end{foldable}
+\end{center}
+
+We conclude this section with a derivation of the product rule using the definition of the derivative.
+\begin{align*}
+\left[f(x)g(x)\right]' &= \lim_{h \to 0} \frac{f(x+h)g(x+h)-f(x)g(x)}{h}\\[5pt] 
+&= \lim_{h \to 0} \frac{f(x+h)g(x+h)- f(x)g(x+h) + f(x)g(x+h) - f(x)g(x)}{h}\\[5pt] 
+&= \lim_{h \to 0} \frac{f(x+h)g(x+h)- f(x)g(x+h)}{h} + \frac{f(x)g(x+h) - f(x)g(x)}{h} \\[5pt] 
+&=  \lim_{h \to 0} \frac{g(x+h)\left[f(x+h)- f(x)\right]}{h} + \frac{f(x)\left[g(x+h) - g(x)\right]}{h}\\[5pt] 
+&= g(x)f'(x) + f(x)g'(x).
+\end{align*}
+
+
+\end{document}
+
+
+
+
+\begin{question} %problem 4b
+  Compute
+  \[
+  \frac{d}{dx} x^6\log(x)
+  \]
+  
+    \begin{hint}
+      Use the Product Rule with $x^6$ and $\log(x)$.
+    \end{hint}
+    \begin{hint}
+      $(fg)' = f'g+g'f$.
+    \end{hint}
+    \begin{hint}
+      The derivative of $x^6$ is $6x^5$
+    \end{hint}
+    \begin{hint}
+      The derivative of $\log(x)$ is $\frac{1}{x\ln(10)}$
+    \end{hint}
+		The derivative of $x^6\log(x)$ with respect to $x$ is
+		 $\answer[given]{x^5(6 \log(x) + \frac{1}{\ln(10)})}$
+		
+\end{question}
+
+\begin{question} %problem 3b
+  Compute
+  \[
+  \frac{d}{dx} (x^4 + 5)2^x
+  \]
+  
+    \begin{hint}
+      Use the Product Rule with $x^4 + 5$ and $2^x$.
+    \end{hint}
+    \begin{hint}
+      $(fg)' = f'g+g'f$.
+    \end{hint}
+    \begin{hint}
+      The derivative of $x^4 + 5$ is $4x^3$
+    \end{hint}
+    \begin{hint}
+      The derivative of $2^x$ is $2^x \ln(2)$
+    \end{hint}
+		The derivative of $(x^4 + 5)2^x$ with respect to $x$ is
+		 $\answer[given]{4x^3 2^x + (x^4 + 5) 2^x \ln(2)}$
+		
+\end{question}
+
+
+
+\begin{question} %problem 5b
+  Compute
+  \[
+  \frac{d}{dx} 3^x \sin(x)
+  \]
+  
+    \begin{hint}
+      Use the Product Rule with $3^x$ and $\sin(x)$.
+    \end{hint}
+    \begin{hint}
+      $(fg)' = f'g+g'f$.
+    \end{hint}
+    \begin{hint}
+      The derivative of $3^x$ is $3^x \ln(3)$
+    \end{hint}
+    \begin{hint}
+      The derivative of $\sin(x)$ is $\cos(x)$
+    \end{hint}
+		The derivative of $3^x\sin(x)$ with respect to $x$ is
+		 $\answer[given]{3^x \ln(3) \sin(x) + 3^x\cos(x)}$
+		
+\end{question}
+
+
+
+\begin{example} %example 6
+Find $h'(x)$ if $h(x) = (1+x^2)\tan^{-1}(x)$.\\
+We write $h(x)$ as a product: $h(x) = f(x)\cdot g(x)$ with
+\[f(x) = 1+x^2 \quad \text{and} \quad g(x) = \tan^{-1}(x).\]
+To use the product rule we need the derivatives:
+\[f'(x) = 2x \quad \text{and} \quad g'(x) = \frac{1}{1+x^2}.\]
+We can now write the derivative:
+\begin{align*}
+h'(x) &= f'(x)g(x) + f(x)g'(x) \\
+&= 2x\tan^{-1}(x)  + (1+x^2)\frac{1}{1+x^2} \\
+&=  2x\tan^{-1}(x) + 1.
+\end{align*}
+\end{example}
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of the preceding example}
+\youtube{NvlgmABasiQ} %vid of example 6
+\end{foldable}
+\end{center}
+
+
+
+\begin{question} %problem 6a
+  Compute
+  \[
+  \frac{d}{dx} x^3 \tan^{-1}(x)
+  \]
+  
+    \begin{hint}
+      Use the Product Rule with $x^3$ and $\tan^{-1}(x)$.
+    \end{hint}
+    \begin{hint}
+      $(fg)' = f'g+g'f$.
+    \end{hint}
+    \begin{hint}
+      The derivative of $x^3$ is $3x^2$
+    \end{hint}
+    \begin{hint}
+      The derivative of $\tan^{-1}(x)$ is $\frac{1}{1+x^2}$
+    \end{hint}
+		The derivative of $x^3\tan^{-1}(x)$ with respect to $x$ is
+		 $\answer[given]{3x^2 \tan^{-1}(x) + \frac{x^3}{1+x^2}}$
+		
+\end{question}
+
+\begin{question} %problem 6b
+  Compute
+  \[
+  \frac{d}{dx} (1-x^2) \sin^{-1}(x)
+  \]
+  
+    \begin{hint}
+      Use the Product Rule with $1-x^2$ and $\sin^{-1}(x)$.
+    \end{hint}
+    \begin{hint}
+      $(fg)' = f'g+g'f$.
+    \end{hint}
+    \begin{hint}
+      The derivative of $1 - x^2$ is $-2x$
+    \end{hint}
+    \begin{hint}
+      The derivative of $\sin^{-1}(x)$ is $\frac{1}{\sqrt{1-x^2}}$
+    \end{hint}
+		\begin{hint}
+       $(1-x^2) \frac{1}{\sqrt{1-x^2}} = \sqrt{1-x^2}$
+    \end{hint}
+		The derivative of $(1-x^2)\sin^{-1}(x)$ with respect to $x$ is
+		 $\answer[given]{-2x \sin^{-1}(x) + \sqrt{1-x^2}}$
+		
+\end{question}

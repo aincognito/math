@@ -1,0 +1,482 @@
+\documentclass{ximera}
+%\usepackage{tcolorbox}
+\input{../preamble}
+
+\outcome{Compute limits using L'Hopital's Rule}
+
+\title{3.6 L'Hopital's Rule}
+
+
+\begin{document}
+
+\begin{abstract}
+In this section we compute limits using L'Hopital's Rule which requires our knowledge of derivatives.
+\end{abstract}
+
+\maketitle
+
+\section{L'Hopital's Rule}
+
+L'Hopital's Rule uses the derivative to help us find limits involving indeterminate forms. 
+The main indeterminate forms we will discuss are $\frac 00, \frac{\infty}{\infty}, 0\cdot \infty, 1^\infty$ and $0^0$. We begin with the fractional forms.
+
+\begin{theorem}[L'Hopital's Rule]
+
+
+
+
+If $\displaystyle{\lim_{x \to c} \frac{f(x)}{g(x)} = \frac{0}{0} \quad \text{or} \quad \frac{\infty}{\infty}}$\\
+then $\displaystyle{\lim_{x \to c} \frac{f(x)}{g(x)} = \lim_{x \to c} \frac{f'(x)}{g'(x)}}$ provided the latter exists.\\
+In the above statement, $\lim_{x \to c}$ can be replaced by a one-sided limit and $c$ can be $\pm \infty$. Also
+the fraction $\frac{\infty}{\infty}$ is shorthand for $\frac{\pm \infty}{\pm \infty}$.
+\end{theorem}
+We begin with the $\frac 00$ form.
+
+
+\begin{example}  %example 1
+Compute the limit: $\displaystyle{\lim_{x \to 0} \frac{\sin(x)}{x}}.$
+
+Plugging in the terminal value, $x=0$, yields 
+the indeterminate form $\frac00$, so L'Hopital's rule applies.
+
+We have 
+
+\[\lim_{x \to 0} \frac{\sin(x)}{x} = \lim_{x \to 0} \frac{\cos(x)}{1} = 1.\]
+\end{example}
+
+\begin{problem} %problem #1a
+  Compute
+  \[
+  \lim_{x \to 0} \frac{1 - \cos(x)}{x} = \answer{0}
+  \]
+  
+    \begin{hint}
+      Plug in $x=0$
+    \end{hint}
+    \begin{hint}
+      If you got $\frac00$, use L'Hopital's Rule
+    \end{hint}
+    \begin{hint}
+      Take the derivative of the numerator and denominator separately
+    \end{hint}
+    \begin{hint}
+      Compute the limit of the new fraction
+    \end{hint}
+    
+		
+	
+\end{problem}
+
+\begin{problem} %problem #1b
+  Compute
+  \[
+  \lim_{x \to 0} \frac{\tan(x)}{3x} = \answer{1/3}
+  \]
+  
+    \begin{hint}
+      Plug in $x=0$
+    \end{hint}
+    \begin{hint}
+      If you got $0/0$, use L'Hopital's Rule
+    \end{hint}
+    \begin{hint}
+      Take the derivative of the numerator and denominator separately
+    \end{hint}
+		\begin{hint}
+		  The derivative of $\tan(x)$ is $\sec^2(x)$
+    \end{hint}
+		\begin{hint}
+      Compute the limit of the new fraction
+    \end{hint}
+	
+\end{problem}
+
+
+\begin{example}  %example 2
+ Compute the limit: $\displaystyle{\lim_{x \to 0} \frac{e^x - 1}{x}}.$\\
+Plugging in the terminal value, $x=0$, yields 
+the indeterminate form $0/0$, so L'Hopital's rule applies.
+We have 
+\[\lim_{x \to 0} \frac{e^x - 1}{x} = \lim_{x \to 0} \frac{e^x}{1} = 1.\]
+\end{example}
+
+
+\begin{problem} %problem #2a
+  Compute
+  \[
+  \lim_{x \to 0} \frac{5x}{2 - 2e^x} = \answer{-5/2}
+  \]
+  
+    \begin{hint}
+      Plug in $x=0$
+    \end{hint}
+    \begin{hint}
+      If you got $\frac00$, use L'Hopital's Rule
+    \end{hint}
+    \begin{hint}
+      Take the derivative of the numerator and denominator separately
+    \end{hint}
+	  \begin{hint}
+      Compute the limit of the new fraction
+    \end{hint}
+	
+\end{problem}
+
+
+\begin{problem} %problem #2b
+  Compute
+  \[
+  \lim_{x \to 0} \frac{e^{2x} -1}{7\sin(x)} = \answer{2/7}
+  \]
+  
+    \begin{hint}
+      Plug in $x=0$
+    \end{hint}
+    \begin{hint}
+      If you got $0/0$, use L'Hopital's Rule
+    \end{hint}
+    \begin{hint}
+      Take the derivative of the numerator and denominator separately
+    \end{hint}
+		\begin{hint}
+		 The derivative of $e^{2x}$ is $2e^{2x}$, by the Chain Rule
+	  \end{hint}
+		\begin{hint}
+      Compute the limit of the new fraction
+    \end{hint}
+    
+\end{problem}
+
+
+\begin{example}  %example 3 
+Compute the limit: $\displaystyle{\lim_{x \to 2} \frac{x^3 - 8}{x^5 - 32}}.$\\
+Plugging in the terminal value, $x=2$, yields 
+the indeterminate form $0/0$, so L'Hopital's rule applies.
+We have 
+\[\lim_{x \to 2} \frac{x^3 - 8}{x^5 - 32} = \lim_{x \to 2} \frac{3x^2}{5x^4} = \frac{12}{80} = \frac{3}{20}.\]
+\end{example}
+
+\begin{problem} %problem #3a
+  Compute
+  \[
+  \lim_{x \to 3} \frac{x^3 - 27}{x^4 - 81} = \answer{1/4}
+  \]
+  
+    \begin{hint}
+      Plug in $x=3$
+    \end{hint}
+    \begin{hint}
+      If you got $0/0$, use L'Hopital's Rule
+    \end{hint}
+    \begin{hint}
+      Take the derivative of the numerator and denominator separately
+    \end{hint}
+	  \begin{hint}
+      Compute the limit of the new fraction
+    \end{hint}
+  
+\end{problem}
+
+
+\begin{problem} %problem #3b
+  Compute
+  \[
+  \lim_{x \to 4} \frac{x^2 - 3x - 4}{x^3 - 64} = \answer{5/48}
+  \]
+  
+    \begin{hint}
+      Plug in $x=4$
+    \end{hint}
+    \begin{hint}
+      If you got $0/0$, use L'Hopital's Rule
+    \end{hint}
+    \begin{hint}
+      Take the derivative of the numerator and denominator separately
+    \end{hint}
+	  \begin{hint}
+      Compute the limit of the new fraction
+    \end{hint}
+  
+\end{problem}
+
+
+Sometimes we have to use L'Hopital's Rule more than once.
+
+\begin{example}  %example 4 
+Compute the limit: $\displaystyle{\lim_{x \to 0} \frac{e^x - x - 1}{x^2}}.$
+
+Plugging in the terminal value, $x=0$, yields 
+the indeterminate form $0/0$, so L'Hopital's rule applies.
+We have 
+\[\lim_{x \to 0} \frac{e^x - x - 1}{x^2} = \lim_{x \to 0} \frac{e^x -1}{2x} = \frac{0}{0}.\]
+Applying L'Hopital's Rule again gives
+\[\lim_{x \to 0} \frac{e^x -1}{2x} = \frac{e^x}{2} = \frac{1}{2}.\]
+Hence $\displaystyle{\lim_{x \to 0} \frac{e^x - x - 1}{x^2} = \frac 12}.$
+\end{example}
+
+
+\begin{problem} %problem #4a
+  Compute
+  \[
+  \lim_{x \to 0} \frac{1 - \cos(x)}{x^2} = \answer{1/2}
+  \]
+  
+    \begin{hint}
+      Plug in $x=0$
+    \end{hint}
+    \begin{hint}
+      If you got $\frac00$, use L'Hopital's Rule
+    \end{hint}
+    \begin{hint}
+      Take the derivative of the numerator and denominator separately
+    \end{hint}
+	  \begin{hint}
+      Compute the limit of the new fraction
+    \end{hint}
+		\begin{hint}
+		 If you get $\frac00$, use L'Hopital's Rule again
+    \end{hint}
+
+	
+\end{problem}
+
+
+\begin{problem} %problem #4b
+  Compute
+  \[
+  \lim_{x \to 0} \frac{\sec(x) - 1}{x^3 - x^2} = \answer{-1/2}
+  \]
+  
+    \begin{hint}
+      Plug in $x=0$
+    \end{hint}
+    \begin{hint}
+      If you got $0/0$, use L'Hopital's Rule
+    \end{hint}
+    \begin{hint}
+      Take the derivative of the numerator and denominator separately
+    \end{hint}
+		\begin{hint}
+		  The derivative of $\sec(x)$ is $\sec(x)\tan(x)$
+	  \end{hint}
+		\begin{hint}
+      Compute the limit of the new fraction
+    \end{hint}
+		\begin{hint}
+		 If you get $\frac00$, use L'Hopital's Rule again
+    \end{hint}
+		\begin{hint}
+		  Use the Product Rule to find the derivative of $\sec(x)\tan(x)$
+		\end{hint}
+		
+\end{problem}
+
+
+\begin{example}  %example 5 
+Compute the limit: $\displaystyle{\lim_{x \to 0} \frac{\tan(x)-x}{x^3}}.$\\
+Plugging in the terminal value, $x=0$, yields 
+the indeterminate form $\frac00$, so L'Hopital's rule applies.
+We have 
+\[\lim_{x \to 0} \frac{\tan(x)-x}{x^3} = \lim_{x \to 0} \frac{\sec^2(x)-1}{3x^2} = \frac{0}{0}.\]
+Applying L'Hopital's Rule again gives
+\[\lim_{x \to 0} \frac{\sec^2(x)-1}{3x^2} = \lim_{x \to 0} \frac{2\sec^2(x)\tan(x)}{6x} = \frac{0}{0}.\]	
+We need to apply L'Hopital's Rule again, but first, the numerator is complicated and 								
+\[\lim_{x \to 0} \sec(x) = 1 \neq 0\]
+so we take a simplifying step before applying the rule.
+\[\lim_{x \to 0} \frac{2\sec^2(x)\tan(x)}{6x} = 
+\lim_{x \to 0} \sec^2(x) \cdot \lim_{x \to 0} \frac{2\tan(x)}{6x}=\]
+ \[1\cdot \lim_{x \to 0} \frac{2\sec^2(x)}{6} =\frac{1}{3}.\]
+\end{example}
+
+
+We next consider problems of the form $\infty/\infty$.  These are handled the same way as the $0/0$ case above.
+
+{\bf The $\dfrac{\infty}{\infty}$ case.}
+
+\begin{example}  %example 6 
+Compute the limit: $\displaystyle{\lim_{x \to \infty} \frac{x^2}{e^x}}.$
+
+As $x$ approaches $\infty$ we get the indeterminate form $\frac{\infty}{\infty}$ so L'Hopital's Rule applies.
+We have 
+\[\lim_{x\to \infty} \frac{x^2}{e^x} = \lim_{x \to \infty} \frac{2x}{e^x} = \frac{\infty}{\infty}.\]
+Applying L'hopital again, we get
+\[\lim_{x \to \infty} \frac{2x}{e^x} = \lim_{\infty} \frac{2}{e^x} = 0.\]
+Hence $\lim_{x\to\infty}\frac{x^2}{e^x}=0$.  
+This limit can be generalized as follows:
+\[\lim_{x\to\infty}\frac{x^n}{e^x} =0\]
+for any exponent $n = 1, 2, 3, \dots$.
+This general result comes from using L'Hopital's Rule $n$ times, yielding
+\[\lim_{x\to\infty} \frac{n!}{e^x} =0\]
+where $n! = n(n-1)(n-2)\cdot \dots \cdot 3\cdot 2\cdot 1$.
+The interpretation of this limit is that the exponential function $e^x$ grows faster than any power of $x$ as $x \to \infty$.
+\end{example}
+
+
+
+
+\begin{problem} %problem #6a
+  Compute
+  \[
+  \lim_{x \to \infty} \frac{3x+2}{2x + 3} = \answer{3/2}
+  \]
+  
+    \begin{hint}
+      ``Plug in'' $x=\infty$
+    \end{hint}
+    \begin{hint}
+      If you got $\frac{\infty}{\infty}$, use L'Hopital's Rule
+    \end{hint}
+    \begin{hint}
+      Take the derivative of the numerator and denominator separately
+    \end{hint}
+		\begin{hint}
+      Compute the limit of the new fraction
+    \end{hint}
+	
+\end{problem}
+
+
+\begin{problem} %problem #6b
+  Compute
+  \[
+  \lim_{x \to \infty} \frac{5x^2 + 2x - 3}{4x^2 - x + 1} = \answer{5/4}
+  \]
+  
+    \begin{hint}
+      ``Plug in'' $x=\infty$
+    \end{hint}
+    \begin{hint}
+      If you got $\frac{\infty}{\infty}$, use L'Hopital's Rule
+    \end{hint}
+    \begin{hint}
+      Take the derivative of the numerator and denominator separately
+    \end{hint}
+		\begin{hint}
+      Compute the limit of the new fraction
+    \end{hint}
+		\begin{hint}
+		  If you got $\frac{\infty}{\infty}$, use L'Hopital's Rule again
+	  \end{hint}
+		
+\end{problem}
+
+
+\begin{example}  %example 7 
+Compute the limit: $\displaystyle{\lim_{x \to \infty} \frac{\sqrt{x}}{\ln(x)}}$.
+As $x \to \infty$ we get $\infty/\infty$, so L'Hopital's Rule applies.
+We have:
+\[\lim_{x \to \infty} \frac{\sqrt x}{\ln(x)} = 
+\lim_{x \to \infty}\frac{\left(\frac{1}{2\sqrt x}\right)}{\left(\frac{1}{x}\right)}\]
+which simplifies to 
+\[\lim_{x\to\infty} \frac{x}{2\sqrt x} = \lim_{x\to\infty}\frac{\sqrt x}{2} = \infty.\]
+Hence, $\lim_{x\to\infty} \frac{\sqrt x}{\ln(x)} = \infty$.
+The interpretation of this limit is that $\sqrt x$ goes to $\infty$ faster than $\ln(x)$ as $x\to\infty$.
+\end{example}
+
+\begin{problem} %problem #7a
+  Compute
+  \[
+  \lim_{x \to \infty} \frac{\sqrt x}{2x + 3} = \answer{0}
+  \]
+  
+    \begin{hint}
+      ``Plug in'' $x=\infty$
+    \end{hint}
+    \begin{hint}
+      If you got $\frac{\infty}{\infty}$, use L'Hopital's Rule
+    \end{hint}
+    \begin{hint}
+      Take the derivative of the numerator and denominator separately
+    \end{hint}
+		\begin{hint}
+		  The derivative of $\sqrt x$ is $\frac{1}{2\sqrt x}$
+	  \end{hint}
+		\begin{hint}
+      Compute the limit of the new fraction
+    \end{hint}
+	
+\end{problem}
+
+\begin{problem} %problem #7b
+  Compute
+  \[
+  \lim_{x \to \infty} \frac{\ln(x)}{1 + x^2} = \answer{0}
+  \]
+  
+    \begin{hint}
+      ``Plug in'' $x=\infty$
+    \end{hint}
+    \begin{hint}
+      If you got $\frac{\infty}{\infty}$, use L'Hopital's Rule
+    \end{hint}
+    \begin{hint}
+      Take the derivative of the numerator and denominator separately
+    \end{hint}
+		\begin{hint}
+		  The derivative of $\ln(x)$ is $\frac{1}{x}$
+	  \end{hint}
+		\begin{hint}
+      Simplify the new fraction and then compute the limit
+    \end{hint}
+	
+\end{problem}
+
+
+\begin{center}
+{\bf Other Indeterminate Forms}
+\end{center}
+
+L'Hopital's Rule requires a fractional indeterminate form such as $0/0$ or $\infty/\infty$, 
+but we can use it to handle other indeterminate forms by rewriting expressions as fractions.
+
+Examples of the $0\cdot\infty$ case.
+
+\begin{example} %example 8
+Compute the limit: $\displaystyle{\lim_{x \to 0^+}x^2 \ln(x)}$.
+
+As $x\to 0^+$ we get $0 \cdot (-\infty)$ which is an indeterminate form, but L'Hopital's Rule does not apply in this situation.
+We must rewrite the problem as a fraction, in the following way:
+\[\lim_{x \to 0^+}\frac{\ln(x)}{x^{-2}}.\]
+Notice that this is equivalent to the original problem since 
+\[x^2 = \frac{1}{x^{-2}}.\]
+Also note that $x^{-2} =\frac{1}{x^2} \to \infty$ as $x\to 0^+$.
+Now, we can use L'Hopital's Rule because 
+\[\lim_{x \to 0+}\frac{\ln(x)}{x^{-2}}= \frac{-\infty}{\infty}.\]
+We get
+\[\lim_{x \to 0^+}\frac{\ln(x)}{x^{-2}}= \lim_{x\to 0^+} \frac{1/x}{-2x^{-3}}\]
+which simplifies to
+\[\lim_{x \to 0^+}-\frac{x^2}{2}= 0.\]
+Hence, 
+\[\lim_{x \to 0^+} x^2 \ln(x)=\lim_{x \to 0^+}\frac{ln(x)}{x^{-2}}= 0.\]
+\end{example}
+
+
+\begin{problem} %problem #8
+  Compute
+  \[
+  \lim_{x \to \infty} 3xe^{-x} = \answer{0}
+  \]
+  
+    \begin{hint}
+      ``Plug in'' $x=\infty$
+    \end{hint}
+    \begin{hint}
+      If you got $\infty \cdot 0$, rewrite the expression as a fraction
+    \end{hint}
+    \begin{hint}
+      Take advantage of negative exponents: $e^{-x} = \frac{1}{e^x}$
+    \end{hint}
+	
+\end{problem}
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a detailed, lecture style video on L'Hopital's Rule:}
+\youtube{fo2rJzeYarw}
+\end{foldable}
+\end{center}
+
+
+
+\end{document}

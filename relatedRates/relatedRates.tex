@@ -1,0 +1,565 @@
+\documentclass{ximera}
+
+\input{../preamble}
+
+\outcome{Solve Related Rates word problems}
+
+\title{2.15 Related Rates}
+
+
+
+
+\begin{document}
+
+\begin{abstract}
+In this section we discover the relationship between the rates of change of two or more related quantities.
+\end{abstract}
+
+\maketitle
+
+
+\section{Related Rates}
+
+In this section, we use implicit differentiation to compute the relationship between 
+the rates of change of related quantities.
+If $F$ is a function of time, then 
+\[ \frac{dF}{dt} \]
+represents the rate of change of $F$ with respect to time, or simply, the rate of change of $F$.
+For example, if $h$ is the height of a rising balloon, then $\frac{dh}{dt}$
+is the rate of change of the height, i.e., it represents \textit{how fast}
+the balloon is rising. If $z$ represents the distance between two moving 
+objects then $\frac{dz}{dt}$ tells you how fast they are moving toward 
+(or away from) each other.  If $V$ represents the volume of a melting snowball, 
+then $\frac{dV}{dt}$ tells you how fast it is melting (and it should be negative, 
+since the volume of a melting snowball is decreasing).
+
+ %(time derivatives of related quantities)
+ %(rates of change  of related quantities with respect to time)
+%(rates of change with respect to time of related quantities).
+
+\begin{center}
+\bf{Examples of Related Rates}
+\end{center}
+
+
+
+\begin{example} 
+Suppose $A$ and $s$ represent the area and side length of an expanding square. 
+Then the symbols $\frac{dA}{dt}$ and $\frac{ds}{dt}$ represent the rates at which 
+the area and the side length are increasing. Since the area of a square is related 
+to side length (by the formula $A = s^2$), the rates of change of area and side 
+length are also related. Since the square is expanding, both $A$ and $s$ are 
+functions of time, $t$.
+%To find this relationship we use implicit differentiation, noting that both $A$ and $s$ are functions of time since the square is expanding. 
+Starting with the equation $A = s^2$, we differentiate both sides with respect 
+to the implicit variable $t$ using the chain rule where appropriate:
+
+%The area of a square is given by $A = s^2$. If $A$ and $s$ are functions of time, $t$, 
+%then their rates of change are related as follows:
+%\[A = s^2 \quad \text{we begin with the basic relationship between the variables}\]
+\[\frac{d}{dt} (A) = \frac{d}{dt}(s^2) \]
+Note the use of the symbol $\frac{d}{dt}$ to represent the derivative with 
+respect to $t$ of each side of the equation $A = s^2$. Now we compute the derivatives:
+%\quad \text{we differentiate both sides with repsect to} \; t\]
+\[\frac{dA}{dt}  = 2s\frac{ds}{dt}. \]
+Note the use of the chain rule on the right hand side. In this application of the 
+chain rule, $s$ is the inside function and the square is the outside function. 
+So we get the derivative of the outside, $2s$, times the derivative of the inside, $\frac{ds}{dt}$.
+In conclusion, the area and side length of a square are related by the formula
+\[A = s^2\]
+and their rates of change are related by the equation
+\[\frac{dA}{dt} = 2s \frac{ds}{dt}.\]
+\end{example}
+
+
+\begin{question}
+The volume of a cube is given by $V = s^3$. If $V$ and $s$ are functions of time, $t$, 
+find the relationship between their rates of change.\\
+\begin{hint}
+Differentiate both sides with respect to $t$, using the symbol $\frac{d}{dt}$
+\end{hint}
+\begin{hint}
+Use the chain rule on the right side with $s$ as the inside and the $cube$ as the outside
+\end{hint}
+
+The relationship between $\frac{dV}{dt}$ and $\frac{ds}{dt}$ is
+\begin{multipleChoice}
+\choice{$\frac{dV}{dt}= 2s \frac{ds}{dt}$}
+\choice{$\frac{dV}{dt}= 3s \frac{ds}{dt}$}
+\choice[correct]{$\frac{dV}{dt}= 3s^2 \frac{ds}{dt}$}
+\choice{none of the above}
+\end{multipleChoice}
+\end{question}
+
+
+\begin{question}
+The surface area of a cube is given by $S = 6s^2$. If $S$ and $s$ are functions of time, $t$, 
+find the relationship between their rates of change.\\
+\begin{hint}
+Differentiate both sides with respect to $t$, using the symbol $\frac{d}{dt}$
+\end{hint}
+\begin{hint}
+Use the chain rule on the right side with $s$ as the inside and the $square$ as the outside
+\end{hint}
+
+The relationship between $\frac{dS}{dt}$ and $\frac{ds}{dt}$ is
+\begin{multipleChoice}
+\choice{$\frac{dS}{dt}= 2s \frac{ds}{dt}$}
+\choice{$\frac{dS}{dt}= 6s \frac{ds}{dt}$}
+\choice[correct]{$\frac{dS}{dt}= 12s \frac{ds}{dt}$}
+\choice{none of the above}
+\end{multipleChoice}
+\end{question}
+
+
+\begin{question}
+The circumference of a circle is given by $C = 2\pi r$. If $C$ and $r$ are functions of time, $t$,
+find the relationship between their rates of change.\\
+\begin{hint}
+Differentiate both sides with respect to $t$, using the symbol $\frac{d}{dt}$
+\end{hint}
+\begin{hint}
+Use the constant multiple rule on the right side
+\end{hint}
+
+The relationship between $\frac{dC}{dt}$ and $\frac{dr}{dt}$ is
+\begin{multipleChoice}
+\choice{$\frac{dC}{dt}=  \frac{dr}{dt}$}
+\choice{$\frac{dC}{dt}= \pi \frac{dr}{dt}$}
+\choice[correct]{$\frac{dC}{dt}= 2\pi \frac{dr}{dt}$}
+\choice{none of the above}
+\end{multipleChoice}
+\end{question}
+
+
+
+\begin{example}
+The area of a circle is given by $A = \pi r^2$. If $A$ and $r$ are functions of time, $t$, 
+then their rates of change are related as follows:
+\[\frac{d}{dt} (A) = \frac{d}{dt}(\pi r^2)\]
+\[\frac{dA}{dt}  = 2\pi r \frac{dr}{dt}.\]
+\end{example}
+
+
+\begin{question}
+The volume of a sphere is given by $V = \tfrac{4}{3}\pi r^3$. If $V$ and $r$ are functions of time, $t$,
+find the relationship between their rates of change.\\
+\begin{hint}
+Differentiate both sides with respect to $t$, using the symbol $\frac{d}{dt}$
+\end{hint}
+\begin{hint}
+Use the chain rule on the right side with $r$ as the inside and the $cube$ as the outside
+\end{hint}
+
+The relationship between $\frac{dV}{dt}$ and $\frac{dr}{dt}$ is
+\begin{multipleChoice}
+\choice[correct]{$\frac{dV}{dt}= 4\pi r^2 \frac{dr}{dt}$}
+\choice{$\frac{dV}{dt}= \frac43 \pi r \frac{dr}{dt}$}
+\choice{$\frac{dV}{dt}= 4 \pi r \frac{dr}{dt}$}
+\choice{none of the above}
+\end{multipleChoice}
+\end{question}
+
+
+\begin{question}
+The surface area of a sphere is given by $S = 4\pi r^2$. If $S$ and $r$ are functions of time, $t$, 
+find the relationship between their rates of change.\\
+\begin{hint}
+Differentiate both sides with respect to $t$, using the symbol $\frac{d}{dt}$
+\end{hint}
+\begin{hint}
+Use the chain rule on the right side with $r$ as the inside and the $square$ as the outside
+\end{hint}
+
+The relationship between $\frac{dS}{dt}$ and $\frac{ds}{dt}$ is
+\begin{multipleChoice}
+\choice{$\frac{dS}{dt}= 2 \pi r \frac{dr}{dt}$}
+\choice[correct]{$\frac{dS}{dt}= 8 \pi r\frac{dr}{dt}$}
+\choice{$\frac{dS}{dt}= 4 \pi r^2 \frac{dr}{dt}$}
+\choice{none of the above}
+\end{multipleChoice}
+\end{question}
+
+
+
+\begin{example}
+The lengths of the sides of a right triangle are related by $x^2 + y^2 = z^2$. 
+If $x, y$ and $z$ are functions of time, $t$, 
+differentiate with respect to $t$ to find the relationship between their rates of change:
+\[\frac{d}{dt} (x^2 + y^2 ) = \frac{d}{dt}( z^2).\]
+Use the chain rule on the squares:
+%\[\frac{d}{dt} (x^2) +\frac{d}{dt}(y^2 ) = \frac{d}{dt}( z^2)\]
+\[2x\frac{dx}{dt} + 2y\frac{dy}{dt} = 2z\frac{dz}{dt}.\]
+Divide by 2:
+\[x\frac{dx}{dt} + y\frac{dy}{dt} = z\frac{dz}{dt}.\]
+\end{example}
+
+
+
+\begin{example}
+In a right triangle with angle $\theta$, adjacent side $5$ and opposite side $x$, then 
+$\theta$ and $x$ are related by $\tan (\theta) = \frac{x}{5}$. If $\theta$ and $x$ are functions of time, $t$, 
+then their rates of change are related as follows:
+\[\frac{d}{dt}[\tan (\theta)] = \frac{d}{dt} \left(\frac{x}{5}\right)\]
+\[\sec^2(\theta) \frac{d\theta}{dt} = \frac{1}{5} \cdot \frac{dx}{dt}.\]
+Note the use of the chain rule on the left side.
+\end{example}
+
+
+
+\begin{example}
+The area of a triangle is given by $A = \frac{1}{2} bh$. If $A, b$ and $h$ are functions of time, $t$, 
+differentiate with respect to $t$ to find the relationship between their rates of change:
+\[\frac{d}{dt}(A) = \frac{d}{dt}(\tfrac{1}{2} bh).\]
+Use the product rule on the right side:
+\[\frac{dA}{dt} = \frac{b}{2} \cdot \frac{dh}{dt}+ \frac{h}{2} \cdot \frac{db}{dt}.\]
+\end{example}
+
+\begin{question}
+The volume of a cylinder is given by $V = \pi r^2h$. If $V, r$ and $h$ are functions of time, $t$,
+find the relationship between their rates of change.\\
+\begin{hint}
+Differentiate both sides with respect to $t$, using the symbol $\frac{d}{dt}$
+\end{hint}
+\begin{hint}
+Use the product rule on the right side and the chain rule on the square
+\end{hint}
+
+The relationship between $\frac{dV}{dt}, \frac{dr}{dt}$ and $\frac{dh}{dt}$ is
+\begin{multipleChoice}
+\choice{$\frac{dV}{dt} = \pi r^2\frac{dh}{dt} \cdot \frac{dr}{dt}$}
+\choice{$\frac{dV}{dt} = \pi r^2 \frac{dh}{dt} + 2\pi r \frac{dr}{dt}$}
+\choice[correct]{$\frac{dV}{dt} = \pi r^2\frac{dh}{dt} + 2\pi rh \frac{dr}{dt}$}
+\choice{none of the above}
+\end{multipleChoice}
+\end{question}
+
+
+
+
+\begin{question}
+The volume of a cone is given by $V = \frac13 \pi r^2h$. If $V, r$ and $h$ are functions of time, $t$,
+find the relationship between their rates of change.\\
+\begin{hint}
+Differentiate both sides with respect to $t$, using the symbol $\frac{d}{dt}$
+\end{hint}
+\begin{hint}
+Use the product rule on the right side and the chain rule on the square
+\end{hint}
+
+The relationship between $\frac{dV}{dt}, \frac{dr}{dt}$ and $\frac{dh}{dt}$ is
+\begin{multipleChoice}
+\choice[correct]{$\frac{dV}{dt} = \tfrac13 \pi r^2\frac{dh}{dt} + \tfrac23\pi rh \frac{dr}{dt}$}
+\choice{$\frac{dV}{dt} = \tfrac23 \pi r^2\frac{dh}{dt} + \tfrac13\pi rh \frac{dr}{dt}$}
+\choice{$\frac{dV}{dt} = 3 \pi r^2\frac{dh}{dt} + 2\pi rh \frac{dr}{dt}$}
+\choice{none of the above}
+\end{multipleChoice}
+\end{question}
+
+
+
+
+
+
+\begin{center}
+\bf{Related Rates Word Problems}
+\end{center}
+
+
+
+\begin{example}
+The radius of a circular ripple wave is increasing at a rate of 2 meters per second. How fast is the area of the wave 
+increasing when the radius is 5 meters? \\
+In mathematical notation, we are given $\frac{dr}{dt} = 2$ and we need to find
+\[\frac{dA}{dt}\bigg|_{r = 5}.\]
+We find the relationship between 
+\[\frac{dA}{dt} \quad \text{and} \quad \frac{dr}{dt}\]
+and then we plug in the given numerical information.
+Since $A = \pi r^2$, we have
+\[\frac{d}{dt} (A) = \frac{d}{dt}(\pi r^2)  \]
+and using the chain rule on the right side we get:
+\[\frac{dA}{dt}  = 2\pi r \frac{dr}{dt}.\]
+Finally,
+\[\frac{dA}{dt}\bigg|_{r = 5}  = 2\pi (5) (2) = 20\pi.\]
+Thus, when the radius of the spill is 5 meters, the area is growing at a rate of $20\pi$ meters per second.
+\end{example}
+
+\begin{question}
+The radius of a circular aperture is decreasing at a rate of 3 centimeters per second.  
+How fast is the area of the aperture changing when the radius is 15 centimeters?
+
+\begin{hint}
+$A = \pi r^2$ where both $A$ and $r$ are functions of time, $t$.
+\end{hint}
+
+\begin{hint}
+Differentiate both sides with respect to $t$, using the symbol $\frac{d}{dt}$
+\end{hint}
+\begin{hint}
+Use the chain rule on the square
+\end{hint}
+
+The area is changing at a rate of (in square centimeters per second):
+\begin{multipleChoice}
+\choice{$90 \pi$}
+\choice[correct]{$-90 \pi$}
+\choice{$-120 \pi$}
+\choice{none of the above}
+\end{multipleChoice}
+\end{question}
+
+
+\begin{example}
+A ten foot ladder is sliding down a wall at a rate of 1 foot per second.  How fast is the base of the 
+ladder sliding away from the wall when the top of the ladder is six feet above the ground?\\
+ The ladder, the wall and the ground make a right triangle with the ladder as the hypotenuse.  
+We label $x$ being the distance from the base of the ladder 
+to the wall by $x$ and we label  the distance between the top of the ladder and the ground by $y$. 
+The hypotenuse is the length of the
+ladder, which is 10 feet. The variables $x$ and $y$ are related by the 
+Pythagorean Theorem: $x^2 + y^2 = 10^2$. Since the ladder is
+sliding down the wall, $x$ and $y$ are functions of time, $t$. 
+In fact, $x$ is increasing and $y$ is decreasing. Furthermore, we are given 
+the rate $\frac{dy}{dt} = -1$ (it is negative because $y$ is decreasing)
+and we need to find the related rate
+\[\frac{dx}{dt}\bigg|_{y = 6}.\]
+We first find the relationship between 
+\[\frac{dx}{dt} \quad \text{and} \quad \frac{dy}{dt}\]
+and then we plug in the given numerical information.
+Since $x^2 + y^2 = 100$, we have
+\[\frac{d}{dt} (x^2 + y^2 ) = \frac{d}{dt}(100)\]
+\[\frac{d}{dt} (x^2) +\frac{d}{dt}(y^2 ) = 0\]
+\[2x\frac{dx}{dt} + 2y\frac{dy}{dt} = 0\]
+\[x\frac{dx}{dt} + y\frac{dy}{dt} = 0\]
+\[\frac{dx}{dt} =- \frac{y}{x}\cdot \frac{dy}{dt}. \]
+Finally, when $y= 6$ we have $x=8$ since $x^2 + y^2 = 100$ and
+\[\frac{dx}{dt}\bigg|_{y = 6}= -\frac68 (-1) = \frac34.\]
+Thus, when the top of the ladder is six feet above the ground, 
+the base of the ladder is sliding away from the wall 
+at a rate of $\frac34$ foot per second.
+\end{example}
+
+
+\begin{question}
+The base of thirteen foot ladder is sliding away from a vertical wall at a rate of two 
+feet per second.  How fast is the top of the ladder sliding down the wall when the base of the 
+ladder is five feet from the wall?
+\begin{hint}
+$x^2 + y^2 = 13^2$ where  $x$ and $y$ are functions of time, $t$.
+\end{hint}
+
+\begin{hint}
+Differentiate both sides with respect to $t$, using the symbol $\frac{d}{dt}$
+\end{hint}
+\begin{hint}
+Use the chain rule on the squares
+\end{hint}
+
+The top of the ladder is sliding down the wall at a rate of (in feet per second):
+\begin{multipleChoice}
+\choice[correct]{$5/6$}
+\choice{$6/5$}
+\choice{$5/12$}
+\choice{none of the above}
+\end{multipleChoice}
+\end{question}
+
+\begin{example}
+A street light is mounted at the top of a 15 ft tall pole.  
+A man 6 ft tall walks away from the pole with a speed of 3 ft per sec along a straight path.  
+How fast is the tip of his shadow moving when he is 35 ft from
+the pole?\\
+The diagram below illustrates the situation in the problem, with the variable $x$ representing the distance from the man to the pole
+and $s$ representing the length of his shadow.
+\begin{center}
+\begin{tikzpicture}%[scale=1.25]%,cap=round,>=latex]
+
+\coordinate [label=below:$light$] (A) at (2.5cm,0.0cm);
+\coordinate [label=below:$man$] (B) at (5cm,0.0cm);
+\coordinate  (C) at (6.5cm,0.0cm);
+\coordinate  (D) at  (5cm, 0.75cm);
+\coordinate  (E) at  (2.5cm, 2.0cm);
+\draw (A) -- node[below] {$x$} (B) -- node[below] {$s$} (C) --  (E) -- node[left] {$15$} (A);
+\draw (B) -- node[left] {$6$} (D);
+\draw (2.5cm,0.25cm) rectangle (2.75cm,0.0cm);
+\draw (5cm,0.1cm) rectangle (5.1cm,0.0cm);
+
+\end{tikzpicture}
+\end{center}
+
+The small right triangle and the large right triangle in the diagram above are similar triangles.  
+That means that the ratios of corresponding sides are equal.
+Thus
+\[\frac{s}{6}=\frac{s+x}{15}  \]
+which can be simplified into
+\[ 15s=6(s+x)\]
+so
+\[9s =6x\]
+or
+\[s = \frac23 x.\]
+Here, $s$ and $x$ are functions of time, so differentiating both sides of this equation with respect to time, $t$,
+we get
+\[\frac{ds}{dt} = \frac23\frac{dx}{dt}.\]
+We were given that 
+\[\frac{dx}{dt} = 3 \; \text{ft/sec},\]
+and so 
+\[\frac{ds}{dt} = \frac23\frac{dx}{dt} = \frac23 \cdot 3 = 2 \;\text{ft/sec}.\]
+Finally, to calculate how fast the tip of the shadow is moving, we must add the walking speed of the man, 
+$dx/dt$, to the rate of lengthening of the shadow, $ds/dt$.
+Thus, the tip of the shadow is moving at a rate of $3+2 =5$ ft/sec.
+Note that this rate is independent of the distance of the man from the pole, so the answer is the same whether he
+is 35 ft. from the pole of 350 ft. from the pole.
+
+
+\end{example}
+
+
+\begin{question}
+A street light is mounted at the top of a 20 ft tall pole.  
+A woman 5 ft tall walks away from the pole with a speed of 2 ft per sec along a straight path.  
+How fast is the tip of his shadow moving when she is 25 ft from
+the pole?
+\begin{hint}
+We have similar triangles, so $\frac{s}{5}=\frac{s+x}{20}$
+\end{hint}
+\begin{hint}
+Thus $s=\frac{x}{3}$
+\end{hint}
+\begin{hint}
+Differentiate both sides with respect to $t$, using the symbol $\frac{d}{dt}$
+\end{hint}
+\begin{hint}
+Add the walking speed of the woman to the rate of the lengthening of the shadow
+\end{hint}
+
+The tip of the shadow is moving at a rate of (in feet per second):
+\begin{multipleChoice}
+\choice{$4/3$}
+\choice{$7/3$}
+\choice[correct]{$8/3$}
+\choice{none of the above}
+\end{multipleChoice}
+\end{question}
+
+
+\begin{example}
+A spherical snowball is melting at a rate of 20 cm$^3$/min. How fast is the radius of the snowball
+decreasing when it is 10 cm. in diameter?\\
+In mathematical notation, we are given $\frac{dV}{dt} = -20$ and we need to find
+\[\frac{dr}{dt}\bigg|_{d = 10}.\]
+The relationship between the volume,$V$, of a sphere and its radius, $r$ is given by the formula 
+\[V = \frac43 \pi r^3.\]
+To solve the problem, we need to find the relationship between 
+\[\frac{dV}{dt} \quad \text{and} \quad \frac{dr}{dt}\]
+and then we plug in the given numerical information.
+Differentiate both sides with respect to $t$:
+
+
+%Assuming the snowball is a sphere, its volume is given by $V = \tfrac43 \pi r^3$, where $r$ represents the radius of the sphere. 
+
+
+\[\frac{d}{dt} (V) = \frac{d}{dt}(\tfrac43 \pi r^3)\]
+Using the chain rule on the right hand side, we get the desired relationship between the rates:
+\[\frac{dV}{dt}  = 4\pi r^2 \  \frac{dr}{dt}.\]
+
+Lastly, we plug in the given numerical information. When the diameter,  $d = 10$, we have the radius, $r = 5$ and since $\frac{dV}{dt}=-20$ (given), we have
+\[-20  = 4\pi (5)^2 \ \frac{dr}{dt}\bigg|_{d = 10}\]
+and
+\[\frac{dr}{dt}\bigg|_{d = 10} = -\frac{20}{4\pi (5)^2} = -\frac{1}{5\pi} \]
+Thus, when the diameter of the snowball is  10 cm, the radius is decreasing at a rate of $\frac{1}{5\pi}$ centimeters per minute.
+\end{example}
+
+
+
+\begin{example}
+A camera is filming the launch of a hot air balloon from 100 feet away. 
+If the balloon rises at a rate of 15 feet per second, how fast is the camera angle increasing when the balloon is 50 feet in the air?\\
+Let $h$ be the height of the balloon and $\theta$ be the camera angle. Then, by right triangle trigonometry, 
+\[\tan \theta  = \frac{h}{100}\]
+where both $\theta$ and $h$ are functions of time, $t$.
+We are given $\frac{dh}{dt} = 15$ and we have to find
+\[\frac{d\theta}{dt}\bigg|_{h = 50}.\]
+We find the relationship between 
+\[\frac{d\theta}{dt} \text{ and } \frac{dh}{dt}\]
+and then we plug in the given numerical information.
+Since $\tan\theta = \frac{h}{100}$, we have
+\[\frac{d}{dt}\big(\tan\theta\big) = \frac{d}{dt} \Big(\frac{h}{100}\Big)\]
+ \[\sec^2 \theta \cdot \frac{d\theta}{dt} = \frac{1}{100} \cdot \frac{dh}{dt}\]
+\[ \frac{d\theta}{dt} = \frac{1}{100}\cdot\cos^2 \theta  \cdot\frac{dh}{dt}.\]
+Next, when the balloon is 50 feet in the air, the hypotenuse of the right triangle is 
+\[\sqrt{100^2 + 50^2} = 50\sqrt{2^2 + 1^2} = 50\sqrt 5\]
+which means 
+\[\cos^2 \theta = \left(\frac{100}{50\sqrt 5}\right)^2 = \left(\frac{2}{\sqrt 5}\right)^2 = \frac45.\]
+Lastly,
+\[\frac{d\theta}{dt}\bigg|_{h = 50}= \frac{1}{100} \cdot \frac45 \cdot 15 = \frac{3}{25}.\]
+Thus, when the balloon is 50 feet in the air, the camera angle is increasing at a rate of $\frac{3}{25}$ radians per second.
+\end{example}
+
+
+
+\begin{example}
+Oil is being spilled into the ocean at a rate of 75 cubic meters per hour.  
+Assuming that the layer of oil on the oceans surface makes a cylinder  2 cm in height, 
+how fast is the radius of the spill increasing when the radius is 300 m?\\
+Let $V, r$ and $h$ be the volume, radius and height of the spill.  Then $V = \pi r^2 h = 0.02 \ \pi r^2$,
+where $V$ and $r$ are functions of time, $t$. We are given
+\[\frac{dV}{dt} = 75 \quad \text{and we need} \quad \frac{dr}{dt}\bigg|_{r = 300}.\]
+
+We find the relationship between 
+\[\frac{dr}{dt} \quad \text{and}\quad \frac{dV}{dt}\]
+and then we plug in the given numerical information.
+Since $V =  0.02\  \pi r^2$,
+\[\frac{d}{dt}(V) = \frac{d}{dt}(0.02 \ \pi r^2)\]
+\[\frac{dV}{dt} = 0.04 \pi r \cdot \frac{dr}{dt}.\]
+Finally, when $r = 300$ we have
+\[75 = 0.04 \ \pi \cdot 300 \cdot \frac{dr}{dt}\bigg|_{r= 300} = 12 \pi \cdot \frac{dr}{dt}\bigg|_{r= 300} \]
+and
+\[\frac{dr}{dt}\bigg|_{r= 300} = \frac{75}{12\pi} = 
+\frac{25}{4\pi}.\]
+
+
+
+
+
+Thus, when the radius of the spill is 300 meters, the radius is increasing at a rate of $\frac{25}{4\pi}$ meters per hour.
+\end{example}
+
+
+
+\begin{example}
+Sand is being dumped into a conical pile. The consistency of the sand is such that the 
+diameter of the cone is always equal to its height. After a few minutes,  the pile is 6 feet high and
+increasing at a rate of 1 ft/min. How fast is sand being added to the pile at that time?\\
+
+Let $h, r$ and $V$ be the height, radius and volume of the cone of sand. Then we are given
+\[\frac{dh}{dt}\bigg|_{h = 6} = 1\]
+and due to the consistency of the sand, $h = 2r$, so $r = h/2$.
+We need to find 
+\[\frac{dV}{dt}\bigg|_{h = 6}.\]
+We find the relationship between 
+\[\frac{dV}{dt} \text{ and } \frac{dh}{dt}\]
+and then we plug in the given numerical information.
+Since 
+\[V = \tfrac13 \pi r^2 h = \tfrac13 \pi \big(\tfrac{h}{2}\big)^2 h = \tfrac{1}{12}\pi h^3\]
+where $V$ and $h$ are functions of $t$, we have
+\[\frac{d}{dt}(V) = \frac{d}{dt}(\tfrac{1}{12}\pi h^3)\]
+\[\frac{dV}{dt} = \tfrac{3}{12}\pi h^2 \  \frac{dh}{dt} = \tfrac{1}{4}\pi h^2 \ \frac{dh}{dt}.\]
+Finally,
+
+\[\frac{dV}{dt}\bigg|_{h = 6} = \tfrac{1}{4}\pi \cdot (6)^2 \cdot(1) = 9\pi.\]
+Thus, when the pile is 6 feet high, sand is being added at a rate of $9\pi$ cubic feet per minute.
+\end{example}
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a detailed, lecture style video on related rates:}
+\youtube{fnqv825oQPY}
+\end{foldable}
+\end{center}
+
+
+
+
+
+\end{document}

@@ -1,0 +1,438 @@
+\documentclass{ximera}
+\usepackage{tcolorbox}
+\input{../preamble}
+
+\outcome{Compute the derivative of a quotient.}
+
+\title{2.6 Quotient Rule}
+
+%\newcommand{\ffrac}[2]{\frac{\mbox{\footnotesize $#1$}}{\mbox{\footnotesize $#2$}}}
+%\newcommand{\vasymptote}[2][]{\draw [densely dashed,#1] ({rel axis cs:0,0} -| {axis cs:#2,0}) -- ({rel axis cs:0,1} -| {axis cs:#2,0});}
+
+
+\begin{document}
+
+\begin{abstract}
+We compute the derivative of a quotient.
+\end{abstract}
+
+\maketitle
+
+
+\begin{center}
+
+\bf{The Quotient Rule}
+
+\end{center}
+
+\begin{theorem} If $f(x)$ and $g(x)$ are differentiable then
+\[\left(\frac{f(x)}{g(x)}\right)' = \frac{g(x)f'(x) - f(x)g'(x)}{g^2(x)}\]
+at all points where $g(x) \neq 0$.
+\end{theorem}
+
+In words, the derivative of a quotient is the bottom times the derivative of the top minus 
+the top times the derivative of the bottom, all over the bottom squared.\\
+
+
+\begin{example} %example 1
+Find $h'(x)$ if 
+\[
+h(x) = \frac{x+1}{x-1}.
+\]
+We have $\displaystyle{h(x) = \frac{f(x)}{g(x)}}$ 
+with:
+\[f(x) =x+1 \ \text{and} \  g(x)= x-1.\]
+To use the quotient rule we need the derivatives:
+\[f'(x) = 1 \ \text{and} \  g'(x) = 1.\]
+We can now write: 
+\begin{align*}
+h'(x) &= \frac{g(x)f'(x) - f(x)g'(x)}{g^2(x)}\\
+&= \frac{(x-1)(1)- (x+1)(1)}{(x-1)^2}\\
+&= \frac{(x-1)-(x+1)}{(x-1)^2} \\
+&= -\frac{2}{(x-1)^2}.
+\end{align*}
+\end{example}
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of Example 1}
+\youtube{mQLa_jvXMKM} %vid of example 1
+\end{foldable}
+\end{center}
+
+
+
+\begin{question} %problem 1a
+  Compute
+  \[
+  \frac{d}{dx} \left(\frac{x-6}{x+3}\right)
+  \]
+  
+    \begin{hint}
+      \[\left(\frac{f}{g}\right)' = \frac{f'g-g'f}{g^2}\]
+    \end{hint}
+    \begin{hint}
+      The derivative of $x-6$ is $1$
+    \end{hint}
+    \begin{hint}
+      The derivative of $x+3$ is $1$
+    \end{hint}
+    \begin{hint}
+      Collect like terms in the numerator
+    \end{hint}
+		The derivative of $\frac{x-6}{x+3}$ with respect to $x$ is
+		 $\answer[given]{\frac{9}{(x+3)^2}}$
+		
+\end{question}
+
+
+\begin{question} %problem 1b
+  Compute
+  \[
+  \frac{d}{dx} \left(\frac{2x+1}{3x-5}\right)
+  \]
+  
+    \begin{hint}
+      \[\left(\frac{f}{g}\right)' = \frac{f'g-g'f}{g^2}\]
+    \end{hint}
+    \begin{hint}
+      The derivative of $2x+1$ is $2$
+    \end{hint}
+    \begin{hint}
+      The derivative of $3x-5$ is $3$
+    \end{hint}
+    \begin{hint}
+      Collect like terms in the numerator
+    \end{hint}
+		The derivative of $\frac{2x+1}{3x-5}$ with respect to $x$ is
+		 $\answer[given]{-\frac{13}{(3x-5)^2}}$
+		
+\end{question}
+
+
+\begin{question} %problem 1c
+  Compute
+  \[
+  \frac{d}{dx} \left(\frac{8x-5}{12x - 7}\right)
+  \]
+  
+    \begin{hint}
+      \[\left(\frac{f}{g}\right)' = \frac{f'g-g'f}{g^2}\]
+    \end{hint}
+    \begin{hint}
+      The derivative of $8x-5$ is $8$
+    \end{hint}
+    \begin{hint}
+      The derivative of $12x-7$ is $12$
+    \end{hint}
+    \begin{hint}
+      Collect like terms in the numerator
+    \end{hint}
+		The derivative of $\frac{8x-5}{12x-7}$ with respect to $x$ is
+		 $\answer[given]{\frac{4}{(12x-7)^2}}$
+		
+\end{question}
+
+
+
+
+
+\begin{example} %example 2
+Find $h'(x)$ if 
+\[
+h(x) = \frac{x^2 - 3x}{x^3 +5}.
+\]
+We write $\displaystyle{h(x) = \frac{f(x)}{g(x)}}$ 
+with:
+\[f(x) =x^2 - 3x \ \text{and} \  g(x)= x^3 + 5.\]
+ To use the quotient rule we need the derivatives:
+\[f'(x) = 2x-3 \ \text{and} \  g'(x) = 3x^2.\]
+We can now write: 
+\begin{align*}
+h'(x) &= \frac{g(x)f'(x) - f(x)g'(x)}{g^2(x)}\\
+&= \frac{(x^3 + 5)(2x-3) - (x^2-3x)(3x^2)}{(x^3 + 5)^2}\\
+&= \frac{(2x^4 -3x^3 + 10x - 15) -(3x^4-9x^3)}{(x^3 + 5)^2}\\
+&= \frac{2x^4 -3x^3 + 10x - 15 -3x^4+9x^3}{(x^3 + 5)^2}\\
+&= \frac{-x^4 +6x^3 + 10x - 15}{(x^3 + 5)^2}
+\end{align*}
+\end{example}
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of Example 2}
+\youtube{a0xcaLdlqZY} %vid of example 2
+\end{foldable}
+\end{center}
+
+
+\begin{question} %problem 2a
+  Compute
+  \[
+  \frac{d}{dx} \left(\frac{x^2 - 2}{x^2 + 1}\right)
+  \]
+  
+    \begin{hint}
+      \[\left(\frac{f}{g}\right)' = \frac{f'g-g'f}{g^2}\]
+    \end{hint}
+    \begin{hint}
+      The derivative of $x^2 - 2$ is $2x$
+    \end{hint}
+    \begin{hint}
+      The derivative of $x^2 + 1$ is $2x$
+    \end{hint}
+    \begin{hint}
+      Collect like terms in the numerator
+    \end{hint}
+		The derivative of $\frac{x^2 - 2}{x^2 + 1}$ with respect to $x$ is
+		 $\answer[given]{\frac{6x}{(x^2 + 1)^2}}$
+		
+\end{question}
+
+
+\begin{question} %problem 2b
+  Compute
+  \[
+  \frac{d}{dx} \left(\frac{x^2 + x + 4}{x^2 -3x + 1}\right)
+  \]
+  
+    \begin{hint}
+      \[\left(\frac{f}{g}\right)' = \frac{f'g-g'f}{g^2}\]
+    \end{hint}
+    \begin{hint}
+      The derivative of $x^2 + x + 4$ is $2x+1$
+    \end{hint}
+    \begin{hint}
+      The derivative of $x^2 -3x + 1$ is $2x-3$
+    \end{hint}
+    \begin{hint}
+      Collect like terms in the numerator
+    \end{hint}
+		\begin{hint}
+      The numerator simplifies to $-4x^2 -6x +13$
+    \end{hint}
+		The derivative of $\frac{x^2 + x + 4}{x^2 -3x + 1}$ with respect to $x$ is
+		 $\answer[given]{\frac{-4x^2 -6x +13}{(x^2 -3x + 1)^2}}$
+		
+\end{question}
+
+
+
+\begin{example} %example 3
+Find $h'(x)$ if 
+\[
+h(x) = \frac{\cos(x)}{2x+1}.
+\]
+We write $\displaystyle{h(x) = \frac{f(x)}{g(x)}}$ 
+with: 
+\[f(x) = \cos(x) \ \text{and} \  g(x)= 2x+1.\]
+To use the quotient rule we need the derivatives:
+\[f'(x) = -\sin(x) \ \text{and} \  g'(x) = 2.\]
+We can now write: 
+\begin{align*}
+h'(x) &= \frac{g(x)f'(x) - f(x)g'(x)}{g^2(x)}\\
+&= \frac{(2x+1)(-\sin(x))- \cos(x)\cdot 2}{(2x+1)^2}\\
+&= -\frac{(2x+1)\sin(x) + 2\cos(x)}{(2x+1)^2}
+\end{align*}
+\end{example}
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of Example 3}
+\youtube{IPYC30SSAro} %vid of example 3
+\end{foldable}
+\end{center}
+
+
+
+\begin{example} %example 4
+Find $h'(x)$ if
+\[
+h(x) = \frac{e^x}{x^2 + 1}.
+\]
+We write $\displaystyle{h(x) = \frac{f(x)}{g(x)}}$ 
+with:
+\[f(x) =e^x \ \text{and} \  g(x)= x^2 + 1.\]
+To use the quotient rule we need the derivatives:
+\[f'(x) = e^x \ \text{and} \  g'(x) =2x.\] 
+We can now write: 
+\begin{align*}
+h'(x) &= \frac{g(x)f'(x) - f(x)g'(x)}{g^2(x)}\\
+&= \frac{(x^2+1)e^x - e^x(2x)}{(x^2 + 1)^2} \\
+&= \frac{(x^2 - 2x +1)e^x}{(x^2 + 1)^2} \\
+&= \frac{e^x(x-1)^2}{(x^2 + 1)^2} 
+\end{align*}
+\end{example}
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of Example 4}
+\youtube{mbUekZP2IsY} %vid of example 4
+\end{foldable}
+\end{center}
+
+
+
+
+\begin{example} %example 5
+Find $h'(x)$ if
+\[
+h(x) = \frac{\ln(x)}{x+1}.
+\]
+We write $\displaystyle{h(x) = \frac{f(x)}{g(x)}}$ 
+with:
+\[f(x) =\ln(x) \  \text{and} \  g(x)= x+1.\]
+To use the quotient rule we need the derivatives:
+\[f'(x) =1/x  \ \text{and} \  g'(x) = 1.\]
+We can now write: 
+\begin{align*}
+h'(x) &= \frac{g(x)f'(x) - f(x)g'(x)}{g^2(x)}\\
+&= \frac{(x+1)(1/x) - \ln(x)}{(x+1)^2}\\
+&= \frac{(x+1)(1/x) - \ln(x)}{(x+1)^2}\cdot \frac{x}{x}\\
+&= \frac{(x+1) - x\ln(x)}{x(x+1)^2}.
+\end{align*}
+\end{example}
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of Example 5}
+\youtube{jg4hL-hPI48} %vid of example 5
+\end{foldable}
+\end{center}
+
+
+
+
+
+\begin{example} %example 6
+Find $h'(x)$ if
+\[
+h(x) = \tan(x).
+\]
+First rewrite $h(x)$ as 
+$\displaystyle{\frac{\sin(x)}{\cos(x)}}.$ \\
+Then $\displaystyle{h(x) = \frac{f(x)}{g(x)}}$ with:
+\[f(x) = \sin(x) \ \mbox{and} \  g(x)= \cos(x).\] 
+To use the quotient rule we need the derivatives:
+\[f'(x) = \cos(x) \ \mbox{and} \  g'(x) = -\sin(x).\]
+We can now write: 
+\begin{align*}
+h'(x) &= \frac{g(x)f'(x) - f(x)g'(x)}{g^2(x)}\\
+&= \frac{\cos(x)\cos(x) - \sin(x)(-\sin(x))}{\cos^2(x)}\\
+&= \frac{\cos^2(x)+ \sin^2(x)}{\cos^2(x)}\\
+&= \frac{1}{\cos^2(x)} = \sec^2(x)
+\end{align*}
+This important formula is worth remembering: if $f(x) = \tan(x)$ then $f'(x) =\sec^2(x)$.
+\end{example}
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of Example 6}
+\youtube{YW68eyqZJ8g} %vid of example 6
+\end{foldable}
+\end{center}
+
+
+
+%Make this next one a problem
+\begin{example} %example 7
+Find $h'(x)$ if $h(x) = \cot(x)$.\\
+First rewrite $h(x)$ as $\displaystyle{\frac{\cos(x)}{\sin(x)}}$ and then 
+$\displaystyle{h(x) = \frac{f(x)}{g(x)}}$ with:
+\[f(x) = \cos(x) \ \text{and} \  g(x)= \sin(x).\]
+To use the quotient rule we need the derivatives:
+\[f'(x) = -\sin(x) \ \text{and} \  g'(x) =\cos(x).\]
+We can now write: 
+\begin{align*}
+h'(x) &= \frac{g(x)f'(x) - f(x)g'(x)}{g^2(x)}\\
+&= \frac{\sin(x)(-\sin(x)) -\cos(x)\cos(x) }{\sin^2(x)}\\
+&= -\frac{\sin^2(x)+ \cos^2(x)}{\sin^2(x)}\\
+&= -\frac{1}{\sin^2(x)} = -\csc^2(x)
+\end{align*}
+
+This important formula is worth remembering: if $f(x) = \cot(x)$ then $f'(x) =-\csc^2(x)$.
+\end{example}
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of Example 7}
+\youtube{nLwYWSf_XJA} %vid of example 7
+\end{foldable}
+\end{center}
+
+
+
+
+\begin{example} %example 8
+Find $h'(x)$ if $h(x) = \sec(x).$\\
+First we rewrite $h(x)$ as $\displaystyle{\frac{1}{\cos(x)}}$ 
+and then $\displaystyle{h(x) = \frac{f(x)}{g(x)}}$ with:
+\[f(x) = 1 \  \mbox{and} \  g(x)= \cos(x).\]
+To use the quotient rule we need the derivatives:
+\[f'(x) = 0 \  \mbox{and} \   g'(x) = -\sin(x).\]
+We can now write: 
+\begin{align*}
+h'(x) &= \frac{g(x)f'(x) - f(x)g'(x)}{g^2(x)}\\
+&= \frac{\cos(x)\cdot 0 - 1\cdot (-\sin(x))}{\cos^2(x)}\\
+&= \frac{ \sin(x)}{\cos^2(x)} \\
+&= \frac{ 1}{\cos(x)} \cdot \frac{\sin(x)}{\cos(x)}\\
+&=  \sec(x) \tan(x)
+\end{align*}
+
+This important formula is worth remembering: if $f(x) = \sec(x)$ then $f'(x) =\sec(x) \tan(x)$.
+\end{example}
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of Example 8}
+\youtube{Qslesf590W4} %vid of example 8
+\end{foldable}
+\end{center}
+
+
+
+%\item[QR 9.] The last trig function is $\csc(x)$ and, if $f(x) = \csc(x)$ then $f'(x) = -\csc(x)\cot(x)$.
+
+
+
+\begin{example} %example 10
+Find $h'(x)$ if 
+\[
+h(x) = \frac{x^2 + 3x + 5}{x}.
+\]
+We could use the quotient rule, 
+but it is easier to rewrite $h(x)$ as $h(x) = x + 3 + \frac{5}{x} = x + 3 + 5x^{-1}$ and 
+find $h'(x)$ using the power and constant rules.  We have:
+\[h'(x) = 1 + (-5)x^{-2} = 1 - \frac{5}{x^2}.\] 
+\end{example}
+
+%$\displaystyle{h(x) = \frac{f(x)}{g(x)}}$ with $f(x) =$ and $g(x)= $. To use the quotient rule 
+%we need $f'(x) = $ and $g'(x) = $. We get 
+%$$h'(x) = \frac{g(x)f'(x) - f(x)g'(x)}{g^2(x)}$$
+%$$= $$
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a detailed, lecture style video on the Quotient Rule:}
+\youtube{0Y_Kap9ZuAo}
+\end{foldable}
+\end{center}
+
+
+
+\end{document}
