@@ -16,49 +16,58 @@ Use the Ratio Test to determine whether an infinite series converges or diverges
 
 \section{Ratio Test}
 
-We will find the average value of a function on an interval 
-and find the value(s) of $x$ for which the function equals the 
-average (MVT for Integrals).
-
-\begin{theorem}[Ratio Test] 
+In this section we will determine whether an infinite series converges or diverges using the Ratio Test. 
+The idea behind this test is to determine if the given series is behaving similarly to a geometric series.
+For a geometric series, 
 \[
-If
+\sum_{n=0}^\infty a_n = \sum_{n=0}^\infty ar^n,
 \]
+the ratio of successive terms is constant, i.e., 
+\[
+\frac{a_{n+1}}{a_n} = \frac{ar^{n+1}}{ar^n} = r.
+\]
+Furthermore, a geometric series converges if this ratio is between $-1$ and $1$.
+For a general series, the ratio of successive terms is not constant, but if the limit of the ratio of successive terms
+approaches a value, $L$, between $-1$ and $1$, then the series behaves like a geometric series with ratio equal to $L$.
+We state this precisely in the following theorem.
+
+\begin{theorem}[Ratio Test]
+The series
+\[
+\sum_{n=0}^\infty a_n
+\]
+converges if $L < 1$ and diverges if $L>1$ where 
+\[
+L = \lim_{n \to \infty} |\frac{a_{n+1}}{a_n}|.
+\]
+If $L = 1$ then no conclusion can be made.
+
 \end{theorem}
+ 
+\begin{remark}
+For any $p$-series,
+\[
+\sum_{n=0}^\infty \frac{1}{n^p},
+\]
+\[
+L =  \lim_{n \to \infty} \frac{\frac{1}{(n+1)^p}}{\frac{1}{n^p}} = \lim_{n \to \infty} \frac{n^p}{(n+1)^p} =  \lim_{n \to \infty} \left(\frac{n}{n+1}\right)^p = 1
+\]
+and so the ratio test gives no conclusion.
+\end{remark}
 
-
-
-
-
-
-\begin{example} %example #1
-Find the average...
- \[
-  f(x) = 
-  \]
+\begin{example}
+Determine whether the series
+\[
+\sum_{n=0}^\infty \frac{1}{n!}
+\]
+converges or diverges.\\
+By the Ratio Test,
+\[
+L =  \lim_{n \to \infty} \frac{\frac{1}{(n+1)!}}{\frac{1}{n!}} =  \lim_{n \to \infty} \frac{n!}{(n+1)!} =  \lim_{n \to \infty} \frac{1}{n+1} = 0
+\]
+Since $L < 1$, the series converges.
 \end{example}
 
-\begin{center}
-\begin{foldable}
-\unfoldable{Here is a video of Example 1}
-%\youtube{Yy6QXnFlnXs} %vid of example 1
-\end{foldable}
-\end{center}
-
-
-\begin{problem} %problem #1
-  Find the average...
-  \[
-  f(x)
-  \]
-    \begin{hint}
-      compute a definite integral
-    \end{hint}
-    
-		
-		The average value is
-		 $\answer[given]{0}$
-\end{problem}
 
 \section{Video Lessons}
 
@@ -69,6 +78,13 @@ Find the average...
 \end{foldable}
 \end{center}
 
+
+\begin{center}
+\begin{unfoldable}
+\unfoldable{Here is a detailed, lecture style video on the Ratio Test:}
+\youtube{XmNK0SK2bO4}
+\end{unfoldable}
+\end{center}
 
 
 
