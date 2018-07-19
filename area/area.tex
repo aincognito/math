@@ -26,12 +26,12 @@ Then the area between the curves is the difference between the area under $f(x)$
 
 
 \begin{center}
-\begin{tikzpicture}[scale = 1.5]
+\begin{tikzpicture}
 \begin{axis}[axis x line=  center, axis y line = none, xtick={-1, 1}, 
 xticklabels={$a$, $b$}, title={Area Between Curves}] 
 
-\addplot[name path=AA, domain=-1:1, samples = 100, color=black, thick]{x^3-x+1};
-\addplot[name path=BB, domain=-1:1, samples = 100, color=black, thick]{x^3-x+.5};
+\addplot[name path=AA, domain=-1:1, samples = 100, color=black, thick]{x^3-x+2};
+\addplot[name path=BB, domain=-1:1, samples = 100, color=black, thick]{x^2 +.5};
 \addplot[name path = E, domain=-1:-.5, samples=100, color=black]{0};
 \addplot[name path = F, domain=-.5:0, samples=100, color=black]{0};
 \addplot[name path = G, domain=0:.5, samples=100, color=black]{0};
@@ -96,7 +96,44 @@ Since $5 - x^2 > x-4$ over the interval $[1,2]$, the area is
                                            & = \frac{31}{6}.
 \end{align*}
                                            
-(INSERT FIGURE HERE)
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  none, axis y line = none, xtick={.9, 2.1}, 
+xticklabels={$1$, $2$}, title={Area between the parabola $y=5-x^2$ and the line $y=x-4$ 
+from $x = 1$ to $x=2$}]
+
+\addplot[name path=AA, domain=1:2, samples = 100, color=black, thick]{5-x^2};
+\addplot[name path=BB, domain=1:2, samples = 100, color=black, thick]{x-4};
+\addplot[domain=.8:2.2, samples = 100, color=black, thick]{5-x^2};
+\addplot[domain=.8:2.2, samples = 100, color=black, thick]{x-4};
+
+
+
+
+\addplot[blue!10] fill between[of=AA and BB];
+\addplot[white] coordinates {(2.5,0) (2.8,0)};
+\addplot[white] coordinates {(0,0) (0,-5)};
+
+\addplot[thick, blue] coordinates {(1,-3) (1, 4)};
+\addplot[thick, blue] coordinates {(2,-2) (2, 1)};
+
+\addplot[<->] coordinates {(0,-3) (0, 4)};
+\addplot[<->] coordinates {(-.5,0) (2.5, 0)};
+
+
+\node at (axis cs: 2.2,2.8){$f(x)=5-x^2$};
+\node at (axis cs: 1.9,-3){$g(x)=x-4$};
+%\node at (axis cs: 0.2,1.25){$y = f(x)$};
+\node at (axis cs: 0,4.5){$y$};
+\node at (axis cs: 2.6,0){$x$};
+\node at (axis cs: .9,.-.4){$1$};
+\node at (axis cs: 2.1,-.4){$2$};
+\node at (axis cs: 1.4,-4.8){$\displaystyle{A(x)=\int_{a}^{b} \left[f(x)-g(x)\right]\; dx=\frac{31}{6}}$};
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
 
 \end{example}
 
@@ -110,7 +147,40 @@ Since $\cos(x) \geq \sin(x)$ on the interval $\left[0, \frac{\pi}{4}\right]$ (se
                                          &= \sqrt 2 - 1.
 \end{align*}
 
-(INSERT FIGURE HERE)
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  none, axis y line = none, xtick={0, .8}, 
+xticklabels={$1$, $2$}, title={Area between $y=\sin(x)$ and $y=\cos(x)$}] 
+
+\addplot[name path=AA, domain=0:.785, samples = 100, color=black, thick]{sin(deg(x))};
+\addplot[name path=BB, domain=0:.785, samples = 100, color=black, thick]{cos(deg(x))};
+\addplot[domain=-.1:.9, samples = 100, color=black, thick]{sin(deg(x))};
+\addplot[domain=-.1:.9, samples = 100, color=black, thick]{cos(deg(x))};
+
+
+
+
+\addplot[blue!10] fill between[of=AA and BB];
+\addplot[white] coordinates {(0,0) (0,-1)};
+\addplot[thin] coordinates {(.785,-.05) (.785,.05)};
+
+\addplot[<->] coordinates {(0,-.2) (0, 1.2)}; %y-axis
+\addplot[<->] coordinates {(-.2,0) (1.2,0)}; %x-axis
+
+
+\node at (axis cs: .6,1.1){$f(x)=\cos(x)$};
+\node at (axis cs: .7,.3){$g(x)=\sin(x)$};
+%\node at (axis cs: 0.2,1.25){$y = f(x)$};
+\node at (axis cs: 0,1.3){$y$};
+\node at (axis cs: 1.25,0){$x$};
+\node at (axis cs: .05,.-.1){$0$};
+\node at (axis cs: .785,-.2){$\frac{\pi}{4}$};
+\node at (axis cs: .5,-.6){$\displaystyle{A(x)=\int_{a}^{b} \left[f(x)-g(x)\right]\; dx=\sqrt2-1}$};
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
 
 \end{example}
                                          
@@ -146,7 +216,41 @@ Noting that the line is above the parabola (see the figure below), the area betw
                                            & = \frac{13}{6}.
 \end{align*}
 
-(INSERT FIGURE HERE)
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  none, axis y line = none, xtick={-2,3}, 
+xticklabels={$-2$, $-1$, $0$, $1$, $2$}, title={Area between $y=x^2+x-3$ and $y=2x-1$}] 
+
+\addplot[name path=AA, domain=-1:2, samples = 100, color=black, thick]{x^2+x-3};
+\addplot[name path=BB, domain=-1:2, samples = 100, color=black, thick]{(2*x-1};
+\addplot[domain=-1.5:2.3, samples = 100, color=black, thick]{x^2+x-3};
+\addplot[domain=-1.5:2.3, samples = 100, color=black, thick]{2*x-1};
+
+
+
+
+\addplot[blue!10] fill between[of=AA and BB];
+\addplot[white] coordinates {(0,6) (0,-7)};
+\addplot[white] coordinates {(3,0) (3.7,0)};
+\addplot[thin] coordinates {(-1,-.4)(-1,.4)};
+\addplot[thin] coordinates {(2,-.4) (2,.4)};
+
+\addplot[<->] coordinates {(0,-5) (0,5)}; %y-axis
+\addplot[<->] coordinates {(-2,0) (3,0)}; %x-axis
+
+
+\node at (axis cs: .3,2){$f(x)=2x-1$};
+\node at (axis cs: 1.3,-3.5){$g(x)=x^2+x-3$};
+%\node at (axis cs: 0.2,1.25){$y = f(x)$};
+\node at (axis cs: .2,5){$y$};
+\node at (axis cs: 3.2,0){$x$};
+\node at (axis cs: -1.1,-.9){$-1$};
+\node at (axis cs: 2,-.9){$2$};
+\node at (axis cs: 0,-6.6){$\displaystyle{A(x)=\int_{a}^{b} \left[f(x)-g(x)\right]\; dx=\frac{13}{6}}$};
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
 \end{example}
 
@@ -163,7 +267,42 @@ Noting that $\sqrt x \geq x^2$ on the interval $[0,1]$, we can calculate the are
                                           &= \frac13.
 \end{align*}
 
-(INSERT FIGURE HERE)
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  none, axis y line = none, xtick={-2,3}, 
+xticklabels={$-2$, $-1$, $0$, $1$, $2$}, title={Area between $y=\sqrt[]{x}$ and $y=x^2$}] 
+
+\addplot[name path=AA, domain=0:1, samples = 100, color=black, thick]{x^.5};
+\addplot[name path=BB, domain=0:1, samples = 100, color=black, thick]{(x^2)};
+\addplot[domain=-.5:1.2, samples = 100, color=black, thick]{x^.5};
+\addplot[domain=-.5:1.2, samples = 100, color=black, thick]{x^2};
+
+
+
+
+\addplot[blue!10] fill between[of=AA and BB];
+\addplot[white] coordinates {(0,2) (0,-2)};
+\addplot[white] coordinates {(2,0) (2.1,0)};
+
+\addplot[thin] coordinates {(1,-.1) (1,.1)};
+
+\addplot[<->] coordinates {(0,-1) (0,2)}; %y-axis
+\addplot[<->] coordinates {(-1,0) (2,0)}; %x-axis
+
+
+\node at (axis cs: .5,1.2){$f(x)=\sqrt[]{x}$};
+\node at (axis cs: 1.3,.6){$g(x)=x^2$};
+%\node at (axis cs: 0.2,1.25){$y = f(x)$};
+\node at (axis cs: .1,1.8){$y$};
+\node at (axis cs: 2.1,0){$x$};
+\node at (axis cs: .1,-.2){$0$};
+\node at (axis cs: 1.1,-.2){$1$};
+\node at (axis cs: 0,-1.5){$\displaystyle{A(x)=\int_{a}^{b} \left[f(x)-g(x)\right]\; dx=\frac{1}{3}}$};
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
 
 \end{example}
 
@@ -201,7 +340,44 @@ To obtain the total area, we now add the values of these definite integrals:
 \text{Area} = 2\sqrt{2}.
 \]
 
-(INSERT FIGURE HERE)
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  none, axis y line = none, xtick={0, .8}, 
+xticklabels={$1$, $2$}, title={Area between $y=\sin(x)$ and $y=\cos(x)$}] 
+
+\addplot[name path=AA, domain=0:3.1415, samples = 100, color=black, thick]{sin(deg(x))};
+\addplot[name path=BB, domain=0:3.1415, samples = 100, color=black, thick]{cos(deg(x))};
+\addplot[domain=-.1:3.5, samples = 100, color=black, thick]{sin(deg(x))};
+\addplot[domain=-.1:3.5, samples = 100, color=black, thick]{cos(deg(x))};
+
+
+
+
+\addplot[blue!10] fill between[of=AA and BB];
+
+\addplot[white] coordinates {(-3,0) (-2,0)};
+\addplot[white] coordinates {(0,-3) (0,-2)};
+\addplot[thin] coordinates {(.785,-.05) (.785,.05)};
+
+\addplot[<->] coordinates {(0,-1.5) (0,1.5)}; %y-axis
+\addplot[<->] coordinates {(-.5,0) (4,0)}; %x-axis
+
+
+\node at (axis cs: -1.4,1){$f(x)=\cos(x)$};
+\node at (axis cs: 1.4,-1.2){$g(x)=\cos(x)$};
+\node at (axis cs: -1.4,.3){$g(x)=\sin(x)$};
+\node at (axis cs: 2,1.3){$f(x)=\sin(x)$};
+%\node at (axis cs: 0.2,1.25){$y = f(x)$};
+\node at (axis cs: 0,2.2){$y$};
+\node at (axis cs: 4.2,0){$x$};
+\node at (axis cs: .2,.-.2){$0$};
+\node at (axis cs: .785,-.4){$\frac{\pi}{4}$};
+\node at (axis cs: 3,-.2){$\pi$};
+\node at (axis cs: 1.3,-2){$\displaystyle{A(x)=\int_{a}^{b} \left[f(x)-g(x)\right] dx =2\sqrt2}$};
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
 
 \end{example}
@@ -289,7 +465,44 @@ Thus the total area of the region is the sum of these two integrals:
 \text{Area} = \frac{64}{81} + \frac{206}{81} = \frac{10}{3}.
 \]
 
-(INSERT FIGURE HERE)
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  none, axis y line = none, xtick={-2,3}, 
+xticklabels={$-2$, $-1$, $0$, $1$, $2$}, title={Area between $y=2-x^2$, $y=-2x-1$ and $y=x$}] 
+
+\addplot[name path=AA, domain=-1:1, samples = 100, color=black, thick]{2-x^2};
+\addplot[name path=BB, domain=-1:-.33, samples = 100, color=black, thick]{(-2*x-1};
+\addplot[name path=CC, domain=-.33:1, samples = 100, color=black, thick]{(x)};
+\addplot[domain=-1.5:1.5, samples = 100, color=black, thick]{2-x^2};
+\addplot[domain=-1.5:0, samples = 100, color=black, thick]{-2*x-1};
+\addplot[domain=-.33:1.5, samples = 100, color=black, thick]{x};
+
+
+
+\addplot[blue!10] fill between[of=AA and BB];
+\addplot[blue!10] fill between[of=AA and CC];
+\addplot[white] coordinates {(0,3) (0,-3)};
+\addplot[white] coordinates {(3,0) (3.7,0)};
+\addplot[thin] coordinates {(-1,-.2)(-1,.2)};
+\addplot[thin] coordinates {(1,-.2) (1,.2)};
+
+\addplot[<->] coordinates {(0,-2) (0,3.5)}; %y-axis
+\addplot[<->] coordinates {(-2,0) (2,0)}; %x-axis
+
+
+\node at (axis cs: 1.1,2.3){$f(x)=2-x^2$};
+\node at (axis cs: -.8,-1){$g(x)=x$};
+\node at (axis cs:-1.5,2.5){$g(x)=-2x-1$};
+%\node at (axis cs: 0.2,1.25){$y = f(x)$};
+\node at (axis cs: .2,3.6){$y$};
+\node at (axis cs: 2.2,0){$x$};
+\node at (axis cs: -1.1,-.4){$-1$};
+\node at (axis cs: 1,-.4){$1$};
+\node at (axis cs: 0,-2.7){$\displaystyle{A(x)=\int_{a}^{b} \left[f(x)-g(x)\right]\; dx=\frac{10}{3}}$};
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
 \end{example}
 
@@ -319,7 +532,36 @@ The area is given by
             &= \tfrac{157}{6}         
 \end{align*}
 
-(INSERT FIGURE HERE)
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  none, axis y line = none, xtick={-2,3}, 
+xticklabels={$-2$, $-1$, $0$, $1$, $2$}, title={Area between $x=y^2+y$ and $x=2y+6$}] 
+
+\addplot[name path=AA, scale=.5, domain=-.25:4.7, samples = 100, color=black, thick]{((x+.25)^.5)-.5};
+\addplot[name path=CC, scale=.5, domain=-.25:1.3, samples = 100, color=black, thick]{(-(x+.25)^.5)-.5};
+\addplot[name path=BB, scale=.5, domain=0:5, samples = 100, color=black, thick]{.5(x)-3};
+
+
+\node at (axis cs:.4,-2){$-2$};
+\node at (axis cs:.4,2){$3$};
+\node at (axis cs:1.7,1.8){$y^2+y$};
+\node at (axis cs:2.6,-1.5){$2y+6$};
+\addplot[thin] coordinates {(-.1,-2) (.1,-2)};
+\addplot[thin] coordinates {(-.1,2) (.1,2)};
+\addplot[white] coordinates {(0,3) (0,-5)};
+
+\addplot[blue!10] fill between [of=AA and CC];
+
+\addplot[<->] coordinates {(0,-3) (0,4)}; %y-axis
+\addplot[<->] coordinates {(-1,0) (6,0)}; %x-axis
+
+\node at (axis cs: 0,-4.5){$\displaystyle{A(x)=\int_{a}^{b} \left[f(x)-g(x)\right]\; dx=\frac{157}{6}}$};
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
 
 
 \end{example}
