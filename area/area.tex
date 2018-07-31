@@ -28,7 +28,7 @@ Then the area between the curves is the difference between the area under $f(x)$
 \begin{center}
 \begin{tikzpicture}
 \begin{axis}[axis x line=  center, axis y line = none, xtick={-1, 1}, 
-xticklabels={$a$, $b$}, title={Area Between Curves}] 
+xticklabels={$a$, $b$}, title={\textup{Area Between Curves}}] 
 
 \addplot[name path=AA, domain=-1:1, samples = 100, color=black, thick]{x^3-x+2};
 \addplot[name path=BB, domain=-1:1, samples = 100, color=black, thick]{x^2 +.5};
@@ -100,7 +100,7 @@ Since $5 - x^2 > x-4$ over the interval $[1,2]$, the area is
 \begin{center}
 \begin{tikzpicture}
 \begin{axis}[axis x line=  none, axis y line = none, xtick={.9, 2.1}, 
-xticklabels={$1$, $2$}, title={Area between the parabola $y=5-x^2$ and the line $y=x-4$ 
+xticklabels={$1$, $2$}, title={\textup{Area between the parabola} $y=5-x^2$ and the line $y=x-4$ 
 from $x = 1$ to $x=2$}]
 
 \addplot[name path=AA, domain=1:2, samples = 100, color=black, thick]{5-x^2};
