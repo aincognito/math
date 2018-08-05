@@ -111,14 +111,197 @@ Thus, the volume of a sphere of radius $r$ is $V = \frac43 \pi r^3$.
 
 \end{example}
 
+\begin{example} Find the volume of the solid obtained by revolving the region bounded by the graphs of $y=x^2, y=0, x=0$, and $x = 1$
+about the $x$-axis.\\
+We begin with a sketch of the region.
 
-\section{Washers}
+(INSERT FIGURE HERE)
+
+To compute the volume of the resulting solid, fix a value of $x$ between 0 and 1 and consider a vertical segment in the region at this $x$-value.
+
+(INSERT FIGURE HERE)
+
+Revolving this individual segment about the $x$-axis yields a disk with radius $r = x^2$ and thickness $dx$. 
+
+(INSERT FIGURE HERE)
+
+The volume of this disk is then
+\[
+V_x = \pi r^2 h = \pi (x^2)^2 \; dx = \pi x^4 \; dx.
+\]
+The volume of the solid can be otained by integrating $V_x$ as $x$ ranges from 0 to 1:
+\[
+V = \int_0^1 V_x \; dx = \int_0^1 \pi x^4 \; dx = \pi \frac{x^5}{5}\bigg|_0^1 = \frac{\pi}{5}.
+\]
+
+(INSERT GEOGEBRA APPLET HERE)
+
+\end{example}
+
+
+\begin{example} Find the volume of the solid obtained by revolving the region bounded by the graphs of $y=\sqrt, y=0, x=0$, and $x = 1$
+about the $x$-axis.\\
+We begin with a sketch of the region.
+
+(INSERT FIGURE HERE)
+
+To compute the volume of the resulting solid, fix a value of $x$ between 0 and 1 and consider a vertical segment in the region at this $x$-value.
+
+(INSERT FIGURE HERE)
+
+Revolving this individual segment about the $x$-axis yields a disk with radius $r = x^2$ and thickness $dx$. 
+
+(INSERT FIGURE HERE)
+
+The volume of this disk is then
+\[
+V_x = \pi r^2 h = \pi (\sqrt x)^2 \; dx = \pi x \; dx.
+\]
+The volume of the solid can be otained by integrating $V_x$ as $x$ ranges from 0 to 1:
+\[
+V = \int_0^1 V_x \; dx = \int_0^1 \pi x \; dx = \pi \frac{x^2}{2}\bigg|_0^1 = \frac{\pi}{2}.
+\]
+
+
+(INSERT GEOGEBRA APPLET HERE)
+
+\end{example}
+
+
+
+\section{Washers} In the next series of examples, the region will not border the axis of revolution. 
+In this situation, the resulting cross-sections are washers rather than disks.
+The area of a washer with inner radius, $r$, and outer radius, $R$, is given by 
+\[
+A = \pi(R^2 - r^2).
+\]
+
+(INSERT FIGURE HERE)
+
+If we attribute an infinitesimal thickness, $dx$, to the washer, then its volume is
+\[
+V = \pi(R^2 - r^2) h = \pi(R^2 - r^2) \; dx.
+\]
+We now use this to calculuate volumes of solids of revolutions about the $x$-axis in which the region does not border the axis.
+
+\begin{example} Find the volume of the solid obtained by revolving the region bounded by the graphs of 
+$y = e^x, y = 3, x = 0$, and $x = 1$ about the $x$-axis.\\
+We begin with a sketch of the region.
+
+(INSERT FIGURE HERE)
+
+To compute the volume of the resulting solid, fix a value of $x$ between 0 and 1 and consider a vertical segment in the region at this $x$-value.
+
+(INSERT FIGURE HERE)
+
+Revolving this individual segment about the $x$-axis yields a washer with inner radius, $r = e^x$, outer radius, $R = 3$, and thickness, $dx$. 
+
+(INSERT FIGURE HERE)
+
+The volume of this washer is then
+\[
+V_x = \pi (R^2 - r^2) h = \pi \left[3^2 - \left(e^x\right)^2\right] \; dx = \pi \left(9 - e^{2x}\right) \; dx.
+\]
+The volume of the solid can be otained by integrating $V_x$ as $x$ ranges from 0 to 1:
+\[
+V = \int_0^1 V_x \; dx = \int_0^1 \pi \left(9 - e^{2x}\right) \; dx = \pi \left(9x - \frac{e^{2x}}{2}\right)\bigg|_0^1 = \left(10-\frac{e^2}{2}\right)\pi.
+\]
+
+
+(INSERT GEOGEBRA APPLET HERE)
+
+\end{example}
+
+
+\begin{example} Find the volume of the solid obtained by revolving the region bounded by the graphs of 
+$y = \sec(x), y = 2, x = 0$, and $x = \frac{\pi}{4}$ about the $x$-axis.\\
+We begin with a sketch of the region.
+
+(INSERT FIGURE HERE)
+
+To compute the volume of the resulting solid, fix a value of $x$ between 0 and $\frac{\pi}{4}$ and consider a vertical segment in the region at this $x$-value.
+
+(INSERT FIGURE HERE)
+
+Revolving this individual segment about the $x$-axis yields a washer with inner radius, $r = \sec(x)$, outer radius, $R = 2$, and thickness, $dx$. 
+
+(INSERT FIGURE HERE)
+
+The volume of this washer is then
+\[
+V_x = \pi (R^2 - r^2) h = \pi \left[2^2 - \sec^2(x)\right] \; dx = \pi \left[4 - \sec^2(x)\right] \; dx.
+\]
+The volume of the solid can be otained by integrating $V_x$ as $x$ ranges from 0 to $\pi/4$:
+\[
+V = \int_0^{\pi/4} V_x \; dx = \int_0^{\pi/4} \pi \left[4-\sec^2(x)\right] \; dx = \pi \left[4x - \tan(x)\right]\bigg|_0^{\pi/4} = \pi^2 - \pi.
+\]
+
+
+(INSERT GEOGEBRA APPLET HERE)
+
+\end{example}
+
+
 
 \section{Cylindrical shells}
 
 
+We now find the volume of solids of revolution obtained by revolving a region about a vertical axis.
+
+\begin{example} Find the volume of the solid obtained by revolving the region bounded by the graphs of $y = x^2, y=0, x=0$, and $x = 1$ about the $y$-axis.\\
+We begin with a sketch of the region.
+
+(INSERT FIGURE HERE)
+
+To compute the volume of the resulting solid, fix a value of $x$ between 0 and 1 and consider a vertical segment in the region at this $x$-value.
+
+(INSERT FIGURE HERE)
+
+Revolving this individual segment about the $y$-axis yields a cylindrical shell with radius, $r = x,$ height, $h = x^2$, and thickness, $dx$. 
+
+(INSERT FIGURE HERE)
+
+The volume of this shell is the surface area of the shell multiplied by its thickness:
+\[
+V_x = 2\pi rh \;dx = 2\pi x(x^2) \; dx = 2\pi x^3 \; dx.
+\]
+The volume of the solid can be otained by integrating $V_x$ as $x$ ranges from 0 to 1:
+\[
+V = \int_0^1 V_x \; dx = \int_0^1 2\pi x^3 \; dx = 2\pi \frac{x^4}{4}\bigg|_0^1 = \frac{\pi}{2}.
+\]
 
 
+(INSERT GEOGEBRA APPLET HERE)
+
+\end{example}
+
+
+\begin{example} Find the volume of the solid obtained by revolving the region bounded by the graphs of $y = \sqrt x, y=2, x=0$, and $x = 1$ about the $y$-axis.\\
+We begin with a sketch of the region.
+
+(INSERT FIGURE HERE)
+
+To compute the volume of the resulting solid, fix a value of $x$ between 0 and 1 and consider a vertical segment in the region at this $x$-value.
+
+(INSERT FIGURE HERE)
+
+Revolving this individual segment about the $y$-axis yields a cylindrical shell with radius, $r = x,$ height, $h = 2 - \sqrt x$, and thickness, $dx$. 
+
+(INSERT FIGURE HERE)
+
+The volume of this shell is the surface area of the shell multiplied by its thickness:
+\[
+V_x = 2\pi rh \;dx = 2\pi x(2 - \sqrt x) \; dx = 2\pi \left(2x - x^{3/2}\right) \; dx.
+\]
+The volume of the solid can be otained by integrating $V_x$ as $x$ ranges from 0 to 1:
+\[
+V = \int_0^1 V_x \; dx = \int_0^1 2\pi \left(2x - x^{3/2}\right) \; dx = 2\pi \left(x^2 - \frac25 x^{5/2}\right)\bigg|_0^1 = \frac{6\pi}{5}.
+\]
+
+
+(INSERT GEOGEBRA APPLET HERE)
+
+\end{example}
 
 
 
