@@ -4,7 +4,7 @@
 
 \outcome{Compute integrals involving powers and products of trigonometric functions}
 
-\title{Trig Integrals}
+\title{Trigonometric Integrals}
 
 \begin{document}
 
@@ -14,19 +14,19 @@ We compute integrals involving powers and products of trigonometric functions.
 
 \maketitle
 
-\section{Trig identities}
+\section{Trigonometric Identities}
 
 The following are the Pythagorean Trigonometric Identities (named for \link[Pythagoras of Samos]{https://en.wikipedia.org/wiki/Pythagoras}) which hold for all angles,
 $\theta$, in the domains of the functions involved:
 \[
-\sin^2(\theta) + \cos^2(\theta) = 1,
+\sin^2(\theta) + \cos^2(\theta) = 1
 \]
 \[
-1 + \tan^2(\theta) = \sec^2(\theta),
+1 + \tan^2(\theta) = \sec^2(\theta)
 \]
 and
 \[
-1 + \cot^2(\theta) = \csc^2(\theta).
+1 + \cot^2(\theta) = \csc^2(\theta)
 \]
 %You can learn more about these well know identities here (link).
 
@@ -51,8 +51,8 @@ Compute
 \[
 \int \sin^3(x) \cos(x) \, dx.
 \]
-To find an anti-derivative, we will make the substitution $u = \sin(x)$ as it is the inside of a composition
-and its differential, $du = \cos(x) \, dx$ is present as a factor. 
+To find an anti-derivative, we will make the substitution $u = \sin(x)$, as it is the inside of a composition
+and its differential, $du = \cos(x) \, dx$, is present as a factor. 
 This substitution transforms the original integral as follows:
 \[
 \int \sin^3(x) \cos(x) \, dx = \int u^3 \, du,
@@ -71,8 +71,8 @@ Compute
 \[
 \int \sec^5(x) \tan(x) \, dx.
 \]
-To find an anti-derivative, we will make the substitution $u = \sec(x)$ as it is the inside of a composition
-and its differential, $du = \sec(x)\tan(x) \, dx$ is present as a factor. 
+To find an anti-derivative, we will make the substitution $u = \sec(x)$, as it is the inside of a composition
+and its differential, $du = \sec(x)\tan(x) \, dx$, is present as a factor. 
 This substitution transforms the original integral as follows:
 \[
 \int \sec^5(x) \tan(x) \, dx = \int \sec^4(x) \sec(x) \tan(x) \, dx= \int u^4 \, du,
@@ -108,7 +108,7 @@ There are two main cases to be considered.
 In the first case, $m$ and/or $n$ is odd.
 The solution to problems of this type involves $u$-substitution,
 as we saw above.
-In the second case $m$ and $n$ are both even. The double angle formulas above are used to 
+In the second case, $m$ and $n$ are both even. The double angle formulas above are used to 
 compute integrals of this type. We will also need the basic formula:
 \[
 \int \cos(ax) \; dx = \frac{1}{a} \sin(ax) + C.
@@ -130,7 +130,7 @@ Then $du = \cos(x) \, dx$ and so $dx = \frac{du}{\cos(x)}$ and the integral beco
    &= \int u^4 (1-u^2) \; du\\
    &= \int (u^4 -u^6) \; du &
   \text{(now integrate)}\\
-  &= \frac{u^5}{5} - \frac{u^7}{7} + C &  \text{(finally, back substitute)}\\
+  &= \frac{u^5}{5} - \frac{u^7}{7} + C &  \text{(finally, substitute for $u$)}\\
   &= \frac15 \sin^5(x) - \frac17 \sin^7(x) + C.
 \end{align*}
   
@@ -163,7 +163,7 @@ to rewrite the integral as
   \text{(double angle formula again)}\\
   &= \frac14 \int \left[ 1- \frac{1+\cos(4x)}{2}\right] \; dx\\
   &= \frac14 \int \left[1-\frac12 - \frac12\cos(4x)\right] \; dx\\
-  &= \frac14 \int \left[\frac12 - \frac12\cos(4x)\right] \; dx & (finally, integrate)\\
+  &= \frac14 \int \left[\frac12 - \frac12\cos(4x)\right] \; dx & \text{(finally, integrate)}\\
   &= \frac14 \left[\frac12 x  - \frac18\sin(4x)\right] + C\\
   &= \frac{x}{8}  - \frac{1}{32}\sin(4x) + C.
 \end{align*}
@@ -242,12 +242,12 @@ We begin by just substituting for $dx$:
 \begin{align*}
 \int \tan^4(x) \sec^4(x)\;dx &= \int \tan^4(x) \sec^4(x) \frac{du}{\sec^2(x)}\\
 &= \int \tan^4(x) \sec^2(x) \; du & \text{(cancelling)}\\
-&= \int u^4 \sec^2(x) \; du & \text{(use Pythagorean identity)}\\
-&= \int u^4\left[1 + \tan^2(x)\right] \; du \\
+&= \int u^4 \sec^2(x) \; du \\
+&= \int u^4\left[1 + \tan^2(x)\right] \; du & \text{(use Pythagorean identity)}\\
 &= \int u^4(1+u^2) \; du & \text{(distribute $u^4$)}\\
 &= \int (u^4 + u^6) \; du & \text{(now integrate)}\\
 &=  \frac{u^5}{5} + \frac{u^7}{7} + C  \\
-&= \frac15\tan^5(x)  + \frac17 \tan^7(x) + C & \text{(back substituting)}
+&= \frac15\tan^5(x)  + \frac17 \tan^7(x) + C & \text{(substituting for $u$)}
 \end{align*}
 \end{example}
 
@@ -309,7 +309,7 @@ Furthermore, IBP also gave a reduction formula for higher powers of $\sec(x)$:
 \int \sec^n(x) \; dx =  \frac{1}{n-1}\sec^{n-2}(x)\tan(x) + \frac{n-2}{n-1}\int \sec^{n-2}(x) \; dx. 
 \]
 This formula is particularly useful if
-the power is odd since if $n$ is odd, $n-2$ is also meaning that if we repeat the formula enough times, 
+the power is odd, since if $n$ is odd, $n-2$ is also odd.  Therefore, if we repeat the formula enough times, 
 we will eventually be left with $\int \sec(x) \, dx$
 which we have just solved.
 
@@ -318,7 +318,7 @@ Use the above reduction of powers formula twice to compute the indefinite integr
 \[
 \int \sec^5(x) \; dx.
 \]
-We have $n =5$ and the formula gives
+We have $n =5$, and the formula gives
 \[
 \int \sec^5(x) \; dx = \frac14 \sec^3(x)\tan(x) + \frac34 \int \sec^3(x) \; dx.
 \]

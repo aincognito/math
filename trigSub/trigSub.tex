@@ -14,21 +14,21 @@ We compute integrals involving square roots of sums and differences.
 
 \maketitle
 
-\section{Trig identities}
+\section{Trigonometric identities}
 
 The following are the Pythagorean Trigonometric Identities 
 (named for \link[Pythagoras of Samos]{https://en.wikipedia.org/wiki/Pythagoras}) 
 which hold for all angles,
 $\theta$, in the domains of the functions involved:
 \[
-\sin^2(\theta) + \cos^2(\theta) = 1,
+\sin^2(\theta) + \cos^2(\theta) = 1
 \]
 \[
-1 + \tan^2(\theta) = \sec^2(\theta),
+1 + \tan^2(\theta) = \sec^2(\theta)
 \]
 and
 \[
-1 + \cot^2(\theta) = \csc^2(\theta).
+1 + \cot^2(\theta) = \csc^2(\theta)
 \]
 %You can learn more about these well know identities here (link).
 
@@ -40,36 +40,36 @@ and
 \begin{example}
 Compute the indefinite integral
 \[
-\int x^3 \sqrt{1-x^2} \; dx
+\int x^3 \sqrt{1-x^2} \; dx.
 \]
-The key to the solution is to replace the variable $x$ with a trigonometric function 
+The key to the solution is to replace the variable, $x$, with a trigonometric function 
 in order to eliminate the square root.
 Since $1-\cos^2(\theta)$ and the radicand, $1-x^2$,
 have the same algebraic form, we will try the substitution $x = \cos(\theta)$.
-In order to apply this to the integral, we also need to compute the differential, 
+To apply this to the integral, we also need to compute the differential, 
 $dx = -\sin(\theta) \; d\theta$.
 Substituting gives,
 \[
 \int x^3 \sqrt{1-x^2} \; dx = \int \cos^3(\theta) \sqrt{1-\cos^2(\theta)} [-\sin(\theta)] \; d\theta.
 \]
-Now, the point of this substitution is that the square root can be computed by
+The point of this substitution is that the square root can be computed by
 using a
-Pythagorean trig identity. From there, we can compute the integral
-using the skills developed in the section on trig integrals.
+Pythagorean trigonometric identity. From there, we can compute the integral
+using the skills developed in the section on trigonometric integrals.
 We have
 \begin{align*}
 \int x^3 \sqrt{1-x^2} \; dx &= \int \cos^3(\theta) \sqrt{1-\cos^2(\theta)} [-\sin(\theta)] \; d\theta\\
                            &= -\int \cos^3(\theta) \sqrt{\sin^2(\theta)} \sin(\theta) \; d\theta\\
                            &= -\int \cos^3(\theta) \sin(\theta) \sin(\theta) \; d\theta\\
                            &= -\int \cos^3(\theta) \sin^2(\theta) \; d\theta\\
-                           \text{now, u-sub, with} \; & \; \text{  $u = \sin(\theta), \; du = \cos(\theta) \, d\theta$}\\
+                           \text{now, $u$-sub, with} \; & \; \text{  $u = \sin(\theta), \; du = \cos(\theta) \, d\theta$}\\
                            &=-\int \cos^3(\theta) u^2 \; \frac{du}{\cos(\theta)}\\
                            &=-\int \cos^2(\theta) u^2 \; du\\
                            &=-\int (1-\sin^2(\theta)) u^2 \; du\\
                            &=-\int (1-u^2)u^2 \; du\\
                            &=\int (u^2 -1)u^2 \; du\\
                            &=\int (u^4 - u^2) \; du\\
-                           \text{now we can} & \text{ integrate (finally)}\\
+                           \text{now we can} & \text{ finally integrate}\\
                            &=\frac{u^5}{5} - \frac{u^3}{3} + C\\
                            &= \frac15 \sin^5(\theta) - \frac13 \sin^3(\theta) + C.
 \end{align*}
@@ -78,7 +78,7 @@ We will use the triangle below to convert back to $x$.
 
 %need triangle showing x = cos(theta)
 
-From the triangle, we see that $\sin(\theta) = \sqrt{1 - x^2}$ and we back-substitute 
+From the triangle, we see that $\sin(\theta) = \sqrt{1 - x^2}$, and we substitute
 to get the final answer:
 \[
 \int x^3 \sqrt{1-x^2} \; dx = \frac15 \sin^5(\theta) - \frac13 \sin^3(\theta) + C = \frac15 (1-x^2)^{5/2} - \frac13 (1-x^2)^{3/2} + C.
@@ -87,9 +87,9 @@ to get the final answer:
 \end{example}
 
 \begin{remark}
-Technically, $\sqrt{\sin^2(\theta)} = |\sin(\theta)|$ but in the substitution
-$x = \cos(\theta)$, we can choose the angle $\theta$ to be in the interval
-$[0, \pi]$ so that $\sin(\theta) \geq 0$ and hence $|\sin(\theta)| = \sin(\theta)$.
+Technically, $\sqrt{\sin^2(\theta)} = |\sin(\theta)|$. However, in the substitution
+$x = \cos(\theta)$, we can choose the angle, $\theta$, to be in the interval
+$[0, \pi]$. This way, $\sin(\theta) \geq 0$, and $|\sin(\theta)| = \sin(\theta)$.
 \end{remark}
 
 
@@ -99,17 +99,17 @@ Compute the indefinite integral
 \[
 \int   x^3 \sqrt{16-x^2} \; dx.
 \]
-Use a trig sub with\\
+Use a trigonometric substitution with\\
 \[
 x = \answer{4\cos(\theta)}
 \]
 The differential is\\
 \[
-dx = \answer{-4\sin(\theta)}d\theta
+dx = \answer{-4\sin(\theta)} \; d\theta
 \]
 Substituting these and simplifying the integrand gives\\
 \[
-\int   x^3\sqrt{16 - x^2}\; dx = -16\int \answer{\cos^3(\theta)\sin^2(\theta)} d\theta
+\int   x^3\sqrt{16 - x^2}\; dx = -16\int \answer{\cos^3(\theta)\sin^2(\theta)} \; d\theta
 \]
 Computing this integral gives
 \[
@@ -169,17 +169,17 @@ Compute the indefinite integral
 \[
 \int   x^5 \sqrt{4-x^2} \; dx.
 \]
-Use a trig sub with\\
+Use a trigonometric substitution with\\
 \[
 x = \answer{2\cos(\theta)}
 \]
 The differential is\\
 \[
-dx = \answer{-2\sin(\theta)}d\theta
+dx = \answer{-2\sin(\theta)} \; d\theta
 \]
 Substituting these and simplifying the integrand gives\\
 \[
-\int   x^5\sqrt{4 - x^2}\; dx = -128\int \answer{\cos^5(\theta)\sin^2(\theta)} d\theta
+\int   x^5\sqrt{4 - x^2}\; dx = -128\int \answer{\cos^5(\theta)\sin^2(\theta)} \; d\theta
 \]
 Computing this integral gives
 \[
@@ -259,13 +259,13 @@ Compute the indefinite integral
 \[
 \int \frac{\sqrt{1-9x^2}}{x^2} \; dx.
 \]
-Use a trig sub with\\
+Use a trigonometric substitution with\\
 \[
 x = \answer{\frac13\cos(\theta)}
 \]
 The differential is\\
 \[
-dx = \answer{-\frac13\sin(\theta)}d\theta
+dx = \answer{-\frac13\sin(\theta)} \; d\theta
 \]
 Substituting these and simplifying the integrand gives\\
 \[
@@ -338,7 +338,7 @@ Compute the indefinite integral
 \[
 \int \frac{1}{x\sqrt{9-x^2}}  \; dx.
 \]
-Use a trig sub with\\
+Use a trigonometric substitution with\\
 \[
 x = \answer{3\cos(\theta)}
 \]
@@ -384,7 +384,7 @@ Compute the indefinite integral
 \[
 \int \frac{1}{x\sqrt{4-25x^2}}  \; dx.
 \]
-Use a trig sub with\\
+Use a trigonometric substitution with\\
 \[
 x = \answer{\frac25\cos(\theta)}
 \]
@@ -465,9 +465,9 @@ From the triangle above, we can see that $\sec(\theta) = x$ and $\tan(\theta) = 
 \end{example}
 
 \begin{remark}
-Technically, $\sqrt{\tan^2(\theta)} = |\tan(\theta)|$, but in the substitution $x = \sec(\theta)$ we 
+Technically, $\sqrt{\tan^2(\theta)} = |\tan(\theta)|$. However, in the substitution $x = \sec(\theta)$ we 
 choose the angle $\theta$ to be in the interval 
-$[0, \pi/2)$ or $[\pi, 3\pi/2)$ so that $\tan(\theta) \geq 0$ and hence $|\tan(\theta)| = \tan(\theta)$.
+$[0, \pi/2)$ or $[\pi, 3\pi/2)$. This way, $\tan(\theta) \geq 0$ and $|\tan(\theta)| = \tan(\theta)$.
 \end{remark}
 
 
@@ -491,7 +491,7 @@ The integral becomes
                             &=  4\int \sec^4(\theta)\tan^2(\theta)\, d\theta\\ 
                             &=  4\int \sec^2(\theta)\cdot \sec^2(\theta) \cdot \tan^2(\theta)\, d\theta\\  
                             &=  4\int \sec^2(\theta)\cdot [1 + \tan^2(\theta)] \cdot \tan^2(\theta)\, d\theta\\  
-                            \text{let } \; & u = \tan(\theta), \; du = \sec^2(\theta) \, d\theta\\
+                            \text{Let } \; & u = \tan(\theta), \; du = \sec^2(\theta) \, d\theta.\\
                             &=  4\int [1 + u^2]u^2\, du\\ 
                              &=  4\int (u^2 + u^4) \, du\\ 
                              &= \frac43 u^3 + \frac45 u^5 + C\\
@@ -644,8 +644,8 @@ From the triangle above, we see that $\sec(\theta)= \sqrt{1+x^2}$.  Back-substit
 
 
 \begin{remark}
-Technically, $\sqrt{\sec^2(\theta)} = |\sec(\theta)|$, but in our substitution, $x = \tan(\theta)$,
-we can specify that the angle $\theta$ be in the interval $(-\pi/2, \pi/2)$ so that 
+Technically, $\sqrt{\sec^2(\theta)} = |\sec(\theta)|$. However, in our substitution, $x = \tan(\theta)$,
+we can specify that the angle $\theta$ be in the interval $(-\pi/2, \pi/2)$. This way, 
 $\sec(\theta) > 0$ and $\sqrt{\sec^2(\theta)} = |\sec(\theta)| = \sec(\theta)$.
 \end{remark}
 
@@ -657,13 +657,13 @@ Compute the indefinite integral
 \[
 \int   x^3\sqrt{9 + x^2}\; dx.
 \]
-Use a trig sub with\\
+Use a trigonometric substitution with\\
 \[
-x = \answer{3\tan(\theta)}
+x = \answer{3\tan(\theta)}.
 \]
 The differential is\\
 \[
-dx = \answer{3\sec^2(\theta)}d\theta
+dx = \answer{3\sec^2(\theta)} \; d\theta
 \]
 Substituting these and simplifying the integrand gives\\
 \[
@@ -731,13 +731,13 @@ Compute the indefinite integral
 \[
 \int \frac{x^3}{\sqrt{4 + x^2}} \; dx.
 \]
-Use a trig sub with\\
+Use a trigonometric substitution with\\
 \[
 x = \answer{2\tan(\theta)}
 \]
 The differential is\\
 \[
-dx = \answer{2\sec^2(\theta)}d\theta
+dx = \answer{2\sec^2(\theta)} \; d\theta
 \]
 Substituting these and simplifying the integrand gives\\
 \[
@@ -807,13 +807,13 @@ Compute the indefinite integral
 \[
 \int \sqrt{9 + 49x^2} \; dx.
 \]
-Use a trig sub with\\
+Use a trigonometric substitution with\\
 \[
 x = \answer{(3/7)\tan(\theta)}
 \]
 The differential is\\
 \[
-dx = \answer{(3/7)\sec^2(\theta)}d\theta
+dx = \answer{(3/7)\sec^2(\theta)} \; d\theta
 \]
 Substituting these and simplifying the integrand gives\\
 \[
@@ -843,18 +843,6 @@ The final answer is
 
 
 
-
-\begin{problem}
-Compute the following indefinite integrals:
-\begin{itemize}
-\item $\displaystyle{\int   x^3\sqrt{9 + x^2}\; dx}$
-\item $\displaystyle{\int   \frac{x^3}{\sqrt{4 + x^2}} \; dx}$
-\item $\displaystyle{\int \sqrt{9 + 49x^2} \; dx}$
-%\item $\displaystyle{\int \frac{1}{x^2\sqrt{25x^2-16}} \; dx}$
-%\item $\displaystyle{\int \frac{1}{x^3\sqrt{x^2-1}} \; dx}$
-\end{itemize}
-
-\end{problem}
 
 
 
@@ -894,6 +882,18 @@ Let $x = \tan(\theta)$, then $dx = \sec^2(\theta) \, d\theta$.
 
 
 
+\begin{problem}
+Compute the following indefinite integrals:
+\begin{itemize}
+\item $\displaystyle{\int   x^3\sqrt{9 + x^2}\; dx}$
+\item $\displaystyle{\int   \frac{x^3}{\sqrt{4 + x^2}} \; dx}$
+\item $\displaystyle{\int \sqrt{9 + 49x^2} \; dx}$
+%\item $\displaystyle{\int \frac{1}{x^2\sqrt{25x^2-16}} \; dx}$
+%\item $\displaystyle{\int \frac{1}{x^3\sqrt{x^2-1}} \; dx}$
+\end{itemize}
+
+\end{problem}
+
 
 
 
@@ -913,8 +913,8 @@ However, in general,
 \[
 \sqrt{\sin^2(\theta)} = |\sin(\theta)|.
 \]
-To resolve this difference, we go back to the original substitution
-$x = \cos(\theta)$ and we add the additional stipulation
+To resolve this difference, we go back to the original substitution,
+$x = \cos(\theta)$, and we add the additional stipulation
 $0 \leq \theta \leq \pi$. This interval allows $\cos(\theta)$ to 
 take on all of its values from $-1$ to $1$ with the additional benefit,
 that for values of $\theta$ in this interval, $\sin(\theta) \geq 0$.
