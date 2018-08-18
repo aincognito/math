@@ -351,7 +351,7 @@ x = \alpha= \dfrac{-2 - \sqrt{2}}{3} \quad \text{and} \quad x = \beta = \dfrac{-
 \end{problem}
 
 
-\begin{question} %problem #6b
+\begin{problem} %problem #6b
   Find the inflection point(s) of the function 
   \[
      f(x) = \cos(x)
@@ -371,7 +371,7 @@ x = \alpha= \dfrac{-2 - \sqrt{2}}{3} \quad \text{and} \quad x = \beta = \dfrac{-
 	On the interval $[0, 2\pi]$, the function $f(x) = \cos(x)$ has inflection points at $x =\answer{\pi/2}$ and $x=\answer{3\pi/2}$.
 		
 	
-\end{question}
+\end{problem}
 
 
 
@@ -506,10 +506,136 @@ there is no inflection point there.
  
 \end{problem}
 
+\section{Using the graph of the derivative}
+In this section, we are given the graph of the derivative, $f'(x)$, and we are asked to make conclusions about the original function, $f(x)$.
+
+\begin{example}
+Use the graph of $f'(x)$, shown below, to answer the following questions about the graph of $f(x)$.
+Where is $f(x)$ increasing/decreasing and where are its local extremes?
+Where is $f(x)$ concave up/down and where are its inflection points?
+
+\begin{image}
+\begin{tikzpicture}[scale=.6]
+\draw[<->, thick] (-4, 0)-- (4,0);
+\draw[<->, thick] (0, -1.5)-- (0, 3.5);
+\node at (0, 4.8) {The graph of the derivative, $y = f'(x)$};
+\node at (4.3,0) {$x$};
+\node at (0,3.8) {$y$};
+\draw[blue, thick]   plot[smooth,domain=-4:4] (\x, {-1 + \x*\x/4});
+\node at (-2.3,-0.65) {$-2$};
+\node at (2.1,-0.65) {$2$};
+\node at (4.9, 1.8) {$y = f'(x)$};
+\draw[thin] (-2, -.3)--(-2,.3);
+
+\draw[thin] (2, -0.3)--(2, 0.3);
+
+%\draw[blue, fill] (1.57,2) circle [radius=0.07];
+
+\end{tikzpicture}
+\end{image}
+
+To answer the first question, recall that when $f'(x) > 0$, then $f(x)$ is increasing,
+and when $f'(x) < 0$, then $f(x)$ is decreasing.  From the graph, we see that $f'(x)$ is positive on the intervals 
+$(-\infty, -2)$ and $(2, \infty)$.  Hence, the graph of $f(x)$ is increasing on these intervals. We can also see that 
+$f'(x)$ is negative on the interval $(-2, 2)$ and therefore $f(x)$ is decreasing on this interval.
+We can now use the first derivative test to determine the nature of the local extremes. Since $f'(-2) = 0$ and $f'(x)$
+changes sign from positive to negative at $x = -2$, the function, $f(x)$, has a local maximum at $x = -2$.
+Similarly, Since $f'(2) = 0$ and $f'(x)$
+changes sign from negative to positive at $x = 2$, the function, $f(x)$, has a local minimum at $x = 2$.\\
+To determine the concavity of $f(x)$,recall that $f(x)$ is concave up when $f'(x)$ is increasing and $f(x)$
+is concave down when $f'(x)$ is decreasing.  From the graph, we see that $f'(x)$ is increasing on the interval $(0, \infty)$,
+and decreasing on the interval $(-\infty, 0)$. Hence, the graph of $f(x)$ is concave up on $(0, \infty)$
+and concave down on $(-\infty, 0)$.  Finally, $f(x)$ has an inflection point at $x = 0$ due to the change in concavity there.
+
+
+\end{example}
+
+\begin{problem}
+Use the graph of the derivative, $f'(x)$, given below, to answer the following questions.
+
+\begin{image}
+\begin{tikzpicture}[scale=.6]
+\draw[<->, thick] (-4, 0)-- (4,0);
+\draw[<->, thick] (0, -1.5)-- (0, 3.5);
+\node at (0, 4.8) {The graph of the derivative, $y = f'(x)$};
+\node at (4.3,0) {$x$};
+\node at (0,3.8) {$y$};
+\draw[blue, thick]   plot[smooth,domain=-4:4] (\x, {-1 + \x*\x/4});
+\node at (-2.3,-0.65) {$-3$};
+\node at (2.1,-0.65) {$3$};
+\node at (4.9, 1.8) {$y = f'(x)$};
+\draw[thin] (-2, -.3)--(-2,.3);
+
+\draw[thin] (2, -0.3)--(2, 0.3);
+
+%\draw[blue, fill] (1.57,2) circle [radius=0.07];
+
+\end{tikzpicture}
+\end{image}
+
+Where is $f(x)$ increasing? Select all that apply.
+
+\begin{selectAll}
+\choice{$(0, \infty)$}
+\choice{$(-\infty, 0)$}
+\choice[correct]{$(3, \infty)$}
+\choice{$(-\infty, \infty)$}
+\choice[correct]{$(-\infty, -3)$}
+\end{selectAll}
+
+Where is $f(x)$ decreasing? Select all that apply.
+
+\begin{selectAll}
+\choice{$(0, \infty)$}
+\choice{$(-\infty, 0)$}
+\choice{$(-\infty, \infty)$}
+\choice[correct]{$(-3, 3)$}
+\choice{$(-\infty, \infty)$}
+\end{selectAll}
+
+
+Describe the local extremes of $f(x)$.
+\begin{selectAll}
+\choice[correct]{local maximum at $x = -3$}
+\choice{local maximum at $x = 3$}
+\choice{local minimum at $x = 0$}
+\choice{local minimum at $x = -3$}
+\choice[correct]{local minimum at $x = 3$}
+\end{selectAll}
+
+Where is $f(x)$ concave up?
+\begin{selectAll}
+\choice[correct]{$(0, \infty)$}
+\choice{$(-\infty, 0)$}
+\choice{$(-\infty, \infty)$}
+\choice{$(-3, 3)$}
+\choice{$(-\infty, \infty)$}
+\end{selectAll}
+
+
+Where is $f(x)$ concave down?
+\begin{selectAll}
+\choice{$(0, \infty)$}
+\choice[correct]{$(-\infty, 0)$}
+\choice{$(-\infty, \infty)$}
+\choice{$(-3, 3)$}
+\choice{$(-\infty, \infty)$}
+\end{selectAll}
+
+
+Where are the inflection points of $f(x)$
+\begin{selectAll}
+\choice[correct]{inflection point at $x = -3$}
+\choice[correct]{inflection point at $x = 0$}
+\choice{inflection point at $x = 3$}
+\choice{no inflection points}
+\end{selectAll}
+\end{problem}
+
 
 %2\sec(x) \sec(x) \tan(x) 
 
-
+\section{Video lessons}
 \begin{center}
 \begin{foldable}
 \unfoldable{Here is a detailed, lecture style video on concavity:}
