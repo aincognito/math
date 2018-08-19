@@ -37,8 +37,8 @@ if $f'(x)$ is decreasing on $I$, then $f(x)$ is \textbf{concave down} on $I$.
 \node at (5.5, 2.5) {concave down};
 %\draw[<->] (4, 0) --(7, 0);
 %\node at (3.2, 0) {$x$};
-\draw (5.5,2) parabola (6.75,.25);
-\draw (5.5,2) parabola (4.25,.25);
+\draw[blue] (5.5,2) parabola (6.75,.25);
+\draw[blue] (5.5,2) parabola (4.25,.25);
 
 %\draw (1.5, .1) -- (1.5, -.1) node[below] {$x_0$};
 %\node at (1.5, -.9) {$f''(x_0) < 0$};
@@ -47,8 +47,8 @@ if $f'(x)$ is decreasing on $I$, then $f(x)$ is \textbf{concave down} on $I$.
 %\draw[<->] (0, 0) --(3, 0);
 %\node at (3.2, 0) {$x$};
 
-\draw (1.5,.25) parabola (0.25,2);
-\draw (1.5,.25) parabola (2.75,2);
+\draw[blue] (1.5,.25) parabola (0.25,2);
+\draw[blue] (1.5,.25) parabola (2.75,2);
 \draw[white] (0,0)--(0,0.1);
 %\draw (5.5, .1) -- (5.5, -.1) node[below] {$x_0$};
 %\node at (5.5, -.9) {$f''(x_0) > 0$};
@@ -590,7 +590,7 @@ Where is $f(x)$ decreasing? Select all that apply.
 \choice{$(-\infty, 0)$}
 \choice{$(-\infty, \infty)$}
 \choice[correct]{$(-3, 3)$}
-\choice{$(-\infty, \infty)$}
+\choice{$(3, \infty)$}
 \end{selectAll}
 
 
@@ -609,7 +609,7 @@ Where is $f(x)$ concave up? Select all that apply.
 \choice{$(-\infty, 0)$}
 \choice{$(-\infty, \infty)$}
 \choice{$(-3, 3)$}
-\choice{$(-\infty, \infty)$}
+\choice{$(3, \infty)$}
 \end{selectAll}
 
 
@@ -619,7 +619,7 @@ Where is $f(x)$ concave down? Select all that apply.
 \choice[correct]{$(-\infty, 0)$}
 \choice{$(-\infty, \infty)$}
 \choice{$(-3, 3)$}
-\choice{$(-\infty, \infty)$}
+\choice{$(3, \infty)$}
 \end{selectAll}
 
 
@@ -632,6 +632,134 @@ Where are the inflection points of $f(x)$? Select all that apply.
 \end{selectAll}
 \end{problem}
 
+
+
+\begin{example}
+Use the graph of $f'(x)$, shown below, to answer the following questions about the graph of $f(x)$.
+Where is $f(x)$ increasing/decreasing and where are its local extremes?
+Where is $f(x)$ concave up/down and where are its inflection points?
+
+\begin{image}
+\begin{tikzpicture}[scale=.6]
+\draw[<->, thick] (-1.5, 0)-- (4,0);
+\draw[<->, thick] (0, -3)-- (0, 3);
+\node at (1.25, 4.4) {The graph of the derivative, $y = f'(x)$};
+\node at (4.3,0) {$x$};
+\node at (0,3.4) {$y$};
+\draw[blue, thick]   plot[smooth,domain=-1.3:3.8] (\x, {\x*(\x - 2)*(\x-2)/4});
+%\node at (-2.3,-0.65) {$-2$};
+
+\node at (4.9, 1.8) {$y = f'(x)$};
+%\draw[thin] (-2, -.3)--(-2,.3);
+\node at (2.1,-0.65) {$2$};
+\draw[thin] (2, -0.2)--(2, 0.2);
+\node at (.67,-0.65) {$.7$};
+\draw[thin] (.67, -0.2)--(.67, 0.2);
+
+%\draw[blue, fill] (1.57,2) circle [radius=0.07];
+
+\end{tikzpicture}
+\end{image}
+
+To answer the first question, recall that when $f'(x) > 0$, then $f(x)$ is increasing,
+and when $f'(x) < 0$, then $f(x)$ is decreasing.  From the graph, we see that $f'(x)$ is positive on the intervals 
+$(0, 2)$ and $(2, \infty)$.  Hence, the graph of $f(x)$ is increasing on these intervals. We can also see that 
+$f'(x)$ is negative on the interval $(-\infty, 0)$ and therefore $f(x)$ is decreasing on this interval.
+We can now use the first derivative test to determine the nature of the local extremes. Since $f'(0) = 0$ and $f'(x)$
+changes sign from negative to positive at $x = 0$, the function, $f(x)$, has a local minimum at $x = 0$.
+The situation at $x = 2$ is different. From the graph, we see that $f'(2) = 0$ but $f'(x)$ does not change sign at $x = 2$- 
+it is positive on either side. Thus, $f(x)$ does not have a local extreme at the critical number, $x = 2$.\\
+To determine the concavity of $f(x)$,recall that $f(x)$ is concave up when $f'(x)$ is increasing and $f(x)$
+is concave down when $f'(x)$ is decreasing.  From the graph, we see that $f'(x)$ is increasing on the intervals $(-\infty, .7)$
+and $(2, \infty)$ and decreasing on the interval $(0.7, 2)$. Hence, the graph of $f(x)$ is concave up on $(-\infty, .7)$ and $(2, \infty)$
+and concave down on $(.7, 2)$.  Finally, $f(x)$ has an inflection points at $x = .7$ and $x = 2$ due to the changes in concavity at these points.
+
+
+\end{example}
+
+\begin{problem}
+Use the graph of the derivative, $f'(x)$, given below, to answer the following questions.
+
+\begin{image}
+\begin{tikzpicture}[scale=.6]
+\draw[<->, thick] (-1.5, 0)-- (5,0);
+\draw[<->, thick] (0, -3)-- (0, 3.2);
+\node at (1.75, 4.6) {The graph of the derivative, $y = f'(x)$};
+\node at (5.3,0) {$x$};
+\node at (0,3.6) {$y$};
+\draw[blue, thick]   plot[smooth,domain=-1.1:4.8] (\x, {\x*(\x - 3)*(\x-3)/6});
+%\node at (-2.3,-0.65) {$-2$};
+
+\node at (5.9, 1.8) {$y = f'(x)$};
+%\draw[thin] (-2, -.3)--(-2,.3);
+\node at (3.1,-0.65) {$3$};
+\draw[thin] (3, -0.2)--(3, 0.2);
+\node at (1,-0.65) {$1$};
+\draw[thin] (1, -0.2)--(1, 0.2);
+
+%\draw[blue, fill] (1.57,2) circle [radius=0.07];
+
+\end{tikzpicture}
+\end{image}
+
+Where is $f(x)$ increasing? Select all that apply.
+
+\begin{selectAll}
+\choice[correct]{$(0, 3)$}
+\choice{$(-\infty, 1)$}
+\choice[correct]{$(3, \infty)$}
+\choice{$(-\infty, \infty)$}
+\choice{$(-\infty, 0)$}
+\end{selectAll}
+
+Where is $f(x)$ decreasing? Select all that apply.
+
+\begin{selectAll}
+\choice{$(0, \infty)$}
+\choice[correct]{$(-\infty, 0)$}
+\choice{$(-\infty, \infty)$}
+\choice{$(1, 3)$}
+\choice{$(1, \infty)$}
+\end{selectAll}
+
+
+Describe the local extremes of $f(x)$. Select all that apply.
+\begin{selectAll}
+\choice{local maximum at $x = 1$}
+\choice{local maximum at $x = 3$}
+\choice[correct]{local minimum at $x = 0$}
+\choice{local minimum at $x = 1$}
+\choice{local minimum at $x = 3$}
+\end{selectAll}
+
+Where is $f(x)$ concave up? Select all that apply.
+\begin{selectAll}
+\choice{$(0, \infty)$}
+\choice{$(-\infty, 0)$}
+\choice[correct]{$(-\infty, 1)$}
+\choice{$(-3, 3)$}
+\choice[correct]{$(3, \infty)$}
+\end{selectAll}
+
+
+Where is $f(x)$ concave down? Select all that apply.
+\begin{selectAll}
+\choice{$(0, \infty)$}
+\choice{$(0, 1)$}
+\choice{$(-\infty, \infty)$}
+\choice[correct]{$(1, 3)$}
+\choice{$(3, \infty)$}
+\end{selectAll}
+
+
+Where are the inflection points of $f(x)$? Select all that apply.
+\begin{selectAll}
+\choice{inflection point at $x = 0$}
+\choice[correct]{inflection point at $x = 1$}
+\choice[correct]{inflection point at $x = 3$}
+\choice{no inflection points}
+\end{selectAll}
+\end{problem}
 
 %2\sec(x) \sec(x) \tan(x) 
 
