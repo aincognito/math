@@ -1,28 +1,51 @@
 %% You can put user macros here
 %% However, you cannot make new environments
-\newcommand{\bart}{BART}
+
 \newcommand{\ffrac}[2]{\frac{\text{\footnotesize $#1$}}{\text{\footnotesize $#2$}}}
 \newcommand{\vasymptote}[2][]{
     \draw [densely dashed,#1] ({rel axis cs:0,0} -| {axis cs:#2,0}) -- ({rel axis cs:0,1} -| {axis cs:#2,0});
 }
 \graphicspath{{./}{firstExample/}}
-%\usepackage[width=4.375in, height=7.0in, top=1.0in, papersize={5.5in,8.5in}]{geometry}
-%\usepackage[pdftex]{graphicx}
+
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{array}
+\usepackage[makeroom]{cancel} %% for strike outs
+\usepackage{pgffor} %% required for integral for loops
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{tkz-euclide}
+
+
+\usetkzobj{all}
+\tikzstyle geometryDiagrams=[ultra thick,color=blue!50!black]
+
+
+\usetikzlibrary{arrows}
+\tikzset{>=stealth,commutative diagrams/.cd,
+  arrow style=tikz,diagrams={>=stealth}} %% cool arrow head
+\tikzset{shorten <>/.style={ shorten >=#1, shorten <=#1 } } %% allows shorter vectors
+
+\usetikzlibrary{backgrounds} %% for boxes around graphs
+\usetikzlibrary{shapes,positioning}  %% Clouds and stars
+\usetikzlibrary{matrix} %% for matrix
+\usepgfplotslibrary{polar} %% for polar plots
+\usepgfplotslibrary{fillbetween} %% to shade area between curves in TikZ
+
+
+
+%\usepackage[width=4.375in, height=7.0in, top=1.0in, papersize={5.5in,8.5in}]{geometry}
+%\usepackage[pdftex]{graphicx}
 %\usepackage{tipa}
 %\usepackage{txfonts}
 %\usepackage{textcomp}
 %\usepackage{amsthm}
-%\usepackage{array}
 %\usepackage{xy}
 %\usepackage{fancyhdr}
 %\usepackage{xcolor}
-\usepackage{tikz}
-\usepackage{tkz-euclide}
-\usetkzobj{all}
-\usepgfplotslibrary{fillbetween}
-\tikzstyle geometryDiagrams=[ultra thick,color=blue!50!black]
+%\usepackage{mathtools} %% for pretty underbrace % Breaks Ximera
+%\usepackage{multicol}
+
 
 
 \newcommand{\RR}{\mathbb R}
