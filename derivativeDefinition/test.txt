@@ -1,0 +1,12 @@
+
+var holder = document.createElement("div");
+holder.style.height = "360px";
+document.currentScript.parentNode.insertBefore( holder, document.currentScript );
+var calc = Desmos.Calculator( holder, {expressionsCollapsed:true} );
+calc.setExpression({latex:"x^2/5", color:"blue"});
+calc.setExpression({latex:"a=0", sliderBounds: {min:-6, max: 6}});
+
+
+
+
+
