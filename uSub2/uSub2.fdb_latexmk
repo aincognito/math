@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1535043843 "uSub2.tex" "uSub2.pdf" "uSub2" 1535043844
+["pdflatex"] 1535045081 "uSub2.tex" "uSub2.pdf" "uSub2" 1535045082
   "../preamble.tex" 1534874171 3669 080d76b6ee3463a45b5023162baffa1e ""
   "/home/andrew/texmf/tex/latex/ximeraLatex/ximera.cls" 1531167858 28946 805eb0dd71d7f8f6597f9d8aa452fc80 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1525040097 3332 103109f5612ad95229751940c61aada0 ""
@@ -313,14 +313,14 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1525040116 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1530739702 2587179 fcbc6712a0ee436de343220061605fd9 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1530739696 7906415 c419d68207755f2bfb6ae0205f4d1bee ""
-  "uSub2.aux" 1535043844 862 40349e8a1789edb68697f5d0864cbf4a ""
-  "uSub2.out" 1535043844 102 877cc0d0bf743eebd3ea40de5c82d22f ""
-  "uSub2.tex" 1535043842 13147 0c514f559729e16392bae8fe5982703b ""
+  "uSub2.aux" 1535045082 862 40349e8a1789edb68697f5d0864cbf4a ""
+  "uSub2.out" 1535045082 102 877cc0d0bf743eebd3ea40de5c82d22f ""
+  "uSub2.tex" 1535045080 13386 f0d30faca6a36d06e2fb3c0db49ff36f ""
   (generated)
-  "uSub2.jax"
   "uSub2.pdf"
-  "uSub2.ids"
-  "uSub2.out"
-  "uSub2.aux"
   "uSub2.oc"
   "uSub2.log"
+  "uSub2.out"
+  "uSub2.aux"
+  "uSub2.ids"
+  "uSub2.jax"
