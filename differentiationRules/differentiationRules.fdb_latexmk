@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1535043725 "differentiationRules.tex" "differentiationRules.pdf" "differentiationRules" 1535043726
+["pdflatex"] 1535047098 "differentiationRules.tex" "differentiationRules.pdf" "differentiationRules" 1535047099
   "../preamble.tex" 1534874171 3669 080d76b6ee3463a45b5023162baffa1e ""
   "/home/andrew/texmf/tex/latex/ximeraLatex/ximera.cls" 1531167858 28946 805eb0dd71d7f8f6597f9d8aa452fc80 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1525040097 3332 103109f5612ad95229751940c61aada0 ""
@@ -287,14 +287,14 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1525040116 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1530739702 2587179 fcbc6712a0ee436de343220061605fd9 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1530739696 7906415 c419d68207755f2bfb6ae0205f4d1bee ""
-  "differentiationRules.aux" 1535043726 918 05c230f967f28354d282b09aaebacb08 ""
-  "differentiationRules.out" 1535043726 172 e7272469e59927e58d0c6b32220dedbb ""
-  "differentiationRules.tex" 1535043724 5717 cab3960a818bd3ec74e0bc5c9a1db5eb ""
+  "differentiationRules.aux" 1535047099 918 adb2b0e764f86e2bf186535773e71e1d ""
+  "differentiationRules.out" 1535047099 172 66c2c763b8fcdd5c2c8053718c4d0b95 ""
+  "differentiationRules.tex" 1535047097 5717 545d5914740bf4ad2d6b3194bd2dbd31 ""
   (generated)
-  "differentiationRules.oc"
-  "differentiationRules.ids"
-  "differentiationRules.aux"
   "differentiationRules.out"
   "differentiationRules.log"
-  "differentiationRules.jax"
+  "differentiationRules.oc"
   "differentiationRules.pdf"
+  "differentiationRules.ids"
+  "differentiationRules.jax"
+  "differentiationRules.aux"
