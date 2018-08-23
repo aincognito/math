@@ -1,0 +1,222 @@
+\documentclass{ximera}
+%\usepackage{tcolorbox}
+\input{../preamble}
+
+\outcome{Learn the rules of differentiation}
+
+\title{2.10 Table of Derivatives}
+
+%\newcommand{\ffrac}[2]{\frac{\mbox{\footnotesize $#1$}}{\mbox{\footnotesize $#2$}}}
+%\newcommand{\vasymptote}[2][]{
+%    \draw [densely dashed,#1] ({rel axis cs:0,0} -| {axis cs:#2,0}) -- ({rel axis cs:0,1} -| {axis cs:#2,0});
+%}
+
+
+\begin{document}
+
+\begin{abstract}
+We learn the rules of differentiation.
+\end{abstract}
+
+\maketitle
+
+
+\section{Table of Derivatives}
+
+In this section we present the derivatives of the fundamental functions in calculus.  
+
+\begin{center}
+\[
+\begin{array}{c|c|c}
+		Type & f(x)= & f'(x)=  \\
+		\hline
+		\text{Constant} & c & 0 \\
+		\text{Linear} & mx & m  \\
+		\text{Power} & x^n & nx^{n-1}  \\
+		\hline
+		\text{Trig} & \sin(x) & \cos(x) \\
+		\text{Trig} & \cos(x) & -\sin(x) \\
+		\hline
+		\text{Trig} & \tan(x) & \sec^2(x) \\
+		\text{Trig} & \sec(x) & \sec(x)\tan(x) \\
+		\hline
+		\text{Trig} & \cot(x) & -\csc^2(x)\ \\
+		\text{Trig} & \csc(x) & -\csc(x)\cot(x) \\
+		\hline
+		\text{Inv Trig} & \sin^{-1}(x) & \frac{1}{\sqrt{1-x^2}} \\
+		\text{Inv Trig} & \cos^{-1}(x) & -\frac{1}{\sqrt{1-x^2}} \\
+		\text{Inv Trig} & \tan^{-1}(x) & \frac{1}{1+x^2} \\
+		\hline
+		\text{Exponential} & e^x & e^x \\
+		\text{Exponential} & a^x & a^x\ln(a) \\
+		\hline
+		\text{Log} & \ln(x) & \frac{1}{x} \\
+		\text{Log} & \log_a(x) & \frac{1}{x\ln(a)}
+	\end{array}
+    \]
+\end{center}
+
+
+\section{Combining functions}
+
+The following list shows how to find derivatives of combintations of functions.
+
+\begin{enumerate}
+
+\item[1.] Constant multiple rule:
+\[
+\frac{d}{dx} \left[cf(x)\right] = c \frac{d}{dx} f(x),
+\]
+or, in condensed form:
+\[
+(cf)' = cf'.
+\]
+
+\item[2.] Sum and difference rules:
+\[
+\frac{d}{dx} \left[f(x) \pm g(x)\right] = \frac{d}{dx} f(x) \pm \frac{d}{dx} g(x),
+\]
+or, in condensed form:
+\[
+(f \pm g)' = f' \pm g'.
+\]
+
+\item[3.] Product rule:
+\[
+\frac{d}{dx} \left[f(x)g(x)\right] = f(x) \frac{d}{dx} g(x) + g(x) \frac{d}{dx} f(x),
+\]
+or, in condensed form:
+\[
+(fg)' = fg' + gf'.
+\]
+
+\item[4.] Quotient rule:
+\[
+\frac{d}{dx} \frac{f(x)}{g(x)} = \frac{g(x) \frac{d}{dx} f(x) - f(x) \frac{d}{dx} g(x)}{g^2(x)},
+\]
+or, in condensed form:
+\[
+\left(\frac{f}{g}\right)' =  \frac{gf' - fg'}{g^2}.
+\]
+
+\item[5.] Chain rule:
+\[
+\frac{d}{dx} f(g(x)) = f'(g(x) \cdot g'(x),
+\]
+or, in Libnitz notation, if $y$ is a function of $u$ and $u$ is a function of $x$, then
+\[
+\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}.
+\]
+In words, the derivative of a composition is the derivative of the outside times the derivative of the inside.
+
+\end{enumerate}
+
+\end{document}
+
+
+
+
+\section{Leibniz Notation}
+
+In this section we introduce another notation for the derivative. The slope of a line segment is given by
+\[m = \frac{\text{rise}}{\text{run}} = \frac{\Delta y}{\Delta x}\]
+and since the derivative represents a formula for the slope of a tangent line to a curve $y = f(x)$,
+a natural notation for the derivative is Leibniz' notation:
+\[ f'(x) = \frac{dy}{dx},\]
+which closely resembles the delta notation for slope.
+
+
+
+
+
+\begin{center}
+
+\bf{Examples of Leibniz Notation}
+
+\end{center}
+
+
+\begin{example} %example 21
+If $y = x^2$ then $\displaystyle{\frac{dy}{dx} = 2x.}$
+\end{example}
+
+\begin{example} %example 22
+If $y = \sqrt x$ then $\displaystyle{\frac{dy}{dx} = \frac{1}{2\sqrt x}.}$
+\end{example}
+
+\begin{example} %example 23
+If $y = \frac{1}{x}$ then $\displaystyle{\frac{dy}{dx} = -\frac{1}{x^2}.}$
+\end{example}
+
+\begin{example} %example 24
+If $y = \sin(x)$ then $\displaystyle{\frac{dy}{dx} = \cos(x).}$
+\end{example}
+
+\begin{example} %example 25
+If $y = \cos(x)$ then $\displaystyle{\frac{dy}{dx} = -\sin(x).}$
+\end{example}
+
+There is also a way to describe the derivative using Leibniz style notation without explicitly stating the function first:
+
+\[f'(x) = \frac{d}{dx}[f(x)].\]
+
+Some examples in this format:
+
+\begin{example} %example 26
+$\displaystyle{\frac{d}{dx}\big( \tan(x) \big) = \frac{d}{dx} \tan(x) = \sec^2(x).}$
+\end{example}
+
+\begin{example} %example 27
+$\displaystyle{\frac{d}{dx}\big( \sec(x) \big) = \frac{d}{dx} \sec(x) =\sec(x)\tan(x).}$
+\end{example}
+
+\begin{example} %example 28
+$\displaystyle{\frac{d}{dx}\big( e^x \big) = e^x.}$
+\end{example}
+
+\begin{example} %example 29
+$\displaystyle{\frac{d}{dx}\big( \ln(x) \big) = \frac{d}{dx} \ln(x)= \frac{1}{x}.}$
+\end{example}
+
+\begin{example} %example 30
+$\displaystyle{\frac{d}{dx}\big( \tan^{-1}(x) \big) = \frac{d}{dx} \tan^{-1}(x) = \frac{1}{1+x^2}.}$
+\end{example}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{description}
+\item[Constant:] If $f(x) = c$ then $f'(x) = 0$, where $c$ is any constant.
+\item[Linear:] If $f(x) = ax$ then $f'(x) = a$, where $a$ is any nonzero constant.
+\item[Power Rule:] If $f(x) = x^n$ then $f'(x) = nx^{n-1}$ where $n$ is a nonzero constant.
+\item[Trig:] If $f(x) = \sin(x)$ then $f'(x) = \cos(x)$.
+\item[Trig:] If $f(x) = \cos(x)$ then $f'(x) = -\sin(x)$.
+\item[Trig:] If $f(x) = \tan(x)$ then $f'(x) = \sec^2(x)$.
+\item[Trig:] If $f(x) = \sec(x)$ then $f'(x) = \sec(x)\tan(x)$.
+\item[Trig:] If $f(x) = \cot(x)$ then $f'(x) = -\csc^2(x)$.
+\item[Trig:] If $f(x) = \csc(x)$ then $f'(x) = -\csc(x)\cot(x)$.
+\item[Inverse Trig:] If $f(x)  = \sin^{-1}(x)$ then $f'(x) = \frac{1}{\sqrt{1-x^2}}$.
+\item[Inverse Trig:] If $f(x)  = \cos^{-1}(x)$ then $f'(x) = -\frac{1}{\sqrt{1-x^2}}$.
+\item[Inverse Trig:] If $f(x)  = \tan^{-1}(x)$ then $f'(x) = \frac{1}{1+x^2}$.
+\item[Exponential:] If $f(x) = e^x$ then $f'(x) = e^x$.
+\item[Exponential:] If $f(x) = a^x$ then $f'(x) = a^x \cdot \ln(a)$.
+%where $a>0$ and $a \neq 1$
+\item[Log:] If $f(x) = \ln(x)$ then $f'(x) = \frac{1}{x}.$
+\item[Log:] If $f(x) = \log_a(x)$ then $f'(x) = \frac{1}{x \ln(a)}.$
+\end{description}

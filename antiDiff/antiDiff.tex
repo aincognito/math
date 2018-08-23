@@ -2,24 +2,112 @@
 
 \input{../preamble}
 
-\outcome{Anti-differentiation via Indefinite Integrals}
+\outcome{Compute indefinite integrals}
 
-\title{Anti-differentiation via Indefinite Integrals}
+\title{Indefinite Integrals}
 
 \begin{document}
 
 \begin{abstract}
-We will compute Anti-differentiation via Indefinite Integrals
+We will compute indefinite Integrals
 \end{abstract}
 
 \maketitle
 
-\begin{example}
+\begin{definition}[Indefinite Integral]
+\[
+\int f(x) \; dx = F(x) + C,
+\]
+where $F' = f$ and $C$ is an arbitrary constant.
+
+\end{definition}
+
+
+We now present a list of basic indefinite integrals:
+
 
 \begin{enumerate}
 
-\item[anti-diff] 
-given f', find f (all f)
+
+\item[1.] Constant functions:
+\[
+\int k \; dx = kx + C,
+\]
+where $k$ is any constant.
+
+\item[2.] Power functions:
+\[
+\int x^n \; dx = \frac{x^{n+1}}{n+1} + C,
+\]
+where $n\neq -1$.
+
+\item[3.] The case $n = -1$:
+\[
+\int x^{-1} \; dx = \int \frac{1}{x} \; dx = \ln|x| + C.
+\]
+
+\item[4.] Trigonometric functions:
+
+\begin{enumerate}
+
+\item[a.] $\displaystyle{\int \cos(x) \; dx = \sin(x) + C}$
+\item[b.] $\displaystyle{\int \sin(x) \; dx = -\cos(x) + C}$
+\item[c.] $\displaystyle{\int \sec^2(x) \; dx = \tan(x) + C}$
+\item[d.] $\displaystyle{\int \sec(x) \tan(x) \; dx = \sec(x) + C}$
+\item[e.] $\displaystyle{\int \csc^2(x) \; dx = -\cot(x) + C}$
+\item[f.] $\displaystyle{\int \csc(x) \cot(x) \; dx = -\csc(x) + C}$
+ 
+\end{enumerate}
+
+
+\item[5.] The exponential function:
+\[
+\int e^x \; dx = e^x + C.
+\]
+
+\item[6.] General exponential functions:
+\[
+\int a^x \; dx = \frac{a^x}{\ln(a)} + C,
+\]
+where $a > 1$.
+
+\item[7.] Inverse Trig:
+
+\begin{enumerate}
+
+\item[a.] $\displaystyle{\int \frac{1}{\sqrt{1-x^2}} \; dx = \sin^{-1}(x) + C}$
+\item[b.] $\displaystyle{\int \frac{1}{1+x^2} \; dx = \tan^{-1}(x) + C}$
+
+\end{enumerate}
+
+
+\end{enumerate}
+
+
+
+
+In many applications, the independent variable is multiplied by a constant, $a$. 
+We list the effects of such a modification on indefinite integrals.
+
+\begin{enumerate}
+
+\item[8.] $\displaystyle{\int e^{ax} \; dx = \frac{1}{a} \cdot e^{ax} + C}$
+
+
+\item[9.] $\displaystyle{\int \cos(ax) \; dx = \frac{1}{a} \cdot \sin(ax) + C}$
+
+\item[10.] $\displaystyle{\int \sin(ax) \; dx = -\frac{1}{a} \cdot \cos(ax) + C}$
+
+\item[11.] $\displaystyle{\int \sec^2(ax) \; dx = \frac{1}{a} \cdot \tan(ax) + C}$
+
+\item[12.] $\displaystyle{\int \sec(ax)\tan(ax) \; dx = \frac{1}{a} \cdot \sec(ax) + C}$
+
+\item[13.] $\displaystyle{\int \frac{1}{a^2 + x^2} \; dx = \frac{1}{a} \cdot \tan^{-1}\left(\frac{x}{a}\right) + C}$
+
+\end{enumerate}
+
+\end{document}
+
 
 \item[intial value] 
 given f' and f(0), find f
