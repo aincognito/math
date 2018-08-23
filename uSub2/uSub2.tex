@@ -1,0 +1,519 @@
+\documentclass{ximera}
+\usepackage{tcolorbox}
+\input{../preamble}
+
+\outcome{Compute an anti-derivative by reversing the chain rule.}
+
+\title{0.3 Substitution}
+
+
+
+\begin{document}
+
+\begin{abstract}
+In this section we learn to reverse the chain rule by making a substitution.
+\end{abstract}
+
+\maketitle
+
+\section{U-Substitution}
+
+We make a u-substitution to fill in the gaps in the following equation, which reverses the chain rule:
+
+\[\int f(g(x))g'(x) \ dx = F(g(x)) + C. \]
+
+If we let $ u = g(x)$ then $du = g'(x) \ dx$ and the integral can be rewritten as
+\[\int f(g(x))g'(x) \ dx = \int f(u) \ du \]
+which equals
+\[F(u) + C\]
+and back substituting gives
+\[F(g(x)) + C. \]
+Now we can see that
+\[\int f(g(x))g'(x) \ dx = F(g(x)) + C. \]
+
+
+
+\begin{example}
+Compute 
+\[\int 2x\cos(x^2 + 1) \ dx.\]
+
+Let $u = x^2 + 1$.  We have,
+\[u = x^2 + 1\]
+\[du = 2x \ dx\]
+
+and the integral can be written as 
+\[\int 2x\cos(x^2 + 1) \ dx = \int \cos(x^2 + 1) \ 2x\  dx = \int \cos(u) \ du.\]
+The last integral can be computed as 
+\[\int \cos(u) \ du = \sin(u) + C\]
+and by back substituting, we have 
+\[\sin(u) + C = \sin(x^2 + 1) + C.\]
+Thus, using u-substitution we can conclude that
+\[\int 2x\cos(x^2 + 1) \ dx =  \sin(x^2 + 1) + C.\]
+\end{example}
+
+\begin{problem}
+\begin{hint}
+Let $u = x^3 + 2$
+\end{hint}
+\begin{hint}
+Compute $du$
+\end{hint}
+\[\int 3x^2\cos(x^3 + 2) \ dx = \answer{\sin(x^3 + 2)} +C.\]
+\end{problem}
+
+\begin{problem}
+\begin{hint}
+Let $u = x^5 -7$
+\end{hint}
+\begin{hint}
+Compute $du$
+\end{hint}
+\[\int 5x^4\sin(x^5 -7) \ dx = \answer{-\cos(x^5 -7)} +C.\]
+\end{problem}
+
+
+\begin{example} Compute 
+\[\int 2x(x^2 + 1)^4 \ dx.\]
+Let $u = x^2 + 1$.  We have,
+\[u = x^2 + 1\]
+\[du = 2x \ dx\]
+
+and the integral can be written as 
+\[\int 2x(x^2 + 1)^4 \ dx = \int (x^2 + 1)^4 \ 2x \  dx = \int u^4 \ du.\]
+The last integral can be computed as 
+\[\int u^4 \ du = \tfrac{u^5}{5} + C\]
+and by back substituting, we have 
+\[\tfrac{u^5}{5} + C = \tfrac15(x^2 + 1)^5 + C .\]
+Thus, using u-substitution we can conclude that
+\[\int 2x(x^2 + 1)^4 \ dx  =  \tfrac15(x^2 + 1)^5 + C .\]
+\end{example}
+
+\begin{problem}
+\begin{hint}
+Let $u = x^3 + 2$
+\end{hint}
+\begin{hint}
+Compute $du$
+\end{hint}
+\[\int 3x^2(x^3 + 2)^6 \ dx = \answer{(x^3 + 2)^7/7} +C.\]
+\end{problem}
+
+\begin{problem}
+\begin{hint}
+Let $u = x^4 -1$
+\end{hint}
+\begin{hint}
+Compute $du$
+\end{hint}
+\[\int 4x^3(x^4 -1)^8 \ dx = \answer{(x^4 -1)^9/9} +C.\]
+\end{problem}
+
+\begin{example} Compute 
+\[\int 2xe^{(x^2 + 1)} \ dx.\]
+Let $u = x^2 + 1$.  We have,
+\[u = x^2 + 1\]
+\[du = 2x \ dx\]
+
+\[\int 2xe^{(x^2 + 1)} \ dx = \int e^{(x^2 + 1)} \ 2x\  dx = \int e^u \ du.\]
+The last integral can be computed as 
+\[\int e^u \ du = e^u + C\]
+and by back substituting, we have 
+\[e^u + C = e^{(x^2 + 1)} + C.\]
+Thus, using u-substitution we can conclude that
+\[\int 2xe^{(x^2 + 1)} \ dx =  e^{(x^2 + 1)} + C.\]
+\end{example}
+
+\begin{problem}
+\begin{hint}
+Let $u = x^3 + 2$
+\end{hint}
+\begin{hint}
+Compute $du$
+\end{hint}
+\[\int 3x^2e^{x^3 + 2} \ dx = \answer{e^{x^3 + 2}} +C.\]
+\end{problem}
+
+\begin{problem}
+\begin{hint}
+Let $u = -x^2$
+\end{hint}
+\begin{hint}
+Compute $du$
+\end{hint}
+\[\int -2xe^{-x^2} \ dx = \answer{e^{-x^2}} +C.\]
+\end{problem}
+
+\begin{example} Compute 
+\[\int 2x\sqrt{x^2 + 1} \ dx.\]
+Let $u = x^2 + 1$.  We have,
+\[u = x^2 + 1\]
+\[du = 2x \ dx\]
+
+\[\int 2x\sqrt{x^2 + 1} \ dx = \int \sqrt{x^2 + 1} \cdot 2x\  dx = \int \sqrt{u} \ du.\]
+The last integral can be computed as 
+\[\int \sqrt u  \ du = \int u^{1/2} \ du = \tfrac{u^{3/2}}{3/2} + C = \tfrac23 u^{3/2} + C\]
+and by back substituting, we have 
+\[\tfrac23 u^{3/2}  + C = \frac23 (x^2 + 1)^{3/2} + C.\]
+Thus, using u-substitution we can conclude that
+\[\int 2x\sqrt{x^2 + 1} \ dx =  \tfrac23 (x^2 + 1)^{3/2} + C.\]
+\end{example}
+
+\begin{problem}
+\begin{hint}
+Let $u = x^4 + 2$
+\end{hint}
+\begin{hint}
+Compute $du$
+\end{hint}
+\[\int 4x^3 \sqrt{x^4 +2} \ dx = \answer{2/3(x^4 +2)^{3/2}} +C.\]
+\end{problem}
+
+
+
+\begin{example} Compute 
+\[\int \frac{2x}{x^2 + 1} \ dx.\]
+Let $u = x^2 + 1$.  We have,
+\[u = x^2 + 1\]
+\[du = 2x \ dx\]
+
+\[\int \frac{2x}{x^2 + 1} \ dx = \int \frac{1}{x^2 + 1} \cdot 2x\  dx = \int \frac{1}{u} \ du.\]
+The last integral can be computed as 
+\[\int \frac{1}{u} \ du = \ln|u| + C\]
+and by back substituting, we have 
+\[\ln|u| + C =  \ln|x^2 + 1| + C=\ln(x^2 + 1) + C.\]
+Thus, using u-substitution we can conclude that
+\[\int \frac{2x}{x^2 + 1} \ dx =  \ln(x^2 + 1) + C.\]
+\end{example}
+
+
+\begin{problem}
+\begin{hint}
+Let $u = x^4 + 2$
+\end{hint}
+\begin{hint}
+Compute $du$
+\end{hint}
+\[\int \frac{4x^3}{x^4 +2} \ dx = \answer{\ln|x^4 +2|} +C.\]
+\end{problem}
+
+
+
+\begin{example} Compute 
+\[\int e^x\sin(e^x) \ dx.\]
+We let $u = e^x$.  We have,
+\[u = e^x\]
+\[du = e^x \ dx\]
+
+and the integral can be written as 
+\[\int e^x\sin(e^x) \ dx = \int \sin(e^x) \cdot e^x \  dx = \int \sin(u) \ du.\]
+The last integral can be computed as 
+\[\int \sin(u) \ du = -\cos(u) + C\]
+and by back substituting, we have 
+\[-\cos(u) + C = -\cos(e^x) + C.\]
+Thus, using u-substitution we can conclude that
+\[\int e^x\sin(e^x) \ dx =  -\cos(e^x) + C.\]
+\end{example}
+
+
+\begin{problem}
+\begin{hint}
+Let $u = e^x$
+\end{hint}
+\begin{hint}
+Compute $du$
+\end{hint}
+\[\int e^x\cos(e^x) \ dx = \answer{\sin(e^x)} +C.\]
+\end{problem}
+
+\begin{problem}
+\begin{hint}
+Let $u = \ln(x)$
+\end{hint}
+\begin{hint}
+Compute $du$
+\end{hint}
+\[\int \frac{\cos(\ln(x))}{x} \ dx = \answer{\sin(\ln(x))} +C.\]
+\end{problem}
+
+
+\begin{example} Compute 
+\[\int 3x^2\sec(x^3)\tan(x^3) \ dx.\]
+Let $u = x^3$.  Then we have,
+\[u = x^3\]
+\[du = 3x^2 \ dx\]
+
+and the integral can be written as 
+\begin{align*}
+\int 3x^2\sec(x^3)\tan(x^3) \ dx &= \int \sec(x^3)\tan(x^3) \cdot 3x^2 \ dx\\
+&= \int \sec(u)\tan(u) \ du.
+\end{align*}
+The last integral can be computed as 
+\[\int \sec(u)\tan(u) \ du = \sec(u) + C\]
+and by back substituting, we have 
+\[\sec(u) + C = \sec(x^3) + C.\]
+Thus, using u-substitution we can conclude that
+\[\int 3x^2\sec(x^3)\tan(x^3) \ dx =  \sec(x^3) + C.\]
+\end{example}
+
+\begin{problem}
+\begin{hint}
+Let $u = e^x$
+\end{hint}
+\begin{hint}
+Compute $du$
+\end{hint}
+\[\int e^x\sec(e^x)\tan(e^x) \ dx = \answer{\sec(e^x)} +C.\]
+\end{problem}
+
+\begin{problem}
+\begin{hint}
+Let $u = x^2$
+\end{hint}
+\begin{hint}
+Compute $du$
+\end{hint}
+\[\int 2x\csc(x^2)\cot(x^2) \ dx = \answer{-\csc(x^2)} +C.\]
+\end{problem}
+
+\begin{example} Compute 
+\[\int x^3\cos(x^4) \ dx.\]
+Let $u = x^4$.  Then,
+\[u = x^4\]
+\[du = 4x^3 \ dx\]
+
+and the integral can be written as 
+\begin{align*}
+\int x^3\cos(x^4) \ dx &= \int \cos(x^4) \cdot x^3\  dx \\
+&=  \int \cos(x^4)\cdot \tfrac14 \cdot 4x^3\  dx\\
+&=  \int \tfrac14\cos(u) \ du.
+\end{align*}
+The last integral can be computed as 
+\[\int \tfrac14 \cos(u) \ du = \tfrac14 \sin(u) + C\]
+and by back substituting, we have 
+\[\tfrac14 \sin(u) + C = \tfrac14 \sin(x^4) + C.\]
+Thus, using u-substitution we can conclude that
+\[\int x^3\cos(x^4) \ dx =  \tfrac14 \sin(x^4) + C.\]
+\end{example}
+
+\begin{problem}
+\begin{hint}
+Let $u = x^2$
+\end{hint}
+\begin{hint}
+Compute $du$
+\end{hint}
+\[\int x\cos(x^2) \ dx = \answer{\sin(x^2)/2} +C.\]
+\end{problem}
+
+
+\begin{example} Compute 
+\[\int xe^{-x^2} \ dx.\]
+Let $u = -x^2 $.  Then we have,
+\[u = -x^2\]
+\[du = -2x \ dx\]
+and the integral can be written as
+\begin{align*}
+\int xe^{-x^2} \ dx &= \int e^{-x^2} \cdot x\  dx \\
+&=  \int e^{-x^2}( -\tfrac12)\ (-2x)\  dx \\
+&=  \int -\tfrac12 e^u \ du.
+\end{align*}
+The last integral can be computed as 
+\[ \int -\tfrac12 e^u \ du = -\tfrac12 e^u + C\]
+and by back substituting, we have 
+\[-\tfrac12 e^u + C = -\tfrac12 e^{-x^2} + C.\]
+Thus, using u-substitution we can conclude that
+\[\int xe^{-x^2} \ dx =  -\tfrac12 e^{-x^2} + C.\]
+\end{example}
+
+
+\begin{problem}
+\begin{hint}
+Let $u = x^3$
+\end{hint}
+\begin{hint}
+Compute $du$
+\end{hint}
+\[\int x^2e^{x^3} \ dx = \answer{e^{x^3}/3} +C.\]
+\end{problem}
+
+
+\begin{problem}
+\begin{hint}
+Let $u = \sqrt x$
+\end{hint}
+\begin{hint}
+Compute $du$
+\end{hint}
+\[\int \frac{e^{\sqrt x}}{\sqrt x} \ dx = \answer{2e^{\sqrt x}} +C.\]
+\end{problem}
+
+
+\begin{example} Compute 
+\[\int \sin(3x) \ dx.\]
+Let $u = 3x$.  Then we have,
+\[u = 3x\]
+\[du = 3 \ dx\]
+and the integral can be written as 
+\[\int\sin(3x) \ dx =  \int \sin(3x) \cdot \tfrac13\cdot 3 \   dx =   \int \tfrac13 \sin(u) \ du.\]
+The last integral can be computed as 
+\[ \int \tfrac13 \sin(u) \ du = -\tfrac13 \cos(u) + C\]
+and by back substituting, we have 
+\[-\tfrac13 \cos(u) + C = -\tfrac13 \cos(3x) + C.\]
+Thus, using u-substitution we can conclude that
+\[\int \sin(3x) \ dx =  -\tfrac13 \cos(3x) + C.\]
+\end{example}
+
+\begin{example} Compute 
+\[\int e^{\frac{x}{2}} \ dx.\]
+Let $u = \frac{x}{2}$.  Then we have,
+\[u = \frac{x}{2}\]
+\[du = \tfrac12 \ dx\]
+and the integral can be written as 
+\[\int e^{\frac{x}{2}} \ dx =  \int e^{\frac{x}{2}} \cdot 2\cdot \tfrac{1}{2}  \   dx =   \int 2e^u \ du.\]
+The last integral can be computed as 
+\[\int 2e^u \ du = 2 e^u + C\]
+and by back substituting, we have 
+\[2e^u + C = 2e^{\frac{x}{2}}+ C.\]
+Thus, using u-substitution we can conclude that
+\[\int e^{x/2} \ dx = 2e^{x/2} + C.\]
+\end{example}
+
+\begin{example} Compute 
+\[\int (4x+3)^5 \ dx.\]
+Let $u = 4x+3$. Then we have,
+\[u = 4x+3\]
+\[du = 4 \ dx\]
+and the integral can be written as 
+\[\int (4x+3)^5 \ dx =   \int (4x+3)^5 \cdot \tfrac14\cdot 4  \   dx =   \int \tfrac14 u^5 \ du.\]
+The last integral can be computed as 
+\[\tfrac14  \int u^5 \ du = \tfrac14  \cdot \tfrac{u^6}{6} + C = \tfrac{u^6}{24} + C\]
+and by back substituting, we have 
+\[\tfrac{u^6}{24} + C = \tfrac{(4x+3)^6}{24}+ C.\]
+Thus, using u-substitution we can conclude that
+\[\int (4x+3)^5 \ dx = \tfrac{1}{24}(4x+3)^6 + C.\]
+\end{example}
+
+\begin{example} Compute 
+\[\int \frac{1}{x\ln^2(x)} \ dx.\]
+Let $u = \ln(x)$. Then we have,
+\[u = \ln(x)\]
+\[du = \tfrac1x \ dx\]
+and the integral can be written as 
+\[\int \frac{1}{x\ln^2(x)} \ dx = \int \frac{1}{\ln^2(x)} \cdot \frac{1}{x}\  dx = \int \frac{1}{u^2} \ du.\]
+The last integral can be computed as 
+\[\int \frac{1}{u^2} \ du = \int u^{-2} \ du = \tfrac{u^{-1}}{-1} + C 
+= -\frac{1}{u} + C\]
+and by back substituting, we have 
+\[-\frac{1}{u} + C =  -\frac{1}{\ln(x)} + C.\]
+Thus, using u-substitution we can conclude that
+\[\int \frac{1}{x\ln^2(x)} \ dx =  -\frac{1}{\ln(x)} + C.\]
+\end{example}
+
+
+\begin{problem}
+\begin{hint}
+Let $u = \ln(x)$
+\end{hint}
+\begin{hint}
+Compute $du$
+\end{hint}
+\[\int \frac{1}{x\ln^3(x)} \ dx = \answer{- \ln^{-2}(x)/2} +C.\]
+\end{problem}
+
+\begin{example} Compute 
+\[\int \sin^4(x)\cos(x) \ dx.\]
+Let $u = \sin(x)$. Then we have,
+\[u = \sin(x)\]
+\[du = \cos(x) \ dx\]
+and the integral can be written as 
+\[\int \sin^4(x)\cos(x) \ dx  = \int u^4 \ du.\]
+The last integral can be computed as 
+\[\int u^4 \ du = \tfrac{u^5}{5} + C\]
+and by back substituting, we have 
+\[\tfrac{u^5}{5} + C = \tfrac15 \sin^5(x) + C.\]
+Thus, using u-substitution we can conclude that
+\[\int \sin^4(x)\cos(x) \ dx =  \tfrac15 \sin^5(x) + C.\]
+\end{example}
+
+
+\begin{problem}
+\begin{hint}
+Let $u = \cos(x)$
+\end{hint}
+\begin{hint}
+Compute $du$
+\end{hint}
+\[\int \cos^3(x)\sin(x) \ dx = \answer{-\cos^4(x)/4} +C.\]
+\end{problem}
+
+
+\begin{problem}
+\begin{hint}
+Let $u = \tan(x)$
+\end{hint}
+\begin{hint}
+Compute $du$
+\end{hint}
+\[\int \tan^5(x)\sec^2(x) \ dx = \answer{\tan^6(x)/6} +C.\]
+\end{problem}
+
+\begin{example} Compute 
+\[\int \tan(x) \ dx.\]
+First rewrite the integral:
+\[\int \tan(x) \ dx =\int \frac{\sin(x)}{\cos(x)} \ dx.\]
+Now, let $u = \cos(x)$; then $du = -\sin(x) \ dx$
+and the integral can be written as
+\begin{align*}
+\int \frac{\sin(x)}{\cos(x)} \ dx &= \int \frac{1}{\cos(x)}\ \sin(x) \  dx \\
+ &=  - \int \frac{1}{\cos(x)}\ \big(-\sin(x)\big) \  dx\\
+&=-\int \frac{1}{u} \ du.
+\end{align*}
+The last integral can be computed as 
+\[-\int \frac{1}{u} \ du = -\ln|u| + C\]
+and by back substituting, we have 
+\[-\ln|u| + C = -\ln|\cos(x)| + C = \ln|\sec(x)| +C.\]
+Thus, using u-substitution we can conclude that
+\[\int \tan(x) \ dx =  \ln|\sec(x)| + C.\]
+\end{example}
+
+\begin{problem}
+\begin{hint}
+Rewrite: $\cot(x) = \frac{\cos(x)}{\sin(x)}$
+\end{hint}
+\begin{hint}
+Let $u = \sin(x)$
+\end{hint}
+\begin{hint}
+Compute $du$
+\end{hint}
+\[\int \cot(x) \ dx = \answer{\ln|\sin(x)|} +C.\]
+
+
+\end{problem}
+
+
+\begin{example} Compute 
+\[\int \sec(x) \ dx.\]
+First rewrite the integral:
+\[\int \sec(x) \ dx =\int \sec(x)\frac{\sec(x)+\tan(x)}{\sec(x)+\tan(x)} \ dx.\]
+Distributing in the numerator, we get
+\[\int \sec(x)\frac{\sec(x)+\tan(x)}{\sec(x)+\tan(x)} \ dx = \int \frac{\sec^2(x)+\sec(x)\tan(x)}{\sec(x)+\tan(x)} \ dx.\]
+Now, let $u = \sec(x) + \tan(x)$, then $du = [\sec(x)\tan(x) + \sec^2(x)] \ dx$ and the integral can be rewritten as
+\[ \int \frac{\sec^2(x)+\sec(x)\tan(x)}{\sec(x)+\tan(x)} \ dx = \int \frac{1}{u} \ du.\]
+The last integral can be computed as
+\[\int \frac{1}{u} \ du = \ln|u| + C\]
+and by back substituting, we have 
+\[\ln|u| + C = \ln|\sec(x) + \tan(x)| + C.\]
+Thus, using u-substitution we can conclude that
+\[\int \sec(x) \ dx =  \ln|\sec(x) + \tan(x)| + C.\]
+\end{example}
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a detailed, lecture style video on u-substitution:}
+\youtube{5yb7_e9PCQU}
+\end{foldable}
+\end{center}
+
+\end{document}
