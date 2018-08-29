@@ -349,7 +349,8 @@ xticklabels={$1$, $2$}, title={Area between $y=\sin(x)$ and $y=\cos(x)$}]
 \addplot[name path=BB, domain=0:3.1415, samples = 100, color=black, thick]{cos(deg(x))};
 \addplot[domain=-.1:3.5, samples = 100, color=black, thick]{sin(deg(x))};
 \addplot[domain=-.1:3.5, samples = 100, color=black, thick]{cos(deg(x))};
-
+\addplot[domain=-0.3:0, samples = 100, color=black, thick]{sin(deg(x))};
+\addplot[domain=-0.3:0, samples = 100, color=black, thick]{cos(deg(x))};
 
 
 
@@ -361,19 +362,19 @@ xticklabels={$1$, $2$}, title={Area between $y=\sin(x)$ and $y=\cos(x)$}]
 
 \addplot[<->] coordinates {(0,-1.5) (0,1.5)}; %y-axis
 \addplot[<->] coordinates {(-.5,0) (4,0)}; %x-axis
+\addplot[dashed, thin] coordinates {(3.14, 0) (3.14, -1)};
 
-
-\node at (axis cs: -1.4,1){$f(x)=\cos(x)$};
-\node at (axis cs: 1.4,-1.2){$g(x)=\cos(x)$};
-\node at (axis cs: -1.4,.3){$g(x)=\sin(x)$};
-\node at (axis cs: 2,1.3){$f(x)=\sin(x)$};
+\node at (axis cs: -1.4,1){$y=\cos(x)$};
+%\node at (axis cs: 1.4,-1.2){$y=\cos(x)$};
+\node at (axis cs: -1.4,-.3){$y=\sin(x)$};
+%\node at (axis cs: 2,0.3){$f(x)=\sin(x)$};
 %\node at (axis cs: 0.2,1.25){$y = f(x)$};
 \node at (axis cs: 0,2.2){$y$};
 \node at (axis cs: 4.2,0){$x$};
 \node at (axis cs: .2,.-.2){$0$};
-\node at (axis cs: .785,-.4){$\frac{\pi}{4}$};
+\node at (axis cs: .785,-.5){$\frac{\pi}{4}$};
 \node at (axis cs: 3,-.2){$\pi$};
-\node at (axis cs: 1.3,-2){$\displaystyle{A(x)=\int_{a}^{b} \left[f(x)-g(x)\right] dx =2\sqrt2}$};
+\node at (axis cs: 1.3,-2){$\displaystyle{Area=2\sqrt2}$};
 
 \end{axis}
 \end{tikzpicture}
@@ -401,7 +402,44 @@ The area is $\answer{1/2}$
 In the next example, we find the area of a region bounded by three curves. In this situation, we will need to use two separate integrals to determine the total area.
 
 \begin{example}
-Find the area of the region bounded by the curves $y = 2-x^2, y = -2x-1,$ and $y = x$.
+Find the area of the region bounded by the curves $y = 2-x^2, y = -2x-1,$ and $y = x$, as shown in the figure below.\\
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  none, axis y line = none, title={Region between $y=2-x^2$, $y=-2x-1$ and $y=x$}] 
+
+\addplot[name path=AA, domain=-1:1, samples = 100, color=black, thick]{2-x^2};
+\addplot[name path=BB, domain=-1:-.33, samples = 100, color=black, thick]{(-2*x-1};
+\addplot[name path=CC, domain=-.33:1, samples = 100, color=black, thick]{(x)};
+\addplot[domain=-1.5:1.5, samples = 100, color=black, thick]{2-x^2};
+\addplot[domain=-1.5:0.2, samples = 100, color=black, thick]{-2*x-1};
+\addplot[domain=-.33:1.5, samples = 100, color=black, thick]{x};
+\addplot[domain=-.8:-.33, samples = 100, color=black, thick]{(x)};
+
+
+\addplot[blue!10] fill between[of=AA and BB];
+\addplot[blue!10] fill between[of=AA and CC];
+\addplot[white] coordinates {(0,3) (0,-3)};
+\addplot[white] coordinates {(3,0) (3.7,0)};
+
+\addplot[<->] coordinates {(0,-2) (0,3.5)}; %y-axis
+\addplot[<->] coordinates {(-2.3,0) (2.3,0)}; %x-axis
+
+
+\node at (axis cs: 1.1,2.3){$y=2-x^2$};
+\node at (axis cs: -1.1,-1.1){$y=x$};
+\node at (axis cs:-1.5,2.3){$y=-2x-1$};
+%\node at (axis cs: 0.2,1.25){$y = f(x)$};
+\node at (axis cs: .2,3.6){$y$};
+\node at (axis cs: 2.4,0){$x$};
+
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+
 First, we need to find the points of intersection of the the curves. The intersection of the lines is at
 \[
 -2x-1 = x 
@@ -455,14 +493,14 @@ The value of the first integral is
 
 And the value of the second integral is
 \begin{align*}
-\int_{-1/3}^{1} \left[(2 - x^2) - (x)\right] \; dx &= \int_{-1/3}^{1} \left((2 - x^2 - x)\right) \; dx \\
+\int_{-1/3}^{1} \left[(2 - x^2) - (x)\right] \; dx &= \int_{-1/3}^{1} \left(2 - x^2 - x\right) \; dx \\
                                                         &= \left(2x - \frac{x^3}{3} -\frac{x^2}{2} \right)\bigg|_{-1/3}^{1} \\
-                                                        &= \left(2 + \tfrac{1}{3} - \tfrac12 \right) - \left(-tfrac23 + \tfrac{1}{81} -tfrac{1}{18} \right) \\
-                                                        &= \tfrac{206}{81}.
+                                                        &= \left(2 - \tfrac{1}{3} - \tfrac12 \right) - \left(-\tfrac23 + \tfrac{1}{81} -\tfrac{1}{18} \right) \\
+                                                        &= \tfrac{152}{81}.
 \end{align*}
 Thus, the total area of the region is the sum of these two integrals:
 \[
-\text{Area} = \frac{64}{81} + \frac{206}{81} = \frac{10}{3}.
+\text{Area} = \frac{64}{81} + \frac{152}{81} = \frac{8}{3}.
 \]
 
 \begin{center}
@@ -476,7 +514,7 @@ xticklabels={$-2$, $-1$, $0$, $1$, $2$}, title={Area between $y=2-x^2$, $y=-2x-1
 \addplot[domain=-1.5:1.5, samples = 100, color=black, thick]{2-x^2};
 \addplot[domain=-1.5:0, samples = 100, color=black, thick]{-2*x-1};
 \addplot[domain=-.33:1.5, samples = 100, color=black, thick]{x};
-
+\addplot[domain=-.8:-.33, samples = 100, color=black, thick]{(x)};
 
 
 \addplot[blue!10] fill between[of=AA and BB];
@@ -487,18 +525,18 @@ xticklabels={$-2$, $-1$, $0$, $1$, $2$}, title={Area between $y=2-x^2$, $y=-2x-1
 \addplot[thin] coordinates {(1,-.2) (1,.2)};
 
 \addplot[<->] coordinates {(0,-2) (0,3.5)}; %y-axis
-\addplot[<->] coordinates {(-2,0) (2,0)}; %x-axis
+\addplot[<->] coordinates {(-2.3,0) (2.3,0)}; %x-axis
 
 
-\node at (axis cs: 1.1,2.3){$f(x)=2-x^2$};
-\node at (axis cs: -.8,-1){$g(x)=x$};
-\node at (axis cs:-1.5,2.5){$g(x)=-2x-1$};
+\node at (axis cs: 1.1,2.3){$y=2-x^2$};
+\node at (axis cs: -.8,-1){$y=x$};
+\node at (axis cs:-1.5,2.5){$y=-2x-1$};
 %\node at (axis cs: 0.2,1.25){$y = f(x)$};
 \node at (axis cs: .2,3.6){$y$};
-\node at (axis cs: 2.2,0){$x$};
+\node at (axis cs: 2.4,0){$x$};
 \node at (axis cs: -1.1,-.4){$-1$};
 \node at (axis cs: 1,-.4){$1$};
-\node at (axis cs: 0,-2.7){$\displaystyle{A(x)=\int_{a}^{b} \left[f(x)-g(x)\right]\; dx=\frac{10}{3}}$};
+\node at (axis cs: 0,-2.7){$\displaystyle{Area=\frac{8}{3}}$};
 
 \end{axis}
 \end{tikzpicture}
