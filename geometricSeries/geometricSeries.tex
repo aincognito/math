@@ -18,7 +18,7 @@ We find the sum of a geometric series.
 
 \begin{definition}[Geometric Series] A \textbf{geometric series} is an infinite series of the form
 \[
-\sum_{n=0}^\infty ar^n = a + ar + ar^2 + ar^3 + \cdots
+\sum_{n=0}^\infty ar^n = a + ar + ar^2 + ar^3 + \cdots.
 \]
 The parameter $r$ is called the \textbf{common ratio}.
 \end{definition}
@@ -30,7 +30,10 @@ Consider the series:
  \]
  Write out the first four terms of the series. If the series is geometric, find the common ratio.
  
- The first four terms are $3 + \frac32 + \frac34 + \frac38 + \cdots$
+ The first four terms are \[
+ 3 + \frac32 + \frac34 + \frac38 + \cdots.
+ \]
+
  The series is geometric and the common ratio is $\frac12$.
  \end{example}
  
@@ -41,15 +44,18 @@ Consider the series:
  \]
  Write out the first four terms of the series. If the series is geometric, find the common ratio.
  
- The first four terms are $3 + \frac34 + \frac39 + \frac{3}{16} + \cdots$
+ The first four terms are 
+ \[
+ 3 + \frac34 + \frac39 + \frac{3}{16} + \cdots.
+ \]
  The ratio of the second term to the first is $\frac14$ but the ratio of the third term to the second is $\frac49$.
- The series is not geometric because it fails to have a common ratio between the successive terms.
+ The series is not geometric because it fails to have a \it{common} ratio.
  
  \end{example}
 
 \section{Convergence}
 
-\begin{theorem} Convergence of Geometric Series 
+\begin{theorem}[Convergence of Geometric Series] 
 The geometric series
 \[
 \sum_{n=0}^\infty ar^n
@@ -107,7 +113,14 @@ S = \sum_{n=0}^\infty ar^n = \lim_{N \to \infty} \sum_{n=0}^N ar^n = \lim_{N \to
 We present this formula in the theorem below.
 
 \begin{theorem}[Sum of a Geometric Series]
-If $-1 < r < 1$, then the sum of the geometric series $\sum_{n=0}^\infty ar^n$ is given by $\frac{a}{1-r}$, i.e.,
+If $-1 < r < 1$, then the sum of the geometric series 
+\[
+\sum_{n=0}^\infty ar^n = a + ar + ar^2 + \cdots
+\] is given by 
+\[
+S = \frac{a}{1-r}.
+\]
+That is, if $-1 < r < 1$, then
 \[
 \sum_{n=0}^\infty ar^n = \frac{a}{1-r}.
 \]

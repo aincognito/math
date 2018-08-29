@@ -34,7 +34,7 @@ diverges.
 \end{theorem}
 
 \begin{remark}
-It is important to recognize that if $\lim a_n = 0$ then the series, $\sum_{n=1}^\infty a_n$, may either converge of diverge.
+It is important to recognize that if $\displaystyle{\lim_{n \to \infty} a_n = 0}$ then the series, $\displaystyle{\sum_{n=1}^\infty a_n}$, may either converge of diverge.
 \end{remark}
 
 \begin{example}
@@ -46,7 +46,7 @@ The degree of the numerator and denominator of $a_n$ are equal (they are both on
 \[
 \lim_{n\to \infty} \frac{n+1}{2n+3} = \frac12.
 \]
-Since this limit is not zero, we can conclude that the series $\sum_{n=1}^\infty \frac{n+1}{2n+3}$ diverges by the Test for Divergence. 
+Since this limit is not zero, we can conclude that the series $\displaystyle{\sum_{n=1}^\infty \frac{n+1}{2n+3}}$ diverges by the Test for Divergence. 
 \end{example}
 
 \begin{example}
@@ -58,7 +58,7 @@ The degree of the numerator (one) is less than the degree of the denominator (tw
 \[
 \lim_{n\to \infty} \frac{n+1}{2n^2+3} = 0,
 \]
-Since this limit is zero, the Test for Divergence \textbf{does not apply} to the series, $\sum_{n=1}^\infty \frac{n+1}{2n^2+3}$ and 
+Since this limit is zero, the Test for Divergence \textbf{does not apply} to the series, $\displaystyle{\sum_{n=1}^\infty \frac{n+1}{2n^2+3}}$ and 
 we cannot determine if the series converges or diverges. 
 The Test for Divergence is \textbf{inconclusive} in this case.
  
@@ -68,9 +68,9 @@ The Test for Divergence is \textbf{inconclusive} in this case.
 
 
 \section{Proof of the Test for Divergence}
-To prove the Test for Divergence, we will show that if $\sum_{n=1}^\infty a_n$ converges, then the limit, 
-$\lim_{n \to \infty} a_n$, must equal zero. The logic is then that if this limit is not zero, 
-the associated series cannot converge, and it therefore must diverge. We begin by considering the partial sums of the series.
+To prove the Test for Divergence, we will show that if $\displaystyle{\sum_{n=1}^\infty a_n}$ converges, then the limit, 
+$\displaystyle{\lim_{n \to \infty} a_n}$, must equal zero. The logic is then that if this limit is not zero, 
+the associated series cannot converge, and it therefore must diverge. We begin by considering the partial sums of the series, $S_N$.
 Since the series converges, the limit of the partial sums exists and equals a finite value, which we will call $L$.
 In mathematical symbols, 
 \[
@@ -82,11 +82,11 @@ S_N = \sum_{n=1}^N a_n.
 \]
 To proceed, we make the following two observations:
 \[
-(1)\; \lim_{N \to \infty} S_{N-1} = L
+(1)\qquad \lim_{N \to \infty} S_{N-1} = L
 \]
 and 
 \[
-(2) \; a_N = S_N - S_{N-1}.
+(2) \qquad a_N = S_N - S_{N-1}.
 \]
 Putting these facts together, we can conclude that
 \[
@@ -107,11 +107,11 @@ the associated series could either converge or diverge.
 We now present two classic series which exemplify this point.
 The two series are
 \[
-(1)  \; 1 + \frac12 + \frac14 + \frac18 + \cdots,
+(1)  \qquad 1 + \frac12 + \frac14 + \frac18 + \cdots,
 \]
 and 
 \[
-(2) \; 1 + \frac12 +  \frac13 + \frac14 + \cdots.
+(2) \qquad 1 + \frac12 +  \frac13 + \frac14 + \cdots.
 \]
 In both cases, the limit of the terms is zero, but the first series converges while the second series diverges.
 We will explore both of these series in future sections 
