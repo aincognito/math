@@ -39,13 +39,13 @@ The function $f(x)$ is \textbf{continuous} at $x = a$ if:
 \[\lim_{x \to a} f(x) = f(a).\]
 \end{definition}
 
-\begin{example}
+\begin{example}[example 1]
 Since
 \[\lim_{x \to 5} x^2 = 5^2 = 25,\]
 we can say that the function $f(x) = x^2$ is continuous at $x = 5$.
 \end{example}
 
-\begin{problem}
+\begin{problem}(problem 1)
 Since
 \[\lim_{x \to 4} \sqrt{x} = \sqrt{4} = 2,\]
 \begin{center}
@@ -57,13 +57,13 @@ $x = \answer{4}.$
 \end{problem}
 
 
-\begin{example}
+\begin{example}[example 2]
 Since
 \[\lim_{x \to \pi} \cos(x) = \cos(\pi) = -1,\]
 we can say that the function $f(x) = \cos(x)$ is continuous at $x = \pi$.
 \end{example}
 
-\begin{problem}
+\begin{problem}(problem 2)
 Since
 \[\lim_{x \to 3} 2^x = 2^3 = 8,\]
 \begin{center}
@@ -74,13 +74,13 @@ $x = \answer{3}.$
 \end{center}
 \end{problem}
 
-\begin{example}
+\begin{example}[example 3]
 Since
 \[\lim_{x \to 1} \ln(x) = \ln(1) = 0,\]
 we can say that the function $f(x) = \ln(x)$ is continuous at $x = 1$.
 \end{example}
 
-\begin{problem}
+\begin{problem}(problem 3)
 Since
 \[\lim_{x \to \sqrt 3} \tan^{-1}(x) = \tan^{-1}(\sqrt 3) = \pi/3,\]
 \begin{center}
@@ -178,7 +178,7 @@ It is important in this case that the one-sided limits are both finite.
 
 % finite numbers but they are not equal to each other, 
 %and therefore the two sided limit does not exist.
-
+\begin{example}[example 4]
 As an example, the function 
 \[f(x) = \frac{|x|}{x}\]
  has a jump discontinuity at $x = 0$ because
@@ -188,7 +188,7 @@ As an example, the function
 A graph of this function is shown below.
 
 \includeinteractive{cf01.js}
-
+\end{example}
 
 Here are two examples of graphs of functions that have jump discontinuities:
 
@@ -229,7 +229,8 @@ The graph of $f(x) = 1/x$ is shown below.
 \]
 %\includeinteractive{cf02.js}
 
-As another example, the function $f(x) = \tan(x)$ has an infinite discontinuity at $x = \frac{\pi}{2}$
+\begin{example}[example 5]
+The function $f(x) = \tan(x)$ has an infinite discontinuity at $x = \frac{\pi}{2}$
 since
 \[\lim_{x \to \frac{\pi}{2}^-} \tan(x) = \infty \ \text {  and}\]
 \[\lim_{x \to \frac{\pi}{2}^+} \tan(x) = -\infty.\]
@@ -241,7 +242,7 @@ The graph of $f(x) = \tan(x)$ is below.
 \]
 %\includeinteractive{cf03.js}
 
-
+\end{example}
 
 
 Finally, if a discontinuity is not one of the first three types, it is called an 
@@ -268,7 +269,7 @@ for all values of $x$ except $x = 0$, where the function is undefined.
 %\end{tikzpicture}
 %\end{center}
 
-\begin{problem} %problem 1
+\begin{problem}(problem 5a)
 Which type of discontinuity does $f(x)$ have at $x=2$ if
 \[
 \lim_{x \to 2^+} f(x) = -\infty?
@@ -282,7 +283,7 @@ Which type of discontinuity does $f(x)$ have at $x=2$ if
 \end{multipleChoice}
 \end{problem}
 
-\begin{problem} %problem 2
+\begin{problem}(problem 5b)
 Which type of discontinuity does $f(x)$ have at $x=2$ if
 \[
 \lim_{x \to 2^-} f(x) = \lim_{x \to 2^+} f(x),
@@ -296,7 +297,7 @@ but $f(2)$ is undefined?
 \end{multipleChoice}
 \end{problem}
 
-\begin{problem} %problem 3
+\begin{problem}(problem 5c)
 Which type of discontinuity does $f(x)$ have at $x=2$ if
 \[
 \lim_{x \to 2^+} f(x) \ \text{DNE}?
@@ -310,7 +311,7 @@ Which type of discontinuity does $f(x)$ have at $x=2$ if
 \end{multipleChoice}
 \end{problem}
 
-\begin{problem} %problem 4
+\begin{problem}(problem 5d)
 Which type of discontinuity does $f(x)$ have at $x=2$ if
 \[
 \lim_{x \to 2^-} f(x) = 3
@@ -335,7 +336,7 @@ and
 
 In this section we will examine the continuity of piecewise defined functions.
 
-\begin{example} %example 1
+\begin{example}[example 6]
 Is the function defined below continuous at $x = 2$?
 \[
 f(x) = \left\{
@@ -366,7 +367,7 @@ and hence $f(x)$ is not continuous at $x = 2$.
 In this case, $f(x)$ has a jump discontinuity at $x=2$ since the one-sided limits are finite but different.
 \end{example}
 
-\begin{problem} %problem 1
+\begin{problem}(problem 6)
 Determine whether the function $f(x)$ given below is continuous at $x = 1$.
 \[
 f(x) = \left\{
@@ -396,7 +397,7 @@ Is $f(x)$ continuous at $x = 1$?
 
 
 
-\begin{example} %example 2
+\begin{example}[example 7]
 Is the function define below continuous at $x = 2$?
 \[f(x) = \left\{
      \begin{array}{lr}
@@ -429,7 +430,7 @@ and conclude that $f(x)$ is continuous at $x = 2$.
 \end{example}
 
 
-\begin{problem} %problem 2
+\begin{problem}(problem 7)
 Determine whether the function $f(x)$ given below is continuous at $x = 1$.
 \[
 f(x) = \left\{
@@ -458,7 +459,7 @@ Is $f(x)$ continuous at $x = 1$?
 
 
 
-\begin{example} %example 3
+\begin{example}[example 8]
 Is the function $f(x)$ defined below continuous at $x = 2$?
 \[
 f(x) = \left\{
@@ -501,7 +502,7 @@ is a finite number.
 \end{example}
 
 
-\begin{problem} %problem 3
+\begin{problem}(problem 8)
 Determine whether the function $f(x)$ given below is continuous at $x = 1$.
 \[
 f(x) = \left\{
@@ -534,7 +535,7 @@ Is $f(x)$ continuous at $x = 1$?
 
 
 
-\begin{example} %example 4
+\begin{example}[example 9]
 Determine the value of $k$ that will make the function $f(x)$ given below 
 continuous at $x = 2$.
  
@@ -569,7 +570,7 @@ and hence,
 This value of $k$ will make the function $f(x)$ continuous at $x=2$.
 \end{example}
 
-\begin{problem}
+\begin{problem}(problem 9)
 Determine the value of $k$ that will make the function $f(x)$ given below 
 continuous at $x = 1$.
  
