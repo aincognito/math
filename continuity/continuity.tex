@@ -27,12 +27,38 @@ In this section we learn the definition of continuity and we study the types of 
 
 \section{Continuity}
 
-One of the tools we used in the last section for evaluating limits analytically was plugging in. For example, to compute
-\[\lim_{x \to 5} x^2 \]
-we would simply plug in $x = 5$ and get the correct answer of 25. In most of the examples in the last section, 
-plugging in 
-did not give an acceptable answer at first, so more work had to be done before eventually plugging in. 
-If plugging does work at the outset, then the function is called continuous.
+Limits can be used to give precise meaning to the concept of continuity. Intuitively, a continuous function is one whose graph can be drawn
+without lifting the pencil off of the paper. In the figure below, the function can be drawn without lifting the pencil 
+off of the paper at $x = 2$, so we say that the function is continuous at $x = 2$.
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  none, axis y line = none,
+title={A Continuous Function}] 
+
+
+\addplot[domain=-1:5, samples = 100, color=blue, thick]{1.5 + cos(deg(x))};
+\addplot[<->] coordinates {(-0.8,-0.5) (-0.8, 2.8)} node[above] {$y$}; %y-axis
+\addplot[<->] coordinates {(-1.3,0) (4.3,0)} node[right] {$x$}; %x-axis
+\addplot[thin] coordinates {(1.57,0.1) (1.57, -0.1)} node[below] {$2$}; 
+\node at (axis cs: 2,2.1){$y = f(x)$};
+\node at (axis cs: 2,-.6){$f(x)$ is continuous at $x = 2$};
+\addplot[smooth,mark=*,blue] plot coordinates {(1.57,1.5)};
+
+\end{axis}
+\end{tikzpicture}
+\end{image}
+Mathematically, what is happening in the graph above that allows us to claim continuity of $f(x)$ at $x = 2$ 
+is the left hand limit, right hand limit and function value are all equal at $x = 2$.
+In symbols,
+\[
+\lim_{x\to 2^-} f(x) = \lim_{x\to 2^+} f(x) = f(2).
+\]
+Since the one-sided limits are equal, we can condense this into a single equation using a two sided limit:
+\[
+\lim_{x\to 2} f(x) = f(2).
+\]
+This leads us to the mathematical definition of continuity at a point:
 
 \begin{definition}[Continuity]
 The function $f(x)$ is \textbf{continuous} at $x = a$ if:
@@ -48,12 +74,10 @@ we can say that the function $f(x) = x^2$ is continuous at $x = 5$.
 \begin{problem}(problem 1)
 Since
 \[\lim_{x \to 4} \sqrt{x} = \sqrt{4} = 2,\]
-\begin{center}
-we can say that the function \\
-$f(x) = \answer{\sqrt x}$ \\
-is continuous at \\
+we can say that the function
+$f(x) = \answer{\sqrt x}$
+is continuous at
 $x = \answer{4}.$
-\end{center}
 \end{problem}
 
 
@@ -66,12 +90,10 @@ we can say that the function $f(x) = \cos(x)$ is continuous at $x = \pi$.
 \begin{problem}(problem 2)
 Since
 \[\lim_{x \to 3} 2^x = 2^3 = 8,\]
-\begin{center}
-we can say that the function \\
-$f(x) = \answer{2^x}$ \\
-is continuous at \\
+we can say that the function
+$f(x) = \answer{2^x}$
+is continuous at
 $x = \answer{3}.$
-\end{center}
 \end{problem}
 
 \begin{example}[example 3]
@@ -83,12 +105,10 @@ we can say that the function $f(x) = \ln(x)$ is continuous at $x = 1$.
 \begin{problem}(problem 3)
 Since
 \[\lim_{x \to \sqrt 3} \tan^{-1}(x) = \tan^{-1}(\sqrt 3) = \pi/3,\]
-\begin{center}
-we can say that the function \\
-$f(x) = \answer{\tan^{-1}(x)}$ \\
-is continuous at \\
+we can say that the function
+$f(x) = \answer{\tan^{-1}(x)}$
+is continuous at
 $x = \answer{\sqrt 3}.$
-\end{center}
 \end{problem}
 
 If a function is continuous at each point in an interval, $I$, then we say that $f(x)$ is \textbf{continuous on $I$}.
@@ -117,9 +137,8 @@ Next, we explore the types of discontinuities.
 %We will study examples of continuity from the left and right in the section on piecewise functions below.
 
 
-\begin{center}
-\textbf{Types of Discontinuities}
-\end{center}
+\section{Types of Discontinuities}
+
 
 A function $f(x)$ has a discontinuity at $x = a$ if
 \[\lim_{x \to a} f(x) \neq f(a).\]
@@ -178,8 +197,11 @@ It is important in this case that the one-sided limits are both finite.
 
 % finite numbers but they are not equal to each other, 
 %and therefore the two sided limit does not exist.
+
+
+
 \begin{example}[example 4]
-As an example, the function 
+The function 
 \[f(x) = \frac{|x|}{x}\]
  has a jump discontinuity at $x = 0$ because
 \[\lim_{x \to 0^-} \frac{|x|}{x} = -1 \text{  but} \]
@@ -220,17 +242,30 @@ This occurs when either of the one-sided limits is either $\pm \infty$, i.e.,
 \[\lim_{x \to a^-} f(x) = \pm\infty \ \text{or}  \]
 \[\lim_{x \to a^+} f(x) = \pm\infty. \]
 The graph of the function $f(x)$ has a vertical asymptote at an infinite discontinuity.
-The function $f(x) = 1/x$,  has an infinite discontinuity at $x=0$ since
+
+
+\begin{example}[example 5]
+The function 
+\[
+f(x) = \frac{1}{x}
+\]
+  has an infinite discontinuity at $x=0$ since
 \[\lim_{x \to 0^-} \frac{1}{x} = -\infty \ \text {  and}\]
 \[\lim_{x \to 0^+} \frac{1}{x} = \infty.\]
 The graph of $f(x) = 1/x$ is shown below.
 \[
 \graph{1/x}
 \]
+\end{example}
+
 %\includeinteractive{cf02.js}
 
-\begin{example}[example 5]
-The function $f(x) = \tan(x)$ has an infinite discontinuity at $x = \frac{\pi}{2}$
+\begin{example}[example 6]
+The function 
+\[
+f(x) = \tan(x)
+\]
+ has an infinite discontinuity at $x = \frac{\pi}{2}$
 since
 \[\lim_{x \to \frac{\pi}{2}^-} \tan(x) = \infty \ \text {  and}\]
 \[\lim_{x \to \frac{\pi}{2}^+} \tan(x) = -\infty.\]
@@ -247,15 +282,22 @@ The graph of $f(x) = \tan(x)$ is below.
 
 Finally, if a discontinuity is not one of the first three types, it is called an 
 \textbf{essential discontinuity}.
-As an example, the function $f(x) = \sin(\frac{1}{x})$, shown below, has an essential discontinuity at $x = 0$.
+
+
+\begin{example}[example 7] The function 
+\[
+f(x) = \sin \left(\frac{1}{x}\right),
+\]
+ shown below, has an essential discontinuity at $x = 0$.
 Neither of one-sided limits at $x=0$ exist due to oscillation of the function, 
 and the function does not have a vertical asymptote since 
-\[-1 \leq \sin\big(\frac{1}{x}\big) \leq 1 \]
+\[-1 \leq \sin\left(\frac{1}{x}\right) \leq 1 \]
 for all values of $x$ except $x = 0$, where the function is undefined.
 
 \[
 \graph{sin(1/x)}
 \]
+\end{example}
 %Here is an example of the graph of a function that has an essential discontinuity:
 
 
@@ -269,7 +311,7 @@ for all values of $x$ except $x = 0$, where the function is undefined.
 %\end{tikzpicture}
 %\end{center}
 
-\begin{problem}(problem 5a)
+\begin{problem}(problem 7a)
 Which type of discontinuity does $f(x)$ have at $x=2$ if
 \[
 \lim_{x \to 2^+} f(x) = -\infty?
@@ -283,7 +325,7 @@ Which type of discontinuity does $f(x)$ have at $x=2$ if
 \end{multipleChoice}
 \end{problem}
 
-\begin{problem}(problem 5b)
+\begin{problem}(problem 7b)
 Which type of discontinuity does $f(x)$ have at $x=2$ if
 \[
 \lim_{x \to 2^-} f(x) = \lim_{x \to 2^+} f(x),
@@ -297,7 +339,7 @@ but $f(2)$ is undefined?
 \end{multipleChoice}
 \end{problem}
 
-\begin{problem}(problem 5c)
+\begin{problem}(problem 7c)
 Which type of discontinuity does $f(x)$ have at $x=2$ if
 \[
 \lim_{x \to 2^+} f(x) \ \text{DNE}?
@@ -311,7 +353,7 @@ Which type of discontinuity does $f(x)$ have at $x=2$ if
 \end{multipleChoice}
 \end{problem}
 
-\begin{problem}(problem 5d)
+\begin{problem}(problem 7d)
 Which type of discontinuity does $f(x)$ have at $x=2$ if
 \[
 \lim_{x \to 2^-} f(x) = 3
@@ -330,13 +372,12 @@ and
 
 
 
-\begin{center}
-\textbf{Piecewise Functions}
-\end{center}
+\section{Piecewise Functions}
+
 
 In this section we will examine the continuity of piecewise defined functions.
 
-\begin{example}[example 6]
+\begin{example}[example 8]
 Is the function defined below continuous at $x = 2$?
 \[
 f(x) = \left\{
@@ -367,7 +408,7 @@ and hence $f(x)$ is not continuous at $x = 2$.
 In this case, $f(x)$ has a jump discontinuity at $x=2$ since the one-sided limits are finite but different.
 \end{example}
 
-\begin{problem}(problem 6)
+\begin{problem}(problem 8)
 Determine whether the function $f(x)$ given below is continuous at $x = 1$.
 \[
 f(x) = \left\{
@@ -397,7 +438,7 @@ Is $f(x)$ continuous at $x = 1$?
 
 
 
-\begin{example}[example 7]
+\begin{example}[example 9]
 Is the function define below continuous at $x = 2$?
 \[f(x) = \left\{
      \begin{array}{lr}
@@ -430,7 +471,7 @@ and conclude that $f(x)$ is continuous at $x = 2$.
 \end{example}
 
 
-\begin{problem}(problem 7)
+\begin{problem}(problem 9)
 Determine whether the function $f(x)$ given below is continuous at $x = 1$.
 \[
 f(x) = \left\{
@@ -459,7 +500,7 @@ Is $f(x)$ continuous at $x = 1$?
 
 
 
-\begin{example}[example 8]
+\begin{example}[example 10]
 Is the function $f(x)$ defined below continuous at $x = 2$?
 \[
 f(x) = \left\{
@@ -502,7 +543,7 @@ is a finite number.
 \end{example}
 
 
-\begin{problem}(problem 8)
+\begin{problem}(problem 10)
 Determine whether the function $f(x)$ given below is continuous at $x = 1$.
 \[
 f(x) = \left\{
@@ -535,7 +576,7 @@ Is $f(x)$ continuous at $x = 1$?
 
 
 
-\begin{example}[example 9]
+\begin{example}[example 11]
 Determine the value of $k$ that will make the function $f(x)$ given below 
 continuous at $x = 2$.
  
@@ -570,7 +611,7 @@ and hence,
 This value of $k$ will make the function $f(x)$ continuous at $x=2$.
 \end{example}
 
-\begin{problem}(problem 9)
+\begin{problem}(problem 11)
 Determine the value of $k$ that will make the function $f(x)$ given below 
 continuous at $x = 1$.
  
@@ -596,9 +637,8 @@ $k = \answer{2}$
 \end{problem}
 
 
-\begin{center}
-\textbf{Continuity of Familiar Functions}
-\end{center}
+\section{Continuity of Familiar Functions}
+
 
 Consider the function $f(x) = x^2$ and any number $a$. We can compute the limit 
 \[\lim_{x \to a} x^2 = a^2\]
@@ -645,9 +685,7 @@ when $x = \pm 1$.
 
 
 
-\begin{center}
-\textbf{Properties of Continuity}
-\end{center}
+\section{Properties of Continuity}
 
 
 
@@ -677,7 +715,33 @@ whereas for the first four basic operations we plug $x = a$ into both $f(x)$ and
 \end{foldable}
 \end{center}
 
+
+
+
+
+
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \begin{center}
