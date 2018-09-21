@@ -21,7 +21,7 @@ In this section we learn the definition of derivative and we use it to solve the
 \maketitle
 
 
-\section{The Derivative}
+\section{Tangent Lines}
 
 
 
@@ -36,27 +36,57 @@ In this section we learn the definition of derivative and we use it to solve the
 %\geogebra{eTqftsNC}{640}{480}
 
 
-Given a function $y = f(x)$, its \textbf{derivative}, denoted by $f'(x)$, is a formula for the slope of 
-its \textbf{tangent lines}.
-Conceptually, the derivative represents the instantaneous rate of change of the function. 
-Other notations for the derivative include $y'$ and $\frac{dy}{dx}$.\\
+The idea of a tangent line is that if we zoom in on a point $(a, f(a))$ on the graph of a smooth function, $y = f(x)$, 
+then the graph looks like a straight line. 
+This line is the \textbf{tangent line} and the point $(a, f(a)$ is called the \textbf{point of tangency}.
+
+
 
 The interactive graph below shows a function and its tangent line at a point.  
 You can drag the point along the curve and see how the tangent line changes.
 You can also zoom in on the curve to see that the tangent line approximates the curve
-locally.
+locally.  If you zoom in far enough, the curve and the tangent line become nearly indistinguishable.
 
 
 \includeinteractive{dd00b.js}
 
-%insert hand drwan pic of f(x), with mtan = f'(x)
+%insert hand drawn pic of f(x), with m_tan = f'(x) (or not)
 
-The tangent line problem is to find the slope of the tangent line.
+
+and a point on the graph, , 
+the tangent line to the graph at this point has the property that when one zooms in on the graph of the function at this point,
+its \textbf{derivative}, denoted $f'(x)$, is a formula for the slope of 
+its \textbf{tangent lines}.
+
+Conceptually, the derivative represents the instantaneous rate of change of the function. 
+Other notations for the derivative include $y'$ and $\frac{dy}{dx}$.\\
+
+
+The \textbf{tangent line problem} is to find the equation of the tangent line to the graph of $y = f(x)$
+at the point $(a, f(a))$. From the point-slope form of the equation of a line,
+we see that the equation of the tangent line has the form
+\[
+y -f(a) = m(x-a),
+\]
+where $m$ is the slope of the line.  The \textbf{derivative}, $f'(x)$, will give us the slope of the tangnet line,
+so the equation of the tangent line can be written as
+\[
+y - f(a) = f'(a)(x-a), \quad \text{or} \quad y = f(a) + f'(a)(x-a).
+\]
+
+
+We will find the second form uselful later when we study linear approximation.
+Note that the slope of the tangent line is $f'(a)$ at the point $(a, f(a))$. 
+The general derivative, $f'(x)$, will give us the slope at any point.
+
+
+\section{The Derivative}
+Our objective is to discover the derivative, $f'(x)$.
 To begin the discussion, we recall the formula for the slope of a line between two points, $(x_1, y_1)$ 
 and $(x_2, y_2)$:
 \[m = \frac{\text{rise}}{\text{run}} = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1}.\]
 
-To find the slope of the tangent line to the graph of $y = f(x)$ at the point $(x, f(x))$, we first 
+To find the slope of the tangent line to the graph of $y = f(x)$ at the general point $(x, f(x))$, we first 
 compute the slope of the \textbf{secant line} connecting the point $(x, f(x))$ with the 
 nearby point $(x+h, f(x+h))$:
 \[m_{\text{sec}} = \frac{f(x+h) - f(x)}{(x+h)-x}.\]
@@ -80,20 +110,25 @@ This definition is valid for all values of $x$ for which the limit exists.
 \end{definition}
 
 
-The slope of the tangent line to the graph of the function $y=f(x)$ at the point $(x,f(x))$
-is given by
-\[
-m_{\text{tan}}= f'(x).
-\]
 
-Below is an interactive graph that shows both a tangent line (red) and a secant line (green).
+
+Below is an interactive graph that shows both a tangent line (in red) and a secant line (in green).
 Consider the red dot to be the point $(x, f(x)$. Move the red dot to a point of your choosing.
 The green dot represents the point $(x+h, f(x+h))$. Move the green dot toward the red dot.
 Observe that when the green dot is very close to the red dot (i.e. $h$ is very small), 
-the secant line becomes indistinguishable from the tangent line. If the green dot is to the left of 
+the secant line becomes indistinguishable from the tangent line. 
+If the green dot is to the right of the red dot, then $h$ is positive, and if the green dot is to the left of 
 the red dot, then $h$ is negative.
 
 \includeinteractive{dd01b.js}
+
+
+
+%The slope of the tangent line to the graph of the function $y=f(x)$ at the point $(a,f(a))$
+%is given by
+%\[
+%m_{\text{tan}}= f'(a).
+%\]
 
 
 %\geogebra{GNskj5A7}{640}{480}
@@ -651,7 +686,7 @@ Step 3. Divide by $h$ to obtain the difference quotient:
 \[
 \frac{f(x+h) - f(x)}{h} = 
 \]
-(multiply by the conjugate radicla and cancel $h$)
+(multiply by the conjugate radical and cancel $h$)
 \begin{multipleChoice}
 \choice[correct]{$\frac{2}{\sqrt{2x + 2h + 5}  + \sqrt{2x + 5}}$}
 \choice{$\frac{2}{\sqrt{2x + 2h + 5}  - \sqrt{2x + 5}}$}
@@ -820,6 +855,24 @@ Solve for $y$
 \end{hint}
 The equation of the tangent line is \  $y = \answer{-2x-2}$
 \end{problem}
+
+
+
+
+
+
+\section{Video Lessons}
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here are two detailed, lecture style videos on the derivative:}
+\youtube{jkLA6rvZVJo}
+\youtube{XJ56sfFBltY}
+\end{foldable}
+\end{center}
+
+
+\end{document}
 
 
 The next two examples us the special limits:
@@ -1102,13 +1155,6 @@ The equation of the tangent line is \ $y = \answer{x-1}$
 
 
 
-\begin{center}
-\begin{foldable}
-\unfoldable{Here are some detailed, lecture style video on the derivative:}
-\youtube{jkLA6rvZVJo}
-\youtube{XJ56sfFBltY}
-\end{foldable}
-\end{center}
 
 
 
@@ -1125,4 +1171,3 @@ f'(x) &= \lim_{h \to 0} \frac{f(x+h)-f(x)}{h} \\[5pt]
 &= \lim_{h \to 0} (2x + h -5)\\
 &= 2x-5.
 \end{align*}
-
