@@ -58,19 +58,19 @@ Pythagorean trigonometric identity. From there, we can compute the integral
 using the skills developed in the section on trigonometric integrals.
 We have
 \begin{align*}
-\int x^3 \sqrt{1-x^2} \; dx &= \int \cos^3(\theta) \sqrt{1-\cos^2(\theta)} [-\sin(\theta)] \; d\theta\\
-                           &= -\int \cos^3(\theta) \sqrt{\sin^2(\theta)} \sin(\theta) \; d\theta\\
-                           &= -\int \cos^3(\theta) \sin(\theta) \sin(\theta) \; d\theta\\
-                           &= -\int \cos^3(\theta) \sin^2(\theta) \; d\theta\\
-                           \text{now, $u$-sub, with} \; & \; \text{  $u = \sin(\theta), \; du = \cos(\theta) \, d\theta$}\\
-                           &=-\int \cos^3(\theta) u^2 \; \frac{du}{\cos(\theta)}\\
-                           &=-\int \cos^2(\theta) u^2 \; du\\
-                           &=-\int (1-\sin^2(\theta)) u^2 \; du\\
-                           &=-\int (1-u^2)u^2 \; du\\
-                           &=\int (u^2 -1)u^2 \; du\\
-                           &=\int (u^4 - u^2) \; du\\
-                           \text{now we can} & \text{ finally integrate}\\
-                           &=\frac{u^5}{5} - \frac{u^3}{3} + C\\
+\int x^3 \sqrt{1-x^2} \; dx &= \int \cos^3(\theta) \sqrt{1-\cos^2(\theta)} \left[-\sin(\theta)\right] \; d\theta\\[6pt]
+                           &= -\int \cos^3(\theta) \sqrt{\sin^2(\theta)} \sin(\theta) \; d\theta\\[6pt]
+                           &= -\int \cos^3(\theta) \sin(\theta) \sin(\theta) \; d\theta\\[6pt]
+                           &= -\int \cos^3(\theta) \sin^2(\theta) \; d\theta\\[6pt]
+                           \text{now, $u$-sub, with} \; & \; \text{  $u = \sin(\theta), \; du = \cos(\theta) \, d\theta$}\\[6pt]
+                           &=-\int \cos^3(\theta) u^2 \; \frac{du}{\cos(\theta)}\\[6pt]
+                           &=-\int \cos^2(\theta) u^2 \; du\\[6pt]
+                           &=-\int \left[1-\sin^2(\theta)\right] u^2 \; du\\[6pt]
+                           &=-\int (1-u^2)u^2 \; du\\[6pt]
+                           &=\int (u^2 -1)u^2 \; du\\[6pt]
+                           &=\int (u^4 - u^2) \; du\\[6pt]
+                           \text{now we can} & \text{ finally integrate}\\[6pt]
+                           &=\frac{u^5}{5} - \frac{u^3}{3} + C\\[6pt]
                            &= \frac15 \sin^5(\theta) - \frac13 \sin^3(\theta) + C.
 \end{align*}
 At this point we have an answer in terms of the variable $\theta$, but we require the variable $x$.
@@ -252,13 +252,14 @@ Compute the indefinite integral
 We choose the substitution $x = 2\cos(\theta)$ so that $dx = -2\sin(\theta) \, d\theta$.
 The integral becomes
 \begin{align*}
-\int \frac{\sqrt{4-x^2}}{x} \; dx &= \int \frac{\sqrt{4-4\cos^2(\theta)}}{\cos^2(\theta)} [-2\sin(\theta)] \; d\theta\\
-                                  &= -2\int \frac{\sqrt{4\sin^2(\theta)}}{\cos^2(\theta)}  \sin(\theta) \; d\theta\\
-                                  &= -2\int \frac{2\sin(\theta)}{\cos^2(\theta)}  \sin(\theta) \; d\theta\\
- &= -4\int \frac{\sin^2(\theta)}{\cos^2(\theta)}  \; d\theta\\
- &= -4\int \tan^2(\theta)  \; d\theta\\
-&= -4\int [\sec^2(\theta) - 1] \; d\theta\\
-&= -4\tan(\theta) + 4\theta + C.
+\int \frac{\sqrt{4-x^2}}{x} \; dx &= \int \frac{\sqrt{4-4\cos^2(\theta)}}{\cos^2(\theta)} \left[-2\sin(\theta)\right] \; d\theta\\[6pt]
+                                  &= -2\int \frac{\sqrt{4\sin^2(\theta)}}{\cos^2(\theta)}  \sin(\theta) \; d\theta\\[6pt]
+                                  &= -2\int \frac{2\sin(\theta)}{4\cos^2(\theta)}  \sin(\theta) \; d\theta\\[6pt]
+ &= -\int \frac{\sin^2(\theta)}{\cos^2(\theta)}  \; d\theta\\[6pt]
+ &= -\int \tan^2(\theta)  \; d\theta\\[6pt]
+&= -\int \left[\sec^2(\theta) - 1\right] \; d\theta\\[6pt]
+&= \int \left[1 - \sec^2(\theta)\right] \; d\theta\\[6pt]
+&= \theta-\tan(\theta)  + C.
 \end{align*}
 
 %need triangle with x = 2 cos(theta)
@@ -285,7 +286,7 @@ The integral becomes
 
 From the triangle above, we can see that $\tan(\theta) = \frac{\sqrt{4-x^2}}{x}$ so that:
 \[
-\int \frac{\sqrt{4-x^2}}{x^2} \; dx = -4\tan(\theta) + 4\theta + C = -\frac{4\sqrt{4-x^2}}{x} + 4\cos^{-1}\left(\frac{x}{2}\right) + C. 
+\int \frac{\sqrt{4-x^2}}{x^2} \; dx = \theta -\tan(\theta) + C = \cos^{-1}\left(\frac{x}{2}\right) -\frac{\sqrt{4-x^2}}{x} +  + C. 
 \]
 
 \end{example}
@@ -351,11 +352,11 @@ Compute the indefinite integral
 We choose the substitution $x = \frac32\cos(\theta)$ so that $dx = -\frac32\sin(\theta) \, d\theta$.
 The integral becomes
 \begin{align*}
-\int \frac{1}{x\sqrt{9-4x^2}}\; dx &= \int \frac{1}{\frac32\cos(\theta)\sqrt{9-9\cos^2(\theta)}} \left[-\frac32\sin(\theta)\right]\; d\theta\\
-                                  &= -\int \frac{\sin(\theta)}{\cos(\theta)\sqrt{9\sin^2(\theta)}}   \; d\theta\\
-                                 &= -\int \frac{\sin(\theta)}{\cos(\theta)\cdot 3\sin(\theta)}   \; d\theta\\
-                                  &= -\frac13\int \frac{1}{\cos(\theta)}  \; d\theta\\
-                                  &= -\frac13\int \sec(\theta) \; d\theta\\                                 
+\int \frac{1}{x\sqrt{9-4x^2}}\; dx &= \int \frac{1}{\frac32\cos(\theta)\sqrt{9-9\cos^2(\theta)}} \left[-\frac32\sin(\theta)\right]\; d\theta\\[6pt]
+                                  &= -\int \frac{\sin(\theta)}{\cos(\theta)\sqrt{9\sin^2(\theta)}}   \; d\theta\\[6pt]
+                                 &= -\int \frac{\sin(\theta)}{\cos(\theta)\cdot 3\sin(\theta)}   \; d\theta\\[6pt]
+                                  &= -\frac13\int \frac{1}{\cos(\theta)}  \; d\theta\\[6pt]
+                                  &= -\frac13\int \sec(\theta) \; d\theta\\[6pt]                                 
                                  &= -\frac13 \ln|\sec(\theta) + \tan(\theta)| + C.  
 \end{align*}
 
@@ -506,10 +507,10 @@ so that $dx = \sec(\theta)\tan(\theta) \, d\theta$.
 
 The integral becomes
 \begin{align*}
-\int \frac{1}{\sqrt{x^2-1}}\; dx &= \int \frac{\sec(\theta)\tan(\theta)}{\sqrt{\sec^2(\theta)-1}}\; d\theta\\
-                                 &= \int \frac{\sec(\theta)\tan(\theta)}{\sqrt{\tan^2(\theta)}}\; d\theta\\
-                                 &= \int \frac{\sec(\theta)\tan(\theta)}{\tan(\theta)}\; d\theta\\
-                                  &= \int \sec(\theta)\; d\theta\\
+\int \frac{1}{\sqrt{x^2-1}}\; dx &= \int \frac{\sec(\theta)\tan(\theta)}{\sqrt{\sec^2(\theta)-1}}\; d\theta\\[6pt]
+                                 &= \int \frac{\sec(\theta)\tan(\theta)}{\sqrt{\tan^2(\theta)}}\; d\theta\\[6pt]
+                                 &= \int \frac{\sec(\theta)\tan(\theta)}{\tan(\theta)}\; d\theta\\[6pt]
+                                  &= \int \sec(\theta)\; d\theta\\[6pt]
                                   &= \ln|\sec(\theta)+ \tan(\theta)| + C.
 \end{align*}
 
@@ -564,16 +565,16 @@ so that $dx = 2\sec(\theta)\tan(\theta) \, d\theta$.
 
 The integral becomes
 \begin{align*}
-\int x^3\sqrt{x^2-4}\; dx &= \int \sec^3(\theta)\sqrt{4\sec^2(\theta)-4}\cdot 2\sec(\theta)\tan(\theta)\, d\theta\\
-                           &=  2\int \sec^4(\theta)\sqrt{4\tan^2(\theta)}\cdot \tan(\theta)\, d\theta\\   
-                            &=  2\int \sec^4(\theta)\cdot2\tan(\theta)\cdot \tan(\theta)\, d\theta\\ 
-                            &=  4\int \sec^4(\theta)\tan^2(\theta)\, d\theta\\ 
-                            &=  4\int \sec^2(\theta)\cdot \sec^2(\theta) \cdot \tan^2(\theta)\, d\theta\\  
-                            &=  4\int \sec^2(\theta)\cdot [1 + \tan^2(\theta)] \cdot \tan^2(\theta)\, d\theta\\  
-                            \text{Let } \; & u = \tan(\theta), \; du = \sec^2(\theta) \, d\theta.\\
-                            &=  4\int [1 + u^2]u^2\, du\\ 
-                             &=  4\int (u^2 + u^4) \, du\\ 
-                             &= \frac43 u^3 + \frac45 u^5 + C\\
+\int x^3\sqrt{x^2-4}\; dx &= \int \sec^3(\theta)\sqrt{4\sec^2(\theta)-4}\cdot 2\sec(\theta)\tan(\theta)\, d\theta\\[6pt]
+                           &=  2\int \sec^4(\theta)\sqrt{4\tan^2(\theta)}\cdot \tan(\theta)\, d\theta\\[6pt]   
+                            &=  2\int \sec^4(\theta)\cdot2\tan(\theta)\cdot \tan(\theta)\, d\theta\\[6pt] 
+                            &=  4\int \sec^4(\theta)\tan^2(\theta)\, d\theta\\[6pt] 
+                            &=  4\int \sec^2(\theta)\cdot \sec^2(\theta) \cdot \tan^2(\theta)\, d\theta\\[6pt]  
+                            &=  4\int \sec^2(\theta)\cdot [1 + \tan^2(\theta)] \cdot \tan^2(\theta)\, d\theta\\[6pt]  
+                            \text{Let } \; & u = \tan(\theta), \; du = \sec^2(\theta) \, d\theta.\\[6pt]
+                            &=  4\int [1 + u^2]u^2\, du\\[6pt] 
+                             &=  4\int (u^2 + u^4) \, du\\[6pt]
+                             &= \frac43 u^3 + \frac45 u^5 + C\\[6pt]
                              &= \frac43 \tan^3(\theta) + \frac45 \tan^5(\theta) + C                            
 \end{align*}
 
@@ -623,11 +624,11 @@ so that $dx = 4\sec(\theta)\tan(\theta) \, d\theta$.
 
 The integral becomes
 \begin{align*}
-\int \frac{1}{x\sqrt{x^2-16}}\; dx &= \int \frac{4\sec(\theta)\tan(\theta)}{4\sec(\theta)\sqrt{16\sec^2(\theta)-16}}\; d\theta\\
-                                 &=  \int \frac{\tan(\theta)}{\sqrt{16\tan^2(\theta)}}\; d\theta\\
-                                 &=  \int \frac{\tan(\theta)}{4\tan(\theta)}\; d\theta\\
-                                  &=  \int \frac14 \; d\theta\\
-                                  &= \frac14 \theta + C\\
+\int \frac{1}{x\sqrt{x^2-16}}\; dx &= \int \frac{4\sec(\theta)\tan(\theta)}{4\sec(\theta)\sqrt{16\sec^2(\theta)-16}}\; d\theta\\[6pt]
+                                 &=  \int \frac{\tan(\theta)}{\sqrt{16\tan^2(\theta)}}\; d\theta\\[6pt]
+                                 &=  \int \frac{\tan(\theta)}{4\tan(\theta)}\; d\theta\\[6pt]
+                                  &=  \int \frac14 \; d\theta\\[6pt]
+                                  &= \frac14 \theta + C\\[6pt]
                                   &= \frac14 \sec^{-1}\left(\frac{x}{4}\right)+C.
 \end{align*}
 
@@ -645,11 +646,11 @@ so that $dx = \frac23\sec(\theta)\tan(\theta) \, d\theta$.
 
 The integral becomes
 \begin{align*}
-\int \frac{1}{x^2\sqrt{9x^2-4}}\; dx &= \int \frac{(2/3)\sec(\theta)\tan(\theta)}{(2/3)^2\sec^2(\theta)\sqrt{4\sec^2(\theta)-4}}\; d\theta\\
-                                 &=  \frac32\int \frac{\tan(\theta)}{\sec(\theta)\sqrt{4\tan^2(\theta)}}\; d\theta\\
-                                 &=  \frac32\int \frac{\tan(\theta)}{2\sec(\theta)\tan(\theta)}\; d\theta\\
-                                  &=  \frac34 \int \frac{1}{\sec(\theta)} \; d\theta\\
-                                  &= \frac34 \int \cos(\theta)  \; d\theta\\
+\int \frac{1}{x^2\sqrt{9x^2-4}}\; dx &= \int \frac{(2/3)\sec(\theta)\tan(\theta)}{(2/3)^2\sec^2(\theta)\sqrt{4\sec^2(\theta)-4}}\; d\theta\\[6pt]
+                                 &=  \frac32\int \frac{\tan(\theta)}{\sec(\theta)\sqrt{4\tan^2(\theta)}}\; d\theta\\[6pt]
+                                 &=  \frac32\int \frac{\tan(\theta)}{2\sec(\theta)\tan(\theta)}\; d\theta\\[6pt]
+                                  &=  \frac34 \int \frac{1}{\sec(\theta)} \; d\theta\\[6pt]
+                                  &= \frac34 \int \cos(\theta)  \; d\theta\\[6pt]
                                   &= \frac34 \sin(\theta) + C.
 \end{align*}
 %need triangle with x = 2/3 sec(theta)
@@ -692,13 +693,13 @@ so that $dx = 5\sec(\theta)\tan(\theta) \, d\theta$.
 
 The integral becomes
 \begin{align*}
-\int \frac{1}{x^3\sqrt{x^2-25}}\; dx &= \int \frac{5\sec(\theta)\tan(\theta)}{5^3\sec^3(\theta)\sqrt{25\sec^2(\theta)-25}}\; d\theta\\
-                                 &=  \frac{1}{25}\int \frac{\tan(\theta)}{\sec^2(\theta)\sqrt{25\tan^2(\theta)}}\; d\theta\\
-                                 &=  \frac{1}{25}\int \frac{\tan(\theta)}{5\sec^2(\theta)\tan(\theta)}\; d\theta\\
-                                  &=  \frac{1}{125} \int \frac{1}{\sec^2(\theta)} \; d\theta\\
-                                  &= \frac{1}{125} \int \cos^2(\theta)  \; d\theta\\
-                                  &= \frac{1}{125} \int \frac{1+\cos(2\theta)}{2} \; d\theta\\
-                                  &= \frac{1}{250}\left[\theta + \frac12 \sin(2\theta)\right] + C\\
+\int \frac{1}{x^3\sqrt{x^2-25}}\; dx &= \int \frac{5\sec(\theta)\tan(\theta)}{5^3\sec^3(\theta)\sqrt{25\sec^2(\theta)-25}}\; d\theta\\[6pt]
+                                 &=  \frac{1}{25}\int \frac{\tan(\theta)}{\sec^2(\theta)\sqrt{25\tan^2(\theta)}}\; d\theta\\[6pt]
+                                 &=  \frac{1}{25}\int \frac{\tan(\theta)}{5\sec^2(\theta)\tan(\theta)}\; d\theta\\[6pt]
+                                  &=  \frac{1}{125} \int \frac{1}{\sec^2(\theta)} \; d\theta\\[6pt]
+                                  &= \frac{1}{125} \int \cos^2(\theta)  \; d\theta\\[6pt]
+                                  &= \frac{1}{125} \int \frac{1+\cos(2\theta)}{2} \; d\theta\\[6pt]
+                                  &= \frac{1}{250}\left[\theta + \frac12 \sin(2\theta)\right] + C\\[6pt]
                                   &= \frac{1}{250} \theta + \frac{1}{500} \cdot 2\sin(\theta)\cos(\theta) + C.
 \end{align*}
 %need triangle with x = 5 sec(theta)
@@ -761,17 +762,17 @@ Compute the indefinite integral:
 We will use the substitution $x = \tan(\theta)$.  Then the differential, 
 $dx = \sec^2(\theta) \, d\theta$.  Substituting these gives
 \begin{align*}
-\int x^3\sqrt{1+x^2} \; dx &= \int \tan^3(\theta) \sqrt{1+\tan^2(\theta)} \cdot \sec^2(\theta) \; d\theta\\
-                           &= \int \tan^3(\theta) \sqrt{\sec^2(\theta)} \cdot \sec^2(\theta) \; d\theta\\
-                           &= \int \tan^3(\theta) \cdot \sec(\theta) \cdot \sec^2(\theta) \; d\theta\\
-                           &= \int \tan^3(\theta) \sec^3(\theta) \; d\theta\\
-                           \text{u-sub with } \; & u=\sec(\theta), \, du = \sec(\theta) \tan(\theta) d\theta\\
-                           &= \int \tan^2(\theta) \sec^2(\theta) \cdot \sec(\theta) \tan(\theta)\; d\theta\\
-                           &= \int \left(\sec^2(\theta)-1 \right) \sec^2(\theta) \cdot \sec(\theta) \tan(\theta)\; d\theta\\ 
-                           &= \int (u^2 -1)u^2 \; du\\ 
-                           &= \int (u^4 -u^2) \; du\\
-                           &\text{now we can integrate}\\
-                           &= \frac{u^5}{5} - \frac{u^3}{3} + C\\
+\int x^3\sqrt{1+x^2} \; dx &= \int \tan^3(\theta) \sqrt{1+\tan^2(\theta)} \cdot \sec^2(\theta) \; d\theta\\[6pt]
+                           &= \int \tan^3(\theta) \sqrt{\sec^2(\theta)} \cdot \sec^2(\theta) \; d\theta\\[6pt]
+                           &= \int \tan^3(\theta) \cdot \sec(\theta) \cdot \sec^2(\theta) \; d\theta\\[6pt]
+                           &= \int \tan^3(\theta) \sec^3(\theta) \; d\theta\\[6pt]
+                           \text{u-sub with } \; & u=\sec(\theta), \, du = \sec(\theta) \tan(\theta) d\theta\\[6pt]
+                           &= \int \tan^2(\theta) \sec^2(\theta) \cdot \sec(\theta) \tan(\theta)\; d\theta\\[6pt]
+                           &= \int \left(\sec^2(\theta)-1 \right) \sec^2(\theta) \cdot \sec(\theta) \tan(\theta)\; d\theta\\[6pt] 
+                           &= \int (u^2 -1)u^2 \; du\\[6pt] 
+                           &= \int (u^4 -u^2) \; du\\[6pt]
+                           &\text{now we can integrate}\\[6pt]
+                           &= \frac{u^5}{5} - \frac{u^3}{3} + C\\[6pt]
                            &= \frac15 \sec^5(\theta)  - \frac13 \sec^3(\theta) + C.
 \end{align*}
 
@@ -866,15 +867,15 @@ Compute the indefinite integral
 We will let $x = 3\tan(\theta)$. Then the differential
 $dx = 3\sec^2(\theta) \, d\theta$.  Substituting these, we get
 \begin{align*}
-\int \frac{x^3}{\sqrt{9 + x^2}} \; dx &= \int \frac{27\tan^3(\theta)}{\sqrt{9 + 9\tan^2(\theta)}} \cdot 3\sec^2(\theta) \; d\theta\\
-                                      &= \int \frac{27\tan^3(\theta)}{\sqrt{9\sec^2(\theta)}} \cdot 3\sec^2(\theta) \; d\theta\\
-                                      &= \int \frac{27\tan^3(\theta)}{3\sec(\theta)} \cdot 3\sec^2(\theta) \; d\theta\\
-                                      &= 27\int \tan^3(\theta) \sec(\theta) \; d\theta\\
-                                      & \text{let} \; u = \sec(\theta), \, du = \sec(\theta) \tan(\theta) \, d\theta\\
-                                      &= 27\int \tan^2(\theta) \cdot \sec(\theta) \tan(\theta) \; d\theta\\
-                                      &= 27\int \left(\sec^2(\theta)-1\right) \cdot \sec(\theta) \tan(\theta) \; d\theta\\
-                                      &= 27\int (u^2-1) \; du\\
-                                      &= 9u^3 - \frac{u}{27} + C\\
+\int \frac{x^3}{\sqrt{9 + x^2}} \; dx &= \int \frac{27\tan^3(\theta)}{\sqrt{9 + 9\tan^2(\theta)}} \cdot 3\sec^2(\theta) \; d\theta\\[6pt]
+                                      &= \int \frac{27\tan^3(\theta)}{\sqrt{9\sec^2(\theta)}} \cdot 3\sec^2(\theta) \; d\theta\\[6pt]
+                                      &= \int \frac{27\tan^3(\theta)}{3\sec(\theta)} \cdot 3\sec^2(\theta) \; d\theta\\[6pt]
+                                      &= 27\int \tan^3(\theta) \sec(\theta) \; d\theta\\[6pt]
+                                      & \text{let} \; u = \sec(\theta), \, du = \sec(\theta) \tan(\theta) \, d\theta\\[6pt]
+                                      &= 27\int \tan^2(\theta) \cdot \sec(\theta) \tan(\theta) \; d\theta\\[6pt]
+                                      &= 27\int \left(\sec^2(\theta)-1\right) \cdot \sec(\theta) \tan(\theta) \; d\theta\\[6pt]
+                                      &= 27\int (u^2-1) \; du\\[6pt]
+                                      &= 9u^3 - \frac{u}{27} + C\\[6pt]
                                       &= 9\sec^3(\theta) - \frac{1}{27} \sec(\theta) + C.
 \end{align*}
 
@@ -961,12 +962,12 @@ Compute the indefinite integral
 Let $x = \frac43 \tan(\theta)$. Then $dx = \frac43 \sec^2(\theta) \, d\theta$.
 Substituting these, the integral becomes,
 \begin{align*}
-\int \sqrt{16 + 9x^2} \; dx &= \int \sqrt{16+16\tan^2(\theta)} \cdot \sec^2(\theta) \; d\theta\\
-                            &= \int \sqrt{16\sec^2(\theta)} \cdot \sec^2(\theta) \; d\theta\\
-                            &= \int 4\sec(\theta) \cdot \sec^2(\theta) \; d\theta\\
-                            &= 4\int \sec^3(\theta) \; d\theta\\
-                            &\;\;\;\;\;\text{(see the IBP section for this integral).}\\
-                            &= 2 \sec(x) \tan(x) + 2 \ln|\sec(x) + \tan(x)| + C
+\int \sqrt{16 + 9x^2} \; dx &= \int \sqrt{16+16\tan^2(\theta)} \cdot \sec^2(\theta) \; d\theta\\[6pt]
+                            &= \int \sqrt{16\sec^2(\theta)} \cdot \sec^2(\theta) \; d\theta\\[6pt]
+                            &= \int 4\sec(\theta) \cdot \sec^2(\theta) \; d\theta\\[6pt]
+                            &= 4\int \sec^3(\theta) \; d\theta\\[6pt]
+                            &\;\;\;\;\;\text{(see the IBP section for this integral).}\\[6pt]
+                            &= 2 \sec(\theta) \tan(\theta) + 2 \ln|\sec(\theta) + \tan(\theta)| + C
 \end{align*}
                             
 %need triangle with x = 4/3 tan(theta)
