@@ -62,7 +62,7 @@ In the first step, the function $F(x)$ is introduced and in the second step, the
 In the following examples, we compute definite integrals using the FTC in order to solve the area problem.
 Recall that the definite integral of a non-negative function gives the area under the curve.
 
-\begin{example}
+\begin{example}[example 1]
 Find the exact area under the graph of $y = x^2$ from $x = 0$ to $x = 1$. \\
 Since the function $x^2$ is non-negative on the interval $[0, 1]$, the 
 exact area under the curve is the definite integral 
@@ -106,7 +106,34 @@ ytick={0, 1, 2}, title={The area under $f(x)=x^2$ on $[0,1]$}]
 
 \end{example}
 
-\begin{example} %example 1
+
+
+\begin{problem}(problem 1)
+Find the exact area under the graph of $y = x^3$ from $x = 0$ to $x = 1$.\\
+The area is $\answer[given]{1/4}$
+
+\begin{hint}
+  \[
+  \text{Area} = \int_0^{1} x^3 \ dx 
+  \]
+\end{hint}
+    \begin{hint}
+      Use the power rule to find an anti-derivative of $x^3$
+    \end{hint}
+    
+    \begin{hint}
+      The Fundamental Theorem of Calculus says:
+      \[
+      \int_a^b f(x) \ dx = F(b) - F(a)
+      \]
+    \end{hint}    
+		
+		
+\end{problem}
+
+
+
+\begin{example}[example 2]
 Find the exact area under the curve $y = \cos(x)$ from $x=0$ to $x= \pi/2$.\\
 Since the function $\cos(x)$ is non-negative on the interval $[0, \frac{\pi}{2}]$, the exact area can be expressed as the definite integral
 \[\int_0^{\pi/2} \cos(x) \ dx.\]
@@ -121,28 +148,8 @@ We can use the Fundamental Theorem of Calculus to compute the value of this defi
     samples=100, color=black]{cos(deg(x))};
 \addplot[name path = B, domain=0:1.57, samples=100, color=black]{0};
 \addplot[blue!10] fill between[of=A and B];
-%xtick={0, $\pi/4$,$\pi/2$},
-%\addplot [domain= 0:.1, samples=10, color=black]{cos(deg(.1)) + (x-.1)};      
-%\addplot [domain= 0:.2, samples=10, color=black]{cos(deg(.2)) + (x-.2)};
-%\addplot [domain= 0:.3, samples=10, color=black]{cos(deg(.3)) + (x-.3)};
-%\addplot [domain= 0:.4, samples=10, color=black]{cos(deg(.4)) + (x-.4)};
-%\addplot [domain= 0:.5, samples=10, color=black]{cos(deg(.5)) + (x-.5)};
-%\addplot [domain= 0:.6, samples=10, color=black]{cos(deg(.6)) + (x-.6)};
-%\addplot [domain= 0:.7, samples=10, color=black]{cos(deg(.7)) + (x-.7)};
-%\addplot [domain= .11:.8, samples=10, color=black]{cos(deg(.8)) + (x-.8)};
-%\addplot [domain= .28:.9, samples=10, color=black]{cos(deg(.9)) + (x-.9)};
-%\addplot [domain= .46:1, samples=10, color=black]{cos(deg(1)) + (x-1)};
-%\addplot [domain= .65:1.1, samples=10, color=black]{cos(deg(1.1)) + (x-1.1)};
-%\addplot [domain= .84:1.2, samples=10, color=black]{cos(deg(1.2)) + (x-1.2)};
-%\addplot [domain= 1.04:1.3, samples=10, color=black]{cos(deg(1.3)) + (x-1.3)} ;
-%\addplot [domain= 1.23:1.4, samples=10, color=black]{cos(deg(1.4)) + (x-1.4)};
-%\addplot [domain= 1.43:1.5, samples=10, color=black]{cos(deg(1.5)) + (x-1.5)};
 \node at (axis cs: .4,.4){Area = 1};
-%\addplot [domain= .9:1, samples=10, color=black]{cos(deg(.2)) + (x-.2)};
-%\node at (0.25, 0.25) {Area = 1}
-%\addplot [domain= .2:.4, samples=10, color=black]{-x + .05};
-%\addplot coordinates {(0.5,0) (0.5, 1/sqrt e)};
-%\addplot[thick, samples = 100, color=black] coordinates {(1,0) (1,1)};
+
 
 \end{axis}
 %\legend{$y = f(x)$, , secant line, tangent line, };
@@ -151,7 +158,9 @@ We can use the Fundamental Theorem of Calculus to compute the value of this defi
 
 \end{example}
 
-\begin{problem} %problem #1
+
+
+\begin{problem}(problem 2)
 Find the exact area under the graph of $y = \sin(x)$ from $x = 0$ to $x = \pi$.\\
 The area is $\answer[given]{2}$
 
@@ -165,7 +174,7 @@ The area is $\answer[given]{2}$
     \end{hint}
     
     \begin{hint}
-      The Fundamental Theorem says:
+      The Fundamental Theorem of Calculus says:
       \[
       \int_a^b f(x) \ dx = F(b) - F(a)
       \]
@@ -177,7 +186,7 @@ The area is $\answer[given]{2}$
 \end{problem}
 
 
-\begin{example} %example 2
+\begin{example}[example 3]
 Find the exact area under the curve $y = e^x$ from $x = 0$ to $x = 1$.\\
 Since the function $e^x$ is non-negative on the interval $[0, 1]$, the area can be expressed as the definite integral
 \[\int_0^1 e^x \ dx.\]
@@ -193,28 +202,7 @@ We can use the Fundamental Theorem of Calculus to compute the value of this defi
 \addplot[name path = B, domain=0:1, samples=100, color=black]{0};
 \addplot[blue!10] fill between[of=A and B];
 
-%xtick={0, $\pi/4$,$\pi/2$},
-%\addplot [domain= 0:.6, samples=10, color=black]{-x+.6};
-%\addplot [domain= 0:.2, samples=10, color=black]{-x+.2};
-%\addplot [domain= 0:.8, samples=10, color=black]{-x+.8};
-%\addplot [domain= 0:.4, samples=10, color=black]{-x+.4};
-%\addplot [domain= 0:1, samples=10, color=black]{-x+1};
-%\addplot [domain= .1:1, samples=10, color=black]{e^.1 - (x-.1)};
-%\addplot [domain= .2:1, samples=10, color=black]{e^.2 - (x-.2)};
-%\addplot [domain= .3:1, samples=10, color=black]{e^.3 - (x-.3)};
-%\addplot [domain= .4:1, samples=10, color=black]{e^.4 - (x-.4)};
-%\addplot [domain= .5:1, samples=10, color=black]{e^.5 - (x-.5)};
-%\addplot [domain= .6:1, samples=10, color=black]{e^.6 - (x-.6)};
-%\addplot [domain= .7:1, samples=10, color=black]{e^.7 - (x-.7)};
-%5\addplot [domain= .8:1, samples=10, color=black]{e^.8 - (x-.8)};
-%\addplot [domain= .9:1, samples=10, color=black]{e^.9 - (x-.9)};
 \node at (axis cs: .5,.7){Area = $e-1$};
-%\addplot[thin, samples = 100, color=black] coordinates {(1,0) (1,e)};
-%\addplot [domain= .9:1, samples=10, color=black]{cos(deg(.2)) + (x-.2)};
-%\node at (0.25, 0.25) {Area = 1}
-%\addplot [domain= .2:.4, samples=10, color=black]{-x + .05};
-%\addplot coordinates {(0.5,0) (0.5, 1/sqrt e)};
-%\addplot[thick, samples = 100, color=black] coordinates {(1,0) (1,1)};
 
 \end{axis}
 %\legend{$y = f(x)$, , secant line, tangent line, };
@@ -223,7 +211,7 @@ We can use the Fundamental Theorem of Calculus to compute the value of this defi
 
 \end{example}
 
-\begin{problem} %problem #2
+\begin{problem}(problem 3a)
  Find the exact area under the graph of $y = e^x$ from $x=1$ to $x = \ln(5)$.\\
 The area is $\answer[given]{5-e}$.
  \begin{hint}
@@ -253,7 +241,7 @@ The area is $\answer[given]{5-e}$.
 %\tfrac{\hphantom{|}2^3}{\hphantom{|}3^\hphantom{3}} - \tfrac{\hphantom{|}1^3}{\hphantom{|}3^\hphantom{3}} = \tfrac{7}{3}}$.
 %\end{example}
 
-\begin{problem} %problem #3
+\begin{problem}(problem 3b)
 Find the exact area under the graph of $y = x^3$ from $x = 2$ to $x = 4$.\\
 The area is $\answer[given]{60}$.
  \begin{hint}
@@ -276,7 +264,7 @@ The area is $\answer[given]{60}$.
 
 
 
-\begin{example} %example 4
+\begin{example}[example 4]
 Find the exact area under the curve $y = 1/x$ from $x=1$ to $x= e$.\\
 Since the function $1/x$ is non-negative on the interval $[1, e]$, the exact area can be expressed as the definite integral
 \[\int_1^{e} \frac{1}{x} \ dx.\]
@@ -299,37 +287,11 @@ We can use the Fundamental Theorem of Calculus to compute the value of this defi
     samples=100, color=black]{1/x};
 \addplot[domain=e:3, 
     samples=100, color=black]{1/x};
-%\addplot[ultra thin, color=black] coordinates {(e, 0) (e, -.05)}; % node[below]{e};
-		
-%xtick={0, $\pi/4$,$\pi/2$},
-%\addplot [domain= 1:1.1, samples=10, color=black]{10/11 + x-1.1};
-%\addplot [domain= 1:1.2, samples=10, color=black]{10/12 + x-1.2};
-%\addplot [domain= 1:1.3, samples=10, color=black]{10/13 + x-1.3};
-%\addplot [domain= 1:1.4, samples=10, color=black]{10/14 + x-1.4};
-%\addplot [domain= 1:1.5, samples=10, color=black]{10/15+ x-1.5};
-%\addplot [domain= 1:1.6, samples=10, color=black]{10/16+ x-1.6};
-%\addplot [domain= 1:1.7, samples=10, color=black]{1+ x-.1};
-%\addplot [domain= 1.25:1.8, samples=10, color=black]{10/18+ x-1.8};
-%\addplot [domain= .4:1.9, samples=10, color=black]{1+ x-.1};
-%\addplot [domain= 1.5:2, samples=10, color=black]{.5+ x-2};
-%\addplot [domain= 1.75:2.2, samples=10, color=black]{10/22+ x-2.2};
-%\addplot [domain= 1.99:2.4, samples=10, color=black]{10/24+ x-2.4};
-%\addplot [domain= 2.22:2.6, samples=10, color=black]{10/26+ x-2.6};
-%\addplot [domain= 2.45:2.71, samples=10, color=black]{10/28+ x-2.8};
-%\addplot [domain= 1.8:2.71, samples=10, color=black]{1/3+ x-3};
-%\addplot [domain= 1.8:2.71, samples=10, color=black]{10/32+ x-3.2};
-%\addplot [domain= 1.8:2.71, samples=10, color=black]{10/34+ x-3.4};
 
-
-%\addplot [domain= .9:1, samples=10, color=black]{1+ x-.1};
 \node at (axis cs: 1.8,.3){Area = $1$};
 \addplot[thin, samples = 100, color=black] coordinates {(1,0) (1,1)};
 \addplot[thin, samples = 100, color=black] coordinates {(e,0) (e,1/e)};
-%\addplot [domain= .9:1, samples=10, color=black]{cos(deg(.2)) + (x-.2)};
-%\node at (0.25, 0.25) {Area = 1}
-%\addplot [domain= .2:.4, samples=10, color=black]{-x + .05};
-%\addplot coordinates {(0.5,0) (0.5, 1/sqrt e)};
-%\addplot[thick, samples = 100, color=black] coordinates {(1,0) (1,1)};
+
 
 \end{axis}
 %\legend{$y = f(x)$, , secant line, tangent line, };
@@ -340,7 +302,7 @@ We can use the Fundamental Theorem of Calculus to compute the value of this defi
 
 
 
-\begin{problem} %problem #4
+\begin{problem}(problem 4)
 Find the exact area under the graph of $y = 1/x$ from $x = 2$ to $x = 5$.\\
 The area is $\answer[given]{\ln(5/2)}$.
  \begin{hint}
@@ -362,7 +324,7 @@ The area is $\answer[given]{\ln(5/2)}$.
 \end{problem}
 
 
-\begin{example} %example 5
+\begin{example}[example 5]
 Find the exact area under the curve $y = 2x+1$ from $x=0$ to $x= 2$.\\
 Since the function $2x+1$ is non-negative on the interval $[0, 2]$, the exact area can be expressed as the definite integral
 \[\int_0^2 (2x+1) \ dx.\]
@@ -376,7 +338,7 @@ We can use the Fundamental Theorem of Calculus to compute the value of this defi
 \end{example}
 
 
-\begin{problem} %problem #5
+\begin{problem}(problem 5)
 Find the exact area under the graph of $y = 4x-3$ from $x = 1$ to $x = 3$.\\
 The area is $\answer[given]{10}$.
  \begin{hint}
@@ -398,7 +360,7 @@ The area is $\answer[given]{10}$.
 \end{problem}
 
 
-\begin{example} %example 6
+\begin{example}[example 6]
 Find the exact area under the curve $y = \sec^2(x)$ from $x=0$ to $x= \pi/4$.\\
 Since the function $\cos(x)$ is non-negative on the interval $[0, \frac{\pi}{4}]$, the exact area can be expressed as the definite integral
 \[\int_0^{\pi/4} \sec^2(x) \ dx.\]
@@ -428,7 +390,7 @@ xticklabels={$0$, $\frac{\pi}{4}$}, ytick={0, 1, 2}, title={The Area Under $f(x)
 
 \end{example}
 
-\begin{problem} %problem #6
+\begin{problem}(problem 6)
 Find the exact area under the graph of $y = \csc^2(x)$ from $x = \pi/4$ to $x = \pi/2$.\\
 The area is $\answer[given]{1}$.
  \begin{hint}
@@ -453,7 +415,7 @@ The area is $\answer[given]{1}$.
 \end{problem}
 
 
-\begin{example} %example 7
+\begin{example}[example 7]
 Find the exact area under the curve $y = \dfrac{1}{1+x^2}$ from $x=0$ to $x= 1$.\\
 Since the function $\frac{1}{1+x^2}$ is non-negative on the interval $[0, 1]$, the exact area can be expressed as the definite integral
 \[\int_0^{1} \frac{1}{1+x^2} \ dx.\]
@@ -486,7 +448,7 @@ We can use the Fundamental Theorem of Calculus to compute the value of this defi
 
 \end{example}
 
-\begin{problem} %problem #7
+\begin{problem}(problem 7)
 Find the exact area under the graph of $y = 1/x$ from $x = 2$ to $x = 5$.\\
 The area is $\answer[given]{\pi/2}$.
  \begin{hint}
@@ -536,7 +498,7 @@ and
 To put it another way, if $f(x) \leq 0$ on $[a,b]$ then
 \[\text{area above the curve} = -\int_a^b f(x) \ dx.\]
 
-\begin{example}
+\begin{example}[example 8]
 Find the exact area above the graph of $y = x^3$ from $x = -1$ to $x = 0$. \\
 Since the function $x^3$ is negative (or zero) on the interval $[-1, 0]$ , the exact area above the curve is the negative of the definite integral 
 \[\int_{-1}^0 x^3 \ dx.\]
@@ -555,19 +517,9 @@ ytick={-1, 0, 1}, title={The Area Above $f(x)=x^3$ on $[-1,0]$}]
 \addplot[name path = A, domain=-1:0, samples=100, color=black]{0};
 \addplot[red!10] fill between[of=A and B];
 
-%\addplot [domain= -.625:-.5, samples=10, color=black]{-x- .5 - .125};
-%\addplot [domain= -.816:-.6, samples=10, color=black]{-x- .6 - .216};
-%\addplot [domain= -1:-.7, samples=10, color=black]{-x- .7 - .343};
-%\addplot [domain= -1:-.8, samples=10, color=black]{-x- .8 - .512};
-%\addplot [domain= -1:-.9, samples=10, color=black]{-x- .9 - .729};
-%\addplot [domain= .6:.96, samples=10, color=black]{.36-(x- .6)};
-\node at (axis cs: -.6,.1){Area = 1/4};
-%\addplot [domain= .7:1, samples=10, color=black]{.49-(x- .7)};
-%\addplot [domain= .8:1, samples=10, color=black]{.64-(x- .8)};
-%\addplot [domain= .9:1, samples=10, color=black]{.81-(x- .9)};
 
-%\addplot [domain= .2:.4, samples=10, color=black]{-x + .05};
-%\addplot coordinates {(0.5,0) (0.5, 1/sqrt e)};
+\node at (axis cs: -.6,.1){Area = 1/4};
+
 \addplot[thick, samples = 100, color=black] coordinates {(-1,0) (-1,-1)};
 
 \end{axis}
@@ -577,7 +529,7 @@ ytick={-1, 0, 1}, title={The Area Above $f(x)=x^3$ on $[-1,0]$}]
 \end{example}
 
 
-\begin{problem}
+\begin{problem}(problem 8)
 Find the exact area above the graph of $y = x^3$ from $x = -2$ to $x = -1$. \\
 \begin{hint}
 Area above the curve $= -\int_a^b f(x) \ dx$
@@ -587,7 +539,7 @@ Area above the curve $= -\int_a^b f(x) \ dx$
 \end{problem}
 
 
-\begin{example}
+\begin{example}[example 9]
 Find the exact area above the graph of $y = x^2 - 2$ from $x = 0$ to $x = 1$. \\
 Since the function $x^2 - 2 \leq 0$  on the interval $[0,1]$ , the exact area above the curve \textit{is the negative of} the definite integral 
 \[\int_0^1 (x^2 -2) \ dx.\]
@@ -607,19 +559,9 @@ ytick={-2, -1, 0, 1},  title={The Area Above $f(x)=x^2 -2$ on $[0,1]$}]
 \addplot[name path =A,domain=0:1, samples = 100, color = black]{0};
 \addplot[domain=-1:0, samples = 100, color = black]{0};
 \addplot[red!10] fill between [of=A and B];
-%\addplot [domain= .1:.2, samples=10, color=black]{-x + .2};
-%\addplot [domain= .2:.24, samples=10, color=black]{.04-(x- .2)};
-%\addplot [domain= .3:.39, samples=10, color=black]{.09-(x- .3)};
-%\addplot [domain= .4:.56, samples=10, color=black]{.16-(x- .4)};
-%\addplot [domain= .5:.75, samples=10, color=black]{.25-(x- .5)};
-%\addplot [domain= .6:.96, samples=10, color=black]{.36-(x- .6)};
-\node at (axis cs: .5,-.7){Area = 5/3};
-%\addplot [domain= .7:1, samples=10, color=black]{.49-(x- .7)};
-%\addplot [domain= .8:1, samples=10, color=black]{.64-(x- .8)};
-%\addplot [domain= .9:1, samples=10, color=black]{.81-(x- .9)};
 
-%\addplot [domain= .2:.4, samples=10, color=black]{-x + .05};
-%\addplot coordinates {(0.5,0) (0.5, 1/sqrt e)};
+\node at (axis cs: .5,-.7){Area = 5/3};
+
 \addplot[thin, samples = 100, color=black] coordinates {(1,0) (1,-1)};
 \addplot[thin, samples = 100, color=black] coordinates {(0,0) (0,1)};
 \end{axis}
@@ -629,7 +571,7 @@ ytick={-2, -1, 0, 1},  title={The Area Above $f(x)=x^2 -2$ on $[0,1]$}]
 \end{example}
 
 
-\begin{problem}
+\begin{problem}(problem 9)
 Find the exact area above the graph of $y = 1 - \sqrt x$ from $x = 1$ to $x = 4$. \\
 \begin{hint}
 Area above the curve $= -\int_a^b f(x) \ dx$
@@ -638,19 +580,8 @@ Area above the curve $= -\int_a^b f(x) \ dx$
 \[\text{area above the curve} = \answer{2/3}.\]
 \end{problem}
 
-\begin{problem}
-Use geometry to find the value of the definite integral $\displaystyle{\int_{-4}^{4}-\sqrt{16-x^2} \ dx}.$
-\begin{hint}
-$-\sqrt{16-x^2} \leq 0$ on the interval $[-4,4]$.
-\end{hint}
-\begin{hint}
-The definite integral gives $(-1) \cdot$ area above the semi-circle
-\end{hint}
-\[\int_{-4}^{4}-\sqrt{16-x^2} \ dx = \answer{-8\pi}.\]
-\end{problem}
 
-
-\begin{example}
+\begin{example}[example 10]
 Find the exact area above the graph of $y = -\sin(x)$ from $x = 0$ to $x = \pi$. \\
 Since the function $-\sin(x) \leq 0$ on the interval $[0, \pi]$ , the exact area above the curve is \textit{the negative of} the definite integral 
 \[\int_{0}^\pi -\sin(x) \ dx.\]
@@ -670,19 +601,9 @@ ytick={-1, 0, 1}, title={The Area Above $f(x)=-\sin(x)$ on $[0,\pi]$}]
 \addplot[name path = A, domain=0:3.14, samples=100, color=black]{0};
 \addplot[red!10] fill between[of=A and B];
 
-%\addplot [domain= .1:.2, samples=10, color=black]{-x + .2};
-%\addplot [domain= .2:.24, samples=10, color=black]{.04-(x- .2)};
-%\addplot [domain= .3:.39, samples=10, color=black]{.09-(x- .3)};
-%\addplot [domain= .4:.56, samples=10, color=black]{.16-(x- .4)};
-%\addplot [domain= .5:.75, samples=10, color=black]{.25-(x- .5)};
-%\addplot [domain= .6:.96, samples=10, color=black]{.36-(x- .6)};
-\node at (axis cs: 1.57,-.5){Area = 2};
-%\addplot [domain= .7:1, samples=10, color=black]{.49-(x- .7)};
-%\addplot [domain= .8:1, samples=10, color=black]{.64-(x- .8)};
-%\addplot [domain= .9:1, samples=10, color=black]{.81-(x- .9)};
 
-%\addplot [domain= .2:.4, samples=10, color=black]{-x + .05};
-%\addplot coordinates {(0.5,0) (0.5, 1/sqrt e)};
+\node at (axis cs: 1.57,-.5){Area = 2};
+
 \addplot[thin, samples = 100, color=black] coordinates {(0,0) (0,1)};
 
 \end{axis}
@@ -691,7 +612,9 @@ ytick={-1, 0, 1}, title={The Area Above $f(x)=-\sin(x)$ on $[0,\pi]$}]
 \end{image}
 \end{example}
 
-\begin{problem}
+
+
+\begin{problem}(problem 10a)
 Find the exact area above the graph of $y = \cos(x)$ from $x = \frac{\pi}{2}$ to $x = \frac{3\pi}{2}$. \\
 \begin{hint}
 Area above the curve $= -\int_a^b f(x) \ dx$
@@ -701,7 +624,7 @@ Area above the curve $= -\int_a^b f(x) \ dx$
 \end{problem}
 
 
-\begin{problem}
+\begin{problem}(problem 10b)
 Find the exact area above the graph of $y = \dfrac{1}{x}$ from $x = -3$ to $x = -1$. \\
 \begin{hint}
 Area above the curve $= -\int_a^b f(x) \ dx$
@@ -720,8 +643,87 @@ Area above the curve $= -\int_a^b f(x) \ dx$
 \end{foldable}
 \end{center}
 
+\section{More Definite Integrals}
+
+
+\begin{problem}(problem 11) Compute the definite integrals:
+\begin{itemize}
+\item[11a)] \; $\displaystyle{\int_0^2 \left(t^2 - 5t + 2\right) \; dt = \answer{-10/3}}$
+\item[11b)] \; $\displaystyle{\int_1^ 3 \left(4u - \frac{5}{u}\right) \; du = \answer{16 - 5\ln(3)}}$
+\item[11c)] \; $\displaystyle{\int_1^4 \frac{r + 1}{\sqrt r} \; dr = \answer{20/3}}$
+\item[11d)] \; $\displaystyle{\int_0^\pi \left[3\cos(\theta) - 4\sin(\theta)\right] \; d\theta = \answer{-8}}$
+\item[11e)] \; $\displaystyle{\int_0^1 2^x \; dx = \answer{1/\ln(2)}}$
+\end{itemize}
+\end{problem}
+
+
+
+\section{Definite Integrals and Substitution}
+We now compute definite integrals that require a u-substitution. The key is to change the limits of integration when we change the variable.
+Suppose that
+\[
+\int f(x) \; dx = F(x) + C.
+\]
+Now, consider the definite integral
+\[
+\int_a^b f(g(x)) g'(x) \; dx.
+\]
+We will make the substitution, $u = g(x)$, so that $du = g'(x) \; dx$.
+When we convert to the integral in terms of the variable $u$, we will change the limits of integration from $x = a$ and $x = b$ 
+to $u = g(a)$ and $u = g(b)$ respectively. This will give us
+\[\int_a^b f(g(x)) g'(x) \; dx = \int_{g(a)}^{g(b)} f(u) \; du = F(u)\bigg|_{g(a)}^{g(b)} = F(g(b)) - F(g(a)).\]
+In this way, we do not need to go basck to the variable $x$, as we did with a substitution in an indefinite integral.
+
+\begin{example}[example12]
+Compute the definite integral 
+\[
+\int_0^1 x(x^2 + 2)^3 \; dx.
+\]
+We let $u = x^2 + 2$ so that $du = 2x \; dx$. Now we change the limits of integration: 
+\[
+\text{when} \quad x = 0 \quad \text{we have} \quad u = 0^2 + 2 = 2  \quad \text{and}
+\]
+\[ 
+\text{when} \quad x = 1 \quad \text{we have} \quad u = 1^2 + 2 = 3.
+\]
+Thus
+\[
+\int_1^2 x(x^2 + 2)^3 \; dx = \frac12 \int_2^3 u^3 \; du = \frac{u^4}{8}\bigg|_2^3 = \frac{3^4}{8} - \frac{2^4}{8} = \frac{65}{8}.
+\]
+\end{example}
+
+\begin{problem}(problem 12) Compute the definite integrals:
+\begin{itemize}
+\item[12a)] \; $\displaystyle{\int_{-1}^1 x^2(x^3 + 1)^4 \; dx = \answer{32/15}}$
+\item[12b)] \; $\displaystyle{\int_0^1 \frac{x}{x^2 + 1}\; dx = \answer{\ln(2)/2}}$
+\item[12c)] \; $\displaystyle{\int_0^{\pi/2} e^{\sin(x)} \cos(x) \; dx = \answer{e-1}}$
+\end{itemize}
+\end{problem}
+
 
 \end{document}
+
+
+
+
+
+
+
+
+
+\begin{problem}(problem 9b)
+Use geometry to find the value of the definite integral $\displaystyle{\int_{-4}^{4}-\sqrt{16-x^2} \ dx}.$
+\begin{hint}
+$-\sqrt{16-x^2} \leq 0$ on the interval $[-4,4]$.
+\end{hint}
+\begin{hint}
+The definite integral gives $(-1) \cdot$ area above the semi-circle
+\end{hint}
+\[\int_{-4}^{4}-\sqrt{16-x^2} \ dx = \answer{-8\pi}.\]
+\end{problem}
+
+
+
 
 \begin{image}
 \begin{tikzpicture}[scale=.75]
