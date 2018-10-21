@@ -61,7 +61,7 @@ An area function gives us the \textbf{net area} between the curve $y = f(t)$ and
 \end{tikzpicture}
 \end{image}
 
-\begin{problem}
+\begin{problem}(problem 1a)
 Use the graph of $y = f(t)$ to find the values of the area function
 \[A(x)= \int_0^x f(t) \ dt.\]
 %xscale=8, yscale =5,
@@ -95,7 +95,7 @@ Use the graph of $y = f(t)$ to find the values of the area function
 
 \end{problem}
 
-\begin{problem}
+\begin{problem}(problem 1b)
 Use the graph of $y = f(t)$ to find the values of the area function
 \[A(x)= \int_{-2}^x f(t) \ dt.\]
 
@@ -148,7 +148,8 @@ This conclusion establishes the theory of the existence of anti-derivatives, i.e
 
 
 
-\begin{example} Let $f(t) = \sin(t^2)$.  This function is continuous for all $x$.  Consider the function
+\begin{example}[example 2]
+ Let $f(t) = \sin(t^2)$.  This function is continuous for all $x$.  Consider the function
 \[A(x) = \int_a^x \sin(t^2) \ dt.\]
 By the FTC part II
 we can say that for any number $a$ and any value of $x$, 
@@ -160,7 +161,7 @@ since such a simple function can be differentiated easily (using the chain rule)
 \end{example}
 
 
-\begin{example}
+\begin{example}[example 3]
 Find the derivative of the function
 \[A(x) = \int_0^x \cos(t) \ dt.\]
 
@@ -177,16 +178,16 @@ and
 \end{example}
 
 
-\begin{problem}
+\begin{problem}(problem 3a)
 \[\frac{d}{dx} \int_0^x \sec^3(t) \ dt = \answer{\sec^3(x)}.\]
 \end{problem}
 
-\begin{problem}
+\begin{problem}(problem 3b)
 \[\frac{d}{dx} \int_1^x \ln^2(t) \ dt = \answer{\ln^2(x)}.\]
 \end{problem}
 
 
-\begin{example}
+\begin{example}[example 4]
 Find the derivative of the function 
 \[A(x) = \int_1^x e^{2t}\sqrt{1+t^3} \ dt.\]
 
@@ -195,7 +196,7 @@ By the FTC part II,
  \[A'(x) = \frac{d}{dx}\int_1^x e^{2t}\sqrt{1+t^3} \ dt = e^{2x}\sqrt{1+x^3}.\]
 \end{example} 
 
-\begin{example}
+\begin{example}[example 5]
 Find the derivative of the function 
 \[A(x) = \int_x^0 f(t) \ dt.\]
 First, we rewrite the integral as
@@ -204,12 +205,12 @@ Then, by the FTC part II,
 \[\frac{d}{dx}\int_x^0 f(t) \ dt = -\frac{d}{dx}\int_0^x f(t) \ dt =-f(x).\] 
 \end{example}
 
-\begin{problem}
+\begin{problem}(problem 5)
 \[\frac{d}{dx} \int_x^0 e^t\cos(t) \ dt = \answer{-e^x\cos(x)}.\]
 \end{problem}
 
   
-\begin{example}
+\begin{example}[example 6]
 Find the following derivative:
 \[\frac{d}{dx} \int_0^{x^2} e^{2t}\sqrt{1+t^3} \ dt.\]
 To solve this problem, we will need to use the chain rule. Let 
@@ -226,7 +227,8 @@ Now multiplying by $2x$ gives the final answer:
 2xe^{2x^2}\sqrt{1+x^6}.\]
 \end{example}
 
-\begin{example} Find the following derivative:
+\begin{example}[example 7]
+Find the following derivative:
 \[\frac{d}{dx} \int_{2x}^0 \tan(3t) \ln(t^2) \ dt.\]
 To solve this problem, we will need to use the chain rule. Let 
 \[A(x) = \int_0^x \tan(3t) \ln(t^2) \ dt.\]
@@ -242,11 +244,11 @@ Now multiplying by $-2$ gives the final answer:
 \[\frac{d}{dx} \int_{2x}^0 \tan(3t) \ln(t^2) \ dt  = -2\tan(6x)\ln(4x^2).\]
 \end{example}
 
-\begin{problem}
+\begin{problem}(problem 7a)
 \[\frac{d}{dx} \int_0^{x^3} t^4\cos(t) \ dt = \answer{3x^{14}\cos(x^3)}.\]
 \end{problem}
 
-\begin{problem}
+\begin{problem}(problem 7b)
 \[\frac{d}{dx} \int_{3x}^0 t^2\sin(t) \ dt = \answer{-27x^2\sin(3x)}.\]
 \end{problem}
 
@@ -260,7 +262,33 @@ Now multiplying by $-2$ gives the final answer:
 \end{center}
 
 
+
+
+
+
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \begin{image}

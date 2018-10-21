@@ -51,7 +51,7 @@ If $f(x)$ is continuous on the interval $[a,b]$ and $c$ is a number between $a$ 
 
 We apply this proposition in the following examples.
 
-\begin{example}
+\begin{example}[example 1]
 Use the figure below to determine the value of the definite integral $\displaystyle{\int_a^b f(x) \ dx}$.
 \\
 %title={The Area Above $f(x)=-\sin(x)$ on $[0,\pi]$}]
@@ -110,7 +110,7 @@ Now, by the additivity of the definite integral,
 \end{example}
 
 
-\begin{problem}
+\begin{problem}(problem 1a)
 Use the figure below to determine the definite integrals.
 \begin{image}
 \begin{tikzpicture}
@@ -139,7 +139,7 @@ Use the figure below to determine the definite integrals.
 \end{problem}
 
 
-\begin{problem}
+\begin{problem}(problem 1b)
 Use the figure below to determine the definite integrals.
 \begin{image}
 \begin{tikzpicture}
@@ -176,7 +176,8 @@ xticklabels={$a$, $c$, $d$, $b$}]
 \end{problem}
 
 
-\begin{example} Use geometry and additivity of the definite integral to compute  
+\begin{example}[example 2]
+Use geometry and additivity of the definite integral to compute  
 $\displaystyle{\int_0^5  (3-x)  \ dx}$.
 The graph of $y = 3-x$ is a line with slope $-1$ passing through the points $(0,3)$ and $(5,-2)$. To compute the integral,
 we need to determine where $3-x$ is positive and where it is negative. We accomplish this by first finding the $x$-intercept(s)
@@ -204,23 +205,11 @@ Thus
 \addplot[name path = C, domain=3:5, samples=100, color=black]{0};
 \addplot[blue!10] fill between[of=A and B];
 \addplot[red!10] fill between[of=C and D];
-%\addplot[<->] coordinates {(0.3,-1) (0.3, 1)};
-%\addplot [domain= .1:.2, samples=10, color=black]{-x + .2};
-%\addplot [domain= .2:.24, samples=10, color=black]{.04-(x- .2)};
-%\addplot [domain= .3:.39, samples=10, color=black]{.09-(x- .3)};
-%\addplot [domain= .4:.56, samples=10, color=black]{.16-(x- .4)};
-%\addplot [domain= .5:.75, samples=10, color=black]{.25-(x- .5)};
-%\addplot [domain= .6:.96, samples=10, color=black]{.36-(x- .6)};
+
 \node at (axis cs: 1,.7){Area = 9/2};
 \node at (axis cs: 4.4,-.7){Area = 2};
 \node at (axis cs: 1.75,2){$y=3-x$};
-%\addplot [domain= .7:1, samples=10, color=black]{.49-(x- .7)};
-%\addplot [domain= .8:1, samples=10, color=black]{.64-(x- .8)};
-%\addplot [domain= .9:1, samples=10, color=black]{.81-(x- .9)};
 
-%\addplot [domain= .2:.4, samples=10, color=black]{-x + .05};
-%
-%\addplot[thin, samples = 100, color=black] coordinates {(0,0) (0,1)};
 
 \end{axis}
 %\legend{$y = f(x)$, , secant line, tangent line, };
@@ -229,7 +218,8 @@ Thus
 
 \end{example}
 
-\begin{problem}
+
+\begin{problem}(problem 2)
 Use geometry and additivity of the definite integral to compute the definite integral.  
 \[\int_0^3  (x-2)  \ dx= \answer{-3/2}.\]
 \begin{hint}
@@ -334,17 +324,17 @@ becomes trivial. For even functions the advantage of this result less significan
 $0$ instead of the negative number $-a$, thereby simplifying any arithmetic associated with the 
 Fundamental Theorem of Calculus.
 
-\begin{example}
+\begin{example}[example 3]
 Since $x^2$ is an even function, 
 \[\int_{-3}^3 x^2 \ dx = 2\int_0^3 x^2 \ dx = \tfrac{2}{3}x^3\Bigg|_0^3 = 18.\]
 \end{example}
 
-\begin{example}
+\begin{example}[example 4]
 Since $\cos(x)$ is an even function, 
 \[\int_{-\pi/2}^{\pi/2} \cos(x) \ dx = 2\int_0^{\pi/2} \cos(x) \ dx = 2\sin(x)\Bigg|_0^{\pi/2} = 2.\]
 \end{example}
 
-\begin{problem}
+\begin{problem}(problem 4)
 Use the fact that the integrand is even to compute the definite integral.
 \[\int_{-1}^1 \left(x^4 + 5x^2 + 3 \right) \ dx =\answer {146/15}.\]
 \end{problem}
@@ -355,28 +345,28 @@ Note that in the last two examples, plugging in the value zero gave zero.  This 
 An even function always has an odd anti-derivative and odd functions must pass thru the origin.\\
 Now we look at some examples of odd functions.
 
-\begin{example}
+\begin{example}[example 5]
 The following definite integrals are all equal to zero, since in each case, the integrand is an odd function and the 
 interval of integration has the form $[-a, a]$:
 
 \[\int_{-2}^2 \left(2x^5 - 4x^3 + 6x \right)\ dx, \int_{-1}^1 \left(\sqrt[3] x + \sqrt[5]x\right) \ dx  \; \text{and} \; \int_{-\pi}^\pi \Big[\sin(x) + \sin^3(x)\Big] \ dx.\]
 \end{example}
 
-\begin{problem}
+\begin{problem}(problem 5a)
 \[\int_{-5}^5 \left(x^5 - 8x^3 +2x \right) \ dx =\answer {0}.\]
 \begin{hint}
 The integrand is odd
 \end{hint}
 \end{problem}
 
-\begin{problem}
+\begin{problem}(problem 5b)
 \[\int_{-1}^1 \Big[x\cos(x) - x^2\sin(x) \Big] \ dx =\answer {0}.\]
 \begin{hint}
 An odd function times an even function is an odd function
 \end{hint}
 \end{problem}
 
-\begin{problem}
+\begin{problem}(problem 5c)
 \[\int_{-\pi}^\pi \Big[\sin^3(x) + \sin(x^3)\Big] \ dx =\answer {0}.\]
 \begin{hint}
 The composition of two odd functions is odd
@@ -386,20 +376,20 @@ The composition of two odd functions is odd
 
 In the next example, we combine an even function and an odd function.
 
-\begin{example}
+\begin{example}[example 6]
 The function $x^4$ is even and the function $x^5$ is odd.  Therefore,
 \[\int_{-2}^2 (x^4 + x^5) \ dx = \int_{-2}^2 x^4 \ dx + \int_{-2}^2 x^5 \ dx = 2\int_0^2 x^4 \ dx + 0 = \tfrac{2}{5}x^5\Bigg|_0^2 = \frac{64}{5}.\]
 \end{example}
 %Furthermore,the sum, product and composition of even functions is even. 
 
-\begin{problem}
+\begin{problem}(problem 6a)
 \[\int_{-3}^3 \Big[x^2 - \sqrt[3]x +2\sin(x) \Big] \ dx =\answer {18}.\]
 \begin{hint}
 $x^2$ is even and $\sqrt[3]x$ and $2\sin(x)$ are odd
 \end{hint}
 \end{problem}
 
-\begin{problem}
+\begin{problem}(problem 6b)
 \[\int_{-1}^{1} x^4\Big[1 + \sin(x)\Big] \ dx =\answer {2/5}.\]
 \begin{hint}
 $x^4$ is even and $x^4\sin(x)$ is odd

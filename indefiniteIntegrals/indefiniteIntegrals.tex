@@ -23,7 +23,7 @@ In a typical \textbf{anti-differentiation} problem, we are given the derivative 
 and we are asked to compute the original function $f(x)$.  Anti-differentiation is thus the reverse process of differentiation.
 There is a small twist, however as we will see in our first example.
 
-\begin{example}
+\begin{example}[example 1]
 Given that $f'(x) = 2x$, find $f(x)$. \\
 By now, we are all familiar with the differentiation formula:
 \[
@@ -50,7 +50,9 @@ The graph below shows several members of this family.
 \end{example}
 
 Anti-differentiation problems arise naturally in projectile motion scenarios.
-\begin{example}
+
+
+\begin{example}[example 2]
 Suppose the velocity of a projectile is given by the equation $v(t) = 40 - 32t$. Find the position function $s(t)$.\\
 We recall from previous discussions of rectilinear motion, of which projectile motion is a special case, that
 \[
@@ -89,7 +91,7 @@ If we were also given the initial position of the object (or the position at any
 then we can find the precise position function.
 We do this in the next example.
 
-\begin{example}
+\begin{example}[example 3]
 Suppose the velocity of a projectile (in ft/sec) is given by the equation $v(t) = 40 - 32t$. 
 Find the height of the projectile at time $t = 1.5$ seconds, 
 given that the projectile lands at time $t = 3$ seconds. \\
@@ -117,7 +119,7 @@ s(1.5) = 24 + 40(1.5) - 16(1.5^2) = 24 + 60 - 16(2.25) = 84 - 36 = 48 \; \text{f
 \end{example}
 
 
-\begin{problem}
+\begin{problem}(problem 3a)
 Given $f'(x)$, find the family of anti-derivatives. Don't forget to add $+C$ to your answers.
 \[
 f'(x) = 3x + 5; \;\; f(x) = \answer{3/2x^2 + 5x +C}.
@@ -133,7 +135,7 @@ f'(x) = e^{4x}; \;\; f(x) = \answer{1/4e^{4x} +C}.
 
 
 
-\begin{problem}
+\begin{problem}(problem 3b)
 Find the precise anti-derivatives satisfying the given initial condition:
 \[
 f'(x) = x^3 + x, f(0) = 1;\;\; f(x) = \answer{1/4x^4 + 1/2x^2 + 1}.
@@ -149,7 +151,7 @@ f'(x) = 1/x, f(1) = 7/4; \;\; f(x) = \answer{7/4 + \ln(x)}.
 
 
 
-\begin{problem}
+\begin{problem}(problem 3c)
 Find the height of the projectile at time $t = 2$ seconds if the total time in the air is 5 seconds 
 and the velocity at time $t$ seconds is given in ft/sec as $v(t) = 80-32t$.\\
 The initial height of the projectile is $s_0 = \answer{0}$ft.\\
@@ -183,7 +185,7 @@ derivative of a familiar function or by reversing the Power Rule for Derivatives
 
 
 
-\begin{example} %example 1
+\begin{example}[example 4]
 \[
 \int \cos(x) \ dx = \sin(x) + C,
 \]
@@ -191,7 +193,7 @@ because the derivative of $\sin(x)$ is $\cos(x)$.
 
 \end{example}
 
-\begin{problem} %problem 1
+\begin{problem}(problem 4a)
 
 \begin{hint}
 \[
@@ -210,7 +212,7 @@ Do not add the +C to your answer
 \]
 \end{problem}
 
-\begin{problem} %problem 1
+\begin{problem}(problem 4b)
 
 \begin{hint}
 \[
@@ -232,7 +234,7 @@ Do not add the +C to your answer
 \]
 \end{problem}
 
-\begin{example} %example 2
+\begin{example}[example 5]
 \[
 \int \sec^2(x) \ dx = \tan(x) + C,
 \]
@@ -240,7 +242,7 @@ because the derivative of $\tan(x)$ is $\sec^2(x)$.
 
 \end{example}
 
-\begin{problem} %problem 2
+\begin{problem}(problem 5a)
 Compute 
 %\[
 %\int \csc^2(x) \ dx.
@@ -263,7 +265,7 @@ Do not add the +C to your answer
 \]
 \end{problem}
 
-\begin{problem} %problem 2
+\begin{problem}(problem 5b)
 Compute 
 %\[
 %\int \sec^2(4x) \ dx.
@@ -289,7 +291,7 @@ Do not add the +C to your answer
 \]
 \end{problem}
 
-\begin{example} %example 3
+\begin{example}[example 6]
 \[
 \int \sec(x)\tan(x) \ dx = \sec(x) + C,
 \]
@@ -298,7 +300,7 @@ because the derivative of $\sec(x)$ is $\sec(x)\tan(x)$.
 \end{example}
 
 
-\begin{problem} %problem 3
+\begin{problem}(problem 6)
 Compute 
 %\[
 %\int \csc(x)\cot(x) \ dx.
@@ -323,7 +325,7 @@ Do not add the +C to your answer
 
 
 
-\begin{example} %example 4
+\begin{example}[example 7]
 \[
 \int e^x \ dx = e^x + C,
 \]
@@ -340,7 +342,7 @@ and hence the derivative of $\frac12 e^{2x}$ is $e^{2x}$, by the constant multip
 
 \end{example}
 
-\begin{problem} %problem 4
+\begin{problem}(problem 7a)
 Compute 
 %\[
 %\int 2^x \ln(2) \ dx.
@@ -363,7 +365,7 @@ Do not add the +C to your answer
 \]
 \end{problem}
 
-\begin{problem} %problem 2
+\begin{problem}(problem 7b)
 Compute 
 %\[
 %\int e^{5x} \ dx.
@@ -389,7 +391,7 @@ Do not add the +C to your answer
 \]
 \end{problem}
 
-\begin{problem} %problem 2
+\begin{problem}(problem 7c)
 Compute 
 %\[
 %\int e^{-x/2} \ dx.
@@ -415,7 +417,7 @@ Do not add the +C to your answer
 \]
 \end{problem}
 
-\begin{example} %example 5
+\begin{example}[example 8]
 \[
 \int 2x \ dx = x^2 + C,
 \]
@@ -424,7 +426,7 @@ because the derivative of $x^2$ is $2x$.
 \end{example}
 
 
-\begin{problem} %problem 5
+\begin{problem}(problem 8)
 Compute 
 %\[
 %\int 3x^2 \ dx.
@@ -448,7 +450,7 @@ Do not add the +C to your answer
 \end{problem}
 
 
-\begin{example} %example 6
+\begin{example}[example 9]
 \[
 \int \frac{1}{2\sqrt x} \ dx = \sqrt x + C,
 \]
@@ -458,7 +460,7 @@ because the derivative of $\sqrt x$ is $\frac{1}{2\sqrt x}$.
 
 
 
-\begin{problem} %problem 6
+\begin{problem}(problem 9)
 Compute 
 %\[
 %\int \frac{1}{2\sqrt w} \ dw.
@@ -489,7 +491,7 @@ Do not add the +C to your answer
 
 
 
-\begin{example} %example 7
+\begin{example}[example 10]
 \[
 \int \frac{1}{1 + x^2} \ dx = \tan^{-1}(x) + C,
 \]
@@ -522,10 +524,10 @@ Do not add the +C to your answer
 \int \frac{1}{1+u^2} \ du =
 \answer[given]{\tan^{-1}(u)} \ + C
 \]
-\end{problem}
+\end{problem}(problem 10)
 
 
-\begin{example} %example 8
+\begin{example}[example 11]
 \[
 \int \frac{1}{\sqrt{1 - x^2}} \ dx = \sin^{-1}(x) + C,
 \]
@@ -534,7 +536,7 @@ is $\frac{1}{\sqrt{1 - x^2}}$.
 
 \end{example}
 
-\begin{problem} %problem 8
+\begin{problem}(problem 11)
 Compute 
 %\[
 %\int \frac{1}{\sqrt{1 - t^2}} \ dt.
@@ -578,14 +580,14 @@ where $n$ is any number except $-1$.
 
 
 
-\begin{example} %example 1
+\begin{example}[example 12]
 Compute $$\int x^3 \ dx.$$
 We use the Power Rule with $n= 3$ and we get
 \[\int x^3 \ dx = \frac{x^4}{4} + C.\]  The answer can be confirmed by observing that the 
 derivative of $\frac{x^4}{4} +C$ is $x^3$ (using the Constant Multiple Rule and the Power Rule for Derivatives).
 \end{example}
 
-\begin{problem} %problem 1a
+\begin{problem}(problem 12a)
 Compute 
 %\[
 %\int x^4 \ dx.
@@ -610,7 +612,7 @@ Do not add the +C to your answer
 \end{problem}
 
 
-\begin{problem} %problem 1b
+\begin{problem}(problem 12b)
 Compute 
 %\[
 %\int x^6 \ dx.
@@ -635,14 +637,14 @@ Do not add the +C to your answer
 \end{problem}
 
 
-\begin{example} %example 2
+\begin{example}[example 13]
 Compute $$\int 1 \ dx.$$
 We use the Power Rule with $n= 0$  ($x^0 = 1$) and we get
 \[\int 1 \ dx = \int x^0 \ dx =\frac{x^1}{1} + C = x+C.\] The answer can be confirmed by observing that the 
 derivative of $x + C$ is $1$ 
 \end{example}
 
-\begin{problem} %problem 2a
+\begin{problem}(problem 13a)
 Compute 
 %\[
 %\int 1 \ dt.
@@ -671,7 +673,7 @@ Do not add the +C to your answer
 \end{problem}
 
 
-\begin{problem} %problem 2b
+\begin{problem}(problem 13b)
 Compute 
 \[
 \int 1 \ du.
@@ -700,7 +702,7 @@ Do not add the +C to your answer
 \end{problem}
 
 
-\begin{example} %example 3
+\begin{example}[example 14]
 Compute $$\int x \ dx.$$
 We use the Power Rule with $n= 1$ and we get
 \[\int x \ dx = \frac{x^2}{2} + C.\] The answer can be confirmed by observing that the 
@@ -708,7 +710,7 @@ derivative of $\frac{x^2}{2} +C$ is $x$ (using the constant multiple rule and th
 \end{example}
 
 
-\begin{problem} %problem 3a
+\begin{problem}(problem 14a)
 Compute 
 %\[
 %\int t \ dt.
@@ -737,7 +739,7 @@ Do not add the +C to your answer
 
 
 
-\begin{problem} %problem 3b
+\begin{problem}(problem 14b)
 Compute 
 %\[
 %\int u \ du.
@@ -765,7 +767,7 @@ Do not add the +C to your answer
 \end{problem}
 
 
-\begin{example} %example 4
+\begin{example}[example 15]
 Compute $$\int \sqrt x \ dx.$$
 We rewrite $\sqrt x$ as $x^{1/2}$ and we use the Power Rule with $n= 1/2$ and we get
 \begin{align*}
@@ -777,7 +779,7 @@ We rewrite $\sqrt x$ as $x^{1/2}$ and we use the Power Rule with $n= 1/2$ and we
 \end{align*}
 \end{example}
 
-\begin{problem} %problem 4a
+\begin{problem}(problem 15a)
 Compute 
 %\[
 %\int \sqrt[3]x \ dx.
@@ -805,7 +807,7 @@ Do not add the +C to your answer
 \end{problem}
 
 
-\begin{problem} %problem 4b
+\begin{problem}(problem 15b)
 Compute 
 %\[
 %\int \sqrt[4]x \ dx.
@@ -834,7 +836,7 @@ Do not add the +C to your answer
 
 
 
-\begin{example} %example 5
+\begin{example}[example 16]
 Compute $$\int \frac{1}{x^3} \ dx.$$
 We rewrite $\frac{1}{x^3}$ as $x^{-3}$ and use the Power Rule with $n= -3$.
 We get
@@ -847,7 +849,7 @@ We get
 \end{align*}
 \end{example}
 
-\begin{problem} %problem 5a
+\begin{problem}(problem 16a)
 Compute 
 %\[
 %\int \frac{1}{x^4} \ dx.
@@ -875,7 +877,7 @@ Do not add the +C to your answer
 \end{problem}
 
 
-\begin{problem} %problem 5b
+\begin{problem}(problem 16b)
 Compute 
 %\[
 %\int \frac{1}{x^7} \ dx.
@@ -904,7 +906,7 @@ Do not add the +C to your answer
 
 
 
-\begin{example} %example 6
+\begin{example}[example 17]
 Compute $$\int \frac{1}{\sqrt x} \ dx.$$
 We rewrite $\frac{1}{\sqrt x}$ as $x^{-1/2}$ and use the Power Rule 
 with $n= -1/2$.
@@ -919,7 +921,7 @@ We get
 \end{example}
 
 
-\begin{problem} %problem 6a
+\begin{problem}(problem 17a)
 Compute 
 %\[
 %\int \frac{1}{\sqrt[3]x} \ dx.
@@ -948,7 +950,7 @@ Do not add the +C to your answer
 
 
 
-\begin{problem} %problem 6b
+\begin{problem}(problem 17b)
 Compute 
 %\[
 %\int \frac{1}{\sqrt[6]x} \ dx.
@@ -983,11 +985,12 @@ Do not add the +C to your answer
 
 The Power Rule does not work when $n = -1$ so we consider this as a special case:
 
+\begin{example}[example 18]
 \[\int x^{-1} \ dx = \int \frac{1}{x}  \ dx = \ln |x| +C.\]
 We can verify this by noting that the derivative of $\ln|x| + C$ is $\displaystyle{\frac{1}{x}}$.
+\end{example}
 
-
-\begin{problem} %problem 7a
+\begin{problem}(problem 18a)
 Compute 
 %\[
 %\int \frac{1}{t} \ dt.
@@ -1014,7 +1017,7 @@ Do not add the +C to your answer
 \]
 \end{problem}
 
-\begin{problem} %problem 7a
+\begin{problem}(problem 18b)
 Compute 
 %\[
 %\int \frac{1}{u} \ du.
