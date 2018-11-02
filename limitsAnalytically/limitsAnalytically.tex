@@ -43,25 +43,14 @@ Compute limits using algebraic techniques.
 %\geogebra{mG34YseZ}{640}{480}
 %\geogebra{PMcY6Q8j}{640}{480}
 
-%\begin{sageCell}
-%plot(1/x, -3, 40)
-%\end{sageCell}
 
-%\begin{sageCell}
-%a=2
-%b=5
-%f=1/x
-%plot(f,(x,a,b))
-%\end{sageCell}
-
-
-We have seen examples of limit problems where plugging in the terminal $x$ value both led to 
+We have seen examples of limit problems where plugging in the terminal $x$-value both led to 
 reasonable answers and meaningless forms.
-In this section we will work with examples in which plugging in the terminal $x$ value initially 
+In this section we will work with examples in which plugging in the terminal $x$-value initially 
 yields a meaningless expression,
 but after performing algebraic manipulations on the function in the problem, 
 plugging in the terminal value
-yields a solution to the problem.
+yields a credible solution.
 
 
 
@@ -72,8 +61,8 @@ Compute the limit: \[\lim_{x \to 4} \frac{x^2 - 16}{x^2 - 4x}.\]
 
 
 Plugging in the terminal value, $x=4$, yields 
-the indeterminate form $0/0$.  To find this limit analytically, we will factor the numerator 
-and denominator and simplify the fraction. In the numerator we have a \textbf{difference of squares} and 
+the indeterminate form $\frac00$.  To find this limit analytically, we will factor the numerator 
+and denominator and simplify the fraction. In the numerator we have a \textbf{difference of squares}, and 
 such a form always factors in the following way:
 \[a^2 - b^2 = (a+b)(a-b).\]
 Applying this general formula to our example, we get 
@@ -81,7 +70,7 @@ Applying this general formula to our example, we get
 Next, in the denominator, we can factor out a common factor
 of $x$ from each of the terms:
 \[x^2 - 4x = x(x-4).\]
-With these factorizations we can simplify the fraction and find the limit:
+With these factorizations, we can simplify the fraction and find the limit:
 
 \begin{align*}
 \lim_{x \to 4} \frac{x^2 - 16}{x^2 - 4x} &= \lim_{x \to 4} \frac{(x+4)(x-4)}{x(x-4)} \enspace & \text{(factoring)} \\
@@ -92,7 +81,7 @@ With these factorizations we can simplify the fraction and find the limit:
 																				
 Hence,
 \[\lim_{x \to 4} \frac{x^2 - 16}{x^2 - 4x} = 2.\]
-This example used the \textbf{factor and cancel} method.
+This example uses the \textbf{factor and cancel} method.
 \end{example}
 
 \begin{problem}(problem 1)
@@ -121,7 +110,7 @@ The numerator factors  by finding two numbers which multiply to give $-10$ and a
 The two numbers are 
 $-2$ and $+5$, hence the factorization is  
 \[x^2 + 3x - 10 = (x-2)(x+5).\]
-In the denominator, we have a \textbf{difference of cubes} and we use the formula:
+In the denominator, we have a \textbf{difference of cubes}, and we use the formula:
 \[a^3 - b^3 = (a-b)(a^2+ab +b^2).\]
 Applying this to our example gives 
 \[x^3 - 8 = (x-2)(x^2 + 2x + 4).\]
@@ -195,7 +184,7 @@ Compute the limit: \[\lim_{x \to 4} \frac{4x^2 - 19x + 12}{6x^2 -19x -20}.\]
 Plugging in the terminal value $x = 4$ yields the indeterminate form $\frac00$.
 To factor the numerator and denominator in this case, we will use the important fact that
 for a polynomial $p(x)$ and a number $a$, 
-\[\text{If} \quad p(a) = 0 \quad \text{then} \quad  x-a \quad \text{is a factor of} \; p(x).\]
+\[\text{If} \quad p(a) = 0, \quad \text{then} \quad  x-a \quad \text{is a factor of} \; p(x).\]
 And once we know one factor of a polynomial, it is usually much easier to find the other.
 Since plugging in $x=4$ gave $0$ in both the numerator and the denominator, both polynomials 
 have $x-4$ as a factor.
@@ -231,7 +220,7 @@ Hence,
       Factor the numerator and the denominator
     \end{hint}
     \begin{hint}
-      If $p(a) = 0$ then $(x-a)$ is a factor
+      If $p(a) = 0$, then $(x-a)$ is a factor
     \end{hint}
     \begin{hint}
       $x-2$ is a factor of both the numerator and the denominator
@@ -256,7 +245,7 @@ Hence,
       Factor the numerator and the denominator
     \end{hint}
     \begin{hint}
-      If $p(a) = 0$ then $(x-a)$ is a factor
+      If $p(a) = 0$, then $(x-a)$ is a factor
     \end{hint}
     \begin{hint}
       $x+2$ is a factor of both the numerator and the denominator
@@ -393,9 +382,9 @@ Compute the limit: $\displaystyle{\lim_{x \to -3} \frac{x^2 - 9}{4 - \sqrt{13 -x
 \\
 If we plug in $x = -3$, the numerator and denominator are both 0. The conjugate of the radical expression in the denominator is
 \[ 4 + \sqrt{13 -x}.\]
-To simplify our calculations a little bit, lets multiply the conjugates together separately:
+To simplify our calculations a little bit, let's multiply the conjugates together separately:
 \[(4 - \sqrt{13 -x})(4 + \sqrt{13 -x}) = 16 - (13-x) = 3+x = x+3.\]
-Now back to our problem:
+With this in mind, we have:
 
 \begin{align*}
 \lim_{x \to -3} \frac{x^2 - 9}{4 - \sqrt{13 -x}} &= 
@@ -477,7 +466,7 @@ We now consider examples involving fractions within fractions, called \textbf{co
 \begin{example}[example 7]
 Compute the limit: $\displaystyle{\lim_{x \to 4} \frac{\frac{1}{x} - \frac{1}{4}}{x-4}}.$ \\
 \\
-Plugging in $x=4$ yields the familiar $0/0$ indeterminate form. The algebra skills necessary to transform the 
+Plugging in $x=4$ yields the familiar $\frac00$ indeterminate form. The algebra skills necessary to transform the 
 function in the problem to one which allows plugging in $x=4$ involve subtraction and division of fractions. 
 The rules are summarized as:
 \[\frac{a}{b} - \frac{c}{d} = \frac{ad-bc}{bd} \quad \text{and} \quad \frac{\frac{a}{b}}{\frac{c}{d}} = \frac{ad}{bc}.\]
@@ -492,7 +481,7 @@ Applying these to our problem, we get
 
 It is important to note that $a-b$ and $b-a$ are opposites which cancel, leaving $-1$: 
 \[ \frac{a-b}{b-a} = -1. \]
-The the ratio of opposites is $-1$.
+The ratio of opposites is $-1$.
 \end{example}
 
 
@@ -623,7 +612,7 @@ quantity in the absolute value bars is positive or negative.
 
 \begin{example}[example 9]
 Compute the limit: $\displaystyle{\lim_{x \to 3^{-}} \frac{|x-3|}{x-3}}$.\\
-Plugging in $x = 3$ gives the indeterminate form $0/0$. To resolve this limit, 
+Plugging in $x = 3$ gives the indeterminate form $\frac00$. To resolve this limit, 
 we will do a sign analysis on the quantity in the absolute value bars, $x-3$.
 
 Since $x \to 3^-$, we have $x<3$ and hence $x-3 <0$. Since the quantity in the absolute value bars is negative, 
@@ -1207,7 +1196,7 @@ Fill in the truth table below using your amazing logic skillz!
 
 The idea used in this problem is to multiply by the \bf conjugate radical}. 
 Expressions of the form $a+b$ and $a-b$ are called conjugate radical expressions if 
-either of the terms $a$ or $b$ (or both) contains a square root. In our problem the expression 
+either of the terms $a$ or $b$ (or both) contains a square root. In our problem, the expression 
 $x- \sqrt x$ in the numerator contains a square root symbol and hence it has a conjugate radical expression, namely $x + \sqrt x$.
 The significance of conjugate radicals is revealed when they are multiplied together. 
 Applying the difference of two squares formula 

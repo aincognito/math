@@ -26,26 +26,26 @@ f(x) = \sum_{n=0}^\infty c_n (x-a)^n = c_0 + c_1(x-a) + c_2(x-a)^2 + \cdots,
 \]
 where the series converges in an interval of the form $(a-r, a+r)$ for some $r >0$. This is an interval centered at $x = a$ of radius $r$.
 The key to creating the Taylor Series is to find the coefficients, $c_n$.
-To find $c_0$, simply plug $x = a$ into both sides of the equation above. We get:
+To find $c_0$, let $x = a$ in the equation above. We get:
 \[
 f(a) = \sum_{n=0}^\infty c_n (a-a)^n = c_0 + c_1(a-a) + c_2(a-a)^2 + \cdots = c_0.
 \]
-Next, to find $c_1$, we differentiate both sides of the equation above, and then plug in $x = a$.
+Next, to find $c_1$, we differentiate both sides of the equation above, and then let $x = a$.
 Differentiating gives
 \[
 f'(x) = c_1 + 2c_2(x-a) + 3c_3(x-a)^2 + \cdots,
 \]
-and plugging in $x = a$, this simplifies to 
+and substituting in $x = a$, this simplifies to 
 \[
 f'(a) = c_1 + 2c_2(a-a) + 3c_3(a-a)^2 + \cdots = c_1.
 \]
 
-Next, to find $c_2$, we differentiate both sides of the equation above, and then plug in $x = a$.
+Next, to find $c_2$, we differentiate both sides of the equation above, and then let $x = a$.
 Differentiating gives
 \[
 f''(x) = 2c_2 + 3\cdot 2 c_3(x-a) + 4\cdot 3 c_4(x-a)^2 + \cdots,
 \]
-and plugging in $x = a$, this simplifies to 
+and substituting in $x = a$, this simplifies to 
 \[
 f''(a) = 2c_2 + 3\cdot 2 c_3(a-a) + 4\cdot 3 c_4(a-a)^2 + \cdots = 2c_2,
 \]
@@ -55,7 +55,7 @@ Continuing in this fashion, we can find $c_3$:
 \[
 f'''(x) = 3 \cdot 2 \cdot 1 c_3 + 4\cdot 3 \cdot 2 c_4 (x-a) + 5 \cdot 4 \cdot 3 c_5 (x-a)^2 + \cdots,
 \]
-and plugging in $x = a$ gives
+and letting $x = a$ gives
 \[
 f'''(a) = 3 \cdot 2 \cdot 1 c_3 + 4\cdot 3 \cdot 2 c_4 (a-a) + 5 \cdot 4 \cdot 3 c_5 (a-a)^2 + \cdots = 6c_3,
 \]
@@ -66,7 +66,7 @@ In general, we have
 \[
 c_n = \frac{f^{(n)}(a)}{n\cdot (n-1) \cdot (n-2) \cdot \dots \cdot 1} = \frac{f^{(n)}(a)}{n!}.
 \]
-Thus the taylor Series representation of $f(x)$ centered at $x = a$ is given by
+Thus, the taylor Series representation of $f(x)$ centered at $x = a$ is given by
 
 \[
 f(x) = \sum_{n=0}^\infty c_n (x-a)^n = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n.

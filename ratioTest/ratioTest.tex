@@ -38,10 +38,10 @@ For the series
 \]
 let
 \[
-L = \lim_{n \to \infty} \bigg|\frac{a_{n+1}}{a_n}\bigg|.
+L = \lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right|.
 \]
 The series converges (absolutely) if $L < 1$ and diverges if $L>1$. 
-If $L = 1$ then no conclusion can be made.
+If $L = 1,$ then no conclusion can be made.
 
 \end{theorem}
  
@@ -51,20 +51,20 @@ For any $p$-series,
 \sum_{n=0}^\infty \frac{1}{n^p},
 \]
 \[
-L =  \lim_{n \to \infty} \bigg|\frac{\frac{1}{(n+1)^p}}{\frac{1}{n^p}}\bigg| = \lim_{n \to \infty} \frac{n^p}{(n+1)^p} =  \lim_{n \to \infty} \left(\frac{n}{n+1}\right)^p = 1
+L =  \lim_{n \to \infty} \left|\frac{\frac{1}{(n+1)^p}}{\frac{1}{n^p}}\right| = \lim_{n \to \infty} \frac{n^p}{(n+1)^p} =  \lim_{n \to \infty} \left(\frac{n}{n+1}\right)^p = 1
 \]
 and so the ratio test gives no conclusion about $p$-series.
 \end{remark}
 
 \begin{example}
-Determine whether the series
+Determine whether the series converges or diverges:
 \[
 \sum_{n=0}^\infty \frac{1}{n!}
 \]
-converges or diverges.\\
+
 By the Ratio Test,
 \[
-L =  \lim_{n \to \infty} \bigg|\frac{\frac{1}{(n+1)!}}{\frac{1}{n!}}\bigg| =  \lim_{n \to \infty} \frac{n!}{(n+1)!} =  \lim_{n \to \infty} \frac{1}{n+1} = 0
+L =  \lim_{n \to \infty} \left|\frac{\frac{1}{(n+1)!}}{\frac{1}{n!}}\right| =  \lim_{n \to \infty} \frac{n!}{(n+1)!} =  \lim_{n \to \infty} \frac{1}{n+1} = 0
 \]
 Since $L < 1$, the series converges.
 \end{example}
