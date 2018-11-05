@@ -20,11 +20,13 @@ We find extremes of functions which model real world situations.
  
 
 \begin{example}[example 1]
-Farmer Bob has 2400 linear feet of fence with which to build a rectangular enclosure with a vertical partition, as shown below.  What dimensions will maximize the total area covered by the enclosure and what is the maximum area?
+Farmer Bob has 2400 linear feet of fence with which to build a rectangular enclosure with a vertical partition, as shown below.  
+What dimensions will maximize the total area covered by the enclosure and what is the maximum area?
 \begin{center}
 \begin{tikzpicture}
-\draw (0,0) --(5, 0) -- (5, 3) -- (0, 3) -- (0, 0);
+\draw (0,0) --(5, 0) -- (5, 3) node[right, midway]{y}-- (0, 3) -- (0, 0);
 \draw (3, 0) -- (3, 3);
+\draw[<->] (0, -.3) --(5,-.3) node[below, midway]{x};
 \end{tikzpicture}
 \end{center}
 Let $x$ be the length of the enclosure and $y$ the width.  The total area of the enclosure is then
@@ -241,6 +243,15 @@ We will assume that the sun is located at the origin,
 the path of the comet follows the parabola $y = x^2 - 5$ and that the units 
 on the axes are in millions of miles.
 
+\begin{center}
+\begin{tikzpicture}
+\draw[blue, thick] plot[smooth, domain=-2:2] (\x, {(\x)^2 - 5});
+\filldraw[orange] (0,-3) circle (3pt) node[below]{sun};
+\filldraw[black] (-1.5, -2.75) circle (1pt) node[left]{comet};
+\draw[dashed, gray, thin] (-1.5, -2.75)-- (0,-3) node[below, midway]{d};
+\end{tikzpicture}
+\end{center}
+
 Using the distance formula, we can see that if the comet is at a point $(x, y)$, 
 then its distance to the sun at $(0, 0)$ is
 \[d = \sqrt{x^2 + y^2}.\]
@@ -251,7 +262,7 @@ So, we want to minimize $f(x) = x^2 + (x^2 - 5)^2$. The min occurs when the deri
 $f'(x) = 0$ for $x$ yielding
 \[f'(x) = 2x + 2(x^2 - 5)(2x) = 2x[1+ 2(x^2 - 5)] = 2x(2x^2 - 9) = 0\]
 which gives either 
-\[2x = 0 \mbox{\;\; or \;\;} 2x^2 - 9 = 0.\]
+\[2x = 0 \;\; \text{or} \;\; 2x^2 - 9 = 0.\]
 The three solutions are $x = 0, \pm 3/\sqrt2$.
 The corresponding $y$-values can be found by plugging these $x$-values into the parabola $y = x^2 - 5$
 giving the three points
@@ -268,6 +279,7 @@ Scientist Sam wants to know how close a comet moving in a parabolic trajectory w
 We will assume that the sun is located at the origin, 
 the path of the comet follows the parabola $y = x^2 - 1$ and that the units 
 on the axes are in millions of miles.
+
 
 
 \begin{hint}
@@ -298,6 +310,14 @@ The minimum distance is $d = \answer{\sqrt{3/4}}$ million miles.
 Gardner Harold wants to construct a 1600 square foot  rectangular enclosure that has both a 
 horizontal and a vertical partition. What dimensions will require the minimum amount of fencing?  
 How much fence will he need?
+
+\begin{center}
+\begin{tikzpicture}
+\draw (0,0) --(5, 0) -- (5, 3) -- (0, 3) -- (0, 0);
+\draw (3, 0) -- (3, 3);
+\draw (0, 1.2) -- (5, 1.2);
+\end{tikzpicture}
+\end{center}
 
 Let $x$ be the length of the enclosure and $y$ the width. Because of the partitions, there are 3 horizontal and 3 vertical sections of fence. Hence the total amount of fence needed can be expressed as 
 \[F = 3x + 3y.\]
