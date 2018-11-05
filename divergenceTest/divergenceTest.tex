@@ -14,6 +14,21 @@ We determine if an infinite series diverges.
 
 \maketitle
 
+\section{Definition of Infinite Series}
+
+\begin{definition}[Infinite Series]
+We define
+\[\sum_{n=1}^\infty a_n = \lim_{N \to \infty} \sum_{n=1}^N a_n.\]
+If this limit is not finite or does not exist, then we say that the infinite series \textbf{diverges}.
+If this limit is a finite number, then we say that the infinite series \textbf{converges}.
+\end{definition}
+
+\begin{remark}
+The sum, $\displaystyle{\sum_{n=1}^N a_n}$, is called the $N^{th}$ partial sum of the infinite series
+$\displaystyle{\sum_{n=1}^\infty a_n}$. Thus, in words, we define an infinite series to be the limit of its partial sums.
+This is reminiscent of an improper integral which is also defined in terms of a limit.
+\end{remark}
+
 \section{Test for Divergence}
 
 In this section, we will learn a simple criterion for the divergence of an infinite series.
@@ -21,16 +36,16 @@ The main idea is that in order for an infinite series to converge to a finite va
 must approach zero. We now state this fact in its equivalent \textbf{contrapositive} form.
 
 
-\begin{theorem}[Test for Divergence] 
-If 
+\begin{theorem}[Test for Divergence]
+
+
 \[
-\lim_{n\to \infty} a_n \neq 0,
+\text{If}  \; \lim_{n\to \infty} a_n \neq 0,
+\; \text{then the series} \;
+\sum_{n=1}^\infty a_n \;
+\text{diverges.}
 \]
-then the series
-\[
-\sum_{n=1}^\infty a_n
-\]
-diverges.
+
 \end{theorem}
 
 \begin{remark}
@@ -95,7 +110,7 @@ Putting these facts together, we can conclude that
 In the above limit, there is nothing special about the index $N$ (it was only helpful in dealing with the partial sums, $S_N$) 
 and we can change it to $n$ to match statement in the theorem. We have therefore proved the theorem, since if 
 \[
-\sum_{n=1}^\infty a_n = 0,
+\sum_{n=1}^\infty a_n = L \; (\text{i.e., the series converges}),
 \]
 then 
 \[
