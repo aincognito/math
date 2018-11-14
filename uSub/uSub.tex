@@ -18,18 +18,68 @@ In this section we learn to reverse the chain rule by making a substitution.
 
 \section{U-Substitution}
 
-We make a u-substitution to fill in the gaps in the following equation, which reverses the chain rule:
+Suppose that $f(x)$ is an anti-derivative of $f(x)$, i.e., $F'(x) = f(x)$. 
+Consider the composition, $F(g(x))$, where $g(x)$ is a differentiable function. What is the derivative of 
+$F(g(x))$? According to the chain rule,
+\[
+\frac{d}{dx} F\left(g(x)\right) = f\left(g(x)\right)\cdot g'(x).
+\]
+From the point of view of integration, this differentiation equation 
+is equivalent to the anti-differentiation equation:
+\[
+\int f(g(x))\cdot g'(x) \; dx = F(g(x)) + C.
+\]
+What this equation would look like if we used familar functions? We will 
+let $g(x) = x^2 + 1$ and $f(x) = \cos(x)$. Composing them gives
+\[
+ f(g(x)) = \cos(x^2 + 1).
+ \]
+ Furthermore, the derivative of $g(x)$ is, $g'(x) = 2x$,
+  and an anti-derivative of $f(x)$ is, $F(x) = \sin(x)$. 
+  Putting this information into the anti-differentiation equation yields:
+\[
+\int \cos(x^2 + 1) \cdot 2x \; dx = \sin(x^2 + 1) + C.
+\]
+This is most easily understood by differentiaing the right hand side using the chain rule(!):
+\[
+\frac{d}{dx} \sin(x^2+1) = \cos(x^2 + 1) \cdot 2x.
+\]
+In other words, this equation is difficult to reproduce is we are just staring at the left hand side:
+\[
+\int \cos(x^2+1) \cdot 2x \; dx.
+\]
+The technique for systematically finding the anti-derivative,
+\[
+\int f(g(x)) \; dx,
+\]
+is to make a \textbf{u-substitution} which is a three step process.
+In the first step, the substitution $u = g(x)$ is declared and the integral is re-written in terms of the variable $u$ as
+\[
+\int f(g(x)) \cdot g'(x) \; dx = \int f(u) \; du.
+\]
+Notice that the left hand-side has the differential $dx$ and the right hand side has the differential $du$.
+We will learn how to convert between differentials.
+Step two is to compute the indefinite integral.  Assuming we know an antiderivative for $f(u)$, we get:
+\[
+\int f(u) \; du = F(u) + C.
+\]
+The third and final step is to replace the variable $u$ in the previous step with $g(x)$, to obtain
+\[
+F(u) + C = F(g(x)) + C.
+\]
+Thus
+\[
+\int f(g(x)) \cdot g'(x) \; dx = \int f(u) \; du = F(u) + C = F(g(x)) + C.
+\]
+Refer back to this equation after you have worked through some examples and 
+problems to review the method of $u$-substitution.
 
-\[\int f(g(x))g'(x) \ dx = F(g(x)) + C. \]
 
-If we let $ u = g(x)$ then $du = g'(x) \ dx$ and the integral can be rewritten as
-\[\int f(g(x))g'(x) \ dx = \int f(u) \ du \]
-which equals
-\[F(u) + C\]
-and back substituting gives
-\[F(g(x)) + C. \]
-Now we can see that
-\[\int f(g(x))g'(x) \ dx = F(g(x)) + C. \]
+%We make a u-substitution to fill in the gaps in the following equation, which reverses the chain rule:
+%\[\int f(g(x))g'(x) \ dx = F(g(x)) + C. \]
+%If we let $ u = g(x)$ then $du = g'(x) \ dx$ and the integral can be rewritten as
+%\[\int f(g(x))g'(x) \ dx = \int f(u) \ du \] which equals
+%\[F(u) + C\] and back substituting gives \[F(g(x)) + C. \]  Now we can see that \[\int f(g(x))g'(x) \ dx = F(g(x)) + C. \]
 
 
 
@@ -37,18 +87,50 @@ Now we can see that
 Compute 
 \[\int 2x\cos(x^2 + 1) \ dx.\]
 
-Let $u = x^2 + 1$.  We have,
-\[u = x^2 + 1\]
-\[du = 2x \ dx\]
+We will make a u-substitution for the inside of the composition $\cos(x^2 + 1)$:\
+\[
+\text{let} \;\; u = x^2 + 1.  
+\]
+We now determine the relationship between the differentials $dx$ and $du$.
+Differentiatiating $u$ gives:
+\[
+\frac{du}{dx} = 2x.
+\]
+This equation can be written in \textbf{differential form} as
+\[
+du = 2x \; dx.
+\]
+For the purpose of our impending computation, we will express this equation in terms of the original differential, $dx$:
+\[
+dx = \frac{1}{2x} \; du.
+\]
+We can now proceed with step one and convert the original intergal into a simpler one, in the variable, $u$:
+\[
+\int  2x\cos(x^2 + 1) \; dx = \int 2x\cos(u) \frac{1}{2x} \; du = \int \cos(u) \; du.
+\]
+Notice that \;$`2x$' \; cancelled with its reciprocal. Now for step two, anti-differentiation:
+\[
+\int \cos(u) \; du = \sin(u) + C.
+\]
+And the coup de grace, step three, we return to the variable $x$:
+\[
+\sin(u) + C = \sin(x^2 + 1) + C.
+\]
 
-and the integral can be written as 
-\[\int 2x\cos(x^2 + 1) \ dx = \int \cos(x^2 + 1) \ 2x\  dx = \int \cos(u) \ du.\]
-The last integral can be computed as 
-\[\int \cos(u) \ du = \sin(u) + C\]
-and by back substituting, we have 
-\[\sin(u) + C = \sin(x^2 + 1) + C.\]
-Thus, using u-substitution we can conclude that
-\[\int 2x\cos(x^2 + 1) \ dx =  \sin(x^2 + 1) + C.\]
+Recapping,
+\[\int 2x\cos(x^2 + 1) \ dx = \int \cos(u) \ du =  \sin(u) + C =  \sin(x^2 + 1) + C.\]
+
+
+%and the integral can be written as 
+%\[\int 2x\cos(x^2 + 1) \ dx = \int \cos(x^2 + 1) \ 2x\  dx = \int \cos(u) \ du.\]
+%The last integral can be computed as 
+%\[\int \cos(u) \ du = \sin(u) + C\]
+%and by back substituting, we have 
+%\[\sin(u) + C = \sin(x^2 + 1) + C.\]
+%Thus, using u-substitution we can conclude that
+%\[\int 2x\cos(x^2 + 1) \ dx =  \sin(x^2 + 1) + C.\]
+
+
 \end{example}
 
 
@@ -662,4 +744,3 @@ Thus, using u-substitution we can conclude that
 \end{center}
 
 \end{document}
-
