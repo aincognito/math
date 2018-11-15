@@ -56,7 +56,7 @@ L =  \lim_{n \to \infty} \left|\frac{\frac{1}{(n+1)^p}}{\frac{1}{n^p}}\right| = 
 and so the ratio test gives no conclusion about $p$-series.
 \end{remark}
 
-\begin{example}
+\begin{example}[example 1]
 Determine whether the series converges or diverges:
 \[
 \sum_{n=0}^\infty \frac{n}{2^n}
@@ -73,7 +73,7 @@ Since $L = 1/2 < 1$, the series converges.
 
 
 
-\begin{example}
+\begin{example}[example 2]
 Determine whether the series converges or diverges:
 \[
 \sum_{n=0}^\infty (-1)^n\frac{n^2}{3^n}
@@ -91,7 +91,7 @@ Since $L = 1/3 < 1$, the series converges.
 
 
 
-\begin{example}
+\begin{example}[example 3]
 Determine whether the series converges or diverges:
 \[
 \sum_{n=0}^\infty \frac{1}{n!}
@@ -107,7 +107,7 @@ Since $L = 0 < 1$, the series converges.
 
 
 
-\begin{example}
+\begin{example}[example 4]
 Determine whether the series converges or diverges:
 \[
 \sum_{n=1}^\infty \frac{n^5 10^{n+1}}{(2n)!}
@@ -124,6 +124,41 @@ L =  \lim_{n \to \infty} \left|\frac{\frac{(n+1)^5 10^{n+2}}{(2n+2)!}}{\frac{5^n
 \]
 Since $L = 0 < 1$, the series converges.
 \end{example}
+
+
+
+
+\begin{example}[example 5]
+Determine whether the series converges or diverges:
+\[
+\sum_{n=1}^\infty \frac{n!}{n^n}
+\]
+
+
+By the Ratio Test,
+\[
+L =  \lim_{n \to \infty} \left|\frac{\frac{(n+1)!}{(n+1)^{n+1}}}{\frac{n!}{n^n}}\right| = 
+\lim_{n \to \infty} \frac{(n+1)!}{(n+1)^{n+1}}\cdot \frac{n^n}{n!}
+=  \lim_{n \to \infty} \frac{(n+1)!}{n!} \cdot  \frac{n^n}{(n+1)^n}\cdot \frac{1}{n+1}
+\]
+\[
+= \lim_{n \to \infty} (n+1) \cdot \left(\frac{n}{n+1}\right)^n \cdot \frac{1}{n+1} = \lim_{n \to \infty} \left(\frac{n}{n+1}\right)^n = \frac{1}{e}.
+\]
+
+
+Since $L = 1/e < 1$, the series converges.
+
+\begin{remark}
+We used the famous limit:
+\[
+\lim_{n \to \infty} \left(\frac{n+1}{n}\right)^n = \lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n = e.
+\]
+\end{remark}
+
+
+\end{example}
+
+
 
 
 
