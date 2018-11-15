@@ -48,7 +48,7 @@ If $L = 1,$ then no conclusion can be made.
 \begin{remark}
 For any $p$-series,
 \[
-\sum_{n=0}^\infty \frac{1}{n^p},
+\sum_{n=1}^\infty \frac{1}{n^p},
 \]
 \[
 L =  \lim_{n \to \infty} \left|\frac{\frac{1}{(n+1)^p}}{\frac{1}{n^p}}\right| = \lim_{n \to \infty} \frac{n^p}{(n+1)^p} =  \lim_{n \to \infty} \left(\frac{n}{n+1}\right)^p = 1
@@ -59,13 +59,13 @@ and so the ratio test gives no conclusion about $p$-series.
 \begin{example}[example 1]
 Determine whether the series converges or diverges:
 \[
-\sum_{n=0}^\infty \frac{n}{2^n}
+\sum_{n=1}^\infty \frac{n}{2^n}.
 \]
 
 By the Ratio Test,
 \[
 L =  \lim_{n \to \infty} \left|\frac{\frac{n+1}{2^{n+1}}}{\frac{n}{2^n}}\right| =  \lim_{n \to \infty} \frac{(n+1)2^n}{n2^{n+1}} 
-=  \lim_{n \to \infty} \frac{n+1}{2n} = \frac12
+=  \lim_{n \to \infty} \frac{n+1}{2n} = \frac12.
 \]
 Since $L = 1/2 < 1$, the series converges.
 \end{example}
@@ -76,13 +76,13 @@ Since $L = 1/2 < 1$, the series converges.
 \begin{example}[example 2]
 Determine whether the series converges or diverges:
 \[
-\sum_{n=0}^\infty (-1)^n\frac{n^2}{3^n}
+\sum_{n=1}^\infty (-1)^n\frac{n^2}{3^n}.
 \]
 
 By the Ratio Test,
 \[
 L =  \lim_{n \to \infty} \left|\frac{(-1)^{n+1}\frac{(n+1)^2}{3^{n+1}}}{(-1)^n\frac{n^2}{3^n}}\right| =  \lim_{n \to \infty} \frac{(n+1)^2 3^n}{n^2 3^{n+1}} 
-=  \lim_{n \to \infty} \frac{(n+1)^2}{3n^2} = \frac13
+=  \lim_{n \to \infty} \frac{(n+1)^2}{3n^2} = \frac13.
 \]
 Since $L = 1/3 < 1$, the series converges.
 \end{example}
@@ -94,12 +94,12 @@ Since $L = 1/3 < 1$, the series converges.
 \begin{example}[example 3]
 Determine whether the series converges or diverges:
 \[
-\sum_{n=0}^\infty \frac{1}{n!}
+\sum_{n=0}^\infty \frac{1}{n!}.
 \]
 
 By the Ratio Test,
 \[
-L =  \lim_{n \to \infty} \left|\frac{\frac{1}{(n+1)!}}{\frac{1}{n!}}\right| =  \lim_{n \to \infty} \frac{n!}{(n+1)!} =  \lim_{n \to \infty} \frac{1}{n+1} = 0
+L =  \lim_{n \to \infty} \left|\frac{\frac{1}{(n+1)!}}{\frac{1}{n!}}\right| =  \lim_{n \to \infty} \frac{n!}{(n+1)!} =  \lim_{n \to \infty} \frac{1}{n+1} = 0.
 \]
 Since $L = 0 < 1$, the series converges.
 \end{example}
@@ -110,7 +110,7 @@ Since $L = 0 < 1$, the series converges.
 \begin{example}[example 4]
 Determine whether the series converges or diverges:
 \[
-\sum_{n=1}^\infty \frac{n^5 10^{n+1}}{(2n)!}
+\sum_{n=1}^\infty \frac{n^5 10^{n+1}}{(2n)!}.
 \]
 
 By the Ratio Test,
@@ -119,7 +119,10 @@ L =  \lim_{n \to \infty} \left|\frac{\frac{(n+1)^5 10^{n+2}}{(2n+2)!}}{\frac{5^n
 =  \lim_{n \to \infty} \frac{(n+1)^5 10^{n+2}(2n)!}{n^5 10^{n+1}(2n+2)!}
 \]
 \[
- =  \lim_{n \to \infty} \frac{(n+1)^5}{n^5} \cdot \frac{10^{n+2}}{10^{n+1}} \cdot \frac{(2n)!}{(2n+2)!} = 
+ =  \lim_{n \to \infty} \frac{(n+1)^5}{n^5} \cdot \frac{10^{n+2}}{10^{n+1}} \cdot \frac{(2n)!}{(2n+2)!} 
+ \]
+ \[
+ = 
   \lim_{n \to \infty} \left(\frac{n+1}{n}\right)^5 \cdot 10 \cdot \frac{1}{(2n+2)(2n+1)} = 1 \cdot 10 \cdot 0 = 0.
 \]
 Since $L = 0 < 1$, the series converges.
@@ -131,7 +134,7 @@ Since $L = 0 < 1$, the series converges.
 \begin{example}[example 5]
 Determine whether the series converges or diverges:
 \[
-\sum_{n=1}^\infty \frac{n!}{n^n}
+\sum_{n=1}^\infty \frac{n!}{n^n}.
 \]
 
 
