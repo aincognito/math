@@ -16,6 +16,153 @@ We find the power series representation of a function.
 
 \section{Power Series}
 
+In this section we will use power series to represent familiar functions.
+A \textbf{power series representation} of a function is a convergent power series whose sum is equal to the given function.
+Our motivation will be the geometric power series that we saw in the last section,
+\[
+\sum_{n=0}^\infty x^n,
+\]
+which converges when $|x| < 1$. Moreover, since this is a geometric series, we can find the sum of this series
+and this sum gives us the primary example of a power series representation of a function.
+
+\begin{example}[example 1]
+Find a power series representation for the function 
+\[
+f(x) = \frac{1}{1-x}.
+\]
+The sum of the geometric series
+\[
+\sum_{n=0}^\infty x^n = 1 + x + x^2 + x^3 + \dots =  \frac{1}{1-x},
+\]
+as long as $|x| < 1$.  Thus, the power series representation of the function 
+\[
+f(x) = \frac{1}{1-x},
+\]
+is given by 
+\[
+\sum_{n=0}^\infty x^n,
+\]
+and this representation is valid as long as $|x| < 1$.
+\end{example}
+
+The result of this example will be used throughout the remainder of this section.
+
+\begin{example}[example 2]
+Find a power series representation for the function
+\[
+f(x) = \frac{2}{1-x},
+\]
+and determine the interval on which this representation is valid.\\
+The function in this example is twice the function in the previous example, 
+so we will simply double the power series representation from that example.
+The power series representation is
+\[
+2\sum_{n=0}^\infty x^n,  \; \text{or} \; \sum_{n=0}^\infty 2x^n,
+\]
+and this representation is valid as long as $|x| < 1$.
+
+\end{example}
+
+
+
+\begin{example}[example 3]
+Find a power series representation for the function
+\[
+f(x) = \frac{x}{1-x},
+\]
+and determine the interval on which this representation is valid.\\
+The function in this example is $x$ times the function in example 1, 
+so we will simply multiply the power series representation from that example by $x$.
+The power series representation is
+\[
+f(x) = x\sum_{n=0}^\infty x^n  = \sum_{n=0}^\infty x\cdot x^n = \sum_{n=0}^\infty x^{n+1},
+\]
+and this representation is valid as long as $|x| < 1$.
+
+\end{example}
+
+
+\begin{example}[example 4]
+Find a power series representation for the function
+\[
+f(x) = \frac{1}{1 + x},
+\]
+and determine the interval on which this representation is valid.\\
+Since $1 + x = 1 - (-x)$, we can use the result of example 1 with $-x$ in the place of $x$.
+Thus, the power series representation is
+
+\[
+f(x) = \sum_{n=0}^\infty (-x)^n = \sum_{n=0}^\infty (-1)^n x^n.
+\]
+This representation is valid as long as $|-x| < 1$, which is equivalent to $|x| < 1$.
+Note the final form of the answer is the standard form of a power series,
+\[
+\sum_{n=0}^\infty c_nx^n.
+\]
+
+\end{example}
+
+
+
+\begin{example}[example 5]
+Find a power series representation for the function
+\[
+f(x) = \frac{1}{1-x^2},
+\]
+and determine the interval on which this representation is valid.\\
+We can use the result of example 1 with $x^2$ in the place of $x$.
+Thus the power series representation is
+\[
+f(x) = \sum_{n=0}^\infty (x^2)^n  = \sum_{n=0}^\infty x^{2n}. 
+\]
+This representation is valid as long as $|x^2| < 1$, which is equivalent to $|x| < 1$.
+
+\end{example}
+
+
+
+\begin{example}[example 6]
+Find a power series representation for the function
+\[
+f(x) = \frac{1}{2-x},
+\]
+and determine the interval on which this representation is valid.\\
+The function in this example resembles the function in example 1 except that there is a `2' in the denominator instead of a `1'.
+This is an important distinction and we need the `1'. To create it, we will factor `2' from the denominator:
+\[
+f(x) = \frac{1}{2 -x} = \frac{1}{2(1 - \frac{x}{2})} = \frac12 \cdot \frac{1}{1 - \frac{x}{2}}.
+\]
+Now we have $1/2$ times a function like the one in example 1 with $x/2$ in the place of $x$.
+Thus, the power series representation is
+\[
+f(x) = \frac12 \sum_{n=0}^\infty \left(\frac{x}{2}\right)^n  = \frac12 \sum_{n=0}^\infty \frac{x^n}{2^n}
+=  \sum_{n=0}^\infty \frac12 \cdot \frac{x^n}{2^n} =  \sum_{n=0}^\infty \frac{x^n}{2^{n+1}}.
+\]
+This representation is valid as long as $|x/2| < 1$ which is equivalent to $|x| < 2$.
+
+\end{example}
+
+In the next example, we combine the ideas of the previous examples.
+
+
+\begin{example}[example 7]
+Find a power series representation for the function
+\[
+f(x) = \frac{3x^3}{4 + x^2},
+\]
+and determine the interval on which this representation is valid.\\
+We begin by factoring a `4' from the denominator:
+\[
+f(x) = \frac{3x^3}{4+x^2} = \frac{3x^3}{4(1 + \frac{x^2}{4})} = \frac{3x^3}{4} \cdot \frac{1}{1 - (-\frac{x^2}{4})}.
+\]
+We can now apply the result of example 1 with $-x^2 /4$ in place of $x$:
+\[
+f(x) = \frac{3x^3}{4} \sum_{n=0}^\infty \left(-\frac{x^2}{4}\right)^n = \frac{3x^3}{4} \sum_{n=0}^\infty (-1)^n \frac{(x^2)^n}{4^n}
+=  \sum_{n=0}^\infty \frac{3x^3}{4} \cdot (-1)^n \frac{x^{2n}}{4^n} =  \sum_{n=0}^\infty 3 (-1)^n \frac{x^{2n+3}}{4^{n+1}}. 
+\]
+This representation is valid as long as $|-x^2/4| < 1$ which is equivalent to $|x^2| < 4$ which, in turn, is equivalent to $|x| < 2$.
+
+\end{example}
 
 
 
