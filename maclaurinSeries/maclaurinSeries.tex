@@ -20,7 +20,8 @@ We find the Maclaurin Series representation of a function.
 In this section we will examine a special type of Taylor Series, called a Maclaurin Series and we will develop the Maclaurin Series for 
 some important functions.
 
-\begin{definition}[Maclaurin series] A \textbf{Maclaurin Series} is a Taylor Series with center 0, i.e., a power series representation 
+\begin{definition}[Maclaurin series] 
+A \textbf{Maclaurin Series} is a Taylor Series with center 0, i.e., a power series representation 
 for a function, $f(x)$, of the form
 \[
 f(x) = \sum_{n=0}^\infty c_n x^n.
@@ -39,7 +40,8 @@ c_n = \frac{f^{(n)}(a)}{n!},
 and we can use this formula to find a Maclaurin Series representation by letting $a = 0$.
 We will do this for the functions $e^x, \sin(x),$ and $\cos(x)$.
 
-\begin{example}[The Maclaurin Series for $e^x$] Find the Maclaurin Series representation for the function $f(x) = e^x$.\\
+\begin{example}[example 1 - the Maclaurin Series for $e^x$] 
+Find the Maclaurin Series representation for the function $f(x) = e^x$.\\
 To find the Maclaurin Series representation, we must determine the coefficients, $c_n$. These are particularly easy to find for the exponential function
 since $f^{(n)}(x) = e^x$ for all whole numbers, $n$. Thus the coefficients are,
 \[
@@ -49,57 +51,121 @@ and the Maclaurin Series representation is
 \[
 e^x = \sum_{n=0}^\infty c_n x^n = \sum_{n=0}^\infty \frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots.
 \]
+We can use the ratio test to verify that this representation converges for all $x$ and 
+hence the representation is valid on the interval $(-\infty, \infty)$.
 \end{example}
 
-\begin{example}[The Maclaurin Series for $\sin(x)$] Find the Maclaurin Series representation for the function $f(x) = \sin(x)$.\\
+We now turn to two examples of finding Maclauirin Series by making modifications to the previous example.
+
+\begin{example}[example 2] 
+Find the Maclaurin Series representation of the function $f(x) = e^{-x}$.\\
+Replacing `$x$' in the Maclaurin Series representation for $e^x$ with $-x$ gives
+\[
+e^{-x} = \sum_{n=0}^\infty \frac{(-x)^n}{n!} = \sum_{n=0}^\infty (-1)^n \frac{x^n}{n!} = 1 - x + \frac{x^2}{2!} - \dots.
+\]
+This representation is valid on the interval $(-\infty, \infty)$.
+\end{example}
+
+
+\begin{example}[example 3] 
+Find the Maclaurin Series representation of the function $f(x) = x^2 e^{2x}$.\\
+Replacing `$x$' with $2x$ in the Maclaurin Series representation for $e^x$ gives
+\[
+x^2 e^{2x} = x^2\sum_{n=0}^\infty \frac{(2x)^n}{n!} = \sum_{n=0}^\infty x^2 \cdot \frac{2^n x^n}{n!} = \sum_{n=0}^\infty \frac{2^n x^{n+2}}{n!}.
+\]
+This representation is valid on the interval $(-\infty, \infty)$.
+\end{example}
+
+
+\begin{example}[example 4 - the Maclaurin Series for $\sin(x)$] 
+Find the Maclaurin Series representation for $f(x) = \sin(x)$.\\
 To find the Maclaurin series representation, we must determine the coefficients, $c_n$. 
-We will take advantage of a cyclical pattern in the derivatives of $f(x) = \sin(x)$.
+We will take advantage of a cyclical pattern in the derivatives of $\sin(x)$.
 The first four derivatives are:
 \[
 f'(x) = \cos(x), f''(x) = -\sin(x), f'''(x) - -\cos(x) \text{ and } f^{(4)}(x) = \sin(x).
 \]
 Since we arrived back at $\sin(x)$, the next four derivatives will be exactly the same.
-The coefficients require us to plug in 0:
+The coefficients require us to plug in the center, $x = 0$:
 \[
 f(0) = \sin(0) = 0, f'(0) = \cos(0) = 1,
 \]
 \[
  f''(0) = -\sin(0) = 0, \text{ and } f'''(0) = -\cos(0) = -1.
 \]
-Hence the numerators of the coefficients will cycle through the values $0, 1, 0, -1...$.
+Hence the numerators of the coefficients will cycle through the values $0, 1, 0,$ and $-1$.
 Since the numerators of the even coefficients are 0, these coefficients are themselves 0 (because $0/n! = 0$) for any whole number, $n$.
-The numerators of the odd coefficients will alternate between $1$ and $-1$ and hence $c_1 = 1/1!, c_3 = -1/3!, c_5 = 1/5!, c_7 = -1/7!$, etc.
+The numerators of the odd coefficients will alternate between $1$ and $-1$ and hence 
+\[
+c_1 = \frac{1}{1!}, c_3 = \frac{-1}{3!}, c_5 = \frac{1}{5!}, c_7 = \frac{-1}{7!}, \text{etc}.
+\]
+
 We can now write the Maclaurin Series representation as
 \[
-\sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots.
+\sin(x) =  x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots.
 \]
 This can be writtien in summation notation as
 \[
 \sin(x) = \sum_{n=0}^\infty \frac{(-1)^{n+1}}{(2n+1)!}x^{2n+1}.
 \]
-We now make an observation about this formula. Recall that $\sin(x)$ is an \textit{odd} function, 
+The ratio test can be used to verify that this representation is valid on the interval $(-\infty, \infty)$.
+\begin{remark}
+Recall that $\sin(x)$ is an \textit{odd} function, 
 i.e., $\sin(-x) = -\sin(x)$, and now notice that the Maclaurin Series representation for $\sin(x)$ consists of only the 
-odd powers of $x$.
+odd powers of $x$. 
+\end{remark}
 \end{example}
 
 
+We now consider an example of a Maclaurin Series obtained by making modifications to the previous example.
 
 
-\begin{example}[The Maclaurin Series for $\cos(x)$] Find the Maclaurin Series representation for the function $f(x) = \cos(x)$.\\
-Most of the work has already been done for us in the proceeding example.  The numerators of the coefficients will cycle through the same
+\begin{example}[example 5]
+Find the Maclaurin Series representation for the function $f(x) = x\sin(3x)$.\\
+We will use the Maclaurin Series for $\sin(x)$ with $3x$ replacing $x$ and then multiply the result by $x$.
+This gives
+\[
+x\sin(3x) = x \sum_{n=0}^\infty \frac{(-1)^{n+1}}{(2n+1)!}(3x)^{2n+1} = \sum_{n=0}^\infty (-1)^{n+1} \frac{3^{2n+1}}{(2n+1)!}x^{2n+2}.
+\]
+This representation is valid in the interval $(-\infty, \infty)$.
+\end{example}
+
+
+\begin{example}[example 6 - the Maclaurin Series for $\cos(x)$] 
+Find the Maclaurin Series representation for the function $f(x) = \cos(x)$.\\
+Most of the work has already been done for us in the $\sin(x)$ example.  The numerators of the coefficients will cycle through the same
 four values as $\sin(x)$, but instead of starting with 0, they start with $\cos(0) = 1$. 
-Specfically, the numerators of the coefficients cycle throught he values $1, 0, -1, 0, ...$.  Again, when the numerator is 0, the coefficient is 0,
+Specfically, the numerators of the coefficients cycle through the values $1, 0, -1$ and $0$.  When the numerator is 0, the coefficient is 0,
 so the Maclaurin Series representation for $\cos(x)$ will only consist of even powers of $x$:
 \[
-\cos(x) = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots.
+\cos(x) = 1 + 0x - \frac{x^2}{2!} + 0x^3 + \cdots = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots.
 \]
 This can be writtien in summation notation as
 \[
-\sin(x) = \sum_{n=0}^\infty \frac{(-1)^n}{(2n)!}x^{2n}.
+\cos(x) = \sum_{n=0}^\infty \frac{(-1)^n}{(2n)!}x^{2n}.
 \]
-We now make a similar observation about this formula than the one we made for $\sin(x)$. Recall that $\cos(x)$ is an \textit{even} function, 
+The ratio test can be used to verify that this representation is valid on the interval $(-\infty, \infty)$.
+\begin{remark}
+Recall that $\cos(x)$ is an \textit{even} function, 
 i.e., $\cos(-x) = \cos(x)$, and as mentioned the Maclaurin Series representation for $\cos(x)$ consists of only the 
 even powers of $x$.
+\end{remark} 
+\end{example}
+
+
+We now consider an example of a Maclaurin Series obtained by making modifications to the previous example.
+
+\begin{example}[example 7]
+Find the Maclaurin Series representation for the function 
+\[
+f(x) = x^2\cos(2x).
+\]
+We will use the Maclaurin Series for $\cos(x)$ with $2x$ replacing $x$ and then multiply the result by $x^2$.
+This gives
+\[
+x^2\cos(2x) = x^2\sum_{n=0}^\infty \frac{(-1)^n}{(2n)!}(2x)^{2n} = \sum_{n=0}^\infty (-1)^n\frac{2^{2n}}{(2n)!}x^{2n+2}.
+\]
+This representation is valid in the interval $(-\infty, \infty)$.
 \end{example}
 
 
