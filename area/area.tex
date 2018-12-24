@@ -20,11 +20,43 @@ We compute the area between two curves.
 
 In this section use definite integrals to find the area of a region 
 in the $xy$-plane bounded by two or more curves. Recall that if $f(x)$ is a positive, continuous function 
-over the interval $[a, b]$, then the area bounded below the curve, above the $x$-axis, and between the lines $x = a$
-and $x = b$ is given by the definite integral, $\int_a^b f(x) \, dx$. If we modify this slightly, 
-we can find the area of a region between two continuous functions $f(x)$ and $g(x)$. First, suppose $f(x)$ and $g(x)$
-are positive, continuous functions on the interval $[a,b]$ with $f(x) \geq g(x)$.
-Then the area between the curves is the difference between the area under $f(x)$ and the area under $g(x)$.
+over the interval $[a, b]$, then the area bounded below the curve $ y= f(x)$, above the $x$-axis, and between the 
+vertical lines $x = a$
+and $x = b$ is given by the definite integral, $\int_a^b f(x) \, dx$ as shown in the figure below.
+
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  center, axis y line = none, xtick={-1, 1, 1.8}, 
+xticklabels={$a$, $b$, $x$}, title={Area and the Definite Integral}] 
+
+\addplot[name path = A, domain=-1:1, samples = 100, color=black, thick]{x^3-x+1};
+\addplot[name path = B, domain=-1:1, samples=100, color=black]{0};
+
+\addplot[blue!10] fill between[of=A and B];
+%\addplot[red!10] fill between[of=C and D];
+\addplot[thick, dashed] coordinates {(-1,0) (-1, 1)};
+\addplot[thick, dashed] coordinates {(1,0) (1, 1)};
+%\addplot[white] coordinates {(1.5,-0.3) (1.8,-.3)};
+\addplot[<->] coordinates {(-1.5,-.5) (-1.5, 2)};
+\addplot[<-] coordinates {(-1.7,0) (1.5, 0)};
+
+
+\node at (axis cs: 0,-.45){Area $= \int_a^b f(x) \; dx$};
+\node at (axis cs: 0.2,1.35){$y = f(x)$};
+\node at (axis cs: 1.45,-.15){$x$};
+\node at (axis cs: -1.6,1.9){$y$};
+
+
+\end{axis}
+%\legend{$y = f(x)$, , secant line, tangent line, };
+\end{tikzpicture}
+\end{image}
+
+
+Combining this with a clever subtrsaction, we can find the area between two curves.
+If $f(x)$ and $g(x)$ are positive, continuous functions on the interval $[a,b]$ with $f(x) \geq g(x)$,
+then the area between the curves is the difference between the area under $f(x)$ and the area under $g(x)$.
 
 
 \begin{image}
@@ -43,29 +75,31 @@ xticklabels={$a$, $b$}, title={\textup{Area Between Curves}}]
 
 %\addplot[white] coordinates {(1.51,0) (1.8, 0)}; %white space to put the x in the x-axis
 
-\addplot[thin, dashed] coordinates {(-1,0) (-1, 2)};
-\addplot[thin, dashed] coordinates {(1,0) (1, 2)};
+\addplot[thin, dashed, blue] coordinates {(-1,1.2) (-1, 2)};
+\addplot[thin, dashed, blue] coordinates {(1,1.2) (1, 2)};
 
-\addplot[<->] coordinates {(-1.5,-.5) (-1.5, 2)};
+\addplot[<->] coordinates {(-1.5,-.6) (-1.5, 2.5)};
 \addplot[<->] coordinates {(-1.7,0) (1.5, 0)};
 
 
-\node at (axis cs: .5,2){$y = f(x)$};
+\node at (axis cs: .5,2.1){$y = f(x)$};
 \node at (axis cs: -.5,.3){$y = g(x)$};
 \node at (axis cs: -1.6,1.9){$y$};
 \node at (axis cs: 1.45,-.15){$x$};
 
-
+\node at (axis cs: 0,-.6){Area $= \int_a^b f(x) \; dx - \int_a^b g(x) \; dx$};
 \end{axis}
 \end{tikzpicture}
 \end{image}
 
 
-Hence
-\[
-\text{Area} = \int_a^b f(x) \; dx - \int_a^b g(x) \; dx.
-\]
-We can simplify this formula slightly by combining these two integrals into a single integral, as in the theorem below. 
+%Hence
+%\[
+%\text{Area} = \int_a^b f(x) \; dx .
+%\]
+
+
+We can write this formula as a single integral, as presented in the theorem below. 
 
 
 \begin{theorem}
@@ -78,17 +112,102 @@ then the area of the region bounded by the graphs of $y = f(x), y=g(x), x=a,$ an
 
 
 \begin{remark}
-There is no need to assume that $f(x)$ and $g(x)$ are positive in the theorem.  It suffices that $f(x) \geq g(x)$ on $[a,b]$ since the area of the region between 
-$f(x) + k$ and $g(x) + k$ is the same for any constant $k$ and if $k$ is large enough then both $f(x) + k$ and $g(x) + k$ are positive
-on the closed interval $[a,b]$.
+The assummption that $f(x)$ and $g(x)$ are positive is unnecessary due to the folling line of reasoning. 
+First, the area of the region between $f(x)$ and $g(x)$ is the same as the area
+between $f(x) + k$ and $g(x) + k$ for any constant $k$, i.e., shifting the region does not change its area.
+Next, if $k$ is large enough then both $f(x) + k$ and $g(x) + k$ will be positive and finally,
+$(f(x) + k) - (g(x) + k) = f(x) - g(x)$.
 \end{remark}
+
 
 \begin{center}
 \geogebra{uqcrerff}{1000}{750}
 \end{center}
 
-\begin{example} %example #1
+\section{Non-intersecting curves}
+In this section the left and right vertical boundaries of the region are given and the curves do not intersect between 
+these vertical boundaries. 
+
+
+\begin{example}[example 1]
+Find the area of the region bounded by curves $y = e^x$ and $y = \sin(x)$ from $x = 0$ to $x = \pi/2$.
+
+Since $e^x > \sin(x)$ over the interval $[0,\pi/2]$, the area of the indicated region is
+\begin{align*}
+\int_0^{\pi/2} \left[e^x - \sin(x)\right] \; dx &= \left[e^x + \cos(x) \right] \bigg|_0^{\pi/2} \\
+                                           &= \left(e^{\pi/2} + 0 \right) - \left(1+1\right)\\
+                                           & = e^{\pi/2} - 2 \approx 2.81.
+\end{align*}
+                                           
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  none, axis y line = none, xtick={pi/2}, 
+xticklabels={$\pi$}, title={\textup{Area between} $y=e^x$ and $y=\sin(x)$ 
+from $x = 0$ to $x=\pi/2$}]
+
+\addplot[name path=AA, domain=0:pi/2, samples = 100, color=black, thick]{e^x};
+\addplot[name path=BB, domain=0:pi/2, samples = 100, color=black, thick]{sin(deg(x))};
+%\addplot[domain=.8:2.2, samples = 100, color=black, thick]{5-x^2};
+%\addplot[domain=.8:2.2, samples = 100, color=black, thick]{x-4};
+
+
+
+
+\addplot[blue!10] fill between[of=AA and BB];
+\addplot[white] coordinates {(2.5,0) (2.8,0)};
+\addplot[white] coordinates {(0,0) (0,-5)};
+
+%\addplot[thick, blue] coordinates {(1,-3) (1, 4)};
+\addplot[thick, blue, dashed] coordinates {(pi/2,1) (pi/2, 4.8)};
+
+\addplot[<->] coordinates {(0,-1.5) (0, 5)};
+\addplot[<->] coordinates {(-.5,0) (2, 0)};
+
+\addplot[thin] coordinates {(pi/2,-.2) (pi/2, .2)};
+
+\node at (axis cs: 2,4.8){$y=e^x$};
+\node at (axis cs: 2.2,1){$y=\sin(x)$};
+%\node at (axis cs: 0.2,1.25){$y = f(x)$};
+\node at (axis cs: -0.1,4.8){$y$};
+\node at (axis cs: 2.1,0){$x$};
+\node at (axis cs: pi/2,-.6){$\pi/2$};
+%\node at (axis cs: 2.1,-.4){$2$};
+\node at (axis cs: 1.4,-2.8){$\displaystyle{A=\int_{a}^{b} \left[f(x)-g(x)\right]\; dx= e^{\pi/2} - 2}$};
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\end{example}
+
+
+
+\begin{problem}(problem 1a)
+Find the area of the region bounded between the curves $y = 2e^x$ and $y = \cos(x)$ from $x = 0$ to $x = \pi/2$.\\
+The top curve is $y = \answer{2e^x}$ and\\
+the bottom curve is $y = \answer{\cos(x)}$.
+The definite integral that represents this area is $\int_0^{\pi/2} \answer{2e^x - \cos(x)} \; dx$\\
+The area of the region is $\answer{2e^{\pi/2} - 3}$.
+\end{problem}
+
+
+\begin{problem}(problem 1b)
+Find the area of the region bounded between the curves $y = e^{2x}$ and $y = \sin(3x)$ from $x = 0$ to $x = \pi/3$.\\
+The top curve is $y = \answer{e^{2x}}$ and\\
+the bottom curve is $y = \answer{\sin(3x)}$.
+The definite integral that represents this area is $\int_0^{\pi/3} \answer{e^{2x} - \sin(3x)} \; dx$\\
+The area of the region is $\answer{e^{2\pi/3}/2 - 7/6}$.
+\end{problem}
+
+
+
+ 
+
+
+
+\begin{example}[example 2]
 Find the area of the region bounded by curves $y = 5 - x^2$ and $y = x-4$ over the interval $[1,2]$.
+
 Since $5 - x^2 > x-4$ over the interval $[1,2]$, the area is
 \begin{align*}
 \int_1^2 \left[(5-x^2) - (x-4)\right] \; dx &= \int_1^2 \left(9-x-x^2\right) \; dx \\
@@ -114,29 +233,54 @@ from $x = 1$ to $x=2$}]
 
 \addplot[blue!10] fill between[of=AA and BB];
 \addplot[white] coordinates {(2.5,0) (2.8,0)};
-\addplot[white] coordinates {(0,0) (0,-5)};
+\addplot[white] coordinates {(0,0) (0,-5.3)};
 
-\addplot[thick, blue] coordinates {(1,-3) (1, 4)};
-\addplot[thick, blue] coordinates {(2,-2) (2, 1)};
+\addplot[thick, blue, dashed] coordinates {(1,-3) (1, 4)};
+\addplot[thick, blue, dashed] coordinates {(2,-2) (2, 1)};
 
 \addplot[<->] coordinates {(0,-3) (0, 4)};
 \addplot[<->] coordinates {(-.5,0) (2.5, 0)};
 
 
-\node at (axis cs: 2.2,2.8){$f(x)=5-x^2$};
-\node at (axis cs: 1.9,-3){$g(x)=x-4$};
+\node at (axis cs: 2,3.5){$f(x)=5-x^2$};
+\node at (axis cs: 2,-3.1){$g(x)=x-4$};
 %\node at (axis cs: 0.2,1.25){$y = f(x)$};
 \node at (axis cs: 0,4.5){$y$};
 \node at (axis cs: 2.6,0){$x$};
 \node at (axis cs: .9,.-.4){$1$};
 \node at (axis cs: 2.1,-.4){$2$};
-\node at (axis cs: 1.4,-4.8){$\displaystyle{A=\int_{a}^{b} \left[f(x)-g(x)\right]\; dx=\frac{31}{6}}$};
+\node at (axis cs: 1.4,-5.2){$\displaystyle{A=\int_{a}^{b} \left[f(x)-g(x)\right]\; dx=\frac{31}{6}}$};
 
 \end{axis}
 \end{tikzpicture}
 \end{center}
 
 \end{example}
+
+
+
+
+\begin{problem}(problem 2a)
+Find the area of the region bounded between the curves $y = x^2$ and $y = x - 2$ from $x = 0$ to $x = 2$.\\
+The top curve is $y = \answer{x^2}$ and\\
+the bottom curve is $y = \answer{x - 2}$.
+The definite integral that represents this area is $\int_0^2 \answer{x^2 - x + 2} \; dx$\\
+The area of the region is $\answer{14/3}$.
+\end{problem}
+
+
+
+\begin{problem}(problem 2b)
+Find the area of the region bounded between the curves $y = (3x+2)^3$ and $y = 1 - x^2$ from $x = 0$ to $x = 1$.\\
+The top curve is $y = \answer{(3x+2)^3}$ and\\
+the bottom curve is $y = \answer{1-x^2}$.
+The definite integral that represents this area is $\int_0^1 \answer{(3x+2)^3  + x^2 - 1} \; dx$\\
+The area of the region is $\answer{617/12}$.
+\end{problem}
+
+\section{Intersecting Curves}
+In this section, one or both of the endpoints of integration will be a point of intersection of the curves forming the topa nd bottom 
+boundaries of the region.  To find the points of intersection of the curves $y = f(x)$ and $y = g(x)$, we solve the equation $f(x) = g(x)$.
 
 
 \begin{example}
@@ -299,7 +443,7 @@ xticklabels={$-2$, $-1$, $0$, $1$, $2$}, title={Area between $y=\sqrt[]{x}$ and 
 \node at (axis cs: 2.1,0){$x$};
 \node at (axis cs: .1,-.2){$0$};
 \node at (axis cs: 1.1,-.2){$1$};
-\node at (axis cs: 0,-1.5){$\displaystyle{A=\int_{a}^{b} \left[f(x)-g(x)\right]\; dx=\frac{1}{3}}$};
+\node at (axis cs: .5,-1.5){$\displaystyle{A=\int_{a}^{b} \left[f(x)-g(x)\right]\; dx=\frac{1}{3}}$};
 
 \end{axis}
 \end{tikzpicture}
@@ -339,7 +483,7 @@ For the second integral,
 \end{align*}                                             
 To obtain the total area, we now add the values of these definite integrals:
 \[
-\text{Area} = 2\sqrt{2}.
+\text{Area} = (\sqrt 2 - 1) + (\sqrt 2 + 1) = 2\sqrt{2}.
 \]
 
 \begin{center}
@@ -364,7 +508,7 @@ xticklabels={$1$, $2$}, title={Area between $y=\sin(x)$ and $y=\cos(x)$}]
 
 \addplot[<->] coordinates {(0,-1.5) (0,1.5)}; %y-axis
 \addplot[<->] coordinates {(-.5,0) (4,0)}; %x-axis
-\addplot[dashed, thin] coordinates {(3.14, 0) (3.14, -1)};
+\addplot[dashed, blue] coordinates {(3.14, 0) (3.14, -1)};
 
 \node at (axis cs: -1.4,1){$y=\cos(x)$};
 %\node at (axis cs: 1.4,-1.2){$y=\cos(x)$};
@@ -373,10 +517,10 @@ xticklabels={$1$, $2$}, title={Area between $y=\sin(x)$ and $y=\cos(x)$}]
 %\node at (axis cs: 0.2,1.25){$y = f(x)$};
 \node at (axis cs: 0,2.2){$y$};
 \node at (axis cs: 4.2,0){$x$};
-\node at (axis cs: .2,.-.2){$0$};
+%\node at (axis cs: .2,.-.2){$0$};
 \node at (axis cs: .785,-.5){$\frac{\pi}{4}$};
 \node at (axis cs: 3,-.2){$\pi$};
-\node at (axis cs: 1.3,-2){$\displaystyle{\text{Area}=2\sqrt2}$};
+\node at (axis cs: 1,-2){$\displaystyle{\text{Area}= \int_0^\pi |\cos(x) - \sin(x)| \; dx = 2\sqrt2}$};
 
 \end{axis}
 \end{tikzpicture}
