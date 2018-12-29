@@ -54,7 +54,7 @@ xticklabels={$a$, $b$, $x$}, title={Area and the Definite Integral}]
 \end{image}
 
 
-Combining this with a clever subtrsaction, we can find the area between two curves.
+Combining this with a clever subtraction, we can find the area between two curves.
 If $f(x)$ and $g(x)$ are positive, continuous functions on the interval $[a,b]$ with $f(x) \geq g(x)$,
 then the area between the curves is the difference between the area under $f(x)$ and the area under $g(x)$.
 
@@ -242,8 +242,8 @@ from $x = 1$ to $x=2$}]
 \addplot[<->] coordinates {(-.5,0) (2.5, 0)};
 
 
-\node at (axis cs: 2,3.5){$f(x)=5-x^2$};
-\node at (axis cs: 2,-3.1){$g(x)=x-4$};
+\node at (axis cs: 2,3.5){$y=5-x^2$};
+\node at (axis cs: 2,-3.1){$y=x-4$};
 %\node at (axis cs: 0.2,1.25){$y = f(x)$};
 \node at (axis cs: 0,4.5){$y$};
 \node at (axis cs: 2.6,0){$x$};
@@ -314,8 +314,8 @@ xticklabels={$1$, $2$}, title={Area between $y=\sin(x)$ and $y=\cos(x)$}]
 \addplot[<->] coordinates {(-.2,0) (1.2,0)}; %x-axis
 
 
-\node at (axis cs: .6,1.1){$f(x)=\cos(x)$};
-\node at (axis cs: .7,.3){$g(x)=\sin(x)$};
+\node at (axis cs: .6,1.1){$y=\cos(x)$};
+\node at (axis cs: .7,.3){$y=\sin(x)$};
 %\node at (axis cs: 0.2,1.25){$y = f(x)$};
 \node at (axis cs: 0,1.3){$y$};
 \node at (axis cs: 1.25,0){$x$};
@@ -385,8 +385,8 @@ xticklabels={$-2$, $-1$, $0$, $1$, $2$}, title={Area between $y=x^2+x-3$ and $y=
 \addplot[<->] coordinates {(-2,0) (3,0)}; %x-axis
 
 
-\node at (axis cs: .3,2){$f(x)=2x-1$};
-\node at (axis cs: 1.5,-3.5){$g(x)=x^2+x-3$};
+\node at (axis cs: .2,2){$y=2x-1$};
+\node at (axis cs: 1.5,-3.5){$y=x^2+x-3$};
 %\node at (axis cs: 0.2,1.25){$y = f(x)$};
 \node at (axis cs: .2,5){$y$};
 \node at (axis cs: 3.2,0){$x$};
@@ -436,8 +436,8 @@ xticklabels={$-2$, $-1$, $0$, $1$, $2$}, title={Area between $y=\sqrt[]{x}$ and 
 \addplot[<->] coordinates {(-1,0) (2,0)}; %x-axis
 
 
-\node at (axis cs: .5,1.2){$f(x)=\sqrt[]{x}$};
-\node at (axis cs: 1.3,.6){$g(x)=x^2$};
+\node at (axis cs: .5,1.2){$y=\sqrt[]{x}$};
+\node at (axis cs: 1.3,.6){$y=x^2$};
 %\node at (axis cs: 0.2,1.25){$y = f(x)$};
 \node at (axis cs: .1,1.8){$y$};
 \node at (axis cs: 2.1,0){$x$};
@@ -690,9 +690,10 @@ xticklabels={$-2$, $-1$, $0$, $1$, $2$}, title={Area between $y=2-x^2$, $y=-2x-1
 
 \end{example}
 
-In our next example, we consider curves of the form $x = f(y)$. In this situation, 
-the formula for area is similar to the $y = f(x)$ situation.
-If $x = f(y)$ and $x=g(y)$ are two curves on the interval from $y = c$ to $y = d$ with $f(y) \geq g(y)$
+\section{Integrating with respect to $y$}
+In our next example, we consider curves of the form $x = f(y)$. In this case, 
+the formula for area is similar to the $y = f(x)$ situation. Instead of ``top - bottom", we have ``right curve - left curve" as the integrand.
+Thus, if $x = f(y)$ and $x = g(y)$ are two curves with $f(y) \geq g(y)$ on the interval from $y = c$ to $y = d$, 
 then the area between them is given by the formula
 \[
 \text{Area} = \int_c^d [f(y) - g(y)] \; dy.
@@ -701,13 +702,20 @@ then the area between them is given by the formula
 Find the area between the curves $x = y^2 + y$ and $x = 2y + 6$.
 First, we find the $y$-coordinates of the points of intersection of the line $x = 2y+6$ 
 and the parabola $x=y^2 + y$ (which opens to the right), by setting these formulas equal and solving for $y$:
-\begin{align*}
-y^2 + y &= 2y + 6 \\
-y^2 - y - 6 &= 0 \\
-(y+2)(y-3) &= 0 \\
-y = -2, & y = 3.
-\end{align*}
-The bigger function is the line $x = 2y+6$, as we can see by plugging in any value between $y = -2$ and $y=3$.
+\[
+y^2 + y = 2y + 6
+\]
+\[
+y^2 - y -  6 = 0
+\]
+\[
+(y+2)(y-3) = 0
+\]
+\[
+y = -2 \;\;\; \text{or}  \;\;\; y = 3.
+\]
+
+The bigger, ``right", function is the line $x = 2y+6$, as we can see by plugging in any value between $y = -2$ and $y=3$.
 The area is given by
 \begin{align*}
 \text{Area} &= \int_{-2}^3 \left[(2y+6) - (y^2+y) \right] \; dy \\
@@ -748,15 +756,21 @@ xticklabels={$-2$, $-1$, $0$, $1$, $2$}, title={Area between $x=y^2+y$ and $x=2y
 \end{center}
 
 
-
-
-
-
-
-
-
 \end{example}
 
+\begin{problem}
+Find the area of the region enclosed by the parabolas $x = y^2 - 1$ and $x = 7 - x^2$.\\
+The endpoints of integration are:\\
+$c = \answer{-2}\;\;\;$ and $\;\;\; d = \answer{2}$.\\ 
+The right curve is $x = \answer{7 - y^2}$ and\\
+the left curve is $x = \answer{y^2 - 1}$.
+The definite integral that represents this area is $\int_{-2}^2 \answer{8 - 2y^2} \; dy$\\
+The area of the region is $\answer{64/3}$.
+\end{problem}
+
+%8y - 2/3 y^3
+
+%16 - 16/3 32/3 64/3
 
 %Need example with curves crossing, three curves, functions of y, velocity and distance.
 
