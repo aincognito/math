@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1546059328 "velocity.tex" "velocity.pdf" "velocity" 1546059330
+["pdflatex"] 1546059953 "velocity.tex" "velocity.pdf" "velocity" 1546059954
   "../preamble.tex" 1534874171 3669 080d76b6ee3463a45b5023162baffa1e ""
   "/home/andrew/texmf/tex/latex/ximeraLatex/ximera.cls" 1531167858 28946 805eb0dd71d7f8f6597f9d8aa452fc80 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1536122179 3332 103109f5612ad95229751940c61aada0 ""
@@ -292,14 +292,14 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1536122179 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1542735336 2756227 3af771b8c7802fcc4de3c67a29c4e776 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1536255675 7908118 a16e2dd5947695aba15dfea80a46c11f ""
-  "velocity.aux" 1546059329 979 bd7eed04cf3a71669a1a0a20511539f6 ""
-  "velocity.out" 1546059329 210 de0bd54dc2fba0f2edc53f178dcfc1bf ""
-  "velocity.tex" 1546059328 14142 d880ea71553a4d70e5282f210ed90cee ""
+  "velocity.aux" 1546059954 979 bd7eed04cf3a71669a1a0a20511539f6 ""
+  "velocity.out" 1546059954 210 de0bd54dc2fba0f2edc53f178dcfc1bf ""
+  "velocity.tex" 1546059953 14235 a781356049c8084014701b7360f5a5ba ""
   (generated)
-  "velocity.pdf"
+  "velocity.aux"
   "velocity.jax"
   "velocity.log"
+  "velocity.pdf"
+  "velocity.oc"
   "velocity.out"
   "velocity.ids"
-  "velocity.aux"
-  "velocity.oc"
