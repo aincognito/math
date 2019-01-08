@@ -4,7 +4,7 @@
 
 \outcome{Describe and denote limits}
 
-\title{1.1 Understanding Limits}
+\title{1.2 Understanding Limits}
 
 
 \begin{document}
@@ -16,62 +16,30 @@ Describe what a limit is and how to denote a limit.
 \maketitle
 
 \section{Understanding Limits}
- %\graph command must contain all 4 boundaries if it contains any (xmin, xmax, ymin, ymax)
+ 
 
-%\[
-%\graph[xmin=-2, xmax=4, ymin=-2, ymax=6]{(x-2)^2 + (y-4)^2 = 0.01, x^2 \left{-1\leq x \leq 1.97\right}}
-%\]
-%\[\graph[xAxisLabel=x, yAxisLabel=y, xmin=-3, xmax=10, ymin=-10, ymax=10]{y = 1/x}\]
-
-%\[
-%\graph[xAxisLabel=x, yAxisLabel=y, xmin=-3, xmax=10, ymin=-10, ymax=10]{y = 1/x, y = x/2}
-%\]
-
-%\[
-%\graph{ \sin(x)\left\{x<0\right\}, 2x\left\{ x>=0 \right\} }
-%\]
-
-%\[
-%\graph[color=Desmos.Colors.BLUE]{y = 1/x, y = x/2}
-%\]
-%\[\graph{x^2 \left\{ -1 \leq x \leq 1.97 \right\}, (x-2)^2 + (y-4)^2 = 0.01 }\]
-
-%\[
-%\graph{(2, 3)}
-%\]
-
-%\geogebra{mG34YseZ}{640}{480}
-%\geogebra{PMcY6Q8j}{640}{480}
-
-%\begin{sageCell}
-%plot(1/x, -3, 40)
-%\end{sageCell}
-
-%\begin{sageCell}
-%a=2
-%b=5
-%f=1/x
-%plot(f,(x,a,b))
-%\end{sageCell}
 
 Limits are the backbone of calculus. A limit tells us the end of an infinite process. For example, consider the following infinite sequence of numbers:
 \[ 0.9, 0.99, 0.999, 0.9999, 0.99999, 0.999999, ... \]
-This infinite sequence of numbers is becoming arbitrarily close to the number 1, so we say the limit of the sequence is 1.
+This infinite sequence of numbers is becoming arbitrarily close to the number 1, so we say the \textbf{limit} of the sequence is 1.
 In calculus, we will be concerned with limits involving functions.
 %A function is an input-output device involving numbers. 
 The inputs of the function will undergo an infinite process which will then correspond to an infinite process for the outputs.  Our goal will be to determine the limit of the outputs.
 Suppose that $f$ represents a function of the input variable $x$.
-We denote by $x \to c$ an infinite process where the inputs are becoming arbitrarily close to the value $c$ without ever actually reaching $c$.
+We denote by $x \to c$ an infinite process where the inputs are becoming arbitrarily close to the value $c$ without ever reaching it.
 Then, we denote by
 \[ \lim_{x\to c} f(x) \]
 the limit of the outputs of the function $f$ as $x$ approaches $c$.
-It is possible that the limit of the outputs of $f$ is a numerical value, 
+The possiblilities for the limit of the outputs of $f$ are: a numerical value, 
 $\infty$, $-\infty$, or that the limit does not exist.
-If the numerical value of the limit is $L$, then that means that as the input variable $x$ is approaching the value $c$, the outputs, $f(x)$ are approaching the value $L$, and we would write
-\[ \lim_{x\to c} f(x) = L. \]
+If the numerical value of the limit is $L$, then as the input variable $x$ is approaches the value $c$, the outputs, $f(x)$ approach the value $L$, and we would write
+\[ 
+\lim_{x\to c} f(x) = L.
+\]
 
-If the value of the limit is $\infty$, that means that as $x \to c$, the outputs $f(x)$ are increasing without bound.  Similarly, if the limit is $-\infty$, that means the outputs are decreasing without bound.
-When none of these conclusions are valid, we say that the limit does not exist. 
+If the value of the limit is $\infty$, then as $x \to c$, the outputs $f(x)$ are \textbf{increasing without bound}.  
+Similarly, if the limit is $-\infty$, that means the outputs are decreasing without bound.
+When none of these conclusions apply, we say that the limit \textbf{does not exist}. 
 
 In addition to writing $x \to c$, we can also write the expression
 $x \to c^-$ to indicate that $x$ is approaching $c$ from the left hand side and $x \to c^+$ to 

@@ -4,7 +4,7 @@
 
 \outcome{Compute limits using algebraic techniques}
 
-\title{1.4b Computing Limits}
+\title{1.4 Computing Limits}
 
 
 \begin{document}
@@ -15,7 +15,127 @@ Compute limits using algebraic techniques.
 
 \maketitle
 
-\section{Computing Limits}
+
+\section{Limit laws}
+ 
+In section 1.2, Numerical Limits, we briefly discussed ``plugging in" to compute limits.
+ The example we investigated was
+ \[
+ \lim_{x \to 3+} \left(x^2 + 2 \right) = 3^2 + 2 = 11.
+ \]
+
+The reason plugging in worked in the previous example iss a direct consequence of the limit laws presented below.
+ 
+In each of the following laws, all of the limits are assumed to exist.
+
+\begin{enumerate}
+
+\item[1.]  
+The limit of a constant is the constant:
+ \[
+ \lim_{x \to c} k = k.
+ \]
+ 
+\item[2.]
+ The next law is self-evident:
+ \[
+ \lim_{x \to c} x = c.
+ \]
+ 
+ \item[3.]
+ The limit of a multiple of a function is the multiple of the limit:
+ \[
+ \lim_{x \to c} kf(x) = k \cdot \lim_{x \to c} f(x). 
+ \]
+ 
+ \item[4.]
+ The limit of a sum is the sum of the limits:
+ \[
+ \lim_{x \to c} \left[f(x) + g(x) \right] = \lim_{x \to c} f(x) + \lim_{x \to c} g(x). 
+ \]
+ 
+\item[5.]
+ The limit of a difference is the difference of the limits:
+ \[
+ \lim_{x \to c} \left[f(x) - g(x) \right] = \lim_{x \to c} f(x) - \lim_{x \to c} g(x). 
+ \]
+ 
+\item[6.]
+ The limit of a product is the product of the limits:
+ \[
+ \lim_{x \to c} f(x) g(x) = \lim_{x \to c} f(x) \cdot \lim_{x \to c} g(x). 
+ \]
+
+
+\item[7.]
+ The limit of a quotient is the quotient of the limits:
+ \[
+ \lim_{x \to c} \frac{f(x)}{g(x)} = \frac{\lim_{x \to c} f(x)}{\lim_{x \to c} g(x)}, 
+ \]
+ provided that the limit in the denominator is \textbf{not equal to zero}.
+ 
+ \item[8.]
+ Limits can be moved inside of radicals:
+ \[
+ \lim_{x \to c} \sqrt[n]{f(x)} = \sqrt[n]{\lim_{x \to c} f(x)}. 
+ \]
+
+\end{enumerate}
+
+
+Each of the above limit laws is valid if $x \to c^+, x\to c^-, x \to \infty$ or $x \to -\infty$.
+
+
+
+\begin{example}[example 1] Given that 
+\[
+\lim_{x \to 3} f(x) = -5 \quad \text{and} \quad \lim_{x \to 3} g(x) = \tfrac12,
+\]
+find 
+\[
+\lim_{x \to 3} \left[x^2f(x) - 6g(x)\right].
+\]
+Using limit laws 2, 3 and 5, we can write
+\[
+\lim_{x \to 3} \left[x^2f(x) - 6g(x)\right] = \lim_{x \to 3} x^2 \cdot \lim_{x \to 3}f(x) - 6\cdot\lim_{x \to 3} g(x) = 9(-5) - 6(\tfrac12) = -48.
+\]
+\end{example}
+
+
+\begin{problem}(problem 1a)
+Given that 
+\[
+\lim_{x \to -2} f(x) = 2 \quad \text{and} \quad \lim_{x \to -2} g(x) = 0,
+\]
+\[
+\lim_{x \to -2} \left[3f(x) + xg(x)\right] = \answer{6}.
+\]
+\end{problem}
+
+
+\begin{problem}(problem 1b)
+Given that 
+\[
+\lim_{x \to 1^+} f(x) = \tfrac23 \quad \text{and} \quad \lim_{x \to 1+} g(x) = 4,
+\]
+\[
+\lim_{x \to 1^+} \frac{f(x)}{\sqrt{g(x)}} = \answer{1/3}.
+\]
+\end{problem}
+
+
+\begin{problem}(problem 1c)
+Given that 
+\[
+\lim_{x \to \infty} f(x) = -9 \quad \text{and} \quad \lim_{x \to \infty} g(x) = 1,
+\]
+\[
+\lim_{x \to \infty} \sqrt[3]{f(x) + g(x)} = \answer{-2}.
+\]
+\end{problem}
+
+
+%\section{Computing Limits}
  %\graph command must contain all 4 boundaries if it contains any (xmin, xmax, ymin, ymax)
 
 %\[
@@ -44,19 +164,19 @@ Compute limits using algebraic techniques.
 %\geogebra{PMcY6Q8j}{640}{480}
 
 
-We have seen examples of limit problems where plugging in the terminal $x$-value both led to 
-reasonable answers and meaningless forms.
-In this section we will work with examples in which plugging in the terminal $x$-value initially 
-yields a meaningless expression,
-but after performing algebraic manipulations on the function in the problem, 
-plugging in the terminal value
-yields a credible solution.
+%We have seen examples of limit problems where plugging in the terminal $x$-value both led to 
+%reasonable answers and meaningless forms.
+%In the section we will work with examples in which plugging in the terminal $x$-value initially 
+%yields a meaningless expression,
+%but after performing algebraic manipulations on the function in the problem, 
+%plugging in the terminal value
+%yields a credible solution.
 
 
 
 \section{Factor and cancel}
 
-\begin{example}[example 1]
+\begin{example}[example 2]
 Compute the limit: \[\lim_{x \to 4} \frac{x^2 - 16}{x^2 - 4x}.\]
 
 
@@ -84,7 +204,7 @@ Hence,
 This example uses the \textbf{factor and cancel} method.
 \end{example}
 
-\begin{problem}(problem 1)
+\begin{problem}(problem 2)
   Compute the limit:
   \[  \lim_{x \to 3} \frac{x^2 - 9}{x^2 - 3x} = \answer{2}.  \]
     \begin{hint}
@@ -102,7 +222,7 @@ This example uses the \textbf{factor and cancel} method.
 \end{problem}
 
 
-\begin{example}[example 2]
+\begin{example}[example 3]
 Compute the limit: \[\lim_{x \to 2} \frac{x^2 + 3x - 10}{x^3 - 8}.\]
 \\
 Plugging in the terminal value $x = 2$ yields the indeterminate form $\frac00$.
@@ -131,7 +251,7 @@ Hence,
 
 
 
-\begin{problem}(problem 2a)
+\begin{problem}(problem 3a)
   Compute the following limit which we investigated numerically in the previous section:
   \[
   \lim_{x \to 1} \frac{x^3 - 1}{x^2 -1}.
@@ -156,7 +276,7 @@ Hence,
 \end{problem}
 
 
-\begin{problem}(problem 2b)
+\begin{problem}(problem 3b)
   Compute the limit:
   \[
   \lim_{x \to 3} \frac{x^3 - 27}{x^2 -2x - 3}.
@@ -178,7 +298,7 @@ Hence,
 \end{problem}
 
 
-\begin{example}[example 3]
+\begin{example}[example 4]
 Compute the limit: \[\lim_{x \to 4} \frac{4x^2 - 19x + 12}{6x^2 -19x -20}.\]
 \\
 Plugging in the terminal value $x = 4$ yields the indeterminate form $\frac00$.
@@ -207,7 +327,7 @@ Hence,
 
 
 
-\begin{problem}(problem 3a)
+\begin{problem}(problem 4a)
   Compute the limit:
   \[
   \lim_{x \to 2} \frac{3x^2 -8x + 4}{2x^2 + x - 10}.
@@ -232,7 +352,7 @@ Hence,
 \end{problem}
 
 
-\begin{problem}(problem 3b)
+\begin{problem}(problem 4b)
   Compute the limit:
   \[
   \lim_{x \to -2} \frac{2x^2 + x - 6}{x^2 + 5x + 6}.
@@ -275,7 +395,7 @@ we get an expression that is free of radicals:
 
 We will now take advantage of this technique to find limits.
 
-\begin{example}[example 4]
+\begin{example}[example 5]
 Compute the limit:
 \[\lim_{x \to 4} \frac{\sqrt{x} - 2}{x-4}.\]
 
@@ -300,7 +420,7 @@ In the last step, we plugged in the terminal value $x=4$ to get the final answer
 
 
 
-\begin{problem}(problem 4)
+\begin{problem}(problem 5)
   Compute the limit:
   \[
   \lim_{x \to 9} \frac{\sqrt{x}-3}{x-9}
@@ -326,7 +446,7 @@ In the last step, we plugged in the terminal value $x=4$ to get the final answer
 
 
 
-\begin{example}[example 5]
+\begin{example}[example 6]
 Compute the limit:
 \[\lim_{x \to 1} \frac{x- \sqrt{x}}{x-1}.\]
 
@@ -351,7 +471,7 @@ In the last step, we plugged in the terminal value $x=1$ to get the final answer
 \end{example}
 
 
-\begin{problem}(problem 5)
+\begin{problem}(problem 6)
   Compute the limit:
   \[
   \lim_{x \to 2} \frac{x- \sqrt{2x}}{x-2}
@@ -377,7 +497,7 @@ In the last step, we plugged in the terminal value $x=1$ to get the final answer
 
 
 
-\begin{example}[example 6]
+\begin{example}[example 7]
 Compute the limit: $\displaystyle{\lim_{x \to -3} \frac{x^2 - 9}{4 - \sqrt{13 -x}}}$.\\
 \\
 If we plug in $x = -3$, the numerator and denominator are both 0. The conjugate of the radical expression in the denominator is
@@ -401,7 +521,7 @@ With this in mind, we have:
 
 
 		
-\begin{problem}(problem 6a)
+\begin{problem}(problem 7a)
   Compute the limit:
   \[
   \lim_{x \to -4} \frac{x^2 - 16}{3 - \sqrt{5 -x}}
@@ -429,7 +549,7 @@ With this in mind, we have:
 
 
 
-\begin{problem}(problem 6b)
+\begin{problem}(problem 7b)
   Compute the limit:
   \[
   \lim_{x \to 0} \frac{4- \sqrt{x + 16}}{x}.
@@ -463,7 +583,7 @@ We now consider examples involving fractions within fractions, called \textbf{co
 
 
 
-\begin{example}[example 7]
+\begin{example}[example 8]
 Compute the limit: $\displaystyle{\lim_{x \to 4} \frac{\frac{1}{x} - \frac{1}{4}}{x-4}}.$ \\
 \\
 Plugging in $x=4$ yields the familiar $\frac00$ indeterminate form. The algebra skills necessary to transform the 
@@ -486,7 +606,7 @@ The ratio of opposites is $-1$.
 
 
 
-\begin{problem}(problem 7)
+\begin{problem}(problem 8)
   Compute the limit:
   \[
   \lim_{x \to 5} \frac{\frac{1}{x} - \frac{1}{5}}{x-5}.
@@ -515,7 +635,7 @@ The ratio of opposites is $-1$.
 
 
 
-\begin{example}[example 8]
+\begin{example}[example 9]
 Compute the limit:
 \[\lim_{x \to -2} \frac{\frac{2}{x-3} + \frac{x+4}{5}}{x^2 + 5x + 6}.\]
 Carefully plugging in $x=-2$ gives $\frac00$, so we begin simplifying the complex fraction.
@@ -536,7 +656,7 @@ Now back to the original problem:
 \end{example}
 
 
-\begin{problem}(problem 8a)
+\begin{problem}(problem 9a)
   Compute the limit:
   \[
   \lim_{x \to -2} \frac{\frac{3}{x+1} + \frac{6}{x+4}}{x+2}.
@@ -564,7 +684,7 @@ Now back to the original problem:
 
 
 
-\begin{problem}(problem 8b)
+\begin{problem}(problem 9b)
   Compute the limit:
   \[
     \lim_{x \to 3} \frac{\frac{2}{x-5} + \frac{x+2}{5}}{x^2 - 5x + 6}.
@@ -610,7 +730,7 @@ To do this correctly, we can see from the definition that it is necessary to kno
 quantity in the absolute value bars is positive or negative.
 
 
-\begin{example}[example 9]
+\begin{example}[example 10]
 Compute the limit: $\displaystyle{\lim_{x \to 3^{-}} \frac{|x-3|}{x-3}}$.\\
 Plugging in $x = 3$ gives the indeterminate form $\frac00$. To resolve this limit, 
 we will do a sign analysis on the quantity in the absolute value bars, $x-3$.
@@ -629,7 +749,7 @@ Using this in the limit, we get
 \end{align*}
 \end{example}
 
-\begin{problem}(problem 9a)
+\begin{problem}(problem 10a)
   Compute the limit:
   \[
   \lim_{x \to 4^-} \frac{4-x}{|x-4|}
@@ -653,7 +773,7 @@ Using this in the limit, we get
 \end{problem}
 
 
-\begin{problem}(problem 9b)
+\begin{problem}(problem 10b)
   Compute the limit:
   \[
   \lim_{x \to -3^-} \frac{|x+3|}{2x+6}
@@ -687,6 +807,26 @@ Using this in the limit, we get
 
 
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 In the next few examples, we will investigate infinite limits of rational functions. 
 These occur at points where the denominator of the rational function is approaching zero, 
