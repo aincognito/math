@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1547487546 "antiDiff.tex" "antiDiff.pdf" "antiDiff" 1547487547
+["pdflatex"] 1547495692 "antiDiff.tex" "antiDiff.pdf" "antiDiff" 1547495693
   "../preamble.tex" 1534874171 3669 080d76b6ee3463a45b5023162baffa1e ""
   "/home/andrew/texmf/tex/latex/ximeraLatex/ximera.cls" 1531167858 28946 805eb0dd71d7f8f6597f9d8aa452fc80 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1536122179 3332 103109f5612ad95229751940c61aada0 ""
@@ -308,14 +308,14 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1536122179 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1542735336 2756227 3af771b8c7802fcc4de3c67a29c4e776 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1536255675 7908118 a16e2dd5947695aba15dfea80a46c11f ""
-  "antiDiff.aux" 1547487547 979 482a2540e63a37e84754e1fe5128770b ""
-  "antiDiff.out" 1547487547 210 778e1c71244f453a72b35d0a42743186 ""
-  "antiDiff.tex" 1547487546 15089 5bb9e662c307d8467fe43253931059bb ""
+  "antiDiff.aux" 1547495693 979 482a2540e63a37e84754e1fe5128770b ""
+  "antiDiff.out" 1547495693 210 778e1c71244f453a72b35d0a42743186 ""
+  "antiDiff.tex" 1547495691 15088 e7052ddda6ce7b8fb33affb0bffa75cb ""
   (generated)
-  "antiDiff.ids"
-  "antiDiff.jax"
-  "antiDiff.aux"
-  "antiDiff.log"
-  "antiDiff.oc"
-  "antiDiff.pdf"
   "antiDiff.out"
+  "antiDiff.log"
+  "antiDiff.ids"
+  "antiDiff.pdf"
+  "antiDiff.aux"
+  "antiDiff.oc"
+  "antiDiff.jax"
