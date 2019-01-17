@@ -104,7 +104,7 @@ We can write this formula as a single integral, as presented in the theorem belo
 
 \begin{theorem}
 Suppose $f(x)$ and $g(x)$ are continuous on the interval $[a,b]$. If $f(x) \geq g(x)$ for all $x$ in the interval $[a,b]$, 
-then the area of the region bounded by the graphs of $y = f(x), y=g(x), x=a,$ and $x=b$ is given by  
+then the area of the region bounded by the graphs of the curves $y = f(x)$ and $y=g(x)$ and the vertical lines $x=a$ and $x=b$ is given by  
 \[
 \text{Area} = \int_a^b \left[f(x) -g(x)\right] \; dx.
 \]
@@ -112,7 +112,7 @@ then the area of the region bounded by the graphs of $y = f(x), y=g(x), x=a,$ an
 
 
 \begin{remark}
-The assummption that $f(x)$ and $g(x)$ are positive is unnecessary due to the folling line of reasoning. 
+The assumption that $f(x)$ and $g(x)$ are positive is unnecessary due to the following line of reasoning. 
 First, the area of the region between $f(x)$ and $g(x)$ is the same as the area
 between $f(x) + k$ and $g(x) + k$ for any constant $k$, i.e., shifting the region does not change its area.
 Next, if $k$ is large enough then both $f(x) + k$ and $g(x) + k$ will be positive and finally,
@@ -184,9 +184,9 @@ xticklabels={$1$, $2$}, title={\textup{Area between the parabola} $y=x^2$ \textu
 
 \begin{problem}(problem 1)
 Find the area of the region between the parabola $y = x^2 + 2$ and the horizontal line $y =1$ from $x = 0$ to $x = 3$.\\
-The top curve is $y = \answer{x^2 + 2}$ and\\
-the bottom curve is $y = \answer{1}$.\\
-The definite integral that represents this area is $\int_0^{3} \answer{x^2 + 1} \; dx$\\
+The top curve is $y = \answer{x^2 + 2}$.\\
+The bottom curve is $y = \answer{1}$.\\
+The definite integral that represents this area is $\displaystyle{\int_0^{3}} \answer{x^2 + 1} \; dx$\\
 The area of the region is $\answer{12}$.
 \end{problem}
 
@@ -248,18 +248,18 @@ xticklabels={$\pi$}, title={\textup{Area between} $y=e^x$ \textup{and} $y=\sin(x
 
 \begin{problem}(problem 2a)
 Find the area of the region bounded between the curves $y = 2e^x$ and $y = \cos(x)$ from $x = 0$ to $x = \pi/2$.\\
-The top curve is $y = \answer{2e^x}$ and\\
-the bottom curve is $y = \answer{\cos(x)}$.
-The definite integral that represents this area is $\int_0^{\pi/2} \answer{2e^x - \cos(x)} \; dx$\\
+The top curve is $y = \answer{2e^x}$.\\
+The bottom curve is $y = \answer{\cos(x)}$.\\
+The definite integral that represents this area is $\displaystyle{\int_0^{\pi/2}} \answer{2e^x - \cos(x)} \; dx$\\
 The area of the region is $\answer{2e^{\pi/2} - 3}$.
 \end{problem}
 
 
 \begin{problem}(problem 2b)
 Find the area of the region bounded between the curves $y = e^{2x}$ and $y = \sin(3x)$ from $x = 0$ to $x = \pi/3$.\\
-The top curve is $y = \answer{e^{2x}}$ and\\
-the bottom curve is $y = \answer{\sin(3x)}$.
-The definite integral that represents this area is $\int_0^{\pi/3} \answer{e^{2x} - \sin(3x)} \; dx$\\
+The top curve is $y = \answer{e^{2x}}$\\
+The bottom curve is $y = \answer{\sin(3x)}$.\\
+The definite integral that represents this area is $\displaystyle{\int_0^{\pi/3}} \answer{e^{2x} - \sin(3x)} \; dx$\\
 The area of the region is $\answer{e^{2\pi/3}/2 - 7/6}$.
 \end{problem}
 
@@ -326,9 +326,9 @@ xticklabels={$1$, $2$}, title={\textup{Area between the parabola} $y=5-x^2$ \tex
 
 \begin{problem}(problem 3a)
 Find the area of the region bounded between the curves $y = x^2$ and $y = x - 2$ from $x = 0$ to $x = 2$.\\
-The top curve is $y = \answer{x^2}$ and\\
-the bottom curve is $y = \answer{x - 2}$.
-The definite integral that represents this area is $\int_0^2 \answer{x^2 - x + 2} \; dx$\\
+The top curve is $y = \answer{x^2}$.\\
+The bottom curve is $y = \answer{x - 2}$.\\
+The definite integral that represents this area is $\displaystyle{\int_0^2} \answer{x^2 - x + 2} \; dx$\\
 The area of the region is $\answer{14/3}$.
 \end{problem}
 
@@ -336,14 +336,14 @@ The area of the region is $\answer{14/3}$.
 
 \begin{problem}(problem 3b)
 Find the area of the region bounded between the curves $y = (3x+2)^3$ and $y = 1 - x^2$ from $x = 0$ to $x = 1$.\\
-The top curve is $y = \answer{(3x+2)^3}$ and\\
-the bottom curve is $y = \answer{1-x^2}$.
-The definite integral that represents this area is $\int_0^1 \answer{(3x+2)^3  + x^2 - 1} \; dx$\\
+The top curve is $y = \answer{(3x+2)^3}$.\\
+The bottom curve is $y = \answer{1-x^2}$.\\
+The definite integral that represents this area is $\displaystyle{\int_0^1 } \answer{(3x+2)^3  + x^2 - 1} \; dx$\\
 The area of the region is $\answer{601/12}$.
 \end{problem}
 
 \section{Intersecting Curves}
-In this section, one or both of the endpoints of integration will be a point of intersection of the curves forming the topa nd bottom 
+In this section, one or both of the endpoints of integration will be a point of intersection of the curves forming the top and bottom 
 boundaries of the region.  To find the points of intersection of the curves $y = f(x)$ and $y = g(x)$, we solve the equation $f(x) = g(x)$.
 
 
@@ -401,9 +401,9 @@ xticklabels={$1$, $2$}, title={Area between $y=\sin(x)$ and $y=\cos(x)$}]
 Find the area between the curves $y = \sin(x)$ and $y = \cos(x)$ over the interval $(\pi/4, 5\pi/4)$.\\
 
 
-The top curve is $y = \answer{\sin(x)}$ and\\
-the bottom curve is $y = \answer{\cos(x)}$.\\
-The definite integral that represents this area is $\int_{\pi/4}^{5\pi/4} \answer{\sin(x) - \cos(x)} \; dx$\\
+The top curve is $y = \answer{\sin(x)}$.\\
+The bottom curve is $y = \answer{\cos(x)}$.\\
+The definite integral that represents this area is $\displaystyle{\int_{\pi/4}^{5\pi/4}} \answer{\sin(x) - \cos(x)} \; dx$\\
 The area of the region is $\answer{2\sqrt 2}$.
 
 
@@ -887,7 +887,7 @@ The endpoints of integration are:
 $c = \answer{-2}\;\;\;$ and $\;\;\; d = \answer{2}$.\\ 
 The right curve is $x = \answer{7 - y^2}$ and\\
 the left curve is $x = \answer{y^2 - 1}$.\\
-The definite integral that represents this area is $\int_{-2}^2 \answer{8 - 2y^2} \; dy$\\
+The definite integral that represents this area is $\displaystyle{\int_{-2}^2} \answer{8 - 2y^2} \; dy$\\
 The area of the region is $\answer{64/3}$.
 \end{problem}
 
