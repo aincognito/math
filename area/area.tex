@@ -139,9 +139,9 @@ Since $x^2 > -2$ over the interval $[-1, 2]$, the area of the region is
                                           &= 9.
 \end{align*}
 
-\begin{center}
+\begin{image}
 \begin{tikzpicture}
-\begin{axis}[axis x line=  none, axis y line = none, xtick={.9, 2.1}, 
+\begin{axis}[scale = 1.5, axis x line=  none, axis y line = none, xtick={.9, 2.1}, 
 xticklabels={$1$, $2$}, title={\textup{Area between the parabola} $y=x^2$ \textup{and the line} $y=-2$ 
 \textup{from} $x = -1$ \textup{to} $x=2$}]
 
@@ -175,7 +175,7 @@ xticklabels={$1$, $2$}, title={\textup{Area between the parabola} $y=x^2$ \textu
 
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\end{image}
 
 \end{example}
 
@@ -676,7 +676,7 @@ The area is: $\answer{1/2}$
 
 In the next example, we find the area of a region bounded by three curves. In this situation, we will need to use two separate integrals to determine the total area.
 
-\begin{example}
+\begin{example}[example 8]
 Find the area of the region bounded by the curves $y = 2-x^2, y = -2x-1,$ and $y = x$, as shown in the figure below.\\
 
 \begin{center}
@@ -818,6 +818,57 @@ xticklabels={$-2$, $-1$, $0$, $1$, $2$}, title={Area between $y=2-x^2$, $y=-2x-1
 \end{center}
 
 \end{example}
+
+
+
+\begin{problem}(problem 8)
+Find the area of the shaded region in the figure below.
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  none, axis y line = none, title={Region between $y=x^2$, $y=2x+3$ and $y=2- x$}] 
+
+\addplot[name path=AA, domain=-1:1, samples = 100, color=black, thick]{x^2};
+\addplot[name path=BB, domain=-1:-1/3, samples = 100, color=black, thick]{2*x+3};
+\addplot[name path=CC, domain=-1/3:1, samples = 100, color=black, thick]{2-x};
+
+\addplot[domain=-1.5:-1, samples = 100, color=black, thick]{x^2};
+\addplot[domain=-1.5:-1, samples = 100, color=black, thick]{2*x+3};
+\addplot[domain=-1.5:-1/3, samples = 100, color=black, thick]{2-x};
+
+\addplot[domain=1:1.5, samples = 100, color=black, thick]{x^2};
+\addplot[domain=-1/3:.75, samples = 100, color=black, thick]{2*x+3};
+\addplot[domain=1:1.5, samples = 100, color=black, thick]{2-x};
+%\addplot[domain=-.8:-.33, samples = 100, color=black, thick]{(x)};
+
+
+\addplot[blue!10] fill between[of=AA and BB];
+\addplot[blue!10] fill between[of=AA and CC];
+\addplot[white] coordinates {(0,3) (0,-3)};
+\addplot[white] coordinates {(3,0) (3.7,0)};
+
+\addplot[<->] coordinates {(0,-2) (0,3.5)}; %y-axis
+\addplot[<->] coordinates {(-2.3,0) (2.3,0)}; %x-axis
+
+
+\node at (axis cs: 1.7,4.2){$y=2x+3$};
+\node at (axis cs: 2.2,2.5){$y=x^2$};
+\node at (axis cs:-1.9,3.8){$y=2-x$};
+%\node at (axis cs: 0.2,1.25){$y = f(x)$};
+\node at (axis cs: 0,3.8){$y$};
+\node at (axis cs: 2.4,0){$x$};
+
+
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
+The area of the shaded region is $\answer{8/3}$.
+
+\end{problem}
+
+
+
 
 \section{Integrating with respect to $y$}
 In our next example, we consider curves of the form $x = f(y)$. In this case, 
