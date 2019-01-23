@@ -51,7 +51,7 @@ the index, $i$, runs from $1$ to $n$.
 Corresponding to these $n$ values, $x_i^*$, there are cross-sections whose areas are given by $A(x_i^*)$.
 From these cross-sections we can construct an irregular cylinder as shown below.
 
-INSERT FIGURE OF IRREGULAR CYLINDER HERE
+%INSERT FIGURE OF IRREGULAR CYLINDER HERE
 
 The volume of each of the $i^\text{th}$ cylinder is given by
 \[
@@ -102,11 +102,15 @@ V = \int_a^b A(y) \; dy.
 
 
 
-\begin{example} Compute the volume of a pyramid of height $h$ with a square base of side length $b$.\\
+\begin{example}[example 1] Compute the volume of a pyramid of height $h$ with a square base of side length $b$.\\
 We will place the $y$-axis through the pyramid so that the apex passes through the axis at $h$ and the center of the base passes through 
 the axis at $0$.
 
-INSERT FIGURE HERE
+\begin{center}
+\geogebra{v8nntygp}{1000}{800}
+\end{center}
+
+%INSERT FIGURE HERE
 
 The cross-sections of the pyramid are squares and the area of a square of side $s$ is $A = s^2$.
 The side length depends on $y$, so we will denote it by $s(y)$ to emphasize this fact. For example, $s(0) = b$ since at the height $0$, the square is 
@@ -121,18 +125,18 @@ The method for finding $s(y)$ involves using \textbf{similar triangles}. We will
 the first is a vertical cross-section of the pyramid through the apex and has height $h$ (the height of the pyramid) 
 and base $b$ (the base of the pyramid). 
 
-INSERT FIGURE HERE
+%INSERT FIGURE HERE
 
 The second triangle is positioned inside the first in such a way that it has height $h-y$, extending from $y$ up to $h$ on the $y$-axis,
 and base $s(y)$ measured through the $y$-axis perpendicular to the side of the square cross-section at height $y$.
 
-INSERT FIGURE HERE
+%INSERT FIGURE HERE
 
 These two triangles are similar because they have the same angles. Because the triangles are similar, the ratio of the base to 
 the height of each triangle is the same, 
 i.e.,
 \[
-\frac{s(y)}{h-y} = {b}{h}.
+\frac{s(y)}{h-y} = \frac{b}{h}.
 \]
  Solving for $s(y)$ gives
  \[
@@ -149,20 +153,21 @@ i.e.,
    &= \frac13 b^2h.
 \end{align*}
 
-\begin{center}
-\geogebra{v8nntygp}{1000}{800}
-\end{center}
 
 
 \end{example}
  
  
  
+\begin{problem}(problem 1) Find the volume of a pyramid with a square base of side length 10 with height 8.\\
+The volume is $\answer{800/3}$.
+\end{problem}
 
 
-\begin{example}  Find the volume of the intersection of two cylinders of radius $r$ show in the figure.
+\begin{example}  Find the volume of the intersection of two cylinders of radius $r$. 
+% show in the figure.
 
-INSERT FIGURE HERE
+%INSERT FIGURE HERE
 
 Place the $x$-axis through the center of one of the cylinders, with the center of the other cylinder at $x = 0$.
 For values of $x$ in the interval $[-r, r]$, cross-sections of the region taken perpendicular 
