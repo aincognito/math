@@ -21,7 +21,7 @@ The integral notation suggests that we compute area in the plane by summing the 
 Of course this perspective is only the result of a limit of Riemann Sums of areas of rectangles.
 The volume of a solid can be similarly conceptualized as resulting from pasting together infinitely many cross-sections,
 each of which possesses area. Hence the integral can be used in a similar fashion to compute the volume of a solid.
-In the case of volume, the defining Riemann Sums involve irregularly formed cylinders rather than rectangles
+In the case of volume, the defining Riemann Sums involve cylinders rather than rectangles
 in our approximation process.
 
 %replacing the line segments which when pasted together form a region,
@@ -29,62 +29,18 @@ in our approximation process.
 
 %visual aid here
 
-Suppose that a solid be placed atop an axis, say the $x-$axis, as shown in the figure below.
+Suppose that a solid is placed atop the $x-$axis, from $x = a$ to $x = b$.
 
 %visual aid here
 
-For each $x$-value between $x = a$ and $x = b$,  there is a cross-section of the solid whose area is $A(x)$.
-Then our astonishing result is that the volume of the solid can be computed as
+For each $x$-value between $x = a$ and $x = b$,  consider the cross-section perpendicular to the $x$-axis. If we denote the area of this cross-section by 
+ $A(x)$ and if we consider this cross-section to have infinitely narrow thickness, dx, then its volume would be $A(x) dx$.
+Then, the volume of our solid can be computed by summing up all of these volumes as $x$ ranges from $a$ to $b$.
+This summing up can be expressed as a definite integral, giving us the formula:
 
 \[
 V = \int_a^b A(x) \; dx.
 \]
-
-
-\begin{explanation}
-To be precise, we will next define the volume in terms of the limit of a Riemann Sums.  
-Let us reconsider the solid above, from the perspective of the $x$-axis. Suppose that at
-each $x$-value there is a cross-sectional area $A(x)$. Then to approximate the volume of the solid we 
-can use a Riemann sum as follows. Subdivide $[0,1]$ into `$n$' equal sub-intervals each of length $\Delta x = 1/n$.
-From the $i^\text{th}$ sub-interval,$\left[\frac{i-1}{n}, \frac{i}{n}\right]$, we choose a sample point, $x_i^*$, where 
-the index, $i$, runs from $1$ to $n$. 
-Corresponding to these $n$ values, $x_i^*$, there are cross-sections whose areas are given by $A(x_i^*)$.
-From these cross-sections we can construct an irregular cylinder as shown below.
-
-%INSERT FIGURE OF IRREGULAR CYLINDER HERE
-
-The volume of each of the $i^\text{th}$ cylinder is given by
-\[
-V_i = \text{area of base} \times \text{height} = A(x_i^*) \cdot \frac{1}{n} = A(x_i^*) \cdot \Delta x.
-\]
-Summing the volumes of these cylinders gives an approximation to the volume as a Riemann Sum
-\[
-V \approx \sum_{i=1}^n V_i = \sum_{i=1}^n A(x_i^*) \Delta x.
-\]
-The exact volume is then defined in terms of a limit these Riemann Sums:
-\[
-V = \lim_{n \to \infty} \sum_{i=1}^n A(x_i^*) \Delta x = \int_0^1 A(x) \; dx.
-\]
-
-\end{explanation}
-
-We generalize this explanation in the definition below.
-
-\begin{definition}[Volume of a Solid]
-Let $A(x)$ be the cross-sectional area of a solid at an $x$-value between $x = a$ and $x=b$. Then, the exact volume of the solid is given by
-\[
-V = \int_a^b A(x) \; dx = \lim_{n \to \infty} \sum_{i=1}^n A(x_i^*) \Delta x.
-\]
-In this context, 
-\[
-\Delta x = \frac{b-a}{n}
-\] 
-and $x_i^*$ is a sample point in the $i^\text{th}$ sub-interval
-\[
-[a + (i-1)\Delta x, a + i\Delta x],
-\]
-where $i = 1, 2, \dots, n$.
-\end{definition}
 
 
 
@@ -102,7 +58,7 @@ V = \int_a^b A(y) \; dy.
 
 
 
-\begin{example}[example 1] Compute the volume of a pyramid of height $h$ with a square base of side length $b$.\\
+\begin{example}[example 1] Compute the volume of a pyramid of height $6$ with a square base of side length $4$.\\
 We will place the $y$-axis through the pyramid so that the apex passes through the axis at $h$ and the center of the base passes through 
 the axis at $0$.
 
@@ -113,21 +69,21 @@ the axis at $0$.
 %INSERT FIGURE HERE
 
 The cross-sections of the pyramid are squares and the area of a square of side $s$ is $A = s^2$.
-The side length depends on $y$, so we will denote it by $s(y)$ to emphasize this fact. For example, $s(0) = b$ since at the height $0$, the square is 
-the base of the pyramid which has side length $b$. Also $s(h) = 0$ since the apex (a single point) is at the height $h$ on the $y$-axis.
+The side length depends on $y$, so we will denote it by $s(y)$ to emphasize this fact. For example, $s(0) = 4$ since at the height $0$, the square is 
+the base of the pyramid which has side length $4$. Also $s(6) = 0$ since the apex (a single point) is at the height $6$ on the $y$-axis.
 Also, $s(y) = 0$ if $y>h$ or $y<0$ since the pyramid only exists for $y$ values between $0$ and $h$.
 From the definition of volume given above, we can express the volume of the pyramid by the definite integral 
 \[
-V = \int_0^h s(y)^2 \; dy.
+V = \int_0^6 s(y)^2 \; dy.
 \]
 In order to compute this integral, we need to find an explicit formula for $s(y)$.
 The method for finding $s(y)$ involves using \textbf{similar triangles}. We will create two triangles- 
-the first is a vertical cross-section of the pyramid through the apex and has height $h$ (the height of the pyramid) 
-and base $b$ (the base of the pyramid). 
+the first is a vertical cross-section of the pyramid through the apex and has height $6$ (the height of the pyramid) 
+and base $6$ (the base of the pyramid). 
 
 %INSERT FIGURE HERE
 
-The second triangle is positioned inside the first in such a way that it has height $h-y$, extending from $y$ up to $h$ on the $y$-axis,
+The second triangle is positioned inside the first in such a way that it has height $6-y$, extending from $y$ up to $h$ on the $y$-axis,
 and base $s(y)$ measured through the $y$-axis perpendicular to the side of the square cross-section at height $y$.
 
 %INSERT FIGURE HERE
@@ -136,21 +92,20 @@ These two triangles are similar because they have the same angles. Because the t
 the height of each triangle is the same, 
 i.e.,
 \[
-\frac{s(y)}{h-y} = \frac{b}{h}.
+\frac{s(y)}{6-y} = \frac{4}{6}.
 \]
  Solving for $s(y)$ gives
  \[
- s(y) = \frac{(h-y)b}{h} = \frac{h-y}{h} \cdot b = \left(1-\frac{y}{h}\right)b.
+ s(y) = \frac{2(6-y)}{3} = 4 - \frac23 y.
  \]
  We can now compute the volume of the pyramid by computing the definite integral given above:
  \begin{align*}
- V &= \int_0^h s(y)^2 \; dy\\
-   &= \int_0^h \left(1-\frac{y}{h}\right)^2b^2 \; dy
-   &= b^2 \int_0^h \left(1 - \frac{2y}{h} + \frac{y^2}{h^2}\right)\; dy
-   &= b^2 \left(y - \frac{y^2}{h} + \frac{y^3}{3h^2}\right)\bigg|_0^h\\
-   &= b^2 \left(h - \frac{h^2}{h} + \frac{h^3}{3h^2}\right)\\
-   &= b^2 \left(h - h + \frac{h}{3}\right)\\
-   &= \frac13 b^2h.
+ V &= \int_0^6 s(y)^2 \; dy\\
+   &= \int_0^6 \left(4-\frac23 y\right)^2 \; dy\\
+   &= \int_0^6 \left(16 - \frac{16}{3} y + \frac49 y^2 \right)\; dy\\
+   &= \left(16y - \frac83 y^2 + \frac{4}{27}y^3\right)\bigg|_0^6\\
+   &= \left(96 - 96 + 32\right)\\
+   &= 32.
 \end{align*}
 
 
@@ -159,11 +114,20 @@ i.e.,
  
  
  
-\begin{problem}(problem 1) Find the volume of a pyramid with a square base of side length 10 with height 8.\\
+\begin{problem}(problem 1a) Find the volume of a pyramid with a square base of side length 10 with height 8.\\
 Cross-sections perpendicular to the $y$-axis are squares with side length $s(y) = \answer{10 - 5y/4}$.\\
 The definite integral that represents the volume is: $\displaystyle{\int_0^8 \answer{(10 - 5y/4)^2} dy}$.\\
 The volume is $\answer{800/3}$.
 \end{problem}
+
+
+\begin{problem}(problem 1b) Find the volume of a pyramid with a square base of side length $b$ with height $h$.\\
+Cross-sections perpendicular to the $y$-axis are squares with side length $s(y) = \answer{ (b/h)(h-y)}$.\\
+The definite integral that represents the volume is: $\displaystyle{\int_0^h \answer{((bh-by)/h)^2} dy}$.\\
+The volume is $\answer{b^2h/3}$.
+\end{problem}
+
+
 
 
 \begin{example}  Find the volume of the intersection of two cylinders of radius $r$. 
@@ -216,6 +180,57 @@ V &= \int_{-r}^r s(x)^2 \; dx\\
 
 
 \end{document}
+
+
+
+\begin{explanation}
+To be precise, we will next define the volume in terms of the limit of a Riemann Sums.  
+Let us reconsider the solid above, from the perspective of the $x$-axis. Suppose that at
+each $x$-value there is a cross-sectional area $A(x)$. Then to approximate the volume of the solid we 
+can use a Riemann sum as follows. Subdivide $[0,1]$ into `$n$' equal sub-intervals each of length $\Delta x = 1/n$.
+From the $i^\text{th}$ sub-interval,$\left[\frac{i-1}{n}, \frac{i}{n}\right]$, we choose a sample point, $x_i^*$, where 
+the index, $i$, runs from $1$ to $n$. 
+Corresponding to these $n$ values, $x_i^*$, there are cross-sections whose areas are given by $A(x_i^*)$.
+From these cross-sections we can construct an irregular cylinder as shown below.
+
+%INSERT FIGURE OF IRREGULAR CYLINDER HERE
+
+The volume of each of the $i^\text{th}$ cylinder is given by
+\[
+V_i = \text{area of base} \times \text{height} = A(x_i^*) \cdot \frac{1}{n} = A(x_i^*) \cdot \Delta x.
+\]
+Summing the volumes of these cylinders gives an approximation to the volume as a Riemann Sum
+\[
+V \approx \sum_{i=1}^n V_i = \sum_{i=1}^n A(x_i^*) \Delta x.
+\]
+The exact volume is then defined in terms of a limit these Riemann Sums:
+\[
+V = \lim_{n \to \infty} \sum_{i=1}^n A(x_i^*) \Delta x = \int_0^1 A(x) \; dx.
+\]
+
+\end{explanation}
+
+We generalize this explanation in the definition below.
+
+\begin{definition}[Volume of a Solid]
+Let $A(x)$ be the cross-sectional area of a solid at an $x$-value between $x = a$ and $x=b$. Then, the exact volume of the solid is given by
+\[
+V = \int_a^b A(x) \; dx = \lim_{n \to \infty} \sum_{i=1}^n A(x_i^*) \Delta x.
+\]
+In this context, 
+\[
+\Delta x = \frac{b-a}{n}
+\] 
+and $x_i^*$ is a sample point in the $i^\text{th}$ sub-interval
+\[
+[a + (i-1)\Delta x, a + i\Delta x],
+\]
+where $i = 1, 2, \dots, n$.
+\end{definition}
+
+
+
+
 
 
 \begin{example} %example #15
