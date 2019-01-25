@@ -50,15 +50,15 @@ Our cone is obtained by revolving the region between this line and the $x$-axis 
 
 We imagine our cone as being constructed by revolving each of the vertical segments in our region individually.
 For any value of $x$ between $x = 0$ and $x = h$, the length of the segment is given by the corresponding $y$-coordinate
-on the line, $y = \frac{r}{h} x$. Assuming that this segment has thickness $dx$, the volume of the resulting disk is 
+on the line, $y = \frac{r}{h} x$. The area of the resulting disk is 
 \[
-V_x = \pi R(x)^2 h  = \pi \left(\frac{r}{h} x\right)^2 \; dx = \pi \frac{r^2}{h^2} x^2 \; dx.
+A_x = \pi R(x)^2   = \pi \left(\frac{r}{h} x\right)^2  = \pi \frac{r^2}{h^2} x^2 .
 \]
 
 
-The volume of the solid of revolution, i.e., our cone, is then obtained by adding the volumes of these infinitely thin disks using a definite integral:
+The volume of the solid of revolution, i.e., our cone, is then obtained by using a definite integral:
 \[
-V = \int_0^h V_x \; dx = \int_0^h \pi R(x)^2 \; dx = \int_0^h \pi \frac{r^2}{h^2} x^2 \; dx 
+V = \int_0^h A_x \; dx  = \int_0^h \pi R(x)^2 \; dx = \int_0^h \pi \frac{r^2}{h^2} x^2 \; dx 
 \]
 \[
 = \pi \frac{r^2}{h^2}\int_0^h  x^2 \; dx = \pi \frac{r^2}{h^2} \left(\frac{x^3}{3}\right)\bigg|_0^h 
@@ -67,7 +67,7 @@ V = \int_0^h V_x \; dx = \int_0^h \pi R(x)^2 \; dx = \int_0^h \pi \frac{r^2}{h^2
 = \pi \frac{r^2}{h^2} \left(\frac{h^3}{3} - 0\right) = \pi \frac{r^2}{h^2} \cdot \frac{h^3}{3} = \frac13 \pi r^2 h.
 \]
 
-Thus, the volume of a ccone of height $h$ and base radius $r$ is $V = \frac13 \pi r^2 h$, i.e., its volume is 1/3 of 
+Thus, the volume of a cone of height $h$ and base radius $r$ is $V = \frac13 \pi r^2 h$, i.e., its volume is 1/3 of 
 volume of the cylinder with the same height and radius.
 
 %(INSERT FIGURE HERE)
@@ -80,23 +80,23 @@ volume of the cylinder with the same height and radius.
 
 \begin{example}[example 2]
 In this example, we find the volume of a sphere with radius $r$.
-To create the sphere, consider the semi-circle or radius $r$ centered at the origin: $y = \sqrt{r^2 - x^2}$.
+To create the sphere, consider the semi-circle of radius $r$ centered at the origin: $y = \sqrt{r^2 - x^2}$.
 Our sphere is obtained by revolving the region between this semi-circle and the $x$-axis over the interval $[-r,r]$
 
 %(INSERT FIGURE HERE)
 
 We imagine the sphere as being constructed by revolving each of the vertical segments in our region individually.
 For any value of $x$ between $x = -r$ and $x = r$, the length of the segment is given by the corresponding $y$-coordinate
-on the semi-circle, $y = \sqrt{r^2 - x^2}$. Assuming that this segment has thickness $dx$, the volume of the resulting disk is 
+on the semi-circle, $y = \sqrt{r^2 - x^2}$. The area of the resulting disk is 
 \[
-v_x = \pi R(x)^2 dx = \pi y^2 \; dx = \pi \left(\sqrt{r^2 - x^2}\right)^2 dx = \pi (r^2 - x^2)\; dx.
+A_x = \pi R(x)^2   = \pi \left(\sqrt{r^2 - x^2}\right)^2  = \pi (r^2 - x^2).
 \]
 
 %(INSERT FIGURE HERE)
 
-The volume of the solid of revolution, i.e., our sphere, is then obtained by adding the volumes of these infinitely thin disks using a definite integral:
+The volume of the solid of revolution, i.e., our sphere, is then obtained by using a definite integral:
 \[
-V = \int_{-r}^r V_x \; dx = \int_{-r}^r \pi R(x)^2 \; dx = \int_{-r}^r \pi (r^2 - x^2) \; dx 
+V = \int_{-r}^r A_x \; dx  = \int_{-r}^r \pi R(x)^2 \; dx = \int_{-r}^r \pi (r^2 - x^2) \; dx 
 \]
 \[
 = \pi \int_{-r}^r  (r^2 - x^2) \; dx = \pi  \left(r^2 x - \frac{x^3}{3}\right)\bigg|_{-r}^r 
@@ -121,17 +121,17 @@ To compute the volume of the resulting solid, fix a value of $x$ between 0 and 1
 
 %(INSERT FIGURE HERE)
 
-Revolving this individual segment about the $x$-axis yields a disk with radius $r = x^2$ and thickness $dx$. 
+Revolving this individual segment about the $x$-axis yields a disk with radius $r = x^2$. 
 
 %(INSERT FIGURE HERE)
 
-The volume of this disk is then
+The area of this disk is then
 \[
-V_x = \pi r^2 h = \pi (x^2)^2 \; dx = \pi x^4 \; dx.
+V_x = \pi r^2  = \pi (x^2)^2  = \pi x^4.
 \]
-The volume of the solid can be otained by integrating $V_x$ as $x$ ranges from 0 to 1:
+The volume of the solid can be otained by integrating $A_x$ as $x$ ranges from 0 to 1:
 \[
-V = \int_0^1 V_x \; dx = \int_0^1 \pi x^4 \; dx = \pi \frac{x^5}{5}\bigg|_0^1 = \frac{\pi}{5}.
+V = \int_0^1 A_x \; dx  = \int_0^1 \pi x^4 \; dx = \pi \frac{x^5}{5}\bigg|_0^1 = \frac{\pi}{5}.
 \]
 
 %(INSERT GEOGEBRA APPLET HERE)
@@ -149,17 +149,17 @@ To compute the volume of the resulting solid, fix a value of $x$ between 0 and 1
 
 %(INSERT FIGURE HERE)
 
-Revolving this individual segment about the $x$-axis yields a disk with radius $r = x^2$ and thickness $dx$. 
+Revolving this individual segment about the $x$-axis yields a disk with radius $r = x^2$. 
 
 %(INSERT FIGURE HERE)
 
-The volume of this disk is then
+The area of this disk is then
 \[
-V_x = \pi r^2 h = \pi (\sqrt x)^2 \; dx = \pi x \; dx.
+A_x = \pi r^2  = \pi (\sqrt x)^2  = \pi x.
 \]
-The volume of the solid can be otained by integrating $V_x$ as $x$ ranges from 0 to 1:
+The volume of the solid can be otained by integrating $A_x$ as $x$ ranges from 0 to 1:
 \[
-V = \int_0^1 V_x \; dx = \int_0^1 \pi x \; dx = \pi \frac{x^2}{2}\bigg|_0^1 = \frac{\pi}{2}.
+V = \int_0^1 A_x \; dx  = \int_0^1 \pi x \; dx = \pi \frac{x^2}{2}\bigg|_0^1 = \frac{\pi}{2}.
 \]
 
 
@@ -178,10 +178,6 @@ A = \pi(R^2 - r^2).
 
 %(INSERT FIGURE HERE)
 
-If we attribute an infinitesimal thickness, $dx$, to the washer, then its volume is
-\[
-V = \pi(R^2 - r^2) h = \pi(R^2 - r^2) \; dx.
-\]
 We now use this to calculuate volumes of solids of revolutions about the $x$-axis in which the region does not border the axis.
 
 \begin{example}[example 5] Find the volume of the solid obtained by revolving the region bounded by the graphs of 
@@ -192,7 +188,7 @@ First, note that the curves $y = e^x$ and $y = 3$ intersect at $x = \ln(3)$.
 Thus, to compute the volume of the resulting solid, fix a value of $x$ between $0$ and $\ln(3)$ and consider a vertical segment in the region at this $x$-value.
 
 
-Revolving this individual segment about the $x$-axis yields a washer with inner radius, $r = e^x$, outer radius, $R = 3$, and thickness, $dx$. 
+Revolving this individual segment about the $x$-axis yields a washer with inner radius, $r = e^x$, outer radius, $R = 3$. 
 
 
 \begin{image}
@@ -224,11 +220,12 @@ Revolving this individual segment about the $x$-axis yields a washer with inner 
 
 The area of this washer is then
 \[
-A_x = \pi (R^2 - r^2) h = \pi \left[3^2 - \left(e^x\right)^2\right] \; dx = \pi \left(9 - e^{2x}\right) \; dx.
+A_x = \pi (R^2 - r^2)  = \pi \left[3^2 - \left(e^x\right)^2\right]  = \pi \left(9 - e^{2x}\right) .
 \]
-The volume of the solid can be otained by integrating $A_x \, dx$ as $x$ ranges from $0$ to $\ln 3$:
+The volume of the solid can be otained by integrating $A_x$ as $x$ ranges from $0$ to $\ln 3$:
 \[
-V = \int_0^{\ln 3} V_x \; dx = \int_0^{\ln 3} \pi \left(9 - e^{2x}\right) \; dx = \pi \left(9x - \frac{e^{2x}}{2}\right)\bigg|_0^{\ln 3} = \left(9\ln(3)-4\right)\pi.
+V = \int_0^{\ln 3} A_x \; dx  = \int_0^{\ln 3} \pi \left(9 - e^{2x}\right) \; dx 
+= \pi \left(9x - \frac{e^{2x}}{2}\right)\bigg|_0^{\ln 3} = \left(9\ln(3)-4\right)\pi.
 \]
 
 
@@ -246,7 +243,7 @@ To compute the volume of the resulting solid, fix a value of $x$ between 0 and $
 
 
 
-Revolving this individual segment about the $x$-axis yields a washer with inner radius, $r = \sec(x)$, outer radius, $R = 2$, and thickness, $dx$. 
+Revolving this individual segment about the $x$-axis yields a washer with inner radius, $r = \sec(x)$ and outer radius, $R = 2$. 
 
 
 \begin{image}
@@ -276,13 +273,13 @@ Revolving this individual segment about the $x$-axis yields a washer with inner 
 \end{image}
 
 
-The volume of this washer is then
+The area of this washer is then
 \[
-V_x = \pi (R^2 - r^2) h = \pi \left[2^2 - \sec^2(x)\right] \; dx = \pi \left[4 - \sec^2(x)\right] \; dx.
+A_x = \pi (R^2 - r^2)  = \pi \left[2^2 - \sec^2(x)\right]  = \pi \left[4 - \sec^2(x)\right] .
 \]
-The volume of the solid can be otained by integrating $V_x$ as $x$ ranges from 0 to $\pi/4$:
+The volume of the solid can be otained by integrating $A_x$ as $x$ ranges from 0 to $\pi/4$:
 \[
-V = \int_0^{\pi/4} V_x \; dx = \int_0^{\pi/4} \pi \left[4-\sec^2(x)\right] \; dx = \pi \left[4x - \tan(x)\right]\bigg|_0^{\pi/4} = \pi^2 - \pi.
+V = \int_0^{\pi/4} A_x \; dx  = \int_0^{\pi/4} \pi \left[4-\sec^2(x)\right] \; dx = \pi \left[4x - \tan(x)\right]\bigg|_0^{\pi/4} = \pi^2 - \pi.
 \]
 
 
@@ -296,7 +293,8 @@ V = \int_0^{\pi/4} V_x \; dx = \int_0^{\pi/4} \pi \left[4-\sec^2(x)\right] \; dx
 
 We now find the volume of solids of revolution obtained by revolving a region about a vertical axis.
 
-\begin{example}[example 7] Find the volume of the solid obtained by revolving the region bounded by the graphs of $y = x^2, y=0$, and $x = 1$ about the $y$-axis.\\
+\begin{example}[example 7] Find the volume of the solid obtained by revolving the region bounded by the graphs of $y = x^2, y=0$, 
+and $x = 1$ about the $y$-axis.\\
 We begin with a sketch of the region.
 
 
@@ -336,13 +334,13 @@ Revolving this individual segment about the $y$-axis yields a cylindrical shell 
 \end{image}
 
 
-The volume of this shell is the surface area of the shell multiplied by its thickness:
+The surface area of this shell is:
 \[
-V_x = 2\pi rh \;dx = 2\pi x(x^2) \; dx = 2\pi x^3 \; dx.
+A_x = 2\pi rh  = 2\pi x(x^2)  = 2\pi x^3 .
 \]
 The volume of the solid can be otained by integrating $V_x$ as $x$ ranges from 0 to 1:
 \[
-V = \int_0^1 V_x \; dx = \int_0^1 2\pi x^3 \; dx = 2\pi \frac{x^4}{4}\bigg|_0^1 = \frac{\pi}{2}.
+V = \int_0^1 A_x \; dx = \int_0^1 2\pi x^3 \; dx = 2\pi \frac{x^4}{4}\bigg|_0^1 = \frac{\pi}{2}.
 \]
 
 
@@ -360,7 +358,7 @@ To compute the volume of the resulting solid, fix a value of $x$ between 0 and 1
 
 
 Revolving this individual segment about the $y$-axis yields a cylindrical shell with 
-radius, $r = x$, height, $h = 2 - \sqrt x$, and thickness, $dx$. 
+radius, $r = x$ and height, $h = 2 - \sqrt x$. 
 
 \begin{image}
 \begin{tikzpicture}
@@ -399,13 +397,13 @@ radius, $r = x$, height, $h = 2 - \sqrt x$, and thickness, $dx$.
 \end{image}
 
 
-The volume of this shell is the surface area of the shell multiplied by its thickness:
+The surface area of the shell is:
 \[
-V_x = 2\pi rh \;dx = 2\pi x(2 - \sqrt x) \; dx = 2\pi \left(2x - x^{3/2}\right) \; dx.
+A_x = 2\pi rh  = 2\pi x(2 - \sqrt x)  = 2\pi \left(2x - x^{3/2}\right) .
 \]
-The volume of the solid can be otained by integrating $V_x$ as $x$ ranges from 0 to 1:
+The volume of the solid can be otained by integrating $A_x$ as $x$ ranges from 0 to 1:
 \[
-V = \int_0^1 V_x \; dx = \int_0^1 2\pi \left(2x - x^{3/2}\right) \; dx = 2\pi \left(x^2 - \frac25 x^{5/2}\right)\bigg|_0^1 = \frac{6\pi}{5}.
+V = \int_0^1 A_x \; dx = \int_0^1 2\pi \left(2x - x^{3/2}\right) \; dx = 2\pi \left(x^2 - \frac25 x^{5/2}\right)\bigg|_0^1 = \frac{6\pi}{5}.
 \]
 
 
