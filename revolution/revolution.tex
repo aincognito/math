@@ -14,16 +14,54 @@ We use disks, washers and shells to find the volume of a solid of revolution.
 
 \maketitle
 
-We now find the volume of a solid of revolution.  
+A special type of solid whose cross-sections are familiar geometric shapes is the solid of revolution. 
+We will use the idea of the last section, namely that volume can be found by integrating cross-sectional area, to find the volume of such a solid.  
 
-\begin{definition}[Solid of revolution] A \textbf{solid of revolution} is obtained by revolving a region in the plane about 
-a line.  The line is referred to as the \textbf{axis of revolution}.
+\begin{definition}[Solid of revolution] A \textbf{solid of revolution} is a solid obtained by revolving a region in the plane about 
+a given line.  The line is referred to as the \textbf{axis of revolution}.
 
 \end{definition}
 
-Cylinders, cones and spheres are familiar examples of solids of revolution. 
+Cylinders, cones and spheres are examples of familiar solids which are solids of revolution. 
+The main formulas we will need from geometry are the area of a circle, area of a washer and the lateral surface area of a cylinder:
 
-The main formula we will need from geometry is the area of a circle of radius $r$: $A = \pi r^2$. 
+\begin{image}
+\begin{tikzpicture}
+%\fill[gray,opacity=0.5] (0,0) circle (1.5cm);
+
+
+\filldraw[fill=gray!10]
+  (0,0) circle (1.5cm) node[below, yshift=-1.5cm]{$A = \pi r^2$};
+  
+\draw (0,0) -- (1.05, 1.05) node[midway,left]{$r$};
+\filldraw[fill=black] (0,0) circle (0.03cm);
+
+  
+\filldraw[fill=gray!10]
+  (4,0) circle (1.5cm) node[below, yshift=-1.5cm]{$A = \pi (R^2 - r^2)$};
+\filldraw[fill=white]
+  (4,0) circle (.75cm); 
+\draw (4,0) -- (5.05, 1.05) node[left, yshift=-.2cm, xshift=-.2cm]{$R$};
+\draw (4,0) -- (3.55, 0.6) node[midway,left]{$r$};
+\filldraw[fill=black] (4,0) circle (0.03cm);
+     
+%\fill[gray,opacity=0.5] (4,0) circle (.75cm) -- (4,0) circle (1.5cm);
+%%\draw[name=AA] (4,0) circle (.75cm);
+%\draw[name=BB] (4,0) circle (1.5cm);
+%\fillbetween[AA:BB,gray,opacity=0.5];
+
+\draw (8,1.2) ellipse (1.25 and 0.3);
+\draw (6.75,1.2) -- (6.75,-1.2);
+\draw (6.75,-1.2) arc (180:360:1.25 and 0.3) node[below, xshift=-1.2cm, yshift = -.35cm]{$A = 2\pi rh$};
+\draw [dashed] (6.75,-1.2) arc (180:360:1.25 and -0.3) ;
+\draw (9.25,-1.2) -- (9.25,1.2) node[right,midway]{$h$};  
+\fill [gray!30, opacity=0.5] (6.75,1.2) -- (6.75,-1.2) arc (180:360:1.25 and 0.3) -- (9.25,1.2) arc (0:180:1.25 and -0.3);
+\filldraw[fill=black] (8,1.2) circle (0.03cm);
+\draw (8,1.2) -- (9.25, 1.2) node[midway,above, xshift=-.1cm, yshift=-.1cm]{$r$};
+
+\end{tikzpicture}
+\end{image}
+ 
 
 \section{Disks}
 
