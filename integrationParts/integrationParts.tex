@@ -5,7 +5,7 @@
 
 \outcome{Compute an integral using integration by parts}
 
-\title{Integration by Parts}
+\title{2.1 Integration by Parts}
 
 \begin{document}
 
@@ -93,7 +93,7 @@ shown above.
 
 \section{BASIC EXAMPLES}
 
-\begin{example} %example #1
+\begin{example}[example 1] %example #1
 Compute the integral using IBP:
   \[
   \int x\sin(x) \;dx.
@@ -139,7 +139,7 @@ Compute the integral using IBP:
 %\end{center}
 
 
-\begin{problem} %problem #1
+\begin{problem}(problem 1a) %problem #1
   Compute the integral using IBP:
   \[
   \int xe^x \;dx.
@@ -162,7 +162,7 @@ Compute the integral using IBP:
 \end{problem}
 
 
-\begin{problem} %problem #1
+\begin{problem}(problem 1b)
   Compute the integral using IBP:
   \[
   \int x\cos(x) \;dx.
@@ -187,7 +187,7 @@ Compute the integral using IBP:
 \end{problem}
 
 
-\begin{example}
+\begin{example}[example 2]
 Compute the integral using IBP:
   \[
   \int 3x\sin(4x) \;dx.
@@ -206,7 +206,7 @@ Next, the IBP formula gives
 \end{example}
 
 
-\begin{problem}
+\begin{problem}(problem 2a)
 Compute the integral using IBP:
   \[
   \int 2x\sin(5x)\;dx.
@@ -216,31 +216,44 @@ Let $u = \answer{2x}$   and   $dv = \answer{\sin(5x) dx}$.\\
   Then $du = \answer{2 dx}$   and   $v = \answer{-\frac15 \cos(5x)}$.\\
   Thus 
   \[
-  \int 2x\sin(5x) dx = -\frac25 x\cos(5x) + \int \answer{\frac25 \cos(5x)-} dx = \answer{xe^x - e^x} + C.
+  \int 2x\sin(5x) dx = -\frac25 x\cos(5x) + \int \answer{\frac25 \cos(5x)} dx = \answer{-\frac25 x\cos(5x) +\frac{2}{25} \sin(5x)} + C.
   \]
   
 \end{problem}
 
 
-\begin{problem}
+\begin{problem}(problem 2b)
 Compute the integral using IBP:
   \[
   \int 6xe^{-3x} \;dx.
   \]
-
+Let $u = \answer{6x}$   and   $dv = \answer{e^{-3x} dx}$.\\
+  Then $du = \answer{6 dx}$   and   $v = \answer{-\frac13 e^{-3x}}$.\\
+  Thus 
+  \[
+  \int 6xe^{-3x} dx = -\frac12 xe^{-3x} + \int \answer{\frac12 e^{-3x}} dx = \answer{\frac12 xe^{-3x} - \frac16 e^{-3x}} + C.
+  \]
+  
 \end{problem}
 
 
-\begin{problem}
+\begin{problem}(problem 2c)
 Compute the integral using IBP:
   \[
   \int x\sin(x/2) \;dx.
   \]
 
+Let $u = \answer{x}$   and   $dv = \answer{\sin(x/2) dx}$.\\
+  Then $du = \answer{ dx}$   and   $v = \answer{-2 \cos(x/2)}$.\\
+  Thus 
+  \[
+  \int x\sin(x/2) dx = -2x\cos(x/2) + \int \answer{2 \cos(x/2)} dx = \answer{-2x\cos(x/2) + 4 \sin(x/2)} + C.
+  \]
+  
 \end{problem}
 
 
-\begin{example}[IBP twice]
+\begin{example}[example 3, IBP twice]
 Compute the integral:
   \[
   \int x^2\sin(3x) \;dx.
@@ -267,7 +280,7 @@ Next, the IBP formula gives
 \end{example}
 
 
-\begin{problem}
+\begin{problem}(problem 3a)
 Compute the integral:
   \[
   \int x^2\cos(2x) \;dx.
@@ -275,7 +288,7 @@ Compute the integral:
 
 \end{problem}
 
-\begin{problem}
+\begin{problem}(problem 3b)
 Compute the integral:
   \[
   \int x^2e^{-x} \;dx.
