@@ -285,6 +285,18 @@ Compute the integral:
   \[
   \int x^2\cos(2x) \;dx.
   \]
+Let $u = \answer{x^2}$   and   $dv = \answer{\cos(2x) dx}$.\\
+  Then $du = \answer{2x dx}$   and   $v = \answer{\frac12 \sin(2x)}$.\\
+  Thus 
+  \[
+  \int x^2 \cos(2x) dx = \frac12 x^2 \sin(2x) -\int \answer{x \sin(2x)} dx.
+  \]
+Let $u = \answer{x}$   and   $dv = \answer{\sin(2x) dx}$.\\
+  Then $du = \answer{dx}$   and   $v = \answer{-\frac12 \cos(2x)}$.\\ 
+Thus 
+  \[
+  \int x^2 \cos(2x) dx = \answer{\frac12 x^2 \sin(2x) + \frac12 x \cos(2x) - \frac12 \sin(2x)} + C.
+  \]  
 
 \end{problem}
 
@@ -299,7 +311,7 @@ Compute the integral:
 \section{TABULAR INTEGRATION}
 
 Integrals of the form $\int x^n f(x) \,dx$ require IBP $n$ times when $f(x)$ is a sine, cosine or exponential function.
-A notational shortcut called \index{\textbf{tabular integration}} can be used to streamline the process of using IBP multiple times.
+A notational shortcut called \textbf{tabular integration} can be used to streamline the process of using IBP multiple times.
 As an example, let's revisit the previous example:
 
 \begin{example}[example 4]
@@ -342,6 +354,38 @@ Thus,
 
 
 
+
+\begin{problem}(problem 4)
+Compute the integral using Tabular Integration:
+  \[
+  \int x^2 e^{-4x} \;dx.
+  \]
+Complete the table and then enter the final answer.
+\begin{center}
+\[
+\begin{array}{c|c}
+		u & dv  \\\hline 
+		x^2 & e^{-4x} \\  
+      \answer{2x} & \answer{-\frac14 e^{-4x}} \\ 
+       \answer{2} & \answer{\frac{1}{16} e^{-4x}} \\
+       0 & \answer{-\frac{1}{64} e^{-4x}} 
+	\end{array}
+    \]
+\end{center}
+
+
+
+Thus, $\displaystyle{  \int x^2 e^{-4x} \;dx = }$
+  \begin{multipleChoice}
+\choice{$-\tfrac{1}{32} (8x^2  - 4x + 1)e^{-4x} +C$}
+\choice[correct]{$-\tfrac{1}{32} (8x^2  + 4x + 1)e^{-4x} +C$}
+\choice{$\tfrac{1}{32} (8x^2  - 4x - 1)e^{-4x} +C$}
+\end{multipleChoice}
+  
+\end{problem}
+
+
+
 \begin{example}[example 5]
 Compute the integral using Tabular Integration:
   \[
@@ -379,12 +423,12 @@ Thus,
   \int x^4 e^{-2x} \;dx = -\frac12 x^4 e^{-2x} - \frac44x^3 e^{-2x} - \frac{12}{8} x^2 e^{-2x} - \frac{24}{16}x e^{-2x} - \frac{24}{32} e^{-2x} + C.
   \]
 \[
-= \left(-\frac12 x^4 - x^3  - \frac{3}{2} x^2  - \frac{3}{2}x  - \frac{3}{4}\right) e^{-2x} + C.
+= -\tfrac14\left(2 x^4 + 4x^3  + 6 x^2  + 6x  + 3\right) e^{-2x} + C.
 \]
 \end{example}
 
 
-\begin{problem}[problem 5]
+\begin{problem}(problem 5)
 Compute the integral using Tabular Integration:
   \[
   \int x^3 \cos(5x) \;dx.
@@ -407,7 +451,7 @@ Complete the table and then enter the final answer.
 
 Thus,
 \[
-  \int x^3 \cos(5x) \;dx = \answer{\frac15 x^3\sin(5x) + \frac{3}{25}x^2 \cos(5x) - \frac{6}{125}\sin(5x) -\frac{6}{625}\cos(5x)} +C.
+  \int x^3 \cos(5x) \;dx = \answer{\frac15 x^3\sin(5x) + \frac{3}{25}x^2 \cos(5x) - \frac{6}{125}x\sin(5x) -\frac{6}{625}\cos(5x)} +C.
   \]
 \end{problem}
 
@@ -532,7 +576,15 @@ Compute the integral:
   \[
   \int \tan^{-1}(x) \;dx.
   \]
-
+\begin{hint}
+      include $dx$ where appropriate
+  \end{hint}
+  Let $u = \answer{\tan^{-1}(x)}$   and   $dv = \answer{dx}$.\\
+  Then $du = \answer{\frac{1}{1+x^2} dx}$   and   $v = \answer{x}$.\\
+  Thus 
+  \[
+  \int \tan^{-1}(x) dx = x\tan^{-1}(x) - \int \answer{\frac{x}{1+x^2}} \;dx = \answer{x\tan^{-1}(x) -\frac12 \ln(1+x^2)} + C.
+  \]
 \end{problem}
 
 \begin{problem}(problem 7b)
@@ -540,7 +592,15 @@ Compute the integral:
   \[
   \int \sin^{-1}(4x) \;dx.
   \]
-
+\begin{hint}
+      include $dx$ where appropriate
+  \end{hint}
+  Let $u = \answer{\sin^{-1}(4x)}$   and   $dv = \answer{dx}$.\\
+  Then $du = \answer{\frac{4}{\sqrt{1-16x^2}} dx}$   and   $v = \answer{x}$.\\
+  Thus 
+  \[
+  \int \sin^{-1}(4x) dx = x\sin^{-1}(4x) - \int \answer{\frac{4x}{\sqrt{1-16x^2}}} \;dx = \answer{x\sin^{-1}(4x) +\frac14 \sqrt{1-16x^2}} + C.
+  \]
 \end{problem}
 
 \begin{example}[example 8]
@@ -662,6 +722,28 @@ Compute the integral:
 \[
 \int e^x\sin(x) \; dx.
 \]
+
+\begin{hint}
+      include $dx$ where appropriate
+  \end{hint}
+  Let $u = \sin(x)$   and   $dv = \answer{e^x \;dx}$.\\
+  Then $du = \answer{\cos(x) dx}$   and   $v = \answer{e^x}$.\\
+  Thus 
+  \[
+  \int e^x \sin(x) dx = e^x \sin(x) - \int \answer{e^x \cos(x)} \;dx. 
+  \]
+  Let $u = \answer{\cos(x)}$   and   $dv = \answer{e^x \;dx}$.\\
+  Then $du = \answer{-\sin(x) dx}$   and   $v = \answer{e^x}$.\\
+  Thus 
+  \[
+  \int e^x \sin(x) dx = e^x \sin(x) - e^x \cos(x) - \int \answer{e^x \sin(x)} \;dx. 
+  \]
+  
+  Solving algebraically for the integral gives:
+  \[
+  \int e^x \sin(x) dx = \answer{ 1/2(e^x \sin(x) - e^x \cos(x))} + C 
+  \]
+  
 \end{problem}
 
 
@@ -670,6 +752,29 @@ Compute the integral:
 \[
 \int e^{x/2}\sin(2x) \; dx.
 \]
+
+  \begin{hint}
+      include $dx$ where appropriate
+  \end{hint}
+  Let $u = \sin(2x)$   and   $dv = \answer{e^{x/2} \;dx}$.\\
+  Then $du = \answer{2\cos(2x) dx}$   and   $v = \answer{2e^{x/2}}$.\\
+  Thus 
+  \[
+  \int e^{x/2} \sin(2x) dx = 2e^{x/2} \sin(2x) - \int \answer{4e^{x/2} \cos(2x)} \;dx. 
+  \]
+  Let $u = 4\answer{\cos(2x)}$   and   $dv = \answer{e^{x/2} \;dx}$.\\
+  Then $du = \answer{-8\sin(2x) dx}$   and   $v = \answer{2e^{x/2}}$.\\
+  Thus 
+  \[
+  \int e^{x/2} \sin(2x) dx = 2e^{x/2} \sin(2x) -8 e^{x/2} \cos(2x) + \int \answer{-16e^{x/2} \sin(2x)} \;dx. 
+  \]
+  
+  Solving algebraically for the integral gives:
+   Thus 
+  \[
+  \int e^{x/2} \sin(2x) dx = \answer{ \frac{2}{17}e^{x/2} \sin(2x) - \frac{8}{17}e^{x/2} \cos(2x)} + C 
+  \]
+  
 \end{problem}
 
 Our next example involves the function $\sec^3(x)$ and arises in the calculation of arc length 
@@ -772,7 +877,7 @@ This gives the reduction formula:
 \int x^{n-1}e^{-x} \; dx = -x^{n-1}e^{-x} + (n-1)\int \answer{x^{n-2}e^{-x}} \; dx
 \]
 \begin{remark}
-We will see that $\Gamma(n) = (n-1)! = n(n-1)(n-2)\cdot \ldots \cdot 2 \cdot 1$.
+We will see that $\Gamma(n) = (n-1)! = (n-1)(n-2)\cdot \ldots \cdot 2 \cdot 1$.
 \end{remark}
 
 \end{problem}
@@ -818,6 +923,26 @@ Create a reduction of powers formula for the integral:
 \[
 \int \sin^n(x) \; dx.
 \]
+Use IBP with
+\[
+u = \sin^{n-1}(x), \quad dv = \answer{\sin(x)} \; dx
+\]
+\[
+du = \answer{(n-1)\sin^{n-2}(x) \cos(x)}\; dx,  \quad v = \answer{-\cos(x)}.
+\]
+This gives:
+\[
+\int \sin^n(x) \; dx = \answer{-\sin^{n-1}(x)\cos(x)} + \int (n-1)\sin^{n-2}(x) \cos^2(x) \; dx.
+\]
+Using $\cos^2(x) = 1 -\sin^2(x)$, we can write this last integral as
+\[
+\int \sin^n(x) \; dx = -\sin^{n-1}(x)\cos(x) + (n-1)\int \answer{\sin^{n-2}(x)- \sin^n(x)} \; dx.
+\]
+Combining the terms involving the original integral gives the reduction formula:
+\[
+\int \sin^n(x) \; dx = -\frac{1}{n}\sin^{n-1}(x)\cos(x) + \frac{n-1}{n}\int \answer{\sin^{n-2}(x)} \; dx.
+\]
+
 \end{problem}
 
 
