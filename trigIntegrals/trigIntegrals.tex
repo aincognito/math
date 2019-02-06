@@ -43,15 +43,23 @@ and
 \]
 We will find the double-angle formulas useful for integrating even powers of sine and cosine.
 
-\section{U-substitution}
-Let's compute some basic trig integrals using $u$-substitution.
+\section{Odd powers of sine or cosine}
 
-\begin{example}
+In this section, we handle integrals of the form
+\[
+\int \sin^m(x) \cos^n(x) \; dx,
+\]
+where either $m$ or $n$ (or both) is odd.
+
+The technique involves preparing and performing a $u$-substitution. The key is to use the Pythagorean identity to convert
+sines to cosines or vice-versa.
+
+\begin{example}[example 1]
 Compute
 \[
-\int \sin^3(x) \cos(x) \, dx.
+\int \sin^4(x) \cos(x) \, dx.
 \]
-To find an anti-derivative, we will make the substitution $u = \sin(x)$, as it is the inside of a composition
+This problem is readily solved using the substitution $u = \sin(x)$, as it is the inside of a composition
 and its differential, $du = \cos(x) \, dx$, is present as a factor of the integrand. 
 This substitution transforms the original integral as follows:
 \[
@@ -66,75 +74,218 @@ which is an integral that can be computed from the power rule giving
 
 \end{example}
 
-\begin{example}
-Compute
-\[
-\int \sec^5(x) \tan(x) \, dx.
-\]
-To find an anti-derivative, we will make the substitution $u = \sec(x)$, as it is the inside of a composition
-and its differential, $du = \sec(x)\tan(x) \, dx$, is present as a factor. 
-This substitution transforms the original integral as follows:
-\[
-\int \sec^5(x) \tan(x) \, dx = \int \sec^4(x) \sec(x) \tan(x) \, dx= \int u^4 \, du,
-\]
-which is an integral that can be computed from the power rule giving
-\begin{align*}
-\int \sec^5(x) \tan(x) \, dx &= \int \sec^4(x) \sec(x) \tan(x) \, dx\\
-                             &= \int u^4 \, du\\
-                             &= \frac{u^5}{5} + C\\
-                             &= \frac15 \sec^5(x) + C.
-\end{align*}
 
-\end{example}
 
-\begin{problem}
-Make a $u$-substitution to compute each of the following indefinite integrals:
-\begin{itemize}
-\item $\displaystyle{\int 5\sin^{14}(x)\cos(x) \, dx}$
-\item $\displaystyle{\int 12\cos^{3}(x)\sin(x) \, dx}$
-\item $\displaystyle{\int 4\tan^{7}(x)\sec^2(x) \, dx}$
-\item $\displaystyle{\int 10 \sec^{3}(x)\tan(x) \, dx}$
-\item $\displaystyle{\int 16\csc^{16}(x)\cot(x) \, dx}$
-\end{itemize}
+\begin{problem}(problem 1a)
+Compute the integral: $\displaystyle{\int \sin^6(x)\cos(x) \, dx}$\\
+Let $u = \answer{\sin(x)}$, \; then $du = \answer{\cos(x) dx}$.\\
+The integral becomes: $\displaystyle{\int \sin^6(x)\cos(x) \, dx = \int \answer{u^6} \; du}$\\
+Final answer: $\displaystyle{\int \sin^{6}(x)\cos(x) \, dx = \answer{1/7 \sin^7(x)} + C}$\\
 \end{problem}
 
-\section{Powers of Sine and Cosine}
-We now consider integrals of the form 
-\[
-\int \sin^m(x) \cos^n(x) \; dx,
-\]
-where $m$ and $n$ are positive integers.
-There are two main cases to be considered.
-In the first case, $m$ and/or $n$ is odd.
-The solution to problems of this type involves $u$-substitution,
-as we saw above.
-In the second case, $m$ and $n$ are both even. The double angle formulas above are used to 
-compute integrals of this type. We will also need the basic formula:
-\[
-\int \cos(ax) \; dx = \frac{1}{a} \sin(ax) + C.
-\]
 
-\subsection{Case 1: $m$ or $n$ is odd}
-\begin{example}
+\begin{problem}(problem 1b)
+Compute the integral: $\displaystyle{\int \sin(x)\cos^4(x) \, dx}$\\
+Let $u = \answer{\cos(x)}$, \; then $du = \answer{-\sin(x) dx}$.\\
+The integral becomes: $\displaystyle{\int \sin(x)\cos^4(x) \, dx = \int \answer{-u^4} \; du}$\\
+Final answer: $\displaystyle{\int \sin(x)\cos^4(x) \, dx = \answer{-1/5 \cos^5(x)} + C}$\\
+\end{problem}
+
+
+\begin{problem}(problem 1c)
+Compute the integral: $\displaystyle{\int \sin^{10}(3x)\cos(3x) \, dx}$\\
+Let $u = \answer{\sin(3x)}$, \; then $du = \answer{\cos(3x) dx}$.\\
+The integral becomes: $\displaystyle{\int \sin(x)\cos^4(x) \, dx = \int \answer{-u^4} \; du}$\\
+Final answer: $\displaystyle{\int \sin(x)\cos^4(x) \, dx = \answer{-1/5 \cos^5(x)} + C}$\\
+\end{problem}
+
+
+In the next example, we need to prepare for the $u$-substitution 
+
+\begin{example}[example 2]
 Compute the indefinite integral:
 \[
 \int \sin^4(x)\cos^3(x) \; dx.
 \]
-We will use the substitution $u = \sin(x)$ because of the even power.
-Then $du = \cos(x) \, dx$ and so $dx = \frac{du}{\cos(x)}$ and the integral becomes
+To prepare for the $u$-substitution, we will use the Pythagorean Identity to re-write the odd power of cosine as follows:
+\[
+\cos^3(x) = \cos^2(x) \cos(x) = \left[1 - \sin^2(x)\right] \cos(x).
+\]
+Now we can rewrite the original integral and hopefully, the $u$-substitution will suggest itself:
+\[
+\int \sin^4(x)\cos^3(x) \; dx = \int \sin^4(x)\left[1 - \sin^2(x)\right] \cos(x) \; dx.
+\]
+Let $u = \sin(x)$ and so  $du = \cos(x) \, dx$, giving:
 \begin{align*}
-\int \sin^4(x)\cos^3(x) \; dx &= \int u^4 \cos^3(x) \frac{du}{\cos(x)}\\
-   &= \int u^4 \cos^2(x) \; du &
-   \text{(use a Pythagorean identity)}\\
-   &= \int u^4 (1-\sin^2(x)) \; du\\
+\int \sin^4(x)\cos^3(x) \; dx &= \int \sin^4(x)\left[1 - \sin^2(x)\right] \cos(x) \; dx\\
    &= \int u^4 (1-u^2) \; du\\
-   &= \int (u^4 -u^6) \; du &
-  \text{(now integrate)}\\
-  &= \frac{u^5}{5} - \frac{u^7}{7} + C &  \text{(finally, substitute for $u$)}\\
+   &= \int (u^4 -u^6) \; du\\
+  &= \frac{u^5}{5} - \frac{u^7}{7} + C \\
   &= \frac15 \sin^5(x) - \frac17 \sin^7(x) + C.
 \end{align*}
   
 \end{example}
+
+
+
+\begin{problem}(problem 2a)
+Compute the indefinite integral:
+\[
+\int \sin^6(x)\cos^3(x) \; dx.
+\]
+Rewrite the odd power of cosine as:
+\begin{multipleChoice}
+\choice{$\cos^3(x) = \left[\sin^2(x)- 1\right] \cos(x)$} 
+\choice[correct]{$\cos^3(x) = \left[1 - \sin^2(x)\right] \cos(x)$}
+\choice{$\cos^3(x) = \left[1 - \sin(x)\right]^2 \cos(x)$}
+\end{multipleChoice}
+
+Now, let $u = \answer{\sin(x)}$ so that $du = \answer{\cos(x) dx}$.\\
+The integral becomes
+\[
+\int \sin^6(x)\cos^3(x) \; dx= \int \answer{u^6(1-u^2)} \; du.
+\]
+Final answer:
+\[
+\int \sin^6(x)\cos^3(x) \; dx= \answer{\sin^7(x)/7 - \sin^9(x)/9)} + C.
+\]
+\end{problem}
+
+
+\begin{problem}(problem 2b)
+Compute the indefinite integral:
+\[
+\int \sin^3(x)\cos^2(x) \; dx.
+\]
+Rewrite the odd power of sine as:
+\begin{multipleChoice}
+\choice{$\sin^3(x) = \left[1 - \cos(x)\right]^2 \sin(x)$}
+\choice{$\sin^3(x) = \left[\cos^2(x)- 1\right] \sin(x)$} 
+\choice[correct]{$\sin^3(x) = \left[1 - \cos^2(x)\right] \sin(x)$}
+
+\end{multipleChoice}
+
+Now, let $u = \answer{\cos(x)}$ so that $du = \answer{-\sin(x) dx}$.\\
+The integral becomes
+\[
+\int \sin^3(x)\cos^2(x) \; dx= \int \answer{-u^2(1-u^2)} \; du.
+\]
+Final answer:
+\[
+\int \sin^3(x)\cos^2(x) \; dx= \answer{\cos^5(x)/5 - \cos^3(x)/3)} + C.
+\]
+\end{problem}
+
+
+
+\begin{problem}(problem 2c)
+Compute the indefinite integral:
+\[
+\int 3\sin^8(2x)\cos^3(2x) \; dx.
+\]
+Rewrite the odd power of cosine as:
+\begin{multipleChoice}
+\choice[correct]{$\cos^3(2x) = \left[1 - \sin^2(2x)\right] \cos(2x)$}
+\choice{$\cos^3(2x) = \left[\sin^2(2x)- 1\right] \cos(2x)$} 
+
+\choice{$\cos^3(2x) = \left[1 - \sin(2x)\right]^2 \cos(2x)$}
+\end{multipleChoice}
+
+Now, let $u = \answer{\sin(2x)}$ so that $du = \answer{2\cos(2x) dx}$.\\
+The integral becomes
+\[
+\int 3\sin^8(2x)\cos^3(2x) \; dx= \int \answer{3/2 u^8(1-u^2)} \; du.
+\]
+Final answer:
+\[
+\int 3\sin^8(2x)\cos^3(2x) \; dx= \answer{\sin^9(x)/6 - 3 \sin^{11}(x)/22)} + C.
+\]
+\end{problem}
+
+
+%\begin{problem}
+%Make a $u$-substitution to compute each of the following indefinite integrals:
+%\begin{itemize}
+
+%\item $\displaystyle{\int 12\cos^{3}(x)\sin(x) \, dx}$
+%\item $\displaystyle{\int 4\tan^{7}(x)\sec^2(x) \, dx}$
+%\item $\displaystyle{\int 10 \sec^{3}(x)\tan(x) \, dx}$
+%\item $\displaystyle{\int 16\csc^{16}(x)\cot(x) \, dx}$
+%\end{itemize}
+%\end{problem}
+
+%\section{Powers of Sine and Cosine}
+%We now consider integrals of the form 
+%\[
+%\int \sin^m(x) \cos^n(x) \; dx,
+%\]
+%where $m$ and $n$ are positive integers.
+%There are two main cases to be considered.
+%In the first case, $m$ and/or $n$ is odd.
+%The solution to problems of this type involves $u$-substitution,
+%as we saw above.
+%In the second case, $m$ and $n$ are both even. The double angle formulas above are used to 
+%compute integrals of this type. We will also need the basic formula:
+%\[
+%\int \cos(ax) \; dx = \frac{1}{a} \sin(ax) + C.
+%\]
+
+%\subsection{Case 1: $m$ or $n$ is odd}
+\begin{example}[example 3]
+Compute the indefinite integral:
+\[
+\int \sin^7(x)\cos^5(x) \; dx.
+\]
+In this example, both powers are odd.  We focus on the smaller power in our $u$-sub preperation.
+We will rewrite the odd power of cosine:
+\[
+\cos^5(x) = \cos^4(x) \cos(x) = \left[1-\sin^2(x)\right]^2 \cos(x).
+\]
+Now we can rewrite the original integral and hopefully, the $u$-substitution will suggest itself:
+\[
+\int \sin^7(x)\cos^5(x) \; dx = \int \sin^7(x)\left[1 - \sin^2(x)\right]^2 \cos(x) \; dx.
+\]
+Let $u = \sin(x)$ so that $du = \cos(x) \, dx$, giving:
+\begin{align*}
+\int \sin^7(x)\cos^5(x) \; dx &= \int \sin^7(x)\left[1 - \sin^2(x)\right]^2 \cos(x) \; dx\\
+   &= \int u^7 (1-u^2)^2 \; du\\
+   &= \int u^7(1 - 2u^2 + u^4) \; du\\
+   &= \int (u^7 - 2u^9 + u^{11}) \; du\\
+  &= \frac{u^8}{8} - \frac{u^{10}}{5} + \frac{u^{12}}{12}+ C \\
+  &= \frac18 \sin^8(x) - \frac15 \sin^{10}(x) + \frac{1}{12} \sin^{12}(x)+ C
+\end{align*}
+
+\end{example}
+
+
+
+
+
+\begin{problem}(problem 3a)
+Compute the indefinite integral:
+\[
+\int \sin^5(x)\cos^7(x) \; dx.
+\]
+Rewrite the odd power of sine as:
+\begin{multipleChoice}
+\choice{$\sin^5(x) = \left[1 - \cos^4(x)\right] \sin(x)$}
+\choice{$\sin^5(x) = \left[\cos^4(x)- 1\right] \sin(x)$} 
+\choice[correct]{$\sin^5(x) = \left[1 - 2\cos^2(x) + \cos^4(x)\right] \sin(x)$}
+
+\end{multipleChoice}
+
+Now, let $u = \answer{\cos(x)}$ so that $du = \answer{-\sin(x) dx}$.\\
+The integral becomes
+\[
+\int \sin^5(x)\cos^7(x) \; dx= \int \answer{-(1-2u^2 + u^4)u^7} \; du.
+\]
+Final answer:
+\[
+\int \sin^5(x)\cos^7(x) \; dx= \answer{-\cos^8(x)/8 + \cos^{10}(x)/5 - \cos^{12}/12} + C.
+\]
+\end{problem}
+
+
 
 \begin{problem}
 Compute the indefinite integrals:
@@ -191,6 +342,28 @@ We consider integrals of the form
 where either $m$ is odd or $n$ is even. In both cases, a $u$-substitution
 can solve the problem. 
 
+
+\begin{example}
+
+Compute
+\[
+\int \sec^5(x) \tan(x) \, dx.
+\]
+To find an anti-derivative, we will make the substitution $u = \sec(x)$, as it is the inside of a composition
+and its differential, $du = \sec(x)\tan(x) \, dx$, is present as a factor. 
+This substitution transforms the original integral as follows:
+\[
+\int \sec^5(x) \tan(x) \, dx = \int \sec^4(x) \sec(x) \tan(x) \, dx= \int u^4 \, du,
+\]
+which is an integral that can be computed from the power rule giving
+\begin{align*}
+\int \sec^5(x) \tan(x) \, dx &= \int \sec^4(x) \sec(x) \tan(x) \, dx\\
+                             &= \int u^4 \, du\\
+                             &= \frac{u^5}{5} + C\\
+                             &= \frac15 \sec^5(x) + C.
+\end{align*}
+
+\end{example}
 \subsection{Case 1: $m$ is odd}
 \begin{example}
 Compute the indefinite integral:
