@@ -30,7 +30,7 @@ and
 \]
 %You can learn more about these well know identities here (link).
 
-Next, we have the double-angle formulas:
+Next, we have the half-angle formulas:
 
 \[
 \sin^2(\theta) = \frac{1-\cos(2\theta)}{2},
@@ -41,9 +41,9 @@ and
 \[
 \cos^2(\theta) = \frac{1+\cos(2\theta)}{2}.
 \]
-We will find the double-angle formulas useful for integrating even powers of sine and cosine.
+We will find the half-angle formulas useful for integrating even powers of sine and cosine.
 
-\section{Odd powers of sine or cosine}
+\section{Odd powers of sine and/or cosine}
 
 In this section, we handle integrals of the form
 \[
@@ -51,7 +51,8 @@ In this section, we handle integrals of the form
 \]
 where either $m$ or $n$ (or both) is odd.
 
-The technique involves preparing and performing a $u$-substitution. The key is to use the Pythagorean identity to convert
+The technique involves preparing and performing a $u$-substitution. The key is to use the Pythagorean 
+Identity $\sin^2 \theta + \cos^2 \theta = 1$ to convert
 sines to cosines or vice-versa.
 
 \begin{example}[example 1]
@@ -59,17 +60,11 @@ Compute
 \[
 \int \sin^4(x) \cos(x) \, dx.
 \]
-This problem is readily solved using the substitution $u = \sin(x)$, as it is the inside of a composition
-and its differential, $du = \cos(x) \, dx$, is present as a factor of the integrand. 
-This substitution transforms the original integral as follows:
-\[
-\int \sin^3(x) \cos(x) \, dx = \int u^3 \, du,
-\]
-which is an integral that can be computed from the power rule giving
+This problem is solved using the substitution $u = \sin(x)$, so that $du = \cos(x) \; dx$:
 \begin{align*}
-\int \sin^3(x) \cos(x) \, dx &= \int u^3 \, du\\
-                             &= \frac{u^4}{4} + C\\
-                             &= \frac14 \sin^4(x) + C.
+\int \sin^4(x) \cos(x) \, dx &= \int u^4 \, du\\
+                             &= \frac{u^5}{5} + C\\
+                             &= \frac15 \sin^5(x) + C.
 \end{align*}
 
 \end{example}
@@ -79,35 +74,34 @@ which is an integral that can be computed from the power rule giving
 \begin{problem}(problem 1a)
 Compute the integral: $\displaystyle{\int \sin^6(x)\cos(x) \, dx}$\\
 Let $u = \answer{\sin(x)}$, \; then $du = \answer{\cos(x) dx}$.\\
-The integral becomes: $\displaystyle{\int \sin^6(x)\cos(x) \, dx = \int \answer{u^6} \; du}$\\
-Final answer: $\displaystyle{\int \sin^{6}(x)\cos(x) \, dx = \answer{1/7 \sin^7(x)} + C}$\\
+Substituting gives: $\displaystyle{\int \sin^6(x)\cos(x) \, dx = \int \answer{u^6} \; du}$\\
+Finally: $\displaystyle{\int \sin^{6}(x)\cos(x) \, dx = \answer{1/7 \sin^7(x)} + C}$\\
 \end{problem}
 
 
 \begin{problem}(problem 1b)
 Compute the integral: $\displaystyle{\int \sin(x)\cos^4(x) \, dx}$\\
 Let $u = \answer{\cos(x)}$, \; then $du = \answer{-\sin(x) dx}$.\\
-The integral becomes: $\displaystyle{\int \sin(x)\cos^4(x) \, dx = \int \answer{-u^4} \; du}$\\
-Final answer: $\displaystyle{\int \sin(x)\cos^4(x) \, dx = \answer{-1/5 \cos^5(x)} + C}$\\
+Substituting gives: $\displaystyle{\int \sin(x)\cos^4(x) \, dx = \int \answer{-u^4} \; du}$\\
+Finally: $\displaystyle{\int \sin(x)\cos^4(x) \, dx = \answer{-1/5 \cos^5(x)} + C}$\\
 \end{problem}
 
 
 \begin{problem}(problem 1c)
 Compute the integral: $\displaystyle{\int \sin^{10}(3x)\cos(3x) \, dx}$\\
-Let $u = \answer{\sin(3x)}$, \; then $du = \answer{\cos(3x) dx}$.\\
-The integral becomes: $\displaystyle{\int \sin(x)\cos^4(x) \, dx = \int \answer{-u^4} \; du}$\\
-Final answer: $\displaystyle{\int \sin(x)\cos^4(x) \, dx = \answer{-1/5 \cos^5(x)} + C}$\\
+Let $u = \answer{\sin(3x)}$, \; then $du = \answer{3\cos(3x) dx}$.\\
+Substituting gives: $\displaystyle{\int \sin^{10}(3x)\cos(3x) \, dx = \int \answer{\frac13 u^{10}} \; du}$\\
+Finally: $\displaystyle{\int \sin^{10}(3x)\cos(3x) \, dx = \answer{\frac{1}{33} \cos^{11}(3x)} + C}$\\
 \end{problem}
 
 
 In the next example, we need to prepare for the $u$-substitution 
 
 \begin{example}[example 2]
-Compute the indefinite integral:
-\[
-\int \sin^4(x)\cos^3(x) \; dx.
-\]
-To prepare for the $u$-substitution, we will use the Pythagorean Identity to re-write the odd power of cosine as follows:
+Compute $\displaystyle{\int \sin^4(x)\cos^3(x) \; dx}$\\
+This problem will be solved using a $u$-substitution, but first, we must
+prepare for the substitution by using the Pythagorean 
+Identity, $\sin^2 \theta + \cos^2 \theta = 1$. We rewrite the odd power of cosine as follows:
 \[
 \cos^3(x) = \cos^2(x) \cos(x) = \left[1 - \sin^2(x)\right] \cos(x).
 \]
@@ -115,7 +109,7 @@ Now we can rewrite the original integral and hopefully, the $u$-substitution wil
 \[
 \int \sin^4(x)\cos^3(x) \; dx = \int \sin^4(x)\left[1 - \sin^2(x)\right] \cos(x) \; dx.
 \]
-Let $u = \sin(x)$ and so  $du = \cos(x) \, dx$, giving:
+Now, let $u = \sin(x)$ so that  $du = \cos(x) \, dx$, giving:
 \begin{align*}
 \int \sin^4(x)\cos^3(x) \; dx &= \int \sin^4(x)\left[1 - \sin^2(x)\right] \cos(x) \; dx\\
    &= \int u^4 (1-u^2) \; du\\
@@ -129,10 +123,7 @@ Let $u = \sin(x)$ and so  $du = \cos(x) \, dx$, giving:
 
 
 \begin{problem}(problem 2a)
-Compute the indefinite integral:
-\[
-\int \sin^6(x)\cos^3(x) \; dx.
-\]
+Compute $\displaystyle{\int \sin^6(x)\cos^3(x) \; dx}$\\
 Rewrite the odd power of cosine as:
 \begin{multipleChoice}
 \choice{$\cos^3(x) = \left[\sin^2(x)- 1\right] \cos(x)$} 
@@ -140,15 +131,18 @@ Rewrite the odd power of cosine as:
 \choice{$\cos^3(x) = \left[1 - \sin(x)\right]^2 \cos(x)$}
 \end{multipleChoice}
 
-Now, let $u = \answer{\sin(x)}$ so that $du = \answer{\cos(x) dx}$.\\
-The integral becomes
+Next, let $u = \answer{\sin(x)}$ so that $du = \answer{\cos(x) dx}$.\\
+
+Substituting gives: 
 \[
-\int \sin^6(x)\cos^3(x) \; dx= \int \answer{u^6(1-u^2)} \; du.
+\int \sin^6(x)\cos^3(x) \; dx= \int \answer{u^6(1-u^2)} \; du
 \]
-Final answer:
+
+Finally, 
 \[
-\int \sin^6(x)\cos^3(x) \; dx= \answer{\sin^7(x)/7 - \sin^9(x)/9)} + C.
+\int \sin^6(x)\cos^3(x) \; dx= \answer{\sin^7(x)/7 - \sin^9(x)/9)} + C
 \]
+
 \end{problem}
 
 
@@ -310,7 +304,7 @@ The integral becomes
 \]
 Final answer:
 \[
-\int \sin^5(x)\cos^7(x) \; dx= \answer{-\cos^8(x)/8 + \cos^{10}(x)/5 - \cos^{12}/12} + C.
+\int \sin^5(x)\cos^7(x) \; dx= \answer{-\cos^8(x)/8 + \cos^{10}(x)/5 - \cos^{12}(x)/12} + C.
 \]
 \end{problem}
 
