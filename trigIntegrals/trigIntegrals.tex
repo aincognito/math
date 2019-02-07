@@ -296,7 +296,7 @@ Now, let $u = \sin(x)$ so that  $du = \cos(x) \, dx$, giving:
 Rewrite the odd power of sine as:
 \begin{multipleChoice}
 \choice{$\sin^5(x) = \left[1 - \cos^4(x)\right] \sin(x)$}
-\choice{$\sin^5(x) = \left[1 - 2\cos^2(x) - \cos^4(x)\right] \sin(x)$} 
+\choice{$\sin^5(x) = \left[1 + \cos^4(x)\right] \sin(x)$} 
 \choice[correct]{$\sin^5(x) = \left[1 - 2\cos^2(x) + \cos^4(x)\right] \sin(x)$}
 
 \end{multipleChoice}
@@ -304,18 +304,56 @@ Rewrite the odd power of sine as:
 Next, let $u = \answer{\cos(x)}$ so that $du = \answer{-\sin(x) dx}$.\\
 Substituting gives
 \[
-\int \sin^3(x)\cos^2(x) \; dx= \int \answer{-u^2(1-u^2)} \; du.
+\int \sin^5(x)\cos^6(x) \; dx= \int \answer{-u^6(1-2u^2 + u^4)} \; du.
 \]
 Finally
 \[
-\int \sin^3(x)\cos^2(x) \; dx= \answer{\cos^5(x)/5 - \cos^3(x)/3} + C.
+\int \sin^5(x)\cos^6(x) \; dx= \answer{-1/7 \cos^7(x) + 2/9 \cos^9(x) - 1/11 \cos^{11}(x)} + C.
 \]
 \end{problem}
 
 
+\begin{problem}{\color{gray}(problem 3b)} Compute $\displaystyle{\int \sin^2(6x)\cos^5(6x) \; dx}$\\
+
+Rewrite the odd power of cosine as:
+
+\begin{multipleChoice}
+\choice[correct]{$\cos^5(6x) = \left[1 - 2\sin^2(6x) + \sin^4(6x)\right] \cos(6x)$}
+\choice{$\cos^5(6x) = \left[1 - \sin^4(6x)\right] \cos(6x)$}
+\choice{$\cos^5(6x) = \left[1 + \sin^4(6x)\right] \cos(6x)$} 
+\end{multipleChoice}
+
+Next, let $u = \answer{\sin(6x)}$ so that $du = \answer{6 \cos(x) dx}$.\\
+Substituting gives
+\[
+\int \sin^2(6x)\cos^5(6x) \; dx= \int \answer{1/6 u^2(1-2u^2 + u^4)} \; du.
+\]
+Finally
+\[
+\int \sin^2(6x)\cos^5(6x) \; dx= \answer{1/18 \sin^3(6x) - 1/15 \sin^5(6x) + 1/42 \sin^7(6x)} + C.
+\]
+\end{problem}
 
 
+\begin{problem}{\color{gray}(problem 3c)} Compute $\displaystyle{\int \sin^5(x) \; dx}$\\
+Rewrite the odd power of sine as:
+\begin{multipleChoice}
+\choice{$\sin^5(x) = \left[1 - \cos^4(x)\right] \sin(x)$}
+\choice{$\sin^5(x) = \left[1 + \cos^4(x)\right] \sin(x)$} 
+\choice[correct]{$\sin^5(x) = \left[1 - 2\cos^2(x) + \cos^4(x)\right] \sin(x)$}
 
+\end{multipleChoice}
+
+Next, let $u = \answer{\cos(x)}$ so that $du = \answer{-\sin(x) dx}$.\\
+Substituting gives
+\[
+\int \sin^5(x) \; dx= \int \answer{-(1-2u^2 + u^4)} \; du.
+\]
+Finally
+\[
+\int \sin^5(x) \; dx= \answer{- \cos(x) + 2/3 \cos^3(x) - 1/5 \cos^5(x)} + C.
+\]
+\end{problem}
 
 In the next example, both powers are odd.  In this case, we have to choose which one to rewrite.
 
