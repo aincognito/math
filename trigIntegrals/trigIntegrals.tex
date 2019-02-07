@@ -203,6 +203,30 @@ Final answer:
 \end{problem}
 
 
+\begin{problem}(problem 2d)
+Compute the indefinite integral:
+\[
+\int \cos^3(4x) \; dx.
+\]
+Rewrite the odd power of cosine as:
+\begin{multipleChoice}
+\choice{$\cos^3(4x) = \left[\sin^2(4x)- 1\right] \cos(4x)$} 
+\choice[correct]{$\cos^3(4x) = \left[1 - \sin^2(4x)\right] \cos(4x)$}
+\choice{$\cos^3(4x) = \left[1 - \sin(4x)\right]^2 \cos(4x)$}
+\end{multipleChoice}
+
+Now, let $u = \answer{\sin(4x)}$ so that $du = \answer{4\cos(4x) dx}$.\\
+The integral becomes
+\[
+\int \cos^3(4x) \; dx= \int \answer{1/4 (1-u^2)} \; du.
+\]
+Final answer:
+\[
+\int \cos^3(4x) \; dx= \answer{\frac14 \sin(4x) - \frac{1}{12} \sin^3(4x) } + C.
+\]
+\end{problem}
+
+
 %\begin{problem}
 %Make a $u$-substitution to compute each of the following indefinite integrals:
 %\begin{itemize}
@@ -266,6 +290,11 @@ Compute the indefinite integral:
 \[
 \int \sin^5(x)\cos^7(x) \; dx.
 \]
+Which trig function should be rewritten?
+\begin{multipleChoice}
+\choice[correct]{$\sin^5(x)$}
+\choice{$\cos^7(x)$}
+\end{multipleChoice}
 Rewrite the odd power of sine as:
 \begin{multipleChoice}
 \choice{$\sin^5(x) = \left[1 - \cos^4(x)\right] \sin(x)$}
@@ -286,16 +315,45 @@ Final answer:
 \end{problem}
 
 
-
 \begin{problem}(problem 3b)
-Compute the indefinite integrals:
+Compute the indefinite integral:
 \[
-\int \cos^6(x)\sin^3(x) \; dx = \answer{\frac19 \cos^9(x) - \frac17 \cos^7(x)} + C.
+\int \sin^9(x)\cos^3(x) \; dx.
 \]
+Which trig function should be rewritten?
+\begin{multipleChoice}
+\choice{$\sin^9(x)$}
+\choice[correct]{$\cos^3(x)$}
+\end{multipleChoice}
+
+Rewrite the odd power of cosine as:
+\begin{multipleChoice}
+\choice{$\cos^3(x) = \left[\sin^2(x)- 1\right] \cos(x)$} 
+\choice[correct]{$\cos^3(x) = \left[1 - \sin^2(x)\right] \cos(x)$}
+\choice{$\cos^3(x) = \left[1 - \sin(x)\right]^2 \cos(x)$}
+\end{multipleChoice}
+
+Now, let $u = \answer{\sin(x)}$ so that $du = \answer{\cos(x) dx}$.\\
+The integral becomes
 \[
-\int \sin^4(x)\cos^5(x) \; dx = \answer{\frac15 \sin^5(x) - \frac27 \sin^7(x)+\frac19 \sin^9(x)} + C.
+\int \sin^9(x)\cos^3(x) \; dx= \int \answer{u^9(1 - u^2)} \; du.
+\]
+Final answer:
+\[
+\int \sin^9(x)\cos^3(x) \; dx= \answer{\sin^{10}(x)/(10) - \sin^{12}(x)/(12) } + C.
 \]
 \end{problem}
+
+
+%\begin{problem}
+%Compute the indefinite integrals:
+%\[
+%\int \cos^6(x)\sin^3(x) \; dx = \answer{\frac19 \cos^9(x) - \frac17 \cos^7(x)} + C.
+%\]
+%\[
+%\int \sin^4(x)\cos^5(x) \; dx = \answer{\frac15 \sin^5(x) - \frac27 \sin^7(x)+\frac19 \sin^9(x)} + C.
+%\]
+%\end{problem}
 
 \subsection{Case 2: $m$ and $n$ are both even}
 \begin{example}
