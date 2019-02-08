@@ -16,7 +16,8 @@ We compute integrals involving powers and products of trigonometric functions.
 
 \section{Trigonometric Identities}
 
-The following are the Pythagorean Trigonometric Identities (named for \link[Pythagoras of Samos]{https://en.wikipedia.org/wiki/Pythagoras}) which hold for all angles,
+The following are the Pythagorean Trigonometric Identities 
+(named for \link[Pythagoras of Samos]{https://en.wikipedia.org/wiki/Pythagoras}) which hold for all angles,
 $\theta$, in the domains of the functions involved:
 \[
 \sin^2(\theta) + \cos^2(\theta) = 1,
@@ -28,7 +29,7 @@ and
 \[
 1 + \cot^2(\theta) = \csc^2(\theta).
 \]
-%You can learn more about these well know identities here (link).
+
 
 Next, we have the half-angle formulas:
 
@@ -43,37 +44,40 @@ and
 \]
 We will find the half-angle formulas useful for integrating even powers of sine and cosine.
 
-\section{Odd powers of sine and/or cosine}
+\section{Integrating powers of sine and cosine}
 
-In this section, we handle integrals of the form
+In this section, we compute integrals of the form
 \[
-\int \sin^m(x) \cos^n(x) \; dx,
+\int \sin^m(x) \cos^n(x) \; dx
 \]
-where either $m$ or $n$ (or both) is odd.
+The method we use depends on whether $m$ and $n$ are even or odd.
 
-The technique involves preparing and performing a $u$-substitution. The key is to use the Pythagorean 
+\subsection{Case 1: $m$ or $n$ is odd}
+In this case, the technique involves preparing and performing a $u$-substitution. The key is to use the Pythagorean 
 Identity $\sin^2 \theta + \cos^2 \theta = 1$ to convert
 sines to cosines or vice-versa.
 
 \begin{example}[example 1]
 Compute
 \[
-\int \sin^4(x) \cos(x) \, dx.
+\int \sin^4(x) \cos(x) \, dx
 \]
-This problem is solved using the substitution $u = \sin(x)$, so that $du = \cos(x) \; dx$:
+This problem is solved using the substitution $u = \sin(x)$, so that $du = \cos(x) \; dx$.
 \begin{align*}
 \int \sin^4(x) \cos(x) \, dx &= \int u^4 \, du\\
                              &= \frac{u^5}{5} + C\\
-                             &= \frac15 \sin^5(x) + C.
+                             &= \frac15 \sin^5(x) + C
 \end{align*}
 
 \end{example}
 
 
 
-\begin{problem}{\color{gray}(problem 1a)}
+\begin{problem}(problem 1a) 
 Compute $\displaystyle{\int \sin^6(x)\cos(x) \, dx}$\\
+
 Let $u = \answer{\sin(x)}$, \; then $du = \answer{\cos(x) dx}$.\\
+
 Substituting gives
 \[
 \int \sin^6(x)\cos(x) \, dx = \int \answer{u^6} \; du
@@ -87,9 +91,12 @@ Finally
 \end{problem}
 
 
-\begin{problem}{\color{gray}(problem 1b)} Compute $\displaystyle{\int \sin(x)\cos^4(x) \, dx}$\\
+
+\begin{problem}(problem 1b) 
+Compute $\displaystyle{\int \sin(x)\cos^4(x) \, dx}$\\
 
 Let $u = \answer{\cos(x)}$, \; then $du = \answer{-\sin(x) dx}$.\\
+
 Substituting gives 
 \[
 \int \sin(x)\cos^4(x) \, dx = \int \answer{-u^4} \; du
@@ -99,12 +106,16 @@ Finally
 \[
 \int \sin(x)\cos^4(x) \, dx = \answer{-1/5 \cos^5(x)} + C
 \]
+
 \end{problem}
 
 
-\begin{problem}{\color{gray}(problem 1c)}
+
+\begin{problem}(problem 1c)
 Compute $\displaystyle{\int \sin^{10}(3x)\cos(3x) \, dx}$\\
+
 Let $u = \answer{\sin(3x)}$, \; then $du = \answer{3\cos(3x) dx}$.\\
+
 Substituting gives 
 \[
 \int \sin^{10}(3x)\cos(3x) \, dx = \int \answer{\frac13 u^{10}} \; du
@@ -118,36 +129,41 @@ Finally
 \end{problem}
 
 
-In the next example, we need to prepare for the $u$-substitution 
+
+In the next example, we need to prepare for the $u$-substitution. 
+
+
 
 \begin{example}[example 2]
 Compute $\displaystyle{\int \sin^4(x)\cos^3(x) \; dx}$\\
-This problem will be solved using a $u$-substitution, but first, we must
-prepare for the substitution by using the Pythagorean 
-Identity, $\sin^2 \theta + \cos^2 \theta = 1$. We rewrite the odd power of cosine as follows:
+
+
+Prepare for substitution by rewriting the odd power of cosine.
 \[
 \cos^3(x) = \cos^2(x) \cos(x) = \left[1 - \sin^2(x)\right] \cos(x).
 \]
-Now we can rewrite the original integral and hopefully, the $u$-substitution will suggest itself:
+
+Rewrite the original integral.
 \[
-\int \sin^4(x)\cos^3(x) \; dx = \int \sin^4(x)\left[1 - \sin^2(x)\right] \cos(x) \; dx.
+\int \sin^4(x)\cos^3(x) \; dx = \int \sin^4(x)\left[1 - \sin^2(x)\right] \cos(x) \; dx
 \]
-Now, let $u = \sin(x)$ so that  $du = \cos(x) \, dx$, giving:
+Make the substitution \, $u = \sin(x)$,  \, $du = \cos(x) \, dx$.
 \begin{align*}
-\int \sin^4(x)\cos^3(x) \; dx &= \int \sin^4(x)\left[1 - \sin^2(x)\right] \cos(x) \; dx\\
-   &= \int u^4 (1-u^2) \; du\\
+\int \sin^4(x)\cos^3(x) \; dx &= \int u^4 (1-u^2) \; du\\
    &= \int (u^4 -u^6) \; du\\
   &= \frac{u^5}{5} - \frac{u^7}{7} + C \\
-  &= \frac15 \sin^5(x) - \frac17 \sin^7(x) + C.
+  &= \frac15 \sin^5(x) - \frac17 \sin^7(x) + C
 \end{align*}
   
 \end{example}
 
 
 
-\begin{problem}{\color{gray}(problem 2a)}
+\begin{problem}(problem 2a)
 Compute $\displaystyle{\int \sin^6(x)\cos^3(x) \; dx}$\\
+
 Rewrite the odd power of cosine as
+
 \begin{multipleChoice}
 \choice{$\cos^3(x) = \left[\sin^2(x)- 1\right] \cos(x)$} 
 \choice[correct]{$\cos^3(x) = \left[1 - \sin^2(x)\right] \cos(x)$}
@@ -169,24 +185,30 @@ Finally
 \end{problem}
 
 
-\begin{problem}{\color{gray}(problem 2b)} Compute $\displaystyle{\int \sin^3(x)\cos^2(x) \; dx}$\\
+
+\begin{problem}{\color{gray}(problem 2b)} 
+Compute $\displaystyle{\int \sin^3(x)\cos^2(x) \; dx}$\\
+
 Rewrite the odd power of sine as:
+
 \begin{multipleChoice}
 \choice{$\sin^3(x) = \left[1 - \cos(x)\right]^2 \sin(x)$}
 \choice{$\sin^3(x) = \left[\cos^2(x)- 1\right] \sin(x)$} 
 \choice[correct]{$\sin^3(x) = \left[1 - \cos^2(x)\right] \sin(x)$}
-
 \end{multipleChoice}
 
 Next, let $u = \answer{\cos(x)}$ so that $du = \answer{-\sin(x) dx}$.\\
+
 Substituting gives
 \[
 \int \sin^3(x)\cos^2(x) \; dx= \int \answer{-u^2(1-u^2)} \; du.
 \]
+
 Finally
 \[
 \int \sin^3(x)\cos^2(x) \; dx= \answer{\cos^5(x)/5 - \cos^3(x)/3} + C.
 \]
+
 \end{problem}
 
 
@@ -195,29 +217,32 @@ Finally
 Compute $\displaystyle{\int 3\sin^8(2x)\cos^3(2x) \; dx}$\\
 
 Rewrite the odd power of cosine as:
+
 \begin{multipleChoice}
 \choice[correct]{$\cos^3(2x) = \left[1 - \sin^2(2x)\right] \cos(2x)$}
 \choice{$\cos^3(2x) = \left[\sin^2(2x)- 1\right] \cos(2x)$} 
-
 \choice{$\cos^3(2x) = \left[1 - \sin(2x)\right]^2 \cos(2x)$}
 \end{multipleChoice}
 
 Next, let $u = \answer{\sin(2x)}$ so that $du = \answer{2\cos(2x) dx}$.\\
+
 Substituting gives
 \[
-\int 3\sin^8(2x)\cos^3(2x) \; dx= \int \answer{3/2 u^8(1-u^2)} \; du.
+\int 3\sin^8(2x)\cos^3(2x) \; dx= \int \answer{3/2 u^8(1-u^2)} \; du
 \]
+
 Finally
 \[
-\int 3\sin^8(2x)\cos^3(2x) \; dx= \answer{\sin^9(2x)/6 - 3 \sin^{11}(2x)/22)} + C.
+\int 3\sin^8(2x)\cos^3(2x) \; dx= \answer{\sin^9(2x)/6 - 3 \sin^{11}(2x)/22)} + C
 \]
 \end{problem}
 
 
-\begin{problem}{\color{gray}(problem 2d)}
+\begin{problem}(problem 2d)
 Compute $\displaystyle{\int \cos^3(4x) \; dx}$\\
 
 Rewrite the odd power of cosine as:
+
 \begin{multipleChoice}
 \choice{$\cos^3(4x) = \left[\sin^2(4x)- 1\right] \cos(4x)$} 
 \choice[correct]{$\cos^3(4x) = \left[1 - \sin^2(4x)\right] \cos(4x)$}
@@ -225,95 +250,78 @@ Rewrite the odd power of cosine as:
 \end{multipleChoice}
 
 Next, let $u = \answer{\sin(4x)}$ so that $du = \answer{4\cos(4x) dx}$.\\
+
 Substituting gives
 \[
-\int \cos^3(4x) \; dx= \int \answer{1/4 (1-u^2)} \; du.
+\int \cos^3(4x) \; dx= \int \answer{1/4 (1-u^2)} \; du
 \]
+
 Finally
 \[
-\int \cos^3(4x) \; dx= \answer{\frac14 \sin(4x) - \frac{1}{12} \sin^3(4x) } + C.
+\int \cos^3(4x) \; dx= \answer{\frac14 \sin(4x) - \frac{1}{12} \sin^3(4x) } + C
 \]
+
 \end{problem}
 
 
-%\begin{problem}
-%Make a $u$-substitution to compute each of the following indefinite integrals:
-%\begin{itemize}
 
-%\item $\displaystyle{\int 12\cos^{3}(x)\sin(x) \, dx}$
-%\item $\displaystyle{\int 4\tan^{7}(x)\sec^2(x) \, dx}$
-%\item $\displaystyle{\int 10 \sec^{3}(x)\tan(x) \, dx}$
-%\item $\displaystyle{\int 16\csc^{16}(x)\cot(x) \, dx}$
-%\end{itemize}
-%\end{problem}
 
-%\section{Powers of Sine and Cosine}
-%We now consider integrals of the form 
-%\[
-%\int \sin^m(x) \cos^n(x) \; dx,
-%\]
-%where $m$ and $n$ are positive integers.
-%There are two main cases to be considered.
-%In the first case, $m$ and/or $n$ is odd.
-%The solution to problems of this type involves $u$-substitution,
-%as we saw above.
-%In the second case, $m$ and $n$ are both even. The double angle formulas above are used to 
-%compute integrals of this type. We will also need the basic formula:
-%\[
-%\int \cos(ax) \; dx = \frac{1}{a} \sin(ax) + C.
-%\]
-
-%\subsection{Case 1: $m$ or $n$ is odd}
 
 \begin{example}[example 3]
 Compute $\displaystyle{\int \sin^8(x)\cos^5(x) \; dx}$\\
-This problem will be solved using a $u$-substitution, but first, we must
-prepare for the substitution by using the Pythagorean 
-Identity, $\sin^2 \theta + \cos^2 \theta = 1$. We rewrite the odd power of cosine as follows:
+
+Prepare for substitution by rewriting the odd power of cosine.
 \[
 \cos^5(x) = \cos^4(x) \cos(x) = \left[1 - \sin^2(x)\right]^2 \cos(x).
 \]
-Now we can rewrite the original integral and hopefully, the $u$-substitution will suggest itself:
+
+Rewrite the original integral.
 \[
 \int \sin^8(x)\cos^5(x) \; dx = \int \sin^8(x)\left[1 - \sin^2(x)\right]^2 \cos(x) \; dx.
 \]
-Now, let $u = \sin(x)$ so that  $du = \cos(x) \, dx$, giving:
+
+Make the substitution $u = \sin(x), \; du = \cos(x) \, dx$.
 \begin{align*}
-\int \sin^8(x)\cos^5(x) \; dx &= \int \sin^8(x)\left[1 - \sin^2(x)\right]^2 \cos(x) \; dx\\
-   &= \int u^8 (1-u^2)^2 \; du\\
+\int \sin^8(x)\cos^5(x) \; dx &= \int u^8 (1-u^2)^2 \; du\\
    &= \int u^8 (1-2u^2 + u^4) \; du\\
    &= \int (u^8 -2u^{10} + u^{12}) \; du\\
-  &= \frac{u^9}{9} - \frac{2u^{11}}{11} + \frac{u^{13}}{13} + C \\
-  &= \frac19 \sin^9(x) - \frac{2}{11} \sin^{11}(x)  + \frac{1}{13} \sin^{13}(x) + C.
+  &= \tfrac19 u^9 - \tfrac{2}{11}u^{11} + \tfrac{1}{13} u^{13} + C \\
+  &= \tfrac19 \sin^9(x) - \tfrac{2}{11} \sin^{11}(x)  + \tfrac{1}{13} \sin^{13}(x) + C.
 \end{align*}
   
 \end{example}
 
 
 
+\begin{problem}(problem 3a) 
+Compute $\displaystyle{\int \sin^5(x)\cos^6(x) \; dx}$\\
 
-\begin{problem}{\color{gray}(problem 3a)} Compute $\displaystyle{\int \sin^5(x)\cos^6(x) \; dx}$\\
 Rewrite the odd power of sine as:
+
 \begin{multipleChoice}
 \choice{$\sin^5(x) = \left[1 - \cos^4(x)\right] \sin(x)$}
 \choice{$\sin^5(x) = \left[1 + \cos^4(x)\right] \sin(x)$} 
 \choice[correct]{$\sin^5(x) = \left[1 - 2\cos^2(x) + \cos^4(x)\right] \sin(x)$}
-
 \end{multipleChoice}
 
 Next, let $u = \answer{\cos(x)}$ so that $du = \answer{-\sin(x) dx}$.\\
+
 Substituting gives
 \[
-\int \sin^5(x)\cos^6(x) \; dx= \int \answer{-u^6(1-2u^2 + u^4)} \; du.
+\int \sin^5(x)\cos^6(x) \; dx= \int \answer{-u^6(1-2u^2 + u^4)} \; du
 \]
+
 Finally
 \[
-\int \sin^5(x)\cos^6(x) \; dx= \answer{-1/7 \cos^7(x) + 2/9 \cos^9(x) - 1/11 \cos^{11}(x)} + C.
+\int \sin^5(x)\cos^6(x) \; dx= \answer{-1/7 \cos^7(x) + 2/9 \cos^9(x) - 1/11 \cos^{11}(x)} + C
 \]
+
 \end{problem}
 
 
-\begin{problem}{\color{gray}(problem 3b)} Compute $\displaystyle{\int \sin^2(6x)\cos^5(6x) \; dx}$\\
+
+\begin{problem}{\color{gray}(problem 3b)} 
+Compute $\displaystyle{\int \sin^2(6x)\cos^5(6x) \; dx}$\\
 
 Rewrite the odd power of cosine as:
 
@@ -324,35 +332,43 @@ Rewrite the odd power of cosine as:
 \end{multipleChoice}
 
 Next, let $u = \answer{\sin(6x)}$ so that $du = \answer{6 \cos(x) dx}$.\\
+
 Substituting gives
 \[
-\int \sin^2(6x)\cos^5(6x) \; dx= \int \answer{1/6 u^2(1-2u^2 + u^4)} \; du.
+\int \sin^2(6x)\cos^5(6x) \; dx= \int \answer{1/6 u^2(1-2u^2 + u^4)} \; du
 \]
+
 Finally
 \[
-\int \sin^2(6x)\cos^5(6x) \; dx= \answer{1/18 \sin^3(6x) - 1/15 \sin^5(6x) + 1/42 \sin^7(6x)} + C.
+\int \sin^2(6x)\cos^5(6x) \; dx= \answer{1/18 \sin^3(6x) - 1/15 \sin^5(6x) + 1/42 \sin^7(6x)} + C
 \]
 \end{problem}
 
 
-\begin{problem}{\color{gray}(problem 3c)} Compute $\displaystyle{\int \sin^5(x) \; dx}$\\
+
+\begin{problem}{\color{gray}(problem 3c)} 
+Compute $\displaystyle{\int \sin^5(x) \; dx}$\\
+
 Rewrite the odd power of sine as:
+
 \begin{multipleChoice}
 \choice{$\sin^5(x) = \left[1 - \cos^4(x)\right] \sin(x)$}
 \choice{$\sin^5(x) = \left[1 + \cos^4(x)\right] \sin(x)$} 
 \choice[correct]{$\sin^5(x) = \left[1 - 2\cos^2(x) + \cos^4(x)\right] \sin(x)$}
-
 \end{multipleChoice}
 
 Next, let $u = \answer{\cos(x)}$ so that $du = \answer{-\sin(x) dx}$.\\
+
 Substituting gives
 \[
-\int \sin^5(x) \; dx= \int \answer{-(1-2u^2 + u^4)} \; du.
+\int \sin^5(x) \; dx= \int \answer{-(1-2u^2 + u^4)} \; du
 \]
+
 Finally
 \[
-\int \sin^5(x) \; dx= \answer{- \cos(x) + 2/3 \cos^3(x) - 1/5 \cos^5(x)} + C.
+\int \sin^5(x) \; dx= \answer{- \cos(x) + 2/3 \cos^3(x) - 1/5 \cos^5(x)} + C
 \]
+
 \end{problem}
 
 In the next example, both powers are odd.  In this case, we have to choose which one to rewrite.
@@ -362,23 +378,23 @@ In the next example, both powers are odd.  In this case, we have to choose which
 \begin{example}[example 4]
 Compute $\displaystyle{\int \sin^7(x)\cos^5(x) \; dx}$\\
 
-In this example, both powers are odd.  We focus on the smaller power in our $u$-sub preperation.
-Since $5 < 7$, will rewrite the odd power of cosine:
+Prepare for substitution by rewriting the smaller odd power.
 \[
 \cos^5(x) = \cos^4(x) \cos(x) = \left[1-\sin^2(x)\right]^2 \cos(x).
 \]
-Now we can rewrite the original integral and hopefully, the $u$-substitution will suggest itself:
+
+Rewrite the original integral.
 \[
 \int \sin^7(x)\cos^5(x) \; dx = \int \sin^7(x)\left[1 - \sin^2(x)\right]^2 \cos(x) \; dx.
 \]
-Let $u = \sin(x)$ so that $du = \cos(x) \, dx$, giving:
+
+Make the substitution $u = \sin(x), \; du = \cos(x) \, dx$.
 \begin{align*}
-\int \sin^7(x)\cos^5(x) \; dx &= \int \sin^7(x)\left[1 - \sin^2(x)\right]^2 \cos(x) \; dx\\
-   &= \int u^7 (1-u^2)^2 \; du\\
+\int \sin^7(x)\cos^5(x) \; dx  &= \int u^7 (1-u^2)^2 \; du\\
    &= \int u^7(1 - 2u^2 + u^4) \; du\\
    &= \int (u^7 - 2u^9 + u^{11}) \; du\\
-  &= \frac{u^8}{8} - \frac{u^{10}}{5} + \frac{u^{12}}{12}+ C \\
-  &= \frac18 \sin^8(x) - \frac15 \sin^{10}(x) + \frac{1}{12} \sin^{12}(x)+ C
+  &= \tfrac18 u^8 - \tfrac15 u^{10} + \tfrac{1}{12}u^{12}+ C \\
+  &= \tfrac18 \sin^8(x) - \tfrac15 \sin^{10}(x) + \tfrac{1}{12} \sin^{12}(x)+ C
 \end{align*}
 
 \end{example}
@@ -388,40 +404,40 @@ Let $u = \sin(x)$ so that $du = \cos(x) \, dx$, giving:
 
 
 \begin{problem}{\color{gray}(problem 4a)}
-Compute the indefinite integral:
-\[
-\int \sin^5(x)\cos^7(x) \; dx.
-\]
+Compute $\displaystyle{\int \sin^5(x)\cos^7(x) \; dx}$
+
 Which trig function should be rewritten?
+
 \begin{multipleChoice}
 \choice[correct]{$\sin^5(x)$}
 \choice{$\cos^7(x)$}
 \end{multipleChoice}
+
 Rewrite the odd power of sine as:
 \begin{multipleChoice}
 \choice{$\sin^5(x) = \left[1 - \cos^4(x)\right] \sin(x)$}
 \choice{$\sin^5(x) = \left[\cos^4(x)- 1\right] \sin(x)$} 
 \choice[correct]{$\sin^5(x) = \left[1 - 2\cos^2(x) + \cos^4(x)\right] \sin(x)$}
-
 \end{multipleChoice}
 
-Now, let $u = \answer{\cos(x)}$ so that $du = \answer{-\sin(x) dx}$.\\
-The integral becomes
+Next, let $u = \answer{\cos(x)}$ so that $du = \answer{-\sin(x) dx}$.\\
+
+Substituting gives
 \[
-\int \sin^5(x)\cos^7(x) \; dx= \int \answer{-(1-2u^2 + u^4)u^7} \; du.
+\int \sin^5(x)\cos^7(x) \; dx= \int \answer{-(1-2u^2 + u^4)u^7} \; du
 \]
-Final answer:
+
+Finally
 \[
-\int \sin^5(x)\cos^7(x) \; dx= \answer{-\cos^8(x)/8 + \cos^{10}(x)/5 - \cos^{12}(x)/12} + C.
+\int \sin^5(x)\cos^7(x) \; dx= \answer{-\cos^8(x)/8 + \cos^{10}(x)/5 - \cos^{12}(x)/12} + C
 \]
 \end{problem}
 
 
-\begin{problem}{\color{gray}(problem 4b)}
-Compute the indefinite integral:
-\[
-\int \sin^9(x)\cos^3(x) \; dx.
-\]
+
+\begin{problem}(problem 4b)
+Compute $\displaystyle{\int \sin^9(x)\cos^3(x) \; dx}$\\
+
 Which trig function should be rewritten?
 \begin{multipleChoice}
 \choice{$\sin^9(x)$}
@@ -435,75 +451,225 @@ Rewrite the odd power of cosine as:
 \choice{$\cos^3(x) = \left[1 - \sin(x)\right]^2 \cos(x)$}
 \end{multipleChoice}
 
-Now, let $u = \answer{\sin(x)}$ so that $du = \answer{\cos(x) dx}$.\\
-The integral becomes
+Next, let $u = \answer{\sin(x)}$ so that $du = \answer{\cos(x) dx}$.\\
+
+Substituting gives
 \[
-\int \sin^9(x)\cos^3(x) \; dx= \int \answer{u^9(1 - u^2)} \; du.
+\int \sin^9(x)\cos^3(x) \; dx= \int \answer{u^9(1 - u^2)} \; du
 \]
-Final answer:
+
+Finally
 \[
-\int \sin^9(x)\cos^3(x) \; dx= \answer{\sin^{10}(x)/(10) - \sin^{12}(x)/(12) } + C.
+\int \sin^9(x)\cos^3(x) \; dx= \answer{\sin^{10}(x)/(10) - \sin^{12}(x)/(12) } + C
 \]
 \end{problem}
 
 
-%\begin{problem}
-%Compute the indefinite integrals:
-%\[
-%\int \cos^6(x)\sin^3(x) \; dx = \answer{\frac19 \cos^9(x) - \frac17 \cos^7(x)} + C.
-%\]
-%\[
-%\int \sin^4(x)\cos^5(x) \; dx = \answer{\frac15 \sin^5(x) - \frac27 \sin^7(x)+\frac19 \sin^9(x)} + C.
-%\]
-%\end{problem}
+
 
 \subsection{Case 2: $m$ and $n$ are both even}
-\begin{example}
+In this section, we compute integrals of the form
+\[
+\int \sin^m(x) \cos^n(x) \; dx
+\]
+where $m$ and $n$ are both even.\\
+We will use the half-angle formulas
+\[
+\sin^2 \theta = \frac{1 - \cos 2\theta}{2} \; \text{and} \; \cos^2 \theta = \frac{1 + \cos 2\theta}{2}
+\]
+
+\begin{example}[example 5]
+Compute $\displaystyle{\int \sin^2(x) \; dx}$
+
+Rewrite the integral using a half-angle formula.
+
+\begin{align*}
+\int \sin^2(x) \; dx &= \int \left[\frac12- \frac12\cos(2x)\right]  \; dx\\
+  &= \frac{x}{2}  - \frac{1}{4}\sin(2x) + C.
+\end{align*}
+\end{example}
+
+\begin{problem}(problem 5)
+Compute $\displaystyle{\int \cos^2(x) \; dx}$
+\begin{multipleChoice}
+\choice[correct]{$\frac{x}{2}  + \frac{1}{4}\sin(2x) + C$} 
+\choice{$\frac{x}{2}  - \frac{1}{4}\cos(2x) + C$}
+\choice{$\frac{x}{2}  + \frac{1}{4}\cos(2x) + C$}
+\end{multipleChoice}
+\end{problem}
+
+\begin{example}[example 6]
 Compute the indefinite integral:
 \[
-\int \sin^2(x)\cos^2(x) \; dx.
+\int \sin^4(x) \; dx.
 \]
-We will use the double angle formulas
-\[
-\sin^2(\theta) = \frac{1-\cos(2\theta)}{2} \; \text{ and } \; \cos^2(\theta) = \frac{1+\cos(2\theta)}{2},
-\]
-to rewrite the integral as
+Rewrite the integral using the half-angle formula for sine.
+
 \begin{align*}
-\int \sin^2(x)\cos^2(x) \; dx &= \int \frac{1-\cos(2x)}{2}\cdot \frac{1+\cos(2x)}{2} \; dx\\
-  &= \frac14 \int \left[1 - \cos^2(2x)\right] \; dx &
-  \text{(double angle formula again)}\\
-  &= \frac14 \int \left[ 1- \frac{1+\cos(4x)}{2}\right] \; dx\\
-  &= \frac14 \int \left[1-\frac12 - \frac12\cos(4x)\right] \; dx\\
-  &= \frac14 \int \left[\frac12 - \frac12\cos(4x)\right] \; dx & \text{(finally, integrate)}\\
-  &= \frac14 \left[\frac12 x  - \frac18\sin(4x)\right] + C\\
-  &= \frac{x}{8}  - \frac{1}{32}\sin(4x) + C.
+\int \sin^4(x) \; dx &= \int \left[\tfrac12- \tfrac12\cos(2x)\right] \cdot \left[\tfrac12 - \tfrac12\cos(2x)\right] \; dx\\
+  &=  \int \left[\tfrac14 - \tfrac12\cos(2x) + \tfrac14\cos^2(2x)\right] \; dx \\
+  &= \int \left( \tfrac14 - \tfrac12 \cos(2x) + \tfrac14 
+  \left[\tfrac12 + \tfrac12\cos(4x)\right]\right) \; dx  \;\; \textup{(half-angle again)} \\
+  &= \int \left[\tfrac14 - \tfrac12 \cos(2x) +\tfrac18 + \tfrac18\cos(4x)\right] \; dx\\
+  &=  \int \left[\tfrac38 - \tfrac12 \cos(2x) + \tfrac18\cos(4x)\right] \; dx \;\; \textup{(now we can integrate)}\\
+  &= \tfrac38 x - \tfrac14 \sin(2x) + \tfrac{1}{32}\sin(4x) + C.
 \end{align*}
 \end{example}
 
 
 
 
+\begin{problem}(problem 6a)
+Compute $\displaystyle{\int \cos^4(x) \; dx}$
 
-\begin{problem}
-Compute the indefinite integrals:
+
+Use a half angle formula to rewrite: $\cos^4(x)=$
+
+\begin{multipleChoice}
+\choice{$\tfrac14  + \tfrac14\cos^2(2x)$}
+\choice{$\tfrac14 - \tfrac12\cos(2x) + \tfrac14\cos^2(2x)$}
+\choice[correct]{$\tfrac14 + \tfrac12\cos(2x) + \tfrac14\cos^2(2x)$}
+\end{multipleChoice}
+
+Use a half angle formula again to obtain, $\cos^4(x) = $
+
+\begin{multipleChoice}
+\choice{$\tfrac18 + \tfrac12\cos(2x) + \tfrac18 \cos(4x)$}
+\choice{$\tfrac14 + \tfrac12\cos(2x) + \tfrac18 \cos(4x)$}
+\choice[correct]{$\tfrac38 + \tfrac12\cos(2x) + \tfrac18 \cos(4x)$}
+\end{multipleChoice}
+
+Finally,
 \[
-\int \sin^2(x) \; dx = \answer{\frac12 x - \frac14 \sin(2x)} + C.
-\]
-\[
-\int \cos^4(x) \; dx = \answer{\frac{3x}{8} +\frac14 \sin(2x) + \frac{1}{32}\sin(4x)} + C.
+\int \cos^4(x) \; dx = \answer{\frac{3x}{8} +\frac14 \sin(2x) + \frac{1}{32}\sin(4x)} + C
 \]
 \end{problem}
 
-\section{Powers of Secant and Tangent}
-We consider integrals of the form
+
+
+\begin{problem}(problem 6b)
+Compute $\displaystyle{\int \sin^2(3x)\cos^2(3x) \; dx}$
+
+
+Use the half angle formulas to rewrite: $\sin^2(3x) \cos^2(3x)=$
+
+\begin{multipleChoice}
+\choice{$\tfrac14 + \tfrac14\cos^2(6x)$}
+\choice{$\tfrac14 - \tfrac14\sin^2(6x)$}
+\choice[correct]{$\tfrac14 - \tfrac14\cos^2(6x)$}
+\end{multipleChoice}
+
+Use a half angle formula again to obtain, $\sin^2(3x) \cos^2(3x)=$
+
+\begin{multipleChoice}
+\choice{$\tfrac38  - \tfrac18 \cos(12x)$}
+\choice{$\tfrac18  + \tfrac18 \cos(12x)$}
+\choice[correct]{$\tfrac18  - \tfrac18 \cos(12x)$}
+\end{multipleChoice}
+
+Finally,
 \[
-\int \tan^m(x)\sec^n(x) \; dx,
+\int \sin^2(3x)\cos^2(3x) \; dx = \answer{\frac18 x - \frac{1}{96} \sin(12x)} + C.
 \]
-where either $m$ is odd or $n$ is even. In both cases, a $u$-substitution
-can solve the problem. 
+
+\end{problem}
 
 
-\begin{example}
+%Rewrite the integral using the half-angle formulas.
+
+%\begin{align*}
+%\int \sin^2(x)\cos^2(x) \; dx &= \int \left[\tfrac12- \tfrac12\cos(2x)\right] \cdot \left[\tfrac12 + \tfrac12\cos(2x)\right] \; dx\\
+%  &=  \int \left[\tfrac14 - \tfrac14\cos^2(2x)\right] \; dx \\
+%  &= \int \left( \tfrac14 - \tfrac14 \left[\tfrac12 + \tfrac12\cos(4x)\right]\right) \; dx  \;\; \textup{(half-angle again)} \\
+%  &= \int \left[\tfrac14 -\tfrac18 - \tfrac18\cos(4x)\right] \; dx\\
+%  &=  \int \left[\tfrac18 - \tfrac18\cos(4x)\right] \; dx \;\; \textup{(now we can integrate)}\\
+%  &= \tfrac18 x  - \tfrac{1}{32}\sin(4x) + C.
+%\end{align*}
+%\end{example}
+
+
+
+\section{Powers of Secant and Tangent}
+In this section, we compute integrals of the form
+\[
+\int \sec^m(x)\tan^n(x) \; dx,
+\]
+where either $m$ is odd or $n$ is even. We will use the identity
+\[
+1+\tan^2 \theta = \sec^2 \theta
+\]
+to prepare a $u$-substitution.
+
+
+\subsection{Case 1: $m$ is even}
+\begin{example}[example 7]
+Compute $\displaystyle{\int \tan^4(x) \sec^2(x)\;dx}$
+
+Make the substitution $u = \tan(x), \; du = \sec^2(x) \, dx$.
+
+\begin{align*}
+\int \tan^4(x) \sec^2(x)\;dx &= \int u^4 du\\
+&=  \frac{u^5}{5} + C  \\
+&= \frac15\tan^5(x)  + C
+\end{align*}
+\end{example} 
+
+
+
+\begin{example}[example 8]
+Compute $\displaystyle{\int \tan^4(x) \sec^6(x)\;dx}$
+
+Prepare for $u$-substitution by rewriting the even power of secant.
+\[
+\sec^6(x) = \sec^4(x) \sec^2(x) = \left[1+\tan^2(x)\right]^2 \sec^2(x)
+\]
+
+Rewrite the original integral.
+
+\[
+\int \tan^4(x) \sec^6(x)\;dx = \int \tan^4(x) \left[1+\tan^2(x)\right]^2 \sec^2(x) \; dx
+\]
+
+Make the substitution $u = \tan(x), \; du = \sec^2(x) \, dx$.
+
+
+\begin{align*}
+\int \tan^4(x) \sec^6(x)\;dx &= \int u^4 (1+u^2)^2 du\\
+&= \int u^4(1+2u^2 + u^4) \; du \\
+&= \int (u^4 + 2u^6 + u^8) \; du \\
+&=  \tfrac15 u^5 + \tfrac27 u^7 + \tfrac19 u^9 + C  \\
+&= \tfrac15\tan^5(x)  + \tfrac27 \tan^7(x) + \tfrac19 \tan^9(x) + C
+\end{align*}
+\end{example} 
+
+
+
+\begin{problem}(problem 8a)
+Compute the indefinite integral:
+\[
+\int \tan^6(x) \sec^4(x)\;dx = \answer{\frac17 \tan^7(x) + \frac19 \tan^9(x)} + C.
+\]
+\end{problem}
+
+\begin{problem}(problem 8b)
+Compute the indefinite integral:
+\[
+\int \tan^{1/3}(x) \sec^4(x)\;dx = \answer{\frac34 \tan^{4/3}(x) + \frac{3}{10} \tan^{10/3}(x)} + C.
+\]
+\end{problem}
+
+\begin{problem}(problem 8c)
+Compute the indefinite integral:
+\[
+\int  \sec^4(3x)\;dx = \answer{\frac13 \tan(3x) + \frac19 \tan^3(3x)} + C.
+\]
+\end{problem}
+
+
+\subsection{Case 2: $n$ is odd}
+
+
+\begin{example}[example 9]
 
 Compute
 \[
@@ -524,13 +690,15 @@ which is an integral that can be computed from the power rule giving
 \end{align*}
 
 \end{example}
-\subsection{Case 1: $m$ is odd}
-\begin{example}
+
+
+
+\begin{example}[example 10]
 Compute the indefinite integral:
 \[
 \int \tan^5(x) \sec^3(x)\;dx.
 \]
-When $m$ is odd, we use the substitution $u = \sec(x)$,
+When $n$ is odd, we use the substitution $u = \sec(x)$,
 which implies $du = \sec(x) \tan(x) \; dx$ or $dx = \frac{du}{\sec(x)\tan(x)}$.
 We begin by just substituting for $dx$:
 \begin{align*}
@@ -563,47 +731,6 @@ Compute the indefinite integral:
 
 
 
-\subsection{Case 2: $n$ is even}
-\begin{example}
-Compute the indefinite integral:
-\[
-\int \tan^4(x) \sec^4(x)\;dx.
-\]
-When $n$ is even, we use the substitution $u = \tan(x)$,
-which implies $du = \sec^2(x) \; dx$ or $dx = \frac{du}{\sec^2(x)}$.
-We begin by just substituting for $dx$:
-\begin{align*}
-\int \tan^4(x) \sec^4(x)\;dx &= \int \tan^4(x) \sec^4(x) \frac{du}{\sec^2(x)}\\
-&= \int \tan^4(x) \sec^2(x) \; du & \text{(cancelling)}\\
-&= \int u^4 \sec^2(x) \; du \\
-&= \int u^4\left[1 + \tan^2(x)\right] \; du & \text{(use Pythagorean identity)}\\
-&= \int u^4(1+u^2) \; du & \text{(distribute $u^4$)}\\
-&= \int (u^4 + u^6) \; du & \text{(now integrate)}\\
-&=  \frac{u^5}{5} + \frac{u^7}{7} + C  \\
-&= \frac15\tan^5(x)  + \frac17 \tan^7(x) + C & \text{(substituting for $u$)}
-\end{align*}
-\end{example}
-
-\begin{problem}
-Compute the indefinite integral:
-\[
-\int \tan^6(x) \sec^4(x)\;dx = \answer{\frac17 \tan^7(x) + \frac19 \tan^9(x)} + C.
-\]
-\end{problem}
-
-\begin{problem}
-Compute the indefinite integral:
-\[
-\int \tan^{1/3}(x) \sec^4(x)\;dx = \answer{\frac34 \tan^{4/3}(x) + \frac{3}{10} \tan^{10/3}(x)} + C.
-\]
-\end{problem}
-
-\begin{problem}
-Compute the indefinite integral:
-\[
-\int  \sec^4(x)\;dx = \answer{\tan(x) + \frac13 \tan^3(x)} + C.
-\]
-\end{problem}
 
 
 \section{Odd Powers of Secant}
