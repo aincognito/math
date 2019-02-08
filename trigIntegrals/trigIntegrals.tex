@@ -616,6 +616,27 @@ Make the substitution $u = \tan(x), \; du = \sec^2(x) \, dx$.
 
 
 
+
+\begin{problem}(problem 7)
+Compute $\displaystyle{\int \tan^{10}(3x)\sec^2(3x) \, dx}$\\
+
+Let $u = \answer{\tan(3x)}$, \; then $du = \answer{3\sec^2(3x) dx}$.\\
+
+Substituting gives 
+\[
+\int \tan^{10}(3x)\sec^2(3x) \, dx = \int \answer{\frac13 u^{10}} \; du
+\]
+
+Finally
+\[
+\int \tan^{10}(3x)\sec^2(3x) \, dx = \answer{\frac{1}{33} \tan^{11}(3x)} + C
+\]
+
+\end{problem}
+
+
+
+
 \begin{example}[example 8]
 Compute $\displaystyle{\int \tan^4(x) \sec^6(x)\;dx}$
 
@@ -645,25 +666,90 @@ Make the substitution $u = \tan(x), \; du = \sec^2(x) \, dx$.
 
 
 \begin{problem}(problem 8a)
-Compute the indefinite integral:
+Compute $\displaystyle{\int \tan^6(x)\sec^4(x) \; dx}$\\
+
+Rewrite the even power of secant as
+
+\begin{multipleChoice}
+\choice{$\sec^4(x) = \left[\tan^2(x)- 1\right] \sec^2(x)$} 
+\choice[correct]{$\sec^4(x) = \left[1 + \tan^2(x)\right] \sec^2(x)$}
+\choice{$\sec^4(x) = \left[1 - \tan^2(x)\right] \sec^2(x)$}
+\end{multipleChoice}
+
+Next, let $u = \answer{\tan(x)}$ so that $du = \answer{\sec^2(x) dx}$.\\
+
+Substituting gives 
 \[
-\int \tan^6(x) \sec^4(x)\;dx = \answer{\frac17 \tan^7(x) + \frac19 \tan^9(x)} + C.
+\int \tan^6(x)\sec^4(x) \; dx= \int \answer{u^6(1+u^2)} \; du
 \]
+
+Finally 
+\[
+\int \tan^6(x)\sec^4(x) \; dx= \answer{\tan^7(x)/7 +  \tan^9(x)/9} + C
+\]
+
 \end{problem}
+
+
 
 \begin{problem}(problem 8b)
 Compute the indefinite integral:
 \[
-\int \tan^{1/3}(x) \sec^4(x)\;dx = \answer{\frac34 \tan^{4/3}(x) + \frac{3}{10} \tan^{10/3}(x)} + C.
+\int \tan^{1/3}(x) \sec^4(x)\;dx = 
 \]
+
+Rewrite the even power of secant as
+
+\begin{multipleChoice}
+\choice{$\sec^4(x) = \left[\tan^2(x)- 1\right] \sec^2(x)$} 
+\choice[correct]{$\sec^4(x) = \left[1 + \tan^2(x)\right] \sec^2(x)$}
+\choice{$\sec^4(x) = \left[1 - \tan^2(x)\right] \sec^2(x)$}
+\end{multipleChoice}
+
+Next, let $u = \answer{\tan(x)}$ so that $du = \answer{\sec^2(x) dx}$.\\
+
+Substituting gives 
+\[
+\int \tan^{1/3}(x)\sec^4(x) \; dx= \int \answer{u^{1/3}(1+u^2)} \; du
+\]
+
+Finally 
+\[
+\int \tan^{1/3}(x)\sec^4(x) \; dx= \answer{\frac34 \tan^{4/3}(x) + \frac{3}{10} \tan^{10/3}(x)} + C.
+\]
+
 \end{problem}
 
 \begin{problem}(problem 8c)
 Compute the indefinite integral:
 \[
-\int  \sec^4(3x)\;dx = \answer{\frac13 \tan(3x) + \frac19 \tan^3(3x)} + C.
+\int  \sec^6(3x)\;dx = \answer{\frac13 \tan(3x) + \frac19 \tan^3(3x)} + C.
 \]
+
+Rewrite the even power of secant as
+
+\begin{multipleChoice}
+\choice{$\sec^6(3x) = \left[1  + \tan^4(3x) \right] \sec^2(3x)$} 
+\choice{$\sec^6(3x) = \left[1 - 2\tan^2(3x) + \tan^4(3x) \right] \sec^2(3x)$}
+\choice[correct]{$\sec^6(3x) = \left[1 + 2\tan^2(3x) + \tan^4(3x) \right] \sec^2(3x)$}
+\end{multipleChoice}
+
+Next, let $u = \answer{\tan(3x)}$ so that $du = \answer{3\sec^2(6x) dx}$.\\
+
+Substituting gives 
+\[
+\int \sec^6(3x) \; dx= \int \answer{(1+ 2u^2 +u^4)/3} \; du
+\]
+
+Finally 
+\[
+\int \sec^6(3x) \; dx= \answer{\frac13 \tan(6x) + \frac29 \tan^3(6x) + \frac{1}{15}\tan^5(6x)} + C.
+\]
+
+
 \end{problem}
+
+
 
 
 \subsection{Case 2: $n$ is odd}
