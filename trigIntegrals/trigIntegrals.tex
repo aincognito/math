@@ -20,27 +20,27 @@ The following are the Pythagorean Trigonometric Identities
 (named for \link[Pythagoras of Samos]{https://en.wikipedia.org/wiki/Pythagoras}) which hold for all angles,
 $\theta$, in the domains of the functions involved:
 \[
-\sin^2(\theta) + \cos^2(\theta) = 1,
+\sin^2\theta + \cos^2\theta = 1,
 \]
 \[
-1 + \tan^2(\theta) = \sec^2(\theta),
+1 + \tan^2\theta = \sec^2\theta,
 \]
 and
 \[
-1 + \cot^2(\theta) = \csc^2(\theta).
+1 + \cot^2\theta = \csc^2\theta.
 \]
 
 
 Next, we have the half-angle formulas:
 
 \[
-\sin^2(\theta) = \frac{1-\cos(2\theta)}{2},
+\sin^2\theta = \frac{1-\cos(2\theta)}{2},
 \]
 
 and
 
 \[
-\cos^2(\theta) = \frac{1+\cos(2\theta)}{2}.
+\cos^2\theta = \frac{1+\cos(2\theta)}{2}.
 \]
 We will find the half-angle formulas useful for integrating even powers of sine and cosine.
 
@@ -509,9 +509,9 @@ Rewrite the integral using the half-angle formula for sine.
 \int \sin^4(x) \; dx &= \int \left[\tfrac12- \tfrac12\cos(2x)\right] \cdot \left[\tfrac12 - \tfrac12\cos(2x)\right] \; dx\\
   &=  \int \left[\tfrac14 - \tfrac12\cos(2x) + \tfrac14\cos^2(2x)\right] \; dx \\
   &= \int \left( \tfrac14 - \tfrac12 \cos(2x) + \tfrac14 
-  \left[\tfrac12 + \tfrac12\cos(4x)\right]\right) \; dx  \;\; \textup{(half-angle again)} \\
+  \left[\tfrac12 + \tfrac12\cos(4x)\right]\right) \; dx  \;\; \text{(half-angle again)} \\
   &= \int \left[\tfrac14 - \tfrac12 \cos(2x) +\tfrac18 + \tfrac18\cos(4x)\right] \; dx\\
-  &=  \int \left[\tfrac38 - \tfrac12 \cos(2x) + \tfrac18\cos(4x)\right] \; dx \;\; \textup{(now we can integrate)}\\
+  &=  \int \left[\tfrac38 - \tfrac12 \cos(2x) + \tfrac18\cos(4x)\right] \; dx \;\; \text{(now we can integrate)}\\
   &= \tfrac38 x - \tfrac14 \sin(2x) + \tfrac{1}{32}\sin(4x) + C.
 \end{align*}
 \end{example}
@@ -715,14 +715,14 @@ We begin by just substituting for $dx$:
 \end{align*}
 \end{example}
 
-\begin{problem}
+\begin{problem}(problem 10a)
 Compute the indefinite integral:
 \[
 \int \tan^3(x) \sec^5(x)\;dx = \answer{\frac17 \sec^7(x) - \frac15 \sec^5(x)} + C.
 \]
 \end{problem}
 
-\begin{problem}
+\begin{problem}(problem 10b)
 Compute the indefinite integral:
 \[
 \int \tan^5(x) \sec^7(x)\;dx = \answer{\frac{1}{11} \sec^{11}(x) + \frac17 \sec^7(x) -\frac29 \sec^9(x)} + C.
