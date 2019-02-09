@@ -761,16 +761,13 @@ Compute
 \[
 \int \sec^5(x) \tan(x) \, dx.
 \]
-To find an anti-derivative, we will make the substitution $u = \sec(x)$, as it is the inside of a composition
-and its differential, $du = \sec(x)\tan(x) \, dx$, is present as a factor. 
-This substitution transforms the original integral as follows:
+With an odd power of tangent, we prepare the substitution $u = \sec(x), \; du = \sec(x)\tan(x) \, dx$ by rewritng the integral as
 \[
-\int \sec^5(x) \tan(x) \, dx = \int \sec^4(x) \sec(x) \tan(x) \, dx= \int u^4 \, du,
+\int \sec^5(x) \tan(x) \, dx = \int \sec^4(x) \sec(x) \tan(x) \, dx.
 \]
-which is an integral that can be computed from the power rule giving
+Next we perfrom the substitution:
 \begin{align*}
-\int \sec^5(x) \tan(x) \, dx &= \int \sec^4(x) \sec(x) \tan(x) \, dx\\
-                             &= \int u^4 \, du\\
+\int \sec^5(x) \tan(x) \, dx &= \int u^4 \, du\\
                              &= \frac{u^5}{5} + C\\
                              &= \frac15 \sec^5(x) + C.
 \end{align*}
@@ -778,40 +775,115 @@ which is an integral that can be computed from the power rule giving
 \end{example}
 
 
+\begin{problem}(probelm 9)
+Compute $\displaystyle{\int \sec^3(x) \tan(x) \, dx}$\\
+Let $u = \answer{\sec(x)}$ then \, $du = \answer{\sec(x)\tan(x) dx}$\\
+Substituting gives 
+\[
+\int \sec^3(x) \tan(x) \, dx = \int \answer{u^2} \, du
+\]
+Finally
+\[
+\int \sec^3(x) \tan(x) \, dx = \int \answer{1/3 \sec^3(x)} + C
+\]
+
+\end{problem}
+
 
 \begin{example}[example 10]
 Compute the indefinite integral:
 \[
 \int \tan^5(x) \sec^3(x)\;dx.
 \]
-When $n$ is odd, we use the substitution $u = \sec(x)$,
-which implies $du = \sec(x) \tan(x) \; dx$ or $dx = \frac{du}{\sec(x)\tan(x)}$.
-We begin by just substituting for $dx$:
+Rewrite the integral to prepare for the substitution, $u = \sec(x), \;du = \sec(x) \tan(x) \; dx$.
+
+\[
+\int \tan^5(x) \sec^3(x)\;dx = \int \tan^4(x) \sec^2(x) \sec(x) \tan(x)\;dx.
+\]
+
+Next, convert tangents to secants, using $1+ \tan^2 \theta = \sec^2 \theta$
+
+\[
+\tan^4(x) = \left[\sec^2(x) - 1\right]^2
+\]
+
+The integral becomes
+
+\[
+ \int \tan^4(x) \sec^2(x) \sec(x) \tan(x)\;dx = \int \left[\sec^2(x) -1\right]^2 \sec^2(x) \sec(x) \tan(x)\;dx
+\]
+
+Now we are ready to substitute, $u = \sec(x), \; du = \sec(x) \tan(x) \, dx$
+
 \begin{align*}
-\int \tan^5(x) \sec^3(x)\;dx &= \int \tan^5(x) \sec^3(x) \frac{du}{\sec(x)\tan(x)}\\
-&= \int \tan^4(x) \sec^2(x) \; du & \text{(cancelling)}\\
-&= \int \tan^4(x) u^2 \; du & \text{(use Pythagorean identity)}\\
-&= \int \left[\tan^2(x)\right]^2 u^2 \; du \\
-&= \int \left[\sec^2(x) -1\right]^2 u^2 \; du \\
-&= \int \left(u^2 -1\right)^2 u^2 \; du \\
-&= \int \left(u^4 - 2u^2 +1\right) u^2 \; du & \text{(distribute $u^2$)}\\
-&= \int \left(u^6 - 2u^4 +u^2\right) \; du & \text{(now integrate)}\\
-&=  \frac{u^7}{7} - \frac{2u^5}{5} + \frac{u^3}{3} + C  \\
-&= \frac17\sec^7(x) - \frac25 \sec^5(x) + \frac13 \sec^3(x) + C & \text{(back substituting)}
+\int \tan^5(x) \sec^3(x)\;dx &= \int \left(u^2 -1\right)^2 u^2 \; du \\
+                             &= \int \left(u^4 - 2u^2 +1\right) u^2 \; du \\
+                             &= \int \left(u^6 - 2u^4 +u^2\right) \; du \\
+                             &=  \frac{u^7}{7} - \frac{2u^5}{5} + \frac{u^3}{3} + C  \\
+                             &= \frac17\sec^7(x) - \frac25 \sec^5(x) + \frac13 \sec^3(x) + C
 \end{align*}
 \end{example}
+
+
 
 \begin{problem}(problem 10a)
 Compute the indefinite integral:
 \[
-\int \tan^3(x) \sec^5(x)\;dx = \answer{\frac17 \sec^7(x) - \frac15 \sec^5(x)} + C.
+\int \tan^3(x) \sec^5(x)\;dx
+\]
+First rewrite the integral as
+\[
+\int \tan^3(x) \sec^5(x)\;dx = \int \tan^2(x) \sec^4(x) \sec(x) \tan(x) \; dx
+\]
+Next, rewrite $\tan^2(x)$ as
+\begin{multipleChoice}
+\choice{$1+\sec^2(x)$}
+\choice{$1-\sec^2(x)$}
+\choice[correct]{$\sec^2(x) -1$}
+\end{multipleChoice}
+
+Let $u = \answer{\sec(x)}$, then \; $du = \answer{\sec(x) \tan(x) \, dx}$
+
+Substituting gives
+\[
+\int \tan^3(x) \sec^5(x)\;dx = \int \answer{(u^2 - 1)u^4} \; du
+\]
+
+Finally
+\[
+\int \tan^3(x) \sec^5(x)\;dx = \answer{\frac17 \sec^7(x) - \frac15 \sec^5(x)} + C
 \]
 \end{problem}
+
+
+
 
 \begin{problem}(problem 10b)
 Compute the indefinite integral:
 \[
-\int \tan^5(x) \sec^7(x)\;dx = \answer{\frac{1}{11} \sec^{11}(x) + \frac17 \sec^7(x) -\frac29 \sec^9(x)} + C.
+\int \tan^5(x) \sec^7(x)\;dx = 
+\]
+First rewrite the integral as
+\[
+\int \tan^5(x) \sec^7(x)\;dx = \int \tan^4(x) \sec^6(x) \sec(x) \tan(x) \; dx
+\]
+Next, rewrite $\tan^4(x)$ as
+\begin{multipleChoice}
+\choice{$\left[\sec^2(x) + 1\right]^2$}
+\choice[correct]{$\left[\sec^2(x) -1\right]^2$}
+\choice{$\left[1-\sec^2(x)\right]^2$}
+\end{multipleChoice}
+
+Let $u = \answer{\sec(x)}$, then \; $du = \answer{\sec(x) \tan(x) \, dx}$
+
+Substituting gives
+\[
+\int \tan^5(x) \sec^7(x)\;dx = \int \answer{(u^4 -2u^2 + 1) u^7} \; du
+\]
+
+Finally
+\[
+\int \tan^5(x) \sec^7(x)\;dx =  \answer{\frac{1}{12} \sec^{12}(x) + \frac15 \sec^{10}(x) -\frac18 \sec^8(x)} + C.
 \]
 \end{problem}
 
