@@ -23,7 +23,7 @@ In this section we compute derivatives involving $e^x$ and $\ln(x)$.
 
 
 
-
+\section{Derivative of $e^x$}
 
 We begin by computing the derivative of the exponential function $f(x) = e^x$.  
 Recall that $e$ is a number whose value is approximately 2.72.
@@ -49,15 +49,21 @@ f'(x) &= \lim_{h \to 0} \frac{f(x+h)-f(x)}{h} \\[5pt]
 
 Thus the derivative of $e^x$ is itself!
 
+\begin{proposition}[Derivative of the Natural Exponential]
+\[
+\frac{d}{dx} e^x = e^x
+\]
+\end{proposition}
+
 
 \begin{example}[example 1] Find the equation of the tangent line to the graph of $y = 3e^x - 5$ at $x = 0$.\\
-The point of tangency is $(0, f(0)) = (0, -2)$ since $3e^0 -5 - 3-5 = -2$. 
+The point of tangency is $(0, f(0)) = (0, -2)$ since $3e^0 -5 = 3-5 = -2$. 
 The derivative is $y' = 3e^x$, so the slope of the tangent line is $m = f'(0) = 3e^0 = 3$.
 Using the point-slope formula, $y - y_1 = m(x-x_1)$ we can make the equation of the tangent line:
 \[
 y - (-2) = 3(x-0)
 \]
-which can be rewritten in slope -intercept form as
+which can be rewritten in slope-intercept form as
 \[
 y = 3x-2
 \]
@@ -98,15 +104,19 @@ The equation of the tangent line is \ $y = \answer{ex}$
 \begin{problem}(problem 1c)
 Find the following derivatives involving $e^x$:
 
-1ci) $\frac{d}{dx} \left(5e^x\right) = \answer{5e^x}.$\\
-1cii) $\frac{d}{dx} \left(-2e^x\right) = \answer{-2e^x}.$\\
-1ciii) $\frac{d}{dx} \left(\frac{e^x}{2}\right) = \answer{\frac{e^x}{2}}.$\\
-1civ) $\frac{d}{dx} \left(x^2 + e^x\right) = \answer{2x + e^x}.$\\
-1cv) $\frac{d}{dx} \left(\sqrt x - 3e^x\right) = \answer{(1/2)x^{-1/2} - 3e^x}.$\\
-1cvi) $\frac{d}{dx} \left(4e^x + \frac{1}{x^2}\right) = \answer{4e^x -\frac{2}{x^3}}.$
+i) $\frac{d}{dx} \left(5e^x\right) = \answer{5e^x}.$\\
+ii) $\frac{d}{dx} \left(-2e^x\right) = \answer{-2e^x}.$\\
+iii) $\frac{d}{dx} \left(\frac{e^x}{2}\right) = \answer{\frac{e^x}{2}}.$\\
+iv) $\frac{d}{dx} \left(x^2 + e^x\right) = \answer{2x + e^x}.$\\
+v) $\frac{d}{dx} \left(\sqrt x - 3e^x\right) = \answer{(1/2)x^{-1/2} - 3e^x}.$\\
+vi) $\frac{d}{dx} \left(4e^x + \frac{1}{x^2}\right) = \answer{4e^x -\frac{2}{x^3}}.$
 
 
 \end{problem}
+
+
+
+\section{Derivative of $\ln(x)$}
 
 
 Next, we use the definition of the derivative to find the derivative of the natural logarithm.
@@ -155,8 +165,17 @@ To recap,
 \[
 \frac{d}{dx} \ln(x) = \frac{1}{x}
 \]
-which gives a memorable mathematical relationship between the \textbf{transcendental} natural logarithm function 
-the \textbf{rational} reciprocal function.
+which gives a memorable mathematical relationship between the \textbf{transcendental}, natural logarithm function 
+the \textbf{algebraic}, reciprocal function.
+
+
+
+\begin{proposition}[Derivative of the Natural Logarithm]
+\[
+\frac{d}{dx} \ln(x) = \frac{1}{x}
+\]
+\end{proposition}
+
 
 
 \begin{example}[example 2]
