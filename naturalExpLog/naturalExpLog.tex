@@ -25,8 +25,10 @@ In this section we compute derivatives involving $e^x$ and $\ln(x)$.
 
 
 
-We begin by computing the derivative of the exponential function $f(x) = e^x$.  Recall that $e$ is a number whose value is approximately 2.72.
-Like $\pi$ and $\sqrt 2$, $e$ is an irrational number, meaning that its decimal representation is non-terminating and non-repeating. The significance of the number $e$ in mathematics
+We begin by computing the derivative of the exponential function $f(x) = e^x$.  
+Recall that $e$ is a number whose value is approximately 2.72.
+Like $\pi$ and $\sqrt 2$, $e$ is an irrational number, meaning that its decimal representation 
+is non-terminating and non-repeating. The significance of the number $e$ in mathematics
 is underscored by the simplicity of the differentiation formula we are about to discover. 
 The result hinges on a limit that we analyzed in the Numerical Limits section:
 \[
@@ -48,9 +50,21 @@ f'(x) &= \lim_{h \to 0} \frac{f(x+h)-f(x)}{h} \\[5pt]
 Thus the derivative of $e^x$ is itself!
 
 
+\begin{example}[example 1] Find the equation of the tangent line to the graph of $y = 3e^x - 5$ at $x = 0$.\\
+The point of tangency is $(0, f(0)) = (0, -2)$ since $3e^0 -5 - 3-5 = -2$. 
+The derivative is $y' = 3e^x$, so the slope of the tangent line is $m = f'(0) = 3e^0 = 3$.
+Using the point-slope formula, $y - y_1 = m(x-x_1)$ we can make the equation of the tangent line:
+\[
+y - (-2) = 3(x-0)
+\]
+which can be rewritten in slope -intercept form as
+\[
+y = 3x-2
+\]
+\end{example}
 
 
-\begin{problem}(problem 1)
+\begin{problem}(problem 1a)
 Find the equation of the tangent line to the graph of $f(x) = e^x$ at $x = 0$.
 \begin{hint}
 Use the derivative to find the slope, $m$
@@ -65,7 +79,7 @@ Use the point slope form: $y-y_0 = m(x-x_0)$
 The equation of the tangent line is \ $y = \answer{x+1}$
 \end{problem}
 
-\begin{problem}(problem 2)
+\begin{problem}(problem 1b)
 Find the equation of the tangent line to the graph of $f(x) = e^x$ at $x = 1$.
 \begin{hint}
 Use the derivative to find the slope, $m$
@@ -81,15 +95,15 @@ The equation of the tangent line is \ $y = \answer{ex}$
 \end{problem}
 
 
-\begin{problem}(problem 3)
+\begin{problem}(problem 1c)
 Find the following derivatives involving $e^x$:
 
-3a) $\frac{d}{dx} \left(5e^x\right) = \answer{5e^x}.$\\
-3b) $\frac{d}{dx} \left(-2e^x\right) = \answer{-2e^x}.$\\
-3c) $\frac{d}{dx} \left(\frac{e^x}{2}\right) = \answer{\frac{e^x}{2}}.$\\
-3d) $\frac{d}{dx} \left(x^2 + e^x\right) = \answer{2x + e^x}.$\\
-3e) $\frac{d}{dx} \left(\sqrt x - 3e^x\right) = \answer{(1/2)x^{-1/2} - 3e^x}.$\\
-3f) $\frac{d}{dx} \left(4e^x + \frac{1}{x^2}\right) = \answer{4e^x -\frac{2}{x^3}}.$
+1ci) $\frac{d}{dx} \left(5e^x\right) = \answer{5e^x}.$\\
+1cii) $\frac{d}{dx} \left(-2e^x\right) = \answer{-2e^x}.$\\
+1ciii) $\frac{d}{dx} \left(\frac{e^x}{2}\right) = \answer{\frac{e^x}{2}}.$\\
+1civ) $\frac{d}{dx} \left(x^2 + e^x\right) = \answer{2x + e^x}.$\\
+1cv) $\frac{d}{dx} \left(\sqrt x - 3e^x\right) = \answer{(1/2)x^{-1/2} - 3e^x}.$\\
+1cvi) $\frac{d}{dx} \left(4e^x + \frac{1}{x^2}\right) = \answer{4e^x -\frac{2}{x^3}}.$
 
 
 \end{problem}
@@ -145,9 +159,10 @@ which gives a memorable mathematical relationship between the \textbf{transcende
 the \textbf{rational} reciprocal function.
 
 
-\begin{example}[example 4]
- If $f(x) = \frac{\ln(x)}{\ln(4)}$ then we use the constant multiple rule with $c = \frac{1}{\ln(4)}$ 
-and we get 
+\begin{example}[example 2]
+ Find $f'(x)$ if $f(x) = \frac{\ln(x)}{\ln(4)}$.\\
+ Using the constant multiple rule with $c = \frac{1}{\ln(4)}$, 
+ we get 
 \[
 f'(x) = \tfrac{1}{\ln(4)} \cdot \frac{1}{x} = \frac{1}{x\ln(4)}.
 \]
@@ -155,15 +170,15 @@ f'(x) = \tfrac{1}{\ln(4)} \cdot \frac{1}{x} = \frac{1}{x\ln(4)}.
 
 
 
-\begin{problem}(problem 4)
+\begin{problem}(problem 2)
 Find the following derivatives involving $\ln(x)$:
 
-4a) $\frac{d}{dx} \left(5\ln(x)\right) = \answer{5/x}.$\\
-4b) $\frac{d}{dx} \left(-2\ln(x)\right) = \answer{-2/x}.$\\
-4c) $\frac{d}{dx} \left(\frac{\ln(x)}{2}\right) = \answer{1/(2x)}.$\\
-4d) $\frac{d}{dx} \left(x^3 + \ln(x)\right) = \answer{3x^2 + 1/x}.$\\
-4e) $\frac{d}{dx} \left(\sqrt x - 3\ln(x)\right) = \answer{(1/2)x^{-1/2} - 3/x}.$\\
-4f) $\frac{d}{dx} \left(4\ln(x) + \frac{1}{x^2}\right) = \answer{4/x -\frac{2}{x^3}}.$
+2a) $\frac{d}{dx} \left(5\ln(x)\right) = \answer{5/x}.$\\
+2b) $\frac{d}{dx} \left(-2\ln(x)\right) = \answer{-2/x}.$\\
+2c) $\frac{d}{dx} \left(\frac{\ln(x)}{2}\right) = \answer{1/(2x)}.$\\
+2d) $\frac{d}{dx} \left(x^3 + \ln(x)\right) = \answer{3x^2 + 1/x}.$\\
+2e) $\frac{d}{dx} \left(\sqrt x - 3\ln(x)\right) = \answer{(1/2)x^{-1/2} - 3/x}.$\\
+2f) $\frac{d}{dx} \left(4\ln(x) + \frac{1}{x^2}\right) = \answer{4/x -\frac{2}{x^3}}.$
 
 
 \end{problem}
@@ -172,8 +187,10 @@ Find the following derivatives involving $\ln(x)$:
 
 
 
-In the formula $\tfrac{d}{dx} \ln(x) = \tfrac{1}{x}$, the domains of the functions do not match.  The domain of $1/x$ is all non-zero $x$, but the domain of 
-$\ln(x)$  is only $x >0$.  This leads us to ask if there is a function defined for $x<0$ whose derivative is $1/x$. The answer is yes and the function is 
+In the formula $\tfrac{d}{dx} \ln(x) = \tfrac{1}{x}$, the domains of the functions do not match.  
+The domain of $1/x$ is all non-zero $x$, but the domain of 
+$\ln(x)$  is only $x >0$.  This leads us to ask if there is a function defined for $x<0$ whose derivative is $1/x$. 
+The answer is yes and the function is 
 $\ln|x|$. In other words,
 \[
 \dd{x} \ln|x| = \frac{1}{x}.
@@ -181,6 +198,20 @@ $\ln|x|$. In other words,
 This result follows from the definition of the derivative exactly as it was used above.  
 The absolute value bars will eventually drop in the computation because $1+h/x$ becomes positive as $h \to 0$.
  
+\begin{example}[example 3]
+Find the slope of the tangent line to the graph of $y = \ln|x|$ at $x = -3$.\\
+The slope of the tangent line is $m = f'(-3)$ and since the derivative is $f'(x) = \frac{1}{x}$,
+the slope is $-\frac13$.
+\end{example}
+ 
+\begin{problem}(problem 3)
+Find the slope of the tangent line to the graph of $y= x^2 + \ln|x|$ at $x = -2$.
+\[
+m = \answer{ = -9/2}
+\]
+\end{problem}
+ 
+  
 %\begin{center}
 \begin{foldable}
 \unfoldable{Below is a graph of $f(x) = \ln|x|$ (in blue) and its derivative, $f'(x) = 1/x$ (in purple).
