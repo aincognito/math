@@ -4,7 +4,7 @@
 
 \outcome{Integrate rational functions using a partial fraction decomposition}
 
-\title{Partial Fractions}
+\title{2.4 Partial Fractions}
 
 \begin{document}
 
@@ -87,7 +87,7 @@ where $A, B$ and $C$ are constants.
 Before we move on to integrating the special rational functions seen in the above decompositions, 
 we will look at one more example consisting of all three of the ideas mentioned above:
  
-\begin{example} %example #1
+\begin{example}[example 1]
 Find the partial fraction decomposition of
 \[
   f(x) = \frac{x^2 + 3x -5}{x(x-2)^3(x^2 + 4)}. 
@@ -110,7 +110,7 @@ where $A, B, C, D, E,$ and $F$ are constants.
 The point of a partial fraction decomposition is to replace a complicated rational function by a sum of simpler ones which we can integrate.
 We will now look at some of these simpler forms and learn how to integrate them.
 
-\begin{example}
+\begin{example}[example 2]
 Compute the indefinite integral
 \[
 \int \frac{1}{ax+b} \; dx.
@@ -189,7 +189,7 @@ Using a substitution with $u = x/a$ and $du = (1/a) \, dx$, so that $x = au$ and
  \end{problem}
  
  
- \begin{example}
+\begin{example}
 Compute the indefinite integral
 \[
 \int \frac{x}{a^2 + x^2} \; dx.
@@ -338,6 +338,32 @@ so that $B = -4 - (6/7) = -34/7$. The final answer is thus:
 
 
 \end{example}
+
+\begin{problem}
+
+Compute $\displaystyle{\int \frac{2x^2 + 1}{(x-1)^2(x+2)}}$\\
+
+The partial fraction decomposition has the form
+
+\begin{multipleChoice}
+\choice[correct]{$\frac{A}{x-1} + \frac{B}{(x-1)^2} + \frac{C}{x+2}$}
+\choice{$\frac{A}{x-1} + \frac{Bx}{(x-1)^2} + \frac{C}{x+2}$}
+\choice{$\frac{A}{(x-1)^2} + \frac{B}{x+2}$}
+\end{multipleChoice}
+
+The answer has the form
+
+$\displaystyle{\int \frac{1}{(x-1)^2(x+2)}=}$
+\begin{multipleChoice}
+\choice[correct]{$A\ln|x-1| - \frac{B}{(x-1)^2} + C\ln|x+2|$}
+\choice[correct]{$A\ln|x-1| + \frac{B}{(x-1)^2} + C\ln|x+2|$}
+\choice[correct]{$A\ln|x-1| + B\ln|(x-1)^2| + C\ln|x+2|$}
+\end{multipleChoice}
+
+The coefficients are:\\
+$A = \answer{1} \; B = \answer{1} \; C = \answer{1}$
+\end{problem}
+
 
 
 
