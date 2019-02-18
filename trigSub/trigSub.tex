@@ -61,15 +61,13 @@ We have
 \int x^3 \sqrt{1-x^2} \; dx &= \int \cos^3(\theta) \sqrt{1-\cos^2(\theta)} \left[-\sin(\theta)\right] \; d\theta\\[6pt]
                            &= -\int \cos^3(\theta) \sqrt{\sin^2(\theta)} \sin(\theta) \; d\theta\\[6pt]
                            &= -\int \cos^3(\theta) \sin(\theta) \sin(\theta) \; d\theta\\[6pt]
-                           &= -\int \cos^3(\theta) \sin^2(\theta) \; d\theta\\[6pt]
-                           \text{now, $u$-sub, with} \; & \; \text{  $u = \sin(\theta), \; du = \cos(\theta) \, d\theta$}\\[6pt]
-                           &=-\int \cos^3(\theta) u^2 \; \frac{du}{\cos(\theta)}\\[6pt]
-                           &=-\int \cos^2(\theta) u^2 \; du\\[6pt]
-                           &=-\int \left[1-\sin^2(\theta)\right] u^2 \; du\\[6pt]
+                           &= -\int \cos^3(\theta) \sin^2(\theta) \; d\theta \; \;\;\text{(odd power of cosine)}\\[6pt]
+                           &= -\int \cos^2(\theta) \sin^2(\theta) \cos(\theta) \; d\theta\\[6pt]
+                           &= -\int \left[1 - \sin^2(\theta)\right] \sin^2(\theta) \cos(\theta) \; d\theta\\[6pt]
+                            & \; \text{let  $u = \sin(\theta), \; du = \cos(\theta) \, d\theta$}\\[6pt]
                            &=-\int (1-u^2)u^2 \; du\\[6pt]
                            &=\int (u^2 -1)u^2 \; du\\[6pt]
                            &=\int (u^4 - u^2) \; du\\[6pt]
-                           \text{now we can} & \text{ finally integrate}\\[6pt]
                            &=\frac{u^5}{5} - \frac{u^3}{3} + C\\[6pt]
                            &= \frac15 \sin^5(\theta) - \frac13 \sin^3(\theta) + C.
 \end{align*}
@@ -119,16 +117,16 @@ Compute the indefinite integral
 \]
 Use a trigonometric substitution with\\
 \[
-x = \answer{4\cos(\theta)}
-\]
-The differential is\\
-\[
-dx = \answer{-4\sin(\theta)} \; d\theta
+x = \answer{4\cos(\theta)} \;\; dx = \answer{-4\sin(\theta)} \; d\theta
 \]
 Substituting these and simplifying the integrand gives\\
-\[
-\int   x^3\sqrt{16 - x^2}\; dx = -16\int \answer{\cos^3(\theta)\sin^2(\theta)} \; d\theta
-\]
+$\displaystyle{\int  x^3 \sqrt{16 - x^2}\; dx =}$\\
+\begin{multipleChoice}
+\choice{$\displaystyle{-64 \int \cos^3(\theta)\sin(\theta) \; d\theta}$}
+\choice[correct]{$\displaystyle{-16\int \cos^3(\theta)\sin^2(\theta) \; d\theta}$}
+\choice{$\displaystyle{16\int \cos^3(\theta)\sin^2(\theta) \; d\theta}$}
+\end{multipleChoice}
+
 Computing this integral gives
 \[
 \int \cos^3(\theta)\sin^2(\theta) \; d\theta = \answer{-(1/5)\sin^5(\theta) + (1/3)\sin^3(\theta)} + C.
@@ -511,6 +509,44 @@ $[0, \pi/2)$ or $[\pi, 3\pi/2)$. This way, $\tan(\theta) \geq 0$ and $|\tan(\the
 
 
 
+\begin{problem}(problem 4)
+Compute the indefinite integral: $\displaystyle{\int   \frac{1}{\sqrt{x^2 - 4}} \; dx}$
+Use a trigonometric substitution with\\
+\[
+x = \answer{2\sec(\theta)} \;\; dx = \answer{2\sec(\theta)\tan(\theta)} \; d\theta
+\]
+Substituting these and simplifying the integrand gives\\
+$\displaystyle{\int   \frac{1}{\sqrt{x^2 - 4}}\; dx =}$\\
+\begin{multipleChoice}
+\choice[correct]{$\displaystyle{ \int \sec(\theta) \; d\theta}$}
+\choice{$\displaystyle{\frac12\int \sec(\theta)\; d\theta}$}
+\choice{$\displaystyle{\int \cot(\theta) \; d\theta}$}
+\end{multipleChoice}
+
+Computing this integral gives
+\[
+\int \sec(\theta) \; d\theta = \answer{\ln|\sec(\theta) + \tan(\theta)|} + C.
+\]
+Based on the substitution $x = 2\sec(\theta)$, \\
+\[
+\tan(\theta) = \answer{\frac12\sqrt{x^2-4}}
+\]
+The final answer is
+\[
+\int   \frac{1}{\sqrt{x^2 - 4}}\; dx = 
+\]
+\begin{center}
+\begin{multipleChoice}
+\choice[correct]{$\ln|x+\sqrt{x^2 - 4}| + C$}
+\choice[correct]{$\ln|\frac{x}{2}+ \frac{\sqrt{x^2 - 4}}{2}| + C$}
+\choice{$2\ln|x+\sqrt{x^2 - 4}| + C$}
+\end{multipleChoice}
+\end{center}
+
+
+\end{problem}
+
+
 
 
 
@@ -698,7 +734,6 @@ From the triangle above, we can see that $\sin(\theta) = \frac{\sqrt{x^2-25}}{x}
 \begin{problem}(problem 8)
 Compute the following indefinite integrals:
 \begin{itemize}
-\item $\displaystyle{\int   \frac{1}{\sqrt{x^2 - 4}} \; dx}$
 \item $\displaystyle{\int   x^3 \sqrt{x^2 - 9} \; dx}$
 \item $\displaystyle{\int \frac{1}{x\sqrt{4x^2 - 1}}\; dx}$
 \item $\displaystyle{\int \frac{1}{x^2\sqrt{25x^2-16}} \; dx}$
