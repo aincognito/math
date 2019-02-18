@@ -870,7 +870,7 @@ $dx = 3\sec^2(\theta) \, d\theta$.  Substituting these, we get
                                       &= 27\int \left(\sec^2(\theta)-1\right) \cdot \sec(\theta) \tan(\theta) \; d\theta\\[6pt]
                                       &= 27\int (u^2-1) \; du\\[6pt]
                                       &= 9u^3 - \frac{u}{27} + C\\[6pt]
-                                      &= 9\sec^3(\theta) - \frac{1}{27} \sec(\theta) + C.
+                                      &= 9\sec^3(\theta) - 27 \sec(\theta) + C.
 \end{align*}
 
 %need triangle with x = 3 tan(theta)
@@ -894,10 +894,10 @@ $dx = 3\sec^2(\theta) \, d\theta$.  Substituting these, we get
 
 
 
-From the triangle above, we can see that $\sec(\theta) = \frac{3}{\sqrt{9+x^2}}$ and so
+From the triangle above, we can see that $\sec(\theta) = \frac{\sqrt{9+x^2}}{3}$ and so
 
 \[
-\int \frac{x^3}{\sqrt{9 + x^2}} \; dx = 9\sec^3(\theta) - \frac{1}{27} \sec(\theta) + C = \frac{243}{(9+x^2)^{3/2}} - \frac{1}{9(1+x^2)^{1/2}} + C.
+\int \frac{x^3}{\sqrt{9 + x^2}} \; dx = 9\sec^3(\theta) - 27 \sec(\theta) + C = \frac13 (9+x^2)^{3/2} - 9(9+x^2)^{1/2} + C.
 \]
 \end{example}
 
