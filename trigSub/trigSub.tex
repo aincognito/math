@@ -560,17 +560,17 @@ so that $dx = 2\sec(\theta)\tan(\theta) \, d\theta$.
 
 The integral becomes
 \begin{align*}
-\int x^3\sqrt{x^2-4}\; dx &= \int \sec^3(\theta)\sqrt{4\sec^2(\theta)-4}\cdot 2\sec(\theta)\tan(\theta)\, d\theta\\[6pt]
-                           &=  2\int \sec^4(\theta)\sqrt{4\tan^2(\theta)}\cdot \tan(\theta)\, d\theta\\[6pt]   
-                            &=  2\int \sec^4(\theta)\cdot2\tan(\theta)\cdot \tan(\theta)\, d\theta\\[6pt] 
-                            &=  4\int \sec^4(\theta)\tan^2(\theta)\, d\theta\\[6pt] 
-                            &=  4\int \sec^2(\theta)\cdot \sec^2(\theta) \cdot \tan^2(\theta)\, d\theta\\[6pt]  
-                            &=  4\int \sec^2(\theta)\cdot [1 + \tan^2(\theta)] \cdot \tan^2(\theta)\, d\theta\\[6pt]  
+\int x^3\sqrt{x^2-4}\; dx &= \int 8\sec^3(\theta)\sqrt{4\sec^2(\theta)-4}\cdot 2\sec(\theta)\tan(\theta)\, d\theta\\[6pt]
+                           &=  16\int \sec^4(\theta)\sqrt{4\tan^2(\theta)}\cdot \tan(\theta)\, d\theta\\[6pt]   
+                            &=  16\int \sec^4(\theta)\cdot2\tan(\theta)\cdot \tan(\theta)\, d\theta\\[6pt] 
+                            &=  32\int \sec^4(\theta)\tan^2(\theta)\, d\theta \;\; \text{(even power of secant)} \\[6pt]
+                            &=  32\int  \sec^2(\theta) \cdot \tan^2(\theta)\cdot\sec^2(\theta)\, d\theta\\[6pt]  
+                            &=  32\int  [1 + \tan^2(\theta)] \cdot \tan^2(\theta)\cdot\sec^2(\theta)\, d\theta\\[6pt]  
                             \text{Let } \; & u = \tan(\theta), \; du = \sec^2(\theta) \, d\theta.\\[6pt]
-                            &=  4\int [1 + u^2]u^2\, du\\[6pt] 
-                             &=  4\int (u^2 + u^4) \, du\\[6pt]
-                             &= \frac43 u^3 + \frac45 u^5 + C\\[6pt]
-                             &= \frac43 \tan^3(\theta) + \frac45 \tan^5(\theta) + C                            
+                            &=  32\int \left(1 + u^2\right)u^2\, du\\[6pt] 
+                             &=  32\int \left(u^2 + u^4\right) \, du\\[6pt]
+                             &= \frac{32}{3} u^3 + \frac{32}{5} u^5 + C\\[6pt]
+                             &= \frac{32}{3} \tan^3(\theta) + \frac{32}{5} \tan^5(\theta) + C                            
 \end{align*}
 
 
@@ -598,8 +598,8 @@ The integral becomes
 
 From the triangle above, we can see that $\tan(\theta) = \frac{\sqrt{x^2-4}}{2}$ so that:
 \[
-\int x^3\sqrt{x^2-4} \; dx =  \frac43 \tan^3(\theta) + \frac45 \tan^5(\theta) + C =  \frac16 (x^2 - 4)^{3/2} + 
-\frac{1}{40} (x^2 - 4)^{5/2} + C.
+\int x^3\sqrt{x^2-4} \; dx =  \frac{32}{3} \tan^3(\theta) + \frac{32}{5} \tan^5(\theta) + C =  \frac43 (x^2 - 4)^{3/2} + 
+\frac{1}{5} (x^2 - 4)^{5/2} + C.
 \]
 
 \end{example}
