@@ -218,7 +218,7 @@ We are now ready to tackle more general scenarios.
 \section{Distinct Linear Factors}
 
 
-\begin{example}
+\begin{example}[example 5]
 
 Compute the indefinite integral
 \[
@@ -278,7 +278,7 @@ We can now write our final answer:
 
 
 
-\begin{problem}
+\begin{problem}(problem 5a)
 
 Compute $\displaystyle{\int \frac{1}{x^2 + x}\, dx}$\\
 
@@ -307,7 +307,7 @@ $A = \answer{1} \;\;\; B = \answer{-1} \;\;\; $
 
 
 
-\begin{problem}
+\begin{problem}(problem 5b)
 
 Compute $\displaystyle{\int \frac{x^2 + 4}{2x^3 + 3x^2 - 2x}\, dx}$\\
 
@@ -339,7 +339,7 @@ $A = \answer{-2} \;\;\; B = \answer{4/5} \;\;\; C = \answer{17/5} $
 
 \section{Repeated Linear Factors}
 
-\begin{example}
+\begin{example}[example 6]
 Compute the indefinite integral
 \[
 \int \frac{3x - 4}{x^3 + 2x^2 + x} \; dx.
@@ -399,7 +399,7 @@ so that $B = -4 - (6/7) = -34/7$. The final answer is thus:
 
 
 
-\begin{problem}
+\begin{problem}(problem 6a)
 
 Compute $\displaystyle{\int \frac{2x^2 + 1}{(x-1)^2(x+2)}\, dx}$\\
 
@@ -429,9 +429,9 @@ $A = \answer{1} \;\;\; B = \answer{1} \;\;\; C = \answer{1}$
 
 
 
-\begin{problem}
+\begin{problem}(problem 6b)
 
-Compute $\displaystyle{\int \frac{x^2 - 4x - 4}{4x^3 + 4x^2 + 4x} \, dx}$
+Compute $\displaystyle{\int \frac{x^2 - 4x - 4}{4x^3 + 4x^2 + x} \, dx}$
 
 The partial fraction decomposition has the form
 
@@ -445,7 +445,7 @@ The partial fraction decomposition has the form
 
 The answer has the form
 
-$\displaystyle{\int \frac{x^2 - 4x - 4}{4x^3 + 4x^2 + 4x} \, dx =}$
+$\displaystyle{\int \frac{x^2 - 4x - 4}{4x^3 + 4x^2 + x} \, dx =}$
 \begin{multipleChoice}
 \choice{$\displaystyle{A\ln|x| - \frac{B}{\ln|2x+1|} -\frac{C}{2x+1} + K}$}
 \choice[correct]{$\displaystyle{A\ln|x| - \frac{B}{2\ln|2x+1|} -\frac{C}{2(2x+1)} + K}$}
@@ -467,7 +467,7 @@ $A = \answer{-4} \;\;\; B = \answer{47/6} \;\;\; C = \answer{7/2}$
 
 \section{Irreducible Quadratic Factors}
 
-\begin{example}
+\begin{example}[example 7]
 Compute the indefinite integral:
 \[
 \int \frac{x^2 + 5x + 2}{x^3 + 4x} \; dx.
@@ -523,7 +523,72 @@ The final answer is thus:
 \end{center}
 
 
+\begin{problem}(problem 7a)
+
+Compute $\displaystyle{\int \frac{x^2 - 9}{x^3 + 9x} \, dx}$
+
+The partial fraction decomposition has the form
+
+\begin{multipleChoice}
+\choice{$\displaystyle{\frac{A}{x} + \frac{B}{x^2 + 9}}$}
+\choice{$\displaystyle{\frac{A}{x} + \frac{Bx}{x^2 + 9}}$}
+\choice[correct]{$\displaystyle{\frac{A}{x} + \frac{Bx+C}{x^2 + 9}}$}
+\end{multipleChoice}
+
+
+
+The answer has the form
+
+$\displaystyle{\int \frac{x^2 - 9}{x^3 + 9x} \, dx=}$
+\begin{multipleChoice}
+\choice[correct]{$\displaystyle{A\ln|x| + \tfrac{B}{2}\ln(x^2 + 9) +\tfrac{C}{3}\tan^{-1}\left(\tfrac{x}{3}\right) + K}$}
+\choice{$\displaystyle{A\ln|x| + \tfrac{B}{3}\ln(x^2 + 9) +C\tan^{-1}\left(\tfrac{x}{3}\right) + K}$}
+\choice{$\displaystyle{A\ln|x| + \frac{B}{2}\ln(x^2 + 9) +\tfrac{C}{3}\ln\left(\tfrac{x}{3}\right) + K}$}
+\end{multipleChoice}
+
+The coefficients are\\
+$A = \answer{-1} \;\;\; B = \answer{-8/3} \;\;\; C = \answer{14/3}$
+\end{problem}
+
+
+\begin{problem}(problem 7b)
+
+Compute $\displaystyle{\int \frac{x^3 + x^2 + 1}{x^4 - 1} \, dx}$
+
+The partial fraction decomposition has the form
+
+\begin{multipleChoice}
+\choice[correct]{$\displaystyle{\frac{A}{x+1} + \frac{B}{x-1} + \frac{Cx+D}{x^2 +1}}$}
+\choice{$\displaystyle{\frac{Ax}{x^2 - 1} + \frac{Bx+C}{x^2 +1}}$}
+\choice{$\displaystyle{\frac{A}{x+1} + \frac{B}{x-1} + \frac{Cx}{x^2 +1}}$}
+\end{multipleChoice}
+
+
+
+The answer has the form
+
+$\displaystyle{\int \frac{x^3 + x^2 + 1}{x^4 - 1} \, dx =}$
+\begin{multipleChoice}
+\choice{$\displaystyle{A\ln|x+1| + B\ln|x-1|+ C\ln(x^2 + 1) +D\tan^{-1}(x) + K}$}
+\choice{$\displaystyle{A\ln|x+1| + B\ln|x-1|+ 2C\ln(x^2 + 1) +D\tan^{-1}(x) + K}$}
+\choice[correct]{$\displaystyle{A\ln|x+1| + B\ln|x-1|+ \frac{C}{2}\ln(x^2 + 1) +D\tan^{-1}(x) + K}$}
+\end{multipleChoice}
+
+The coefficients are\\
+$A = \answer{-1/4} \;\;\; B = \answer{3/4} \;\;\; C = \answer{3/4} \;\;\; D = \answer{-1/2}$
+\end{problem}
+
+
+
 \end{document}
+
+
+
+
+
+
+
+
 
 
 \begin{center}
