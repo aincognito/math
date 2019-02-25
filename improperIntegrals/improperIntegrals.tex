@@ -45,7 +45,7 @@ The improper integral at negative infinity is defined similarly.
 \end{definition}
 
 
-\begin{example}
+\begin{example}[example 1]
 Compute the improper integral
 \[
 \int_0^\infty e^{-2x} \; dx.
@@ -75,20 +75,32 @@ More precisely, we can say that the integral converges to $1/2$.
 
 
 
-\begin{problem}
+\begin{problem}(problem 1a)
 Compute the improper integral
 \[
 \int_0^\infty 2e^{-5x} \; dx = \answer{2/5}
 \]
+\begin{multipleChoice}
+\choice[correct]{converge}
+\choice{diverge}
+\end{multipleChoice}
+\end{problem}
 
+
+\begin{problem}(problem 1b)
+Compute the improper integral
+\[
+\int_{-\infty}^1 3e^{x/2} \; dx = \answer{6e^{1/2}}
+\]
+\begin{multipleChoice}
+\choice[correct]{converge}
+\choice{diverge}
+\end{multipleChoice}
 \end{problem}
 
 
 
-
-
-
-\begin{example}
+\begin{example}[example 2]
 Compute the improper integral
 \[
 \int_1^\infty \frac{3}{x^2} \; dx.
@@ -119,18 +131,33 @@ More precisely, we can say that the integral converges to $3$.
 
 
 
-\begin{problem}
+\begin{problem}(problem 2a)
 Compute the improper integral
 \[
-\int_2^\infty \frac{5}{x^3} \; dx = \answer{5/8}
+\int_2^\infty \frac{5}{x^3} \; dx = \answer{5/8} 
 \]
+\begin{multipleChoice}
+\choice[correct]{converge}
+\choice{diverge}
+\end{multipleChoice}
+\end{problem}
 
+
+\begin{problem}(problem 2b)
+Compute the improper integral
+\[
+\int_1^\infty \frac{5}{(3x+1)^2} \; dx = \answer{5/12}
+\]
+\begin{multipleChoice}
+\choice[correct]{converge}
+\choice{diverge}
+\end{multipleChoice}
 \end{problem}
 
 
 
 
-\begin{example}
+\begin{example}[example 3]
 Compute the improper integral
 \[
 \int_1^\infty \frac{4}{x} \; dx.
@@ -157,16 +184,21 @@ Since the answer is a \textbf{not} a finite number, we say that the integral div
 \end{example}
 
 
-\begin{problem}
-Show that the improper integral diverges:
+\begin{problem}(problem 3)
+Compute the improper integral
 \[
-\int_3^\infty \frac{7}{\sqrt x}.
+\int_3^\infty \frac{7}{\sqrt x} = \answer{\infty}.
 \]
+Does the improper integral converge or diverge?
+\begin{multipleChoice}
+\choice{converge}
+\choice[correct]{diverge}
+\end{multipleChoice}
 \end{problem}
 
-Based on the previous examples and problems, we can expect the following theorem about integrals of the form
+Based on the previous examples and problems, we can expect the following theorem about improper integrals of the form
 \[
-\int_1^\infty \frac{1}{x^p} \; dx.
+\int_1^\infty \frac{1}{x^p} \; dx
 \]
 
 \begin{theorem}[$p$-integrals]
@@ -176,9 +208,51 @@ The result is the same if lower endpoint is replaced by any other positive numbe
 \end{theorem}
 This theorem will be of value to us in future sections, but for now, we use it to help us with another improper integral.
 
+\begin{example}[example 4]
+Use the theory of $p$-integrals to determine if the integral converges or diverges
+\[
+\int_2^\infty \frac{2}{\sqrt x} \; dx
+\]
+This is a (multiple of a) $p$-integral with $p = 1/2$. Since $1/2 \leq 1$, this integral diverges.
+\end{example}
 
-\begin{example}
-Compute the improper integral
+
+
+
+\begin{problem}(problem 4a)
+Use the theory of $p$-integrals to determine if the integral converges or diverges
+\[
+\int_4^\infty \frac{3}{\sqrt[3] x} \; dx
+\]
+This is a (multiple of a) $p$-integral with $p = \answer{1/3}$\\
+Does the improper integral converge or diverge?
+\begin{multipleChoice}
+\choice{converge}
+\choice[correct]{diverge}
+\end{multipleChoice}
+\end{problem}
+
+
+
+
+
+\begin{problem}(problem 4b)
+Use the theory of $p$-integrals to determine if the integral converges or diverges
+\[
+\int_{0.3}^\infty 2x^{-5} \; dx
+\]
+This is a (multiple of a) $p$-integral with $p = \answer{5}$\\
+Does the improper integral converge or diverge?
+\begin{multipleChoice}
+\choice[correct]{converge}
+\choice{diverge}
+\end{multipleChoice}
+\end{problem}
+
+
+
+\begin{example}[example 5]
+Use the theory of $p$-integrals to determine whether the improper integral convergs or diverges
 \[
 \int_2^\infty \frac{1}{x\ln(x)} \; dx.
 \]
@@ -191,6 +265,38 @@ This is a $p$-integral in the variable $u$ with $p=1$. Since $p \leq 1$, the the
 \int_2^\infty \frac{1}{x\ln(x)} \; dx \;\; \text{ diverges}.
 \]
 \end{example}
+
+
+\begin{problem}(problem 5a)
+Use the theory of $p$-integrals to determine if the improper integral converges or diverges:
+\[
+\int_3^\infty \frac{1}{x\ln^2(x)} \; dx
+\]
+
+Make a substitution\\
+$u = \answer{\ln(x)} \;\; du = \answer{1/x} \, dx$\\
+The endpoints become\\
+$x = 3 \implies u = \answer{\ln(3)}$ and $x= \infty \implies u = \answer{\infty}$\\
+In terms of $u$, the integral is
+\[
+\int_3^\infty \frac{1}{x\ln^2(x)} \; dx = \int_{\ln(3)}^\infty \answer{1/u^2} \; du
+\]
+This is a $p$-integral with $p = \answer{2}$\\
+According to the theory of $p$-integrals, this integral
+\begin{multipleChoice}
+\choice[correct]{converges}
+\choice{diverges}
+\end{multipleChoice}
+\end{problem}
+
+
+\begin{problem}(problem 5b)
+Use the theory of $p$-integrals to determine the values of $n$ for which the improper integral converges
+\[
+\int_2^\infty \frac{1}{x \ln^n(x)} \; dx
+\]
+This integral will converge for $n > \answer{1}$.
+\end{problem}
 
 
 
@@ -207,7 +313,7 @@ Then
 The improper integral is defined similarly if the vertical asymptote is at the upper endpoint of integration.
 \end{definition}
 
-\begin{example}
+\begin{example}[example 6]
 Compute the improper integral
 \[
 \int_0^1 \frac{3}{\sqrt x} \; dx.
@@ -218,20 +324,137 @@ The integral is improper because the integrand has a vertical asymptote at $x = 
                                  &= \lim_{a \to 0^+} \int_a^1 3x^{-1/2} \; dx\\
                                  &= \lim_{a \to 0^+} \left( 6x^{1/2}  \right) \bigg|_a^1\\
                                  &= \lim_{a \to 0^+} \left( 6\sqrt{1} - 6\sqrt{a}  \right) \\
-                                 &= \left( 6 - 6\sqrt{0}  \right) \\
+                                 &=  6 - 0   \\
                                  &= 6.
 \end{align*}
  Therefore, the improper integral converges to 6.
  \end{example}
  
-\begin{problem}
+\begin{problem}(problem 6)
 Compute the improper integral
 \[
 \int_2^6 \frac{4}{\sqrt{x-2}} \; dx = \answer{16}
 \]
+Does the improper integral converge or diverge?
+\begin{multipleChoice}
+\choice[correct]{converge}
+\choice{diverge}
+\end{multipleChoice}
 \end{problem}
 
-                                 
+
+\begin{example}[example 7]
+Compute the improper integral
+\[
+\int_0^{\pi/2} \tan(x) \; dx.
+\]
+The integral is improper because the integrand has a vertical asymptote at $x = \pi/2$. Hence
+\begin{align*}
+\int_0^{\pi/2} \tan(x) \; dx &= \lim_{b \to \frac{\pi}{2}^-} \int_0^b \tan(x) \; dx\\
+                                 &= \lim_{b \to \frac{\pi}{2}^-} \int_0^b \frac{\sin(x)}{\cos(x)} \; dx\\
+                                 &= \lim_{b \to \frac{\pi}{2}^-}  \ln|\sec(x)|   \bigg|_0^b\\
+                                 &= \lim_{b \to \frac{\pi}{2}^-} \big( \ln|\sec(b)| - \ln|\sec(0)|  \big) \\
+                                 &=  \infty - 0  \\
+                                 &= \infty.
+\end{align*}
+ Therefore, the improper integral diverges.
+ \end{example}
+ 
+ \begin{problem}(problem 7)
+Compute the improper integral
+\[
+\int_0^{\pi/2} \cot(x) \; dx
+\]
+The integrand has a vertical asymptote at
+\begin{multipleChoice}
+\choice[correct]{0}
+\choice{$\pi/2$}
+\end{multipleChoice}
+The anti derivative is
+\[
+\int \cot(x) \; dx = \answer{\ln|\sin(x)|} + C
+\]
+The improper integral
+\begin{multipleChoice}
+\choice{converges}
+\choice[correct]{diverges}
+\end{multipleChoice}
+\end{problem}
+
+
+\section{Doubly Improper Integrals}
+
+Doubly improper integrals have the form 
+\[
+\int_{-\infty}^\infty f(x) \; dx
+\]
+To compute a doubly improper integral, we let $a$ be any number (typically 0) and split it into two improper integrals:
+\[
+\int_{-\infty}^\infty f(x) \; dx = \int_{-\infty}^a f(x) \; dx + \int_a^\infty f(x) \; dx
+\]
+If either of these improper integrals diverges, then we say that the doubly improper integral diverges.
+Otherwise, we say that it converges.
+
+\begin{example}[example 8]
+Compute the doubly improper integral
+\[
+\int_{-\infty}^\infty \frac{1}{1+x^2} \; dx
+\]
+We will rewrite this integral as
+\[
+\int_{-\infty}^\infty \frac{1}{1+x^2} \; dx = \int_{-\infty}^0 \frac{1}{1+x^2} \; dx + \int_0^\infty \frac{1}{1+x^2} \; dx
+\] 
+The first integral is
+\[
+\int_{-\infty}^0 \frac{1}{1+x^2} \; dx = \lim_{a \to -\infty} \int_{a}^0 \frac{1}{1+x^2} \; dx
+\]
+\[
+= \lim_{a \to -\infty} \tan^{-1}(x) \bigg|_a^0 = \lim_{a \to -\infty} \left[\tan^{-1}(0) - \tan^{-1}(a)\right]
+\]
+\[
+= 0 - \left(-\frac{\pi}{2}\right) = \frac{\pi}{2}
+\]
+Thus the first integral converges. You can verify that the second integral also converges to $\frac{\pi}{2}$,
+and so the double improper integral converges to $\pi$, i.e.
+\[
+\int_{-\infty}^\infty \frac{1}{1+x^2} \; dx = \frac{\pi}{2} + \frac{\pi}{2} = \pi
+\]
+
+\end{example}
+
+
+\section{More Problems}
+
+\begin{example}[example 9]
+Compute the improper integral
+\[
+\int_0^\infty xe^{-x} \; dx
+\]
+We use integration by parts with $u = x$ and $dv = e^{-x} dx$ to obtain
+\begin{align*}
+\int_0^\infty \tan(x) \; dx &= \lim_{b \to \infty} \int_0^b xe^{-x} \; dx\\
+                                 &= \lim_{b \to \infty}  \left[ -xe^{-x}\bigg|_0^b + \int_0^b e^{-x} \; dx \right]   \\
+                                 &= \lim_{b \to \infty}  -xe^{-x}- e^{-x}\bigg|_0^b  \\
+                                 &= \lim_{b \to \infty}  xe^{-x} + e^{-x}\bigg|_b^0  \\
+                                 &= \lim_{b \to \infty}  (0+1) - (be^{-b} + e^{-b})    \\
+                                 &=  1 - 0  \\
+                                 &= 1
+\end{align*}
+ Therefore, the improper integral converges.
+ \begin{remark}
+ L'Hopital's rule is used to compute the limit of $be^{-b}$:
+ \[
+ \lim_{b \to \infty} be^{-b} = \lim_{b \to \infty} \frac{b}{e^b} = \frac{\infty}{\infty}
+ \]
+ and now, by L'Hopital's rule, we get
+ \[
+ \lim_{b \to \infty} \frac{b}{e^b} = \lim_{b \to \infty} \frac{1}{e^b} = 0.
+ \]
+ \end{remark}
+ 
+ \end{example}
+
+                               
 \begin{center}
 \begin{foldable}
 \unfoldable{Here is a detailed, lecture style video on improper integrals:}
