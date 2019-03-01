@@ -1,0 +1,199 @@
+\documentclass{ximera}
+
+\input{../preamble}
+
+\outcome{Solve separable differential equations}
+
+\title{1.6 Separable Diff Eq's}
+
+\begin{document}
+
+\begin{abstract}
+We solve separable differential equations and initial value problems.
+\end{abstract}
+
+\maketitle
+
+\section{Differential Equations}
+
+A differential equation is an equation that invloves one or more derivatives of an unknown function. 
+Solving a differential equation entails determining the unknown function.
+
+\begin{example}[example 1]
+Solve the differential equation $y' = y$.\\
+We seek $y = f(x)$ such that $f'(x) = f(x)$. By inspection $y = e^x$ is a solution of this equation.
+However, $y = 2e^x$ is also a solution. In fact, there are infinitely many solutions: $y = Ce^x$,
+where $C$ is any constant (including 0).
+\end{example}
+
+An initial value problem is a differential equation along with other information about the solution, usually the value of the function at a point.
+The purpose of the initial value is to determine one specific solution of the differential equation, in the event that there was more than one solution.
+
+\begin{example}[example 2]
+Solve the initial value problem $y' = y, y(0) = 4$.\\
+We saw in the last example that the differential equation $y' = y$ has infinitely many solutions, $y = Ce^x$, where $C$ is any constant.
+The initial value $y(0) = 4$ can be used to determine the value of $C$ so that we will have a unique solution. Since $y(0) = Ce^0 = 4$, we can see that $C = 4$.
+Thus the initial value problem $y' = y, y(0) = 4$ has the unique solution $y = 4e^x$.
+\end{example}
+
+
+
+\section{Separable Differential Equations}
+
+A \textbf{separable differential equation} is a differential equation that can be put in the form
+$y' = f(y)g(x)$. To solve such an equation, we rewrite $y'$ as $\frac{dy}{dx}$ and we move the $y's$ and the $dy$ to one 
+side of the equation and the $x's$ and the $dx$ to the other. Then we integrate both sides and solve for $y$.
+
+\begin{example}[example 3]
+Solve the differential equation $y' = xy^2$.\\
+Rewrite the equation as 
+\[
+\frac{dy}{dx} = xy^2.
+\]
+Move the $y^2$ to the left and the $dx$ to the right to get
+\[
+\frac{1}{y^2} \, dy = x \,  dx.
+\]
+Integrate both sides:
+\[
+\int \frac{1}{y^2}\,  dy  = \int x \, dx.
+\]
+This gives
+\[
+-\frac{1}{y} = \frac{x^2}{2} + C.
+\]
+Solve for $y$:
+\[
+\frac{1}{y} = -\frac{x^2}{2} + C
+\]
+Note that $-C$ has been replaced by $+C$, as this makes no difference. Now take reciprocals:
+\[
+y = \frac{1}{-\frac{x^2}{2} + C} = - \frac{2}{x^2 + C}.
+\]
+Note that $-2C$ was replaced by $+C$ as this makes no difference.
+We can check the differential equation by calculuating $y'$ and observing that $y = xy^2$.
+From the quotient rule, we have
+\[
+y' = \frac{(x^2 + C)\cdot 0 - (-2)(2x)}{(x^2 + C)^2} = \frac{4x}{(x^2 + C)^2} 
+\]
+\[
+= x \cdot \frac{4}{(x^2 + C)^2} = x \cdot \left[\frac{2}{x^2 + C}\right]^2 = xy^2.
+\]
+
+
+
+\end{example}
+
+
+
+
+\begin{example}[example 4]
+Solve the differential equation $y' = x^2y$.\\
+Rewrite the equation as 
+\[
+\frac{dy}{dx} = x^2y.
+\]
+Move the $y$ to the left and the $dx$ to the right to get
+\[
+\frac{1}{y} \, dy = x^2 \,  dx.
+\]
+Integrate both sides:
+\[
+\int \frac{1}{y}\,  dy  = \int x^2 \, dx.
+\]
+This gives
+\[
+\ln|y| = \frac{x^3}{3} + C.
+\]
+Solve for $y$:
+\[
+|y| = e^{\frac{x^3}{3} + C} = e^C \cdot e^{x^3/3}.
+\]
+Note that $e^C$ is a positive constant. Remove the absolute values:
+\[
+y = \pm e^C \cdot e^{x^3/3} = Ae^{x^3/3},
+\]
+where $A$ is any non-zero constant. Looking back at the original differential equation, we see that $y = 0$ is a solution, so 
+we can say that $A$ is actually any constant.
+We can check the differential equation by calculuating $y'$ and observing that $y = x^2y$.
+From the chain rule, we have
+\[
+y' = Ae^{x^3/3}\cdot \frac{d}{dx} \frac{x^3}{3} = Ae^{x^3/3} \cdot x^2 = x^2 y.
+\]
+
+
+
+
+\end{example}
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+%more question formats below
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\begin{verbatim}
+\begin{question}
+What is your favorite color?
+\begin{multipleChoice}
+\choice[correct]{Rainbow}
+\choice{Blue}
+\choice{Green}
+\choice{Red}
+\end{multipleChoice}
+\begin{freeResponse}
+Hello
+\end{freeResponse}
+\end{question}
+%\end{verbatim}
+
+
+
+
+
+\begin{question}
+  Which one will you choose?
+  \begin{multipleChoice}
+    \choice[correct]{I'm correct.}
+    \choice{I'm wrong.}
+    \choice{I'm wrong too.}
+  \end{multipleChoice}
+\end{question}
+
+
+\begin{question}
+  Which one will you choose?
+  \begin{selectAll}
+    \choice[correct]{I'm correct.}
+    \choice{I'm wrong.}
+    \choice[correct]{I'm also correct.}
+    \choice{I'm wrong too.}
+  \end{selectAll}
+\end{question}
+
+
+\begin{freeResponse}
+What is the chain rule used for?
+\end{freeResponse}
