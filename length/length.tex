@@ -190,6 +190,22 @@ Arc length = $\answer{3/2 - \ln 2}$
 \end{problem}
 
 
+\begin{problem}(problem 3c)
+Find the length of the curve $y = \ln(\sec(x))$ from $x = 0$ to $x = \pi/4$.
+
+$f'(x) = \answer{\tan(x)}$\\
+
+$1 + f'(x)^2 =$
+
+\begin{multipleChoice}
+\choice[correct]{$\sec^2(x)$}
+\choice{$\tan^2(x)$}
+\choice{$\cos^2(x)$}
+\end{multipleChoice}
+
+
+Arc length = $\answer{\ln(1 + \sqrt 2)}$
+\end{problem}
 
 
 \section{Video Lesson}
@@ -202,11 +218,52 @@ Arc length = $\answer{3/2 - \ln 2}$
 \end{foldable}
 \end{center}
 
-\section{More Problems}
+\section{Theoretical Justifications}
+In this section, we derive the arc length formula.
+Suppose $f(x)$ is a differentiable function on the open interval $(a,b)$ and continuous on the 
+closed interval $[a,b]$. Let $\Delta x = \frac{b-a}{n}$ and let $x_i = a + i\cdot \Delta x$ for 
+$i = 0, 1, 2, 3, \ldots, n$.  Note that $x_0 = a$ and $x_n = a + n \cdot \Delta x = b$.
+Next, to approximate the arc length, connect the adjacent points $(x_{i-1}, f(x_{i-1}))$ and
+$(x_i, f(x_i))$ with straight line segments for $i = 1, 2, \ldots n.$ From the distance formula,
+the length of the $i^{th}$ segment is
+\[
+L_i = \sqrt{(x_i - x_{i-1})^2 + \left[f(x_i) -f(x_{i-1})\right]^2} 
+\]
+%which can be rewritten as
+%\[
+%L_i = (x_i- x_{i-1}) \sqrt{1 + \frac{\left[f(x_i) -f(x_{i-1})\right]^2}{(x_i - x_{i-1})^2}} = 
+%\Delta x \cdot \sqrt{1 + \left[ \frac{f(x_i) -f(x_{i-1})}{x_i - x_{i-1}} \right]^2}
+%\]
+Now, we apply the Mean Value Theorem to $f(x)$ on the interval $[x_{i-1}, x_i]$ to conclude that
+\[
+f(x_i) -f(x_{i-1})  = f'(x_i^*)(x_i - x_{i-1}) = f'(x_i^*) \cdot \Delta x
+\]
+for some number $x_i^*$ in the interval $(x_{i -1}, x_i)$. Thus,
+
+\[
+L_i = \sqrt{ (\Delta x)^2 + f'(x_i^*)^2 \cdot (\Delta x)^2} = \sqrt{ 1 + f'(x_i^*)^2 }\cdot \Delta x, \; i = 1, 2, \ldots n.
+\]
+
+Returning to the arc length, $L$, of $ y = f(x)$ on $[a,b]$, we have
+\[
+L \approx \sum_{i=1}^n L_i = \sum_{i=1}^n   \sqrt{1 + f'(x_i^*)^2} \cdot \Delta x.
+\]
+Taking the limit as $n \to \infty$, we define the arc length as 
+\[
+L = \lim_{n \to \infty} \sum_{i=1}^n   \sqrt{1 + f'(x_i^*)^2} \cdot \Delta x = \int_a^b \sqrt{1 + f'(x)^2} \; dx.
+\]
 
 
 
 \end{document}
+
+
+
+
+
+
+
+
 
 in ab 2pi x sqrt(1+m^2) = pi(b^2 - a^2) sqrt(1 + (R-r/b-a)^2) = pi (b+a) sqrt (b-a)^2 + (R-r)^2
 \begin{example} %example #15
