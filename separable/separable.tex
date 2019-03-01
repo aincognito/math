@@ -121,13 +121,49 @@ From the chain rule, we have
 y' = Ae^{x^3/3}\cdot \frac{d}{dx} \frac{x^3}{3} = Ae^{x^3/3} \cdot x^2 = x^2 y.
 \]
 
-
-
-
 \end{example}
 
 
 
+\begin{example}[example 5]
+A population of 2 million bacteria doubles in 1 hour. If we assume that the population is growing at a rate which is proportional to the number of bacteria present,
+write a differential equation that models the population at time $t$ and find the population after 90 minutes.\\
+Let $P = P(t)$ denote the population of the bacteria (in millions) after $t$ hours.
+Since the rate of growth is proportional to the number present, we have
+\[
+\frac{dP}{dt} = k P,
+\]
+for some constant $k$.
+Moving $P$ to the left and $dt$ to the right and integrating gives
+\[
+\int \frac{1}{P}\, dP = \int k \, dt
+\]
+Anti-differentiating gives:
+\[
+\ln|P| = kt + C
+\]
+Solving for $P$:
+\[
+|P| = e^{kt+C} = e^C \cdot e^{kt},
+\]
+Removing the absolute value bars, we have
+\[
+P = \pm e^C \cdot e^{kt} = Ae^{kt},
+\]
+where $A$ is a nonzero constant.
+To determine the values of $A$ and $k$ we will use the given information about the size of the population at time $t = 0$ and $t = 1$.
+The population was initially 2 million, so $P(0) = 2$ and in one hour it doubled, so $P(1) = 4$. the first of these gives,
+\[
+P(0) = Ae^{0} = 2 \implies A = 2.
+\]
+Using the second condition gives:
+\[
+P(1) = 2e^k = 4 \implies e^k = 2 \implies k = \ln(2).
+\]
+Thus $P(t) = 2e^{\ln(2)t}$ is the formula for the population at time $t$. Finally, after 90 minutes (or 1.5 hours), the population is 
+$P(1.5) = 2e^{1.5\ln(2)} \approx 5.66$ million bacteria.
+
+\end{example}
 
 
 
