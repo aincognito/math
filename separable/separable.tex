@@ -23,8 +23,27 @@ Solving a differential equation entails determining the unknown function.
 Solve the differential equation $y' = y$.\\
 We seek $y = f(x)$ such that $f'(x) = f(x)$. By inspection $y = e^x$ is a solution of this equation.
 However, $y = 2e^x$ is also a solution. In fact, there are infinitely many solutions: $y = Ce^x$,
-where $C$ is any constant (including 0).
+where $C$ is any constant (including 0). This family of solutions to the differential equation is called the 
+\textbf{general solution}.
 \end{example}
+
+
+
+\begin{problem}(problem 1)
+Find all solutions of the differential equation $y' = 2y$.\\
+\begin{hint}
+Try $y = e^{kx}$ for some $k$
+\end{hint}
+\begin{hint}
+There are infinitely many solutions
+\end{hint}
+\begin{hint}
+A multiple of a solution is also a solution
+\end{hint}
+The solutions are: \; $y = \answer{Ce^{2x}}$ \; for any constant $C$.
+\end{problem}
+
+
 
 An initial value problem is a differential equation along with other information about the solution, usually the value of the function at a point.
 The purpose of the initial value is to determine one specific solution of the differential equation, in the event that there was more than one solution.
@@ -35,6 +54,24 @@ We saw in the last example that the differential equation $y' = y$ has infinitel
 The initial value $y(0) = 4$ can be used to determine the value of $C$ so that we will have a unique solution. Since $y(0) = Ce^0 = 4$, we can see that $C = 4$.
 Thus the initial value problem $y' = y, y(0) = 4$ has the unique solution $y = 4e^x$.
 \end{example}
+
+
+
+\begin{problem}(problem 2)
+Solve the initial value problem $y' = 3y, \; y(0) = 2$.\\
+
+The general solution of the differential equation is
+
+\begin{multipleChoice}
+\choice{$y = 3Ce^x$}
+\choice[correct]{$y = Ce^{3x}$}
+\choice{$y = e^{3x}$}
+\end{multipleChoice}
+
+The solution to the initial value problem is\\
+$y = \answer{2e^{3x}}$
+\end{problem}
+
 
 
 
@@ -146,7 +183,7 @@ Integrating gives
 \choice{$\displaystyle{\frac{y^4}{4} = x^3 + C}$}
 \end{multipleChoice}
 
-The general solutions is
+The general solution is
 
 \begin{multipleChoice}
 \choice[correct]{$\displaystyle{y = \sqrt[4]{2x^3 + C}}$}
@@ -155,6 +192,9 @@ The general solutions is
 \end{multipleChoice}
 
 \end{problem}
+
+
+
 
 
 
@@ -180,7 +220,7 @@ Integrating gives
 \choice{$\displaystyle{\frac{1}{y} = \frac13 e^{3x} + C}$}
 \end{multipleChoice}
 
-The general solutions is
+The general solution is
 
 \begin{multipleChoice}
 \choice[correct]{$\displaystyle{y = -\frac{3}{e^{3x} + C}}$}
@@ -196,8 +236,10 @@ The solution to the initial value problem is
 \choice[correct]{$\displaystyle{y = \frac{12}{7 - 4e^{3x}}}$}
 \end{multipleChoice}
 
-
 \end{problem}
+
+
+
 
 
 
@@ -232,10 +274,86 @@ we can say that $A$ is actually any constant.
 We can check the differential equation by calculating $y'$ and observing that $y = x^2y$.
 From the chain rule, we have
 \[
-y' = Ae^{x^3/3}\cdot \frac{d}{dx} \frac{x^3}{3} = Ae^{x^3/3} \cdot x^2 = x^2 y.
+y' = Ae^{x^3/3}\cdot \frac{d}{dx} \left(\frac{x^3}{3}\right) = Ae^{x^3/3} \cdot x^2 = x^2 y.
 \]
 
 \end{example}
+
+
+
+\begin{problem}(problem 4a)
+Find the general solution of the differential equation
+\[
+ty + \frac{dy}{dt} = 0
+\]
+
+Separating the variables gives
+
+\begin{multipleChoice}
+\choice{$\displaystyle{y \, dy = t \, dt}$}
+\choice{$\displaystyle{\frac{1}{y} \, dy = t \, dt}$}
+\choice[correct]{$\displaystyle{\frac{1}{y} \, dy = -t \, dt}$}
+\end{multipleChoice}
+
+Integrating gives
+
+\begin{multipleChoice}
+\choice{$\displaystyle{\ln(y) = -\frac{t^2}{2} + C}$}
+\choice[correct]{$\displaystyle{\ln|y| = -\frac{t^2}{2} + C}$}
+\choice{$\displaystyle{\ln|y| = \frac{t^2}{2} + C}$}
+\end{multipleChoice}
+
+The general solution is
+
+\begin{multipleChoice}
+\choice[correct]{$\displaystyle{y = Ce^{-t^2/2}}$}
+\choice{$\displaystyle{y = e^{-t^2/2} + C}$}
+\choice{$\displaystyle{y = Ce^{-t^2}}$}
+\end{multipleChoice}
+
+\end{problem}
+
+
+
+\begin{problem}(problem 4b)
+Solve the initial value problem
+\[
+(1+t^2)\frac{dy}{dt} = 2ty, \; y(1) = 8
+\]
+
+Separating the variables gives
+
+\begin{multipleChoice}
+\choice{$\displaystyle{y \, dy = 2t(1+t^2) \, dt}$}
+\choice{$\displaystyle{\frac{1}{y} \, dy = 2t(1+t^2) \, dt}$}
+\choice[correct]{$\displaystyle{\frac{1}{y} \, dy = \frac{2t}{1+t^2} \, dt}$}
+\end{multipleChoice}
+
+Integrating gives
+
+\begin{multipleChoice}
+\choice{$\displaystyle{\ln|y| = \frac12\ln(1+t^2) + C}$}
+\choice[correct]{$\displaystyle{\ln|y| = \ln(1+t^2) + C}$}
+\choice{$\displaystyle{\ln|y| = \tan^{-1}(1+t^2) + C}$}
+\end{multipleChoice}
+
+The general solution is
+
+\begin{multipleChoice}
+\choice[correct]{$\displaystyle{y = C(1+t^2)}$}
+\choice{$\displaystyle{y = t^2 + C}$}
+\choice{$\displaystyle{y = Ce^{1+t^2}}$}
+\end{multipleChoice}
+
+The solution to the initial value problem is
+
+\begin{multipleChoice}
+\choice{$\displaystyle{y = t^2 + 8}$}
+\choice{$\displaystyle{y = 8+8t^2}$}
+\choice[correct]{$\displaystyle{y = 4+4t^2}$}
+\end{multipleChoice}
+
+\end{problem}
 
 
 
@@ -280,6 +398,70 @@ $P(1.5) = 2e^{1.5\ln(2)} \approx 5.66$ million bacteria.
 \end{example}
 
 
+
+\begin{problem}(problem 5a)
+In the year 2000, the human population on earth was approximately 6 billion people and in the year 2010 it was approximately 6.5 billion. 
+If we assume that the population is growing at a rate which is proportional to the number of present present,
+write a differential equation that models the population at time $t$ and find the population in the year 2050.\\
+
+
+Let $P = P(t)$ denote the population  (in billions)  $t$ years after the year 2000.\\
+The differential equation which models human population is\\
+
+$\frac{dP}{dt} = \answer{k P},$ for some constant $k$.
+
+The general solution to this differential equation is 
+
+\begin{multipleChoice}
+\choice{$P =  e^{kt} + C$}
+\choice[correct]{$P =  Ce^{kt}$}
+\choice{$P =  e^{Ckt}$}
+\end{multipleChoice}
+
+The value of $C$ is $\answer{6}$.\\
+The value of $k$ to 3 decimal places is $\answer{0.008}$.\\
+The population in the year 2050 is projected to be 
+
+\begin{multipleChoice}
+\choice{8.5 billion}
+\choice[correct]{9 billion}
+\choice{9.5 billion}
+\end{multipleChoice}
+
+\end{problem}
+
+
+
+\begin{problem}(problem 5b)
+Under continuous compounding of money, the rate of growth is proportional to the amount present.
+How long will it take for the amount of money in an account to double if the account earns a $7\%$ yearly interest rate with continuous compounding?
+
+
+
+Let $A= A(t)$ denote the amount of money in the account at time  $t$  in years.\\
+The differential equation which models human population is\\
+
+$\frac{dA}{dt} = \answer{0.07A}$
+
+The general solution to this differential equation is 
+
+\begin{multipleChoice}
+\choice[correct]{$A =  Ce^{0.07t}$}
+\choice{$A =  Ce^{7t}$}
+\choice{$A =  e^{0.07t} + C$}
+\end{multipleChoice}
+
+To determine the doubling time, we should let $A = \answer{2C}$\\
+
+The doubling time is approximately
+
+\begin{multipleChoice}
+\choice{9 years}
+\choice{9.5 years}
+\choice[correct]{10 years}
+\end{multipleChoice}
+
+\end{problem}
 
 
 \begin{example}[example 6]

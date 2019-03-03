@@ -241,6 +241,38 @@ Arc length = $\answer{\frac{e^2 - 1}{2e}}$
 \end{center}
 
 \section{Theoretical Justifications}
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  center, axis y line = center, legend pos =  north west, xmin=-0.5, 
+ymin=-0.01, xmax = 3.3, ymax = 2.2, axis equal image, xtick={0.001,1,2,3},ytick={1.414,2},
+xticklabels={$x_0=a$,$x_{i-1}$,$x_i$,$b=x_n$}, yticklabels={$f(x_{i-1})$,$f(x_i$)},
+title={$L_i = \sqrt{(x_i - x_{i-1})^2 +\left[f(x_i) -f(x_{i-1})\right]^2}$}]
+ 
+\addplot[domain=0:3, samples = 100, color=blue, thick]{2*sin(deg(pi*x/4))}; %node[right] {$y = e^x$};
+%\addlegendentry{$y=f(x)$};
+\addplot[color=red, thick] coordinates {(0,0) (1,1.414)(2,2)(3,1.414)} ; %y-axis
+%\addlegendentry{polygonal path}
+
+\addplot[thin, dashed] coordinates {(1,0) (1,1.414)} ;
+\addplot[thin, dashed] coordinates {(2,0) (2,2)} ;
+\addplot[<->,thin] coordinates {(1,0.5) (2, 0.5)};
+\node at (axis cs:1.5,0.65) {$\Delta x$};
+
+
+
+%\addplot[&lt;-&gt;] coordinates {(-1.3,0) (4.3,0)} node[right] {$x$}; %x-axis
+%\addplot[thin] coordinates {(1.57,0.1) (1.57, -0.1)} node[below] {$2$};
+%\node at (axis cs: 2,2.1){$y = f(x)$};
+%\node at (axis cs: 2,-.6){$f(x)$ is continuous at $x = 2$};
+%\addplot[smooth,mark=*,blue] plot coordinates {(1.57,1.5)};
+ 
+\end{axis}
+\end{tikzpicture}
+
+\end{image}
+
+
 In this section, we derive the arc length formula.
 Suppose $f(x)$ is a differentiable function on the open interval $(a,b)$ and continuous on the 
 closed interval $[a,b]$. Let $\Delta x = \frac{b-a}{n}$ and let $x_i = a + i\cdot \Delta x$ for 
@@ -251,6 +283,12 @@ the length of the $i^{th}$ segment is
 \[
 L_i = \sqrt{(x_i - x_{i-1})^2 + \left[f(x_i) -f(x_{i-1})\right]^2} 
 \]
+
+
+
+
+
+
 %which can be rewritten as
 %\[
 %L_i = (x_i- x_{i-1}) \sqrt{1 + \frac{\left[f(x_i) -f(x_{i-1})\right]^2}{(x_i - x_{i-1})^2}} = 
