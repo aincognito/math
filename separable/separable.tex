@@ -469,7 +469,7 @@ A water tanks contains 100 gallons of pure water. Salt water with a concentratio
 At the same time, water is drained from the tank at the same rate of 3 gallons per minute.
 Find an expression for the amount of salt in the tank at time $t$.\\
 Let $A = A(t)$ represent the amount of salt in the tank at time $t$. Salt is entering the tank at a rate of 0.6 lb/min and 
-salt is leaving the tank at a rate of 0.03A(t) lbs/min. This leads to the differential equation
+salt is leaving the tank at a rate of 0.03A lbs/min. This leads to the differential equation
 \[
 A' = 0.6 - 0.03A \text{  or  } \frac{dA}{dt} = 0.6 - 0.03A.
 \]
@@ -502,9 +502,68 @@ Since $0.6/0.03 = 20$ we can write the amount of salt in the tank as
 \[
 A= A(t) = 20 - 20e^{-0.03t}.
 \]
-Note that as $t\to \infty$, $A(t) \to 20 - 0 = 200$ pounds of salt. 
+Note that as $t\to \infty$, $A(t) \to 20 - 0 = 20$ pounds of salt. 
 This makes sense since we are adding salt at a concentration of 0.2 lbs/gal to a 100 gallon tank and 0.2 lbs/gal $\cdot$ 100 gal = 20 lbs.
 \end{example}
+
+
+
+\begin{problem}(problem 6)
+A water tanks contains 60 gallons of salt water with 1 pound of salt mixed in. 
+Salt water with a concentration of 0.1 lbs/gal is added to the tank at a rate of 1.5 gallons per minute.
+At the same time, water is drained from the tank at the same rate of 1.5 gallons per minute.
+How long will it take for the tank to contain 2 pounds of salt?\\
+
+
+Let $A = A(t)$ represent the amount of salt in the tank at time $t$ minutes. \\
+
+
+Salt is entering the tank at a rate of $\answer{0.15}$ \; lb/min \\
+Salt is leaving the tank at a rate of $\answer{0.025A}$ \; lbs/min \\
+
+This leads to the differential equation
+\[
+\frac{dA}{dt} = \answer{0.15 - 0.025A}.
+\]
+Separating variables gives
+
+\begin{multipleChoice}
+\choice{$\displaystyle{\frac{1}{0.025A} \, dA = 0.15\, dt}$}
+\choice{$\displaystyle{0.025A + dA \, dA = 0.15\, dt}$}
+\choice[correct]{$\displaystyle{\frac{1}{0.15 -0.025A} \, dA = 1\, dt}$}
+\end{multipleChoice}
+
+
+Integrating gives
+\begin{multipleChoice}
+\choice[correct]{$\displaystyle{-\frac{1}{0.025}\ln|0.15 - 0.025A|  = t + C}$}
+\choice{$\displaystyle{\frac{1}{0.025}\ln|0.15 - 0.025A|  = t + C}$}
+\choice{$\displaystyle{0.025\ln|0.15 - 0.025A|  = t + C}$}
+\end{multipleChoice}
+
+
+Solving for $A$, we have
+
+\begin{multipleChoice}
+\choice{$\displaystyle{A = 60 - Ce^{-0.025t}}$}
+\choice[correct]{$\displaystyle{A = 6 - Ce^{-0.025t}}$}
+\choice{$\displaystyle{A = 6 - Ce^{-40t}}$}
+\end{multipleChoice}
+
+The value of $C$ is $\answer{5}$
+
+The time it takes for the tank to contain 2 pounds of salt  is approximately
+
+\begin{multipleChoice}
+\choice[correct]{9 minutes}
+\choice{9.5 minutes}
+\choice{10 minutes}
+\end{multipleChoice}
+
+\end{problem}
+
+
+
 
 
 \end{document}
