@@ -493,6 +493,8 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsl8.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsl8.tfm
 INPUT separable.aux
 INPUT ./separable.out
 INPUT ./separable.out

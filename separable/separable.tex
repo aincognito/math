@@ -508,7 +508,7 @@ This makes sense since we are adding salt at a concentration of 0.2 lbs/gal to a
 
 
 
-\begin{problem}(problem 6)
+\begin{problem}(problem 6a)
 A water tanks contains 60 gallons of salt water with 1 pound of salt mixed in. 
 Salt water with a concentration of 0.1 lbs/gal is added to the tank at a rate of 1.5 gallons per minute.
 At the same time, water is drained from the tank at the same rate of 1.5 gallons per minute.
@@ -563,6 +563,66 @@ The time it takes for the tank to contain 2 pounds of salt  is approximately
 \end{problem}
 
 
+
+\begin{problem}(problem 6b)
+Newtons Law of Cooling states that the rate of cooling of an object at temperature $T = T(t)$ is proportional to the difference between $T$
+and the ambient temperature. A loaf of banana nut bread (with chocolate chips) is removed from an oven at $400^\circ F$ and placed on a cooling rack
+in a kitchen whose temperature is $70^{\circ} F$.  
+Two minutes later, the temperature of the bread is measured to be $250^\circ F$.
+How much longer will take to be at the desired eating temperature of $150^\circ F$ \\
+
+The differential equation that models Newton's Law of Cooling is
+\[
+\frac{dT}{dt} = \answer{k(T-70)}, \; \text{ where $k$ is the constant of proportionality.}
+\]
+
+Separating variables gives
+
+\begin{multipleChoice}
+\choice[correct]{$\displaystyle{\frac{1}{T-70 } \, dT = k\, dt}$}
+\choice{$\displaystyle{\frac{T}{70} \, dT = k\, dt}$}
+\choice{$\displaystyle{\frac{1}{T} \, dT = 70k\, dt}$}
+\end{multipleChoice}
+
+
+Integrating gives
+\begin{multipleChoice}
+\choice{$\displaystyle{\ln|T-70|  = \frac{k^2}{2} + C}$}
+\choice{$\displaystyle{-\ln|T-70|  = kt + C}$}
+\choice[correct]{$\displaystyle{\ln|T-70|  = kt + C}$}
+\end{multipleChoice}
+
+
+Solving for $T$, we have
+
+\begin{multipleChoice}
+\choice{$\displaystyle{T = 70e^{kt + C}}$}
+\choice[correct]{$\displaystyle{T = 70 + Ce^{kt}}$}
+\choice{$\displaystyle{T = 70 +  e^{kt+C}}$}
+\end{multipleChoice}
+
+The value of $C$ is $\answer{330}$.
+
+The value of the constant of proportionality, $k$ is
+
+\begin{multipleChoice}
+\choice[correct]{-0.303}
+\choice{0.303}
+\choice{-0.606}
+\end{multipleChoice}
+
+
+
+The additional time until the bread is at $150^\circ$ is 
+
+\begin{multipleChoice}
+\choice[correct]{2.7 minutes}
+\choice{4.7 minutes}
+\choice{6.7 minutes}
+\end{multipleChoice}
+
+
+\end{problem}
 
 
 
