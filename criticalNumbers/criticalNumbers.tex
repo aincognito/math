@@ -30,7 +30,8 @@ In this section we learn to find the critical numbers of a function.
 
 \section{Critical Numbers}
 
-In this section we will find the {\bf critical numbers} of a given function. Critical numbers come in two main types and the idea of the definition is to consider the possibilities at a local extreme. Here is the definition of  critical number.  \\
+In this section we will find the {\bf critical numbers} of a given function. 
+Critical numbers come in two main types and the idea of the definition is to consider the possibilities at a local extreme. Here is the definition of  critical number.  \\
 
 
 %\begin{center}
@@ -54,15 +55,35 @@ $f(x)$ has a critical number at $x = 0$.
 For an example of the second type consider the function $f(x) = |x|$. This function has a corner point at $x = 0$
 so $f(x)$ is not differentiable there. Hence $x=0$ is a critical number for $f(x)$.
 
+\begin{image}
+\begin{tikzpicture}[scale = 1.2]
+\begin{axis}[axis x line=  center, axis y line = center,
+title={Type 1 critical number at x = 0}];
+
+\addplot[domain=-1.2:1.2, samples = 100, color=blue, thick]{x^2} node[right] {$y = x^2$};
+\node[color=blue] at (axis cs:1,0.5) {$y = x^2$};
+\end{axis}
+\end{tikzpicture}
+\hspace{1 in}
+\begin{tikzpicture}[scale = 1.2]
+\begin{axis}[axis x line=  center, axis y line = center,
+title={Type 2 critical number at x = 0}]
+\addplot[domain=-1.4:0, samples = 100, color=purple, thick]{-x} ;
+\addplot[domain=0:1.4, samples = 100, color=purple, thick]{x} ;
+\node[color=purple] at (axis cs:1,0.5) {$y = |x|$};
+\end{axis}
+\end{tikzpicture}
+
+\end{image}
 
 
-\begin{center}
-{\bf Examples of Finding Critical Numbers}
-\end{center}
+
+\section{Finding Critical Numbers}
+
 
 
 \begin{example}[example 1] Find the critical numbers of the function 
-\[f(x) = \dfrac{x^3}{3} - \dfrac{x^2}{2} - 6x - 3.\]
+\[f(x) = \dfrac{x^3}{3} - \dfrac{x^2}{2} - 6x +1.\]
 Solution: We need to compute $f'(x)$.  We have
 \[f'(x) = x^2 - x - 6.\]
 Noting that $f'(x)$ is defined for all values of $x$, there are no type 2 critical numbers.
@@ -75,17 +96,24 @@ We get
 \[x = -2 \mbox{  or  } x = 3.\]
 
 Hence $f(x) = \frac{x^3}{3} - \frac{x^2}{2} - 6x - 3$ has two critical numbers, $-2$ and $3$, and they are both type 1.
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  center, axis y line = center,
+title={Type 1 critical numbers at $x = -2$ and $x = 3$}];
+
+\addplot[domain=-3:4, samples = 100, color=blue, thick]{2*x^3 - 3*x^2 -36*x + 6)/6} ;
+\node[color=blue] at (axis cs:2,2.5) {$y = \frac{x^3}{3} - \frac{x^2}{2} - 6x +1$};
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
 \end{example}
+
 
 
 \begin{problem}(problem 1a)
   Find the critical numbers of the function $f(x) = x^2 - 8x + 11$.
-    \begin{hint}
-      Compute $f'(x)$
-    \end{hint}
-    \begin{hint}
-      The derivative is $f'(x) = 2x -8$
-    \end{hint}
 		\begin{hint}
       Solve $f'(x) = 0$ for $x$
     \end{hint}
@@ -96,18 +124,18 @@ Hence $f(x) = \frac{x^3}{3} - \frac{x^2}{2} - 6x - 3$ has two critical numbers, 
     
     
 		The critical numbers of $f(x) = x^2 - 8x + 11$ are
-		 $\answer[given]{4}$
+		\begin{multipleChoice}
+		\choice{$x = -4$}
+		\choice[correct]{$x = 4$}
+		\choice{no critical numbers}
+		\end{multipleChoice}
+		
 \end{problem}
 
 
 \begin{problem}(problem 1b)
   Find the critical numbers of the function $f(x) = 2x^3 - 3x^2 -36x + 7$
-    \begin{hint}
-      Compute $f'(x)$
-    \end{hint}
-    \begin{hint}
-      The derivative is $f'(x) = 6x^2 - 6x - 36$
-    \end{hint}
+    
 		\begin{hint}
       Solve $f'(x) = 0$ for $x$
     \end{hint}
@@ -118,41 +146,57 @@ Hence $f(x) = \frac{x^3}{3} - \frac{x^2}{2} - 6x - 3$ has two critical numbers, 
     
     
 		The critical numbers of $f(x) = 2x^3 - 3x^2 -36x + 7$ are
-		 $\answer[given]{-2}$ and $\answer{3}$ (list answers in ascending order).
+		\begin{multipleChoice}
+		\choice{$x = -3$ and $x = 2$}
+		\choice[correct]{$x = -2$ and $x = 3$}
+		\choice{no critical numbers}
+		\end{multipleChoice}
 		\end{problem}
 
+\begin{example}[example 2]
+Find the critical numbers of the function $f(x) = x^4 - 4x^3 + 2$\\
+Solution: We need to compute $f'(x)$.  We have
+\[f'(x) = 4x^3 - 12x^3.\]
+Noting that $f'(x)$ is defined for all values of $x$, there are no type 2 critical numbers.
+To find the type 1 critical numbers, we solve the equation
+\[f'(x) = 0.\]
+Geometrically, these are the points where the graph of $f(x)$ has horizontal tangent lines.
+We get
+\[ 4x^3 - 12x^3 =0\]
+\[ 4x^2(x-3) =0\]
+\[x = 0 \mbox{  or  } x = 3.\]
+
+Hence $f(x) = x^4 - 4x^3 + 2$ has two critical numbers, $0$ and $3$, and they are both type 1.
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  center, axis y line = center,
+title={Type 1 critical numbers at $x = 0$ and $x = 3$}];
+
+\addplot[domain=-2:4.5, samples = 100, color=blue, thick]{x^4 - 4*x^3 + 2} ;
+\node[color=blue] at (axis cs:2,8) {$y = x^4 - 4x^3 + 2$};
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
+\end{example}
 
 
-\begin{problem}(problem 1c)
-  Find the critical numbers of the function $f(x) = x^4 - 4x^3 - 5$
-  
-    \begin{hint}
-      Compute $f'(x)$
-    \end{hint}
-    \begin{hint}
-      The derivative is $f'(x) = 4x^3 - 12x^2$
-    \end{hint}
-		\begin{hint}
-      Solve $f'(x) = 0$ for $x$
-    \end{hint}
-		\begin{hint}
-      Factor out $4x^2$
-    \end{hint}
-    \begin{hint}
-      Are there any points where $f'(x)$ is undefined?
-      If so, is $f(x)$ defined at these points?  
-		\end{hint}
-    
+\begin{problem}(problem 2)
+  Find the critical numbers of the function $f(x) = x^4 - x^3 - 5$
     
 		The critical numbers of $f(x) = x^4 - 4x^3 - 5$ are
-		 $\answer[given]{0}$ and $\answer{3}$ (list answers in ascending order).
+		\begin{multipleChoice}
+		\choice{$x = 3/4$}
+		\choice[correct]{$x = 0$ and $x = 3/4$}
+		\choice{no critical numbers}
+		\end{multipleChoice} 
 		
 \end{problem}
 
 
 
 
-\begin{example}[example 2] Find the critical numbers of the function 
+\begin{example}[example 3] Find the critical numbers of the function 
 \[f(x) = x^2e^{3x}.\]
 We need to compute $f'(x)$ using the product and chain rules.  We have
 \[f'(x) = (3x^2 +2x)e^{3x} \mbox{   (verify)}.\]
@@ -167,9 +211,21 @@ We get
 Note that the equation $e^{3x} = 0$ has no solutions since an exponential function is always positive.
 
 Hence $f(x) = x^2e^{3x}$ has two critical numbers, $-2/3$ and $0$, and they are both type 1. 
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  center, axis y line = center,
+title={Type 1 critical numbers at $x = -2/3$ and $x = 0$}];
+
+\addplot[domain=-2:0.5, samples = 100, color=blue, thick]{x^2*e^(3*x)} ;
+\node[color=blue] at (axis cs:-1,0.2) {$y = x^2e^{3x}$};
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
 \end{example}
 
-\begin{problem}(problem 2a)
+\begin{problem}(problem 3a)
   Find the critical numbers of the function $f(x) = xe^{2x}$
   
   
@@ -194,7 +250,7 @@ Hence $f(x) = x^2e^{3x}$ has two critical numbers, $-2/3$ and $0$, and they are 
 \end{problem}
 
 
-\begin{problem}(problem 2b)
+\begin{problem}(problem 3b)
   Find the critical numbers of the function $f(x) = 5xe^{-x/5}$
   
   
@@ -221,7 +277,7 @@ Hence $f(x) = x^2e^{3x}$ has two critical numbers, $-2/3$ and $0$, and they are 
 
 
 
-\begin{example}[example 3] Find the critical numbers of the function 
+\begin{example}[example 4] Find the critical numbers of the function 
 \[f(x) = \dfrac{x}{x^2 +1}.\]
 We need to compute $f'(x)$ using the quotient rule.  We have
 \[f'(x) = \frac{1-x^2}{(x^2+1)^2} \mbox{   (verify)}.\]
@@ -236,9 +292,21 @@ We get
 \[x = \pm 1.\]
 
 Hence $f(x) = \dfrac{x}{x^2 +1}$ has two critical numbers, $-1$ and $1$, and they are both type 1. 
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  center, axis y line = center,
+title={Type 1 critical numbers at $x = -1$ and $x = 1$}];
+
+\addplot[domain=-4:4, samples = 100, color=blue, thick]{x/(x^2 +1)} ;
+\node[color=blue] at (axis cs:1.5,0.2) {$y = \frac{x}{x^2+1}$};
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
 \end{example}
 
-\begin{problem}(problem 3a)
+\begin{problem}(problem 4a)
   Find the critical numbers of the function $f(x) = \dfrac{1}{1 + x^2}$
   
   
@@ -265,7 +333,7 @@ Hence $f(x) = \dfrac{x}{x^2 +1}$ has two critical numbers, $-1$ and $1$, and the
 		
 \end{problem}
 
-\begin{problem}(problem 3b)
+\begin{problem}(problem 4b)
   Find the critical numbers of the function $f(x) = \dfrac{3x}{x^2 +4}$
   
   
@@ -296,7 +364,7 @@ Hence $f(x) = \dfrac{x}{x^2 +1}$ has two critical numbers, $-1$ and $1$, and the
 
 
 
-\begin{example}[example 4] Find the critical numbers of the function 
+\begin{example}[example 5] Find the critical numbers of the function 
 \[f(x) = \sqrt[3] x.\]
 We need to compute $f'(x)$.  We have
 \[f'(x) = \frac{1}{3\sqrt[3]{x^2}} \text{   (verify)}.\]
@@ -315,10 +383,24 @@ So there are no solutions.  The function has no type 1 critical numbers.
 Hence $f(x) = \sqrt[3] x$ has only one critical number, 0, and it type 2, 
 where the function is not differentiable. 
 Geometrically, the function $f(x) = \sqrt[3] x$ has a vertical tangent line at the critical number $x = 0$.
-\graph{x^{1/3}}
+
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  center, axis y line = center,
+title={Type 2 critical number at $x = 0$}]
+
+\addplot[domain=0:5, samples = 100, color=blue, thick]{x^(1/3)} ;
+\addplot[domain=-5:0, samples = 100, color=blue, thick]{-(-x)^(1/3)} ;
+
+\node[color=blue] at (axis cs:1.5,0.7) {$y = \sqrt[3] x$};
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
 \end{example}
 
-\begin{problem}(problem 4a)
+\begin{problem}(problem 5a)
   Find the critical numbers of the function $f(x) = \sqrt[5] x$
   
   \begin{explanation}
@@ -347,7 +429,7 @@ Geometrically, the function $f(x) = \sqrt[3] x$ has a vertical tangent line at t
 
 
 
-\begin{problem}(problem 4b)
+\begin{problem}(problem 5b)
   Find the critical numbers of the function $f(x) = x\sqrt[3]x$
   
     \begin{hint}
@@ -372,7 +454,7 @@ Geometrically, the function $f(x) = \sqrt[3] x$ has a vertical tangent line at t
 
 
 
-\begin{example}[example 5]  Find the critical numbers of the function 
+\begin{example}[example 6]  Find the critical numbers of the function 
 \[f(x) = \dfrac{1}{x}.\]
 We need to compute $f'(x)$.  We have
 \[f'(x) = -\frac{1}{ x^2} \mbox{   (verify)}.\]
@@ -389,10 +471,24 @@ So there are no solutions.  The function has no type 1 critical numbers.
 
 
 Hence $f(x) = \dfrac{1}{x}$ has no critical numbers. 
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  center, axis y line = center,
+title={No critical number at $x = 0$}]
+
+\addplot[domain=-4:-.25, samples = 100, color=blue, thick]{1/x} ;
+\addplot[domain=.25:4, samples = 100, color=blue, thick]{1/x} ;
+\node[color=blue] at (axis cs:1.5,1.5) {$y = \frac{1}{x}$};
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
+
 \end{example}
 
 
-\begin{problem}(problem 5a)
+\begin{problem}(problem 6a)
   Find the critical numbers of the function $f(x) = \dfrac{3}{x^2}$
   
   
@@ -421,7 +517,7 @@ Hence $f(x) = \dfrac{1}{x}$ has no critical numbers.
 
 
 
-\begin{problem}(problem 5b)
+\begin{problem}(problem 6b)
   Find the critical numbers of the function $f(x) = \tan(x)$
   
   
