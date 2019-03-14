@@ -36,6 +36,36 @@ If either of these conditions fails to hold, then $f(x)$ {\it might} fail to hav
 absolute max or an absolute min (or both). It is also important to note that the theorem 
 tells us that the max and the min occur in the interval, but it does not tell us how to find them.  
 
+\begin{image}[4.5in]
+\begin{tikzpicture}
+\begin{axis}[ axis x line = bottom,  axis y line = left, xtick = {1,2}, ytick = {1,2},title={No absolute extremes on the open interval $(0,2)$}]
+%\addplot[domain=0:0.98, color=blue]{x+1};
+%\addplot[smooth,mark=*,blue] plot coordinates {(1,1.5)};
+\addplot[domain=0.02:1.99,
+    samples=100, color=blue, thick]{2^(x-1)};
+\addplot[domain=0:0.1,
+    samples=100, color=white, thick]{x+ 0.3};
+\addplot[smooth,mark=o,blue] coordinates {(0.0,0.5)};
+\addplot[smooth,mark=o,blue] coordinates {(2,2)};
+\end{axis}
+\end{tikzpicture}
+\hspace{0.5in}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center,xtick = {1,2}, ytick = {1,2}, title={No absolute extremes on $[0,2]$ due to discontinuity}]
+\addplot[domain=0:.99, color=blue]{2^x};
+\addplot[smooth,mark=*,blue] plot coordinates {(0,1)};
+\addplot[smooth,mark=o,blue] plot coordinates {(1,2)};
+\addplot[domain=1.02:2,
+    color=blue]{x-1};
+\addplot[smooth,mark=o,blue] plot coordinates {(1,0)};
+\addplot[smooth,mark=*,blue] plot coordinates {(2,1)};
+\addplot[smooth,mark=*,blue] plot coordinates {(1,1)};
+\addplot[domain=2:2.02,
+    color=white]{x-1};
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
 
 \begin{theorem}
 (Closed Interval Method)
@@ -60,28 +90,50 @@ of these values is the absolute minimum.
 
 
 
-\begin{center}
-{\bf Examples of the Closed Interval Method}
-\end{center}
+\section{Closed Interval Method}
 
 
 
-\begin{example}[example 1] Find the absolute max and the absolute min of $f(x) = x^2 - 4x + 7$ on the closed interval $[0, 3]$.
 
-Solution:  First, we find the critical numbers of $f(x)$ in the interval $[0, 3]$. 
-The function is a polynomial, so it is differentiable everywhere.  
-We solve the equation $f'(x) =0$.  This becomes $2x-4 = 0$ and the solution is $x=2$.
-Hence $f(x)$ has one critical number in the interval and it occurs at $x = 2$.
-The absolute extremes occur at either the endpoints, $x=0, 3$ or the critical number $x = 2$.  
-Plugging these special values into the original function $f(x)$ yields:
+\begin{example}[example 1] Find the absolute maximum and the absolute minimum values of $f(x) = x^2 - 4x + 5$ on the closed interval $[0, 3]$.
+
+Solution:  The function is a polynomial, so it is continuous, and the interval is closed, 
+so by the Extreme Value Theorem, we know that this function has an absolute maximum and an absolute minimum on the interval $[0,3]$.
+First, we find the critical numbers of $f(x)$ in the interval $(0, 3)$. 
+The derivative is 
+\[
+f'(x) = 2x - 4
+\]
+which exists for all values of $x$.
+Solving the equation $f'(x) =0$ gives $x=2$ as the only critical number of the function.
+Moreover, this critical number is in the interval $(0,3)$.
+By the closed interval method, we know that the absolute extremes occur at either the endpoints, $x=0$ and $x = 3$, or the critical number $x = 2$.  
+Plugging these values into the original function $f(x)$ yields:
 \begin{eqnarray*}
-f(0) &=& 0^2 - 4(0) + 7 =7\\
-f(2) &=& 2^2 - 4(2) + 7 = 3\\
-f(3) &=& 3^2 - 4(3) + 7 = 4.
+f(0) &=& 0^2 - 4(0) + 5 =5\\
+f(2) &=& 2^2 - 4(2) + 5 = 1\\
+f(3) &=& 3^2 - 4(3) + 5 = 2.
 \end{eqnarray*}
-From this data we conclude that the absolute maximum of $f(x)$ on the interval is $7$ occurring 
-at the left endpoint $x = 0$ and the absolute minimum of $f(x)$ in the interval is $3$
+The largest of these values is 5, corresponding to $f(0)$, and the smallest is 1, corresponding to $f(2)$. 
+Thus, we conclude that the absolute maximum of $f(x)$ on the closed interval $[0,3]$ is $5$ occurring 
+at the left endpoint $x = 0$ and the absolute minimum of $f(x)$ in the interval is $1$
 occurring at the critical number $x = 2$.
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[ axis x line = bottom,  axis y line = left, xtick = {1,2, 3}, ytick={1, 2, 3, 4, 5, 6, 7}, title={Absolute min at $x=2$ and absolute max at $x = 0$}]
+%\addplot[domain=0:0.98, color=blue]{x+1};
+%\addplot[smooth,mark=*,blue] plot coordinates {(1,1.5)};
+\addplot[domain=0:3,
+    samples=100, color=blue, thick]{x^2 - 4*x + 5};
+\addplot[smooth,mark=*,blue] coordinates {(0,5)};
+\addplot[smooth,mark=*,blue] coordinates {(3,2)};
+\addplot[smooth,mark=*,blue] coordinates {(2,1)};
+\addplot[domain=0:1,
+    samples=100, color=white, thick]{x};
+\node[color=blue] at (axis cs: 2,2.5){$y = x^2 - 4x + 5$ on $[0,3]$};
+\end{axis}
+\end{tikzpicture}
+\end{image}
 \end{example}
 
 
@@ -116,6 +168,24 @@ From this data we conclude that the absolute maximum of $f(x)$ on the interval i
 at both the critical number $x = 0$ and the right endpoint $x = 6$ and 
 the absolute minimum of $f(x)$ in the interval is $-27$
 occurring at the critical number $x = 4$.
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[ axis x line = center,  axis y line = center, xtick = {-1,1,2, 3, 4, 5, 6}, ytick={-27, 5}, title={Absolute min at $x=4$ and absolute max at $x = 0$ and $x = 6$}]
+%\addplot[domain=0:0.98, color=blue]{x+1};
+%\addplot[smooth,mark=*,blue] plot coordinates {(1,1.5)};
+\addplot[domain=-1:6,
+    samples=100, color=blue, thick]{x^3 - 6*x^2 + 5};
+\addplot[smooth,mark=*,blue] coordinates {(-1,-2)};
+\addplot[smooth,mark=*,blue] coordinates {(0,5)};
+\addplot[smooth,mark=*,blue] coordinates {(4,-27)};
+\addplot[smooth,mark=*,blue] coordinates {(6,5)};
+%\addplot[domain=0:1,    samples=100, color=white, thick]{x};
+\node[color=blue] at (axis cs: 3.3,2.5){$y = x^3 - 6x^2 + 5$ on $[-1,6]$};
+\addplot[domain=1:6,
+    samples=100, color=white, thick]{x+6};
+\end{axis}
+\end{tikzpicture}
+\end{image}
 \end{example}
 
 
@@ -156,14 +226,31 @@ Plugging these special values into the original function $f(x)$ yields:
 \begin{eqnarray*}
 f(\text{-}1) &=& \frac14(\text{-}1)^4 -2(\text{-}1)^3 + 4(\text{-}1)^2 - 3 = \frac14 + 2 + 4 - 3 = \frac{13}{4}\\
 f(0) &=& \frac14 (0)^4 -2(0)^3 + 4(0)^2 - 3 = \text{-}3\\
-f(2) &=& \frac14(2)^4 -2(2)^3 + 4(2)^2 - 3 = 4 -8 + 16 -3 = 9\\
+f(2) &=& \frac14(2)^4 -2(2)^3 + 4(2)^2 - 3 = 4 -16 + 16 -3 = 1\\
 f(3) &=& \frac14(3)^4 -2(3)^3 + 4(3)^2 - 3 = \frac{81}{4} - 54 + 36 - 3 = \text{-}\frac34.
 \end{eqnarray*}
 
 
-From this data we conclude that the absolute maximum of $f(x)$ on the interval is $9$ occurring 
-at the critical number $x = 2$ and the absolute minimum of $f(x)$ in the interval is $\text{-}3$
+From this data we conclude that the absolute maximum of $f(x)$ on the interval is $3.25$ occurring 
+at the endpoint $x = -1$ and the absolute minimum of $f(x)$ in the interval is $-3$
 occurring at the critical number $x = 0$.
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[ axis x line = center,  axis y line = center, xtick = {-1,2, 3}, ytick={-3,13/4}, title={Absolute min at $x=0$ and absolute max at $x = -1$}]
+%\addplot[domain=0:0.98, color=blue]{x+1};
+%\addplot[smooth,mark=*,blue] plot coordinates {(1,1.5)};
+\addplot[domain=-1:3,
+    samples=100, color=blue, thick]{0.25*x^4 - 2*x^3 + 4*x^2 - 3};
+\addplot[smooth,mark=*,blue] coordinates {(-1,3.25)};
+\addplot[smooth,mark=*,blue] coordinates {(0,-3)};
+\addplot[smooth,mark=*,blue] coordinates {(2,1)};
+\addplot[smooth,mark=*,blue] coordinates {(3,-0.75)};
+%\addplot[domain=0:1,    samples=100, color=white, thick]{x};
+\node[color=blue] at (axis cs: 1.3,2){$y=\frac14 x^4 - 2x^3 + 4x^2 - 3$ on $[-1,3]$};
+%\addplot[domain=1:3,    samples=100, color=white, thick]{x+6};
+\end{axis}
+\end{tikzpicture}
+\end{image}
 \end{example}
 
 
@@ -198,6 +285,31 @@ f(0) &=& 0.
 From this data we conclude that the absolute maximum of $f(x)$ on the interval is $0$ occurring 
 at the right endpoint $x = 0$ and the absolute minimum of $f(x)$ in the interval is $-\frac{1}{3e}$
 occurring at the critical number $x = -1/3$.
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[ axis x line = center,  axis y line = center, xtick = {-1,-1/3}, ytick={-0.0498,-0.1226},  
+xticklabels = {-1, $-\frac13$},yticklabels = {}, 
+title={Absolute min at $x=0$ and absolute max at $x = -1$}]
+%\addplot[domain=0:0.98, color=blue]{x+1};
+%\addplot[smooth,mark=*,blue] plot coordinates {(1,1.5)};
+\addplot[domain=-1:0,
+    samples=100, color=blue, thick]{x*e^(3*x)};
+\addplot[smooth,mark=*,blue] coordinates {(-1,-0.0498)};
+\addplot[smooth,mark=*,blue] coordinates {(-1/3,-0.1226)};
+\addplot[smooth,mark=*,blue] coordinates {(0,0)};
+
+
+\node[color=blue] at (axis cs: -0.5,-0.05){$y=xe^{3x}$ on $[-1,0]$};
+\node at (axis cs: 0.1,-0.0498){$-\frac{1}{e^3}$};
+\node at (axis cs: 0.1,-0.1226){$-\frac{1}{3e}$};
+\addplot[domain=-1:0.4,
+    samples=100, color=white, thick]{-0.15};
+\addplot[domain=-1:0.4,
+    samples=100, color=white, thick]{0.05};
+    
+\end{axis}
+\end{tikzpicture}
+\end{image}
 \end{example}
 
 
