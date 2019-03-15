@@ -11,7 +11,8 @@
 \begin{document}
 
 \begin{abstract}
-In this section, we use the derivative to determine intervals on which a given function is increasing or decreasing.  
+In this section, we use the derivative to determine intervals on which a given function 
+is increasing or decreasing.  
 We will also determine the local extremes of the function.
 \end{abstract}
 
@@ -42,7 +43,7 @@ $x_1 < x_2$, we have $f(x_1) > f(x_2)$.
 \begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal, xtick={.75, 1.5},
 xticklabels={$x_1$, $x_2$}, ytick={1.682, 2.828}, yticklabels={$f(x_1)$, $f(x_2)$}, title={An Increasing Function}]
 
-\addplot[domain=-1:2, color=blue]{2^x};
+\addplot[domain=-1:2, color=blue, thick]{2^x};
 \addplot[dashed] coordinates{(0.75, 0)  (0.75, 1.682)};
 \addplot[dashed] coordinates{ (0.75, 1.682) (0, 1.682)};
 \addplot[dashed] coordinates{(1.5, 0) (1.5, 2.828)};
@@ -51,7 +52,7 @@ xticklabels={$x_1$, $x_2$}, ytick={1.682, 2.828}, yticklabels={$f(x_1)$, $f(x_2)
 \end{axis}
 %\addplot[mark=*,fill=white] coordinates {(0,0)}
 \node at (4, -1) {$x_1 < x_2 \implies f(x_1) < f(x_2)$};				
-\node[color=blue] at (6.5, 5) {$y = f(x)$};
+\node[color=blue] at (6.3, 5) {$y = f(x)$};
  
 
 \end{tikzpicture}
@@ -60,7 +61,7 @@ xticklabels={$x_1$, $x_2$}, ytick={1.682, 2.828}, yticklabels={$f(x_1)$, $f(x_2)
 \begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal, xtick={.5, 1.5},
 xticklabels={$x_1$, $x_2$}, ytick={0.707, 0.3536}, yticklabels={$f(x_1)$, $f(x_2)$}, title={A Decreasing Function}]
 
-\addplot[domain=-0.5:2, color=blue]{1/2^x};
+\addplot[domain=-0.5:2, color=blue, thick]{1/2^x};
 \addplot[dashed] coordinates{(0.5, 0)  (0.5, 0.707)};
 \addplot[dashed] coordinates{ (0.5, 0.707) (0, 0.707)};
 \addplot[dashed] coordinates{(1.5, 0) (1.5, 0.3536)};
@@ -69,12 +70,19 @@ xticklabels={$x_1$, $x_2$}, ytick={0.707, 0.3536}, yticklabels={$f(x_1)$, $f(x_2
 \end{axis}
 %\addplot[mark=*,fill=white] coordinates {(0,0)}
 \node at (4, -1) {$x_1 < x_2 \implies f(x_1) > f(x_2)$};				
-\node[color=blue] at (-0.7, 4.5) {$y = f(x)$};
+\node[color=blue] at (-0.6, 4.2) {$y = f(x)$};
  
 
 \end{tikzpicture}
 
 \end{center}
+
+
+
+
+
+
+
 %align=flush center,text width=8cm
 %minor tick ={0.7, 1.7}
 %\draw (0.7pt,2pt) -- (0.7pt,-2pt) node[below] {$x_1$};
@@ -109,13 +117,17 @@ xticklabels={$x_1$, $x_2$}, ytick={0.707, 0.3536}, yticklabels={$f(x_1)$, $f(x_2
 %\end{image}
 
 
+%insert desmos interactive to get the feel for positive derivative means increasing function and vis versa.
 
 
-To determine where a function is increasing or decreasing, we use the derivative as in the following theorem.
+The derivative is used to determine the intervals where a function is either increasing or decreasing.
+The following theorem is a direct consequence of the cornerstone, Mean Value Theorem.
 
-\begin{theorem}[Increasing/Decreasing]
-If $f'(x) > 0$ on an interval $I$, then $f(x)$ is increasing on $I$, and
-if $f'(x) < 0$ on an interval $I$, then $f(x)$ is decreasing on $I$.
+
+\begin{theorem}[``increasing/decreasing"]
+Suppose $f$ is differentiable on an open interval $I$ and $f'(x) > 0$ on $I$. 
+Then $f(x)$ is increasing on the open interval $I$. Similarly, it is also true that
+if $f'(x) < 0$ on $I$, then $f(x)$ is decreasing on $I$.
 \end{theorem}
 
 
@@ -130,25 +142,47 @@ if $f'(x) < 0$ on an interval $I$, then $f(x)$ is decreasing on $I$.
 
 
 \begin{example}[example 1]
-Determine intervals on which $f(x) = \ln(x)$ is increasing or decreasing.\\
-The domain of $\ln(x)$ is $(0,\infty)$ and 
-\[
-\frac{d}{dx} \ln(x) = \frac{1}{x} > 0 \text{ on the interval } (0, \infty).
-\]
-By the Increasing/Decreasing Theorem, $f(x) = \ln(x)$ is increasing on its domain, $(0, \infty)$.
+Determine intervals on which $f(x) = \ln|x|$ is increasing or decreasing.\\
+
+The function $\ln|x|:$
+
+\begin{enumerate}
+  \item is even, i.e., $f(-x) = f(x)$
+  \item   is continuous on its domain, $(-\infty,0) \cup (0,\infty)$, 
+  \item   has an {\it infinite} discontinuity at $x = 0$. 
+  \item  has derivative
+                 $$ \frac{d}{dx} \ln|x| = \frac{1}{x}. $$
+                 
+                 
+      
+              
+\end{enumerate}
+The last and most relevant fact is due to the chain rule:
+                 $$\text{for} x<0,  \frac{d}{dx} \ln(-x) = \frac{1}{-x}\cdot(-1) = \frac{1}{x}. $$
+This derivative can now be used to determine the intervals of increase and decrease.
+Observe that
+$$ \frac{1}{x} > 0 \quad \text{ precisely when} \quad x >0  \;\;\text{ and},$$
+$$ \frac{1}{x} > 0 \;\;\; \text{when} \;\; x >0.$$
+Finally, by the ``increasing/decreasing" theorem, we can conclude that $\ln|x|$ is increasing on the interval $(0, \infty)$,
+and decreasing on the interval $(-\infty, 0)$.
+See the graph below.
+
+
 
 \begin{image}
 \begin{tikzpicture}
-\begin{axis}[axis lines = center, xmin=-1, xmax = 4.5, title={$f(x) = \ln(x)$ is increasing on $(0, \infty)$}]
+\begin{axis}[axis lines = center, xmin=-4.5, xmax = 4.5, xtick={-4, 1, 4}, ytick={-2, 1}, 
+              title={Note the $y$-axis symmetry and the vertical asymptote and $x = 0$.}]
 \addplot[smooth,blue, domain=0.1:4, thick] {ln(x)};
-\node[blue] at (axis cs:3, 0.7){$y = \ln(x)$};
+\addplot[smooth,blue, domain=-4:-0.1, thick] {ln(-x)};
+\node[blue] at (axis cs:-3, 0.5){$y = \ln|x|$};
 \end{axis}
 \end{tikzpicture}
 \end{image}
 \end{example}
 
 
-\begin{problem}(problem 1)
+\begin{problem}(problem 1a)
 The derivative of $3\ln(x)$ is $\answer{3/x}$.\\
 Is $f(x) = 3\ln(x)$ increasing or decreasing on the interval $(0, \infty)$?
 \begin{multipleChoice}
@@ -179,7 +213,7 @@ since $e^{-x} > 0$ for all $x$. By the Increasing/Decreasing Theorem, $f(x) = e^
 
 
 
-\begin{problem}(problem 2)
+\begin{problem}(problem 2a)
 The derivative of $-e^{2x}$ is $\answer{-2e^{2x}}$.\\
 Is $f(x) = -e^{2x}$ increasing or decreasing on the interval $(-\infty, \infty)$?
 \begin{multipleChoice}
@@ -189,6 +223,15 @@ Is $f(x) = -e^{2x}$ increasing or decreasing on the interval $(-\infty, \infty)$
 \end{problem}
 
 
+
+\begin{problem}(problem 2b)
+The derivative of $-e^{2x}$ is $\answer{-2e^{2x}}$.\\
+Is $f(x) = -e^{2x}$ increasing or decreasing on the interval $(-\infty, \infty)$?
+\begin{multipleChoice}
+\choice{increasing}
+\choice[correct]{decreasing}
+\end{multipleChoice}
+\end{problem}
 
 \begin{example}[example 3]
 Determine intervals on which $f(x) = \tan^{-1}(x)$ is increasing or decreasing.\\
@@ -286,7 +329,7 @@ and it is decreasing on the interval $(-2, 3)$.
 
 \begin{problem}(problem 4)
 Determine intervals on which $f(x) = x^3 - 3x  + 4$ is increasing.\\
-
+Select all that apply:
 \begin{selectAll}
 \choice[correct]{$(-\infty, -1)$}
 \choice{$(-\infty, 1)$}
