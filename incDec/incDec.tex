@@ -42,7 +42,7 @@ $x_1 < x_2$, we have $f(x_1) > f(x_2)$.
 \begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal, xtick={.75, 1.5},
 xticklabels={$x_1$, $x_2$}, ytick={1.682, 2.828}, yticklabels={$f(x_1)$, $f(x_2)$}, title={An Increasing Function}]
 
-\addplot[domain=-1:2]{2^x};
+\addplot[domain=-1:2, color=blue]{2^x};
 \addplot[dashed] coordinates{(0.75, 0)  (0.75, 1.682)};
 \addplot[dashed] coordinates{ (0.75, 1.682) (0, 1.682)};
 \addplot[dashed] coordinates{(1.5, 0) (1.5, 2.828)};
@@ -51,7 +51,7 @@ xticklabels={$x_1$, $x_2$}, ytick={1.682, 2.828}, yticklabels={$f(x_1)$, $f(x_2)
 \end{axis}
 %\addplot[mark=*,fill=white] coordinates {(0,0)}
 \node at (4, -1) {$x_1 < x_2 \implies f(x_1) < f(x_2)$};				
-\node at (6.5, 5) {$y = f(x)$};
+\node[color=blue] at (6.5, 5) {$y = f(x)$};
  
 
 \end{tikzpicture}
@@ -60,7 +60,7 @@ xticklabels={$x_1$, $x_2$}, ytick={1.682, 2.828}, yticklabels={$f(x_1)$, $f(x_2)
 \begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal, xtick={.5, 1.5},
 xticklabels={$x_1$, $x_2$}, ytick={0.707, 0.3536}, yticklabels={$f(x_1)$, $f(x_2)$}, title={A Decreasing Function}]
 
-\addplot[domain=-0.5:2]{1/2^x};
+\addplot[domain=-0.5:2, color=blue]{1/2^x};
 \addplot[dashed] coordinates{(0.5, 0)  (0.5, 0.707)};
 \addplot[dashed] coordinates{ (0.5, 0.707) (0, 0.707)};
 \addplot[dashed] coordinates{(1.5, 0) (1.5, 0.3536)};
@@ -69,7 +69,7 @@ xticklabels={$x_1$, $x_2$}, ytick={0.707, 0.3536}, yticklabels={$f(x_1)$, $f(x_2
 \end{axis}
 %\addplot[mark=*,fill=white] coordinates {(0,0)}
 \node at (4, -1) {$x_1 < x_2 \implies f(x_1) > f(x_2)$};				
-\node at (-0.7, 4.5) {$y = f(x)$};
+\node[color=blue] at (-0.7, 4.5) {$y = f(x)$};
  
 
 \end{tikzpicture}
@@ -143,17 +143,17 @@ Note that these are the critical numbers of $f(x)$.
 These two $x$-values break the real number line into three open intervals: $(-\infty, -2), (-2, 3)$ and $(3, \infty)$.
 On each of these intervals, $f'$ will be either strictly positive or strictly negative.  
 To determine which, we will use \textbf{test points}. 
-For the interval, $(-\infty, -2)$ we will use $-3$ as the test point (any number in the interval is acceptable). 
+For the interval, $(-\infty, -2)$ we will use $x=-3$ as the test point (any number in the interval is acceptable). 
 Then we consider the derivative at this point: $f'(-3) = (-3)^2 - (-3) -6 = 6 >0$.
 This means that $f'(x) > 0$ for every $x$ value in the interval $(-\infty, -2)$ and by the theorem, 
 $f(x)$ is increasing on this interval.
 
-Next, for the interval $(-2, 3)$, we will use $0$ as the test point, and we have $f'(0) = (0)^2 - (0) -6 = -6 <0$. 
+Next, for the interval $(-2, 3)$, we will use $x=0$ as the test point, and we have $f'(0) = (0)^2 - (0) -6 = -6 <0$. 
 This means that $f'(x) < 0$ for every $x$ value in the interval $(-2, 3)$ and by the theorem, 
 $f(x)$ is decreasing on this interval.
 
 
-Finally, for the interval $(3, \infty)$, we will use $4$ as the test point and we have $f'(4) = (4)^2 - (4) -6 = 10>0$. 
+Finally, for the interval $(3, \infty)$, we will use $x=4$ as the test point and we have $f'(4) = (4)^2 - (4) -6 = 10>0$. 
 This means that $f'(x) > 0$ for every $x$ value in the interval $(3, \infty)$ and by the theorem, 
 $f(x)$ is increasing on this interval.
 
@@ -203,28 +203,28 @@ If $f'(x)$ changes sign from positive to negative at the critical number $x=a$,
 \begin{image}
 \begin{tikzpicture}
 \node at (5,3.5) {First Derivative Test};
-\node at (1.5, 2.5) {Local Maximum at $x=a$};
-\draw[<->] (0, 0) --(3, 0);
+\node at (1.5, 2.7) {Local maximum at $x=a$};
+\draw[<->] (0, -0.2) --(3, -0.2);
 %\node at (3.2, 0) {$x$};
-\draw (1.5,2) parabola (2.75,.25);
-\draw (1.5,2) parabola (0.25,.25);
-\draw[fill] (1.5,2) circle [radius=0.07];
-\node at (-.5, 1) {$f'(x) >0$};
-\node at (3.5, 1) {$f'(x) <0$};
+\draw[blue, thick] (1.5,2) parabola (2.75,.25);
+\draw[blue, thick] (1.5,2) parabola (0.25,.25);
+\draw[fill, blue] (1.5,2) circle [radius=0.07];
+\node[blue] at (-.5, 1) {$f'(x) >0$};
+\node[blue] at (3.5, 1) {$f'(x) <0$};
 
-\draw (1.5, .1) -- (1.5, -.1) node[below] {$a$};
+\draw (1.5, -.1) -- (1.5, -.3) node[below] {$a$};
 %\node at (1.5, -.9) {$f''(a) < 0$};
 
-\node at (8, 2.5) {Local Minimum at $x=a$};
-\draw[<->] (6.5, 0) --(9.5, 0);
+\node at (8, 2.7) {Local minimum at $x=a$};
+\draw[<->] (6.5, -0.2) --(9.5, -0.2);
 %\node at (3.2, 0) {$x$};
 
-\draw (8,.25) parabola (6.75,2);
-\draw (8,.25) parabola (9.25,2);
-\draw[fill] (8,.25) circle [radius=0.07];
-\draw (8, .1) -- (8, -.1) node[below] {$a$};
-\node at (6, 1) {$f'(x) <0$};
-\node at (10, 1) {$f'(x) >0$};
+\draw[blue, thick] (8,.25) parabola (6.75,2);
+\draw[blue, thick] (8,.25) parabola (9.25,2);
+\draw[fill, blue] (8,.25) circle [radius=0.07];
+\draw (8, -.1) -- (8, -.3) node[below] {$a$};
+\node[blue] at (6, 1) {$f'(x) <0$};
+\node[blue] at (10, 1) {$f'(x) >0$};
 %\node at (6.5, -.9) {$f''(a) > 0$};
 \end{tikzpicture}
 \end{image}
@@ -237,9 +237,28 @@ Find the local extremes of $f(x) =2x^3 - 3x^2 - 36x + 2 $.\\
 In the previous example, we found that the critical numbers for $f(x)$ were $-2$ and $3$.  We also noted that
 $f'(x)$ changed sign from positive to negative at $x = -2$ and from negative to positive at $x=3$.
 Hence, by the First Derivative Test, $f(x) = 2x^3 - 6x^2 - 36x + 2$ has a local maximum at $x = -2$ and a local minimum at $x=3$.
-\[
-\graph{2x^3 - 3x^2 - 36x + 2}
-\]
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[ axis x line = center,  axis y line = center, xtick = {-2, 3},ymin=-155, xmin = -5.25, xmax = 6.3, ytick={-79,46},  
+xticklabels = {-2, 3},yticklabels = {-79,46}, title = {Local maximum at $x = -2$ and local minimum at $x = 3$}]
+
+\addplot[<->,domain=-5:6,
+    samples=100, color=blue, thick]{2*x^3 - 3*x^2 - 36*x + 2};
+\addplot[smooth,mark=*,blue] coordinates {(-2,46)};
+\addplot[smooth,mark=*,blue] coordinates {(3,-79)};
+\addplot[smooth,white]{-150};
+\addplot[smooth,white, thick] coordinates {(0,-120)(0,-155)};
+
+\node[color=blue] at (axis cs: -1.3,-140){$y= 2x^3 - 6x^2 - 36x + 2$};
+\node[color=blue] at (axis cs: -3.5,-50){inc};
+\node[color=blue] at (axis cs: 1,-10){dec};
+\node[color=blue] at (axis cs: 4.5,40){inc};
+
+    
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
 \end{example}
 
 
@@ -356,9 +375,44 @@ and so $f(x)$ is decreasing on the interval $(-\infty, -1/3)$.
 In the second interval, we choose the test point $x = 0$:
 \[f'(0) = e^{0}(1-0) = 1 > 0,\]
 and so $f(x)$ is increasing on the interval $(-1/3, \infty)$.
+\begin{image}
+\begin{tikzpicture}
+\node at (-1/3,1) {Sign of $f'(x)$};
+\node at (-1.3, .5) {- - - };
+\node at (0.5, .5) {+ + +};
+\draw[thick, <->] (-2.2, 0) --(1.5, 0);
+\draw[thin] (-1/3, -.2) --(-1/3,.2);
+\node at (-1/3, -.5) {$-\tfrac13$};
+
+\end{tikzpicture}
+\end{image}
 As for the local extremes, at the critical number $x = -1/3$,
 the derivative changes sign from negative to positive, so by the First Derivative Test,
 $f(x)$ has a local minimum at $x = -1/3$. There are no other critical numbers, so there are no other local extremes for this function.
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[ axis x line = center,  axis y line = center, xtick = {-1/3}, ytick={-0.1226},  
+xticklabels = {},yticklabels = {}, title = {Local minimum at $x = -\tfrac13$}]
+%\addplot[domain=0:0.98, color=blue]{x+1};
+%\addplot[smooth,mark=*,blue] plot coordinates {(1,1.5)};
+\addplot[<->,domain=-1.6:0.2,
+    samples=100, color=blue, thick]{x*e^(3*x)};
+\addplot[smooth,mark=*,blue] coordinates {(-1/3,-0.1226)};
+
+
+
+\node[color=blue] at (axis cs: -1.4,-0.06){$y=xe^{3x}$};
+\node[color=blue] at (axis cs: -0.8,-0.035){dec};
+\node[color=blue] at (axis cs: 0.17,0.08){inc};
+%\node at (axis cs: 0.1,-0.0498){$-\frac{1}{e^3}$};
+\node at (axis cs: 0.13,-0.1226){$-\tfrac{1}{3e}$};
+\node at (axis cs: -1/3,0.03){$-\tfrac13$};
+\addplot[domain=-1:0.3,samples=100, color=white, thick]{-0.17};
+%\addplot[domain=-1:0.4, samples=100, color=white, thick]{0.05};
+    
+\end{axis}
+\end{tikzpicture}
+\end{image}
 \end{example}
 
 \begin{problem}(problem 3a)
@@ -423,7 +477,9 @@ is increasing or decreasing.
 \begin{image}
 \begin{tikzpicture} 
 \begin{axis}[ axis x line=middle, axis y line=middle, ymax=5, ymin=-5, xlabel=$x$,ylabel=$y$, title={Graph of the derivative, $y = f'(x)$} ] 
-\addplot[blue,mark=none, domain=-3:3,samples=40] {4-x^2}; 
+\addplot[blue,mark=none, domain=-3:3,samples=40] {4-x^2};
+\node[color=blue] at (axis cs: -2,3){$y=f'(x)$}; 
+
 \end{axis} 
 \end{tikzpicture}
 \end{image}

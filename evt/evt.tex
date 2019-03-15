@@ -45,20 +45,20 @@ tells us that the max and the min occur in the interval, but it does not tell us
     samples=100, color=blue, thick]{2^(x-1)};
 \addplot[domain=0:0.1,
     samples=100, color=white, thick]{x+ 0.3};
-\addplot[smooth,mark=o,blue] coordinates {(0.0,0.5)};
-\addplot[smooth,mark=o,blue] coordinates {(2,2)};
+\addplot[smooth,mark=o,blue, thick] coordinates {(0.0,0.5)};
+\addplot[smooth,mark=o,blue, thick] coordinates {(2,2)};
 \node[color=blue] at (axis cs: 1.5,1){$y = f(x)$};
 \end{axis}
 \end{tikzpicture}
 \hspace{0.5in}
 \begin{tikzpicture}
 \begin{axis}[axis lines = center,xtick = {1,2}, ytick = {1,2}, title={No absolute extremes on $[0,2]$ due to discontinuity}]
-\addplot[domain=0:.99, color=blue]{2^x};
+\addplot[domain=0:.99, color=blue, thick]{2^x};
 \addplot[smooth,mark=*,blue] plot coordinates {(0,1)};
-\addplot[smooth,mark=o,blue] plot coordinates {(1,2)};
+\addplot[smooth,mark=o,blue, thick] plot coordinates {(1,2)};
 \addplot[domain=1.02:2,
-    color=blue]{x-1};
-\addplot[smooth,mark=o,blue] plot coordinates {(1,0)};
+    color=blue, thick]{x-1};
+\addplot[smooth,mark=o,blue, thick] plot coordinates {(1,0)};
 \addplot[smooth,mark=*,blue] plot coordinates {(2,1)};
 \addplot[smooth,mark=*,blue] plot coordinates {(1,1)};
 \addplot[domain=2:2.02,
