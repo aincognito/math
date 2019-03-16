@@ -41,7 +41,7 @@ $x_1 < x_2$, we have $f(x_1) > f(x_2)$.
 \begin{center}
 \begin{tikzpicture}
 \begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal, xtick={.75, 1.5},
-xticklabels={$x_1$, $x_2$}, ytick={1.682, 2.828}, yticklabels={$f(x_1)$, $f(x_2)$}, title={$f(x)$ is increasing}]
+xticklabels={$x_1$, $x_2$}, ymin = -1, ytick={1.682, 2.828}, yticklabels={$f(x_1)$, $f(x_2)$}, title={$f(x)$ is increasing on $I$}]
 
 \addplot[domain=-1:2, color=blue, thick]{2^x};
 \addplot[dashed, gray] coordinates{(0.75, 0)  (0.75, 1.682)};
@@ -50,29 +50,30 @@ xticklabels={$x_1$, $x_2$}, ytick={1.682, 2.828}, yticklabels={$f(x_1)$, $f(x_2)
 \addplot[dashed, gray] coordinates{(1.5, 2.828) (0, 2.828)};
 \addplot[smooth,mark=*,blue] plot coordinates {(0.75, 1.682)};
 \addplot[smooth,mark=*,blue] plot coordinates {(1.5, 2.828)};
+\addplot[thick, purple] coordinates{(2, 0) (-1, 0)} node[below left, purple]{$I$};
 \end{axis}
 %\addplot[mark=*,fill=white] coordinates {(0,0)}
-\node at (4, -1) {$x_1 < x_2 \implies f(x_1) < f(x_2)$};				
-\node[color=blue] at (6.3, 5) {$y = f(x)$};
- 
+\node at (4, -0.5) {$x_1 < x_2 \implies f(x_1) < f(x_2)$};				
+\node[color=blue] at (6, 5) {$y = f(x)$};
 
 \end{tikzpicture}
 \hspace{1.5 in}
 \begin{tikzpicture}
-\begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal, xtick={.5, 1.5},
-xticklabels={$x_1$, $x_2$}, ytick={0.707, 0.3536}, yticklabels={$f(x_1)$, $f(x_2)$}, title={$f(x)$ is decreasing}]
+\begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal,xmin=-1, xmax = 2.5, xtick={.5, 1.5},
+xticklabels={$x_1$, $x_2$},ymin=-0.1,ymax=1.5, ytick={1.007, 0.6536}, yticklabels={$f(x_1)$, $f(x_2)$}, title={$f(x)$ is decreasing on $I$}]
 
-\addplot[domain=-0.5:2, color=blue, thick]{1/2^x};
-\addplot[dashed, gray] coordinates{(0.5, 0)  (0.5, 0.707)};
-\addplot[dashed, gray] coordinates{ (0.5, 0.707) (0, 0.707)};
-\addplot[dashed, gray] coordinates{(1.5, 0) (1.5, 0.3536)};
-\addplot[dashed, gray] coordinates{(1.5, 0.3536) (0, 0.3536)};
-\addplot[smooth,mark=*,blue] plot coordinates {(1.5, 0.3536)};
-\addplot[smooth,mark=*,blue] plot coordinates {(0.5, 0.707)};
+\addplot[domain=-0.5:2, color=blue, thick]{0.3+ 1/2^x};
+\addplot[dashed, gray] coordinates{(0.5, 0)  (0.5, 1.007)};
+\addplot[dashed, gray] coordinates{ (0.5, 1.007) (0, 1.007)};
+\addplot[dashed, gray] coordinates{(1.5, 0) (1.5, 0.6536)};
+\addplot[dashed, gray] coordinates{(1.5, 0.6536) (0, 0.6536)};
+\addplot[smooth,mark=*,blue] plot coordinates {(1.5, 0.6536)};
+\addplot[smooth,mark=*,blue] plot coordinates {(0.5, 1.007)};
+\addplot[thick, purple] coordinates{ (2, 0)(-0.5, 0)} node[below left, purple]{$I$};
 \end{axis}
 %\addplot[mark=*,fill=white] coordinates {(0,0)}
-\node at (4, -1) {$x_1 < x_2 \implies f(x_1) > f(x_2)$};				
-\node[color=blue] at (-0.6, 4.2) {$y = f(x)$};
+\node at (4, -0.5) {$x_1 < x_2 \implies f(x_1) > f(x_2)$};				
+\node[color=blue] at (5.7, 3) {$y = f(x)$};
  
 
 \end{tikzpicture}
@@ -126,11 +127,41 @@ The derivative is used to determine the intervals where a function is either inc
 The following theorem is a direct consequence of the cornerstone, Mean Value Theorem.
 
 
-\begin{theorem}[``increasing/decreasing"]
+\begin{theorem}[increasing/decreasing]
 Let $I$ be an open interval and suppose $f$ is differentiable on $I$.
  If $f'(x) > 0$ on $I$, 
 then $f(x)$ is increasing on $I$ and similarly, if $f'(x) < 0$ on $I$, then $f(x)$ is decreasing on $I$.
 \end{theorem}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal, xtick={},
+xticklabels={}, ymin = -1, ytick={}, yticklabels={}, title={$f'(x)>0$  on $I$}]
+
+\addplot[domain=-1:2, color=blue, thick]{2^x} node[pos=.5, below, sloped] {increasing} node[pos=.5, above, sloped] {$f'(x) > 0$};
+\addplot[thick, purple] coordinates{(2, 0) (-1, 0)} node[below left, purple]{$I$};
+\end{axis}
+%\addplot[mark=*,fill=white] coordinates {(0,0)}
+\node at (4, -0.5) {$f'(x) > 0 \implies f(x)$ is increasing};				
+\node[color=blue] at (6, 5) {$y = f(x)$};
+
+\end{tikzpicture}
+\hspace{1.5 in}
+\begin{tikzpicture}
+\begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal,xmin=-1, xmax = 2.5, xtick={},
+xticklabels={},ymin=-0.1,ymax=1.5, ytick={}, yticklabels={}, title={$f'(x)<0$ }]
+
+\addplot[domain=-0.5:2, color=blue, thick]{0.3+1/2^x} node[pos=.5, below, sloped] {decreasing} node[pos=.5, above, sloped] {$f'(x) < 0$};
+
+\addplot[thick, purple] coordinates{ (2, 0)(-0.5, 0)} node[below left, purple]{$I$};
+\end{axis}
+%\addplot[mark=*,fill=white] coordinates {(0,0)}			
+\node[color=blue] at (5.8, 3.1) {$y = f(x)$};
+ \node at (4, -0.5) {$f'(x) > 0 \implies f(x)$ is increasing};
+
+\end{tikzpicture}
+
+\end{center}
 
 
 %Proof (Increasing case): Let $x_1$ and $x_2$ be in the interval $I$ with $x_1 < x_2$.  
@@ -199,7 +230,7 @@ This derivative can now be used to determine the intervals of increase and decre
 Observe that
 $$ \frac{1}{x} > 0 \quad \text{ precisely when} \quad x >0  \;\;\text{ and},$$
 $$ \frac{1}{x} <0 \;\;\; \text{when} \;\; x <0.$$
-Finally, by the ``increasing/decreasing" theorem, we can conclude that $\ln|x|$ is increasing on the interval $(0, \infty)$,
+Finally, by the increasing/decreasing theorem, we can conclude that $\ln|x|$ is increasing on the interval $(0, \infty)$,
 and decreasing on the interval $(-\infty, 0)$.
 This can be seen in the graph below.
 
@@ -234,7 +265,7 @@ The domain of $e^{-x}$ is $(-\infty,\infty)$ and
 \[
 \frac{d}{dx} e^{-x} = -e^{-x} < 0 \text{ on the interval } (-\infty, \infty),
 \]
-since $e^{-x} > 0$ for all $x$. By the Increasing/Decreasing Theorem, $f(x) = e^{-x}$ is decreasing on its domain, $(-\infty, \infty)$.
+since $e^{-x} > 0$ for all $x$. By the increasing/decreasing theorem, $f(x) = e^{-x}$ is decreasing on its domain, $(-\infty, \infty)$.
 
 \begin{image}
 \begin{tikzpicture}
@@ -275,7 +306,7 @@ The domain of $\tan^{-1}(x)$ is $(-\infty,\infty)$ and
 \[
 \frac{d}{dx} \tan^{-1}(x) = \frac{1}{1+x^2} > 0 \text{ on the interval } (-\infty, \infty).
 \]
-By the Increasing/Decreasing Theorem, $f(x) = \tan^{-1}(x)$ is increasing on its domain, $(-\infty, \infty)$.
+By the increasing/decreasing theorem, $f(x) = \tan^{-1}(x)$ is increasing on its domain, $(-\infty, \infty)$.
 
 \begin{image}
 \begin{tikzpicture}
