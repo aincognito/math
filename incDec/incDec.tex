@@ -41,14 +41,15 @@ $x_1 < x_2$, we have $f(x_1) > f(x_2)$.
 \begin{center}
 \begin{tikzpicture}
 \begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal, xtick={.75, 1.5},
-xticklabels={$x_1$, $x_2$}, ytick={1.682, 2.828}, yticklabels={$f(x_1)$, $f(x_2)$}, title={An Increasing Function}]
+xticklabels={$x_1$, $x_2$}, ytick={1.682, 2.828}, yticklabels={$f(x_1)$, $f(x_2)$}, title={$f(x)$ is increasing}]
 
 \addplot[domain=-1:2, color=blue, thick]{2^x};
-\addplot[dashed] coordinates{(0.75, 0)  (0.75, 1.682)};
-\addplot[dashed] coordinates{ (0.75, 1.682) (0, 1.682)};
-\addplot[dashed] coordinates{(1.5, 0) (1.5, 2.828)};
-\addplot[dashed] coordinates{(1.5, 2.828) (0, 2.828)};
-
+\addplot[dashed, gray] coordinates{(0.75, 0)  (0.75, 1.682)};
+\addplot[dashed, gray] coordinates{ (0.75, 1.682) (0, 1.682)};
+\addplot[dashed, gray] coordinates{(1.5, 0) (1.5, 2.828)};
+\addplot[dashed, gray] coordinates{(1.5, 2.828) (0, 2.828)};
+\addplot[smooth,mark=*,blue] plot coordinates {(0.75, 1.682)};
+\addplot[smooth,mark=*,blue] plot coordinates {(1.5, 2.828)};
 \end{axis}
 %\addplot[mark=*,fill=white] coordinates {(0,0)}
 \node at (4, -1) {$x_1 < x_2 \implies f(x_1) < f(x_2)$};				
@@ -59,14 +60,15 @@ xticklabels={$x_1$, $x_2$}, ytick={1.682, 2.828}, yticklabels={$f(x_1)$, $f(x_2)
 \hspace{1.5 in}
 \begin{tikzpicture}
 \begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal, xtick={.5, 1.5},
-xticklabels={$x_1$, $x_2$}, ytick={0.707, 0.3536}, yticklabels={$f(x_1)$, $f(x_2)$}, title={A Decreasing Function}]
+xticklabels={$x_1$, $x_2$}, ytick={0.707, 0.3536}, yticklabels={$f(x_1)$, $f(x_2)$}, title={$f(x)$ is decreasing}]
 
 \addplot[domain=-0.5:2, color=blue, thick]{1/2^x};
-\addplot[dashed] coordinates{(0.5, 0)  (0.5, 0.707)};
-\addplot[dashed] coordinates{ (0.5, 0.707) (0, 0.707)};
-\addplot[dashed] coordinates{(1.5, 0) (1.5, 0.3536)};
-\addplot[dashed] coordinates{(1.5, 0.3536) (0, 0.3536)};
-
+\addplot[dashed, gray] coordinates{(0.5, 0)  (0.5, 0.707)};
+\addplot[dashed, gray] coordinates{ (0.5, 0.707) (0, 0.707)};
+\addplot[dashed, gray] coordinates{(1.5, 0) (1.5, 0.3536)};
+\addplot[dashed, gray] coordinates{(1.5, 0.3536) (0, 0.3536)};
+\addplot[smooth,mark=*,blue] plot coordinates {(1.5, 0.3536)};
+\addplot[smooth,mark=*,blue] plot coordinates {(0.5, 0.707)};
 \end{axis}
 %\addplot[mark=*,fill=white] coordinates {(0,0)}
 \node at (4, -1) {$x_1 < x_2 \implies f(x_1) > f(x_2)$};				
@@ -117,7 +119,7 @@ xticklabels={$x_1$, $x_2$}, ytick={0.707, 0.3536}, yticklabels={$f(x_1)$, $f(x_2
 %\end{image}
 
 
-%insert desmos interactive to get the feel for positive derivative means increasing function and vis versa.
+%insert desmos interactive to get the feel for positive derivative means increasing function and vise versa.
 
 
 The derivative is used to determine the intervals where a function is either increasing or decreasing.
@@ -125,9 +127,9 @@ The following theorem is a direct consequence of the cornerstone, Mean Value The
 
 
 \begin{theorem}[``increasing/decreasing"]
-Suppose $f$ is differentiable on an open interval $I$ and $f'(x) > 0$ on $I$. 
-Then $f(x)$ is increasing on the open interval $I$. Similarly, it is also true that
-if $f'(x) < 0$ on $I$, then $f(x)$ is decreasing on $I$.
+Let $I$ be an open interval and suppose $f$ is differentiable on $I$.
+ If $f'(x) > 0$ on $I$, 
+then $f(x)$ is increasing on $I$ and similarly, if $f'(x) < 0$ on $I$, then $f(x)$ is decreasing on $I$.
 \end{theorem}
 
 
@@ -142,6 +144,40 @@ if $f'(x) < 0$ on $I$, then $f(x)$ is decreasing on $I$.
 
 
 \begin{example}[example 1]
+Determine the intervals on which the function $f(x) = mx + b$ is increasing or decreasing.\\
+In this example, the graph of the function is a straight line with slope, $f'(x) = m$.
+The line is increasing on $(-\infty, \infty)$ if $m >0$ and decreasing on $(-\infty, \infty)$ if $m<0$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal, xtick={},
+xticklabels={}, ytick={}, yticklabels={},xmax= 2.4, title={$f(x)= mx+b, m>0$}]
+
+\addplot[<->,domain=-2:1, color=blue, thick]{x+1};
+\node[color=blue] at (axis cs: 1.2, .8) {$m>0 \implies$ increasing};
+\end{axis}
+		
+
+ 
+
+\end{tikzpicture}
+\hspace{1.5 in}
+\begin{tikzpicture}
+\begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal, xtick={},
+xticklabels={}, ytick={}, yticklabels={}, ymin = -2, title={$f(x)= mx+b, m<0$}]
+
+\addplot[<->,domain=-1:2, color=blue, thick]{1-x};
+\node[color=blue] at (axis cs: 1.3, 1.1) {$m<0 \implies$ decreasing};
+\end{axis}
+ 
+\end{tikzpicture}
+
+\end{center}
+
+\end{example}
+
+
+\begin{example}[example 1]
 Determine intervals on which $f(x) = \ln|x|$ is increasing or decreasing.\\
 
 The function $\ln|x|:$
@@ -150,22 +186,22 @@ The function $\ln|x|:$
   \item is even, i.e., $f(-x) = f(x)$
   \item   is continuous on its domain, $(-\infty,0) \cup (0,\infty)$, 
   \item   has an {\it infinite} discontinuity at $x = 0$. 
-  \item  has derivative
+  \item  is differentiable (for $x \neq 0$) and
                  $$ \frac{d}{dx} \ln|x| = \frac{1}{x}. $$
                  
                  
       
               
 \end{enumerate}
-The last and most relevant fact is due to the chain rule:
-                 $$\text{for} x<0,  \frac{d}{dx} \ln(-x) = \frac{1}{-x}\cdot(-1) = \frac{1}{x}. $$
+To see the last property, let $x<0$ and use the chain rule:
+                 $$\frac{d}{dx} \ln|x|= \frac{d}{dx} \ln(-x) = \frac{1}{-x}\cdot(-1) = \frac{1}{x}. $$
 This derivative can now be used to determine the intervals of increase and decrease.
 Observe that
 $$ \frac{1}{x} > 0 \quad \text{ precisely when} \quad x >0  \;\;\text{ and},$$
-$$ \frac{1}{x} > 0 \;\;\; \text{when} \;\; x >0.$$
+$$ \frac{1}{x} <0 \;\;\; \text{when} \;\; x <0.$$
 Finally, by the ``increasing/decreasing" theorem, we can conclude that $\ln|x|$ is increasing on the interval $(0, \infty)$,
 and decreasing on the interval $(-\infty, 0)$.
-See the graph below.
+This can be seen in the graph below.
 
 
 
@@ -358,10 +394,11 @@ Critical numbers can help us find the location and the nature of local extremes 
 	%If $f'(x)$ changes sign at $x_0$, then $f(x)$ has a local 
 %extreme at $x=x_0$.  \\
 %More specifically, 
-If $f'(x)$ changes sign from positive to negative at the critical number $x=a$,
+Suppose $f(x)$ is differentiable with critical number $x=a$.
+If $f'(x)$ changes sign from positive to negative $x=a$,
  then  $f(x)$ has a local maximum at $x = a$ and
- if $f'(x)$ changes sign from negative to positive at the critical number $x=a$,
- then $f(x)$ has a local minimum at $x = a$.
+ if $f'(x)$ changes sign from negative to positive at $x=a$,
+ then $f(x)$ has a local minimum at the point $(a, f(a))$.
 \end{theorem}
  
 \begin{image}
@@ -532,24 +569,34 @@ The derivative exists for all $x$.  Setting the derivative equal to zero gives
 \[e^{3x} = 0 \;\; \text{or} \;\; 1+3x = 0.\]
 The first equation has no solutions, since $e$ raised to any power is strictly positive
 and the second equation has one solution, $x = -1/3$.
-This one critical number breaks the real number line into two intervals.  The first is $(-\infty, -1/3)$
-and the second is $(-1/3, \infty)$.  In the first interval, we choose the test point $x = -1$:
+This one critical number breaks the real number line into two intervals,$(-\infty, -1/3)$
+and $(-1/3, \infty)$.  
+By the Intermediate Value Theorem, the derivative will not change sign on these intervals. 
+We choose a test point from each interval to plug into $f'(x)$ to determine its sign on the corresponding interval.
+From $(-\infty, -\frac13)$, we will choose the $x = -1$ and from
+$(-\frac13, \infty)$ we will choose $x = 0$.
+Thus, 
 \[f'(-1) = e^{-3}(1-3) = -\frac{2}{e^3} < 0,\]
-and so $f(x)$ is decreasing on the interval $(-\infty, -1/3)$.
-In the second interval, we choose the test point $x = 0$:
+and so $f'(x)$ is negative on the interval $(-\infty, -1/3)$.
+Similarly,
 \[f'(0) = e^{0}(1-0) = 1 > 0,\]
-and so $f(x)$ is increasing on the interval $(-1/3, \infty)$.
+and so $f'(x)$ is positive on the interval $(-1/3, \infty)$.
+This information is summarized in the sign chart below.
 \begin{image}
 \begin{tikzpicture}
 \node at (-1/3,1) {Sign of $f'(x)$};
-\node at (-1.3, .5) {- - - };
-\node at (0.5, .5) {+ + +};
-\draw[thick, <->] (-2.2, 0) --(1.5, 0);
+\node at (-2.3, .5) {- - - - - -};
+\node at (1.5, .5) {+ + + + +};
+\draw[thick, <->] (-4.2, 0) --(3.5, 0);
 \draw[thin] (-1/3, -.2) --(-1/3,.2);
 \node at (-1/3, -.5) {$-\tfrac13$};
 
 \end{tikzpicture}
 \end{image}
+
+Applying the increasing/decreasing theorem, we can conclude that $f(x)$ is decreasing on the interval $(-\infty, -1/3)$
+and increasing on the interval $(-1/3, \infty)$.
+
 As for the local extremes, at the critical number $x = -1/3$,
 the derivative changes sign from negative to positive, so by the First Derivative Test,
 $f(x)$ has a local minimum at $x = -1/3$. There are no other critical numbers, so there are no other local extremes for this function.
@@ -558,7 +605,7 @@ $f(x)$ has a local minimum at $x = -1/3$. There are no other critical numbers, s
 \begin{axis}[ axis x line = center,  axis y line = center, xtick = {-1/3}, ytick={-0.1226},  
 xticklabels = {},yticklabels = {}, title = {Local minimum at $x = -\tfrac13$}]
 %\addplot[domain=0:0.98, color=blue]{x+1};
-%\addplot[smooth,mark=*,blue] plot coordinates {(1,1.5)};
+
 \addplot[<->,domain=-1.6:0.2,
     samples=100, color=blue, thick]{x*e^(3*x)};
 \addplot[smooth,mark=*,blue] coordinates {(-1/3,-0.1226)};
