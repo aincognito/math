@@ -57,7 +57,7 @@ xticklabels={$x_1$, $x_2$}, ymin = -1, ytick={1.682, 2.828}, yticklabels={$f(x_1
 \node[color=blue] at (6, 5) {$y = f(x)$};
 
 \end{tikzpicture}
-\hspace{1.5 in}
+\hspace{2 in}
 \begin{tikzpicture}
 \begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal,xmin=-1, xmax = 2.5, xtick={.5, 1.5},
 xticklabels={$x_1$, $x_2$},ymin=-0.1,ymax=1.5, ytick={1.007, 0.6536}, yticklabels={$f(x_1)$, $f(x_2)$}, title={$f(x)$ is decreasing on $I$}]
@@ -146,7 +146,7 @@ xticklabels={}, ymin = -1, ytick={}, yticklabels={}, title={$f'(x)>0$  on $I$}]
 \node[color=blue] at (6, 5) {$y = f(x)$};
 
 \end{tikzpicture}
-\hspace{1.5 in}
+\hspace{2 in}
 \begin{tikzpicture}
 \begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal,xmin=-1, xmax = 2.5, xtick={},
 xticklabels={},ymin=-0.1,ymax=1.5, ytick={}, yticklabels={}, title={$f'(x)<0$ }]
@@ -208,7 +208,7 @@ xticklabels={}, ytick={}, yticklabels={}, ymin = -2, title={$f(x)= mx+b, m<0$}]
 \end{example}
 
 
-\begin{example}[example 1]
+\begin{example}[example 2]
 Determine intervals on which $f(x) = \ln|x|$ is increasing or decreasing.\\
 
 The function $\ln|x|:$
@@ -230,8 +230,11 @@ This derivative can now be used to determine the intervals of increase and decre
 Observe that
 $$ \frac{1}{x} > 0 \quad \text{ precisely when} \quad x >0  \;\;\text{ and},$$
 $$ \frac{1}{x} <0 \;\;\; \text{when} \;\; x <0.$$
-Finally, by the increasing/decreasing theorem, we can conclude that $\ln|x|$ is increasing on the interval $(0, \infty)$,
-and decreasing on the interval $(-\infty, 0)$.
+By the increasing/decreasing theorem, we can conclude that $f(x) = \ln|x|$:
+\begin{enumerate}
+  \item is increasing on the interval $(0, \infty)$, and
+  \item   is decreasing on the interval $(-\infty, 0)$.                                 
+\end{enumerate}
 This can be seen in the graph below.
 
 
@@ -249,7 +252,7 @@ This can be seen in the graph below.
 \end{example}
 
 
-\begin{problem}(problem 1a)
+\begin{problem}(problem 2)
 The derivative of $3\ln(x)$ is $\answer{3/x}$.\\
 Is $f(x) = 3\ln(x)$ increasing or decreasing on the interval $(0, \infty)$?
 \begin{multipleChoice}
@@ -259,7 +262,7 @@ Is $f(x) = 3\ln(x)$ increasing or decreasing on the interval $(0, \infty)$?
 \end{problem}
 
 
-\begin{example}[example 2]
+\begin{example}[example 3]
 Determine intervals on which $f(x) = e^{-x}$ is increasing or decreasing.\\
 The domain of $e^{-x}$ is $(-\infty,\infty)$ and 
 \[
@@ -280,7 +283,7 @@ since $e^{-x} > 0$ for all $x$. By the increasing/decreasing theorem, $f(x) = e^
 
 
 
-\begin{problem}(problem 2a)
+\begin{problem}(problem 3a)
 The derivative of $-e^{2x}$ is $\answer{-2e^{2x}}$.\\
 Is $f(x) = -e^{2x}$ increasing or decreasing on the interval $(-\infty, \infty)$?
 \begin{multipleChoice}
@@ -291,7 +294,7 @@ Is $f(x) = -e^{2x}$ increasing or decreasing on the interval $(-\infty, \infty)$
 
 
 
-\begin{problem}(problem 2b)
+\begin{problem}(problem 3b)
 The derivative of $-e^{2x}$ is $\answer{-2e^{2x}}$.\\
 Is $f(x) = -e^{2x}$ increasing or decreasing on the interval $(-\infty, \infty)$?
 \begin{multipleChoice}
@@ -300,7 +303,7 @@ Is $f(x) = -e^{2x}$ increasing or decreasing on the interval $(-\infty, \infty)$
 \end{multipleChoice}
 \end{problem}
 
-\begin{example}[example 3]
+\begin{example}[example 4]
 Determine intervals on which $f(x) = \tan^{-1}(x)$ is increasing or decreasing.\\
 The domain of $\tan^{-1}(x)$ is $(-\infty,\infty)$ and 
 \[
@@ -322,7 +325,7 @@ yticklabels={$-\tfrac{\pi}{2}$, $\tfrac{\pi}{2}$}, title={$f(x) = \tan^{-1}(x)$ 
 \end{example}
 
 
-\begin{problem}(problem 3a)
+\begin{problem}(problem 4a)
 The derivative of $\tan(x)$ is $\answer{\sec^2(x)}$.\\
 Is $f(x) = \tan(x)$ increasing or decreasing on the interval $(-\frac{\pi}{2}, \frac{\pi}{2})$?
 \begin{multipleChoice}
@@ -332,7 +335,7 @@ Is $f(x) = \tan(x)$ increasing or decreasing on the interval $(-\frac{\pi}{2}, \
 \end{problem}
 
 
-\begin{problem}(problem 3b)
+\begin{problem}(problem 4b)
 The derivative of $2-3x$ is $\answer{-3}$.\\
 Is $f(x) = 2-3x$ increasing or decreasing on the interval $(-\infty, \infty)$?
 \begin{multipleChoice}
@@ -343,7 +346,7 @@ Is $f(x) = 2-3x$ increasing or decreasing on the interval $(-\infty, \infty)$?
 
 
 
-\begin{example}[example 4]
+\begin{example}[example 5]
 Determine intervals on which $f(x) = 2x^3 - 3x^2  - 36x + 2$ is increasing or decreasing.\\
 According to the theorem, we must determine where $f'(x)$ is positive and  where $f'(x)$ is negative. 
 To do this, it is often easiest to first determine where $f'(x) = 0$ or 
@@ -394,7 +397,7 @@ and it is decreasing on the interval $(-2, 3)$.
 
 
 
-\begin{problem}(problem 4)
+\begin{problem}(problem 5)
 Determine intervals on which $f(x) = x^3 - 3x  + 4$ is increasing.\\
 Select all that apply:
 \begin{selectAll}
@@ -464,7 +467,7 @@ If $f'(x)$ changes sign from positive to negative $x=a$,
 
 
 
-\begin{example}[example 5]
+\begin{example}[example 6]
 Find the local extremes of $f(x) =2x^3 - 3x^2 - 36x + 2 $.\\
 In the previous example, we found that the critical numbers for $f(x)$ were $-2$ and $3$.  We also noted that
 $f'(x)$ changed sign from positive to negative at $x = -2$ and from negative to positive at $x=3$.
@@ -495,7 +498,7 @@ xticklabels = {-2, 3},yticklabels = {-79,46}, title = {Local maximum at $x = -2$
 
 
 
-\begin{problem}(problem 5a)
+\begin{problem}(problem 6a)
 Find the local extremes of the function $f(x) = x^2 - 6x + 2.$\\
 \begin{hint}
 Find the critical numbers of $f(x)$
@@ -514,7 +517,7 @@ $f(x)$ has a local minimum at $x = \answer{3}.$
 \end{problem}
 
 
-\begin{problem}(problem 5b)
+\begin{problem}(problem 6b)
 Find the local extremes of the function $f(x) = x^3 - 3x^2 + 3.$\\
 \begin{hint}
 Find the critical numbers of $f(x)$
@@ -533,7 +536,7 @@ $f(x)$ has a local minimum at $x = \answer{2}.$
 \end{problem}
 
 
-\begin{problem}(problem 5c)
+\begin{problem}(problem 6c)
 Find the local extremes of the function $f(x) = x^3 - 3x^2 +3x -1.$\\
 \begin{hint}
 Find the critical numbers of $f(x)$
@@ -552,7 +555,7 @@ $f(x)$ has a local minimum at $x = \answer{none}.$
 \end{problem}
 
 
-\begin{problem}(problem 5d)
+\begin{problem}(problem 6d)
 Find the local extremes of the function $f(x) = x^4 - 8x^2 + 1.$
 \begin{hint}
 Find the critical numbers of $f(x)$
@@ -572,7 +575,7 @@ and at $x = \answer{2}.$
 \end{problem}
 
 
-\begin{problem}(problem 5e)
+\begin{problem}(problem 6e)
 Find the local extremes of the function $f(x) = 3x^4 +8x^3 - 5.$\\
 % f' = x^2 (x+2) = x^3 + 2x^2,  f = x^4/4 +2x^3/3 or 3x^4 +8x^3 - 5
 \begin{hint}
@@ -592,7 +595,7 @@ $f(x)$ has a local minimum at $x = \answer{-2}.$
 
 
 
-\begin{example}[example 6]
+\begin{example}[example 7]
 Find intervals on which $f(x) = xe^{3x}$ is increasing or decreasing and find and describe the local extremes.\\
 We begin by finding the critical numbers of $f(x)$. By the product and chain rules, 
 \[f'(x) = e^{3x} + xe^{3x}\cdot 3 = e^{3x}(1+3x).\]
@@ -657,7 +660,7 @@ xticklabels = {},yticklabels = {}, title = {Local minimum at $x = -\tfrac13$}]
 \end{image}
 \end{example}
 
-\begin{problem}(problem 6a)
+\begin{problem}(problem 7a)
 Find the local extremes of the function $f(x) = xe^{2x}.$\\
 \begin{hint}
 Find the critical numbers of $f(x)$
@@ -675,7 +678,7 @@ $f(x)$ has a local minimum at $x = \answer{-1/2}.$
 \end{problem}
 
 
-\begin{problem}(problem 6b)
+\begin{problem}(problem 7b)
 Find the local extremes of the function $f(x) = x^2e^{3x}.$\\
 \begin{hint}
 Find the critical numbers of $f(x)$
@@ -692,7 +695,7 @@ $f(x)$ has a local maximum at $x = \answer{-2/3}.$\\
 $f(x)$ has a local minimum at $x = \answer{0}.$
 \end{problem}
 
-\begin{problem}(problem 6c)
+\begin{problem}(problem 7c)
 Find the local extremes of the function $f(x) = \dfrac{3x}{x^2 + 4}.$\\
 \begin{hint}
 Find the critical numbers of $f(x)$
@@ -712,7 +715,7 @@ $f(x)$ has a local minimum at $x = \answer{-2}.$
 
 
 
-\begin{example}[example 7]
+\begin{example}[example 8]
 Use the graph of $f'(x)$ given below to determine intervals on which $f(x)$
 is increasing or decreasing.
 
