@@ -1,0 +1,424 @@
+\documentclass{ximera}
+
+
+\input{../preamble}
+
+\outcome{Find the local maximimums and local mininimums of a function..}
+
+\title{3.4 Local Extremes}
+
+
+\begin{document}
+
+\begin{abstract}
+In this section, we use the the knowledge of a function 
+increasing or decreasing.  
+to determine the local extremes of the function.
+\end{abstract}
+
+\maketitle
+
+
+
+
+\section{The First Derivative Test}
+
+The work that was done in the previous example can actually give us slightly more information about $f(x)$.  
+We can determine the \textbf{local extremes} of $f(x)$.
+
+\begin{definition}[Local Extremes]
+We say that $f(x)$ has a \textbf{local maximum} at $x = a$ if there is an open interval $I$ containing $a$ 
+such that $f(x) \leq f(a)$ for all values of $x$ in $I$.  Similarly, we say that $f(x)$ has a 
+\textbf{local minimum} at $x = a$ if there is an open interval $I$ containing $a$ 
+such that $f(x) \geq f(a)$ for all values of $x$ in $I$.
+\end{definition}
+
+\begin{center}
+
+\begin{tikzpicture}
+\begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal, xtick={-1.414, 1.414},
+xticklabels={a, b}, ytick={}, yticklabels={}, 
+xmin= -3.5, xmax = 3.5, ymin = -3.5, ymax = 3.5, title={Local extremes at $x=a$ and $x=b$}]
+
+\addplot[domain=-3:3, color=blue, thick]{x^3/3 - 2*x};
+\addplot[mark=*,fill=blue] coordinates {(-1.414,4/3 * 1.414)} node[above, blue]{local max};
+\addplot[mark=*,fill=blue] coordinates {(1.414,-4/3 * 1.414)} node[below, blue]{local min};
+\node[color=blue] at (axis cs: -2, -2.5) {$y=f(x)$};
+\end{axis}
+ 
+\end{tikzpicture}
+
+\end{center}
+
+Critical numbers can help us find the location and the nature of local extremes and the next theorem tells us how.
+
+\begin{theorem}[First Derivative Test]
+  %Suppose $x=a$ is a critical number of the function $f(x)$. \\
+	%If $f'(x)$ changes sign at $x_0$, then $f(x)$ has a local 
+%extreme at $x=x_0$.  \\
+%More specifically, 
+Suppose $f(x)$ is differentiable with critical number $x=a$.
+If $f'(x)$ changes sign from positive to negative $x=a$,
+ then  $f(x)$ has a local maximum at $x = a$ and
+ if $f'(x)$ changes sign from negative to positive at $x=a$,
+ then $f(x)$ has a local minimum at the point $(a, f(a))$.
+\end{theorem}
+ 
+\begin{image}
+\begin{tikzpicture}
+\node at (5,3.5) {First Derivative Test};
+\node at (1.5, 2.7) {Local maximum at $x=a$};
+\draw[<->] (0, -0.2) --(3, -0.2);
+%\node at (3.2, 0) {$x$};
+\draw[blue, thick] (1.5,2) parabola (2.75,.25);
+\draw[blue, thick] (1.5,2) parabola (0.25,.25);
+\draw[fill, blue] (1.5,2) circle [radius=0.07];
+\node[blue] at (-.5, 1) {$f'(x) >0$};
+\node[blue] at (3.5, 1) {$f'(x) <0$};
+
+\draw (1.5, -.1) -- (1.5, -.3) node[below] {$a$};
+%\node at (1.5, -.9) {$f''(a) < 0$};
+
+\node at (8, 2.7) {Local minimum at $x=a$};
+\draw[<->] (6.5, -0.2) --(9.5, -0.2);
+%\node at (3.2, 0) {$x$};
+
+\draw[blue, thick] (8,.25) parabola (6.75,2);
+\draw[blue, thick] (8,.25) parabola (9.25,2);
+\draw[fill, blue] (8,.25) circle [radius=0.07];
+\draw (8, -.1) -- (8, -.3) node[below] {$a$};
+\node[blue] at (6, 1) {$f'(x) <0$};
+\node[blue] at (10, 1) {$f'(x) >0$};
+%\node at (6.5, -.9) {$f''(a) > 0$};
+\end{tikzpicture}
+\end{image}
+
+
+
+
+\begin{example}[example 6]
+Find the local extremes of $f(x) =2x^3 - 3x^2 - 36x + 2 $.\\
+In the previous example, we found that the critical numbers for $f(x)$ were $-2$ and $3$.  We also noted that
+$f'(x)$ changed sign from positive to negative at $x = -2$ and from negative to positive at $x=3$.
+Hence, by the First Derivative Test, $f(x) = 2x^3 - 6x^2 - 36x + 2$ has a local maximum at $x = -2$ and a local minimum at $x=3$.
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[ axis x line = center,  axis y line = center, xtick = {-2, 3},ymin=-155, xmin = -5.25, xmax = 6.3, ytick={-79,46},  
+xticklabels = {-2, 3},yticklabels = {-79,46}, title = {Local maximum at $x = -2$ and local minimum at $x = 3$}]
+
+\addplot[<->,domain=-5:6,
+    samples=100, color=blue, thick]{2*x^3 - 3*x^2 - 36*x + 2};
+\addplot[smooth,mark=*,blue] coordinates {(-2,46)};
+\addplot[smooth,mark=*,blue] coordinates {(3,-79)};
+\addplot[smooth,white]{-150};
+\addplot[smooth,white, thick] coordinates {(0,-120)(0,-155)};
+
+\node[color=blue] at (axis cs: -1.3,-140){$y= 2x^3 - 6x^2 - 36x + 2$};
+\node[color=blue] at (axis cs: -3.5,-50){inc};
+\node[color=blue] at (axis cs: 1,-10){dec};
+\node[color=blue] at (axis cs: 4.5,40){inc};
+
+    
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
+\end{example}
+
+
+
+\begin{problem}(problem 6a)
+Find the local extremes of the function $f(x) = x^2 - 6x + 2.$\\
+\begin{hint}
+Find the critical numbers of $f(x)$
+\end{hint}
+\begin{hint}
+Find intervals where $f'(x)$ is positive/negative
+\end{hint}
+
+\begin{hint}
+Use the First Derivative Test to determine the local extremes.
+\end{hint}
+
+If there are none, type ``none".\\
+$f(x)$ has a local maximum at $x = \answer{none}.$\\
+$f(x)$ has a local minimum at $x = \answer{3}.$
+\end{problem}
+
+
+\begin{problem}(problem 6b)
+Find the local extremes of the function $f(x) = x^3 - 3x^2 + 3.$\\
+\begin{hint}
+Find the critical numbers of $f(x)$
+\end{hint}
+\begin{hint}
+Find intervals where $f'(x)$ is positive/negative
+\end{hint}
+\begin{hint}
+Use the First Derivative Test to determine the local extremes.
+\end{hint}
+
+%3x^2 - 6x   3x(x-2)
+If there are none, type ``none".\\
+$f(x)$ has a local maximum at $x = \answer{0}.$\\
+$f(x)$ has a local minimum at $x = \answer{2}.$
+\end{problem}
+
+
+\begin{problem}(problem 6c)
+Find the local extremes of the function $f(x) = x^3 - 3x^2 +3x -1.$\\
+\begin{hint}
+Find the critical numbers of $f(x)$
+\end{hint}
+\begin{hint}
+Find intervals where $f'(x)$ is positive/negative
+\end{hint}
+\begin{hint}
+Use the First Derivative Test to determine the local extremes.
+\end{hint}
+
+%3x^2 - 6x +3  x^2 - 2x + 1  x = 1
+If there are none, type ``none".\\
+$f(x)$ has a local maximum at $x = \answer{none}.$\\
+$f(x)$ has a local minimum at $x = \answer{none}.$
+\end{problem}
+
+
+\begin{problem}(problem 6d)
+Find the local extremes of the function $f(x) = x^4 - 8x^2 + 1.$
+\begin{hint}
+Find the critical numbers of $f(x)$
+\end{hint}
+\begin{hint}
+Find intervals where $f(x)$ is increasing/decreasing
+\end{hint}
+\begin{hint}
+Use the First Derivative Test to determine the local extremes.
+\end{hint}
+
+If there are none, type ``none".\\
+If there is more than one local extreme, list them in ascending order.\\
+$f(x)$ has a local maximum at $x = \answer{0}.$\\
+$f(x)$ has a local minimum at $x = \answer{-2}.$\\
+and at $x = \answer{2}.$
+\end{problem}
+
+
+\begin{problem}(problem 6e)
+Find the local extremes of the function $f(x) = 3x^4 +8x^3 - 5.$\\
+% f' = x^2 (x+2) = x^3 + 2x^2,  f = x^4/4 +2x^3/3 or 3x^4 +8x^3 - 5
+\begin{hint}
+Find the critical numbers of $f(x)$
+\end{hint}
+\begin{hint}
+Find intervals where $f'(x)$ is positive/negative
+\end{hint}
+\begin{hint}
+Use the First Derivative Test to determine the local extremes.
+\end{hint}
+
+If there are none, type ``none".\\
+$f(x)$ has a local maximum at $x = \answer{none}.$\\
+$f(x)$ has a local minimum at $x = \answer{-2}.$
+\end{problem}
+
+
+
+\begin{example}[example 7]
+Find intervals on which $f(x) = xe^{3x}$ is increasing or decreasing and find and describe the local extremes.\\
+We begin by finding the critical numbers of $f(x)$. By the product and chain rules, 
+\[f'(x) = e^{3x} + xe^{3x}\cdot 3 = e^{3x}(1+3x).\]
+The derivative exists for all $x$.  Setting the derivative equal to zero gives
+\[e^{3x} = 0 \;\; \text{or} \;\; 1+3x = 0.\]
+The first equation has no solutions, since $e$ raised to any power is strictly positive
+and the second equation has one solution, $x = -1/3$.
+This one critical number breaks the real number line into two intervals,$(-\infty, -1/3)$
+and $(-1/3, \infty)$.  
+By the Intermediate Value Theorem, the derivative will not change sign on these intervals. 
+We choose a test point from each interval to plug into $f'(x)$ to determine its sign on the corresponding interval.
+From $(-\infty, -\frac13)$, we will choose the $x = -1$ and from
+$(-\frac13, \infty)$ we will choose $x = 0$.
+Thus, 
+\[f'(-1) = e^{-3}(1-3) = -\frac{2}{e^3} < 0,\]
+and so $f'(x)$ is negative on the interval $(-\infty, -1/3)$.
+Similarly,
+\[f'(0) = e^{0}(1-0) = 1 > 0,\]
+and so $f'(x)$ is positive on the interval $(-1/3, \infty)$.
+This information is summarized in the sign chart below.
+\begin{image}
+\begin{tikzpicture}
+\node at (-1/3,1) {Sign of $f'(x)$};
+\node at (-2.3, .5) {- - - - - -};
+\node at (1.5, .5) {+ + + + +};
+\draw[thick, <->] (-4.2, 0) --(3.5, 0);
+\draw[thin] (-1/3, -.2) --(-1/3,.2);
+\node at (-1/3, -.5) {$-\tfrac13$};
+
+\end{tikzpicture}
+\end{image}
+
+Applying the increasing/decreasing theorem, we can conclude that $f(x)$ is decreasing on the interval $(-\infty, -1/3)$
+and increasing on the interval $(-1/3, \infty)$.
+
+As for the local extremes, at the critical number $x = -1/3$,
+the derivative changes sign from negative to positive, so by the First Derivative Test,
+$f(x)$ has a local minimum at $x = -1/3$. There are no other critical numbers, so there are no other local extremes for this function.
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[ axis x line = center,  axis y line = center, xtick = {-1/3}, ytick={-0.1226},  
+xticklabels = {},yticklabels = {}, title = {Local minimum at $x = -\tfrac13$}]
+%\addplot[domain=0:0.98, color=blue]{x+1};
+
+\addplot[<->,domain=-1.6:0.2,
+    samples=100, color=blue, thick]{x*e^(3*x)};
+\addplot[smooth,mark=*,blue] coordinates {(-1/3,-0.1226)};
+
+
+
+\node[color=blue] at (axis cs: -1.4,-0.06){$y=xe^{3x}$};
+\node[color=blue] at (axis cs: -0.8,-0.035){dec};
+\node[color=blue] at (axis cs: 0.17,0.08){inc};
+%\node at (axis cs: 0.1,-0.0498){$-\frac{1}{e^3}$};
+\node at (axis cs: 0.13,-0.1226){$-\tfrac{1}{3e}$};
+\node at (axis cs: -1/3,0.03){$-\tfrac13$};
+\addplot[domain=-1:0.3,samples=100, color=white, thick]{-0.17};
+%\addplot[domain=-1:0.4, samples=100, color=white, thick]{0.05};
+    
+\end{axis}
+\end{tikzpicture}
+\end{image}
+\end{example}
+
+\begin{problem}(problem 7a)
+Find the local extremes of the function $f(x) = xe^{2x}.$\\
+\begin{hint}
+Find the critical numbers of $f(x)$
+\end{hint}
+\begin{hint}
+Find intervals where $f'(x)$ is positive/negative
+\end{hint}
+\begin{hint}
+Use the First Derivative Test to determine the local extremes.
+\end{hint}
+
+If there are none, type ``none".\\
+$f(x)$ has a local maximum at $x = \answer{none}.$\\
+$f(x)$ has a local minimum at $x = \answer{-1/2}.$
+\end{problem}
+
+
+\begin{problem}(problem 7b)
+Find the local extremes of the function $f(x) = x^2e^{3x}.$\\
+\begin{hint}
+Find the critical numbers of $f(x)$
+\end{hint}
+\begin{hint}
+Find intervals where $f'(x)$ is positive/negative
+\end{hint}
+\begin{hint}
+Use the First Derivative Test to determine the local extremes.
+\end{hint}
+
+If there are none, type ``none".\\
+$f(x)$ has a local maximum at $x = \answer{-2/3}.$\\
+$f(x)$ has a local minimum at $x = \answer{0}.$
+\end{problem}
+
+\begin{problem}(problem 7c)
+Find the local extremes of the function $f(x) = \dfrac{3x}{x^2 + 4}.$\\
+\begin{hint}
+Find the critical numbers of $f(x)$
+\end{hint}
+\begin{hint}
+Find intervals where $f'(x)$ is positive/negative
+\end{hint}
+\begin{hint}
+Use the First Derivative Test to determine the local extremes.
+\end{hint}
+
+If there are none, type ``none".\\
+$f(x)$ has a local maximum at $x = \answer{2}.$\\
+$f(x)$ has a local minimum at $x = \answer{-2}.$
+\end{problem}
+
+
+
+
+\begin{example}[example 8]
+Use the graph of $f'(x)$ given below to determine intervals on which $f(x)$
+is increasing or decreasing.
+
+\begin{image}
+\begin{tikzpicture} 
+\begin{axis}[ axis x line=middle, axis y line=middle, ymax=5, ymin=-5, xlabel=$x$,ylabel=$y$, title={Graph of the derivative, $y = f'(x)$} ] 
+\addplot[blue,mark=none, domain=-3:3,samples=40] {4-x^2};
+\node[color=blue] at (axis cs: -2,3){$y=f'(x)$}; 
+
+\end{axis} 
+\end{tikzpicture}
+\end{image}
+
+
+First, recall that the Increasing/Decreasing Theorem states that $f(x)$ is increasing on intervals where $f'(x) > 0$ and
+$f(x)$ is decreasing on intervals where $f'(x) < 0$.
+Such intervals can be determined from the graph of $f'(x)$ by noting when it is above or below the $x$-axis.
+This graph is above the $x$-axis on the interval $(-2, 2)$ and below the $x$-axis on the intervals $(-\infty, -2)$
+and $(2, \infty)$. When the graph of $f'(x)$ is above the $x$-axis, then $f'(x)>0$ and hence, $f(x)$
+is increasing. Likewise, when the graph of $f'(x)$ is below the $x$-axis, then $f'(x)<0$ and $f(x)$ is decreasing.
+We can now interpret the graph of $f'(x)$ to state that $f(x)$ is increasing on the interval $(-2, 2)$ 
+and $f(x)$ is decreasing on the intervals $(-\infty, -2)$ and $(2, \infty)$.
+
+
+
+%From the graph of $f'(x)$, above, we can see that $f'(x) > 0$ on the interval $(-2, 2)$ and $f'(x) < 0$ on the intervals  
+%Specifically, we have $f(x)$ is increasing 
+
+\end{example}
+
+
+
+
+
+
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here are some detailed, lecture style videos on inc/dec functions:}
+\youtube{bNVSN7xdZIs}
+\youtube{0yGcbq9Bbdo}
+\end{foldable}
+\end{center}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{problem}
+Find the intervals on which the function $f(x) = \dfrac{3x}{x^2 + 4}$ is increasing or decreasing.
+\begin{hint}
+Find the critical numbers of $f(x)$
+\end{hint}
+\begin{hint}
+Find intervals where $f'(x)$ is positive/negative
+\end{hint}
+\begin{hint}
+$f'(x) > 0 \implies f(x) \; \text{ is increasing}$\\
+$f'(x) < 0 \implies f(x) \; \text{ is decreasing}$
+\end{hint}
+
+If there are none, type ``none".\\
+$f(x)$ has a local maximum at $x = \answer{2}$.\\
+$f(x)$ has a local minimum at $x = \answer{-2}$.
+\end{problem}
