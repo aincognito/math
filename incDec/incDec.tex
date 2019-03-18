@@ -128,36 +128,53 @@ The following theorem is a direct consequence of the cornerstone, Mean Value The
 
 
 \begin{theorem}[increasing/decreasing]
-Let $I$ be an open interval and suppose $f$ is differentiable on $I$.
+Suppose $f(x)$ is a differentiable function on an open interval $I$.
+
+%or:  Let $I$ be an open interval and suppose $f$ is differentiable on $I$.
  If $f'(x) > 0$ on $I$, 
 then $f(x)$ is increasing on $I$ and similarly, if $f'(x) < 0$ on $I$, then $f(x)$ is decreasing on $I$.
 \end{theorem}
 
 \begin{center}
+
 \begin{tikzpicture}
+
 \begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal, xtick={},
-xticklabels={}, ymin = -1, ytick={}, yticklabels={}, title={$f'(x)>0$  on $I$}]
+xticklabels={}, ymin = -1, ytick={}, yticklabels={}, title={$f'(x)>0$  on an interval $I$}]
 
 \addplot[domain=-1:2, color=blue, thick]{2^x} node[pos=.5, below, sloped] {increasing} node[pos=.5, above, sloped] {$f'(x) > 0$};
-\addplot[thick, purple] coordinates{(2, 0) (-1, 0)} node[below left, purple]{$I$};
+\addplot[thick, violet] coordinates{(2, 0) (-1, 0)} node[below left, violet]{$I$};
+\addplot[domain=.2:1.8,red,thin] {2*0.69*x + .62};
+\addplot[mark=*,fill=red] coordinates {(1,2)};
+%{2^x ln2  approx  + b  implies 1.414*.69*.5 + b = 1.414 so b = 
+% at x = 1: m = 2*ln2 = 2*0.69 and p=(1,2)  y = mx - m +2 = 
 \end{axis}
+
 %\addplot[mark=*,fill=white] coordinates {(0,0)}
 \node at (4, -0.5) {$f'(x) > 0 \implies f(x)$ is increasing};				
 \node[color=blue] at (6, 5) {$y = f(x)$};
 
 \end{tikzpicture}
+
+
 \hspace{2 in}
+
+
 \begin{tikzpicture}
+
 \begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal,xmin=-1, xmax = 2.5, xtick={},
-xticklabels={},ymin=-0.1,ymax=1.5, ytick={}, yticklabels={}, title={$f'(x)<0$ }]
+xticklabels={},ymin=-0.1,ymax=1.5, ytick={}, yticklabels={}, title={$f'(x)<0$ on an interval $I$}]
 
-\addplot[domain=-0.5:2, color=blue, thick]{0.3+1/2^x} node[pos=.5, below, sloped] {decreasing} node[pos=.5, above, sloped] {$f'(x) < 0$};
+\addplot[domain=-0.5:2, color=blue, thick]{0.3+1/2^x} node[pos=.5, below, sloped] {decreasing} node[pos=.5, above, sloped] {$f'(x) < 0$ on $I$};
 
-\addplot[thick, purple] coordinates{ (2, 0)(-0.5, 0)} node[below left, purple]{$I$};
+\addplot[thick, brown!75!black] coordinates{ (2, 0)(-0.5, 0)} node[below left, brown!75!black]{$I$};
+\addplot[domain=-.3:1.3,red,thin] {-1/2^0.5 * 0.69*(x-0.5)+ (0.3+1/2^0.5)};
+\addplot[mark=*,fill=red] coordinates {(0.5,0.3+1/2^0.5)};
 \end{axis}
+
 %\addplot[mark=*,fill=white] coordinates {(0,0)}			
 \node[color=blue] at (5.8, 3.1) {$y = f(x)$};
- \node at (4, -0.5) {$f'(x) > 0 \implies f(x)$ is increasing};
+ \node at (4, -0.5) {$f'(x) < 0 \implies f(x)$ is decreasing};
 
 \end{tikzpicture}
 
@@ -175,9 +192,9 @@ xticklabels={},ymin=-0.1,ymax=1.5, ytick={}, yticklabels={}, title={$f'(x)<0$ }]
 
 
 \begin{example}[example 1]
-Determine the intervals on which the function $f(x) = mx + b$ is increasing or decreasing.\\
-In this example, the graph of the function is a straight line with slope, $f'(x) = m$.
-The line is increasing on $(-\infty, \infty)$ if $m >0$ and decreasing on $(-\infty, \infty)$ if $m<0$.
+Determine the intervals on which a function of the form $f(x) = mx + b$ is increasing or decreasing.\\
+The graph of a function of this form is a straight line with slope, $m=f'(x) $.
+If $f'(x) = m > 0$, then $f(x) = mx+b$ is increasing on the interval $(-\infty, \infty)$  and if $f'(x) = m < 0$, then it is decreasing on $(-\infty, \infty)$ .
 
 \begin{center}
 \begin{tikzpicture}
@@ -208,7 +225,176 @@ xticklabels={}, ytick={}, yticklabels={}, ymin = -2, title={$f(x)= mx+b, m<0$}]
 \end{example}
 
 
+\begin{problem}(problem 1a)
+Determine whether the function $f(x) = 3 - 4x$ is increasing or decreasing on $(-\infty, \infty)$.\\
+\begin{multipleChoice}
+\choice{increasing}
+\choice[correct]{decreasing}
+\end{multipleChoice}
+\end{problem}
+
+\begin{problem}(problem 1b)
+Determine whether the function $f(x) = \frac{x}{5}$ is increasing or decreasing on $(-\infty, \infty)$.\\
+\begin{multipleChoice}
+\choice[correct]{increasing}
+\choice{decreasing}
+\end{multipleChoice}
+\end{problem}
+
+
 \begin{example}[example 2]
+Determine the intervals on the function $f(x) = 2x + x^5$ is increasing or decreasing.\\
+The derivative of this polynomial is $f'(x) = 2 + 5x^4$. Since $x^4 \geq 0$ for all values of $x$, 
+
+$f'(x) > 0$ on the interval $(-\infty, \infty)$. Thus $f(x) = 2x + x^5$ is an increasing function on $(-\infty, \infty)$.
+
+\end{example}
+
+\begin{problem}(problem 2a)
+Determine whether the function $f(x) = 2x + x^3$ is increasing or decreasing on $(-\infty, \infty)$.\\
+\begin{multipleChoice}
+\choice[correct]{increasing}
+\choice{decreasing}
+\end{multipleChoice}
+\end{problem}
+
+\begin{problem}(problem 2b)
+Determine whether the function $f(x) = -x - x^7$ is increasing or decreasing on $(-\infty, \infty)$.\\
+\begin{multipleChoice}
+\choice{increasing}
+\choice[correct]{decreasing}
+\end{multipleChoice}
+\end{problem}
+
+
+\begin{example}[example 3]
+Determine the intervals on the function $f(x) = 4x - x^2$ is increasing or decreasing.\\
+The derivative of this polynomial is $f'(x) = 4 -  2x$. If $x > 2$, then $f'(x) <0$ which means that $f(x)$ is decreasing on the interval $(2, \infty)$.
+Similarly, if $x<2$, then $f'(x) >0$ and so $f(x)$ is increasing on the interval $(-\infty, 2)$.
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal, xtick={2},
+xticklabels={2}, ytick={4}, yticklabels={4},xmin = -1, xmax = 5, ymin = -2.5, ymax = 4.5, title={$f(x)= 4x-x^2$}]
+
+\addplot[domain=-0.5:4.5, color=blue, thick]{4*x-x^2};
+\addplot[mark = *, blue] coordinates {(2,4)};
+%\node[color=blue] at (axis cs: 1.2, .8) {$m>0 \implies$ increasing};
+\end{axis}
+		
+\end{tikzpicture}
+\end{image}
+
+\end{example}
+
+\begin{problem}(problem 3a)
+The derivative of $f(x)=x^2 - 6x + 2$ is $f'(x) = \answer{2x-6}$.\\
+Is $\frac{1}{x}$ increasing or decreasing on the interval $(3, \infty)$?
+\begin{multipleChoice}
+\choice[correct]{increasing}
+\choice{decreasing}
+\end{multipleChoice}
+\end{problem}
+
+
+\begin{problem}(problem 3b)
+The derivative of $f(x)=5 - 2x - x^2$ is $f'(x) = \answer{-2x-2}$.\\
+Is $\frac{1}{x}$ increasing or decreasing on the interval $(-1, \infty)$?
+\begin{multipleChoice}
+\choice{increasing}
+\choice[correct]{decreasing}
+\end{multipleChoice}
+\end{problem}
+
+\begin{example}[example 4]
+Determine intervals on which $f(x) = e^{-x}$ is increasing or decreasing.\\
+The domain of $e^{-x}$ is $(-\infty,\infty)$ and 
+\[
+\frac{d}{dx} e^{-x} = -e^{-x} < 0 \text{ on the interval } (-\infty, \infty),
+\]
+since $e^{-x} > 0$ for all $x$. By the increasing/decreasing theorem, $f(x) = e^{-x}$ is decreasing on its domain, $(-\infty, \infty)$.
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center, xmin=-1, xmax = 4.5, title={$f(x) = e^{-x}$ is decreasing on $(-\infty, \infty)$}]
+\addplot[smooth,blue, domain=-1:4, thick] {e^(-x)};
+\node[blue] at (axis cs:2, 1){$y = e^{-x}$};
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
+\end{example}
+
+
+
+\begin{problem}(problem 4a)
+The derivative of $f(x)=\frac{1}{x}$ is $f'(x) = \answer{-1/x^2}$.\\
+Is $\frac{1}{x}$ increasing or decreasing on the interval $(0, \infty)$?
+\begin{multipleChoice}
+\choice{increasing}
+\choice[correct]{decreasing}
+\end{multipleChoice}
+\end{problem}
+
+
+
+\begin{problem}(problem 4b)
+The derivative of $f(x) = -e^{-2x}$ is $f'(x) = \answer{2e^{-2x}}$.\\
+Is $-e^{-2x}$ increasing or decreasing on the interval $(-\infty, \infty)$?
+\begin{hint}
+$e^x > 0$ for all values of $x$
+\end{hint}
+\begin{multipleChoice}
+\choice[correct]{increasing}
+\choice{decreasing}
+\end{multipleChoice}
+\end{problem}
+
+\begin{example}[example 5]
+Determine intervals on which $f(x) = \tan^{-1}(x)$ is increasing or decreasing.\\
+The domain of $\tan^{-1}(x)$ is $(-\infty,\infty)$ and 
+\[
+\frac{d}{dx} \tan^{-1}(x) = \frac{1}{1+x^2} > 0 \text{ on the interval } (-\infty, \infty).
+\]
+By the increasing/decreasing theorem, $f(x) = \tan^{-1}(x)$ is increasing on its domain, $(-\infty, \infty)$.
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center, xmin=-5.5, xmax = 5.5, ymin=-2, ymax = 2, ytick={-1.57, 1.57},
+yticklabels={$-\tfrac{\pi}{2}$, $\tfrac{\pi}{2}$}, title={$f(x) = \tan^{-1}(x)$ is increasing on $(-\infty, \infty)$}]
+\addplot[smooth,blue, domain=-5:5, thick] {rad(atan(x))};
+\node[blue] at (axis cs:3, 0.7){$y = \tan^{-1}(x)$};
+\addplot[dashed,domain=-1.5: -5.5]{-1.57};
+\addplot[dashed, domain= 0.3:5.5]{1.57};
+\end{axis}
+\end{tikzpicture}
+\end{image}
+\end{example}
+
+
+\begin{problem}(problem 5a)
+The derivative of $\tan(x)$ is $\answer{\sec^2(x)}$.\\
+Is $f(x) = \tan(x)$ increasing or decreasing on the interval $(-\frac{\pi}{2}, \frac{\pi}{2})$?
+\begin{multipleChoice}
+\choice[correct]{increasing}
+\choice{decreasing}
+\end{multipleChoice}
+\end{problem}
+
+
+\begin{problem}(problem 5b)
+The derivative of $2^x$ is $\answer{2^x\ln(2)}$.\\
+Is $f(x) = 2^x$ increasing or decreasing on the interval $(-\infty, \infty)$?
+\begin{hint}
+$2^x > 0$ for all values of $x$
+\end{hint}
+\begin{multipleChoice}
+\choice[correct]{increasing}
+\choice{decreasing}
+\end{multipleChoice}
+\end{problem}
+
+
+\begin{example}[example 6]
 Determine intervals on which $f(x) = \ln|x|$ is increasing or decreasing.\\
 
 The function $\ln|x|:$
@@ -252,7 +438,7 @@ This can be seen in the graph below.
 \end{example}
 
 
-\begin{problem}(problem 2)
+\begin{problem}(problem 6)
 The derivative of $3\ln(x)$ is $\answer{3/x}$.\\
 Is $f(x) = 3\ln(x)$ increasing or decreasing on the interval $(0, \infty)$?
 \begin{multipleChoice}
@@ -262,91 +448,8 @@ Is $f(x) = 3\ln(x)$ increasing or decreasing on the interval $(0, \infty)$?
 \end{problem}
 
 
-\begin{example}[example 3]
-Determine intervals on which $f(x) = e^{-x}$ is increasing or decreasing.\\
-The domain of $e^{-x}$ is $(-\infty,\infty)$ and 
-\[
-\frac{d}{dx} e^{-x} = -e^{-x} < 0 \text{ on the interval } (-\infty, \infty),
-\]
-since $e^{-x} > 0$ for all $x$. By the increasing/decreasing theorem, $f(x) = e^{-x}$ is decreasing on its domain, $(-\infty, \infty)$.
 
-\begin{image}
-\begin{tikzpicture}
-\begin{axis}[axis lines = center, xmin=-1, xmax = 4.5, title={$f(x) = e^{-x}$ is decreasing on $(-\infty, \infty)$}]
-\addplot[smooth,blue, domain=-1:4, thick] {e^(-x)};
-\node[blue] at (axis cs:2, 1){$y = e^{-x}$};
-\end{axis}
-\end{tikzpicture}
-\end{image}
-
-\end{example}
-
-
-
-\begin{problem}(problem 3a)
-The derivative of $-e^{2x}$ is $\answer{-2e^{2x}}$.\\
-Is $f(x) = -e^{2x}$ increasing or decreasing on the interval $(-\infty, \infty)$?
-\begin{multipleChoice}
-\choice{increasing}
-\choice[correct]{decreasing}
-\end{multipleChoice}
-\end{problem}
-
-
-
-\begin{problem}(problem 3b)
-The derivative of $-e^{2x}$ is $\answer{-2e^{2x}}$.\\
-Is $f(x) = -e^{2x}$ increasing or decreasing on the interval $(-\infty, \infty)$?
-\begin{multipleChoice}
-\choice{increasing}
-\choice[correct]{decreasing}
-\end{multipleChoice}
-\end{problem}
-
-\begin{example}[example 4]
-Determine intervals on which $f(x) = \tan^{-1}(x)$ is increasing or decreasing.\\
-The domain of $\tan^{-1}(x)$ is $(-\infty,\infty)$ and 
-\[
-\frac{d}{dx} \tan^{-1}(x) = \frac{1}{1+x^2} > 0 \text{ on the interval } (-\infty, \infty).
-\]
-By the increasing/decreasing theorem, $f(x) = \tan^{-1}(x)$ is increasing on its domain, $(-\infty, \infty)$.
-
-\begin{image}
-\begin{tikzpicture}
-\begin{axis}[axis lines = center, xmin=-5.5, xmax = 5.5, ymin=-2, ymax = 2, ytick={-1.57, 1.57},
-yticklabels={$-\tfrac{\pi}{2}$, $\tfrac{\pi}{2}$}, title={$f(x) = \tan^{-1}(x)$ is increasing on $(-\infty, \infty)$}]
-\addplot[smooth,blue, domain=-5:5, thick] {rad(atan(x))};
-\node[blue] at (axis cs:3, 0.7){$y = \tan^{-1}(x)$};
-\addplot[dashed,domain=-1.5: -5.5]{-1.57};
-\addplot[dashed, domain= 0.3:5.5]{1.57};
-\end{axis}
-\end{tikzpicture}
-\end{image}
-\end{example}
-
-
-\begin{problem}(problem 4a)
-The derivative of $\tan(x)$ is $\answer{\sec^2(x)}$.\\
-Is $f(x) = \tan(x)$ increasing or decreasing on the interval $(-\frac{\pi}{2}, \frac{\pi}{2})$?
-\begin{multipleChoice}
-\choice[correct]{increasing}
-\choice{decreasing}
-\end{multipleChoice}
-\end{problem}
-
-
-\begin{problem}(problem 4b)
-The derivative of $2-3x$ is $\answer{-3}$.\\
-Is $f(x) = 2-3x$ increasing or decreasing on the interval $(-\infty, \infty)$?
-\begin{multipleChoice}
-\choice{increasing}
-\choice[correct]{decreasing}
-\end{multipleChoice}
-\end{problem}
-
-
-
-\begin{example}[example 5]
+\begin{example}[example 7]
 Determine intervals on which $f(x) = 2x^3 - 3x^2  - 36x + 2$ is increasing or decreasing.\\
 According to the theorem, we must determine where $f'(x)$ is positive and  where $f'(x)$ is negative. 
 To do this, it is often easiest to first determine where $f'(x) = 0$ or 
@@ -397,7 +500,7 @@ and it is decreasing on the interval $(-2, 3)$.
 
 
 
-\begin{problem}(problem 5)
+\begin{problem}(problem 7)
 Determine intervals on which $f(x) = x^3 - 3x  + 4$ is increasing.\\
 Select all that apply:
 \begin{selectAll}
@@ -405,6 +508,63 @@ Select all that apply:
 \choice{$(-\infty, 1)$}
 \choice{$(-1, \infty)$}
 \choice[correct]{$(1, \infty)$}
+\end{selectAll}
+
+\end{problem}
+
+
+\begin{example}[example 8]
+Determine intervals on which $f(x) = xe^{3x}$ is increasing or decreasing.\\
+According to the theorem, we must determine where $f'(x)$ is positive and  where $f'(x)$ is negative. 
+To do this, it is often easiest to first determine where $f'(x) = 0$ or 
+$f'(x)$ is undefined. By the  product rule, 
+\[f'(x) = 3xe^{3x} + e^{3x} = (3x+1)e^{3x}\] 
+which exists for all $x$. There is one solution to the equation,
+\[f'(x) = (3x+1)e^{3x} = 0\] 
+and that is  $x=-1/3$. 
+Note that $e^{3x} > 0$ for any value of $x$.
+
+This critical number breaks the real number line into two open intervals: $(-\infty, -1/3)$ and $(-1/3, \infty)$.
+On each of these intervals, $f'$ will be either strictly positive or strictly negative.  
+To determine which, we will use \textbf{test points}. 
+For the interval, $(-\infty, -1/3)$ we will use $x=-1$ as the test point (any number in the interval is acceptable). 
+Then we consider the derivative at this point: $f'(-1) = (3(-1) + 1)e^{-3} = -2e^{-3} <0$.
+This means that $f'(x) < 0$ for every $x$ value in the interval $(-\infty, -1/3)$ and by the theorem, 
+$f(x)$ is decreasing on this interval.
+
+
+
+For the interval $(-1/3, \infty)$, we will use $x=0$ as the test point and we have $f'(0) = (3(0)+1)e^0 = 1>0$. 
+This means that $f'(x) > 0$ for every $x$ value in the interval $(-1/3, \infty)$ and by the theorem, 
+$f(x)$ is increasing on this interval.
+
+
+\begin{image}
+\begin{tikzpicture}
+\node at (-1/3,1) {Sign of $f'(x)$};
+\node at (-2.3, .5) {- - - - - -};
+\node at (1.5, .5) {+ + + + +};
+\draw[thick, <->] (-4.2, 0) --(3.5, 0);
+\draw[thin] (-1/3, -.2) --(-1/3,.2);
+\node at (-1/3, -.5) {$-\tfrac13$};
+
+\end{tikzpicture}
+\end{image}
+
+Thus $f(x)$ is decreasing on the interval $(-\infty, -1/3)$
+and it is increasing on the interval $(-1/3, \infty)$.
+\end{example}
+
+
+
+\begin{problem}(problem 8)
+Determine intervals on which $f(x) = xe^{-x}$ is increasing.\\
+Select all that apply:
+\begin{selectAll}
+\choice{$(-\infty, -1)$}
+\choice[correct]{$(-\infty, 1)$}
+\choice{$(-1, \infty)$}
+\choice{$(1, \infty)$}
 \end{selectAll}
 
 \end{problem}
