@@ -42,9 +42,11 @@ possibilities at a local extreme.  \\
 ytick={},yticklabels={}, title = {Local extremes at $x = a$ and $x = b$}]
 \addplot[<-,blue,domain=-3.3:1,thick] {2-(x+1)^2};
 \addplot[->,blue,domain=1:3.2,thick] {2.5*x-4.5};
+\addplot[red,domain=0.87:1,thick] {2-(x+1)^2};
+\addplot[red,domain=1:1.2,thick] {2.5*x-4.5};
 \addplot[blue, mark = *] coordinates{(-1,2)} ;
-\addplot[red, thick, domain=-5/3:-1/3]{2} node[blue,above, pos = 0] {\begin{tabular}{c}  horizontal \\ tangent line \end{tabular}};
-\addplot[blue, mark = *] coordinates{(1,-2)} node[below, right]{corner point};
+\addplot[red, thick, domain=-5/3:-1/3]{2} node[red,above, pos = 0] {\begin{tabular}{c}  horizontal \\ tangent line \end{tabular}};
+\addplot[blue, mark = *] coordinates{(1,-2)} node[below, right, red]{corner point};
 \end{axis}
 \end{tikzpicture}
 \end{image}
