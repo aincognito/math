@@ -369,6 +369,33 @@ The sum is $S= \answer{e/(e-2)}$
 
 \end{problem}
 
+\begin{example}[example 8]
+Write the repeating decimal $0.\overline{123} = 0.123123123...$ as a ratio of integers.\\
+First, note that we can write this repeating decimal as an infinite series:
+\[
+0.\overline{123} = 0.123 + 0.000123 + 0.000000123 + \dots
+\]
+Wring these decimals as fractions, we have
+\[
+0.\overline{123} =\frac{123}{10^3} + \frac{123}{10^6}+\frac{123}{10^9} + \dots
+\]
+This is a convergent geometric series with first term, $a = \frac{123}{1000}$ and common ratio $r = \frac{1}{1000}$.
+The sum is 
+\[
+S = \frac{a}{1-r} = \frac{\left(\frac{123}{1000}\right)}{1-\frac{1}{1000}} = \frac{\left(\frac{123}{1000}\right)}{\left(\frac{999}{1000}\right)}
+= \frac{123}{999} = \frac{41}{333}.
+\]
+
+\end{example}
+
+\begin{problem}(problem 8)
+Write the repeating decimal $0.\overline{45} = 0.454545...$ as a ratio of integers.\\
+\begin{multipleChoice}
+\choice{$\frac{9}{20}$}
+\choice{$\frac{45}{98}$}
+\choice[correct]{$\frac{5}{11}$}
+\end{multipleChoice}
+\end{problem}
 \section{Video Lesson}
 
 
