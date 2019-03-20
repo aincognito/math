@@ -349,6 +349,8 @@ $e^x > 0$ for all values of $x$
 \end{multipleChoice}
 \end{problem}
 
+
+
 \begin{example}[example 5]
 Determine intervals on which $f(x) = \tan^{-1}(x)$ is increasing or decreasing.\\
 The domain of $\tan^{-1}(x)$ is $(-\infty,\infty)$ and 
@@ -392,6 +394,7 @@ $2^x > 0$ for all values of $x$
 \choice{decreasing}
 \end{multipleChoice}
 \end{problem}
+
 
 
 \begin{example}[example 6]
@@ -627,7 +630,7 @@ If $f'(x)$ changes sign from positive to negative $x=a$,
 
 
 
-\begin{example}[example 6]
+\begin{example}[example 9]
 Find the local extremes of $f(x) =2x^3 - 3x^2 - 36x + 2 $.\\
 In the previous example, we found that the critical numbers for $f(x)$ were $-2$ and $3$.  We also noted that
 $f'(x)$ changed sign from positive to negative at $x = -2$ and from negative to positive at $x=3$.
@@ -658,7 +661,7 @@ xticklabels = {-2, 3},yticklabels = {-79,46}, title = {Local maximum at $x = -2$
 
 
 
-\begin{problem}(problem 6a)
+\begin{problem}(problem 9a)
 Find the local extremes of the function $f(x) = x^2 - 6x + 2.$\\
 \begin{hint}
 Find the critical numbers of $f(x)$
@@ -677,7 +680,7 @@ $f(x)$ has a local minimum at $x = \answer{3}.$
 \end{problem}
 
 
-\begin{problem}(problem 6b)
+\begin{problem}(problem 9b)
 Find the local extremes of the function $f(x) = x^3 - 3x^2 + 3.$\\
 \begin{hint}
 Find the critical numbers of $f(x)$
@@ -696,7 +699,7 @@ $f(x)$ has a local minimum at $x = \answer{2}.$
 \end{problem}
 
 
-\begin{problem}(problem 6c)
+\begin{problem}(problem 9c)
 Find the local extremes of the function $f(x) = x^3 - 3x^2 +3x -1.$\\
 \begin{hint}
 Find the critical numbers of $f(x)$
@@ -715,7 +718,7 @@ $f(x)$ has a local minimum at $x = \answer{none}.$
 \end{problem}
 
 
-\begin{problem}(problem 6d)
+\begin{problem}(problem 9d)
 Find the local extremes of the function $f(x) = x^4 - 8x^2 + 1.$
 \begin{hint}
 Find the critical numbers of $f(x)$
@@ -735,7 +738,7 @@ and at $x = \answer{2}.$
 \end{problem}
 
 
-\begin{problem}(problem 6e)
+\begin{problem}(problem 9e)
 Find the local extremes of the function $f(x) = 3x^4 +8x^3 - 5.$\\
 % f' = x^2 (x+2) = x^3 + 2x^2,  f = x^4/4 +2x^3/3 or 3x^4 +8x^3 - 5
 \begin{hint}
@@ -755,7 +758,7 @@ $f(x)$ has a local minimum at $x = \answer{-2}.$
 
 
 
-\begin{example}[example 7]
+\begin{example}[example 10]
 Find intervals on which $f(x) = xe^{3x}$ is increasing or decreasing and find and describe the local extremes.\\
 We begin by finding the critical numbers of $f(x)$. By the product and chain rules, 
 \[f'(x) = e^{3x} + xe^{3x}\cdot 3 = e^{3x}(1+3x).\]
@@ -820,7 +823,7 @@ xticklabels = {},yticklabels = {}, title = {Local minimum at $x = -\tfrac13$}]
 \end{image}
 \end{example}
 
-\begin{problem}(problem 7a)
+\begin{problem}(problem 10a)
 Find the local extremes of the function $f(x) = xe^{2x}.$\\
 \begin{hint}
 Find the critical numbers of $f(x)$
@@ -838,7 +841,7 @@ $f(x)$ has a local minimum at $x = \answer{-1/2}.$
 \end{problem}
 
 
-\begin{problem}(problem 7b)
+\begin{problem}(problem 10b)
 Find the local extremes of the function $f(x) = x^2e^{3x}.$\\
 \begin{hint}
 Find the critical numbers of $f(x)$
@@ -855,7 +858,7 @@ $f(x)$ has a local maximum at $x = \answer{-2/3}.$\\
 $f(x)$ has a local minimum at $x = \answer{0}.$
 \end{problem}
 
-\begin{problem}(problem 7c)
+\begin{problem}(problem 10c)
 Find the local extremes of the function $f(x) = \dfrac{3x}{x^2 + 4}.$\\
 \begin{hint}
 Find the critical numbers of $f(x)$
@@ -875,14 +878,14 @@ $f(x)$ has a local minimum at $x = \answer{-2}.$
 
 
 
-\begin{example}[example 8]
+\begin{example}[example 11]
 Use the graph of $f'(x)$ given below to determine intervals on which $f(x)$
 is increasing or decreasing.
 
 \begin{image}
 \begin{tikzpicture} 
 \begin{axis}[ axis x line=middle, axis y line=middle, ymax=5, ymin=-5, xlabel=$x$,ylabel=$y$, title={Graph of the derivative, $y = f'(x)$} ] 
-\addplot[blue,mark=none, domain=-3:3,samples=40] {4-x^2};
+\addplot[blue,mark=none, domain=-3:3,samples=40, thick] {4-x^2};
 \node[color=blue] at (axis cs: -2,3){$y=f'(x)$}; 
 
 \end{axis} 
@@ -909,8 +912,35 @@ and $f(x)$ is decreasing on the intervals $(-\infty, -2)$ and $(2, \infty)$.
 
 
 
+\begin{problem}(problem 11)
+Use the graph of $y = f'(x)$ shown below to determine where $f(x)$ is increasing/decreasing and find the local extremes.
 
+\begin{image}
+\begin{tikzpicture} 
+\begin{axis}[ axis x line=middle, axis y line=middle, ymax=5, ymin=-5, xlabel=$x$,ylabel=$y$,
+xtick={-2, 2}, xticklabels= {$-3$, 3}, ytick={-4, 4}, yticklabels={$-6$, 6}, title={Graph of the derivative, $y = f'(x)$} ] 
+\addplot[blue,mark=none, domain=-3:3,samples=40, thick] {x^2 - 4};
+\node[color=blue] at (axis cs: 2,-3){$y=f'(x)$}; 
 
+\end{axis} 
+\end{tikzpicture}
+\end{image}
+
+$f(x)$ is increasing on the interval(s):
+\begin{multipleChoice}
+\choice{$(0,\infty)$}
+\choice[correct]{$(-\infty, -3)$ and $(3,\infty)$}
+\choice{$(3,\infty)$}
+\end{multipleChoice}
+
+The local extremes of $f(x)$ are:
+\begin{multipleChoice}
+\choice{local min at $x = 0$}
+\choice{local min at $x = -3$ and local max at $x=3$}
+\choice[correct]{local max at $x = -3$ and local min at $x=3$}
+\end{multipleChoice}
+
+\end{problem}
 
 
 
