@@ -124,7 +124,7 @@ In the next two examples, we will discuss the curvature of the given functions a
  
 
 \begin{example}[example 4]
-Determine where the cubic polynomial $f(x) = x^3 + 12x^2 - 7x - 4$ is concave up, concave down and find the inflection points.\\
+Determine where the cubic polynomial $f(x) = x^3 + 12x^2 - 7x + 10$ is concave up, concave down and find the inflection points.\\
 The second derivative of $f(x)$ is 
 $f''(x) = 6x + 24$.  To determine where $f''(x)$ is positive and where it is negative, 
 we will first determine where it is zero. Hence, we will solve the equation
@@ -136,15 +136,44 @@ This value breaks the real number line into two intervals, $(-\infty, -4)$ and $
 The second derivative maintains the same sign throughout each of these intervals.  
 To determine whether it is positive or negative, we choose a test point in each interval.
 For the interval, $(-\infty, -4)$, we choose $x = -5$.  Plugging this into the second derivative, we get
-$f''(-5) = 6(-5) + 24 = -6 < 0$.  Since this value is negative, we can conclude that the original function,
-$f(x) = x^3 + 12x^2 - 7x - 4$ is concave down on the interval $(-\infty, -4)$. \\
-
-Next, we choose the test point 
+$f''(-5) = 6(-5) + 24 = -6 < 0$. Next, we choose the test point 
 $x = 0$ for the interval $(-4, \infty)$.  Plugging this into the second derivative gives $f''(0) = 6(0) + 24 = 24 > 0$.
-Since this value is positive, we can conclude that the original function,
-$f(x) = x^3 + 12x^2 - 7x - 4$ is concave up on the interval $(-4, \infty)$.
+We can use this information to create a sign chart for the second derivative, as shown below.
+
+\begin{image}
+\begin{tikzpicture}
+\node at (.5,1.5) {Sign of $f''(x)$};
+
+\node at (-5.5, .5) {- - - - -};
+\node at (-2.5, .5) {+++};
+\draw[thick, <->] (-7, 0) --(-1, 0);
+\draw[thin] (-4, -.2) --(-4,.2);
+%\draw[thin] (3,-.2) --(3,.2);
+\node at (-4, -.5) {$-4$};
+%\node at (3, -.5) {$3$};
+\end{tikzpicture}
+\end{image}
+We can now use the concavity theorem to conclue that
+the original function,
+$f(x) = x^3 + 12x^2 - 7x +10$ is concave down on the interval $(-\infty, -4)$.
+and concave up on the interval $(-4, \infty)$.
 Finally, noting that the original polynomial is continuous everywhere and changes concavity at $x = -4$, we can say that
-$f(x) = x^3 + 12x^2 - 7x - 4$ has an inflection point at $x = -4$.
+$f(x) = x^3 + 12x^2 - 7x +10$ has an inflection point at $x = -4$.
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center,  axis y line=none, xmin=-10.5, xmax = 3.5,ymin = -50, ymax = 399, xtick={-4}, ytick={}, 
+              title={Inflection point at $x = -4$}]
+\addplot[smooth,blue, domain=-10:3, thick] {x^3 + 12*x^2 - 7*x + 10};
+\addplot[blue, mark = *] coordinates{(-4,166)} node[right,blue] {inflection point};
+\node[blue] at (axis cs:-2, 300){$y = x^3 + 12x^2 - 7x + 10$};
+\node[blue] at (axis cs:-8, 250){\begin{tabular}{c} concave\\down \end{tabular}};
+\node[blue] at (axis cs:0.2, 50){\begin{tabular}{c} concave\\up \end{tabular}};
+
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
 \end{example}
 
 
@@ -202,16 +231,47 @@ This value breaks the real number line into two intervals, $(-\infty, -1/2)$ and
 The second derivative maintains the same sign throughout each of these intervals.  
 To determine whether it is positive or negative, we choose a test point in each interval.
 For the interval, $(-\infty, -1/2)$, we choose $x = -1$.  Plugging this into the second derivative, we get
-$f''(-1) = 12(-1) + 6 = -6 < 0$.  Since this value is negative, we can conclude that the original function,
-$f(x) = 2x^3 + 3x^2 - 36x + 2$ is concave down on the interval $(-\infty, -1/2)$. \\
+$f''(-1) = 12(-1) + 6 = -6 < 0$.  
 
 Next, for the interval $(-1/2, \infty)$, we choose the test point 
 $x = 0$.  Plugging this into the second derivative gives $f''(0) = 12(0) + 6 = 6 > 0$.
-Since this value is positive, we can conclude that the original function,
-$f(x) = 2x^3 + 3x^2 - 36x + 2$ is concave up on the interval $(-1/2, \infty)$.
-Finally, noting that the original polynomial is continuous everywhere and changes concavity at $x = -1/2$, we can say that
-the original function, 
-$f(x) = 2x^3 + 3x^2 - 36x + 2$ has an inflection point at $x = -1/2$.
+
+\begin{image}
+\begin{tikzpicture}
+\node at (.5,1.5) {Sign of $f''(x)$};
+\draw[thick, <->] (-2.5, 0) --(1.5, 0);
+\node at (-1.5, .5) {- - - - -};
+\node at (0.5, .5) {+++};
+
+\draw[thin] (-0.5, -.2) --(-0.5,.2);
+%\draw[thin] (3,-.2) --(3,.2);
+\node at (-0.5, -.5) {$-\frac12$};
+%\node at (3, -.5) {$3$};
+\end{tikzpicture}
+\end{image}
+We can now use the concavity theorem to conclue that
+the original function,
+$f(x) = 2x^3 + 3x^2 - 36x +2$ is concave down on the interval $(-\infty, -\frac12)$.
+and concave up on the interval $(-\frac12, \infty)$.
+Finally, noting that the original polynomial is continuous everywhere and changes concavity at $x = -\frac12$, 
+we can say that
+$f(x) = 2x^3 + 3x^2 - 36x +2$ has an inflection point at $x = -\frac12$.
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center,  axis y line=none, xmin=-4.5, xmax = 3.5,ymin = -45, 
+ymax = 90, xtick={-0.5}, xticklabels={$-\frac12$},ytick={}, 
+              title={Inflection point at $x = -\frac12$}]
+\addplot[smooth,blue, domain=-10:3, thick] {2*x^3 + 3*x^2 - 36*x +2};
+\addplot[blue, mark = *] coordinates{(-1/2,20.5)} node[right,blue] {inflection point};
+\node[blue] at (axis cs:0.2, 80){$y = 2x^3 + 3x^2 - 36x +2$};
+\node[blue] at (axis cs:-3, 55){\begin{tabular}{c} concave\\down \end{tabular}};
+\node[blue] at (axis cs:1.8, -20){\begin{tabular}{c} concave\\up \end{tabular}};
+
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
 \end{example}
 
 \begin{problem}(problem 5a)
@@ -276,9 +336,9 @@ The solutions are
 \[x = \frac{-12 \pm \sqrt{12^2 - 4(9)(2)}}{2(9)} = \frac{-2 \pm \sqrt{2}}{3}.\]
 For simplicity, we will call these two roots $\alpha$ and $\beta$.
 So 
-\[\alpha = \frac{-2 - \sqrt{2}}{3} \approx \]
+\[\alpha = \frac{-2 - \sqrt{2}}{3} \approx -1.138\]
 and
-\[\beta = \frac{-2 + \sqrt{2}}{3} \approx .\]
+\[\beta = \frac{-2 + \sqrt{2}}{3} \approx -0.195\]
 
 These two values break the real number line into three intervals: $(-\infty, \alpha), 
 (\alpha, \beta)$ and $(\beta, \infty)$ with test points
@@ -288,13 +348,49 @@ Plugging these into the second derivative gives
 \[f''(-1) = (9(-1)^2 + 12(-1) + 2)e^{3(-1)} = -e^{-3} < 0,\]
 and
 \[f''(0) = (9(0)^2 + 12(0) + 2)e^{3(0)} = 2 > 0.\]
-Hence $f(x) = x^2 e^{3x}$ is concave up on the intervals $(-\infty, \alpha)$ 
+
+\begin{image}
+\begin{tikzpicture}
+\node at (-.75,1.5) {Sign of $f''(x)$};
+\draw[thick, <->] (-2.5, 0) --(1, 0);
+\node at (-1.8, .5) {+++};
+\node at (-0.65, .5) {- - - -};
+\node at (0.5, .5) {+++};
+\draw[thin] (-1.138, -.2) --(-1.138,.2);
+
+\node at (-1.138, -.5) {$\alpha$};
+\draw[thin] (-0.195, -.2) --(-0.195,.2);
+
+\node at (-0.195, -.5) {$\beta$};
+
+\end{tikzpicture}
+\end{image}
+We can now use the concavity theorem to conclue that
+the original function, $f(x) = x^2 e^{3x}$ is concave up on the intervals $(-\infty, \alpha)$ 
 and $(\beta, \infty)$ and it is concave down on the interval 
 $(\alpha, \beta)$.
 Finally, we can infer from this that the continuous function $f(x) = x^2 e^{3x}$ has inflection points at 
 \[
 x = \alpha= \dfrac{-2 - \sqrt{2}}{3} \quad \text{and} \quad x = \beta = \dfrac{-2 + \sqrt{2}}{3}.
 \]
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center,  axis y line=none, xmin=-2.5, xmax = 0.5,ymin = 0, 
+ymax = .2, xtick={-1.138, -0.195}, xticklabels={$\alpha$, $\beta$},ytick={}, 
+              title={Inflection points at $x = \alpha$ and $x=\beta$}]
+\addplot[smooth,blue, domain=-2:0.3, thick] {x^2*e^(3*x)};
+\addplot[blue, mark = *] coordinates{(-1.138,0.0426)} ;
+\addplot[blue, mark = *] coordinates{(-0.195,0.021224)} ;
+\node[blue] at (axis cs:-0.1, .15){$y = x^2e^{3x}$};
+\node[blue] at (axis cs:-1.8, .04){\begin{tabular}{c} concave\\up \end{tabular}};
+\node[blue] at (axis cs:-0.7, .03){\begin{tabular}{c} concave\\down \end{tabular}};
+\node[blue] at (axis cs:-0.04, .03){\begin{tabular}{c} c.\\up \end{tabular}};
+
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
 \end{example}
 
 \begin{problem}(problem 6a)
