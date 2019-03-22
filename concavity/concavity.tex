@@ -530,7 +530,7 @@ the original function, $f(x) = e^{-x^2}$
 is concave up on the intervals $(-\infty, -\frac{1}{\sqrt 2})$ and $(\frac{1}{\sqrt 2}, \infty)$ and 
 concave down on the interval $(-\frac{1}{\sqrt 2},\frac{1}{\sqrt 2})$. 
 Finally, since the original function is continuous everywhere, we can
-say that $x = \pm \frac{1}{\sqrt 2} 2$ are inflection points for $f(x) = e^{-x^2}$.
+say that $x = \pm \frac{1}{\sqrt 2}$ are inflection points for $f(x) = e^{-x^2}$.
 
 \begin{image}
 \begin{tikzpicture}
@@ -694,9 +694,9 @@ Use the graph of the derivative, $f'(x)$, given below, to answer the following q
 \node at (0, 4.8) {The graph of the derivative, $y = f'(x)$};
 \node at (4.3,0) {$x$};
 \node at (0,3.8) {$y$};
-\draw[blue, thick]   plot[smooth,domain=-4:4] (\x, {-1 + \x*\x/4});
-\node at (-2.3,-0.65) {$-2$};
-\node at (2.1,-0.65) {$2$};
+\draw[blue, thick]   plot[smooth,domain=-4:4] (\x, {2 - \x*\x/4});
+\node at (-2.3,-0.65) {$-3$};
+\node at (2.1,-0.65) {$3$};
 \node[blue] at (4.9, 1.8) {$y = f'(x)$};
 \draw[thin] (-2, -.3)--(-2,.3);
 
@@ -712,9 +712,9 @@ Where is $f(x)$ increasing? Select all that apply.
 \begin{selectAll}
 \choice{$(0, \infty)$}
 \choice{$(-\infty, 0)$}
-\choice[correct]{$(2, \infty)$}
-\choice{$(-\infty, \infty)$}
-\choice[correct]{$(-\infty, -2)$}
+\choice{$(3, \infty)$}
+\choice[correct]{$(-3, 3)$}
+\choice{$(-\infty, -3)$}
 \end{selectAll}
 
 Where is $f(x)$ decreasing? Select all that apply.
@@ -722,44 +722,44 @@ Where is $f(x)$ decreasing? Select all that apply.
 \begin{selectAll}
 \choice{$(0, \infty)$}
 \choice{$(-\infty, 0)$}
-\choice{$(-\infty, \infty)$}
-\choice[correct]{$(-2, 2)$}
-\choice{$(2, \infty)$}
+\choice[correct]{$(-\infty, -3)$}
+\choice{$(-3,3)$}
+\choice[correct]{$(3, \infty)$}
 \end{selectAll}
 
 
 Describe the local extremes of $f(x)$. Select all that apply.
 \begin{selectAll}
-\choice[correct]{local maximum at $x = -2$}
-\choice{local maximum at $x = 2$}
+\choice{local maximum at $x = -3$}
+\choice[correct]{local maximum at $x = 3$}
 \choice{local minimum at $x = 0$}
-\choice{local minimum at $x = -2$}
-\choice[correct]{local minimum at $x = 2$}
+\choice[correct]{local mainimum at $x = -3$}
+\choice{local minimum at $x = 3$}
 \end{selectAll}
 
 Where is $f(x)$ concave up? Select all that apply.
 \begin{selectAll}
-\choice[correct]{$(0, \infty)$}
-\choice{$(-\infty, 0)$}
+\choice{$(0, \infty)$}
+\choice[correct]{$(-\infty, 0)$}
 \choice{$(-\infty, \infty)$}
-\choice{$(-2, 2)$}
-\choice{$(2, \infty)$}
+\choice{$(-3, 3)$}
+\choice{$(3, \infty)$}
 \end{selectAll}
 
 
 Where is $f(x)$ concave down? Select all that apply.
 \begin{selectAll}
-\choice{$(0, \infty)$}
-\choice[correct]{$(-\infty, 0)$}
+\choice[correct]{$(0, \infty)$}
+\choice{$(-\infty, 0)$}
 \choice{$(-\infty, \infty)$}
-\choice{$(-2, 2)$}
-\choice{$(2, \infty)$}
+\choice{$(-3, 3)$}
+\choice{$(3, \infty)$}
 \end{selectAll}
 
 
 Where are the inflection points of $f(x)$? Select all that apply.
 \begin{selectAll}
-\choice[correct]{inflection point at $x = -2$}
+\choice{inflection point at $x = -2$}
 \choice[correct]{inflection point at $x = 0$}
 \choice{inflection point at $x = 2$}
 \choice{no inflection points}
