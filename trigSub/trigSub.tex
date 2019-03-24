@@ -752,6 +752,52 @@ From the triangle above, we can see that $\sin(\theta) = \frac{\sqrt{9x^2-4}}{3x
 
 \end{example}
 
+\begin{problem}(problem 7)
+Compute the indefinite integral
+\[
+\int \frac{1}{x^2\sqrt{25x^2-16}} \; dx
+\]
+
+
+Use a trigonometric substitution with\\
+\[
+x = \answer{4/5 \sec(\theta)} \;\; dx = \answer{4/5 \sec(\theta)\tan(\theta)} \; d\theta
+\]
+Substituting these and simplifying the integrand gives\\
+$\displaystyle{\int  \frac{1}{x^2 \sqrt{ 25x^2 -16}}\; dx =}$\\
+\begin{multipleChoice}
+\choice{$\displaystyle{\frac{5}{4}\int \cos(\theta) \; d\theta}$}
+\choice[correct]{$\displaystyle{\frac{5}{16}\int \cos(\theta) \; d\theta}$}
+\choice{$\displaystyle{\frac{16}{5}\int \cos(\theta) \; d\theta}$}
+\end{multipleChoice}
+
+Computing this integral gives
+\[
+\int \cos(\theta) \; d\theta = \answer{\sin(\theta) } + C.
+\]
+Based on the substitution $x = \frac45\sec(\theta)$, \\
+\[
+\sin(\theta) = \answer{\sqrt{25x^2 -16}/5x}
+\]
+The final answer is
+\[
+\int   \frac{1}{x^2\sqrt{25x^2-16}} \; dx = 
+\]
+
+%16/3 (sqrt )^3 + 1/5 (sqrt )^5
+\begin{center}
+\begin{multipleChoice}
+\choice{$\frac{16\sqrt{25x^2 - 16}}{5x} + C$}
+\choice{$\frac{5\sqrt{25x^2 - 16}}{16x} + C$}
+\choice{$\frac{\sqrt{25x^2 - 16}}{5x} + C$}
+\choice[correct]{$\frac{\sqrt{25x^2 - 16}}{16x} + C$}
+\end{multipleChoice}
+\end{center}
+
+
+\end{problem}
+
+
 
 \begin{example}[example 8]
 Compute the indefinite integral
@@ -807,13 +853,55 @@ From the triangle above, we can see that $\sin(\theta) = \frac{\sqrt{x^2-25}}{x}
 
 
 \begin{problem}(problem 8)
-Compute the following indefinite integrals:
-\begin{itemize}
+Compute the indefinite integral
+\[
+\int \frac{1}{x^3\sqrt{x^2-1}} \; dx
+\]
+Use a trigonometric substitution with\\
+\[
+x = \answer{\sec(\theta)} \;\; dx = \answer{ \sec(\theta)\tan(\theta)} \; d\theta
+\]
+Substituting these and simplifying the integrand gives\\
+$\displaystyle{\int  \frac{1}{x^3\sqrt{x^2-1}}\; dx =}$\\
+\begin{multipleChoice}
+\choice[correct]{$\displaystyle{\int \cos^2(\theta) \; d\theta}$}
+\choice{$\displaystyle{\int \cos^3(\theta) \; d\theta}$}
+\choice{$\displaystyle{\int \cos(\theta) \; d\theta}$}
+\end{multipleChoice}
 
-\item $\displaystyle{\int \frac{1}{x\sqrt{4x^2 - 1}}\; dx}$
-\item $\displaystyle{\int \frac{1}{x^2\sqrt{25x^2-16}} \; dx}$
-\item $\displaystyle{\int \frac{1}{x^3\sqrt{x^2-1}} \; dx}$
-\end{itemize}
+Computing this integral gives
+\begin{hint}
+use $\cos^2(\theta) = \frac12 + \frac12 \cos(2\theta)$
+\end{hint}
+
+\[
+\int \cos^2(\theta) \; d\theta = \answer{\frac12 \theta + \frac14 \sin(2\theta) } + C.
+\]
+
+Using the indentity, $\sin(2\theta) = 2\sin(\theta)\cos(\theta)$, we can rewrite this as
+
+\[
+\frac12 \theta + \frac12 \answer{\sin(\theta) \cos(\theta)} + C.
+\]
+
+Based on the substitution $x = \sec(\theta)$, \\
+\[
+\sin(\theta) = \answer{\sqrt{x^2 -1}/x} \;\; \text{and} \;\; \cos(\theta) = \answer{1/x}
+\]
+The final answer is
+\[
+\int   \frac{1}{x^3\sqrt{x^2-1}} \; dx = 
+\]
+
+\begin{center}
+\begin{multipleChoice}
+\choice{$ \sec^{-1}(x) + \frac{\sqrt{x^2 -1}}{2x^2}  + C$}
+\choice[correct]{$\frac12 \sec^{-1}(x) + \frac{\sqrt{x^2 -1}}{2x^2}  + C$}
+\choice{$\frac12 \sec^{-1}(x) + \frac{\sqrt{x^2 -1}}{x^2}  + C$}
+\choice{$\sec^{-1}(x) + \frac{\sqrt{x^2 -1}}{x^2}  + C$}
+\end{multipleChoice}
+\end{center}
+
 
 \end{problem}
 
