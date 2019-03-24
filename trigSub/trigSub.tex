@@ -606,6 +606,49 @@ From the triangle above, we can see that $\tan(\theta) = \frac{\sqrt{x^2-4}}{2}$
 
 
 
+\begin{problem}(problem 5)
+Compute the indefinite integral
+\[
+\int   x^3 \sqrt{x^2 - 16} \; dx
+\]
+Use a trigonometric substitution with\\
+\[
+x = \answer{4\sec(\theta)} \;\; dx = \answer{4\sec(\theta)\tan(\theta)} \; d\theta
+\]
+Substituting these and simplifying the integrand gives\\
+$\displaystyle{\int  x^3 \sqrt{ x^2 -16}\; dx =}$\\
+\begin{multipleChoice}
+\choice{$\displaystyle{64 \int \sec^4(\theta)\tan^2(\theta) \; d\theta}$}
+\choice[correct]{$\displaystyle{1024\int \sec^4(\theta)\tan^2(\theta) \; d\theta}$}
+\choice{$\displaystyle{16\int \sec^4(\theta)\tan^2(\theta) \; d\theta}$}
+\end{multipleChoice}
+
+Computing this integral gives
+\[
+\int \sec^4(\theta)\tan^2(\theta) \; d\theta = \answer{(1/3)\tan^3(\theta)+ (1/5)\tan^5(\theta) } + C.
+\]
+Based on the substitution $x = 4\sec(\theta)$, \\
+\[
+\tan(\theta) = \answer{\sqrt{x^2 -16}/4}
+\]
+The final answer is
+\[
+\int   x^3\sqrt{x^2 -16}\; dx = 
+\]
+
+%16/3 (sqrt )^3 + 1/5 (sqrt )^5
+\begin{center}
+\begin{multipleChoice}
+\choice{$\frac{1}{5}(x^2 -16)^{5/2} + \frac{1}{3}(x^2 -16)^{3/2} + C$}
+\choice{$\frac{16}{5}(x^2 -16)^{5/2} + \frac{16}{3}(x^2 -16)^{3/2} + C$}
+\choice{$\frac{16}{5}(x^2 -16)^{5/2} + \frac{1}{3}(x^2 -16)^{3/2} + C$}
+\choice[correct]{$\frac{1}{5}(16-x^2)^{5/2} + \frac{16}{3}(16 -x^2)^{3/2} + C$}
+\end{multipleChoice}
+\end{center}
+
+
+\end{problem}
+
 
 
 
@@ -628,6 +671,38 @@ The integral becomes
 \end{align*}
 
 \end{example}
+
+
+
+\begin{problem}(problem 6)
+Compute the indefinite integral
+\[
+\int \frac{1}{x\sqrt{4x^2 - 1}}\; dx
+\]
+Use a trigonometric substitution with\\
+\[
+x = \answer{(1/2)\sec(\theta)} \;\; dx = \answer{(1/2)\sec(\theta)\tan(\theta)} \; d\theta
+\]
+Substituting these and simplifying the integrand gives\\
+\[
+\int  \frac{1}{x\sqrt{4x^2-1}} \; dx = \int \answer{1} \; d\theta
+\]
+
+
+
+Computing this integral gives
+\[
+\int 1 \; d\theta = \answer{\theta } + C.
+\]
+Based on the substitution $x = \frac12\sec(\theta)$, the final answer is
+
+\[
+\int   \frac{1}{x\sqrt{4x^2 - 1}}\; dx = \answer{\sec^{-1}(2x)} + C
+\]
+
+
+\end{problem}
+
 
 
 
@@ -734,7 +809,7 @@ From the triangle above, we can see that $\sin(\theta) = \frac{\sqrt{x^2-25}}{x}
 \begin{problem}(problem 8)
 Compute the following indefinite integrals:
 \begin{itemize}
-\item $\displaystyle{\int   x^3 \sqrt{x^2 - 9} \; dx}$
+
 \item $\displaystyle{\int \frac{1}{x\sqrt{4x^2 - 1}}\; dx}$
 \item $\displaystyle{\int \frac{1}{x^2\sqrt{25x^2-16}} \; dx}$
 \item $\displaystyle{\int \frac{1}{x^3\sqrt{x^2-1}} \; dx}$
