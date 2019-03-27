@@ -4,7 +4,7 @@
 
 \outcome{Determine if an infinite series diverges}
 
-\title{Test for Divergence}
+\title{3.2 Test for Divergence}
 
 \begin{document}
 
@@ -52,7 +52,7 @@ must approach zero. We now state this fact in its equivalent \textbf{contraposit
 It is important to recognize that if $\displaystyle{\lim_{n \to \infty} a_n = 0}$ then the series, $\displaystyle{\sum_{n=1}^\infty a_n}$, may either converge of diverge.
 \end{remark}
 
-\begin{example}
+\begin{example}[example 1]
 Consider the infinite series
 \[
 \sum_{n=1}^\infty \frac{n+1}{2n+3}.
@@ -63,6 +63,110 @@ The degree of the numerator and denominator of $a_n$ are equal (they are both on
 \]
 Since this limit is not zero, we can conclude that the series $\displaystyle{\sum_{n=1}^\infty \frac{n+1}{2n+3}}$ diverges by the Test for Divergence. 
 \end{example}
+
+\begin{problem}(problem 1a)
+Consider the infinite series
+
+\[
+\sum_{n=1}^\infty \frac{3n+2}{5n+1}
+\]
+The limit of its terms is
+\[
+\lim_{n\to \infty} \frac{3n+2}{5n+1} = \answer{3/5}
+\]
+By the test for divergence, the series
+\begin{multipleChoice}
+\choice{converges}
+\choice[correct]{diverges}
+\choice{no conclusion}
+\end{multipleChoice}
+
+\end{problem}
+
+
+
+\begin{problem}(problem 1b)
+Consider the infinite series
+
+\[
+\sum_{n=2}^\infty  \ln(n).
+\]
+
+\[
+\lim_{n\to \infty} \ln(n) = \answer{\infty}
+\]
+By the test for divergence, the series
+\begin{multipleChoice}
+\choice{converges}
+\choice[correct]{diverges}
+\choice{no conclusion}
+\end{multipleChoice}
+
+\end{problem}
+
+
+\begin{problem}(problem 1c)
+Consider the infinite series
+
+\[
+ \sum_{n=1}^\infty \sin(n).
+\]
+\begin{hint}
+type DNE if the limit does not exist
+\end{hint}
+\[
+\lim_{n\to \infty} \sin(n) = \answer{DNE}
+\]
+By the test for divergence, the series
+\begin{multipleChoice}
+\choice{converges}
+\choice[correct]{diverges}
+\choice{no conclusion}
+\end{multipleChoice}
+
+\end{problem}
+
+
+\begin{problem}(problem 1d)
+Consider the infinite series
+
+\[
+\sum_{n=1}^\infty \frac{n^2 + 1}{2n^2 + 3n + 5}.
+\]
+
+\[
+\lim_{n\to \infty} \frac{n^2 + 1}{2n^2 + 3n + 5} = \answer{1/2}
+\]
+By the test for divergence, the series
+\begin{multipleChoice}
+\choice{converges}
+\choice[correct]{diverges}
+\choice{no conclusion}
+\end{multipleChoice}
+
+\end{problem}
+
+
+\begin{problem}(problem 1e)
+Consider the infinite series
+
+\[
+\sum_{n=1}^\infty \sqrt[n] 2.
+\]
+
+\[
+\lim_{n\to \infty} \sqrt[n] 2 = 1
+\]
+By the test for divergence, the series
+\begin{multipleChoice}
+\choice{converges}
+\choice[correct]{diverges}
+\choice{no conclusion}
+\end{multipleChoice}
+
+\end{problem}
+
+
 
 \begin{example}
 Consider the infinite series
@@ -80,10 +184,96 @@ The Test for Divergence is \textbf{inconclusive} in this case.
 \end{example}
 
 
+\begin{problem}(problem 2a)
+Consider the infinite series
+
+\[
+\sum_{n=1}^\infty a_n = \sum_{n=1}^\infty \frac{3n+2}{5n^2+1}.
+\]
+
+\[
+\lim_{n\to \infty} \frac{3n+2}{5n^2+1} = \answer{0}
+\]
+By the test for divergence, the series
+\begin{multipleChoice}
+\choice{converges}
+\choice{diverges}
+\choice[correct]{no conclusion}
+\end{multipleChoice}
+
+\end{problem}
+
+
+\begin{problem}(problem 2b)
+Consider the infinite series
+
+\[
+\sum_{n=2}^\infty  \frac{1}{\ln(n)}.
+\]
+
+\[
+\lim_{n\to \infty} \frac{1}{\ln(n)} = \answer{0}
+\]
+By the test for divergence, the series
+\begin{multipleChoice}
+\choice{converges}
+\choice{diverges}
+\choice[correct]{no conclusion}
+\end{multipleChoice}
+
+\end{problem}
+
+
+
+
+\begin{problem}(problem 2c)
+Consider the infinite series
+
+\[
+\sum_{n=1}^\infty \frac{n^2 + 1}{2n^4 + 3n^2 + 5}.
+\]
+
+\[
+\lim_{n\to \infty} \frac{n^2 + 1}{2n^4 + 3n^2 + 5} = \answer{0}
+\]
+By the test for divergence, the series
+\begin{multipleChoice}
+\choice{converges}
+\choice{diverges}
+\choice[correct]{no conclusion}
+\end{multipleChoice}
+
+\end{problem}
+
+
+
+\begin{problem}(problem 2d)
+Consider the infinite series
+
+\[
+\sum_{n=1}^\infty \frac{1}{n!}.
+\]
+
+\[
+\lim_{n\to \infty} \frac{1}{n!} = \answer{0}
+\]
+By the test for divergence, the series
+\begin{multipleChoice}
+\choice{converges}
+\choice{diverges}
+\choice[correct]{no conclusion}
+\end{multipleChoice}
+
+\end{problem}
+
+
+\begin{remark}
+Note that the test for divergence can NEVER be used to conclude that an infinite series converges.
+\end{remark}
 
 
 \section{Proof of the Test for Divergence}
-To prove the Test for Divergence, we will show that if $\displaystyle{\sum_{n=1}^\infty a_n}$ converges, then the limit, 
+To prove the test for divergence, we will show that if $\displaystyle{\sum_{n=1}^\infty a_n}$ converges, then the limit, 
 $\displaystyle{\lim_{n \to \infty} a_n}$, must equal zero. The logic is then that if this limit is not zero, 
 the associated series cannot converge, and it therefore must diverge. We begin by considering the partial sums of the series, $S_N$.
 Since the series converges, the limit of the partial sums exists and equals a finite value, which we will call $L$.
