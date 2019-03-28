@@ -28,44 +28,87 @@ Consider the series
 The $N^{th}$ partial sum is given by
 
 \[
-\sum_{n=1}^N \frac{1}{n^2 +n} = \frac{1}{2} + \frac{1}{6} + \frac{1}{12} + \cdots + \frac{1}{N^2 - N} + \frac{1}{N^2 + N}
+S_N = \sum_{n=1}^N \frac{1}{n^2 +n} = \frac{1}{2} + \frac{1}{6} + \frac{1}{12} + \cdots + \frac{1}{N^2 - N} + \frac{1}{N^2 + N}
 \]
 Note that the second to last term above comes from letting $n = N-1$, so that in the denominator we have 
 \[
 n^2 + n = (N-1)^2 + (N-1) = N^2 - 2N + 1 + N - 1 = N^2 -N.
 \]
-There does not appear to be an easy way to express this partial sum without simply listing all of the terms in the sum.
-However, if we rewrite $\frac{1}{n^2 +n}$ using a partial fraction decomposition, we will see that the partial sum simplies greatly.
-We have
+There does not appear to be an easier way to express this partial sum.
+However, if we rewrite $\frac{1}{n^2 +n}$ using a partial fraction decomposition, we will see a nice formula for the partial sum.
+The decomposition is:
 \[
-\frac{1}{n^2 + n} = \frac{1}{n(n+1)} = \frac{A}{n} + \frac{B}{n+1}.
+\frac{1}{n^2 + n} = \frac{1}{n(n+1)} = \frac{A}{n} + \frac{B}{n+1}, 
 \]
-You can verify that $A = 1$ and $B=-1$, so that, in the end, we have
-\[
-\frac{1}{n^2 + n} = \frac{1}{n} - \frac{1}{n+1}.
-\]
-Using this form, we now rewrite the $N^{th}$ partial sum:
-\[
-\sum_{n=1}^N \frac{1}{n^2 +n} = \sum_{n=1}^N \left(\frac{1}{n}-\frac{1}{n+1}\right)
-\]
-\[
- = \left(\frac11 - \frac12 \right) + \left(\frac12 - \frac13 \right) + \left(\frac13 - \frac14 \right) + \cdots + 
- \left(\frac{1}{N-1} - \frac{1}{N} \right) +\left(\frac{1}{N} - \frac{1}{N+1} \right) 
-\]
-Looking carefully at the terms in this sum, we see lots of cancellation. For example, we see the terms $-\frac12$ and $+\frac12$.
-We also see both $-\frac13$ and $+\frac13$ as well as both $-\frac{1}{N}$ and $+\frac{1}{N}$. In fact, every fraction will cancel out
-except for the first and the last. The series collapses like an old-time telescope and the $N^{th}$ partial sum reduces to just
+with $A = 1$ and $B=-1$ (verify).
+Now rewrite the $N^{th}$ partial sum using this decomposition:
+\begin{align*}
+S_N = \sum_{n=1}^N \left(\frac{1}{n}-\frac{1}{n+1}\right)= \left(1  - \frac12 \right) &+ \left(\frac12 - \frac13 \right) + \left(\frac13 - \frac14 \right) + \cdots \\
+&+ \left(\frac{1}{N-1} - \frac{1}{N} \right) +\left(\frac{1}{N} - \frac{1}{N+1} \right) 
+\end{align*}
+Looking carefully at the terms in this sum, we see a lot of cancellation. The terms $-\frac12$ and $+\frac12$ cancel as do the pair
+ $-\frac13$ and $+\frac13$ and the pair $-\frac{1}{N}$ and $+\frac{1}{N}$. The only fractions that don't cancel are the first, $1$, and the last $-1/(N+1)$.
+ The series collapses like an old-time telescope and the $N^{th}$ partial sum is:
 \[
 S_N = \sum_{n=1}^N \frac{1}{n^2 +n} = 1 - \frac{1}{N+1}.
 \]
-Now, we can find the sum of the series by taking a limit:
+We can now find the sum of the series by taking a limit:
 \[
-\sum_{n=1}^\infty  \frac{1}{n^2 +n} = \lim_{N\to \infty} \sum_{n=1}^N  \frac{1}{n^2 +n} = \lim_{N\to \infty} \left(1 - \frac{1}{N+1}\right) = 1-0 = 1.
+S = \sum_{n=1}^\infty  \frac{1}{n^2 +n} = \lim_{N\to \infty} S_N = \lim_{N\to \infty} \left(1 - \frac{1}{N+1}\right) = 1.
 \]
 Thus, the series converges and its sum is 1.
 \end{example}
 
 
+
+
+\begin{example}[example 2]
+Consider the series
+\[
+\sum_{n=1}^\infty \frac{1}{n^2 +2n}
+\]
+
+We begin with a partial fraction decomposition:
+\[
+\frac{1}{n^2 + 2n} = \frac{1}{n(n+2)} = \frac{A}{n} + \frac{B}{n+2}
+\]
+with $A = 1/2$ and $B=-1/2$ (verify). Thus,
+\[
+\sum_{n=1}^\infty \frac{1}{n^2 + 2n}  = \frac12 \sum_{n=1}^\infty \left( \frac{1}{n} - \frac{1}{n+2} \right)
+\]
+Using the telescoping form, we can find $S_N$:
+\begin{align*}
+ \frac12 \sum_{n=1}^N  \left(\frac{1}{n}-\frac{1}{n+2}\right) &= \frac12 \Bigg[\left(1 - \frac13 \right) + \left(\frac12 - \frac14 \right) 
+ + \left(\frac13 - \frac15 \right) + \cdots \\
+ & + \left(\frac{1}{N-2} - \frac{1}{N} \right) +\left(\frac{1}{N-1} - \frac{1}{N+1} \right) +\left(\frac{1}{N} - \frac{1}{N+2} \right) \Bigg]
+\end{align*}
+
+Observe that the first negative term is $-1/3$ and the last positive term is $1/N$. This means that the first two positive terms, 
+$1$ and $1/2$ and the last two negative terms, $-1/(N+1)$ 
+and $-1/(N+2)$  will survive the cancellation:
+\[
+S_N = \frac12 \left[ 1 + \frac12 - \frac{1}{N+1} - \frac{1}{N+2}\right]
+\]
+We can now find the sum of the series as a limit of its partial sums:
+\[
+S  = \lim_{N\to \infty} S_N = \frac12 \left[1 + \frac12 - 0- 0\right] =  \frac34
+\]
+Thus, the series converges and its sum is 3/4.
+\end{example}
+
+
+
+\begin{problem}
+Write each series as a telescoping sum, find a formula for $S_N$, and find the sum of the series (if it converges).
+\begin{itemize}
+\item[1)] $\displaystyle{\sum_{n=0}^\infty \frac{1}{n^2 + 3n + 2}   }$
+\item[2)] $\displaystyle{\sum_{n=2}^\infty \frac{1}{n^2 - 1}    }$
+\item[3)] $\displaystyle{\sum_{n=0}^\infty \frac{1}{n^2 + 4n + 3}    }$
+\item[4)] $\displaystyle{\sum_{n=2}^\infty  \ln\left(1 + \frac{1}{n}\right)  }$ (Hint: $\ln(u/v) = \ln(u) - \ln(v)$)
+\item[5)] $\displaystyle{\sum_{n=1}^\infty  \frac{1}{\sqrt n + \sqrt{n+1}}  }$ (Hint: multiply by the conjugate radical)
+\item[6)] $\displaystyle{\sum_{n=0}^\infty  (-1)^n  }$ (Hint: consider $S_N$ when $N$ is even and when $N$ is odd)
+\end{itemize}
+\end{problem}
 
 \end{document}
 
