@@ -16,59 +16,54 @@ We determine the convergence or divergence of a Telescoping Series.
 
 \section{Telescoping Series}
 
-We will find the average value of a function on an interval 
-and find the value(s) of $x$ for which the function equals the 
-average (MVT for Integrals).
+A telescoping series is a special type of series whose terms cancel each out in such a way that it is relatively easy to determine the
+exact value of its partial sums. Creating the telescoping effect frequently involves a partial fraction decomposition.
 
-\begin{theorem} Mean Value Theorem for Integrals 
+\begin{example}[example 1]
+Consider the series
 \[
-If
+\sum_{n=1}^\infty \frac{1}{n^2 +n}
 \]
-\end{theorem}
 
+The $N^{th}$ partial sum is given by
 
-
-
-
-
-\begin{example} %example #1
-Find the average...
- \[
-  f(x) = 
-  \]
+\[
+\sum_{n=1}^N \frac{1}{n^2 +n} = \frac{1}{2} + \frac{1}{6} + \frac{1}{12} + \cdots + \frac{1}{N^2 - N} + \frac{1}{N^2 + N}
+\]
+Note that the second to last term above comes from letting $n = N-1$, so that in the denominator we have 
+\[
+n^2 + n = (N-1)^2 + (N-1) = N^2 - 2N + 1 + N - 1 = N^2 -N.
+\]
+There does not appear to be an easy way to express this partial sum without simply listing all of the terms in the sum.
+However, if we rewrite $\frac{1}{n^2 +n}$ using a partial fraction decomposition, we will see that the partial sum simplies greatly.
+We have
+\[
+\frac{1}{n^2 + n} = \frac{1}{n(n+1)} = \frac{A}{n} + \frac{B}{n+1}.
+\]
+You can verify that $A = 1$ and $B=-1$, so that, in the end, we have
+\[
+\frac{1}{n^2 + n} = \frac{1}{n} - \frac{1}{n+1}.
+\]
+Using this form, we now rewrite the $N^{th}$ partial sum:
+\[
+\sum_{n=1}^N \frac{1}{n^2 +n} = \sum_{n=1}^N \left(\frac{1}{n}-\frac{1}{n+1}\right)
+\]
+\[
+ = \left(\frac11 - \frac12 \right) + \left(\frac12 - \frac13 \right) + \left(\frac13 - \frac14 \right) + \cdots + 
+ \left(\frac{1}{N-1} - \frac{1}{N} \right) +\left(\frac{1}{N} - \frac{1}{N+1} \right) 
+\]
+Looking carefully at the terms in this sum, we see lots of cancellation. For example, we see the terms $-\frac12$ and $+\frac12$.
+We also see both $-\frac13$ and $+\frac13$ as well as both $-\frac{1}{N}$ and $+\frac{1}{N}$. In fact, every fraction will cancel out
+except for the first and the last. The series collapses like an old-time telescope and the $N^{th}$ partial sum reduces to just
+\[
+S_N = \sum_{n=1}^N \frac{1}{n^2 +n} = 1 - \frac{1}{N+1}.
+\]
+Now, we can find the sum of the series by taking a limit:
+\[
+\sum_{n=1}^\infty  \frac{1}{n^2 +n} = \lim_{N\to \infty} \sum_{n=1}^N  \frac{1}{n^2 +n} = \lim_{N\to \infty} \left(1 - \frac{1}{N+1}\right) = 1-0 = 1.
+\]
+Thus, the series converges and its sum is 1.
 \end{example}
-
-\begin{center}
-\begin{foldable}
-\unfoldable{Here is a video of Example 1}
-%\youtube{Yy6QXnFlnXs} %vid of example 1
-\end{foldable}
-\end{center}
-
-
-\begin{problem} %problem #1
-  Find the average...
-  \[
-  f(x)
-  \]
-    \begin{hint}
-      compute a definite integral
-    \end{hint}
-    
-		
-		The average value is
-		 $\answer[given]{0}$
-\end{problem}
-
-
-\begin{center}
-\begin{foldable}
-\unfoldable{Here is a detailed, lecture style video on average value:}
-\youtube{gRJTe1i1muo}
-\end{foldable}
-\end{center}
-
-
 
 
 
