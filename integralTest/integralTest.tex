@@ -37,16 +37,29 @@ It is sufficient for the function to be decreasing eventually, i.e., on an inter
 for some number $a$.
 \end{remark}
 
+
+The ratioanl for the integral test is that the sum of an infinite series can be interpretred as an area problem in the sense of integral calculus.
+Since each term in the sum represents the area of area a rectangle of unit width, 
+it stands to reason that we can use the comaprison theorem of improper integrals that can be roughly 
+summarized as "less than convergent is convergent and greater than divergent is divergent". The two figures below show that if 
+the function $f(x)$ and terms $a_n$ are in accord, then we can use the behavior of the integral to make conclusions about the behavior of the series.
+
 \begin{center}
 \begin{tikzpicture}
 
 \begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, xtick={1, 2, 3, 4, 5, 6},
 xmin=0, xmax = 6.5, ymax = 1.3,legend pos= north east,
 xticklabels={1, 2, 3, 4, 5, 6}, ymin = 0, ytick={1/4, 1/3, 1/2, 1}, yticklabels={$a_4$, $a_3$, $a_2$, $a_1$}, 
-title={\begin{tabular} {c}The area of each rectangle is $a_n$ and \\ 
-$\displaystyle{\int_1^\infty f(x) dx < \sum_{n=1}^\infty a_n}$\end{tabular}}]
+title={
+\begin{tabular} {c} 
+If the improper integral $\displaystyle{\int_1^\infty f(x) \, dx}$ diverges, \\
+then so does the associated series  $\displaystyle{\sum_{n=1}^\infty a_n}$ 
+\end{tabular}  
+}]
+%title={\begin{tabular} {c}The area of each rectangle is $a_n$ and \\ 
+%$\displaystyle{\int_1^\infty f(x) dx < \sum_{n=1}^\infty a_n}$\end{tabular}}]
 
-\addplot[domain=1:6, color=blue, thick]{1/x};
+\addplot+[fill][mark=none, domain=1:6, color=blue, thick, fill=blue!25]{1/x} \closedcycle;
 
 \addplot[mark=*,cyan] coordinates {(1,1)};
 
@@ -60,20 +73,34 @@ $\displaystyle{\int_1^\infty f(x) dx < \sum_{n=1}^\infty a_n}$\end{tabular}}]
 \addplot[thick, cyan] coordinates{(1, 0) (1, 1) (2,1) (2,0)};
 \addplot[thick, cyan] coordinates{ (2,1/2) (3, 1/2)  (3,0)};
 \addplot[thick, cyan] coordinates{(3, 1/3) (4, 1/3)  (4,0)};
-\addplot[thick, cyan] coordinates{(4, 1/4) (5, 1/4)  (5,0)};
+\addplot[thick, cyan] coordinates{(4,0) (4, 1/4) (5, 1/4)  (5,0)};
 \addplot[thick, cyan] coordinates{(5, 1/5) (6, 1/5)  (6,0)};
 \end{axis}
 \end{tikzpicture}
 \hspace{.51 in}
 \begin{tikzpicture}
 
-\begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, xtick={1, 2, 3, 4, 5, 6},
-xmin=0, xmax = 6.5, ymax = 1.3,legend pos= north east,
+\begin{axis}
+[
+axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, xtick={1, 2, 3, 4, 5, 6},
+xmin=0, xmax = 6.5, ymax = 1.3, legend pos= north east,
 xticklabels={1, 2, 3, 4, 5, 6}, ymin = 0, ytick={1/4, 1/3, 1/2, 1}, yticklabels={$a_4$, $a_3$, $a_2$, $a_1$}, 
-title={\begin{tabular} {c}The area of each rectangle is $a_n$ and \\ 
-$\displaystyle{\int_1^\infty f(x) dx > \sum_{n=2}^\infty a_n}$\end{tabular}}]
+title={
+\begin{tabular} {c} 
+If the improper integral $\displaystyle{\int_1^\infty f(x) \, dx}$ converges, \\
+then so does the associated series  $\displaystyle{\sum_{n=2}^\infty a_n}$ 
+\end{tabular}  
+}
+]
 
-\addplot[domain=1:6, color=blue, thick]{1/x};
+
+%title={\begin{tabular} {c} The area of each rectangle is $a_n$ and \\ 
+%$\displaystyle{ \int_1^\infty f(x) dx > \sum_{n=2}^\infty a_n}$\end{tabular}}]
+
+\addplot[domain=1:6, color=blue, thick,name path=f, ]{1/x};
+fill between[
+        of=f and axis,
+    ];
 
 
 \addplot[mark=*,cyan] coordinates {(2,1/2)} ;
@@ -85,12 +112,12 @@ $\displaystyle{\int_1^\infty f(x) dx > \sum_{n=2}^\infty a_n}$\end{tabular}}]
 \addplot[mark=*,cyan] coordinates {(4,1/4)} ;
 \addplot[mark=*,cyan] coordinates {(5,1/5)} ;
 \addplot[mark=*,cyan] coordinates {(6,1/6)} ;
-\addplot[thick, cyan, dashed] coordinates{(0, 0) (0, 1) (1,1) (1,0)};
-\addplot[thick, cyan] coordinates{(1,0) (1,1/2) (2, 1/2)  (2,0)};
-\addplot[thick, cyan] coordinates{(2, 1/3) (3, 1/3)  (3,0)};
-\addplot[thick, cyan] coordinates{(3, 1/4) (4, 1/4)  (4,0)};
-\addplot[thick, cyan] coordinates{(4, 1/5) (5, 1/5)  (5,0)};
-\addplot[thick, cyan] coordinates{(5, 1/6) (6, 1/6)  (6,0)};
+\addplot[thick, cyan] coordinates{(0, 0) (0, 1) (1,1) (1,0)};
+\addplot[thick, cyan, fill=cyan!25!white] coordinates{(1,0) (1,1/2) (2, 1/2)  (2,0)};
+\addplot[thick, cyan, fill=cyan!25!white] coordinates{(2,0) (2, 1/3) (3, 1/3)  (3,0)};
+\addplot[thick, cyan, fill=cyan!25!white] coordinates{(3,0) (3, 1/4) (4, 1/4)  (4,0)};
+\addplot[thick, cyan, fill=cyan!25!white] coordinates{(4,0) (4, 1/5) (5, 1/5)  (5,0)};
+\addplot[thick, cyan, fill=cyan!25!white] coordinates{(5,0) (5, 1/6) (6, 1/6)  (6,0)};
 \end{axis}
 \end{tikzpicture}
 \end{center}
