@@ -125,21 +125,26 @@ fill between[
 \end{center}
 
 
-\begin{example}
+\begin{example}[example 1]
 Determine whether the series
 \[
 \sum_{n=0}^\infty \frac{1}{1+n^2}
 \]
 converges or diverges.\\
-Consider the function, $f(x) = \frac{1}{1+x^2}$, so that $a_n = f(n)$.
-This function is positive and continuous on the interval $(0, \infty)$.
-To see that the function is decreasing, we recall that if the derivative is negative then the function is decreasing.
-Using the Quotient Rule, we can see that the derivative is given by 
+Consider the function, 
+\[
+f(x) = \frac{1}{1+x^2}
+\]
+Note that $a_n = f(n)$.
+This function $f(x)$ is positive and continuous on the interval $(0, \infty)$.
+To check that $f(x)$ is decreasing, we need to verify that $f'(x) < 0$ on the interval $(0, \infty)$.
+recall that if the derivative is negative then the function is decreasing.
+By the quotient rule, 
 \[
 f'(x) = -\frac{2x}{(1+x^2)^2}.
 \]
-Since $f'(x)$ is negative on the interval $(0, \infty)$, the original function $f(x)$ is decreasing on that interval.
-Hence the conditions of the Integral Test are met and the behavior of the series is determined by the behavior of the improper integral:
+which is negative on the interval $(0, \infty)$. Thus $f(x)$ is decreasing on this interval.
+Having verified that the conditions of the Integral Test are met, we compute the improper integral:
 \begin{align*}
 \int_0^\infty \frac{1}{1+x^2} \; dx &= \lim_{b \to \infty} \int_0^b \frac{1}{1+x^2} \; dx\\
 &= \lim_{b \to \infty} \tan^{-1}(x) \bigg|_0^b \\
@@ -147,7 +152,7 @@ Hence the conditions of the Integral Test are met and the behavior of the series
 &= \lim_{b \to \infty} \left[\tan^{-1}(b)\right]\\
 &= \frac{\pi}{2}.
 \end{align*}
-We see that the improper integral converges. By the Integral Test, the associated infinite series
+The improper integral converges, so by the Integral Test, the associated infinite series
 \[
 \sum_{n=0}^\infty \frac{1}{1+n^2}
 \]
@@ -156,13 +161,89 @@ also converges.
 
 
 
-\begin{example}
+\begin{problem}(problem 1a)
+Use the integral test to determine whether the infinite series
+\[
+\sum_{n=1}^\infty \frac{1}{n^2}
+\]
+converges or diverges.\\
+
+Let $f(x) = \answer{ 1/x^2 }$\\
+
+Is $f(x)$ positive and continuous on the interval $(1, \infty)$? \wordChoice{\choice[correct]{Yes}
+\choice{No}}
+
+
+The derivative, $f'(x) = \answer{-2/x^3}$\\
+
+Is $f(x)$ decreasing on the interval $(1, \infty)$? \wordChoice{\choice[correct]{Yes}
+\choice{No}}
+
+
+Evaluate the improper integral: 
+\[
+ \int_1^\infty \frac{1}{x^2} \, dx = \answer{1}
+\]
+
+Does the infinite series
+\[
+\sum_{n=0}^\infty  \frac{1}{n^2}
+\]
+converge or diverge? \wordChoice{\choice[correct]{Converge}
+\choice{Diverge}}
+
+
+\end{problem}
+
+
+
+\begin{problem}(problem 1b)
+Use the integral test to determine whether the infinite series
+\[
+\sum_{n=0}^\infty \frac{1}{\sqrt{n+1}}
+\]
+converges or diverges.\\
+
+Let $f(x) = \answer{ 1/\sqrt{x+1} }$\\
+
+Is $f(x)$ positive and continuous on the interval $(0, \infty)$?\wordChoice{\choice[correct]{Yes}
+\choice{No}}\\
+
+
+The derivative, $f'(x) = \answer{-\frac12 (x+1)^{-3/2}}$\\
+
+Is $f(x)$ decreasing on the interval $(0, \infty)$? \wordChoice{\choice[correct]{Yes}
+\choice{No}}\\
+
+
+Evaluate the improper integral: 
+\[
+ \int_0^\infty \frac{1}{\sqrt{x+1}} \, dx = \answer{\infty}
+\]
+
+Does the infinite series
+\[
+\sum_{n=0}^\infty \frac{1}{\sqrt{n+1}}
+\]
+converge or diverge?\wordChoice{\choice{Converge}
+\choice[correct]{Diverge}}
+
+
+\end{problem}
+
+
+
+\begin{example}[example 2]
 Determine whether the series
 \[
 \sum_{n=2}^\infty \frac{\ln(n)}{n}
 \]
 converges or diverges.\\
-Consider the function, $f(x) = \frac{\ln(x)}{x}$, so that $a_n = f(n)$.
+Consider the function
+\[
+f(x) = \frac{\ln(x)}{x},
+\]
+so that $a_n = f(n)$.
 This function is positive and continuous on the interval $(2, \infty)$.
 To see that the function is decreasing, compute the derivative:
 \[
@@ -172,12 +253,12 @@ which is negative if $x > e$. Hence $f(x)$ is eventually decreasing and we can u
 
 \begin{align*}
 \int_2^\infty \frac{\ln(x)}{x} \; dx &= \lim_{t \to \infty} \int_2^t \frac{\ln(x)}{x} \; dx\\
-&= \lim_{t \to \infty} \int_{\ln(2)}^{\ln(t)} \frac{1}{u} \, du \;\; \left(\text{u-sub with $u = \ln(x), du = \frac{1}{x} dx$}\right)\\
-&= \lim_{t \to \infty} \ln|u| \bigg|_{\ln(2)}^{\ln(t)}\\
-&= \lim_{t \to \infty} \big(\ln|\ln(t)| - \ln|\ln 2|\big)\\
+&= \lim_{t \to \infty} \int_{\ln(2)}^{\ln(t)} u \, du \;\; \left(\text{u-sub with $u = \ln(x), du = \frac{1}{x} dx$}\right)\\
+&= \lim_{t \to \infty} \frac{u^2}{2} \bigg|_{\ln(2)}^{\ln(t)}\\
+&= \lim_{t \to \infty} \left(\ln^2(t) - \ln^2(2) \right)\\
 &= \infty.
 \end{align*}
-We see that the improper integral diverges. By the Integral Test, the associated infinite series
+The improper integral diverges, so by the Integral Test, the associated infinite series
 \[
 \sum_{n=2}^\infty \frac{\ln(n)}{n}
 \]
@@ -185,6 +266,74 @@ also diverges.
 \end{example}
 
 
+
+\begin{problem}(problem 2a)
+Use the integral test to determine whether the infinite series
+\[
+\sum_{n=2}^\infty \frac{1}{n\ln(n)}
+\]
+converges or diverges.\\
+
+Let $f(x) = \answer{1/(x\ln(x))}$\\
+
+Is $f(x)$ positive and continuous on the interval $(2, \infty)$?\wordChoice{\choice[correct]{Yes}
+\choice{No}}
+\\ %wordChoice?
+
+The derivative, $f'(x) = \answer{-\frac{1+\ln(x)}{x^2 \ln^2(x)}}$\\
+
+Is $f(x)$ decreasing on the interval $(2, \infty)$? \wordChoice{\choice[correct]{Yes}
+\choice{No}}\\
+
+Evaluate the improper integral: 
+\[
+ \int_2^\infty \frac{1}{x\ln(x)} = \answer{\infty}
+\]
+
+Does the infinite series
+\[
+\sum_{n=2}^\infty \frac{1}{n\ln(n)}
+\]
+converge or diverge? \wordChoice{\choice{Converge}
+\choice[correct]{Diverge}}
+
+
+\end{problem}
+
+
+
+\begin{problem}(problem 2b)
+Use the integral test to determine whether the infinite series
+\[
+\sum_{n=1}^\infty \frac{n}{e^n}
+\]
+converges or diverges.\\
+
+Let $f(x) = \answer{xe^{-x}}$\\
+
+Is $f(x)$ positive and continuous on the interval $(1, \infty)$?\wordChoice{\choice[correct]{Yes}
+\choice{No}}\\ %wordChoice?
+
+The derivative, $f'(x) = \answer{e^{-x}(1-x)}$\\
+
+Is $f(x)$ decreasing on the interval $(1, \infty)$? \wordChoice{\choice[correct]{Yes}
+\choice{No}}\\
+
+
+Evaluate the improper integral (hint, use integration by parts): 
+\[
+ \int_1^\infty \frac{x}{e^x} = \answer{2/e}
+\]
+
+Does the infinite series
+\[
+\sum_{n=2}^\infty \frac{n}{e^n}
+\]
+converge or diverge? \wordChoice{\choice[correct]{Converge}
+\choice{Diverge}}
+
+
+\end{problem}
 
 
 \begin{definition}[p-series]
@@ -214,6 +363,7 @@ converges if $p > 1$ and diverges if $p \leq 1$.
 \end{theorem}
 
 
+
 \section{Video Lesson}
 
 \begin{center}
@@ -225,12 +375,12 @@ converges if $p > 1$ and diverges if $p \leq 1$.
 
 
 
-\section{More Problems}
+
 
 
 
 \end{document}
-
+\section{More Problems}
 
 \begin{example} %example #15
 Find $h'(x)$ if $h(x) = x^{\sin(x)}$.\\
