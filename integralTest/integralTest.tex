@@ -22,7 +22,7 @@ suppose that the terms of an infinite series
 are given by the corresponding function values, i.e., $a_n = f(n)$. \\
 Then the improper integral
 \[
-\int_1^\infty f(x) \; dx.
+\int_1^\infty f(x) \; dx,
 \]
 and the associated infinite series
 \[
@@ -38,11 +38,11 @@ for some number $a$.
 \end{remark}
 
 
-The ratioanl for the integral test is that the sum of an infinite series can be interpretred as an area problem in the sense of integral calculus.
-Since each term in the sum represents the area of area a rectangle of unit width, 
-it stands to reason that we can use the comaprison theorem of improper integrals that can be roughly 
-summarized as "less than convergent is convergent and greater than divergent is divergent". The two figures below show that if 
-the function $f(x)$ and terms $a_n$ are in accord, then we can use the behavior of the integral to make conclusions about the behavior of the series.
+The rational for the integral test is that the sum of an infinite series can be interpreted as the areas under a graph.
+This is because each term in the sum represents the area of area a rectangle of unit width, 
+it stands to reason that we can use the comparison theorem of improper integrals: ``less than convergent is convergent and greater 
+than divergent is divergent". The two figures below show that if 
+the function $f(x)$ satisfies the hypotheses of the integral test and if  $a_n = f(n)$, then we can use the behavior of the integral to make conclusions about the behavior of the series.
 
 \begin{center}
 \begin{tikzpicture}
@@ -70,12 +70,14 @@ then so does the associated series  $\displaystyle{\sum_{n=1}^\infty a_n}$
 \addplot[mark=*,cyan] coordinates {(3,1/3)} ;
 \addplot[mark=*,cyan] coordinates {(4,1/4)} ;
 \addplot[mark=*,cyan] coordinates {(5,1/5)} ;
+\addplot[mark=*,cyan] coordinates {(6,1/6)} ;
 \addplot[thick, cyan] coordinates{(1, 0) (1, 1) (2,1) (2,0)};
 \addplot[thick, cyan] coordinates{ (2,1/2) (3, 1/2)  (3,0)};
 \addplot[thick, cyan] coordinates{(3, 1/3) (4, 1/3)  (4,0)};
 \addplot[thick, cyan] coordinates{(4,0) (4, 1/4) (5, 1/4)  (5,0)};
 \addplot[thick, cyan] coordinates{(5, 1/5) (6, 1/5)  (6,0)};
 \end{axis}
+\node at (3.5, -1) {Note that $a_n = f(n)$};	
 \end{tikzpicture}
 \hspace{.51 in}
 \begin{tikzpicture}
@@ -119,6 +121,7 @@ fill between[
 \addplot[thick, cyan, fill=cyan!25!white] coordinates{(4,0) (4, 1/5) (5, 1/5)  (5,0)};
 \addplot[thick, cyan, fill=cyan!25!white] coordinates{(5,0) (5, 1/6) (6, 1/6)  (6,0)};
 \end{axis}
+\node at (3.5, -1) {Note that $a_n = f(n)$};
 \end{tikzpicture}
 \end{center}
 
