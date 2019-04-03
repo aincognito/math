@@ -70,7 +70,18 @@ Find the average...
 
 
 
-
+\begin{tikzpicture}
+\node[inner sep=0pt] (bird) at (0,0)
+    {\includegraphics[width=.25\textwidth]{bird.jpg}};
+\node[inner sep=0pt] (spiral) at (5,0)
+    {\includegraphics[width=.25\textwidth]{spiral.jpg}};
+\node[inner sep=0pt] (taylor) at (5,-5)
+    {\includegraphics[width=1\textwidth]{taylor.png}};
+\draw[->,thick] (bird) -- (spiral.north west)
+    node[midway,fill=white] {bird};
+\draw[->,thick] (spiral.south west) -- (bird.south east)
+    node[midway,fill=white] {spiral};    
+\end{tikzpicture}
 
 \end{document}
 
