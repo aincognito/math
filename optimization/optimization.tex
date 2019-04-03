@@ -32,7 +32,7 @@ What dimensions will maximize the total area covered by the enclosure and what i
 Let $x$ be the length of the enclosure and $y$ the width.  The total area of the enclosure is then
 \[A= xy.\]
 This is called the {\it objective} function.
-To maximize the area, Farmer Bob should use all 2400 linear feet of fence.  Since there are two horizontal strips of length $x$ and three vertical strips of length $y$ (because of the partition), we get the {\it constraint} equation:
+To maximize the area, Farmer Bob should use all 2400 linear feet of fence.  Since there are two horizontal segments of length $x$ and three vertical segments of length $y$ (because of the partition), we get the {\it constraint} equation:
 \[2x+3y=2400.\]
 In the standard language of optimization, we can now state the problem as follows.
 
@@ -44,13 +44,18 @@ To find the maximum area, we need to eliminate one of the variables $x, y$ from 
 We use the constraint to do this.  Solve the constraint for either $x$ or $y$, whichever is easier.
 In this case, solving the constraint for $y$ gives
 \[y = 800 - \frac23 x.\]
-We now {\it substitute} this expression of $y$ into the objective function to get 
+We {\it substitute} this expression of $y$ into the objective function to get 
 \[A = xy = x(800 - \frac23 x) = 800x - \frac23 x^2.\]
-Now we can find the maximum area by finding the critical numbers:
+Now that our objective function is a function of a single variable, we can find its maximum by finding the critical numbers:
 \[A' = 800 - \frac43 x = 0 \]
 which yields
 \[x= 600 \,\mbox{ft.}\]
-Note that this gives a maximum since the graph of $A$ is a parabola that opens down.
+Note that this gives a maximum since the graph of $A$ is a parabola that opens down. 
+Alternatively, we can use the second derivative test to see that this is a max:
+\[
+A'' = -\frac43.
+\]
+Since, $A'' < 0$ at the critical number $x = 600$, $A$ has a local maximum there.
 To finish off the problem, we find $y$ by plugging $x = 600$ into the constraint, which we already solved for $y$:
 \[y = 800 - \frac23 x = 800 - \frac23(600) = 400 \,\mbox{ft.}\]
 Finally the maximum area of the enclosure is
@@ -323,7 +328,11 @@ Let $x$ be the length of the enclosure and $y$ the width. Because of the partiti
 \[F = 3x + 3y.\]
  This is our objective function. Since the area of the enclosure needs to be 1600 sq. ft., we have the constraint 
 \[xy = 1600.\]
-Solving the constraint for $y$ gives $y = 1600/x$.  Substituting this into the objective yields
+Solving the constraint for $y$ gives 
+\[
+y = 1600/x.
+\]
+  Substituting this into the objective yields
 \[F= 3x + 3y = 3x + 3\left(\frac{1600}{x}\right) = 3x + \frac{4800}{x}.\]
 The minimum value of $F$ occurs when $F' = 0$. Solving $F' = 0$ for $x$ gives
 \[F' = 3 - \frac{4800}{x^2} = 0\]
