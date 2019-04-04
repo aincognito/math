@@ -382,6 +382,39 @@ The improper integral
 \end{problem}
 
 
+
+\begin{example}[example 8]
+Compute the improper integral
+\[
+\int_0^\infty xe^{-x} \; dx
+\]
+We use integration by parts with $u = x$ and $dv = e^{-x} dx$ to obtain
+\begin{align*}
+\int_0^\infty xe^{-x} \; dx &= \lim_{b \to \infty} \int_0^b xe^{-x} \; dx\\
+                                 &= \lim_{b \to \infty}  \left[ -xe^{-x}\bigg|_0^b + \int_0^b e^{-x} \; dx \right]   \\
+                                 &= \lim_{b \to \infty}  -xe^{-x}- e^{-x}\bigg|_0^b  \\
+                                 &= \lim_{b \to \infty}  xe^{-x} + e^{-x}\bigg|_b^0  \\
+                                 &= \lim_{b \to \infty}  (0+1) - (be^{-b} + e^{-b})    \\
+                                 &=  1 - 0  \\
+                                 &= 1
+\end{align*}
+ Therefore, the improper integral converges.
+ \begin{remark}
+ L'Hopital's rule is used to compute the limit of $be^{-b}$:
+ \[
+ \lim_{b \to \infty} be^{-b} = \lim_{b \to \infty} \frac{b}{e^b} = \frac{\infty}{\infty}
+ \]
+ and now, by L'Hopital's rule, we get
+ \[
+ \lim_{b \to \infty} \frac{b}{e^b} = \lim_{b \to \infty} \frac{1}{e^b} = 0.
+ \]
+ \end{remark}
+ 
+ \end{example}
+
+           
+           
+
 \section{Doubly Improper Integrals}
 
 Doubly improper integrals have the form 
@@ -395,7 +428,7 @@ To compute a doubly improper integral, we let $a$ be any number (typically 0) an
 If either of these improper integrals diverges, then we say that the doubly improper integral diverges.
 Otherwise, we say that it converges.
 
-\begin{example}[example 8]
+\begin{example}[example 9]
 Compute the doubly improper integral
 \[
 \int_{-\infty}^\infty \frac{1}{1+x^2} \; dx
@@ -423,38 +456,7 @@ and so the double improper integral converges to $\pi$, i.e.
 \end{example}
 
 
-\section{More Problems}
-
-\begin{example}[example 9]
-Compute the improper integral
-\[
-\int_0^\infty xe^{-x} \; dx
-\]
-We use integration by parts with $u = x$ and $dv = e^{-x} dx$ to obtain
-\begin{align*}
-\int_0^\infty \tan(x) \; dx &= \lim_{b \to \infty} \int_0^b xe^{-x} \; dx\\
-                                 &= \lim_{b \to \infty}  \left[ -xe^{-x}\bigg|_0^b + \int_0^b e^{-x} \; dx \right]   \\
-                                 &= \lim_{b \to \infty}  -xe^{-x}- e^{-x}\bigg|_0^b  \\
-                                 &= \lim_{b \to \infty}  xe^{-x} + e^{-x}\bigg|_b^0  \\
-                                 &= \lim_{b \to \infty}  (0+1) - (be^{-b} + e^{-b})    \\
-                                 &=  1 - 0  \\
-                                 &= 1
-\end{align*}
- Therefore, the improper integral converges.
- \begin{remark}
- L'Hopital's rule is used to compute the limit of $be^{-b}$:
- \[
- \lim_{b \to \infty} be^{-b} = \lim_{b \to \infty} \frac{b}{e^b} = \frac{\infty}{\infty}
- \]
- and now, by L'Hopital's rule, we get
- \[
- \lim_{b \to \infty} \frac{b}{e^b} = \lim_{b \to \infty} \frac{1}{e^b} = 0.
- \]
- \end{remark}
- 
- \end{example}
-
-                               
+                    
 \begin{center}
 \begin{foldable}
 \unfoldable{Here is a detailed, lecture style video on improper integrals:}
