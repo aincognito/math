@@ -20,20 +20,21 @@ In this section we will determine whether an infinite series converges or diverg
 The idea behind this test is to determine if the given series is behaving similarly to a geometric series.
 For a geometric series, 
 \[
-\sum_{n=0}^\infty a_n = \sum_{n=0}^\infty ar^n,
+\sum_{n=0}^\infty ar^n,
 \]
-the $n^{th}$ root of the $n^{th}$ term approaches $r$ and $n \to \infty$ i.e., 
+the $n^{th}$ root of the $n^{th}$ term approaches $r$ as $n \to \infty$ i.e., 
 \[
-\lim_{n \to \infty} \left|\sqrt[n]{ar^n}\right| = \lim_{n \to \infty} \left|r\sqrt[n]{a}\right| = r,
-\]
-since for any number $a \neq 0$, 
-\[
-\lim_{n \to \infty}  \left|\sqrt[n]{a}\right| = 1.
+\lim_{n \to \infty} \sqrt[n]{\left|ar^n\right|} = \lim_{n \to \infty} \left|r\right| \cdot \left|a\right|^{1/n} = r\cdot a^0 = r.
 \]
 
+%since for any number $a \neq 0$, 
+%\[
+%\lim_{n \to \infty}  \left|\sqrt[n]{a}\right| = 1.
+%\]
 
-For a general series, if the limit of the $n^{th}$ root of the (absolute value of the) $n^{th}$ term
-approaches a value, $L$, then the series behaves like a geometric series with ratio equal to $L$.
+
+For a general series, if the limit of the $n^{th}$ root of the absolute value of the $n^{th}$ term
+approaches a value $L$ as $n \to \infty$, then the series behaves like a geometric series with ratio equal to $L$.
 We state this precisely in the following theorem.
 
 \begin{theorem}[Root Test]
@@ -64,7 +65,7 @@ Determine whether the series converges or diverges:
 
 By the Root Test,
 \[
-L =  \lim_{n \to \infty} \sqrt[n]{\left|\frac{n+ 2}{3n+1}\right|^n} = \lim_{n \to \infty} \frac{n+ 2}{3n+1} = \frac13.
+L =  \lim_{n \to \infty} \sqrt[n]{\left|\left(\frac{n+ 2}{3n+1}\right)^n\right|}=  \lim_{n \to \infty} \sqrt[n]{\left|\frac{n+ 2}{3n+1}\right|^n} = \lim_{n \to \infty} \frac{n+ 2}{3n+1} = \frac13.
 \]
 Since $L = 1/3 < 1$, the series converges.
 

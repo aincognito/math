@@ -16,60 +16,44 @@ We integrate power series term by term.
 
 \section{Integration of Power Series}
 
-We will find the average value of a function on an interval 
-and find the value(s) of $x$ for which the function equals the 
-average (MVT for Integrals).
 
-\begin{theorem} Mean Value Theorem for Integrals 
+Suppose that the power series 
 \[
-If
+\sum_{n=0}^\infty a_n x^n
 \]
-\end{theorem}
+converges for all $x$ in some open interval $I$. Then, on this interval, the power series has an anti-derivative which can be obtained by integrating term-by-term:
 
 
+\[
+\int \left( \sum_{n=0}^\infty a_n x^n \right) \, dx  = \sum_{n=0}^\infty  \int a_n x^n \, dx   
+= \sum_{n=0}^\infty   \frac{a_n}{n+1} x^{n+1} + C.
+\]
+In other words, the indefinite integral of a power series is computed term by term, as we would anti-differentiate a polynomial.
 
+\begin{example}
+The power series 
+\[
+\sum_{n=0}^\infty x^n
+\]
+converges on the interval $(-1, 1)$.
+On that interval, its anti-derivative is given by
+\[
+\int\left( \sum_{n=0}^\infty x^n \right) \, dx= \sum_{n=0}^\infty  \big(\int x^n \, dx\big) = \sum_{n=0}^\infty \frac{x^{n+1}}{n+1} + C.
+\]
 
-
-
-\begin{example} %example #1
-Find the average...
- \[
-  f(x) = 
-  \]
 \end{example}
 
-\begin{center}
-\begin{foldable}
-\unfoldable{Here is a video of Example 1}
-%\youtube{Yy6QXnFlnXs} %vid of example 1
-\end{foldable}
-\end{center}
 
 
-\begin{problem} %problem #1
-  Find the average...
-  \[
-  f(x)
-  \]
-    \begin{hint}
-      compute a definite integral
-    \end{hint}
-    
-		
-		The average value is
-		 $\answer[given]{0}$
+\begin{problem}(problem 1)
+Find the anti-derivatives of the following power series:
+\[
+\sum_{n=0}^\infty \frac{x^n}{n+1},\qquad \sum_{n=0}^\infty \frac{x^n}{2^n},
+\]
+\[
+ \sum_{n=0}^\infty \frac{x^n}{n!},\qquad \sum_{n=0}^\infty x^{2n}
+\]
 \end{problem}
-
-
-\begin{center}
-\begin{foldable}
-\unfoldable{Here is a detailed, lecture style video on average value:}
-\youtube{gRJTe1i1muo}
-\end{foldable}
-\end{center}
-
-
-
 
 
 \end{document}

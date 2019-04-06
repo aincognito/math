@@ -16,49 +16,52 @@ We differentiate power series term by term.
 
 
 
-We will find the average value of a function on an interval 
-and find the value(s) of $x$ for which the function equals the 
-average (MVT for Integrals).
-
-\begin{theorem} Mean Value Theorem for Integrals 
+Suppose that the power series 
 \[
-If
+\sum_{n=0}^\infty a_n x^n
 \]
-\end{theorem}
+converges for all $x$ in some open interval $I$. Then, on this interval, the power series represents a differentiable function and its derivative is given by 
+\[
+\frac{d}{dx} \left( \sum_{n=0}^\infty a_n x^n \right) = \sum_{n=0}^\infty  \frac{d}{dx}\big( a_n x^n \big)  
+= \sum_{n=1}^\infty   n\cdot a_n x^{n-1}.
+\]
+In other words, the derivative of a power series is a power series. and the derivative is computed term by term, as we would differentiate a polynomial.
 
-
-
-
-
-
-\begin{example} %example #1
-Find the average...
- \[
-  f(x) = 
-  \]
+\begin{example}
+The power series 
+\[
+\sum_{n=0}^\infty x^n
+\]
+converges on the interval $(-1, 1)$.
+On that interval, its derivative is given by
+\[
+\frac{d}{dx}\left( \sum_{n=0}^\infty x^n \right)= \sum_{n=0}^\infty \frac{d}{dx} \big(x^n\big) = \sum_{n=1}^\infty nx^{n-1}.
+\]
+We can re-index to rewrite this as
+\[
+\sum_{n=1}^\infty nx^{n-1} = \sum_{n=0}^\infty (n+1)x^n
+\]
 \end{example}
 
-\begin{center}
-\begin{foldable}
-\unfoldable{Here is a video of Example 1}
-%\youtube{Yy6QXnFlnXs} %vid of example 1
-\end{foldable}
-\end{center}
 
 
-\begin{problem} %problem #1
-  Find the average...
-  \[
-  f(x)
-  \]
-    \begin{hint}
-      compute a definite integral
-    \end{hint}
-    
-		
-		The average value is
-		 $\answer[given]{0}$
+\begin{problem}(problem 1)
+Find the derivatives of the following power series:
+\[
+\sum_{n=0}^\infty \frac{x^n}{n},\qquad \sum_{n=0}^\infty \frac{x^n}{2^n},
+\]
+\[
+ \sum_{n=0}^\infty \frac{x^n}{n!},\qquad \sum_{n=0}^\infty x^{2n}
+\]
 \end{problem}
+
+\end{document}
+
+
+
+
+
+
 
 
 \begin{center}
@@ -83,7 +86,7 @@ Find the average...
     node[midway,fill=white] {spiral};    
 \end{tikzpicture}
 
-\end{document}
+
 
 
 \begin{example} %example #15
