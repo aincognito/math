@@ -55,6 +55,19 @@ We can use the ratio test to verify that this representation converges for all $
 hence the representation is valid on the interval $(-\infty, \infty)$.
 \end{example}
 
+\begin{problem}(problem 1)
+Which of the following series converges to $e$?
+\begin{hint}
+Let $x = 1$ in the Maclaurin series for $e^x$
+\end{hint}
+
+\begin{multipleChoice}
+\choice{$ \frac12 + \frac16+ \frac{1}{24} + \dots$}
+\choice{$1 + \frac12 + \frac16+ \frac{1}{24} + \dots$}
+\choice[correct]{$1+ 1 + \frac12 + \frac16+ \frac{1}{24} + \dots$}
+\end{multipleChoice}
+\end{problem}
+
 We now turn to two examples of finding Maclauirin Series by making modifications to the previous example.
 
 \begin{example}[example 2] 
@@ -66,6 +79,24 @@ e^{-x} = \sum_{n=0}^\infty \frac{(-x)^n}{n!} = \sum_{n=0}^\infty (-1)^n \frac{x^
 This representation is valid on the interval $(-\infty, \infty)$.
 \end{example}
 
+\begin{problem}(problem 2a)
+Use the Maclaurin series for $e^x$ to find the maclaurin series for $e^{3x}$.
+\begin{multipleChoice}
+\choice[correct]{$\displaystyle{\sum_{n=0}^\infty \frac{3^n}{n!} x^n}$}
+\choice{$\displaystyle{\sum_{n=0}^\infty \frac{3x^n}{n!}}$}
+\choice{$\displaystyle{\sum_{n=1}^\infty \frac{3^n}{n!}}$}
+\end{multipleChoice}
+\end{problem}
+
+
+\begin{problem}(problem 2b)
+Use the Maclaurin series for $e^x$ to find the maclaurin series for $e^{-x^2}$.
+\begin{multipleChoice}
+\choice[correct]{$\displaystyle{\sum_{n=0}^\infty (-1)^n \frac{x^{2n}}{2n!} x^n}$}
+\choice{$\displaystyle{\sum_{n=0}^\infty (-1)^n \frac{x^{2n}}{n!}}$}
+\choice{$\displaystyle{\sum_{n=1}^\infty (-1)^n \frac{x^{2n}}{n!}}$}
+\end{multipleChoice}
+\end{problem}
 
 \begin{example}[example 3] 
 Find the Maclaurin Series representation of the function $f(x) = x^2 e^{2x}$.\\
@@ -75,6 +106,19 @@ x^2 e^{2x} = x^2\sum_{n=0}^\infty \frac{(2x)^n}{n!} = \sum_{n=0}^\infty x^2 \cdo
 \]
 This representation is valid on the interval $(-\infty, \infty)$.
 \end{example}
+
+
+
+
+\begin{problem}(problem 3)
+Use the Maclaurin series for $e^x$ to find the maclaurin series for $x^3e^{x/2}$.
+\begin{multipleChoice}
+\choice{$\displaystyle{\sum_{n=0}^\infty (-1)^n \frac{x^{3n}}{2^n n!}}$}
+\choice{$\displaystyle{\sum_{n=0}^\infty (-1)^n \frac{2^n x^{n+3}}{ n!}}$}
+\choice[correct]{$\displaystyle{\sum_{n=0}^\infty  \frac{x^{n+3}}{2^n n!}}$}
+\end{multipleChoice}
+\end{problem}
+
 
 
 \begin{example}[example 4 - the Maclaurin Series for $\sin(x)$] 
@@ -106,7 +150,7 @@ We can now write the Maclaurin Series representation as
 \]
 This can be writtien in summation notation as
 \[
-\sin(x) = \sum_{n=0}^\infty \frac{(-1)^{n+1}}{(2n+1)!}x^{2n+1}.
+\sin(x) = \sum_{n=0}^\infty (-1)^{n+1}\frac{x^{2n+1}}{(2n+1)!}.
 \]
 The ratio test can be used to verify that this representation is valid on the interval $(-\infty, \infty)$.
 \begin{remark}
@@ -121,7 +165,7 @@ We now consider an example of a Maclaurin Series obtained by making modification
 
 
 \begin{example}[example 5]
-Find the Maclaurin Series representation for the function $f(x) = x\sin(3x)$.\\
+Find the Maclaurin series representation for the function $f(x) = x\sin(3x)$.\\
 We will use the Maclaurin Series for $\sin(x)$ with $3x$ replacing $x$ and then multiply the result by $x$.
 This gives
 \[
@@ -130,6 +174,15 @@ x\sin(3x) = x \sum_{n=0}^\infty \frac{(-1)^{n+1}}{(2n+1)!}(3x)^{2n+1} = \sum_{n=
 This representation is valid in the interval $(-\infty, \infty)$.
 \end{example}
 
+
+\begin{problem}(problem 5)
+Use the Maclaurin Series for $\sin(x)$ to find the Maclaurin Series for $x^2 \sin(2x)$.
+\begin{multipleChoice}
+\choice[correct]{$\displaystyle{\sum_{n=0}^\infty (-1)^{n+1} \frac{x^{2n+3}}{(2n+1)!}}$}
+\choice{$\displaystyle{\sum_{n=0}^\infty (-1)^{n+1} \frac{x^{4n+2}}{(2n+1)!}}$}
+\choice{$\displaystyle{\sum_{n=0}^\infty (-1)^{n+1} \frac{x^{2n+2}}{(2n+1)!}}$}
+\end{multipleChoice}
+\end{problem}
 
 \begin{example}[example 6 - the Maclaurin Series for $\cos(x)$] 
 Find the Maclaurin Series representation for the function $f(x) = \cos(x)$.\\
