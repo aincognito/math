@@ -371,39 +371,27 @@ Going back to the original decomposition, we have
 \]
 Multiplying both sides of this equation by $x(x+1)^2$ gives
 \[
-3x-4 = A(x+1)^2 + B(x+1) + Cx.
+3x-4 = A(x+1)^2 + Bx(x+1) + Cx.
 \]
 Letting $x = -1$ will eliminate the $A$ and $B$ terms, allowing us to find $C$:
 \[
 -7 = C(-1),
 \]
-which implies that $C = 1/7$.  If we let $x = 0$ the $C$ term gets eliminated and we are left with:
+which implies that $C = 7$.  If we let $x = 0$ the $B$ and $C$ terms get eliminated and we are left with:
 \[
--4 = A + B.
+-4 = A .
 \]
-Choosing another $x$-value will leave us with another equation involving $A$ and $B$.  Since $C = 1/7$, choosing $x = 7$ yields
+Choosing another $x$-value will leave us with another equation involving $B$.  Since $A = -4$ and $C = 7$, choosing $x = 1$ yields
 \[
-17 = 64A + 8B + 1,
+-1 = 4A + 2B + C = -16 + 2B + 7,
 \]
-which can be written as 
-\[
-16 = 64A + 8B.
-\]
-Dividing this by 8 and then substituting $B = -A - 4$ (from the equation -4 = A + B), we can find $A$:
-\[
-2 = 8A + B = 8A + (-A-4) = 7A -4,
-\]
-which means $7A = 6$, or $A = 6/7$.
-Now that we know $A$, we can use $-4 = A + B$ to find $B$:
-\[
--4 = (6/7) + B,
-\]
-so that $B = -4 - (6/7) = -34/7$. The final answer is thus:
+and so $B = 4$.
+The final answer is thus:
 \[
 \int \frac{3x - 4}{x^3 + 2x^2 + x} \; dx = A\ln|x| + B\ln|x+1| - \frac{C}{x+1} + K.
 \]
 \[
-= \frac67\ln|x| -\frac{34}{7}\ln|x+1| - \frac{1}{7(x+1)} + C.
+= -4\ln|x| +4\ln|x+1| - \frac{7}{x+1} + C.
 \]
 
 \end{example}
