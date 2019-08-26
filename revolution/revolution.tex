@@ -20,8 +20,8 @@ to find the volume of such a solid.
 
 \begin{definition}[Solid of revolution] A \textbf{solid of revolution} is a solid obtained by revolving a region in the
  $xy-$ plane about a given line.  The line is referred to as the \textbf{axis of revolution}.
-
 \end{definition}
+
 Cylinders, cones and spheres are examples of familiar solids which are solids of revolution. 
 For simplicity, we will only consider horizontal and vertical lines for our axis of revolution.  
 Furthermore, we will assume that our region in the plane is bounded by functions of $x$.  
@@ -263,7 +263,7 @@ The definite integral that gives the volume of the cone is:\\
 \choice[correct]{$\displaystyle{V = \int_0^5 \pi \left(\frac35 x\right)^2\; dx}$}
 \end{multipleChoice}
 
-The volume of the cone is $V = \answer{15 \pi }$.
+The volume of the cone is: \; $V = \answer{15 \pi }$.
 
 
 
@@ -292,7 +292,7 @@ The definite integral that gives the volume of the cone is:\\
 \choice{$\displaystyle{V = \int_0^h \pi \left(\frac{r}{h}\right)x^2\; dx}$}
 \end{multipleChoice}
 
-The formula for the volume of cone is $V = \answer{\pi r^2 h/3}$.
+The formula for the volume of a cone is: \; $V = \answer{\pi r^2 h/3}$.
 
 \end{problem}
 
@@ -378,7 +378,7 @@ The definite integral that gives the volume of the sphere is:\\
 \choice{$\displaystyle{V = \int_{-3}^3  2\pi \left(\sqrt{9-x^2}\right)^2\; dx}$}
 \end{multipleChoice}
 
-The volume of the sphere is $V = \answer{36 \pi }$.
+The volume of the sphere is: \;  $V = \answer{36 \pi }$.
 
 
 \end{problem}
@@ -399,7 +399,7 @@ The definite integral that gives the volume of the sphere is:\\
 \choice{$\displaystyle{V = \int_{-r}^r  2\pi \left(\sqrt{r^2-x^2}\right)^2\; dx}$}
 \end{multipleChoice}
 
-The formula for the volume of a sphere with radius $r$ is $V = \answer{4/3 \pi r^3 }$.
+The formula for the volume of a sphere with radius $r$ is: \; $V = \answer{4/3 \pi r^3 }$.
 \end{problem}
 
 
@@ -526,11 +526,11 @@ The area of a washer with inner radius, $r$, and outer radius, $R$, is given by
 A = \pi(R^2 - r^2).
 \]
 
-%(INSERT FIGURE HERE)
+
 
 We now use this to calculuate volumes of solids of revolutions about the $x$-axis in which the region does not border the axis.
 
-\begin{example}[example 5] Find the volume of the solid obtained by revolving the region bounded by the graphs of 
+\begin{example}[example 4] Find the volume of the solid obtained by revolving the region bounded by the graphs of 
 $y = e^x, y = 3$, and $x = 0$ about the $x$-axis.\\
 First, note that the curves $y = e^x$ and $y = 3$ intersect at $x = \ln(3)$.
 
@@ -578,11 +578,11 @@ Revolving this individual segment about the $x$-axis yields a washer with inner 
 
 The area of this washer is then
 \[
-A_x = \pi (R^2 - r^2)  = \pi \left[3^2 - \left(e^x\right)^2\right]  = \pi \left(9 - e^{2x}\right) .
+A = \pi (R^2 - r^2)  = \pi \left[3^2 - \left(e^x\right)^2\right]  = \pi \left(9 - e^{2x}\right) .
 \]
-The volume of the solid can be otained by integrating $A_x$ as $x$ ranges from $0$ to $\ln 3$:
+The volume of the solid can be otained by integrating the area of a cross-section as $x$ ranges from $0$ to $\ln 3$:
 \[
-V = \int_0^{\ln 3} A_x \; dx  = \int_0^{\ln 3} \pi \left(9 - e^{2x}\right) \; dx 
+V = \int_a^b (area) \; dx  = \int_0^{\ln 3} \pi \left(9 - e^{2x}\right) \; dx 
 = \pi \left(9x - \frac{e^{2x}}{2}\right)\bigg|_0^{\ln 3} = \left(9\ln(3)-4\right)\pi.
 \]
 
@@ -591,7 +591,7 @@ V = \int_0^{\ln 3} A_x \; dx  = \int_0^{\ln 3} \pi \left(9 - e^{2x}\right) \; dx
 \end{example}
 
 
-\begin{example}[example 6] Find the volume of the solid obtained by revolving the region bounded by the graphs of 
+\begin{example}[example 5] Find the volume of the solid obtained by revolving the region bounded by the graphs of 
 $y = \sec(x), y =  2, x = 0$, and $x = \frac{\pi}{4}$ about the $x$-axis.\\
 We begin with a sketch of the region.
 
@@ -633,11 +633,11 @@ Revolving this individual segment about the $x$-axis yields a washer with inner 
 
 The area of this washer is then
 \[
-A_x = \pi (R^2 - r^2)  = \pi \left[2^2 - \sec^2(x)\right]  = \pi \left[4 - \sec^2(x)\right] .
+A = \pi (R^2 - r^2)  = \pi \left[2^2 - \sec^2(x)\right]  = \pi \left[4 - \sec^2(x)\right] .
 \]
-The volume of the solid can be otained by integrating $A_x$ as $x$ ranges from 0 to $\pi/4$:
+The volume of the solid can be otained by integrating the area of a cross-section as $x$ ranges from 0 to $\pi/4$:
 \[
-V = \int_0^{\pi/4} A_x \; dx  = \int_0^{\pi/4} \pi \left[4-\sec^2(x)\right] \; dx = \pi \left[4x - \tan(x)\right]\bigg|_0^{\pi/4} = \pi^2 - \pi.
+V = \int_a^b (area) \; dx  = \int_0^{\pi/4} \pi \left[4-\sec^2(x)\right] \; dx = \pi \left[4x - \tan(x)\right]\bigg|_0^{\pi/4} = \pi^2 - \pi.
 \]
 
 
@@ -647,12 +647,12 @@ V = \int_0^{\pi/4} A_x \; dx  = \int_0^{\pi/4} \pi \left[4-\sec^2(x)\right] \; d
 
 
 
-\begin{example}[example 7] Find the volume of the solid obtained by revolving the region bounded by the graphs of 
+\begin{example}[example 6] Find the volume of the solid obtained by revolving the region bounded by the graphs of 
 $y = x^2$ and $y = \sqrt x$ about the line $y = 1$.\\
 The points of intersection of the curves is:
 \[
-x^2 = \sqrt x \implies x = 0 \text{or} x=1\]
-Next we make a sketch of the region incl;uding a vertical segment at $x$ (see below).
+x^2 = \sqrt x \implies x = 0 \;\; \text{or} \;\; x=1\]
+Next we make a sketch of the region including a vertical segment at $x$ (see below).
 
 Revolving this vertical segment about the axis of revolution makes a washer.
 
@@ -662,7 +662,7 @@ A = \pi(R^2 -r^2),
 \]
 where 
 \[
-R = 1-x^2 \text{and} r = 1 - \sqrt x
+R = 1-x^2 \;\; \text{and} \;\; r = 1 - \sqrt x
 \]
 Squaring these radii gives
 \[
@@ -719,11 +719,11 @@ V = \pi \int_0^1 (x^4 -2x^2 - x + 2\sqrt x) \; dx = \pi \left(\frac{x^5}{5} - \f
 \draw[thin, teal] (2,0.5) -- (2.3, 0.5); %inner radial line
 \filldraw[teal] (2.3, 0.5) circle(0.02) node at (2.4, 0.5) {$r$}; %endpoint of inner radial line
 
-\node[brown] at (3.1, 0.7) {$R = 1 - x^2$};
-\node[teal] at (3.1, 0.3) {$r =  1 - \sqrt x$};
+\node[brown] at (3.1, 0.7) {$R = 1 - x^2$};  %label outer radius
+\node[teal] at (3.1, 0.3) {$r =  1 - \sqrt x$}; %label inner radius
 
 \node at (-0.1, 1) {$1$};
-\node at (1.7, -0.4) {The region (left) and a typical washer (right)};
+\node at (1.7, -0.4) {The region (left) and a typical washer (right)}; %caption
 \end{tikzpicture}
 \end{image}
 
@@ -781,11 +781,11 @@ Revolving this individual segment about the $y$-axis yields a cylindrical shell 
 
 The surface area of this shell is:
 \[
-A_x = 2\pi rh  = 2\pi x(x^2)  = 2\pi x^3 .
+A = 2\pi rh  = 2\pi x(x^2)  = 2\pi x^3 .
 \]
-The volume of the solid can be otained by integrating $V_x$ as $x$ ranges from 0 to 1:
+The volume of the solid can be otained by integrating the area of the shells as $x$ ranges from 0 to 1:
 \[
-V = \int_0^1 A_x \; dx = \int_0^1 2\pi x^3 \; dx = 2\pi \frac{x^4}{4}\bigg|_0^1 = \frac{\pi}{2}.
+V = \int_a^b (area) \; dx = \int_0^1 2\pi x^3 \; dx = 2\pi \frac{x^4}{4}\bigg|_0^1 = \frac{\pi}{2}.
 \]
 
 
@@ -844,11 +844,11 @@ radius, $r = x$ and height, $h = 2 - \sqrt x$.
 
 The surface area of the shell is:
 \[
-A_x = 2\pi rh  = 2\pi x(2 - \sqrt x)  = 2\pi \left(2x - x^{3/2}\right) .
+A = 2\pi rh  = 2\pi x(2 - \sqrt x)  = 2\pi \left(2x - x^{3/2}\right) .
 \]
-The volume of the solid can be otained by integrating $A_x$ as $x$ ranges from 0 to 1:
+The volume of the solid can be otained by integrating the area of the shells as $x$ ranges from 0 to 1:
 \[
-V = \int_0^1 A_x \; dx = \int_0^1 2\pi \left(2x - x^{3/2}\right) \; dx = 2\pi \left(x^2 - \frac25 x^{5/2}\right)\bigg|_0^1 = \frac{6\pi}{5}.
+V = \int_a^b (area) \; dx = \int_0^1 2\pi \left(2x - x^{3/2}\right) \; dx = 2\pi \left(x^2 - \frac25 x^{5/2}\right)\bigg|_0^1 = \frac{6\pi}{5}.
 \]
 
 
@@ -856,6 +856,66 @@ V = \int_0^1 A_x \; dx = \int_0^1 2\pi \left(2x - x^{3/2}\right) \; dx = 2\pi \l
 \end{example}
 
 
+
+\begin{example}[example 9] Find the volume of the solid obtained by revolving the region bounded by the graphs of 
+$y = x-x^2$ and $y=0$ about the line $x = -1$.\\
+We begin with a sketch of the region.
+
+
+Note that the parabola $y=x-x^2$ crosses the $x$-axis at $x = 0$ and $x = 1$.
+To compute the volume of the resulting solid, fix a value of $x$ between 0 and 1 and consider a vertical segment in the region at this $x$-value.
+
+
+
+Revolving this individual segment about the line $x = -1$ yields a cylindrical shell with 
+radius, $r = x+1$ and height, $h = x-x^2$. 
+
+
+\begin{image}
+\begin{tikzpicture}
+\draw[scale= 2, <->] (0,1.3) -- (0,0) -- (1.3,0);
+\draw[scale=2, <-] (-1.3,0) -- (0,0);
+
+\draw[scale = 2, thick, domain=0:1,smooth,variable=\x,teal] plot ({\x},{\x - \x*\x}) node at (0.6, 0.9) {$y = x-x^2$}; %sketch of boundary curve
+%\draw[thick,teal]  (0, 4) -- (pi/2,4) node at (-0.5, 4) {$y = 2$};
+\draw[scale = 2, thick, brown] (0.6, 0) -- (0.6,0.24); %vertical slice
+%\draw[scale = 2, thick, gray] (1, 0) -- (1,1);
+\draw[scale = 2, thin] (0.6, 0.05) -- (0.6, -0.05) node[below] {$x$}; %x-tick with label
+\draw[scale = 2, thin] (1, 0.05) -- (1, -0.05) node[below] {$1$}; %x-tick with label
+\draw[teal] (4,0.72) ellipse (0.7 and 0.2);
+\draw[black] (4,0) ellipse (0.7 and 0.2);
+\draw[thin, ->] (4, 0) -- (4, 1.2);
+\filldraw (4,0) circle(0.04);
+\filldraw (4,0.72) circle(0.04);
+\draw[thick, brown] (3.3,0) -- (3.3, 0.72);
+\draw[thick, brown] (4.7,0) -- (4.7, 0.72) node at (4.9,0.45) {$h$};
+\filldraw[teal] (1.2,0.48) circle(0.04);
+\draw[thin, teal] (4,0.72) -- (4.5, 0.85);
+\filldraw[teal] (4.48,0.85) circle(0.04) node at (4.65, 1) {$r$};
+\node[teal] at (7, 0.75) {$r = x-(-1) = x+1$};
+\node[brown] at (7, 0.4) {$h =  x-x^2$};
+
+\node at (-1.3, 1.8) {$x = -1$}; %label axis of revolution
+\draw[scale = 2] (-1, -0.2) -- (-1, 1.2); %axis of revolution
+\draw [thin, ->] (-1.7,0.27) to[out=250,in=-90] (-2.3,0.3) to[out=90,in=150] (-1.7,0.35); %revolution indicator arrow
+%\draw[thin, <->] (0.1,0.3) arc (330:15:0.1);
+\end{tikzpicture}
+\end{image}
+
+
+
+The surface area of the shell is:
+\[
+A = 2\pi rh  = 2\pi (x+1)(x-x^2)  = 2\pi \left(x -x^3  \right)
+ .\]
+The volume of the solid can be obtained by integrating the area of the shells as $x$ ranges from 0 to 1:
+\[
+V = \int_a^b (area) \; dx = \int_0^1 2\pi \left(x - x^3\right) \; dx = 2\pi \left(\frac{x^2}{2} - \frac{x^4}{4}\right)\bigg|_0^1 = \frac{\pi}{2}.
+\]
+
+
+
+\end{example}
 
 
 \section{Problems}
@@ -933,7 +993,7 @@ The volume of the solid is $V = \answer{\pi/6}$.
 
 
 \begin{problem}(problem 3)
-Find the volume of the solid obtained by revolving the region bounded by the graphs of $y = 2/x, y = 0, x = 1$, and $x = 2$ about the $x$-axis.\\
+Find the volume of the solid obtained by revolving the region bounded by the graphs of $y = \frac{2}{x}, y = 0, x = 1$, and $x = 2$ about the $x$-axis.\\
 The method we will use is:
 \begin{multipleChoice}
 \choice[correct]{Disks}
@@ -1147,7 +1207,7 @@ The volume of the solid is $V = \answer{27\pi/4}$.
 
 
 \begin{problem}(problem 9)
-Find the volume of the solid obtained by revolving the region bounded by the graphs of $y = 1/x, y = \sqrt[4] x$ and $x = 16$ about the line $x = 16$.\\
+Find the volume of the solid obtained by revolving the region bounded by the graphs of $y = \frac{1}{x}, y = \sqrt[4] x$ \, and $x = 16$ about the line $x = 16$.\\
 The method we will use is:
 \begin{multipleChoice}
 \choice{Disks}
@@ -1397,4 +1457,3 @@ Computing this integral gives
 V = \pi \int_0^1 x \, dx = = \pi \frac{x^2}{2}\bigg|_0^1 = \frac{\pi}{2}. 
 \]
 \end{example}
-
