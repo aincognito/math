@@ -22,11 +22,11 @@ to find the volume of such a solid.
  $xy-$ plane about a given line.  The line is referred to as the \textbf{axis of revolution}.
 \end{definition}
 
-Cylinders, cones and spheres are examples of familiar solids which are solids of revolution. 
+Cylinders, cones and spheres are examples of well known solids which are solids of revolution. 
 For simplicity, we will only consider horizontal and vertical lines for our axis of revolution.  
 Furthermore, we will assume that our region in the plane is bounded by functions of $x$.  
 In the event that we have a region bounded by functions of $y$, we can interchange the 
-variables $x$ and $y$ throughout the problem to return to the more familiar stting of functions of $x$.
+variables $x$ and $y$ throughout the problem to conmvert the problem to the setting of functions of $x$.
 
 The main formulas we will need from geometry are the area of a disk, area of a washer and 
 the lateral surface area of a cylinder:
@@ -591,6 +591,30 @@ V = \int_a^b (area) \; dx  = \int_0^{\ln 3} \pi \left(9 - e^{2x}\right) \; dx
 \end{example}
 
 
+
+
+\begin{problem}(problem 4)
+Find the volume of the solid obtained by revolving the region between $y= \frac{1}{x}$ and $y = 1$ from $x = 1$ to $x = 2$ about the $x$-axis.
+
+
+The outer radius of the washer at $x$ is $R = \answer{1}$\\
+The inner radius of the washer at $x$ is $r = \answer{1/x}$\\
+
+We will integrate over the interval $\left(\answer{1},\answer{2}\right)$
+
+The definite integral that gives the volume of the solid is:\\
+\begin{multipleChoice}
+\choice[correct]{$\displaystyle{V = \int_{1}^2 \pi \left(1-\frac{1}{x^2}\right)\; dx}$}
+\choice{$\displaystyle{V = \int_{1}^2 \pi \left(1-\frac{1}{x}\right)\; dx}$}
+\choice{$\displaystyle{V = \int_{1}^2 \pi \left(1-\frac{2}{x} +\frac{1}{x^2}\right)\; dx}$}
+\end{multipleChoice}
+
+The volume of the solid is $V = \answer{\pi/2 }$.
+
+\end{problem}
+
+
+
 \begin{example}[example 5] Find the volume of the solid obtained by revolving the region bounded by the graphs of 
 $y = \sec(x), y =  2, x = 0$, and $x = \frac{\pi}{4}$ about the $x$-axis.\\
 We begin with a sketch of the region.
@@ -644,6 +668,27 @@ V = \int_a^b (area) \; dx  = \int_0^{\pi/4} \pi \left[4-\sec^2(x)\right] \; dx =
 
 \end{example}
 
+
+
+\begin{problem}(problem 5)
+Find the volume of the solid obtained by revolving the region between $y= \sqrt[3] x$ and $y = 1$ from $x = 0$ to $x = 1$ about the $x$-axis.
+
+
+The outer radius of the washer at $x$ is $R = \answer{1}$\\
+The inner radius of the washer at $x$ is $r = \answer{x^{1/3}}$\\
+
+We will integrate over the interval $\left(\answer{0},\answer{1}\right)$
+
+The definite integral that gives the volume of the solid is:\\
+\begin{multipleChoice}
+\choice{$\displaystyle{V = \int_{0}^1 \pi \left(1-x^{1/6}\right)\; dx}$}
+\choice{$\displaystyle{V = \int_{0}^1 \pi \left(1-x^{1/3}\right)\; dx}$}
+\choice[correct]{$\displaystyle{V = \int_{0}^1 \pi \left(1-x^{2/3}\right)\; dx}$}
+\end{multipleChoice}
+
+The volume of the solid is $V = \answer{2\pi/5 }$.
+
+\end{problem}
 
 
 
@@ -731,7 +776,25 @@ V = \pi \int_0^1 (x^4 -2x^2 - x + 2\sqrt x) \; dx = \pi \left(\frac{x^5}{5} - \f
 \end{example}
 
 
+\begin{problem}(problem 6)
+Find the volume of the solid obtained by revolving the region between $y= x$ and $y = x^2$ from $x = 0$ to $x = 1$ about the line $y = 1$.
 
+
+The outer radius of the washer at $x$ is $R = \answer{1-x^2}$\\
+The inner radius of the washer at $x$ is $r = \answer{1-x}$\\
+
+We will integrate over the interval $\left(\answer{0},\answer{1}\right)$
+
+The definite integral that gives the volume of the solid is:\\
+\begin{multipleChoice}
+\choice{$\displaystyle{V = \int_{0}^1 \pi \left(x^4 -x^2 + 2x\right)\; dx}$}
+\choice[correct]{$\displaystyle{V = \int_{0}^1 \pi \left(x^4 -3x^2 + 2x\right)\; dx}$}
+\choice{$\displaystyle{V = \int_{0}^1 \pi \left(x^4 -3x^2 - 2x\right)\; dx}$}
+\end{multipleChoice}
+
+The volume of the solid is $V = \answer{\pi/5 }$.
+
+\end{problem}
 
 \section{Cylindrical shells}
 
@@ -791,6 +854,28 @@ V = \int_a^b (area) \; dx = \int_0^1 2\pi x^3 \; dx = 2\pi \frac{x^4}{4}\bigg|_0
 
 
 \end{example}
+
+
+\begin{problem}(problem 7)
+Find the volume of the solid obtained by revolving the region between $y= x+1, y = 0, x = 0$ and $x = 1$ about the $y$-axis.
+
+
+The radius of the cylindrical shell at $x$ is $r = \answer{x}$\\
+The height of the cylindrical shell at $x$ is $h = \answer{x+1}$\\
+
+We will integrate over the interval $\left(\answer{0},\answer{1}\right)$
+
+The definite integral that gives the volume of the solid is:\\
+\begin{multipleChoice}
+\choice{$\displaystyle{V = 2\pi\int_{0}^1  \left(x^2 +1\right)\; dx}$}
+\choice[correct]{$\displaystyle{V = 2\pi\int_{0}^1  \left(x^2 +x\right)\; dx}$}
+\choice{$\displaystyle{V = \pi\int_{0}^1  \left(x^2 +x\right)\; dx}$}
+\end{multipleChoice}
+
+The volume of the solid is $V = \answer{5\pi/3 }$.
+
+\end{problem}
+
 
 
 \begin{example}[example 8] Find the volume of the solid obtained by revolving the region bounded by the graphs of $y = \sqrt x, y=2, x=0$, and $x = 1$ about the $y$-axis.\\
@@ -857,6 +942,28 @@ V = \int_a^b (area) \; dx = \int_0^1 2\pi \left(2x - x^{3/2}\right) \; dx = 2\pi
 
 
 
+\begin{problem}(problem 8)
+Find the volume of the solid obtained by revolving the region between $y= x$ and $y=x^2$ about the $y$-axis.
+
+
+The radius of the cylindrical shell at $x$ is $r = \answer{x}$\\
+The height of the cylindrical shell at $x$ is $h = \answer{x-x^2}$\\
+
+We will integrate over the interval $\left(\answer{0},\answer{1}\right)$
+
+The definite integral that gives the volume of the solid is:\\
+\begin{multipleChoice}
+\choice[correct]{$\displaystyle{V = 2\pi\int_{0}^1  \left(x^2 -x^3\right)\; dx}$}
+\choice{$\displaystyle{V = 2\pi\int_{0}^1  \left(x^2 +x^3\right)\; dx}$}
+\choice{$\displaystyle{V = 2\pi\int_{0}^1  \left(x^4 -x^6\right)\; dx}$}
+\end{multipleChoice}
+
+The volume of the solid is $V = \answer{\pi/6 }$.
+
+\end{problem}
+
+
+
 \begin{example}[example 9] Find the volume of the solid obtained by revolving the region bounded by the graphs of 
 $y = x-x^2$ and $y=0$ about the line $x = -1$.\\
 We begin with a sketch of the region.
@@ -918,10 +1025,39 @@ V = \int_a^b (area) \; dx = \int_0^1 2\pi \left(x - x^3\right) \; dx = 2\pi \lef
 \end{example}
 
 
-\section{Problems}
+\begin{problem}(problem 9)
+Find the volume of the solid obtained by revolving the region between $y= \frac{1}{x}, y = 0, x = 1$ and $x=2$ about the line $x = 1$.
 
 
-\begin{problem}(problem 1)
+The radius of the cylindrical shell at $x$ is $r = \answer{1/x}$\\
+The height of the cylindrical shell at $x$ is $h = \answer{x-1}$\\
+
+We will integrate over the interval $\left(\answer{1},\answer{2}\right)$
+
+The definite integral that gives the volume of the solid is:\\
+\begin{multipleChoice}
+\choice{$\displaystyle{V = 2\pi\int_{1}^2  \left(x - \frac{1}{x} \right)\; dx}$}
+\choice{$\displaystyle{V = 2\pi\int_{1}^2  \left(1 - \frac{x}{x} \right)\; dx}$}
+\choice[correct]{$\displaystyle{V = 2\pi\int_{1}^2  \left(1-\frac{1}{x}\right)\; dx}$}
+\end{multipleChoice}
+
+The volume of the solid is $V = \answer{2\pi(1-\ln(2)) }$.
+
+\end{problem}
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video on the method of washers and the method of cylindrical shells}
+\youtube{N1GtE5TCQBc} 
+\end{foldable}
+\end{center}
+
+
+
+\section{More Problems}
+
+
+\begin{problem}(problem 10)
 Find the volume of the solid obtained by revolving the region bounded by the graphs of $y = x$ and $y = \sqrt x$ about the line $x = -1$.\\
 The method we will use is:
 \begin{multipleChoice}
@@ -957,7 +1093,7 @@ The volume of the solid is $V = \answer{7\pi/15}$.
 
 
 
-\begin{problem}(problem 2)
+\begin{problem}(problem 11)
 Find the volume of the solid obtained by revolving the region bounded by the graphs of $y = x$ and $y = \sqrt x$ about the line $y = 1$.\\
 The method we will use is:
 \begin{multipleChoice}
@@ -992,7 +1128,7 @@ The volume of the solid is $V = \answer{\pi/6}$.
 
 
 
-\begin{problem}(problem 3)
+\begin{problem}(problem 12)
 Find the volume of the solid obtained by revolving the region bounded by the graphs of $y = \frac{2}{x}, y = 0, x = 1$, and $x = 2$ about the $x$-axis.\\
 The method we will use is:
 \begin{multipleChoice}
@@ -1027,7 +1163,7 @@ The volume of the solid is $V = \answer{2\pi}$.
 
 
 
-\begin{problem}(problem 4)
+\begin{problem}(problem 13)
 Find the volume of the solid obtained by revolving the region bounded by the graphs of $y = x^3, y = 0$, and $x = 1$ about the $x$-axis.\\
 The method we will use is:
 \begin{multipleChoice}
@@ -1061,7 +1197,7 @@ The volume of the solid is $V = \answer{\pi/7}$.
 
 
 
-\begin{problem}(problem 5)
+\begin{problem}(problem 14)
 Find the volume of the solid obtained by revolving the region bounded by the graphs of $y = x^2, y = 0, x = 0$ and $x = 2$ about the line $y = 4$.\\
 The method we will use is:
 \begin{multipleChoice}
@@ -1097,7 +1233,7 @@ The volume of the solid is $V = \answer{224\pi/15}$.
 
 
 
-\begin{problem}(problem 6)
+\begin{problem}(problem 15)
 Find the volume of the solid obtained by revolving the region bounded by the graphs of $y = 2e^x, y = 0, x = -1$, and $x = \ln 2$ about the $x$-axis.\\
 The method we will use is:
 \begin{multipleChoice}
@@ -1133,7 +1269,7 @@ The volume of the solid is $V = \answer{(8-2/{e^2})\pi}$.
 
 
 
-\begin{problem}(problem 7)
+\begin{problem}(problem 16)
 Find the volume of the solid obtained by revolving the region bounded by the graphs of $y = x^2$ and $y = x^3$ about the $y$-axis.\\
 The method we will use is:
 \begin{multipleChoice}
@@ -1170,7 +1306,7 @@ The volume of the solid is $V = \answer{\pi/10}$.
 
 
 
-\begin{problem}(problem 8)
+\begin{problem}(problem 17)
 Find the volume of the solid obtained by revolving the region bounded by the graphs of $y = x-1, y = 2- x$ and $x = 0$ about the line $y = -1$.\\
 The method we will use is:
 \begin{multipleChoice}
@@ -1206,8 +1342,8 @@ The volume of the solid is $V = \answer{27\pi/4}$.
 
 
 
-\begin{problem}(problem 9)
-Find the volume of the solid obtained by revolving the region bounded by the graphs of $y = \frac{1}{x}, y = \sqrt[4] x$ \, and $x = 16$ about the line $x = 16$.\\
+\begin{problem}(problem 19)
+Find the volume of the solid obtained by revolving the region bounded by the graphs of $y = \sqrt[4] x, y = 0$ \, and $x = 16$ about the line $x = 16$.\\
 The method we will use is:
 \begin{multipleChoice}
 \choice{Disks}
@@ -1223,18 +1359,18 @@ The formula associated with this method is:
 \end{multipleChoice}
 
 The left and right endpoints of integration are:\\
-$a = \answer{1}\;\;\;$ and $\;\;\; b = \answer{16}$.\\
+$a = \answer{0}\;\;\;$ and $\;\;\; b = \answer{16}$.\\
 The radius and height as functions of $x$ are:\\
-$r = \answer{16-x} \;\;\;$ and $\; h = \answer{\sqrt[4]{x} - 1/x}$.\\
+$r = \answer{16-x} \;\;\;$ and $\; h = \answer{\sqrt[4]{x} }$.\\
 
 The definite integral that represents the volume is given by:\\
 \begin{multipleChoice}
-\choice{$\displaystyle{V = \int_1^{16} 2\pi \left(-x^2 + x^{3/2} - x + x^{1/2}\right)\; dx}$}
-\choice[correct]{$\displaystyle{V = \int_1^{16} 2\pi \left(2x^{1/4} - \frac{2}{x} - x^{5/4} + 1\right)\; dx}$}
-\choice{$\displaystyle{V = \int_1^{16} 2\pi \left(-x^2 + x^{3/2} + x - x^{1/2}\right)\; dx}$}
+\choice{$\displaystyle{V = 2\pi\int_0^{16} \left(16x^{1/4} - x\right)\; dx}$}
+\choice[correct]{$\displaystyle{V = 2\pi\int_0^{16}  \left(16x^{1/4} - x^{5/4} \right)\; dx}$}
+\choice{$\displaystyle{V = 2\pi\int_0^{16}  \left(16x^{1/4} + x - 16x^{5/4}\right)\; dx}$}
 \end{multipleChoice}
 
-The volume of the solid is $V = \answer{(16622/45 - 32\ln(16))\pi}$.
+The volume of the solid is $V = \answer{8192\pi/45}$.
 
 \end{problem}
 
