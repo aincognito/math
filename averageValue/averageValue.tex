@@ -222,6 +222,42 @@ xticklabels={$a$, $c$, $b$, $x$}, title={Mean Value Theorem for Integrals}]
 \end{center}
 
 
+\section{Theoretical Justifications}
+
+In this section, we derive the formula for average value. Recall that we are trying to find the average value of a function, $f(x)$, over an interval, $[a,b]$.
+We begin by subdividing the interval $[a,b]$ into $n$ equal sub-intervals, each of length
+\[
+\Delta x = \frac{b-a}{n}.
+\]
+In each of these $n$ sub-intervals, we choose a sample point.  We denote the sample point in the $i$-th sub-interval by $x_i^*$.
+As an approximation to the average value of the function over the interval $[a,b]$ we take the average of the function values at the sample points:
+\[
+f_{ave} \approx \frac{f(x_1^*) + f(x_2^*)+ \cdots +f(x_n^*)}{n}
+\]
+This can be written in summation notation as 
+\[
+f_{ave} \approx \frac{1}{n} \sum_{i=1}^n f(x_i^*)
+\]
+Observing that equation in the definition of $\Delta x$ can be rewritten as 
+\[
+\frac{1}{n} = \frac{\Delta x}{b-a}
+\]
+This allows us to rewrite our approximation of $f_{ave}$ as
+\[
+f_{ave} \approx \frac{1}{n} \sum_{i=1}^n f(x_i^*) = \frac{\Delta x}{b-a} \sum_{i=1}^n f(x_i^*)
+\]
+Since $\Delta x$ is a constant, we can bring it inside the summation to write:
+\[
+f_{ave} \approx  \frac{1}{b-a} \sum_{i=1}^n f(x_i^*)\Delta x
+\]
+Finally, the approximation improves as the number of sample points, $n$, increases. Therefore, we define
+\[
+f_{ave} \equiv \lim_{n \to \infty} \frac{1}{b-a} \sum_{i=1}^n f(x_i^*)\Delta x
+\]
+which by the definition of the definite integral can be written as
+\[
+f_{ave} = \frac{1}{b-a} \int_a^b f(x) dx.
+\]
 
 
 
