@@ -22,15 +22,15 @@ analysis includes the position, velocity and acceleration of the particle.
 
 In this section we analyze the motion of a particle moving in a straight line. Our
 analysis includes the position, velocity and acceleration of the particle.
-We assume that the line is a horizontal number line with the origin in a fixed position, although, in some situations, 
-the line is more naturally placed vertically. We will consider the relationship between the position, 
+We assume that the line is either a horizontal or a vertical number line with the origin in a fixed position.
+We will consider the relationship between the position, 
 velocity and acceleration as functions of time using a rate of change perspective. \\
 Given a \textbf{position function}, $s(t)$, the \textbf{instantaneous velocity} of the particle at time $t$, 
 denoted $v(t)$, is the rate of change of position 
-with respect to time:
+with respect to time, i.e.:
 \[v(t) = s'(t).\]
-Similarly, the \textbf{instantaneous acceleration} of the particle at time $t, a(t)$, is the rate of change of 
-velocity with respect to time:
+Similarly, the \textbf{instantaneous acceleration} of the particle at time $t$, denoted $a(t)$, is the rate of change of 
+velocity with respect to time, i.e.:
 \[a(t) = v'(t).\]
 The connection between position and acceleration is thus:
 \[a(t) = s''(t).\]
@@ -40,19 +40,20 @@ The connection between position and acceleration is thus:
 
 
 \begin{example}[example 1]
-Suppose that the position of a particle in motion along a straight line is given by:
-\[s(t) = t^3 - 3t^2 + 2.\]
+The position  of a particle in motion along a straight line is given by:
+\[s(t) = t^3 - 3t^2 + 2,\]
+where $s$ is measured in feet and $t$ is measured in seconds.
 Find the initial position of the particle and the position at time $t = 2$ seconds.
-Then, use these to find the \textbf{displacement} of the particle during the first two seconds.\\
+Then, find the \textbf{displacement} of the particle during the first two seconds.\\
 
 The initial position is given by plugging $t=0$ into the position function: 
-\[s(0) = 0^3 -3(0)^2 + 2 = 2.\]
-Interpretation: assuming that the motion is taking place along a horizontal line,
+\[s(0) = 0^3 -3(0)^2 + 2 = 2 \text{ feet}.\]
+Assuming that the motion is taking place along a horizontal line,
 with the positive direction to the right and the negative direction to the left, then the initial position 
-of the particle is 2 units to the right of the origin.
-At time $t=2$ the particle is at position
-\[s(2) = 2^3 -3(2)^2 + 2 = 8 - 12 + 2 = -2,\]
-so that at time $t = 2$, the particle is 2 units to the left of the origin.
+of the particle is 2 feet to the right of the origin.
+At time $t=2$ seconds, the particle is at position
+\[s(2) = 2^3 -3(2)^2 + 2 = 8 - 12 + 2 = -2 \text{ feet},\]
+so that at time $t = 2$, the particle is 2 feet to the left of the origin.
 \begin{center}
 \begin{tikzpicture}
 \draw[<->] (-3,0) -- (3,0);
@@ -70,13 +71,14 @@ so that at time $t = 2$, the particle is 2 units to the left of the origin.
 \end{tikzpicture}
 \end{center}
 
-From this information, one might be tempted to conclude that the particle has traveled a distance  of 4 units
+From this information, one might be tempted to conclude that the particle has traveled a distance  of 4 feet
 during the time interval [0,2].  However, we cannot be certain that the particle did not change direction 
 during this time interval and so that conclusion might be false. 
-One thing that we can conclude at this point is that the displacement from 
+One thing that we can conclude is that the displacement from 
 time $t = 0$ to time $t = 2$ is
-\[s(2) - s(0) = -2 - 2 = -4,\]
-meaning that the particle has been displaced 4 units to the left. To determine the distance traveled, we need to analyze the velocity function.  
+\[s(2) - s(0) = -2 - 2 = -4 \text{ feet},\]
+meaning that the particle has been displaced 4 feet to the left. 
+ 
 
 
 
@@ -99,35 +101,42 @@ The displacement over the interval $[0,3]$ is $\answer{12}$ feet.\\
 \end{problem}
 
  
-\begin{example}[example 2] Let's compute the velocity of the particle in the preceding example, where
-\[s(t) = t^3 - 3t^2 + 2.\]
+\begin{example}[example 2] As in example 1, suppose that the position of a particle in motion along a 
+straight line is given by:
+\[s(t) = t^3 - 3t^2 + 2,\]
+where $s$ is measured in feet and $t$ is measured in seconds.
+Compute the instantaneous velocity of the particle at time $t$, the initial velocity, the times when the partical 
+is at rest and the distance traveled over the time intervals $[0,2]$ and $[1,3]$.\\
+
+
 Since 
 \[v(t) = s'(t),\]
 we have
 \[v(t) = 3t^2 - 6t.\]
 From this we can note that
 \[v(0) = 3(0)^2 - 6(0) = 0.\]
-This means that the initial velocity of the particle was 0.  
+This means that the initial velocity of the particle was 0 ft/sec, i.e. the particle was initially at rest.  
 
-It is interesting to solve the equation 
+To find all of the times that the particle is at rest, we need to solve the equation
 \[v(t) = 0\]
-for $t$. The solutions will tell us all of the times that the particle was at rest. These times are significant, 
-because assuming that the motion of the particle is continuous, 
-these are the only times that the particle can change direction.
+for $t$.  
 We have
-\[v(t) = 0\]
 \[3t^2 - 6t = 0\]
 \[3t(t-2) = 0\]
 \[3t = 0 \ \ \text{or} \ \ t-2 = 0\]
 \[t = 0 \ \ \text{or} \ \ t = 2.\]
 
-Since the particle can only change directions at $t=0$ and $t=2$, we can now conclude that the 
-total distance traveled by the particle from time $t=0$ to time $t=2$ is 
+Thus the particle was at rest at times $t = 0$ seconds and $t = 2$ seconds.\\
 
-\[|s(2) - s(0)| = |-2 - 2| = |-4| = 4 \ \text{units.}\]
+Using the fact that these are the only times that the particle can change direction, we can now find distance traveled.
+The total distance traveled by the particle from time $t=0$ to time $t=2$ is 
 
-When the velocity function is negative, that means the particle is moving to the left and when the 
-velocity is positive that means that the particle is moving to the right. Since $v(t)$ can be written as
+\[|s(2) - s(0)| = |-2 - 2| = |-4| = 4 \text{ feet.}\]
+
+For the time interval, $[1,3]$ the situation is a little bit more complicated since the particle changes direction.
+
+The particle is moving to the left when the velocity function is negative, and the particle is moving to the right when the 
+velocity is positive. Since $v(t)$ can be written as
 \[v(t) = 3t(t-2)\]
 we can conclude that the velocity is negative when $0<t<2$ and positive when $t>2$.
 Thus the particle begins at rest, then moves to the left between $t = 0$ and $t = 2$, comes to rest again at $t=2$
@@ -136,7 +145,7 @@ and moves to the right for $t>2$.
 To find the total distance the particle traveled from time $t = 1$ to time $t = 3$, we would need to take into consideration
 the fact that it changes direction at $t = 2$:
 \[ \text{distance} \  = |s(2) - s(1)| + |s(3) -s(2)|\]
-\[= |-2-0|+|2-(-2)| = 2 + 4 = 6 \ \text{units}.\]
+\[= |-2-0|+|2-(-2)| = 2 + 4 = 6  \text{ feet}.\]
 Notice that the absolute value is used in computing distance but not when computing displacement.
 
 
@@ -247,7 +256,16 @@ Hence the initial velocity of the projectile was 128 ft/sec.
 \end{example}
 
 
+\begin{problem} (problem 4)
+A projectile is launched vertically with position function given by:
+\[s(t) = 12 + 48t - 16t^2,\]
+where $s$ is measured in feet and $t$ is measured in seconds.
+Determine the initial height and the initial velocity of the object.\\
 
+The inital height is $\answer{12}$ feet.\\
+The inital velocity is $\answer{48}$ feet/second.
+
+\end{problem}
 
 \begin{example}[example 5]
 Determine its maximum height
