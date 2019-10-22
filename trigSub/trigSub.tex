@@ -208,9 +208,9 @@ Compute the indefinite integral
 We choose the substitution $x = 2\cos(\theta)$ so that $dx = -2\sin(\theta) \, d\theta$.
 The integral becomes
 \begin{align*}
-\int \frac{\sqrt{4-x^2}}{x} \; dx &= \int \frac{\sqrt{4-4\cos^2(\theta)}}{\cos^2(\theta)} \left[-2\sin(\theta)\right] \; d\theta\\[6pt]
-                                  &= -2\int \frac{\sqrt{4\sin^2(\theta)}}{\cos^2(\theta)}  \sin(\theta) \; d\theta\\[6pt]
-                                  &= -2\int \frac{2\sin(\theta)}{4\cos^2(\theta)}  \sin(\theta) \; d\theta\\[6pt]
+\int \frac{\sqrt{4-x^2}}{x^2} \; dx &= \int \frac{\sqrt{4-4\cos^2(\theta)}}{4\cos^2(\theta)} \left[-2\sin(\theta)\right] \; d\theta\\[6pt]
+                                  &= -\frac12\int \frac{\sqrt{4\sin^2(\theta)}}{\cos^2(\theta)}  \sin(\theta) \; d\theta\\[6pt]
+                                  &= -\frac12\int \frac{2\sin(\theta)}{\cos^2(\theta)}  \sin(\theta) \; d\theta\\[6pt]
  &= -\int \frac{\sin^2(\theta)}{\cos^2(\theta)}  \; d\theta\\[6pt]
  &= -\int \tan^2(\theta)  \; d\theta\\[6pt]
 &= -\int \left[\sec^2(\theta) - 1\right] \; d\theta\\[6pt]
