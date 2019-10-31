@@ -140,19 +140,24 @@ $f''(-5) = 6(-5) + 24 = -6 < 0$. Next, we choose the test point
 $x = 0$ for the interval $(-4, \infty)$.  Plugging this into the second derivative gives $f''(0) = 6(0) + 24 = 24 > 0$.
 We can use this information to create a sign chart for the second derivative, as shown below.
 
+
+
+
 \begin{image}
 \begin{tikzpicture}
-\node at (-4,1.25) {Sign of $f''(x)$};
+\begin{axis}[axis lines = center,  axis y line=none, xmin=-7, xmax = -1, xtick={-4}, ytick={}]
+\addplot[smooth,black, domain=-7:-1, thick, <->] {0};
+%\addplot[blue, mark = *] coordinates{(-4,166)} node[right,blue] {inflection point};
+\node at (axis cs:-4, 0.45){Sign of $f''(x)$ };
+\node at (axis cs:-5.5, 0.15){ - \ - \ - \ - };
+\node at (axis cs:-2.5, 0.15){ + \ + \ +  };
+%\node[blue] at (axis cs:0.2, 50){\begin{tabular}{c} concave\\up \end{tabular}};
 
-\node at (-5.5, .5) {- - - - -};
-\node at (-2.5, .5) {+++};
-\draw[thick, <->] (-7, 0) --(-1, 0);
-\draw[thin] (-4, -.2) --(-4,.2);
-%\draw[thin] (3,-.2) --(3,.2);
-\node at (-4, -.5) {$-4$};
-%\node at (3, -.5) {$3$};
+\end{axis}
 \end{tikzpicture}
 \end{image}
+
+
 We can now use the concavity theorem to conclude that
 the original function,
 $f(x) = x^3 + 12x^2 - 7x +10$ is concave down on the interval $(-\infty, -4)$.
@@ -238,19 +243,19 @@ $x = 0$.  Plugging this into the second derivative gives $f''(0) = 12(0) + 6 = 6
 
 
 
+
+
 \begin{image}
 \begin{tikzpicture}
-\node at (-0.5,1.25) {Sign of $f''(x)$};
+\begin{axis}[axis lines = center,  axis y line=none, xmin=-2.5, xmax = 1.5, xtick={-1/2}, xticklabels={$-\frac12$}, ytick={}]
+\addplot[smooth,black, domain=-2.5:1.5, thick, <->] {0};
+%\addplot[blue, mark = *] coordinates{(-4,166)} node[right,blue] {inflection point};
+\node at (axis cs:-0.5, 0.45){Sign of $f''(x)$ };
+\node at (axis cs:-1.5, 0.15){ - \ - \ - \ - };
+\node at (axis cs:0.5, 0.15){ + \ + \ +  };
+%\node[blue] at (axis cs:0.2, 50){\begin{tabular}{c} concave\\up \end{tabular}};
 
-\node at (-1.5, .5) {- - - - -};
-\node at (0.5, .5) {+++};
-\draw[thin, white] (-3.5, 0) --(2.5,0);
-\draw[thick, <->] (-2.5, 0) --(1.5, 0);
-\draw[thin] (-0.5, -.2) --(-0.5,.2);
-
-%\draw[thin] (3,-.2) --(3,.2);
-\node at (-0.5, -.5) {$-1/2$};
-%\node at (3, -.5) {$3$};
+\end{axis}
 \end{tikzpicture}
 \end{image}
 
@@ -363,25 +368,25 @@ and
 
 
 
+
+
+
+
 \begin{image}
 \begin{tikzpicture}
-\node at (-.75,1.25) {Sign of $f''(x)$};
+\begin{axis}[axis lines = center,  axis y line=none, xmin=-2.5, xmax = 1, xtick={-1.138, -0.195}, xticklabels={$\alpha$, $\beta$}, ytick={}]
+\addplot[smooth,black, domain=-2.5:1, thick, <->] {0};
+%\addplot[blue, mark = *] coordinates{(-4,166)} node[right,blue] {inflection point};
+\node at (axis cs:-0.75, 0.45){Sign of $f''(x)$ };
+\node at (axis cs:-1.8, 0.15){ + \ + \ +  };
+\node at (axis cs:-0.65, 0.15){ - \ - \ - \ - };
+\node at (axis cs:0.5, 0.15){ + \ + \ +  };
+%\node[blue] at (axis cs:0.2, 50){\begin{tabular}{c} concave\\up \end{tabular}};
 
-\node at (-1.8, .5) {+++};
-\node at (-0.65, .5) {- - - -};
-\node at (0.5, .5) {+++};
-\draw[thin, white] (-3.75, 0) --(2.25, 0);
-\draw[thick, <->] (-2.5, 0) --(1, 0);
-
-\draw[thin] (-1.138, -.2) --(-1.138,.2);
-
-\node at (-1.138, -.5) {$\alpha$};
-\draw[thin] (-0.195, -.2) --(-0.195,.2);
-
-\node at (-0.195, -.5) {$\beta$};
-
+\end{axis}
 \end{tikzpicture}
 \end{image}
+
 
 
 We can now use the concavity theorem to conclude that
@@ -527,24 +532,27 @@ f''(1) = (4(1)^2 - 2) e^{-(1)^2} = 2e^{-1} > 0.
 \]
 
 
+
+
+
 \begin{image}
 \begin{tikzpicture}
-\node at (0,1.25) {Sign of $f''(x)$};
+\begin{axis}[axis lines = center,  axis y line=none, xmin=-3, xmax = 3, xtick={-0.707, 0.707}, xticklabels={$-\frac{1}{\sqrt 2}$, $\frac{1}{\sqrt 2}$}, ytick={}]
+\addplot[smooth,black, domain=-3:3, thick, <->] {0};
+%\addplot[blue, mark = *] coordinates{(-4,166)} node[right,blue] {inflection point};
+\node at (axis cs:0, 0.45){Sign of $f''(x)$ };
+\node at (axis cs:-1.6, 0.15){ + \ + \ +  };
+\node at (axis cs:0, 0.15){ - \ - \ - \ - };
+\node at (axis cs:1.6, 0.15){ + \ + \ +  };
+%\node[blue] at (axis cs:0.2, 50){\begin{tabular}{c} concave\\up \end{tabular}};
 
-\node at (-1.6, .5) {+++};
-\node at (0, .5) {- - - -};
-\node at (1.6, .5) {+++};
-\draw[thin, white] (-3, 0) --(3, 0);
-\draw[thick, <->] (-2.5, 0) --(2.5, 0);
-\draw[thin] (-0.707, -.2) --(-0.707,.2);
-
-\node at (-0.707, -.7) {$-\frac{1}{\sqrt 2}$};
-\draw[thin] (0.707, -.2) --(0.707,.2);
-
-\node at (0.707, -.7) {$\frac{1}{\sqrt 2}$};
-
+\end{axis}
 \end{tikzpicture}
 \end{image}
+
+
+
+
 
 We can now use the concavity theorem to conclude that
 the original function, $f(x) = e^{-x^2}$
