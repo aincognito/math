@@ -105,7 +105,7 @@ In the next two examples, we will discuss the curvature of the given functions a
 
 
 \begin{image}
-\begin{tikzpicture}[scale=.7]
+\begin{tikzpicture}[scale=.5]
 \draw[<->, thick] (-2, 3)-- (-2,.5)--(5,.5);
 \draw[blue, thick]   plot[smooth,domain=-1.79:4.71] (\x, {2 + cos(deg(\x))});
 \node at (1.57,4) {Inflection Point at $(a,f(a))$};
@@ -142,7 +142,7 @@ We can use this information to create a sign chart for the second derivative, as
 
 \begin{image}
 \begin{tikzpicture}
-\node at (.5,1.5) {Sign of $f''(x)$};
+\node at (-4,1.5) {Sign of $f''(x)$};
 
 \node at (-5.5, .5) {- - - - -};
 \node at (-2.5, .5) {+++};
@@ -238,14 +238,15 @@ $x = 0$.  Plugging this into the second derivative gives $f''(0) = 12(0) + 6 = 6
 
 \begin{image}
 \begin{tikzpicture}
-\node at (.5,1.5) {Sign of $f''(x)$};
-\draw[thick, <->] (-2.5, 0) --(1.5, 0);
+\node at (-0.5,1.5) {Sign of $f''(x)$};
+
 \node at (-1.5, .5) {- - - - -};
 \node at (0.5, .5) {+++};
-
+\draw[thick, <->] (-2.5, 0) --(1.5, 0);
 \draw[thin] (-0.5, -.2) --(-0.5,.2);
+\draw[thin, white] (-3.5, 1) --(-1.5,1);
 %\draw[thin] (3,-.2) --(3,.2);
-\node at (-0.5, -.5) {$-\frac12$};
+\node at (-0.5, -.5) {$-1/2$};
 %\node at (3, -.5) {$3$};
 \end{tikzpicture}
 \end{image}
@@ -358,10 +359,11 @@ and
 \begin{image}
 \begin{tikzpicture}
 \node at (-.75,1.5) {Sign of $f''(x)$};
-\draw[thick, <->] (-2.5, 0) --(1, 0);
+
 \node at (-1.8, .5) {+++};
 \node at (-0.65, .5) {- - - -};
 \node at (0.5, .5) {+++};
+\draw[thick, <->] (-2.5, 0) --(1, 0);
 \draw[thin] (-1.138, -.2) --(-1.138,.2);
 
 \node at (-1.138, -.5) {$\alpha$};
@@ -517,10 +519,11 @@ f''(1) = (4(1)^2 - 2) e^{-(1)^2} = 2e^{-1} > 0.
 \begin{image}
 \begin{tikzpicture}
 \node at (0,1.5) {Sign of $f''(x)$};
-\draw[thick, <->] (-2.5, 0) --(2.5, 0);
+
 \node at (-1.6, .5) {+++};
 \node at (0, .5) {- - - -};
 \node at (1.6, .5) {+++};
+\draw[thick, <->] (-2.5, 0) --(2.5, 0);
 \draw[thin] (-0.707, -.2) --(-0.707,.2);
 
 \node at (-0.707, -.7) {$-\frac{1}{\sqrt 2}$};
@@ -1076,3 +1079,41 @@ xticklabels={$x_0$}, title={A local minimum}]
 
 \end{center}
 %align=flush ce
+
+
+
+
+%this one is good
+\begin{image}
+\begin{tikzpicture}
+\node at (-4,1.5) {Sign of $f''(x)$};
+
+\node at (-5.5, .5) {- - - - -};
+\node at (-2.5, .5) {+++};
+\draw[thick, <->] (-7, 0) --(-1, 0);
+\draw[thin] (-4, -.2) --(-4,.2);
+
+\node at (-4, -.5) {$-4$};
+
+\end{tikzpicture}
+\end{image}
+
+
+
+
+%this one is not good
+\begin{image}
+\begin{tikzpicture}[scale =0.5]
+\node at (-0.5,1.5) {Sign of $f''(x)$};
+
+\node at (-1.5, .5) {- - - - -};
+\node at (0.5, .5) {+++};
+\draw[thick, <->] (-2.5, 0) --(1.5, 0);
+
+
+\draw[thin] (-0.5, -.2) --(-0.5,.2);
+
+\node at (-0.5, -.5) {$-1/2$};
+
+\end{tikzpicture}
+\end{image}
