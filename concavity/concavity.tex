@@ -37,8 +37,8 @@ if $f'(x)$ is decreasing on $I$, then $f(x)$ is \textbf{concave down} on $I$.
 \node at (5.5, 2.5) {concave down};
 %\draw[<->] (4, 0) --(7, 0);
 %\node at (3.2, 0) {$x$};
-\draw[blue] (5.5,2) parabola (6.75,.25);
-\draw[blue] (5.5,2) parabola (4.25,.25);
+\draw[blue, thick] (5.5,2) parabola (6.75,.25);
+\draw[blue, thick] (5.5,2) parabola (4.25,.25);
 
 %\draw (1.5, .1) -- (1.5, -.1) node[below] {$x_0$};
 %\node at (1.5, -.9) {$f''(x_0) < 0$};
@@ -47,8 +47,8 @@ if $f'(x)$ is decreasing on $I$, then $f(x)$ is \textbf{concave down} on $I$.
 %\draw[<->] (0, 0) --(3, 0);
 %\node at (3.2, 0) {$x$};
 
-\draw[blue] (1.5,.25) parabola (0.25,2);
-\draw[blue] (1.5,.25) parabola (2.75,2);
+\draw[blue, thick] (1.5,.25) parabola (0.25,2);
+\draw[blue, thick] (1.5,.25) parabola (2.75,2);
 \draw[white] (0,0)--(0,0.1);
 %\draw (5.5, .1) -- (5.5, -.1) node[below] {$x_0$};
 %\node at (5.5, -.9) {$f''(x_0) > 0$};
@@ -105,7 +105,7 @@ In the next two examples, we will discuss the curvature of the given functions a
 
 
 \begin{image}
-\begin{tikzpicture}[scale=.5]
+\begin{tikzpicture}[scale=.7]
 \draw[<->, thick] (-2, 3)-- (-2,.5)--(5,.5);
 \draw[blue, thick]   plot[smooth,domain=-1.79:4.71] (\x, {2 + cos(deg(\x))});
 \node at (1.57,4) {Inflection Point at $(a,f(a))$};
