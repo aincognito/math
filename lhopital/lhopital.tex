@@ -21,14 +21,13 @@ L'Hopital's Rule uses the derivative to help us find limits involving indetermin
 The main indeterminate forms we will discuss are $\frac 00, \frac{\infty}{\infty}, 0\cdot \infty, 1^\infty$ and $0^0$. We begin with the fractional forms.
 
 \begin{theorem}[L'Hopital's Rule]
-If 
+
 \[
-\lim_{x \to c} \frac{f(x)}{g(x)} = \frac{0}{0} \quad \text{or} \quad \frac{\infty}{\infty}
+\text{If} \;\; \lim_{x \to c} \frac{f(x)}{g(x)} = \frac{0}{0} \; \text{or} \; \frac{\pm \infty}{\pm \infty},
+\;\;\text{then} \; \lim_{x \to c} \frac{f(x)}{g(x)} = \lim_{x \to c} \frac{f'(x)}{g'(x)}
 \]
-then \[\lim_{x \to c} \frac{f(x)}{g(x)} = \lim_{x \to c} \frac{f'(x)}{g'(x)}\]
- provided the latter exists.\\
-In the limits above, $x \to c$ is a two-sided limt.  The statement is also true for one-sided limits and if `$c$' is replaced by$\infty$ or $-\infty$.
-Additioanly, in the expression $\frac{\infty}{\infty}, -\infty$ can replace $\infty$.
+ provided the latter limit exists. The statement is also true for one-sided limits 
+ and if `$c$' is replaced by $\infty$ or $-\infty$.
 \end{theorem}
 
 
@@ -260,7 +259,7 @@ the indeterminate form $\frac00$, so we can use L'Hopital's Rule:
 
 
 \begin{problem}(problem 3c)
-  Let $m$ and $n$ be non-zer0 constants. Compute
+  Let $m$ and $n$ be non-zero constants. Compute
   \[
   \lim_{x \to a} \frac{x^m - a^m}{x^n - a^n} = \answer{m/n a^{m-n}}
   \]
@@ -382,7 +381,7 @@ Compute the limit:  $\displaystyle{\;\lim_{x \to \infty} \frac{x^2}{e^x}}.$
 As $x$ approaches $\infty$ we get the indeterminate form $\frac{\infty}{\infty}$ so L'Hopital's Rule applies.
 We have 
 \[\lim_{x\to \infty} \frac{x^2}{e^x} = \lim_{x \to \infty} \frac{2x}{e^x} = \frac{\infty}{\infty}.\]
-Applying L'hopital again, we get
+Applying L'Hopital again, we get
 \[\lim_{x \to \infty} \frac{2x}{e^x} = \lim_{\infty} \frac{2}{e^x} = 0.\]
 Hence $\lim_{x\to\infty}\frac{x^2}{e^x}=0$.  
 This limit can be generalized as follows:
