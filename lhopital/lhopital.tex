@@ -25,15 +25,19 @@ The main indeterminate forms we will discuss are $\frac 00, \frac{\infty}{\infty
 
 
 
-If $\displaystyle{\lim_{x \to c} \frac{f(x)}{g(x)} = \frac{0}{0} \quad \text{or} \quad \frac{\infty}{\infty}}$\\
-then $\displaystyle{\lim_{x \to c} \frac{f(x)}{g(x)} = \lim_{x \to c} \frac{f'(x)}{g'(x)}}$ provided the latter exists.\\
-In the above statement, $\lim_{x \to c}$ can be replaced by a one-sided limit and `$c$' can be $\pm \infty$. Also
-the fraction $\frac{\infty}{\infty}$ is shorthand for $\frac{\pm \infty}{\pm \infty}$.
+If 
+\[
+\lim_{x \to c} \frac{f(x)}{g(x)} = \frac{0}{0} \quad \text{or} \quad \frac{\infty}{\infty}
+\]
+then \[\lim_{x \to c} \frac{f(x)}{g(x)} = \lim_{x \to c} \frac{f'(x)}{g'(x)}\]
+ provided the latter exists.\\
+In the limits above, $x \to c$ is a two-sided limt.  The statement is also true for one-sided limits and if `$c$' is replaced by$\infty$ or $-\infty$.
+Additioanly, in the expression $\frac{\infty}{\infty}, -\infty$ can replace $\infty$.
 \end{theorem}
-We begin with the $\frac 00$ form.
 
 
-\section{The $\frac00$ case}
+
+\section{The indeterminate form $\frac00$}
 
 
 \begin{example}[example 1]
@@ -46,6 +50,8 @@ We have
 
 \[\lim_{x \to 0} \frac{\sin(x)}{x} = \lim_{x \to 0} \frac{\cos(x)}{1} = 1.\]
 \end{example}
+
+
 
 \begin{problem}(problem 1a)
   Compute
@@ -69,6 +75,8 @@ We have
 		
 	
 \end{problem}
+
+
 
 \begin{problem}(problem 1b)
   Compute
@@ -200,10 +208,14 @@ We have
 
 
 \begin{example}[example 3]
-Compute the limit:  $\displaystyle{\;\lim_{x \to 2} \frac{x^3 - 8}{x^5 - 32}}.$\\
-Plugging in the terminal value, $x=2$, yields 
-the indeterminate form $\frac00$, so L'Hopital's rule applies.
-We have 
+Compute  
+       \[
+            \lim_{x \to 2} \frac{x^3 - 8}{x^5 - 32}.
+        \]
+            
+Plugging in the terminal value, $x=2$, gives 
+the indeterminate form $\frac00$, so we can use L'Hopital's Rule:
+ 
 \[\lim_{x \to 2} \frac{x^3 - 8}{x^5 - 32} = \lim_{x \to 2} \frac{3x^2}{5x^4} = \frac{12}{80} = \frac{3}{20}.\]
 \end{example}
 
