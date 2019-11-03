@@ -20,8 +20,12 @@ We find extremes of functions which model real world situations.
  
 
 \begin{example}[example 1]
-Farmer Bob has 2400 linear feet of fence with which to build a rectangular enclosure with a vertical partition, as shown below.  
-What dimensions will maximize the total area covered by the enclosure and what is the maximum area?
+Farmer Bob has 2400 linear feet of fence. He wishes to build a rectangular enclosure with a partition fence parallel to one of the sides.  
+What are the dimensions, $(x,y)$, that maximize the total area of the enclosure? What is the maximum area?
+
+% Farmer Bob can enclose if he has 2400 linear feet of fence at his disposal?
+
+%dimensions will maximize the total area covered by the enclosure and what is the maximum area?
 \begin{center}
 \begin{tikzpicture}
 \node at (2.5, 3.3) {Area = length $\times$ width};
@@ -33,7 +37,7 @@ What dimensions will maximize the total area covered by the enclosure and what i
 \end{center}
 Let $x$ be the length of the enclosure and $y$ the width.  The total area of the enclosure is then
 \[A= xy.\]
-This is called the {\it objective} function.
+This is called the {\it objective} equation.
 To maximize the area, Farmer Bob should use all 2400 linear feet of fence.  Since there are two horizontal segments of length $x$ and three vertical segments of length $y$ (because of the partition), we get the {\it constraint} equation:
 \[2x+3y=2400.\]
 In the standard language of optimization, we can now state the problem as follows.
@@ -43,27 +47,44 @@ Maximize the objective
 subject to the constraint 
 \[2x+3y = 2400.\]
 To find the maximum area, we need to eliminate one of the variables $x, y$ from the objective function.
-We use the constraint to do this.  Solve the constraint for either $x$ or $y$, whichever is easier.
+We use the constraint to do this.  Solve the constraint for either $x$ or $y$.
 In this case, solving the constraint for $y$ gives
-\[y = 800 - \frac23 x.\]
+\[y = 800 - \frac23 x. \;\; \text{(verify)}\]
 We {\it substitute} this expression of $y$ into the objective function to get 
 \[A = xy = x(800 - \frac23 x) = 800x - \frac23 x^2.\]
 Now that our objective function is a function of a single variable, we can find its maximum by finding the critical numbers:
 \[A' = 800 - \frac43 x = 0 \]
 which yields
 \[x= 600 \,\mbox{ft.}\]
-Note that this gives a maximum since the graph of $A$ is a parabola that opens down. 
-Alternatively, we can use the second derivative test to see that this is a max:
+
+We now use the second derivative test to verify that this is a maximum:
 \[
 A'' = -\frac43.
 \]
 Since, $A'' < 0$ at the critical number $x = 600$, $A$ has a local maximum there.
-To finish off the problem, we find $y$ by plugging $x = 600$ into the constraint, which we already solved for $y$:
+
+We can also note that this gives a maximum since the graph of $A$ is a parabola that opens down.
+
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center,  axis y line=center, ticks=none, xmin=-0.5, xmax = 4.5, xlabel=$x$, ylabel=$A$, ymin = -0.5, ymax = 4.5, 
+              title={Graph of objective function}]
+\addplot[smooth,blue, domain=0:4, thick] {4*x - x^2};
+\addplot[blue, mark = *] coordinates{(2,4)} node[above,blue] {maximum area};
+\node[blue] at (axis cs:2, 1.5){$A = 800x - \frac23 x^2$};
+%\node[blue] at (axis cs:-8, 250){\begin{tabular}{c} concave\\down \end{tabular}};
+%\node[blue] at (axis cs:0.2, 50){\begin{tabular}{c} concave\\up \end{tabular}};
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
+
+We next find $y$ by plugging $x = 600$ into the constraint:
 \[y = 800 - \frac23 x = 800 - \frac23(600) = 400 \,\mbox{ft.}\]
 Finally the maximum area of the enclosure is
 \[A = xy = (600)(400) = 240{,}000 \,\mbox{ sq.ft.}\]
 \end{example}
-
 
 
 \begin{center}
