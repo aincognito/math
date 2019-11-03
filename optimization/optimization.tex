@@ -28,11 +28,11 @@ What are the dimensions, $(x,y)$, that maximize the total area of the enclosure?
 %dimensions will maximize the total area covered by the enclosure and what is the maximum area?
 \begin{center}
 \begin{tikzpicture}
-\node at (2.5, 3.3) {Area = length $\times$ width};
-\draw (0,0) --(5, 0) -- (5, 3) -- (0, 3) -- (0, 0);
-\draw[<->] (5.3, 0) --(5.3,3) node[right, midway]{y};
-\draw (3, 0) -- (3, 3);
-\draw[<->] (0, -.3) --(5,-.3) node[below, midway]{x};
+\node at (5, 6.5) {Area = length $\times$ width};
+\draw (0,0) --(10, 0) -- (10, 6) -- (0, 6) -- (0, 0);
+\draw[<->] (10.5, 0) --(10.5,6) node[right, midway]{y};
+\draw (6, 0) -- (6, 6);
+\draw[<->] (0, -.5) --(10,-.5) node[below, midway]{x};
 \end{tikzpicture}
 \end{center}
 Let $x$ be the length of the enclosure and $y$ the width.  The total area of the enclosure is then
@@ -68,7 +68,7 @@ We can also note that this gives a maximum since the graph of $A$ is a parabola 
 
 \begin{image}
 \begin{tikzpicture}
-\begin{axis}[axis lines = center,  axis y line=center, ticks=none, xmin=-0.5, xmax = 4.5, xlabel=$x$, ylabel=$A$, ymin = -0.5, ymax = 4.5, 
+\begin{axis}[axis lines = center,  axis y line=center,  xmin=-0.5, xmax = 4.5, xtick={2}, , ytick={0}, yticklabels={,,}, xticklabel={$600$ ft.}, xlabel=$x$, ylabel=$A$, ymin = -0.5, ymax = 4.5, 
               title={Graph of objective function}]
 \addplot[smooth,blue, domain=0:4, thick] {4*x - x^2};
 \addplot[blue, mark = *] coordinates{(2,4)} node[above,blue] {maximum area};
