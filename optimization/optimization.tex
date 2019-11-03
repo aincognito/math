@@ -28,11 +28,11 @@ What are the dimensions, $(x,y)$, that maximize the total area of the enclosure?
 %dimensions will maximize the total area covered by the enclosure and what is the maximum area?
 \begin{center}
 \begin{tikzpicture}
-\node at (5, 6.5) {Area = length $\times$ width};
-\draw (0,0) --(10, 0) -- (10, 6) -- (0, 6) -- (0, 0);
-\draw[<->] (10.5, 0) --(10.5,6) node[right, midway]{y};
-\draw (6, 0) -- (6, 6);
-\draw[<->] (0, -.5) --(10,-.5) node[below, midway]{x};
+\node at (5, 6.5) {\fontsize{16 pt}{18 pt}\selectfont Area = length $\times$ width};
+\draw[brown, thick] (0,0) --(10, 0) -- (10, 6) -- (0, 6) -- (0, 0);
+\draw[<->] (10.5, 0) --(10.5,6) node[right, midway]{\fontsize{16 pt}{18 pt}\selectfont y};
+\draw[brown, thick] (6, 0) -- (6, 6);
+\draw[<->] (0, -.5) --(10,-.5) node[below, midway]{\fontsize{16 pt}{18 pt}\selectfont x};
 \end{tikzpicture}
 \end{center}
 Let $x$ be the length of the enclosure and $y$ the width.  The total area of the enclosure is then
