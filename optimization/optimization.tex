@@ -26,7 +26,7 @@ What are the dimensions, $(x,y)$, that maximize the total area of the enclosure?
 % Farmer Bob can enclose if he has 2400 linear feet of fence at his disposal?
 
 %dimensions will maximize the total area covered by the enclosure and what is the maximum area?
-\begin{center}
+\begin{image}
 \begin{tikzpicture}
 \node at (5, 6.5) {\fontsize{16 pt}{18 pt}\selectfont Area = length $\times$ width};
 \draw[brown, thick] (0,0) --(10, 0) -- (10, 6) -- (0, 6) -- (0, 0);
@@ -34,7 +34,7 @@ What are the dimensions, $(x,y)$, that maximize the total area of the enclosure?
 \draw[brown, thick] (6, 0) -- (6, 6);
 \draw[<->] (0, -.5) --(10,-.5) node[below, midway]{\fontsize{16 pt}{18 pt}\selectfont x};
 \end{tikzpicture}
-\end{center}
+\end{image}
 Let $x$ be the length of the enclosure and $y$ the width.  The total area of the enclosure is then
 \[A= xy.\]
 This is called the {\it objective} equation.
@@ -276,7 +276,7 @@ The maximum volume is $ \answer{62500}$ cubic inches.
 \end{problem}
 
 
-\begin{example}[example3]
+\begin{example}[example 3]
 Scientist Sam wants to know how close a comet moving in a parabolic trajectory will get to the sun. 
 We will assume that the sun is located at the origin and that the path of the comet follows the parabola $y = x^2 - 5$. The units 
 are in millions of miles.
@@ -420,6 +420,92 @@ The optimal width is $y = \answer{20}$ ft.\\
 The minimum amount of fence needed is $\answer{120}$ ft.
 \end{problem}
 
+
+\begin{example}[example 5]
+A cheetah is on the bank of a 50 meter wide, straight river.   The cheetah spots prey on the opposite bank of the river, 100 meters upstream. 
+The cheetah decides to walk along the rivers edge for part of the way before swimming directly at the prey. If the cheetah walks at 2 m/s and swims at 1 m/s,
+how far should the cheetah walk before swimming so as to minimize the total time to get to the prey?\\
+
+Let $x$ meters be the distance that the cheetah walks and $y$ meters the distance that the cheetah swims, as shown in the figure below. 
+
+
+\begin{image}
+\begin{tikzpicture}
+%\node at (5, 6.5) {\fontsize{16 pt}{18 pt}\selectfont Area = length $\times$ width};
+\draw[blue, thick] (0,0) --(0, 4);
+\draw[blue, thick] (2,0) --(2, 4);
+\draw[thin] (0, 2.5) --(2,2.5) node[below, midway]{$50$};
+\draw[thin, dashed] (0, 2.5) --(2,4);
+\node at (2.7, 3.25) {$100-x$};
+\node at (-0.3, 1.25) {$x$};
+\filldraw[brown] (0, 0) circle (1pt) node[left]{Cheetah};
+\filldraw[brown] (0, 2.5) circle (1pt) node[left]{start swim};
+\filldraw[brown] (2, 4) circle (1pt) node[right]{Prey};
+\node at (1, 0.5) {river};
+\draw[thin] (1.7, 2.5) -- (1.7, 2.8) -- (2, 2.8);
+\node at (0.9, 3.4) {$y$};
+\end{tikzpicture}
+\end{image}
+
+The total time for the trip is the time walking plus the time swimming. Since 
+\[
+\text{time} = \frac{\text{distance}}{\text{rate}},
+\]
+the total time is 
+\[
+T = \frac{x}{2} + \frac{y}{1}.
+\]
+This is the objective equation.
+The constraint comes from the Pythagorean Theorem, since the swim portion of the trip is along the hypotenuse of a right triangle 
+with legs parallel and perpendicular to the river bank. One leg of the triangle is $50$ and the other is $100-x$.  So 
+\[
+y = \sqrt{50^2 + (100-x)^2}.
+\]
+Substituting this into the objective gives:
+\[
+T = \frac{x}{2} + \sqrt{50^2 + (100-x)^2},\]
+where $x$ is between $0$ and $100$.
+To find the minimum value of $T$, we find the critical numbers (using the chain rule):
+\[
+T' = \frac12 +  \frac{2(100-x)(-1)}{2\sqrt{50^2 + (100-x)^2}} = \frac12 - \frac{100-x}{\sqrt{50^2 + (100-x)^2}} = 0
+\]
+
+Solving for $x$ gives
+\[
+\frac{100 - x}{\sqrt{50^2 + (100-x)^2}} = \frac12
+\]
+\[
+2(100 - x) = \sqrt{50^2 + (100-x)^2}.
+\]
+Square both sides:
+\[
+4(100-x)^2 = 50^2 + (100-x)^2
+\]
+\[
+3(100-x)^2 = 50^2
+\]
+\[
+100-x = \frac{50}{\sqrt{3}} = \frac{50\sqrt{3}}{3}.
+\]
+Hence
+\[
+x = 100 - \frac{50\sqrt{3}}{3} \approx 71 \text{meters}.
+\]
+To verify that this is indeed the minimum time, we can use the closed interval method from section 3.2 (Extreme Value Theorem).
+This is because our independent variable $x$ must be between $0$ and $100$. Thus we compare $T(0), T(100)$ and $T(50/\sqrt 3)$.
+We have 
+\[
+T(0) = \frac02 +  \sqrt{50^2 + 100^2} = \sqrt{12500} \approx 111,
+\]
+\[
+T(100) = \frac{100}{2} +  \sqrt{50^2 + 0} = 50 + 50 = 100, \text{and}
+\]
+\[
+T(50/\sqrt 3) = \frac12 \cdot \left(100- \frac{50}{\sqrt 3}\right) +  \sqrt{50^2 + (50/\sqrt 3)^2} \approx 93.3
+\]
+Hence the minimum time to reach the prey is approximately $T=93.3$ seconds and this is achieved by walking approximately $x =71$ meters, 
+then swimming the rest of the way.
+\end{example}
 
 
 \end{document}
