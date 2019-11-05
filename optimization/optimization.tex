@@ -68,8 +68,8 @@ We can also note that this gives a maximum since the graph of $A$ is a parabola 
 
 \begin{image}
 \begin{tikzpicture}
-\begin{axis}[axis lines = center,  axis y line=center,  xmin=-0.5, xmax = 4.5, xtick={2}, , ytick={0}, yticklabels={,,}, xticklabel={$600$ ft.}, xlabel=$x$, ylabel=$A$, ymin = -0.5, ymax = 4.5, 
-              title={Graph of objective function}]
+\begin{axis}[axis lines = center,  axis y line=center,  xmin=-0.5, xmax = 4.5, xtick={2}, ytick={0}, yticklabels={,,},
+ xticklabel={$600$ ft.}, xlabel=$x$, ylabel=$A$, ymin = -0.5, ymax = 4.5, title={Graph of objective function}]
 \addplot[smooth,blue, domain=0:4, thick] {4*x - x^2};
 \addplot[blue, mark = *] coordinates{(2,4)} node[above,blue] {maximum area};
 \node[blue] at (axis cs:2, 1.5){$A = 800x - \frac23 x^2$};
@@ -83,7 +83,7 @@ We can also note that this gives a maximum since the graph of $A$ is a parabola 
 We next find $y$ by plugging $x = 600$ into the constraint:
 \[y = 800 - \frac23 x = 800 - \frac23(600) = 400 \,\mbox{ft.}\]
 Finally the maximum area of the enclosure is
-\[A = xy = (600)(400) = 240{,}000 \,\mbox{ sq.ft.}\]
+\[A = xy = (600)(400) = 240{,}000 \,\mbox{ft$^2$}.\]
 \end{example}
 
 
@@ -98,7 +98,8 @@ Finally the maximum area of the enclosure is
 
 
 \begin{problem}(problem 1a)
-Farmer Bob has 1000 linear feet of fence with which to build a rectangular enclosure.  What dimensions will maximize the total area covered by the enclosure and what is the maximum area?
+Farmer Bob has 1000 linear feet of fence with which to build a rectangular enclosure.  
+What dimensions will maximize the total area covered by the enclosure and what is the maximum area?
 
 \begin{hint}
 Let $x$ be the length and $y$ the width
@@ -122,7 +123,7 @@ The maximum area is $\answer{62500}$ sq. ft.
 
 
 \begin{problem}(problem 1b)
-Farmer Bob has 3200 linear feet of fence with which to build a rectangular enclosure with two vertical partitions, as shown below.
+Farmer Bob has 3200 linear feet of fence with which to build a rectangular enclosure with two partitions, as shown below.
 What dimensions will maximize the total area covered by the enclosure and what is the maximum area?
 
 \begin{center}
@@ -184,14 +185,26 @@ The maximum area is $\answer{20000}$ sq. ft.
 
 \end{problem}
 
+
+\begin{problem}(problem 1d)
+The sum of two numbers is 100.  Find the maximum value of their product.\\
+Let the two numbers be $x$ and $y$ and let their product be $P$.\\
+The objective equation is $\answer{P=xy}$.\\
+The constraint equation is $\answer{x + y = 100}$.\\
+The maximum value of the product is $P= \answer{2500}$.
+\end{problem}
+
+
+
 \begin{example}[example 2]
-A box with a square base and an open top are to be constructed using 4800 sq. in. of cardboard.  Find the dimensions of the box that will maximize its volume.  What is the maximum volume?\\
+A box with a square base and an open top is to be constructed using 4800 square inches of cardboard.  
+Find the dimensions of the box that will maximize its volume.  What is the maximum volume?\\
 
 If we let $x$ represent the length and width of the box, and $y$ its height, then our objective is to maximize 
 the volume,
 
 
-\begin{center}
+\begin{image}
 \begin{tikzpicture}
 \draw (0,0) --node[below] {$x$} (4, 0) -- (4, 3) -- (0, 3)--(0,0);
 \draw (2,1) --(6, 1) -- node[right] {$y$}(6, 4) -- (2, 4) -- (2, 1);
@@ -200,31 +213,29 @@ the volume,
 \draw (4,3 )--(6,4);
 \draw (0,3)--(2,4);
 \end{tikzpicture}
-\end{center}
+\end{image}
 
-\[V = \text{length times width times height} = x^2y.\]
+\[V = \text{length $\times$ width $\times$ height} = x^2y.\]
 
 We have a material constraint which says that the surface area of the box should be 4800 sq. in:
 \[\text{area of base + area of 4 sides} = x^2 + 4xy = 4800.\]
 Solving the constraint for $y$ gives
-\[y = \frac{4800 - x^2}{4x},\]
-and substituting this into the objective gives:
+\[y = \frac{4800 - x^2}{4x}.\]
+Substituting this into the objective gives:
 \[V = x^2y = x^2 \left(\frac{4800 - x^2}{4x}\right).\]
-This simplifies to 
-\[V = 1200x - \frac14 x^3\]
-which has a maximum when its derivative is zero.
-Solving $V' = 0$ for $x$ gives
-\[V' = 1200 - \frac34 x^2 = 0,\]
-so
+Simplifying $V$ gives:
+\[V = 1200x - \frac14 x^3.\]
+The volume will be at a maximum when its derivative is zero:
+\[V' = 1200 - \frac34 x^2 = 0.\]
+Solving for $x$, we get:
 \[ \frac34 x^2 = 1200, \]
-and 
 \[x^2 = 1600,\]
-\[x = \pm 40,\]
-so our answer is 
+\[x = \pm 40.\]
+Since $x$ should be positive in this context, we have:
 \[x = 40 \mbox{ in.}\]
 Plugging this into the constraint equation, we can find $y$:
 \[y = \frac{4800 - x^2}{4x} = \frac{4800 - 1600}{160} = 20 \mbox{ in.}\]
-The volume of the box with these dimensions is
+Thus the volume is maximized when $x = 40$ and $y = 20$. Finally, the maximum volume of the box is:
 \[V = x^2y = (40)^2 (20) = 32{,}000 \mbox{ cubic inches}.\]
 
 \end{example}
@@ -267,9 +278,8 @@ The maximum volume is $ \answer{62500}$ cubic inches.
 
 \begin{example}[example3]
 Scientist Sam wants to know how close a comet moving in a parabolic trajectory will get to the sun. 
-We will assume that the sun is located at the origin, 
-the path of the comet follows the parabola $y = x^2 - 5$ and that the units 
-on the axes are in millions of miles.
+We will assume that the sun is located at the origin and that the path of the comet follows the parabola $y = x^2 - 5$. The units 
+are in millions of miles.
 
 \begin{center}
 \begin{tikzpicture}
@@ -279,27 +289,48 @@ on the axes are in millions of miles.
 \draw[dashed, gray, thin] (-1.5, -2.75)-- (0,-3) node[below, midway]{d};
 \end{tikzpicture}
 \end{center}
+To solve this problem, we need the formula for the distance between two points in a plane.
+If the points are $(x_1, y_1)$ and $(x_2, y_2)$, then the Pythagorean Theorem gives the distance between them:
+\[
+d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}.
+\]
+\begin{image}
+\begin{tikzpicture}
+\draw (0,0) --node[below] {$x_2-x_1$} (4, 0) -- node[right]{$y_2-y_1$} (4, 3) --  (0,0);
+\node at (-.3, -.3) {$(x_1, y_1)$};
+\node at (4.3, 3.3) {$(x_2, y_2)$};
+\node at (2, 1.8){$d$};
+\filldraw[black] (0, 0) circle (1pt);
+\filldraw[black] (4, 3) circle (1pt);
+\draw[thin] (3.7, 0) -- (3.7, 0.3) -- (4, 0.3);
+\end{tikzpicture}
+\end{image}
 
-Using the distance formula, we can see that if the comet is at a point $(x, y)$, 
-then its distance to the sun at $(0, 0)$ is
-\[d = \sqrt{x^2 + y^2}.\]
-Since the comet is on the parabola $y = x^2 - 5$, we can substitute this into the equation for $d$ giving
+
+We apply the distance formula to the comet at the point $(x, y)$ and the sun at the origin to get the objective equation:
+\[d = \sqrt{(x-0)^2 + (y-0)^2} = \sqrt{x^2 + y^2}.\]
+Since the comet must stay on the parabola we get the constraint equation $y = x^2 - 5$.  Substituting this into the objective equation gives:
 \[d = \sqrt{x^2 + (x^2 - 5)^2}.\]
-Now, we would like to minimize $d$. A convenient trick when minimizing a square root is to minimize the radicand.
-So, we want to minimize $f(x) = x^2 + (x^2 - 5)^2$. The min occurs when the derivative is 0, so we solve
+Now, we would like to find the minimum value of $d$. A convenient trick when minimizing a square root function is to minimize 
+the radicand (the quantity under the square root).
+So, we want to minimize 
+\[
+f(x) = x^2 + (x^2 - 5)^2.
+\]
+The minimum occurs when the derivative is zero, so we solve
 $f'(x) = 0$ for $x$ yielding
 \[f'(x) = 2x + 2(x^2 - 5)(2x) = 2x[1+ 2(x^2 - 5)] = 2x(2x^2 - 9) = 0\]
 which gives either 
 \[2x = 0 \;\; \text{or} \;\; 2x^2 - 9 = 0.\]
-The three solutions are $x = 0, \pm 3/\sqrt2$.
+The three solutions are $x = 0, \pm \dfrac{3}{\sqrt2}$.
 The corresponding $y$-values can be found by plugging these $x$-values into the parabola $y = x^2 - 5$
 giving the three points
-\[(0, -5), (-3/\sqrt2, -1/2) \mbox{ and } (3/\sqrt2, -1/2).\]
+\[(0, -5), \left(-\dfrac{3}{\sqrt 2}, -\dfrac12 \right) \mbox{ and } \left(\dfrac{3}{\sqrt 2}, -\dfrac12 \right).\]
 If the comet is at $(0, -5)$ then its distance to the sun is 5 million miles.  If the comet is at 
-either $(\pm 3/\sqrt2, -1/2)$ then the distance is 
+either $\left(\pm\dfrac{3}{\sqrt 2}, -\dfrac12\right)$ then the distance is 
 \[d = \sqrt{x^2 + y^2} = \sqrt{{\frac{9}{2} + \frac14}} = \frac{\sqrt {19}}{2} \mbox{ million miles}.\]
-Hence the minimum distance is $\sqrt{19}/2$ million miles when the comet is at either of the points 
-$(\pm 3/ \sqrt 2, -1/2)$.
+Hence the minimum distance is $\dfrac{\sqrt{19}}{2}$ million miles when the comet is at either of the points 
+$\left(\pm\dfrac{3}{\sqrt 2}, -\dfrac12 \right)$.
 \end{example}
 
 \begin{problem}(problem 3)
