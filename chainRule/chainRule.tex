@@ -14,26 +14,33 @@ We compute the derivative of  a composition.
 
 \maketitle
 
-\begin{center}
-\textbf{The Chain Rule}
-\end{center}
+\section{The Chain Rule}
 
-
-\begin{theorem} If $f(x)$ and $g(x)$ are differentiable functions and $h(x) = f(g(x))$, then
+Compositions are common in typical looking functions.
+For example, the hypotensue of a right triangle with sides $x$ and $3$ is $\sqrt{x^2 + 9}$.  This function is a composition of the inside polynomial, $x^2 + 9,$
+and the square root on the outside, $\sqrt{x}$.
+Consider an exponential growth model with parameter $k$, $f(t) = ae^{kt}$, where $a>0$. The expression $e^{kt}$ is the composition of the inner linear function $kt$
+and the outer, exponential function $e^t$. In this section, we will learn how to differentiate such functions.
+\begin{theorem}[Chain Rule] If $f(x)$ and $g(x)$ are differentiable functions and if $h(x) = f(g(x))$, then
 \[
 h'(x) = f'(g(x))g'(x).
 \]
-This important differentiation rule can also be written as 
+This can also be written as 
 \[
-\frac{d}{dx}f(g(x)) = f'(g(x))g'(x).
+\frac{d}{dx}f(g(x)) = f'(g(x))g'(x),
 \]
+
+or in Leibniz notation as 
+\[
+\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx},
+\]
+where $u = g(x)$ and $y= f(g(x))$.
 \end{theorem}
 
 
 
-In words, the derivative of a composition is the derivative of the outside, with the inside left in,   
-times the derivative of the inside. Or, we can shorten the phrasing slightly to simply `the derivative of the outside   
-times the derivative of the inside'.
+In words, the derivative of a composition is the derivative of the outside (with the inside left in),   
+times the derivative of the inside.
 
 
 
@@ -43,7 +50,7 @@ We write $h(x)$ as a composition: $h(x)=f(g(x))$ with
 \[g(x) = 2x   \quad \text{and} \quad  f(x) = \sin(x).\]
 
 
-To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$. First,
+To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$. We have,
 \[g'(x) = 2; \quad \text{next} \]
 \[f'(x) = \cos(x), \quad \text{so}\]
 \[f'(g(x)) =\cos(g(x)) = \cos(2x).\]
@@ -92,7 +99,7 @@ We write $h(x)$ as a composition: $h(x)=f(g(x))$ with
 \[
 g(x) = 5x  \quad \text{and} \quad f(x) = e^x.
 \]
-To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$. First:
+To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$. We have,
 \[
 g'(x) = 5; \quad \text{and} 
 \]
@@ -152,7 +159,7 @@ We write $h(x)$ as a composition: $h(x)=f(g(x))$ with
 \[
 g(x) = x^2 + 1  \quad \text{and} \quad  f(x) = \cos(x).
 \]
-To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$. First,
+To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$. We have,
 \[
 g'(x) = 2x; \quad \text{next}
 \]
@@ -211,7 +218,7 @@ We write $h(x)$ as a composition: $h(x)=f(g(x))$ with
 \[
 g(x) = x^3 - 4x + 2  \quad \text{and} \quad  f(x) = x^7.
 \]
-To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First,
+To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  We have,
 \[
 g'(x) =3x^2 - 4; \quad \text{next} 
 \]
@@ -272,7 +279,7 @@ We write $h(x)$ as a composition: $h(x)=f(g(x))$ with
 \[
 g(x) = x^2 + 4  \quad \text{and} \quad  f(x) = \sqrt x.
 \] 
-To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First,
+To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  We have,
 \[
 g'(x) = 2x; \quad \text{next} 
 \]
@@ -336,7 +343,7 @@ We write $h(x)$ as a composition: $h(x)=f(g(x))$ with
 \[
 g(x) = 3x  \quad \text{and} \quad  f(x) =\tan(x).
 \]
-To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First, 
+To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  We have, 
 \[
 g'(x) =3; \quad \text{next} 
 \]
@@ -404,7 +411,7 @@ We write $h(x)$ as a composition: $h(x)=f(g(x))$ with
 \[
 g(x) = 2x+ 5  \quad \text{and} \quad  f(x) = \frac{3}{x^4} = 3x^{-4}.
 \]
- To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First,
+ To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  We have,
 \[g'(x) = 2; \quad \text{next}\]
 \[f'(x) = -12x^{-5}, \quad \text{so}\]
 \[f'(g(x)) = -12[g(x)]^{-5} = -12(2x+5)^{-5} = -\frac{12}{(2x+5)^5}.\]
@@ -452,7 +459,7 @@ By the chain rule,
 Find $h'(x)$ if $h(x) = \sin(x^3)$.\\
 We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
 \[g(x) = x^3  \quad \text{and} \quad  f(x) = \sin(x).\] 
-To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First, 
+To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  We have, 
 \[g'(x) = 3x^2; \quad \text{next} \]
 \[f'(x) =\cos(x) , \quad \text{so}\]
 \[ f'(g(x)) = \cos(g(x)) = \cos(x^3).\]
@@ -499,7 +506,7 @@ By the chain rule,
 Find $h'(x)$ if $h(x) = \sin^3(x)$.\\
 We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
 \[g(x) =\sin(x)   \quad \text{and} \quad  f(x) = x^3.\]
- To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First, 
+ To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  We have, 
 \[g'(x) =\cos(x); \quad \text{next} \] 
 \[f'(x) = 3x^2, \quad \text{so}\] 
 \[f'(g(x)) = 3g^2(x) = 3\sin^2(x).\]
@@ -547,7 +554,7 @@ By the chain rule,
 Find $h'(x)$ if $h(x) = e^{-x^2}$.\\
 We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
 \[g(x) = -x^2  \quad \text{and} \quad  f(x) =e^x.\]
- To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$. First, 
+ To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$. We have, 
 \[g'(x) = -2x; \quad \text{next} \] 
 \[f'(x) = e^x, \quad \text{so} \]
 \[f'(g(x)) = e^{g(x)} = e^{-x^2}.\]
@@ -595,7 +602,7 @@ Compute
 Find $h'(x)$ if $h(x) = \ln(x^4 +1)$.\\
 We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
 \[g(x) = x^4 + 1  \quad \text{and} \quad  f(x) = \ln(x).\]
- To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First, 
+ To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  We have, 
 \[g'(x) = 4x^3; \quad \text{next} \] 
 \[f'(x) = \frac{1}{x}, \quad \text{so}\]
 \[ f'(g(x)) =\frac{1}{g(x)} = \frac{1}{x^4 + 1} .\]
@@ -643,7 +650,7 @@ By the chain rule,
 Find $h'(x)$ if $h(x) = \ln^5(x)$.\\
 We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
 \[g(x) = \ln(x)  \quad \text{and} \quad  f(x) = x^5.\]
- To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First, 
+ To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  We have, 
 \[g'(x) = \frac{1}{x}; \quad \text{next} \] 
 \[f'(x) = 5x^4, \quad \text{so} \]
 \[f'(g(x)) = 5g^4(x) = 5\ln^4(x).\]
@@ -691,7 +698,7 @@ Compute
 Find $h'(x)$ if $h(x) = \ln(\sin(x))$.\\
 We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
 \[g(x) = \sin(x)  \quad \text{and} \quad  f(x) = \ln(x).\]
- To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First,
+ To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  We have,
 \[g'(x) = \cos(x); \quad \text{next} \]
 \[f'(x) = \frac{1}{x}, \quad \text{so}\]
 \[f'(g(x)) = \frac{1}{g(x)} = \frac{1}{\sin(x)}.\]
@@ -771,6 +778,7 @@ The above formula is both useful and important.  We will see it again in the Log
 
 \begin{example}
  Find $\frac{d}{dx} \left[\ln(x^3 + 2)\right]$.\\
+ 
 We use the above formula with $g(x) = x^3 + 2$ to get
 \[
 \frac{d}{dx} \left[\ln(x^3 + 2)\right] = \frac{3x^2}{x^3 + 2}.
@@ -804,7 +812,7 @@ Compute
 Find $h'(x)$ if $h(x) = \tan^{-1}(4x)$.\\
 We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
 \[g(x) = 4x  \quad \text{and} \quad  f(x) = \tan^{-1}(x).\]
- To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First, 
+ To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  We have, 
 \[g'(x) = 4; \quad \text{next} \] 
 \[f'(x) = \frac{1}{1+x^2} , \quad \text{so}\]
 \[ f'(g(x)) = \frac{1}{1+g^2(x)} =\frac{1}{1+(4x)^2}=\frac{1}{1+16x^2}.\]
