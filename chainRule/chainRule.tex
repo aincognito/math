@@ -56,6 +56,19 @@ To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$. We have,
 \[f'(g(x)) =\cos(g(x)) = \cos(2x).\]
 By the chain rule,
 \[h'(x) = f'(g(x))g'(x) = \cos(2x) \cdot 2 = 2\cos(2x).\]
+We can also solve this problem using Leibniz notation.  In that case, we let $u = 2x$, and $y=\sin(2x)$.
+Substituting $u$ for $2x$ in $y$, we can write 
+\[
+y = \sin(u),  \text{ where } \, u = 2x.
+\]
+Then the derivatives are
+\[
+\frac{dy}{du} = \cos(u)  \,\,\,\text{  and  }  \,\,\,\frac{du}{dx} = 2.
+\]
+Finally, the chain rule says to multiply thses derivatives:
+\[
+\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = \cos(x) \cdot 2 = 2\cos(2x).
+\]
 \end{example}
 
 \begin{center}

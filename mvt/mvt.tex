@@ -14,9 +14,104 @@ We apply the Mean Value Theorem.
 
 \maketitle
 
-\begin{center}
-\textbf{The Mean Value Theorem}
-\end{center}
+\section{Rolle's Theorem}
+We begin with a special case of the Mean Value Theorem known as Rolle's Theorem.
+This theorem uses the Extreme Value Theorem to guarantee a critical number of a differentiable function under certain circumstances.
+
+\begin{theorem}[Rolle's Theorem]
+Suppose the function $f(x)$ is continuous on the closed interval $[a,b]$ and differentiable on the open interval $(a,b)$.
+If $f(a) = f(b)$, then there exists a number $c$ between $a$ and $b$ such that 
+\[
+f'(c) = 0.
+\]
+\end{theorem}
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  center, axis y line = none, xmin= -2.5, xmax=2.5, xtick={-2, 0, 2}, xticklabels={$a$,$c$,$b$},
+title={Rolle's Theorem for $f(x) $ on $[a,b]$}]
+\addplot[domain=-2:2, 
+    samples=100, color=black]{-0.25*x^2 + 1.5 };
+\addplot[smooth,mark=*,blue] plot coordinates {(-2,0.5)  (2,0.5)} node[below, midway]{$f(a) = f(b)$};
+\addplot[domain=-1.2:1.2, 
+    samples=100, color=red]{1.5};
+\addplot[smooth,mark=*,red] plot coordinates {(0, 1.5)} node[above] {$f'(c) = 0$};
+\addplot[domain=-2.5:2.5, 
+    samples=100, color=black]{0};
+\end{axis}
+\end{tikzpicture}
+\end{image}
+The rationale behind the theorem is that since the function is at the same height at the endpoints, the Extreme Value Theorem implies that
+there must be a local extreme (and hence a critical number) between $x = a$ and $x = b$.
+
+\begin{example} Show that the function $f(x) = \sin(x)$ has a critical number in the interval $(0, \pi)$.\\
+The function $\sin(x)$ is differentiable (and hence also continuous) on the interval $(-\infty, \infty)$.
+We can apply Rolle's Theorem to this function on the interval $[0, \pi]$ since
+\[
+\sin 0 = \sin \pi = 0.
+\]
+In this case, the conclusion of the theorem is that $f(x) = \sin(x)$ has a critical number in the interval $(0, \pi)$.
+Moreover, we know extly where, since $f'(x) = \cos(x)$ and the equation $\cos(x) = 0$ has a solution at $x = \pi/2$, which is in the interval.
+\end{example}
+
+\begin{example} Use Rolle's Theorem  to show that a cubic polynomial can have at most 3 roots.\\
+Recall that a root of a polynomial, $p(x)$, is a value $x = a$, such that $p(a) = 0$.
+So we would like to show that an equation of the form $p(x) = 0$, where $p(x)$ is a cubic polynomial, 
+\[
+p(x) = ax^3 + bx^2 + cx + d, \;\; \text{where} \;\; a\neq 0.
+\]
+Also recall that a quadratic polynomial has at most two roots, since if
+\[
+ax^2 + bx + c = 0
+\]
+then
+\[
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.
+\]
+Now we can argue by way of contradiction that a cubic polynomial can have at most 3 roots.
+Suppose that the cubic polynomial, $p(x)$, has 4 roots, $x_1, x_2, x_3$ and $x_4$, where these are in order from smallest to largest.
+Then, by definition of root,
+\[
+p(x_1) = p(x_2) = p(x_3) = p(x_4) = 0.
+\]
+We can apply Rolle's Theorem to $p(x)$ on the intervals $[x_1, x_2], [x_2, x_3]$ and $[x_3, x_4]$ to conclude
+that $p'(x)$ has a root on each of these intervals, i.e.,
+\[
+p'(c_1) = p'(c_2) = p'(c_3) = 0,
+\]
+where
+\[
+x_1 < c_1 < x_2 < c_2 < x_3 < c_3 < x_4.
+\]
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[axis x line=  center, axis y line = none, xmin= -0.5, xmax=6.5, xtick={0, 1, 2, 3, 4, 5, 6}, 
+xticklabels={$x_1$,$c_1$,$x_2$,$c_2$,$x_3$,$c_3$,$x_4$}, title={By Rolle's Theorem, $p'(x)$ has 3 roots}]
+\addplot[domain=-0.5:6.5, 
+    samples=100, color=black]{0};
+\addplot [samples=100,smooth,domain=0:6] {sin(deg(1.57*x))} ;
+\addplot[smooth,mark=*,blue] plot coordinates {(0,0)   (2,0)  (4,0) (6,0)} ;
+\addplot[smooth,mark=*,red] plot coordinates {(1, 1)} ;
+\addplot[smooth,mark=*,red] plot coordinates {(3, -1)} ;
+\addplot[smooth,mark=*,red] plot coordinates {(5, 1)} ;
+\addplot[domain=0.3:1.7, 
+    samples=100, color=red]{1} node[above]{$p'(c_1) = 0$};
+\addplot[domain=2.3:3.7, 
+    samples=100, color=red]{-1} node[below]{$p'(c_2) = 0$};
+\addplot[domain=4.3:5.7, 
+    samples=100, color=red]{1} node[above]{$p'(c_3) = 0$};
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
+But this is not possible. Since $p(x)$ is a cubic polynomial, its derivative, $p'(x)$ is a quadratic polynomial and so it has at most 2 roots.
+This contradiction implies that a cubic polynomial can have at most 3 roots.
+\end{example}
+
+
+
+
+\section{The Mean Value Theorem}
 
 
 The Mean Value Theorem is one of the most far-reaching theorems in calculus. It states that for a continuous 
