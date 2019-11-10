@@ -30,9 +30,10 @@ f'(c) = 0.
 \begin{tikzpicture}
 \begin{axis}[axis x line=  center, axis y line = none, xmin= -2.5, xmax=2.5, xtick={-2, 0, 2}, xticklabels={$a$,$c$,$b$},
 title={Rolle's Theorem for $f(x) $ on $[a,b]$}]
-\addplot[domain=-2:2, 
-    samples=100, color=black]{-0.25*x^2 + 1.5 };
-\addplot[smooth,mark=*,blue] plot coordinates {(-2,0.5)  (2,0.5)} node[below, midway]{$f(a) = f(b)$};
+\addplot[domain=-2.3:2.3, 
+    samples=100, color=black, thick]{-0.25*x^2 + 1.5 };
+    \node at (axis cs: 1.8,1.25) {$y = f(x)$};
+\addplot[smooth,mark=*,blue,dashed] plot coordinates {(-2,0.5)  (2,0.5)} node[below, midway]{$f(a) = f(b)$};
 \addplot[domain=-1.2:1.2, 
     samples=100, color=red]{1.5};
 \addplot[smooth,mark=*,red] plot coordinates {(0, 1.5)} node[above] {$f'(c) = 0$};
@@ -51,7 +52,7 @@ We can apply Rolle's Theorem to this function on the interval $[0, \pi]$ since
 \sin 0 = \sin \pi = 0.
 \]
 In this case, the conclusion of the theorem is that $f(x) = \sin(x)$ has a critical number in the interval $(0, \pi)$.
-Moreover, we know extly where, since $f'(x) = \cos(x)$ and the equation $\cos(x) = 0$ has a solution at $x = \pi/2$, which is in the interval.
+Moreover, we know exactly where, since $f'(x) = \cos(x)$ and the equation $\cos(x) = 0$ has a solution at $x = \pi/2$, which is in the interval.
 \end{example}
 
 \begin{example} Use Rolle's Theorem  to show that a cubic polynomial can have at most 3 roots.\\
@@ -69,19 +70,19 @@ then
 x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.
 \]
 Now we can argue by way of contradiction that a cubic polynomial can have at most 3 roots.
-Suppose that the cubic polynomial, $p(x)$, has 4 roots, $x_1, x_2, x_3$ and $x_4$, where these are in order from smallest to largest.
+Suppose that the cubic polynomial, $p(x)$, has 4 roots.  From smallest to largest, we label the 4 roots $x_1, x_2, x_3$ and $x_4$.
 Then, by definition of root,
 \[
 p(x_1) = p(x_2) = p(x_3) = p(x_4) = 0.
 \]
-We can apply Rolle's Theorem to $p(x)$ on the intervals $[x_1, x_2], [x_2, x_3]$ and $[x_3, x_4]$ to conclude
+We can now apply Rolle's Theorem to $p(x)$ on $[x_1, x_2], [x_2, x_3]$ and $[x_3, x_4]$ to conclude
 that $p'(x)$ has a root on each of these intervals, i.e.,
 \[
 p'(c_1) = p'(c_2) = p'(c_3) = 0,
 \]
 where
 \[
-x_1 < c_1 < x_2 < c_2 < x_3 < c_3 < x_4.
+x_1 < c_1 < x_2, \quad x_2 < c_2 < x_3 \quad \text{and} \quad x_3 < c_3 < x_4.
 \]
 \begin{image}
 \begin{tikzpicture}
@@ -90,7 +91,7 @@ xticklabels={$x_1$,$c_1$,$x_2$,$c_2$,$x_3$,$c_3$,$x_4$}, title={By Rolle's Theor
 \addplot[domain=-0.5:6.5, 
     samples=100, color=black]{0};
 \addplot [samples=100,smooth,domain=0:6] {sin(deg(1.57*x))} ;
-\addplot[smooth,mark=*,blue] plot coordinates {(0,0)   (2,0)  (4,0) (6,0)} ;
+\addplot[smooth,mark=*,blue, dashed] plot coordinates {(0,0)   (2,0)  (4,0) (6,0)} ;
 \addplot[smooth,mark=*,red] plot coordinates {(1, 1)} ;
 \addplot[smooth,mark=*,red] plot coordinates {(3, -1)} ;
 \addplot[smooth,mark=*,red] plot coordinates {(5, 1)} ;
@@ -119,29 +120,32 @@ and differentiable function, the average rate of change over an interval is atta
 instantaneous rate of change at some point inside the interval. The precise mathematical statement is as follows.\\
 
 \begin{theorem}[Mean Value Theorem]
-If $f(x)$ is continuous on the closed interval $[a,b]$ and differentiable on the 
-open interval $(a,b)$, then the Mean Value Equation:
+Suppose that the function $f(x)$ is continuous on the closed interval $[a,b]$ and differentiable on the 
+open interval $(a,b)$. Then there exists a number $c$ between $x = a$ and $x = b$ such that
 \[f'(c) = \frac{f(b) - f(a)}{b-a}\]
-holds for some value $c$ between $a$ and $b$.\\
+
 \end{theorem}
 
 
 
-
-The left hand side of the Mean Value Theorem equation represents the instantaneous rate of change of $f(x)$ at $x = c$ and the
-right hand side represents the average rate of change of $f(x)$ over the interval from $x=a$ to $x=b$.
+Geometrically, the left-hand side of the conclusion of the MVT represents the slope of the tangent line to $f(x)$ at $x = c$ 
+Meanwhile, the right-hand side represents the slope of the secant line connecting the points $(a, f(a))$ and $(b, f(b))$. 
+Since their slopes are equal, these two lines are parallel.
+Conceptually, the left-hand side represents the instantaneous rate of change of $f(x)$ at $x = c$ while the
+right-hand side represents the average rate of change of $f(x)$ over the interval from $x=a$ to $x=b$. 
+Thus, the MVT says that at some point, the instantaneous rate of change will be equal to the average rate of change.
 
 \begin{image}
 \begin{tikzpicture}
 \begin{axis}[axis x line=  center, axis y line = none, xtick={-1, 0.5, 2}, xticklabels={$a$,$c$,$b$}, 
 legend pos=outer north east, title={MVT for $f(x) $ on $[a,b]$}]
 \addplot[domain=-1.4:2.4, 
-    samples=100, color=black]{-x^2 + 5 };
-\addplot[smooth,mark=*,blue] plot coordinates {(-1,4)  (2,1)};
+    samples=100, color=black, thick]{-x^2 + 5 };
+\addplot[smooth,mark=*,blue, thin] plot coordinates {(-1,4)  (2,1)};
 \addplot[domain=-1:2, 
-    samples=100, color=blue]{-x + 3};
-\addplot[domain=-1:2, 
-    samples=100, color=red]{-x + 5.25 };
+    samples=100, color=blue, thin]{-x + 3};
+\addplot[domain=-0.2:1.2, 
+    samples=100, color=red, thin]{-x + 5.25 };
 \addplot[smooth,mark=*,red] plot coordinates {(0.5, 4.75)};
 \legend{$y = f(x)$, , secant line, tangent line, };
 \addplot[dashed] coordinates{(-1,0)(-1,4)};
@@ -152,59 +156,51 @@ node[label=below]{some label};
 \end{tikzpicture}
 \end{image}
 
-
-
-
-
-
-
-
-The Mean Value Equation is also frequently presented in the form:
-\[f(b) - f(a)=f'(c)(b-a).\]
-
-As a real life example, if a car averages 57.4 miles per hour on a long trip, then by the MVT the car must have been 
+As an example of the conceptual interpretation of the theorem, consider a car that averages  a speed of 57.4 miles per hour on a long trip. 
+By the MVT the car must have been 
 traveling at exactly 57.4 miles per hour at some instant during the trip.
 
-The MVT is considered an existence theorem because it asserts that there exists a special value $c$ inside the interval $(a,b)$
-that satisfies Mean Value Equation 
+The MVT is considered an existence theorem because it asserts that there exists at least one value $c$ inside the interval $(a,b)$
+that satisfies the equation 
 \[f'(c) = \frac{f(b) - f(a)}{b-a}.\]
 In our examples, we will determine the exact value of $c$. 
 
 \begin{example}[example 1]
-We will verify that the function $f(x) = x^2$ satisfies the hypotheses of the MVT
-on the interval $[0,3]$ and we will find the special value of $c$ that satisfies the Mean Value Equation.
-Since $x^2$ is a polynomial function, it is continuous and differentiable on any interval. 
-Hence, it is continuous on the closed interval $[0, 3]$ and differentiable on the open interval $(0, 3)$. 
-Then, by the MVT,  the Mean Value Equation holds for some number 
-$c$ in the interval $(0, 3)$. To find $c$, we first compute
-\[\frac{f(b) - f(a)}{b-a},\]
-then we compute $f'(x)$
-and finally we solve the equation
-\[f'(x) = \frac{f(b) - f(a)}{b-a}\]
-for $x$, discarding any solutions that do not lie in the interval $(0, 3)$.  
-Keep in mind that the MVT guarantees that we will find at least one solution in this interval.
-Let's begin:
+Verify that the function $f(x) = x^2$ satisfies the hypotheses of the Mean Value Theorem
+on the interval $[0,3]$. Then find all values that satisfy the conclusion of the theorem.\\
+Since $x^2$ is a polynomial, it is continuous on the closed interval $[0, 3]$ and differentiable on the open interval $(0, 3)$. 
+Thus, $f(x) = x^2$ satisfies the hypotheses of the MVT on $[0, 3]$. We now know that the equation
+\[
+f'(x) = \frac{f(b) - f(a)}{b-a}
+\]
+has at least one solution in the interval $(0, 3)$. To find the solution(s), 
+we first compute the value of the right-hand side using $a = 0$ and $b = 3$:
 \[\frac{f(b) - f(a)}{b-a} = \frac{f(3) - f(0)}{3-0} \]
 \[= \frac{3^2 - 0^2}{3}= \frac{9 - 0}{3} = 3.\]
-Next, $f'(x) = 2x$
-and finally, we solve the equation
+Since, $f'(x) = 2x$,
+the conclusion of the MVT guarantees that the equation
 \[2x = 3\]
-which gives
-\[x = \frac{3}{2}.\]
-Note that the value $\frac32$ is in the interval $(0,3)$ and so the special value, $c$, guaranteed to exist by the MVT,
-is $\frac32$ in this example.
+has at least one solution in the open interval $(0,3)$.
+This is easily verified, since if $2x = 3$, then 
+\[x = \frac{3}{2},
+\]
+which is in the open interval $(0, 3)$.
+Furthermore, note that $3/2$ is actually the mid-point of the interval $(0, 3)$.
+When applying the MVT to a quadratic polynomial on any interval $[a, b]$ the point $c$ will always be the mid-point!
+% and so the special value, $c$, guaranteed to exist by the MVT,
+%is $\frac32$ in this example.
 
 
 \begin{image}
 \begin{tikzpicture}
 \begin{axis}[axis lines = center, legend pos=outer north east, title={MVT for $f(x) = x^2$ on $[0,3]$}]
 \addplot[domain=0:3, 
-    samples=100, color=black]{x^2};
-\addplot[smooth,mark=*,blue] plot coordinates {(0,0)  (3,9)};
+    samples=100, color=black, thick]{x^2};
+\addplot[smooth,mark=*,blue, thin] plot coordinates {(0,0)  (3,9)};
 \addplot[domain=0:3, 
-    samples=100, color=blue]{3*x};
-\addplot[domain=0:3, 
-    samples=100, color=red]{3*x - 2.25 };
+    samples=100, color=blue, thin]{3*x};
+\addplot[domain=0.8:2.2, 
+    samples=100, color=red, thin]{3*x - 2.25 };
 \addplot[smooth,mark=*,red] plot coordinates {(1.5, 2.25)};
 \legend{$y=x^2$, , \text{secant line}, \text{tangent line}, }
 \end{axis}
@@ -212,8 +208,7 @@ is $\frac32$ in this example.
 \end{image}
 
 In the above figure, the blue line in the secant line for $f(x) = x^2$ on the interval $[0, 3]$, 
-and the red line is the tangent line at $x = \frac32$. The Mean Value Equation asserts that these lines are parallel, and this
-is clear in the figure.
+and the red line is the tangent line at $x = 3/2$. The Mean Value Theorem asserts that these lines are parallel.
 \end{example}
 
 \begin{problem}(problem 1a)
