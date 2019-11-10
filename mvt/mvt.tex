@@ -57,10 +57,7 @@ Moreover, we know exactly where, since $f'(x) = \cos(x)$ and the equation $\cos(
 
 \begin{example} Use Rolle's Theorem  to show that a cubic polynomial can have at most 3 roots.\\
 Recall that a root of a polynomial, $p(x)$, is a value $x = a$, such that $p(a) = 0$.
-So we would like to show that an equation of the form $p(x) = 0$, where $p(x)$ is a cubic polynomial, 
-\[
-p(x) = ax^3 + bx^2 + cx + d, \;\; \text{where} \;\; a\neq 0.
-\]
+
 Also recall that a quadratic polynomial has at most two roots, since if
 \[
 ax^2 + bx + c = 0
@@ -69,18 +66,28 @@ then
 \[
 x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.
 \]
-Now we can argue by way of contradiction that a cubic polynomial can have at most 3 roots.
-Suppose that the cubic polynomial, $p(x)$, has 4 roots.  From smallest to largest, we label the 4 roots $x_1, x_2, x_3$ and $x_4$.
+Let $p(x)$ be a cubic polynomial, i.e., 
+\[
+p(x) = ax^3 + bx^2 + cx + d, \;\; \text{where} \;\; a\neq 0.
+\]
+We would like to demonstrate that $p(x)$ can have at most 3 roots.
+%So we would like to show that an equation of the form $p(x) = 0$, where $p(x)$ is a cubic polynomial, 
+Now argue by \it{contradiction}. 
+%We  suppose that $(p(x)$ can have 4 roots and draw from that an erroneous cocnlusion.
+%This contradiction implies that our supposition ``$p(x)$ can have 4 roots" is false.  Therefore we can conclude that $p(x)$ has at most 3 roots.
+
+ %that a cubic polynomial can have at most 3 roots.
+Suppose that a cubic polynomial, $p(x)$, has 4 roots.  From smallest to largest, we label the 4 roots $x_1, x_2, x_3$ and $x_4$.
 Then, by definition of root,
 \[
 p(x_1) = p(x_2) = p(x_3) = p(x_4) = 0.
 \]
 We can now apply Rolle's Theorem to $p(x)$ on $[x_1, x_2], [x_2, x_3]$ and $[x_3, x_4]$ to conclude
-that $p'(x)$ has a root on each of these intervals, i.e.,
+that $p'(x)$ has a root on each of these intervals. That is, there exist numbers $c_1, c_2$ and $c_3$ such that
 \[
 p'(c_1) = p'(c_2) = p'(c_3) = 0,
 \]
-where
+and
 \[
 x_1 < c_1 < x_2, \quad x_2 < c_2 < x_3 \quad \text{and} \quad x_3 < c_3 < x_4.
 \]
@@ -105,8 +112,11 @@ xticklabels={$x_1$,$c_1$,$x_2$,$c_2$,$x_3$,$c_3$,$x_4$}, title={By Rolle's Theor
 \end{tikzpicture}
 \end{image}
 
-But this is not possible. Since $p(x)$ is a cubic polynomial, its derivative, $p'(x)$ is a quadratic polynomial and so it has at most 2 roots.
-This contradiction implies that a cubic polynomial can have at most 3 roots.
+But $p'(x)$ cannot have 3 roots. Since $p(x)$ is a cubic polynomial, the power rule tells us that $p'(x)$ is a quadratic polynomial. 
+As such, $p'(x)$ can have at most 2 roots.
+This contradiction implies that a cubic polynomial cannot have 4 roots. Thus, a cubic polynomial can have at most 3 roots.\\
+In fact, more generally a polynomial of degree $n$ can have at most $n$ roots.  
+This can be proven using an arguemnt similar to the one used in this example and an advanced technique known as principle of {\it mathematical induction}.
 \end{example}
 
 
