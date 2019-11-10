@@ -82,7 +82,9 @@ Then, by definition of root,
 p(x_1) = p(x_2) = p(x_3) = p(x_4) = 0.
 \]
 We can now apply Rolle's Theorem to $p(x)$ on $[x_1, x_2], [x_2, x_3]$ and $[x_3, x_4]$ to conclude
-that $p'(x)$ has a root on each of these intervals. That is, there exist numbers $c_1, c_2$ and $c_3$ such that
+that $p'(x)$ has a root on each of these intervals. 
+
+That is, there exist numbers $c_1, c_2$ and $c_3$ such that
 \[
 p'(c_1) = p'(c_2) = p'(c_3) = 0,
 \]
@@ -112,9 +114,11 @@ xticklabels={$x_1$,$c_1$,$x_2$,$c_2$,$x_3$,$c_3$,$x_4$}, title={By Rolle's Theor
 \end{tikzpicture}
 \end{image}
 
-This would mean that $p'(x)$ has 3 roots. But this is not possible: 
+This would mean that $p'(x)$ has 3 roots, which is not possible: 
  $p'(x)$ is a quadratic polynomial, and so $p'(x)$ has at most 2 roots.
-This contradiction implies that a cubic polynomial cannot have 4 roots. Thus, a cubic polynomial can have at most 3 roots.\\
+ 
+This contradiction implies that a cubic polynomial cannot have 4 roots. Thus, a cubic polynomial can have at most 3 roots.
+
 In fact, more generally a polynomial of degree $n$ can have at most $n$ roots.  
 This can be proven using an argument similar to this one, combined with an advanced technique known as mathematical induction.
 \end{example}
