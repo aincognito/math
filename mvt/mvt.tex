@@ -42,17 +42,24 @@ title={Rolle's Theorem for $f(x) $ on $[a,b]$}]
 \end{axis}
 \end{tikzpicture}
 \end{image}
-The rationale behind the theorem is that since the function is at the same height at the endpoints, the Extreme Value Theorem implies that
-there must be a local extreme (and hence a critical number) between $x = a$ and $x = b$.
+Since the function is continuous on the interval $[a,b]$, the Extreme Value Theorem applies.
+Thus $f(x)$ has an absolute minimum and an absolute maximum on the interval.
+Since $f(a) = f(b)$, $f(x)$ must have an absolute extreme on the interval $(a,b)$.
+Recall that $f(x)$ is differentiable on $(a,b)$ which implies that the derivative is zero at this extreme.
+
+ critical number on the interval $(a,b)$. 
+At this value of our differnetiable function, the derivative is zero.
+
+(and hence a critical number)
 
 \begin{example} Show that the function $f(x) = \sin(x)$ has a critical number in the interval $(0, \pi)$.\\
-The function $\sin(x)$ is differentiable (and hence also continuous) on the interval $(-\infty, \infty)$.
-We can apply Rolle's Theorem to this function on the interval $[0, \pi]$ since
+The function $\sin(x)$ is differentiable (and hence also continuous) on the interval $(-\infty, \infty)$ and since
 \[
-\sin 0 = \sin \pi = 0.
+\sin 0 = \sin \pi = 0,
 \]
-In this case, the conclusion of the theorem is that $f(x) = \sin(x)$ has a critical number in the interval $(0, \pi)$.
-Moreover, we know exactly where, since $f'(x) = \cos(x)$ and the equation $\cos(x) = 0$ has a solution at $x = \pi/2$, which is in the interval.
+we can apply Rolle's Theorem to $\sin(x)$ on the interval $[0, \pi]$. The theorem says that there exists a number $c$ between $0$ and $\pi$ such that 
+$f'(c) = 0$. That is, $f(x) = \sin(x)$ has a critical number in the interval $(0, \pi)$.
+Moreover, we can find $c$ since $f'(x) = \cos(x)$ and the equation $\cos(x) = 0$ has $x = \pi/2$ as a solution in the interval.
 \end{example}
 
 \begin{example} Use Rolle's Theorem  to show that a cubic polynomial can have at most 3 roots.\\
@@ -88,10 +95,8 @@ That is, there exist numbers $c_1, c_2$ and $c_3$ such that
 \[
 p'(c_1) = p'(c_2) = p'(c_3) = 0,
 \]
-where
-\[
-x_1 < c_1 < x_2, \quad x_2 < c_2 < x_3 \quad \text{and} \quad x_3 < c_3 < x_4.
-\]
+where: $x_1 < c_1 < x_2, \; x_2 < c_2 < x_3 \;$ and $\; x_3 < c_3 < x_4$.
+
 \begin{image}
 \begin{tikzpicture}
 \begin{axis}[axis x line=  center, axis y line = none, xmin= -0.5, xmax=6.5, xtick={0, 1, 2, 3, 4, 5, 6}, 
@@ -119,8 +124,9 @@ This would mean that $p'(x)$ has 3 roots, which is not possible:
  
 This contradiction implies that a cubic polynomial cannot have 4 roots. Thus, a cubic polynomial can have at most 3 roots.
 
-In fact, more generally a polynomial of degree $n$ can have at most $n$ roots.  
-This can be proven using an argument similar to this one, combined with an advanced technique known as mathematical induction.
+In fact, a similar argument can be used to show that a polynomial of degree $n$ can have at most $n$ roots for any whole number, $n$.  
+%This can be proved similarly.
+%This can be proven using an argument similar to this one, combined with an advanced technique known as mathematical induction.
 \end{example}
 
 
