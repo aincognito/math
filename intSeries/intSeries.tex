@@ -55,6 +55,95 @@ c) \;  \sum_{n=0}^\infty \frac{x^n}{n!},\qquad d) \; \sum_{n=0}^\infty x^{2n}
 \]
 \end{problem}
 
+\begin{example}[example 2]
+The power series expansion for the function $\frac{1}{1+x}$ is 
+\[
+\frac{1}{1+x} = \sum_{n=0}^\infty (-1)^n x^n, |x| < 1.
+\]
+Integrate the function and the series to obtain a power series representation for a logaritmic function.\\
+First note that
+\[
+\int \frac{1}{1+x} \, dx = \ln|1+x| + C.
+\]
+Next, integrate the power series:
+\[
+\int \left[\sum_{n=0}^\infty (-1)^n x^n \right] \, dx =  \sum_{n=0}^\infty \left[ \int(-1)^n x^n \, dx \right] = \sum_{n=0}^\infty  (-1)^n \frac{x^{n+1}}{n+1} +C.
+\]
+Equating these two antiderivatives, we have
+\[
+\ln|1+x| = \sum_{n=0}^\infty  (-1)^n \frac{x^{n+1}}{n+1} +C, \; |x| < 1,
+\]
+which is a power series representation for a logarithmic function.
+
+\begin{remark}[Remark 1]
+If we set $x = 0$, we can find $C$:
+\[
+\ln(1) = \sum_{n=0}^\infty  (-1)^n \frac{0^{n+1}}{n+1} +C = 0 + C,
+\]
+so $C = \ln(1) = 0$.
+\end{remark}
+
+\begin{remark}[Remark 2]
+If we substitute $x = 1$ into both sides of the power series representation, we obtain:
+\[
+\ln(2) = \sum_{n=0}^\infty  (-1)^n \frac{1^{n+1}}{n+1} = \sum_{n=0}^\infty  (-1)^n \frac{1}{n+1} = 1 - \frac12 + \frac13 - \frac14 + \cdots
+\]
+The right side is the alternating harmonic series. We have previously learned that the alternating harmonic series converges 
+and now we have discovered that the sum of this series is $\ln(2) \approx 0.7$.
+\end{remark}
+
+\begin{remark}[Remark 3]
+Since $|x|<1$, we have $-1 < x< 1$ and so $0 < 1+x < 2$. Hence, we can remove the absolute value bars in the logarithm to obtain:
+\[
+\ln(1+x) = \sum_{n=0}^\infty  (-1)^n \frac{x^{n+1}}{n+1}, \; |x| < 1.
+\]
+\end{remark}
+
+\end{example}
+
+\begin{example}[example 3]
+The power series representation for the function $\frac{1}{1+x^2}$ is 
+\[
+\frac{1}{1+x^2} = \sum_{n=0}^\infty (-1)^n x^{2n}, \; |x| < 1.
+\]
+Integrate the function and the series to obtain a power series representation for an inverse trigonometric function.\\
+First note that
+\[
+\int \frac{1}{1+x^2} \, dx = \tan^{-1}(x) + C.
+\]
+Next, integrate the power series:
+\[
+\int \left[\sum_{n=0}^\infty (-1)^n x^{2n} \right] \, dx =  \sum_{n=0}^\infty \left[ \int(-1)^n x^{2n} \, dx \right] = \sum_{n=0}^\infty  (-1)^n \frac{x^{2n+1}}{2n+1} +C.
+\]
+Equating these two antiderivatives, we have
+\[
+\tan^{-1}(x) = \sum_{n=0}^\infty  (-1)^n \frac{x^{2n+1}}{2n+1} +C, \; |x| < 1,
+\]
+which is a power series representation for an inverse trigonometric function.
+
+\begin{remark}[Remark 1]
+If we set $x = 0$, we can find $C$:
+\[
+\tan^{-1}(0) = \sum_{n=0}^\infty  (-1)^n \frac{0^{2n+1}}{2n+1} +C = 0 + C,
+\]
+so $C = \tan^{-1}(0) = 0$.
+\end{remark}
+
+\begin{remark}[Remark 2]
+If we substitute $x = 1$ into both sides of the power series representation, we obtain:
+\[
+\tan^{-1}(1) = \sum_{n=0}^\infty  (-1)^n \frac{1^{2n+1}}{2n+1} = \sum_{n=0}^\infty  (-1)^n \frac{1}{2n+1} 
+\]
+Since $\tan^{-1}(1) = \pi/4$, we can multiply by $4$ to obtain an infinite series whose sum is $\pi$:
+\[
+\pi = \sum_{n=0}^\infty  (-1)^n \frac{4}{2n+1} = 4 - \frac43 + \frac45 - \frac47 + \cdots
+\]
+\end{remark}
+
+
+
+
+\end{example}
 
 \end{document}
 
