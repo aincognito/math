@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1575839223 "angles.tex" "angles.pdf" "angles" 1575839224
+["pdflatex"] 1575840099 "angles.tex" "angles.pdf" "angles" 1575840100
   "../preamble.tex" 1552972435 3703 0b0a472a71c0c8f438ab786608282e61 ""
   "/home/andrew/texmf/tex/latex/ximeraLatex/ximera.cls" 1531167858 28946 805eb0dd71d7f8f6597f9d8aa452fc80 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1536122179 3332 103109f5612ad95229751940c61aada0 ""
@@ -31,9 +31,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1536122179 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1536122179 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxsl10.pfb" 1536122179 33268 c6f8eb7f8646b55ddad94764eab1ec72 ""
-  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1536122179 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1536122179 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
-  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1536122179 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1536122179 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1536122179 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1536122179 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
@@ -295,14 +293,14 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1536122179 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1542735336 2756227 3af771b8c7802fcc4de3c67a29c4e776 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1536255675 7908118 a16e2dd5947695aba15dfea80a46c11f ""
-  "angles.aux" 1575839223 878 e96b7e79e16970d28c33ca2da0fc07f1 ""
-  "angles.out" 1575839223 132 c6e38b61bd52db7f16d64ebe9d7a367f ""
-  "angles.tex" 1575839222 5398 419d3fbdc582b74917f07b67b524b96f ""
+  "angles.aux" 1575840100 878 1e23e9164a6dfb3ac04ab1176157cfdd ""
+  "angles.out" 1575840100 132 c6e38b61bd52db7f16d64ebe9d7a367f ""
+  "angles.tex" 1575840098 6047 c65fac2f2c1ee5e47dd0bb4144a766ea ""
   (generated)
   "angles.jax"
+  "angles.out"
+  "angles.log"
+  "angles.ids"
+  "angles.oc"
   "angles.aux"
   "angles.pdf"
-  "angles.ids"
-  "angles.log"
-  "angles.oc"
-  "angles.out"
