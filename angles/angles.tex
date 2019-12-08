@@ -1,0 +1,284 @@
+\documentclass{ximera}
+
+\usetikzlibrary{calc,patterns,angles,quotes}
+
+
+\input{../preamble}
+
+\outcome{Compute angles}
+
+\title{1.1 Angles}
+
+\begin{document}
+
+\begin{abstract}
+We will compute angles
+\end{abstract}
+
+\maketitle
+
+\begin{definition}
+
+
+\end{definition}
+
+
+\section{Angles}
+
+ \begin{tikzpicture}[thick]
+  \draw (0,0) node[left]{$A$}  -- (4,0) node[midway,below]{$f$} -- (4,2) node[midway,right]{$\frac{x}{2}$}-- cycle;
+\end{tikzpicture}
+
+
+
+
+
+  \begin{tikzpicture}
+    \coordinate (origo) at (0,0);
+    \coordinate (pivot) at (1,5);
+
+    % draw axes
+    \fill[black] (origo) circle (0.05);
+    \draw[thick,gray,->] (origo) -- ++(4,0) node[black,right] {$x$};
+    \draw[thick,gray,->] (origo) -- ++(0,-4) node (mary) [black,below] {$y$};
+
+    % draw roof
+    \fill[pattern = north east lines] ($ (origo) + (-1,0) $) rectangle ($ (origo) + (1,0.5) $);
+    \draw[thick] ($ (origo) + (-1,0) $) -- ($ (origo) + (1,0) $);
+
+    \draw[thick] (origo) -- ++(300:3) coordinate (bob);
+    \fill (bob) circle (0.2);
+
+    \pic [draw, ->, "$\theta$", angle eccentricity=1.5] {angle = mary--origo--bob};
+  \end{tikzpicture}
+
+
+\begin{tikzpicture}
+\coordinate[label=below left:$A$] (A) at (0,0);
+\coordinate[label=below right:$x$] (X) at (6,1);
+\coordinate[label=above left:$y$] (Y) at (3,5);
+
+\draw[thick] (X) -- (A) -- (Y);
+
+% Mark the angle XAY
+\begin{scope}
+\path[clip] (A) -- (X) -- (Y);
+\fill[red, opacity=0.5, draw=black] (A) circle (5mm);
+\node at ($(A)+(30:7mm)$) {$\theta$};
+\end{scope}
+
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}
+ \draw  (3,-1) coordinate (a) node[right] {a}   -- (0,0) coordinate (b) node[left] {b}
+  -- (2,2) coordinate (c) node[above right] {c}
+  pic["$\alpha$", draw=orange, <->, angle eccentricity=1.2, angle radius=1cm]
+  {angle=a--b--c};
+    
+  \pic [draw=blue, text=blue, ->, "$\theta$", angle eccentricity=1.5] {angle = a--b--c};
+\end{tikzpicture}
+
+
+
+
+\begin{enumerate}
+
+
+\item[1.] 
+
+\begin{problem}
+Angle angle whose measure is $18^\circ$ is called \wordChoice{\choice[correct]{acute} 
+\choice{obtuse }\choice{right}\choice{straight}}
+\end{problem}
+
+\begin{enumerate}
+
+\item[a.] $\displaystyle $
+\item[b.] $\displaystyle $
+
+ 
+\end{enumerate}
+
+
+\item[5.] Natural exponential function:
+\[
+\int e^x \; dx = e^x + C.
+\]
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+\section{Problems}
+
+
+
+
+
+
+\begin{problem}(problem 1)
+
+\begin{hint}
+
+
+
+\begin{center}
+
+\end{center}
+
+\end{hint}
+
+\[
+\answer[given]{10^\circ} 
+\]
+
+\end{problem}
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Combining functions}
+
+The \textbf{constant multiple rule}:
+\[
+\int af(x) \; dx = a\int f(x) \; dx,
+\]
+where $a$ is any constant.\\
+
+The \textbf{sum and difference rules}:
+\[
+\int \left[f(x) \pm g(x) \right] \; dx = \int f(x) \; dx \pm \int g(x) \; dx.
+\]
+
+
+
+\item[initial value] 
+given f' and f(0), find f
+
+\item[second derivative]
+given f'' and f'(0), f(0), find f
+
+\item[Indefinite integrals]
+\[
+\int f'(x) \; dx = f(x) + C \;\; \text{or} \;\; \int f(x) \; dx = F(x) + C.
+\]
+
+\item[Interaction with Constants]
+\[
+\int [af'(x) + bg'(x)] \; dx = a \int f'(x) \; dx + b \int g'(x) \; dx.
+\]
+
+\item[Trig Functions]
+\[
+\int \cos(x) \; dx = \sin(x) + C \:\:  \text{and} \;\; \int \sec^2(x) \; dx = \tan(x) + C.
+\]
+
+\item[Power Functions]
+\[
+\int x^2 \; dx = \frac{x^3}{3} + C \;\; \text{and} \;\; \int \frac{1}{x} \; dx = \ln|x| + C.
+\]
+
+\item[Power Rule for Indefinite Integrals]
+\[
+\int x^n \; dx = \frac{x^{n+1}}{n+1} + C, n\neq -1.
+\]
+
+\item[examples for the power rule]
+\[
+\int \frac{1}{2\sqrt x} \; dx = \sqrt x + C \;\; \text{and} \;\; \int x^{-3} \; dx = -\frac{x^{-2}}{2} + C = -\frac{1}{2x^2} + C.
+\]
+
+\item[exponential functions]
+\[
+\int be^{ax} \; dx = \frac{b}{a} e^{ax} + C
+\]
+
+\item[other examples]
+\[
+\int \frac{1}{x^2 + a^2} \; dx = \frac{1}{a} \tan^{-1}(\frac{x}{a}) + C \;\; \text{and} \;\; \int f'(ax) \; dx = \frac{1}{a} f(ax) + C.
+\]
+
+\item[compositions]
+\[
+\int f(g(x))g'(x) \; dx = F(g(x)) + C.
+\]
+
+\item[products]
+\[
+\int f(x)g'(x) \; dx = f(x)g(x) + \int f'(x)g(x) \; dx \;\; \text{or} \;\; \int u\; dv = uv - \int v \; du.
+\]
+
+\item[rational functions]
+\[
+\int \frac{p(x)}{(x-a)^n(x^2 + b^2)} \; dx = \int \frac{A_1}{x-a} + \frac{A_2}{(x-a)^2} + \cdots + \frac{A_n}{(x-a)^n} + \frac{Bx+C}{x^2 + b^2} \; dx.
+\]
+
+\item[trig integrals]
+\[
+\int \sin^m(x) \cos^n(x) \; dx \;\; \text{and} \int\frac{1}{x^2\sqrt{x^2-a^2}} \; dx = \frac{1}{a^2} \int \cos \theta \; d\theta.
+\]
+
+
+\end{enumerate}
+
+\end{example}
+
+
+\end{document}
+
+Integration by parts in economics
+
+Present value of a flow
+Suppose P(t) is the annual rate at which income is flowing at time
+t. Given r the interest rate. Consider a period between a and b, if
+we partition the time interval with sub-intervals [t i−1 , t i ], for
+i = 1, .., n with t 0 = a and t n = b we know that we can
+approximate the income in any sub-interval as P(t i )(t i − t i−1 ). The
+discount factor will be e −rt i .
+Using integral to get the present value of the flow on the whole
+period
+Z b
+e −rt P(t)dt
+
+
+
+An example of improper integral in economics
+Denoting by c(t) consumption at time t, by U the instantaneous
+utility function and r a discount rate. An integral
+Z ∞
+U(c(t))e −rt dt
+t 0
+represents the present value of future cumulative utility coming
+from consumption.
+
+Applications in mathematics
+Laplace transform
+gamma function
+prob density function (doubly improper integral) int 1/(1+x^2)
+computer science int of download speed = amount downloaded
