@@ -51,19 +51,23 @@ We use the constraint to do this.  Solve the constraint for either $x$ or $y$.
 In this case, solving the constraint for $y$ gives
 \[y = 800 - \frac23 x. \;\; \text{(verify)}\]
 We {\it substitute} this expression of $y$ into the objective function to get 
-\[A = xy = x(800 - \frac23 x) = 800x - \frac23 x^2.\]
-Now that our objective function is a function of a single variable, we can find its maximum by finding the critical numbers:
-\[A' = 800 - \frac43 x = 0 \]
+\[A(x) = x\left(800 - \frac23 x\right) = 800x - \frac23 x^2.\]
+Since $x$ represents a length of fence, we have $x \geq 0$. Furthermore, since we have 2400 feet of fence $2x \leq 2400$ which implies $x\leq 1200$.
+Thus we would like find the absolute maximum of $A(x)$ on the interval $[0, 1200]$. Since $A(x)$ is a continuous function, the EVT says that it has an abs max on the closed interval $[0, 1200]$.  We use the closed interval method of section 3.1 to find the abs max.
+
+The critical numbers are:
+\[A'(x) = 800 - \frac43 x = 0 \]
 which yields
 \[x= 600 \,\mbox{ft.}\]
+which is in the interval. Comparing values, we have $A(0) = 0, A(600) = 240000$ and $A(1200) = 0$.
+Thus the abs max occurs when $x = 600$. 
+%We now use the second derivative test to verify that this is a maximum:
+%\[
+%A'' = -\frac43.
+%\]
+%Since, $A'' < 0$ at the critical number $x = 600$, $A$ has a local maximum there.
 
-We now use the second derivative test to verify that this is a maximum:
-\[
-A'' = -\frac43.
-\]
-Since, $A'' < 0$ at the critical number $x = 600$, $A$ has a local maximum there.
-
-We can also note that this gives a maximum since the graph of $A$ is a parabola that opens down.
+We can also note that $x = 600$ gives a maximum since the graph of $A(x)$ is a parabola that opens down.
 
 
 \begin{image}
@@ -222,20 +226,21 @@ We have a material constraint which says that the surface area of the box should
 Solving the constraint for $y$ gives
 \[y = \frac{4800 - x^2}{4x}.\]
 Substituting this into the objective gives:
-\[V = x^2y = x^2 \left(\frac{4800 - x^2}{4x}\right).\]
-Simplifying $V$ gives:
-\[V = 1200x - \frac14 x^3.\]
+\[V(x) = x^2 \left(\frac{4800 - x^2}{4x}\right),\]
+where $0\leq x \leq \sqrt{4800}$.
+Simplifying $V(x)$ gives:
+\[V(x) = 1200x - \frac14 x^3.\]
 The volume will be at a maximum when its derivative is zero:
-\[V' = 1200 - \frac34 x^2 = 0.\]
+\[V'(x) = 1200 - \frac34 x^2 = 0.\]
 Solving for $x$, we get:
 \[ \frac34 x^2 = 1200, \]
 \[x^2 = 1600,\]
 \[x = \pm 40.\]
-Since $x$ should be positive in this context, we have:
-\[x = 40 \mbox{ in.}\]
+Since $x=-40$ is not in the interval $[0, \sqrt{4800}]$, we eliminate it from consideration. 
+Furthermore, since $V(0) = 0$ and $V(\sqrt{4800})= 0$ (since $y=0$ in this case), the maximum volume occurs when $x = 40$.
 Plugging this into the constraint equation, we can find $y$:
 \[y = \frac{4800 - x^2}{4x} = \frac{4800 - 1600}{160} = 20 \mbox{ in.}\]
-Thus the volume is maximized when $x = 40$ and $y = 20$. Finally, the maximum volume of the box is:
+Thus the volume is maximized when $x = 40$ and $y = 20$ and the maximum volume of the box is:
 \[V = x^2y = (40)^2 (20) = 32{,}000 \mbox{ cubic inches}.\]
 
 \end{example}
@@ -275,7 +280,9 @@ The optimal height is $y = \answer{25}$ inches.\\
 The maximum volume is $ \answer{62500}$ cubic inches.
 \end{problem}
 
-
+In some problems, the objective function involves a composition, $f(g(x))$.  
+If the outsode function $f$ is strictly increasing, then the max or min of the composition occurs at the same $x$-value as the max/min of $g(x)$. 
+We will see this in the next example.
 \begin{example}[example 3]
 Scientist Sam wants to know how close a comet moving in a parabolic trajectory will get to the sun. 
 We will assume that the sun is located at the origin and that the path of the comet follows the parabola $y = x^2 - 5$. The units 
@@ -311,8 +318,8 @@ We apply the distance formula to the comet at the point $(x, y)$ and the sun at 
 \[d = \sqrt{(x-0)^2 + (y-0)^2} = \sqrt{x^2 + y^2}.\]
 Since the comet must stay on the parabola we get the constraint equation $y = x^2 - 5$.  Substituting this into the objective equation gives:
 \[d = \sqrt{x^2 + (x^2 - 5)^2}.\]
-Now, we would like to find the minimum value of $d$. A convenient trick when minimizing a square root function is to minimize 
-the radicand (the quantity under the square root).
+Now, we would like to find the minimum value of $d$. Since the square root function is increasing, 
+we can locate the minimum by finding the min of the radicand (the quantity under the square root).
 So, we want to minimize 
 \[
 f(x) = x^2 + (x^2 - 5)^2.
@@ -387,9 +394,9 @@ Solving the constraint for $y$ gives
 y = 1600/x.
 \]
   Substituting this into the objective yields
-\[F= 3x + 3y = 3x + 3\left(\frac{1600}{x}\right) = 3x + \frac{4800}{x}.\]
-The minimum value of $F$ occurs when $F' = 0$. Solving $F' = 0$ for $x$ gives
-\[F' = 3 - \frac{4800}{x^2} = 0\]
+\[F(x) = 3x + 3\left(\frac{1600}{x}\right) = 3x + \frac{4800}{x}.\]
+To find the minimum value of $F$ , we solve $F'(x) = 0$. This gives
+\[F'(x) = 3 - \frac{4800}{x^2} = 0\]
 which means $3x^2 = 4800$ and so $x = \pm 40$ ft.  Since $x>0$ from context, we have $x = 40$ ft. as our solution.
 Plugging this value of $x$ into the constraint equation gives
 \[y = \frac{1600}{x} = \frac{1600}{40} = 40 \mbox{ ft.}\]
@@ -463,7 +470,7 @@ y = \sqrt{50^2 + (100-x)^2}.
 \]
 Substituting this into the objective gives:
 \[
-T = \frac{x}{2} + \sqrt{50^2 + (100-x)^2},\]
+T(x) = \frac{x}{2} + \sqrt{50^2 + (100-x)^2},\]
 where $x$ is between $0$ and $100$.
 To find the minimum value of $T$, we find the critical numbers (using the chain rule):
 \[
