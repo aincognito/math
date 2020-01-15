@@ -103,35 +103,39 @@ The final answer in terms of $x$ is:
 
 
 \begin{example}[example 3] Compute 
-\[\int 2xe^{(x^2 + 1)} \ dx.\]
-Let $u = x^2 + 1$.  We have,
+\[\int_0^2 2xe^{x^2 + 1} \ dx.\]
+In this example, we have a definite integral.  When making a substitution in a definite integral, 
+we must change the endpoints of integration in addition to the integrand and the differential.
+As before, let $u = x^2 + 1$.  We have,
 \[u = x^2 + 1\]
 \[du = 2x \ dx\]
-
-\[\int 2xe^{(x^2 + 1)} \ dx = \int e^{(x^2 + 1)} \ 2x\  dx = \int e^u \ du.\]
+Now we prepare to change the endpoints. If $x = 0$, then $ u = 0^2 + 1 = 1$ and if $x = 2$, then $u = 2^2 +1 = 5$.
+So, the endpoints in the original integral, 0 and 1, will be changed to 1 and 5 respectively.
+\[\int_0^1 2xe^{x^2 + 1} \ dx  = \int_1^5  e^u \ du.\]
 The last integral can be computed as 
-\[\int e^u \ du = e^u + C,\]
-and by back-substituting, we have 
-\[e^u + C = e^{(x^2 + 1)} + C.\]
+\[\int_1^5 e^u \ du = e^u \Big{|}_1^5 = e^5 - e.\]
+
 Thus, using $u$-substitution we can conclude that
-\[\int 2xe^{(x^2 + 1)} \ dx =  e^{(x^2 + 1)} + C.\]
+\[\int_0^1 2xe^{x^2 + 1} \ dx =  e^5 - e.\]
 \end{example}
 
 
 
 \begin{problem}(problem 3)\\
-Compute $\displaystyle{\int -2xe^{-x^2} \ dx}$.\\
+Compute $\displaystyle{\int_1^2 -2xe^{-x^2} \ dx}$.\\
 Let $u = \answer{-x^2}$. Then $du = \answer{-2x dx}$.\\
 \begin{hint}
 Don't forget the `dx' in your answer for `du'.
 \end{hint}
+If $x = 1$ then $u = \answer{-1}$ and \\
+if $x = 2$ then $u = \answer{-4}$
 Convert to an intergal in the variable $u$:
-\[\int -2xe^{-x^2} \ dx = \int\answer{e^u du}\]
+\[\int -2xe^{-x^2} \ dx = \int_{\answer{-1}}^{\answer{-4}} \answer{e^u du}\]
 \begin{hint}
 Don't forget the `du' in your integral.
 \end{hint}
-The final answer in terms of $x$ is:
-\[\int -2xe^{-x^2} \ dx = \answer{e^{-x^2}} +C.\]
+The final answer is:
+\[\int_1^2 -2xe^{-x^2} \ dx = \answer{e^{-4} - e^{-1}} \]
 \end{problem}
 
 \begin{example}[example 4] Compute 
@@ -526,4 +530,3 @@ Thus, using $u$-substitution we can conclude that
 \end{center}
 
 \end{document}
-
