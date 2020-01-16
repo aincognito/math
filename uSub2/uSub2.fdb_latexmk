@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1579124496 "uSub2.tex" "uSub2.pdf" "uSub2" 1579124498
+["pdflatex"] 1579124601 "uSub2.tex" "uSub2.pdf" "uSub2" 1579124603
   "../preamble.tex" 1552972435 3703 0b0a472a71c0c8f438ab786608282e61 ""
   "/home/andrew/texmf/tex/latex/ximeraLatex/ximera.cls" 1531167858 28946 805eb0dd71d7f8f6597f9d8aa452fc80 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1536122179 3332 103109f5612ad95229751940c61aada0 ""
@@ -317,14 +317,14 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1536122179 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1542735336 2756227 3af771b8c7802fcc4de3c67a29c4e776 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1536255675 7908118 a16e2dd5947695aba15dfea80a46c11f ""
-  "uSub2.aux" 1579124497 827 30b1adeadc8283ce78f95b4d4de00042 ""
-  "uSub2.out" 1579124497 102 877cc0d0bf743eebd3ea40de5c82d22f ""
-  "uSub2.tex" 1579124495 15090 2f221d50ece9f048a1881a204b6ce282 ""
+  "uSub2.aux" 1579124602 827 30b1adeadc8283ce78f95b4d4de00042 ""
+  "uSub2.out" 1579124602 102 877cc0d0bf743eebd3ea40de5c82d22f ""
+  "uSub2.tex" 1579124600 15092 e9bbd8b9730a55ac7b921cc0b50a2cb3 ""
   (generated)
-  "uSub2.oc"
-  "uSub2.jax"
   "uSub2.out"
-  "uSub2.log"
+  "uSub2.jax"
   "uSub2.aux"
   "uSub2.ids"
   "uSub2.pdf"
+  "uSub2.oc"
+  "uSub2.log"
