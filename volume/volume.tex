@@ -176,16 +176,83 @@ V &= \int_{-r}^r s(x)^2 \; dx\\
 \end{center}
 
 
+\section{Theoretical justification}
+
+\begin{image}
+\begin{tikzpicture}
+%\fill[gray,opacity=0.5] (0,0) circle (1.5cm);
+ 
+ 
+ 
+\draw[thick] (0,0) ellipse (4 and 2.5);
+\draw[thick]  (-4,0) arc (180:360:4 and .75) ;
+\draw[dashed, thick] (4,0) arc (0:180:4 and .5) ;
+%\draw (0,0) ellipse (4 and 0.5);
+
+\draw[thick, <->] (-5,-3.5) -- (5,-3.5) node[right] {$x$-axis};
+\draw (-4, -3.3) -- (-4, -3.7) node[below]{$a$};
+\draw (4, -3.3) -- (4, -3.7) node[below]{$b$};
+\draw (-2.4, -3.3) -- (-2.4, -3.7);
+\draw (-0.8, -3.3) -- (-0.8, -3.7);
+\draw (0.8, -3.3) -- (0.8, -3.7);
+\draw (2.4, -3.3) -- (2.4, -3.7);
+
+\draw[thin, dashed, gray] (-4, -3.3) -- (-4, 0);
+\draw[thin, dashed, gray] (4, -3.3) -- (4, 0);
+
+\draw[blue] (-2.4, -2.2) -- (-0.8, -2.2);
+\draw[blue] (-2.4, 2.2) -- (-0.8, 2.2);
+%\draw[blue] (-2.4,0) ellipse (0.4 and 2.2);
+%\draw[blue] (-0.8,0) ellipse (0.4 and 2.2);
+
+\draw[blue,dashed] (-2.4,-2.2) arc (-90:90: 0.2 and 2.2) ;
+\draw[blue] (-2.4,2.2) arc (90:270: 0.3 and 2.2) ;
+\draw[blue,dashed] (-0.8,-2.2) arc (-90:90: 0.2 and 2.2) ;
+\draw[blue] (-0.8,2.2) arc (90:270: 0.3 and 2.2) ;
+
+\draw (-1.8, -3.3) -- (-1.8, -3.7) node[below] {$x_2^*$};
 
 
+
+
+%\draw (0.75,-1.2) arc (180:360:1.25 and 0.3) node[below, xshift=-1.2cm, yshift = -.35cm]{$A = 2\pi rh$};
+%\draw [dashed] (6.75,-1.2) arc (180:360:1.25 and -0.3) ;
+%\draw (9.25,-1.2) -- (9.25,1.2) node[right,midway]{$h$}; 
+%\fill [gray!30, opacity=0.5] (6.75,1.2) -- (6.75,-1.2) arc (180:360:1.25 and 0.3) -- (9.25,1.2) arc (0:180:1.25 and -0.3);
+%\filldraw[fill=black] (8,1.2) circle (0.03cm);
+%\draw (8,1.2) -- (9.25, 1.2) node[midway,above, xshift=-.1cm, yshift=-.1cm]{$r$};
+ 
+\end{tikzpicture}
+\end{image}
+Suppose that a solid ranges from $x=a$ to $x = b$ on the $x$-axis.
+To find the volume of the solid, we begin by subdividing the interval $[a,b]$ into $n$ equal pieces, each of length
+\[
+\Delta x = \frac{b-a}{n}
+\]
+Next, we choose a test point in each subinterval. We denote the test point in the $i$-th subinterval by $x_i^*$ where $i = 1, 2, \dots , n$.
+Then, we make a cross-section of the solid perpendicular to the $x$-axis at each test point, $x_i^*$. If we denote the area of this cross-section by $A(x_i^*)$,
+then the volume of the solid over the $i$-th subinterval is approximately 
+\[
+V(x_i^*) \approx A(x_i^*) \Delta x
+\]
+Thus the volume of the solid can be approximated by summing these approximations as $i$ ranges from $1$ to $n$:
+\[
+V \approx \sum_{i=1}^n A(x_i^*) \Delta x.
+\]
+
+Since the approximation should improve as $n$ increases, we define the volume of the solid by taking the limit as $n \to \infty$:
+\[
+V = \lim_{n \to \infty} \sum_{i=1}^n A(x_i^*) \Delta x
+\]
+Finally, since this is a limit of Riemann sums, we can express the volume as a definite integral:
+\[
+V = \int_a^b A(x) \, dx,
+\]
+where $A(x)$ is the area of the cross-section of the solid perpendicular to the $x$-axis at $x$.
 
 \end{document}
 
 
-
-\begin{explanation}
-To be precise, we will next define the volume in terms of the limit of a Riemann Sums.  
-Let us reconsider the solid above, from the perspective of the $x$-axis. Suppose that at
 each $x$-value there is a cross-sectional area $A(x)$. Then to approximate the volume of the solid we 
 can use a Riemann sum as follows. Subdivide $[0,1]$ into `$n$' equal sub-intervals each of length $\Delta x = 1/n$.
 From the $i^\text{th}$ sub-interval,$\left[\frac{i-1}{n}, \frac{i}{n}\right]$, we choose a sample point, $x_i^*$, where 
@@ -206,6 +273,14 @@ V \approx \sum_{i=1}^n V_i = \sum_{i=1}^n A(x_i^*) \Delta x.
 The exact volume is then defined in terms of a limit these Riemann Sums:
 \[
 V = \lim_{n \to \infty} \sum_{i=1}^n A(x_i^*) \Delta x = \int_0^1 A(x) \; dx.
+
+
+
+
+
+
+\begin{explanation}
+
 \]
 
 \end{explanation}
