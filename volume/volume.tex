@@ -179,12 +179,12 @@ V &= \int_{-r}^r s(x)^2 \; dx\\
 \section{Theoretical justification}
 
 Suppose that a solid ranges from $x=a$ to $x = b$ on the $x$-axis.
-To find the volume of the solid, we begin by subdividing the interval $[a,b]$ into $n$ equal pieces, each of length
+To find the volume of the solid, we begin by subdividing the interval $[a,b]$ into $n$ subintervals, each of width
 \[
 \Delta x = \frac{b-a}{n}
 \]
-Next, we choose a sample point in each subinterval. We denote the sample point in the $i$-th subinterval by $x_i^*$ where $i = 1, 2, \dots , n$.
-Then, we make a cross-section of the solid perpendicular to the $x$-axis at each sample point, $x_i^*$ and denote the area of this cross-section by $A(x_i*)$.
+Let  $x_i^*$ denote a sample point in the $i$-th subinterval, where $i = 1, 2, \dots , n$.
+Consider a cross section of the solid perpendicular to the $x$-axis at the sample point $x_i^*,$ and denote the area of this cross section by $A(x_i*)$.
 
 
 \begin{image}
@@ -198,7 +198,7 @@ Then, we make a cross-section of the solid perpendicular to the $x$-axis at each
 \draw[dashed, thick] (4,0) arc (0:180:4 and .5) ;
 %\draw (0,0) ellipse (4 and 0.5);
 
-\draw[thick, <->] (-5,-3.5) -- (5,-3.5) node[right] {$x$-axis} node[below, midway,yshift=-1cm]{The area of the cross-section at $x_2^*$ is $A(x_2^*)$};
+\draw[thick, <->] (-5,-3.5) -- (5,-3.5) node[right] {$x$-axis} node[below, midway,yshift=-1cm]{The area of the cross section at $x_2^*$ is $A(x_2^*)$};
 
 \draw (-4, -3.3) -- (-4, -3.7) node[below]{$a$};
 \draw (4, -3.3) -- (4, -3.7) node[below]{$b$};
@@ -229,8 +229,8 @@ Then, we make a cross-section of the solid perpendicular to the $x$-axis at each
 \end{image}
 
 
-If we multiply the area of the cross-section, by the width of the sub-interval, 
-we get the volume of an object that is roughly the volume of the solid over the sub-interval:
+Multiplying the area of the cross section, $A(x_i^*)$, by the width of the subinterval, $\Delta x,$
+gives the volume of an object that is approximately the volume of the solid over the subinterval:
 \[
 V(x_i^*) = A(x_i^*) \Delta x
 \]
@@ -299,7 +299,7 @@ Finally, since this is a limit of Riemann sums, we can express the volume as a d
 \[
 V = \int_a^b A(x) \, dx,
 \]
-where $A(x)$ is the area of the cross-section of the solid perpendicular to the $x$-axis at $x$.
+where $A(x)$ is the area of the cross section of the solid perpendicular to the $x$-axis at $x$.
 
 \end{document}
 
