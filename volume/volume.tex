@@ -178,6 +178,15 @@ V &= \int_{-r}^r s(x)^2 \; dx\\
 
 \section{Theoretical justification}
 
+Suppose that a solid ranges from $x=a$ to $x = b$ on the $x$-axis.
+To find the volume of the solid, we begin by subdividing the interval $[a,b]$ into $n$ equal pieces, each of length
+\[
+\Delta x = \frac{b-a}{n}
+\]
+Next, we choose a test point in each subinterval. We denote the test point in the $i$-th subinterval by $x_i^*$ where $i = 1, 2, \dots , n$.
+Then, we make a cross-section of the solid perpendicular to the $x$-axis at each test point, $x_i^*$ and denote the area of this cross-section by $A(x_i*)$.
+
+
 \begin{image}
 \begin{tikzpicture}
 %\fill[gray,opacity=0.5] (0,0) circle (1.5cm);
@@ -220,6 +229,11 @@ V &= \int_{-r}^r s(x)^2 \; dx\\
 \end{image}
 
 
+If we multiply the area of the cross-section, by the width of the sub-interval, 
+we get the volume of an object that is roughly the volume of the solid over the sub-interval:
+\[
+V(x_i^*) = A(x_i^*) \Delta x
+\]
 
 
 \begin{image}
@@ -233,7 +247,7 @@ V &= \int_{-r}^r s(x)^2 \; dx\\
 \draw[dashed, thick] (4,0) arc (0:180:4 and .5) ;
 %\draw (0,0) ellipse (4 and 0.5);
 
-\draw[thick, <->] (-5,-3.5) -- (5,-3.5) node[right] {$x$-axis} node[below, midway,yshift=-1cm]{The volume is $A(x_2^*)\Delta x$};
+\draw[thick, <->] (-5,-3.5) -- (5,-3.5) node[right] {$x$-axis} node[below, midway,yshift=-1cm]{The volume is $V(x_2^*) = A(x_2^*)\Delta x$};
 \draw (-4, -3.3) -- (-4, -3.7) node[below]{$a$};
 \draw (4, -3.3) -- (4, -3.7) node[below]{$b$};
 \draw (-2.4, -3.3) -- (-2.4, -3.7);
@@ -272,25 +286,12 @@ V &= \int_{-r}^r s(x)^2 \; dx\\
 %\draw (8,1.2) -- (9.25, 1.2) node[midway,above, xshift=-.1cm, yshift=-.1cm]{$r$};
 
 
-
-
-Suppose that a solid ranges from $x=a$ to $x = b$ on the $x$-axis.
-To find the volume of the solid, we begin by subdividing the interval $[a,b]$ into $n$ equal pieces, each of length
+The volume of the solid, $V,$ can be approximated by summing the volumes $V(x_i^*)$: % as $i$ ranges from $1$ to $n$:
 \[
-\Delta x = \frac{b-a}{n}
-\]
-Next, we choose a test point in each subinterval. We denote the test point in the $i$-th subinterval by $x_i^*$ where $i = 1, 2, \dots , n$.
-Then, we make a cross-section of the solid perpendicular to the $x$-axis at each test point, $x_i^*$. If we denote the area of this cross-section by $A(x_i^*)$,
-then the volume of the solid over the $i$-th subinterval is approximately 
-\[
-V(x_i^*) \approx A(x_i^*) \Delta x
-\]
-Thus the volume of the solid can be approximated by summing these approximations as $i$ ranges from $1$ to $n$:
-\[
-V \approx \sum_{i=1}^n A(x_i^*) \Delta x.
+V \approx \sum_{i=1}^n V(x_i^*) = \sum_{i=1}^n A(x_i^*) \Delta x.
 \]
 
-Since the approximation should improve as $n$ increases, we define the volume of the solid by taking the limit as $n \to \infty$:
+Since the approximation improves as $n$ increases, we define the volume of the solid by taking the limit as $n \to \infty$:
 \[
 V = \lim_{n \to \infty} \sum_{i=1}^n A(x_i^*) \Delta x
 \]
