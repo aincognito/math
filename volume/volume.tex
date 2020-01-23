@@ -1,5 +1,5 @@
 \documentclass{ximera}
-
+\usepgfplotslibrary{fillbetween}
 \input{../preamble}
 
 \outcome{Find the volume of a solid}
@@ -189,7 +189,51 @@ V &= \int_{-r}^r s(x)^2 \; dx\\
 \draw[dashed, thick] (4,0) arc (0:180:4 and .5) ;
 %\draw (0,0) ellipse (4 and 0.5);
 
-\draw[thick, <->] (-5,-3.5) -- (5,-3.5) node[right] {$x$-axis};
+\draw[thick, <->] (-5,-3.5) -- (5,-3.5) node[right] {$x$-axis} node[below, midway,yshift=-1cm]{The area of the cross-section at $x_2^*$ is $A(x_2^*)$};
+
+\draw (-4, -3.3) -- (-4, -3.7) node[below]{$a$};
+\draw (4, -3.3) -- (4, -3.7) node[below]{$b$};
+\draw (-2.4, -3.3) -- (-2.4, -3.7);
+\draw (-0.8, -3.3) -- (-0.8, -3.7);
+\draw (0.8, -3.3) -- (0.8, -3.7);
+\draw (2.4, -3.3) -- (2.4, -3.7);
+
+\draw[thin, dashed, gray] (-4, -3.3) -- (-4, 0);
+\draw[thin, dashed, gray] (4, -3.3) -- (4, 0);
+
+%\draw[blue] (-2.4, -2.2) -- (-0.8, -2.2);
+%\draw[blue] (-2.4, 2.2) -- (-0.8, 2.2);
+%\draw[blue] (-2.4,0) ellipse (0.4 and 2.2);
+%\draw[blue] (-0.8,0) ellipse (0.4 and 2.2);
+
+
+%\fill [gray!30, opacity=0.5] (-2.4,2.2) arc (90:270: 0.3 and 2.2) -- (-0.8,-2.2) arc (-90:90: 0.2 and 2.2) ;
+%\draw[blue, dashed] (-2.4,-2.2) arc (-90:90: 0.2 and 2.2) ;
+%\draw[blue] (-2.4,2.2) arc (90:270: 0.3 and 2.2);
+%\draw[blue, dashed] (-0.8,-2.2) arc (-90:90: 0.2 and 2.2) ;
+%\draw[blue] (-0.8,2.2) arc (90:270: 0.3 and 2.2) ;
+\draw[blue,dashed, thick] (-1.8,-2.2) arc (-90:90: 0.2 and 2.2) ;
+\draw[blue, thick] (-1.8,2.2) arc (90:270: 0.3 and 2.2) ;
+
+\draw (-1.8, -3.3) -- (-1.8, -3.7) node[below] {$x_2^*$};
+\end{tikzpicture}
+\end{image}
+
+
+
+
+\begin{image}
+\begin{tikzpicture}
+%\fill[gray,opacity=0.5] (0,0) circle (1.5cm);
+ 
+ 
+ 
+\draw[thick] (0,0) ellipse (4 and 2.5);
+\draw[thick]  (-4,0) arc (180:360:4 and .75) ;
+\draw[dashed, thick] (4,0) arc (0:180:4 and .5) ;
+%\draw (0,0) ellipse (4 and 0.5);
+
+\draw[thick, <->] (-5,-3.5) -- (5,-3.5) node[right] {$x$-axis} node[below, midway,yshift=-1cm]{The volume is $A(x_2^*)\Delta x$};
 \draw (-4, -3.3) -- (-4, -3.7) node[below]{$a$};
 \draw (4, -3.3) -- (4, -3.7) node[below]{$b$};
 \draw (-2.4, -3.3) -- (-2.4, -3.7);
@@ -201,17 +245,22 @@ V &= \int_{-r}^r s(x)^2 \; dx\\
 \draw[thin, dashed, gray] (4, -3.3) -- (4, 0);
 
 \draw[blue] (-2.4, -2.2) -- (-0.8, -2.2);
-\draw[blue] (-2.4, 2.2) -- (-0.8, 2.2);
+\draw[blue] (-2.4, 2.2) -- (-0.8, 2.2) node[above, midway, yshift= 0.25cm] {$\leftarrow \Delta x \rightarrow$};
 %\draw[blue] (-2.4,0) ellipse (0.4 and 2.2);
 %\draw[blue] (-0.8,0) ellipse (0.4 and 2.2);
 
-\draw[blue,dashed] (-2.4,-2.2) arc (-90:90: 0.2 and 2.2) ;
-\draw[blue] (-2.4,2.2) arc (90:270: 0.3 and 2.2) ;
-\draw[blue,dashed] (-0.8,-2.2) arc (-90:90: 0.2 and 2.2) ;
+
+\fill [gray!30, opacity=0.5] (-2.4,2.2) arc (90:270: 0.3 and 2.2) -- (-0.8,-2.2) arc (-90:90: 0.2 and 2.2) ;
+\draw[blue, dashed] (-2.4,-2.2) arc (-90:90: 0.2 and 2.2) ;
+\draw[blue] (-2.4,2.2) arc (90:270: 0.3 and 2.2);
+\draw[blue, dashed] (-0.8,-2.2) arc (-90:90: 0.2 and 2.2) ;
 \draw[blue] (-0.8,2.2) arc (90:270: 0.3 and 2.2) ;
+\draw[gray,dashed, thick] (-1.8,-2.2) arc (-90:90: 0.2 and 2.2) ;
+\draw[gray, thick] (-1.8,2.2) arc (90:270: 0.3 and 2.2) ;
 
 \draw (-1.8, -3.3) -- (-1.8, -3.7) node[below] {$x_2^*$};
-
+\end{tikzpicture}
+\end{image}
 
 
 
@@ -221,9 +270,10 @@ V &= \int_{-r}^r s(x)^2 \; dx\\
 %\fill [gray!30, opacity=0.5] (6.75,1.2) -- (6.75,-1.2) arc (180:360:1.25 and 0.3) -- (9.25,1.2) arc (0:180:1.25 and -0.3);
 %\filldraw[fill=black] (8,1.2) circle (0.03cm);
 %\draw (8,1.2) -- (9.25, 1.2) node[midway,above, xshift=-.1cm, yshift=-.1cm]{$r$};
- 
-\end{tikzpicture}
-\end{image}
+
+
+
+
 Suppose that a solid ranges from $x=a$ to $x = b$ on the $x$-axis.
 To find the volume of the solid, we begin by subdividing the interval $[a,b]$ into $n$ equal pieces, each of length
 \[
