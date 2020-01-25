@@ -34,8 +34,52 @@ Suppose that a solid is placed atop the $x-$axis, from $x = a$ to $x = b$.
 %visual aid here
 
 For each $x$-value between $x = a$ and $x = b$,  consider the cross-section perpendicular to the $x$-axis. If we denote the area of this cross-section by 
- $A(x)$ and if we consider this cross-section to have infinitely narrow thickness, dx, then its volume would be $A(x) dx$.
-Then, the volume of our solid can be computed by summing up all of these volumes as $x$ ranges from $a$ to $b$.
+ $A(x)$ and if we consider this cross-section to have infinitely narrow thickness, dx, then its "volume element'' would be $A(x) dx$.
+
+
+
+\begin{image}
+\begin{tikzpicture}
+%\fill[gray,opacity=0.5] (0,0) circle (1.5cm);
+ 
+ 
+ 
+\draw[thick] (0,0) ellipse (4 and 2.5);
+\draw[thick]  (-4,0) arc (180:360:4 and .75) ;
+\draw[dashed, thick] (4,0) arc (0:180:4 and .5) ;
+%\draw (0,0) ellipse (4 and 0.5);
+
+\draw[thick, <->] (-5,-3.5) -- (5,-3.5) node[right] {$x$-axis} node[below, midway,yshift=-1cm]{The area of the cross-section is $A(x)$ and
+the corresponding volume element is $A(x)\,dx$};
+
+\draw (-4, -3.3) -- (-4, -3.7) node[below]{$a$};
+\draw (4, -3.3) -- (4, -3.7) node[below]{$b$};
+
+
+\draw[thin, dashed, gray] (-4, -3.3) -- (-4, 0);
+\draw[thin, dashed, gray] (4, -3.3) -- (4, 0);
+
+%\draw[blue] (-2.4, -2.2) -- (-0.8, -2.2);
+%\draw[blue] (-2.4, 2.2) -- (-0.8, 2.2);
+%\draw[blue] (-2.4,0) ellipse (0.4 and 2.2);
+%\draw[blue] (-0.8,0) ellipse (0.4 and 2.2);
+
+
+%\fill [gray!30, opacity=0.5] (-2.4,2.2) arc (90:270: 0.3 and 2.2) -- (-0.8,-2.2) arc (-90:90: 0.2 and 2.2) ;
+%\draw[blue, dashed] (-2.4,-2.2) arc (-90:90: 0.2 and 2.2) ;
+%\draw[blue] (-2.4,2.2) arc (90:270: 0.3 and 2.2);
+%\draw[blue, dashed] (-0.8,-2.2) arc (-90:90: 0.2 and 2.2) ;
+%\draw[blue] (-0.8,2.2) arc (90:270: 0.3 and 2.2) ;
+\draw[blue,dashed, thick] (-1.8,-2.2) arc (-90:90: 0.2 and 2.2) ;
+\draw[blue, thick] (-1.8,2.2) arc (90:270: 0.3 and 2.2) ;
+
+\draw (-1.8, -3.3) -- (-1.8, -3.7) node[below] {$x$};
+\end{tikzpicture}
+\end{image}
+
+
+
+The volume of our solid can be computed by summing up all of the volume elements as $x$ ranges from $a$ to $b$.
 This summing up can be expressed as a definite integral, giving us the formula:
 
 \[
@@ -47,15 +91,53 @@ V = \int_a^b A(x) \; dx.
 
 \begin{remark}
 We can also re-orient our axis so that it would be more aptly, named `$y$', and with respect to this vertical axis, 
-we could compute the volume with the exact same idea as
+we could us compute the volume as:
 \[
-V = \int_a^b A(y) \; dy.
+V = \int_c^d A(y) \; dy.
 \]
 
 \end{remark}
 
-%visual aid here with y-axis
 
+
+\begin{image}
+\begin{tikzpicture}
+%\fill[gray,opacity=0.5] (0,0) circle (1.5cm);
+ 
+ 
+ 
+\draw[thick] (0,0) ellipse (2.5 and 4);
+\draw[thick]  (0,4) arc (90:270:.75 and 4) ;
+\draw[dashed, thick] (0,4) arc (90:-90:.5 and 4) ;
+%\draw (0,0) ellipse (4 and 0.5);
+
+\draw[thick, <->] (-3.5,-5) node[below, xshift=2cm]{The area of the cross-section is $A(y)$ and
+the corresponding volume element is $A(y)\,dy$}-- (-3.5,5) node[above] {$y$-axis} ;
+
+\draw (-3.3,-4) -- (-3.7, -4) node[left]{$c$};
+\draw (-3.3, 4) -- (-3.7, 4) node[left]{$d$};
+
+
+\draw[thin, dashed, gray] (-3.3, -4) -- (0, -4);
+\draw[thin, dashed, gray] (-3.3, 4) -- (0, 4);
+
+%\draw[blue] (-2.4, -2.2) -- (-0.8, -2.2);
+%\draw[blue] (-2.4, 2.2) -- (-0.8, 2.2);
+%\draw[blue] (-2.4,0) ellipse (0.4 and 2.2);
+%\draw[blue] (-0.8,0) ellipse (0.4 and 2.2);
+
+
+%\fill [gray!30, opacity=0.5] (-2.4,2.2) arc (90:270: 0.3 and 2.2) -- (-0.8,-2.2) arc (-90:90: 0.2 and 2.2) ;
+%\draw[blue, dashed] (-2.4,-2.2) arc (-90:90: 0.2 and 2.2) ;
+%\draw[blue] (-2.4,2.2) arc (90:270: 0.3 and 2.2);
+%\draw[blue, dashed] (-0.8,-2.2) arc (-90:90: 0.2 and 2.2) ;
+%\draw[blue] (-0.8,2.2) arc (90:270: 0.3 and 2.2) ;
+\draw[blue,dashed, thick] (2.2, -1.8) arc (0:180: 2.2 and 0.2) ;
+\draw[blue, thick] (-2.2, -1.8) arc (180:360: 2.2 and 0.3) ;
+
+\draw (-3.3, -1.8) -- (-3.7, -1.8) node[left] {$y$};
+\end{tikzpicture}
+\end{image}
 
 
 \begin{example}[example 1] Compute the volume of a pyramid of height $6$ with a square base of side length $4$.\\
@@ -184,7 +266,7 @@ To find the volume of the solid, we begin by subdividing the interval $[a,b]$ in
 \Delta x = \frac{b-a}{n}
 \]
 Let  $x_i^*$ denote a sample point in the $i$-th subinterval, where $i = 1, 2, \dots , n$.
-Consider a cross section of the solid perpendicular to the $x$-axis at the sample point $x_i^*,$ and denote the area of this cross section by $A(x_i*)$.
+Consider a cross-section of the solid perpendicular to the $x$-axis at the sample point $x_i^*,$ and denote the area of this cross-section by $A(x_i*)$.
 
 
 \begin{image}
@@ -198,7 +280,7 @@ Consider a cross section of the solid perpendicular to the $x$-axis at the sampl
 \draw[dashed, thick] (4,0) arc (0:180:4 and .5) ;
 %\draw (0,0) ellipse (4 and 0.5);
 
-\draw[thick, <->] (-5,-3.5) -- (5,-3.5) node[right] {$x$-axis} node[below, midway,yshift=-1cm]{The area of the cross section at $x_2^*$ is $A(x_2^*)$};
+\draw[thick, <->] (-5,-3.5) -- (5,-3.5) node[right] {$x$-axis} node[below, midway,yshift=-1cm]{The area of the cross-section at $x_2^*$ is $A(x_2^*)$};
 
 \draw (-4, -3.3) -- (-4, -3.7) node[below]{$a$};
 \draw (4, -3.3) -- (4, -3.7) node[below]{$b$};
@@ -229,7 +311,7 @@ Consider a cross section of the solid perpendicular to the $x$-axis at the sampl
 \end{image}
 
 
-Multiplying the area of the cross section, $A(x_i^*)$, by the width of the subinterval, $\Delta x,$
+Multiplying the area of the cross-section, $A(x_i^*)$, by the width of the subinterval, $\Delta x,$
 gives the volume of an object that is approximately the volume of the solid over the subinterval:
 \[
 V(x_i^*) = A(x_i^*) \Delta x
@@ -299,7 +381,7 @@ Finally, since this is a limit of Riemann sums, we can express the volume as a d
 \[
 V = \int_a^b A(x) \, dx,
 \]
-where $A(x)$ is the area of the cross section of the solid perpendicular to the $x$-axis at $x$.
+where $A(x)$ is the area of the cross-section of the solid perpendicular to the $x$-axis at $x$.
 
 \end{document}
 
