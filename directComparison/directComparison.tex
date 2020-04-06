@@ -1,4 +1,4 @@
-\documentclass{ximera}
+\documentclass[handout]{ximera}
 
 \input{../preamble}
 
@@ -55,10 +55,11 @@ Determine if the series
 \sum_{n=1}^\infty \frac{1}{2n^2 + 3}
 \]
 converges or diverges.\\
-We will use the DCT with the convergent p-series 
+We will use the DCT with the series 
 \[
 \sum_{n=1}^\infty \frac{1}{n^2}.
 \] 
+This is a $p$-series with $p=2 >1$ and so it converges.
 To make the comparison, first note that 
 \[
 2n^2 + 3 > n^2 > 0
@@ -116,11 +117,11 @@ Determine if the series
 \sum_{n=0}^\infty \frac{3^n}{4^n + 1}
 \]
  converges or diverges.\\
-We will use the DCT with the convergent geometric series 
+We will use the DCT with the series 
 \[
 \sum_{n=0}^\infty \left(\frac34\right)^n.
 \]
- 
+ This is a geometric series with common ratio, $r = 3/4$. Since $-1 < \frac 34 < 1$, this series converges.
 To make the comparison, first note that $4^n + 1 > 4^n > 0$ for all $n \geq 0$. By taking the reciprocal of both sides,
 we have 
 \[
@@ -179,11 +180,11 @@ Determine if the series
 \sum_{n=1}^\infty \frac{\sin^2(n)}{n^3}
 \]
  converges or diverges.\\
-We will use the DCT with the convergent p-series 
+We will use the DCT with the series 
 \[
 \sum_{n=1}^\infty \frac{1}{n^3}.
 \]
- 
+This is a $p$-series with $p=3 >1$ and so it converges.
 To make the comparison, first note that $0 \leq \sin^2(n) \leq 1$ for all $n \geq 1$. Dividing by $n^3$,
 we have 
 \[

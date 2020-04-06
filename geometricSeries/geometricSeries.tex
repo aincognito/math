@@ -1,4 +1,4 @@
-\documentclass{ximera}
+\documentclass[handout]{ximera}
 
 \input{../preamble}
 
@@ -13,6 +13,22 @@ We find the sum of a geometric series.
 \end{abstract}
 
 \maketitle
+
+\section{Definition of Infinte Series}
+
+\begin{definition}[Infinite Series]
+We define
+\[\sum_{n=1}^\infty a_n = \lim_{N \to \infty} \sum_{n=1}^N a_n.\]
+If this limit is a finite number, then we say that the infinite series \textbf{converges}.
+If this limit is not finite or if it does not exist, then we say that the infinite series \textbf{diverges}.
+
+\end{definition}
+
+\begin{remark}
+The sum, $\displaystyle{\sum_{n=1}^N a_n}$, is called the $N^{th}$ partial sum of the infinite series
+$\displaystyle{\sum_{n=1}^\infty a_n}$. Thus, in words, we define an infinite series to be the limit of its partial sums.
+This is similar to an improper integral which is also defined in terms of a limit.
+\end{remark}
 
 \section{Geometric Series}
 
