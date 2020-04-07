@@ -385,6 +385,10 @@ INPUT /usr/share/texmf-dist/tex/latex/tkz-euclide/tkz-obj-circles.tex
 INPUT /usr/share/texmf-dist/tex/latex/tkz-euclide/tkz-obj-circles.tex
 INPUT /usr/share/texmf-dist/tex/latex/tkz-euclide/tkz-obj-addpoints.tex
 INPUT /usr/share/texmf-dist/tex/latex/tkz-euclide/tkz-obj-addpoints.tex
+INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
+INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
+INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
+INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
 INPUT /usr/share/texmf-dist/tex/latex/tkz-euclide/tkz-obj-polygons.tex
 INPUT /usr/share/texmf-dist/tex/latex/tkz-euclide/tkz-obj-vectors.tex
 INPUT /usr/share/texmf-dist/tex/latex/tkz-euclide/tkz-obj-arcs.tex
@@ -411,10 +415,6 @@ INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlib
 INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex
-INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
-INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
-INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
-INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.polar.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.polar.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.fillbetween.code.tex
@@ -512,4 +512,3 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
-INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
