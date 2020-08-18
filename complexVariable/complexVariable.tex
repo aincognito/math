@@ -1,0 +1,100 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\pgfplotsset{compat=1.13}
+
+\outcome{Use a complex variable}
+
+\title{1.4 The Complex Variable, $z$}
+
+\begin{document}
+
+\begin{abstract}
+We learn to use a complex variable.
+\end{abstract}
+
+\maketitle
+
+\section{The Complex Variable, z}
+
+We typically use the variable $x$ to represent a real number and we write $x \in \R$.
+In the complex plane we use the variable $z$, and write $z \in \C$. We can relate the variable $z$ to the real variables $x$ and $y$
+from the $xy$-plane using the equation:
+\[
+z = x+iy
+\]
+
+Thus, the variable $z$ can be thought of as a pair of real variables, $x$ and $y$, 
+which satisfy
+\[
+x = \Rep{z} \quad \mbox{and} \quad y = \Imp{z}
+\]
+
+The complex conjugate of $z = x+iy$ is
+\[
+\overline{z} = x-iy
+\]
+
+The modulus of $z = x+iy$ is
+\[
+|z| = \sqrt{x^2 + y^2}
+\]
+This can be written in terms of the complex conjugate as
+\[
+|z|^2 = z\overline{z} \quad \mbox{or} \quad |z| = \sqrt{z\overline{z}}
+\]
+The polar form of $z = x+iy$:
+\[
+z = r \cis \theta
+\]
+where $r = |z|$ and $\theta$ is an {\it argument} of $z$. If $x \neq 0$ then $\theta$ satisfies
+\[
+\tan \theta = \frac{y}{x}
+\]
+This equation has infinitely many solutions, including
+\[ 
+\tan^{-1} \left(\frac{y}{x}\right) \in \left(-\frac{\pi}{2}, \frac{\pi}{2}\right)
+\]
+Note that this solution may or may not be an argument of $z$, but since the tangent function is $\pi$-periodic,
+either
+\[
+\tan^{-1} \left(\frac{y}{x}\right) \quad \mbox{or} \quad \pi + \tan^{-1} \left(\frac{y}{x}\right)
+\]
+is an argument of $z$ as long as $x \neq 0$.
+
+
+\section{Properties of $z$}
+
+
+We now rewrite many of the properties of complex numbers learned in earlier sectiomns using the variable z.
+
+
+Complex addition and multiplication are commutative and associative: 
+\[
+z_1 + z_2 = z_2 + z_1 \quad \mbox{and} \quad z_1 \cdot z_2 = z_2 \cdot z_1 \quad \mbox{(commutativity)}
+\]
+and
+\[
+(z_1 + z_2) + z_3  = z_1 + (z_2 + z_3) \quad \mbox{and} \quad (z_1 \cdot z_2) \cdot z_3  = z_1 \cdot (z_2 \cdot z_3) \quad \mbox{(associativity)}
+\]
+where $z_1, z_2, z_3 \in \C$.
+
+Furthermore, the conjugate of a sum is the sum of the conjugates:
+\[
+\overline{z_1 + z_2} = \overline{z_1} + \overline{z_2},
+\]
+
+and the conjugate of a product is the product of the conjugates:
+\[
+\overline{z_1 z_2} = \overline{z_1} \cdot \overline{z_2}
+\]
+
+
+
+
+
+
+
+
+\end{document}

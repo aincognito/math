@@ -1,0 +1,286 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\pgfplotsset{compat=1.13}
+
+\outcome{Learn properties of the complex conjugate}
+
+\title{1.3 Complex Conjugate}
+
+\begin{document}
+
+\begin{abstract}
+We learn properties of the complex conjugate.
+\end{abstract}
+
+\maketitle
+
+
+
+We have seen that the complex conjugate is defined by
+\[
+\overline{a+bi} = a-bi
+\]
+
+The conjugate of the conjugate is the original complex number:
+
+\[
+\overline{\overline{a+bi}} = \overline{a-bi} = a+bi
+\]
+
+The conjugate of a real number is itself:
+\[
+\overline{a}=\overline{a+0i} = a-0i = a
+\]
+
+The conjugate of an imaginary number is its negative:
+\[
+\overline{bi}=\overline{0+bi} = 0-bi = -bi
+\]
+
+
+\section{Real and Imaginary Part}
+
+
+If we add a complex number and it's conjugate, we get
+\[
+(a+bi) + (\overline{a+bi}) = 2a = 2\Rep(a+bi)
+\]
+Thus, we have a formula for the real part of a complex number in terms of its conjugate:
+\[
+\Rep(a+bi) = \frac12 \left[(a+bi) + (\overline{a+bi})\right]
+\]
+Similarly, subtracting the conjugate gives 
+\[
+a+bi - \overline{a+bi} = 2bi,
+\]
+and so
+\[
+\Imp(a+bi) = -\frac{i}{2}\left[(a+bi) + (\overline{a+bi})\right]
+\]
+ 
+\section{Modulus}
+
+If we multiply a complex number by its conjugate, we get the square of the modulus:
+\[
+(a+bi)(\overline{a+bi}) = (a+bi)(a-bi) = a^2 + b^2 = |a+bi|^2
+\]
+Thus, we have a formula for the modulus of a complex number in terms of its conjugate:
+\[
+|a+bi|= \sqrt{(a+bi)(\overline{a+bi})}
+\]
+
+
+\section{Multiplicative Inverse}
+
+For a non-zero complex number, $a+bi$, its multiplicative inverse is its conjugate divided by the square of its modulus:
+\[
+\frac{1}{a+bi} = \frac{1}{a+bi}\cdot \frac{\overline{a+bi}}{\overline{a+bi}} = \frac{\overline{a+bi}}{\ |a+bi|^2}
+\]
+
+
+
+\section{Addition and Multiplication}
+
+The conjugate of a sum is the sum of the conjugates:
+\[
+\overline{(a+bi) + (c+di)} = (a+c) - (b+d)i = \overline{a+bi }+\overline{c+di}
+\]
+
+
+The conjugate of a product is the product of the conjugates:
+\[
+\overline{(a+bi) \cdot (c+di)} = \overline{a+bi }\cdot\overline{c+di}
+\]
+To see this, we can calculate the left and right sides separately and see that they are the same:
+\[
+\overline{(a+bi) \cdot (c+di)}= \overline{(ac-bd) + (ad+bc)i} = (ac-bd) - (ad+bc)i
+\]
+and
+\[
+\overline{a+bi }\cdot\overline{c+di} = (a-bi)(c-di) = (ac-bd) + (-ad-bc)i = (ac-bd) - (ad +bc)i
+\]
+
+
+\end{document}
+
+
+
+
+\begin{definition}
+A {\bf complex number} is a number of the form $a+bi$ where $a,b \in \mathbb{R}$. 
+The set of all complex numbers is $\mathbb{C}= \{a+bi \,|\, a,b \in \mathbb{R}\}$.
+\end{definition}
+
+examples of complex numbers
+equality of complex numbers
+real numbers are complex R is a subset of C
+real part, imaginary part
+
+\section{Addition of Complex Numbers}
+
+Complex numbers are added component-wise:
+\[
+(a+bi) + (c+di) = (a+b) + (c+d)i
+\]
+
+problems
+Complex addition is commuative and associative.
+
+
+\section{Multiplication of Complex Numbers}
+Complex numbers are multiplied in the same way as binomials, using the fact that $i^2 = -1$:
+\[
+(a+bi)(c+di) = ac + adi + bci + (bi)(di) = (ac-bd) + (ad+bc)i
+\]
+
+problems
+
+
+\section{The Complex Conjugate}
+
+\begin{definition}[Complex Conjugate]
+The {\bf complex conjugate} of a complex number $a+bi$ is defined as
+\[
+\overline {a+bi} = a-bi
+\]
+\end{definition}
+problems
+
+Note that if we multiply a complex number by its conjugate, we get a real number:
+\[
+(a+bi)  \cdot \overline{(a+bi)} = (a+bi)(a-bi) = a^2 +b^2
+\]
+
+problems
+
+
+\section{Division of Complex Numbers}
+To divide complex numbers, we use the complex conjugate:
+\[
+\frac{a+bi}{c+di} = \frac{a+bi}{c+di}\cdot\frac{c-di}{c-di} = \frac{(a+bi)(c-di)}{c^2 + d^2} = \left(\frac{ac+bd}{c^2 + d^2}\right) + \left(\frac{bc-ad}{c^2 + d^2}\right)i
+\]
+
+
+problems
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of Example 1}
+%\youtube{###} %vid of example 1
+\end{foldable}
+\end{center}
+
+\begin{problem} %problem #1
+  Find the area between...
+  \[
+  f(x) =  ...
+  \]
+    \begin{hint}
+      Set up a definite integral
+    \end{hint}
+    \begin{hint}
+      Determine the top and bottom curves
+    \end{hint}
+    
+		
+		The area between the curves is
+		 $\answer[given]{number}$
+\end{problem}
+
+
+
+
+
+
+
+\begin{example} %example #15
+Find $h'(x)$ if $h(x) = x^{\sin(x)}$.\\
+We will use the fact that the exponential and logarithm functions are inverses,
+\[e^{\ln(x)} = x,\]
+and the exponent property of logarithms, 
+\[\ln(x^n) = n\ln(x),\]
+to rewrite $h(x)$.  We have 
+\[h(x) = x^{\sin(x)} = e^{\ln(x^{\sin(x)})} = e^{\sin(x)\ln(x)}\]
+and we can now compute $h'(x)$ using a combination of the chain rule and product rule.
+We can write $h(x)$ as a composition, $f(g(x))$ with 
+\[g(x) = \sin(x)\ln(x) \quad \text{and} \quad f(x) = e^x.\]
+Then to find $g'(x)$ we us the product rule and we get $g'(x) = \frac{\sin(x)}{x} + \cos(x)\ln(x)$.
+Next $f'(x) = e^x$ and 
+hence $f'(g(x)) = e^{g(x)} = e^{\sin(x)\ln(x)} = x^{\sin(x)}$.
+We can then conclude $h'(x) = f'(g(x))g'(x) = x^{\sin(x)} \left[ \frac{\sin(x)}{x} + \cos(x)\ln(x)\right]$.
+\end{example}
+
+%more question formats below
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\begin{verbatim}
+\begin{question}
+What is your favorite color?
+\begin{multipleChoice}
+\choice[correct]{Rainbow}
+\choice{Blue}
+\choice{Green}
+\choice{Red}
+\end{multipleChoice}
+\begin{freeResponse}
+Hello
+\end{freeResponse}
+\end{question}
+%\end{verbatim}
+
+
+
+
+
+\begin{question}
+  Which one will you choose?
+  \begin{multipleChoice}
+    \choice[correct]{I'm correct.}
+    \choice{I'm wrong.}
+    \choice{I'm wrong too.}
+  \end{multipleChoice}
+\end{question}
+
+
+\begin{question}
+  Which one will you choose?
+  \begin{selectAll}
+    \choice[correct]{I'm correct.}
+    \choice{I'm wrong.}
+    \choice[correct]{I'm also correct.}
+    \choice{I'm wrong too.}
+  \end{selectAll}
+\end{question}
+
+
+\begin{freeResponse}
+What is the chain rule used for?
+\end{freeResponse}

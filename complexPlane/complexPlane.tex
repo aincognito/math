@@ -1,0 +1,399 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\pgfplotsset{compat=1.13}
+
+\outcome{Learn the arithmetic of complex numbers}
+
+\title{1.2 The Complex Plane}
+
+\begin{document}
+
+\begin{abstract}
+We learn a geometric interpretation of complex numbers.
+\end{abstract}
+
+\maketitle
+
+\section{Plotting a Complex Number}
+
+Just as the real numbers can be represented visually, or {\bf geometrically}, by the real number line, 
+complex numbers can be represented by the complex plane.  
+Each complex number will correspond to a point in the plane and visa-versa. The plane is analogous to the $xy$-plane.  
+The difference is that the vertical axis is labeled as $i, 2i, 3i, ...$ instead of $1, 2, 3, ...$.
+We plot the complex number $a+bi$ in the complex plane just as we would plot the point $(a,b)$ in the $xy$-plane.
+
+
+\begin{example}[Example 1]
+Plot the complex number $1+2i$ in the complex plane.
+
+\begin{image}
+\begin{tikzpicture}
+\draw[<->, thick] (-3,0)--(3,0);
+ \node[blue] at (2.9,.5){Real Axis};
+\draw[<->, thick] (0, 3)--(0,-3) node[ below=10pt, blue]{\large The Complex Plane, $\mathbb{C}$};
+\node[blue] at (-1.5, 2.9){Imaginary Axis};
+
+\draw[thin] (1,.2)--(1,-.2) node[below]{$1$};
+\draw[thin] (-1,.2)--(-1,-.2) node[below]{$-1$};
+\draw[thin] (2,.2)--(2,-.2) node[below]{$2$};
+\draw[thin] (-2,.2)--(-2,-.2) node[below]{$-2$};
+
+\draw[thin] (.2,1)--(-.2,1) node[left]{$i$};
+\draw[thin] (.2,-1)--(-.2,-1) node[left]{$-i$};
+\draw[thin] (.2,2)--(-.2,2) node[left]{$2i$};
+\draw[thin] (.2,-2)--(-.2,-2) node[left]{$-2i$};
+
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(1,2)} node[above right, blue]{$1+2i$};
+
+\draw[ultra thin, dashed, blue] (1,0.3) -- (1,1.9);
+\draw[ultra thin, dashed, blue] (.9,2) --(0.2,2);
+
+\end{tikzpicture}
+\end{image}
+
+
+\end{example}
+
+\begin{problem}(Problem 1)
+Plot the complex numbers in the complex plane:
+\begin{flalign*}
+\quad (i)& \quad 3+i & \\
+\quad (ii)& \quad -2-2i \\
+\quad (iii)& \quad 4i \\
+\quad (iv)& \quad -5
+\end{flalign*}
+
+\end{problem}
+
+
+
+\section{The Real and Imaginary Parts}
+Geometrically, the real part of a complex number $a+bi$ its horizontal component and the imaginary part is its vertical component.  
+It is important to note
+that the imaginary part is a real number.
+
+% 
+
+\begin{image}
+\begin{tikzpicture}
+\draw[->, thick] (-0.4,0)--(3.8,0) node[midway, below=15pt,blue] {Real and Imaginary Parts};
+%
+%\node[blue] at (2.9,.5){Real Axis};
+\draw[<-, thick] (0, 3)--(0,-0.4) ;
+%\node[blue] at (-1.5, 2.9){Imaginary Axis};
+
+\draw[thin] (2.6,.02)--(2.6,-.02) node[below]{$a$};
+
+
+\draw[thin] (.02,1.8)--(-.02,1.8) node[left]{$bi$};
+
+
+\draw[mark=*,mark size=1pt] plot coordinates {(2.6,1.8)} node[above right]{$a+bi$};
+
+\draw[dashed,ultra thin, blue] (2.6,-0.05) -- (2.6,1.8) node[midway, right , blue]{$\Imp(a+bi)$};
+
+%\draw[snake=brace, blue] (-.2, 0.3) -- (-.2, 1.5)  ;
+\draw[dashed,ultra thin, blue] (-0.05,1.8) -- (2.6,1.8) node[midway, above, blue]{$\Rep(a+bi)$};
+
+%\draw[snake=brace, mirror snake, blue] (0.01,-0.2) -- (2.59,-0.2) node[midway, below, blue]{Re($a+bi$)};
+
+\end{tikzpicture}
+\end{image}
+
+
+
+\section{The Modulus of a Complex Number}
+Just as a point in the $xy$-plane can be thought of as a vector emanating from the origin, a complex number can be interpreted in the same manner.
+The magnitude of a complex number, considering it as a vector, is called the {\bf modulus}, denoted $|a+bi|$.
+From the Pythagorean Theorem, we can see that
+\[
+|a+bi| = \sqrt{a^2+b^2}
+\]
+
+\begin{remark}
+The modulus of a real number is just its absolute value.
+\end{remark}
+
+\begin{image}
+\begin{tikzpicture}
+\draw[->, thick] (-0.4,0)--(3.8,0) node[midway, below=15pt, blue]{ Modulus, $|a+bi|$};
+%\node[blue] at (2.9,.5){Real Axis};
+\draw[<-, thick] (0, 3)--(0,-0.4) ;
+%\node[blue] at (-1.5, 2.9){Imaginary Axis};
+
+\draw[ultra thin] (2.6,.1)--(2.6,-.1) node[below]{$a$};
+
+
+\draw[ultra thin] (.1,1.8)--(-.1,1.8) node[left]{$bi$};
+
+
+\draw[mark=*,mark size=1pt] plot coordinates {(2.6,1.8)} node[above right]{$a+bi$};
+
+%\draw[ultra thin, dashed, blue] (2.6,0.3) -- (2.6,1.6) ;
+%\draw[snake=brace, blue, mirror snake] (2.7, 0.1) -- (2.7, 1.7) node[midway, right , blue]{Im($a+bi$)};
+%\draw[ultra thin, dashed, blue] (0.2,1.8) -- (2.4,1.8) node[midway, above, blue]{Re($a+bi$)};
+%\draw[snake=brace, blue] (0.1,0.1) -- (2.5,1.9) node[midway, above, blue, sloped]{$|a+bi|$};
+\draw[->, blue] (0,0) -- (2.58,1.78) node[midway, above, blue, sloped]{$|a+bi|$};
+
+\end{tikzpicture}
+\end{image}
+
+\begin{example}[Example 2]
+Find the modulus of the complex number $-5+6i$.\\
+Using the formula $|a+bi| =\sqrt{a^2+b^2}$, we have
+\[
+|-5+6i| = \sqrt{(-5)^2 + 6^2} = \sqrt{61}
+\]
+\end{example}
+
+\begin{problem}(Problem 2a)
+
+Find the modulus of the complex number:
+\begin{flalign*}
+\quad (i)& \quad |-3i| = \answer{3} &\\
+\quad (ii)& \quad |-12| = \answer{12} \\
+\quad (iii)& \quad |6+8i| = \answer{10} \\
+\quad (iv)& \quad |\overline{2+3i}| = \answer{\sqrt{13}}
+\end{flalign*}
+
+\end{problem}
+
+\begin{problem}(Problem 2b)
+Select all of the statements that are true for any complex number, $a+bi$:
+\begin{selectAll}
+\choice[correct] {$|\Rep(a+bi)| \leq |a+bi|$}
+\choice[correct] {$|\Imp(a+bi)| \leq |a+bi|$}
+\choice[correct] {$ |a+bi| \leq |\Rep(a+bi)| + |\Imp(a+bi)|$}
+\choice[correct] {$\left|\overline{a+bi}\right| = |a+bi|$}
+\end{selectAll}
+
+\end{problem}
+
+\begin{problem}(Problem 2c)
+Prove each of the true statements from problem 2b, above.
+\end{problem}
+
+
+\section{The Polar Form of a Complex Number}
+We can describe the position of a complex number in polar form using a magnitude, or radius, 
+and a direction angle rather than using the rectangular form involving horizontal and vertical components. 
+With the standard polar notations $r$ and $\theta$ for the radius and the direction angle, we can represent 
+a complex number in polar form  
+\[
+r\cos \theta + ir\sin \theta = r\left(\cos \theta + i\sin \theta\right) = r \cis \theta
+\]
+
+\begin{image}
+\begin{tikzpicture}
+\draw[->, thick] (-0.4,0)--(3.8,0) node[midway, below=25pt, blue]{ Polar form, $r \cis \theta$};
+%\node[blue] at (2.9,.5){Real Axis};
+\draw[<-, thick] (0, 3)--(0,-0.4) ;
+%\node[blue] at (-1.5, 2.9){Imaginary Axis};
+
+\draw[ultra thin] (2.6,.1)--(2.6,-.1) node[below]{$a$};
+
+
+\draw[ultra thin] (.1,1.8)--(-.1,1.8) node[left]{$bi$};
+
+\draw[blue, dashed] (2.6, 0) -- (2.6, 1.8) node[midway, right , blue]{$r \sin \theta$};
+\node[blue] at (1.3, -0.2){$r \cos \theta$};
+%[snake=brace, blue, mirror snake]
+
+\draw[mark=*,mark size=1pt] plot coordinates {(2.6,1.8)} node[above right]{$a+bi$};
+
+%\draw[ultra thin, dashed, blue] (2.6,0.3) -- (2.6,1.6) ;
+%\draw[snake=brace, blue, mirror snake] (2.7, 0.1) -- (2.7, 1.7) node[midway, right , blue]{Im($a+bi$)};
+%\draw[ultra thin, dashed, blue] (0.2,1.8) -- (2.4,1.8) node[midway, above, blue]{Re($a+bi$)};
+%\draw[snake=brace, blue] (0.1,0.1) -- (2.5,1.9) node[midway, above, blue, sloped]{$|a+bi|$};
+\draw[ ->, blue] (0,0) -- (2.58,1.78) node[midway, above, blue, sloped]{$r$};
+\node[blue] at (0.6, 0.2){$\theta$};
+\end{tikzpicture}
+\end{image}
+
+\begin{remark}
+The polar radius of a complex number is just its modulus:
+\[
+r = |a+bi|
+\]
+\end{remark}
+
+\begin{remark}
+Later, we will discover that $e^{i\theta} = \cis \theta$. This is known as Euler's Formula.
+\end{remark}
+
+\begin{example}[Example 3]
+Find the polar form of the complex number $-\sqrt 3 + i$.\\
+The polar radius is
+\[
+r = |-\sqrt 3 + i | =2
+\]
+To find the polar angle, $\theta$, we will use the equation
+\[
+\tan \theta = -\frac{\ 1}{\sqrt 3}
+\]
+We might erroneously conclude that
+\[
+\theta = \tan^{-1} \left(-\frac{\ 1}{\sqrt 3}\right) = -\frac{\pi}{6}
+\]
+However, the complex number  $-\sqrt 3 + i$ lies in the second quadrant so we add $\pi$:
+\[
+\theta = -\frac{\pi}{6} + \pi = \frac{5\pi}{6}
+\]
+We can now write the polar form:
+\[
+-\sqrt 3 +i = 2\cis \left(\frac{5\pi}{6}\right)
+\]
+
+\begin{image}
+\begin{tikzpicture}
+\draw[<->, thick] (-2,0)--(2,0);
+
+\draw[<-, thick] (0, 2)--(0,-.3);
+
+\draw[ultra thin] (-1.73,.1)--(-1.73,-.1) node[below]{$-\sqrt 3$};
+
+
+\draw[ultra thin] (.1,1)--(-.1,1) node[left]{$i$};
+
+\draw[mark=*,mark size=1pt] plot coordinates {(-1.73,1)} node[above left]{$-\sqrt 3 + i$};
+
+\draw[blue, ->] (0,0) -- (-1.73,1) node[left, xshift = -1mm, yshift = -1mm, midway, blue]{$2$};
+
+\draw[blue, ->] (3mm,0mm) arc (0:150:3mm) ;
+\node[blue] at (.4,.4) {$\tfrac{5\pi}{6}$};
+\end{tikzpicture}
+\end{image}
+
+
+\end{example}
+
+\begin{problem}(Problem 3)
+
+Express the complex number in polar form, $r\cis \theta$ where $0 \leq \theta < 2\pi$:
+\begin{flalign*}
+\quad (i)& \quad 2i = \answer{2cis(\pi/2)} &\\
+\quad (ii)& \quad -3 = \answer{3cis(\pi)} \\
+\quad (iii)& \quad 1+i = \answer{\sqrt 2 cis(\pi/4)} \\
+\quad (iv)& \quad -2-2\sqrt 3i = \answer{4cis(4\pi/3)}
+\end{flalign*}
+
+\end{problem}
+
+\end{document}
+
+
+
+
+
+%node distance = 2 cm,
+
+
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of Example 1}
+%\youtube{###} %vid of example 1
+\end{foldable}
+\end{center}
+
+\begin{problem} %problem #1
+  Find the area between...
+  \[
+  f(x) =  ...
+  \]
+    \begin{hint}
+      Set up a definite integral
+    \end{hint}
+    \begin{hint}
+      Determine the top and bottom curves
+    \end{hint}
+    
+		
+		The area between the curves is
+		 $\answer[given]{number}$
+\end{problem}
+
+
+
+
+
+
+
+\begin{example} %example #15
+Find $h'(x)$ if $h(x) = x^{\sin(x)}$.\\
+We will use the fact that the exponential and logarithm functions are inverses,
+\[e^{\ln(x)} = x,\]
+and the exponent property of logarithms, 
+\[\ln(x^n) = n\ln(x),\]
+to rewrite $h(x)$.  We have 
+\[h(x) = x^{\sin(x)} = e^{\ln(x^{\sin(x)})} = e^{\sin(x)\ln(x)}\]
+and we can now compute $h'(x)$ using a combination of the chain rule and product rule.
+We can write $h(x)$ as a composition, $f(g(x))$ with 
+\[g(x) = \sin(x)\ln(x) \quad \text{and} \quad f(x) = e^x.\]
+Then to find $g'(x)$ we us the product rule and we get $g'(x) = \frac{\sin(x)}{x} + \cos(x)\ln(x)$.
+Next $f'(x) = e^x$ and 
+hence $f'(g(x)) = e^{g(x)} = e^{\sin(x)\ln(x)} = x^{\sin(x)}$.
+We can then conclude $h'(x) = f'(g(x))g'(x) = x^{\sin(x)} \left[ \frac{\sin(x)}{x} + \cos(x)\ln(x)\right]$.
+\end{example}
+
+%more question formats below
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\begin{verbatim}
+\begin{question}
+What is your favorite color?
+\begin{multipleChoice}
+\choice[correct]{Rainbow}
+\choice{Blue}
+\choice{Green}
+\choice{Red}
+\end{multipleChoice}
+\begin{freeResponse}
+Hello
+\end{freeResponse}
+\end{question}
+%\end{verbatim}
+
+
+
+
+
+\begin{question}
+  Which one will you choose?
+  \begin{multipleChoice}
+    \choice[correct]{I'm correct.}
+    \choice{I'm wrong.}
+    \choice{I'm wrong too.}
+  \end{multipleChoice}
+\end{question}
+
+
+\begin{question}
+  Which one will you choose?
+  \begin{selectAll}
+    \choice[correct]{I'm correct.}
+    \choice{I'm wrong.}
+    \choice[correct]{I'm also correct.}
+    \choice{I'm wrong too.}
+  \end{selectAll}
+\end{question}
+
+
+\begin{freeResponse}
+What is the chain rule used for?
+\end{freeResponse}
