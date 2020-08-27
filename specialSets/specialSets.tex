@@ -1,0 +1,125 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\pgfplotsset{compat=1.13}
+
+\outcome{Recognize and sketch special sets}
+
+\title{1.6 Special Sets}
+
+\begin{document}
+
+\begin{abstract}
+We learn to recognize and sketch special sets in the complex plane.
+\end{abstract}
+
+\maketitle
+
+\section{Circles and Disks}
+
+\begin{example}[example 1]
+The set 
+\[
+C(z_0,r) = \{z\in \C | |z-z_0| =r \}
+\]
+is a circle with center $z_0$ and radius $r$.
+\end{example}
+
+
+\begin{example}[example 2]
+The set 
+\[
+D(z_0,r) = \{z\in \C | |z-z_0| <r \}
+\]
+is an open disk with center $z_0$ and radius $r$.
+\end{example}
+
+
+\begin{example}[example 2]
+The set 
+\[
+D(z_0,r) = \{z\in \C | |z-z_0| <r \}
+\]
+is an open disk with center $z_0$ and radius $r$.
+\end{example}
+
+
+\begin{example}[example 3]
+The set 
+\[
+D(z_0,r) = \{z\in \C | |z-z_0| \leq r \}
+\]
+is a closed disk with center $z_0$ and radius $r$.
+\end{example}
+
+
+\section{Lines and Half Planes}
+
+\begin{example}[example 4]
+The set of points satisfying the equation $\Imp(z) = c$ where $c \in \R$ is a horizontal line and
+The set of points satisfying the equation $\Rep(z) = c$ where $c \in \R$ is a vertical line.
+
+\end{example}
+
+
+\begin{example}[example 5]
+The set of points satisfying the inequality $\Imp(z) < c$ where $c \in \R$ is a
+half plane. If $c=0$ this set is called the lower half plane (LHP).
+\end{example}
+
+
+\section{Ellipses and Hyperbolas}
+
+\begin{example}[example 6]
+The set of points satisfying the equation
+\[
+|z-z_1| + |z-z_2| = d
+\]
+is an ellipse if $d > |z_1 -z_2|$.
+\end{example}
+
+
+\begin{example}[example 7]
+The set of points satisfying the equation
+\[
+|z-z_1| - |z-z_2| = d
+\]
+is a hyperbola if $d < |z_1 -z_2|$.
+\end{example}
+
+
+
+\section{Other Curves}
+
+
+\begin{example}[example 8]
+If $x(t)$ and $y(t)$ are differentiable functions of the real variable $t$ and if $x'$ and $y'$ do not both vanish simultaneously,
+then
+\[
+\gamma(t)= x(t) + iy(t),  a \leq t \leq b
+\]
+is a smooth curve. Furthermore, if $\gamma(a) =\gamma(b)$, but $\gamma(t_1) \neq \gamma(t_2)$ for all $t_1,t_2 \in (a,b)$,
+then $\gamma$ is called a simple closed curve.
+
+\end{example}
+
+
+\section{Problems}
+
+Sketch each the following:\\
+\begin{align*}
+i) & \; |z+1-i| = 2 \\
+ii) &  \; |z-1| + |z+i| = 4 \\
+iii) & \;  Re(z) \geq 2 \\
+iv) &  \; \gamma(t) = (t-1) + it^2, 0\leq t \leq 2 \\
+v) &  \; |i- z| < 3 \\
+vi) &  \; |z-i| - |z+i| = 1 \\
+vii) & \;  \gamma(t) = 2\cos t + 2i\sin t , \pi/4 \leq t \leq 3\pi/2 \\
+viii) &  \; 1 < |z -2i| < 4 \\
+ix) & \;  |z| > 1 \\
+x) &  \; \gamma(t) = \cos t |\cos t| + i\sin t |\sin t|, 0 \leq t \leq 2\pi
+\end{align*}
+
+
+\end{document}
