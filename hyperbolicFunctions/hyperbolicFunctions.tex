@@ -21,7 +21,52 @@ The hyperbolc sine and hyperbolic cosine functions are defined as
 \sinh x = \frac{e^x - e^{-x}}{2} \;\; \mbox{and} \;\; \cosh x = \frac{e^x + e^{-x}}{2}
 \]
 
+\begin{image}
+\begin{tikzpicture}
+\draw[<->, thick] (-3,0)--(3,0);
 
+\draw[<->, thick] (0, 3)--(0,-3) node[ below=10pt, blue]{\large The Hyperbolic Sine, $y =\sinh x$};
+
+
+\draw[ thick, domain=-1.7:1.7,smooth,variable=\x,blue] plot ({\x},{0.5*e^\x -0.5* e^-\x});
+
+
+\draw[thin] (1,.2)--(1,-.2) node[below]{$1$};
+\draw[thin] (-1,.2)--(-1,-.2) node[below]{$-1$};
+\draw[thin] (2,.2)--(2,-.2) node[below]{$2$};
+\draw[thin] (-2,.2)--(-2,-.2) node[below]{$-2$};
+
+\draw[thin] (.2,1)--(-.2,1) node[left]{$1$};
+\draw[thin] (.2,-1)--(-.2,-1) node[left]{$-1$};
+\draw[thin] (.2,2)--(-.2,2) node[left]{$2$};
+\draw[thin] (.2,-2)--(-.2,-2) node[left]{$-2$};
+
+
+\end{tikzpicture}
+\end{image}
+
+\begin{image}
+\begin{tikzpicture}
+\draw[<->, thick] (-3,0)--(3,0);
+
+\draw[<->, thick] (0, 3)--(0,-0.5) node[ below=10pt, blue]{\large The Hyperbolic Cosine, $y =\cosh x$};
+
+
+\draw[ thick, domain=-1.7:1.7,smooth,variable=\x,blue] plot ({\x},{0.5*e^\x +0.5* e^-\x});
+
+
+\draw[thin] (1,.2)--(1,-.2) node[below]{$1$};
+\draw[thin] (-1,.2)--(-1,-.2) node[below]{$-1$};
+\draw[thin] (2,.2)--(2,-.2) node[below]{$2$};
+\draw[thin] (-2,.2)--(-2,-.2) node[below]{$-2$};
+
+\draw[thin] (.2,1)--(-.2,1) node[left]{$1$};
+\draw[thin] (.2,2)--(-.2,2) node[left]{$2$};
+
+
+
+\end{tikzpicture}
+\end{image}
 
 \begin{example}[example 1]
 Solve the equation $\cosh x = c$ for $x$.\\
@@ -110,6 +155,33 @@ $\frac{d}{dx} \csch x = \answer{-\csch x \coth x}$
 \end{problem}
 
 
+\begin{example}[example 3]
+Find the Maclaurin series representation for the hyperbolic cosine.\\
+Recall that the Maclaurin series for $e^x$ is given by
+\[
+e^x = \sum_{n=0}^\infty \frac{x^n}{n!}
+\]
+Thus
+\[
+\cosh x = \frac{e^x + e^{-x}}{2} = \frac12 \sum_{n=0}^\infty \frac{x^n}{n!} + \frac12 \sum_{n=0}^\infty \frac{(-x)^n}{n!}
+\]
+\[
+= \sum_{\substack{n=0\\ n\; even}}^\infty \frac{x^n}{n!} = \sum_{n=0}^\infty \frac{x^{2n}}{(2n)!}
+\]
+
+\end{example}
+
+\begin{problem}(problem 3)
+Find the Maclauring series for the hyperbolic sine function.\\
+
+\begin{multipleChoice}
+\choice{$\sinh x=\displaystyle{\sum_{n=0}^\infty (-1)^n \frac{x^{2n+1}}{(2n+1)!}}$}
+\choice{$\sinh x=\displaystyle{\sum_{n=0}^\infty  \frac{x^{2n+1}}{ n!}}$}
+\choice[correct]{$\sinh x=\displaystyle{\sum_{n=0}^\infty  \frac{x^{2n+1}}{(2n+1)!}}$}
+\end{multipleChoice}
+\end{problem}
+
+
 \end{document}
 
 
@@ -131,6 +203,9 @@ Plot the complex number $1+2i$ in the complex plane.
  \node[blue] at (2.9,.5){Real Axis};
 \draw[<->, thick] (0, 3)--(0,-3) node[ below=10pt, blue]{\large The Complex Plane, $\mathbb{C}$};
 \node[blue] at (-1.5, 2.9){Imaginary Axis};
+
+\draw[scale = 2, thick, domain=0:1.1,smooth,variable=\x,brown] plot ({\x},{e^\x}) node at (0.7, 1.4) {$y = e^x$};
+
 
 \draw[thin] (1,.2)--(1,-.2) node[below]{$1$};
 \draw[thin] (-1,.2)--(-1,-.2) node[below]{$-1$};
