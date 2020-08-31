@@ -65,8 +65,8 @@ is a \textbf{closed} disk with center $z_0$ and radius $r$.
 \draw[thin] (.2,-2)--(-.2,-2) node[left]{$-2i$};
 
 \draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(1,1)} node[above right, blue]{$1+i$};
-\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(-1,1)} node[above left, blue]{$1-i$};
-
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(-1,1)} node[above left, blue]{$-1+i$};
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(1,-1)} node[below, blue]{$1-i$};
 
 \end{tikzpicture}
 \end{image}
@@ -144,6 +144,40 @@ then $\gamma$ is called a simple closed curve.
 
 \end{example}
 
+\begin{theorem}[Jordan Closed Curve Theorem]
+The complement of any simple closed curve $C$ can be partitioned into two mututally exclusive domains, $I$ and $E$, in such a way that $I$ is bounded,
+$E$ is unbounded, and $C$ is the boundary for both $I$ and $E$. In addition $I \cup E \cup C$ is the entire complex plane.
+The domain $I$ is called the interior of $C$, and the domain $E$ is called the exterior of $C$.
+\end{theorem}
+
+\begin{remark} A domain is a connected, open set.
+\end{remark}
+
+\begin{image}
+\begin{tikzpicture}
+
+\draw[blue] (1,1) circle (2cm) ;
+\node at (2,-1) {$C$};
+\node at (1.2, 1.2) {$I$};
+\node at (-1.8, 1)  {$E$};
+\draw[<->, thick] (-3,0)--(3,0);
+
+\draw[<->, thick] (0, 3)--(0,-3) node[ below=10pt, blue]{\large $I$, $E$ and $C$};
+
+
+\draw[thin] (1,.2)--(1,-.2) node[below]{$1$};
+\draw[thin] (-1,.2)--(-1,-.2) node[below]{$-1$};
+\draw[thin] (2,.2)--(2,-.2) node[below]{$2$};
+\draw[thin] (-2,.2)--(-2,-.2) node[below]{$-2$};
+
+\draw[thin] (.2,1)--(-.2,1) node[left]{$i$};
+\draw[thin] (.2,-1)--(-.2,-1) node[left]{$-i$};
+\draw[thin] (.2,2)--(-.2,2) node[left]{$2i$};
+\draw[thin] (.2,-2)--(-.2,-2) node[left]{$-2i$};
+
+
+\end{tikzpicture}
+\end{image}
 
 \section{Problems}
 
