@@ -31,15 +31,27 @@ and the
 The series of interest are:
 \begin{equation*}
 \begin{aligned}[c]
-&\sin(x) =\sum_{n=0}^\infty (-1)^n \frac{x^{2n+1}}{(2n+1)!}\\
+&\sin(x) =\sum_{n=0}^\infty (-1)^n \frac{x^{2n+1}}{(2n+1)!}\\[15pt]
 &\sinh(x)=\sum_{n=0}^\infty \frac{x^{2n+1}}{(2n+1)!}\\
 \end{aligned}
-\quad \quad
+\quad \quad\quad
 \begin{aligned}[c]
-&\cos(x) =\sum_{n=0}^\infty (-1)^n \frac{x^{2n}}{(2n)!}\\
+&\cos(x) =\sum_{n=0}^\infty (-1)^n \frac{x^{2n}}{(2n)!}\\[15pt]
 &\cosh(x)=\sum_{n=0}^\infty \frac{x^{2n}}{(2n)!}\\
 \end{aligned}
 \end{equation*}
+
+
+%\begin{tikzpicture}
+%\node[draw,brown!50!green!50] at (0,2) {$\sin(x) =\sum_{n=0}^\infty (-1)^n \frac{x^{2n+1}}{(2n+1)!}$};
+%\node[draw,brown!70!purple!80] at (5,2) {$\cos(x) =\sum_{n=0}^\infty (-1)^n \frac{x^{2n}}{(2n)!}$};
+%\node[draw,blue!50!brown!50] at (0,0) {$\sinh(x)=\sum_{n=0}^\infty \frac{x^{2n+1}}{(2n+1)!}$};
+%\node[draw,blue] at (5,0) {$\cosh(x)=\sum_{n=0}^\infty \frac{x^{2n}}{(2n)!}$};
+%\end{tikzpicture}
+
+
+
+
 and the sum identity for the cosine is:
 \[
 \cos(\alpha + \beta) = \cos\alpha \cos \beta - \sin \alpha \sin \beta
@@ -58,7 +70,7 @@ and
 \[
 \sin iy = \sum_{n=0}^\infty (-1)^n \frac{(iy)^{2n+1}}{(2n+1)!} 
 \]
-Noting that $(-1)^n i^{2n} = 1$ for all $n$, these power series metamorhpise into hyperbolic functions(!): 
+These power series can be simplified into hyperbolic functions(!) by noting that $(-1)^n i^{2n} = 1$ for all $n$: 
 \[
 \cos iy= \sum_{n=0}^\infty  \frac{y^{2n}}{(2n)!} = \cosh y
 \]
@@ -74,28 +86,43 @@ Substituting these into the sum identity establishes
 \]
 We use this as our definition of the complex cosine.
 \begin{definition}[The Complex Cosine]
-For all $z \in \C$ we define the complex cosine by
+For all $z \in \C$ we define the complex cosine, $f(z) = \cos z: \C \to \C$ by
 \[
 \cos(z) = \cos(x+iy) = \cos x \cosh y - i\sin x \sinh y
 \]
 \end{definition}
 
 
-\section{The Complex Cosine}
+\section{The Complex Sine}
 
-
-The sum identity for the sine function in trigonometry states
+\begin{question}
+The sum identity for the sine function states that
 \[
 \sin(\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta
 \]
 for all angles $\alpha$ and $\beta$.
-\begin{question}
-Consider the sum identity using an imaginary angle:
+
+%Allowing an imaginary angle in the sum identity using an imaginary angle:
 %How would you define the complex sine function in light of the identity for the sin of a sum? \\
+\begin{hint}
 \[
 \sin{z} = \sin(x+iy) = \sin(x) \cos(iy) + \cos(x) \sin(iy) =
 \]
-The complex sine is defined by $\sin z =$:
+\end{hint}
+\begin{hint}
+\[
+ \cos iy = \cosh y
+\]
+\end{hint}
+\begin{hint}
+\[
+\sin iy = i \sinh y
+\]
+\end{hint}
+
+
+Based on the results obtained in the method for defining the complex cosine, which of the following is the definition 
+of the complex sine function $f(z) = \sin z$?
 \begin{multipleChoice}
 \choice{$\sin(x) \sinh(y) - i\cos(x) \cosh(y)$};
 \choice{$\sin(x) \sinh(y) + i\cos(x) \cosh(y)$};
