@@ -70,7 +70,7 @@ and
 \[
 \sin iy = \sum_{n=0}^\infty (-1)^n \frac{(iy)^{2n+1}}{(2n+1)!} 
 \]
-These power series can be simplified into hyperbolic functions(!) by noting that $(-1)^n i^{2n} = 1$ for all $n$: 
+These power series can be simplified into hyperbolic functions (!) by noting that $(-1)^n i^{2n} = 1$ for all $n$: 
 \[
 \cos iy= \sum_{n=0}^\infty  \frac{y^{2n}}{(2n)!} = \cosh y
 \]
@@ -86,7 +86,8 @@ Substituting these into the sum identity establishes
 \]
 We use this as our definition of the complex cosine.
 \begin{definition}[The Complex Cosine]
-For all $z \in \C$ we define the complex cosine, $f(z) = \cos z: \C \to \C$ by
+For all $z \in \C$ we define the complex cosine by
+%$f(z) = \cos z: \C \to \C$
 \[
 \cos(z) = \cos(x+iy) = \cos x \cosh y - i\sin x \sinh y
 \]
@@ -124,12 +125,71 @@ for all angles $\alpha$ and $\beta$.
 Based on the results obtained in the method for defining the complex cosine, which of the following is the definition 
 of the complex sine function $f(z) = \sin z$?
 \begin{multipleChoice}
-\choice{$\sin(x) \sinh(y) - i\cos(x) \cosh(y)$};
-\choice{$\sin(x) \sinh(y) + i\cos(x) \cosh(y)$};
-\choice{$\sin(x) \cosh(y) - i\cos(x) \sinh(y)$};
-\choice[correct]{$\sin(x) \cosh(y) + i\cos(x) \sinh(y)$ };
+\choice{$\sin(x) \sinh(y) - i\cos(x) \cosh(y)$}\\
+\choice{$\sin(x) \sinh(y) + i\cos(x) \cosh(y)$}\\
+\choice{$\sin(x) \cosh(y) - i\cos(x) \sinh(y)$}\\
+\choice[correct]{$\sin(x) \cosh(y) + i\cos(x) \sinh(y)$ }
 \end{multipleChoice}
 \end{question}
+
+
+\begin{example}[example 1]
+Solve for $z: \; \sin(z) = 2$.\\
+Since
+\[
+\sin z = \sin x \cosh y + i\cos x \sinh y
+\]
+we need 
+\[
+\sin x \cosh y =2 \;\; \mbox{and} \;\; \cos x \sinh y = 0
+\]
+simultaneously. The second equation gives
+\[
+x = \pi/2 + n\pi \;\; \mbox{or} \;\; y = 0
+\]
+We proceed on a case by case basis. If $y = 0$, then since
+\[
+\cosh 0 = 1
+\]
+we would be led to $\sin x = 2$ which has no solutions.\\
+Next, if $x = \pi/2 + n\pi$ where $n=2k$ is even, then 
+\[
+\sin x = \sin\left(\pi/2 + 2k\pi\right) = 1
+\]
+and we arrive at 
+\[
+\cosh y = 2
+\]
+which has two solutions (verify)
+\[
+y = \ln\left(2\pm \sqrt 3 \right)
+\]
+Finally, if $x = \pi/2 + n\pi$ where $n=2k+1$ is odd, then 
+\[
+\sin x = \sin\left(\pi/2 + (2k+1)\pi\right) = -1
+\]
+and we arrive at 
+\[
+\cosh y = -2
+\]
+which has no solutions (verify).
+Thus the equation $\sin z = 2$ has as its solutions
+\[
+z = \left[\frac{\pi}{2} + 2k\pi\right] + i\left[\ln\left(2\pm \sqrt 3\right)\right]
+\]
+where $k$ is any integer.
+\end{example}
+
+\begin{problem}(problem 1)
+Solve the following equations for $z$.
+\begin{align*}
+i) & \sin z = -5\\
+ii) & \sin z = i\\
+iii) & \cos z = 5\\
+iv) & \cos z = -2i\\
+\end{align*}
+\end{problem}
+
 
 
 \end{document}
