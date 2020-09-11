@@ -192,6 +192,117 @@ iv) & \cos z = -2i\\
 
 
 
+\section{Identities}
+\subsection{Periodicity}
+Since the real sine and cosine functions are $2\pi$ periodic, so are their complex extenstions.
+\begin{proposition}
+\[
+\sin(z + 2\pi) = \sin z \;\; \mbox{and} \;\; \cos(z+2\pi) = \cos z
+\]
+\end{proposition}
+The periodicity follows immediately from the definition:
+\[
+\sin(z + 2\pi) = \sin(x+2\pi)\cosh(y) + i\cos(x+2\pi) \sinh(y) = \sin(x)\cosh(y) + i\cos(x) \sinh(y) =\sin(z)
+\]
+The periodicity of the cosine is proved similarly (verify).\\
+\subsection{Evenness and Oddness}
+Recall that $\sin x$ and $\sinh x$ are odd functions and that $\cos x$ and $\cosh x$ are even functions.
+As a result, $\sin z$ is an odd function and $\cos z$ is an even function.
+
+\begin{proposition}
+\[
+\sin(-z) = -\sin z \;\; \mbox{and} \;\; \cos(-z) = \cos z
+\]
+\end{proposition}
+To obtain the first equation, we have
+\begin{align*}
+\sin(-z) &= \sin(-x-iy) = \sin(-x)\cosh(-y) + i\cos(-x) \sinh(-y)\\
+  &= -\sin(x)\cosh(y) -i\cos(x) \sinh(y) = -\sin(z)
+\end{align*}
+The evenness of the complex cosine is demonstrated similarly (verify).
+
+\subsection{Shift by $\pi$}
+\begin{proposition}
+\[
+\sin(z + \pi) = -\sin z \;\; \mbox{and} \;\; \cos(z+\pi) = -\cos z
+\]
+\end{proposition}
+The proof of these equations follows directly from their real counterparts (verify).
+
+\subsection{Relation to the Complex Exponential}
+\begin{proposition}
+\[
+\sin(z) = \frac{e^{iz} - e^{-iz}}{2i} \;\; \mbox{and} \;\;  \cos(z) = \frac{e^{iz} + e^{-iz}}{2}
+\]
+\end{proposition}
+To prove the first equation, we begin with
+\[
+e^{iz} = e^{-y+ix} = e^{-y}\cos(x) + ie^{-y}\sin(x)
+\]
+and
+\[
+e^{-iz} = e^{y-ix} = e^{y}\cos(x) - ie^{y}\sin(x)
+\]
+Subtracting the second of these from the first, we get
+\begin{align*}
+e^{iz} - e^{-iz} &= \left[e^{-y}-e^y\right]\cos(x) + i\left[e^{-y}+e^y\right]\sin(x)\\
+&=-2\cos(x) \sinh(y) +2i \sin(x)\cosh(y)\\
+& = 2i\left[\sin(x)\cosh(y) + i \cos(x)\sinh(y)\right]\\
+&=2i\sin(z)
+\end{align*}
+The result follows by dividing by $2i$.
+The proof of the second equation is similar (verify).
+
+
+\subsection{Co-functions}
+\begin{proposition}
+\[
+\sin\left(\frac{\pi}{2}-z\right) = \cos z \;\; \mbox{and} \;\; \cos\left(\frac{\pi}{2}-z\right) = \sin z
+\]
+\end{proposition}
+These identities follow directly from their counterparts for the real sine and cosine functions.
+
+\subsection{Sum and Difference Identities}
+\begin{proposition}
+\[
+\sin(z_1 + z_2) = \sin(z_1)\cos(z_2) + \cos(z_1)\sin(z_2)
+\]
+\[
+\sin(z_1 - z_2) = \sin(z_1)\cos(z_2) - \cos(z_1)\sin(z_2)
+\]
+\[
+\cos(z_1 + z_2) = \cos(z_1)\cos(z_2) - \sin(z_1)\sin(z_2)
+\]
+\[
+\cos(z_1 + z_2) = \cos(z_1)\cos(z_2) + \sin(z_1)\sin(z_2)
+\]
+\end{proposition}
+To prove the first equation, we rewrite the right hand side using the complex exponential. The first term is
+\begin{align*}
+\sin(z_1)\cos(z_2) &= \frac{e^{iz_1} - e^{- iz_1}}{2i} \cdot \frac{e^{iz_2} + e^{-iz_2}}{2}\\
+&= \frac{1}{4i}\left[e^{i(z_1+ z_2)} + e^{i(z_1 - z_2)} - e^{-i(z_1 - z_2)} - e^{-i(z_1+ z_2)}\right]
+\end{align*}
+The second term is
+\begin{align*}
+\cos(z_1)\sin(z_2) &= \frac{e^{iz_1} + e^{- iz_1}}{2} \cdot \frac{e^{iz_2} - e^{-iz_2}}{2i}\\
+&= \frac{1}{4i}\left[e^{i(z_1+ z_2)} - e^{i(z_1 - z_2)} + e^{-i(z_1 - z_2)} - e^{-i(z_1+ z_2)}\right]
+\end{align*}
+Adding these, we get
+\[
+\sin(z_1)\cos(z_2) + \cos(z_1)\sin(z_2)  = \frac{1}{4i}\left[2e^{i(z_1+ z_2)} - 2e^{-i(z_1+ z_2)}\right]
+\]
+\[
+= \sin(z_1 + z_2)
+\]
+
+
+%&= e^{-y_1 -y_2}\cis(x) - e^{y_1 +y_2}\cis(-x)\\
+%&=\left[e^{-y_1 -y_2} - e^{y_1 +y_2}\right]\cos(x) + 
+
+%\end{align*}
+
+The second equation follows from the first by replacing $z_2$ with $-z_2$ and using evenness and oddness.
+The third and fourth equations are proved in the same manner as the first and second (verify).
 \end{document}
 
 
