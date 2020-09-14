@@ -18,8 +18,10 @@ We define and discuss complex logarithms.
 
 \section{The Multivalued Logarithm}
 Consider the function $w = f(z) = e^z = e^x \cis y$. This function is $2\pi i$-periodic, so it is not one-to-one.  Hence it does not have a traditional inverse-
-the complex logarithm is multivalued.  For a given $w \in \C$, $z=\log w$ gives all of the values of $z$ so that $e^{z} = w$. To define the complex log, 
-consider a complex number $w_0$ in the image of $f(z) = e^z$, so that $w_0 = e^{x_0} \cis y_0$.  Then the modulus of $w_0$ is $e^{x_0}$ and an argument of $w_0$ is $y_0$.
+the complex logarithm is multivalued.  
+%For a given $w \in \C$, $z=\log w$ gives all of the values of $z$ so that $e^{z} = w$. 
+To define the complex log, consider a complex number $w_0$ in the image of $f(z) = e^z$, 
+so that $w_0 = e^{x_0} \cis (y_0+ 2k\pi)$.  Then the modulus of $w_0$ is $e^{x_0}$ and an argument of $w_0$ is $y_0$.
 
 
 \begin{image}
@@ -101,6 +103,43 @@ Find all values of the complex logarithm: $\; \log(i-1)$\\
 \end{multipleChoice}
 \end{problem}
 
+
+
+Some familiar properties of real logarithms carry over tho the multivalued complex logarithm.
+
+\begin{proposition}
+For $z_1, z_2 \neq 0$, 
+\[
+\log(z_1\cdot z_2) = \log z_1 + \log z_2
+\]
+and for $z \neq 0$
+\[
+\log\left(\frac{1}{z}\right) = - \log z
+\]
+\end{proposition}
+The key to the proof of the first propoerty is that the argument of a product is the sum of the arguments:
+\[
+\arg(z_1 \cdot z_2) = \arg z_1 + \arg z_2
+\]
+As a result of this property of the multivalued argument, we have
+\begin{align*}
+\log(z_1\cdot z_2) &= \ln|z_1 z_2| + i\arg(z_1 z_2)\\
+&= \ln|z_1| + \ln|z_2| + i\left[\arg z_1 + \arg z_2\right]\\
+&= \log z_1 + \log z_2
+\end{align*}
+
+The proof of the second property is similar (verify) and uses
+\[
+\arg\left(\frac{1}{z}\right) = -\arg z
+\]
+
+\begin{corollary}
+For $z_1, z_2 \neq 0$
+\[
+\log\left(\frac{z_1}{z_2}\right) = \log z_1 - \log z_2
+\]
+\end{corollary}
+
 \section{Principal Log}
 
 Remarking that the complex exponential function, $e^z$, is defined in terms of the radial part, $e^x=r$,
@@ -133,7 +172,7 @@ if and only if $-\pi < y \leq \pi$.
 
 
 
-\begin{example}[Example 1] 
+\begin{example}[Example 2] 
 Find $\Log z$ for $z = -5, i, 1+i, 1-i$ and $-3-i\sqrt 3$.\\
 \begin{align*}
 & \Log(-5) = \ln|-5|+ i \Arg(-5) = \ln 5 + i\pi\\
@@ -145,7 +184,7 @@ Find $\Log z$ for $z = -5, i, 1+i, 1-i$ and $-3-i\sqrt 3$.\\
 \end{example}
 
 
-\begin{problem}(problem 1) 
+\begin{problem}(problem 2) 
 Find $\Log z$ for $z = -2, -i, -2-2i, -4+4i$ and $1+i\sqrt 3$.\\
 \begin{align*}
 & \Log(-2) = \answer{\ln 2 + i\pi }\\
@@ -155,6 +194,27 @@ Find $\Log z$ for $z = -2, -i, -2-2i, -4+4i$ and $1+i\sqrt 3$.\\
 & \Log(1+i\sqrt 3) = \answer{\ln 2+ i\pi/3}
 \end{align*}
 \end{problem}
+
+The properties of the multivalued complex logarithm do not carry over to the principal branch without modification.
+\begin{proposition}
+For $z_1, z_2 \neq 0$
+\[\Log(z_1\cdot z_2) = \Log z_1 + \Log z_2
+\]
+if and only if 
+\[
+-\pi < \Arg z_1 + \Arg z_2 \leq \pi\]
+
+and for $z \neq 0$
+\[
+\Log\left(\frac{1}{z}\right) = - \Log z
+\]
+if and only if $z$ is not a negative real number.
+\end{proposition}
+\begin{question}Under what conditions can we expect
+\[
+\Log\left(\frac{z_1}{z_2}\right) = \Log z_1 - \Log z_2?
+\]
+\end{question}
 
 
 \section{Other Branches}
@@ -171,7 +231,7 @@ The we define
 \end{definition}
 
 
-\begin{example}[Example 2] 
+\begin{example}[Example 3] 
 Find the indicated logarithm. The expression $\arg_\alpha(z)$ is used below to indicate the element of the set 
 $\arg z$ which lies in the interval $(\alpha, \alpha + 2\pi]$.\\
 \begin{align*}
@@ -184,7 +244,7 @@ v)  \, & \log_{4\pi}(\sqrt 3 + i) = \ln|\sqrt 3 + i|+ i \arg_{4\pi}(\sqrt 3+i) =
 \end{example}
 
 
-\begin{problem}(problem 2) 
+\begin{problem}(problem 3) 
 Find the following complex logarithms:\\
 \begin{align*}
 i) \, & \log_0(3) = \answer{\ln 3 + i2\pi }\\
@@ -194,6 +254,7 @@ iv)  \, & \log_{2\pi}(1+i) = \answer{\ln \sqrt 2 +i11\pi/4}\\
 v)  \, & \log_0(1- i\sqrt 3) = \answer{\ln 2+ 5\pi/3}
 \end{align*}
 \end{problem}
+
 
 
 
@@ -223,7 +284,7 @@ z^c = e^{c \Log z}
 \]
 \end{definition}
 
-\begin{example}[example 3]
+\begin{example}[example 4]
 Find all values of $i^i$ and highlight the principal value.\\
 Using the definition of a complex exponent, we have
 \[
@@ -239,7 +300,7 @@ i^i = e^{-\pi/2} \approx 0.20788...
 Note that the values of $i^i$ are real!
 \end{example}
 
-\begin{problem}(problem 3)
+\begin{problem}(problem 4)
 Find all values of each of the exponential expressions and highlight the principal value.\\
 \begin{align*}
 i) &\; 4^i; \;\; \mbox{Principal value:}\;\; \answer{e^{i\ln 4}}\\
@@ -248,7 +309,21 @@ iii) & \;(-1)^{\sqrt 2}; \;\;\mbox{Principal value:}\;\; \answer{e^{i\pi\sqrt 2}
 \end{align*}
 \end{problem}
 
+
+
+
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
 
 Let $w = f(z) = z^2$. Find $u(x,y)$ and $v(x,y)$.\\
 Since $z = x+iy$, 
