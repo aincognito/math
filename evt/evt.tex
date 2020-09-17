@@ -69,16 +69,18 @@ tells us that the max and the min occur in the interval, but it does not tell us
 \end{tikzpicture}
 \end{center}
 
-
-\begin{theorem}
-(Closed Interval Method)
-If $f(x)$ is continuous on the closed 
-interval $[a,b]$, then the absolute extremes occur at either the endpoints 
-or at critical numbers inside the interval. 
+The main idea is finding the location of the absolute max and absolute min of a continuous function on a closed 
+interval is contained in the following theorem.
+\begin{theorem}[Fermat's Theorem]
+If $f(x)$ is defined on the open interval $(a,b)$ and that $f(x)$ has an absolute maximum or absolute minimum at 
+a point $x = c$ in thie interval. Then $c$ is a critical number for $f(x)$.
 \end{theorem}
+As a result of Fermat's Theorem, we can conclude that the absolute extremes of
+a continuous function on a closed interval must occur at the endpoints of the interval or at a critical numbers 
+inside the interval.\\
 
-
-By the Closed Interval Method, finding the absolute extremes of a
+\section{Closed Interval Method}
+Finding the absolute extremes of a
 continuous function, $f(x)$, on a closed interval $[a,b]$ is a three 
 step process.
 \begin{enumerate}
@@ -90,12 +92,6 @@ maximum of $f(x)$ on the closed interval $[a,b]$, and the smallest
 of these values is the absolute minimum.
 \end{enumerate}
 %The largest of these function values is the absolute max and the smallest is the absolute min of $f(x)$ on $[a,b]$. 
-
-
-
-\section{Closed Interval Method}
-
-
 
 
 \begin{example}[example 1] Find the absolute maximum and the absolute minimum values of $f(x) = x^2 - 4x + 5$ on the closed interval $[0, 3]$.
@@ -354,6 +350,16 @@ Note that the critical number $x= -2$ is not in the interval $[0, 4]$.
 \end{center}
 
 
+\section{Proof of Fermat's Theorem}
+Suppose that $f(x)$ is defined on the open interval $(a,b)$ and that $f(x)$ has an absolute max at $x=c$.
+Thus $f(c) \geq f(x)$ for all $x$ in $(a,b)$. If $f'(c)$ is undefined then, $x=c$ is a critical number for $f(x)$.
+If $f'(c)$ is defined, then from the definition of the derivative we have
+\[
+f'(c) = \lim_{h \to 0^-} \frac{f(c+h) -f(c)}{h} = \lim_{h \to 0^-} \frac{f(c+h) -f(c)}{h}
+\]
+The difference quotient in the left hand limit is positive (or zero) since the numerator is negative (or zero) and the denominator is negative.
+Thus $f'(c) \geq 0$.  But the difference quotient in the right hand limit is negative (or zero) and so $f'(c) \leq 0$.
+Hence $f'(c) = 0$ and the theorem is proved.
 
 \end{document}
 
