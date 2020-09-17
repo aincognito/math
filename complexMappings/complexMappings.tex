@@ -218,9 +218,118 @@ $D(z_0, r)$ is the disk of twice the radius, $D(\overline{z_0}, 2r)$.
 Find the image of the disk $D(1+i, 1)$ under the given mapping:
 \begin{align*}
 i) & f(z) = \overline{z} \\
-ii) & f(z) = 2\overline{z} \\
+ii) & f(z) = -2\overline{z} \\
 iii) & f(z) = 3i\overline{z} \\
 iv) & f(z) = i+\overline{z} 
+\end{align*}
+\end{problem}
+
+
+To understand the mapping properties of $f(z) = \frac{1}{z}$ it is useful to rewrite it in the following way:
+\[
+\frac{1}{z} = \frac{1}{z} \cdot \frac{\overline{z}}{\overline{z}}= \frac{\overline{z}}{|z|^2}
+\]
+Thus the mapping $f(z) = \frac{1}{z}$ has both a reflecting property like the conjugate mapping and a scaling property
+due to the division of the positive real number $|z|^2$. As a result of the scaling, the image of a point inside the unit circle 
+will map to a point outside of the circle and vice versa. This is shown in the figure below.
+
+\begin{image}
+\begin{tikzpicture}
+\filldraw[dashed, bottom color = red!30, top color = blue!30] (0,0) circle (1) ;
+\draw[mark=*,mark size=1pt,] plot coordinates {(.3, .75)} ;
+\node at (.45,.55) {$z_0$};
+\draw[<->, thick] (-3,0)--(3,0) node[right]{$x$};
+
+\draw[<->, thick] (0, -3) node[right]{$z$-plane} --(0,3) node[right]{$iy$};
+\draw[dashed, fill = white] (0,0)circle (.05) ;
+
+
+
+\filldraw[draw = none, top color = red!30, bottom color = blue!30] (6.2,-2.8) rectangle (11.8,2.8) ;
+\draw[dashed, fill = white] (9,0)circle (1) ;
+\draw[mark=*,mark size=1pt] plot coordinates {(10, -2.5)} ;
+\node at (10.3,-2.2) {$1/z_0$};
+\draw[->, thick, blue] (3.5,1)--(5.5, 1) node[above,midway, blue]{$w = \frac{1}{z}$};
+\draw[<->, thick] (6,0)--(12,0)node[right]{$u$};
+
+
+\draw[<->, thick] (9, -3) node[right]{$w$-plane}--(9,3) node[right]{$iv$};
+
+
+\node at (4.5, -4){\large The effect of $f(z) = \frac{1}{z}$ on the open punctured unit disk};
+\end{tikzpicture}
+\end{image}
+
+The color coding in the figure is intended to convey reflection in the real axis. A blue point in the upper half plane
+inside the disk maps to a blue point in the lower half plane outside the disk. Similarly, a red point in the lower half plane inside the disk maps to a
+red point outside the disk.
+
+\begin{example}[example 5]
+Find the image of the vertical ray $\Rep z = \frac12, \Imp z > 0$ under the mapping $f(z) = \frac{1}{z}$.\\
+We write $1/z$ in rectangular form:
+\[
+\frac{1}{z} = \frac{\overline{z}}{|z|^2} = \frac{x-iy}{x^2 + y^2}
+\]
+Substituting $x = 1/2$, we have
+\[
+u = \frac{2}{1+4y^2} \quad \mbox{and} \quad v = -\frac{4y}{1+4y^2}
+\]
+Note $v < 0$ since $y > 0$. Furthermore, observe that $u$ and $v$ are related by $v = -2uy$. 
+To eliminate $y$ from this last equation, we rewrite the expression for $u$, which gives
+\[
+y = \sqrt{\frac{2-u}{4u}} 
+\]
+Substituting into $v = -2uy$ gives
+\[
+v = -2u\sqrt{\frac{2-u}{4u}} = -\sqrt{u(2-u)} = -\sqrt{2u-u^2}
+\]
+To see what type of curve this is, square both sides :
+\[
+v^2 = 2u - u^2
+\]
+and so $u^2 - 2u + v^2 = 0$.  Completing the square we get
+\[
+(u-1)^2 + v^2 = 1
+\]
+which is the circle $C(1,1)$. Recalling that $v <0$
+we conclude that the image of the ray $x = 1/2, y >0$ is a semi circle in the lower half plane with 
+center at $1$ and radius $1$.
+
+
+\begin{image}
+\begin{tikzpicture}
+
+%z-plane
+\draw[<->, thick] (-2.5,0)--(2.5,0) node[right]{$x$}; %real axis
+\draw[<->, thick] (0, -2.5) node[right]{$z$-plane} --(0,2.5) node[left]{$iy$}; %imaginary axis
+
+\draw[blue, thick, ->] (0.5, 0) -- (0.5, 2.5) ; %domain
+\draw[thick,blue, fill = white] (0.5,0) circle (0.07) ;
+\node[blue, thick] at (1.5, 1.5){$x = 1, y > 0$}; %domain label
+
+
+%w-plane
+\draw[<->, thick] (5,0)--(10,0)node[right]{$u$}; %real axis
+\draw[<->, thick] (7.5, -2.5) node[right]{$w$-plane}--(7.5,2.5) node[left]{$iv$}; %imaginary axis
+
+\draw[blue, thick, ->] (9.5,0) arc (360:180:1); %image
+\draw[thick,blue, fill = white] (9.5,0) circle (0.07) ;
+\node[blue, thick] at (10, -1.5){$(u-1)^2 + v^2 = 1, v< 0$}; %image label
+
+\node at (3.75, -3.5){\large The effect of $f(z) = \frac{1}{z}$ on a vertical ray}; %caption
+\end{tikzpicture}
+\end{image}
+
+\end{example}
+
+
+\begin{problem}(problem 5)
+Find the image of the following sets under the mapping $f(z) = \frac{1}{z}$:
+\begin{align*}
+i) & \Rep z = \frac12, \Imp z \leq 0 \\
+ii) & \Rep z = 2, \Imp z > 0 \\
+iii) & \Imp z = 3, \Rep z \geq 0 \\
+iv) & \Imp z = \frac13, \Rep z < 0 
 \end{align*}
 \end{problem}
 
