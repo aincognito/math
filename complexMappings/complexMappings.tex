@@ -326,21 +326,52 @@ center at $1$ and radius $1$.
 \begin{problem}(problem 5)
 Find the image of the following sets under the mapping $f(z) = \frac{1}{z}$:
 \begin{align*}
-i) & \Rep z = \frac12, \Imp z \leq 0 \\
-ii) & \Rep z = 2, \Imp z > 0 \\
-iii) & \Imp z = 3, \Rep z \geq 0 \\
-iv) & \Imp z = \frac13, \Rep z < 0 
+i) & \Imp z = \frac13, \Rep z < 0 \\
+ii) & \Rep z = 2, \Imp z >\leq 0 \\
+iii) & \Rep z + \Imp z = 1 \\
+iv) & \mbox{The ray:} \; \theta = \theta_0
 \end{align*}
 \end{problem}
 
+\begin{image}
+\begin{tikzpicture}
+\begin{scope}
+\draw[clip, draw = none] (0,0) arc (0:180:2) --cycle;
+\draw[outer color = blue!50, inner color = white, shading = radial] (-2,0) circle (2);
+%\draw[ color = blue!50,shading = radial] (-2,0) circle (2);
+\end{scope}
+ 
+ \begin{scope}
+\draw[clip, draw = none] (0,0) arc (0:-180:2) --cycle;
+\draw[outer color = red!50, inner color = white] (-2,0) circle (2);
+\end{scope}
 
+\begin{scope}
+\draw[clip, draw = none] (6.2,0) rectangle (11.8,2.8);
+\filldraw[draw = none, inner color = red, outer color = red!10, shading = radial] (6.2,-2.8) rectangle (11.8,2.8) ;
+\end{scope}
+\begin{scope}
+\draw[clip, draw = none] (6.2,-2.8) rectangle (11.8,0);
+\filldraw[draw = none, inner color = blue, outer color = blue!10, shading = radial] (6.2,-2.8) rectangle (11.8,2.8) ;
+\end{scope}
+\draw[dashed, fill = white] (9,0)circle (1) ;
+\draw[white, thick] (6.2, -2.8) rectangle (11.8, 2.8);
+\draw[thick, color = blue!20] (6.5,0)--(8,0);
+\draw[thin, color = blue!20] (10,0)--(11.3,0);
+
+
+\end{tikzpicture}
+\end{image}
 
 \end{document}
 
 
 
 
-
+\begin{scope}
+    \clip (1,0) arc (180:360:2)-- cycle;
+    \draw[outer color = blue, inner color = red] (1,0) arc (0:3600:2) -- cycle;
+\end{scope}
 
 
 
