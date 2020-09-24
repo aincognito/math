@@ -358,15 +358,158 @@ center at $1$ and radius $1$.
 \begin{problem}(problem 5)
 Find the image of the following sets under the mapping $f(z) = \frac{1}{z}$:
 \begin{align*}
-i) & \Imp z = \frac13, \Rep z < 0 \\
-ii) & \Rep z = 2, \Imp z >\leq 0 \\
-iii) & \Rep z + \Imp z = 1 \\
-iv) & \mbox{The ray:} \; \theta = \theta_0
+i)\; & \Imp z = \frac13, \Rep z < 0 \\
+ii)\; & \Rep z = 2, \Imp z >\leq 0 \\
+iii)\; & \Rep z + \Imp z = 1 \\
+iv)\; & \mbox{The ray:} \; \theta = \theta_0
 \end{align*}
 \end{problem}
 
 
+
+\subsection{Stereographic Projection}
+
+
+The mapping $f(z) = \frac{1}{z}$ in some sense inverts the unit disk, with the singularity at the origin corresponding to a ring of points far from 0.
+In the complex plane this entire ring is considered to be ``$\infty$". Stereographic projection enables us to identify the complex plane with a punctured 
+sphere $S\setminus N$ where $N$ is the north pole of the sphere (sorry Santa) and further, to identitify ``$\infty$" with the north pole, $N$.
+%(North Pole, like batteries, not included).
+
+At the heart of stereographic projection lies a 1-1, onto map $\varphi: \C\to S\setminus N $ where $S$ is the sphere with 
+center at $\left(0,0,\tfrac12\right)$ and radius $\tfrac12$, so that $N = (0,0,1)$. 
+
+
+
+
+\begin{image}
+\begin{tikzpicture}
+
+\draw (0,2) circle (2);
+%\draw (-2,2) .. controls (0, 1.5) .. (2,2);
+%\draw[dashed] (2,2) -- (-2,2);
+\begin{scope}
+\draw[clip, draw = none] (-2,2) rectangle (2,-4);
+\draw (0,2) ellipse (2 and 0.5);
+\end{scope}
+
+\begin{scope}
+\draw[clip, draw = none] (-2,2) rectangle (2,4);
+\draw[dashed] (0,2) ellipse (2 and 0.5);
+\end{scope}
+
+\draw (-5,-1) -- (-3,1) --(5,1) -- (3,-1) --cycle;
+\node at (0.3, 4.3) {$N$};
+\node at (.2, -.2) {$0$};
+\draw (0, 4) -- (-2, -0.5) node[below right] {$z_0$};
+\node at (3.8, -.8) {$\C$};
+\node at (2.2, 3.3) {$S\setminus N$};
+\draw[fill=white] (0,4) circle (0.03);
+%\draw[mark=*,mark size=1pt,] plot coordinates {(0, 4)} ;
+\draw[mark=*,mark size=1pt,] plot coordinates {(0, 0)} ;
+\draw[mark=*,mark size=1pt,] plot coordinates {(-2, -0.5)} ;
+\draw[mark=*,mark size=1pt,red] plot coordinates {(-1.08, 1.58)}  ;
+\node[red] at (-0.7, 1.7) {$w_0$};
+\node at (0, -1.7) {\Large Stereographic Projection: $\varphi (z_0) = w_0$};
+\draw[->] (0,0) -- (0, 5);
+\end{tikzpicture}
+\end{image}
+
+
+
+To find the precise formula for the mapping $\varphi$, recall that a line segment in three dimensions can be expressed in vector form as
+\[
+\gamma(t) = {\bf u} + t{\bf v},  \; 0 \leq t \leq 1
+\]
+
+This segment goes from ${\bf u}$ to ${\bf u} + {\bf v}$ as $t$ goes from $0$ to $1$:
+
+\begin{image}
+\begin{tikzpicture}
+
+\draw[thin, dashed, blue!80, ->] (0,0) -- (1, 1) node[midway, left] {${\bf u}$};
+\draw[blue, ->, thick] (1,1) -- (3,2) node[midway, blue, above] {$\bf{v}$};
+\draw[mark=*,mark size=1pt, blue!80] plot coordinates {(0, 0)} node[below left]{$0$} ;
+\draw[mark=*,mark size=1pt, blue] plot coordinates {(1, 1)} ;
+\draw[mark=*,mark size=1pt, blue] plot coordinates {(3, 2)} ;
+\draw[mark=*,mark size=1pt,red] plot coordinates {(1.5, 1.25)} node[below right] {$\gamma(t) = {\bf u}+ t{\bf v}$} ;
+\node at (1.5, -0.8){\Large The segment from ${\bf u} \;\; \mbox{to}\;\; {\bf u}+{\bf v}$};
+\end{tikzpicture}
+\end{image}
+
+The vector ${\bf u} = (x,y,0)$ and the vector ${\bf v} = (-x, -y, 1)$. We wish to find $t$ so that the point
+\[
+{\bf u}+ t{\bf v} = (x- tx,y- ty, t) = (x(1-t), y(1-t), t)
+\]
+lies on the sphere, $S$ given by
+
+\[
+x^2 + y^2 + \left(z-\frac12 \right)^2 = \left(\frac12\right)^2
+\]
+Substituting gives
+\[
+x^2(1-t)^2 + y^2(1-t)^2 + \left(t-\frac12 \right)^2 = \left(\frac12\right)^2
+\]
+which is equivalent to 
+\[
+x^2(1-t)^2 + y^2(1-t)^2 + t(t-1) = 0
+\]
+Dividing by $t-1$ gives
+\[
+x^2(t-1) + y^2(t-1) + t = 0
+\]
+Solving this linear equation for $t$ we have
+\[
+t= \frac{x^2 + y^2}{1+x^2+y^2}
+\]
+Noting that $\displaystyle 1-t = \frac{1}{1+x^2 +y^2}$, we can define $\varphi$:
+\[
+\varphi(x+iy) = \varphi(x,y) = (x(1-t),y(1-t),t)  = \left( \frac{x}{1+x^2 +y^2}, \frac{y}{1+x^2 +y^2}, \frac{x^2 + y^2}{1+x^2+y^2} \right)
+\]
+
+The bijection $\varphi$ can be extended in a natural way to include $\infty$ in its domain: $\varphi(\infty) = N$.
+
+
 \end{document}
+
+
+
+
+
+
+
+
+
+\pgfdeclareradialshading{ballshading}{\pgfpoint{-10bp}{10bp}}
+ {color(0bp)=(gray!40!white); 
+ color(9bp)=(gray!75!white);
+ color(18bp)=(gray!70!black); 
+ color(25bp)=(gray!50!black); 
+ color(50bp)=(black)}
+
+\begin{pgfpicture}
+  \pgfpathcircle{\pgfpoint{0cm}{0cm}}{2cm}
+  \pgfshadepath{ballshading}{20}
+  \pgfusepath{}
+\end{pgfpicture} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -462,5 +605,4 @@ iv) & \mbox{The ray:} \; \theta = \theta_0
     \clip (1,0) arc (180:360:2)-- cycle;
     \draw[outer color = blue, inner color = red] (1,0) arc (0:3600:2) -- cycle;
 \end{scope}
-
 
