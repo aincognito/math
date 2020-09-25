@@ -339,7 +339,7 @@ center at $1$ and radius $1$.
 \draw[thick,blue, fill = white] (0.5,0) circle (0.07) ;
 \node[blue, thick] at (1.5, 1.5){$x = 1, y > 0$}; %domain label
 
-
+\draw[->, thick, blue] (3,-1.5)--(5, -1.5) node[above,midway, blue]{$w = \frac{1}{z}$};
 %w-plane
 \draw[<->, thick] (5,0)--(10,0)node[right]{$u$}; %real axis
 \draw[<->, thick] (7.5, -2.5) node[right]{$w$-plane}--(7.5,2.5) node[left]{$iv$}; %imaginary axis
@@ -432,15 +432,16 @@ This segment goes from ${\bf u}$ to ${\bf u} + {\bf v}$ as $t$ goes from $0$ to 
 \draw[mark=*,mark size=1pt, blue] plot coordinates {(1, 1)} ;
 \draw[mark=*,mark size=1pt, blue] plot coordinates {(3, 2)} ;
 \draw[mark=*,mark size=1pt,red] plot coordinates {(1.5, 1.25)} node[below right] {$\gamma(t) = {\bf u}+ t{\bf v}$} ;
-\node at (1.5, -0.8){\Large The segment from ${\bf u} \;\; \mbox{to}\;\; {\bf u}+{\bf v}$};
+\node at (1.5, -0.8){The segment from ${\bf u} \;\; \mbox{to}\;\; {\bf u}+{\bf v}$};
 \end{tikzpicture}
 \end{image}
 
-The vector ${\bf u} = (x,y,0)$ and the vector ${\bf v} = (-x, -y, 1)$. We wish to find $t$ so that the point
+In our case, the vector ${\bf u}$ is $(x,y,0)$ and the vector ${\bf v}$ goes from $(x, y, 0)$ to $(0, 0, 1)$, so ${\bf v} = (-x, -y, 1)$. 
+Now, we wish to find $t$ so that the point
 \[
 {\bf u}+ t{\bf v} = (x- tx,y- ty, t) = (x(1-t), y(1-t), t)
 \]
-lies on the sphere, $S$ given by
+lies on the sphere, $S$, given by
 
 \[
 x^2 + y^2 + \left(z-\frac12 \right)^2 = \left(\frac12\right)^2
@@ -463,10 +464,104 @@ t= \frac{x^2 + y^2}{1+x^2+y^2}
 \]
 Noting that $\displaystyle 1-t = \frac{1}{1+x^2 +y^2}$, we can define $\varphi$:
 \[
-\varphi(x+iy) = \varphi(x,y) = (x(1-t),y(1-t),t)  = \left( \frac{x}{1+x^2 +y^2}, \frac{y}{1+x^2 +y^2}, \frac{x^2 + y^2}{1+x^2+y^2} \right)
+\varphi(x+iy)   = \left( \frac{x}{1+x^2 +y^2}, \frac{y}{1+x^2 +y^2}, \frac{x^2 + y^2}{1+x^2+y^2} \right)
 \]
 
 The bijection $\varphi$ can be extended in a natural way to include $\infty$ in its domain: $\varphi(\infty) = N$.
+
+\begin{question} The mapping $\varphi$ is a bijection from $\C$ to the punctured sphere $S \setminus N$.
+What is the formula for $\varphi^{-1} : S \setminus N \to \C$?
+\end{question}
+
+Next, we turn to the exponential function, $f(z) = e^z$ and its mapping properties.
+Recall that $e^z$ is $2\pi i$ periodic.  As a result, the image of the band of complex numbers satisfying
+\(-\pi < \Imp z \leq \pi\) is its full image, $\C\{0\}$.
+
+\begin{example}
+Find the image of the vertical segment $x = 2, -\pi < y \leq \pi$ under the mapping $f(z) = e^z$.\\
+For $z$ on this segment, 
+\[
+e^z = e^2 \cis y
+\]
+and since $y$ takes on all values in an interval of length $2\pi$, $\cis y$ will take on all values on the unit circle.
+Hence the image of the segment is the circle centered at the origin with radius $e^2$.
+\begin{image}
+\begin{tikzpicture}
+
+%z-plane
+\draw[<->, thick] (-2.5,0)--(2.5,0) node[right]{$x$}; %real axis
+\draw[<->, thick] (0, -2.5) node[left]{$z$-plane} --(0,2.5) node[left]{$iy$}; %imaginary axis
+
+\draw[blue, thick] (1, -1.2) -- (1, 1.2) ; %domain
+\draw[thick,blue, fill = white] (1,-1.2) circle (0.07) ;
+\draw[thick,blue, fill = blue] (1, 1.2) circle (0.07) ;
+\node[blue, thick] at (2, 1.5){$x = 2, -\pi < y \leq \pi$}; %domain label
+
+\draw[->, thick, blue] (3,-1.5)--(5, -1.5) node[above,midway, blue]{$w = e^z$};
+%w-plane
+\draw[<->, thick] (5,0)--(10,0)node[right]{$u$}; %real axis
+\draw[<->, thick] (7.5, -2.5) node[right]{$w$-plane}--(7.5,2.5) node[left]{$iv$}; %imaginary axis
+
+\draw[blue, thick, ->] (7.5,0) circle (2.2); %image
+\draw[dashed,thin,blue!80] (7.5,0) -- (9.1, 1.6) node[midway, below right]{$e^2$} ;
+\node[blue, thick] at (10.2, 1.7){$u^2 + v^2 = e^4$}; %image label
+
+\node at (3.75, -3.5){\large The effect of $f(z) = \frac{1}{z}$ on a vertical segment}; %caption
+\end{tikzpicture}
+\end{image}
+An alternative method to arrive at the conclusion of the last example is to write
+\[
+u = e^2\cos  y \quad \mbox{and} \quad v = e^2 \sin y
+\]
+and note that the Pythagorean trig identity implies that
+\[
+u^2 + v^2 = (e^2)^2 = e^4
+\]
+To see that the image is this entire circle, note that since $-\pi < y \leq \pi$ we have
+$-e^2 \leq u \leq e^2$ and similarly for $v$.
+\end{example}
+
+\begin{example} 
+Find the image of the horizontal line $y = \frac{\pi}{4}$ under the mapping $f(z) = e^z$.\\
+For $z$ on this horizontal line, 
+\[
+e^z = e^x \cis \left(\frac{\pi}{4}\right)
+\]
+where $-\infty < x < \infty$. Such a point lies on the polar ray $\theta = \pi/4$ at a distance $e^x$ units from the origin.
+Since $e^x$ goes from $0$ to $\infty$ as $x$ goes from $-\infty$ to $\infty$, the image of the horizontal line is the polar
+ray, $\theta = \pi/4$ with $r>0$.
+
+\begin{image}
+\begin{tikzpicture}
+
+%z-plane
+\draw[<->, thick] (-2.5,0)--(2.5,0) node[right]{$x$}; %real axis
+\draw[<->, thick] (0, -2.5) node[right]{$z$-plane} --(0,2.5) node[left]{$iy$}; %imaginary axis
+
+\draw[blue, thick, <->] (-2, 1.6) -- (2, 1.6) ; %domain
+
+\node[blue, thick] at (1.5, 1.1){$ y = 2$}; %domain label
+
+\draw[->, thick, blue] (3,-1.5)--(5, -1.5) node[above,midway, blue]{$w = e^z$};
+%w-plane
+\draw[<->, thick] (5,0)--(10,0)node[right]{$u$}; %real axis
+\draw[<->, thick] (7.5, -2.5) node[right]{$w$-plane}--(7.5,2.5) node[left]{$iv$}; %imaginary axis
+
+\draw[blue, thick, ->] (7.5,0) -- (9.5,2); %image
+\draw[thick,blue, fill = white] (7.5,0) circle (0.07) ;
+\node[blue, thick] at (10, .8){$\theta = \pi/4, r>0$}; %image label
+
+\node at (3.75, -3.5){\large The effect of $f(z) = e^z$ on a horizontal line}; %caption
+\end{tikzpicture}
+\end{image}
+An alternative method to arrive at the conclusion of the last example is to write
+\[
+u = e^x\cos\left(\frac{\pi}{4}\right) = \frac{e^x}{\sqrt 2} = e^x\sin\left(\frac{\pi}{4}\right) = v
+\]
+where $u$ and $v$ are both strictly positive. This gives the portion of the line $u = v$ in the first quadrant.
+
+\end{example}
+
 
 
 \end{document}
