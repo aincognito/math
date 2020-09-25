@@ -148,10 +148,10 @@ which is a parabola in the $uv$-plane which opens to the left and has vertex at 
 
 \draw[<->, thick] (0, -3) node[right]{$z$-plane} --(0,3) node[right]{$iy$};
 
-\draw[blue, <->] (1, -2.5) -- (1, 2.5) ;
+\draw[blue, thick, <->] (1, -2.5) -- (1, 2.5) ;
 \node[blue] at (1.6, 1){$x = 1$};
 
-\draw[<->,blue, rotate=-90, shift={(0,9)}] (-3,-1.25) parabola bend (0,1) (3,-1.25) ;
+\draw[<->,thick, blue, rotate=-90, shift={(0,9)}] (-3,-1.25) parabola bend (0,1) (3,-1.25) ;
 \node[blue] at (11,1){$u = 1-\frac{v^2}{4}$};
 
 \draw[<->, thick] (6,0)--(12,0)node[right]{$u$};
@@ -184,7 +184,7 @@ The function $f(z) = \overline{z}$ maps a set in the complex plane to its mirror
 \begin{example}[example 4]
 Find the image of the closed disk $D(z_0, r)$ under the mapping $f(z) = 2\overline{z}$.\\
 The image of the center of the disk is $f(z_0) = 2\overline{z_0}$ and so the image of the disk
-$D(z_0, r)$ is the disk of twice the radius, $D(\overline{z_0}, 2r)$.
+$D(z_0, r)$ is the disk of twice the radius, $D(2\overline{z_0}, 2r)$.
 
 \begin{image}
 \begin{tikzpicture}
@@ -198,15 +198,15 @@ $D(z_0, r)$ is the disk of twice the radius, $D(\overline{z_0}, 2r)$.
 \draw[blue] (1.25, 1.25)--(1.78, 1.78) node[right, midway]{$r$};
 
 
-\draw[dashed, blue, fill= blue!20] (10.25, -1.25)circle (1.5) ;
-\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(10.25, -1.25)} node[left, blue]{$\overline{z_0}$};
-\draw[blue] (10.25, -1.25)--(11.31, -.19) node[right, midway]{$2r$};
+\draw[dashed, blue, fill= blue!20] (11.5, -2.5)circle (1.5) ;
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(11.25, -2.5)} node[left, blue]{$2\overline{z_0}$};
+\draw[blue] (11.25, -2.5)--(12.36, -1.33) node[right, midway]{$2r$};
 
 \draw[->, thick, blue] (3.5,1)--(5.5, 1) node[above,midway, blue]{$w = 2\overline{z}$};
 \draw[<->, thick] (6,0)--(12,0)node[right]{$u$};
 
 
-\draw[<->, thick] (9, -3) node[right]{$w$-plane}--(9,3) node[right]{$iv$};
+\draw[<->, thick] (9, -3) node[left]{$w$-plane}--(9,3) node[right]{$iv$};
 
 
 \node at (4.5, -4){\large The effect of $f(z) = 2\overline{z}$ on a disk};
