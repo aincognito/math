@@ -74,6 +74,7 @@ iv) & f(z) = (1-i)z +i
 \end{problem}
 
 
+
 \section{Squaring}
 
 
@@ -477,7 +478,7 @@ What is the formula for $\varphi^{-1} : S \setminus N \to \C$?
 
 
 
-\section{The Exponential Function}
+\section{Exponential and Logs}
 Next, we turn to the exponential function, $f(z) = e^z$ and its mapping properties.
 Recall that $e^z$ is $2\pi i$ periodic.  As a result, the image of the band of complex numbers satisfying
 \(-\pi < \Imp z \leq \pi\) is its full image, $\C\{0\}$.
@@ -568,6 +569,71 @@ where $u$ and $v$ are both strictly positive. This gives the portion of the line
 \end{example}
 
 
+
+\begin{example}
+Find the image of the semi-circle $z = 3\cis \theta, \; \pi/2 < \theta \leq 3\pi/2$ 
+under the mapping $f(z) = \Log z$.\\
+On the given semi-circle, $|z| = 3$, so 
+\[
+w = \Log z = \ln 3 + i\Arg \theta
+\]
+Thus $u = \ln 3$ and so the image lies on a vertical line. By definition of $\Log z$, 
+the values of $v$ must lie in the interval $\left(-\pi, \pi\right]$.
+For $\pi/2 <\theta\leq \pi$ we have $\pi/2 <\Arg z \leq  \pi$ and for $\pi < \theta \leq 3\pi/2$ we have $-\pi/2 \geq \Arg z  > -\pi$.
+Hence the range of values for $v$ is $(\pi/2, \pi] \cup (-\pi/2, -\pi)$
+
+
+\begin{image}
+\begin{tikzpicture}
+
+%z-plane
+\draw[<->, thick] (-2.5,0)--(2.5,0) node[right]{$x$}; %real axis
+\draw[<->, thick] (0, -2.5) node[right]{$z$-plane} --(0,2.5) node[left]{$iy$}; %imaginary axis
+
+\draw[blue, thick, ->] (0,1.5) node[right]{$3i$} arc (90:140:1.5) ; %domain
+\draw[blue, thick] (-1.0605, 1.0605) arc (135:180:1.5) node[anchor = north east]{$-3$}; %domain
+\draw[red, thick, ->] (-1.5,0) arc (180:230:1.5); %domain
+\draw[red, thick] (-1.0605,-1.0605) arc (225:270:1.5) node[right]{$-3i$}; %domain
+
+\draw[thick,blue, fill = white] (0,1.5) circle (0.04) ;
+\draw[thick,blue, fill = blue] (-1.5,0) circle (0.04) ;
+\draw[thick,red, fill=red] (0,-1.5) circle (0.04) ;
+\node[blue, thick] at (-1.5, 1.6){$x^2 + y^2 = 9$}; %domain label
+
+\draw[->, thick, blue] (3,-1.5)--(5, -1.5) node[above,midway, blue]{$w = \Log z$};
+
+%w-plane
+\draw[<->, thick] (5,0)--(10,0)node[right]{$u$}; %real axis
+\draw[<->, thick] (7.5, -2.5) node[right]{$w$-plane}--(7.5,2.5) node[left]{$iv$}; %imaginary axis
+
+\draw[blue, thick, ->] (8.4, 1) -- (8.4, 1.6) ; %image
+\draw[blue, thick] (8.4, 1.5) -- (8.4, 2) node[right]{$u = \ln 3$}; %image
+\draw[thick,blue, fill=blue] (8.4,2) circle (0.04) ;
+\draw[thick,blue, fill=white] (8.4,1) circle (0.04) ;
+
+\draw[red, thick, ->] (8.4, -2) -- (8.4, -1.4) ; %image
+\draw[red, thick] (8.4, -1.5) -- (8.4, -1) ; %image
+\draw[thick,red, fill=red] (8.4,-1) circle (0.04) ;
+\draw[thick,red, fill=white] (8.4,-2) circle (0.04) ;
+%\node[red, thick] at (9.5, 1.5){$x = 1, y > 0$}; %image label
+
+\draw[thin] (7.6, 2) -- (7.4, 2) node[left]{$\pi i$};
+\draw[thin] (7.6, -2) -- (7.4, -2) node[left]{$-\pi i$};
+
+
+
+\node at (3.75, -3.5){\large The effect of $f(z) = \Log z $ on a semi-circle}; %caption
+\end{tikzpicture}
+\end{image}
+
+
+\end{example}
+
+
+
+\begin{center}
+\geogebra{Ptnx5Z3m}{1000}{800}
+\end{center}
 
 \end{document}
 
@@ -705,4 +771,3 @@ where $u$ and $v$ are both strictly positive. This gives the portion of the line
     \clip (1,0) arc (180:360:2)-- cycle;
     \draw[outer color = blue, inner color = red] (1,0) arc (0:3600:2) -- cycle;
 \end{scope}
-
