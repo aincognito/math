@@ -43,7 +43,7 @@ In this last respect, IBP is similar to $u$-substitution. The following integral
 %But, for now, let's discover the IBP formula! 
 
 
-\section{IBP FORMULA}
+\section{IBP Formula}
 
 Recall the product rule: $(uv)' = u'v+uv'$ (where $u$ and $v$ are functions of $x$).
 Integrating both sides of this equation with respect to $x$ gives
@@ -89,7 +89,7 @@ It replaces one integral with another another integral (which still has to be co
 We will now use the integration by parts (IBP) formula to compute integrals involving products of unrelated factors, like the ones
 shown above. 
 
-\section{BASIC EXAMPLES}
+
 
 \begin{example}[example 1] %example #1
 Compute the integral using IBP:
@@ -205,7 +205,7 @@ Next, the IBP formula gives
 
 
 \begin{problem}(problem 2a)
-Compute the integral using IBP:
+Compute the indefinite integral:
   \[
   \int 2x\sin(5x)\;dx.
   \]
@@ -221,7 +221,7 @@ Let $u = \answer{2x}\;\;$   and   $\;\;dv = \answer{\sin(5x) dx}$.\\
 
 
 \begin{problem}(problem 2b)
-Compute the integral using IBP:
+Compute the indefinite integral:
   \[
   \int 6xe^{-3x} \;dx.
   \]
@@ -317,7 +317,7 @@ Thus
   \]  
 \end{problem}
 
-\section{TABULAR INTEGRATION}
+\section{Tabular Integration}
 
 Integrals of the form $\int x^n f(x) \,dx$ require IBP $n$ times when $f(x)$ is a sine, cosine or exponential function.
 A notational shortcut called \textbf{tabular integration} can be used to streamline the process of using IBP multiple times.
@@ -466,9 +466,9 @@ Thus,
 
 
 
-\section{INVERSE FUNCTIONS}
+\section{Inverse Functions}
 
-We will now look at some examples involving inverse functions like $\ln(x), \tan^{-1}(x), \sin^{-1}(x)$ and $\cos^{-1}(x)$.
+We will now look at some examples the involving inverse functions $\ln(x), \tan^{-1}(x), \sin^{-1}(x)$ and $\cos^{-1}(x)$.
 We do not (yet) know anti-derivatives for these functions, so we will have to let $u$ equal the inverse function.
  
 \begin{example}[example 6]
@@ -501,7 +501,7 @@ which is easier to work with. Now, by IBP, we have,
 
 
 \begin{problem}(problem 6a)
-  Compute the integral:
+  Compute the indefinite integral:
   \[
   \int x^8 \ln(x) \;dx.
   \]
@@ -522,7 +522,7 @@ This method can be used to anti-differentiate $\ln(x)$ as well.
 
 
 \begin{problem}(problem 6b) 
-  Compute the integral:
+  Compute the indefinite integral:
   \[
   \int \ln(x) \;dx.
   \]
@@ -540,7 +540,7 @@ This method can be used to anti-differentiate $\ln(x)$ as well.
 \end{problem}
 
 \begin{problem}(problem 6c)
-  Compute the integral:
+  Compute the indefinite integral:
   \[
   \int \frac{\ln(x)}{\sqrt x} \;dx.
   \]
@@ -562,7 +562,7 @@ This method can be used to anti-differentiate $\ln(x)$ as well.
 
 
 \begin{example}[example 7]
-Compute the integral:
+Compute the indefinite integral:
   \[
   \int \tan^{-1}(2x) \;dx.
   \]
@@ -581,7 +581,7 @@ By IBP,
 \end{example}
 
 \begin{problem}(problem 7a)
-Compute the integral:
+Compute the indefinite integral:
   \[
   \int \tan^{-1}(x) \;dx.
   \]
@@ -597,7 +597,7 @@ Compute the integral:
 \end{problem}
 
 \begin{problem}(problem 7b)
-Compute the integral:
+Compute the indefinite integral:
   \[
   \int \sin^{-1}(4x) \;dx.
   \]
@@ -613,7 +613,7 @@ Compute the integral:
 \end{problem}
 
 \begin{example}[example 8]
-Compute the integral:
+Compute the indefinite integral:
   \[
   \int x^3\tan^{-1}(x) \;dx.
   \]
@@ -631,7 +631,7 @@ By IBP,
 \end{example}
 
 \begin{problem}(problem 8)
-Compute the integral:
+Compute the indefinite integral:
   \[
   \int x^2\tan^{-1}(x) \;dx.
   \]
@@ -647,10 +647,10 @@ Compute the integral:
   \]
 \end{problem}
 
-\section{SPECIAL EXAMPLES}
+\section{Special Examples}
 
 \begin{example}[example 9]
-Compute the integral:
+Compute the indefinite integral:
 \[
 \int e^{-6x}\cos(2x) \; dx.
 \]
@@ -795,6 +795,50 @@ At the end of our computation, we will need to recall the following integral
 \]
 
 \begin{example}[example 10]
+Compute the indefinite integral:
+
+\[
+\int \sin^2(x) \; dx.
+\]
+We will call the original integral $I$ and use IBP, arriving back at the original integral (as in the previous example).
+\[
+u = \sin(x), \quad dv = \sin(x) \; dx
+\]
+\[
+du = \cos(x) \; dx, \quad v = -\cos(x).
+\]
+Then,
+\[
+I = \int \sin^2(x) \; dx = -\sin(x)\cos(x) - \int -\cos^2(x) \; dx =  -\sin(x)\cos(x) + \int \cos^2(x) \; dx
+\]
+Using the trig identity $\cos^2(x) + \sin^2(x) = 1$, gives
+\[
+I = -\sin(x)\cos(x) + \int \left[1-\sin^2(x)\right] \; dx
+\]
+\[
+=-\sin(x)\cos(x) + \int 1 \; dx - I,
+\]
+
+and so
+\[
+2I = -\sin(x)\cos(x) + x + C
+\]
+and finally,
+\[
+I = \int \sin^2(x) \; dx = -\frac12 \sin(x)\cos(x) + \frac12 x + C
+\]
+\end{example}
+
+\begin{problem}(problem 10)
+Use IBP to compute the indefinite integral:
+\[
+\int \cos^2(x) \; dx
+\]
+\end{problem}
+
+
+
+\begin{example}[example 11]
 Compute the integral:
 \[
 \int \sec^3(x) \; dx.
@@ -832,8 +876,8 @@ I = \int \sec^3(x) \; dx = \frac12 \sec(x) \tan(x) + \frac12 \ln|\sec(x) + \tan(
 \]
 \end{example}
 
-\begin{problem}(problem 10)
-Compute the integral
+\begin{problem}(problem 11)
+Compute the indefinite integral:
 \[
 \int 30\sec^3(5x) \; dx = 3\sec(5x) \tan(5x) +  \answer{3\ln|\sec(5x) + \tan(5x)|} + C.
 \]
@@ -844,7 +888,7 @@ Compute the integral
 \section{REDUCTION OF POWERS}
 
 
-\begin{example}[example 11]
+\begin{example}[example 12]
 Create a reduction of powers formula for the integral:
 \[
 \int x^n e^x \; dx.
@@ -862,7 +906,7 @@ This gives
 \]
 \end{example}
 
-\begin{problem}(problem 11)
+\begin{problem}(problem 12)
 Create a reduction of powers formula for the integral:
 \[
 \int x^{n-1}e^{-x} \; dx.
@@ -894,7 +938,7 @@ We will see that $\Gamma(n) = (n-1)! = (n-1)(n-2)\cdot \ldots \cdot 2 \cdot 1$.
 
 
 
-\begin{example}[example 12]
+\begin{example}[example 13]
 Create a reduction of powers formula for the integral:
 \[
 \int \sec^n(x) \; dx.
@@ -927,7 +971,7 @@ and so,
 
 
 
-\begin{problem}(problem 12)
+\begin{problem}(problem 13)
 Create a reduction of powers formula for the integral:
 \[
 \int \sin^n(x) \; dx.
@@ -956,7 +1000,7 @@ Combining the terms involving the original integral gives the reduction formula:
 
 
 
-\begin{example}[example 13]
+\begin{example}[example 14]
 Create a reduction of powers formula for the integral
 \[
 \int x^n\sin(x) \; dx.
@@ -974,7 +1018,7 @@ This gives
 \]
 \end{example}
 
-\begin{problem}(problem 13)
+\begin{problem}(problem 14)
 Create a reduction of powers formula for the integral
 \[
 \int x^n\cos(x) \; dx.
@@ -998,7 +1042,7 @@ This gives the reduction formula:
 
 \section{APPLICATIONS}
 
-\begin{example}[example 14]
+\begin{example}[example 15]
 Find the volume of the solid of revolution obtained by revolving the region between the curves $y = e^x, y = 0, x = 0$
 and $x = 1$ about the $y$-axis.\\
 
@@ -1032,7 +1076,7 @@ V = 2\pi xe^x \Big|_0^1 - \int_0^1 2\pi e^x \; dx
 \]
 \end{example} 
 
-\begin{problem}(problem 14)
+\begin{problem}(problem 15)
 Find the volume of the solid of revolution obtained by revolving the region between the curves $y = \cos(x), y = 0, x = 0$
 and $x = \pi/2$ about the $y$-axis.\\
 
