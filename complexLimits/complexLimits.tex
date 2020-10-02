@@ -16,6 +16,67 @@ We find limits of complex functions.
 
 \maketitle
 
+
+\begin{definition} If $f$ is defined on the disk $D(z_0, r)$ for some $r>0$ we say that
+\[
+\lim_{z \to z_0} f(z) = L
+\]
+if given $\epsilon > 0$ there exists $\delta >0$ such that 
+\[
+|z-z_0| < \delta \Rightarrow |f(z) - f(z_0)| < \epsilon
+\]
+\end{definition}
+ 
+
+\begin{example}[example 1]
+Show that $\displaystyle \lim_{z \to 1+i} z^2 = 2i$.\\[6pt]
+Suppose $|z-(1+i)| < \delta$ for some $0< \delta < 1$.
+Note that
+\[
+z ^2 - 2i=\left[z-(1+i)\right] \cdot \left[z + (1+i)\right]
+\]
+By the Triangle Inequality
+\[
+|z+(1+i)| \leq |z| + |1+i| = |z| + \sqrt 2
+\]
+Now, since $|z-(1+i)| < \delta$ the Triangle Inequality also gives
+\[
+|z| = |z-(1+i) +(1+i)| \leq |z-(1+i)| + |1+i| < \delta + \sqrt 2 
+\]
+Thus,
+\[
+|z+(1+i)| \leq \delta + 2\sqrt 2 <  4 \; \mbox{since} \; \delta < 1
+\]
+Returning to $z^2 - 2i$, we have
+\[
+|z ^2 - 2i| = |z-(1+i)| \cdot | z+(1+i)| < \delta \cdot 4
+\]
+
+Now, let $\epsilon > 0$ and choose $\delta> 0$ such that $\delta < \min\left\{\frac{\epsilon}{4}, 1\right\}$. 
+From the computations above, if $|z-(1+i)| < \delta$ then
+\[
+|z^2 - 2i| < 4\delta < \epsilon
+\]
+Hence,
+\[
+\lim_{z \to 1+i} z^2 = 2i
+\]
+
+
+\end{example}
+
+\begin{problem}(problem 1) Show the following limits:
+\begin{align*}
+i) & \displaystyle \lim_{z \to i} z^2 = -1\\
+ii) & \displaystyle \lim_{z \to z_0} (az+b) = az_0 + b \;\;(a \neq 0)\\
+iii) & \displaystyle \lim_{z \to z_0} \overline{z} = \overline{z_0}
+\end{align*}
+\end{problem}
+
+
+\end{document}
+
+
 \section{Linear Functions}
 A linear function has the form $f(z) = az+b$ where $a, b \in \C$ and $a \neq 0$ (if $a=0$, then $f$ is a constant function).
 The effect of a linear function on a set in the complex plane is to scale, rotate and translate that set.  The constant term $b$ acts as a translation vector, 
