@@ -19,11 +19,11 @@ We find limits of complex functions.
 
 \begin{definition} If $f$ is defined on the disk $D(z_0, r)$ for some $r>0$ we say that
 \[
-\lim_{z \to z_0} f(z) = L
+\lim_{z \to z_0} f(z) = w_0
 \]
 if given $\epsilon > 0$ there exists $\delta >0$ such that 
 \[
-|z-z_0| < \delta \Rightarrow |f(z) - f(z_0)| < \epsilon
+|z-z_0| < \delta \Rightarrow |f(z) - w_0)| < \epsilon
 \]
 \end{definition}
  
@@ -65,7 +65,7 @@ Hence,
 
 \end{example}
 
-\begin{problem}(problem 1) Show the following limits:
+\begin{problem}(problem 1) Use the definition of limit to show each of the following:
 \begin{align*}
 i) & \displaystyle \lim_{z \to i} z^2 = -1\\
 ii) & \displaystyle \lim_{z \to z_0} (az+b) = az_0 + b \;\;(a \neq 0)\\
@@ -73,7 +73,90 @@ iii) & \displaystyle \lim_{z \to z_0} \overline{z} = \overline{z_0}
 \end{align*}
 \end{problem}
 
+The limit of a complex function can be determined from the limits of its real and imaginary parts.
+\begin{proposition}
+Let $z_0 = x_0 + iy_0 \in \C$ and suppose $f(z)=f(x+iy) = u(x,y) + iv(x,y)$ is defined on $D(z_0,r)$ for some $r>0$. Let $w_0 = u_0 + iv_0$, then
+\[
+\lim_{z \to z_0} f(z) = w_0 
+\]
+if and only if
+\[
+\lim_{(x,y) \to (x_0, y_0)} u(x,y) =  u_0 
+\]
+and
+\[
+\lim_{(x,y) \to (x_0, y_0)} v(x,y) =  v_0 
+\]
+%where $z_0 = x_0 + iy_0$.
+\end{proposition}
 
+To prove the proposition, we need to recall that 
+\[
+|\Rep z|, |\Imp z| \leq |z| \leq |\Rep z| + |\Imp z|
+\]
+for all $z \in \C$.
+Also, we will use the notation 
+\[
+|(x,y) - (x_0,y_0)|
+\]
+ for the distance between the points
+$(x,y)$ and $(x_0,y_0)$ in $\R^2$.  Thus
+\[
+|(x,y) - (x_0,y_0)| = |(x+iy) - (x_0 + iy_0)|
+\]
+%For ease of readability we will also abbreviate $u(x,y)$ and $v(x,y)$ with $u$  and $v$ respectively. 
+\begin{proof} %We now prove the proposition.\\[6pt]
+Suppose $\lim_{z \to z_0} f(z) = w_0 = u_0 + iv_0$.
+Then for any $\epsilon > 0$ there exists $\delta > 0$ such that
+\[
+|z-z_0| < \delta \Rightarrow |f(z) - w_0| < \epsilon
+\]
+%In particular, this statement holds for all $|z - z_0|< \epsilon$ with the additional constraint that $y = y_0$
+This statement can be rewritten as
+\[
+|(x+iy)-(x_0+i y_0)| < \delta \Rightarrow |u(x,y) + iv(x,y) - (u_0 + iv_0)|< \epsilon
+\]
+Since $|u(x,y) - u_0| \leq |u(x,y) + iv(x,y) - (u_0 + iv_0)|$
+we have
+\[
+|(x,y)-(x_0, y_0)| < \delta \Rightarrow |u(x,y)  - u_0 |< \epsilon
+\]
+Thus
+\[
+\lim_{(x,y) \to (x_0, y_0)} u(x,y) =  u_0 
+\]
+Similarly, 
+%since $|v(x,y) - v_0|<  |f(z) -w_0|$
+%we have
+%\[
+%|(x,y)-(x_0, y_0)| < \delta \Rightarrow |v(x,y)  - v_0 |< \epsilon
+%\]
+%Thus
+\[
+\lim_{(x,y) \to (x_0, y_0)} v(x,y) =  v_0 
+\]
+Next, suppose
+\[
+\lim_{(x,y) \to (x_0, y_0)} u(x,y) =  u_0  \quad \mbox{and} \quad \lim_{(x,y) \to (x_0, y_0)} v(x,y) =  v_0 
+\]
+Then for $\epsilon > 0$ there exists $\delta_u > 0$ and $\delta_v > 0$ such that
+\[
+|(x,y)-(x_0, y_0)| < \delta_u \Rightarrow |u(x,y)  - u_0 |< \frac{\epsilon}{2}
+\]
+and
+\[
+|(x,y)-(x_0, y_0)| < \delta_v \Rightarrow |v(x,y)  - v_0 |< \frac{\epsilon}{2}
+\]
+Let $\delta = \min\{\delta_u, \delta_v\}$ and suppose $|z-z_0| = |(x+iy) - (x_0 + iy_0)| <  \delta$. Then 
+%by the Triangle Inequality
+\[
+|f(z) - w_0| \leq  |u(x,y)  - u_0 | + |v(x,y)  - v_0 | < \frac{\epsilon}{2}+ \frac{\epsilon}{2} = \epsilon
+\]
+which shows that
+\[
+\lim_{z \to z_0} f(z) = w_0
+\]
+\end{proof}
 \end{document}
 
 
