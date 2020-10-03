@@ -17,13 +17,13 @@ We find limits of complex functions.
 \maketitle
 
 
-\begin{definition} If $f$ is defined on the disk $D(z_0, r)$ for some $r>0$ we say that
+\begin{definition} If $f$ is defined on the punctured disk $D_\circ(z_0, r)$ for some $r>0$ we say that
 \[
 \lim_{z \to z_0} f(z) = w_0
 \]
 if given $\epsilon > 0$ there exists $\delta >0$ such that 
 \[
-|z-z_0| < \delta \Rightarrow |f(z) - w_0)| < \epsilon
+0< |z-z_0| < \delta \Rightarrow |f(z) - w_0)| < \epsilon
 \]
 \end{definition}
  
@@ -73,9 +73,83 @@ iii) & \displaystyle \lim_{z \to z_0} \overline{z} = \overline{z_0}
 \end{align*}
 \end{problem}
 
+Complex limits have the same familiar properties as real limits.
+
+\begin{theorem}
+Suppose $f$ and $g$ are defined on the punctured disk $D_\circ(z_0, r)$ for some $r>0$ and suppose
+\[
+\lim_{z \to z_0} f(z) = w_f \quad \mbox{and} \quad \lim_{z \to z_0} g(z) = w_g
+\]
+then the following limits hold:
+\begin{align*}
+a) \; & \lim_{z \to z_0} \left[f(z)+ g(z)\right] = w_f +w_g\\
+b) \; & \lim_{z \to z_0} \left[\alpha f(z)\right] = \alpha w_f, \;\; \mbox{for any} \;\;\alpha \in \C\\
+c) \; & \lim_{z \to z_0} \left[f(z)\cdot g(z)\right] = w_f \cdot w_g\\
+d) \; & \lim_{z \to z_0} \frac{f(z)}{g(z)} = \frac{w_f}{w_g}, \;\; \mbox{if}\;\; w_g \neq 0
+\end{align*}
+\end{theorem}
+
+\begin{proof}
+Part a)  Since $\lim_{z \to z_0} f(z) = w_f$, for a given $\epsilon >0$, there exists $\delta_f >0$ such that
+\[
+0<|z-z_0| < \delta_f \Rightarrow |f(z) - w_f| < \frac{\epsilon}{2}
+\]
+Similarly, there exists $\delta_g >0$ such that
+\[
+0<|z-z_0| < \delta_f \Rightarrow |g(z) - w_g| < \frac{\epsilon}{2}
+\]
+Let $\delta = \min\{\delta_f, \delta_g \}$ then for $0< |z-z_0| < \delta$, the Triangle Inequality gives
+\[
+|\left(f(z) + g(z)\right) - (w_f + w_g)| \leq |f(z) - w_f|+|g(z) - w_g| < \frac{\epsilon}{2}+\frac{\epsilon}{2} = \epsilon
+\]
+as required.\\[6pt]
+
+Part d) It is sufficient to prove that 
+\[
+\lim_{z \to z_0} \frac{1}{g(z)} = \frac{1}{w_g}, \;\; \mbox{if}\;\; w_g \neq 0
+\]
+for then the result follows by observing that $\displaystyle \frac{f}{g} = f \cdot \frac{1}{g}$ and applying part c.\\
+Let $\epsilon > 0$ and Let $\epsilon' = \min\left\{\frac{|w_g|}{2}, \frac{\epsilon |w_g|^2}{2}\right\}$.
+
+Then there exists $\delta >0$ such that
+\[
+ 0< |z-z_0| < \delta \Rightarrow |g(z) - w_g| < \epsilon'
+ \]
+By the Reverse Triangle Inequality and the definition of $\epsilon'$, if $0 < |z-z_0| < \delta $ then
+\[
+|g(z)| > |w_g| - \epsilon' \geq |w_g| - \frac{|w_g|}{2} = \frac{|w_g|}{2}
+\]
+and so 
+\[
+\frac{1}{|g(z)|} < \frac{2}{|w_g|}
+\]
+Now, for $z$ such that $0 < |z-z_0| < \delta $ we have 
+\begin{align*}
+\left| \frac{1}{g(z)} - \frac{1}{w_g} \right| & = \frac{|w_g - g(z)|}{|g(z)|\cdot |w_g|}\\
+& < \frac{2\epsilon'}{|w_g|^2}\\
+& \leq \frac{2}{|w_g|^2} \cdot \frac{\epsilon |w_g|^2}{2}\\
+& = \epsilon
+\end{align*}
+as required.
+
+\end{proof}
+
+
+\begin{problem} 
+Use the Reverse Triangle Inequality $\left(|z_2 - z_1| \geq |z_2| -|z_1|\right)$ to prove 
+that if $|g(z) - w_g| < \epsilon'$, then $|g(z)| > |w_g| - \epsilon'$.
+\end{problem}
+
+\begin{problem} 
+Prove parts b and c of the proposition above.
+\end{problem}
+
+
+
 The limit of a complex function can be determined from the limits of its real and imaginary parts.
 \begin{proposition}
-Let $z_0 = x_0 + iy_0 \in \C$ and suppose $f(z)=f(x+iy) = u(x,y) + iv(x,y)$ is defined on $D(z_0,r)$ for some $r>0$. Let $w_0 = u_0 + iv_0$, then
+Let $z_0 = x_0 + iy_0 \in \C$ and suppose $f(z)=f(x+iy) = u(x,y) + iv(x,y)$ is defined 
+on $D_\circ(z_0,r)$ for some $r>0$. Let $w_0 = u_0 + iv_0$, then
 \[
 \lim_{z \to z_0} f(z) = w_0 
 \]
@@ -109,7 +183,7 @@ $(x,y)$ and $(x_0,y_0)$ in $\R^2$.  Thus
 Suppose $\lim_{z \to z_0} f(z) = w_0 = u_0 + iv_0$.
 Then for any $\epsilon > 0$ there exists $\delta > 0$ such that
 \[
-|z-z_0| < \delta \Rightarrow |f(z) - w_0| < \epsilon
+0< |z-z_0| < \delta \Rightarrow |f(z) - w_0| < \epsilon
 \]
 %In particular, this statement holds for all $|z - z_0|< \epsilon$ with the additional constraint that $y = y_0$
 This statement can be rewritten as
@@ -141,11 +215,11 @@ Next, suppose
 \]
 Then for $\epsilon > 0$ there exists $\delta_u > 0$ and $\delta_v > 0$ such that
 \[
-|(x,y)-(x_0, y_0)| < \delta_u \Rightarrow |u(x,y)  - u_0 |< \frac{\epsilon}{2}
+0<|(x,y)-(x_0, y_0)| < \delta_u \Rightarrow |u(x,y)  - u_0 |< \frac{\epsilon}{2}
 \]
 and
 \[
-|(x,y)-(x_0, y_0)| < \delta_v \Rightarrow |v(x,y)  - v_0 |< \frac{\epsilon}{2}
+0<|(x,y)-(x_0, y_0)| < \delta_v \Rightarrow |v(x,y)  - v_0 |< \frac{\epsilon}{2}
 \]
 Let $\delta = \min\{\delta_u, \delta_v\}$ and suppose $|z-z_0| = |(x+iy) - (x_0 + iy_0)| <  \delta$. Then 
 %by the Triangle Inequality
