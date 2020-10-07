@@ -25,7 +25,7 @@ If $f(z)$ is defined in $D(z_0, r)$ for some $r>0$, then we define the derivativ
 \[
 f'(z_0) = \lim_{z \to z_0} \frac{f(z) - f(z_0}{z-z_0}
 \]
-An equivalent formulation is 
+An equivalent alternative formulation is 
 \[
 f'(z_0) = \lim_{h \to 0} \frac{f(z_0 +h) -f(z_0)}{h}
 \]
@@ -41,7 +41,7 @@ f'(z_0) =\lim_{z \to z_0} \frac{z^4 - z_0^4}{z-z_0} =\lim_{z \to z_0} \frac{(z-z
 \[
 = \lim_{z \to z_0} (z+z_0)(z^2+z_0^2) = 2z_0\cdot 2z_0^2 = 4z_0^3
 \]
-Since this formual for $f'$ holds for any $z_0 \in \C$, we can write,
+Since this formula for $f'$ holds for any $z_0 \in \C$, we can write,
 \[
 f'(z) = 4z^3
 \]
@@ -90,12 +90,43 @@ Use the factorization
 \[
 z^n - z_0^n = (z-z_0)\left(z^{n-1} + z^{n-2}z_0 + \cdots + zz_0^{n-2} + z_0^{n-1} \right)
 \]
-to show that if $\alpha$ is an $n^{th}$ root of unity, i.e., $\alpha^n = 1$, then
+to show that if $\alpha \neq 1$ is an $n^{th}$ root of unity, i.e., $\alpha^n = 1$, then
 \[
 \alpha^{n-1} + \alpha^{n-2} + \cdots + \alpha + 1 = 0
 \]
 \end{problem}
 
+In the next example, we will see a function that is differentiable at $0$ but nowhere else.
+
+\begin{example}
+Let $f(z) = \overline{z}^2$.  Show that $f'(0) = 0$ but that $f$ is not differentiable for any $z_0 \neq 0$.\\
+We begin with the derivative at $0$:
+\[
+f'(0) = \lim_{z \to  0} \frac{\overline{z}^2}{z} = \lim_{z \to  0} \frac{\overline{z}^3}{|z|^2}
+\]
+We will separate this into real and imaginary parts using 
+\begin{align*}
+\overline{z}^3 &= (x -iy)^3 = x^3 - 3x^2(iy) + 3x(iy)^2  - (iy)^3 
+              &= (x^3 -3xy^2) + i(y^3 - 3x^2y)
+\end{align*}
+Doing so gives
+\begin{align*}
+f'(0) &= \lim_{z \to  0} \frac{\overline{z}^3}{|z|^2}\\
+      &= \lim_{(x,y) \to (0,0)} \frac{x^3 -3xy^2}{x^2 +y^2} + i\cdot \lim_{(x,y) \to (0,0)} \frac{y^3 - 3x^2y}{x^2 +y^2}\\
+      & = 0 + 0i \;\; \mbox{(verfiy)}
+\end{align*}
+
+Next, suppose $z_0 \neq 0$, then the alternative formulation of $f'(z_0)$ gives
+\begin{align*}
+f'(z_0) &= \lim_{h \to 0} \frac{\overline{z_0 + h}^2-\overline{z_0}^2 }{h}\\[6pt]
+        &=\lim_{h \to 0} \frac{\overline{z_0}^2 +\overline{2z_0h}- \overline{h}^2 -\overline{z_0}^2 }{h}\\[6pt]
+        &=\lim_{h \to 0} \frac{\overline{h} \overline{2z_0}- \overline{h}}{h}.
+\end{align*}
+This last limit is equal to $2z_0$ if $h$ is real and it is equal to $-2z_0$ if $h$ is purely imaginary.
+Since $2z_0 \neq -2z_0$ if $z_0 \neq 0$, this limit does not exist and $f$ is not differentiable at $z_0 \neq 0$.\\
+Hence $f(z) = \overline{z}^2$ is only differentiable at $0$.
+
+\end{example}
 
 \end{document}
 
