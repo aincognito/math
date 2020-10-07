@@ -100,6 +100,94 @@ to show that if $\alpha \neq 1$ is an $n^{th}$ root of unity, i.e., $\alpha^n = 
 Prove that for $z_0 \neq 0$, the power rule holds for negative integers.
 \end{problem}
 
+If a function is differentiable at $z= z_0$, then it must be continuous there.
+\begin{theorem}
+If $f$ is differentiable at $z = z_0$ then $f$ is continuous at $z = z_0$
+\end{theorem}
+\begin{proof}
+\[
+\lim_{z\to z_0} \left[f(z) - f(z_0)\right] = \lim_{z\to z_0} \frac{f(z) - f(z_0)}{z-z_0} \cdot (z-z_0)
+\]
+\[
+= \lim_{z\to z_0} \frac{f(z) - f(z_0)}{z-z_0} \cdot \lim_{z\to z_0}(z-z_0) = f'(z_0) \cdot 0 = 0
+\]
+Thus
+\[
+ \lim_{z\to z_0} f(z) = f(z_0),
+ \]
+ and so $f(z)$ is continuous at $z = z_0$.
+\end{proof}
+We next state familiar rules for differentiation that extend from functions of a real variable to complex functions.
+
+\begin{theorem}[Rules for Differentiation]
+If $f$ and $g$ are complex functions that are differentiable at $z = z_0$ then the following hold:
+\begin{align*}
+\mbox{Sum Rule} & \quad (f+g)'(z_0) = f'(z_0) + g'(z_0)\\[6 pt]
+\mbox{Product Rule} & \quad (fg)'(z_0) = f'(z_0)g(z_0) + f(z_0)g'(z_0)\\[6pt]
+\mbox{Quotient Rule} &\quad \left (\frac{f}{g}\right)'(z_0) = \frac{f'(z_0)g(z_0) - f(z_0)g'(z_0)}{g^2(z_0)}\quad (\mbox{if} \; g(z_0) \neq 0)
+\end{align*}
+\end{theorem}
+
+\begin{proof}
+We prove the quotient rule and leave the others as exercises. If $g(z_0) \neq 0$ then
+\[
+\left(\frac{f}{g}\right)'(z_0) = \lim_{z \to z_0} \frac{\frac{1}{g(z)} - \frac{1}{g(z_0)}}{z-z_0}
+\]
+\[
+= \lim_{z \to z_0} \frac{g(z_0)- g(z)}{g(z)\cdot g(z_0) \cdot(z-z_0)}
+\]
+\[
+= \lim_{z \to z_0} \frac{g(z_0)- g(z)}{z-z_0}   \cdot \lim_{z \to z_0} \frac{1}{g(z)\cdot g(z_0)}
+\]
+\[
+= -g'(z_0) \cdot \frac{1}{g^2(z_0)} = -\frac{g'(z_0)}{g^2(z_0)}
+\]
+The quotient rule follows from combining this reciprocal rule with the product rule.
+
+\end{proof}
+
+\begin{theorem}[Chain Rule]
+If $g(z)$ is differentiable at $z = z_0$ and $f(z)$ is differentiable at $z = g(z_0)$, then
+$f \circ g$ is differentiable at $z_0$ and
+\[
+(f\circ g)'(z_0) = \frac{d}{dz} f(g(z)) \Big|_{z=z_0} = f'(g(z_0)) \cdot g'(z_0)
+\]
+\end{theorem}
+
+\begin{proof}
+
+Let
+\[ \phi(z)  = \left\{
+     \begin{array}{lr}
+       \frac{f(g(z)) - f(g(z_0))}{g(z) -g(z_0)} & \ \text{for} \  g(z) \neq g(z_0) \\[12pt]
+       f'(g(z_0)) & \ \text{for} \ g(z) = g(z_0)
+     \end{array}
+   \right.
+\]
+Then
+\[
+\lim_{z \to z_0} \phi(z) = f'(g(z_0))
+\]
+Now, 
+\begin{align*}
+(f\circ g)'(z_0) &= \lim_{z\to z_0} \frac{f(g(z)) - f(g(z_0))}{z-z_0} \\[10pt]
+                 &= \lim_{z \to z_0} \phi(z_0) \cdot \frac{g(z) - g(z_0)}{z-z_0} \\[10pt]
+                 &= f'(g(z_0)) \cdot g'(z_0)
+\end{align*}
+
+\end{proof}
+
+\begin{example}
+Find the derivative of $f(z) = (z^2 + iz + 1)^5$.\\
+By the Chain Rule and the Power rule, we have
+\[
+f'(z) = 5(z^2 + z + 1)^4 \cdot (2z +i)
+\]
+\end{example}
+
+\begin{problem}
+Find the derivative of $f(z) = (z^3 - 2iz^2 + 3 + 2i)^4$.
+\end{problem}
 In the next example, we will see a function that is differentiable at $0$ but nowhere else.
 
 \begin{example}
