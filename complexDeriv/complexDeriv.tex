@@ -119,7 +119,7 @@ Thus
 \end{proof}
 We next state familiar rules for differentiation that extend from functions of a real variable to complex functions.
 
-\begin{theorem}[Rules for Differentiation]
+\begin{theorem}[Basic Rules for Differentiation]
 If $f$ and $g$ are complex functions that are differentiable at $z = z_0$ then the following hold:
 \begin{align*}
 \mbox{Sum Rule} & \quad (f+g)'(z_0) = f'(z_0) + g'(z_0)\\[6 pt]
@@ -205,18 +205,18 @@ Doing so gives
 \begin{align*}
 f'(0) &= \lim_{z \to  0} \frac{\overline{z}^3}{|z|^2}\\
       &= \lim_{(x,y) \to (0,0)} \frac{x^3 -3xy^2}{x^2 +y^2} + i\cdot \lim_{(x,y) \to (0,0)} \frac{y^3 - 3x^2y}{x^2 +y^2}\\
-      & = 0 + 0i \;\; \mbox{(verfiy)}
+      & = 0 + 0i \;\; \mbox{(verify)}
 \end{align*}
 
 Next, suppose $z_0 \neq 0$, then the alternative formulation of $f'(z_0)$ gives
 \begin{align*}
-f'(z_0) &= \lim_{h \to 0} \frac{\overline{z_0 + h}^2-\overline{z_0}^2 }{h}\\[6pt]
-        &=\lim_{h \to 0} \frac{\overline{z_0}^2 +\overline{2z_0h}- \overline{h}^2 -\overline{z_0}^2 }{h}\\[6pt]
-        &=\lim_{h \to 0} \frac{\overline{h} \left(\overline{2z_0}- \overline{h}\right)}{h}.
+f'(z_0) &= \lim_{h \to 0} \frac{\left(\overline{z_0 + h}\right)^2-\overline{z_0}^2 }{h}\\[6pt]
+        &=\lim_{h \to 0} \frac{\overline{z_0}^2 +2\overline{z_0h}+ \overline{h}^2 -\overline{z_0}^2 }{h}\\[6pt]
+        &=\lim_{h \to 0} \frac{\overline{h} \left(2\overline{z_0}+ \overline{h}\right)}{h}.
 \end{align*}
-This last limit is equal to $2z_0$ if $h$ is real and it is equal to $-2z_0$ if $h$ is purely imaginary.
-Since $2z_0 \neq -2z_0$ if $z_0 \neq 0$, this limit does not exist and $f$ is not differentiable at $z_0 \neq 0$.\\
-Hence $f(z) = \overline{z}^2$ is only differentiable at $0$.
+This last limit is equal to $2\overline{z_0}$ if $h$ is real and it is equal to $-2z_0$ if $h$ is purely imaginary.
+Since $2\overline{z_0} \neq -2\overline{z_0}$ if $z_0 \neq 0$, this limit does not exist and $f$ is not differentiable at $z_0 \neq 0$.\\
+Hence $f(z) = \overline{z}^2$ is only differentiable at $0$ and $f'(0) = 0$
 
 \end{example}
 
