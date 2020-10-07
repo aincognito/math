@@ -16,6 +16,93 @@ We find derivatives of complex functions
 
 \maketitle
 
+
+
+We begin with the derivative of a complex function at $z = z_0$.
+
+\begin{definition}
+If $f(z)$ is defined in $D(z_0, r)$ for some $r>0$, then we define the derivative of $f$ at $z_0$ by
+\[
+f'(z_0) = \lim_{z \to z_0} \frac{f(z) - f(z_0}{z-z_0}
+\]
+An equivalent formulation is 
+\[
+f'(z_0) = \lim_{h \to 0} \frac{f(z_0 +h) -f(z_0)}{h}
+\]
+In the latter formulation, it is important to note that $h\in  \C$.
+\end{definition}
+
+\begin{example}
+Let $z_0 \in \C$. Compute $f'(z_0)$ for $f(z) = z^4$.\\
+Since $z^4 - z_0^4$ factors readily, we will use the first formulation of the derivative:
+\[
+f'(z_0) =\lim_{z \to z_0} \frac{z^4 - z_0^4}{z-z_0} =\lim_{z \to z_0} \frac{(z-z_0)(z+z_0)(z^2+z_0^2)}{z-z_0}
+\]
+\[
+= \lim_{z \to z_0} (z+z_0)(z^2+z_0^2) = 2z_0\cdot 2z_0^2 = 4z_0^3
+\]
+Since this formual for $f'$ holds for any $z_0 \in \C$, we can write,
+\[
+f'(z) = 4z^3
+\]
+\end{example}
+
+
+\begin{problem}
+Compute $f'(z_0)$ for $f(z) = z^2$ and $f(z) = z^3$ using the definition of the derivative.
+\end{problem}
+
+\begin{proposition}[Power Rule]
+If $n$ is a positive integer, then $f(z) = z^n$ is differentiable on $\C$ and
+\[
+f'(z) = \frac{d}{dz} z^n = nz^{n-1}
+\]
+\end{proposition}
+
+\begin{proof}
+We will use the factorization
+\[
+z^n - z_0^n = (z-z_0)\left(z^{n-1} + z^{n-2}z_0 + \cdots + zz_0^{n-2} + z_0^{n-1} \right)
+\]
+We have
+\begin{align*}
+f'(z_0) &= \lim_{z \to z_0} \frac{z^n - z_0^n}{z-z_0} \\
+        &=\lim_{z \to z_0} \frac{(z-z_0)\left(z^{n-1} + z^{n-2}z_0 + \cdots + zz_0^{n-2} + z_0^{n-1} \right)}{z-z_0} \\
+        &= \lim_{z \to z_0} \left(z^{n-1} + z^{n-2}z_0 + \cdots + zz_0^{n-2} + z_0^{n-1} \right)\\
+        & = z_0^{n-1} + z_0^{n-1} + \cdots z_0^{n-1}\\
+        & = nz_0^{n-1}
+\end{align*}
+Since this holds for all $z_0 \in \C$, we can write $f'(z) = nz^{n-1}$.
+
+\end{proof}
+
+
+\begin{remark}
+The power rule can also be proved using the alternate formulation of the derivative with the help of the Binomial Theorem:
+\[
+(z_0 + h)^n = \sum_{k = 0}^n \binom{n}{k} z_0^{n-k} h^k
+\]
+\end{remark}
+
+
+\begin{problem}
+Use the factorization 
+\[
+z^n - z_0^n = (z-z_0)\left(z^{n-1} + z^{n-2}z_0 + \cdots + zz_0^{n-2} + z_0^{n-1} \right)
+\]
+to show that if $\alpha$ is an $n^{th}$ root of unity, i.e., $\alpha^n = 1$, then
+\[
+\alpha^{n-1} + \alpha^{n-2} + \cdots + \alpha + 1 = 0
+\]
+\end{problem}
+
+
+\end{document}
+
+
+
+
+
 \section{Linear Functions}
 A linear function has the form $f(z) = az+b$ where $a, b \in \C$ and $a \neq 0$ (if $a=0$, then $f$ is a constant function).
 The effect of a linear function on a set in the complex plane is to scale, rotate and translate that set.  The constant term $b$ acts as a translation vector, 
