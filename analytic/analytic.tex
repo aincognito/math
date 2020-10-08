@@ -6,7 +6,7 @@
 
 \outcome{Determine Analyticity}
 
-\title{3.3 Analytic Functions}
+\title{3.4 Analytic Functions}
 
 \begin{document}
 
@@ -15,6 +15,97 @@ We determine if a function is analytic using the Cauchy-Riemann equations.
 \end{abstract}
 
 \maketitle
+
+\begin{definition}
+We say that $f(z)$ is analytic at $z_0$ if $f$ is differentiable on $D(z_0, r)$ for some $r>0$.
+Furthermore, $f(z)$ is called analytic on a region $R$ if it is analytic at each point in $R$.
+\end{definition}
+
+
+
+
+\end{document}
+
+
+Recall the definition of partial derivative from multi-variable calculus.  
+Let $u(x,y)$ be defined in a neighborhood of $(x_0,y_0)$, then its partial derivatives are defined by
+
+\[
+u_x(x_0, y_0) = \frac{\partial u}{\partial x}\Big|_{(x_0,y_0)} = \lim_{h \to 0} \frac{u(x_0 +h, y_0) - u(x_0,y_0)}{h}
+\]
+
+and
+
+\[
+u_y(x_0, y_0) = \frac{\partial u}{\partial y}\Big|_{(x_0,y_0)} = \lim_{h \to 0} \frac{u(x_0 , y_0+h) - u(x_0,y_0)}{h}
+\]
+
+In the definition of $f'(z_0)$ we can let $h$ approach $0$ along any path. If we choose $h$ to be real, then we get a powerful result.
+\begin{theorem}
+If $f(z) = u(x,y) + iv(x,y)$ is differentiable at $z_0 = x_0 + iy_0$, then
+\[
+f'(z_0) = u_x(x_0,y_0) + iv_x(x_0,y_0)
+\]
+\end{theorem}
+
+\begin{remark}
+In short, we can write
+\[
+f' = f_x = u_x + iv_x
+\]
+\end{remark}
+
+\begin{proof}
+We let $h$ approach $0$ along the $x$-axis in the definition of $f'(z_0)$:
+\begin{align*}
+f'(z_0) &= \lim_{h \to 0 \atop h \in \R} \frac{f(z_0 + h) -f(z_0)}{h} \\[10pt]
+        &= \lim_{h \to 0} \frac{\left[u(x_0 +h, y_0) + iv(x_0 +h, y_0)\right] - \left[u(x_0,y_0)+iv(x_0 +h, y_0)\right]}{h} \\[10pt]
+        &=  \lim_{h \to 0} \frac{u(x_0 +h, y_0)- u(x_0,y_0)}{h} +i\lim_{h \to 0}\frac{v(x_0 +h, y_0)-v(x_0, y_0)}{h} \\[10pt]
+        &= u_x(x_0,y_0) + iv_x(x_0,y_0)
+\end{align*}
+\end{proof}
+
+
+
+
+\begin{example}
+Find $f'(z)$ for the complex exponential function $f(z) = e^z$.\\
+Since $e^z = e^x \cos y + i e^x \sin y$, we have
+\[
+u_x = u_x(x,y) = \frac{\partial}{\partial x} e^x \cos y = e^x \cos y 
+\]
+and
+\[
+ v_x = v_x(x,y) = \frac{\partial}{\partial y}e^x \sin y = e^x \sin y
+\]
+Thus, 
+\[
+f'(z_0) = e^{x_0} \cos y_0 + i e^{x_0} \sin y_0  = e^{z_0}
+\]
+for any $z_0 = x_0 + iy_0 \in \C$.
+Thus, we can write
+\[
+\frac{d}{dz} e^z = e^z \;\; \mbox{for all} \;\; z \in \C
+\]
+\end{example}
+
+
+\begin{problem}
+Show that
+\[
+\frac{d}{dz} \sin z = \cos z \quad \mbox{and} \quad \frac{d}{dz} \cos z = -\sin z
+\]
+\end{problem}
+
+
+
+
+\end{document}
+
+
+
+
+
 
 \section{Linear Functions}
 A linear function has the form $f(z) = az+b$ where $a, b \in \C$ and $a \neq 0$ (if $a=0$, then $f$ is a constant function).
