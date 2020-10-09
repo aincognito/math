@@ -142,7 +142,102 @@ f_y = if_x
 \]
 \end{remark}
 
+Some functions, like $\Log z$ and $z^{1/2}$ are best described using polar coordinates. To determine their derivatives, we need 
+to express $f'(z)$ in terms of $u_r, u_\theta, v_r$ and $v_\theta$. to do this, we will take advantage of the polar coordinate transformations,
+\[
+x = r\cos \theta \quad \mbox{and} \quad y=r\sin \theta
+\]
+and the multivariate version of the chain rule.
+Suppose $f(z) = u(x,y) + iv(x,y)$ is differentiable at $z = x+iy$.
+Then, by the multivariate chain rule,
+\begin{align*}
+\frac{\partial u}{\partial r} &= \frac{\partial u}{\partial x}\frac{\partial x}{\partial r}+\frac{\partial u}{\partial y}\frac{\partial y}{\partial r}\\
+                              &= \frac{\partial u}{\partial x} \cos\theta + \frac{\partial u}{\partial y} \sin \theta
+\end{align*}
+In short
+\[
+u_r = u_x \cos \theta + u_y \sin\theta
+\]
+Similarly,
+\[
+u_\theta = -ru_x \sin \theta + ru_y \cos\theta
+\]
 
+\begin{problem}
+Show that
+\[
+ v_r = v_x \cos \theta + v_y \sin\theta \quad \mbox{and} \quad  v_\theta = -rv_x \sin \theta + rv_y \cos\theta
+\]
+\end{problem}
+By the Cauchy-Riemann Equations, $u_x = v_y$ and $u_y = -v_x$ and substituting for $v_x$ and $v_y$ in $v_r$ and $v_\theta$ from the problem above, gives
+\[
+v_r = -ui_y \cos \theta + u_x \sin\theta \quad \mbox{and} \quad  v_\theta = ru_y \sin \theta + ru_x \cos\theta
+\]
+Now, we can observe the Cauchy-Riemann Equations in polar form:
+\[
+u_r = \frac{1}{r} v_\theta \quad \mbox{and} \quad u_\theta = -rv_r
+\]
+Finally, we would like to formulate $f'(z) = u_x + iv_x$, in terms of $u_r$ and $v_r$.
+\begin{problem} Solve the $2 \times 2$ system of equations
+\begin{align*}
+u_r &= u_x \cos \theta + u_y \sin\theta\\
+v_r &= u_x \sin \theta -u_y \cos\theta
+\end{align*}
+for $u_x$ and $u_y$
+\begin{multipleChoice}
+\choice{$u_x = u_r \cos \theta - v_r \sin \theta$ \;\; and \;\; $u_y = u_r \sin \theta + v_r \cos \theta $}
+\choice{$u_x = u_r \sin \theta + v_r \cos \theta$ \;\; and \;\; $u_y = u_r \cos \theta - v_r \sin \theta $}
+\choice[correct]{$u_x = u_r \cos \theta + v_r \sin \theta$ \;\; and \;\; $u_y = u_r \sin \theta - v_r \cos \theta $}
+\end{multipleChoice}
+\end{problem}
+
+From the Cauchy-Riemann Equation, $v_x = -u_y$, and the result of the previous problem, we can write
+\begin{align*}
+f'(z) &= u_x + iv_x\\
+      & = u_x - iu_y\\
+      &= \left[u_r \cos \theta + v_r \sin \theta\right] - i\left[ u_r \sin \theta - v_r \cos \theta \right]\\
+      &= \left[u_r \cos \theta -i u_r \sin \theta\right] + i\left[v_r \sin \theta  - v_r \cos \theta \right]\\
+      &= u_r e^{-i\theta} + v_r e^{-i\theta}\\
+      &=  e^{-i\theta}(u_r +v_r)
+\end{align*}
+
+We have just proved the following theorem:
+
+\begin{theorem}
+If $f(z) = f\left(re^{i\theta}\right)$ is differentiable at $z = z_0 = r_0 e^{i\theta_0}$ then
+\[
+f'(z_0) = e^{-i\theta_0} \left[u_r(r_0, \theta_0) + v_r(r_0, \theta_0)\right]
+\]
+\end{theorem}
+
+\begin{example}
+Use the theorem above to find the derivative of $f(z) = Log z$ at $z = z_0$ where $z_0$ is in the 
+slit plane $\C \backslash \{x\leq 0, y=0\}$ \\
+We can write $z_0 = r_0 e^{i\theta_0}$ where $\theta_0 = \Arg z_0$. Since $\Log z = ln r + i\theta$
+where $\theta = \Arg z$, we have 
+\[
+u_r(r_0,\theta_0) = \frac{1}{r_0} \quad \mbox{and} \quad v_r(r_0,\theta_0) = 0
+\]
+Hence, according to the theorem,
+\begin{align*}
+f'(z_0) &= e^{-i\theta_0}[u_r(r_0,\theta_0)+v_r(r_0,\theta_0)] \\
+        &= e^{-i\theta_0}\frac{1}{r_0}\\
+        &= \frac{1}{e^{i\theta_0}r_0}\\
+        &= \frac{1}{z_0}
+\end{align*}
+Dropping the subscript, we can write
+\[
+\frac{d}{dz} \Log z = \frac{1}{z}
+\]
+for $z$ in the slit plane.
+\end{example}
+
+\begin{problem} Let $z_0$ be in the slit plane, $\C \backslash \{x\leq 0, y=0\}$. 
+Find $f'(z_0)$ if $f(z) = z^{1/2}$, the principal branch of the square root function.
+\begin{hint}
+$z^{1/2} = r^{1/2}e^{i\theta/2}$ where $\theta = \Arg z$
+\end{hint}
+\end{problem}
 
 \end{document}
 
