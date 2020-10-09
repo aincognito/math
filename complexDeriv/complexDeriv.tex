@@ -21,11 +21,15 @@ We find derivatives of complex functions
 We begin with the derivative of a complex function at $z = z_0$.
 
 \begin{definition}
-If $f(z)$ is defined in $D(z_0, r)$ for some $r>0$, then we define the derivative of $f$ at $z_0$ by
+If $f(z)$ is defined in $D(z_0, r)$ for some $r>0$, then we say that $f$ is differentiable at $z_0$ if the following limit exists:
+\[
+\lim_{z \to z_0} \frac{f(z) - f(z_0)}{z-z_0}
+\]
+and this limit is denoted by $f'(z_0)$, the derivative of $f$ at $z_0$, i.e., 
 \[
 f'(z_0) = \lim_{z \to z_0} \frac{f(z) - f(z_0)}{z-z_0}
 \]
-An equivalent alternative formulation is 
+An equivalent alternative formulation of the derivative is 
 \[
 f'(z_0) = \lim_{h \to 0} \frac{f(z_0 +h) -f(z_0)}{h}
 \]
@@ -49,7 +53,13 @@ f'(z) = 4z^3
 
 
 \begin{problem}
-Compute $f'(z_0)$ for $f(z) = z^2$, $f(z) = z^3$ and $f(z) = \frac{1}{z}, (z_0 \neq 0)$ using the definition of the derivative.
+Use the definition of the derivative to compute $f'(z)$ for the following functions:
+\begin{align*}
+i) \;\; &f(z) = c \quad f'(z) =\answer{0}\\
+ii) \;\; &f(z) = z^2 \quad f'(z) =\answer{2z}\\
+iii) \;\; &f(z) = z^3 \quad f'(z) =\answer{3z^2}\\
+iv) \;\; & f(z) = \frac{1}{z}, (z \neq 0) \quad f'(z) =\answer{-\frac{1}{z^2}}
+\end{align*}
 \end{problem}
 
 \begin{proposition}[Power Rule]
@@ -131,7 +141,7 @@ If $f$ and $g$ are complex functions that are differentiable at $z = z_0$ then t
 \begin{proof}
 We prove the quotient rule and leave the others as exercises. If $g(z_0) \neq 0$ then
 \[
-\left(\frac{f}{g}\right)'(z_0) = \lim_{z \to z_0} \frac{\frac{1}{g(z)} - \frac{1}{g(z_0)}}{z-z_0}
+\left(\frac{1}{g}\right)'(z_0) = \lim_{z \to z_0} \frac{\frac{1}{g(z)} - \frac{1}{g(z_0)}}{z-z_0}
 \]
 \[
 = \lim_{z \to z_0} \frac{g(z_0)- g(z)}{g(z)\cdot g(z_0) \cdot(z-z_0)}
@@ -186,7 +196,11 @@ f'(z) = 5(z^2 + z + 1)^4 \cdot (2z +i)
 \end{example}
 
 \begin{problem}
-Find the derivative of $f(z) = (z^3 - 2iz^2 + 3 + 2i)^4$.
+Find the derivative of $f(z) = (z^3 - 2iz^2 + 3 + 2i)^4$.\\
+\[
+f'(z) = \answer{4(z^3 - 2iz^2 + 3 + 2i)^3 (3z^2 -4iz)}
+\]
+
 \end{problem}
 In the next example, we will see a function that is differentiable at $0$ but nowhere else.
 
@@ -226,6 +240,5 @@ Show that the function $f(z) = \overline{z}$ is nowhere differentiable.
 \end{problem}
 
 \end{document}
-
 
 
