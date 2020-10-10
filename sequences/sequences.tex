@@ -68,6 +68,10 @@ and so the sequence converges to $0$. The diagram below shows the terms of the s
 \end{image}
 \end{example}
 
+\begin{remark}
+The sequence in the previous problem could be written as $\displaystyle \{a_n\} = \left\{\left(\frac12\right)^n\right\}$. \\
+In general, a sequence of the form $\{a_n\} = \{r^n\}$ converges if $0<r<1$ and diverges if $r>1$.
+\end{remark}
 
 \begin{example}
 Does the sequence $\displaystyle \{a_n\} = \left\{(-1)^n\right\}$ converge or diverge?\\
@@ -166,9 +170,131 @@ Hence,
 as well, and the sequence converges to $0$. 
 \end{example}
 
+\begin{definition} 
+A sequence $\{a_n\}$ is called {\bf increasing} if $a_{n+1} > a_n$ for all $n$.
+Similarly, $\{a_n\}$ is called {\bf decreasing} if $a_{n+1} < a_n$ for all $n$.
+\end{definition}
+
+\begin{example}
+Show that the sequence $\left\{\frac{1}{n}\right\}$ is decreasing.\\
+We will use the fact that if $0<a<b$ then $\frac{1}{a} > \frac{1}{b}$.  Since
+\[
+n+1 > n \quad \text{for} \; n = 1, 2, 3, \ldots
+\]
+Taking reciprocals gives
+\[
+\frac{1}{n+1} < \frac{1}{n} \quad \text{for} \; n = 1, 2, 3, \ldots
+\]
+and hence the sequence $\left\{\frac{1}{n}\right\}$ is decreasing.
+\end{example}
+
+
+\begin{remark}
+If the function $f(x)$ associated with the sequence $\{a_n\} = \{f(n)\}$ is an increasing (or decreasing) function, then the sequence 
+is increasing (or decreasing).
+\end{remark}
+
+\begin{example}
+Show that the sequence $\left\{\frac{n+1}{n^2 + 1}\right\}$ is decreasing.\\
+We will show that the associated function $f(x) = \frac{x+1}{x^2 + 1}$ is an increasing function. To do this recall that if $f'(x)< 0$ for $x>a$,
+then $f(x)$ is decreasing on the interval $(a,\infty)$. The quotient rule gives
+\[
+f'(x) = \frac{\left(x^2+1\right) - 2x(x+1)}{(x^2+1)^2} = \frac{-x^2-2x+1}{(x^2+1)^2}
+\]
+which is negative if $x>1/2$. Thus $f(x)$ is decreasing on the interval $(1/2, \infty)$ and $\left\{\frac{n+1}{n^2 + 1} \right\}$
+is a decreasing sequence.
+\end{example}
+
+\section{Problems}
+You can type DNE or infinity into the answer box as needed.
+\begin{problem}
+Find the limit of the sequence $\displaystyle \left\{\frac{1}{3^n}\right\}$ (if it exists), and then state whether the sequence converges or diverges.\\
+$\displaystyle \lim_{n\to \infty} \frac{1}{3^n} = \;\;\answer{0}$ \;\;
+The sequence \wordChoice{\choice[correct]{converges}\choice{diverges}}
+\end{problem}
+
+\begin{problem}
+Find the limit of the sequence $\displaystyle \left\{\frac{n+1}{n^3}\right\}$ (if it exists), and then state whether the sequence converges or diverges.\\
+$\displaystyle \lim_{n\to \infty} \frac{1}{3^n} = \;\;\answer{0}$ \;\;
+The sequence \wordChoice{\choice[correct]{converges}\choice{diverges}}
+\end{problem}
+
+\begin{problem}
+Find the limit of the sequence $\displaystyle \left\{\sqrt[n]{2}\right\}$ (if it exists), and then state whether the sequence converges or diverges.\\
+$\displaystyle \lim_{n\to \infty} \sqrt[n]2 = \;\;\answer{1}$ \;\;
+The sequence \wordChoice{\choice[correct]{converges}\choice{diverges}}
+\end{problem}
+
+\begin{problem}
+Find the limit of the sequence $\displaystyle \left\{\frac{2^{2n}}{3^n}\right\}$ (if it exists), and then state whether the sequence converges or diverges.\\
+$\displaystyle \lim_{n\to \infty} \frac{2^{2n}}{3^n} = \;\;\answer{\infty}$ \;\;
+The sequence \wordChoice{\choice{converges}\choice[correct]{diverges}}
+\end{problem}
+
+\begin{problem}
+Find the limit of the sequence $\displaystyle \left\{\frac{\ln n}{n}\right\}$ (if it exists), and then state whether the sequence converges or diverges.\\
+$\displaystyle \lim_{n\to \infty} \frac{\ln n}{n} = \;\;\answer{0}$ \;\;
+The sequence \wordChoice{\choice[correct]{converges}\choice{diverges}}
+\end{problem}
+
+\begin{problem}
+Find the limit of the sequence $\displaystyle \left\{\frac{n^2}{5n+4}\right\}$ (if it exists), and then state whether the sequence converges or diverges.\\
+$\displaystyle \lim_{n\to \infty} \frac{n^2}{5n+4} = \;\;\answer{\infty}$ \;\;
+The sequence \wordChoice{\choice{converges}\choice[correct]{diverges}}
+\end{problem}
+
+\begin{problem}
+Find the limit of the sequence $\displaystyle \left\{\frac{(-1)^n}{n}\right\}$ (if it exists), and then state whether the sequence converges or diverges.\\
+$\displaystyle \lim_{n\to \infty} \frac{(-1)^n}{n} = \;\;\answer{0}$ \;\;
+The sequence \wordChoice{\choice[correct]{converges}\choice{diverges}}
+\end{problem}
+
+
+\begin{problem}
+Find the limit of the sequence $\displaystyle \left\{\cos(n\pi)\right\}$ (if it exists), and then state whether the sequence converges or diverges.\\
+$\displaystyle \lim_{n\to \infty} \cos(n\pi) = \;\;\answer{DNE}$ \;\;
+The sequence \wordChoice{\choice{converges}\choice[correct]{diverges}}
+\end{problem}
+
+
+\begin{problem}
+Find the limit of the sequence $\displaystyle \left\{\frac{1}{3^n}\right\}$ (if it exists), and then state whether the sequence converges or diverges.\\
+$\displaystyle \lim_{n\to \infty} \frac{1}{3^n} = \;\;\answer{0}$ \;\;
+The sequence \wordChoice{\choice[correct]{converges}\choice{diverges}}
+\end{problem}
+
+
+\begin{problem}
+Find the limit of the sequence $\displaystyle \left\{\frac{(-1)^n}{n}\right\}$ (if it exists), and then state whether the sequence converges or diverges.\\
+$\displaystyle \lim_{n\to \infty} \frac{(-1)^n}{n} = \;\;\answer{0}$ \;\;
+The sequence \wordChoice{\choice[correct]{converges}\choice{diverges}}
+\end{problem}
+
+
+\begin{problem} Determine whether the sequence is increasing, decreasing or neither.
+\begin{align*}
+a) \;\; & \left\{\frac{1}{\sqrt n}\right\} \quad \mbox{\wordChoice{\choice{increasing} \choice[correct]{decreasing} \choice{neither}}}  \\
+b) \;\; &  \left\{\frac{n}{n^2 +1}\right\} \quad \mbox{\wordChoice{\choice{increasing} \choice[correct]{decreasing} \choice{neither}} } \\
+c) \;\; &  \left\{\ln n\right\} \quad \mbox{\wordChoice{\choice[correct]{increasing} \choice{decreasing} \choice{neither}} } \\
+d) \;\; &  \left\{\frac{\cos(n\pi)}{n^2}\right\} \quad \mbox{\wordChoice{\choice{increasing} \choice{decreasing} \choice[correct]{neither}} } \\
+e) \;\; &  \left\{\frac{n^2 + 1}{n^3 + 1}\right\} \quad \mbox{\wordChoice{\choice{increasing} \choice[correct]{decreasing} \choice{neither}}} 
+\end{align*}
+\end{problem}
 
 
 \end{document}
+
+x^2 + 1 - 2x^2 - 2x
+
+-x^2 - 2x + 1
+
+
+
+
+
+
+
+
 
 
 
