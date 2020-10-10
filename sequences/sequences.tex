@@ -1,0 +1,575 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\outcome{Determine if a sequence converges or diverges}
+
+\title{3.0 Test for Divergence}
+
+\begin{document}
+
+\begin{abstract}
+We determine if a sequence converges or diverges.
+\end{abstract}
+
+\maketitle
+
+\begin{definition}[Sequence]
+A sequence, denoted $\displaystyle \{a_n\}$ or $\displaystyle \{a_n\}_{n=1}^\infty$, is a function whose domain is the natural numbers: $1, 2, 3, \dots$, i.e,
+\[
+a_n = f(n)
+\]
+\end{definition}
+We think of a sequence as a list of numbers, like $1, 2, 3, \dots$.
+
+Some examples of sequences are
+\begin{align*}
+i) \;\; &  \{a_n\} = \{n^2\} = 1^2, 2^2, 3^2, 4^2, \dots = 1, 4, 9, 16,  \dots\\
+ii) \;\; &  \{a_n\} = \{(-1)^n\} = (-1)^1, (-1)^2, (-1)^3, \dots = -1, 1, -1, 1, \dots\\
+iii) \;\; &  \{a_n\} = \left\{\frac{1}{2^n}\right\} = \frac{1}{2^1}, \frac{1}{2^2}, \frac{1}{2^3}, \frac{1}{2^4}, \dots = \frac12, \frac14, \frac18, \frac{1}{16}, \dots\\
+iv) \;\; &   \{a_n\} = \left\{\frac{n}{n+1}\right\} = \frac{1}{1+1}, \frac{2}{2+1}, \frac{3}{3+1}, \frac{4}{4+1}, \dots = \frac12, \frac23, \frac34, \frac45, \dots
+\end{align*}
+
+The question we will have about a given sequence is if it has a limit.
+
+\begin{definition}
+A sequence $\{a_n\}$ has a limit $L$, written
+\[
+\lim_{n \to \infty} a_n \quad \mbox{or} \quad a_n \to L \; \mbox{as} \; n \to \infty
+\]
+if the terms of the sequence get arbitrarily close to $L$ as $n$ increases without bound.\\
+If a sequence has a (finite) limit, we say that the sequence {\bf converges}.  Otherwise, we say that it {\bf diverges}.
+\end{definition}
+
+
+\begin{example}
+Does the sequence $\displaystyle \{a_n\} = \left\{\frac{1}{2^n}\right\}$ converge or diverge?\\
+We compute
+\[
+\lim_{n \to \infty} \frac{1}{2^n}
+\]
+Since $2^n \to \infty$ as $n \to \infty$, we can conclude that
+\[
+\lim_{n \to \infty} \frac{1}{2^n} = 0
+\]
+and so the sequence converges to $0$. The diagram below shows the terms of the sequence approaching $0$.
+\begin{image}
+\begin{tikzpicture}
+\draw[thick,  ->] (0,0) -- (4,0) node[right]{$n$};
+\draw[thick,  ->] (0,0) -- (0,2) node[above]{$a_n$};
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(0.5,1.6)}; 
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(1,.8)}; 
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(1.5,.4)}; 
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(2,.2)}; 
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(2.5,.1)}; 
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(3,.05)}; 
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(3.5,.03)}; 
+\end{tikzpicture}
+\end{image}
+\end{example}
+
+
+\begin{example}
+Does the sequence $\displaystyle \{a_n\} = \left\{(-1)^n\right\}$ converge or diverge?\\
+We compute
+\[
+\lim_{n \to \infty} (-1)^n
+\]
+Since $(-1)^n$ oscillates between $-1$ and $1$ we can conclude that
+\[
+\lim_{n \to \infty} (-1)^n = \text{DNE}
+\]
+and so the sequence diverges. The diagram below shows the oscillation of the terms of the sequence.
+\begin{image}
+\begin{tikzpicture}
+\draw[thick,  ->] (0,0) -- (4,0) node[right]{$n$};
+\draw[thick,  <->] (0,-2) -- (0,2) node[above]{$a_n$};
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(0.5,-1)}; 
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(1,1)}; 
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(1.5,-1)}; 
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(2,1)}; 
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(2.5,-1)}; 
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(3,1)}; 
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(3.5,-1)}; 
+\end{tikzpicture}
+\end{image}
+\end{example}
+
+
+\begin{example}
+Does the sequence $\displaystyle \{a_n\} = \left\{n^2\right\}$ converge or diverge?\\
+Since
+\[
+\lim_{n \to \infty} n^2 = \infty
+\]
+we conclude that the sequence diverges. The diagram below shows that the terms of the sequence grow without bound.
+\begin{image}
+\begin{tikzpicture}
+\draw[thick,  ->] (0,0) -- (4,0) node[right]{$n$};
+\draw[thick,  ->] (0,0) -- (0,4) node[above]{$a_n$};
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(1,0.25)}; 
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(2,1)}; 
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(3,2)}; 
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(4,4)}; 
+%\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(2.5,-1)}; 
+%\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(3,1)}; 
+%\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(3.5,4)}; 
+\end{tikzpicture}
+\end{image}
+\end{example}
+
+
+\begin{example}
+Does the sequence $\displaystyle \{a_n\} = \left\{\frac{n}{n+1}\right\}$ converge or diverge?\\
+We compute
+\begin{align*}
+\lim_{n \to \infty} \frac{n}{n+1} &=\lim_{n \to \infty} \frac{n}{n\left(1+\frac{1}{n}\right)} \\
+                                  &=\lim_{n \to \infty} \frac{1}{1+\frac{1}{n}}\\
+                                  &=\frac{1}{1+0}\\
+                                  &= 1
+\end{align*}
+Hence, the sequence converges to $1$. The diagram below shows the terms of the sequence approaching $1$.
+\begin{image}
+\begin{tikzpicture}
+\draw[thick,  ->] (0,0) -- (4,0) node[right]{$n$};
+\draw[thick,  ->] (0,0) -- (0,2) node[above]{$a_n$};
+\draw[thin, dashed, red] (0,1.5) -- (4,1.5);
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(0.5,.75)}; 
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(1,1)}; 
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(1.5,1.15)}; 
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(2,1.25)}; 
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(2.5,1.35)}; 
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(3,1.4)}; 
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(3.5,1.45)}; 
+\end{tikzpicture}
+\end{image}
+\end{example}
+
+
+\begin{example}
+Does the sequence $\displaystyle \{a_n\} = \left\{\frac{n^2}{e^n}\right\}$ converge or diverge?\\
+To compute the limit
+\[
+\lim_{n \to \infty} \frac{n^2}{e^n}
+\]
+we use the fact that if the limit of a function, $f(x)$, has a limit, then the associated sequence
+$a_n = f(n)$ has the same limit. Using L'Hopitals rule twice, we have
+\begin{align*}
+\lim_{x \to \infty} \frac{x^2}{e^x} &= \frac{\infty}{\infty} = \lim_{x \to \infty} \frac{2x}{e^x} \;\text{(L'Hopital)}\\
+                                  &=\frac{\infty}{\infty} = \lim_{x \to \infty} \frac{2}{e^x} \;\;\text{(L'Hopital again)}\\
+                                  &=0
+\end{align*}
+Hence, 
+\[
+\lim_{n \to \infty} \frac{n^2}{e^n} =0
+\]
+as well, and the sequence converges to $0$. 
+\end{example}
+
+
+
+\end{document}
+
+
+
+\section{Definition of Infinite Series}
+
+\begin{definition}[Infinite Series]
+We define
+\[\sum_{n=1}^\infty a_n = \lim_{N \to \infty} \sum_{n=1}^N a_n.\]
+If this limit is not finite or does not exist, then we say that the infinite series \textbf{diverges}.
+If this limit is a finite number, then we say that the infinite series \textbf{converges}.
+\end{definition}
+
+\begin{remark}
+The sum, $\displaystyle{\sum_{n=1}^N a_n}$, is called the $N^{th}$ partial sum of the infinite series
+$\displaystyle{\sum_{n=1}^\infty a_n}$. Thus, in words, we define an infinite series to be the limit of its partial sums.
+This is reminiscent of an improper integral which is also defined in terms of a limit.
+\end{remark}
+
+\section{Test for Divergence}
+
+In this section, we will learn a simple criterion for the divergence of an infinite series.
+The main idea is that in order for an infinite series to converge to a finite value, the terms in the series
+must approach zero. We now state this fact in its equivalent \textbf{contrapositive} form.
+
+
+\begin{theorem}[Test for Divergence]
+
+
+\[
+\text{If}  \; \lim_{n\to \infty} a_n \neq 0,
+\; \text{then the series} \;
+\sum_{n=1}^\infty a_n \;
+\text{diverges.}
+\]
+
+\end{theorem}
+
+\begin{remark}
+It is important to recognize that if $\displaystyle{\lim_{n \to \infty} a_n = 0}$ then the series, $\displaystyle{\sum_{n=1}^\infty a_n}$, may either converge or diverge.
+\end{remark}
+
+\begin{example}[example 1]
+Consider the infinite series
+\[
+\sum_{n=1}^\infty \frac{n+1}{2n+3}.
+\]
+The degree of the numerator and denominator of $a_n$ are equal (they are both one), so we can use the ratio of the lead coefficients to determine that
+\[
+\lim_{n\to \infty} \frac{n+1}{2n+3} = \frac12.
+\]
+Since this limit is not zero, we can conclude that the series $\displaystyle{\sum_{n=1}^\infty \frac{n+1}{2n+3}}$ diverges by the Test for Divergence. 
+\end{example}
+
+\begin{problem}(problem 1a)
+Consider the infinite series
+
+\[
+\sum_{n=1}^\infty \frac{3n+2}{5n+1}
+\]
+The limit of its terms is
+\[
+\lim_{n\to \infty} \frac{3n+2}{5n+1} = \answer{3/5}
+\]
+By the test for divergence, the series
+\begin{multipleChoice}
+\choice{converges}
+\choice[correct]{diverges}
+\choice{no conclusion}
+\end{multipleChoice}
+
+\end{problem}
+
+
+
+\begin{problem}(problem 1b)
+Consider the infinite series
+
+\[
+\sum_{n=2}^\infty  \ln(n).
+\]
+The limit of its terms is
+\[
+\lim_{n\to \infty} \ln(n) = \answer{\infty}
+\]
+By the test for divergence, the series
+\begin{multipleChoice}
+\choice{converges}
+\choice[correct]{diverges}
+\choice{no conclusion}
+\end{multipleChoice}
+
+\end{problem}
+
+
+\begin{problem}(problem 1c)
+Consider the infinite series
+
+\[
+ \sum_{n=1}^\infty \sin(n).
+\]
+The limit of its terms is
+\begin{hint}
+type DNE if the limit does not exist
+\end{hint}
+\[
+\lim_{n\to \infty} \sin(n) = \answer{DNE}
+\]
+By the test for divergence, the series
+\begin{multipleChoice}
+\choice{converges}
+\choice[correct]{diverges}
+\choice{no conclusion}
+\end{multipleChoice}
+
+\end{problem}
+
+
+\begin{problem}(problem 1d)
+Consider the infinite series
+
+\[
+\sum_{n=1}^\infty \frac{n^2 + 1}{2n^2 + 3n + 5}.
+\]
+The limit of its terms is
+\[
+\lim_{n\to \infty} \frac{n^2 + 1}{2n^2 + 3n + 5} = \answer{1/2}
+\]
+By the test for divergence, the series
+\begin{multipleChoice}
+\choice{converges}
+\choice[correct]{diverges}
+\choice{no conclusion}
+\end{multipleChoice}
+
+\end{problem}
+
+
+\begin{problem}(problem 1e)
+Consider the infinite series
+
+\[
+\sum_{n=1}^\infty \sqrt[n] 2.
+\]
+The limit of its terms is
+\[
+\lim_{n\to \infty} \sqrt[n] 2 = \answer{1}
+\]
+By the test for divergence, the series
+\begin{multipleChoice}
+\choice{converges}
+\choice[correct]{diverges}
+\choice{no conclusion}
+\end{multipleChoice}
+
+\end{problem}
+
+
+
+\begin{example}[example 2]
+Consider the infinite series
+\[
+\sum_{n=1}^\infty \frac{n+1}{2n^2+3}.
+\]
+The degree of the numerator (one) is less than the degree of the denominator (two) so
+\[
+\lim_{n\to \infty} \frac{n+1}{2n^2+3} = 0,
+\]
+Since this limit is zero, the Test for Divergence \textbf{does not apply} to the series, $\displaystyle{\sum_{n=1}^\infty \frac{n+1}{2n^2+3}}$ and 
+we cannot determine if the series converges or diverges. 
+The Test for Divergence is \textbf{inconclusive} in this case.
+ 
+\end{example}
+
+
+\begin{problem}(problem 2a)
+Consider the infinite series
+
+\[
+\sum_{n=1}^\infty a_n = \sum_{n=1}^\infty \frac{3n+2}{5n^2+1}.
+\]
+The limit of its terms is
+\[
+\lim_{n\to \infty} \frac{3n+2}{5n^2+1} = \answer{0}
+\]
+By the test for divergence, the series
+\begin{multipleChoice}
+\choice{converges}
+\choice{diverges}
+\choice[correct]{no conclusion}
+\end{multipleChoice}
+
+\end{problem}
+
+
+\begin{problem}(problem 2b)
+Consider the infinite series
+
+\[
+\sum_{n=2}^\infty  \frac{1}{\ln(n)}.
+\]
+The limit of its terms is
+\[
+\lim_{n\to \infty} \frac{1}{\ln(n)} = \answer{0}
+\]
+By the test for divergence, the series
+\begin{multipleChoice}
+\choice{converges}
+\choice{diverges}
+\choice[correct]{no conclusion}
+\end{multipleChoice}
+
+\end{problem}
+
+
+
+
+\begin{problem}(problem 2c)
+Consider the infinite series
+
+\[
+\sum_{n=1}^\infty \frac{n^2 + 1}{2n^4 + 3n^2 + 5}.
+\]
+The limit of its terms is
+\[
+\lim_{n\to \infty} \frac{n^2 + 1}{2n^4 + 3n^2 + 5} = \answer{0}
+\]
+By the test for divergence, the series
+\begin{multipleChoice}
+\choice{converges}
+\choice{diverges}
+\choice[correct]{no conclusion}
+\end{multipleChoice}
+
+\end{problem}
+
+
+
+\begin{problem}(problem 2d)
+Consider the infinite series
+
+\[
+\sum_{n=1}^\infty \frac{1}{n!}.
+\]
+The limit of its terms is
+\[
+\lim_{n\to \infty} \frac{1}{n!} = \answer{0}
+\]
+By the test for divergence, the series
+\begin{multipleChoice}
+\choice{converges}
+\choice{diverges}
+\choice[correct]{no conclusion}
+\end{multipleChoice}
+
+\end{problem}
+
+
+\begin{remark}
+Note that the test for divergence can NEVER be used to conclude that an infinite series converges.
+\end{remark}
+
+
+\section{Proof of the Test for Divergence}
+To prove the test for divergence, we will show that if $\displaystyle{\sum_{n=1}^\infty a_n}$ converges, then the limit, 
+$\displaystyle{\lim_{n \to \infty} a_n}$, must equal zero. The logic is then that if this limit is not zero, 
+the associated series cannot converge, and it therefore must diverge. We begin by considering the partial sums of the series, $S_N$.
+Since the series converges, the limit of the partial sums exists and equals a finite value, which we will call $L$.
+In mathematical symbols, 
+\[
+\lim_{N \to \infty} S_N = L, 
+\]
+where
+\[
+S_N = \sum_{n=1}^N a_n.
+\]
+To proceed, we make the following two observations:
+\[
+(1)\qquad \lim_{N \to \infty} S_{N-1} = L
+\]
+and 
+\[
+(2) \qquad a_N = S_N - S_{N-1}.
+\]
+Putting these facts together, we can conclude that
+\[
+\lim_{N \to \infty} a_N = \lim_{N \to \infty} (S_N - S_{N-1}) = L-L = 0.
+\]
+In the above limit, there is nothing special about the index $N$ (it was only helpful in dealing with the partial sums, $S_N$) 
+and we can change it to $n$ to match statement in the theorem. We have therefore proved the theorem, since if 
+\[
+\sum_{n=1}^\infty a_n = L \; (\text{i.e., the series converges}),
+\]
+then 
+\[
+\lim_{n \to \infty} a_n = 0.
+\]
+We will wrap up this section by examining the converse of the Test for Divergence.
+It was mentioned in the remark following the statement of the theorem above, that if the limit of the terms is zero,
+the associated series could either converge or diverge.
+We now present two classic series which exemplify this point.
+The two series are
+\[
+(1)  \qquad 1 + \frac12 + \frac14 + \frac18 + \cdots,
+\]
+and 
+\[
+(2) \qquad 1 + \frac12 +  \frac13 + \frac14 + \cdots.
+\]
+In both cases, the limit of the terms is zero, but the first series converges while the second series diverges.
+We will explore both of these series in future sections 
+(the first in the section on Geometric Series and the second in the section on the Integral Test).
+
+
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a detailed, lecture style video on the Test for Divergence:}
+\youtube{Ttq3S0GAtEA}
+\end{foldable}
+\end{center}
+
+
+
+
+
+\end{document}
+
+
+\begin{example} %example #15
+Find $h'(x)$ if $h(x) = x^{\sin(x)}$.\\
+We will use the fact that the exponential and logarithm functions are inverses,
+\[e^{\ln(x)} = x,\]
+and the exponent property of logarithms, 
+\[\ln(x^n) = n\ln(x),\]
+to rewrite $h(x)$.  We have 
+\[h(x) = x^{\sin(x)} = e^{\ln(x^{\sin(x)})} = e^{\sin(x)\ln(x)}\]
+and we can now compute $h'(x)$ using a combination of the chain rule and product rule.
+We can write $h(x)$ as a composition, $f(g(x))$ with 
+\[g(x) = \sin(x)\ln(x) \quad \text{and} \quad f(x) = e^x.\]
+Then to find $g'(x)$ we us the product rule and we get $g'(x) = \frac{\sin(x)}{x} + \cos(x)\ln(x)$.
+Next $f'(x) = e^x$ and 
+hence $f'(g(x)) = e^{g(x)} = e^{\sin(x)\ln(x)} = x^{\sin(x)}$.
+We can then conclude $h'(x) = f'(g(x))g'(x) = x^{\sin(x)} \left[ \frac{\sin(x)}{x} + \cos(x)\ln(x)\right]$.
+\end{example}
+
+%more question formats below
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\begin{verbatim}
+\begin{question}
+What is your favorite color?
+\begin{multipleChoice}
+\choice[correct]{Rainbow}
+\choice{Blue}
+\choice{Green}
+\choice{Red}
+\end{multipleChoice}
+\begin{freeResponse}
+Hello
+\end{freeResponse}
+\end{question}
+%\end{verbatim}
+
+
+
+
+
+\begin{question}
+  Which one will you choose?
+  \begin{multipleChoice}
+    \choice[correct]{I'm correct.}
+    \choice{I'm wrong.}
+    \choice{I'm wrong too.}
+  \end{multipleChoice}
+\end{question}
+
+
+\begin{question}
+  Which one will you choose?
+  \begin{selectAll}
+    \choice[correct]{I'm correct.}
+    \choice{I'm wrong.}
+    \choice[correct]{I'm also correct.}
+    \choice{I'm wrong too.}
+  \end{selectAll}
+\end{question}
+
+
+\begin{freeResponse}
+What is the chain rule used for?
+\end{freeResponse}
