@@ -167,13 +167,31 @@ The first four terms of the Taylor Series for the function $f(x) = \sqrt x$ cent
 \end{problem}
 
 
+In the last example and problem, we computed only the first four terms of the Taylor Series, yielding a polynomial of degree 3.
+This is a special polynomial.
+
+\begin{definition}[Taylor Polynomial]
+Give a function $f(x)$ and its first $n$ derivatives at $x = a$, $f^{(k)}(a), k= 0, 1, 2, \ldots, n$, the polynomial
+\[
+T_n (x) = \sum_{k=0}^n\frac{f^{(k)}(a)}{k!} (x-a)^k.
+\]
+is called the Taylor Polynomial of degree $n$ for $f(x)$ centered at $x=a$.
+\end{definition}
+
+\begin{remark}
+The Taylor Polynomial of degree 1 for $f(x)$ centered at $x = a$,
+\[
+T_1(x) = f(a) + f'(a)(x-a)
+\]
+is also known as the Linearization of $f(x)$ at $x = a$ which is used in making linear approximations.
+\end{remark}
 
 
-\begin{example}[example 2] Find the first four terms of the Taylor Series $f(x) = \sqrt[3] x$ centered at $x = -1$.\\
-Since we are asked to find the first four terms, we must find the coefficients $c _0, c_1, c_2$ and $c_3$
+\begin{example}[example 2] Find the Taylor Polynomial of degree 3, $T_3(x)$, for $f(x) = \sqrt[3] x$ centered at $x = -1$.\\
+Since we are asked to find $T_3(x)$, we must find the coefficients $c _0, c_1, c_2$ and $c_3$
 and the answer will have the form 
 \[
-\sqrt[3] x = c_0 + c_1(x+1) + c_2(x+1)^2 + c_3(x+1)^3 + \cdots .
+T_3(x) = c_0 + c_1(x+1) + c_2(x+1)^2 + c_3(x+1)^3.
 \]
 To find the coefficients, we create the following table:
 
@@ -197,10 +215,10 @@ To find the coefficients, we create the following table:
 
 
 We can now use the coefficients in the right-hand column of the table to write the final answer. 
-The first four terms of the Taylor Series for the function $f(x) = \sqrt x$ centered at $x = 4$ are
+The Taylor Polynomial of degree 3 for $f(x) = \sqrt[3] x$ centered at $x = -1$ is
 \begin{align*}
-\sqrt[3] x &= c_0 + c_1(x+1) + c_2(x+1)^2 + c_3(x+1)^3 + \cdots \\
-        &= -1 + \frac13(x+1) + \frac{1}{9}(x+1)^2 + \frac{5}{81}(x+1)^3 + \cdots
+T_3(x) &= c_0 + c_1(x+1) + c_2(x+1)^2 + c_3(x+1)^3  \\
+        &= -1 + \frac13(x+1) + \frac{1}{9}(x+1)^2 + \frac{5}{81}(x+1)^3 
 \end{align*}
 
 \end{example}
@@ -208,15 +226,15 @@ The first four terms of the Taylor Series for the function $f(x) = \sqrt x$ cent
 
 
 
-\begin{problem}(problem 2a) Find the first four terms of the Taylor Series $f(x) = \sqrt[3] x$ centered at $x = 8$.\\
+\begin{problem}(problem 2a) Find the Taylor Polynomial of degree 3, $T_3(x)$, for $f(x) = \sqrt[3] x$ centered at $x = 8$.\\
 
 The final answer has the form:
 \begin{center}
 \begin{multipleChoice}
-\choice{a) \;\;\; $\sqrt[3] x = c_0 + c_1(x-8) + c_2(x-8) + c_3(x-8) + \cdots$ }
-\choice{b) \;\;\; $\sqrt[3] x = c_0 + c_1(x- \sqrt[3] 1) + c_2(x-\sqrt[3] 2) + c_3(x-\sqrt[3] 3) + \cdots$ }
-\choice[correct]{c) \;\;\; $\sqrt[3] x = c_0 + c_1(x-8) + c_2(x-8)^2 + c_3(x-8)^3 + \cdots$ }
-\choice{d) \;\;\; $\sqrt[3] x = c_0 + c_1(\sqrt[3]x-8) + c_2(\sqrt[3] x -8)^2 + c_3(\sqrt[3] x-8)^3 + \cdots$ }
+\choice{a) \;\;\; $\sqrt[3] x = c_0 + c_1(x-8) + c_2(x-8) + c_3(x-8) $ }
+\choice{b) \;\;\; $\sqrt[3] x = c_0 + c_1(x- \sqrt[3] 1) + c_2(x-\sqrt[3] 2) + c_3(x-\sqrt[3] 3) $ }
+\choice[correct]{c) \;\;\; $\sqrt[3] x = c_0 + c_1(x-8) + c_2(x-8)^2 + c_3(x-8)^3 $ }
+\choice{d) \;\;\; $\sqrt[3] x = c_0 + c_1(\sqrt[3]x-8) + c_2(\sqrt[3] x -8)^2 + c_3(\sqrt[3] x-8)^3 $ }
 \end{multipleChoice}
 \end{center}
 
@@ -241,7 +259,7 @@ Fill in the following table to find the coefficients:
 
 The first four terms of the Taylor Series for the function $f(x) = \sqrt[3] x$ centered at $x = 8$ are
 \[
-\sqrt[3] x = \answer{2 + \frac{1}{12}(x-8) -\frac{1}{288}(x-8)^2 + \frac{5}{20736}(x-8)^3} + \cdots
+T_3(x) = \answer{2 + \frac{1}{12}(x-8) -\frac{1}{288}(x-8)^2 + \frac{5}{20736}(x-8)^3}
 \]
 
 
@@ -251,7 +269,8 @@ The first four terms of the Taylor Series for the function $f(x) = \sqrt[3] x$ c
 
 
 
-\begin{problem}(problem 2b) Find the first four terms of the Taylor Series $f(x) = x\sqrt x$ centered at $x = 4$.\\
+\begin{problem}(problem 2b) Find the Taylor Polynomial of degree 3, $T_3(x)$, for
+ $f(x) = x\sqrt x$ centered at $x = 4$.\\
 
 The function $f(x) = x\sqrt x$ can be written as a power function, $x^k$, for an appropriate value of $k$.
 Write $x\sqrt x$ as a power function:
@@ -266,10 +285,10 @@ x\sqrt x = \answer{x^{3/2}}
 The final answer has the form:
 \begin{center}
 \begin{multipleChoice}
-\choice{a) \;\;\; $x\sqrt x = c_0 + c_1(x-4) + c_2(x-4) + c_3(x-4) + \cdots$ }
-\choice{b) \;\;\; $x\sqrt x = c_0 + c_1(x- 1\sqrt1) + c_2(x-2\sqrt2) + c_3(x-3\sqrt3) + \cdots$ }
-\choice{c) \;\;\; $x\sqrt x = c_0 + c_1(x\sqrt x -4) + c_2(x\sqrt x -4)^2 + c_3(x\sqrt x-4)^3 + \cdots$ }
-\choice[correct]{d) \;\;\; $x\sqrt x = c_0 + c_1(x-4) + c_2(x-4)^2 + c_3(x-4)^3 + \cdots$ }
+\choice{a) \;\;\; $x\sqrt x = c_0 + c_1(x-4) + c_2(x-4) + c_3(x-4)$ }
+\choice{b) \;\;\; $x\sqrt x = c_0 + c_1(x- 1\sqrt1) + c_2(x-2\sqrt2) + c_3(x-3\sqrt3)$ }
+\choice{c) \;\;\; $x\sqrt x = c_0 + c_1(x\sqrt x -4) + c_2(x\sqrt x -4)^2 + c_3(x\sqrt x-4)^3$ }
+\choice[correct]{d) \;\;\; $x\sqrt x = c_0 + c_1(x-4) + c_2(x-4)^2 + c_3(x-4)^3$ }
 \end{multipleChoice}
 \end{center}
 
@@ -294,7 +313,7 @@ Fill in the following table to find the coefficients:
 
 The first four terms of the Taylor Series for the function $f(x) = x\sqrt x$ centered at $x = 4$ are
 \[
-x\sqrt x = \answer{8 + 3(x-4) +\frac{3}{16}(x-4)^2 - \frac{1}{128}(x-4)^3} + \cdots
+T_3(x) = \answer{8 + 3(x-4) +\frac{3}{16}(x-4)^2 - \frac{1}{128}(x-4)^3} + \cdots
 \]
 
 
@@ -304,11 +323,11 @@ x\sqrt x = \answer{8 + 3(x-4) +\frac{3}{16}(x-4)^2 - \frac{1}{128}(x-4)^3} + \cd
 
 
 
-\begin{example}[example 3] Find the first four terms of the Taylor Series $f(x) = \ln(x)$ centered at $x = 1$.\\
-Since we are asked to find the first four terms, we must find the coefficients $c _0, c_1, c_2$ and $c_3$
+\begin{example}[example 3] Find the Taylor Polynomial of degree 4, $T_4(x)$, for $f(x) = \ln(x)$ centered at $x = 1$.\\
+Since we are asked to find the forth degree Taylor Polynomial, we must find the coefficients $c _0, c_1, c_2, c_3$ and $c_4$
 and the answer will have the form 
 \[
-\ln(x) = c_0 + c_1(x-1) + c_2(x-1)^2 + c_3(x-1)^3 + \cdots .
+\ln(x) = c_0 + c_1(x-1) + c_2(x-1)^2 + c_3(x-1)^3 + c_4(x-1)^4.
 \]
 To find the coefficients, we create the following table:
 
@@ -325,17 +344,19 @@ To find the coefficients, we create the following table:
 \hline
  3 & \frac{2}{x^3} & 2 & \frac13\\[1em]
 \hline
+ 4 & -\frac{6}{x^4} & -6 & -\frac14\\[1em]
+\hline
 \end{array}
 \]
 
 
 
 We can now use the coefficients in the right-hand column of the table to write the final answer. 
-The first four terms of the Taylor Series for the function $f(x) = \ln(x)$ centered at $x = 1$ are
+The first five terms of the Taylor Series for the function $f(x) = \ln(x)$ centered at $x = 1$ are
 \begin{align*}
-\ln(x) &= c_0 + c_1(x-1) + c_2(x-1)^2 + c_3(x-1)^3 + \cdots \\
-        &= 0 + 1(x-1) -\frac{1}{2}(x-1)^2 + \frac{1}{3}(x-1)^3 + \cdots\\
-        &= (x-1) -\frac{1}{2}(x-1)^2 + \frac{1}{3}(x-1)^3 + \cdots
+T_4(x) &= c_0 + c_1(x-1) + c_2(x-1)^2 + c_3(x-1)^3 + c_4(x-1)^4\\
+        &= 0 + 1(x-1) -\frac{1}{2}(x-1)^2 + \frac{1}{3}(x-1)^3-\frac{1}{4}(x-1)^4\\
+        &= (x-1) -\frac{1}{2}(x-1)^2 + \frac{1}{3}(x-1)^3-\frac{1}{4}(x-1)^4
 \end{align*}
 
 \end{example}
@@ -343,16 +364,16 @@ The first four terms of the Taylor Series for the function $f(x) = \ln(x)$ cente
 
 
 
-\begin{problem}(problem 3) Find the first four terms of the Taylor Series $f(x) = \ln(2x)$ centered at $x = 1$.\\
+\begin{problem}(problem 3) Find the Taylor Polynomial of degree 4, $T_4(x)$, for $f(x) = \ln(2x)$ centered at $x = 1$.\\
 
 
 The final answer has the form:
 \begin{center}
 \begin{multipleChoice}
-\choice{a) \;\;\; $\ln(2x) = c_0 + c_1(x-1) + c_2(x-1) + c_3(x-1) + \cdots$ }
-\choice[correct]{b) \;\;\; $\ln(2x) = c_0 + c_1(x-1) + c_2(x-1)^2 + c_3(x-1)^3 + \cdots$ }
-\choice{c) \;\;\; $\ln(2x) = c_0 + c_1(\ln(2x) -4) + c_2(\ln(2x) -4)^2 + c_3(\ln(2x)-4)^3 + \cdots$ }
-\choice{d) \;\;\;  $\ln(2x) = c_0 + c_1(x- \ln(1)) + c_2(x-\ln(2)) + c_3(x-\ln(3)) + \cdots$}
+\choice{a) \;\;\; $\ln(2x) = c_0 + c_1(x-1) + c_2(x-1) + c_3(x-1) + c_4(x-1)$ }
+\choice[correct]{b) \;\;\; $\ln(2x) = c_0 + c_1(x-1) + c_2(x-1)^2 + c_3(x-1)^3 + c_4(x-1)^4$ }
+\choice{c) \;\;\; $\ln(2x) = c_0 + c_1(\ln(2x) -1) + c_2(\ln(2x) -1)^2 + c_3(\ln(2x)-1)^3+ c_4(\ln(2x)-1)^4$ }
+\choice{d) \;\;\;  $\ln(2x) = c_0 + c_1(x- \ln(1)) + c_2(x-\ln(2)) + c_3(x-\ln(3))+ c_4(x-\ln(4))$}
 \end{multipleChoice}
 \end{center}
 
@@ -371,21 +392,30 @@ Fill in the following table to find the coefficients:
 \hline
  3 & f'''(x) =\answer{\frac{2}{x^3}} & f'''(1) = \answer{2} & c_3 = \answer{1/3}\\[1em]
 \hline
+ 4 & f^{(4)}(x) =\answer{-\frac{6}{x^4}} & f^{(4)}(1) = \answer{-6} & c_4 = \answer{-1/4}\\[1em]
+\hline
 \end{array}
 \]
 
 
-The first four terms of the Taylor Series for the function $f(x) = \ln(2x)$ centered at $x = 1$ are
+The first five terms of the Taylor Series for the function $f(x) = \ln(2x)$ centered at $x = 1$ are
 \[
-\ln(2x) = \answer{\ln(2) + (x-1) -\frac12(x-1)^2 + \frac13(x-1)^3} + \cdots
+T_4(x) = \answer{\ln(2) + (x-1) -\frac12(x-1)^2 + \frac13(x-1)^3-\frac14(x-1)^4}
 \]
 
 
 \end{problem}
 
+Taylor Polynomials can be used to approximate function values, and the following theorem gives us an expression for the error in such an approximation.
 
-
-
+\begin{theorem}[Taylor's Remainder Theorem]
+If the function $f(x)$ is $n+1$ times differentiable at $x = a$ then the difference between $f(x)$ and $T_n(x)$
+is given by 
+\[
+f(x) - T_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^n
+\]
+where $c$ is number between $a$ and $x$.
+\end{theorem}
 
 \section{Video Lessons}
 

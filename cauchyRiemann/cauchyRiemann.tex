@@ -257,23 +257,25 @@ The Cauchy-Riemann Equations tell us that if $f$ is a differentianiable function
 There is also a partial converse to this statement.  
 
 \begin{theorem}
-If the partial derivatives $u_x, u_y, v_x$ and $v_y$ are continuous at a point $(x_0,y_0)$, 
-and if these partial derivatives satisfy the Cauchy-Riemann Equations at this point, then $f(z) = u(x,y) + iv(x,y)$
+Suppose $f(z) = u(x,y) + iv(x,y)$ has partial derivatives $u_x, u_y, v_x$ and $v_y$ that are continuous at a point $(x_0,y_0)$.
+If these partial derivatives satisfy the Cauchy-Riemann Equations at this point, then $f(z)$
 is differentiable at $z_0 = x_0 + iy_0$.
 \end{theorem}
 
 \begin{proof}
+For ease of readability, we will drop the subscripts on the point $(x_0,y_0)$.\\
 Let $h$ and $k$ both be real numbers and consider the following limit:
 \[
 L = \lim_{h+ik \to 0} \frac{u(x+h, y+k) - u(x,y)}{h+ik} 
 \]
-In a standard partial derivative, on of $h$ or $k$ would be zero. Our goal is to turn this limit into partial derivatives.
-We will do so using the Mean Value Theorem
+In a standard partial derivative, one of $h$ or $k$ would be zero. Our goal is to turn this limit into partial derivatives,
+and will do so with the aid of the Mean Value Theorem. Recall that the MVT states that 
+if $g$ is a differentiable function (of a single variable)then for some number $c$ between $a$ and $b$
 \[
-g(b) -g(a) - g'(c)(b-a)
+g(b) -g(a) = g'(c)(b-a)
 \]
-where $g$ is a differentiable function (of a single variable) and $c$ is between $a$ and $b$. In the limit above, 
-we will add and subtract the term $u(x,y+k)$.
+To apply the theorem, we   
+we will add and subtract the term $u(x,y+k)$ in the numerator of the limit above.
 This leads to 
 \[
 L = \lim_{h+ik \to 0} \frac{u(x+h, y+k) - u(x,y+k)}{h+ik} + \lim_{h+ik \to 0} \frac{u(x, y+k) - u(x,y)}{h+ik} =  L_1 + L_2 
@@ -286,9 +288,9 @@ L_1 = \lim_{h+ik \to 0} \frac{u(x+h, y+k) - u(x,y+k)}{h+ik} = \lim_{h+ik \to 0} 
 where $x*$ is between $x$ and $x+h$. In order to take advantage of the continuity of $u_x$  at the point $(x,y)$, 
 we add and subtract $u_x(x,y)$ in the numerator and split $L_1$ into two limits:
 \[
-L_1 = \lim_{h+ik \to 0} \frac{u_x(x,y)h}{h+ik} + \lim_{h+ik \to 0} \frac{[u_x(x*,y+k)-u_x(x,y)]h}{h+ik}= L_1' + L_1''
+L_1 = \lim_{h+ik \to 0} \frac{u_x(x,y)h}{h+ik} + \lim_{h+ik \to 0} \frac{[u_x(x*,y+k)-u_x(x,y)]h}{h+ik}= L_{1a} + L_{1b}
 \]
-In the limit $L_1``$, note that $\left|\frac{h}{h+ik}\right| \leq 1$, hence
+In the limit $L_{1b}$, note that $\left|\frac{h}{h+ik}\right| \leq 1$, hence
  
 \[
 0\leq \left|\frac{[u_x(x^*,y+k)-u_x(x,y)]h}{h+ik}\right| \leq \left|u_x(x^*,y+k)-u_x(x,y)\right|
@@ -301,9 +303,9 @@ which implies that
 \[
 \lim_{h+ik \to 0} \left|u_x(x^*,y+k)-u_x(x,y)\right| =0
 \]
-Finally, the Squeeze Theorem gives $L_1'' = 0$ and so
+Finally, the Squeeze Theorem gives $L_{1b} = 0$ and so
 \[
-L_1 = \lim_{h+ik \to 0} \frac{u_x(x,y)h}{h+ik}
+L_1 = L_{1a} = \lim_{h+ik \to 0} \frac{u_x(x,y)h}{h+ik}
 \]
 Performing a similar analysis on $L_2$ yields
  \[
@@ -321,7 +323,7 @@ and
  \[
 L_4 = \lim_{h+ik \to 0} \frac{v_y(x,y)k}{h+ik}
 \]
-Now we use the hypotheses that $u$ and $v$ satisfy the Cauchy-Riemann Equations to Rewrite $L_2$ and $L_4$ as
+Now we use the hypotheses that $u$ and $v$ satisfy the Cauchy-Riemann Equations to rewrite $L_2$ and $L_4$ as
 \[
 L_4 = -i^2\lim_{h+ik \to 0} \frac{u_x(x,y)k}{h+ik} = -i\lim_{h+ik \to 0} \frac{u_x(x,y)ik}{h+ik}
 \]
