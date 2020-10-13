@@ -23,13 +23,152 @@ Furthermore, $f(z)$ is called analytic on a region $R$ if it is analytic at each
 
 
 \begin{example}
-Recall from section 3.2 that the function $f(z) = \overline{z}^2$ is differentiable at $z=0$ and nowhere else. Thus,
-$f(z) = \overline{z}^2$ is not differentiable on any disk of positive radius. Hence, $f(z) = \overline{z}^2$ is nowhere analytic.
+Recall from section 3.2 that the function $f(z) = \overline{z}^2$ is differentiable 
+at $z=0$ and nowhere else. Thus,
+$f(z) = \overline{z}^2$ is not differentiable on any disk of positive radius. 
+Hence, $f(z) = \overline{z}^2$ is nowhere analytic.
 \end{example}
 
+\begin{problem}
+Where is the function $f(z) = (x^3 + 3xy^2) +i(3x^2y+y^3)$ analytic?\\
+$u_x = \answer{3x^2+3y^2} \quad \text{and} \quad u_y = \answer{6xy}$\\
+$v_x = \answer{6xy} \quad \text{and} \quad v_y = \answer{3x^2 + 3y^2}$\\
+Complete the sentence:  $f$ is differentiable
+\begin{multipleChoice}
+\choice{on the real axis only}
+\choice{on the imaginary axis only}
+\choice[correct]{on both the real and imaginary axes}
+\choice{at the origin only}
+\choice{nowhere}
+\end{multipleChoice}
+Complete the sentence:  $f$ is analytic
+\begin{multipleChoice}
+\choice{on the real axis only}
+\choice{on the imaginary axis only}
+\choice{on both the real and imaginary axes}
+\choice{at the origin only}
+\choice[correct]{nowhere}
+\end{multipleChoice}
+\end{problem}
+
+
 \begin{example}
-The function $f(z) = e^z$ is differentiable at every point in $\C$ and hence it is analytic everywhere in $\C$.
+The function $f(z) = e^z$ is differentiable at every point in $\C$ and hence 
+it is analytic everywhere in $\C$.
 \end{example}
+
+\begin{problem}
+Where is the function $f(z) = cos(z)$ analytic?\\
+\begin{multipleChoice}
+\choice{on punctured plane}
+\choice{on the slit plane}
+\choice[correct]{on entire plane}
+\choice{at the origin only}
+\choice{nowhere}
+\end{multipleChoice}
+\end{problem}
+
+\begin{problem}
+Where is the function $f(z) = Log(z)$ analytic?\\
+\begin{multipleChoice}
+\choice{on punctured plane}
+\choice[correct]{on the slit plane}
+\choice{on entire plane}
+\choice{at the origin only}
+\choice{nowhere}
+\end{multipleChoice}
+\end{problem}
+
+\begin{problem}
+Where is the function $f(z) = \frac{1}{z}$ analytic?\\
+\begin{multipleChoice}
+\choice[correct]{on punctured plane}
+\choice{on the slit plane}
+\choice{on entire plane}
+\choice{at the origin only}
+\choice{nowhere}
+\end{multipleChoice}
+\end{problem}
+
+Like the real variable case, an analytic function whose derivative is zero is a constant.
+
+\begin{theorem}
+Suppose $f(z)$ is analytic in a disk, $D$ and further suppose that $f'(z) =0$ on $D$.
+Then $f(z) =c$ on $D$.
+\end{theorem}
+\begin{proof}
+First note that since $f'=0$ on $D$, the partial derivatives $u_x, u_y, v_x$ and $v_y$ 
+are all zero on the disk.
+Suppose $z_1, z_2 \in D$ with $\Imp z_1 = \Imp z_2$. Then on the horizontal segment 
+between $z_1$ and $z_2$, $u_x = 0$ implies that $u$ is constant 
+on the segment and $v_x =0$ on the segment implies that $v$ is constant on the segment as well.
+Now suppose $z_1, z_2 \in D$ with $\Rep z_1 = \Rep z_2$. Then on the vertical segment 
+between $z_1$ and $z_2$, $u_y = 0$ implies that $u$ is constant 
+on the segment and $v_y =0$ on the segment implies that $v$ is constant on the segment as well.
+Finally, any two points $z_1, z_2 \in D$ can be connected by a horizontal and a 
+vertical segment and $f$ is constant on these segments, so $f(z_1) = f(z_2)$.
+Since $z_1$ and $z_2$ were arbitrary, $f(z) =c$ on $D$. 
+\end{proof}
+
+In a vane similar to the previous theorem, if the modulus of an analytic function is constant, 
+then the function itself is constant.
+
+\begin{theorem}
+Suppose $f(z)$ is analytic in a disk $D$. If $|f(z)| = m$ on  $D$, then $f(z) =c$ on $D$.
+\end{theorem}
+
+\begin{proof}
+If $m =0$, the $f$ is identically zero, so suppose $m>0$. The definition of modulus gives
+\[
+u^2(x,y) + v^2(x,y) = m^2
+\]
+Taking the partial derivative of both sides with respect to $x$ and with respect to $y$ gives the system
+\[
+2uu_x +2vv_x = 0
+\]
+\[
+2uu_y + 2vv_y = 0
+\]
+Dividing by $2$ and using the Cauchy-Riemann equations selectively gives
+\[
+uu_x -vu_y = 0
+\]
+\[
+uu_y + vu_x = 0
+\]
+Multiplying the first equation by $u$ and the second equation by $v$ gives
+\[
+u^2u^x - uvu_y=0
+\]
+\[
+uvu_y + v^2u_x = 0
+\]
+adding these equations together gives
+\[
+\left(u^2 +v^2\right)u_x = m^2u_x = 0
+\]
+which gives $u_x = 0$ on $D$. We could have eliminated $u_x$ instead of $u_y$ which would 
+have led to $u_y =0$ on $D$.
+Hence $u$ is constant on $D$. Moreover, by the Cauchy-Riemann equations $v_x=0$ and $v_y=0$ on $D$ and 
+so $v$ is constant on $D$ as well.
+Thus $f = u+iv$ is constant on $D$.
+\end{proof}
+
+\begin{problem}
+Solve the system for $u_y$:
+\[
+uu_x -vu_y = 0
+\]
+\[
+uu_y + vu_x = 0
+\]
+\begin{multipleChoice}
+\choice[correct]{$u_y= 0$}
+\choice{$u_y = -u_x$}
+\choice{$u_y = m^2$}
+\end{multipleChoice}
+\end{problem}
+
 
 \begin{definition}
 A function that is analytic at every point in $\C$ is called {\bf entire}.
@@ -47,6 +186,13 @@ Select all of the functions below which are entire.
 \choice {$\Log z$}
 \end{selectAll}
 \end{problem}
+
+
+%f' analytic on a disk and f' = 0 implies f is constant
+%Schwartz reflection principle
+%derivative of inverse
+%fundamental theorem of algebra
+%conformal mapping
 
 \end{document}
 

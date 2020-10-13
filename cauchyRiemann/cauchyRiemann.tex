@@ -4,7 +4,7 @@
 
 \pgfplotsset{compat=1.13}
 
-\outcome{Derive the Cauchy-Riemann Equations}
+\outcome{Derive the Cauchy-Riemann equations}
 
 \title{3.3 Cauchy-Riemann Equations}
 
@@ -109,7 +109,7 @@ f'(z_0) = v_y(x_0,y_0)-iu_y(x_0,y_0)
 \]
 
 Now, we have two different forms for $f'(z_0)$ which depend on the direction in which $h$ approached $0$.
-By assumption, $f$ was differentiable at $z_0$, so these two forms must be equal. This gives rise to the Cauchy-Riemann Equations.
+By assumption, $f$ was differentiable at $z_0$, so these two forms must be equal. This gives rise to the Cauchy-Riemann equations.
 
 
 \begin{theorem}[Cauchy-Riemann Equations]
@@ -141,7 +141,7 @@ f'(z_0) = v_y(x_0,y_0)-iu_y(x_0,y_0)
 The result follows by equating the real and imaginary parts.
 \end{proof}
 \begin{remark}
-The Cauchy-Riemann Equations can be written in a single complex equation instead of two real equations as
+The Cauchy-Riemann equations can be written in a single complex equation instead of two real equations as
 \[
 f_y = if_x
 \]
@@ -183,7 +183,7 @@ By the Cauchy-Riemann Equations, $u_x = v_y$ and $u_y = -v_x$ we have
 \[
 v_r = -u_y \cos \theta + u_x \sin\theta \quad \mbox{and} \quad  v_\theta = ru_y \sin \theta + ru_x \cos\theta
 \]
-Now, we can observe the Cauchy-Riemann Equations in polar form:
+Now, we can observe the Cauchy-Riemann equations in polar form:
 \[
 u_r = \frac{1}{r} v_\theta \quad \mbox{and} \quad u_\theta = -rv_r
 \]
@@ -253,12 +253,12 @@ $\displaystyle z^{\frac12} = r^{\frac12}e^{i\frac{\theta}{2}}$ where $\theta = \
 \end{hint}
 \end{problem}
 
-The Cauchy-Riemann Equations tell us that if $f$ is a differentianiable function of $z$, then it must satisfy $f_x = -if_y$.
+The Cauchy-Riemann Equations tell us that if $f$ is a differentiable function of $z$, then it must satisfy $f_x = -if_y$.
 There is also a partial converse to this statement.  
 
 \begin{theorem}
 Let $f(z) = u(x,y) + iv(x,y)$ and suppose the partial derivatives $u_x, u_y, v_x$ and $v_y$ are continuous at $(x_0,y_0)$ and 
- satisfy the Cauchy-Riemann Equations there. Then $f(z)$
+ satisfy the Cauchy-Riemann equations there. Then $f(z)$
 is differentiable at $z_0 = x_0 + iy_0$.
 \end{theorem}
 
@@ -270,25 +270,25 @@ L = \lim_{h+ik \to 0} \frac{u(x+h, y+k) - u(x,y)}{h+ik}
 \]
 In a standard partial derivative, one of $h$ or $k$ would be zero. Our goal is to turn this limit into partial derivatives,
 and will do so with the aid of the Mean Value Theorem. Recall that the MVT states that 
-if $g$ is a differentiable function (of a single variable)then for some number $c$ between $a$ and $b$
+if $g$ is a differentiable function (of a single variable), then for some number $c$ between $a$ and $b$
 \[
 g(b) -g(a) = g'(c)(b-a)
 \]
 To apply the theorem, we   
-we will add and subtract the term $u(x,y+k)$ in the numerator of the limit above.
+we will add and subtract the term $u(x,y+k)$ in the numerator of the above limit.
 This leads to 
 \[
 L = \lim_{h+ik \to 0} \frac{u(x+h, y+k) - u(x,y+k)}{h+ik} + \lim_{h+ik \to 0} \frac{u(x, y+k) - u(x,y)}{h+ik} =  L_1 + L_2 
 \]
 The limits $L_1$ and $L_2$ will be dealt with similarly, so let's focus on $L_1$ and apply the MVT, 
-considering $u$ to be a function of a single variable (since the second coponent is constant).
+considering $u$ to be a function of a single variable (since the second component is constant). We have
 \[
-L_1 = \lim_{h+ik \to 0} \frac{u(x+h, y+k) - u(x,y+k)}{h+ik} = \lim_{h+ik \to 0} \frac{u_x(x*,y+k)h}{h+ik}
+L_1 = \lim_{h+ik \to 0} \frac{u(x+h, y+k) - u(x,y+k)}{h+ik} = \lim_{h+ik \to 0} \frac{u_x(x^*,y+k)h}{h+ik}
 \]
 where $x*$ is between $x$ and $x+h$. In order to take advantage of the continuity of $u_x$  at the point $(x,y)$, 
 we add and subtract $u_x(x,y)$ in the numerator and split $L_1$ into two limits:
 \[
-L_1 = \lim_{h+ik \to 0} \frac{u_x(x,y)h}{h+ik} + \lim_{h+ik \to 0} \frac{[u_x(x*,y+k)-u_x(x,y)]h}{h+ik}= L_{1a} + L_{1b}
+L_1 = \lim_{h+ik \to 0} \frac{u_x(x,y)h}{h+ik} + \lim_{h+ik \to 0} \frac{[u_x(x^*,y+k)-u_x(x,y)]h}{h+ik}= L_{1a} + L_{1b}
 \]
 In the limit $L_{1b}$, note that $\left|\frac{h}{h+ik}\right| \leq 1$, hence
  
@@ -323,9 +323,9 @@ and
  \[
 L_4 = \lim_{h+ik \to 0} \frac{v_y(x,y)k}{h+ik}
 \]
-Now we use the hypotheses that $u$ and $v$ satisfy the Cauchy-Riemann Equations to rewrite $L_2$ and $L_4$ as
+Now we use the hypotheses that $u$ and $v$ satisfy the Cauchy-Riemann equations to rewrite $L_2$ and $L_4$ as
 \[
-L_4 = -i^2\lim_{h+ik \to 0} \frac{u_x(x,y)k}{h+ik} = -i\lim_{h+ik \to 0} \frac{u_x(x,y)ik}{h+ik}
+L_4 = -i^2\lim_{h+ik \to 0} \frac{v_y(x,y)k}{h+ik} = -i\lim_{h+ik \to 0} \frac{u_x(x,y)ik}{h+ik}
 \]
 and 
 \[
@@ -335,8 +335,8 @@ We can now readily obtain the result.
 \begin{align*}
 f'(z) &= \lim_{h+ik \to 0} {f(z+h+ik)-f(z)}{h+ik}\\
       &=\lim_{h+ik \to 0} \frac{\left[u(x+h, y+k) +iv(x+h, y+k)\right] - \left[u(x,y) + iv(x,y)\right]}{h+ik} \\
-      &\lim_{h+ik \to 0} \frac{u(x+h, y+k) - u(x,y)}{h+ik} +i\lim_{h+ik \to 0} \frac{v(x+h, y+k) - v(x,y)}{h+ik} \\
-      &= L_1+L2+ iL_3 + iL_4\\
+      &=\lim_{h+ik \to 0} \frac{u(x+h, y+k) - u(x,y)}{h+ik} +i\lim_{h+ik \to 0} \frac{v(x+h, y+k) - v(x,y)}{h+ik} \\
+      &= L_1+L2+ i(L_3 + L_4)\\
       &= ( L_1+  iL_4) +(L2+ iL_3 )\\
       &= \lim_{h+ik \to 0}\frac{u_x(x,y)(h+ik)}{h+ik} + i\lim_{h+ik \to 0}\frac{v_x(x,y)(h+ik)}{h+ik}\\
       &= u_x(x,y) + v_x(x,y)
@@ -355,7 +355,7 @@ Their partial derivatives are
 \[
 u_x = 2x, \;u_y = -2y,\; v_x = -2y, \; \text{and} \;\; v_y =-2x
 \]
-The partials are continuous on $\R^2$ but the Cauchy-Riemann Equations are only satisfied at $(0,0)$ since
+The partials are continuous on $\R^2$ but the Cauchy-Riemann equations are only satisfied at $(0,0)$ since
 \[
 u_x = v_y \Rightarrow 2x = -2x \Rightarrow x=0
 \]
