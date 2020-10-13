@@ -16,6 +16,72 @@ We determine and create harmonic functions.
 
 \maketitle
 
+
+\begin{definition}
+A function $u(x,y)$ is called {\bf harmonic} on a disk $D \subset \R^2$ if it the second order partial derivatives
+$u_{xx}$ and $u_{yy}$ exist on $D$ and satisfy the equation
+\[
+\Delta u = u_{xx} + u_{yy} = 0
+\]
+on $D$.
+\end{definition}
+
+\begin{example}
+The function $u(x,y) = 3x + 5y +1$ is harmonic in the entire plane, $\R^2$ since
+\[
+u_{xx} \quad \text{and} \quad u_{yy} = 0
+\]
+everywhere. Hence $\Delta u = 0$ on $\R^2$ and $u$ is harmonic everywhere.
+\end{example}
+
+\begin{problem}
+Select all of the functions that are harmonic on $\R^2$?\\
+\begin{selectAll}
+\choice[correct]{$u(x,y) = 2x -3y$}
+\choice[correct]{$u(x,y) = xy$}
+\choice{$u(x,y) = x^2 + y^2$}
+\choice[correct]{$u(x,y) = x^2 - y^2$}
+\end{selectAll}
+\end{problem}
+
+\end{document}
+
+\begin{theorem}
+If $f(z) = u(x,y) + iv(x,y)$ is analytic in a disk $D$, and if the second order 
+partial derivatives of $u$ and $v$ exist and are continuous on $D$ then $u$ and $v$ are both harmonic on $D$.
+\end{theorem}
+\begin{proof}
+We prove that $u$ is harmonic on $D$ and leave the proof of $v$ as an exercise.\\
+By the Cauchy-Riemann equations, $u_y = -v_x$ on $D$.  Therefore, $u_{yy} = -v_{xy} = -v_{yx}$ where the 
+second equality follows from the symmetry of mixed partial derivatives. Applying the Cauch-Riemann 
+equations (specifically $v_y = u_x$)  gives
+\[
+u_{yy} = -v_{yx} = -u_{xx}
+\]
+on $D$. Hence
+\[
+\Delta u = u_{xx} + u_{yy} = u_{xx} - u_{xx} = 0
+\]
+and $u(x,y)$ is harmonic on $D$.
+\end{proof}
+
+\begin{problem}
+Suppose $f(z) = u(x,y) + iv(x,y)$ satisfies the hypotheses of the above theorem on a disk $D$. 
+Prove $v$ is harmonic on $D$.\\
+Note that $v$ is the real part of which function?
+\begin{multipleChoice}
+\choice{$-f(z)$}
+\choice{$i f(z)$}
+\choice[correct]{$-i f(z)$}
+\end{multipleChoice}
+Is this function analytic on $D$? \wordchoice{\choice[correct]{yes}\choice{no}}\\
+How do we know $v$ is harmonic on $D$?
+\end{problem}
+
+\end{document}
+
+
+
 \section{Linear Functions}
 A linear function has the form $f(z) = az+b$ where $a, b \in \C$ and $a \neq 0$ (if $a=0$, then $f$ is a constant function).
 The effect of a linear function on a set in the complex plane is to scale, rotate and translate that set.  The constant term $b$ acts as a translation vector, 
