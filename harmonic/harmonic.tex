@@ -135,7 +135,7 @@ such that $u(x,y)$ is the real part of $f$. The imaginary part of $f$ is called 
 Find the harmonic conjugate of $u(x,y) = x^3 - 3xy^2$.\\
 First, we should verify that $u$ is harmonic:
 \[
-\Delta u = u_{xx} + u_{yy} = (6x) + (6x) = 0
+\Delta u = u_{xx} + u_{yy} = (6x) + (-6x) = 0
 \]
 so $u$ is harmonic on $\C$. According to the theorem we can find $v(x,y)$ such that
 $f(z) = u(x,y) + iv(x,y)$ is analytic (entire in this case). To construct $v$, we begin by noting that
@@ -153,7 +153,10 @@ the integral that $x$ was constant. To determine $C(x)$, we use the other Cauchy
 On one hand, $v_x = -u_y = 6xy$ and on the other hand, since we have established a form for $v$, we can use it
 to obtain $v_x = 6xy + C'(x)$. Equating these two expressions for $v_x$ we see 
 that $C'(x) =0$ and hence $C(x)$ is a constant. Thus the harmonic conjugate of $u(x,y) = x^3 - 3xy^2$ is
-$v(x,y) = 3x^2y - y^3 + C$ where $C$ is any complex constant.
+\[
+v(x,y) = 3x^2y - y^3 + C
+\]
+where $C$ is any complex constant.
 \end{example}
 
 \begin{remark}
@@ -165,13 +168,13 @@ Verify that each function is harmonic on $\C$ and then find its harmonic conjuga
 \begin{align*}
 a) \;\;u(x,y) &= x^4 -6x^2y^2 + y^4\\
 v_y &= \answer{4x^3 - 12xy^2}\\
-v(x,y) &= \answer{4x^3y - 4xy^3}+C\\
+v(x,y) &= \answer{4x^3y - 4xy^3}+C\\[8pt]
 b) \;\;u(x,y) &= e^x\sin y\\
 v_y &= \answer{4x^3 - 12xy^2}\\
-v(x,y) &= \answer{4x^3y - 4xy^3}+C\\
+v(x,y) &= \answer{4x^3y - 4xy^3}+C\\[8pt]
 c) \;\;u(x,y) &= \cos x \cosh y\\
 v_y &= \answer{4x^3 - 12xy^2}\\
-v(x,y) &= \answer{4x^3y - 4xy^3}+C\\
+v(x,y) &= \answer{4x^3y - 4xy^3}+C\\[8pt]
 d) \;\; u(x,y) &= \sinh x \sin y\\
 v_y &= \answer{4x^3 - 12xy^2}\\
 v(x,y) &= \answer{4x^3y - 4xy^3}+C

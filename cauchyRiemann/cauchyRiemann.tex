@@ -58,7 +58,7 @@ f'(z_0) &= \lim_{h \to 0 \atop h \in \R} \frac{f(z_0 + h) -f(z_0)}{h} \\[10pt]
 
 \begin{example}
 Find $f'(z)$ for the complex exponential function $f(z) = e^z$.\\
-Since $e^z = e^x \cos y + i e^x \sin y$, we have
+Assuming that $e^z$ is a differentiable function of $z$, then since $e^z = e^x \cos y + i e^x \sin y$, we have
 \[
 u_x = u_x(x,y) = \frac{\partial}{\partial x} \left(e^x \cos y \right)= e^x \cos y 
 \]
@@ -66,12 +66,12 @@ and
 \[
  v_x = v_x(x,y) = \frac{\partial}{\partial x}\left(e^x \sin y\right) = e^x \sin y
 \]
-Thus, 
+Thus, if it exists, 
 \[
 f'(z_0) = e^{x_0} \cos y_0 + i e^{x_0} \sin y_0  = e^{z_0}
 \]
 for any $z_0 = x_0 + iy_0 \in \C$.
-Thus, we can write
+Hence, if $e^z$ is differentiable, its derivative would be
 \[
 \frac{d}{dz} e^z = e^z \;\; \mbox{for all} \;\; z \in \C
 \]
@@ -79,7 +79,7 @@ Thus, we can write
 
 
 \begin{problem}
-Show that
+Assuming that the complex sine and cosine are differentiable functios of $z$, show that
 \[
 \frac{d}{dz} \sin z = \cos z \quad \mbox{and} \quad \frac{d}{dz} \cos z = -\sin z
 \]
@@ -93,12 +93,15 @@ $\cos z = \cos x \cosh y - i \sin x \sinh y$
 \end{problem}
 
 
-In the theorem above, we computed $f'(z_0)$ by letting $h$ be real.  Suppose we let $h$ be purely imaginary, instead.
+In the theorem above, we computed $f'(z_0)$ by letting $h$ be real.  
+Suppose we let $h$ be purely imaginary, instead.
 Let $h = ik$ where $k \in \R$, then
 \begin{align*}
 f'(z_0) &= \lim_{h \to 0 \atop h = ik} \frac{f(z_0 + h) -f(z_0)}{h} \\[10pt]
-        &= \lim_{k \to 0 \atop k \in \R} \frac{\left[u(x_0 , y_0+k) + iv(x_0 , y_0+k)\right] - \left[u(x_0,y_0)+iv(x_0, y_0)\right]}{ik} \\[10pt]
-        &=  \lim_{k \to 0} \frac{u(x_0 , y_0+k)- u(x_0,y_0)}{ik} +i\lim_{k \to 0}\frac{v(x_0 , y_0+k)-v(x_0, y_0)}{ik} \\[10pt]
+        &= \lim_{k \to 0 \atop k \in \R} \frac{\left[u(x_0 , y_0+k) + iv(x_0 , y_0+k)\right] -
+         \left[u(x_0,y_0)+iv(x_0, y_0)\right]}{ik} \\[10pt]
+        &=  \lim_{k \to 0} \frac{u(x_0 , y_0+k)- u(x_0,y_0)}{ik} +
+        i\lim_{k \to 0}\frac{v(x_0 , y_0+k)-v(x_0, y_0)}{ik} \\[10pt]
         &= -iu_y(x_0,y_0) + v_y(x_0,y_0)\\
         &=  v_y(x_0,y_0)-iu_y(x_0,y_0)
 \end{align*}
@@ -129,7 +132,8 @@ u_x =v_y \quad \mbox{and} \quad u_y = -v_x
 
 
 \begin{proof}
-Since $f$ is differentiable at $z_0$, we can let $h$ be either purely real or purely imaginary in the definition of $f'(z_0)$
+Since $f$ is differentiable at $z_0$, we can let $h$ be either purely real or 
+purely imaginary in the definition of $f'(z_0)$
 and the results must be equal. Therefore
 \[
 f'(z_0) = u_x(x_0,y_0)+iv_x(x_0,y_0)
@@ -147,8 +151,10 @@ f_y = if_x
 \]
 \end{remark}
 
-Some functions, like $\Log z$ and $z^{1/2}$, are best described using polar coordinates. To determine their derivatives, we need 
-to express $f'(z)$ in terms of $u_r, u_\theta, v_r$ and $v_\theta$. To do this, we will take advantage of the polar coordinate transformations,
+Some functions, like $\Log z$ and $z^{1/2}$, are best described using polar coordinates. 
+To determine their derivatives, we need 
+to express $f'(z)$ in terms of $u_r, u_\theta, v_r$ and $v_\theta$. 
+To do this, we will take advantage of the polar coordinate transformations,
 \[
 x = r\cos \theta \quad \mbox{and} \quad y=r\sin \theta
 \]
@@ -224,7 +230,7 @@ f'(z_0) = e^{-i\theta_0} \left[u_r(r_0, \theta_0) + v_r(r_0, \theta_0)\right]
 \end{theorem}
 
 \begin{example}
-Use the theorem above to find the derivative of $f(z) = \Log z$ at $z = z_0$ where $z_0$ is in the 
+Assuming that it exists, use the theorem above to find the derivative of $f(z) = \Log z$ at $z = z_0$ where $z_0$ is in the 
 slit plane $\C \backslash \{x\leq 0, y=0\}$ \\
 We can write $z_0 = r_0 e^{i\theta_0}$ where $\theta_0 = \Arg z_0$. Since $\Log z = \ln r + i\theta$
 where $\theta = \Arg z$, we have 
@@ -247,17 +253,20 @@ for $z$ in the slit plane.
 
 \begin{problem} 
 Let $z_0$ be in the slit plane, $\C \backslash \{x\leq 0, y=0\}$. 
-Find $f'(z_0)$ if $f(z) = z^{1/2}$, the principal branch of the square root function.
+Assuming the derivative exists, find $f'(z_0)$ if $f(z) = z^{1/2}$, 
+the principal branch of the square root function.
 \begin{hint}
 $\displaystyle z^{\frac12} = r^{\frac12}e^{i\frac{\theta}{2}}$ where $\theta = \Arg z$
 \end{hint}
 \end{problem}
 
-The Cauchy-Riemann Equations tell us that if $f$ is a differentiable function of $z$, then it must satisfy $f_x = -if_y$.
+The Cauchy-Riemann Equations tell us that if $f$ is a differentiable function of $z$, 
+then it must satisfy $f_x = -if_y$.
 There is also a partial converse to this statement.  
 
 \begin{theorem}
-Let $f(z) = u(x,y) + iv(x,y)$ and suppose the partial derivatives $u_x, u_y, v_x$ and $v_y$ are continuous at $(x_0,y_0)$ and 
+Let $f(z) = u(x,y) + iv(x,y)$ and suppose the partial derivatives $u_x, u_y, v_x$ and $v_y$ are 
+continuous at $(x_0,y_0)$ and 
  satisfy the Cauchy-Riemann equations there. Then $f(z)$
 is differentiable at $z_0 = x_0 + iy_0$.
 \end{theorem}
@@ -268,7 +277,8 @@ Let $h$ and $k$ both be real numbers and consider the following limit:
 \[
 L = \lim_{h+ik \to 0} \frac{u(x+h, y+k) - u(x,y)}{h+ik} 
 \]
-In a standard partial derivative, one of $h$ or $k$ would be zero. Our goal is to turn this limit into partial derivatives,
+In a standard partial derivative, one of $h$ or $k$ would be zero. 
+Our goal is to turn this limit into partial derivatives,
 and will do so with the aid of the Mean Value Theorem. Recall that the MVT states that 
 if $g$ is a differentiable function (of a single variable), then for some number $c$ between $a$ and $b$
 \[
@@ -278,17 +288,20 @@ To apply the theorem, we
 we will add and subtract the term $u(x,y+k)$ in the numerator of the above limit.
 This leads to 
 \[
-L = \lim_{h+ik \to 0} \frac{u(x+h, y+k) - u(x,y+k)}{h+ik} + \lim_{h+ik \to 0} \frac{u(x, y+k) - u(x,y)}{h+ik} =  L_1 + L_2 
+L = \lim_{h+ik \to 0} \frac{u(x+h, y+k) - u(x,y+k)}{h+ik} + 
+\lim_{h+ik \to 0} \frac{u(x, y+k) - u(x,y)}{h+ik} =  L_1 + L_2 
 \]
 The limits $L_1$ and $L_2$ will be dealt with similarly, so let's focus on $L_1$ and apply the MVT, 
 considering $u$ to be a function of a single variable (since the second component is constant). We have
 \[
 L_1 = \lim_{h+ik \to 0} \frac{u(x+h, y+k) - u(x,y+k)}{h+ik} = \lim_{h+ik \to 0} \frac{u_x(x^*,y+k)h}{h+ik}
 \]
-where $x*$ is between $x$ and $x+h$. In order to take advantage of the continuity of $u_x$  at the point $(x,y)$, 
+where $x*$ is between $x$ and $x+h$. In order to take advantage of the continuity of $u_x$  at 
+the point $(x,y)$, 
 we add and subtract $u_x(x,y)$ in the numerator and split $L_1$ into two limits:
 \[
-L_1 = \lim_{h+ik \to 0} \frac{u_x(x,y)h}{h+ik} + \lim_{h+ik \to 0} \frac{[u_x(x^*,y+k)-u_x(x,y)]h}{h+ik}= L_{1a} + L_{1b}
+L_1 = \lim_{h+ik \to 0} \frac{u_x(x,y)h}{h+ik} + 
+\lim_{h+ik \to 0} \frac{[u_x(x^*,y+k)-u_x(x,y)]h}{h+ik}= L_{1a} + L_{1b}
 \]
 In the limit $L_{1b}$, note that $\left|\frac{h}{h+ik}\right| \leq 1$, hence
  
@@ -335,7 +348,8 @@ We can now readily obtain the result.
 \begin{align*}
 f'(z) &= \lim_{h+ik \to 0} {f(z+h+ik)-f(z)}{h+ik}\\
       &=\lim_{h+ik \to 0} \frac{\left[u(x+h, y+k) +iv(x+h, y+k)\right] - \left[u(x,y) + iv(x,y)\right]}{h+ik} \\
-      &=\lim_{h+ik \to 0} \frac{u(x+h, y+k) - u(x,y)}{h+ik} +i\lim_{h+ik \to 0} \frac{v(x+h, y+k) - v(x,y)}{h+ik} \\
+      &=\lim_{h+ik \to 0} \frac{u(x+h, y+k) - u(x,y)}{h+ik} +
+      i\lim_{h+ik \to 0} \frac{v(x+h, y+k) - v(x,y)}{h+ik} \\
       &= L_1+L2+ i(L_3 + L_4)\\
       &= ( L_1+  iL_4) +(L2+ iL_3 )\\
       &= \lim_{h+ik \to 0}\frac{u_x(x,y)(h+ik)}{h+ik} + i\lim_{h+ik \to 0}\frac{v_x(x,y)(h+ik)}{h+ik}\\
