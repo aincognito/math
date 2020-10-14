@@ -79,7 +79,7 @@ Hence, if $e^z$ is differentiable, its derivative would be
 
 
 \begin{problem}
-Assuming that the complex sine and cosine are differentiable functios of $z$, show that
+Assuming that the complex sine and cosine are differentiable functions of $z$, show that
 \[
 \frac{d}{dz} \sin z = \cos z \quad \mbox{and} \quad \frac{d}{dz} \cos z = -\sin z
 \]
@@ -112,7 +112,8 @@ f'(z_0) = v_y(x_0,y_0)-iu_y(x_0,y_0)
 \]
 
 Now, we have two different forms for $f'(z_0)$ which depend on the direction in which $h$ approached $0$.
-By assumption, $f$ was differentiable at $z_0$, so these two forms must be equal. This gives rise to the Cauchy-Riemann equations.
+By assumption, $f$ was differentiable at $z_0$, so these two forms must be equal. 
+This gives rise to the Cauchy-Riemann equations.
 
 
 \begin{theorem}[Cauchy-Riemann Equations]
@@ -184,7 +185,7 @@ Similarly,
  v_r = v_x \cos \theta + v_y \sin\theta \quad \mbox{and} \quad  v_\theta = -rv_x \sin \theta + rv_y \cos\theta
 \]
 
-By the Cauchy-Riemann Equations, $u_x = v_y$ and $u_y = -v_x$ we have
+By the Cauchy-Riemann equations, $u_x = v_y$ and $u_y = -v_x$ we have
 %and substituting for $v_x$ and $v_y$ in $v_r$ and $v_\theta$ from the problem above, gives
 \[
 v_r = -u_y \cos \theta + u_x \sin\theta \quad \mbox{and} \quad  v_\theta = ru_y \sin \theta + ru_x \cos\theta
@@ -210,7 +211,7 @@ for $u_x$ and $u_y$
 \end{problem}
 
 
-From the Cauchy-Riemann Equation, $v_x = -u_y$, and the result of the previous problem, we can write
+From the Cauchy-Riemann equation, $v_x = -u_y$, and the result of the previous problem, we can write
 \begin{align*}
 f'(z) &= u_x + iv_x\\
       & = u_x - iu_y\\
@@ -230,7 +231,8 @@ f'(z_0) = e^{-i\theta_0} \left[u_r(r_0, \theta_0) + v_r(r_0, \theta_0)\right]
 \end{theorem}
 
 \begin{example}
-Assuming that it exists, use the theorem above to find the derivative of $f(z) = \Log z$ at $z = z_0$ where $z_0$ is in the 
+Assuming that it exists, use the theorem above to find the derivative of $f(z) = \Log z$ 
+at $z = z_0$ where $z_0$ is in the 
 slit plane $\C \backslash \{x\leq 0, y=0\}$ \\
 We can write $z_0 = r_0 e^{i\theta_0}$ where $\theta_0 = \Arg z_0$. Since $\Log z = \ln r + i\theta$
 where $\theta = \Arg z$, we have 
@@ -260,7 +262,7 @@ $\displaystyle z^{\frac12} = r^{\frac12}e^{i\frac{\theta}{2}}$ where $\theta = \
 \end{hint}
 \end{problem}
 
-The Cauchy-Riemann Equations tell us that if $f$ is a differentiable function of $z$, 
+The Cauchy-Riemann equations tell us that if $f$ is a differentiable function of $z$, 
 then it must satisfy $f_x = -if_y$.
 There is also a partial converse to this statement.  
 
@@ -385,14 +387,23 @@ u_y = -v_x \Rightarrow -2y = 2y \Rightarrow y=0
 Show that the following functions are nowhere differentiable:
 \begin{align*}
 i) \;\; & f(z) = \overline{z} \\
+& u_x = \answer{1} \quad u_y = \answer{0} \\
+& v_x = \answer{0} \quad v_y = \answer{-1} \\
 ii) \;\; & f(z) = e^{\overline{z}} \\
+& u_x = \answer{e^x \cos y} \quad u_y = \answer{-e^x \sin y} \\
+& v_x = \answer{-e^x \sin y} \quad v_y = \answer{-e^x \cos y} \\
 iii) \;\; & f(z) = \frac{x+iy}{x^2 + y^2} \\
-iv) \;\; & f(z) = \sin x \cosh y - i \cos x \sinh y 
+& u_x = \answer{\frac{y^2 -x^2}{(x^2 +y^2)^2}} \quad u_y = \answer{\frac{-2xy}{(x^2 +y^2)^2}}\\
+& v_x = \answer{\frac{-2xy}{(x^2 +y^2)^2}} \quad v_y = \answer{\frac{x^2 - y^2}{(x^2 +y^2)^2}} \\
+iv) \;\; & f(z) = \sin x \cosh y - i \cos x \sinh y \\
+& u_x = \answer{\cos x \cosh y} \quad u_y = \answer{\sin x \sinh y} \\ 
+& v_x = \answer{\sin x \sinh y} \quad v_y = \answer{-\cos x \cosh y} 
 \end{align*}
 \end{problem}
 
 
 \end{document}
+
 
 
 
