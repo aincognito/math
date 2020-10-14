@@ -18,7 +18,7 @@ We determine and create harmonic functions.
 
 
 \begin{definition}
-A function $u(x,y)$ is called {\bf harmonic} on a disk $D \subset \R^2$ if it the second order partial derivatives
+A function $u(x,y)$ is called {\bf harmonic} on a disk $D \subset \R^2$ if the second order partial derivatives
 $u_{xx}$ and $u_{yy}$ exist on $D$ and satisfy the equation
 \[
 \Delta u = u_{xx} + u_{yy} = 0
@@ -45,6 +45,53 @@ Select all of the functions that are harmonic on $\R^2$?\\
 \end{problem}
 
 
+\begin{example}
+Show that the function $u(x,y) = \ln\left(x^2 + y^2\right)$ is harmonic in the 
+punctured plane, $\R^2 \backslash (0,0)$.\\
+Using the chain rule gives
+\[
+u_x = \frac{2x}{x^2 + y^2}
+\]
+Next, the quotient rule gives
+\[
+u_{xx} = \frac{(x^2+y^2)(2)- (2x)(2x)}{\left(x^2 +y^2\right)^2} = \frac{2y^2-2x^2}{\left(x^2 +y^2\right)^2}
+\]
+Due to the symmetry in variables in the formula for $u(x,y)$, we can see that
+\[
+u_{yy} = \frac{2x^2-2y^2}{\left(x^2 +y^2\right)^2}
+\]
+Adding these gives
+\[
+\Delta u = u_{xx} + u_{yy} = 0
+\]
+since the numerators are opposites (and the denominators are equal). 
+The above calculations are valid for all $(x,y)\in \R^2$ except $(0,0)$ (where $u$ is not defined).  
+Hence $u$ is harmonic in the punctured plane, $R^2\backslash (0,0)$.
+\end{example}
+
+
+\begin{problem}
+Show that the following functions are harmonic on the indicated set.\\
+\begin{align*}
+a) \;\; u(x,y) &= e^x\cos y \;\;\text{on} \;\; \C\\
+u_y &= \answer{-e^x \sin y}\\
+u_{yy} &= \answer{-e^x \cos y}\\
+b) \;\; u(x,y) &= \tan^{-1}\left(\frac{y}{x}\right) \;\; \text{on} \;\; \C\backslash \{y-\text{axis}\}\\
+u_x &= \answer{-\frac{y}{x^2+y^2}}\\
+u_{xx} &= \answer{\frac{2xy}{(x^2+y^2)^2}}
+\end{align*}
+\begin{hint}
+Recall $\frac{d}{dx} \tan^{-1} x = \frac{1}{1+x^2}$
+\end{hint}
+\begin{hint}
+Simplify $u_x$ before calculating $u_{xx}$
+\end{hint}
+
+
+
+\end{problem}
+
+
 \begin{theorem}
 If $f(z) = u(x,y) + iv(x,y)$ is analytic in a disk $D$, and if the second order 
 partial derivatives of $u$ and $v$ exist and are continuous on $D$ then $u$ and $v$ are both harmonic on $D$.
@@ -67,14 +114,14 @@ and $u(x,y)$ is harmonic on $D$.
 \begin{problem}
 Suppose $f(z) = u(x,y) + iv(x,y)$ satisfies the hypotheses of the above theorem on a disk $D$. 
 Prove $v$ is harmonic on $D$.\\
-Note that $v$ is the real part of which function?
+To begin, note that $v$ is the real part of which function?
 \begin{multipleChoice}
 \choice{$-f(z)$}
 \choice{$i f(z)$}
 \choice[correct]{$-i f(z)$}
 \end{multipleChoice}
 Is this function analytic on $D$? \wordChoice{\choice[correct]{yes}\choice{no}}\\
-How do we know $v$ is harmonic on $D$?
+How do we know $v$ is harmonic on $D$? \wordChoice{\choice{direct computation of $\Delta v$}\choice[correct]{the theorem above}}
 \end{problem}
   
   
