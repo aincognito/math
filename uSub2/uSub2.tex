@@ -22,12 +22,18 @@ We make a $u$-substitution to fill in the gaps in the following equation, which 
 
 \[\int f(g(x))g'(x) \ dx = F(g(x)) + C. \]
 
-If we let $ u = g(x)$ then $du = g'(x) \ dx$ and the integral can be rewritten as
+If we let $u$ be the inside of the composition and we compute $du$:
+ \begin{align*}
+ &\text{Let} \quad \;\;u  = g(x) \\
+ &\text{then} \quad du = g'(x) \ dx
+ \end{align*}
+ Substituting $u$ and $du$ into the original integral gives
+
 \[\int f(g(x))g'(x) \ dx = \int f(u) \ du \]
-which equals
-\[F(u) + C,\]
-and back-substituting gives
-\[F(g(x)) + C. \]
+which we can compute if we know an anti-derivative of $f(u)$:
+\[=F(u) + C,\]
+Finally, we can back-substitute to get the final answer:
+\[=F(g(x)) + C. \]
 Now we can see that
 \[\int f(g(x))g'(x) \ dx = F(g(x)) + C. \]
 
@@ -530,3 +536,68 @@ Thus, using $u$-substitution we can conclude that
 \end{center}
 
 \end{document}
+
+
+
+
+
+\begin{example}
+Compute  $\displaystyle \int e^{3x} \ dx$\\
+If we let $u = 3x$, the inside of the composition in the integrand, then we get $du = 3 dx$. We can rewrite 
+this second equation as $dx = \frac13 du$.  Substituting $u$ for $3x$ and $\frac13 \ du$ for $dx$ in the original integral gives
+\[
+\int e^{3x} \ dx = \frac13 \int e^u \ du
+\]
+Note that the constant $\frac13$ has been moved to the front of the integral using the constant multiple rule.
+We know an anti-derifvative of $e^u$ so we continue with
+\[
+\frac13 \int e^u \ du = \frac13 e^u + C
+\]
+Finally, back-substituting $3x$ for $u$ gives the final answer
+\[
+\int e^{3x} \ dx = \frac13 e^{3x} + C
+\]
+\end{example}
+
+\begin{problem}
+Compute the following integrals:
+\begin{align*}
+a) \;\; & \int e^{2x} \ dx = \; \answer{\frac12 e^2x+ C}  \\
+b) \;\; & \int e^{-\frac{x}{2}} \ dx = \; \answer{-2 e^{-x/2}+ C}  \\
+c) \;\; & \int 5\cos(x) \ dx = \; \answer{5\sin(x)+ C}  \\
+d) \;\; & \int \cos(5x)\ dx = \; \answer{\frac15 \sin{5x}+ C}  \\
+e) \;\; & \int 2\sin(\pi x) \ dx = \; \answer{-\frac{2}{\pi} \cos(\pi x)+ C} 
+\end{align*}
+\end{problem}
+
+\begin{remark}
+Integrands with $kx$ as an `inside' function arise frequently, so it is helpful if we can notice that
+\[
+\int f(kx) \ dx = \frac{1}{k} F(kx) + C
+\]
+where $F$ is an anti-derivative of $f$.
+\end{remark}
+
+\begin{example}
+Compute  $\displaystyle \int \frac{3}{(2x+5)^2} \ dx$\\
+If we let $u = 2x+5$, the inside of the composition in the integrand, then we get $du = 2 dx$. We can rewrite 
+this second equation as $dx = \frac12 du$.  Substituting $u$ for $2x+5$ and $\frac12 \ du$ for $dx$ in the 
+original integral gives
+\[
+\int \frac{3}{(2x+5)^2} \ dx = \frac32 \int \frac{1}{u^2} \ du
+\]
+
+
+Note that the constant $\frac32$ has been moved to the front of the integral using the constant multiple rule.
+We use the power rule to find an anti-derivative of $\frac{1}{u^2} = u^{-2}$ so we continue with
+\begin{align*}
+\frac32 \int \frac{1}{u^2} \ du &= \frac32 \int u^{-2} \ du \\
+                                &= \frac32 \left(\frac{u^{-1}}{-1}\right) + C\\
+                                &= -\frac{3}{2u} + C
+\end{align*}
+Finally, back-substituting $2x+5$ for $u$ gives the final answer
+\[
+\int  \frac{3}{(2x+5)^2}  \ dx =-\frac{3}{4x+10} + C
+\]
+
+\end{example}
