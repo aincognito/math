@@ -298,7 +298,7 @@ considering $u$ to be a function of a single variable (since the second componen
 \[
 L_1 = \lim_{h+ik \to 0} \frac{u(x+h, y+k) - u(x,y+k)}{h+ik} = \lim_{h+ik \to 0} \frac{u_x(x^*,y+k)h}{h+ik}
 \]
-where $x*$ is between $x$ and $x+h$. In order to take advantage of the continuity of $u_x$  at 
+where $x^*$ is between $x$ and $x+h$. In order to take advantage of the continuity of $u_x$  at 
 the point $(x,y)$, 
 we add and subtract $u_x(x,y)$ in the numerator and split $L_1$ into two limits:
 \[
@@ -348,13 +348,13 @@ L_2 = -i^2\lim_{h+ik \to 0} \frac{u_y(x,y)k}{h+ik} = i\lim_{h+ik \to 0} \frac{v_
 \]
 We can now readily obtain the result.
 \begin{align*}
-f'(z) &= \lim_{h+ik \to 0} {f(z+h+ik)-f(z)}{h+ik}\\
-      &=\lim_{h+ik \to 0} \frac{\left[u(x+h, y+k) +iv(x+h, y+k)\right] - \left[u(x,y) + iv(x,y)\right]}{h+ik} \\
+f'(z) &= \lim_{h+ik \to 0} {f(z+h+ik)-f(z)}{h+ik}\\[8pt]
+      &=\lim_{h+ik \to 0} \frac{\left[u(x+h, y+k) +iv(x+h, y+k)\right] - \left[u(x,y) + iv(x,y)\right]}{h+ik} \\[8pt]
       &=\lim_{h+ik \to 0} \frac{u(x+h, y+k) - u(x,y)}{h+ik} +
-      i\lim_{h+ik \to 0} \frac{v(x+h, y+k) - v(x,y)}{h+ik} \\
-      &= L_1+L2+ i(L_3 + L_4)\\
-      &= ( L_1+  iL_4) +(L2+ iL_3 )\\
-      &= \lim_{h+ik \to 0}\frac{u_x(x,y)(h+ik)}{h+ik} + i\lim_{h+ik \to 0}\frac{v_x(x,y)(h+ik)}{h+ik}\\
+      i\lim_{h+ik \to 0} \frac{v(x+h, y+k) - v(x,y)}{h+ik} \\[8pt]
+      &= L_1+L2+ i(L_3 + L_4)\\[8pt]
+      &= ( L_1+  iL_4) +(L2+ iL_3 )\\[8pt]
+      &= \lim_{h+ik \to 0}\frac{u_x(x,y)(h+ik)}{h+ik} + i\lim_{h+ik \to 0}\frac{v_x(x,y)(h+ik)}{h+ik}\\[8pt]
       &= u_x(x,y) + v_x(x,y)
 \end{align*}
 Hence $f$ is differentiable at $z$.
@@ -403,7 +403,6 @@ iv) \;\; & f(z) = \sin x \cosh y - i \cos x \sinh y \\
 
 
 \end{document}
-
 
 
 
