@@ -1,0 +1,1274 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\pgfplotsset{compat=1.13}
+
+\outcome{Find limits of complex sequences}
+
+\title{4.1 Complex Sequences}
+
+\begin{document}
+
+\begin{abstract}
+We find limits of complex sequences.
+\end{abstract}
+
+\maketitle
+
+
+\begin{definition} 
+A complex sequence $\{c_n\}$ is a function from the natural numbers to the complex numbers, $\C$.
+\end{definition}
+
+\begin{definition}
+A complex sequence $\{c_n\}$ is said to {\bf converge} to a complex number $c$ if given $\epsilon >0$, there exists $N \in \N$
+such that 
+\[
+|c_n - c| < \epsilon \quad \text{whenever} \quad n>N
+\]
+If no such complex number $c$ exists, then we say the sequence $\{c_n\}$ {\bf diverges}.
+\end{definition}
+
+ 
+
+\begin{example}[example 1]
+Show that $\displaystyle \lim_{z \to 1+i} z^2 = 2i$.\\[6pt]
+Suppose $|z-(1+i)| < \delta$ for some $0< \delta < 1$.
+Note that
+\[
+z ^2 - 2i=\left[z-(1+i)\right] \cdot \left[z + (1+i)\right]
+\]
+By the Triangle Inequality
+\[
+|z+(1+i)| \leq |z| + |1+i| = |z| + \sqrt 2
+\]
+Now, since $|z-(1+i)| < \delta$ the Triangle Inequality also gives
+\[
+|z| = |z-(1+i) +(1+i)| \leq |z-(1+i)| + |1+i| < \delta + \sqrt 2 
+\]
+Thus,
+\[
+|z+(1+i)| \leq \delta + 2\sqrt 2 <  4 \; \mbox{since} \; \delta < 1
+\]
+Returning to $z^2 - 2i$, we have
+\[
+|z ^2 - 2i| = |z-(1+i)| \cdot | z+(1+i)| < \delta \cdot 4
+\]
+
+Now, let $\epsilon > 0$ and choose $\delta> 0$ such that $\delta < \min\left\{\frac{\epsilon}{4}, 1\right\}$. 
+From the computations above, if $|z-(1+i)| < \delta$ then
+\[
+|z^2 - 2i| < 4\delta < \epsilon
+\]
+Hence,
+\[
+\lim_{z \to 1+i} z^2 = 2i
+\]
+
+
+\end{example}
+
+\begin{problem}(problem 1) Use the definition of limit to show each of the following:
+\begin{align*}
+i) & \displaystyle \lim_{z \to i} z^2 = -1\\
+ii) & \displaystyle \lim_{z \to z_0} (az+b) = az_0 + b \;\;(a \neq 0)\\
+iii) & \displaystyle \lim_{z \to z_0} \overline{z} = \overline{z_0}
+\end{align*}
+\end{problem}
+
+Complex limits have the same familiar properties as real limits.
+
+\begin{theorem}
+Suppose $f$ and $g$ are defined on the punctured disk $D_\circ(z_0, r)$ for some $r>0$ and suppose
+\[
+\lim_{z \to z_0} f(z) = w_f \quad \mbox{and} \quad \lim_{z \to z_0} g(z) = w_g
+\]
+then the following limits hold:
+\begin{align*}
+a) \; & \lim_{z \to z_0} \left[f(z)+ g(z)\right] = w_f +w_g\\
+b) \; & \lim_{z \to z_0} \left[\alpha f(z)\right] = \alpha w_f, \;\; \mbox{for any} \;\;\alpha \in \C\\
+c) \; & \lim_{z \to z_0} \left[f(z)\cdot g(z)\right] = w_f \cdot w_g\\
+d) \; & \lim_{z \to z_0} \frac{f(z)}{g(z)} = \frac{w_f}{w_g}, \;\; \mbox{if}\;\; w_g \neq 0
+\end{align*}
+\end{theorem}
+
+\begin{proof}
+Part a)  Since $\lim_{z \to z_0} f(z) = w_f$, for a given $\epsilon >0$, there exists $\delta_f >0$ such that
+\[
+0<|z-z_0| < \delta_f \Rightarrow |f(z) - w_f| < \frac{\epsilon}{2}
+\]
+Similarly, there exists $\delta_g >0$ such that
+\[
+0<|z-z_0| < \delta_f \Rightarrow |g(z) - w_g| < \frac{\epsilon}{2}
+\]
+Let $\delta = \min\{\delta_f, \delta_g \}$ then for $0< |z-z_0| < \delta$, the Triangle Inequality gives
+\[
+|\left(f(z) + g(z)\right) - (w_f + w_g)| \leq |f(z) - w_f|+|g(z) - w_g| < \frac{\epsilon}{2}+\frac{\epsilon}{2} = \epsilon
+\]
+as required.\\[6pt]
+
+Part d) It is sufficient to prove that 
+\[
+\lim_{z \to z_0} \frac{1}{g(z)} = \frac{1}{w_g}, \;\; \mbox{if}\;\; w_g \neq 0
+\]
+for then the result follows by observing that $\displaystyle \frac{f}{g} = f \cdot \frac{1}{g}$ and applying part c.\\
+Let $\epsilon > 0$ and Let $\epsilon' = \min\left\{\frac{|w_g|}{2}, \frac{\epsilon |w_g|^2}{2}\right\}$.
+
+Then there exists $\delta >0$ such that
+\[
+ 0< |z-z_0| < \delta \Rightarrow |g(z) - w_g| < \epsilon'
+ \]
+By the Reverse Triangle Inequality and the definition of $\epsilon'$, if $0 < |z-z_0| < \delta $ then
+\[
+|g(z)| > |w_g| - \epsilon' \geq |w_g| - \frac{|w_g|}{2} = \frac{|w_g|}{2}
+\]
+and so 
+\[
+\frac{1}{|g(z)|} < \frac{2}{|w_g|}
+\]
+Now, for $z$ such that $0 < |z-z_0| < \delta $ we have 
+\begin{align*}
+\left| \frac{1}{g(z)} - \frac{1}{w_g} \right| & = \frac{|w_g - g(z)|}{|g(z)|\cdot |w_g|}\\
+& < \frac{2\epsilon'}{|w_g|^2}\\
+& \leq \frac{2}{|w_g|^2} \cdot \frac{\epsilon |w_g|^2}{2}\\
+& = \epsilon
+\end{align*}
+as required.
+
+\end{proof}
+
+
+\begin{problem} 
+Use the Reverse Triangle Inequality $\left(|z_2 - z_1| \geq |z_2| -|z_1|\right)$ to prove 
+that if $|g(z) - w_g| < \epsilon'$, then $|g(z)| > |w_g| - \epsilon'$.
+\end{problem}
+
+\begin{problem} 
+Prove parts b and c of the theorem above.
+\end{problem}
+
+\begin{problem}
+Use parts a and b of the theorem above to show that the limit of a difference is the difference
+of the limits
+\end{problem}
+
+
+\begin{problem}
+Use parts a, b and c of the theorem above to prove that for a polynomial $p(z)$
+\[
+\lim_{z\to z_0} p(z) = p(z_0)
+\]
+for any $z_0 \in \C$.
+\end{problem}
+
+The limit of a complex function can be determined from the limits of its real and imaginary parts.
+\begin{proposition}
+Let $z_0 = x_0 + iy_0 \in \C$ and suppose $f(z)=f(x+iy) = u(x,y) + iv(x,y)$ is defined 
+on $D_\circ(z_0,r)$ for some $r>0$. Let $w_0 = u_0 + iv_0$, then
+\[
+\lim_{z \to z_0} f(z) = w_0 
+\]
+if and only if
+\[
+\lim_{(x,y) \to (x_0, y_0)} u(x,y) =  u_0 
+\]
+and
+\[
+\lim_{(x,y) \to (x_0, y_0)} v(x,y) =  v_0 
+\]
+%where $z_0 = x_0 + iy_0$.
+\end{proposition}
+
+To prove the proposition, we need to recall that 
+\[
+|\Rep z|, |\Imp z| \leq |z| \leq |\Rep z| + |\Imp z|
+\]
+for all $z \in \C$.
+Also, we will use the notation 
+\[
+|(x,y) - (x_0,y_0)|
+\]
+ for the distance between the points
+$(x,y)$ and $(x_0,y_0)$ in $\R^2$.  Thus
+\[
+|(x,y) - (x_0,y_0)| = |(x+iy) - (x_0 + iy_0)|
+\]
+
+%For ease of readability we will also abbreviate $u(x,y)$ and $v(x,y)$ with $u$  and $v$ respectively. 
+
+\begin{proof} %We now prove the proposition.\\[6pt]
+Suppose $\lim_{z \to z_0} f(z) = w_0 = u_0 + iv_0$.
+Then for any $\epsilon > 0$ there exists $\delta > 0$ such that
+\[
+0< |z-z_0| < \delta \Rightarrow |f(z) - w_0| < \epsilon
+\]
+
+%In particular, this statement holds for all $|z - z_0|< \epsilon$ with the additional constraint that $y = y_0$
+
+This statement can be rewritten as
+\[
+|(x+iy)-(x_0+i y_0)| < \delta \Rightarrow |u(x,y) + iv(x,y) - (u_0 + iv_0)|< \epsilon
+\]
+Since $|u(x,y) - u_0| \leq |u(x,y) + iv(x,y) - (u_0 + iv_0)|$
+we have
+\[
+|(x,y)-(x_0, y_0)| < \delta \Rightarrow |u(x,y)  - u_0 |< \epsilon
+\]
+Thus
+\[
+\lim_{(x,y) \to (x_0, y_0)} u(x,y) =  u_0 
+\]
+ 
+
+%since $|v(x,y) - v_0|<  |f(z) -w_0|$
+%we have
+%\[
+%|(x,y)-(x_0, y_0)| < \delta \Rightarrow |v(x,y)  - v_0 |< \epsilon
+%\]
+%Thus
+
+Similarly,
+\[
+\lim_{(x,y) \to (x_0, y_0)} v(x,y) =  v_0 
+\]
+Next, suppose
+\[
+\lim_{(x,y) \to (x_0, y_0)} u(x,y) =  u_0  \quad \mbox{and} \quad \lim_{(x,y) \to (x_0, y_0)} v(x,y) =  v_0 
+\]
+Then for $\epsilon > 0$ there exists $\delta_u > 0$ and $\delta_v > 0$ such that
+\[
+0<|(x,y)-(x_0, y_0)| < \delta_u \Rightarrow |u(x,y)  - u_0 |< \frac{\epsilon}{2}
+\]
+and
+\[
+0<|(x,y)-(x_0, y_0)| < \delta_v \Rightarrow |v(x,y)  - v_0 |< \frac{\epsilon}{2}
+\]
+Let $\delta = \min\{\delta_u, \delta_v\}$ and suppose $|z-z_0| = |(x+iy) - (x_0 + iy_0)| <  \delta$. Then 
+
+%by the Triangle Inequality
+
+\[
+|f(z) - w_0| \leq  |u(x,y)  - u_0 | + |v(x,y)  - v_0 | < \frac{\epsilon}{2}+ \frac{\epsilon}{2} = \epsilon
+\]
+which shows that
+\[
+\lim_{z \to z_0} f(z) = w_0
+\]
+\end{proof}
+
+Let's examine some limits of a real functions of two variables.
+
+\begin{example}
+Find
+\[
+\lim_{(x,y) \to (0,0)} \frac{x^3}{x^2 + y^2}
+\]
+if it exists.\\
+We will use the Squeeze Theorem.  
+Note that 
+\[
+0 \leq \frac{x^2}{x^2 + y^2} \leq 1
+\]
+for any $(x,y) \neq (0,0)$. Furthermore
+\[
+-|x| \leq x \leq |x|
+\]
+for any $x \in \R$. Hence,
+\[
+-|x| \leq - \frac{|x|x^2}{x^2 + y^2}\leq \frac{x^3}{x^2 + y^2} \leq  \frac{|x|x^2}{x^2 + y^2} \leq |x|
+\]
+Finally, since
+\[
+\lim_{(x,y) \to (0,0)} -|x| = 0 \;\; \mbox{and} \;\; \lim_{(x,y) \to (0,0)} |x| = 0
+\]
+we can use the Squeeze Theorem to can conclude that
+\[
+\lim_{(x,y) \to (0,0)} \frac{x^3}{x^2 + y^2} = 0
+\]
+as well.
+\end{example}
+
+\begin{problem}
+Find
+\[
+\lim_{(x,y) \to (0,0)} \frac{x^2y}{x^2 + y^2} =\answer{0}
+\]
+if it exists.
+
+\end{problem}
+
+
+\begin{problem}
+Find
+\[
+\lim_{(x,y) \to (0,0)} \frac{2x^2y^3}{x^4 + y^4} =\answer{0}
+\]
+if it exists.
+\begin{hint}
+$a^2 + b^2 \geq 2ab$ for any $a, b \in \R$
+\end{hint}
+
+\end{problem}
+
+
+
+In the next example we show that a limit does not exist because different paths lead to different limits. This is akin to 
+a two-sided limit not existing in the single variable case when the one-sided are different.
+
+\begin{example}
+Find
+\[
+\lim_{(x,y) \to (0,0)} \frac{xy}{x^2 + y^2}
+\]
+if it exists.\\
+We will let $(x,y)$ approach $(0,0)$ along different lines. If we let $y = mx, m \in \R$, then the limit becomes
+\begin{align*}
+\lim_{(x,y) \to (0,0)} \frac{xy}{x^2 + y^2} &= \lim_{(x,y) \to (0,0)} \frac{mx^2}{x^2 + (mx)^2} \\
+                                            &= \lim_{(x,y) \to (0,0)} \frac{mx^2}{(1+m^2)x^2}\\
+                                            &  = \frac{m}{1+m^2}
+\end{align*}
+Hence the limit depends on the path and so the limit does not exist.
+\end{example}
+
+\begin{problem}
+Find the limit if it exists.
+\begin{align*}
+i) \; & \lim_{(x,y) \to (0,0)} \frac{y^2}{x^2 + y^2} \\
+ii) \; & \lim_{(x,y) \to (0,0)} \frac{x}{x^2 + y^2}\\
+iii) \; & \lim_{(x,y) \to (0,0)} \frac{x^2y}{x^4 + y^2} \;\; \mbox{Hint: use parabolas instead of lines}
+\end{align*}
+\end{problem}
+
+\section{Continuity}
+A significant application of limits is to continuity. Recall that we define a function of a single real variable to be continuous at $x = x_0$
+if 
+\[
+\lim_{x \to x_0} f(x) = f(x_0)
+\]
+We define continuity for a complex function analagously.
+
+\begin{definition}
+Let $f$ be a complex function defined on the disk $D(z_0, r)$ for some $r>0$. We say that $f$ is continuous ar $z_0$ if
+\[
+\lim_{z \to z_0} f(z) = f(z_0)
+\]
+\end{definition}
+
+\begin{example}
+If $p(z)$ is a polynomial (with complex coefficients), then $p$ is continuous in $\C$ (see the related problem above).
+\end{example}
+
+\begin{proposition}
+A complex function $f(z) = u(x,y) + iv(x,y)$ is continuous at $z_0$ if and only if
+$u(x,y)$ and $v(x,y)$ are continuous at $(x_0,y_0)$.
+\end{proposition}
+
+The proof of this proposition is a direct application of the earlier proposition relating limits 
+of a complex function to the limits of its real and imaginary parts.\\
+Recalling that the real exponential and trigonometric functions are continuous on their domains makes it easy to see that their complex analogues are also continuous.
+\begin{example}
+The complex exponential function $e^z$ is continuous on $\C$.\\
+Since
+\[
+e^z = e^x \cis y = e^x \cos y + ie^x \sin y
+\]
+and the real functions $e^x \cos y$ and $e^x \sin y$ are continuous on $\R^2$,
+the complex exponential function, $e^z$, is continuous on $\C$.
+\end{example}
+
+\begin{problem}
+Show that the functions $\sin z$ and $\cos z$ are continuous on $\C$.
+\end{problem}
+
+\begin{example}
+The principal branch of the complex logarithm, $\Log z$ is not continuous on the non-positive real axis.\\
+To see this, first note that $\Log 0$ is undefined, so $\Log z$ is not continuous at $0$. Now let $c<0$ be any negative real number.
+Then $\Log c = \ln |c| + \pi i$, but if we compute the limit as $z \to c$ along a path in the third quadrant, we get
+\[
+\lim_{z \to c \atop y < 0} \Log z = \ln|c| - \pi i \neq \Log c
+\]
+\end{example}
+
+\begin{problem}
+Show that the principal argument function $\Arg z$ is not continuous on the negative real axis.
+\end{problem}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Linear Functions}
+A linear function has the form $f(z) = az+b$ where $a, b \in \C$ and $a \neq 0$ (if $a=0$, then $f$ is a constant function).
+The effect of a linear function on a set in the complex plane is to scale, rotate and translate that set.  The constant term $b$ acts as a translation vector, 
+and the modulus and argument of $a$ are responsible for producing scaling and rotation, respectively.
+
+\begin{example}[example 1]
+Find the image of the unit square under the mapping $f(z) = (1+i)z + i$.\\
+In this case, $a = 1+i$ which has modulus $\sqrt 2$ and argument $\pi/4$, and $b = i$.
+The effect on the square of multiplying by $1+i$ is to scale the square by a factor of $\sqrt 2$, rotate counter-clockwise by $\pi/4$ and then translate it
+by $i$. The scaling and the rotation can be done in either order, but the translation must come last.
+
+
+\begin{image}
+\begin{tikzpicture}
+\draw[<->, thick] (-3,0)--(3,0) node[right]{x};
+
+\draw[<->, thick] (0, -3) node[right]{$z$-plane} --(0,3) node[right]{iy};
+
+\draw[thick,blue, fill= blue!20] (0,0) -- (1.2,0) node[below, black]{1} -- (1.2,1.2) -- (0, 1.2) node[left, black]{i}  -- (0,0);
+
+%\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(-0.5,.4)} node[right, blue]{$z_0 = x_0 + iy_0$};
+%\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(-0.5,1.4)} node[right, blue]{$z_0+ 2\pi i$};
+
+
+%\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(-0.5,-.6)} node[right, blue]{$z_0- 2\pi i$};
+%\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(-0.5,-1.6)} node[right, blue]{$z_0- 4\pi i$};
+
+
+\draw[<->, thick] (6,0)--(12,0)node[right]{u};
+
+
+
+\draw[thick,blue, fill= blue!20] (9,.5) node[left, black]{i}-- (10,1.5) node[right, black]{$1+2i$} -- (9,2.5) node[left, black]{3i} -- 
+(8, 1.5) node[left, black]{$-1+2i$}  -- (9,.5);
+\draw[<->, thick] (9, -3) node[right]{$w$-plane}--(9,3) node[right]{iv};
+%\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(8.5,1.3)} node[right, blue]{$w_0$};
+%\draw[dashed] (7,0) -- (8.5, 1.3) node[above, midway]{$e^{x_0}$};
+%\draw (7.4,0) arc (0:42:.4) node[midway, right]{$y_0$} ;
+\draw[->, thick, blue] (3.5,1)--(5.5, 1) node[above,midway, blue]{$w = f(z)$};
+\node at (4.5, -4){\large The effect of $f(z) = (1+i)z + i$ on the unit square};
+\end{tikzpicture}
+\end{image}
+
+
+\end{example}
+
+
+\begin{problem}(problem 1)
+Find the image of the unit square under the given mapping:
+\begin{align*}
+i) & f(z) = iz\\
+ii) & f(z) = 2z\\
+iii) & f(z) = z+1\\
+iv) & f(z) = (1-i)z +i
+\end{align*}
+\end{problem}
+
+
+
+\section{Squaring}
+
+
+\begin{example}[example 2]
+Find the image of the sector of an annulus given by:
+\[
+S = \left\{r\cis \theta : \frac12 < r < 2, \;\frac{\pi}{6} < \theta < \frac{\pi}{2}\right\}
+\]
+under the mapping $f(z) = z^2$.\\
+The effect of squaring is to square moduli and double arguments. Hence the image, $f(S)$ is the sector
+\[
+f(S) = \left\{r\cis \theta : \frac14 < r < 4, \;\frac{\pi}{3} < \theta < \pi \right\}
+\]
+
+
+\begin{image}
+\begin{tikzpicture}
+\draw[dashed, blue, fill=blue!20] (90:.75) node[left]{$\frac{i}{2}$} arc (90:30:.75) coordinate (alpha) -- (30:2.25) arc (30:90:2.25) node[left]{$2i$} -- cycle;
+\draw[->, thin, black] (1.5,0) arc (0:30:1.5) node[right, midway]{$\pi/6$};
+\draw[<->, thick] (-3,0)--(3,0) node[right]{$x$};
+
+\draw[<->, thick] (0, -3) node[right]{$z$-plane} --(0,3) node[right]{$iy$};
+
+\draw[dashed, blue, fill=blue!20, shift ={(9,0)}] (180:.5) node[below]{$-\frac{1}{4}$} arc (180:60:.5) 
+coordinate (alpha) -- (60:2.5) arc (60:180:2.5) node[below]{$-4$} -- cycle;
+
+
+\draw[->, thin, black, shift={(9,0)}] (1.5,0) arc (0:60:1.5) node[right, midway]{$\pi/3$};
+
+\draw[<->, thick] (6,0)--(12,0)node[right]{$u$};
+
+
+\draw[<->, thick] (9, -3) node[right]{$w$-plane}--(9,3) node[right]{$iv$};
+
+\draw[->, thick, blue] (3.5,1)--(5.5, 1) node[above,midway, blue]{$w = z^2$};
+\node at (4.5, -4){\large The effect of $f(z) = z^2$ on a sector of an annulus};
+\end{tikzpicture}
+\end{image}
+
+\end{example}
+
+
+\begin{problem}(problem 2)
+Find the image of the given set under the mapping $f(z) = z^2$:
+\begin{align*}
+i) & S = \left\{r\cis \theta : 1 < r < 2, \;0 < \theta < \frac{\pi}{4}\right\} \\
+ii) & S = \left\{r\cis \theta : 2 < r < 3, \;\frac{\pi}{2} < \theta < \frac{3\pi}{4}\right\}\\
+iii) & \mbox{Upper Half Plane}\; = \left\{ x+iy: y> 0\right\}\\
+iv) & \mbox{Quadrant IV}\; = \left\{ x+iy: x> 0, y< 0\right\}
+\end{align*}
+\end{problem}
+
+
+
+\begin{example}[example 3]
+Find the image of vertical line $\Rep z = 1$ under the mapping $f(z) = z^2$.\\
+Instead of a polar analysis, we will use rectangular coordinates with $x = 1$. We have
+\[
+w = u+iv = (1+iy)^2 = (1-y^2) + 2iy
+\]
+Thus $u = 1-y^2$ and $v = 2y$, where $y \in R$. Eliminating $y$ gives
+\[
+u= 1-\frac{v^2}{4}
+\]
+which is a parabola in the $uv$-plane which opens to the left and has vertex at $(1,0)$.
+
+
+\begin{image}
+\begin{tikzpicture}
+
+\draw[<->, thick] (-3,0)--(3,0) node[right]{$x$};
+
+\draw[<->, thick] (0, -3) node[right]{$z$-plane} --(0,3) node[right]{$iy$};
+
+\draw[blue, thick, <->] (1, -2.5) -- (1, 2.5) ;
+\node[blue] at (1.6, 1){$x = 1$};
+
+\draw[<->,thick, blue, rotate=-90, shift={(0,9)}] (-3,-1.25) parabola bend (0,1) (3,-1.25) ;
+\node[blue] at (11,1){$u = 1-\frac{v^2}{4}$};
+
+\draw[<->, thick] (6,0)--(12,0)node[right]{$u$};
+
+
+\draw[<->, thick] (9, -3) node[right]{$w$-plane}--(9,3) node[right]{$iv$};
+
+\draw[->, thick, blue] (3.5,1)--(5.5, 1) node[above,midway, blue]{$w = z^2$};
+\node at (4.5, -4){\large The effect of $f(z) = z^2$ on a vertical line};
+\end{tikzpicture}
+\end{image}
+
+\end{example}
+
+
+\begin{problem}(problem 3)
+Find the image of the given line under the mapping $f(z) = z^2$:
+\begin{align*}
+i) & \Rep z = 2 \\
+ii) & \Rep z = -1\\
+iii) & \Imp z = 1\\
+iv) & \Imp z = -2
+\end{align*}
+\end{problem}
+
+
+\section{Conjugates and Reciprocals}
+The function $f(z) = \overline{z}$ maps a set in the complex plane to its mirror image in the real axis.
+
+\begin{example}[example 4]
+Find the image of the closed disk $D(z_0, r)$ under the mapping $f(z) = 2\overline{z}$.\\
+The image of the center of the disk is $f(z_0) = 2\overline{z_0}$ and so the image of the disk
+$D(z_0, r)$ is the disk of twice the radius, $D(2\overline{z_0}, 2r)$.
+
+\begin{image}
+\begin{tikzpicture}
+
+\draw[<->, thick] (-3,0)--(3,0) node[right]{$x$};
+
+\draw[<->, thick] (0, -3) node[right]{$z$-plane} --(0,3) node[right]{$iy$};
+
+\draw[dashed, blue, fill = blue!20] (1.25, 1.25) circle (0.75) ;
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(1.25, 1.25)} node[left, blue]{$z_0$};
+\draw[blue] (1.25, 1.25)--(1.78, 1.78) node[right, midway]{$r$};
+
+
+\draw[dashed, blue, fill= blue!20] (11.5, -2.5)circle (1.5) ;
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(11.25, -2.5)} node[left, blue]{$2\overline{z_0}$};
+\draw[blue] (11.25, -2.5)--(12.36, -1.33) node[right, midway]{$2r$};
+
+\draw[->, thick, blue] (3.5,1)--(5.5, 1) node[above,midway, blue]{$w = 2\overline{z}$};
+\draw[<->, thick] (6,0)--(12,0)node[right]{$u$};
+
+
+\draw[<->, thick] (9, -3) node[left]{$w$-plane}--(9,3) node[right]{$iv$};
+
+
+\node at (4.5, -4){\large The effect of $f(z) = 2\overline{z}$ on a disk};
+\end{tikzpicture}
+\end{image}
+
+\end{example}
+
+
+\begin{problem}(problem 4)
+Find the image of the disk $D(1+i, 1)$ under the given mapping:
+\begin{align*}
+i) & f(z) = \overline{z} \\
+ii) & f(z) = -2\overline{z} \\
+iii) & f(z) = 3i\overline{z} \\
+iv) & f(z) = i+\overline{z} 
+\end{align*}
+\end{problem}
+
+
+To understand the mapping properties of $f(z) = \frac{1}{z}$ it is useful to rewrite it in the following way:
+\[
+\frac{1}{z} = \frac{1}{z} \cdot \frac{\overline{z}}{\overline{z}}= \frac{\overline{z}}{|z|^2}
+\]
+Thus the mapping $f(z) = \frac{1}{z}$ has both a reflecting property like the conjugate mapping and a scaling property
+due to the division of the positive real number $|z|^2$. As a result of the scaling, the image of a point inside the unit circle 
+will map to a point outside of the circle and vice versa. This is shown in the figure below.
+
+\begin{image}
+\begin{tikzpicture}
+
+
+\begin{scope}
+\draw[clip, draw = none] (1,0) arc (0:180:2) --cycle;
+\draw[outer color = blue!50, inner color = white, shading = radial] (-1,0) circle (2);
+%\draw[ color = blue!50,shading = radial] (-2,0) circle (2);
+\end{scope}
+
+ 
+
+ \begin{scope}
+\draw[clip, draw = none] (1,0) arc (0:-180:2) --cycle;
+\draw[outer color = red!50, inner color = white] (-1,0) circle (2);
+\end{scope}
+
+\draw[<->, thick] (-4,0)--(2,0) node[right]{$x$};
+\draw[<->, thick] (-1, -3) node[right]{$z$-plane} --(-1,3) node[right]{$iy$};
+
+\begin{scope}
+\draw[clip, draw = none] (6.2,0) rectangle (11.8,2.8);
+\filldraw[draw = none, inner color = red, outer color = red!10, shading = radial] (6.2,-2.8) rectangle (11.8,2.8) ;
+\end{scope}
+
+\begin{scope}
+\draw[clip, draw = none] (6.2,-2.8) rectangle (11.8,0);
+\filldraw[draw = none, inner color = blue, outer color = blue!10, shading = radial] (6.2,-2.8) rectangle (11.8,2.8) ;
+\end{scope}
+
+\draw[dashed, fill = white] (9,0)circle (1) ;
+\draw[white, thick] (6.2, -2.8) rectangle (11.8, 2.8);
+\draw[thick, color = blue!20] (6.5,0)--(8,0);
+\draw[thin, color = blue!20] (10,0)--(11.3,0);
+
+\draw[<->, thick] (6,0)--(12,0)node[right]{$u$};
+
+
+\draw[<->, thick] (9, -3) node[right]{$w$-plane}--(9,3) node[right]{$iv$};
+
+\draw[->, thick, blue] (3,1)--(5, 1) node[above,midway, blue]{$w = \frac{1}{z}$};
+
+\draw[dashed, fill = white] (-1,0)circle (.05) ;
+\draw[dashed] (-1,0)circle (2) ;
+
+\node at (4, -4){\large The effect of $f(z) = \frac{1}{z}$ on the open punctured unit disk};
+
+\draw[mark=*,mark size=1pt,] plot coordinates {(-.3, 1.25)} ;
+\node at (-.45,1) {$z_0$};
+
+\draw[mark=*,mark size=1pt] plot coordinates {(9.8, -1.4)} ;
+\node at (10.2,-1.4) {$\frac{1}{z_0}$};
+
+\end{tikzpicture}
+\end{image}
+
+
+
+
+The color coding in the figure is intended to convey reflection in the real axis. A blue point in the upper half plane
+inside the disk maps to a blue point in the lower half plane outside the disk. Similarly, a red point in the lower half plane inside the disk maps to a
+red point outside the disk.
+
+\begin{example}[example 5]
+Find the image of the vertical ray $\Rep z = \frac12, \Imp z > 0$ under the mapping $f(z) = \frac{1}{z}$.\\
+We write $1/z$ in rectangular form:
+\[
+\frac{1}{z} = \frac{\overline{z}}{|z|^2} = \frac{x-iy}{x^2 + y^2}
+\]
+Substituting $x = 1/2$, we have
+\[
+u = \frac{2}{1+4y^2} \quad \mbox{and} \quad v = -\frac{4y}{1+4y^2}
+\]
+Note $v < 0$ since $y > 0$. Furthermore, observe that $u$ and $v$ are related by $v = -2uy$. 
+To eliminate $y$ from this last equation, we rewrite the expression for $u$, which gives
+\[
+y = \sqrt{\frac{2-u}{4u}} 
+\]
+Substituting into $v = -2uy$ gives
+\[
+v = -2u\sqrt{\frac{2-u}{4u}} = -\sqrt{u(2-u)} = -\sqrt{2u-u^2}
+\]
+To see what type of curve this is, square both sides :
+\[
+v^2 = 2u - u^2
+\]
+and so $u^2 - 2u + v^2 = 0$.  Completing the square we get
+\[
+(u-1)^2 + v^2 = 1
+\]
+which is the circle $C(1,1)$. Recalling that $v <0$
+we conclude that the image of the ray $x = 1/2, y >0$ is a semi circle in the lower half plane with 
+center at $1$ and radius $1$.
+
+
+\begin{image}
+\begin{tikzpicture}
+
+%z-plane
+\draw[<->, thick] (-2.5,0)--(2.5,0) node[right]{$x$}; %real axis
+\draw[<->, thick] (0, -2.5) node[right]{$z$-plane} --(0,2.5) node[left]{$iy$}; %imaginary axis
+
+\draw[blue, thick, ->] (0.5, 0) -- (0.5, 2.5) ; %domain
+\draw[thick,blue, fill = white] (0.5,0) circle (0.07) ;
+\node[blue, thick] at (1.5, 1.5){$x = 1, y > 0$}; %domain label
+
+\draw[->, thick, blue] (3,-1.5)--(5, -1.5) node[above,midway, blue]{$w = \frac{1}{z}$};
+%w-plane
+\draw[<->, thick] (5,0)--(10,0)node[right]{$u$}; %real axis
+\draw[<->, thick] (7.5, -2.5) node[right]{$w$-plane}--(7.5,2.5) node[left]{$iv$}; %imaginary axis
+
+\draw[blue, thick, ->] (9.5,0) arc (360:180:1); %image
+\draw[thick,blue, fill = white] (9.5,0) circle (0.07) ;
+\node[blue, thick] at (10, -1.5){$(u-1)^2 + v^2 = 1, v< 0$}; %image label
+
+\node at (3.75, -3.5){\large The effect of $f(z) = \frac{1}{z}$ on a vertical ray}; %caption
+\end{tikzpicture}
+\end{image}
+
+\end{example}
+
+
+\begin{problem}(problem 5)
+Find the image of the following sets under the mapping $f(z) = \frac{1}{z}$:
+\begin{align*}
+i)\; & \Imp z = \frac13, \Rep z < 0 \\
+ii)\; & \Rep z = 2, \Imp z >\leq 0 \\
+iii)\; & \Rep z + \Imp z = 1 \\
+iv)\; & \mbox{The ray:} \; \theta = \theta_0
+\end{align*}
+\end{problem}
+
+
+
+\subsection{Stereographic Projection}
+
+
+The mapping $f(z) = \frac{1}{z}$ in some sense inverts the unit disk, with the singularity at the origin corresponding to a ring of points far from 0.
+In the complex plane this entire ring is considered to be ``$\infty$". Stereographic projection enables us to identify the complex plane with a punctured 
+sphere $S\setminus N$ where $N$ is the north pole of the sphere (sorry Santa) and further, to identitify ``$\infty$" with the north pole, $N$.
+%(North Pole, like batteries, not included).
+
+At the heart of stereographic projection lies a 1-1, onto map $\varphi: \C\to S\setminus N $ where $S$ is the sphere with 
+center at $\left(0,0,\tfrac12\right)$ and radius $\tfrac12$, so that $N = (0,0,1)$. 
+
+
+
+
+\begin{image}
+\begin{tikzpicture}
+
+\draw (0,2) circle (2);
+%\draw (-2,2) .. controls (0, 1.5) .. (2,2);
+%\draw[dashed] (2,2) -- (-2,2);
+\begin{scope}
+\draw[clip, draw = none] (-2,2) rectangle (2,-4);
+\draw (0,2) ellipse (2 and 0.5);
+\end{scope}
+
+\begin{scope}
+\draw[clip, draw = none] (-2,2) rectangle (2,4);
+\draw[dashed] (0,2) ellipse (2 and 0.5);
+\end{scope}
+
+\draw (-5,-1) -- (-3,1) --(5,1) -- (3,-1) --cycle;
+\node at (0.3, 4.3) {$N$};
+\node at (.2, -.2) {$0$};
+\draw (0, 4) -- (-2, -0.5) node[below right] {$z_0$};
+\node at (4.2, -.3) {$\C$};
+\node at (2.2, 3.3) {$S\setminus N$};
+\draw[fill=white] (0,4) circle (0.03);
+%\draw[mark=*,mark size=1pt,] plot coordinates {(0, 4)} ;
+\draw[mark=*,mark size=1pt,] plot coordinates {(0, 0)} ;
+\draw[mark=*,mark size=1pt,] plot coordinates {(-2, -0.5)} ;
+\draw[mark=*,mark size=1pt,red] plot coordinates {(-1.08, 1.58)}  ;
+\node[red] at (-0.7, 1.7) {$w_0$};
+\node at (0, -1.7) {\Large Stereographic Projection: $\varphi (z_0) = w_0$};
+\draw[->] (0,0) -- (0, 5);
+\end{tikzpicture}
+\end{image}
+
+
+
+To find the precise formula for the mapping $\varphi$, recall that a line segment in three dimensions can be expressed in vector form as
+\[
+\gamma(t) = {\bf u} + t{\bf v},  \; 0 \leq t \leq 1
+\]
+
+This segment goes from ${\bf u}$ to ${\bf u} + {\bf v}$ as $t$ goes from $0$ to $1$:
+
+\begin{image}
+\begin{tikzpicture}
+
+\draw[thin, dashed, blue!80, ->] (0,0) -- (2, 2) node[midway, left] {${\bf u}$};
+\draw[blue, ->, thick] (2,2) -- (5,3) node[midway, blue, above] {$\bf{v}$};
+\draw[mark=*,mark size=1pt, blue!80] plot coordinates {(0, 0)} node[below left]{$0$} ;
+\draw[mark=*,mark size=1pt, blue] plot coordinates {(2, 2)} ;
+\draw[mark=*,mark size=1pt, blue] plot coordinates {(5, 3)} ;
+\draw[mark=*,mark size=1pt,red] plot coordinates {(3, 2.33)} node[below right] {$\gamma(t) = {\bf u}+ t{\bf v}$} ;
+\node at (2.5, -0.8){The segment from ${\bf u} \;\; \mbox{to}\;\; {\bf u}+{\bf v}$};
+\end{tikzpicture}
+\end{image}
+
+In our case, the vector ${\bf u}$ is $(x,y,0)$ and the vector ${\bf v}$ goes from $(x, y, 0)$ to $(0, 0, 1)$, so ${\bf v} = (-x, -y, 1)$. 
+Now, we wish to find $t$ so that the point
+\[
+{\bf u}+ t{\bf v} = (x- tx,y- ty, t) = (x(1-t), y(1-t), t)
+\]
+lies on the sphere, $S$, given by
+
+\[
+x^2 + y^2 + \left(z-\frac12 \right)^2 = \left(\frac12\right)^2
+\]
+Substituting gives
+\[
+x^2(1-t)^2 + y^2(1-t)^2 + \left(t-\frac12 \right)^2 = \left(\frac12\right)^2
+\]
+which is equivalent to 
+\[
+x^2(1-t)^2 + y^2(1-t)^2 + t(t-1) = 0
+\]
+Dividing by $t-1$ gives
+\[
+x^2(t-1) + y^2(t-1) + t = 0
+\]
+Solving this linear equation for $t$ we have
+\[
+t= \frac{x^2 + y^2}{1+x^2+y^2}
+\]
+Noting that $\displaystyle 1-t = \frac{1}{1+x^2 +y^2}$, we can define $\varphi$:
+\[
+\varphi(x+iy)   = \left( \frac{x}{1+x^2 +y^2}, \frac{y}{1+x^2 +y^2}, \frac{x^2 + y^2}{1+x^2+y^2} \right)
+\]
+
+The bijection $\varphi$ can be extended in a natural way to include $\infty$ in its domain: $\varphi(\infty) = N$.
+
+\begin{question} The mapping $\varphi$ is a bijection from $\C$ to the punctured sphere $S \setminus N$.
+What is the formula for $\varphi^{-1} : S \setminus N \to \C$?
+\end{question}
+
+
+
+\section{Exponential and Logs}
+Next, we turn to the exponential function, $f(z) = e^z$ and its mapping properties.
+Recall that $e^z$ is $2\pi i$ periodic.  As a result, the image of the band of complex numbers satisfying
+\(-\pi < \Imp z \leq \pi\) is its full image, $\C\{0\}$.
+
+\begin{example}[example 6]
+Find the image of the vertical segment $x = 2, -\pi < y \leq \pi$ under the mapping $f(z) = e^z$.\\
+For $z$ on this segment, 
+\[
+e^z = e^2 \cis y
+\]
+and since $y$ takes on all values in an interval of length $2\pi$, $\cis y$ will take on all values on the unit circle.
+Hence the image of the segment is the circle centered at the origin with radius $e^2$.
+\begin{image}
+\begin{tikzpicture}
+
+%z-plane
+\draw[<->, thick] (-2.5,0)--(2.5,0) node[right]{$x$}; %real axis
+\draw[<->, thick] (0, -2.5) node[left]{$z$-plane} --(0,2.5) node[left]{$iy$}; %imaginary axis
+
+\draw[blue, thick] (1, -1.2) -- (1, 1.2) ; %domain
+\draw[thick,blue, fill = white] (1,-1.2) circle (0.07) ;
+\draw[thick,blue, fill = blue] (1, 1.2) circle (0.07) ;
+\node[blue, thick] at (2, 1.5){$x = 2, -\pi < y \leq \pi$}; %domain label
+
+\draw[->, thick, blue] (3,-1.5)--(5, -1.5) node[above,midway, blue]{$w = e^z$};
+%w-plane
+\draw[<->, thick] (5,0)--(10,0)node[right]{$u$}; %real axis
+\draw[<->, thick] (7.5, -2.5) node[right]{$w$-plane}--(7.5,2.5) node[left]{$iv$}; %imaginary axis
+
+\draw[blue, thick, ->] (7.5,0) circle (2.2); %image
+\draw[dashed,thin,blue!80] (7.5,0) -- (9.1, 1.6) node[midway, below right]{$e^2$} ;
+\node[blue, thick] at (10.2, 1.7){$u^2 + v^2 = e^4$}; %image label
+
+\node at (3.75, -3.5){\large The effect of $f(z) = \frac{1}{z}$ on a vertical segment}; %caption
+\end{tikzpicture}
+\end{image}
+An alternative method to arrive at the conclusion of the last example is to write
+\[
+u = e^2\cos  y \quad \mbox{and} \quad v = e^2 \sin y
+\]
+and note that the Pythagorean trig identity implies that
+\[
+u^2 + v^2 = (e^2)^2 = e^4
+\]
+To see that the image is this entire circle, note that since $-\pi < y \leq \pi$ we have
+$-e^2 \leq u \leq e^2$ and similarly for $v$.
+\end{example}
+
+
+\begin{problem}(problem 6)
+Find the image of the given line segment under the map $w = e^z$:
+\begin{align*}
+i)\; & \Rep z = 1, 0<\Imp z < \pi\\
+ii)\; & \Rep z = -1, \pi/2 < \Imp z < 3\pi/2
+\end{align*}
+\end{problem}
+
+
+
+\begin{example}[example 7]
+Find the image of the horizontal line $y = \frac{\pi}{4}$ under the mapping $f(z) = e^z$.\\
+For $z$ on this horizontal line, 
+\[
+e^z = e^x \cis \left(\frac{\pi}{4}\right)
+\]
+where $-\infty < x < \infty$. Such a point lies on the polar ray $\theta = \pi/4$ at a distance $e^x$ units from the origin.
+Since $e^x$ goes from $0$ to $\infty$ as $x$ goes from $-\infty$ to $\infty$, the image of the horizontal line is the polar
+ray, $\theta = \pi/4$ with $r>0$.
+
+\begin{image}
+\begin{tikzpicture}
+
+%z-plane
+\draw[<->, thick] (-2.5,0)--(2.5,0) node[right]{$x$}; %real axis
+\draw[<->, thick] (0, -2.5) node[right]{$z$-plane} --(0,2.5) node[left]{$iy$}; %imaginary axis
+
+\draw[blue, thick, <->] (-2, 1.6) -- (2, 1.6) ; %domain
+
+\node[blue, thick] at (1.5, 1.1){$ y = 2$}; %domain label
+
+\draw[->, thick, blue] (3,-1.5)--(5, -1.5) node[above,midway, blue]{$w = e^z$};
+%w-plane
+\draw[<->, thick] (5,0)--(10,0)node[right]{$u$}; %real axis
+\draw[<->, thick] (7.5, -2.5) node[right]{$w$-plane}--(7.5,2.5) node[left]{$iv$}; %imaginary axis
+
+\draw[blue, thick, ->] (7.5,0) -- (9.5,2); %image
+\draw[thick,blue, fill = white] (7.5,0) circle (0.07) ;
+\node[blue, thick] at (10, .8){$\theta = \pi/4, r>0$}; %image label
+
+\node at (3.75, -3.5){\large The effect of $f(z) = e^z$ on a horizontal line}; %caption
+\end{tikzpicture}
+\end{image}
+An alternative method to arrive at the conclusion of the last example is to write
+\[
+u = e^x\cos\left(\frac{\pi}{4}\right) = \frac{e^x}{\sqrt 2} = e^x\sin\left(\frac{\pi}{4}\right) = v
+\]
+where $u$ and $v$ are both strictly positive. This gives the portion of the line $u = v$ in the first quadrant.
+
+\end{example}
+
+
+
+\begin{problem}(problem 7)
+Find the image of the line $\Imp z = \pi/3$ under the map $w = e^z$.
+\end{problem}
+
+
+
+\begin{example}[example 8]
+Find the image of the semi-circle $z = 3\cis \theta, \; \pi/2 < \theta \leq 3\pi/2$ 
+under the mapping $f(z) = \Log z$.\\
+On the given semi-circle, $|z| = 3$, so 
+\[
+w = \Log z = \ln 3 + i\Arg \theta
+\]
+Thus $u = \ln 3$ and so the image lies on a vertical line. By definition of $\Log z$, 
+the values of $v$ must lie in the interval $\left(-\pi, \pi\right]$.
+For $\pi/2 <\theta\leq \pi$ we have $\pi/2 <\Arg z \leq  \pi$ and for $\pi < \theta \leq 3\pi/2$ we have $-\pi/2 \geq \Arg z  > -\pi$.
+Hence the range of values for $v$ is $(\pi/2, \pi] \cup (-\pi/2, -\pi)$
+
+
+\begin{image}
+\begin{tikzpicture}
+
+%z-plane
+\draw[<->, thick] (-2.5,0)--(2.5,0) node[right]{$x$}; %real axis
+\draw[<->, thick] (0, -2.5) node[right]{$z$-plane} --(0,2.5) node[left]{$iy$}; %imaginary axis
+
+\draw[blue, thick, ->] (0,1.5) node[right]{$3i$} arc (90:140:1.5) ; %domain
+\draw[blue, thick] (-1.0605, 1.0605) arc (135:180:1.5) node[anchor = north east]{$-3$}; %domain
+\draw[red, thick, ->] (-1.5,0) arc (180:230:1.5); %domain
+\draw[red, thick] (-1.0605,-1.0605) arc (225:270:1.5) node[right]{$-3i$}; %domain
+
+\draw[thick,blue, fill = white] (0,1.5) circle (0.04) ;
+\draw[thick,blue, fill = blue] (-1.5,0) circle (0.04) ;
+\draw[thick,red, fill=red] (0,-1.5) circle (0.04) ;
+\node[blue, thick] at (-1.5, 1.6){$x^2 + y^2 = 9$}; %domain label
+
+\draw[->, thick, blue] (3,-1.5)--(5, -1.5) node[above,midway, blue]{$w = \Log z$};
+
+%w-plane
+\draw[<->, thick] (5,0)--(10,0)node[right]{$u$}; %real axis
+\draw[<->, thick] (7.5, -2.5) node[right]{$w$-plane}--(7.5,2.5) node[left]{$iv$}; %imaginary axis
+
+\draw[blue, thick, ->] (8.4, 1) -- (8.4, 1.6) ; %image
+\draw[blue, thick] (8.4, 1.5) -- (8.4, 2) node[right]{$u = \ln 3$}; %image
+\draw[thick,blue, fill=blue] (8.4,2) circle (0.04) ;
+\draw[thick,blue, fill=white] (8.4,1) circle (0.04) ;
+
+\draw[red, thick, ->] (8.4, -2) -- (8.4, -1.4) ; %image
+\draw[red, thick] (8.4, -1.5) -- (8.4, -1) ; %image
+\draw[thick,red, fill=red] (8.4,-1) circle (0.04) ;
+\draw[thick,red, fill=white] (8.4,-2) circle (0.04) ;
+%\node[red, thick] at (9.5, 1.5){$x = 1, y > 0$}; %image label
+
+\draw[thin] (7.6, 2) -- (7.4, 2) node[left]{$\pi i$};
+\draw[thin] (7.6, -2) -- (7.4, -2) node[left]{$-\pi i$};
+
+
+
+\node at (3.75, -3.5){\large The effect of $f(z) = \Log z $ on a semi-circle}; %caption
+\end{tikzpicture}
+\end{image}
+
+
+\end{example}
+
+\begin{problem}(problem 8)
+Find the image of the given line under the map $w = \Log z$:
+\begin{align*}
+i)\; & C(0,1); \; \Log z\\
+ii)\; & \theta = -\pi/4; \; \Log z
+\end{align*}
+\end{problem}
+
+
+Below is a Geogebra applet that shows the image of a line under $1/z, e^z$ and $z^2$.  Move the red line and observe the effects!
+\begin{center}
+\geogebra{Ptnx5Z3m}{600}{600}
+\end{center}
+
+
+Below is a Geogebra applet that shows the image of a circle under $1/z, e^z$ and $z^2$.  Move the red circle and observe the effects!
+\begin{center}
+\geogebra{WuXRYxUm}{600}{600}
+\end{center}
+
+
+
+
+\section{Sine and Cosine}
+
+\begin{example}[example 9]
+Find the image of the horizontal line $\Imp z =1$ under the mapping $f(z) = \cos z$.\\
+Recall
+\[
+\cos z = \cos x \cosh y - i \sin x \sinh y
+\]
+Writin $w = u+iv = \cos z$ and substituting $y = 1$ gives
+\[
+u = \cos x \cosh 1 \quad \mbox{and} \quad v = -\sin x \sinh y
+\]
+We square $u$ and $v$ to take advantage of the Pythagorean Identity,
+\[
+\frac{u^2}{\cosh^2 1} + \frac{v^2}{\sinh^2 1} = \cos^2 x + \sin^2 x = 1
+\]
+This is the equation of an ellipse with $u$-intercepts $u = \pm \cosh 1$
+and $v$-intercepts $v = \pm \sinh 1$.
+
+
+\begin{image}
+\begin{tikzpicture}
+
+\draw[<->, thick] (-3,0)--(3,0) node[right]{$x$};
+
+\draw[<->, thick] (0, -3) node[right]{$z$-plane} --(0,3) node[right]{$iy$};
+
+\draw[blue, thick, <->] (-2.5, 1) -- (2.5, 1) ;
+\node[blue] at (1, 1.6){$y = 1$};
+
+\draw[thick, blue] (9,0) ellipse (1.54 and 1.17);
+
+
+\node[blue] at (11.5,2){$\frac{u^2}{\cosh^2 1} + \frac{v^2}{\sinh^2 1} = 1$};
+
+\draw[<->, thick] (6,0)--(12,0)node[right]{$u$};
+
+
+\draw[<->, thick] (9, -3) node[right]{$w$-plane}--(9,3) node[right]{$iv$};
+
+\draw[->, thick, blue] (3.5,-1.5)--(5.5, -1.5) node[above,midway, blue]{$w = \cos z$};
+\node at (4.5, -4){\large The effect of $f(z) = \cos z$ on a horizontal line};
+\end{tikzpicture}
+\end{image}
+
+
+\end{example}
+
+
+\begin{problem}(problem 9)
+Find the image of the given line under the given map:
+\begin{align*}
+i)\; & \Rep z = \pi/4; \; \cos z \\
+ii)\; & \Imp z = -2; \; \cos z \\
+iii)\; & \Rep z = \pi/6; \; \sin z\\
+iv)\; & \Imp z = 1; \; \sin z
+\end{align*}
+\end{problem}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+\pgfdeclareradialshading{ballshading}{\pgfpoint{-10bp}{10bp}}
+ {color(0bp)=(gray!40!white); 
+ color(9bp)=(gray!75!white);
+ color(18bp)=(gray!70!black); 
+ color(25bp)=(gray!50!black); 
+ color(50bp)=(black)}
+
+\begin{pgfpicture}
+  \pgfpathcircle{\pgfpoint{0cm}{0cm}}{2cm}
+  \pgfshadepath{ballshading}{20}
+  \pgfusepath{}
+\end{pgfpicture} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{image}
+\begin{tikzpicture}
+
+
+\begin{scope}
+\draw[clip, draw = none] (1,0) arc (0:180:2) --cycle;
+\draw[outer color = blue!50, inner color = white, shading = radial] (-1,0) circle (2);
+%\draw[ color = blue!50,shading = radial] (-2,0) circle (2);
+\end{scope}
+
+ 
+
+ \begin{scope}
+\draw[clip, draw = none] (1,0) arc (0:-180:2) --cycle;
+\draw[outer color = red!50, inner color = white] (-1,0) circle (2);
+\end{scope}
+
+\draw[<->, thick] (-4,0)--(2,0) node[right]{$x$};
+\draw[<->, thick] (-1, -3) node[right]{$z$-plane} --(-1,3) node[right]{$iy$};
+
+\begin{scope}
+\draw[clip, draw = none] (6.2,0) rectangle (11.8,2.8);
+\filldraw[draw = none, inner color = red, outer color = red!10, shading = radial] (6.2,-2.8) rectangle (11.8,2.8) ;
+\end{scope}
+
+\begin{scope}
+\draw[clip, draw = none] (6.2,-2.8) rectangle (11.8,0);
+\filldraw[draw = none, inner color = blue, outer color = blue!10, shading = radial] (6.2,-2.8) rectangle (11.8,2.8) ;
+\end{scope}
+
+\draw[dashed, fill = white] (9,0)circle (1) ;
+\draw[white, thick] (6.2, -2.8) rectangle (11.8, 2.8);
+\draw[thick, color = blue!20] (6.5,0)--(8,0);
+\draw[thin, color = blue!20] (10,0)--(11.3,0);
+
+\draw[<->, thick] (6,0)--(12,0)node[right]{$u$};
+
+
+\draw[<->, thick] (9, -3) node[right]{$w$-plane}--(9,3) node[right]{$iv$};
+
+\draw[->, thick, blue] (3,1)--(5, 1) node[above,midway, blue]{$w = \frac{1}{z}$};
+
+\draw[dashed, fill = white] (-1,0)circle (.05) ;
+\draw[dashed] (-1,0)circle (2) ;
+
+\node at (4, -4){\large The effect of $f(z) = \frac{1}{z}$ on the open punctured unit disk};
+
+\draw[mark=*,mark size=1pt,] plot coordinates {(-.3, 1.25)} ;
+\node at (-.45,1) {$z_0$};
+
+\draw[mark=*,mark size=1pt] plot coordinates {(9.8, -1.4)} ;
+\node at (10.2,-1.4) {$\frac{1}{z_0}$};
+
+\end{tikzpicture}
+\end{image}
+
+
+
+
+
+\begin{image}
+\begin{tikzpicture}
+\filldraw[dashed, bottom color = red!30, top color = blue!30] (0,0) circle (1) ;
+\draw[mark=*,mark size=1pt,] plot coordinates {(.3, .75)} ;
+\node at (.45,.55) {$z_0$};
+\draw[<->, thick] (-3,0)--(3,0) node[right]{$x$};
+
+\draw[<->, thick] (0, -3) node[right]{$z$-plane} --(0,3) node[right]{$iy$};
+\draw[dashed, fill = white] (0,0)circle (.05) ;
+
+
+
+\filldraw[draw = none, top color = red!30, bottom color = blue!30] (6.2,-2.8) rectangle (11.8,2.8) ;
+\draw[dashed, fill = white] (9,0)circle (1) ;
+\draw[mark=*,mark size=1pt] plot coordinates {(10, -2.5)} ;
+\node at (10.3,-2.2) {$1/z_0$};
+\draw[->, thick, blue] (3.5,1)--(5.5, 1) node[above,midway, blue]{$w = \frac{1}{z}$};
+\draw[<->, thick] (6,0)--(12,0)node[right]{$u$};
+
+
+\draw[<->, thick] (9, -3) node[right]{$w$-plane}--(9,3) node[right]{$iv$};
+
+
+\node at (4.5, -4){\large The effect of $f(z) = \frac{1}{z}$ on the open punctured unit disk};
+\end{tikzpicture}
+\end{image}
+
+\begin{scope}
+    \clip (1,0) arc (180:360:2)-- cycle;
+    \draw[outer color = blue, inner color = red] (1,0) arc (0:3600:2) -- cycle;
+\end{scope}
