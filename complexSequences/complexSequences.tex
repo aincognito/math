@@ -33,7 +33,88 @@ If no such complex number $c$ exists, then we say the sequence $\{c_n\}$ {\bf di
  
 
 \begin{example}[example 1]
-Show that $\displaystyle \lim_{z \to 1+i} z^2 = 2i$.\\[6pt]
+Show that the sequence $\displaystyle \left\{\frac{i^n}{n}\right\}$ converges to $0$.\\
+Let $\epsilon >0$ and let $N > 1/\epsilon$. Then for $n> N$ we have
+\[
+\left|\frac{i^n}{n} -0\right| = \frac{1}{n} < \frac{1}{N} < \epsilon
+\]
+Hence, the sequence $\displaystyle \left\{\frac{i^n}{n}\right\}$ converges to $0$.
+\end{example}
+
+\begin{problem}
+Show that the sequence $\displaystyle \left\{\frac{i^n}{2^n}\right\}$ converges to $0$.
+\begin{hint}
+Let $\epsilon >0$
+\end{hint}
+\begin{hint}
+Let $N > -\log_2\epsilon$
+\end{hint}
+\begin{hint}
+If $n>N$ then $2^n > 2^{-\log_2\epsilon}$
+\end{hint}
+\end{problem}
+
+\begin{problem}
+Show that the sequence $\displaystyle \left\{\frac{n+i}{in}\right\}$ converges to $-i$.
+\begin{hint}
+Simplify $\displaystyle \left|\frac{n+i}{in} - (-i) \right|$
+\end{hint}
+\end{problem}
+
+The next proposition shows that convergence of complex sequences can be determined by the convergence of its real and imaginary parts.
+
+\begin{proposition}
+A complex sequence $\{c_n\} = \{a_n + ib_n\}$ converges to $c = a+bi$ if and only if the real 
+sequences $\{a_n\}$ and $\{b_n\}$ converge to $a$ and $b$ respectively.
+\end{proposition}
+\begin{proof}
+$\left(\Rightarrow\right)$ \; Suppose the complex sequence $\{c_n\} = \{a_n + ib_n\}$ converges to $c = a+bi$.
+Let $epsilon >0$, then since $\{c_n\}$ converges to $c$, we can choose $N$ so that for $n>N$, $|c_n - c| < \epsilon$.
+Using the fact that $|z| \geq |\Rep z|$ and $|z| \geq |\Imp z|$, we have 
+\[
+|c_n - c| = |(a_n + ib_n) - (a+bi)| = |(a_n -a) + i(b_n -b)| \geq \max\left\{|a_n-a|, |b_n -b|\right\}
+\]
+we can conclude that for $n>N$
+\[
+|a_n-a| < \epsilon \quad \text{and} \quad  |b_n -b| < \epsilon
+\]
+Thus $\{a_n\}$ converges to $a$ and $\{b_n\}$ converges to $b$.\\
+$\left(\Leftarrow\right)$ Suppose that the real sequences $\{a_n\}$ and $\{b_n\}$ converge to $a$ and $b$ respectively, 
+and consider the complex sequence $\{c_n\} = \{a_n + ib_n\}$. With $c = a+bi$, the triangle inequality gives
+\[
+|c_n - c| = |(a_n + ib_n) - (a+bi)| = |(a_n -a) + i(b_n -b)| \leq |a_n-a|+ |b_n -b|
+\]
+Now by the convergence of $\{a_n\}$ and $\{b_n\}$, for any $\epsilon >0$ there exists an integer $N$ such that $n>N$ implies
+\[
+|a_n-a| < \frac{\epsilon}{2} \quad \text{and} \quad  |b_n -b| < \frac{\epsilon}{2}
+\]
+and hence
+\[
+|c_n-c| < \frac{\epsilon}{2}+\frac{\epsilon}{2}= \epsilon 
+\]
+Thus $\{c_n\}$ converges to $c$.
+\end{proof}
+
+\begin{example}
+Show that the complex sequence $\displaystyle \left\{\tan^{-1} n + i\sqrt[n]n\right\}$ converges to $\displaystyle \frac{pi}{2} + i$.\\
+Since the real sequences $\displaystyle \left\{\tan^{-1} n\right\}$ and $\displaystyle \left\{\sqrt[n]n\right\}$ converge to 
+$\displaystyle \frac{pi}{2}$ and $1$ respectively, the complex sequence 
+$\displaystyle \left\{\tan^{-1} n + i\sqrt[n]n\right\}$ converges to $\displaystyle \frac{pi}{2} + i$.
+\end{example}
+
+\begin{problem}
+Determine if the following sequences converge or diverge.
+\begin{align*}
+a) \;\; &\left\{\frac{n}{n+1}+ i\frac{\cos n}{n} \right\} \quad \mbox{\wordChoice{\choice[correct]{converges}\choice{diverges}}} \quad \text{limit:} \answer{1}\\
+b) \;\; & \left\{\frac{n^2}{2^n}+ i\sqrt[n]{n^2 +1} \right\} \quad \mbox{\wordChoice{\choice[correct]{converges}\choice{diverges}}} \quad \text{limit:} \answer{i}\\
+c) \;\; & \left\{\left(1+\frac{1}{n}\right)^n+ i\frac{\ln n}{n} \right\} \quad \mbox{\wordChoice{\choice[correct]{converges}\choice{diverges}}} \quad \text{limit:} \answer{e}\\
+d) \;\; & \left\{\frac{n^2}{1+n^3}+i\frac{n^2}{1+n} \right\} \quad \mbox{\wordChoice{\choice{converges}\choice[correct]{diverges}}} 
+\end{align*}
+\end{problem}
+\end{document}
+
+
+\lim_{z \to 1+i} z^2 = 2i$.\\[6pt]
 Suppose $|z-(1+i)| < \delta$ for some $0< \delta < 1$.
 Note that
 \[
