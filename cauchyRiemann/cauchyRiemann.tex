@@ -217,8 +217,8 @@ f'(z) &= u_x + iv_x\\
       & = u_x - iu_y\\
       &= \left[u_r \cos \theta + v_r \sin \theta\right] - i\left[ u_r \sin \theta - v_r \cos \theta \right]\\
       &= \left[u_r \cos \theta -i u_r \sin \theta\right] + i\left[ v_r \cos \theta  - iv_r \sin \theta\right]\\
-      &= u_r e^{-i\theta} + v_r e^{-i\theta}\\
-      &=  e^{-i\theta}(u_r +v_r)
+      &= u_r e^{-i\theta} + iv_r e^{-i\theta}\\
+      &=  e^{-i\theta}(u_r +iv_r)
 \end{align*}
 
 We have just proved the following theorem:
@@ -226,7 +226,7 @@ We have just proved the following theorem:
 \begin{theorem}
 If $f(z) = f\left(re^{i\theta}\right)$ is differentiable at $z = z_0 = r_0 e^{i\theta_0}$ then
 \[
-f'(z_0) = e^{-i\theta_0} \left[u_r(r_0, \theta_0) + v_r(r_0, \theta_0)\right]
+f'(z_0) = e^{-i\theta_0} \left[u_r(r_0, \theta_0) + iv_r(r_0, \theta_0)\right]
 \]
 \end{theorem}
 
@@ -241,7 +241,7 @@ u_r(r_0,\theta_0) = \frac{1}{r_0} \quad \mbox{and} \quad v_r(r_0,\theta_0) = 0
 \]
 Hence, according to the theorem,
 \begin{align*}
-f'(z_0) &= e^{-i\theta_0}[u_r(r_0,\theta_0)+v_r(r_0,\theta_0)] \\
+f'(z_0) &= e^{-i\theta_0}[u_r(r_0,\theta_0)+iv_r(r_0,\theta_0)] \\
         &= e^{-i\theta_0}\frac{1}{r_0}\\
         &= \frac{1}{e^{i\theta_0}r_0}\\
         &= \frac{1}{z_0}
@@ -403,7 +403,6 @@ iv) \;\; & f(z) = \sin x \cosh y - i \cos x \sinh y \\
 
 
 \end{document}
-
 
 
 
