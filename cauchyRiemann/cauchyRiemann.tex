@@ -56,7 +56,7 @@ f'(z_0) &= \lim_{h \to 0 \atop h \in \R} \frac{f(z_0 + h) -f(z_0)}{h} \\[10pt]
 \end{proof}
 
 
-\begin{example}
+\begin{example}[example 1]
 Find $f'(z)$ for the complex exponential function $f(z) = e^z$.\\
 Assuming that $e^z$ is a differentiable function of $z$, then since $e^z = e^x \cos y + i e^x \sin y$, we have
 \[
@@ -78,7 +78,7 @@ Hence, if $e^z$ is differentiable, its derivative would be
 \end{example}
 
 
-\begin{problem}
+\begin{problem}(problem 1)
 Assuming that the complex sine and cosine are differentiable functions of $z$, show that
 \[
 \frac{d}{dz} \sin z = \cos z \quad \mbox{and} \quad \frac{d}{dz} \cos z = -\sin z
@@ -172,7 +172,7 @@ u_r = u_x \cos \theta + u_y \sin\theta
 \]
 
 
-\begin{problem}
+\begin{problem}(chain rule)
 Show that
 \[
 u_\theta = -ru_x \sin \theta + ru_y \cos\theta
@@ -197,7 +197,8 @@ u_r = \frac{1}{r} v_\theta \quad \mbox{and} \quad u_\theta = -rv_r
 Finally, we would like to formulate $f'(z) = u_x + iv_x$, in terms of $u_r$ and $v_r$.
 
 
-\begin{problem} Solve the $2 \times 2$ system of equations
+\begin{problem}(linear system)
+ Solve the $2 \times 2$ system of equations
 \begin{align*}
 u_r &= u_x \cos \theta + u_y \sin\theta\\
 v_r &= u_x \sin \theta -u_y \cos\theta
@@ -230,7 +231,7 @@ f'(z_0) = e^{-i\theta_0} \left[u_r(r_0, \theta_0) + iv_r(r_0, \theta_0)\right]
 \]
 \end{theorem}
 
-\begin{example}
+\begin{example}[example 2]
 Assuming that it exists, use the theorem above to find the derivative of $f(z) = \Log z$ 
 at $z = z_0$ where $z_0$ is in the 
 slit plane $\C \backslash \{x\leq 0, y=0\}$ \\
@@ -253,7 +254,7 @@ Dropping the subscript, we can write
 for $z$ in the slit plane.
 \end{example}
 
-\begin{problem} 
+\begin{problem}(problem 2)
 Let $z_0$ be in the slit plane, $\C \backslash \{x\leq 0, y=0\}$. 
 Assuming the derivative exists, find $f'(z_0)$ if $f(z) = z^{1/2}$, 
 the principal branch of the square root function.
@@ -361,7 +362,7 @@ Hence $f$ is differentiable at $z$.
 \end{proof}
 
 
-\begin{example}
+\begin{example}[example 3]
 Show that the function $f(z) = \overline{z}^2$ is differentiable at $z = 0$ and nowhere else.\\
 The real and imaginary parts of $f$ are
 \[
@@ -383,7 +384,7 @@ u_y = -v_x \Rightarrow -2y = 2y \Rightarrow y=0
 \end{example}
 
 
-\begin{problem}
+\begin{problem}(problem 3)
 Show that the following functions are nowhere differentiable:
 \begin{align*}
 i) \;\; & f(z) = \overline{z} \\

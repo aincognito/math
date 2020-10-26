@@ -36,7 +36,7 @@ f'(z_0) = \lim_{h \to 0} \frac{f(z_0 +h) -f(z_0)}{h}
 In the latter formulation, it is important to note that $h\in  \C$.
 \end{definition}
 
-\begin{example}
+\begin{example}[example 1]
 Let $z_0 \in \C$. Compute $f'(z_0)$ for $f(z) = z^4$.\\
 Since $z^4 - z_0^4$ factors readily, we will use the first formulation of the derivative:
 \[
@@ -52,7 +52,7 @@ f'(z) = 4z^3
 \end{example}
 
 
-\begin{problem}
+\begin{problem}(problem 1)
 Use the definition of the derivative to compute $f'(z)$ for the following functions:
 \begin{align*}
 i) \;\; &f(z) = c \quad f'(z) =\answer{0}\\
@@ -95,7 +95,7 @@ The power rule can also be proved using the alternate formulation of the derivat
 \end{remark}
 
 
-\begin{problem}
+\begin{problem}(root of unity)
 Use the factorization 
 \[
 z^n - z_0^n = (z-z_0)\left(z^{n-1} + z^{n-2}z_0 + \cdots + zz_0^{n-2} + z_0^{n-1} \right)
@@ -106,7 +106,7 @@ to show that if $\alpha \neq 1$ is an $n^{th}$ root of unity, i.e., $\alpha^n = 
 \]
 \end{problem}
 
-\begin{problem}
+\begin{problem}(power rule)
 Prove that for $z_0 \neq 0$, the power rule holds for negative integers.
 \end{problem}
 
@@ -187,7 +187,7 @@ Now,
 
 \end{proof}
 
-\begin{example}
+\begin{example}[example 2]
 Find the derivative of $f(z) = (z^2 + iz + 1)^5$.\\
 By the Chain Rule and the Power rule, we have
 \[
@@ -195,7 +195,7 @@ f'(z) = 5(z^2 + z + 1)^4 \cdot (2z +i)
 \]
 \end{example}
 
-\begin{problem}
+\begin{problem}(problem 2)
 Find the derivative of $f(z) = (z^3 - 2iz^2 + 3 + 2i)^4$.\\
 \[
 f'(z) = \answer{4(z^3 - 2iz^2 + 3 + 2i)^3 (3z^2 -4iz)}
@@ -204,7 +204,7 @@ f'(z) = \answer{4(z^3 - 2iz^2 + 3 + 2i)^3 (3z^2 -4iz)}
 \end{problem}
 In the next example, we will see a function that is differentiable at $0$ but nowhere else.
 
-\begin{example}
+\begin{example}[example 3]
 Let $f(z) = \overline{z}^2$.  Show that $f'(0) = 0$ but that $f$ is not differentiable for any $z_0 \neq 0$.\\
 We begin with the derivative at $0$:
 \[
@@ -235,10 +235,9 @@ Hence $f(z) = \overline{z}^2$ is only differentiable at $0$ and $f'(0) = 0$
 \end{example}
 
 
-\begin{problem}
+\begin{problem}(problem 3)
 Show that the function $f(z) = \overline{z}$ is nowhere differentiable.
 \end{problem}
 
 \end{document}
-
 
