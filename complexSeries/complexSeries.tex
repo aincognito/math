@@ -47,7 +47,7 @@ This series converges if and only if $|c| < 1$.  Moreover, if it converges, its 
 $\displaystyle \frac{1}{1-c}$.
 \end{theorem}
 \begin{proof}
-Suppose $|c| < 1$. Then the partial sum has a closed form whose limit can be computed directly.
+Suppose $|c| < 1$. Then the partial sums have a closed form whose limit can be computed directly.
 Since
 \[
 S_n = \sum_{k=1}^n c^k = 1+c+c^2+\cdots + c^n
@@ -84,7 +84,7 @@ To prove this result, we will need the Monotone Convergence Theorem which states
 \end{remark}
 
 \begin{proof}
-Suppose $\displaystyle \sum_{k=1}^\infty |c_k|$ converges to the real nmumber $S$, and break the partial sums of  the complex series 
+Suppose $\displaystyle \sum_{k=1}^\infty |c_k|$ converges to the real number $S$, and break the partial sums of  the complex series 
 $\displaystyle \sum_{k=1}^\infty c_k$ into their real and imaginary parts:
 \[
 \sum_{k=1}^n c_k =  \sum_{k=1}^n a_k + i\sum_{k=1}^n b_k
@@ -94,7 +94,7 @@ Similarly, let $a_k^- = -a_k$ if $a_k < 0$ and let $a_k^- = 0$ if $a_k \geq 0$. 
 \[
 \sum_{k=1}^n a_k = \sum_{k=1}^n a_k^+ - \sum_{k=1}^n a_k^- = A_n^+ - A_n^-
 \]
-The sequences $\{A_n^+\}$ and $\{A_n^-\}$ are both increasing sequences and since $|a_n| \leq |c_n|$ for all $n$, they are both bounded above by $S$.
+The sequences $\{A_n^+\}$ and $\{A_n^-\}$ are both increasing sequences and since $|a_k| \leq |c_k|$ for all $k$, they are both bounded above by $S$.
 Hence, by the Monotone Convergence Theorem, both sequences converge.
 Thus, the real series $\dis \sum_{k=1}^n a_k$ converges, to a sum, $A$. Applying the same argument to the partial sums of the imaginary part, 
 $\dis \sum_{k=1}^n b_k$, we see that it too converges to a sum, $B$. Finally, we can conclude that $\dis \sum_{k=1}^\infty c_k$ converges to $A + iB$. 
@@ -120,15 +120,24 @@ Let $\displaystyle \sum_{k=1}^\infty c_k$ be a complex series and let
 \[
 L = \limsup \sqrt[k]{|c_k|}
 \]
-Then the series converges if and only if $L <1$.
+Then the series converges if $L <1$ and diverges if $L >1$.
 \end{theorem}
 
 \begin{proof}
-
+First, suppose $\dis L = \limsup \sqrt[k]{|c_k|} < 1$. Then there exists a natural number $N$ such that for $k>N 
+|c_k| < L^k$.  Hence the series $\dis \sum_{k = N+1}^\infty |c_k|$ converges by direct comparison to the geometric series
+$\dis \sum_{k = N+1}^\infty L^k$. Thus, the series $\dis\sum_{k = 1}^\infty c_k$ converges absolutely and is therefore convergent.\\
+Next, suppose $\dis L = \limsup \sqrt[k]{|c_k|} > 1$ Then there exists a subsequence of $\{c_k\}$ such that $\sqrt[k]{|c_k|} > 1$
+which implies that $|c_k| > 1$ for each of the infinitely many terms in this subsequence. Hence, $c_k \nrightarrow 0$ as $k \to \infty$.
+By the Test for Divergence, the series $\displaystyle \sum_{k=1}^\infty c_k$ diverges.
 \end{proof}
 
-\end{document}
+\begin{remark}
+The series $\dis \sum_{k=1}^\infty \frac{1}{k^2}$ and $\dis \sum_{k=1}^\infty \frac{1}{k}$ show that if $L = 1$ in the Root Test,
+then no conclusion can be drawn. This is because the first series converges and the second series diverges but $L=1$ in both cases.
+\end{remark}
 
+\end{document}
 
 
 
