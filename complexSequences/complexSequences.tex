@@ -68,18 +68,7 @@ A complex sequence $\{c_n\} = \{a_n + ib_n\}$ converges to $c = a+bi$ if and onl
 sequences $\{a_n\}$ and $\{b_n\}$ converge to $a$ and $b$ respectively.
 \end{proposition}
 \begin{proof}
-$\left(\Rightarrow\right)$ \; Suppose the complex sequence $\{c_n\} = \{a_n + ib_n\}$ converges to $c = a+bi$.
-Let $\epsilon >0$, then since $\{c_n\}$ converges to $c$, we can choose $N$ so that for $n>N$, $|c_n - c| < \epsilon$.
-Using the fact that $|z| \geq |\Rep z|$ and $|z| \geq |\Imp z|$, we have 
-\[
-|c_n - c| = |(a_n + ib_n) - (a+bi)| = |(a_n -a) + i(b_n -b)| \geq \max\left\{|a_n-a|, |b_n -b|\right\}
-\]
-we can conclude that for $n>N$
-\[
-|a_n-a| < \epsilon \quad \text{and} \quad  |b_n -b| < \epsilon
-\]
-Thus $\{a_n\}$ converges to $a$ and $\{b_n\}$ converges to $b$.\\
-$\left(\Leftarrow\right)$ Suppose that the real sequences $\{a_n\}$ and $\{b_n\}$ converge to $a$ and $b$ respectively, 
+$\left(\Rightarrow\right)$ Suppose that the real sequences $\{a_n\}$ and $\{b_n\}$ converge to $a$ and $b$ respectively, 
 and consider the complex sequence $\{c_n\} = \{a_n + ib_n\}$. With $c = a+bi$, the triangle inequality gives
 \[
 |c_n - c| = |(a_n + ib_n) - (a+bi)| = |(a_n -a) + i(b_n -b)| \leq |a_n-a|+ |b_n -b|
@@ -93,6 +82,18 @@ and hence, for $n>N$ we have
 |c_n-c| < \frac{\epsilon}{2}+\frac{\epsilon}{2}= \epsilon 
 \]
 Thus $\{c_n\}$ converges to $c$.
+$\left(\Leftarrow\right)$ \; Suppose the complex sequence $\{c_n\} = \{a_n + ib_n\}$ converges to $c = a+bi$.
+Let $\epsilon >0$, then since $\{c_n\}$ converges to $c$, we can choose $N$ so that for $n>N$, $|c_n - c| < \epsilon$.
+Using the fact that $|z| \geq |\Rep z|$ and $|z| \geq |\Imp z|$, we have 
+\[
+|c_n - c| = |(a_n + ib_n) - (a+bi)| = |(a_n -a) + i(b_n -b)| \geq \max\left\{|a_n-a|, |b_n -b|\right\}
+\]
+we can conclude that for $n>N$
+\[
+|a_n-a| < \epsilon \quad \text{and} \quad  |b_n -b| < \epsilon
+\]
+Thus $\{a_n\}$ converges to $a$ and $\{b_n\}$ converges to $b$.\\
+
 \end{proof}
 
 \begin{example}
