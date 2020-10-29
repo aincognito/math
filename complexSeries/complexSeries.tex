@@ -26,7 +26,7 @@ If the sequence $\{S_n\}$ converges, then we say the series converges.  Otherwis
 \end{definition}
 
 \begin{theorem}[Test for Divergence]
-If $\displaystyle \sum_{k=1}^\infty c_k$ converges, then $\displaystyle \lim_{n\to\infty} c_n = 0$
+If $\dis \sum_{k=1}^\infty c_k$ converges, then $\dis \lim_{k\to\infty} c_k = 0$
 \end{theorem}
 \begin{proof}
 Note that $c_n = S_n - S_{n-1}$, the difference in partial sums. Since the sequence $\{S_n\}$ converges, given $\epsilon >0$,
@@ -38,6 +38,14 @@ there exists a number $N$ and a number $S$ such that if $n>N$ then $|S_n - S| < 
 Hence, the sequence $\{c_n\}$ converges to zero.
 \end{proof}
 
+
+\begin{example}[example 1] 
+Determine whether the complex series $\dis \sum_{k=1}^\infty \frac{1+ik}{k}$ converges.\\
+Since, $\dis \lim_{k \to \infty} \frac{1+ik}{k} = i$. Since $i \neq 0$, the Test for Divergence says that the series $\dis \sum_{k=1}^\infty \frac{1+ik}{k}$
+does not converge, i.e., it diverges.
+\end{example}
+
+
 \begin{theorem}[Geometric Series]
 Let $c \in \C$ and consider the series
 \[
@@ -46,6 +54,11 @@ Let $c \in \C$ and consider the series
 This series converges if and only if $|c| < 1$.  Moreover, if it converges, its sum is 
 $\displaystyle \frac{1}{1-c}$.
 \end{theorem}
+
+\begin{remark}
+The complex number $c$ in the geometric series $\dis \sum_{k=0}^\infty c^k$ is called the common ratio of the series.
+\end{remark}
+
 \begin{proof}
 Suppose $|c| < 1$. Then the partial sums have a closed form whose limit can be computed directly.
 Since
@@ -72,6 +85,26 @@ Thus, the geometric series converges and its sum is also known.\\
 If $|c| \geq 1$ then $c^n \nrightarrow 0$ as $n \to \infty$ which implies 
 that the geometric series diverges (by the Test for Divergence).
 \end{proof}
+
+
+\begin{example}[example 2] 
+Determine whether the geometric series converges or diverges:\\
+a) $\;\;\dis \sum_{k=0}^\infty \frac{1}{(1+i)^k}$ \quad b) $\;\;\dis \sum_{k=0}^\infty \left(\frac{1+i}{1-i}\right)^k$ \\
+Part a) This is a geometric series with common ratio $\dis \frac{1}{1+i}$. The modulus of the common ratio is 
+\[
+\left|\frac{1}{1+i}\right| = \frac{1}{\sqrt 2} <1
+\]
+Hence the geometric series converges and its sum is
+\[
+\sum_{k=0}^\infty \frac{1}{(1+i)^k} \frac{1}{1-\frac{1}{1+i}} = \frac{1+i}{i} = 1-i
+\]
+Part b) This is a geometric series with common ratio $\dis \frac{1+i}{1-i}$. The modulus of the common ratio is 
+\[
+\left|\frac{1+i}{1-i}\right| = \frac{\sqrt 2}{\sqrt 2} = 1 \nless 1
+\]
+Hence the geometric series diverges.
+\end{example}
+
 
 
 \begin{theorem}[Absolute Convergence]
@@ -102,32 +135,32 @@ $\dis \sum_{k=1}^n b_k$, we see that it too converges to a sum, $B$. Finally, we
 
 
 \begin{definition}
-We define the limit superior, or $\limsup$, of a sequence of real numbers $\{a_n\}$ to be the largest limit of any subsequence of $\{a_n\}$.\
+We define the limit superior of a sequence of real numbers $\{a_n\}, \; \limsup_{n \to \infty} a_n,\;$to be the largest limit of any subsequence of $\{a_n\}$.\
 \end{definition}
 
 
 \begin{remark}
-If the sequence $\{a_n\}$ converges to $a$, then $\limsup a_n =a$.
+If the sequence $\{a_n\}$ converges to $a$, then $\limsup_{n \to \infty} a_n =a$.
 \end{remark}
 
 \begin{remark}
-It is possible that $\limsup a_n =\pm\infty$
+It is possible that $\limsup_{n \to \infty} a_n =\pm\infty$
 \end{remark}
 
 
 \begin{theorem}[Root Test]
 Let $\displaystyle \sum_{k=1}^\infty c_k$ be a complex series and let 
 \[
-L = \limsup \sqrt[k]{|c_k|}
+L = \limsup_{k \to \infty} \sqrt[k]{|c_k|}
 \]
 Then the series converges if $L <1$ and diverges if $L >1$.
 \end{theorem}
 
 \begin{proof}
-First, suppose $\dis L = \limsup \sqrt[k]{|c_k|} < 1$. Then there exists a natural number $N$ such that for $k>N 
+First, suppose $\dis L = \limsup_{k \to \infty} \sqrt[k]{|c_k|} < 1$. Then there exists a natural number $N$ such that for $k>N 
 |c_k| < L^k$.  Hence the series $\dis \sum_{k = N+1}^\infty |c_k|$ converges by direct comparison to the geometric series
 $\dis \sum_{k = N+1}^\infty L^k$. Thus, the series $\dis\sum_{k = 1}^\infty c_k$ converges absolutely and is therefore convergent.\\
-Next, suppose $\dis L = \limsup \sqrt[k]{|c_k|} > 1$ Then there exists a subsequence of $\{c_k\}$ such that $\sqrt[k]{|c_k|} > 1$
+Next, suppose $\dis L = \limsup_{k \to \infty} \sqrt[k]{|c_k|} > 1$ Then there exists a subsequence of $\{c_k\}$ such that $\sqrt[k]{|c_k|} > 1$
 which implies that $|c_k| > 1$ for each of the infinitely many terms in this subsequence. Hence, $c_k \nrightarrow 0$ as $k \to \infty$.
 By the Test for Divergence, the series $\displaystyle \sum_{k=1}^\infty c_k$ diverges.
 \end{proof}
