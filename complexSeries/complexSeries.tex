@@ -133,6 +133,19 @@ Thus, the real series $\dis \sum_{k=1}^n a_k$ converges, to a sum, $A$. Applying
 $\dis \sum_{k=1}^n b_k$, we see that it too converges to a sum, $B$. Finally, we can conclude that $\dis \sum_{k=1}^\infty c_k$ converges to $A + iB$. 
 \end{proof}
 
+\begin{example}[example 3]
+Show that the complex series converges: $\dis \sum_{k=1}^\infty \frac{2e^i}{(k+ik)^2}$\\
+The modulus of $c_k$ is
+\[
+\left|\frac{2e^i}{(k+ik)^2}\right| = \frac{2}{2k^2} = \frac{1}{k^2}
+\]
+and the series
+\[
+\sum_{k=1}^\infty \frac{1}{k^2}
+\]
+is a convergent $p$-series with $p = 2 > 1$. Moreover the sum of this well known series is $\frac{\pi^2}{6}$.
+\end{example}
+
 
 \begin{definition}
 We define the limit superior of a sequence of real numbers $\{a_n\}, \; \limsup_{n \to \infty} a_n,\;$to be the largest limit of any subsequence of $\{a_n\}$.\
@@ -146,6 +159,14 @@ If the sequence $\{a_n\}$ converges to $a$, then $\limsup_{n \to \infty} a_n =a$
 \begin{remark}
 It is possible that $\limsup_{n \to \infty} a_n =\pm\infty$
 \end{remark}
+
+\begin{example}[example 4]
+Find the limit superior of the sequence $\{c_k\}= \{1, 2, 3, 1, 2, 3, 1, 2, 3, \ldots\}$
+The sequence $\{c_k\}$ has subsequences that converge to $1, 2$ and $3$. Since the largest of these limits is $3$, we have
+\[
+\limsup_{k\to\infty} c_k = 3
+\]
+\end{example}
 
 
 \begin{theorem}[Root Test]
@@ -169,6 +190,19 @@ By the Test for Divergence, the series $\displaystyle \sum_{k=1}^\infty c_k$ div
 The series $\dis \sum_{k=1}^\infty \frac{1}{k^2}$ and $\dis \sum_{k=1}^\infty \frac{1}{k}$ show that if $L = 1$ in the Root Test,
 then no conclusion can be drawn. This is because the first series converges and the second series diverges but $L=1$ in both cases.
 \end{remark}
+
+\begin{example}[example 5]
+Determine if the series converges or diverges: $\dis \sum_{k=1}^\infty \left(\frac{k+i}{k^2 - i}\right)^k$\\
+Computing the $k^{th}$ root of the modulus of $c_k$ gives
+\[
+\sqrt[k]{|c_k|} = \sqrt[k]{\left|\left(\frac{k+i}{k^2 - i}\right)^k\right|} = \sqrt[k]{\left|\frac{k+i}{k^2 - i}\right|^k} = \sqrt{\frac{k^2 + 1}{k^4 + 1}}
+\]
+and the limit superior is
+\[
+\limsup_{k \to \infty} \sqrt[k]{|c_k|} = \limsup_{k \to \infty}  \sqrt{\frac{k^2 + 1}{k^4 + 1}} = 0 <1
+\]
+so the series converges.
+\end{example}
 
 \end{document}
 
