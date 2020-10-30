@@ -49,7 +49,7 @@ does not converge, i.e., it diverges.
 Determine whether the complex series $\dis \sum_{k=0}^\infty \frac{K!}{(2i)^k}$ converges.\\
 Since, $\dis \lim_{k \to \infty} \left|\frac{k!}{(2i)^k}\right| = \answer{\infty}$,\\
  $\dis \lim_{k \to \infty} \frac{k!}{(2i)^k} \neq \answer{0}$,\\
- the series $\dis \sum_{k=0}^\infty \frac{K!}{(2i)^k}\;\;$ \wordChoice{\choice{converges}\choice[correct]{diverges}}\\
+ the series $\dis \sum_{k=0}^\infty \frac{k!}{(2i)^k}\;\;$ \wordChoice{\choice{converges}\choice[correct]{diverges}}\\
  by the \wordChoice{\choice{Test for Convergence}\choice[correct]{Test for Divergence}}
 \end{problem}
 
@@ -96,14 +96,14 @@ that the geometric series diverges (by the Test for Divergence).
 
 \begin{example}[example 2] 
 Determine whether the geometric series converges or diverges:\\
-a) $\;\;\dis \sum_{k=0}^\infty \frac{1}{(1+i)^k}$ \quad b) $\;\;\dis \sum_{k=0}^\infty \left(\frac{1+i}{1-i}\right)^k$ \\
+a) $\;\;\dis \sum_{k=0}^\infty \frac{1}{(1+i)^k}\quad$  b) $\;\;\dis \sum_{k=0}^\infty \left(\frac{1+i}{1-i}\right)^k$ \\
 Part a) This is a geometric series with common ratio $\dis \frac{1}{1+i}$. The modulus of the common ratio is 
 \[
 \left|\frac{1}{1+i}\right| = \frac{1}{\sqrt 2} <1
 \]
 Hence the geometric series converges and its sum is
 \[
-\sum_{k=0}^\infty \frac{1}{(1+i)^k} \frac{1}{1-\frac{1}{1+i}} = \frac{1+i}{i} = 1-i
+\sum_{k=0}^\infty \frac{1}{(1+i)^k} = \frac{1}{1-\frac{1}{1+i}} = \frac{1+i}{i} = 1-i
 \]
 Part b) This is a geometric series with common ratio $\dis \frac{1+i}{1-i}$. The modulus of the common ratio is 
 \[
@@ -191,6 +191,12 @@ The sequence $\{c_k\}$ has subsequences that converge to $1, 2$ and $3$. Since t
 \]
 \end{example}
 
+\begin{problem}(problem 4)
+Find the limit superior of the sequence:\\
+a) $\; \{(-1)^k\} \quad \limsup_{k\to\infty} (-1)^k = \; \answer{1}$\\
+a) $\; \{c_k\} = \{1, -1, \frac12, -1, \frac13, -1, \ldots\} \quad \limsup_{k\to\infty} c_k = \; \answer{0}$\\
+\end{problem}
+
 
 \begin{theorem}[Root Test]
 Let $\displaystyle \sum_{k=1}^\infty c_k$ be a complex series and let 
@@ -226,6 +232,16 @@ and the limit superior is
 \]
 so the series converges.
 \end{example}
+
+
+\begin{problem}(problem 5)
+Determine if the series converges or diverges: $\dis \sum_{k=1}^\infty \left(\frac{e^{ik}}{1+i\sqrt k}\right)^k$\\
+$\sqrt[k]{|c_k|} = \; \answer{\frac{1}{sqrt{1+k}}}$\\
+The limit superior is $\; \limsup_{k\to\infty}\sqrt[k]{|c_k|}= \; \answer{0}$\\
+Is this less than 1? \wordChoice{\choice[correct]{yes}\choice{no}}\\
+The series  \wordChoice{\choice[correct]{converges}\choice{diverges}}
+\end{problem}
+
 
 \end{document}
 
