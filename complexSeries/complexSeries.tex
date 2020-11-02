@@ -46,7 +46,7 @@ does not converge, i.e., it diverges.
 \end{example}
 
 \begin{problem}(problem 1) 
-Determine whether the complex series $\dis \sum_{k=0}^\infty \frac{K!}{(2i)^k}$ converges.\\
+Determine whether the complex series $\dis \sum_{k=0}^\infty \frac{k!}{(2i)^k}$ converges.\\
 Since, $\dis \lim_{k \to \infty} \left|\frac{k!}{(2i)^k}\right| = \answer{\infty}$,\\
  $\dis \lim_{k \to \infty} \frac{k!}{(2i)^k} \neq \answer{0}$,\\
  the series $\dis \sum_{k=0}^\infty \frac{k!}{(2i)^k}\;\;$ \wordChoice{\choice{converges}\choice[correct]{diverges}}\\
@@ -235,9 +235,54 @@ so the series converges.
 
 
 \begin{problem}(problem 5)
-Determine if the series converges or diverges: $\dis \sum_{k=1}^\infty \left(\frac{e^{ik}}{1+i\sqrt k}\right)^k$\\
+Determine if the series converges or diverges: 
+\[
+\sum_{k=1}^\infty \left(\frac{e^{ik}}{1+i\sqrt k}\right)^k
+\]
 $\sqrt[k]{|c_k|} = \; \answer{\frac{1}{\sqrt{1+k}}}$\\
 The limit superior is $\; \limsup_{k\to\infty}\sqrt[k]{|c_k|}= \; \answer{0}$\\
+Is this less than 1? \wordChoice{\choice[correct]{yes}\choice{no}}\\
+The series  \wordChoice{\choice[correct]{converges}\choice{diverges}}
+\end{problem}
+
+\begin{theorem}[Ratio Test]
+Let $\displaystyle \sum_{k=1}^\infty c_k$ be a complex series and let 
+\[
+L = \limsup_{k \to \infty} \left|\frac{c_{k+1}}{c_k}\right|
+\]
+Then the series converges if $L <1$ and diverges if $L >1$.
+\end{theorem}
+
+\begin{remark} 
+If $c_k = 0$ for infinitely many values of $k$, then the ratio test cannot be used.
+\end{remark}
+\begin{remark} 
+The prrof of the ratio test is similar to the proof of the root test.
+\end{remark}
+
+\begin{example}[example 6]
+Determine if the series converges or diverges: 
+\[
+\sum_{k=0}^\infty \frac{i^k2^k}{k!}
+\]
+The modulus of the ratio of successive terms is
+\[
+\left|\frac{i^{k+1}2^{k+1}}{(k+1)!}\cdot \frac{k!}{i^k 2^k}\right| = \frac{2}{k+1}
+\]
+Taking the limit gives
+\[
+\limsup_{k \to \infty} \frac{2}{k+1} = 0 < 1
+\]
+By the Ratio Test, the series converges.
+\end{example}
+
+\begin{problem}(problem 6)
+Determine if the series converges or diverges: 
+\[
+\sum_{k=0}^\infty \frac{2e^{ik}}{(2k)!}
+\]
+$\left|\frac{c_{k+1}}{c_k}\right| = \; \answer{\frac{1}{(k+1)(2k+1)}}$\\
+The limit superior is $\; \limsup_{k\to\infty}\left|\frac{c_{k+1}}{c_k}\right|= \; \answer{0}$\\
 Is this less than 1? \wordChoice{\choice[correct]{yes}\choice{no}}\\
 The series  \wordChoice{\choice[correct]{converges}\choice{diverges}}
 \end{problem}
