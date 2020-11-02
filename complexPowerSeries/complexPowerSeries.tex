@@ -34,16 +34,18 @@ $z \in D(z_0, \rho)$ and diverge for $|z-z_0| > \rho$, where $\rho = \frac{1}{L}
 L = \limsup_{k \to 0} \sqrt[k]{|c_k|}
 \]
 The radius, $\rho$ is called the radius of convergence of the complex power series.
+If $L = 0$, then $\rho$ is understood to be infinity, i.e., the complex power series converges for all $z$.
+If $L = \infty$, then the power series converges only at its center, $z_0$.
+A complex power series may converge or diverge points on the circle $C(z_0, \rho)$.
 \end{theorem}
 \begin{remark}
-If $L = 0$, then $\rho$ is understood to be infinity, i.e., the complex power series converges for all $z$.
+The limit $L$, can also be computed from the ratio test as 
+\[
+L = \limsup_{k \to \infty} \left|\frac{c_{k+1}}{c_k}\right|
+\]
+provided $c_k \neq 0$ for all but finitely many values of $k$
 \end{remark}
-\begin{remark}
-If $L = \infty$, then the power series converges only at its center, $z_0$.
-\end{remark}
-\begin{remark}
-A complex power series may converge or diverge points on the circle $C(z_0, \rho)$.
-\end{remark}
+
 
 \begin{proof}
 From the root test, the series  $\dis \sum_{k=0}^\infty c_k(z-z_0)^k$ converges if $z$ satisfies the inequality
@@ -53,6 +55,31 @@ From the root test, the series  $\dis \sum_{k=0}^\infty c_k(z-z_0)^k$ converges 
 If $L \neq 0$, then the series converges if $|z-z_0| < \frac{1}{L} = \rho$ and if $L =0$, then the series converges for all $z$.
 Moreover, the same calculation also shows that if $|z-z_0| \cdot L > 1$ the series diverges.
 \end{proof}
+
+\begin{example}[example 1]
+Find the disk of convergence of the complex power series: $\dis \sum_{k=1}^\infty \frac{i^k}{k}(z+i)^k$\\
+We first compute the limit superior from the root test:
+\[
+L = \limsup_{k \to \infty} \sqrt[k]{|c_k|} = \limsup_{k \to \infty} \sqrt[k]{|\frac{i^k}{k}|} = \limsup_{k \to \infty} \frac{1}{\sqrt[k]{k}} = 1
+\]
+Therefore the radius of convergence is $\rho = 1/L = 1$ and since the center of the power series is $-i$, the disk of convergence is $D(-i, 1)$.
+\end{example}
+
+\begin{problem}(problem 1)
+Find the disk of convergence of the complex power series: $\dis \sum_{k=1}^\infty \frac{e^{ik}}{k^2}(z-2i)^k$\\
+The center of the power series is $\; \answer{2i}$\\
+The limit superior of the coefficients from the root test (or ratio test) is:
+\[
+\limsup_{k \to \infty} \sqrt[k]{|c_k|} = \; \answer{1}
+\]
+The disk of convergence is:
+\begin{multipleChoice}
+\choice{$D(-2i, 1)$}\\
+\choice{$D(2i, -1)$}\\
+\choice[correct]{$D(2i, 1)$}\\
+\end{multipleChoice}
+\end{problem}
+
 On its disk of convergence, a power series is an analytic function.
 \begin{theorem}
 Suppose the complex power series
