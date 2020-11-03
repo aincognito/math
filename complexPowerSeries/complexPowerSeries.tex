@@ -18,24 +18,25 @@ We determine radius of convergence of complex power series.
 
 
 \begin{definition} 
-A {\bf complex power series centered at $z_0$} is a complex series of the form
+A {\bf complex power series centered at} ${\bf z_0}$ is a complex series of the form
 \[
 \sum_{k=0}^\infty c_k(z-z_0)^k = c_0 + c_1 (z-z_0) + c_2 (z-z_0)^2 + c_3 (z-z_0)^3 + \cdots
 \]
-where $z_0$ is a given complex number and $z$ is a complex variable.
 \end{definition}
 Since a complex power series contains a variable, the question is, for which values of the variable, $z$, 
-does the complex power series converge? This question is answered by the root test as described in the following theorem.
+does the complex power series converge? This question is answered by using the root test, as described in the following theorem.
 
 \begin{theorem}
-The complex power series centered at $z_0$, $\dis \sum_{k=0}^\infty c_k(z-z_0)^k$ will converge for 
-$z \in D(z_0, \rho)$ and diverge for $|z-z_0| > \rho$, where $\rho = \frac{1}{L}$ with 
+Let $\dis L = \limsup_{k \to 0} \sqrt[k]{|c_k|}$ and let $\dis \rho = \frac{1}{L}$.
+Then complex power series centered at $z_0$ given by
 \[
-L = \limsup_{k \to 0} \sqrt[k]{|c_k|}
+\sum_{k=0}^\infty c_k(z-z_0)^k
 \]
-The radius, $\rho$ is called the radius of convergence of the complex power series.
-If $L = 0$, then $\rho$ is understood to be infinity, i.e., the complex power series converges for all $z$.
-If $L = \infty$, then the power series converges only at its center, $z_0$.
+will converge for 
+$z \in D(z_0, \rho)$ and diverge for $|z-z_0| > \rho$.\\
+The radius, $\rho$, is called the radius of convergence of the complex power series.\\
+If $L = 0$, then $\rho$ is understood to be infinity, i.e., the complex power series converges for all $z$.\\
+If $L = \infty$, then the power series converges only at its center, $z_0$.\\
 A complex power series may converge or diverge points on the circle $C(z_0, \rho)$.
 \end{theorem}
 \begin{remark}
@@ -52,15 +53,15 @@ From the root test, the series  $\dis \sum_{k=0}^\infty c_k(z-z_0)^k$ converges 
 \[
 \limsup_{k \to 0} \sqrt[k]{|c_k(z-z_0)^k|} = |z-z_0| \limsup_{k \to 0} \sqrt[k]{|c_k|} = |z-z_0| \cdot L < 1
 \]
-If $L \neq 0$, then the series converges if $|z-z_0| < \frac{1}{L} = \rho$ and if $L =0$, then the series converges for all $z$.
-Moreover, the same calculation also shows that if $|z-z_0| \cdot L > 1$ the series diverges.
+If $L =0$, then the series converges for all $z$. If $L \neq 0$, then the series converges if $|z-z_0| < \frac{1}{L} = \rho$.
+Moreover, the root test also shows that if $|z-z_0|  > \frac{1}{L} = \rho$ then the series diverges.
 \end{proof}
 
 \begin{example}[example 1]
 Find the disk of convergence of the complex power series: $\dis \sum_{k=1}^\infty \frac{i^k}{k}(z+i)^k$\\
 We first compute the limit superior from the root test:
 \[
-L = \limsup_{k \to \infty} \sqrt[k]{|c_k|} = \limsup_{k \to \infty} \sqrt[k]{|\frac{i^k}{k}|} = \limsup_{k \to \infty} \frac{1}{\sqrt[k]{k}} = 1
+L = \limsup_{k \to \infty} \sqrt[k]{|c_k|} = \limsup_{k \to \infty} \sqrt[k]{\left|\frac{i^k}{k}\right|} = \limsup_{k \to \infty} \frac{1}{\sqrt[k]{k}} = 1
 \]
 Therefore the radius of convergence is $\rho = 1/L = 1$ and since the center of the power series is $-i$, the disk of convergence is $D(-i, 1)$.
 \end{example}
@@ -106,8 +107,8 @@ Then $f$ is infinitely differentiable on $D(z_0, \rho)$
 \end{corollary}
 
 \begin{proof}
-Since $f'$ is a power series with the same radius of convergence as $f$, the theorem can be applied to $f'$ and hence
-$f'$ is differentiable and $f''$ has the same radius of convergence as $f'$ and hence, as $f$. Continuing inductively, $f$
+Since $f'$ is a power series with the same radius of convergence as $f$, the theorem can be applied to $f'$. Thus,
+$f'$ is differentiable and $f''$ has the same radius of convergence as $f'$. Continuing inductively, $f$
 has derivatives of al orders, i.e., $f$ is infinitely differentiable on $D(z_0, \rho)$.
 \end{proof}
 
@@ -118,7 +119,7 @@ f(z) = \sum_{k=0}^\infty c_k(z-z_0)^k
 \]
 converges on $D(z_0, \rho)$ for some $\rho > 0$. Then we have the following formula for the coefficients:
 \[
-c_k = \frac{f(k)(z_0)}{k!}
+c_k = \frac{f^{(k)}(z_0)}{k!}
 \]
 \end{corollary}
 \begin{proof}
@@ -126,8 +127,8 @@ Since $f$ is infinitely differentiable and the derivative is computed term by te
 \[
 f^{(j)}(z) = \sum_{k=j}^\infty k(k-1)(k-2)\cdots(k-j+1)c_k(z-z_0)^{k-j}
 \]
-Plugging in $z_0$ for $z$ and noting that all of the terms are zero except the first (where $k = j$),
-we get
+Plugging in $z_0$ for $z$ and noting that all of the terms of the series are zero except the first (where $k = j$),
+we obtain
 \[
 f^{(j)}(z_0) = j!c_j
 \]
@@ -138,17 +139,13 @@ Note that we treat the zero power in the first term as 1 when $z=z_0$.
 Find the derivative of the power series function $\dis f(z) = \sum_{k=0}^\infty \frac{z^k}{k!}$\\
 The ratio test shows that this series converges for all $z \in \C$. It's derivative is
 \[
-f'(z) = \sum_{k=0}^\infty k\frac{z^{k-1}}{k!}
+f'(z) = \sum_{k=1}^\infty\frac{kz^{k-1}}{k!}= \sum_{k=1}^\infty \frac{z^{k-1}}{(k-1)!}
 \]
-If we expand and simplify this, we see something interesting:
-\[
-f'(z) = \sum_{k=1}^\infty k\frac{z^{k-1}}{k!} = \sum_{k=1}^\infty \frac{z^{k-1}}{(k-1)!}
-\]
-and re-indexing so that $k$ starts at $0$ instead of $1$ we get
+Re-indexing so that $k$ starts at $0$ instead of $1$ (i.e. replacing $k-1$ with $k$), yields
 \[
 f'(z) = \sum_{k=0}^\infty \frac{z^k}{k!}
 \]
-which was the original function! What function is this?
+But this is the same series as the original function! What function is this?
 \end{example}
 
 \begin{problem}(problem 2a)
