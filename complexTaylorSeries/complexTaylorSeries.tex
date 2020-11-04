@@ -4,30 +4,129 @@
 
 \pgfplotsset{compat=1.13}
 
-\outcome{Determine convergence of complex series}
+\outcome{Determine Taylor series of an analytic function}
 
-\title{4.2 Complex Series}
+\title{4.4 Complex Taylor Series}
 
 \begin{document}
 
 \begin{abstract}
-We determine convergence of complex series.
+We determine the Taylor series for a given analytic function.
 \end{abstract}
 
 \maketitle
 
 
 \begin{definition} 
-A complex series  is defined as a limit of its sequence partial sums:
+Suppose $f$ is analytic at $z_0$. Then the complex power series
 \[
-\sum_{k=1}^\infty c_k = \lim_{n \to \infty}  \sum_{k=1}^n c_k = \lim_{n \to \infty} S_n
+\sum_{k=0}^\infty \frac{f^{(k)}(z_0)}{k!}(z-z_0)^k
 \]
-If the sequence $\{S_n\}$ converges, then we say the series converges.  Otherwise, we say that the series diverges. 
+is called the Taylor series representation for $f$ centered at $z_0$.
 \end{definition}
 
-\begin{theorem}[Test for Divergence]
-If $\dis \sum_{k=1}^\infty c_k$ converges, then $\dis \lim_{k\to\infty} c_k = 0$
+\begin{theorem}
+Suppose $f$ is analytic at $z_0$. Then there exists $\rho >0$ such that for all $z \in D(z_0, \rho), \,f(z)$ is equal to its Taylor series representation centered at $z_0$.
 \end{theorem}
+
+\begin{example}[example 1]
+Find the Taylor series representation for $f(z) = \sin(z)$ centered at the origin.\\
+The derivatives of $\sin z$ evaluated at the origin form the sequence $\{0, 1, 0, -1,...\}$,
+where this cycle of length four repeats indefinitely.
+Hence the series is 
+\[
+\sin z = z - \frac{z^3}{3!} + \frac{z^5}{5!} - \dots
+\]
+which can be written as
+\[
+\sin z = \sum_{k=0}^\infty (-1)^k \frac{z^{2k+1}}{(2k+1)!}
+\]
+The ratio test shows that this series converges for all $z$.
+When the center of the Taylor series is the origin, it is referred to as the Maclaurin series for the function.
+\end{example}
+
+\begin{problem}(problem 1a)
+Find the Maclaurin series for $f(z) = e^z$ and find its radius of convergence.
+\end{problem}
+
+\begin{problem}(problem 1b)
+Find the Maclaurin series for $f(z) = \cos(z)$ and find its radius of convergence.
+\end{problem}
+
+\begin{problem}(problem 1c)
+Find the Taylor series for $f(z) = e^z$ centered at $\pi i$ and find its radius of convergence.
+\end{problem}
+
+\begin{problem}(problem 1d)
+Find the Taylor series for $f(z) = \Log(z)$ centered at $i$ and find its radius of convergence.
+\end{problem}
+
+
+\begin{example}[example 2]
+Find the Maclaurin series for $f(z) = z\sin(\pi z)$.\\
+First note that $f(z)$ is an entire function, so it has a Maclaurin series representation.
+Using the Maclaurin series for $\sin z$ gives
+\[
+z\sin(\pi z) = z\sum_{k=0}^\infty (-1)^k \frac{(\pi z)^{2k+1}}{(2k+1)!} = \sum_{k=0}^\infty (-1)^k \frac{\pi^{2k+1} z^{2k+2}}{(2k+1)!}
+\]
+The ratio test shows that this series converges for all $z$.
+\end{example}
+
+\begin{problem}(problem 2a)
+Find the Maclaurin series for $f(z) = e^{-z^2}$ and find its radius of convergence.
+\end{problem}
+
+\begin{problem}(problem 2b)
+Find the Maclaurin series for $f(z) = z\cos(\pi z)$ and find its radius of convergence.
+\end{problem}
+
+\begin{example}[example 3]
+Find the first few terms of the Maclaurin series for $\tan z$.\\
+Since $\tan z = \frac{\sin z}{\cos z}$ and $\cos 0 \neq 0$, $\tan z$ is analytic at the origin 
+and has a Maclaurin series expansion:
+\[
+\tan z = \sum_{k=0}^\infty c_k z^k = c_0 + c_1 z + c_2 z^2 + \cdots
+\]
+Using the Maclaurin series of $\sin z$ and $\cos z$ and writing $\sin z = \tan z \cdot \cos z$ we have
+\[
+z-\frac{z^3}{3!} + \frac{z^5}{5!} - \cdots = \left(c_0 + c_1 z + c_2 z^2 + \cdots\right) \cdot \left(1-\frac{z^2}{2!} + \frac{z^4}{4!} - \cdots \right)
+\]
+Multiplying on the RHS and comparing coefficients leads to a system of equations:
+\begin{align*}
+c_0 & = 0\\
+c_1 & = 1\\
+c_2 -\frac{c_0}{2!} & = 0\\
+c_3- \frac{c_1}{2!} & = -\frac{1}{3!}\\
+c_4 - \frac{c_2}{2!} +  \frac{c_0}{4!} = 0\\
+c_5- \frac{c_3}{2!} +  \frac{c_1}{4!} = \frac{1}{5!}\\
+\end{align*}
+Solving this system yields $c_2 = c_4 = 0$, $c_3 = \frac13$ and $c_5 = \frac{2}{15}$ etc.
+Hence 
+\[
+\tan z = z + \frac13 z + \frac{2}{15}z^3 + \cdots
+\]
+\end{example}
+
+\begin{problem}(problem 3)
+Find the first few terms of the Maclaurin series for $\sec z$.
+\end{problem}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \begin{proof}
 Note that $c_n = S_n - S_{n-1}$, the difference in partial sums. Since the sequence $\{S_n\}$ converges, given $\epsilon >0$,
 there exists a number $N$ and a number $S$ such that if $n>N$ then $|S_n - S| < \epsilon/2$. Hence for $n > N+1$, the triangle inequality gives
@@ -289,7 +388,6 @@ The series  \wordChoice{\choice[correct]{converges}\choice{diverges}}
 
 
 \end{document}
-
 
 
 
