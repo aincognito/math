@@ -203,10 +203,81 @@ Find Res$(f, 0)$ for the function $\dis f(z) = e^\frac{1}{z}$\\
 $\dis \text{Res}(f,0) = \answer{1}$
 \end{problem}
 
+Consider the function $\dis f(z) = \frac{1}{1-z}$. This function is analytic on $\C\backslash\{1\}$. 
+We may recognize this function as the sum of the geometric series
+\[
+\sum_{k=0}^\infty z^k = 1+z+z^2 + \cdots = \frac{1}{1-z}, \, |z|<1
+\]
+This series represents the function inside of the unit disk, but what about the rest of the domain of analyticity of the function? 
+On the set $|z|>1$ we can write a Laurent series centered at the origin for the function as follows:
+\begin{align*}
+\frac{1}{1-z} &= \frac{1}{z\left(\frac{1}{z} - 1\right)} = -\frac{1}{z}\cdot\frac{1}{1-\frac{1}{z}} \\
+&= -\frac{1}{z} \sum_{k=0}^\infty \left(\frac{1}{z}\right)^k = -\sum_{k=0}^\infty \frac{1}{z^{k+1}}\\
+&= -\frac{1}{z} - \frac{1}{z^2}- \frac{1}{z^3} - \cdots, \, |z|>1
+\end{align*}
+
+Hence we have multiple representations of $\dis \frac{1}{1-z}$ with each representation being valid in a different region.
+We can generalize this idea.
+
+\begin{theorem}
+If $f(z)$ is analytic in an annulus centered at $z_0$ with inner radius $r$ and outer radius $R$, i.e. $A = A(z_0, r, R) = \{z\,\big|\, 0\leq r <|z-z_0| < R \leq \infty\}$, then 
+$f$ has a Laurent series representation which is valid in $A$.
+\end{theorem}
+
+\begin{example}[example 4]
+Find Laurent series expansions centered at $i$ for the function $\dis f(z) = \frac{2i}{z^2+1}$.\\
+This function has isolated singularities at $\pm i$. Hence it is analytic in the annuli
+$A_1 = A(i,0,2)$ and $A_2 = A(i, 2, \infty)$. The function has a Laurent series representation on each of these annuli.
+To create these Laurent series, we make a partial fraction decomposition of $f$:
+\[
+\frac{2i}{z^2+1} = \frac{1}{z-i} - \frac{1}{z+i} \quad \text{(verify)}
+\]
+
+For the annulus $A_1$, we need a Taylor series centered at $i$ for the second fraction: $\dis \frac{1}{z+i}$.
+We have
+\[
+\frac{1}{z+i} = \frac{1}{2i+(z-i)} = \frac{1}{2i} \cdot \frac{1}{1+ \frac{z-i}{2i}}
+\]
+We can now make a geometric series expansion 
+\[
+\frac{1}{z+i} = \frac{1}{2i} \cdot \sum_{k=0}^\infty \left(-\frac{z-i}{2i}\right)^k, \; \left|\frac{z-i}{2i}\right| < 1
+\]
+Simplifying and combining with $\dis \frac{1}{z-i}$, we obtain the Laurent series
+\[
+\frac{2i}{z^2+1} = \frac{1}{z-i} - \sum_{k=0}^\infty \frac{i^{k-1}}{2^{k+1}}(z-i)^k 
+\]
+\[
+= \frac{1}{z-i} + \frac{i}{2} - \frac{1}{4}(z-i) - \frac{i}{8}(z-i)^2 + \cdots
+\]
+which is valid on $A_1$.
+To find the Laurent series on $A_2$ we again use the geometric series formula, but with a twist so that the series converges in the correct region:
+
+\[
+\frac{1}{z+i} = \frac{1}{2i + (z-i)} = \frac{1}{z-i} \cdot  \frac{1}{\frac{2i}{z-i} +1}
+\]
+
+\[
+= \frac{1}{z-i} \sum_{k=0}^\infty \left(-\frac{2i}{z-i}\right)^k = \sum_{k=0}^\infty \frac{(-2i)^k}{(z-i)^{k+1}}, \quad \left|\frac{2i}{z-i}\right| < 1
+\]
+
+Thus, on $A_2$ we have
+\begin{align*}
+\frac{2i}{z^2 +1} &= \frac{1}{z-i} -\frac{1}{z+i}\\
+&=\frac{1}{z-i} - \sum_{k=0}^\infty \frac{(-2i)^k}{(z-i)^{k+1}}\\
+&= \frac{1}{z-i} - \left(\frac{1}{z-i}-\frac{2i}{(z-i)^2}-\frac{4}{(z-i)^3}+\frac{8i}{(z-i)^4} \cdots \right)\\
+&= \frac{2i}{(z-i)^2}+\frac{4}{(z-i)^3}-\frac{8i}{(z-i)^4} -\cdots
+\end{align*}
+
+
+\end{example}
+
+
+\begin{problem}(problem 4)
+Find the Laurent series for $\dis f(z) = \frac{1}{z(z+1)}$ on the annuli $A_1 = A(0, 0, 1)$ and $A_2 = A(0, 1, \infty)$
+\end{problem}
 
 
 \end{document}
-
 
 
 
