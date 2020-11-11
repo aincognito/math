@@ -24,7 +24,7 @@ Then the integral of $f$ along $C$ is defined by
 \]
 
 \begin{example}[example 1]
-Compute $\dis \int_C \overline{z} dz$ where $C$ is the line segment from $-1$ to $1+i$.\\
+Compute $\dis \int_C \overline{z} \, dz$ where $C$ is the line segment from $-1$ to $1+i$.\\
 We first parameterize the line segment. Since the equation of the line in the $xy$-plane is $y = \frac12x + \frac12$,
 one possible parametrization of the line segment is
 \[
@@ -131,7 +131,7 @@ Note that $\zeta'(t) = -2ie^{i(\pi - t)}$. Thus
                         = -it \bigg|_0^\pi
                         = -\pi i
 \]
-From our calculations, we see that $\dis \int_C \frac{1}{z} \, dz = \int_{-C} \frac{1}{z} \, dz$
+From our calculations, we see that $\dis \int_C \frac{1}{z} \, dz = -\int_{-C} \frac{1}{z} \, dz$
 thereby verifying the conclusion of the previous proposition.
 \end{example}
 
@@ -148,8 +148,8 @@ To parametrize the circle $C(z_0, r)$ traversed in the counter-clockwise directi
 \end{problem}
 
 \begin{problem}(problem 2b)
-Let $C= C(i, 2)$ be the circle centered at $i$ of radius $2$, traversed in the counter-clockwise direction. Compute \\
-$\dis \int_C \frac{1}{z-i} \, dz = \answer{2\pi i} $\\
+Let $C= C(i, 2)$ be the circle centered at $i$ of radius $2$, traversed in the clockwise direction. Compute \\
+$\dis \int_C \frac{1}{z-i} \, dz = \answer{-2\pi i} $\\
 \begin{hint}
 To parametrize the circle $C(z_0, r)$ traversed in the counter-clockwise direction, use
 \[
@@ -168,6 +168,8 @@ To parametrize the circle $C(z_0, r)$ traversed in the counter-clockwise directi
 \]
 \end{hint}
 \end{problem}
+
+Compare your answers to problems 2b and 2c. Notice that they verify the proposition.
 
 \begin{problem}(problem 2d)
 Let $C= C(z_0, r)$ be the circle centered at $z_0$ of radius $r$, traversed in the counter-clockwise direction. Compute \\
@@ -237,16 +239,16 @@ then
 Let $C$ be any contour from $0$ to $i$. Compute $\dis \int_C \cos z \, dz$.\\
 Since $\cos z$ is an entire function, it is analytic at every point on $C$. Moreover, since
 \[
-\frac{d}{dz} \sin z = \cos z
+\frac{d}{dz} \sin z = \cos z \quad \text{for all} \,\, z \in \C
 \]
-we have an anti-derivative for $\cos z$ for any $z \in \C$. Thus
+we have an anti-derivative for $\cos z$ for any $z$ on $C$. Thus
 \[
 \int_C \cos z \, dz = \sin(i) - \sin(0) = \sin(i) = i\sinh(1).
 \]
 \end{example}
 
 \begin{problem}(problem 4)
-Let $C$ be any contour from $1$ to $1+i$ that does not cross the negative real axis of go through the origin. 
+Let $C$ be any contour from $1$ to $1+i$ that does not cross the negative real axis or go through the origin. 
 Compute $\dis \int_C \frac{1}{z} \, dz$.\\
 \[
 \int_C \frac{1}{z} \, dz = \answer{\frac12 \ln 2+ i\pi/4}.
@@ -554,6 +556,5 @@ The series  \wordChoice{\choice[correct]{converges}\choice{diverges}}
 
 
 \end{document}
-
 
 
