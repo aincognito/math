@@ -56,16 +56,33 @@ Since $(1+i) - (-1) = 2 + i$, the contour $C$ in the previous example can thus a
 \]
 \end{remark}
 
-\begin{problem}(problem 1)
+\begin{problem}(problem 1a)
 Use the parametrization given in the remark above to compute the integral in example 1.
 \end{problem}
 
+\begin{problem}(problem 1b)
+Let $C$ be the line segment from $0$ to $1+i$. Compute \\
+$\dis \int_C \overline{z} \, dz = \answer{1} $\\
+\end{problem}
+
+\begin{problem}(problem 1c)
+Let $C= C(0, 1)$ be the unit circle traversed in the counter-clockwise direction. Compute \\
+$\dis \int_C \overline{z} \, dz = \answer{2\pi i} $\\
+\begin{hint}
+To parametrize the circle $C(z_0, r)$ traversed in the counter-clockwise direction, use
+\[
+\gamma(t) = z_0 + re^{it}, \, 0 \leq t \leq 2\pi
+\]
+\end{hint}
+\end{problem}
+
+
 \begin{proposition}
-If the contour $C$ has two different parametrizations, $\gamma_1(t) \, a_1 \leq t \leq b_1$ and $\gamma_2(t)\, a_2 \leq t \leq b_2$, then
+If the contour $C$ has two different parametrizations, $\gamma_1(t)\,$ with  $\, a_1 \leq t \leq b_1$ and $\gamma_2(t)\,$ with $ \, a_2 \leq t \leq b_2$, then
 \[
 \int_C f(z) \, dz = \int_{a_1}^{b_1} f(\gamma_1(t)) \gamma_1'(t) \, dt = \int_{a_2}^{b_2} f(\gamma_2(t)) \gamma_2'(t) \, dt
 \]
-That is, the value of a contour integral is independent of the parametrization of the contour.
+That is, the value of a contour integral is independent of the parametrization used to describe the contour.
 \end{proposition}
 
 What happens if we reverse the direction of a contour , $C$?
@@ -95,7 +112,151 @@ Using the substitution $t = a+b-s$, we have
 \end{align*}
 \end{proof}
 
-            
+\begin{example}[example 2]
+Let $C$ be the semi-circle parametrized by $\gamma(t) = 2e^{it}, \, 0\leq t \leq \pi$. Compute
+\[
+\int_C \frac{1}{z} \, dz \quad \text{and} \quad \int_{-C }\frac{1}{z} \, dz
+\]
+and verify the the above proposition.\\
+Note that $\gamma'(t) = 2ie^{it}$. We begin with the integral along $C$:
+\[
+\int_C \frac{1}{z} \, dz = \int_0^\pi \frac{1}{\gamma(t)} \gamma'(t) \, dt = \int_0^\pi \frac{2ie^{it}}{2e^{it}} \, dt
+                        =\int_0^\pi i \, dt \,= \, it\, \bigg|_0^\pi \, = \pi i
+\]
+Next we integrate along $-C$.  To do this we parametrize $-C$ as $\zeta(t) = 2e^{i(\pi - t)}, \, 0\leq t \leq \pi$.
+Note that $\zeta'(t) = -2ie^{i(\pi - t)}$. Thus
+\[
+\int_{-C} \frac{1}{z} \, dz = \int_0^\pi \frac{1}{\zeta(t)} \zeta'(t) \, dt = \int_0^\pi \frac{-2ie^{i(\pi-t)}}{2e^{i(\pi -t)}} \, dt
+                        =\int_0^\pi -i \, dt
+                        = -it \bigg|_0^\pi
+                        = -\pi i
+\]
+From our calculations, we see that $\dis \int_C \frac{1}{z} \, dz = \int_{-C} \frac{1}{z} \, dz$
+thereby verifying the conclusion of the previous proposition.
+\end{example}
+
+
+\begin{problem}(problem 2a)
+Let $C= C(0, 1)$ be the unit circle traversed in the counter-clockwise direction. Compute \\
+$\dis \int_C \frac{1}{z} \, dz = \answer{2\pi i} $\\
+\begin{hint}
+To parametrize the circle $C(z_0, r)$ traversed in the counter-clockwise direction, use
+\[
+\gamma(t) = z_0 + re^{it}, \, 0 \leq t \leq 2\pi
+\]
+\end{hint}
+\end{problem}
+
+\begin{problem}(problem 2b)
+Let $C= C(i, 2)$ be the circle centered at $i$ of radius $2$, traversed in the counter-clockwise direction. Compute \\
+$\dis \int_C \frac{1}{z-i} \, dz = \answer{2\pi i} $\\
+\begin{hint}
+To parametrize the circle $C(z_0, r)$ traversed in the counter-clockwise direction, use
+\[
+\gamma(t) = z_0 + re^{it}, \, 0 \leq t \leq 2\pi
+\]
+\end{hint}
+\end{problem}
+
+\begin{problem}(problem 2c)
+Let $C= C(z_0, r)$ be the circle centered at $z_0$ of radius $r$, traversed in the counter-clockwise direction. Compute \\
+$\dis \int_C \frac{1}{z-z_0} \, dz = \answer{2\pi i} $\\
+\begin{hint}
+To parametrize the circle $C(z_0, r)$ traversed in the counter-clockwise direction, use
+\[
+\gamma(t) = z_0 + re^{it}, \, 0 \leq t \leq 2\pi
+\]
+\end{hint}
+\end{problem}
+
+\begin{problem}(problem 2d)
+Let $C= C(z_0, r)$ be the circle centered at $z_0$ of radius $r$, traversed in the counter-clockwise direction. Compute \\
+$\dis \int_C \frac{1}{(z-z_0)^2} \, dz = \answer{0} $\\
+\begin{hint}
+To parametrize the circle $C(z_0, r)$ traversed in the counter-clockwise direction, use
+\[
+\gamma(t) = z_0 + re^{it}, \, 0 \leq t \leq 2\pi
+\]
+\end{hint}
+\end{problem}
+
+\begin{proposition}
+Let $C$ be a contour and suppose $f$ is continuous along $C$. Then
+\[
+\left| \int_C f(z) \, dz \right| \leq \int_C \left| f(z) \right| \, dz
+\]
+\end{proposition}
+
+\begin{proposition}[$ML$-formula]
+Let $C$ be a contour and suppose $f$ is continuous along $C$. Then
+\[
+\left| \int_C f(z) \, dz \right| \leq ML
+\]
+where $M$ is the maximum value of $|f(z)|$ along $C$ and $L$ is the length of $C$. 
+\end{proposition}   
+
+\begin{example}[example 3]
+Use the $ML$-formula to estimate the modulus of the integral: $\dis \int_C z^\frac12 \, dz$,
+where $C$ is the circle centered at $3+4i$ of radius $4$.\\
+The length $L$ of the circle, $C$, is $L = 2\pi \cdot \text{radius} = 8\pi$. 
+In polar form, $z^\frac12 = r^\frac12 e^{i\theta/2}$ and hence $|z^\frac12| = r^\frac12 = |z|^\frac12$.
+From the triangle inequality, the modulus of any point $z$ on $C=C(3+4i, 4)$ can be estimated by
+\[
+|z| = |z-(3+4i) + (3+4i)| \leq |z-(3+4i)| + |3+4i| = 4+5 = 9.
+\]
+Hence for any $z$ on the circle, $|z^\frac12| \leq 9^\frac12 = 3 = M$.
+Finally, by the $ML$-formula,
+\[
+\left| \int_C z^\frac12 \, dz \right| \leq ML = (3)(8\pi) = 24\pi.
+\]
+\end{example}
+
+\begin{problem}(problem 3)
+Use the $ML$-formula to estimate the modulus of the integral: $\dis \int_C e^z \, dz$,
+where $C$ is the circle centered at $i$ of radius $2$.\\
+\begin{hint}
+$|e^z| = e^x$
+\end{hint}
+The maximum modulus of $e^z$ on $C$ is $M = \answer{e^2}$\\
+The length of $C$ is $L = \answer{4\pi}$\\
+By the $ML$-formula, $\dis \int_C e^z \, dz \leq \answer{4e^2 \pi}$
+\end{problem}
+If the function $f(z)$ is analytic at every point on the contour $C$, then the computation of the integral along $C$
+can be simplified as long as an anti-derivative of $f$ can be found.
+
+\begin{theorem}[Fundamental Theorem of Calculus]
+Suppose $C$ is a contour with initial point $z_1$ and terminal point $z_2$. If $f$ is analytic along $C$ and 
+if $F$ is an anti-derivative of $f$ along $C$, i.e., $F' = f$ at every $z \in C$,
+then
+\[
+\int_C f(z) \, dz = F(z_2) -F(z_1)
+\]
+\end{theorem}
+
+\begin{example}[example 4]
+Let $C$ be any contour from $0$ to $i$. Compute $\dis \int_C \cos z \, dz$.\\
+Since $\cos z$ is an entire function, it is analytic at every point on $C$. Moreover, since
+\[
+\frac{d}{dz} \sin z = \cos z
+\]
+we have an anti-derivative for $\cos z$ for any $z \in \C$. Thus
+\[
+\int_C \cos z \, dz = \sin(i) - \sin(0) = \sin(i) = i\sinh(1).
+\]
+\end{example}
+
+\begin{problem}(problem 4)
+Let $C$ be any contour from $1$ to $1+i$ that does not cross the negative real axis of go through the origin. 
+Compute $\dis \int_C \frac{1}{z} \, dz$.\\
+\[
+\int_C \frac{1}{z} \, dz = \answer{\frac12 \ln 2+ i\pi/4}.
+\]
+\begin{hint}
+Use the principal branch of the logarithm, $\Log z$, as the anti-derivative on $C$.
+\end{hint}
+\end{problem}
+
+
 \end{document}
 
 
@@ -393,7 +554,6 @@ The series  \wordChoice{\choice[correct]{converges}\choice{diverges}}
 
 
 \end{document}
-
 
 
 
