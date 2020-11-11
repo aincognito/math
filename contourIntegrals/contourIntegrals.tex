@@ -183,9 +183,9 @@ To parametrize the circle $C(z_0, r)$ traversed in the counter-clockwise directi
 \end{problem}
 
 \begin{proposition}
-Let $C$ be a contour and suppose $f$ is continuous along $C$. Then
+Suppose $f(t) = u(t) + iv(t)$ is a continuous function of the real variable $t$. Then
 \[
-\left| \int_C f(z) \, dz \right| \leq \int_C \left| f(z) \right| \, dz
+\left| \int_a^b f(t) \, dt \right| \leq \int_a^b \left| f(t) \right| \, dt
 \]
 \end{proposition}
 
@@ -196,6 +196,17 @@ Let $C$ be a contour and suppose $f$ is continuous along $C$. Then
 \]
 where $M$ is the maximum value of $|f(z)|$ along $C$ and $L$ is the length of $C$. 
 \end{proposition}   
+
+\begin{proof}
+Suppose $C$ is parametrized by $\gamma(t), \, a \leq t \leq b$. Since $|f(z)| \leq M$ for all $z \in C$, the previous proposition implies
+\[
+\left| \int_C f(z) \, dz \right| = \left| \int_a^b f(\gamma(t))\gamma'(t) \, dt \right| \leq  \int_a^b \left|f(\gamma(t))\right| \cdot \left|\gamma'(t)\right| \, dt \leq M \int_a^b \left|\gamma'(t)\right| \, dt
+\]
+But this last integral is exactly $L$, the length of the curve $C$ and hence
+\[
+\left| \int_C f(z) \, dz \right| \leq M \int_a^b \left|\gamma'(t)\right| \, dt = ML
+\]
+\end{proof}
 
 \begin{example}[example 3]
 Use the $ML$-formula to estimate the modulus of the integral: $\dis \int_C z^\frac12 \, dz$,
