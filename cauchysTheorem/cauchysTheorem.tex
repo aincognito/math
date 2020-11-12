@@ -1,0 +1,619 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\pgfplotsset{compat=1.13}
+
+\outcome{Compute complex integrals around closed curves}
+
+\title{5.2 Cauchy's Theorem}
+
+\begin{document}
+
+\begin{abstract}
+We compute integrals of complex functions around closed curves.
+\end{abstract}
+
+\maketitle
+
+A contour is called closed if its initial and terminal points coincide.  Further it is called simple if those are the only points which coincide. 
+\begin{theorem}[Cauchy's Theorem]
+If $f$ is analytic along a simple closed contour $C$ and also analytic inside $C$, then
+\[
+\int_C f(z) \, dz = 0
+\]
+\end{theorem}
+
+A \textbf{positively oriented} simple closed contour is one in which the interior of the contour is to the left as the contour is traced out.
+In the case of a circle, positive orientation is counter-clockwise. 
+
+\begin{theorem}[Deformation of Contour]
+Suppose $C_1$ and $C_2$ are positively oriented, simple closed contours such that $C_1$ lies entirely inside $C_2$. If $f$ is analytic 
+along $C_1$ and $C_2$ and also analytic in the region between them, then
+\[
+\int_{C_1} f(z) \, dz = \int_{C_2} f(z) \, dz
+\]
+\end{theorem}
+
+
+\begin{theorem}[Extended Cauchy's Theorem]
+Suppose $C_1, C_2, ..., C_n$ are non-intersecting positively oriented, simple closed contours each lying inside of another positively oriented, simple closed contour $C$.  
+If $f$ is analytic along $C, C_1, C_2, ..., C_n$ and also analytic in the region between them (i.e. interior to $C$ but exterior to each of $C_1, C_2, ..., C_n$), then
+\[
+\int_C f(z) \, dz = \sum_{k=1}^n \int_{C_k} f(z) \, dz
+\]
+\end{theorem}
+
+
+
+\begin{theorem}[Cauchy's Integral Formula]
+Suppose $f$ is analytic along and inside a positively oriented, simple closed contour $C$ containing the point $z_0$ in its interior.
+Then
+\[
+f^{(n)}(z_0) = \frac{n!}{2\pi i} \int_C \frac{f(z)}{(z-z_0)^{n+1}} \, dz
+\]
+\end{theorem}
+
+\begin{remark}
+The case $n=0$ corresponds to 
+\[
+f(z_0) = \frac{1}{2\pi i} \int_C \frac{f(z)}{z-z_0} \, dz
+\]
+\end{remark}
+
+\end{document}
+
+
+
+
+Let $C$ be a contour parameterized by $\gamma(t) = x(t) + iy(t), \; a\leq t \leq b$ and let $f(z)$ be a complex function defined along $C$.
+Then the integral of $f$ along $C$ is defined by
+\[
+\int_C f(z) dz = \int_a^b f(\gamma(t)) \gamma'(t) dt
+\]
+
+\begin{example}[example 1]
+Compute $\dis \int_C \overline{z} \, dz$ where $C$ is the line segment from $-1$ to $1+i$.\\
+We first parameterize the line segment. Since the equation of the line in the $xy$-plane is $y = \frac12x + \frac12$,
+one possible parametrization of the line segment is
+\[
+\gamma(t) = x(t) + iy(t) = t + i\left(\frac{t}{2} + \frac12\right), \; -1 \leq t \leq 1
+\]
+The derivative of $\gamma(t)$ is 
+\[
+\gamma'(t) = 1 + \frac{i}{2}
+\]
+Next, $f(z) = \overline{z} = x-iy$ and hence
+\[
+f(\gamma(t)) = x(t) - iy(t) = t - i\left(\frac{t}{2} + \frac12\right)
+\]
+We are now ready to compute the contour integral:
+\begin{align*}
+\int_C \overline{z} \, dz &= \int_{-1}^1 \left[t - i\left(\frac{t}{2} + \frac12\right)\right]\cdot \left[1 + \frac{i}{2}\right] \, dt\\[6pt]
+&= \int_{-1}^1 \left[t + \frac12\left(\frac{t}{2} + \frac12\right)\right] + i\left[-\left(\frac{t}{2} +\frac12\right) + \frac{t}{2}\right] \, dt\\[6pt]
+&= \int_{-1}^1 \left[\frac54 t + \frac14\right]+i\left[-\frac12\right] \, dt\\[6pt]
+&=\int_{-1}^1 \left[\frac54 t + \frac14\right] \, dt - i\int_{-1}^1  \frac12 \, dt\\[6pt]
+                         &= \frac12 - i
+\end{align*}
+\end{example}
+
+\begin{remark}
+A line segment from $z_1$ to $z_2$ can be parameterized by $\gamma(t) = z_1 + t(z_2 - z_1), \, 0\leq t \leq 1$.
+Since $(1+i) - (-1) = 2 + i$, the contour $C$ in the previous example can thus also be parametrized by
+\[
+\gamma(t) = -1 + t(2+i), \, 0 \leq t \leq 1
+\]
+\end{remark}
+
+\begin{problem}(problem 1a)
+Use the parametrization given in the remark above to compute the integral in example 1.
+\end{problem}
+
+\begin{problem}(problem 1b)
+Let $C$ be the line segment from $0$ to $1+i$. Compute \\
+$\dis \int_C \overline{z} \, dz = \answer{1} $\\
+\end{problem}
+
+\begin{problem}(problem 1c)
+Let $C= C(0, 1)$ be the unit circle traversed in the counter-clockwise direction. Compute \\
+$\dis \int_C \overline{z} \, dz = \answer{2\pi i} $\\
+\begin{hint}
+To parametrize the circle $C(z_0, r)$ traversed in the counter-clockwise direction, use
+\[
+\gamma(t) = z_0 + re^{it}, \, 0 \leq t \leq 2\pi
+\]
+\end{hint}
+\end{problem}
+
+
+\begin{proposition}
+If the contour $C$ has two different parametrizations, $\gamma_1(t)\,$ with  $\, a_1 \leq t \leq b_1$ and $\gamma_2(t)\,$ with $ \, a_2 \leq t \leq b_2$, then
+\[
+\int_C f(z) \, dz = \int_{a_1}^{b_1} f(\gamma_1(t)) \gamma_1'(t) \, dt = \int_{a_2}^{b_2} f(\gamma_2(t)) \gamma_2'(t) \, dt
+\]
+That is, the value of a contour integral is independent of the parametrization used to describe the contour.
+\end{proposition}
+
+What happens if we reverse the direction of a contour , $C$?
+
+
+If $C$ is a contour parameterized by $\gamma(t) = x(t) + iy(t), \, a \leq t \leq b$ then the contour $-C$ which represents the 
+same points as $C$ but traced in the opposite 
+direction has parametrization $\zeta(s) = x(a+b-s) + iy(a+b-s), \, a \leq s \leq b$.
+
+
+\begin{proposition}
+Suppose $f$ is continuous along a contour $C$ %parameterized by $C: \gamma(t) = x(t) + iy(t), \, a \leq t \leq b$
+and suppose the contour $-C$ represents the same points as $C$ traced in the opposite direction, 
+then 
+\[
+\int_{-C} f(z) \, dz = -\int_C f(z) \, dz
+\]
+\end{proposition}
+\begin{proof}
+Using the substitution $t = a+b-s$, we have
+\begin{align*}
+\int_{-C} f(z) \, dz &= \int_a^b f(\zeta(s)) \zeta'(s) \, ds \\
+&= \int_a^b f\big(x(a+b-s) + iy(a+b-s)\big) \big[x'(a+b-s)(-1)+ iy'(a+b-s)(-1)\big]\, ds\\
+                     &= \int_b^a f\big(x(t)+iy(t)\big) \big[x'(t)+ iy'(t)\big] \, dt\\
+                     &= -\int_a^b f(\gamma(t)) \gamma'(t) \, dt\\
+                   &= - \int_C f(z) \, dz
+\end{align*}
+\end{proof}
+
+\begin{example}[example 2]
+Let $C$ be the semi-circle parametrized by $\gamma(t) = 2e^{it}, \, 0\leq t \leq \pi$. Compute
+\[
+\int_C \frac{1}{z} \, dz \quad \text{and} \quad \int_{-C }\frac{1}{z} \, dz
+\]
+and verify the the above proposition.\\
+Note that $\gamma'(t) = 2ie^{it}$. We begin with the integral along $C$:
+\[
+\int_C \frac{1}{z} \, dz = \int_0^\pi \frac{1}{\gamma(t)} \gamma'(t) \, dt = \int_0^\pi \frac{2ie^{it}}{2e^{it}} \, dt
+                        =\int_0^\pi i \, dt \,= \, it\, \bigg|_0^\pi \, = \pi i
+\]
+Next we integrate along $-C$.  To do this we parametrize $-C$ as $\zeta(t) = 2e^{i(\pi - t)}, \, 0\leq t \leq \pi$.
+Note that $\zeta'(t) = -2ie^{i(\pi - t)}$. Thus
+\[
+\int_{-C} \frac{1}{z} \, dz = \int_0^\pi \frac{1}{\zeta(t)} \zeta'(t) \, dt = \int_0^\pi \frac{-2ie^{i(\pi-t)}}{2e^{i(\pi -t)}} \, dt
+                        =\int_0^\pi -i \, dt
+                        = -it \bigg|_0^\pi
+                        = -\pi i
+\]
+From our calculations, we see that $\dis \int_C \frac{1}{z} \, dz = -\int_{-C} \frac{1}{z} \, dz$
+thereby verifying the conclusion of the previous proposition.
+\end{example}
+
+
+\begin{problem}(problem 2a)
+Let $C= C(0, 1)$ be the unit circle traversed in the counter-clockwise direction. Compute \\
+$\dis \int_C \frac{1}{z} \, dz = \answer{2\pi i} $\\
+\begin{hint}
+To parametrize the circle $C(z_0, r)$ traversed in the counter-clockwise direction, use
+\[
+\gamma(t) = z_0 + re^{it}, \, 0 \leq t \leq 2\pi
+\]
+\end{hint}
+\end{problem}
+
+\begin{problem}(problem 2b)
+Let $C= C(i, 2)$ be the circle centered at $i$ of radius $2$, traversed in the clockwise direction. Compute \\
+$\dis \int_C \frac{1}{z-i} \, dz = \answer{-2\pi i} $\\
+\begin{hint}
+To parametrize the circle $C(z_0, r)$ traversed in the counter-clockwise direction, use
+\[
+\gamma(t) = z_0 + re^{it}, \, 0 \leq t \leq 2\pi
+\]
+\end{hint}
+\end{problem}
+
+\begin{problem}(problem 2c)
+Let $C= C(z_0, r)$ be the circle centered at $z_0$ of radius $r$, traversed in the counter-clockwise direction. Compute \\
+$\dis \int_C \frac{1}{z-z_0} \, dz = \answer{2\pi i} $\\
+\begin{hint}
+To parametrize the circle $C(z_0, r)$ traversed in the counter-clockwise direction, use
+\[
+\gamma(t) = z_0 + re^{it}, \, 0 \leq t \leq 2\pi
+\]
+\end{hint}
+\end{problem}
+
+Compare your answers to problems 2b and 2c. Notice that they verify the proposition.
+
+\begin{problem}(problem 2d)
+Let $C= C(z_0, r)$ be the circle centered at $z_0$ of radius $r$, traversed in the counter-clockwise direction. Compute \\
+$\dis \int_C \frac{1}{(z-z_0)^2} \, dz = \answer{0} $\\
+\begin{hint}
+To parametrize the circle $C(z_0, r)$ traversed in the counter-clockwise direction, use
+\[
+\gamma(t) = z_0 + re^{it}, \, 0 \leq t \leq 2\pi
+\]
+\end{hint}
+\end{problem}
+
+\begin{proposition}
+Suppose $f(t) = u(t) + iv(t)$ is a continuous function of the real variable $t$. Then
+\[
+\left| \int_a^b f(t) \, dt \right| \leq \int_a^b \left| f(t) \right| \, dt
+\]
+\end{proposition}
+
+\begin{proposition}[$ML$-formula]
+Let $C$ be a contour and suppose $f$ is continuous along $C$. Then
+\[
+\left| \int_C f(z) \, dz \right| \leq ML
+\]
+where $M$ is the maximum value of $|f(z)|$ along $C$ and $L$ is the length of $C$. 
+\end{proposition}   
+
+\begin{proof}
+Suppose $C$ is parametrized by $\gamma(t), \, a \leq t \leq b$. Since $|f(z)| \leq M$ for all $z \in C$, the previous proposition implies
+\[
+\left| \int_C f(z) \, dz \right| = \left| \int_a^b f(\gamma(t))\gamma'(t) \, dt \right| \leq  \int_a^b \left|f(\gamma(t))\right| \cdot \left|\gamma'(t)\right| \, dt \leq M \int_a^b \left|\gamma'(t)\right| \, dt
+\]
+But this last integral is exactly $L$, the length of the curve $C$ and hence
+\[
+\left| \int_C f(z) \, dz \right| \leq M \int_a^b \left|\gamma'(t)\right| \, dt = ML
+\]
+\end{proof}
+
+\begin{example}[example 3]
+Use the $ML$-formula to estimate the modulus of the integral: $\dis \int_C z^\frac12 \, dz$,
+where $C$ is the circle centered at $3+4i$ of radius $4$.\\
+The length $L$ of the circle, $C$, is $L = 2\pi \cdot \text{radius} = 8\pi$. 
+In polar form, $z^\frac12 = r^\frac12 e^{i\theta/2}$ and hence $|z^\frac12| = r^\frac12 = |z|^\frac12$.
+From the triangle inequality, the modulus of any point $z$ on $C=C(3+4i, 4)$ can be estimated by
+\[
+|z| = |z-(3+4i) + (3+4i)| \leq |z-(3+4i)| + |3+4i| = 4+5 = 9.
+\]
+Hence for any $z$ on the circle, $|z^\frac12| \leq 9^\frac12 = 3 = M$.
+Finally, by the $ML$-formula,
+\[
+\left| \int_C z^\frac12 \, dz \right| \leq ML = (3)(8\pi) = 24\pi.
+\]
+\end{example}
+
+\begin{problem}(problem 3)
+Use the $ML$-formula to estimate the modulus of the integral: $\dis \int_C e^z \, dz$,
+where $C$ is the circle centered at $i$ of radius $2$.\\
+\begin{hint}
+$|e^z| = e^x$
+\end{hint}
+The maximum modulus of $e^z$ on $C$ is $M = \answer{e^2}$\\
+The length of $C$ is $L = \answer{4\pi}$\\
+By the $ML$-formula, $\dis \int_C e^z \, dz \leq \answer{4e^2 \pi}$
+\end{problem}
+If the function $f(z)$ is analytic at every point on the contour $C$, then the computation of the integral along $C$
+can be simplified as long as an anti-derivative of $f$ can be found.
+
+\begin{theorem}[Fundamental Theorem of Calculus]
+Suppose $C$ is a contour with initial point $z_1$ and terminal point $z_2$. If $f$ is analytic along $C$ and 
+if $F$ is an anti-derivative of $f$ along $C$, i.e., $F' = f$ at every $z \in C$,
+then
+\[
+\int_C f(z) \, dz = F(z_2) -F(z_1)
+\]
+\end{theorem}
+
+\begin{example}[example 4]
+Let $C$ be any contour from $0$ to $i$. Compute $\dis \int_C \cos z \, dz$.\\
+Since $\cos z$ is an entire function, it is analytic at every point on $C$. Moreover, since
+\[
+\frac{d}{dz} \sin z = \cos z \quad \text{for all} \,\, z \in \C
+\]
+we have an anti-derivative for $\cos z$ for any $z$ on $C$. Thus
+\[
+\int_C \cos z \, dz = \sin(i) - \sin(0) = \sin(i) = i\sinh(1).
+\]
+\end{example}
+
+\begin{problem}(problem 4)
+Let $C$ be any contour from $1$ to $1+i$ that does not cross the negative real axis or go through the origin. 
+Compute $\dis \int_C \frac{1}{z} \, dz$.\\
+\[
+\int_C \frac{1}{z} \, dz = \answer{\frac12 \ln 2+ i\pi/4}.
+\]
+\begin{hint}
+Use the principal branch of the logarithm, $\Log z$, as the anti-derivative on $C$.
+\end{hint}
+\end{problem}
+
+
+\end{document}
+
+
+                         
+                         
+
+
+
+                         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{definition} 
+A complex series  is defined as a limit of its sequence partial sums:
+\[
+\sum_{k=1}^\infty c_k = \lim_{n \to \infty}  \sum_{k=1}^n c_k = \lim_{n \to \infty} S_n
+\]
+If the sequence $\{S_n\}$ converges, then we say the series converges.  Otherwise, we say that the series diverges. 
+\end{definition}
+
+\begin{theorem}[Test for Divergence]
+If $\dis \sum_{k=1}^\infty c_k$ converges, then $\dis \lim_{k\to\infty} c_k = 0$
+\end{theorem}
+\begin{proof}
+Note that $c_n = S_n - S_{n-1}$, the difference in partial sums. Since the sequence $\{S_n\}$ converges, given $\epsilon >0$,
+there exists a number $N$ and a number $S$ such that if $n>N$ then $|S_n - S| < \epsilon/2$. Hence for $n > N+1$, the triangle inequality gives
+\begin{align*}
+|c_n| &= |S_n - S_{n-1}| = |(S_n -S) + (S-S_{n-1})| \\
+&\leq |S_n -S| + |S-S_{n-1}| < \frac{\epsilon}{2} + \frac{\epsilon}{2} =\epsilon
+\end{align*}
+Hence, the sequence $\{c_n\}$ converges to zero.
+\end{proof}
+
+
+\begin{example}[example 1] 
+Determine whether the complex series $\dis \sum_{k=1}^\infty \frac{1+ik}{k}$ converges.\\
+Since, $\dis \lim_{k \to \infty} \frac{1+ik}{k} = i$. Since $i \neq 0$, the Test for Divergence says that the series $\dis \sum_{k=1}^\infty \frac{1+ik}{k}$
+does not converge, i.e., it diverges.
+\end{example}
+
+\begin{problem}(problem 1) 
+Determine whether the complex series $\dis \sum_{k=0}^\infty \frac{k!}{(2i)^k}$ converges.\\
+Since, $\dis \lim_{k \to \infty} \left|\frac{k!}{(2i)^k}\right| = \answer{\infty}$,\\
+ $\dis \lim_{k \to \infty} \frac{k!}{(2i)^k} \neq \answer{0}$,\\
+ the series $\dis \sum_{k=0}^\infty \frac{k!}{(2i)^k}\;\;$ \wordChoice{\choice{converges}\choice[correct]{diverges}}\\
+ by the \wordChoice{\choice{Test for Convergence}\choice[correct]{Test for Divergence}}
+\end{problem}
+
+\begin{theorem}[Geometric Series]
+Let $c \in \C$ and consider the series
+\[
+\sum_{k=0}^\infty c^k = 1 + c + c^2 + c^3 + \cdots
+\]
+This series converges if and only if $|c| < 1$.  Moreover, if it converges, its sum is 
+$\displaystyle \frac{1}{1-c}$.
+\end{theorem}
+
+\begin{remark}
+The complex number $c$ in the geometric series $\dis \sum_{k=0}^\infty c^k$ is called the common ratio of the series.
+\end{remark}
+
+\begin{proof}
+Suppose $|c| < 1$. Then the partial sums have a closed form whose limit can be computed directly.
+Since
+\[
+S_n = \sum_{k=1}^n c^k = 1+c+c^2+\cdots + c^n
+\]
+we have
+\[
+cS_n = c+c^2+\cdots + c^{n+1}
+\]
+Subtracting gives
+\[
+S_n - cS_n = 1-c^{n+1}
+\]
+from which we obtain the closed form
+\[
+S_n = \frac{1-c^{n+1}}{1-c}
+\]
+Now, since $|c|<1$, we have $c^n \to 0$ as $n \to \infty$ and hence
+\[
+\sum_{k=0}^\infty c^k = \lim_{n\to \infty} S_n = \lim_{n\to \infty} \frac{1-c^{n+1}}{1-c} = \frac{1}{1-c}
+\]
+Thus, the geometric series converges and its sum is also known.\\
+If $|c| \geq 1$ then $c^n \nrightarrow 0$ as $n \to \infty$ which implies 
+that the geometric series diverges (by the Test for Divergence).
+\end{proof}
+
+
+\begin{example}[example 2] 
+Determine whether the geometric series converges or diverges:\\
+a) $\;\;\dis \sum_{k=0}^\infty \frac{1}{(1+i)^k}\quad$  b) $\;\;\dis \sum_{k=0}^\infty \left(\frac{1+i}{1-i}\right)^k$ \\
+Part a) This is a geometric series with common ratio $\dis \frac{1}{1+i}$. The modulus of the common ratio is 
+\[
+\left|\frac{1}{1+i}\right| = \frac{1}{\sqrt 2} <1
+\]
+Hence the geometric series converges and its sum is
+\[
+\sum_{k=0}^\infty \frac{1}{(1+i)^k} = \frac{1}{1-\frac{1}{1+i}} = \frac{1+i}{i} = 1-i
+\]
+Part b) This is a geometric series with common ratio $\dis \frac{1+i}{1-i}$. The modulus of the common ratio is 
+\[
+\left|\frac{1+i}{1-i}\right| = \frac{\sqrt 2}{\sqrt 2} = 1 \nless 1
+\]
+Hence the geometric series diverges.
+\end{example}
+
+
+\begin{problem}(problem 2)
+Determine whether the geometric series converges or diverges. If it converges, find its sum: $\;\;\dis \sum_{k=0}^\infty \left(\frac{2i}{2+i}\right)$ \\
+The common ratio is $\; \answer{\frac{2i}{2+i}}$\\
+The modulus of the common ratio is $\; \answer{\frac{2}{\sqrt 5}}$\\
+Is this less than 1? \wordChoice{\choice[correct]{yes}\choice{no}}\\
+The geometric series  \wordChoice{\choice[correct]{converges}\choice{diverges}}\\
+The sum of the series is $\; \answer{\frac{2+i}{2-i}}$
+\end{problem}
+
+
+\begin{theorem}[Absolute Convergence]
+If the series $\dis \sum_{k=1}^\infty |c_k|$ converges, then so does the complex series $\dis \sum_{k=1}^\infty c_k$.
+\end{theorem}
+
+
+\begin{remark}
+To prove this result, we will need the Monotone Convergence Theorem which states that a bounded, monotone sequence of real numbers converges.
+\end{remark}
+
+\begin{proof}
+Suppose $\displaystyle \sum_{k=1}^\infty |c_k|$ converges to the real number $S$, and break the partial sums of  the complex series 
+$\displaystyle \sum_{k=1}^\infty c_k$ into their real and imaginary parts:
+\[
+\sum_{k=1}^n c_k =  \sum_{k=1}^n a_k + i\sum_{k=1}^n b_k
+\]
+where $a_k, b_k \in \R$ for all $k$.  Let $a_k^+ = a_k$ if $a_k \geq 0$ and let $a_k^+ = 0$ if $a_k < 0$.
+Similarly, let $a_k^- = -a_k$ if $a_k < 0$ and let $a_k^- = 0$ if $a_k \geq 0$. Then 
+\[
+\sum_{k=1}^n a_k = \sum_{k=1}^n a_k^+ - \sum_{k=1}^n a_k^- = A_n^+ - A_n^-
+\]
+The sequences $\{A_n^+\}$ and $\{A_n^-\}$ are both increasing sequences and since $|a_k| \leq |c_k|$ for all $k$, they are both bounded above by $S$.
+Hence, by the Monotone Convergence Theorem, both sequences converge.
+Thus, the real series $\dis \sum_{k=1}^n a_k$ converges, to a sum, $A$. Applying the same argument to the partial sums of the imaginary part, 
+$\dis \sum_{k=1}^n b_k$, we see that it too converges to a sum, $B$. Finally, we can conclude that $\dis \sum_{k=1}^\infty c_k$ converges to $A + iB$. 
+\end{proof}
+
+\begin{example}[example 3]
+Show that the complex series converges: $\dis \sum_{k=1}^\infty \frac{2e^i}{(k+ik)^2}$\\
+The modulus of $c_k$ is
+\[
+\left|\frac{2e^i}{(k+ik)^2}\right| = \frac{2}{2k^2} = \frac{1}{k^2}
+\]
+and the series
+\[
+\sum_{k=1}^\infty \frac{1}{k^2}
+\]
+is a convergent $p$-series with $p = 2 > 1$. Moreover the sum of this well known series is $\frac{\pi^2}{6}$.
+\end{example}
+
+\begin{problem}(problem 3) 
+Determine whether the complex series $\dis \sum_{k=0}^\infty \frac{i^k}{k!}$ converges.\\
+The modulus of $c_k$ is $\; \answer{1/k!}$\\
+The series $\dis \sum_{k=0}^\infty \frac{1}{k!}\;\;$ \wordChoice{\choice[correct]{converges}\choice{diverges}}\\
+The series $\dis \sum_{k=0}^\infty \frac{i^k}{k!}\;\;$ \wordChoice{\choice[correct]{converges}\choice{diverges}}
+\end{problem}
+
+
+\begin{definition}
+We define the limit superior of a sequence of real numbers $\{a_n\}, \; \limsup_{n \to \infty} a_n,\;$to be the largest limit of any subsequence of $\{a_n\}$.\
+\end{definition}
+
+
+\begin{remark}
+If the sequence $\{a_n\}$ converges to $a$, then $\limsup_{n \to \infty} a_n =a$.
+\end{remark}
+
+\begin{remark}
+It is possible that $\limsup_{n \to \infty} a_n =\pm\infty$
+\end{remark}
+
+\begin{example}[example 4]
+Find the limit superior of the sequence $\{c_k\}= \{1, 2, 3, 1, 2, 3, 1, 2, 3, \ldots\}$
+The sequence $\{c_k\}$ has subsequences that converge to $1, 2$ and $3$. Since the largest of these limits is $3$, we have
+\[
+\limsup_{k\to\infty} c_k = 3
+\]
+\end{example}
+
+\begin{problem}(problem 4)
+Find the limit superior of the sequence:\\
+a) $\dis\; \{(-1)^k\} \quad \limsup_{k\to\infty} (-1)^k = \; \answer{1}$\\
+a) $\dis\; \{c_k\} = \{1, -1, \frac12, -1, \frac13, -1, \ldots\} \quad \limsup_{k\to\infty} c_k = \; \answer{0}$\\
+\end{problem}
+
+
+\begin{theorem}[Root Test]
+Let $\displaystyle \sum_{k=1}^\infty c_k$ be a complex series and let 
+\[
+L = \limsup_{k \to \infty} \sqrt[k]{|c_k|}
+\]
+Then the series converges if $L <1$ and diverges if $L >1$.
+\end{theorem}
+
+\begin{proof}
+First, suppose $\dis L = \limsup_{k \to \infty} \sqrt[k]{|c_k|} < 1$. Then there exists a natural number $N$ such that for $k>N 
+|c_k| < L^k$.  Hence the series $\dis \sum_{k = N+1}^\infty |c_k|$ converges by direct comparison to the geometric series
+$\dis \sum_{k = N+1}^\infty L^k$. Thus, the series $\dis\sum_{k = 1}^\infty c_k$ converges absolutely and is therefore convergent.\\
+Next, suppose $\dis L = \limsup_{k \to \infty} \sqrt[k]{|c_k|} > 1$ Then there exists a subsequence of $\{c_k\}$ such that $\sqrt[k]{|c_k|} > 1$
+which implies that $|c_k| > 1$ for each of the infinitely many terms in this subsequence. Hence, $c_k \nrightarrow 0$ as $k \to \infty$.
+By the Test for Divergence, the series $\displaystyle \sum_{k=1}^\infty c_k$ diverges.
+\end{proof}
+
+\begin{remark}
+The series $\dis \sum_{k=1}^\infty \frac{1}{k^2}$ and $\dis \sum_{k=1}^\infty \frac{1}{k}$ show that if $L = 1$ in the Root Test,
+then no conclusion can be drawn. This is because the first series converges and the second series diverges but $L=1$ in both cases.
+\end{remark}
+
+\begin{example}[example 5]
+Determine if the series converges or diverges: $\dis \sum_{k=1}^\infty \left(\frac{k+i}{k^2 - i}\right)^k$\\
+Computing the $k^{th}$ root of the modulus of $c_k$ gives
+\[
+\sqrt[k]{|c_k|} = \sqrt[k]{\left|\left(\frac{k+i}{k^2 - i}\right)^k\right|} = \sqrt[k]{\left|\frac{k+i}{k^2 - i}\right|^k} = \sqrt{\frac{k^2 + 1}{k^4 + 1}}
+\]
+and the limit superior is
+\[
+\limsup_{k \to \infty} \sqrt[k]{|c_k|} = \limsup_{k \to \infty}  \sqrt{\frac{k^2 + 1}{k^4 + 1}} = 0 <1
+\]
+so the series converges.
+\end{example}
+
+
+\begin{problem}(problem 5)
+Determine if the series converges or diverges: 
+\[
+\sum_{k=1}^\infty \left(\frac{e^{ik}}{1+i\sqrt k}\right)^k
+\]
+$\sqrt[k]{|c_k|} = \; \answer{\frac{1}{\sqrt{1+k}}}$\\
+The limit superior is $\; \limsup_{k\to\infty}\sqrt[k]{|c_k|}= \; \answer{0}$\\
+Is this less than 1? \wordChoice{\choice[correct]{yes}\choice{no}}\\
+The series  \wordChoice{\choice[correct]{converges}\choice{diverges}}
+\end{problem}
+
+\begin{theorem}[Ratio Test]
+Let $\displaystyle \sum_{k=1}^\infty c_k$ be a complex series and let 
+\[
+L = \limsup_{k \to \infty} \left|\frac{c_{k+1}}{c_k}\right|
+\]
+Then the series converges if $L <1$ and diverges if $L >1$.
+\end{theorem}
+
+\begin{remark} 
+If $c_k = 0$ for infinitely many values of $k$, then the ratio test cannot be used.
+\end{remark}
+\begin{remark} 
+The proof of the ratio test is similar to the proof of the root test.
+\end{remark}
+
+\begin{example}[example 6]
+Determine if the series converges or diverges: 
+\[
+\sum_{k=0}^\infty \frac{i^k2^k}{k!}
+\]
+The modulus of the ratio of successive terms is
+\[
+\left|\frac{i^{k+1}2^{k+1}}{(k+1)!}\cdot \frac{k!}{i^k 2^k}\right| = \frac{2}{k+1}
+\]
+Taking the limit gives
+\[
+\limsup_{k \to \infty} \frac{2}{k+1} = 0 < 1
+\]
+By the Ratio Test, the series converges.
+\end{example}
+
+\begin{problem}(problem 6)
+Determine if the series converges or diverges: 
+\[
+\sum_{k=0}^\infty \frac{2e^{ik}}{(2k)!}
+\]
+$\left|\frac{c_{k+1}}{c_k}\right| = \; \answer{\frac{1}{(k+1)(2k+1)}}$\\
+The limit superior is $\; \limsup_{k\to\infty}\left|\frac{c_{k+1}}{c_k}\right|= \; \answer{0}$\\
+Is this less than 1? \wordChoice{\choice[correct]{yes}\choice{no}}\\
+The series  \wordChoice{\choice[correct]{converges}\choice{diverges}}
+\end{problem}
+
+
+\end{document}
+
