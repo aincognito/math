@@ -24,6 +24,49 @@ If $f$ is analytic along a simple closed contour $C$ and also analytic inside $C
 \]
 \end{theorem}
 
+\begin{example}
+Let $C$ be a simple closed contour that does not pass through $z_0$ or contain $z_0$ in its interior. Compute $\dis \int_C \frac{1}{z-z_0} \, dz$.\\
+The function $\dis f(z) = \frac{1}{z-z_0}$ is analytic everywhere except at $z_0$.  From the description of the contour $C$,
+$f(z)$ is analytic along $C$ and in its interior.  Hence, by Cauchy's Theorem,
+\[
+\int_C \frac{1}{z-z_0} \, dz = 0
+\]
+\end{example}
+\begin{remark}
+If the contour $C$ in the previous example passed through the point $z_0$ or contained $z_0$ in its interior, Cauchy's Theorem would not apply
+and the integral could be non-zero.
+\end{remark}
+
+\begin{problem}(problem 1a)
+Let $C = C(z_0, r)$ traversed clockwise.\\
+\[
+\int_C e^z \, dz = \answer{0}
+\]
+\end{problem}
+
+\begin{problem}(problem 1b)
+Let $C = C(z_0, r)$ traversed clockwise.\\
+\[
+\int_C \sin(z) \, dz = \answer{0}
+\]
+\end{problem}
+
+\begin{problem}(problem 1c)
+Let $C = C(1+i, 1)$ traversed counter-clockwise.\\
+\[
+\int_C \Log(z) \, dz = \answer{0}
+\]
+\end{problem}
+
+\begin{problem}(problem 1d)
+Let $C = C(1+i, 1)$ traversed counter-clockwise.\\
+\[
+\int_C \frac{1}{z} \, dz = \answer{0}
+\]
+\end{problem}
+
+
+
 A \textbf{positively oriented} simple closed contour is one in which the interior of the contour is to the left as the contour is traced out.
 In the case of a circle, positive orientation is counter-clockwise. 
 
@@ -34,6 +77,54 @@ along $C_1$ and $C_2$ and also analytic in the region between them, then
 \int_{C_1} f(z) \, dz = \int_{C_2} f(z) \, dz
 \]
 \end{theorem}
+
+\begin{remark} 
+The Deformation of Contour theorem is typically used to replace arbitrary positively oriented, simple closed curves with circles traversed counter-clockwise.
+\end{remark}
+
+
+\begin{example}[example 2]
+Let $C$ be a positively oriented, simple closed contour containing the origin in its interior. Compute $\dis \int_C \frac{1}{z} \, dz$.\\
+Since the origin is interior to $C$, there exists a radius $r$ such that the circle $C(0, r)$ lies in the interior of $C$.
+By the Deformation of Contour theorem,
+\[
+\int_C \frac{1}{z} \, dz = \int_{C(0,r)} \frac{1}{z} \, dz
+\]
+where $C(0,r)$ is traversed in the positive direction, i.e., counter-clockwise. Using the parametrization
+$\gamma(t) = re^{it}, \, 0\leq t \leq 2\pi$ for $C(0, r)$, we have
+\[
+\int_{C(0,r)} \frac{1}{z} \, dz = \int_0^{2\pi} \frac{\gamma'(t)}{\gamma(t)} \, dt = \int_0^{2\pi} i \, dt = 2\pi i
+\]
+Hence, 
+\[
+\int_C \frac{1}{z} \, dz = 2\pi i
+\]
+as well.
+\end{example}
+
+\begin{problem}(problem 2a)
+Let $C$ be a positively oriented simple closed curve containing the point $z_0$ in its interior.\\
+\[
+\int_C \frac{1}{z-z_0} \, dz = \answer{2\pi i}
+\]
+\end{problem}
+
+\begin{problem}(problem 2b)
+Let $C$ be a positively oriented simple closed curve containing the point $z_0$ in its interior.\\
+\[
+\int_C \frac{1}{(z-z_0)^2} \, dz = \answer{0}
+\]
+\end{problem}
+
+
+\begin{problem}(problem 2c)
+Let $C$ be a positively oriented simple closed curve containing the point $z_0$ in its interior and let $n > 2$.\\
+\[
+\int_C \frac{1}{(z-z_0)^n} \, dz = \answer{0}
+\]
+\end{problem}
+
+
 
 
 \begin{theorem}[Extended Cauchy's Theorem]
@@ -61,7 +152,94 @@ f(z_0) = \frac{1}{2\pi i} \int_C \frac{f(z)}{z-z_0} \, dz
 \]
 \end{remark}
 
+
+\begin{example}[example 3a]
+Let $C = C(0, 1)$ traversed counter-clockwise. Compute the contour integral: $\dis \int_C \frac{\sin z}{z^2} \, dz$\\
+We use Cauchy's Integral Formula.  To do so, we first need to identify $z_0, n$ and $f(z)$ and verify that $f(z)$ is analytic in an on $C$.
+We have $z_0 = 0, n=1, $ and $f(z) = \sin z$ which is entire. Thus, we can apply the formula and we obtain
+\[
+\int_C \frac{\sin z}{z^2} \, dz = \frac{2\pi i}{1!} f'(0) = 2\pi i \cos 0  = 2 \pi i
+\]
+\end{example}
+
+\begin{example}[example 3b]
+Let $C = C(2, 1)$ traversed counter-clockwise. Compute the contour integral: $\dis \int_C \frac{\sin z}{z(z-2)} \, dz$\\
+We use Cauchy's Integral Formula.  To do so, we first need to identify $z_0, n$ and $f(z)$ and verify that $f(z)$ is analytic in an on $C$.
+We have $z_0 = 2, n=0, $ and $f(z) = \frac{\sin z}{z}$ which is analytic in and on $C(2,1)$. Thus, we can apply the formula and we obtain
+\[
+\int_C \frac{\sin z}{z(z-2)} \, dz = \frac{2\pi i}{0!} f(2) = 2\pi i \frac{\sin 2}{2}  =  \pi i \sin 2
+\]
+\end{example}
+
+
+\begin{problem}(problem 3a)
+Let $C = C(0, 1)$ traversed counter-clockwise. Compute the contour integral: $\dis \int_C \frac{e^z}{z^2} \, dz$\\
+\[
+z_0 = \answer{0} \quad n = \answer{1} \quad f(z) = \answer{e^z}
+\]
+\[
+\int_C \frac{e^z}{z^2} \, dz = \answer{2\pi i}
+\]
+\end{problem}
+\begin{problem}(problem 3b)
+Let $C = C(0, 1)$ traversed counter-clockwise. Compute the contour integral: $\dis \int_C \frac{e^z}{z^4} \, dz$\\
+\[
+z_0 = \answer{0} \quad n = \answer{3} \quad f(z) = \answer{\pi i /3}
+\]
+\[
+\int_C \frac{e^z}{z^4}\, dz = \answer{}
+\]
+\end{problem}
+\begin{problem}(problem 3c)
+Let $C = C(i, 1)$ traversed clockwise. Compute the contour integral: $\dis \int_C \frac{\cos z}{z-i} \, dz$\\
+\[
+z_0 = \answer{i} \quad n = \answer{0} \quad f(z) = \answer{\cos z}
+\]
+\[
+\int_C \frac{\cos z}{z-i}\, dz = \answer{-2\pi i \cosh 1}
+\]
+\end{problem}
+\begin{problem}(problem 3d)
+Let $C = C(4, 2)$ traversed counter-clockwise. Compute the contour integral: $\dis \int_C \frac{\sin z}{(z-1)(z-3)} \, dz$\\
+\[
+z_0 = \answer{3} \quad n = \answer{0} \quad f(z) = \answer{\frac{\sin z}{z-1}}
+\]
+\[
+\int_C \frac{\sin z}{(z-1)(z-3)} \, dz = \answer{\pi i \sin 3}
+\]
+\end{problem}
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
