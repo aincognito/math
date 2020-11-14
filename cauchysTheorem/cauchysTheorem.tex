@@ -208,6 +208,46 @@ z_0 = \answer{3} \quad n = \answer{0} \quad f(z) = \answer{\frac{\sin z}{z-1}}
 \int_C \frac{\sin z}{(z-1)(z-3)} \, dz = \answer{\pi i \sin 3}
 \]
 \end{problem}
+
+\begin{example}[example 4]
+Let $C = C(0, 2)$ traversed counter-clockwise. Compute the contour integral: $\dis \int_C \frac{e^z}{z^2 +1} \, dz$\\
+The integrand has singularities at $\pm i$, so we use the Extended Deformation of Contour Theorem before we use Cauchy's Integral Fromula.
+By the Extended Deformation of Contour Theorem we can write
+\[
+\int_C \frac{e^z}{z^2 +1} \, dz = \int_{C_1} \frac{e^z}{z^2 +1} \, dz +  \int_{C_2} \frac{e^z}{z^2 +1} \, dz 
+\]
+where $C_1 = C(i, 1/2)$ traversed counter-clockwise and $C_2 = C(-i, 1/2)$ traversed counter-clockwise.
+Now by Cauchy's Integral Formula with $n = 0$, we have
+\[
+\int_{C_1} \frac{e^z}{z^2 +1} \, dz = \int_{C_1} \frac{e^z}{(z+i)(z-i)} \, dz = 2\pi i f(i)
+\]
+where $f(z) = \frac{e^z}{z+i}$.
+Hence
+\[
+\int_{C_1} \frac{e^z}{z^2 +1} \, dz = 2\pi i \cdot \frac{e^i}{2i} = \pi e^i
+\]
+Similarly,
+\[
+\int_{C_2} \frac{e^z}{z^2 +1} \, dz = \int_{C_2} \frac{e^z}{(z+i)(z-i)} \, dz = 2\pi i f(-i)
+\]
+where $f(z) = \frac{e^z}{z-i}$.
+Hence
+\[
+\int_{C_1} \frac{e^z}{z^2 +1} \, dz = 2\pi i \cdot \frac{e^{-i}}{-2i} = -\pi e^{-i}
+\]
+Combining these we get
+\[
+\int_C \frac{e^z}{z^2 +1} \, dz = \pi e^i - \pi e^{-i} = 2\pi \sin(1)
+\]
+\end{example}
+
+\begin{problem}(problem 4)
+Let $C = C(0, 2)$ traversed counter-clockwise. Compute the contour integral:\\
+\[
+\int_C \frac{e^z}{z^2 -1} \, dx  \answer{\pi i (e-1/e)}
+\]
+\end{problem}
+
 \end{document}
 
 
@@ -794,4 +834,3 @@ The series  \wordChoice{\choice[correct]{converges}\choice{diverges}}
 
 
 \end{document}
-
