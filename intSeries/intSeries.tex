@@ -40,13 +40,15 @@ On that interval, its anti-derivative is given by
 \[
 \int\left( \sum_{n=0}^\infty x^n \right) \, dx= \sum_{n=0}^\infty  \big(\int x^n \, dx\big) = \sum_{n=0}^\infty \frac{x^{n+1}}{n+1} + C.
 \]
-
+The interval of convergence of the anti-derivative is $[-1,1)$. In general, 
+the anti-derivative might converge at an endpoint when the original series did not.
 \end{example}
 
 
 
 \begin{problem}(problem 1)
-Find the anti-derivatives of the following power series:
+Find the anti-derivatives of the following power series. 
+Also, compare the interval of convergence of the original series to its anti-derivative.
 \[
 a) \; \sum_{n=0}^\infty \frac{x^n}{n+1},\qquad b) \; \sum_{n=0}^\infty \frac{x^n}{2^n},
 \]
@@ -71,9 +73,9 @@ Next, integrate the power series:
 \]
 Equating these two antiderivatives, we have
 \[
-\ln|1+x| = \sum_{n=0}^\infty  (-1)^n \frac{x^{n+1}}{n+1} +C, \; |x| < 1,
+\ln|1+x| = \sum_{n=0}^\infty  (-1)^n \frac{x^{n+1}}{n+1} +C, \; -1 < x \leq 1,
 \]
-which is a power series representation for a logarithmic function.
+which is a power series representation for a logarithmic function. Note that his series converges at $x = 1$.
 
 \begin{remark}[Remark 1]
 If we set $x = 0$, we can find $C$:
@@ -93,9 +95,9 @@ and now we have discovered that the sum of this series is $\ln(2) \approx 0.7$.
 \end{remark}
 
 \begin{remark}[Remark 3]
-Since $|x|<1$, we have $-1 < x< 1$ and so $0 < 1+x < 2$. Hence, we can remove the absolute value bars in the logarithm to obtain:
+Since $-1 < x\leq 1$ and so $0 < 1+x \leq 2$. Hence, we can remove the absolute value bars in the logarithm to obtain:
 \[
-\ln(1+x) = \sum_{n=0}^\infty  (-1)^n \frac{x^{n+1}}{n+1}, \; |x| < 1.
+\ln(1+x) = \sum_{n=0}^\infty  (-1)^n \frac{x^{n+1}}{n+1}, \; -1 < x \leq 1.
 \]
 \end{remark}
 
