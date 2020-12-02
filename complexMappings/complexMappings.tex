@@ -301,33 +301,31 @@ red point outside the disk.
 
 \begin{example}[example 5]
 Find the image of the vertical ray $\Rep z = \frac12, \Imp z > 0$ under the mapping $f(z) = \frac{1}{z}$.\\
-We write $1/z$ in rectangular form:
+The equation $w = 1/z$ is equivalent to the equation $z = 1/w$ where $w$ and $z$ are both non-zero.
+We write $1/w$ in rectangular form:
 \[
-\frac{1}{z} = \frac{\overline{z}}{|z|^2} = \frac{x-iy}{x^2 + y^2}
+z = \frac{1}{w} = \frac{\overline{w}}{|w|^2} = \frac{u-iv}{u^2 + v^2}
+\]
+Thus,
+\[
+x = \frac{u}{u^2+v^2} \quad \text{and} \quad y = -\frac{v}{u^2+v^2}
 \]
 Substituting $x = 1/2$, we have
 \[
-u = \frac{2}{1+4y^2} \quad \mbox{and} \quad v = -\frac{4y}{1+4y^2}
+\frac12 = \frac{u}{u^2+v^2}
 \]
-Note $v < 0$ since $y > 0$. Furthermore, observe that $u$ and $v$ are related by $v = -2uy$. 
-To eliminate $y$ from this last equation, we rewrite the expression for $u$, which gives
+Rearraging we have
 \[
-y = \sqrt{\frac{2-u}{4u}} 
+u^2 - 2u + v^2 = 0
 \]
-Substituting into $v = -2uy$ gives
-\[
-v = -2u\sqrt{\frac{2-u}{4u}} = -\sqrt{u(2-u)} = -\sqrt{2u-u^2}
-\]
-To see what type of curve this is, square both sides :
-\[
-v^2 = 2u - u^2
-\]
-and so $u^2 - 2u + v^2 = 0$.  Completing the square we get
+Completing the square we get
 \[
 (u-1)^2 + v^2 = 1
 \]
-which is the circle $C(1,1)$. Recalling that $v <0$
-we conclude that the image of the ray $x = 1/2, y >0$ is a semi circle in the lower half plane with 
+which is the circle $C(1,1)$.
+
+Note $v < 0$ since $y > 0$.  Recalling that $v <0$
+we conclude that the image of the ray $x = 1/2, y >0$ is a semi-circle in the lower half plane with 
 center at $1$ and radius $1$.
 
 
