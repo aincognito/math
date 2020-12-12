@@ -1,0 +1,386 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\pgfplotsset{compat=1.13}
+
+\outcome{Use the Fundamental Principle of Counting}
+
+\title{1.1 Fundamental Principle of Counting}
+
+\begin{document}
+
+\begin{abstract}
+We use the Fundamental Principle of Counting.
+\end{abstract}
+
+\maketitle
+
+\section{Fundamental Principle of Counting}
+
+Pat has 3 distinct shirts and 2 distinct pairs of pants. Getting dressed requires one of each.  
+In how many ways can Pat get dressed?
+
+
+
+
+\begin{forest}
+  [, circle, fill, inner sep=1pt
+    [80\%, label=left:Data Gathering
+      [70\%, label=left:Data Analysis]
+      [30\%]
+    ]
+    [20\%
+      [90\%]
+      [10\%]
+    ]
+  ]
+\end{forest}
+\end{document}
+
+
+What is a complex number?  The core component of a complex number is the imaginary number $i = \sqrt{-1}$.
+
+\begin{definition}
+A {\bf complex number} is a number of the form $a+bi$ where $a,b \in \mathbb{R}$. 
+The set of all complex numbers is $\mathbb{C}= \{a+bi \,|\, a,b \in \mathbb{R}\}$. 
+The {\bf real part} of $a+bi$ is $a$ and the {\bf imaginary part} of $a+bi$ is $b$.
+\end{definition}
+
+\begin{remark}
+The imaginary part of a complex number is a real number.
+\end{remark}
+
+We use the symbols $\Rep$ and $\Imp$ to denote the real and imaginary parts of a complex number.
+Thus $\Rep(a+bi) = a$ and $\Imp(a+bi) = b$.
+
+
+\begin{example}[Example 1] 
+The following are complex numbers: $2+3i, \; -2i$ and $\sqrt 2$.
+Their real and imaginary parts are:
+\begin{align*}
+(i)& \quad \Rep(2+3i) = 2 \quad \mbox{and} \quad \;\Imp(2+3i) = 3 \\
+(ii)& \quad \Rep(-2i) = 0 \quad \;\;\; \mbox{and} \quad \;\Imp(-2i) = -2 \\
+(iii)& \quad \Rep\left(\sqrt 2\right) = \sqrt 2 \quad \;\mbox{and} \quad \;\Imp\left(\sqrt 2\right) = 0 
+\end{align*}
+
+\end{example}
+
+
+\begin{remark}
+A real number is a complex number, i.e., $\mathbb{R} \subset \mathbb{C}$.
+\end{remark}
+\begin{remark}
+If the real part of a complex number is $0$, then we say that the complex number is purely imaginary. 
+\end{remark}
+
+
+\begin{problem}(Problem 1)
+Find the real and imaginary parts of the following complex numbers: $-3i,\; \pi$ and $-2+i$.
+\begin{align*}
+(i) \quad&\Rep(-3i) = \answer{0} \qquad \quad \; \mbox{and} \quad \; \Imp(-3i) = \answer{-3}\\
+(ii) \quad&\Rep(\pi) = \answer{\pi} \qquad \qquad \; \mbox{and} \quad \;\Imp(\pi) = \answer{0}\\
+(iii) \quad&\Rep(-2+i) = \answer{-2} \qquad \mbox{and} \quad \; \Imp(-2+i) = \answer{1}\\
+\end{align*}
+
+\end{problem}
+
+
+
+Two complex numbers are equal if their real and imaginary parts are both equal. 
+
+
+
+\begin{example}[Example 2]
+The complex numbers $\frac12 - \frac13 i$ and $0.5 - 0.{\overline 3}i$ are equal since
+$\frac12 = 0.5$ and $-\frac13 = -0.{\overline 3}$.
+\end{example}
+
+\begin{problem}(Problem 2)
+Which of the following complex numbers are equal?
+
+\begin{selectAll}
+\choice[correct]{$1 + 0.125i$ \quad and \quad $0.{\overline 9} + \frac18 i$}
+\choice[correct]{$\cos(\pi/6) + i\sin(\pi/6)$ \quad and \quad $\frac{\sqrt 3}{2} + \frac12 i$}
+\choice{$e + \pi i$ \quad and \quad $2.72 + 3.14i$}
+\end{selectAll}
+
+\end{problem}
+
+
+
+\section{Addition of Complex Numbers}
+
+Complex numbers are added component-wise:
+\[
+(a+bi) + (c+di) = (a+c) + (b+d)i
+\]
+
+Complex addition is commutative and associative since the addition of real numbers is commutative and associative.
+
+\begin{example}[Example 3]
+Compute the following sums:
+\begin{align*}
+(i)& \quad (3+4i) + (5+6i) = 8+10i \\
+(ii)& \quad (3+2i) + (3-2i) = 6 \\
+(iii)& \quad (4+i) - (4-i) = 2i
+\end{align*}
+
+\end{example}
+
+
+\begin{problem}(Problem 3)
+Compute the following sums:
+\begin{align*}
+(i)& \quad (2+3i) + (4+5i) = \answer{6+8i} \\
+(ii)& \quad(5+2i) + (5-2i) = \answer{10}\\
+(iii)& \quad(6-3i) - (6+3i) = \answer{-6i}
+\end{align*}
+\end{problem}
+
+\section{Multiplication of Complex Numbers}
+Complex numbers are multiplied in the same way as binomials, using the fact that $i^2 = -1$:
+\[
+(a+bi)(c+di) = ac + adi + bci + (bi)(di) = (ac-bd) + (ad+bc)i
+\]
+
+Complex multiplication is commutative and associative since the multiplication of real numbers is commutative and associative.
+
+\begin{example}[Example 4]
+Compute the following products:
+\begin{align*}
+(i)& \quad (3+4i) \cdot (5+6i) = 15 + 18i + 20i - 24 = -9 + 38i \\
+(ii)& \quad (3+2i) \cdot (3-2i) = 9-6i+6i+4=13 \\
+(iii)& \quad 5(2i) = 10i
+\end{align*}
+
+\end{example}
+
+
+\begin{problem}(Problem 4)
+Compute the following products:
+\begin{align*}
+(i)& \quad (2+3i) \cdot (4+5i) = \answer{-7+22i}\\
+(ii)& \quad (3-i) \cdot (2-3i) = \answer{3-11i}\\
+(iii)& \quad (4+i) \cdot (4-i) = \answer{17}\\
+(iv)& \quad -4(3i)= \answer{-12i}
+\end{align*}
+\end{problem}
+
+
+\section{The Powers of $i$}
+An alternative to stating that $i = \sqrt {-1}$ is to say $i^2 = -1$. This leads us to compute the powers of $i$.
+
+\begin{example}[Example 5]
+Compute the each of the following powers: $i^3, i^4$ and $i^{75}$.
+\begin{align*}
+(i)& \quad i^3 = (i^2)(i) = (-1)(i) =-i\\
+(ii)& \quad i^4 = (i^2)(i^2) = (-1)(-1) = 1\\
+(iii)& \quad i^{75} = (i^{72})(i^3) = i^3 = -i
+\end{align*}
+Note that in part $(iii), i^{72} =1$ since $i^4 =1$ and $72$ is a multiple of $4$.
+\end{example}
+
+
+\begin{problem}(Problem 5)
+Compute the following powers of $i$:
+\begin{align*}
+(i)& \quad i^5 = \answer{i}\\
+(ii)& \quad i^{50} = \answer{-1}\\
+(iii)& \quad i^{103}= \answer{-i}
+\end{align*}
+\end{problem}
+
+
+
+\section{The Complex Conjugate}
+
+\begin{definition}[Complex Conjugate]
+The {\bf complex conjugate} of a complex number $a+bi$ is defined as
+\[
+\overline {a+bi} = a-bi
+\]
+\end{definition}
+
+\begin{example}[Example 6]
+Find the complex conjugate:
+\begin{align*}
+(i)& \quad \overline {2+3i} = 2-3i \\
+(ii)& \quad \overline {1-i} = 1+i \\
+(iii)& \quad \overline {75} = 75 \\
+(iv)& \quad \overline {4i} = -4i
+\end{align*}
+\end{example}
+
+
+\begin{problem}(Problem 6)
+Find the complex conjugate:
+\begin{align*}
+(i)& \quad {\overline {3+2i}} = \answer{3-2i} \\
+(ii)& \quad {\overline {4-5i}} = \answer{4+5i}\\
+(iii)& \quad {\overline {26}}= \answer{26}\\
+(iv)& \quad {\overline {-7i}}= \answer{7i}
+\end{align*}
+\end{problem}
+
+
+If we multiply a complex number by its conjugate, we get a real number:
+\[
+(a+bi)  \cdot \overline{(a+bi)} = (a+bi)(a-bi) = a^2 +b^2
+\]
+
+\begin{example}[Example 7]
+Multiply the complex conjugates:
+\begin{align*}
+(i)& \quad (2+5i) \overline {(2+5i)} = 2^2 + 5^2 = 29\\
+(ii)& \quad (1-i) \overline {(1-i)} = 1^2 + (-1)^2 = 2
+\end{align*}
+\end{example}
+
+\begin{problem}(Problem 7)
+Multiply the complex conjugates:
+\begin{align*}
+(i)& \quad (6+2i) \overline{(6+2i)} = \answer{2\sqrt{10}} \\
+(ii)& \quad (3-4i) \overline {(3-4i)} = \answer{25}
+\end{align*}
+\end{problem}
+
+
+\section{Division of Complex Numbers}
+To divide complex numbers, we use the complex conjugate:
+\[
+\frac{a+bi}{c+di} = \frac{a+bi}{c+di}\cdot\frac{c-di}{c-di} = \frac{(a+bi)(c-di)}{c^2 + d^2} = \left(\frac{ac+bd}{c^2 + d^2}\right) + \left(\frac{bc-ad}{c^2 + d^2}\right)i
+\]
+
+
+\begin{example}[Example 8]
+Divide the complex numbers:
+\[
+\frac{3+2i}{4-5i} 
+\]
+Begin by multiplying the numerator and denominator by the conjugate of the denominator.
+We have
+\begin{align*}
+\frac{3+2i}{4-5i} &= \frac{3+2i}{4-5i} \cdot \frac{{\overline{4-5i}}}{{\overline{4-5i}}} \\[9 pt]
+                  &= \frac{(3+2i)(4+5i)}{4^2 +(-5)^2}\\[8pt]
+                  &= \frac{2+23i}{41}\\[7pt]
+                  &= \frac{2}{41} + \frac{23}{41}i
+\end{align*}
+\end{example}
+
+
+\begin{problem}(Problem 8)
+Divide the complex numbers:
+\begin{align*}
+(i)& \quad  \frac{7+3i}{8+5i} = \answer{\frac{71}{89} -\frac{11}{89}i}\\
+(ii)& \quad\frac{1+i}{1-i} = \answer{i}\\
+(iii)& \quad\frac{4+i}{i} = \answer{1-4i}\\
+(iv)& \quad\frac{1}{6+8i} = \answer{\frac{6}{100} - \frac{8}{100}i}
+\end{align*}
+\end{problem}
+
+
+\begin{problem}(Problem 9)
+Find the following quantities:
+\begin{align*}
+(i)& \quad \Rep\left[(4+3i)\overline{(2+i)}\right] = \answer{11}\\
+(ii)& \quad \Imp\left[(1+i)^3\right] = \answer{2}\\
+(iii)& \quad \overline{\left(\frac{1}{i^7}\right)} = \answer{-i}\\
+(iv)& \quad \overline{\overline{(5-2i)}} = \answer{5-2i}
+\end{align*}
+\end{problem}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here is a video of Example 1}
+\youtube{###} %vid of example 1
+\end{foldable}
+\end{center}
+
+\begin{problem} (Problem 1)
+  Problem statement
+  
+    \begin{hint}
+      Hint goes here
+    \end{hint}
+    
+    
+		
+		answer box:
+		 $\answer[given]{number}$
+
+\end{problem}
+
+
+
+
+
+
+
+\begin{example}[Example 15]
+
+\end{example}
+
+%more question formats below
+
+
+
+
+%\begin{verbatim}
+\begin{question}
+What is your favorite color?
+\begin{multipleChoice}
+\choice[correct]{Rainbow}
+\choice{Blue}
+\choice{Green}
+\choice{Red}
+\end{multipleChoice}
+\begin{freeResponse}
+Hello
+\end{freeResponse}
+\end{question}
+%\end{verbatim}
+
+
+
+
+
+\begin{question}
+  Which one will you choose?
+  \begin{multipleChoice}
+    \choice[correct]{I'm correct.}
+    \choice{I'm wrong.}
+    \choice{I'm wrong too.}
+  \end{multipleChoice}
+\end{question}
+
+
+\begin{question}
+  Which one will you choose?
+  \begin{selectAll}
+    \choice[correct]{I'm correct.}
+    \choice{I'm wrong.}
+    \choice[correct]{I'm also correct.}
+    \choice{I'm wrong too.}
+  \end{selectAll}
+\end{question}
+
+
+\begin{freeResponse}
+What is the chain rule used for?
+\end{freeResponse}
