@@ -24,25 +24,25 @@ In how many ways can Pat get dressed?\\
 We make a tree diagram to determine the possible outfits Pat can create.
 \begin{image}
 \begin{tikzpicture}
-\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(0,0)} node[above, blue]{Pat};
+\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(0,0)} node[left, blue]{Pat\; };
 \draw (0,0) -- (3,4) ;
-\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(3,4)} node[above, blue]{Shirt 1};
+\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(3,4)} node[left, blue]{Shirt 1\, };
 \draw (0,0) -- (3,0) ;
-\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(3,0)} node[above, blue]{Shirt 2};
+\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(3,0)} node[above left, blue]{Shirt 2 \,};
 \draw (0,0) -- (3,-4) ;
-\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(3,-4)} node[above, blue]{Shirt 3};
+\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(3,-4)} node[left, blue]{Shirt 3 \,};
 \draw (3,4) -- (6,5) ;
-\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(6,5)} node[above, blue]{Pants 1};
+\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(6,5)} node[right, blue]{ \,Pants 1};
 \draw (3,4) -- (6,3) ;
-\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(6,3)} node[above, blue]{Pants 2};
+\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(6,3)} node[right, blue]{\, Pants 2};
 \draw (3,0) -- (6,1) ;
-\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(6,1)} node[above, blue]{Pants 1};
+\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(6,1)} node[right, blue]{ \,Pants 1};
 \draw (3,0) -- (6,-1) ;
-\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(6,-1)} node[above, blue]{Pants 2};
+\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(6,-1)} node[right, blue]{\, Pants 2};
 \draw (3,-4) -- (6,-3) ;
-\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(6,-3)} node[above, blue]{Pants 1};
+\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(6,-3)} node[right, blue]{\, Pants 1};
 \draw (3,-4) -- (6,-5) ;
-\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(6,-5)} node[above, blue]{Pants 2};
+\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(6,-5)} node[right, blue]{\,Pants 2};
 \end{tikzpicture}
 \end{image}
 Each node on the far right of the tree diagram represents a different way for Pat to dress. From top to bottom, 
