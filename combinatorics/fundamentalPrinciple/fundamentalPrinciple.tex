@@ -19,7 +19,7 @@ We use the Fundamental Principle of Counting.
 \section{Fundamental Principle of Counting}
 
 \begin{example}[example 1]
-Pat has 3 distinct shirts and 2 distinct pairs of pants. Getting dressed requires one of each.  
+Pat has three distinct shirts and two distinct pairs of pants. Getting dressed requires one of each.  
 In how many ways can Pat get dressed?\\
 We make a tree diagram to determine the possible outfits Pat can create.
 \begin{image}
@@ -45,12 +45,28 @@ We make a tree diagram to determine the possible outfits Pat can create.
 \draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(6,-5)} node[right, blue]{\,Pants 2};
 \end{tikzpicture}
 \end{image}
-Each node on the far right of the tree diagram represents a different way for Pat to dress. From top to bottom, 
-these nodes represent the outfits: Shirt 1 with Pants 1, Shirt 1 with Pants 2, Shirt 2 with Pants 1, 
+Each path from Pat to a node on the far right of the tree diagram represents a different way for Pat to dress. From top to bottom, 
+these represent the following outfits: Shirt 1 with Pants 1, Shirt 1 with Pants 2, Shirt 2 with Pants 1, 
 Shirt 2 with Pants 2, Shirt 3 with Pants 1 and Shirt 3 with Pants 2. 
-Since there are 6 of these nodes, Pat can dress in 6 different ways.
+Since there are 6 total paths, Pat can dress in 6 different ways.
 
 \end{example}
+
+\begin{problem}(problem 1a)
+Sam is getting dressed and wants to include a belt and a hat.  
+If Sam has three distinct belts and two distinct hats, how many ways
+can Sam accessorize? Include a tree diagram that illustrates the possibilities.\\
+Sam can accessorize is \; $\answer{6}$\; different ways.
+\end{problem}
+
+\begin{problem}(problem 1b)
+A couple wants to go on a date.  They decide to  eat at a restaurant, walk in a park and then see a show.
+If there are two restaurants that the y both like, two nearby parks and two shows playing, 
+how many possibilities are there for their date? Make a tree diagram illustrating the possibilities.\\
+There are $\;\answer{8}\;$ different possibilities for their date.
+\end{problem}
+
+
 \end{document}
 
 
