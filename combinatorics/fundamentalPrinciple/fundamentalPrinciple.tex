@@ -109,14 +109,47 @@ If no student may serve in more than one post, in how many possible ways can the
 The total number of ways to select the class officers is $\answer{116280}$.
 \end{problem}
 
+
+\begin{example}[example 3]
+Suppose License plates consist of three letters followed by three digits. How many license plates are possible?\\
+Altogether, there are six decisions to be made. By the Fundamental Principle of Counting, the answer is the
+product of the number of choices for each decision.
+
+\begin{image}
+\begin{tikzpicture}[scale = .8]
+
+\draw (0,0) -- (2,0) node[blue, below, midway]{$1^{st}$ letter} node[above, midway]{26} node[right]{$\times$};
+\draw (2.5,0) -- (4.5,0) node[blue, below, midway]{$2^{nd}$ letter} node[above, midway]{26} node[right]{$\times$};
+\draw (5,0) -- (7,0) node[blue, below, midway]{$3^{rd}$ letter} node[above, midway]{26} node[right]{$\times$};
+\draw (7.5,0) -- (9.5,0) node[blue, below, midway]{$1^{st}$ digit} node[above, midway]{10} node[right]{$\times$};
+\draw (10,0) -- (12,0) node[blue, below, midway]{$2^{nd}$ digit} node[above, midway]{10} node[right]{$\times$};
+\draw (12.5,0) -- (14.5,0) node[blue, below, midway]{$3^{rd}$ digit} node[above, midway]{10} node[right]{$=$};
+\draw (15,0) -- (17,0) node[blue, below, midway]{Total} node[above, midway]{$26^3 10^3$} ;
+\end{tikzpicture}
+\end{image}
+Thus the total number of such license plates is $26 \cdot 26 \cdot 26 \cdot 10\cdot 10\cdot 10 = 17,576,000$.
+
+\end{example}
+
+\begin{problem}(problem 3)
+Suppose telephone numbers consist of 7 digits, the first of which cannot be 0 or 1.  
+How many such telephone numbers are possible?\\
+$\answer{8000000}$
+
+\end{problem}
+
 \end{document}
 
 
 
+\begin{example}[example ]
+
+\end{example}
 
 
+\begin{problem}(problem )
 
-
+\end{problem}
 
 
 
