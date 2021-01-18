@@ -1,0 +1,281 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\pgfplotsset{compat=1.13}
+
+\outcome{Compute Ramsey Numbers}
+
+\title{3.2 Ramsey Theory}
+
+\begin{document}
+
+\begin{abstract}
+We compute Ramsey numbers in small cases
+\end{abstract}
+
+\maketitle
+
+\section{Ramsey Theory}
+
+In this section we consider graph colorings. That is, each edge in a graph will be assigned a particular color.
+The graph below is a $K_3$ colored with red and blue edges. The vertices represent people and the color represents whether
+they know each other (red) or not (blue).
+
+\begin{image}
+\begin{tikzpicture}
+\draw[fill] (0,0) circle (1pt) node[left]{A};
+\draw[fill] (2,0) circle (1pt) node[right]{B};
+\draw[fill] (1,1) circle (1pt)node[above]{C};
+\draw[red] (0,0) -- (2,0);
+\draw[blue] (0,0) -- (1,1);
+\draw[blue] (2,0) -- (1,1);
+\node at (1,-0.5) {A and B know each other,};
+\node at (1, -1){B and C do not};
+\end{tikzpicture}
+\end{image}
+
+The Pigeon Hole Principle suggests that in a $K_3$ with two colors, there must be two of the same color.
+Hence, in a group of three people, there are at least 2 pairs of people that know each other or 
+two pairs of people that do not.
+
+\begin{image}
+\begin{tikzpicture}
+\draw[fill] (0,0) circle (1pt) node[left]{A};
+\draw[fill] (2,0) circle (1pt) node[right]{B};
+\draw[fill] (1,1) circle (1pt)node[above]{C};
+\draw[red] (0,0) -- (2,0);
+\draw[red] (0,0) -- (1,1);
+\draw[red] (2,0) -- (1,1) ;
+\node at (1,-0.5){Three people, each of whom knows the others};
+\end{tikzpicture}
+\end{image}
+
+\begin{image}
+\begin{tikzpicture}
+\draw[fill] (0,0) circle (1pt) node[left]{A};
+\draw[fill] (2,0) circle (1pt) node[right]{B};
+\draw[fill] (1,1) circle (1pt)node[above]{C};
+\draw[blue] (0,0) -- (2,0)node[midway,below = 6pt, black]{Three people, none of whom knows another};
+\draw[blue] (0,0) -- (1,1);
+\draw[blue] (2,0) -- (1,1) ;
+\end{tikzpicture}
+\end{image}
+
+A fundamental question in Ramsey Theory is: how many people are needed in order to ensure that 
+there is a subgroup of 3 people that are either mutually acquainted or mutually unacquainted?
+In terms of graphs with edge colorings, what is the smallest value of $n$ such that $K_n$ with 2 colors 
+must contain a monochromatic $K_3$? This value of $n$ is known as a Ramsey Number and denoted $R(3,3)$
+
+\begin{image}
+\begin{tikzpicture}
+\draw[fill] (0,0) circle (1pt)node[ left]{A} ;
+\draw[fill] (2,0) circle (1pt)node[right]{D} ;
+\draw[fill] (0,2) circle (1pt)node[left]{B};
+\draw[fill] (2,2) circle (1pt)node[right]{C};
+\draw[blue] (0,0) -- (2,0)node[midway,below = 6pt, black]{$K_4$ with no monochromatic $K_3$};
+\draw[red] (0,0) -- (2,2);
+\draw[red] (0,0) -- (0,2) ;
+\draw[blue] (2,0) -- (0,2) ;
+\draw[red] (2,0) -- (2,2) ;
+\draw[blue] (2,2) -- (0,2) ;
+\end{tikzpicture}
+\end{image}
+
+The figure above shows that $R(3,3) > 4$. 
+
+\begin{problem}(problem 1) 
+Show that $R(3,3) > 5$ by exhibiting an edge coloring on $K_5$ that does not contain a monochromatic $K_3$
+\end{problem}
+
+We now prove that $R(3,3) = 6$. 
+
+\begin{theorem}[$R(3,3) = 6$]
+The smallest number of vertices $n$ for which a $K_n$ with edges colored red and blue must contain a 
+monochromatic $K_3$ is 6, i.e., $R(3,3) = 6$.
+% $K_6$ with blue and red edge colorings must contain a monochromatic $K_3$
+%and $6$ is the smallest number of vertices for which this is true.
+\end{theorem}
+\begin{proof}
+Consider a $K_6$ with edges colored red and blue. 
+We must show that it contains a monochromatic $K_3$. Let $V$ be any vertex in the $K_6$. 
+V has 5 edges emanating from it.  By the Pigeon Hole Principle, there must be at least 3 of the same color.
+
+\begin{image}
+\begin{tikzpicture}
+\draw[fill] (0,0) circle (1pt)node[ left]{V} ;
+\draw[fill] (2,2) circle (1pt)node[right]{A} ;
+\draw[fill] (2,1) circle (1pt)node[right]{B};
+\draw[fill] (2,0) circle (1pt)node[right]{C};
+\draw[fill] (2,-1) circle (1pt)node[right]{D};
+\draw[fill] (2,-2) circle (1pt)node[right]{E};
+\draw[red] (0,0) -- (2,2);
+\draw[red] (0,0) -- (2,1);
+\draw[red] (0,0) -- (2,0) ;
+\draw[blue] (0,0) -- (2,-1) ;
+\draw[blue] (0,0) -- (2,-2) ;
+\end{tikzpicture}
+\end{image}
+
+Without loss of generality, assume $V$ is connected to vertices $A, B$ and $C$ with red edges, as pictured above. 
+Then consider the $K_3$ embedded in the $K_6$ consisting of vertices $A, B$ and $C$.
+If this $K_3$ contains a red edge, say from $A$ to $B$, then the $K_3$ formed by $V, A$ and $B$ is monochromatic (red).
+If the $K_3, (A, B, C)$ does not contain a red edge, then IT is a monochromatic $K_3$ (blue).
+Either way, the $K_6$ must contain a monochromatic $K_3$. Finally, since $R(3,3) > 5$ we can conclude that $R(3,3) = 6$.
+
+\end{proof}
+
+
+We can use more than two colors. Suppose we use green, red and blue to color the edges of $K_n$. 
+What is the minimum value of $n$ that guarantees a monochromatic $K_3$? This Ramsey Number is denoted $R(3,3,3)$.
+
+\begin{theorem}[$R(3,3,3) = 17$]
+Let $V$ be a vertex of $K_{17}$ with edges colored green, red and blue. There are 16 edges emanating from $V$.
+By the Pigeon Hole Principle, there must be at least 6 of one color (otherwise, we would have at most 5 of each color
+and 5+5+5 = 15 <16).  Which color this is is unimportant, so let's say it is green. Thus we can say that the vertex $V$ is 
+joined to the vertices $A_1, A_2, A_3, A_4, A_5, A_6$ by green edges. Now, if any of the edges connecting an $A_i$
+with an $A_j$ are green, then $V, A_i, A_j$ would be a green $K_3$ and hence the $K_{17}$ would have a monochromatic 
+$K_3$ as claimed. So now we must consider the possibility that none of the edges connecting and $A_i$ to any other $A_j$
+is colored green.  In this case, all of the edges among the 6 vertices $A_1, A_2, ..., A_6$ would be 
+colored either red or blue.  Thus we would have a $K_6$ colored with two colors embedded in our $K_{17}$.  
+By the previous theorem, $R(3,3) = 6$, so we are guaranteed that this embedded $K_6$ contains a monochromatic $K_3$.
+We can now conclude that $R(3,3,3) \leq 17$. To see that it is actually 17, we must exhibit a coloring of $K_16$ with three 
+colors that does not contain  a monochromatic $K_3$.  
+The standard example is pictured below. The three identical monochromatic subgraphs are know as the Clebsch graph.
+
+\begin{image}
+\includegraphics{K16}
+\end{image}
+
+\end{theorem}
+
+\begin{problem}
+Suppose $K_n$ is colored using 4 colors: yellow, green, red and blue. The smallest value of $n$ that guarantees
+a monochromatic $K_3$ is denoted $R(3,3,3,3)$. Show that $R(3,3,3,3) \leq 66$
+\begin{hint}
+Use the fact that $R(3,3,3) = 17$
+\end{hint}
+How many edges must emanate from a vertex $V$ in $K_n$ to ensure that there are at least 17 of one color? $\answer{65}$
+How many vertices must a graph have to be sure that this many edges emanate from each vertex? $\answer{66}$
+
+\end{problem}
+
+\end{document}
+
+
+\begin{example}[example 1]
+Pat has three distinct shirts and two distinct pairs of pants. Getting dressed requires one of each.  
+In how many ways can Pat get dressed?\\
+We make a tree diagram to determine the possible outfits Pat can create.
+\begin{image}
+\begin{tikzpicture}
+\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(0,0)} node[left, blue]{Pat\; };
+\draw (0,0) -- (3,4) ;
+\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(3,4)} node[left, blue]{Shirt 1\, };
+\draw (0,0) -- (3,0) ;
+\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(3,0)} node[above left, blue]{Shirt 2 \,};
+\draw (0,0) -- (3,-4) ;
+\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(3,-4)} node[left, blue]{Shirt 3 \,};
+\draw (3,4) -- (6,5) ;
+\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(6,5)} node[right, blue]{ \,Pants 1};
+\draw (3,4) -- (6,3) ;
+\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(6,3)} node[right, blue]{\, Pants 2};
+\draw (3,0) -- (6,1) ;
+\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(6,1)} node[right, blue]{ \,Pants 1};
+\draw (3,0) -- (6,-1) ;
+\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(6,-1)} node[right, blue]{\, Pants 2};
+\draw (3,-4) -- (6,-3) ;
+\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(6,-3)} node[right, blue]{\, Pants 1};
+\draw (3,-4) -- (6,-5) ;
+\draw[mark=*,mark size=3pt,mark options={color=blue}] plot coordinates {(6,-5)} node[right, blue]{\,Pants 2};
+\end{tikzpicture}
+\end{image}
+Each path from Pat to a node on the far right of the tree diagram represents a different way for Pat to dress. From top to bottom, 
+these represent the following outfits: Shirt 1 with Pants 1, Shirt 1 with Pants 2, Shirt 2 with Pants 1, 
+Shirt 2 with Pants 2, Shirt 3 with Pants 1 and Shirt 3 with Pants 2. 
+Since there are 6 total paths, Pat can dress in 6 different ways.
+
+\end{example}
+
+\begin{problem}(problem 1a)
+Sam is getting dressed and wants to include a belt and a hat.  
+If Sam has three distinct belts and two distinct hats, how many ways
+can Sam accessorize? Include a tree diagram that illustrates the possibilities.\\
+Sam can accessorize in $\; \answer{6} \;$ different ways.
+\end{problem}
+
+\begin{problem}(problem 1b)
+A couple wants to go on a date.  They decide to  eat at a restaurant, walk in a park and then see a show.
+If there are two restaurants that the y both like, two nearby parks and two shows playing, 
+how many possibilities are there for their date? Make a tree diagram illustrating the possibilities.\\
+There are $\;\answer{8}\;$ different possibilities for their date.
+\end{problem}
+
+
+\begin{theorem}[Fundamental Principle of Counting]
+Suppose that $n$ decisions are to be made and that the number of choices for the $k^{th}$ decision is $d_k$.
+Then the total number of ways to make the $n$ decisions is
+\[
+\prod_{k=1}^n d_k = d_1 \cdot d_2 \cdot \ldots \cdot d_n
+\]
+\end{theorem}
+
+\begin{example}
+There are three types of Tesla Model 3: Standard Range, Long Range and Performance. 
+Each type can be painted one of 5 colors. Furthermore, two interior color schemes are available. 
+Given these parameters, how many choices are there for my Tesla Model 3 purchase?\\
+In total, three decisions must be made: the type, the paint color and the interior color scheme.
+The number of choices for each decision is 3, 5 and 2 respectively. 
+Hence, by the Fundamental Principle of Counting, the total number of ways to configure my new 
+Tesla Model 3 is $3 \cdot 5\cdot 2 = 30$.
+\begin{image}
+\begin{tikzpicture}
+
+\draw (0,0) -- (2,0) node[blue, below, midway]{Type} node[above, midway]{3} node[right]{$\times$};
+\draw (2.5,0) -- (4.5,0) node[blue, below, midway]{Paint} node[above, midway]{5} node[right]{$\times$};
+\draw (5,0) -- (7,0) node[blue, below, midway]{Interior} node[above, midway]{2} node[right]{$=$};
+\draw (7.5,0) -- (9.5,0) node[blue, below, midway]{Total} node[above, midway]{30} ;
+
+\end{tikzpicture}
+\end{image}
+\end{example}
+
+
+\begin{problem}(problem 2a)
+A three course meal consists of an appetizer, an entree and a dessert. 
+If a restaurant offers a dozen appetizers, a score of entrees and a bakers dozen desserts, 
+how many possible three course meals can be ordered?\\
+The total number of possible three course meals is $\answer{3120}$.
+\end{problem}
+
+\begin{problem}(problem 2b)
+A sixth grade class of 20 students would like to select a President, Vice-President, Secretary and Treasurer.
+If no student may serve in more than one post, in how many possible ways can the class officers be selected?\\
+The total number of ways to select the class officers is $\answer{116280}$.
+\end{problem}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
