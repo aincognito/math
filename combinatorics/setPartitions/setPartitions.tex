@@ -113,7 +113,7 @@ for the hat: $|S| = 3 \times 2 \times 15 = 90$.
 
 \begin{example}[example 3]
 Sam wants to buy a slice of pizza.  
-Sam enjoys three styles of pizza: Neopolitan, Chicago and Sicilian, 
+Sam enjoys three styles of pizza: Neapolitan, Chicago and Sicilian, 
 and either eats the pizza plain or with pepperoni.  
 How many different slices of pizza can Sam order?\\
 If we denote by $S$ the set of all possible acceptable slices of pizza, 
@@ -125,6 +125,20 @@ hence, the total number of possible slices Sam can order is
 \]
 \end{example}
 
+\begin{example}[example 4]
+Alex and Charlie want to have 2 or fewer children.  
+How many combinations of boys and girls are possible assuming 
+that birth order of each gender is irrelevant?\\
+
+If $S$ is the set of all possible genders of their children, then we can partition $S$ according to the number of children. Let $S_0$ be the number of ways for them to have 0 children. Then $|S_0| = 1$ because the only way to have 0 children is to have 0 boys and 0 girls. Let $S_1$ be the number of ways for them to have 1 child. Then $|S_0| = 2$ because they can have 1 boy and 0 girls or 1 girl and 0 boys.
+ Let $S_2$ be the number of ways for them to have 2 children. Then $|S_2| = 2$ because they
+ can have 2 boys and 0 girls, 2 girls and 0 boys or 1 of each.
+ Thus the total number of combinations of boys and girls that they can have is
+ \[
+ |S| = |S_0|+|S_1|+|S_2|= 1 + 2+3 = 6
+ \]
+ \end{example}
+ 
 
 \end{document}
 
