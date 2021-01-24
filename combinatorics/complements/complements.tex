@@ -1,0 +1,205 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\pgfplotsset{compat=1.13}
+
+\outcome{Use complements to count the number of elements in a set}
+
+\title{1.3 Complements}
+
+\begin{document}
+
+\begin{abstract}
+We use complements to enumerate sets.
+\end{abstract}
+
+\maketitle
+
+\section{The complement}
+
+
+
+\begin{definition}[Complement]
+Given a universal set $U$ and a subset, $S \subset U$, we dfine the complement of $S$, denoted, $S^c$ by
+\[
+S^c = \{x \in U | x \notin S \}
+\]
+\end{definition}
+
+\begin{remark} The sets $S$ and $S^c$ form a partition of $U$.
+\end{remark}
+\begin{image}
+\begin{tikzpicture}
+\draw (0,0) -- (0,2) -- (3.2,2) -- (3.2, 0) -- (0,0);
+\draw (1.6, 1) circle (0.7);
+\node at (1.4,0.8) {$S$};
+\node at (2.6,1.5) {$S^c$};
+\node at (3.5,0.5) {$U$};
+\node at (1.6,-0.5) {$S$ and $S^c$};
+\end{tikzpicture}
+\end{image}
+
+\begin{proposition}[Rule for Complements]
+The number of elements in $S$ is the number of elements in $U$ minus the number of elemetns in $S^c$:
+\[
+|S| = |U| - |S^c|
+\]
+\end{proposition}
+
+We will denote the number of elements in a set $S$ by $|S|$. The main result
+ is that the number of elements in a set is the sum of the elements in each 
+subset of the partition:
+\[
+|S| = |S_1| + |S_2|+ \cdots + |S_n|
+\]
+where $S_1, S_2, ..., S_n$ is a partition of $S$.
+
+\begin{example}[example 1]
+Two 6-sided dice are thrown, one of which is red and the other green.  
+In how many ways can at least one 6 be rolled.\\
+We let $U$ be the set of all 36 possible outcomes of the form (red, green).
+The set $S$ which we would like to enumerate is the subset of $U$ which contains a 6 as a component in at least one position.
+The complement, $S^c$, is the set of outcomes which do not contain a 6 in either the red or the green component. It is easier to count the number of elements in $S^c$ than it is to count the number of elements in $S$, so we will use the rule for Complements.
+\[
+|S^c| = 5 \cdot 5 = 25
+\]
+since each component can be a number from 1 to 5. Now, the Rule for Complements gives
+\[
+|S| = |U| - |S^c| = 36 - 25 = 11
+\]
+Thus there are 11 outcomes where at least one of the die rolls is a 6.
+\end{example}
+
+
+\begin{problem}(problem 1a)
+Two 6-sided dice are thrown, one of which is red and the other green.  
+In how many ways can at least one 4 be rolled?\\
+The number of outcomes with at least one 4 is $\answer{11}$.
+\end{problem}
+
+\begin{problem}(problem 1b)
+Two 6-sided dice are thrown, one of which is red and the other green.  
+In how many ways can their sum be at least 3?\\
+The number of outcomes whose sum is at least 3 is $\answer{35}$.
+\end{problem}
+
+
+\begin{example}[example 2]
+Two 6-sided dice are thrown, one of which is red and the other green.  
+In how many ways can the sum be at most 10?\\
+We let $U$ be the set of all 36 possible outcomes of the form (red, green).
+The set $S$ which we would like to enumerate is the subset of $U$ whose components sum to at most 10. This means that their sum can be 2, 3, 4, ..., 10. This is most of the possible sums, so most likely, it will be easier to enumerate $S$ by examining its complement.
+$S^c$ contains the outcomes whose sum is more than 10. That is, the sum is either 11 or 12. There are tow outcomes that give a sum of 11, namely $(5,6)$ and $(6,5)$ and there is one outcome that gives a sum of 12, $(6,6)$. Thus
+\[
+|S^c| = 2 + 1 = 3
+\]
+Note that $S^c$ was partitioned into two substes here.
+Now, by the Rule for Complements,
+\[
+|S| = |U| - |S^c| = 36 -3 = 33
+\]
+Thus there are 33 outcomes which have a sum of at most 10.
+\end{example}
+
+
+\begin{problem}(problem 2)
+Two 6-sided dice are thrown, one of which is red and the other green.  
+In how many ways can their sum be at least 5?\\
+The number of outcomes whose sum is at least 5 is $\answer{30}$.
+\end{problem}
+
+\begin{example}[example 3]
+Computer passwords are eight characters long where a character can be either an upper case letter, 
+lower case letter, digit 0-9, or one of 8 special symbols. 
+How many passwords are possible if a password must contain at least one special symbol?\\
+With no restrictions on the symbols, we have seen that the total number of possibilities is 
+\[
+|U| = 70^8 = 576480100000000
+\]
+To enumerate the passwords with at least one special symbol, it will be helpful to consider the complement. 
+That is, passwords with no special symbols. If we use only capital letters, 
+lower case letters and digits only to construct our password, then there are
+\[
+|S^c| = 62^8 = 218340105584896
+\]
+possibilities. Thus, the Rule for Complements tells us tha tthe number of passwords which contain at least one
+special symbol is
+\[
+|S| = |U| - |S^c| = 70^8 - 62^8 = 358139994415104
+\]
+Thus there are over 358 trillion possible passwords if we insist on at least one special symbol.
+\end{example}
+
+\begin{problem}(problem 2)
+Computer passwords are eight characters long where a character can be either an upper case letter, 
+lower case letter, digit 0-9, or one of 8 special symbols. 
+How many passwords are possible if a password must contain at least one capital letter?\\
+The number of passwords with at least one capital letter is  $\answer{70^8 - 44^8}$.
+\end{problem}
+\end{document}
+
+
+\begin{example}[example 2] Steph has three different shirts, 
+two different pairs of pants and 14 different hats. 
+How many ways can Steph dress if the hat is optional?\\
+If we denote by $S$ the set of all possible outfits Steph can wear, 
+then we can partition $S$ into those outfits with a hat, $S_h$, 
+and those without a hat, $S_{nh}$.
+The number of outfits with a hat is $|S_h| = 3 \times 2 \times 14 = 84$ and 
+the number of outfits with no hat is $|S_{nh}| = 3\times 2 = 6$. 
+Thus, the total number of ways for Steph to dress is 
+\[
+|S| = |S_h| + |S_{nh}| = 84 + 6 = 90
+\]
+Note that we could have counted this slightly 
+differently, by including ``no hat" as a $15^{th}$ option 
+for the hat: $|S| = 3 \times 2 \times 15 = 90$.
+\end{example}
+
+\begin{problem}(problem 1c)
+Two 6-sided dice are thrown, one of which is red and the other green.  
+In how many ways can their sum be at least 5?\\
+The number of outcomes whose sum is at least 5 is  $\answer{18}$.
+\end{problem}
+
+
+\begin{example}[example 3]
+Sam wants to buy a slice of pizza.  
+Sam enjoys three styles of pizza: Neapolitan, Chicago and Sicilian, 
+and either eats the pizza plain or with pepperoni.  
+How many different slices of pizza can Sam order?\\
+If we denote by $S$ the set of all possible acceptable slices of pizza, 
+then we can partition $S$ into the slices that have pepperoni, $S_p$ and 
+those that do not, $S_{np}$. The number of slices of each is 3 and 
+hence, the total number of possible slices Sam can order is
+\[
+|S| = |S_p| + |S_{np}| = 3+3 =6
+\]
+\end{example}
+
+\begin{example}[example 4]
+Alex and Charlie want to have 2 or fewer children.  
+How many combinations of boys and girls are possible assuming 
+that birth order of each gender is irrelevant?\\
+
+If $S$ is the set of all possible genders of their children, then we can partition $S$ according to the number of children. Let $S_0$ be the number of ways for them to have 0 children. Then $|S_0| = 1$ because the only way to have 0 children is to have 0 boys and 0 girls. Let $S_1$ be the number of ways for them to have 1 child. Then $|S_0| = 2$ because they can have 1 boy and 0 girls or 1 girl and 0 boys.
+ Let $S_2$ be the number of ways for them to have 2 children. Then $|S_2| = 3$ because they
+ can have 2 boys and 0 girls, 2 girls and 0 boys or 1 of each.
+ Thus the total number of combinations of boys and girls that they can have is
+ \[
+ |S| = |S_0|+|S_1|+|S_2|= 1 + 2+3 = 6
+ \]
+ \end{example}
+ 
+
+\begin{problem}(problem 4)
+Fluffy is about to give birth to either 5 or 6 kittens.  
+How many combinations of males and females are possible assuming 
+that birth order of each gender is irrelevant?\\
+The total number of combinations of males and females that Fluffy can have is
+$\answer{13}$
+\end{problem}
+
+\end{document}
+
