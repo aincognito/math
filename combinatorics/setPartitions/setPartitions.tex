@@ -98,17 +98,22 @@ two different pairs of pants and 14 different hats.
 How many ways can Steph dress if the hat is optional?\\
 If we denote by $S$ the set of all possible outfits Steph can wear, 
 then we can partition $S$ into those outfits with a hat, $S_h$, 
-and those without a hat, $S_{nh}$.
+and those without a hat, $S_{n}$.
 The number of outfits with a hat is $|S_h| = 3 \times 2 \times 14 = 84$ and 
-the number of outfits with no hat is $|S_{nh}| = 3\times 2 = 6$. 
+the number of outfits with no hat is $|S_n| = 3\times 2 = 6$. 
 Thus, the total number of ways for Steph to dress is 
 \[
-|S| = |S_h| + |S_{nh}| = 84 + 6 = 90
+|S| = |S_h| + |S_{n}| = 84 + 6 = 90
 \]
 Note that we could have counted this slightly 
 differently, by including ``no hat" as a $15^{th}$ option 
 for the hat: $|S| = 3 \times 2 \times 15 = 90$.
 \end{example}
+
+\begin{problem}(problem 2)
+Jake is going jogging.  Jake has 4 t-shirts, 3 pairs of shorts and 2 pairs of sneakers.
+How many jogging outfits can Jake make consisting of a pair of shorts, a pair of sneakers and an optional t-shirt? \; $\answer{30}$
+\end{problem}
 
 
 \begin{example}[example 3]
@@ -124,6 +129,16 @@ hence, the total number of possible slices Sam can order is
 |S| = |S_p| + |S_{np}| = 3+3 =6
 \]
 \end{example}
+
+\begin{problem}(problem 3)
+A menu consists of 6 appetizers, 10 entrees and 4 desserts. 
+If a meal consists of an appetizer and an entree with dessert being 
+optional, how many meals are possible?
+$\; \answer{300}$
+\end{problem}
+
+
+
 
 \begin{example}[example 4]
 Alex and Charlie want to have 2 or fewer children.  

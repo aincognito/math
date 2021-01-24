@@ -21,7 +21,7 @@ We use complements to enumerate sets.
 
 
 \begin{definition}[Complement]
-Given a universal set $U$ and a subset, $S \subset U$, we dfine the complement of $S$, denoted, $S^c$ by
+Given a universal set $U$ and a subset, $S \subset U$, we define the complement of $S$, denoted, $S^c$ by
 \[
 S^c = \{x \in U | x \notin S \}
 \]
@@ -33,15 +33,15 @@ S^c = \{x \in U | x \notin S \}
 \begin{tikzpicture}
 \draw (0,0) -- (0,2) -- (3.2,2) -- (3.2, 0) -- (0,0);
 \draw (1.6, 1) circle (0.7);
-\node at (1.4,0.8) {$S$};
-\node at (2.6,1.5) {$S^c$};
+\node at (1.5,0.9) {$S$};
+\node at (2.7,1.5) {$S^c$};
 \node at (3.5,0.5) {$U$};
 \node at (1.6,-0.5) {$S$ and $S^c$};
 \end{tikzpicture}
 \end{image}
 
 \begin{proposition}[Rule for Complements]
-The number of elements in $S$ is the number of elements in $U$ minus the number of elemetns in $S^c$:
+The number of elements in $S$ is the number of elements in $U$ minus the number of elements in $S^c$:
 \[
 |S| = |U| - |S^c|
 \]
@@ -94,7 +94,7 @@ $S^c$ contains the outcomes whose sum is more than 10. That is, the sum is eithe
 \[
 |S^c| = 2 + 1 = 3
 \]
-Note that $S^c$ was partitioned into two substes here.
+Note that $S^c$ was partitioned into two subsets here.
 Now, by the Rule for Complements,
 \[
 |S| = |U| - |S^c| = 36 -3 = 33
@@ -123,7 +123,7 @@ lower case letters and digits only to construct our password, then there are
 \[
 |S^c| = 62^8 = 218340105584896
 \]
-possibilities. Thus, the Rule for Complements tells us tha tthe number of passwords which contain at least one
+possibilities. Thus, the Rule for Complements tells us that the number of passwords which contain at least one
 special symbol is
 \[
 |S| = |U| - |S^c| = 70^8 - 62^8 = 358139994415104
@@ -131,12 +131,52 @@ special symbol is
 Thus there are over 358 trillion possible passwords if we insist on at least one special symbol.
 \end{example}
 
-\begin{problem}(problem 2)
+\begin{problem}(problem 3a)
 Computer passwords are eight characters long where a character can be either an upper case letter, 
 lower case letter, digit 0-9, or one of 8 special symbols. 
 How many passwords are possible if a password must contain at least one capital letter?\\
 The number of passwords with at least one capital letter is  $\answer{70^8 - 44^8}$.
 \end{problem}
+
+
+\begin{example}[example 4]
+How many $2 \times 2$ bit matrices contain at least one 1?\\
+If we let $U$ be the set of all $2 \times 2$ bit matrices, then by the FPC, $|U| = 2^4 = 16$ We wish to find $|S|$,
+where $S$ is the subset of $U$ consisting of $2 \times 2$ bit matrices with at least one 1. The complement, $S^c$
+is the set of $2 \times 2$ bit matrices containing zero 1's and it is easy to enumerate.  In fact, $|S^c|= 1$, since the matrix must contain all 0's. Thus,
+\[
+|S| = |U| - |S^c| = 16 -1 = 15
+\]
+and there are 15 $2 \times 2$ bit matrices containing at least one 1.
+\end{example}
+
+
+\begin{problem}(problem 4)
+How many $3 \times 2$ bit matrices contain at least one 0? \; $\answer{63}$
+\end{problem}
+
+
+\begin{example}[problem 5]
+Doggy Daphne is having pups.  
+Assuming that her litter consists of 5 pups, in how many ways can she have at least one male pup?\\
+By the FPC, the total number of combinations of male and female pups is $|U| = 2^5 = 32$\\
+If $S$ consists of all combinations with at least one male pup, then $|S^c| =1$, namely all female pups.
+Thus, by the Rule for Complements, the number of possible 5 pup litters Daphne can have which consist of at least one male pup is
+\[
+|S| = |U| - |S^c| = 32 -1 = 31
+\]
+\end{example}
+
+\begin{problem}(problem 5a)
+Gracie the grizzly bear is about to give birth to 3 cubs. How many combinations of male and female cubs consisting of at most 2 male cubs are possible? $\; \answer{7}$.
+\end{problem}
+
+\begin{problem}(problem 5b)
+Lioness Lucy is about to give birth to 4 cubs. How many combinations of male and female cubs consisting of at 
+least 2 female cubs are possible? $\; \answer{11}$.
+\end{problem}
+
+
 \end{document}
 
 
