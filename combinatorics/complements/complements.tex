@@ -149,11 +149,34 @@ and there are 15 $2 \times 2$ bit matrices containing at least one 1.
 How many $3 \times 2$ bit matrices contain at least one 0? \; $\answer{63}$
 \end{problem}
 
+
+\begin{example}[example 5]
+A coin is flipped 5 times and the sequence of heads and tails is recorded.  
+How many possible outcomes contain at least 2 heads?\\
+By the FPC, the total number of outcomes for the 5 coin flips is $|U| = 2^5 = 32$. 
+The condition at least two heads contains the possibilities of 2, 3, 4 or 5 heads.  
+On the other hand, the complement consists of only the outcomes 0 or 1 heads, suggesting that we consider 
+using the Rule for Complements. Since there is 1 way to get 0 heads (namely TTTTT), and there are 5 ways to get exactly 1 heads (the H can go in any one of 5 places, with the other 4 places being T's), we have
+\[
+|S^c| = |S_0| + |S_1| = 1 + 5 = 6
+\]
+By the Rule for Complements, 
+\[
+|S| = |U| - |S^c| = 32 -6 = 26
+\]
+Thus there are 26 outcomes consisting of 2 or more heads.
+\end{example}
+
+\begin{problem}(problem 5)
+A coin is flipped 6 times and the sequence of heads and tails is recorded.\\
+How many possible outcomes contain at least 2 tails? $\; \answer{57}$
+\end{problem}
+
 \end{document}
 
 
 
-\begin{example}[problem 5]
+\begin{example}[example 5]
 Doggy Daphne is having pups.  
 Assuming that her litter consists of 5 pups, in how many ways can she have at least one male pup?\\
 By the FPC, the total number of combinations of male and female pups is $|U| = 2^5 = 32$\\
