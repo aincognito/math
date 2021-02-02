@@ -29,9 +29,9 @@ Combinations are counted by counting permutations and then dividing appropriatel
 
 \begin{example}[example 1]
 In how many ways can a 6 person committee be formed from a department of 30 faculty members?\\
-The order in which the members are selected is not important, so the answer is 
+The order in which the members are selected is not important, so the answer is the number of combinations of 30 objects taken 6 at a time, denoted $C(30,6)$.  To count this, we note that each 6 person committee can have its members permuted in $6!$ ways. Thus $6! \cdot C(30,6) = P(30,6)$.  Hence,
 \[
-C(30,6) = \binom{30}{6} = \frac{30!}{6!24!} = 593,775
+C(30,6) = \binom{30}{6} = \frac{P(30,6)}{6!} = \frac{30!}{6!24!} = 593,775
 \]
 \end{example}
 
@@ -41,9 +41,9 @@ In how many ways can a 5 person committee be formed from a group of 25 employees
 
 \begin{example}[example 2]
 How many subsets of size 8 can be formed from a set of size 12?\\
-Since the order of selection of the 8 elements in the subset is not important, the answer is 
+Since the order of selection of the 8 elements in the subset is not important, the answer is the number of combinations of 12 objects taken 8 at a time, denoted $C(12,8)$.  To count this, we note that each 8 element subset can have its members permuted in $8!$ ways. Thus $8! \cdot C(12,8) = P(12,8)$.
 \[
-C(12,8) = \binom{12}{8} = \frac{12!}{4!8!} =  495
+C(12,8) = \binom{12}{8} = \frac{P(12,8)}{8!} = \frac{12!}{8!4!} =  495
 \]
 \end{example}
 \begin{proposition}
