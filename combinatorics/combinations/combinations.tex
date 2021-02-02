@@ -21,7 +21,7 @@ We define and enumerate combinations.
 
 
 \begin{definition}[Combination]
-A combination of selection of objects in which the order of selection is unimportant.
+A combination is a selection of objects in which the order of selection is unimportant.
 \end{definition}
 
 Combinations are counted by counting permutations and then dividing appropriately.
@@ -73,15 +73,13 @@ C(n,k) = \frac{n!}{k!(n-k)!}
 
 
 \end{proof}
-\begin{remark}
-Note that the list $n, n-1, n-1, ..., n-k+1$ consists of $k$ numbers, corresponding to the $k$ objects being selected.
-\end{remark}
+
 
 \begin{example}[example 3]
 Compute $C(7, 3)$.\\
-Using the proposition with $n = 7$ and $k = 3$, so that, $n-k+1 = 7-3+1 = 5$, we have
+Using the formula from the proposition above, with $n =7$ and $k = 3$, we have
 \[
-P(7,3) = 7 \cdot 6 \cdot 5 = 210
+C(7,3) = \frac{7!}{3!4!} = \frac{7 \cdot 6\cdot 5}{3\cdot 2\cdot 1} = 35
 \]
 \end{example}
 
