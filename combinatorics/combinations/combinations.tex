@@ -1,0 +1,387 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\pgfplotsset{compat=1.13}
+
+\outcome{Define and enumerate combinations}
+
+\title{1.5 Combinations}
+
+\begin{document}
+
+\begin{abstract}
+We define and enumerate combinations.
+\end{abstract}
+
+\maketitle
+
+\section{Combinations}
+
+
+
+\begin{definition}[Combination]
+A combination of selection of objects in which the order of selection is unimportant.
+\end{definition}
+
+Combinations are counted by counting permutations and then dividing appropriately.
+
+
+\begin{example}[example 1]
+In how many ways can a 6 person committee be formed from a department of 30 faculty members?\\
+The order in which the members are selected is not important, so the answer is 
+\[
+C(30,6) = \binom{30}{6} = \frac{30!}{6!24!} = 593,775
+\]
+\end{example}
+
+\begin{problem}(problem 1)
+In how many ways can a 5 person committee be formed from a group of 25 employees? $\; \answer{53130}$\\
+\end{problem}
+
+\begin{example}[example 2]
+How many subsets of size 8 can be formed from a set of size 12?\\
+Since the order of selection of the 8 elements in the subset is not important, the answer is 
+\[
+C(12,8) = \binom{12}{8} = \frac{12!}{4!8!} =  495
+\]
+\end{example}
+\begin{proposition}
+The number of combinations of $n$ objects taken $k$ at a time is
+\[
+C(n,k) = \binom{n}{k} = \frac{P(n,k)}{k!} = \frac{n!}{k!(n-k)!}
+\]
+
+\end{proposition}
+\begin{proof}
+Each combination of the $k$ objects selected from a set of $n$ distinct objects 
+corresponds to $k!$ permutations of those $k$ objects.  
+This is because there are $k!$ ways to permute the $k$ selected objects.
+Thus the number of permutations, $P(n,k)$ is $k!$ times greater than the 
+number of combinations, $C(n,k)$. Since we know the number of permutations is 
+\[
+P(n,k) = \frac{n!}{(n-k)!}
+\]
+we have
+\[
+P(n,k) = k!\cdot C(n,k)
+\]
+Dividing both sides by $k!$ gives the desired result, namely
+\[
+C(n,k) = \frac{n!}{k!(n-k)!}
+\]
+
+
+\end{proof}
+\begin{remark}
+Note that the list $n, n-1, n-1, ..., n-k+1$ consists of $k$ numbers, corresponding to the $k$ objects being selected.
+\end{remark}
+
+\begin{example}[example 3]
+Compute $C(7, 3)$.\\
+Using the proposition with $n = 7$ and $k = 3$, so that, $n-k+1 = 7-3+1 = 5$, we have
+\[
+P(7,3) = 7 \cdot 6 \cdot 5 = 210
+\]
+\end{example}
+
+
+\begin{problem}(problem 3)
+Compute each of the following:\\
+$C(5,2) = \; \answer{10}$\\
+$C(8,3) = \; \answer{56}$\\
+$C(10,5) = \; \answer{252}$\\
+$C(n,n) = \; \answer{1}$
+\end{problem}
+
+
+
+\begin{example}[example 4]
+An NBA basketball team consists of 15 players.  In how many ways can a coach choose the 
+starting 5 (without regard to position, ability, etc)?\\
+The order in which the 5 players are selected is not important, so the answer is $C(15, 5)$.
+\end{example}
+
+\begin{problem}(problem 4)
+An NHL hockey team consists of 23 players.  A line-up consists of 6 players.  
+How many line-ups are possible (without regard to position)? $\; \answer{100947}$\\
+
+\end{problem}
+
+
+\begin{example}[example 5]
+How many subsets of size $k$ can be made from a set containing $n$ elements ($k\leq n$)?\\
+\end{example}
+
+
+\begin{problem}(problem 5)
+How many subsets of size $n-k$ can be made from a set containing $n$ elements ($k\leq n$)?\\
+How does this answer differ from the answer to the example above?\\
+\end{problem}
+
+
+\begin{example}[example 6]
+A box of crayons contains 64 different colors.  In how many ways can Jack select
+ 6 different colors to make his drawing?\\
+ Since the order of selection of the 6 colors is not important, there are 
+ \[
+ C(64, 6) = \binom{64}{6} = \frac{64!}{6!58!}=74974368
+ \]
+ ways to select the 6 colors from a box containing 64 different colors.
+ 
+\end{example}
+
+
+\begin{problem}(problem 6)
+A box of crayons contains 64 different colors.  In how many ways can Jill select
+ 10 different colors to make her drawing? $\; \answer{151473214816}$\\
+\end{problem}
+
+
+
+\begin{example}[example 7] 
+An ordinary deck of playing cards contains 52 cards broken into two colors, red and black (26 of each).  
+Each color is further subdivided into two suits (of 13 cards each)- red are evenly split between 
+hearts and diamonds, black between spades and clubs. 
+Finally, each suit is decomposed into 13 types labeled 2 through 10, then Jack, Queen, King and Ace.
+In the popular card game poker, each player is dealt 5 cards.  How many different 5 card hands are possible?\\
+The answer is simply $C(52, 5)$ since the order in which the cards are received is 
+irrelevant (and quickly becomes unknown when the holder organizes the cards in their hand).
+\end{example}
+
+
+\begin{problem}(problem 7)
+There are variants of poker in which a player is dealt 7 cards. How many $7$-card poker hands are possible? $\; \answer{\frac{(52)!}{7!(45)!}}$
+\end{problem}
+
+\begin{example}[example 8] 
+In poker, one type of hand is called ``three of a kind". This occurs when 3 of your 5 cards are of 
+the same type and the remaining two cards are of two other types.  For example, a hand consisting of 3 Jacks, an 
+Eight and a Four (regardless of suit) is a three of a kind (3 Jacks). How many three of a kinds are possible?\\
+We can break this down into a two step process.  First we choose the 3 cards to make the ``three of a kind", 
+then choose the remaining two cards. To choose the 3 matching cards, there are 13 choices for the type and 
+then there are $C(4, 3) =4$ ways to choose the suits.  To choose the remaining two cards, 
+we first choose two different types in $C(12, 2)$ ways (one of the 13 types is accounted for, 
+so there are only 12 left), and then choose the suit of each card in $4^2$ ways.
+Putting all of this together, the number of "three of a kind's" is
+\[
+13 \cdot 4 \cdot C(12, 2) \cdot 4^2 = 54, 912
+\]
+
+\end{example}
+
+\begin{problem}(problem 8)
+How many of each of the following poker hands are possible?
+a) Four of a kind: $\; \answer{624}$\\
+b) Flush (all 5 cards of the same suit): $\; \answer{5148}$\\
+c) Full house (three of one kind and two of another kind): $\; \answer{3744}$\\
+d) Two pair: $\; \answer{123552}$
+\end{problem}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Factorials}
+
+\begin{definition}[Factorial]
+Let $n$ be a natural number. Then n! (read n factorial) is defined as
+\[
+n! = n \cdot (n-1) \cdot \ldots \cdot 3 \cdot 2 \cdot 1
+\]
+\end{definition}
+
+\begin{example}[example 3]
+Compute the following factorials: $2!\,, 4!\,, 6!$ and $8!$\\
+We have
+\[
+2! = 2\cdot 1 = 2,
+\]
+\[
+4! = 4 \cdot 3 \cdot 2\cdot 1 = 24,
+\]
+\[
+6! = 6\cdot 5\cdot 4 \cdot 3 \cdot 2\cdot 1 = 720
+\]
+and
+\[
+8! = 8 \cdot 7 \cdot 6\cdot 5\cdot 4 \cdot 3 \cdot 2\cdot 1 = 40320
+\]
+\end{example}
+
+\begin{problem}(problem 3)
+Compute the following factorials: \\
+$3! = \; \answer{6}$\\
+$5! = \; \answer{120}$\\
+$7! = \; \answer{5040}$\\
+$9! = \; \answer{362880}$\\
+\end{problem}
+
+We now explore the connection between factorials and permutations.
+
+\begin{example}[example 4]
+In how many ways can 5 people line up at an ATM?\\
+The answer is the number of permutations of 5 objects taken 5 at a time, i.e., 
+\[
+P(5,5) = 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 5! = 120
+\]
+\end{example}
+
+\begin{problem}(problem 4)
+In how many ways can 6 people line up at an ATM (answer using factorials)? $\; \answer{6!}$
+\end{problem}
+
+General permutations can be expressed as a ratio of factorials.
+
+\begin{proposition}
+Let $n$ and $k$ be natural numbers with $n > k$. Then 
+\[
+P(n,k) = \frac{n!}{(n-k)!}
+\]
+\end{proposition}
+\begin{proof}
+The ratio of factorials lends itself to lots of cancellation. We have
+\[
+\frac{n!}{(n-k)!} = \frac{n \cdot (n-1) \cdot \ldots \cdot 2 \cdot 1}{(n-k) \cdot (n - k-1) \cdot \ldots \cdot  2 \cdot 1}
+= n \cdot (n-1) \cdot \ldots \cdot (n-k+1) = P(n,k).
+\]
+Note that the entire denominator cancelled out.
+\end{proof}
+
+\begin{example}[example 5]
+Express the following as a ratio of factorials: $P(7, 3), P(10, 4)$ and $P(100, 25)$.\\
+For $P(7,3)$ we have $n = 7, k = 3$ and $n-k = 7-3 = 4$, so
+\[
+P(7, 3) = \frac{7!}{4!}
+\]
+Similarly,
+\[
+P(10,4) = \frac{10!}{6!} \;\; \mbox{and} \;\; P(100, 25) = \frac{100!}{75!}
+\]
+In applications, numbers such as $75!$ and $100!$ are too unwieldy to write out, so we will prefer the factorial notation
+as a final form.
+\end{example}
+
+\begin{problem}(problem 5)
+Express the following as a ratio of factorials:\\
+$P(8,5) = \; \answer{\frac{8!}{3!}}$\\
+$P(12,6) = \; \answer{\frac{12!}{6!}}$\\
+$P(50,10) = \; \answer{\frac{50!}{40!}}$
+\end{problem}
+
+In the proposition, it was assumed that $n>k$.  But, what if $n = k$, for we have already seen 
+the expression $P(n,n)$ arise in applications. 
+In fact, $P(n,n) = n!$. To extend the proposition to cover this case we make the following definition.
+
+\begin{definition}[0!]
+We define 
+\[
+0! \equiv 1
+\]
+\end{definition}
+
+With the above definition, we can safely revise the proposition to state that for $n$ and $k$ natural numbers with $n \geq k$,
+we have
+\[
+P(n,k) = \frac{n!}{(n-k)!}
+\]
+for if $n = k$ then the denominator is $0! = 1$.
+
+
+\section{Permutations of Non-distinct Objects}
+
+In this subsection, we examine permutations of $n$ objects taken $n$ at 
+a time in which the $n$ objects are not distinct.  The idea is that arranging non-distinct objects 
+among themselves does not produce a new permutation.  To count such permutations, we will combine the FPC with division.
+
+\begin{example}[example 6]
+How many permutations are there of the word $AABC$?\\
+We have 2 non-distinct objects among our 4 objects- namely the two $A$'s.  We begin the counting process by 
+considering the 4 objects as distinct by placing subscripts on the repeated objects.  
+In other words, we consider the word $A_1A_2BC$, which has $P(4,4) = 4! = 24$ permutations. Among these 24 permutations, consider the following pairs of permutations:
+\[
+A_1BA_2C \; \mbox{and} \; A_2BA_1C
+\]
+
+\[
+BA_1CA_2 \; \mbox{and} \; BA_2CA_1
+\]
+
+\[
+A_1CBA_2 \; \mbox{and} \; A_2CBA_1
+\]
+Each of these three pairs of permutations of the 4 distinct objects, correspond to just a single permutation of the 
+non-distinct objects $AABC$.  In fact, the correspond to 
+\[
+ABAC, BACA \;\mbox{and} \;  ACBA
+\]
+respectively. In fact, the 24 permutations of $A_1A_2BC$ can be paired in the manner shown above, 
+with each pair yielding a single permutation of $AABC$. 
+This means that the number of permutations of $A_1A_2BC$ is twice the number of permutations of $AABC$.  
+Thus, the number of permutations of $AABC$ is
+$24/2 = 12$.
+\end{example}
+
+\begin{problem}(problem 6)
+How many permutations are there of the letter in the word following words?
+a) $\;BOO: \; \answer{3}$\\
+b) $\;BOOK: \; \answer{12}$\\
+c) $\;BOOKS: \; \answer{60}$
+\end{problem}
+
+\begin{example}[example 7]
+How many permutations are there of the letters in the word $AAABC$?\\
+Again, we begin by considering the distinct letters $A_1A_2A_3BC$, which have $P(5,5) = 5! = 120$ permutations.
+Given any of these 120 permutations, there are $3! = 6$ ways to rearrange the letters $A_1, A_2$ and $A_3$ among themselves, leaving the B and C in the same position.
+These 6 permutations of $A_1A_2A_3BC$ all correspond to the same permutation of $AAaBC$.  hence the number of permutations of $A_1A_2A_3$ is 6 times the number of permutations of $AAABC$.  Thus the number of permutations of $AAABC$ can be obtained by dividing 120 by 6, so there are 20 permutation of the letters in the word $AAABC$.
+\end{example}
+
+\begin{problem}(problem 7)
+How many permutations are there of the letter in the word following words?
+a) $\; LULL: \; \answer{4}$\\
+b) $\; RARER: \; \answer{20}$\\
+c) $\;ASSESS: \; \answer{30}$
+\end{problem} 
+
+\begin{example}[example 8]
+How many permutations are there of the letters in the word $AAABBC$?\\
+If the letters were all distinct, as in $A_1A_2A_3B_1B_2C$, then there would be $6! =720$ permutations.
+However, the $A_k's$ in any such permutation can be permuted among themselves in $3! =6$ ways 
+without changing the permutation
+of the unsubscripted original letters.  Furthermore, the $B_k$'s can also be permuted among themselves in $2!= 2$ ways without changing the permutation of the original unsubscripted letters.  Thus the total number of permutations of $AAABBC$ can be found by dividing $6!$ first by $3!$ and then dividing that by $2!$. This is equivalent to dividing $6!$ by the product of $3!$ and $2!$.  Thus the number of permutations of the letters in the word $AAABBC$ is
+\[
+\frac{6!}{3!2!} = \frac{720}{12} = 60
+\]
+\end{example}
+
+\begin{problem}(problem 8)
+How many permutations are there of the letter in the word following words?
+a) $\; HAWAII: \; \answer{180}$\\
+b) $\; CALIFORNIA: \; \answer{907200}$\\
+c) $\; CONNECTICUT: \; \answer{1663200}$\\
+d) $\;TENNESSEE: \; \answer{3780}$\\
+e) $\;MISSISSIPPI: \; \answer{34650}$
+f) $\;MASSACHUSETTS: \; \answer{64864800}$\\
+\end{problem}
+
+\end{document}
+
+
+
+
+
+
+
+
+
