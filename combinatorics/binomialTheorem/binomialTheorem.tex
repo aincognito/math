@@ -4,192 +4,82 @@
 
 \pgfplotsset{compat=1.13}
 
-\outcome{Define and enumerate combinations}
+\outcome{Explore the Binomial Theorem}
 
-\title{1.6 Combinations}
+\title{1.9 Binomial Theorem}
 
 \begin{document}
 
 \begin{abstract}
-We define and enumerate combinations.
+We explore the Binomial Theorem.
 \end{abstract}
 
 \maketitle
 
-\section{Combinations}
+\end{document}
+
+\section{Permutations}
 
 
 
-\begin{definition}[Combination]
-A combination is a selection of objects in which the order of selection is unimportant.
+\begin{definition}[Permutation]
+A permutation of selection of objects in a particular order.
 \end{definition}
 
-Combinations are counted by counting permutations and then dividing appropriately.
-
+Permutations are counted using the fundamental principle of counting.
 
 \begin{example}[example 1]
-In how many ways can a 6 person committee be formed from a department of 30 faculty members?\\
-The order in which the members are selected is not important, so the answer is the number of combinations of 30 objects taken 6 at a time, denoted $C(30,6)$.  To count this, we note that each 6 person committee can have its members permuted in $6!$ ways. Thus $6! \cdot C(30,6) = P(30,6)$.  Hence,
+A fifth grade class consisting of 24 students wishes to elect a class president, vice-president, secretary and treasurer.
+Assuming that no student can hold more than one office, in how many ways can these
+positions be filled?\\
+The selection of class officers can be thought of as a permutation
+the order of the selection of the 4 students determines which office they will hold. 
+Thus, we seek the number of permutations of 24 objects taken 4 at a time, denoted $P(24, 4)$. By the FPC, we have
 \[
-C(30,6) = \binom{30}{6} = \frac{P(30,6)}{6!} = \frac{30!}{6!24!} = 593,775
+P(24, 4) = 24 \times 23 \times 22 \times 21 = 255,024
 \]
+Thus, there are just over a quarter of a million possible outcomes for the selection of the class officers.
 \end{example}
 
 \begin{problem}(problem 1)
-In how many ways can a 5 person committee be formed from a group of 25 employees? $\; \answer{53130}$\\
+A sports team consisting of 12 players wishes to select a captain, 
+an inspirational leader and an equipment manager (from among themselves).  
+In how many ways can this be done?\\
+\begin{multipleChoice}
+\choice[correct]{P(12, 3)}
+\choice{P(15, 3)}
+\choice{P(9, 6)}
+\end{multipleChoice}
+
 \end{problem}
 
-\begin{example}[example 2]
-How many subsets of size 8 can be formed from a set of size 12?\\
-Since the order of selection of the 8 elements in the subset is not important, the answer is the number of combinations of 12 objects taken 8 at a time, denoted $C(12,8)$.  To count this, we note that each 8 element subset can have its members permuted in $8!$ ways. Thus $8! \cdot C(12,8) = P(12,8)$.
-\[
-C(12,8) = \binom{12}{8} = \frac{P(12,8)}{8!} = \frac{12!}{8!4!} =  495
-\]
-\end{example}
 \begin{proposition}
-The number of combinations of $n$ objects taken $k$ at a time is
+The number of permutations of $n$ objects taken $k$ at a time is
 \[
-C(n,k) = \binom{n}{k} = \frac{P(n,k)}{k!} = \frac{n!}{k!(n-k)!}
+P(n,k) = n \cdot (n-1) \cdot (n-2) \cdot \ldots \cdot (n-k+1)
 \]
 
 \end{proposition}
 \begin{proof}
-Each combination of the $k$ objects selected from a set of $n$ distinct objects 
-corresponds to $k!$ permutations of those $k$ objects.  
-This is because there are $k!$ ways to permute the $k$ selected objects.
-Thus the number of permutations, $P(n,k)$ is $k!$ times greater than the 
-number of combinations, $C(n,k)$. Since we know the number of permutations is 
-\[
-P(n,k) = \frac{n!}{(n-k)!}
-\]
-we have
-\[
-P(n,k) = k!\cdot C(n,k)
-\]
-Dividing both sides by $k!$ gives the desired result, namely
-\[
-C(n,k) = \frac{n!}{k!(n-k)!}
-\]
-
-
+The number of choices for the first object selected is $n$. The number of choices for the second object selected is $n-1$. And so on, until the $k$ object, for which there are $n-k+1$ choices remaining. The result then follows directly from the FPC. 
 \end{proof}
+\begin{remark}
+Note that the list $n, n-1, n-1, ..., n-k+1$ consists of $k$ numbers, corresponding to the $k$ objects being selected.
+\end{remark}
 
-
-\begin{example}[example 3]
-Compute $C(7, 3)$.\\
-Using the formula from the proposition above, with $n =7$ and $k = 3$, we have
+\begin{example}[example 2]
+Compute $P(7, 3)$.\\
+Using the proposition with $n = 7$ and $k = 3$, so that, $n-k+1 = 7-3+1 = 5$, we have
 \[
-C(7,3) = \frac{7!}{3!4!} = \frac{7 \cdot 6\cdot 5}{3\cdot 2\cdot 1} = 35
+P(7,3) = 7 \cdot 6 \cdot 5 = 210
 \]
 \end{example}
-
-
-\begin{problem}(problem 3)
+\begin{problem}(problem 2)
 Compute each of the following:\\
-$C(5,2) = \; \answer{10}$\\
-$C(8,3) = \; \answer{56}$\\
-$C(10,5) = \; \answer{252}$\\
-$C(n,n) = \; \answer{1}$
+a) \; $P(5,2) = \; \answer{20}$\\
+b) \; $P(8,3) = \; \answer{336}$\\
+c) \; $P(10,5) = \; \answer{30240}$
 \end{problem}
-
-
-
-\begin{example}[example 4]
-An NBA basketball team consists of 15 players.  In how many ways can a coach choose the 
-starting 5 (without regard to position, ability, etc)?\\
-The order in which the 5 players are selected is not important, so the answer is $C(15, 5)$.
-\end{example}
-
-\begin{problem}(problem 4)
-An NHL hockey team consists of 23 players.  A line-up consists of 6 players.  
-How many line-ups are possible (without regard to position)? $\; \answer{100947}$\\
-
-\end{problem}
-
-
-\begin{example}[example 5]
-How many subsets of size $k$ can be made from a set containing $n$ elements ($k\leq n$)?\\
-\end{example}
-
-
-\begin{problem}(problem 5)
-How many subsets of size $n-k$ can be made from a set containing $n$ elements ($k\leq n$)?\\
-How does this answer differ from the answer to the example above?\\
-\end{problem}
-
-
-\begin{example}[example 6]
-A box of crayons contains 64 different colors.  In how many ways can Jack select
- 6 different colors to make his drawing?\\
- Since the order of selection of the 6 colors is not important, there are 
- \[
- C(64, 6) = \binom{64}{6} = \frac{64!}{6!58!}=74974368
- \]
- ways to select the 6 colors from a box containing 64 different colors.
- 
-\end{example}
-
-
-\begin{problem}(problem 6)
-A box of crayons contains 64 different colors.  In how many ways can Jill select
- 10 different colors to make her drawing? $\; \answer{151473214816}$\\
-\end{problem}
-
-
-
-\begin{example}[example 7] 
-An ordinary deck of playing cards contains 52 cards broken into two colors, red and black (26 of each).  
-Each color is further subdivided into two suits (of 13 cards each)- red are evenly split between 
-hearts and diamonds, black between spades and clubs. 
-Finally, each suit is decomposed into 13 types labeled 2 through 10, then Jack, Queen, King and Ace.
-In the popular card game poker, each player is dealt 5 cards.  How many different 5 card hands are possible?\\
-The answer is simply $C(52, 5)$ since the order in which the cards are received is 
-irrelevant (and quickly becomes unknown when the holder organizes the cards in their hand).
-\end{example}
-
-
-\begin{problem}(problem 7)
-There are variants of poker in which a player is dealt 7 cards. How many $7$-card poker hands are possible? $\; \answer{\frac{(52)!}{7!(45)!}}$
-\end{problem}
-
-\begin{example}[example 8] 
-In poker, one type of hand is called ``three of a kind". This occurs when 3 of your 5 cards are of 
-the same type and the remaining two cards are of two other types.  For example, a hand consisting of 3 Jacks, an 
-Eight and a Four (regardless of suit) is a three of a kind (3 Jacks). How many three of a kinds are possible?\\
-We can break this down into a two step process.  First we choose the 3 cards to make the ``three of a kind", 
-then choose the remaining two cards. To choose the 3 matching cards, there are 13 choices for the type and 
-then there are $C(4, 3) =4$ ways to choose the suits.  To choose the remaining two cards, 
-we first choose two different types in $C(12, 2)$ ways (one of the 13 types is accounted for, 
-so there are only 12 left), and then choose the suit of each card in $4^2$ ways.
-Putting all of this together, the number of "three of a kind's" is
-\[
-13 \cdot 4 \cdot C(12, 2) \cdot 4^2 = 54, 912
-\]
-
-\end{example}
-
-\begin{problem}(problem 8)
-How many of each of the following poker hands are possible?
-a) Four of a kind: $\; \answer{624}$\\
-b) Flush (all 5 cards of the same suit): $\; \answer{5148}$\\
-c) Full house (three of one kind and two of another kind): $\; \answer{3744}$\\
-d) Two pair: $\; \answer{123552}$
-\end{problem}
-
-
-\end{document}
-
-
-
-
-
-
-
-
-
-
-
-
 
 \section{Factorials}
 
@@ -220,10 +110,10 @@ and
 
 \begin{problem}(problem 3)
 Compute the following factorials: \\
-$3! = \; \answer{6}$\\
-$5! = \; \answer{120}$\\
-$7! = \; \answer{5040}$\\
-$9! = \; \answer{362880}$\\
+a) \; $3! = \; \answer{6}$\\
+b) \; $5! = \; \answer{120}$\\
+c) \; $7! = \; \answer{5040}$\\
+d) \; $9! = \; \answer{362880}$\\
 \end{problem}
 
 We now explore the connection between factorials and permutations.
@@ -273,9 +163,9 @@ as a final form.
 
 \begin{problem}(problem 5)
 Express the following as a ratio of factorials:\\
-$P(8,5) = \; \answer{\frac{8!}{3!}}$\\
-$P(12,6) = \; \answer{\frac{12!}{6!}}$\\
-$P(50,10) = \; \answer{\frac{50!}{40!}}$
+a) \; $P(8,5) = \; \answer{\frac{8!}{3!}}$\\
+b) \; $P(12,6) = \; \answer{\frac{12!}{6!}}$\\
+c) \; $P(50,10) = \; \answer{\frac{50!}{40!}}$
 \end{problem}
 
 In the proposition, it was assumed that $n>k$.  But, what if $n = k$, for we have already seen 
@@ -332,7 +222,7 @@ $24/2 = 12$.
 \end{example}
 
 \begin{problem}(problem 6)
-How many permutations are there of the letter in the word following words?
+How many permutations are there of the letter in the word following words?\\
 a) $\;BOO: \; \answer{3}$\\
 b) $\;BOOK: \; \answer{12}$\\
 c) $\;BOOKS: \; \answer{60}$
@@ -346,7 +236,7 @@ These 6 permutations of $A_1A_2A_3BC$ all correspond to the same permutation of 
 \end{example}
 
 \begin{problem}(problem 7)
-How many permutations are there of the letter in the word following words?
+How many permutations are there of the letter in the word following words?\\
 a) $\; LULL: \; \answer{4}$\\
 b) $\; RARER: \; \answer{20}$\\
 c) $\;ASSESS: \; \answer{30}$
@@ -364,17 +254,16 @@ of the unsubscripted original letters.  Furthermore, the $B_k$'s can also be per
 \end{example}
 
 \begin{problem}(problem 8)
-How many permutations are there of the letter in the word following words?
+How many permutations are there of the letter in the word following words?\\
 a) $\; HAWAII: \; \answer{180}$\\
 b) $\; CALIFORNIA: \; \answer{907200}$\\
 c) $\; CONNECTICUT: \; \answer{1663200}$\\
 d) $\;TENNESSEE: \; \answer{3780}$\\
-e) $\;MISSISSIPPI: \; \answer{34650}$
+e) $\;MISSISSIPPI: \; \answer{34650}$\\
 f) $\;MASSACHUSETTS: \; \answer{64864800}$\\
 \end{problem}
 
 \end{document}
-
 
 
 
