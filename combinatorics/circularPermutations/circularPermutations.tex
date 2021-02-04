@@ -21,26 +21,38 @@ We define and enumerate circular permutations.
 
 
 \begin{definition}[Circular Permutation]
-A circular permutation of selection of objects placed in a circular arrangement in a particular order.
+A circular permutation of selection of objects placed in a circular 
+arrangement in a particular order.
 \end{definition}
 
 
-In a circular permutation, all positions on the circle are considered equivalent. Thus, the position of an object
-is solely determined by its position relative to the other objects. By contrast, the objects in an ordinary permutations have 
-absolute positions- first, second, third etc.  An ordinary permutation can be thought of as a linear permutation.\\
+In a circular permutation, all positions on the circle are considered equivalent. 
+Thus, the position of an object
+is solely determined by its position relative to the other objects. 
+By contrast, the objects in an ordinary permutations have 
+absolute positions- first, second, third etc.  An ordinary permutation 
+can be thought of as a linear permutation.\\
 
 \begin{proposition}
-The number of circular permutations of $k$ objects taken from a group of $n$ objects ($n \geq k$) is given by
+The number of circular permutations of $k$ objects taken from a 
+group of $n$ objects ($n \geq k$) is given by
 \[
 C(n,k)\cdot (k-1)! = \frac{P(n,k)}{k}
 \]
 \end{proposition}
 
 \begin{proof}
-First, we select the $k$ objects to be placed in the circular permutation.  This can be done $C(n,k)$ ways.\\
-Second, we arrange the $k$ objects in a circle and use the FPC. When the first object is placed in the circle, all of the positions are equivalent, so there is only 1 choice. Once the first object is placed, the remaining positions in the circle become distinct.  Hence, there are $k-1$ choices for the position of the second object in the circle, $k-2$ choices for the 
-third object, and so on. Thus, the number of ways to arrange the $k$ objects in a circle  is $(k-1)!$.
-Finally, we multiply the number of ways to select the $k$ objects by the number of ways to arrange them in a circle to obtain
+First, we select the $k$ objects to be placed in the circular permutation.  
+This can be done $C(n,k)$ ways.\\
+Second, we arrange the $k$ objects in a circle and use the FPC. 
+When the first object is placed in the circle, all of the positions are 
+equivalent, so there is only 1 choice. Once the first object is placed, 
+the remaining positions in the circle become distinct.  
+Hence, there are $k-1$ choices for the position of the second object in the 
+circle, $k-2$ choices for the third object, and so on. 
+Thus, the number of ways to arrange the $k$ objects in a circle  is $(k-1)!$.
+Finally, we multiply the number of ways to select the $k$ objects by the 
+number of ways to arrange them in a circle to obtain
 \[
 C(n,k)\cdot (k-1)!
 \]
@@ -63,63 +75,113 @@ C(n,n)\cdot (n-1)! = (n-1)!
 
 \begin{example}[example 1]
 In how many ways can 10 first graders march in a circle?\\
-Here, we are counting the number of circular permutations of $10$ objects (taken $10$ at a time).
-According to the corollary, the number of ways for the 10 children to march in a circle is $9!$.
+Here, we are counting the number of circular permutations of $10$ 
+objects (taken $10$ at a time).
+According to the corollary, the number of ways for the 10 children to 
+march in a circle is $9!$.
 \end{example}
 
 
 \begin{problem}(problem 1)
-In how many ways can the 20 members of the high-school band march in a circle during the halftime show? $\; \answer{19!}$
+In how many ways can the 20 members of the high-school band 
+march in a circle during the halftime show? $\; \answer{19!}$
 \end{problem}
 
 
 \begin{example}[example 2]
-How many ways can King Arthur, Guinevere, Merlin, Lancelot and Galahad be seated at the round table?\\
-Assuming that all seats at the table are equivalent, we seek the number of circular 
-permutations of 5 objects (taken 5 at a time).  According to the corollary, the number of ways for 
-them to be seated around the table is $4! =24$
+How many ways can King Arthur, Guinevere, Merlin, Lancelot and Galahad be 
+seated at the round table if Merlin and Galahad cannot be seated next to each other?\\
+According to the corollary, the total number of ways for 
+them to be seated around the table with no restrictions is $4! =24$\\
+Next, we count the number of seating arrangements that have Merlin and 
+Galahad next to each other.  We seat them first, in 2 possible 
+ways- with Galahad on Merlin's left and with Galahad on Merlin's right. 
+Then the other 3 members can be seated in 3! = 6 ways.  
+Thus there are $2 \cdot 6 = 12$ ways for the group to be seated in 
+violation of the restriction.\\
+Finally, by subtracting (using the Rule for Complements), we conclude 
+that the number of ways to seat the group so that Merlin and Galahad are 
+separated is $24-12 = 12$.
 \end{example}
 
 
 \begin{problem}(problem 2)
-In how many ways can the President, Vice-President, Secretary of State, Secretary of the Treasury, 
-Secretary of the Interior, Secretary of Labor and a secretary be seated at a round table? $\; \answer{720}$.
+In how many ways can the President, Vice-President, Secretary of State, 
+Secretary of the Treasury, Secretary of the Interior, Secretary of Labor 
+and a secretary be seated at a round table if the President and Vice-President 
+cannot be seated next to each other? $\; \answer{480}$.
 
 \end{problem}
 
 
 \begin{example}[example 3]
+In how many ways can 8 children be seated around a table at a birthday 
+party if the sit boy-girl-boy-girl?\\
+The first child, say a girl is seated in 1 way, since all seats at a round 
+table are considered identical. Once she is seated, there are 3 seats left 
+for the other 3 girls and therefore they can be seated in $3!$ ways.  
+The 4 boys can then be seated in the remaining 4 seats in $4!$ ways.\\
+The total number of ways to seat the eight children is 
+\[
+1\cdot 3! \cdot 4! = 6 \cdot 24 = 144
+\]
 
 \end{example}
 
 
 \begin{problem}(problem 3)
-
-
+In how many ways can 8 teenagers sit at a round table if the 4 boys sit next to each other?
+$\; \answer{576}$
 \end{problem}
 
 
 \begin{example}[example 4]
-
+Twenty children run to get in line to get on the carousel when the local amusement 
+park opens its doors at 9am. If the ride has 10 seats, alternating between 
+horses and tigers, how many ways are there for the first group of 10 
+children to be seated on the ride?\\
+First, we have to choose the 10 children to be seated.  This can be done in $C(20,10)$ ways.
+Next, we can seat the first child in 2 ways (horse or tiger) and then the other 9 children 
+can be seated in $9!$ ways relative to the first child.\\
+Hence, the total number of configurations of 10 of the 20 children for the 
+first carousel ride of the day is 
+\[
+C(20,10) \cdot 2 \cdot 9! = \frac{20! \cdot 2 \cdot 9!}{10!\cdot 10!} = 134088514560
+\]
 \end{example}
 
 
 \begin{problem}(problem 4)
-
+Fifteen children run to get in line to get on the carousel when the local amusement 
+park opens its doors at 10am. The ride has 12 seats arranged in a circle. 
+The seats alternate horse, horse, tiger, tiger, etc. 
+How many ways are there for the first group of 12 
+children to be seated on the ride? $\; \answer{72648576000}$
 
 \end{problem}
 
 
 \begin{example}[example 5]
-
+Sam is making a bracelets consisting of 8 beads, each of a different color. 
+How many different looking bracelets can Sam create?\\
+At first, this may seem like a straight forward circular permutation, 
+but unlike the other scenarios we have seen, the round object in this 
+case can be flipped upside down to create another (different) circular permutation.\\
+Thus, we count the circular permutations of $8$ objects and then divide by 2, to get
+$7!/2 = 2520$ different bracelets can be created.
 \end{example}
 
 
 \begin{problem}(problem 5)
-
-
+Jean has 6 keys to put on a key ring, but does not want to put the house key 
+next to the office key.  In how many ways can Jean configure the key ring? $\; \answer{48}$
 \end{problem}
 
+
+
+
+
+\end{document}
 
 \begin{example}[example 6]
 
@@ -130,7 +192,3 @@ Secretary of the Interior, Secretary of Labor and a secretary be seated at a rou
 
 
 \end{problem}
-
-
-\end{document}
-
