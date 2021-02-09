@@ -72,10 +72,21 @@ C(8,6) = \frac{8!}{6! 2!} = 28
 \end{example}
 
 
-\begin{problem}(problem 1)
+\begin{problem}(problem 1a)
 A bakery has 5 types of donuts, each in abundant supply. How many ways are there to select a dozen donuts?
 $\; \answer{1820}$
 \end{problem}
+
+\begin{problem}(problem 1b)
+A bakery has 6 types of donuts, each in abundant supply. How many ways are there to select 8 donuts?
+$\; \answer{1287}$
+\end{problem}
+
+\begin{problem}(problem 1c)
+A pastry shop has 8 types of pastries, each in abundant supply. 
+How many ways are there to select 4 pastries $\; \answer{330}$
+\end{problem}
+
  
 
 \begin{example}[example 2]
@@ -116,11 +127,11 @@ We now turn to examples involving the number of solutions to an equation, under 
 the variables must represent whole numbers.
 
 \begin{example}[example 4]
-Find the number of solutions to the the equation
+Find the number of integer solutions to the the equation
 \[
 x_1 + x_2 + x_3 + x_4 = 10
 \]
-if each $x_i$ must be a whole number between 0 and 10.\\
+if $x_i \geq 0$ for $i = 1, 2, 3, 4$.\\
 Note that this problem is equivalent to the problem of selecting 10 donuts if there are 4 types, each in abundant supply. In this case, there are 10 stars and 3 bars (one less than the number of types).  Hence the number of solutions is 
 \[
 C(13, 10) = \frac{13!}{10! 3!} = \frac{13 \cdot 12 \cdot 11}{3 \cdot 2 \cdot 1} = 286
@@ -128,11 +139,39 @@ C(13, 10) = \frac{13!}{10! 3!} = \frac{13 \cdot 12 \cdot 11}{3 \cdot 2 \cdot 1} 
 \end{example}
 
 \begin{problem}(problem 4)
-How many solutions are there to the equation
+How many integer solutions are there to the equation
 \[
 x_1 + x_2 + x_3 + x_4 +x_5 = 8
 \]
-if each variable $x_i$ must be a whole number between 0 and 8? $\; \answer{495}$
+if $x_i \geq 0$  for $i = 1, 2, 3, 4, 5$? $\; \answer{495}$
+\end{problem}
+
+
+\begin{example}[example 5]
+Find the number of integer solutions to the the equation
+\[
+x_1 + x_2 + x_3 + x_4 = 20
+\]
+if $x_1 \geq 1, x_2 \geq 2, x_3 \geq 3$ and $x_4 \geq 4$.\\
+Consider the variables:
+\[
+y_1 = x_1 -1, y_2 = x_2 -2, y_3 = x_3 -3, y_4 = x_4 -4
+\]
+The original equation is equivalent to
+\[
+y_1 + y_2 + y_3 + y_4 = 10
+\]
+with $y_i \geq 0$ for $i = 1, 2, 3, 4$. From example 4, the number of solutions is $C(13,10) = 286$.
+\end{example}
+
+
+\begin{problem}(problem 5)
+How many integer solutions are there to the equation
+\[
+x_1 + x_2 + x_3 + x_4 +x_5 = 25
+\]
+with $x_1 \geq 1, x_2 \geq 2, x_3 \geq 3$ , $x_4 \geq 4$ and $x_5 \geq 5$? $\; \answer{2002}$
+
 \end{problem}
 
 We summarize the stars and bars method in the following proposition.
