@@ -111,8 +111,8 @@ A convenience store sells donuts of three types: chocolate, jelly and glazed.
 If each type is in abundant supply, how many ways are there to select half a 
 dozen donuts if you must have at least one of each type?\\
 Since one of each type must be included, this problem boils down to selecting the 
-remaining 3 donuts from among the 4 types. We have 3 stars and 3 bars, so
-the number of ways to do this is $C(6, 3) = 20$.
+remaining 3 donuts from among the 3 types. We have 3 stars and 2 bars, so
+the number of ways to do this is $C(5, 3) = 20$.
 \end{example}
 
 \begin{problem}(problem 3a)
@@ -177,17 +177,17 @@ with $x_1 \geq 1, x_2 \geq 2, x_3 \geq 3$ , $x_4 \geq 4$ and $x_5 \geq 5$? $\; \
 We summarize the stars and bars method in the following proposition.
 
 \begin{proposition}[Stars and Bars]
-Given a multiset of the form $S = \{n_1 \cdot a_1, n_2 \cdot a_2, \ldots, n_k \cdot a_k\}$, 
-the number of combinations of $m$ elements of the set (where $m \leq |S|$) is given by
-$C(m+k-1, m)$.
+Given a multiset of the form $S = \{\infty \cdot a_1, \infty \cdot a_2, \ldots, \infty \cdot a_k\}$, 
+the number of combinations of $n$ elements of the set is given by
+$C(n+k-1, n)$.
 \end{proposition}
 \begin{proof}
-A combination of $m$ elements of $S$ can be thought of as a permutation of stars and bars. 
-The number of stars is equal to the number of elements selected, $m$. 
-The number of bars needed to separate the $m$ objects into $k$ different types is $k-1$. 
-Altogether, the number of stars plus bars is $m + k-1$. 
-The number of permutations of the $m$ stars and $k-1$ bars can be thought of as 
-the number of combinations of $m+k-1$ objects taken $m$ at a time, i.e. $(C, m+k-1,m)$. 
+A combination of $n$ elements of $S$ can be thought of as a permutation of stars and bars. 
+The number of stars is equal to the number of elements selected, $n$. 
+The number of bars needed to separate the $n$ objects into $k$ different types is $k-1$. 
+Altogether, the number of stars plus bars is $n + k-1$. 
+The number of permutations of the $n$ stars and $k-1$ bars can be thought of as 
+the number of combinations of $n+k-1$ objects taken $n$ at a time, i.e. $(C, n+k-1,n)$. 
 \end{proof}
 
 \end{document}
