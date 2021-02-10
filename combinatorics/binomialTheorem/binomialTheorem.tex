@@ -16,8 +16,32 @@ We explore the Binomial Theorem.
 
 \maketitle
 
-\end{document}
 
+
+
+\begin{theorem}[Binomial Theorem]
+Let $n$ be a non-negative integer and $x, y \in \mathbb{R}$. Then
+\[
+(x+y)^n = \sum_{k=0}^n \binom{n}{k} x^ky^{n-k}
+\]
+\end{theorem}
+
+\begin{proof}
+Let $0 \leq k \leq n$ and consider the coefficient of the term $x^ky^{n-k}$ in the expansion of $(x+y)^n$.
+\[
+\underbrace{(x+y) (x+y) (x+y) \cdots (x+y) (x+y)}
+\]
+\[
+\mbox{ n factors}
+\]
+According to the distributive property, both terms in each factor multiply both of the terms in each of the other factors.
+Hence, the coefficient sought is the number of ways to select $k$ of the $x's$ 
+(and hence simultaneously $n-k$ of the $y's$) from the $n$ factors. 
+Since the order of the selection is not important, we seek the number of combinations of $n$ objects, 
+taken $k$ at a time, i.e., $C(n, k)$. 
+\end{proof}
+
+\end{document}
 \section{Permutations}
 
 

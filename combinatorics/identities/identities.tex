@@ -87,23 +87,7 @@ the remaining $n-1$ people.  In either case, we are counting the number of ways 
 a chaired committee of $k$ people from a group of $n$ people.
 \end{example}
 
-\begin{problem}(problem 3)
-Use combinatorial reasoning to establish the identity
-\[
-\binom{n}{m} \binom{m}{k} = \binom{n}{k} \binom{n-m}{m-k}
-\]
-\begin{hint}
-Use a double counting argument
-\end{hint}
-\begin{hint}
-The left hand side represents the number of ways to select an $m$ member committee from a group of $n$ people and then 
-select $k$ committee members to be on a sub-committee
-\end{hint}
 
-\begin{hint}
-To get the right hand side, choose the sub-committee first
-\end{hint}
-\end{problem}
 
 \begin{example}[example 4]
 Use combinatorial reasoning to establish the identity
@@ -170,9 +154,25 @@ Create the permutations by first creating a combination and then permuting the s
 \end{hint}
 \end{problem}
 
-
-
 \begin{problem}(problem 2)
+Use combinatorial reasoning to establish the identity
+\[
+\binom{n}{m} \binom{m}{k} = \binom{n}{k} \binom{n-m}{m-k}
+\]
+\begin{hint}
+Use a double counting argument
+\end{hint}
+\begin{hint}
+The left hand side represents the number of ways to select an $m$ member committee from a group of $n$ people and then 
+select $k$ committee members to be on a sub-committee
+\end{hint}
+
+\begin{hint}
+To get the right hand side, choose the sub-committee first
+\end{hint}
+\end{problem}
+
+\begin{problem}(problem 3)
 Use combinatorial reasoning to establish the identity
 \[
 \sum_{k=1}^n k\binom{n}{k} = n2^{n-1}
@@ -196,7 +196,7 @@ Partition the committees according to the number of members (including the chair
 \end{problem}
 
 
-\begin{problem}(problem 3)
+\begin{problem}(problem 4)
 Use combinatorial reasoning to establish the identity
 \[
 \sum_{k=0}^n \binom{n}{k}^2 = \binom{2n}{n}
@@ -218,26 +218,26 @@ Use the fact that $\dis \binom{n}{k} = \binom{n}{n-k}$
 \end{hint}
 \end{problem}
 
-\begin{problem}(problem 4)
+\begin{problem}(problem 5)
 Use combinatorial reasoning to establish the identity
 \[
 \sum_{k=0}^n \binom{n_1}{k}\binom{n_2}{n-k} = \binom{n_1+n_2}{n}
 \]
 \begin{hint}
-Modify the argument for problem 3
+Modify the argument for problem 4
 \end{hint}
 \begin{hint}
 Assume that there are $n_1$ men and $n_2$ women on the committee
 \end{hint}
 \end{problem}
 
-\begin{problem}(problem 3)
+\begin{problem}(problem 6)
 Use combinatorial reasoning to establish the identity
 \[
 \sum_{k=0}^n k\binom{n}{k}^2 = n\binom{2n-1}{n-1}
 \]
 \begin{hint}
-Modify the argument for problem 3
+Modify the argument for problem 4
 \end{hint}
 \begin{hint}
 Include a chairperson on the committee
@@ -245,85 +245,6 @@ Include a chairperson on the committee
 \end{problem}
 
 \end{document}
-
-
-
-
-
-
-
-
-
-\begin{problem}(problem 1a)
-Sam is getting dressed and wants to include a belt and a hat.  
-If Sam has three distinct belts and two distinct hats, how many ways
-can Sam accessorize? Include a tree diagram that illustrates the possibilities.\\
-Sam can accessorize in $\; \answer{6} \;$ different ways.
-\end{problem}
-
-\begin{problem}(problem 1b)
-A couple wants to go on a date.  They decide to  eat at a restaurant, walk in a park and then see a show.
-If there are two restaurants that the y both like, two nearby parks and two shows playing, 
-how many possibilities are there for their date? Make a tree diagram illustrating the possibilities.\\
-There are $\;\answer{8}\;$ different possibilities for their date.
-\end{problem}
-
-
-\begin{theorem}[Fundamental Principle of Counting]
-Suppose that $n$ decisions are to be made and that the number of choices for the $k^{th}$ decision is $d_k$.
-Then the total number of ways to make the $n$ decisions is
-\[
-\prod_{k=1}^n d_k = d_1 \cdot d_2 \cdot \ldots \cdot d_n
-\]
-\end{theorem}
-
-\begin{example}
-There are three types of Tesla Model 3: Standard Range, Long Range and Performance. 
-Each type can be painted one of 5 colors. Furthermore, two interior color schemes are available. 
-Given these parameters, how many choices are there for my Tesla Model 3 purchase?\\
-In total, three decisions must be made: the type, the paint color and the interior color scheme.
-The number of choices for each decision is 3, 5 and 2 respectively. 
-Hence, by the Fundamental Principle of Counting, the total number of ways to configure my new 
-Tesla Model 3 is $3 \cdot 5\cdot 2 = 30$.
-\begin{image}
-\begin{tikzpicture}
-
-\draw (0,0) -- (2,0) node[blue, below, midway]{Type} node[above, midway]{3} node[right]{$\times$};
-\draw (2.5,0) -- (4.5,0) node[blue, below, midway]{Paint} node[above, midway]{5} node[right]{$\times$};
-\draw (5,0) -- (7,0) node[blue, below, midway]{Interior} node[above, midway]{2} node[right]{$=$};
-\draw (7.5,0) -- (9.5,0) node[blue, below, midway]{Total} node[above, midway]{30} ;
-
-\end{tikzpicture}
-\end{image}
-\end{example}
-
-
-\begin{problem}(problem 2a)
-A three course meal consists of an appetizer, an entree and a dessert. 
-If a restaurant offers a dozen appetizers, a score of entrees and a bakers dozen desserts, 
-how many possible three course meals can be ordered?\\
-The total number of possible three course meals is $\answer{3120}$.
-\end{problem}
-
-\begin{problem}(problem 2b)
-A sixth grade class of 20 students would like to select a President, Vice-President, Secretary and Treasurer.
-If no student may serve in more than one post, in how many possible ways can the class officers be selected?\\
-The total number of ways to select the class officers is $\answer{116280}$.
-\end{problem}
-
-\end{document}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
