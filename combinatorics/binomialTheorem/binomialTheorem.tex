@@ -29,10 +29,7 @@ Let $n$ be a non-negative integer and $x, y \in \mathbb{R}$. Then
 \begin{proof}
 Let $0 \leq k \leq n$ and consider the coefficient of the term $x^ky^{n-k}$ in the expansion of $(x+y)^n$.
 \[
-\underbrace{(x+y) (x+y) (x+y) \cdots (x+y) (x+y)}
-\]
-\[
-\mbox{ n factors}
+\underbrace{(x+y) (x+y) (x+y) \cdots (x+y) (x+y)}_{\mbox{n factors}}
 \]
 According to the distributive property, both terms in each factor multiply both of the terms in each of the other factors.
 Hence, the coefficient sought is the number of ways to select $k$ of the $x's$ 
@@ -40,6 +37,66 @@ Hence, the coefficient sought is the number of ways to select $k$ of the $x's$
 Since the order of the selection is not important, we seek the number of combinations of $n$ objects, 
 taken $k$ at a time, i.e., $C(n, k)$. 
 \end{proof}
+
+\begin{remark}
+The numbers $C(n,k) = \binom{n}{k}$ are sometimes referred to as binomial coefficients.
+\end{remark}
+
+Pascal's Triangle contains the binomial coefficientsarranged in a triangular array.
+
+\[
+\mbox{Pascal's Triangle}
+\]
+\[
+1 \quad 1
+\]
+\[
+1\quad 2 \quad1
+\]
+\[
+1\quad 3 \quad 3 \quad 1 
+\]
+\[
+1\quad 4\quad 6\quad 4\quad 1
+\]
+\[
+1\quad 5\quad 10\quad 10\quad 5\quad 1 
+\]
+\[
+1\quad 6 \quad 15 \quad 20 \quad 15\quad 6 \quad 1
+\]
+From Pascal's Identity,
+\[
+\binom{n}{k} + \binom{n}{k+1} = \binom{n+1}{k+1},
+\]
+each number in the interior of the triangle is the sum of the two numbers above it.
+Try to write the next 3 rows of Pascal's Trianlge for yourself.
+Pascal's Triangle can be used to expand a  binomial expression.
+
+\begin{example}
+Use Pascal's Triangle to expand $(x+y)^4$.\\
+The fourth row of the triangle gives the coefficients:
+\[
+(x+y)^4 = x^4 + 4x^3y + 6x^2y^2 + 4xy^3 + y^4
+\]
+\end{example}
+
+\begin{problem}
+Use Pascal's triangle to expand $(x+y)^6$ and $(a+b)^8$
+\end{problem}
+
+\begin{example}
+Find the coefficient of $x^2y^3$ in the expansion of $(3x-2y)^5$.\\
+The term involving $x^2y^3$ will have the form
+\[
+\binom{5}{2}(3x)^2(-2y)^3
+\]
+Thus, the coefficient of $x^2y^3$ is
+\[
+\binom{5}{2}\cdot 3^2 \cdot (-2)^3 = 10\cdot 9 \cdot (-8) = -720
+\]
+\end{example}
+
 
 \end{document}
 \section{Permutations}
