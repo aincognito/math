@@ -42,7 +42,7 @@ taken $k$ at a time, i.e., $C(n, k)$.
 The numbers $C(n,k) = \binom{n}{k}$ are sometimes referred to as binomial coefficients.
 \end{remark}
 
-Pascal's Triangle contains the binomial coefficientsarranged in a triangular array.
+Pascal's Triangle contains the binomial coefficients arranged in a triangular array.
 
 \[
 \mbox{Pascal's Triangle}
@@ -70,7 +70,7 @@ From Pascal's Identity,
 \binom{n}{k} + \binom{n}{k+1} = \binom{n+1}{k+1},
 \]
 each number in the interior of the triangle is the sum of the two numbers above it.
-Try to write the next 3 rows of Pascal's Trianlge for yourself.
+Try to write the next 3 rows of Pascal's Triangle for yourself.
 Pascal's Triangle can be used to expand a  binomial expression.
 
 \begin{example}[example 1]
@@ -104,5 +104,126 @@ c) Find the coefficient of $x^4y^3$ in the expansion of $(2x-y)^7 \quad \answer{
 \end{problem}
 
 
-% binom identites, (1+1)^n, (1-1)^n, (2-1)^n, differentiate binom sum
+\begin{example}[example 3]
+Use the Binomial Theorem to establish the identity:
+\[
+\sum_{k=0}^n \binom{n}{k} = 2^n
+\]
+
+If we substitute $x=1$ and $y=1$, the Binomial Theorem gives,
+\[
+(1+1)^n = \sum_{k=0}^n \binom{n}{k} 1^k 1^{n-k}
+\]
+which simplifies to the identity in question.
+\end{example}
+
+\begin{problem}(problem 3a)
+Use the Binomial Theorem to establish the identity:
+\[
+\sum_{k=0}^n (-1)^k\binom{n}{k} = 0
+\]
+\begin{hint}
+Substitute appropriate values for $x$ and $y$ in the Binomial Theorem.
+\end{hint}
+
+\end{problem}
+
+\begin{problem}(problem 3b)
+Use the Binomial Theorem to establish the identity:
+\[
+\sum_{k=0}^n (-1)^k\binom{n}{k}2^{n-k} = 1
+\]
+\begin{hint}
+Substitute appropriate values for $x$ and $y$ in the Binomial Theorem.
+\end{hint}
+
+\end{problem}
+
+
+\begin{example}[example 4]
+Use the Binomial Theorem to compute:
+\[
+\sum_{k=0}^n (-1)^k\binom{n}{k}4^k 
+\]
+
+If we substitute $x=-4$ and $y=1$, the Binomial Theorem gives,
+\[
+(-4+1)^n = \sum_{k=0}^n \binom{n}{k} (-4)^k 1^{n-k}
+\]
+Rewriting $(-4)^k$ as $(-1)^k \cdot 4^k$ we arrive at
+\[
+\sum_{k=0}^n (-1)^k\binom{n}{k}4^k = (-3)^n
+\]
+\end{example}
+
+\begin{problem}(problem 4a)
+Use the Binomial Theorem to compute:
+\[
+\sum_{k=0}^n (-1)^k\binom{n}{k}10^k = \answer{(-9)^n}
+\]
+\begin{hint}
+Substitute appropriate values for $x$ and $y$ in the Binomial Theorem.
+\end{hint}
+
+\end{problem}
+
+\begin{problem}(problem 4b)
+Use the Binomial Theorem to compute:
+\[
+\sum_{k=0}^n (-\frac12)^k\binom{n}{k} = \answer{(1/2)^n}
+\]
+\begin{hint}
+Substitute appropriate values for $x$ and $y$ in the Binomial Theorem.
+\end{hint}
+
+\end{problem}
+
+\begin{example}[example 5]
+Use the Binomial Theorem to evaluate the sum:
+\[
+\sum{k=1}^{n} k\binom{n}{k}
+\]
+Consider the function 
+\[
+f(x) = (1+x)^n =\sum_{k=0}^n \binom{n}{k} x^k
+\]
+
+and it's derivative, 
+\[
+f'(x) = n(1+x)^{n-1}= \sum_{k=0}^n k\binom{n}{k} x^{k-1} = \sum_{k=1}^n k\binom{n}{k} x^{k-1}
+\]
+Evaluating $f'(1)$ we have
+\[
+f'(1) = n2^{n-1} = \sum_{k=1}^n k\binom{n}{k} 1^{k-1} = \sum_{k=1}^n k\binom{n}{k}
+\]
+Hence,
+\[
+\sum_{k=1}^n k\binom{n}{k} = n2^{n-1}
+\]
+\end{example}
+
+\begin{problem}(problem 5)
+Use the Binomial Theorem to evaluate the sum:
+\[
+ \sum{k=1}^n k^2 \binom {n}{k} = \answer{(n^+n)2^{n-2}}
+\]
+\begin{hint}
+Consider the second derivative of the function $f(x) = (1+x)^n$ and the result of the preceding example.
+\end{hint}
+
+\end{problem}
+
+We close this section by examining the function $f(x) = (1+x)^n$. According to the Binomial Theorem,
+\[
+f(x) = \sum_{k=0}^n \binom{n}{k} x^k = \binom{n}{0} + \binom{n}{1}x + \binom{n}{2}x^2 + \cdots + \binom{n}{n-1}x^{n-1} + \binom{n}{n}x^n
+\]
+Observe that the coefficient of $x^k$ in $f(x)$ is the binomial coefficient $\dis \binom{n}{k}$. 
+Polynomial functions (and power series functions) whose coefficients contain combinatorial 
+information are known as generating functions.  We will study generating functions in chapter 4.
+
+% binom identities, (1+1)^n, (1-1)^n, (2-1)^n, differentiate binom sum
 \end{document}
+
+
+f(x) = (1+x)^n....f'(x) = n(1+x)^{n-1} =\sum{k=0}^{n} k\binom{n}{k} x^{k-1} = \sum{k=1}^{n} k\binom{n}{k} x^{k-1},
+so n2^{n-1} = \sum{k=1}^{n} k\binom{n}{k} 
