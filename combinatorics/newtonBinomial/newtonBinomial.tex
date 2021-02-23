@@ -66,7 +66,7 @@ and hence the infinite series becomes a finite sum in this case.
 \end{remark}
 
 
-\begin{example}
+\begin{example}[example 2]
 Use Newton's Binomial Theorem to approximate $\sqrt 5$.\\
 First, we write 
 \[
@@ -91,27 +91,42 @@ To make an approximation, we truncate the sum at some index.  For the purpose of
 = \frac{1145}{512}
 \]
 Since the infinite series in our approximation begins to alternate after the second term, 
-the error in our four term approximation is less that the absolute value of the next term. 
+the error in our four term approximation is less than twice the absolute value of the next term (since our estimate involves multiplying the series by 2). 
 This next term corresponds to $k= 4$ and its value is 
 \[
 \binom{1/2}{4}\left(\frac14\right)^4 = -\frac{\frac12\cdot \frac12\cdot \frac32 \cdot\frac52}{4!}\cdot \frac{1}{4^4}
  = -\frac{5}{32768}
 \]
-Since the term corresponding to $k = 4$ is negative, our approximation of $\sqrt 5$ 
-as $\dis \frac{1145}{512}$ is an overestimate, and the error is at most $\dis \frac{5}{32768}$.
+Hence, the error is at most 
+\[
+\dis 2 \cdot \frac{5}{32768} = \frac{5}{16384}
+\]
+Moreover, since the term corresponding to $k = 4$ is negative, our approximation of $\sqrt 5$ 
+as $\dis \frac{1145}{512}$ is an overestimate.
 \end{example}
 
-\begin{problem} Use Newton's Binomial Theorem to approximate the given value. Truncate your series at the given value of $k$.
+\begin{problem}(problem 2) Use Newton's Binomial Theorem to approximate the given value. Truncate your series at the given value of $k$.
  Is your approximation an over-estimate or an under-estimate? What is the most your error could be?\\
 a) Approximate $\sqrt[3]{12}$. Truncate your infinite series at $k = 2$ \\
-Approximation: $\; \answer{}$ Nature of estimate? 
-\wordChoice{\choice[correct]{overestimate}\choice{underestimate}}  Maximum error: $\; \answer{}$\\
+Approximation: $\; \answer{\frac{41}{18}}\;$  
+Maximum error: $\; \answer{\frac{5}{324}}\; $
+Nature of estimate? 
+\wordChoice{\choice{overestimate}\choice[correct]{underestimate}} \\
+
 b) Approximate: $\sqrt{10}$. Truncate your infinite series at $k = 3$ \\ 
-Approximation: $\; \answer{}$ Nature of estimate? \wordChoice{\choice[correct]{overestimate}\choice{underestimate}}
-Maximum error: $\; \answer{}$\\
+Approximation: $\; \answer{\frac{12255}{3888}}\;$ 
+Maximum error: $\; \answer{\frac{5}{279936}}\;$ 
+Nature of estimate? \wordChoice{\choice[correct]{overestimate}\choice{underestimate}}\\
+
 c) Approximate $\sqrt{2}$. Truncate your infinite series at $k = 4$ \\ 
-Approximation: $\; \answer{}$ Nature of estimate? \wordChoice{\choice[correct]{overestimate}\choice{underestimate}}
-Maximum error: $\; \answer{}$\\
+Approximation: $\; \answer{\frac{179}{128}}$ 
+Maximum error: $\; \answer{\frac{7}{256}}$
+Nature of estimate? \wordChoice{\choice{overestimate}\choice[correct]{underestimate}}\\
+
+d) Approximate $\sqrt[4]{5}$. Truncate your infinite series at $k = 2$ \\ 
+Approximation: $\; \answer{\frac{7321}{4096}}\;$ 
+Maximum error: $\; \answer{\frac{7}{131072}}\;$ 
+Nature of estimate? \wordChoice{\choice{overestimate}\choice[correct]{underestimate}}\\
 
 
 \end{problem}
