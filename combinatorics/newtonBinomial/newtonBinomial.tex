@@ -131,6 +131,38 @@ Nature of estimate? \wordChoice{\choice{overestimate}\choice[correct]{underestim
 
 \end{problem}
 
+\begin{proposition}[Pascal's Identity]
+For any number $\alpha$ and any integer $k$, Pascal's Identity holds, i.e.,
+\[
+\binom{\alpha +1}{k+1} = \binom{\alpha}{k+1}+\binom{\alpha}{k}
+\]
+\end{proposition}
+
+\begin{proof}
+We prove the case that $k > 0$ and leave for the reader to prove the cases $k=0, k = -1$ and $k \leq -2$.\\
+We compute the right hand side:
+\[
+\binom{\alpha}{k+1}+\binom{\alpha}{k} = \frac{\alpha (\alpha - 1) \cdots (\alpha -k)}{(k+1)!} + 
+\frac{\alpha (\alpha - 1) \cdots (\alpha -k+1)}{k!}
+\]
+\[
+= \frac{\alpha (\alpha - 1) \cdots (\alpha -k)}{(k+1)!} + \frac{\alpha (\alpha - 1) \cdots (\alpha -k+1)}{k!} \cdot \frac{k+1}{k+1}
+\]
+\[
+= \frac{\alpha (\alpha - 1) \cdots (\alpha -k + 1)[(\alpha -k) + (k+1)]}{(k+1)!}
+\]
+\[
+= \frac{\alpha (\alpha - 1) \cdots (\alpha -k + 1)(\alpha +1)}{(k+1)!}
+\]
+\[
+= \frac{(\alpha +1)(\alpha) (\alpha - 1) \cdots (\alpha -k + 1)}{(k+1)!}
+\]
+\[
+=\binom{\alpha+1}{k+1}
+\]
+since $(\alpha + 1) - (k+1) +1 = \alpha -k +1$ which agrees with the last factor in the numerator.
+\end{proof}
+
 \end{document}
 
 
