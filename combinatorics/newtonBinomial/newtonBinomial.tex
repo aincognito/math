@@ -36,19 +36,20 @@ $\binom{\alpha}{k}$ to be zero and if $k = 0$, then we define $\binom{\alpha}{k}
 Compute $\dis \binom{1/2}{3}$.\\
 Using the definition of $\binom{\alpha}{k}$ with $\alpha = 1/2$ and $k = 3$, we have
 \[
-\binom{1/2}{3} = \frac{1/2(1/2 -1)(1/2 -2)}{3!} = \frac{\left(\frac12\right) \left(-\frac12\right)\left(-\frac32\right)}{6} = \frac{1}{16}
+\binom{1/2}{3} = \frac{\frac12(\frac12 -1)(\frac12 -2)}{3!} = \frac{\left(\frac12\right) \left(-\frac12\right)\left(-\frac32\right)}{6} = \frac{1}{16}
 \]
 \end{example}
 
 \begin{problem}(problem 1) Compute each of the following:\\
-a) $\; \binom{\frac34}{2} = \; \answer{-\frac{3}{32}}$\\
-b) $\; \binom{\frac52}{4} = \; \answer{-\frac{5}{128}}$\\
+a) $\; \binom{3/4}{2} = \; \answer{-\frac{3}{32}}$\\
+b) $\; \binom{5/2}{4} = \; \answer{-\frac{5}{128}}$\\
 c) $\; \binom{-5}{3} = \; \answer{-35}$\\
 d) $\; \binom{0}{8} = \; \answer{0}$\\
 e) $\; \binom{5}{12} = \; \answer{0}$
 \end{problem}
 
-Newton's Binomial Theorem involves powers of a binomial which are not whole numbers, like $(1+x)^{1/2}$, and stating it requires our new binomial coefficients, $\binom{\alpha}{k}$.
+Newton's Binomial Theorem involves powers of a binomial which are not whole numbers, like $(1+x)^{1/2}$. Stating 
+the theorem requires our new binomial coefficients, $\binom{\alpha}{k}$.
 
 \begin{theorem}[Newton's Binomial Theorem]
 If $|x| \leq 1$ and $\alpha \in \mathbb{R}$ then
@@ -66,7 +67,7 @@ and hence the infinite series becomes a finite sum in this case.
 
 
 \begin{example}
-Use Newton's Binomial Theorem to approxinmate $\sqrt 5$.\\
+Use Newton's Binomial Theorem to approximate $\sqrt 5$.\\
 First, we write 
 \[
 \sqrt 5 = \sqrt{4+1} = \sqrt{4}\cdot \sqrt{1+\frac{1}{4}}
@@ -76,7 +77,7 @@ We have
 \[
 \sqrt 5 = 2\left(1+\frac14\right)^{1/2} = 2\sum_{k=0}^\infty \binom{1/2}{k} \left(\frac14\right)^k
 \]
-To make an approximation, we truncate the sum at some index.  For the purpose of this example, let's say
+To make an approximation, we truncate the sum at some index.  For the purpose of this example, we will truncate the series at $k = 3$. We have
 \[
 \sqrt 5 \approx 2\sum_{k=0}^3 \binom{1/2}{k} \left(\frac14\right)^k 
 \]
@@ -89,23 +90,27 @@ To make an approximation, we truncate the sum at some index.  For the purpose of
 \[
 = \frac{1145}{512}
 \]
-Since the infinite series in our approximation begins to alternate after the second term, the error in our four term approximation is less that the absolute value of the next term. This next term corresponds to $k= 4$ and its value is 
+Since the infinite series in our approximation begins to alternate after the second term, 
+the error in our four term approximation is less that the absolute value of the next term. 
+This next term corresponds to $k= 4$ and its value is 
 \[
 \binom{1/2}{4}\left(\frac14\right)^4 = -\frac{\frac12\cdot \frac12\cdot \frac32 \cdot\frac52}{4!}\cdot \frac{1}{4^4}
  = -\frac{5}{32768}
 \]
-Since the term corresponding to $k = 4$ is negative, our approximation of $\sqrt 5$ as $\dis \frac{1145}{512}$ is an overestimate, and the error is at most $\dis \frac{5}{32768}$.
+Since the term corresponding to $k = 4$ is negative, our approximation of $\sqrt 5$ 
+as $\dis \frac{1145}{512}$ is an overestimate, and the error is at most $\dis \frac{5}{32768}$.
 \end{example}
 
 \begin{problem} Use Newton's Binomial Theorem to approximate the given value. Truncate your series at the given value of $k$.
  Is your approximation an over-estimate or an under-estimate? What is the most your error could be?\\
 a) Approximate $\sqrt[3]{12}$. Truncate your infinite series at $k = 2$ \\
 Approximation: $\; \answer{}$ Nature of estimate? 
-\wordChoice{\choice[correct]{over-extimate}\choice{under-estimate}}  Maximum error: $\; \answer{}$\\
+\wordChoice{\choice[correct]{overestimate}\choice{underestimate}}  Maximum error: $\; \answer{}$\\
 b) Approximate: $\sqrt{10}$. Truncate your infinite series at $k = 3$ \\ 
-Approximation: $\; \answer{}$ Nature of estimate? \wordChoice{\choice[correct]{over-extimate}\choice{under-estimate}}
+Approximation: $\; \answer{}$ Nature of estimate? \wordChoice{\choice[correct]{overestimate}\choice{underestimate}}
 Maximum error: $\; \answer{}$\\
-c) Approximate $\sqrt{2}$. Truncate your infinite series at $k = 4$ \\ Approximation: $\; \answer{}$ Nature of estimate? \wordChoice{\choice[correct]{over-extimate}\choice{under-estimate}}
+c) Approximate $\sqrt{2}$. Truncate your infinite series at $k = 4$ \\ 
+Approximation: $\; \answer{}$ Nature of estimate? \wordChoice{\choice[correct]{overestimate}\choice{underestimate}}
 Maximum error: $\; \answer{}$\\
 
 
