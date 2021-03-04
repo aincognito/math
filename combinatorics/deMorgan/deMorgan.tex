@@ -13,7 +13,7 @@
 
 
 \begin{abstract}
-We use De Morgan's to enumerate sets.
+We use De Morgan's Law to enumerate sets.
 \end{abstract}
 
 \maketitle
@@ -171,7 +171,14 @@ By virtue of being subsets of each other, the two sets are equal and De Morgan's
 \end{proof}
 
 
-
+\begin{remark}
+There are actually two of De Morgan's Laws.  The second is
+\[
+\left(A \cap B\right)^c = A^c \cup B^c
+\]
+The proof of this second law follows immediately from the first law by replacing $A$ and $B$ with $A^c$ and $B^c$
+and using the fact that $(S^c)^c = S$ for any set $S$.
+\end{remark}
 
 
 The next example uses De Morgan's Law in conjunction with the Rule for Complements and the 
