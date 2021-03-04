@@ -104,6 +104,71 @@ we have shown that  $A^c \cap B^c\subseteq (A \cup B)^c $.\\
 By virtue of being subsets of each other, the two sets are equal and De Morgan's Law is proved.
 \end{proof}
 
+To take advantage of De Morgan's Law in counting, we need  to count the number of elements in the union of two sets.
+
+\begin{proposition}[Inclusion-Exclusion Principle]
+Given sets $A$ and $B$ with finite cardinalities $|A|$ and $|B|$, we have
+\[
+|A \cup B| = |A| + |B| - |A \cap B|
+\]
+\end{proposition}
+
+
+
+\begin{proof}
+Let $x \in A \cup B$.  Then $x$ is in $A, B$ or both.\\
+Case 1. ($x$ is in both)
+If $x$ is in both $A$ and $B$, then the right hand side of the formula accounts for $x$ twice, 
+once as an element of $A$ and again as an element of $B$. But then, since $x$ is in 
+both $A$ and $B$, $x$ is in their intersection, $A \cap B$.  
+The coefficient of $|A \cap B|$ being $-1$, $x$ is ``de-accounted" for once in the 
+right hand side of the formula.  In total, $x$ is accounted for twice and de-accounted for once, 
+thereby accounting for it just once in total.\\
+Case 2. ($x$ is in $A$ only)
+If $x \in A$ but $x \notin B$, then the right hand side of the formula accounts 
+for such $x$ exactly once, as a member of $A$.  Note that such an $x$ is not a 
+member of $A \cap B$ and so it is not de-accounted for by the right hand side of the formula.\\
+Case 3. ($x$ is in $B$ only)
+This is the same as case 2 with the roles of $A$ and $B$ reversed.\\
+Finally, we need to be sure that the right hand side of the formula does not count elements that are not in $A \cup B$.\\
+Case 4. ($x$ is in neither $A$ nor $B$)
+In this case, none of the terms on the right hand side of the formula will either account 
+for or de-account for $x$ (since $x \notin A \cap B$ either).
+\end{proof}
+
+
+\begin{remark}
+In our discussion of partitions, we did not have a subtraction term.  This is because for each pair of sets in a partition,
+\[
+S_i \cap S_j = \emptyset
+\]
+and hence $|S_i \cap S_j| = 0$.
+\end{remark}
+
+
+\begin{example}[example 1]
+How many numbers in the set $S = \{1,2,3, \ldots, 1000\}$ are multiples of either 2 or 5?\\
+Let $A$ be the subset of $S$ consisting of the multiples of 2, and $B$ be the subset of $S$ consisting of the multiples of 5.
+We seek $|A \cup B|$. According to the proposition, 
+\[
+|A \cup B| = |A| + |B| - |A \cap B|
+\]
+We have $|A| =500$ and $|B| = 200$ and we still need $|A \cap B|$. The set $A \cap B$ consists of the multiples of 10, 
+hence $|A \cap B| = 100$.  Now we can conclude that the number of elements of $S$ that are either multiples of 2 or 5 is
+\[
+|A \cup B| = 500 + 200 - 100 = 600
+\]
+\end{example}
+
+\begin{problem}(problem 1)
+How many nmumbers from the given set $S= \{1,2,3, \ldots, 1000\}$ are multiples of the given numbers $a$ and $b$?\\
+a)$\; a = 4, b = 5 \;\; \answer{400}$\\
+b)$\;  a = 7, b = 12 \;\; \answer{214}$\\
+c)$\; a = 6, b = 10 \;\; \answer{233}$\\
+d)$\;  a = 18, b = 30 \;\; \answer{77}$ \\
+\end{problem}
+
+
 \end{document}
 
 \begin{example}[example 1]
