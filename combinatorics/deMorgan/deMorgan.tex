@@ -10,35 +10,15 @@
 
 \begin{document}
 
+
+
 \begin{abstract}
 We use De Morgan's to enumerate sets.
 \end{abstract}
 
 \maketitle
 
-\section{De Morgan's Law}
-
-Recall set complements from section 1.2:
-
-\begin{definition}[Complement]
-Given a universal set $U$ and a subset, $a \subset U$, we define the complement of $A$, denoted, $A^c$ by
-\[
-A^c = \{x \in U | x \notin A \}
-\]
-\end{definition}
-
-
-\begin{image}
-\begin{tikzpicture}
-\draw (0,0) -- (0,2) -- (3.2,2) -- (3.2, 0) -- (0,0);
-\draw (1.6, 1) circle (0.7);
-\node at (1.5,0.9) {$A$};
-\node at (2.7,1.5) {$A^c$};
-\node at (3.5,0.5) {$U$};
-\node at (1.6,-0.5) {$A$ and $A^c$};
-\end{tikzpicture}
-\end{image}
-
+We begin by counting the number of elements in the union of two sets.
 \begin{definition}[Union]
 Given a sets $A$ and $B$, their union is defined as
 \[
@@ -84,29 +64,8 @@ A \cap B = \{x \,|\, x \in A \text{  and  } x \in B \}
 \end{image}
 
 
-De Morgan's Law gives us a formula for the complement of a union in terms of the intersection of their complements.
 
-\begin{proposition}[De Morgan's Law]
-Given sets $A$ and $B$ in a universal set $U$ De Morgan's Law states that
-\[
-\left(A \cup B\right)^c = A^c \cap B^c
-\]
-\end{proposition}
-
-\begin{proof}
-First, let $x \in (A \cup B)^c$.  Then  $x \notin A \cup B$ which implies that $x \notin A$ and $x \notin B$. 
-By definition of complement, this means that $x \in A^c$ and $x \in B^c$.   
-Finally, by definition of intersection, $x \in A^c \cap B^c$.
-Thus $(A \cup B)^c \subseteq A^c \cap B^c$.\\
-Next, let $x \in A^c \cap B^c$. By definition of intersection, $x \in A^c$ and $x \in B^c$. 
-Then, $x \notin A$ and $x \notin B$ which implies that $x \notin A \cup B$. Thus $x \in (A \cup B)^c$ and 
-we have shown that  $A^c \cap B^c\subseteq (A \cup B)^c $.\\
-By virtue of being subsets of each other, the two sets are equal and De Morgan's Law is proved.
-\end{proof}
-
-To take advantage of De Morgan's Law in counting, we need  to count the number of elements in the union of two sets.
-
-\begin{proposition}[Inclusion-Exclusion Principle]
+\begin{proposition}[Inclusion-Exclusion Principle (for two sets)]
 Given sets $A$ and $B$ with finite cardinalities $|A|$ and $|B|$, we have
 \[
 |A \cup B| = |A| + |B| - |A \cap B|
@@ -153,8 +112,9 @@ We seek $|A \cup B|$. According to the proposition,
 \[
 |A \cup B| = |A| + |B| - |A \cap B|
 \]
-We have $|A| =500$ and $|B| = 200$ and we still need $|A \cap B|$. The set $A \cap B$ consists of the multiples of 10, 
-hence $|A \cap B| = 100$.  Now we can conclude that the number of elements of $S$ that are either multiples of 2 or 5 is
+We have $|A| =500$ and $|B| = 200$ and $|A \cap B| = 100$ since the set $A \cap B$ consists of the multiples of 10.  
+Using the Inclusion-Exclusion Principle (for two sets), we can conclude 
+that the number of elements of $S$ that are either multiples of 2 or 5 is
 \[
 |A \cup B| = 500 + 200 - 100 = 600
 \]
@@ -168,7 +128,54 @@ c)$\; a = 6, b = 10 \;\; \answer{233}$\\
 d)$\;  a = 18, b = 30 \;\; \answer{77}$ \\
 \end{problem}
 
-The next example uses De Morgan's Law in conjunction with the Rule for Complements.
+Recall set complements from section 1.2:
+
+\begin{definition}[Complement]
+Given a universal set $U$ and a subset, $a \subset U$, we define the complement of $A$, denoted, $A^c$ by
+\[
+A^c = \{x \in U | x \notin A \}
+\]
+\end{definition}
+
+
+\begin{image}
+\begin{tikzpicture}
+\draw (0,0) -- (0,2) -- (3.2,2) -- (3.2, 0) -- (0,0);
+\draw (1.6, 1) circle (0.7);
+\node at (1.5,0.9) {$A$};
+\node at (2.7,1.5) {$A^c$};
+\node at (3.5,0.5) {$U$};
+\node at (1.6,-0.5) {$A$ and $A^c$};
+\end{tikzpicture}
+\end{image}
+
+
+De Morgan's Law gives us a formula for the complement of a union in terms of the intersection of their complements.
+
+\begin{proposition}[De Morgan's Law]
+Given sets $A$ and $B$ in a universal set $S$ De Morgan's Law states that
+\[
+\left(A \cup B\right)^c = A^c \cap B^c
+\]
+\end{proposition}
+
+\begin{proof}
+First, let $x \in (A \cup B)^c$.  Then  $x \notin A \cup B$ which implies that $x \notin A$ and $x \notin B$. 
+By definition of complement, this means that $x \in A^c$ and $x \in B^c$.   
+Finally, by definition of intersection, $x \in A^c \cap B^c$.
+Thus $(A \cup B)^c \subseteq A^c \cap B^c$.\\
+Next, let $x \in A^c \cap B^c$. By definition of intersection, $x \in A^c$ and $x \in B^c$. 
+Then, $x \notin A$ and $x \notin B$ which implies that $x \notin A \cup B$. Thus $x \in (A \cup B)^c$ and 
+we have shown that  $A^c \cap B^c\subseteq (A \cup B)^c $.\\
+By virtue of being subsets of each other, the two sets are equal and De Morgan's Law is proved.
+\end{proof}
+
+
+
+
+
+The next example uses De Morgan's Law in conjunction with the Rule for Complements and the 
+Inclusion-Exclusion Principle (for two sets).
 
 \begin{example}[example 2]
 Computer passwords are eight characters long where a character can be either an upper case letter, 
@@ -186,7 +193,7 @@ Then according to the Rule for Complements,
 |(A \cup B)^c| = |S| - |A \cup B|,
 \]
 where $S$ is the set of all possible passwords with no restrictions. 
-Combining the two equations above with the Inclusion-Exclusion Principle for two sets, we have
+Combining the two equations above with the Inclusion-Exclusion Principle (for two sets), we have
 \[
 |A^c \cap B^c| = |S| - |A| - |B| + |A\cap B|
 \]
@@ -212,218 +219,114 @@ b) at least special symbol and at least one lower case letter? $\; \answer{70^8 
 c) at least one letter? $\; \answer{70^8 - 18^8}$\\
 \end{problem}
 
-\end{document}
-
-\begin{example}[example 1]
-Two 6-sided dice are thrown, one of which is red and the other green.  
-In how many ways can at least one 6 be rolled.\\
-We let $U$ be the set of all 36 possible outcomes of the form (red, green).
-The set $S$ which we would like to enumerate is the subset of $U$ which contains a 6 as a component in at least one position.
-The complement, $S^c$, is the set of outcomes which do not contain a 6 in either the red or the green component. It is easier to count the number of elements in $S^c$ than it is to count the number of elements in $S$, so we will use the rule for Complements.
-\[
-|S^c| = 5 \cdot 5 = 25
-\]
-since each component can be a number from 1 to 5. Now, the Rule for Complements gives
-\[
-|S| = |U| - |S^c| = 36 - 25 = 11
-\]
-Thus there are 11 outcomes where at least one of the die rolls is a 6.
-\end{example}
-
-
-\begin{problem}(problem 1a)
-Two 6-sided dice are thrown, one of which is red and the other green.  
-In how many ways can at least one 4 be rolled?\\
-The number of outcomes with at least one 4 is $\answer{11}$.
-\end{problem}
-
-\begin{problem}(problem 1b)
-Two 6-sided dice are thrown, one of which is red and the other green.  
-In how many ways can their sum be at least 3?\\
-The number of outcomes whose sum is at least 3 is $\answer{35}$.
-\end{problem}
-
-
-\begin{example}[example 2]
-Two 6-sided dice are thrown, one of which is red and the other green.  
-In how many ways can the sum be at most 10?\\
-We let $U$ be the set of all 36 possible outcomes of the form (red, green).
-The set $S$ which we would like to enumerate is the subset of $U$ whose components sum to at most 10. This means that their sum can be 2, 3, 4, ..., 10. This is most of the possible sums, so most likely, it will be easier to enumerate $S$ by examining its complement.
-$S^c$ contains the outcomes whose sum is more than 10. That is, the sum is either 11 or 12. There are tow outcomes that give a sum of 11, namely $(5,6)$ and $(6,5)$ and there is one outcome that gives a sum of 12, $(6,6)$. Thus
-\[
-|S^c| = 2 + 1 = 3
-\]
-Note that $S^c$ was partitioned into two subsets here.
-Now, by the Rule for Complements,
-\[
-|S| = |U| - |S^c| = 36 -3 = 33
-\]
-Thus there are 33 outcomes which have a sum of at most 10.
-\end{example}
-
-
-\begin{problem}(problem 2)
-Two 6-sided dice are thrown, one of which is red and the other green.  
-In how many ways can their sum be at least 5?\\
-The number of outcomes whose sum is at least 5 is $\answer{30}$.
-\end{problem}
-
 \begin{example}[example 3]
-Computer passwords are eight characters long where a character can be either an upper case letter, 
-lower case letter, digit 0-9, or one of 8 special symbols. 
-How many passwords are possible if a password must contain at least one special symbol?\\
-With no restrictions on the symbols, we have seen that the total number of possibilities is 
+How many permutations are there of the letters in the phrase MATH ROCKS in which neither 
+the word MATH nor the word ROCKS appears?\\
+Such permutations include MRAOTCHKS and SKCORHTAM, but not RKMATHSOC, HROCKSMTA, or ROCKSMATH.
+Let $A$ be the set of permutations which include the word MATH and let $B$ be the set of permutations which include the word
+ROCKS.  We seek $|A^c \cap B^c|$. By De Morgan's Law, this is the same as $|(A \cup B)^c|$. 
+Let $S$ be the set of all permutations of the letters in the phrase. Then, applying the Rule for Complements,
+and the Inclusion-Exclusion Principle (for two sets), we have
+\begin{align*}
+|A^c \cap B^c| &= |(A \cup B)^c|\\
+               &= |S| - |A\cup B|\\
+               &= |S| - \Big(|A| + |B| - |A\cup B|\Big)\\
+               &= |S| - |A| - |B| + |A\cup B|
+\end{align*}
+The number of elements in $A$ is the number of permutations of the symbols MATH, R, O, C, K, S.  
+Since this is 6 distinct symbols, $|A| = 6!$. The number of elements in $B$ is the number of 
+permutations of the symbols M, A, T, H, ROCKS.  
+Since this is 5 distinct symbols, $|B| = 5!$. The number of elements in $A \cap B$ is 2 and the number of elements in $S$
+is $9!$. Hence, the total number of ways to permute the letters in the phrase MATH ROCKS which do not 
+include either of the words MATH or ROCKS is
 \[
-|U| = 70^8 = 576480100000000
+|A^c \cap B^c| = 9! - 6! - 5! + 2 = 362042
 \]
-To enumerate the passwords with at least one special symbol, it will be helpful to consider the complement. 
-That is, passwords with no special symbols. If we use only capital letters, 
-lower case letters and digits only to construct our password, then there are
-\[
-|S^c| = 62^8 = 218340105584896
-\]
-possibilities. Thus, the Rule for Complements tells us that the number of passwords which contain at least one
-special symbol is
-\[
-|S| = |U| - |S^c| = 70^8 - 62^8 = 358139994415104
-\]
-Thus there are over 358 trillion possible passwords if we insist on at least one special symbol.
 \end{example}
 
-\begin{problem}(problem 3a)
-Computer passwords are eight characters long where a character can be either an upper case letter, 
-lower case letter, digit 0-9, or one of 8 special symbols. 
-How many passwords are possible if a password must contain at least one capital letter?\\
-The number of passwords with at least one capital letter is  $\answer{70^8 - 44^8}$.
-\end{problem}
 
+\begin{problem}(problem 3)
+How many permutations are there of the letters in the phrase DOGS RULE in which neither 
+the word DOGS nor the word RULE appears? $\; answer{40082}$
+\end{problem}
 
 \begin{example}[example 4]
-How many $2 \times 2$ bit matrices contain at least one 1?\\
-If we let $U$ be the set of all $2 \times 2$ bit matrices, then by the FPC, $|U| = 2^4 = 16$ We wish to find $|S|$,
-where $S$ is the subset of $U$ consisting of $2 \times 2$ bit matrices with at least one 1. The complement, $S^c$
-is the set of $2 \times 2$ bit matrices containing zero 1's and it is easy to enumerate.  In fact, $|S^c|= 1$, since the matrix must contain all 0's. Thus,
-\[
-|S| = |U| - |S^c| = 16 -1 = 15
-\]
-and there are 15 $2 \times 2$ bit matrices containing at least one 1.
+How many permutations are there of the numbers 1-7 such that the 1 is not in the first 
+position and the 2 is not in the second position?\\
+Let $A$ be the permutations with 1 in the first position, $B$ be the permutations with 2 in the 
+second position and $s$ be the set of all permutations. We seek $|A^c \cap B^c|$. 
+De Morgan's Law, the Rule for Complements and the Inclusion-Exclusion Principle (for two sets) gives:
+\begin{align*}
+|A^c \cap B^c| &= |(A \cup B)^c|\\
+               &= |S| - |A\cup B|\\
+               &= |S| - \Big(|A| + |B| - |A\cup B|\Big)\\
+               &= |S| - |A| - |B| + |A\cup B|\\
+               &= 7! - 6! - 6! + 5!\\
+               &= 3720
+\end{align*}
+
 \end{example}
 
-
 \begin{problem}(problem 4)
-How many $3 \times 2$ bit matrices contain at least one 0? \; $\answer{63}$
+How many permutations are there of the letters in the word ABCDEF in which the letter A is not 
+first and the letter F is not last? $\; answer{504}$
 \end{problem}
 
 
 \begin{example}[example 5]
-A coin is flipped 5 times and the sequence of heads and tails is recorded.  
-How many possible outcomes contain at least 2 heads?\\
-By the FPC, the total number of outcomes for the 5 coin flips is $|U| = 2^5 = 32$. 
-The condition at least two heads contains the possibilities of 2, 3, 4 or 5 heads.  
-On the other hand, the complement consists of only the outcomes 0 or 1 heads, suggesting that we consider 
-using the Rule for Complements. Since there is 1 way to get 0 heads (namely TTTTT), and there are 5 ways to get exactly 1 heads (the H can go in any one of 5 places, with the other 4 places being T's), we have
+How many non-negative integer solutions are there to the equation
 \[
-|S^c| = |S_0| + |S_1| = 1 + 5 = 6
+x_1 + x_2 + x_3 + x_4 + x_5 = 20
 \]
-By the Rule for Complements, 
+if $x_1 \leq 4$ and $x_2 \leq 3$?\\
+With no restrictions on the variables (except that they be non-negative integers), 
+the total number of solutions is $C(24, 20)$ by the stars and bars method.
+Let $A$ be the set of all solutions which have $x_1 > 4$ and let $B$ be the set of all solutions with $x_2 > 3$.
+We wish to find $|A^c \cap B^c|$.
+De Morgan's Law, the Rule for Complements and the Inclusion-Exclusion Principle (for two sets) gives:
+\begin{align*}
+|A^c \cap B^c| &= |(A \cup B)^c|\\
+               &= |S| - |A\cup B|\\
+               &= |S| - \Big(|A| + |B| - |A\cup B|\Big)\\
+               &= |S| - |A| - |B| + |A\cup B|\\
+\end{align*}
+where $S$ is the set of all non-negative integer solutions. By letting $y_1 = x_1 -5$, we see that 
+the number of elements in the set $A$
+is the number of non-negative integer solutions to the equation:
 \[
-|S| = |U| - |S^c| = 32 -6 = 26
+y_1 + x_2 + x_3 + x_4 + x_5 = 15
 \]
-Thus there are 26 outcomes consisting of 2 or more heads.
+which is $C(19, 15)$. By letting $y_2 = x_2 -4$, we see that the number of elements in the set $B$
+is the number of non-negative integer solutions to the equation:
+\[
+x_1 + y_2 + x_3 + x_4 + x_5 = 16
+\]
+which is $C(20, 16)$. Finally, by letting $y_1 = x_1 -5$ and $y_2 = x_2 -4$ we see that the number of 
+elements in the set $A \cap B$
+is the number of non-negative integer solutions to the equation:
+\[
+y_1 + y_2 + x_3 + x_4 + x_5 = 11
+\]
+which is $C(15, 11)$. 
+Thus the total number of non-negative integer solutions to the equation
+\[
+x_1 + x_2 + x_3 + x_4 + x_5 = 20
+\]
+with $x_1 \leq 4$ and $x_2 \leq 3$ is
+\[
+|A^c \cap B^c| = \binom{24}{20} - \binom{19}{15} - \binom{20}{16} + \binom{15}{11} = 3270
+\]
+
 \end{example}
+
 
 \begin{problem}(problem 5)
-A coin is flipped 6 times and the sequence of heads and tails is recorded.\\
-How many possible outcomes contain at least 2 tails? $\; \answer{57}$
-\end{problem}
+How many non-negative integer solutions are there to the equation
+\[
+x + y + z + w = 12
+\]
+if $y < 5$ and $w \leq 2 ? \; \answer{170}$
 
+\end{problem}
 \end{document}
 
-
-
-\begin{example}[example 5]
-Doggy Daphne is having pups.  
-Assuming that her litter consists of 5 pups, in how many ways can she have at least one male pup?\\
-By the FPC, the total number of combinations of male and female pups is $|U| = 2^5 = 32$\\
-If $S$ consists of all combinations with at least one male pup, then $|S^c| =1$, namely all female pups.
-Thus, by the Rule for Complements, the number of possible 5 pup litters Daphne can have which consist of at least one male pup is
-\[
-|S| = |U| - |S^c| = 32 -1 = 31
-\]
-\end{example}
-
-\begin{problem}(problem 5a)
-Gracie the grizzly bear is about to give birth to 3 cubs. How many combinations of male and female cubs consisting of at most 2 male cubs are possible? $\; \answer{7}$.
-\end{problem}
-
-\begin{problem}(problem 5b)
-Lioness Lucy is about to give birth to 4 cubs. How many combinations of male and female cubs consisting of at 
-least 2 female cubs are possible? $\; \answer{11}$.
-\end{problem}
-
-
-
-
-
-\begin{example}[example 2] Steph has three different shirts, 
-two different pairs of pants and 14 different hats. 
-How many ways can Steph dress if the hat is optional?\\
-If we denote by $S$ the set of all possible outfits Steph can wear, 
-then we can partition $S$ into those outfits with a hat, $S_h$, 
-and those without a hat, $S_{nh}$.
-The number of outfits with a hat is $|S_h| = 3 \times 2 \times 14 = 84$ and 
-the number of outfits with no hat is $|S_{nh}| = 3\times 2 = 6$. 
-Thus, the total number of ways for Steph to dress is 
-\[
-|S| = |S_h| + |S_{nh}| = 84 + 6 = 90
-\]
-Note that we could have counted this slightly 
-differently, by including ``no hat" as a $15^{th}$ option 
-for the hat: $|S| = 3 \times 2 \times 15 = 90$.
-\end{example}
-
-\begin{problem}(problem 1c)
-Two 6-sided dice are thrown, one of which is red and the other green.  
-In how many ways can their sum be at least 5?\\
-The number of outcomes whose sum is at least 5 is  $\answer{18}$.
-\end{problem}
-
-
-\begin{example}[example 3]
-Sam wants to buy a slice of pizza.  
-Sam enjoys three styles of pizza: Neapolitan, Chicago and Sicilian, 
-and either eats the pizza plain or with pepperoni.  
-How many different slices of pizza can Sam order?\\
-If we denote by $S$ the set of all possible acceptable slices of pizza, 
-then we can partition $S$ into the slices that have pepperoni, $S_p$ and 
-those that do not, $S_{np}$. The number of slices of each is 3 and 
-hence, the total number of possible slices Sam can order is
-\[
-|S| = |S_p| + |S_{np}| = 3+3 =6
-\]
-\end{example}
-
-\begin{example}[example 4]
-Alex and Charlie want to have 2 or fewer children.  
-How many combinations of boys and girls are possible assuming 
-that birth order of each gender is irrelevant?\\
-
-If $S$ is the set of all possible genders of their children, then we can partition $S$ according to the number of children. Let $S_0$ be the number of ways for them to have 0 children. Then $|S_0| = 1$ because the only way to have 0 children is to have 0 boys and 0 girls. Let $S_1$ be the number of ways for them to have 1 child. Then $|S_0| = 2$ because they can have 1 boy and 0 girls or 1 girl and 0 boys.
- Let $S_2$ be the number of ways for them to have 2 children. Then $|S_2| = 3$ because they
- can have 2 boys and 0 girls, 2 girls and 0 boys or 1 of each.
- Thus the total number of combinations of boys and girls that they can have is
- \[
- |S| = |S_0|+|S_1|+|S_2|= 1 + 2+3 = 6
- \]
- \end{example}
- 
-
-\begin{problem}(problem 4)
-Fluffy is about to give birth to either 5 or 6 kittens.  
-How many combinations of males and females are possible assuming 
-that birth order of each gender is irrelevant?\\
-The total number of combinations of males and females that Fluffy can have is
-$\answer{13}$
-\end{problem}
-
-\end{document}
