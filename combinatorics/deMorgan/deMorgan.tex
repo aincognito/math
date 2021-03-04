@@ -161,13 +161,56 @@ hence $|A \cap B| = 100$.  Now we can conclude that the number of elements of $S
 \end{example}
 
 \begin{problem}(problem 1)
-How many nmumbers from the given set $S= \{1,2,3, \ldots, 1000\}$ are multiples of the given numbers $a$ and $b$?\\
+How many numbers from the given set $S= \{1,2,3, \ldots, 1000\}$ are multiples of the given numbers $a$ and $b$?\\
 a)$\; a = 4, b = 5 \;\; \answer{400}$\\
 b)$\;  a = 7, b = 12 \;\; \answer{214}$\\
 c)$\; a = 6, b = 10 \;\; \answer{233}$\\
 d)$\;  a = 18, b = 30 \;\; \answer{77}$ \\
 \end{problem}
 
+The next example uses De Morgan's Law in conjunction with the Rule for Complements.
+
+\begin{example}[example 2]
+Computer passwords are eight characters long where a character can be either an upper case letter, 
+lower case letter, digit 0-9, or one of 8 special symbols. 
+How many passwords are possible if a password must contain at least one digit and at least one special symbol?\\
+
+Let $A$ be the set of passwords that do not contain any digits and let $B$ be the set of passwords that do not
+contain any special symbols. Since our passwords must contain a digit and a special symbol, we seek $|A^c \cap B^c|$.
+By De Morgan's Law, 
+\[
+A^c \cap B^c = (A \cup B)^c
+\]
+Then according to the Rule for Complements,
+\[
+|(A \cup B)^c| = |S| - |A \cup B|,
+\]
+where $S$ is the set of all possible passwords with no restrictions. 
+Combining the two equations above with the Inclusion-Exclusion Principle for two sets, we have
+\[
+|A^c \cap B^c| = |S| - |A| - |B| + |A\cap B|
+\]
+Each of the terms on the right hand side can be computed using the Fundamental Principle of Counting. Since there are
+70 different characters in total with 10 digits and 8 special symbols,
+\[
+|S| = 70^8, \; |A| = 60^8, \; |B| = 62^8 \; \text{ and } \; |A\cap B| = 52^8
+\]
+Note that the passwords in the set $A \cap B$ do not contain either digits or special symbols, so there are $70-10-8 = 52$
+available characters for them. In conclusion, the number of acceptable passwords is
+\[
+70^8 - 60^8 - 62^8 + 52^8
+\]
+
+\end{example}
+
+\begin{problem}(problem 2)
+Computer passwords are eight characters long where a character can be either an upper case letter, 
+lower case letter, digit 0-9, or one of 8 special symbols. 
+How many passwords are possible if a password must contain:\\
+a) at least one digit and at least one upper case letter? $\; \answer{70^8 - 60^8 - 44^8 + 34^8}$\\
+b) at least special symbol and at least one lower case letter? $\; \answer{70^8 - 62^8 - 44^8 + 36^8}$\\
+c) at least one letter? $\; \answer{70^8 - 18^8}$\\
+\end{problem}
 
 \end{document}
 
