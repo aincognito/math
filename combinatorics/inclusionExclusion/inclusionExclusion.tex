@@ -1,0 +1,367 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\pgfplotsset{compat=1.13}
+
+\outcome{Use the Inclusion-Exclusion Principle to count the number of elements in a set}
+
+\title{2.2 Inclusion-Exclusion Principle}
+
+\begin{document}
+
+
+
+\begin{abstract}
+We use the Inclusion-Exclusion Principle to enumerate sets.
+\end{abstract}
+
+\maketitle
+
+
+Recall the Inclusion-Exclusion Principle for two sets:
+
+\[
+|A \cup B| = |A| + |B| - |A \cap B|
+\]
+
+In this section, we will generalize this to $n$ sets, but first, let's extend it from two sets to three sets.
+
+\begin{proposition}
+Given sets $A, B$ and $C$ with finite cardinalities $|A|, |B|$ and $|C|$, we have
+\[
+|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|
+\]
+\end{proposition}
+
+
+
+
+\begin{proof}
+Consider $A \cup B$ as one set and $C$ as the second set and apply the 
+Inclusion-Exclusion Principle for two sets.  We have:
+\[
+|A \cup B \cup C| = |A \cup B| + |C| - | (A\cup B) \cap C|
+\]
+Next, use the Inclusion-Exclusion Principle for two sets on the first term, and 
+distribute the intersection across the union in the third term to obtain:
+\[
+|A \cup B \cup C| = |A| + |B| - |A \cap B| + |C| - | (A \cap C) \cup (B\cap C) |
+\]
+Now, use the Inclusion Exclusion Principle for two sets on the fourth term to get:
+\[
+|A \cup B \cup C| = |A| + |B| - |A \cap B| + |C| - \bigg(| (A \cap C)| + |B\cap C| - |(A\cap B) \cap (B\cap C)| \bigg)
+\]
+Finally, the set in the last term is just $A \cap B \cap C$, so we have the final form of the 
+Inclusion-Exclusion Principle for three sets:
+\[
+|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - | (A \cap C)| - |B\cap C| +|A\cap B\cap C|
+\]
+\end{proof}
+
+
+
+For four sets, the Inclusion-Exclusion Principle is
+\begin{align*}
+|A \cup B \cup C \cup D | = &\;\;|A|  + |B| + |C| + |D| \\
+&- |A \cap B| - | (A \cap C)| - |A \cap D| - |B\cap C| - | B \cap D| 
+- |C \cap D| \\
+& +|A\cap B\cap C| + |A\cap B\cap D|+|A\cap C\cap D|+| B\cap C\cap D| \\
+&- |A\cap B\cap C \cap D|
+\end{align*}
+At this point, the number of terms is becoming quite large, so summation notation is to be preferred:
+\[
+|A_1 \cup A_2 \cup A_3 \cup A_4 | = \sum_{i = 1}^4 |A_i| - \sum_{1 = i < j}^4 |A_i \cap A_j| + 
+\]
+\[
+\sum_{1 = i < j< k }^4 |A_i \cap A_j \cap A_k| - |A_1 \cap A_2 \cap A_3 \cap A_4 |
+\]
+
+We are now ready to state and prove the general case of the Inclusion-Exclusion Principle.
+\begin{proposition}[Inclusion-Exclusion Principle]
+Given $n$ finite sets, $A_1, A_2, \ldots, A_n$ we have
+\[
+|A_1 \cup A_2 \cup \cdots \cup A_n| 
+\]
+\[
+= \sum_{i =1}^n |A_i| - \sum_{1 =i<j}^n |A_i\cap A_j| +
+\sum_{1 =i<j< k}^n |A_i\cap A_j \cap A_k| - \cdots + (-1)^{n-1} |A_1 \cap A_2 \cap \cdots \cap A_n|
+\]
+\end{proposition}
+
+\begin{proof}
+We will prove the proposition by induction on the number of sets, $n$. The base case, $n=2$ was proved in section 2.1.
+For the induction hypothesis, we assume that the result is true for some number of sets $n$. 
+We then wish to show that the result is true for $n+1$ sets. We will do this in a manner similar to the way we began
+this section, obtaining the Inclusion-Exclusion Principle for three sets as a consequence of the result for two sets.
+Thus, we consider the union of the first $n$ sets to be a single set and we obtain:
+\[
+|(A_1 \cup A_2 \cup \cdots \cup A_n) \cup A_{n+1}| 
+\]
+\[
+= |A_1 \cup A_2 \cup \cdots \cup A_n| + |A_{n+1}| - 
+|(A_1 \cup A_2 \cup \cdots \cup A_n) \cap A_{n+1}|
+\]
+In the last term, we can distribute the intersection over the unions to obtain a union of $n$ sets:
+\[
+(A_1 \cup A_2 \cup \cdots \cup A_n) \cap A_{n+1} = 
+(A_1 \cap A_{n+1}) \cup (A_2 \cap A_{n+1}) \cup \cdots \cup (A_n \cap A_{n+1})
+\]
+We can apply the induction hypothesis the number of elements in this union, and noting 
+that $(A_i \cap A_{n+1}) \cap (A_j \cap A_{n+1})  = (A_i \cap A_j \cap A_{n+1})$, we obtain
+\[
+|(A_1 \cap A_{n+1}) \cup (A_2 \cap A_{n+1}) \cup \cdots \cup (A_n \cap A_{n+1})|
+\]
+\[
+= \sum_{i = 1}^n |A_i \cap A_{n+1}| - \sum_{1 = i < j}^n |A_i \cap A_j \cap A_{n+1}| + \cdots + (-1)^{n-1} |A_1 \cap A_2 \cap \cdots \cap A_{n+1}|
+\]
+Inserting this back into the first equation, and applying the induction hypothesis to the 
+first term in that equation, we get
+\begin{align*}
+|(A_1 \cup A_2 \cup \cdots &\cup A_n) \cup A_{n+1}|  = \\
+& |A_1 \cup A_2 \cup \cdots \cup A_n| + |A_{n+1}| - |(A_1 \cup A_2 \cup \cdots \cup A_n) \cap A_{n+1}| \\
+ &= \bigg( \sum_{i =1}^n |A_i| - \sum_{1 =i<j}^n |A_i\cap A_j| \\
+ & +\sum_{1 =i<j< k}^n |A_i\cap A_j \cap A_k| - \cdots + (-1)^{n-1} |A_1 \cap A_2 \cap \cdots \cap A_n|\bigg) \\
+  &+ |A_{n+1}| - \bigg(\sum_{i = 1}^n |A_i \cap A_{n+1}| - \sum_{1 = i < j}^n |A_i \cap A_j \cap A_{n+1}| \\
+  &+ \cdots + (-1)^{n-1} |A_1 \cap A_2 \cap \cdots \cap A_{n+1}|\bigg)\\
+  &= \sum_{i =1}^{n+1} |A_i| - \sum_{1 =i<j}^{n+1} |A_i\cap A_j| \\
+& +\sum_{1 =i<j< k}^{n+1} |A_i\cap A_j \cap A_k| - \cdots + (-1)^{n} |A_1 \cap A_2 \cap \cdots \cap A_{n+1}| \\
+\end{align*}
+as required.
+
+\end{proof}
+
+\end{document}
+
+
+\begin{example}[example 1]
+How many numbers in the set $S = \{1,2,3, \ldots, 1000\}$ are multiples of either 2 or 5?\\
+Let $A$ be the subset of $S$ consisting of the multiples of 2, and $B$ be the subset of $S$ consisting of the multiples of 5.
+We seek $|A \cup B|$. According to the proposition, 
+\[
+|A \cup B| = |A| + |B| - |A \cap B|
+\]
+We have $|A| =500$ and $|B| = 200$ and $|A \cap B| = 100$ since the set $A \cap B$ consists of the multiples of 10.  
+Using the Inclusion-Exclusion Principle (for two sets), we can conclude 
+that the number of elements of $S$ that are either multiples of 2 or 5 is
+\[
+|A \cup B| = 500 + 200 - 100 = 600
+\]
+\end{example}
+
+\begin{problem}(problem 1)
+How many numbers from the given set $S= \{1,2,3, \ldots, 1000\}$ are multiples of the given numbers $a$ and $b$?\\
+a)$\; a = 4, b = 5 \;\; \answer{400}$\\
+b)$\;  a = 7, b = 12 \;\; \answer{214}$\\
+c)$\; a = 6, b = 10 \;\; \answer{233}$\\
+d)$\;  a = 18, b = 30 \;\; \answer{77}$ \\
+\end{problem}
+
+Recall set complements from section 1.2:
+
+\begin{definition}[Complement]
+Given a universal set $U$ and a subset, $A \subset U$, we define the complement of $A$, denoted, $A^c$ by
+\[
+A^c = \{x \in U | x \notin A \}
+\]
+\end{definition}
+
+
+\begin{image}
+\begin{tikzpicture}
+\draw (0,0) -- (0,2) -- (3.2,2) -- (3.2, 0) -- (0,0);
+\draw (1.6, 1) circle (0.7);
+\node at (1.5,0.9) {$A$};
+\node at (2.7,1.5) {$A^c$};
+\node at (3.5,0.5) {$U$};
+\node at (1.6,-0.5) {$A$ and $A^c$};
+\end{tikzpicture}
+\end{image}
+
+
+De Morgan's Law gives us a formula for the complement of a union in terms of the intersection of their complements.
+
+\begin{proposition}[De Morgan's Law]
+Given sets $A$ and $B$ in a universal set $U$, De Morgan's Law states that
+\[
+\left(A \cup B\right)^c = A^c \cap B^c
+\]
+\end{proposition}
+
+\begin{proof}
+First, let $x \in (A \cup B)^c$.  Then  $x \notin A \cup B$ which implies that $x \notin A$ and $x \notin B$. 
+By definition of complement, this means that $x \in A^c$ and $x \in B^c$.   
+Finally, by definition of intersection, $x \in A^c \cap B^c$.
+Thus $(A \cup B)^c \subseteq A^c \cap B^c$.\\
+Next, let $x \in A^c \cap B^c$. By definition of intersection, $x \in A^c$ and $x \in B^c$. 
+Then, $x \notin A$ and $x \notin B$ which implies that $x \notin A \cup B$. Thus $x \in (A \cup B)^c$ and 
+we have shown that  $A^c \cap B^c\subseteq (A \cup B)^c $.\\
+By virtue of being subsets of each other, the two sets are equal and De Morgan's Law is proved.
+\end{proof}
+
+
+\begin{remark}
+There are actually two of De Morgan's Laws.  The second is
+\[
+\left(A \cap B\right)^c = A^c \cup B^c
+\]
+The proof of this second law follows immediately from the first law by replacing $A$ and $B$ with $A^c$ and $B^c$
+and using the fact that $(S^c)^c = S$ for any set $S$.
+\end{remark}
+
+
+The next example uses De Morgan's Law in conjunction with the Rule for Complements and the 
+Inclusion-Exclusion Principle (for two sets).
+
+\begin{example}[example 2]
+Computer passwords are eight characters long where a character can be either an upper case letter, 
+lower case letter, digit 0-9, or one of 8 special symbols. 
+How many passwords are possible if a password must contain at least one digit and at least one special symbol?\\
+
+Let $A$ be the set of passwords that do not contain any digits and let $B$ be the set of passwords that do not
+contain any special symbols. Since our passwords must contain a digit and a special symbol, we seek $|A^c \cap B^c|$.
+By De Morgan's Law, 
+\[
+A^c \cap B^c = (A \cup B)^c
+\]
+Then according to the Rule for Complements,
+\[
+|(A \cup B)^c| = |S| - |A \cup B|,
+\]
+where $S$ is the set of all possible passwords with no restrictions. 
+Combining the two equations above with the Inclusion-Exclusion Principle (for two sets), we have
+\[
+|A^c \cap B^c| = |S| - |A| - |B| + |A\cap B|
+\]
+Each of the terms on the right hand side can be computed using the Fundamental Principle of Counting. Since there are
+70 different characters in total with 10 digits and 8 special symbols,
+\[
+|S| = 70^8, \; |A| = 60^8, \; |B| = 62^8 \; \text{ and } \; |A\cap B| = 52^8
+\]
+Note that the passwords in the set $A \cap B$ do not contain either digits or special symbols, so there are $70-10-8 = 52$
+available characters for them. In conclusion, the number of acceptable passwords is
+\[
+70^8 - 60^8 - 62^8 + 52^8 \approx 243638122947000
+\]
+
+\end{example}
+
+\begin{problem}(problem 2)
+Computer passwords are eight characters long where a character can be either an upper case letter, 
+lower case letter, digit 0-9, or one of 8 special symbols. 
+How many passwords are possible if a password must contain:\\
+a) at least one digit and at least one upper case letter? $\; \answer{70^8 - 60^8 - 44^8 + 34^8}$\\
+b) at least special symbol and at least one lower case letter? $\; \answer{70^8 - 62^8 - 44^8 + 36^8}$\\
+c) at least one letter? $\; \answer{70^8 - 18^8}$\\
+\end{problem}
+
+\begin{example}[example 3]
+How many permutations are there of the letters in the phrase MATH ROCKS in which neither 
+the word MATH nor the word ROCKS appears?\\
+Such permutations include MRAOTCHKS and SKCORHTAM, but not RKMATHSOC, HROCKSMTA, or ROCKSMATH.
+Let $A$ be the set of permutations which include the word MATH and let $B$ be the set of permutations which include the word
+ROCKS.  We seek $|A^c \cap B^c|$. By De Morgan's Law, this is the same as $|(A \cup B)^c|$. 
+Let $S$ be the set of all permutations of the letters in the phrase. Then, applying the Rule for Complements,
+and the Inclusion-Exclusion Principle (for two sets), we have
+\begin{align*}
+|A^c \cap B^c| &= |(A \cup B)^c|\\
+               &= |S| - |A\cup B|\\
+               &= |S| - \Big(|A| + |B| -|A\cap B|\Big)\\
+               &= |S| - |A| - |B| + |A\cap B|
+\end{align*}
+The number of elements in $A$ is the number of permutations of the symbols MATH, R, O, C, K, S.  
+Since this is 6 distinct symbols, $|A| = 6!$. The number of elements in $B$ is the number of 
+permutations of the symbols M, A, T, H, ROCKS.  
+Since this is 5 distinct symbols, $|B| = 5!$. The number of elements in $A \cap B$ is 2 and the number of elements in $S$
+is $9!$. Hence, the total number of ways to permute the letters in the phrase MATH ROCKS which do not 
+include either of the words MATH or ROCKS is
+\[
+|A^c \cap B^c| = 9! - 6! - 5! + 2 = 362042
+\]
+\end{example}
+
+
+\begin{problem}(problem 3)
+How many permutations are there of the letters in the phrase DOGS RULE in which neither 
+the word DOGS nor the word RULE appears? $\; \answer{40082}$
+\end{problem}
+
+\begin{example}[example 4]
+How many permutations are there of the numbers 1-7 such that the 1 is not in the first 
+position and the 2 is not in the second position?\\
+Let $A$ be the permutations with 1 in the first position, $B$ be the permutations with 2 in the 
+second position and $s$ be the set of all permutations. We seek $|A^c \cap B^c|$. 
+De Morgan's Law, the Rule for Complements and the Inclusion-Exclusion Principle (for two sets) gives:
+\begin{align*}
+|A^c \cap B^c| &= |(A \cup B)^c|\\
+               &= |S| - |A\cup B|\\
+               &= |S| - \Big(|A| + |B| - |A\cap B|\Big)\\
+               &= |S| - |A| - |B| + |A\cap B|\\
+               &= 7! - 6! - 6! + 5!\\
+               &= 3720
+\end{align*}
+
+\end{example}
+
+\begin{problem}(problem 4)
+How many permutations are there of the letters in the word ABCDEF in which the letter A is not 
+first and the letter F is not last? $\; answer{504}$
+\end{problem}
+
+
+\begin{example}[example 5]
+How many non-negative integer solutions are there to the equation
+\[
+x_1 + x_2 + x_3 + x_4 + x_5 = 20
+\]
+if $x_1 \leq 4$ and $x_2 \leq 3$?\\
+With no restrictions on the variables (except that they be non-negative integers), 
+the total number of solutions is $C(24, 20)$ by the stars and bars method.
+Let $A$ be the set of all solutions which have $x_1 > 4$ and let $B$ be the set of all solutions with $x_2 > 3$.
+We wish to find $|A^c \cap B^c|$.
+De Morgan's Law, the Rule for Complements and the Inclusion-Exclusion Principle (for two sets) gives:
+\begin{align*}
+|A^c \cap B^c| &= |(A \cup B)^c|\\
+               &= |S| - |A\cup B|\\
+               &= |S| - \Big(|A| + |B| - |A\cap B|\Big)\\
+               &= |S| - |A| - |B| + |A\cap B|\\
+\end{align*}
+where $S$ is the set of all non-negative integer solutions. By letting $y_1 = x_1 -5$, we see that 
+the number of elements in the set $A$
+is the number of non-negative integer solutions to the equation:
+\[
+y_1 + x_2 + x_3 + x_4 + x_5 = 15
+\]
+which is $C(19, 15)$. By letting $y_2 = x_2 -4$, we see that the number of elements in the set $B$
+is the number of non-negative integer solutions to the equation:
+\[
+x_1 + y_2 + x_3 + x_4 + x_5 = 16
+\]
+which is $C(20, 16)$. Finally, by letting $y_1 = x_1 -5$ and $y_2 = x_2 -4$ we see that the number of 
+elements in the set $A \cap B$
+is the number of non-negative integer solutions to the equation:
+\[
+y_1 + y_2 + x_3 + x_4 + x_5 = 11
+\]
+which is $C(15, 11)$. 
+Thus the total number of non-negative integer solutions to the equation
+\[
+x_1 + x_2 + x_3 + x_4 + x_5 = 20
+\]
+with $x_1 \leq 4$ and $x_2 \leq 3$ is
+\[
+|A^c \cap B^c| = \binom{24}{20} - \binom{19}{15} - \binom{20}{16} + \binom{15}{11} = 3270
+\]
+
+\end{example}
+
+
+\begin{problem}(problem 5)
+How many non-negative integer solutions are there to the equation
+\[
+x + y + z + w = 12
+\]
+if $y < 5$ and $w \leq 2 ? \; \answer{170}$
+
+\end{problem}
+\end{document}
