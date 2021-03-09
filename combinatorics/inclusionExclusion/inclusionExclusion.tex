@@ -163,7 +163,7 @@ letter and at least one upper case letter? $\; \answer{70^8 - 60^8 - 44^8- 44^8 
 
 
 
-\end{document}
+
 
 
 
@@ -171,105 +171,75 @@ letter and at least one upper case letter? $\; \answer{70^8 - 60^8 - 44^8- 44^8 
 How many permutations are there of the letters in the phrase MATH IS FUN in which none of the
 words MATH, IS or FUN appears?\\
 Such permutations include MITFNSHAU and FASTHUMIN, but not IMATHUNSF, FMAISHNUT, or HTFUNISAM.
-Let $A$ be the set of permutations which include the word MATH and let $B$ be the set of permutations which include the word
-ROCKS.  We seek $|A^c \cap B^c|$. By De Morgan's Law, this is the same as $|(A \cup B)^c|$. 
+Let $A$ be the set of permutations which include the word MATH; let $B$ be the set of permutations which include the word
+IS; and let $C$ be the set of permutations which include the word FUN.  We seek $|A^c \cap B^c \cap C^c|$. 
+By De Morgan's Law (for three sets), this is the same as $|(A \cup B\cup C)^c|$. 
 Let $S$ be the set of all permutations of the letters in the phrase. Then, applying the Rule for Complements,
-and the Inclusion-Exclusion Principle (for two sets), we have
+and the Inclusion-Exclusion Principle (for three sets), we have
 \begin{align*}
-|A^c \cap B^c| &= |(A \cup B)^c|\\
-               &= |S| - |A\cup B|\\
-               &= |S| - \Big(|A| + |B| -|A\cap B|\Big)\\
-               &= |S| - |A| - |B| + |A\cap B|
+|A^c \cap B^c \cap C^c| &= |(A \cup B \cup C)^c|\\
+               &= |S| - |A\cup B \cup C|\\
+               &= |S| - \Big(|A| + |B| + |C| -|A\cap B|-|A\cap C|-|B\cap C|+|A\cap B \cap C|\Big)\\
+               &= |S| -|A| - |B| - |C| +|A\cap B|+|A\cap C|+|B\cap C|-|A\cap B \cap C|
 \end{align*}
-The number of elements in $A$ is the number of permutations of the symbols MATH, R, O, C, K, S.  
-Since this is 6 distinct symbols, $|A| = 6!$. The number of elements in $B$ is the number of 
-permutations of the symbols M, A, T, H, ROCKS.  
-Since this is 5 distinct symbols, $|B| = 5!$. The number of elements in $A \cap B$ is 2 and the number of elements in $S$
-is $9!$. Hence, the total number of ways to permute the letters in the phrase MATH ROCKS which do not 
-include either of the words MATH or ROCKS is
+The number of elements in $A$ is the number of permutations of the symbols MATH, I, S, F, U, N.  
+Since this is 6 distinct symbols, $|A| = 6!$. 
+The number of elements in $B$ is the number of 
+permutations of the symbols M, A, T, H, IS, F, U, N.  
+Since this is 8 distinct symbols, $|B| = 8!$. 
+The number of elements in $C$ is the number of 
+permutations of the symbols M, A, T, H, I, S, FUN.  
+Since this is 7 distinct symbols, $|C| = 7!$.
+The number of elements in $A \cap B$ is the number of permutations of the symbols MATH, IS, F, U, N.  
+Since this is 5 distinct symbols, $|A \cap B| = 5!$.
+The number of elements in $A \cap C$ is the number of permutations of the symbols MATH, I, S, FUN.  
+Since this is 4 distinct symbols, $|A \cap C| = 4!$.
+The number of elements in $B \cap C$ is the number of permutations of the symbols M, A, T, H, IS, FUN.  
+Since this is 6 distinct symbols, $|B \cap C| = 6!$.
+The number of elements in $A \cap B\cap C$ is the number of permutations of the symbols MATH, IS, FUN.  
+Since this is 3 distinct symbols, $|A \cap B\cap C| = 3!$.
+The number of elements in $S$
+is $9!$. Hence, the total number of ways to permute the letters in the phrase MATH IS FUN which do not 
+include any of the words MATH, IS or FUN is
 \[
-|A^c \cap B^c| = 9! - 6! - 5! + 2 = 362042
+|A^c \cap B^c \cap C^c| = 9! - 6! - 8! - 7! + 5! + 4! + 6! -3! = 317658
 \]
 \end{example}
 
 
 \begin{problem}(problem 3)
-How many permutations are there of the letters in the phrase DOGS RULE in which neither 
-the word DOGS nor the word RULE appears? $\; \answer{40082}$
+How many permutations are there of the letters in the phrase YOU HAD TIME in which do not include any of the  
+ words YOU, HAD or TIME? $\; \answer{3344074}$
 \end{problem}
 
 \begin{example}[example 4]
-How many permutations are there of the numbers 1-7 such that the 1 is not in the first 
-position and the 2 is not in the second position?\\
+How many permutations are there of the numbers 1-7 such that the 1 is not in the first position, 2 is not in the 
+second position and 3 is not in the third position?\\
 Let $A$ be the permutations with 1 in the first position, $B$ be the permutations with 2 in the 
-second position and $s$ be the set of all permutations. We seek $|A^c \cap B^c|$. 
-De Morgan's Law, the Rule for Complements and the Inclusion-Exclusion Principle (for two sets) gives:
+second position, $C$ be the permutations with 3 in the third position and $S$ be the set of all permutations. 
+We seek $|A^c \cap B^c \cap C^c|$. 
+De Morgan's Law (for three sets), the Rule for Complements and the Inclusion-Exclusion Principle (for three sets) gives:
 \begin{align*}
-|A^c \cap B^c| &= |(A \cup B)^c|\\
-               &= |S| - |A\cup B|\\
-               &= |S| - \Big(|A| + |B| - |A\cap B|\Big)\\
-               &= |S| - |A| - |B| + |A\cap B|\\
-               &= 7! - 6! - 6! + 5!\\
-               &= 3720
+|A^c \cap B^c \cap C^c| &= |(A \cup B \cup C)^c|\\
+               &= |S| - |A\cup B \cup C|\\
+               &= |S| - \Big(|A| + |B| + |C| - |A\cap B|\ - |A\cap C| - |B\cap C| + |A \cap B \cap C| \Big)\\
+               &= |S| - |A| - |B| - |C| + |A\cap B| + |A\cap C| + |B\cap C| - |A\cap B \cap C|\\
+               &= 7! - 3 \times 6! + 3 \times 5! - 4!\\
+               &= 3216
 \end{align*}
-
+Notice that in our computation we took advantage of the fact that certain sets had the same number of elements.
 \end{example}
 
 \begin{problem}(problem 4)
 How many permutations are there of the letters in the word ABCDEF in which the letter A is not 
-first and the letter F is not last? $\; answer{504}$
+first and the letter F is not last? $\; \answer{426}$
 \end{problem}
 
 
-\begin{example}[example 5]
-How many non-negative integer solutions are there to the equation
-\[
-x_1 + x_2 + x_3 + x_4 + x_5 = 20
-\]
-if $x_1 \leq 4$ and $x_2 \leq 3$?\\
-With no restrictions on the variables (except that they be non-negative integers), 
-the total number of solutions is $C(24, 20)$ by the stars and bars method.
-Let $A$ be the set of all solutions which have $x_1 > 4$ and let $B$ be the set of all solutions with $x_2 > 3$.
-We wish to find $|A^c \cap B^c|$.
-De Morgan's Law, the Rule for Complements and the Inclusion-Exclusion Principle (for two sets) gives:
-\begin{align*}
-|A^c \cap B^c| &= |(A \cup B)^c|\\
-               &= |S| - |A\cup B|\\
-               &= |S| - \Big(|A| + |B| - |A\cap B|\Big)\\
-               &= |S| - |A| - |B| + |A\cap B|\\
-\end{align*}
-where $S$ is the set of all non-negative integer solutions. By letting $y_1 = x_1 -5$, we see that 
-the number of elements in the set $A$
-is the number of non-negative integer solutions to the equation:
-\[
-y_1 + x_2 + x_3 + x_4 + x_5 = 15
-\]
-which is $C(19, 15)$. By letting $y_2 = x_2 -4$, we see that the number of elements in the set $B$
-is the number of non-negative integer solutions to the equation:
-\[
-x_1 + y_2 + x_3 + x_4 + x_5 = 16
-\]
-which is $C(20, 16)$. Finally, by letting $y_1 = x_1 -5$ and $y_2 = x_2 -4$ we see that the number of 
-elements in the set $A \cap B$
-is the number of non-negative integer solutions to the equation:
-\[
-y_1 + y_2 + x_3 + x_4 + x_5 = 11
-\]
-which is $C(15, 11)$. 
-Thus the total number of non-negative integer solutions to the equation
-\[
-x_1 + x_2 + x_3 + x_4 + x_5 = 20
-\]
-with $x_1 \leq 4$ and $x_2 \leq 3$ is
-\[
-|A^c \cap B^c| = \binom{24}{20} - \binom{19}{15} - \binom{20}{16} + \binom{15}{11} = 3270
-\]
-
-\end{example}
 
 
 
-For four sets, the Inclusion-Exclusion Principle is
+For four sets, the Inclusion-Exclusion Principle states:
 \begin{align*}
 |A \cup B \cup C \cup D | = &\;\;|A|  + |B| + |C| + |D| \\
 &- |A \cap B| - | (A \cap C)| - |A \cap D| - |B\cap C| - | B \cap D| 
@@ -284,6 +254,57 @@ At this point, the number of terms is becoming quite large, so summation notatio
 \[
 \sum_{1 = i < j< k }^4 |A_i \cap A_j \cap A_k| - |A_1 \cap A_2 \cap A_3 \cap A_4 |
 \]
+
+
+\begin{example}[example 5]
+How many non-negative integer solutions are there to the equation
+\[
+x_1 + x_2 + x_3 + x_4  = 10
+\]
+if $x_i \leq 3$ for $i = 1, 2, 3, 4$?\\
+With no restrictions on the variables (except that they be non-negative integers), 
+the total number of solutions is $|S| = C(13, 10)$ by the stars and bars method.
+Let $A_i$ be the set of all solutions which have $x_i \geq 4$ for $i = 1, 2, 3, 4$.
+We wish to find $|A_1^c \cap A_2^c \cap A_3^c \cap A_4^c|$.
+De Morgan's Law (for four sets) and the Rule for Complements 
+\begin{align*}
+|A_1^c \cap A_2^c \cap A_3^c \cap A_4^c| &= |(A_1 \cup A_2 \cup A_3 \cup A_4)^c|\\
+               &= |S| - |A_1 \cup A_2 \cup A_3 \cup A_4|
+\end{align*}               
+   
+Now, the Inclusion-Exclusion Principle (for four sets) gives:
+\[
+|A_1^c \cap A_2^c \cap A_3^c \cap A_4^c| = |S| - \sum_{i = 1}^4 |A_i| + \sum_{1 = i < j}^4 |A_i \cap A_j|
+\]
+\[
+-\sum_{1 = i < j< k }^4 |A_i \cap A_j \cap A_k| + |A_1 \cap A_2 \cap A_3 \cap A_4 |
+\]
+Since the conditions on the four variables is the same ($x_i \leq 3$), 
+the number of elements in each intersection of a particular number of sets will be equal.
+Thus, $|A_1| = |A_2| =|A_3| =|A_4| = C(9,6)$; $|A_i \cap A_j| = C(5, 2)$ for the six intersections of this form;
+$|A_i \cap A_j \cap A_k| = 0$ for the four intersections of this form; and $|A_1 \cap A_2 \cap A_3 \cap A_4| = 0$.
+Hence,
+\[
+|A_1^c \cap A_2^c \cap A_3^c \cap A_4^c| = \binom{13}{10} - 4\cdot \binom{9}{6} + 6 \cdot \binom{5}{2} - 4 \cdot 0 + 0 = 10 
+\]
+
+
+
+
+
+
+\end{example}
+
+\begin{problem}(problem 5)
+How many non-negative integer solutions are there to the equation
+\[
+x_1 + x_2 + x_3 + x_4 = 15
+\]
+if $x_i < 5$ for $i = 1, 2, 3, 4? \; \answer{576}$
+
+\end{problem}
+
+
 
 We are now ready to state and prove the general case of the Inclusion-Exclusion Principle.
 \begin{proposition}[Inclusion-Exclusion Principle]
@@ -342,60 +363,3 @@ as required.
 \end{document}
 
 
-\begin{example}[example 1]
-How many numbers in the set $S = \{1,2,3, \ldots, 1000\}$ are multiples of either 2 or 5?\\
-Let $A$ be the subset of $S$ consisting of the multiples of 2, and $B$ be the subset of $S$ consisting of the multiples of 5.
-We seek $|A \cup B|$. According to the proposition, 
-\[
-|A \cup B| = |A| + |B| - |A \cap B|
-\]
-We have $|A| =500$ and $|B| = 200$ and $|A \cap B| = 100$ since the set $A \cap B$ consists of the multiples of 10.  
-Using the Inclusion-Exclusion Principle (for two sets), we can conclude 
-that the number of elements of $S$ that are either multiples of 2 or 5 is
-\[
-|A \cup B| = 500 + 200 - 100 = 600
-\]
-\end{example}
-
-\begin{problem}(problem 1)
-How many numbers from the given set $S= \{1,2,3, \ldots, 1000\}$ are multiples of the given numbers $a$ and $b$?\\
-a)$\; a = 4, b = 5 \;\; \answer{400}$\\
-b)$\;  a = 7, b = 12 \;\; \answer{214}$\\
-c)$\; a = 6, b = 10 \;\; \answer{233}$\\
-d)$\;  a = 18, b = 30 \;\; \answer{77}$ \\
-\end{problem}
-
-Recall set complements from section 1.2:
-
-\begin{definition}[Complement]
-Given a universal set $U$ and a subset, $A \subset U$, we define the complement of $A$, denoted, $A^c$ by
-\[
-A^c = \{x \in U | x \notin A \}
-\]
-\end{definition}
-
-
-\begin{image}
-\begin{tikzpicture}
-\draw (0,0) -- (0,2) -- (3.2,2) -- (3.2, 0) -- (0,0);
-\draw (1.6, 1) circle (0.7);
-\node at (1.5,0.9) {$A$};
-\node at (2.7,1.5) {$A^c$};
-\node at (3.5,0.5) {$U$};
-\node at (1.6,-0.5) {$A$ and $A^c$};
-\end{tikzpicture}
-\end{image}
-
-
-De Morgan's Law gives us a formula for the complement of a union in terms of the intersection of their complements.
-
-
-\begin{problem}(problem 5)
-How many non-negative integer solutions are there to the equation
-\[
-x + y + z + w = 12
-\]
-if $y < 5$ and $w \leq 2 ? \; \answer{170}$
-
-\end{problem}
-\end{document}
