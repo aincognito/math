@@ -295,7 +295,7 @@ Hence,
 
 \end{example}
 
-\begin{problem}(problem 5)
+\begin{problem}(problem 5a)
 How many non-negative integer solutions are there to the equation
 \[
 x_1 + x_2 + x_3 + x_4 = 15
@@ -305,6 +305,15 @@ if $x_i < 5$ for $i = 1, 2, 3, 4? \; \answer{576}$
 \end{problem}
 
 
+
+\begin{problem}(problem 5b)
+How many permutations are there of the numbers 1-7 such that the 1 is not in the first position, 2 is not in the 
+second position, 3 is not in the third position and 4 is not in the fourth position?\\
+\begin{hint}
+$|A_i|, |A_i \cap A_j|$ and $|A_i \cap A_j \cap A_k|$ are the same for all $1 \leq i<j<k \leq 4$
+\end{hint}
+$\answer{2790}$
+\end{problem}
 
 We are now ready to state and prove the general case of the Inclusion-Exclusion Principle.
 \begin{proposition}[Inclusion-Exclusion Principle]
@@ -360,6 +369,45 @@ as required.
 
 \end{proof}
 
-\end{document}
+We now present a second proof, using a counting argument used in the proof of the two set case.
 
+\begin{proof}(combinatorial proof)\\
+Let $x \in A_1 \cup A_2 \cup \cdots \cup A_n$ and suppose that $x$ is an element of $k$ of the $n$ sets, $A_i$.
+We need to show that the proposed formula accounts for $x$ exactly once. 
+We will analyze the accounting for $x$ term by term. The first term of the Inclusion-Exclusion Principle is 
+\[
+\sum_{i=1}^n |A_i|
+\]
+and this term accounts for $x$ exactly $k$ times, since $x$ is an element of $k$ of the $n$ sets in the sum. 
+Note that $k$ is also $\binom{k}{1}$.
+The second term of the Inclusion-Exclusion Principle is 
+\[
+-\sum_{1 =i < j}^n |A_i \cap A_j|
+\]
+and this term accounts for $x$ exactly $\binom{k}{2}$ times since for $x$ to be in $A_i \cap A_j$, both of these sets must be among the $k$ sets that contain $x$.
+Similarly, the third term of the Inclusion-Exclusion Principle is 
+\[
+\sum_{1 =i < j< l}^n |A_i \cap A_j \cap A_l|
+\]
+and this term accounts for $x$ exactly $\binom{k}{3}$ times.
+Lastly, the $k^{th}$ term of the Inclusion-Exclusion Principle involves the intersections of $k$ of the $n$ sets. In this term,  $x$ is accounted  for $\binom{k}{k}$ times.
+The remaining terms of the Inclusion-Exclusion formula contain more than $k$ intersections 
+and hence they will not account for $x$ at all (or zero times). In total, the number of times $x$ is accounted for by the Inclusion-Exclusion formula is
+\[
+\binom{k}{1} - \binom{k}{2} + \binom{k}{3} - \cdots + (-1)^{k-1} \binom{k}{k} = \sum_{r=1}^k (-1)^{k-1} \binom{k}{r}
+\]
+From the binomial theorem with $x = -1$ and $y = 1$ and replacing $n$ and $k$ with $k$ and $r$ respectively, we have
+\[
+\sum_{r=0}^k (-1)^{k} \binom{k}{r} = 0
+\]
+Thus the Inclusion-Exclusion formula accounts for $x$ in 
+\[
+\sum_{r=1}^k (-1)^{k-1} \binom{k}{r} = -\sum_{r=1}^k (-1)^{k} \binom{k}{r}
+-\sum_{r=0}^k (-1)^{k} \binom{k}{r} + \binom{k}{0} = 0+1 =1
+\]
+way, as desired.
+\end{proof}
+
+
+\end{document}
 
