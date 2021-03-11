@@ -19,386 +19,169 @@ We use the Inclusion-Exclusion Principle to enumerate derangements.
 \maketitle
 
 
-\end{document}
 
+\begin{definition}[Derangements]
+A derangement is a permutation in which each of the permuted objects is forbidden from exactly one distinct position.
+The number of derangements of a set of $n$ elements is denoted by $D_n$.
+\end{definition}
 
-Recall the Inclusion-Exclusion Principle for two sets:
+\begin{remark}
+In its simplest form, a derangement of the set $S = \{1, 2, ..., n\}$ is a permutation of $S$ in 
+which the $1$ is not in the first position, the $2$ is not in the second position and so on.
+\end{remark}
 
+\begin{example}
+How many derangements are there of the word $CAT$?\\
+In this case, a derangement consists of a permutation of the letters in the word $CAT$ in 
+which the $C$ is not in the first position, the $A$ is not in the second position 
+and the $T$ is not in the third position. The list of such permutations is short 
+enough (certainly less than $3! = 6$) that the count can be 
+obtained by listing its members.  They are
 \[
-|A \cup B| = |A| + |B| - |A \cap B|
+ATC text{and} TCA
 \]
-
-In this section, we will generalize this to $n$ sets, but first, let's extend it from two sets to three sets.
-
-\begin{proposition}
-Given sets $A, B$ and $C$ with finite cardinalities $|A|, |B|$ and $|C|$, we have
-\[
-|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|
-\]
-\end{proposition}
-
-
-
-
-\begin{proof}
-Consider $A \cup B$ as one set and $C$ as the second set and apply the 
-Inclusion-Exclusion Principle for two sets.  We have:
-\[
-|A \cup B \cup C| = |A \cup B| + |C| - | (A\cup B) \cap C|
-\]
-Next, use the Inclusion-Exclusion Principle for two sets on the first term, and 
-distribute the intersection across the union in the third term to obtain:
-\[
-|A \cup B \cup C| = |A| + |B| - |A \cap B| + |C| - | (A \cap C) \cup (B\cap C) |
-\]
-Now, use the Inclusion Exclusion Principle for two sets on the fourth term to get:
-\[
-|A \cup B \cup C| = |A| + |B| - |A \cap B| + |C| - \bigg(| (A \cap C)| + |B\cap C| - |(A\cap B) \cap (B\cap C)| \bigg)
-\]
-Finally, the set in the last term is just $A \cap B \cap C$, so we have the final form of the 
-Inclusion-Exclusion Principle for three sets:
-\[
-|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - | (A \cap C)| - |B\cap C| +|A\cap B\cap C|
-\]
-\end{proof}
-
-\begin{example}[example 1]
-How many numbers in the set $S = \{1,2,3, \ldots, 1000\}$ are multiples of either 2, 5 or 9?\\
-Let $A$ be the subset of $S$ consisting of the multiples of 2, $B$ be the subset of $S$ consisting of the multiples of 5,
-and $C$ be the subset of $S$ consisting of multiples of 9.
-We seek $|A \cup B \cup C|$. According to the proposition, 
-\[
-|A \cup B \cup C| = |A| + |B| +|C| - |A \cap B|- |A \cap C|- |B \cap C| + |A \cap B \cap C|
-\]
-We have $|A| =500,|B| = 200$ and $|C| = 111$. Elements in $A \cap B$ are multiples of 10, so $|A\cap B| = 100$.
-Elements in $A \cap C$ are multiples of 18, so $|A\cap B| = 55$.
-Elements in $B \cap C$ are multiples of 45, so $|B\cap C| = 22$.  
-Lastly, elements in $A \cap B \cap C$ are multiples of 90, so $|A \cap B\cap C| = 11$. 
-Using the Inclusion-Exclusion Principle (for three sets), we can conclude 
-that the number of elements of $S$ that are either multiples of 2, 5 or 9 is
-\[
-|A \cup B \cup C| = 500 + 200 + 111 - 100 - 55 -22 + 11 = 645
-\]
+Hence, there are $4$ such derangements and $D_3 =2$.  
 \end{example}
 
 \begin{problem}(problem 1)
-How many numbers from the given set $S= \{1,2,3, \ldots, 1000\}$ are multiples of the given numbers $a, b$ and $c$?\\
-a)$\; a = 2, b = 3 , c = 5\;\; \answer{734}$\\
-b)$\;  a = 4, b= 5, c = 6 \;\; \answer{466}$\\
-c)$\; a = 6, b= 8, c = 10 \;\; \answer{300}$\\
-
+Show that $D_2 = 1$ and $D_4 = 9$ by explicitly listing all possible derangements of $AB$ and $ABCD$ respectively.
 \end{problem}
+%ABCD: BADC BCDA BDAC CADB CDAB CDBA DABC DCAB DCBA
 
+We now use the Inclusion-Exclusion Principle to count the number of derangements of the set $S = \{1, 2, ..., n\}$
+in which the number $j$ is not in the $j^{th}$ position for each $j$ from $1$ to $n$.
 
-We now extend De Morgan's Law to three sets.
-\begin{proposition}[De Morgan's Law (for three sets)]
-Given sets $A, B$ and $C$ in a universal set $U$, De Morgan's Law states that
+\begin{proposition}[Derangements]
+The number of derangements of the set $S = \{1, 2, ..., n\}$
+in which the number $j$ is not in the $j^{th}$ position for $j = 1, 2, ..., n$ is given by
 \[
-\left(A \cup B \cup C\right)^c = A^c \cap B^c \cap C^c
+D_n = n!\sum_{k = 0}^n (-1)^k \frac{1}{n!}
 \]
 \end{proposition}
 
+\begin{remark}
+Recall the Maclaurin series expansion for the exponential function:
+\[
+e^x = \sum{k = 0}^\infty \frac{x^k}{k!}
+\]
+and hence
+\[
+\frac{1}{e} = \sum{k = 0}^\infty (-1)^k\frac{1}{k!}
+\]
+Thus we see in $D_n$ the truncation of this series for $1/e$ at the $n^{th}$ term.
+\end{remark}
+
 \begin{proof}
-Using De Morgan's Law for two sets twice yields the result:
+For each $k$ from $1$ to $n$, let $A_k$ be the set of permutations of $S$ that has $k$ in the $k^{th}$ position.
+Then $|S| = n!$ and $|A_k| = (n-1)!$ for each $k$. Furthermore, $|A_i \cap A_j| = (n-2)!$ and $|A_i \cap A_j \cap A_k| = (n-3)!$.
+We see that the number of elements in the intersection of $m$ of these sets will be $(n-m)!$.\\
+We seek $\dis D_n = |A_1^c \cap A_2^c \cap \cdots \cap A_n^c|$
+By De Morgan's Law (for $n$ sets), the Rule for Complements and the Inclusion-Exclusion Principle, we have
 \begin{align*}
-\left(A \cup B \cup C\right)^c &= \left[(A \cup B) \cup C\right]^c \\
-        &= (A \cup B)^c \cap C^c \\
-        &= A^c \cap B^c \cap C^c
+D_n &= |A_1^c \cap A_2^c \cap \cdots \cap A_n^c| = |\left(A_1 \cup A_2 \cup \cdots \cup A_n\right)^c|
+   = |S| - |A_1 \cup A_2 \cup \cdots \cup A_n|\\
+   &= n! - \bigg[\sum_{i =1}^n |A_i| - \sum_{1 =i<j}^n |A_i\cap A_j|+ 
+   \sum_{1 =i<j< k}^n |A_i\cap A_j \cap A_k| \\
+   &\hspace{2.5 in} - \cdots + (-1)^{n-1} |A_1 \cap A_2 \cap \cdots \cap A_n|\bigg]\\
+   &= n! - \binom{n}{1}(n-1)! + \binom{n}{2}(n-2)! - \binom{n}{3}(n-3)! + \cdots + (-1)^n \binom{n}{n}(n-n)!\\
+   &= n! - n! + \frac{n!}{2!} - \frac{n!}{3!} + \cdots + (-1)^n \frac{n!}{n!}\\
+   &= n! \cdot \sum_{k=0}^n (-1)^n \frac{1}{k!}
 \end{align*}
-as desired.
+
+
 \end{proof}
 
-
-
-The next example uses De Morgan's Law (for three sets) in conjunction with the Rule for Complements and the 
-Inclusion-Exclusion Principle (for three sets).
-
 \begin{example}[example 2]
-Computer passwords are eight characters long where a character can be either an upper case letter, 
-lower case letter, digit 0-9, or one of 8 special symbols. 
-How many passwords are possible if a password must contain at least one digit, at least one special symbol
-and at least one capital letter?\\
-
-Let $A$ be the set of passwords that do not contain any digits; let $B$ be the set of 
-passwords that do not contain any special symbols; and let $C$ be the set of passwords 
-that do not contain any capital letters. 
-Since our passwords must contain a digit, a special symbol and a capital letter, we seek $|A^c \cap B^c \cap C^c|$.
-By De Morgan's Law (for three sets), 
-\[
-A^c \cap B^c  \cap C^c= (A \cup B \cup C)^c
-\]
-Then according to the Rule for Complements,
-\[
-|(A \cup B \cup C)^c| = |S| - |A \cup B \cup C|,
-\]
-where $S$ is the set of all possible passwords with no restrictions. 
-Combining the two equations above with the Inclusion-Exclusion Principle (for three sets), we have
-\[
-|A^c \cap B^c \cap C^c| = |S| - |A| - |B| - |C| + |A\cap B|+ |A\cap C|+ |B\cap C|- |A\cap B \cap C|
-\]
-Each of the terms on the right hand side can be computed using the Fundamental Principle of Counting. Since there are
-70 different characters in total with 10 digits, 8 special symbols and 26 capital letters,
-\[
-|S| = 70^8, \; |A| = 60^8, \; |B| = 62^8, |C| = 44^8 \; \text{ and } 
-\]
-\[
- |A\cap B| = 52^8, |A\cap C| = 34^8, |B\cap C| = 36^8 \; \text{ and }
- \]
- \[
- |A\cap B\cap C| = 26^8
-\]
-In conclusion, the number of acceptable passwords is
-\[
-70^8 - 60^8 - 62^8 - 44^8 + 52^8 + 34^8 + 36^8 - 26^8 \approx 233987976069000
-\]
-
+Compute $D_8$.\\
+\begin{align*}
+D_8 &= 8! \sum_{k=0}^8 \frac{(-1)^k}{k!}\\
+&= 8!\big(\frac{1}{0!} - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!} + \frac{1}{4!} \\
+& - \frac{1}{5!} + \frac{1}{6!} - \frac{1}{7!} + \frac{1}{8!}\big) \\
+&=  \frac{8!}{2!} - \frac{8!}{3!} + \frac{8!}{4!} - \frac{8!}{5!} + \frac{8!}{6!} - \frac{8!}{7!} + \frac{8!}{8!} \\
+&= 14833
+\end{align*}
 \end{example}
 
 \begin{problem}(problem 2)
-Computer passwords are eight characters long where a character can be either an upper case letter, 
-lower case letter, digit 0-9, or one of 8 special symbols. 
-How many passwords are possible if a password must contain at least one digit, at least one lower case 
-letter and at least one upper case letter? $\; \answer{70^8 - 60^8 - 44^8- 44^8 + 34^8 + 34^8 + 18^8 -8^8}$\\
-
+Compute $D_5$ and $D_6$.\\
+\[
+D_5 = \; \answer{265}
+\]
+\[
+D_6 = \; \answer{1854}
+\]
 \end{problem}
 
-
-
-
-
+ 
 \end{document}
 
 
 
-\begin{example}[example 3]
-How many permutations are there of the letters in the phrase MATH IS FUN in which none of the
-words MATH, IS or FUN appears?\\
-Such permutations include MITFNSHAU and FASTHUMIN, but not IMATHUNSF, FMAISHNUT, or HTFUNISAM.
-Let $A$ be the set of permutations which include the word MATH and let $B$ be the set of permutations which include the word
-ROCKS.  We seek $|A^c \cap B^c|$. By De Morgan's Law, this is the same as $|(A \cup B)^c|$. 
-Let $S$ be the set of all permutations of the letters in the phrase. Then, applying the Rule for Complements,
-and the Inclusion-Exclusion Principle (for two sets), we have
-\begin{align*}
-|A^c \cap B^c| &= |(A \cup B)^c|\\
-               &= |S| - |A\cup B|\\
-               &= |S| - \Big(|A| + |B| -|A\cap B|\Big)\\
-               &= |S| - |A| - |B| + |A\cap B|
-\end{align*}
-The number of elements in $A$ is the number of permutations of the symbols MATH, R, O, C, K, S.  
-Since this is 6 distinct symbols, $|A| = 6!$. The number of elements in $B$ is the number of 
-permutations of the symbols M, A, T, H, ROCKS.  
-Since this is 5 distinct symbols, $|B| = 5!$. The number of elements in $A \cap B$ is 2 and the number of elements in $S$
-is $9!$. Hence, the total number of ways to permute the letters in the phrase MATH ROCKS which do not 
-include either of the words MATH or ROCKS is
+There is a recursive formula for derangement numbers that makes computing them easier in some circumstances.
+
+\begin{proposition}
+Let $n \geq 2$. Then the following formula holds:
 \[
-|A^c \cap B^c| = 9! - 6! - 5! + 2 = 362042
+D_n = (n-1)(D_{n-2} + D_{n-1}
 \]
+\end{proposition}
+
+\begin{remark}
+Since $D_1 = 0$ and $D_2 = 1$, We define $D_0 = 1$ so that the recursion formula 
+holds for $n=2$, i.e., $D_2 = D_0 + D_1$.
+\end{remark}
+
+\begin{proof}
+The proof uses a counting argument. Let $S = \{1, 2, ..., n\}$ and consider the 
+derangements of $123...n$ where the $j$ is in the first position. 
+These derangements can be partitioned into two sets- those permutations for which the $1$ is in 
+the $j^{th}$ position and those for which the $1$ is in some other position.\\
+Case 1) The $j$ is in the first position and the $1$ is in the $j^{th}$ position. 
+The number of such derangements is simply $D_{n-2}$ since the remaining $n-2$ elements can be permuted among themselves 
+in $D_{n-2}$ ways in order to obtain a derangement.\\
+Case 2) The $j$ is in the first position and the $1$ is not in the $j^{th}$ position. 
+The number of derangements in this case is the number of ways to permute $234...1...n$,
+(where the 1 is in the $j^{th}$ position such that the 2 is not first, 
+the 3 is not second, ..., the $1$ is not $j^{th}$, ..., and the $n$ is not last. 
+This is the number of derangements of the $n-1$ symbols $234...n$ and hence it is $D_{n-1}$.\\
+The result follows by noting that there are $n-1$ possibilities for the choice of $j$.
+\end{proof}
+
+\begin{example}[example 3]
+Use the values $D_0 = 1$ and $D_1 = 0$ and the recursive formula for $D_n$ to compute $D_2, D_3, D_4 and D_5$.\\
+We have
+\begin{align*}
+D_2 &= (2-1)(D_0 + D_1) = 1\\
+D_3 &= (3-1)(D_1 + D_2) = 2(0+1) = 2\\
+D_4 &= (4-1)(D_2 + D_3) = 3(1+2) = 9\\
+D_5 &= (5-1)(D_4 + D_5) = 4(2+9) = 44\\
+\end{align*}
 \end{example}
 
 
 \begin{problem}(problem 3)
-How many permutations are there of the letters in the phrase DOGS RULE in which neither 
-the word DOGS nor the word RULE appears? $\; \answer{40082}$
+Use the recursive formula to compute $D_6, D_7, D_8, D_9$ and $D_10$.
 \end{problem}
 
-\begin{example}[example 4]
-How many permutations are there of the numbers 1-7 such that the 1 is not in the first 
-position and the 2 is not in the second position?\\
-Let $A$ be the permutations with 1 in the first position, $B$ be the permutations with 2 in the 
-second position and $s$ be the set of all permutations. We seek $|A^c \cap B^c|$. 
-De Morgan's Law, the Rule for Complements and the Inclusion-Exclusion Principle (for two sets) gives:
-\begin{align*}
-|A^c \cap B^c| &= |(A \cup B)^c|\\
-               &= |S| - |A\cup B|\\
-               &= |S| - \Big(|A| + |B| - |A\cap B|\Big)\\
-               &= |S| - |A| - |B| + |A\cap B|\\
-               &= 7! - 6! - 6! + 5!\\
-               &= 3720
-\end{align*}
-
+\begin{example}[example 4] (The hat check problem)\\
+$n$ people check their hats at an establishment. At closing time, the $n$ hats are returned at random to the $n$ people.
+What is the probability that no one receives their own hat?\\
+The total number of ways to return the $n$ hats to the $n$ people is $n!$ and since each of 
+these $n!$ permutations is equally likely as the hats at returned at random, the probability of 
+any particular permutation of the returned hats is $\frac{1}{n!}$. The probability that no one 
+receives their own hat is thus $D_n*\frac{1}{n!} = \frac{D_n}{n!}$ since there are $D_n$ ways to return 
+the $n$ hats in this manner.
 \end{example}
 
 \begin{problem}(problem 4)
-How many permutations are there of the letters in the word ABCDEF in which the letter A is not 
-first and the letter F is not last? $\; answer{504}$
+Find the limit as $n \to \infty$ of the probability in the hat check problem. $\;\; \answer{1/e}$
 \end{problem}
 
-
-\begin{example}[example 5]
-How many non-negative integer solutions are there to the equation
-\[
-x_1 + x_2 + x_3 + x_4 + x_5 = 20
-\]
-if $x_1 \leq 4$ and $x_2 \leq 3$?\\
-With no restrictions on the variables (except that they be non-negative integers), 
-the total number of solutions is $C(24, 20)$ by the stars and bars method.
-Let $A$ be the set of all solutions which have $x_1 > 4$ and let $B$ be the set of all solutions with $x_2 > 3$.
-We wish to find $|A^c \cap B^c|$.
-De Morgan's Law, the Rule for Complements and the Inclusion-Exclusion Principle (for two sets) gives:
-\begin{align*}
-|A^c \cap B^c| &= |(A \cup B)^c|\\
-               &= |S| - |A\cup B|\\
-               &= |S| - \Big(|A| + |B| - |A\cap B|\Big)\\
-               &= |S| - |A| - |B| + |A\cap B|\\
-\end{align*}
-where $S$ is the set of all non-negative integer solutions. By letting $y_1 = x_1 -5$, we see that 
-the number of elements in the set $A$
-is the number of non-negative integer solutions to the equation:
-\[
-y_1 + x_2 + x_3 + x_4 + x_5 = 15
-\]
-which is $C(19, 15)$. By letting $y_2 = x_2 -4$, we see that the number of elements in the set $B$
-is the number of non-negative integer solutions to the equation:
-\[
-x_1 + y_2 + x_3 + x_4 + x_5 = 16
-\]
-which is $C(20, 16)$. Finally, by letting $y_1 = x_1 -5$ and $y_2 = x_2 -4$ we see that the number of 
-elements in the set $A \cap B$
-is the number of non-negative integer solutions to the equation:
-\[
-y_1 + y_2 + x_3 + x_4 + x_5 = 11
-\]
-which is $C(15, 11)$. 
-Thus the total number of non-negative integer solutions to the equation
-\[
-x_1 + x_2 + x_3 + x_4 + x_5 = 20
-\]
-with $x_1 \leq 4$ and $x_2 \leq 3$ is
-\[
-|A^c \cap B^c| = \binom{24}{20} - \binom{19}{15} - \binom{20}{16} + \binom{15}{11} = 3270
-\]
-
-\end{example}
-
-
-
-For four sets, the Inclusion-Exclusion Principle is
-\begin{align*}
-|A \cup B \cup C \cup D | = &\;\;|A|  + |B| + |C| + |D| \\
-&- |A \cap B| - | (A \cap C)| - |A \cap D| - |B\cap C| - | B \cap D| 
-- |C \cap D| \\
-& +|A\cap B\cap C| + |A\cap B\cap D|+|A\cap C\cap D|+| B\cap C\cap D| \\
-&- |A\cap B\cap C \cap D|
-\end{align*}
-At this point, the number of terms is becoming quite large, so summation notation is to be preferred:
-\[
-|A_1 \cup A_2 \cup A_3 \cup A_4 | = \sum_{i = 1}^4 |A_i| - \sum_{1 = i < j}^4 |A_i \cap A_j| + 
-\]
-\[
-\sum_{1 = i < j< k }^4 |A_i \cap A_j \cap A_k| - |A_1 \cap A_2 \cap A_3 \cap A_4 |
-\]
-
-We are now ready to state and prove the general case of the Inclusion-Exclusion Principle.
-\begin{proposition}[Inclusion-Exclusion Principle]
-Given $n$ finite sets, $A_1, A_2, \ldots, A_n$ we have
-\[
-|A_1 \cup A_2 \cup \cdots \cup A_n| 
-\]
-\[
-= \sum_{i =1}^n |A_i| - \sum_{1 =i<j}^n |A_i\cap A_j| +
-\sum_{1 =i<j< k}^n |A_i\cap A_j \cap A_k| - \cdots + (-1)^{n-1} |A_1 \cap A_2 \cap \cdots \cap A_n|
-\]
-\end{proposition}
-
-\begin{proof}
-We will prove the proposition by induction on the number of sets, $n$. The base case, $n=2$ was proved in section 2.1.
-For the induction hypothesis, we assume that the result is true for some number of sets $n$. 
-We then wish to show that the result is true for $n+1$ sets. We will do this in a manner similar to the way we began
-this section, obtaining the Inclusion-Exclusion Principle for three sets as a consequence of the result for two sets.
-Thus, we consider the union of the first $n$ sets to be a single set and we obtain:
-\[
-|(A_1 \cup A_2 \cup \cdots \cup A_n) \cup A_{n+1}| 
-\]
-\[
-= |A_1 \cup A_2 \cup \cdots \cup A_n| + |A_{n+1}| - 
-|(A_1 \cup A_2 \cup \cdots \cup A_n) \cap A_{n+1}|
-\]
-In the last term, we can distribute the intersection over the unions to obtain a union of $n$ sets:
-\[
-(A_1 \cup A_2 \cup \cdots \cup A_n) \cap A_{n+1} = 
-(A_1 \cap A_{n+1}) \cup (A_2 \cap A_{n+1}) \cup \cdots \cup (A_n \cap A_{n+1})
-\]
-We can apply the induction hypothesis the number of elements in this union, and noting 
-that $(A_i \cap A_{n+1}) \cap (A_j \cap A_{n+1})  = (A_i \cap A_j \cap A_{n+1})$, we obtain
-\[
-|(A_1 \cap A_{n+1}) \cup (A_2 \cap A_{n+1}) \cup \cdots \cup (A_n \cap A_{n+1})|
-\]
-\[
-= \sum_{i = 1}^n |A_i \cap A_{n+1}| - \sum_{1 = i < j}^n |A_i \cap A_j \cap A_{n+1}| + \cdots + (-1)^{n-1} |A_1 \cap A_2 \cap \cdots \cap A_{n+1}|
-\]
-Inserting this back into the first equation, and applying the induction hypothesis to the 
-first term in that equation, we get
-\begin{align*}
-|A_1 \cup A_2 &\cup \cdots \cup A_n \cup A_{n+1}|   \\[6 pt]
-& =|A_1 \cup A_2 \cup \cdots \cup A_n| + |A_{n+1}| - |(A_1 \cup A_2 \cup \cdots \cup A_n) \cap A_{n+1}| \\[7 pt]
- &= \bigg( \sum_{i =1}^n |A_i| - \sum_{1 =i<j}^n |A_i\cap A_j| \\
- &\quad +\sum_{1 =i<j< k}^n |A_i\cap A_j \cap A_k| - \cdots + (-1)^{n-1} |A_1 \cap A_2 \cap \cdots \cap A_n|\bigg) \\
-  &\quad+ |A_{n+1}| - \bigg(\sum_{i = 1}^n |A_i \cap A_{n+1}| - \sum_{1 = i < j}^n |A_i \cap A_j \cap A_{n+1}| \\
-  &\;\;+ \cdots + (-1)^{n-1} |A_1 \cap A_2 \cap \cdots \cap A_{n+1}|\bigg)\\
-  &= \sum_{i =1}^{n+1} |A_i| - \sum_{1 =i<j}^{n+1} |A_i\cap A_j| \\
-& \quad +\sum_{1 =i<j< k}^{n+1} |A_i\cap A_j \cap A_k| - \cdots + (-1)^{n} |A_1 \cap A_2 \cap \cdots \cap A_{n+1}| \\
-\end{align*}
-as required.
-
-\end{proof}
 
 \end{document}
 
 
-\begin{example}[example 1]
-How many numbers in the set $S = \{1,2,3, \ldots, 1000\}$ are multiples of either 2 or 5?\\
-Let $A$ be the subset of $S$ consisting of the multiples of 2, and $B$ be the subset of $S$ consisting of the multiples of 5.
-We seek $|A \cup B|$. According to the proposition, 
-\[
-|A \cup B| = |A| + |B| - |A \cap B|
-\]
-We have $|A| =500$ and $|B| = 200$ and $|A \cap B| = 100$ since the set $A \cap B$ consists of the multiples of 10.  
-Using the Inclusion-Exclusion Principle (for two sets), we can conclude 
-that the number of elements of $S$ that are either multiples of 2 or 5 is
-\[
-|A \cup B| = 500 + 200 - 100 = 600
-\]
-\end{example}
-
-\begin{problem}(problem 1)
-How many numbers from the given set $S= \{1,2,3, \ldots, 1000\}$ are multiples of the given numbers $a$ and $b$?\\
-a)$\; a = 4, b = 5 \;\; \answer{400}$\\
-b)$\;  a = 7, b = 12 \;\; \answer{214}$\\
-c)$\; a = 6, b = 10 \;\; \answer{233}$\\
-d)$\;  a = 18, b = 30 \;\; \answer{77}$ \\
-\end{problem}
-
-Recall set complements from section 1.2:
-
-\begin{definition}[Complement]
-Given a universal set $U$ and a subset, $A \subset U$, we define the complement of $A$, denoted, $A^c$ by
-\[
-A^c = \{x \in U | x \notin A \}
-\]
-\end{definition}
 
 
-\begin{image}
-\begin{tikzpicture}
-\draw (0,0) -- (0,2) -- (3.2,2) -- (3.2, 0) -- (0,0);
-\draw (1.6, 1) circle (0.7);
-\node at (1.5,0.9) {$A$};
-\node at (2.7,1.5) {$A^c$};
-\node at (3.5,0.5) {$U$};
-\node at (1.6,-0.5) {$A$ and $A^c$};
-\end{tikzpicture}
-\end{image}
 
 
-De Morgan's Law gives us a formula for the complement of a union in terms of the intersection of their complements.
-
-
-\begin{problem}(problem 5)
-How many non-negative integer solutions are there to the equation
-\[
-x + y + z + w = 12
-\]
-if $y < 5$ and $w \leq 2 ? \; \answer{170}$
-
-\end{problem}
-\end{document}
