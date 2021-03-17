@@ -1,0 +1,139 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\pgfplotsset{compat=1.13}
+
+\outcome{Enumerate the number of relative derangements of a set}
+
+\title{2.4 Relative Derangements}
+
+\begin{document}
+
+
+
+\begin{abstract}
+We use the Inclusion-Exclusion Principle to enumerate relative derangements.
+\end{abstract}
+
+\maketitle
+
+
+
+\begin{definition}[Relative Derangements]
+A relative derangement of a permutation is another permutation in which each object in the first 
+permutation has a different successor. The number of relative derangements of a permutation consisting 
+of $n$ elements is denoted by $Q_n$.
+\end{definition}
+
+\begin{remark}
+In its simplest form, a relative derangement of the permutation $123...n$ is a permutation which does not contain any of the strings $12, 23, 34, ..., (n-1)n$.
+\end{remark}
+
+\begin{example}
+List the relative derangements of the letters $CAT$.\\
+  We consider permutations of $CAT$ for which the $C$ does not proceed 
+the $A$ and the $A$ does not proceed the $T$. The relative derangements of $CAT$ are
+\[
+CTA, ACT, \text{and} TCA
+\]
+Since there are 3 of them, we can write $Q_3 = 3$.
+Note that while $TCA$ is a derangement of $CAT$, it is not a relative derangement 
+since $A$ follows $C$ in both $CAT$ and $TCA$.
+\end{example}
+
+\begin{problem}(problem 1)
+Show that $Q_2 = 1$ and $Q_4 = 11$ by explicitly listing all relative derangements of $AB$ and $ABCD$ respectively.
+\end{problem}
+%ABCD: ACBD ADCB BADC BDAC BDCA CADB CBAD CBDA DACB DBAC DCBA
+
+Before we find a general formula for $Q_n$, we will explore $Q_5$. 
+We wish to count the number of relative derangements of $12345$.
+Let $A_1$ be the permutations of $12345$ which contain the string $12$;\\
+let $A_2$ be the permutations of $12345$ which contain the string $23$;\\
+let $A_3$ be the permutations of $12345$ which contain the string $34$;\\
+and let $A_4$ be the permutations of $12345$ which contain the string $45$.\\
+The number of permutations in $A_1$ is then number of permutations of the symbols $12, 3, 4, 5$.  
+Since there are 4 distinct symbols, we have $|A_1|$ = 4!. Furthermore, $|A_2| = |A_3| = |A_4| = 4!$ as well.
+Next we consider $|A_1 \cap A_2|$ and $|A_1 \cap A_3|$. Permutations in the set $A_1 \cap A_2$ include 
+the strings $12$ and $23$ and hence they contain the string $123$. Thus, $|A_1 \cap A_2| = 3!$ since they 
+consist of permutations of the symbols $123, 4, 5$. Now consider permutations in the set $A_1 \cap A_3$. 
+These permutations contain the strings $12$ and $34$.  Unlike the previous situation, these strings do 
+not overlap. We have $|A_1 \cap A_3| = 3!$ anyway, since we are considering permutations of the three 
+symbols $12, 34, 5$. We see that whether the strings overlap or not, the number of permutations containing 
+the same number of 2-strings is the same. In a similar manner, when we consider three way intersections
+we obtain the same number of permutations even though on the surface they appear to be different.
+Consider $A_1 \cap A_2 \cap A_3$ and $A_1 \cap A_2 \cap A_4$. In the first case, the set contains permutations of the symbols $1234, 5$ and in the second case $123, 45$.  In either case there are $2!$ permutations, so
+$|A_1 \cap A_2 \cap A_3|=|A_1 \cap A_2 \cap A_4|$.  In this way, we see that the three way 
+intersections all contain the same number of permutations. We are now able to compute $Q_5$. We have
+\begin{align*}
+Q_5 &= |A_1^c \cap A_2^c \cap A_3^c \cap A_4^c|\\
+    &= |(A_1 \cup A_2 \cup A_3 \cup A_4)^c|\\
+    &= |S| - |A_1 \cup A_2 \cup A_3 \cup A_4|\\
+    &= |S| - \sum_{i =1}^4 |A_i| + \sum_{1=i<j}|A_i \cap A_j|\\
+    & \qquad  - \sum_{1 = i <j<k}^4 |A_i \cap A_j \cap A_k| \;\;+\;\; |A_1 \cap A_2 \cap A_3 \cap A_4|\\
+    &= 5! - \binom{4}{1}4! + \binom{4}{2} 3! - \binom{4}{3}2! + 1\\
+    &= 120 - 96 + 36 - 8 +1 = 53
+ \end{align*}
+    
+
+
+
+We now compute the number of relative derangements, $Q_n$
+
+\begin{theorem}[Relative Derangements]
+The number of relative derangements of the permutation $123...n$, i.e., the number of permutations of the set $S = 1, 2, 3, ..., n$ which do not contain any of the strings $12, 23, 34, ..., (n-1)n$, is given by
+\[
+Q_n = (n-1)! \sum_{k = 0}^{n-1} (-1)^k \frac{n-k}{k!}
+\]
+\end{theorem}
+
+
+
+\begin{proof}
+For each $j$ from $1$ to $n-1$, let $A_j$ be the set of permutations of $S$ that contain the string $j(j+1)$ 
+Then $|S| = n!$ and $|A_j| = (n-1)!$ for each $j$. Furthermore, based on the pattern we observed when computing $Q_5$,  $|A_i \cap A_j| = (n-2)!$ and $|A_i \cap A_j \cap A_k| = (n-3)!$ and in general, 
+the number of elements in the intersection of $m$ of these sets will be $(n-m)!$.\\
+We are now ready to compute $\dis Q_n = |A_1^c \cap A_2^c \cap \cdots \cap A_{n-1}^c|$
+By De Morgan's Law (for $n$ sets), the Rule for Complements and the Inclusion-Exclusion Principle, we have
+\begin{align*}
+Q_n &= |A_1^c \cap A_2^c \cap \cdots \cap A_{n-1}^c| = |\left(A_1 \cup A_2 \cup \cdots \cup A_{n-1}\right)^c|
+   = |S| - |A_1 \cup A_2 \cup \cdots \cup A_{n-1}|\\
+   &= n! - \bigg[\sum_{i =1}^{n-1} |A_i| - \sum_{1 =i<j}^{n-1} |A_i\cap A_j|+ 
+   \sum_{1 =i<j< k}^{n-1} |A_i\cap A_j \cap A_k| \\
+   &\hspace{2.5 in} - \cdots + (-1)^{n-2} |A_1 \cap A_2 \cap \cdots \cap A_{n-1}|\bigg]\\
+   &= n! - \binom{n-1}{1}(n-1)! + \binom{n-1}{2}(n-2)! - \binom{n-1}{3}(n-3)! + \cdots + (-1)^{n-1} \binom{n-1}{n-1}(1)!\\
+   &= (n-1)!\left[n -\frac{n-1}{1!} + \frac{n-2}{2!} - \frac{n-3}{3!} + \cdots + (-1)^{n-1} \frac{1}{(n-1)!}\right]\\
+   &= (n-1)! \cdot \sum_{k=0}^{n-1} (-1)^k \frac{n-k}{k!}
+\end{align*}
+
+
+\end{proof}
+
+\begin{problem}(problem 2) A herd of 30 elephants is walking single file on a long trek.  
+At the midpoint, they stop at a watering hole. Upon resuming their single file march, they decide that 
+no elephant should have the same elephant immediately in front of them.  
+In how many single file formations can the elephants resume their journey?\\
+\begin{multipleChoice}
+\choice{$D_{30}$}\\
+\choice[correct]{$Q_{30}$}\\
+\choice{$30!$}\\
+\choice{$30^{30}$}
+\end{multipleChoice}
+\end{problem}
+
+It turns out that the relative derangement numbers, $Q_n$ are related to the derangement numbers $D_n$.
+
+\begin{problem}(problem 3)  Show that for $k \geq 1$
+\[
+(-1)^k \frac{n-k}{k!} = (-1)^k \frac{n}{k!} + (-1)^{k-1} \frac{1}{(k-1)!}
+\]
+and use this to show that 
+\[
+Q_n = D_n + D_{n-1}
+\]
+for $n \geq 2$.
+\end{problem}
+
+\end{document}
+
