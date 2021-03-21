@@ -21,19 +21,19 @@ We use the Inclusion-Exclusion Principle to enumerate relative derangements.
 
 
 \begin{definition}[Relative Derangements]
-A relative derangement of a permutation is another permutation in which each object in the first 
+A relative derangement of a permutation of $n$ objects is another permutation of these $n$ objects for which each object in the original 
 permutation has a different successor. The number of relative derangements of a permutation consisting 
-of $n$ elements is denoted by $Q_n$.
+of $n$ objects is denoted by $Q_n$.
 \end{definition}
 
 \begin{remark}
-In its simplest form, a relative derangement of the permutation $123...n$ is a permutation which does not contain any of the strings $12, 23, 34, ..., (n-1)n$.
+In its simplest form, a relative derangement of the permutation $123...n$ is a permutation of $S = \{1, 2, 3, ..., n\}$ which does not contain any of the strings $12, 23, 34, ..., (n-1)n$.
 \end{remark}
 
 \begin{example}
 List the relative derangements of the letters $CAT$.\\
   We consider permutations of $CAT$ for which the $C$ does not proceed 
-the $A$ and the $A$ does not proceed the $T$. The relative derangements of $CAT$ are
+the $A$, and the $A$ does not proceed the $T$. The relative derangements of $CAT$ are
 \[
 CTA, ACT, \text{and} TCA
 \]
@@ -82,7 +82,7 @@ Q_5 &= |A_1^c \cap A_2^c \cap A_3^c \cap A_4^c|\\
 We now compute the number of relative derangements, $Q_n$
 
 \begin{theorem}[Relative Derangements]
-The number of relative derangements of the permutation $123...n$, i.e., the number of permutations of the set $S = 1, 2, 3, ..., n$ which do not contain any of the strings $12, 23, 34, ..., (n-1)n$, is given by
+The number of relative derangements of $123...n$, i.e., the number of permutations of the set $S = \{1, 2, 3, ..., n\}$ which do not contain any of the strings $12, 23, 34, ..., (n-1)n$, is given by
 \[
 Q_n = (n-1)! \sum_{k = 0}^{n-1} (-1)^k \frac{n-k}{k!}
 \]

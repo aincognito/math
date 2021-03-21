@@ -422,8 +422,27 @@ Compute $du$
 \end{problem}
 
 
-\begin{example}[example 13] Compute 
-\[\int \frac{1}{x\ln^2(x)} \ dx.\]
+\begin{example}[example 13]
+ Compute $\dis \int \frac{1}{x\ln^2(x)} \ dx.$\\
+Step 1) Transform the integral:
+\begin{align*}
+\int \frac{1}{x\ln^2(x)}& \ dx = \int \frac{1}{\ln^2(x)} \cdot \frac{1}{x} \ dx = \int \frac{1}{u^2} \ du\\
+\text{let} \;\; u =& \ln(x)&  \\
+\text{then} \;\; du =& \frac{1}{x} dx&
+\end{align*}
+Step 2) Anti-differentiate:
+\[
+\int \frac{1}{u^2} \, du = \int u^{-2} \, du = \frac{u^{-1}}{-1} + C = -\frac{1}{u} + C
+\]
+Step 3) Back-substitute:
+\[
+-\frac{1}{u} + C = -\frac{1}{\ln(x)} + C
+\]
+Hence,
+\[
+\int \frac{1}{x\ln^2(x)} \ dx = -\frac{1}{\ln(x)} + C
+\]
+
 Let $u = \ln(x)$. Then we have,
 \[u = \ln(x)\]
 \[du = \tfrac1x \ dx\]
