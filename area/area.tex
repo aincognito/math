@@ -75,19 +75,20 @@ xticklabels={$a$, $b$}, title={\textup{Area Between Curves}}]
 
 %\addplot[white] coordinates {(1.51,0) (1.8, 0)}; %white space to put the x in the x-axis
 
-\addplot[thin, dashed, blue] coordinates {(-1,1.2) (-1, 2)};
-\addplot[thin, dashed, blue] coordinates {(1,1.2) (1, 2)};
+\addplot[thick, dashed, blue] coordinates {(-1,1.2) (-1, 2)};
+\addplot[thick, dashed, blue] coordinates {(1,1.2) (1, 2)};
 
 \addplot[<->] coordinates {(-1.5,-.6) (-1.5, 2.5)};
 \addplot[<->] coordinates {(-1.7,0) (1.5, 0)};
-
+\addplot[white] coordinates {(-1.5, -0.7) (-1.5, -1.4)};
 
 \node at (axis cs: .5,2.1){$y = f(x)$};
 \node at (axis cs: -.5,.3){$y = g(x)$};
 \node at (axis cs: -1.6,1.9){$y$};
 \node at (axis cs: 1.45,-.15){$x$};
 
-\node at (axis cs: 0,-.6){Area $= \int_a^b f(x) \; dx - \int_a^b g(x) \; dx$};
+\node at (axis cs: 0,-.6){Area $= \int_a^b f(x) \; dx - \int_a^b g(x) \; dx $};
+\node at (axis cs: 0,-1.4){$=\int_a^b \left[f(x)-g(x)\right] \; dx$};
 \end{axis}
 \end{tikzpicture}
 \end{image}
@@ -113,9 +114,9 @@ then the area of the region bounded by the graphs of the curves $y = f(x)$ and $
 
 \begin{remark}
 The assumption that $f(x)$ and $g(x)$ are positive is unnecessary due to the following line of reasoning. 
-First, the area of the region between $f(x)$ and $g(x)$ is the same as the area
+The area of the region between $f(x)$ and $g(x)$ is the same as the area
 between $f(x) + k$ and $g(x) + k$ for any constant $k$, i.e., shifting the region does not change its area.
-Next, if $k$ is large enough then both $f(x) + k$ and $g(x) + k$ will be positive and finally,
+If $k$ is large enough then both $f(x) + k$ and $g(x) + k$ will be positive. The result follows by noting that
 $(f(x) + k) - (g(x) + k) = f(x) - g(x)$.
 \end{remark}
 
@@ -171,7 +172,7 @@ xticklabels={$1$, $2$}, title={\textup{Area between the parabola} $y=x^2$ \textu
 \node at (axis cs: 2.6,0){$x$};
 \node at (axis cs: -1.2,.-.4){$-1$};
 \node at (axis cs: 2.1,-.4){$2$};
-\node at (axis cs: 0.4,-4.5){$\displaystyle{A=\int_{a}^{b} \left[f(x)-g(x)\right]\; dx=9}$};
+\node at (axis cs: 0.4,-4.5){$\displaystyle{A=\int_{-1}^{2} \left[x^2-(-2)\right]\; dx=9}$};
 
 \end{axis}
 \end{tikzpicture}
@@ -223,6 +224,7 @@ xticklabels={$\pi$}, title={\textup{Area between} $y=e^x$ \textup{and} $y=\sin(x
 
 %\addplot[thick, blue] coordinates {(1,-3) (1, 4)};
 \addplot[thick, blue, dashed] coordinates {(pi/2,1) (pi/2, 4.8)};
+\addplot[thick, blue, dashed] coordinates {(0,0) (0,1)};
 
 \addplot[<->] coordinates {(0,-1.5) (0, 5)};
 \addplot[<->] coordinates {(-.5,0) (2, 0)};
@@ -236,7 +238,7 @@ xticklabels={$\pi$}, title={\textup{Area between} $y=e^x$ \textup{and} $y=\sin(x
 \node at (axis cs: 2.1,0){$x$};
 \node at (axis cs: pi/2,-.6){$\pi/2$};
 %\node at (axis cs: 2.1,-.4){$2$};
-\node at (axis cs: .9,-2.8){$\displaystyle{A=\int_{a}^{b} \left[f(x)-g(x)\right]\; dx= e^{\pi/2} - 2}$};
+\node at (axis cs: .9,-2.8){$\displaystyle{A=\int_{0}^{\pi/2} \left[e^x-\sin(x)\right]\; dx= e^{\pi/2} - 2}$};
 
 \end{axis}
 \end{tikzpicture}
@@ -313,7 +315,7 @@ xticklabels={$1$, $2$}, title={\textup{Area between the parabola} $y=5-x^2$ \tex
 \node at (axis cs: 2.6,0){$x$};
 \node at (axis cs: .9,.-.4){$1$};
 \node at (axis cs: 2.1,-.4){$2$};
-\node at (axis cs: 1.4,-5.2){$\displaystyle{A=\int_{a}^{b} \left[f(x)-g(x)\right]\; dx=\frac{31}{6}}$};
+\node at (axis cs: 1.4,-5.2){$\displaystyle{A=\int_{1}^{2} \left[(5-x^2)-(x-4)\right]\; dx=\frac{31}{6}}$};
 
 \end{axis}
 \end{tikzpicture}
@@ -385,8 +387,8 @@ xticklabels={$1$, $2$}, title={Area between $y=\sin(x)$ and $y=\cos(x)$}]
 \node at (axis cs: 0,1.3){$y$};
 \node at (axis cs: 1.25,0){$x$};
 \node at (axis cs: .05,.-.1){$0$};
-\node at (axis cs: .785,-.2){$\frac{\pi}{4}$};
-\node at (axis cs: .5,-.6){$\displaystyle{A=\int_{a}^{b} \left[f(x)-g(x)\right]\; dx=\sqrt2-1}$};
+\node at (axis cs: .785,-.2){$\pi/4$};
+\node at (axis cs: .5,-.6){$\displaystyle{A=\int_{1}^{\pi/4} \left[\cos(x)-\sin(x)\right]\; dx=\sqrt2-1}$};
 
 \end{axis}
 \end{tikzpicture}
@@ -456,7 +458,7 @@ xticklabels={$-2$, $-1$, $0$, $1$, $2$}, title={Area between $y=\sqrt[]{x}$ and 
 \node at (axis cs: 2.1,0){$x$};
 \node at (axis cs: .1,-.2){$0$};
 \node at (axis cs: 1.1,-.2){$1$};
-\node at (axis cs: .5,-1.5){$\displaystyle{A=\int_{a}^{b} \left[f(x)-g(x)\right]\; dx=\frac{1}{3}}$};
+\node at (axis cs: .5,-1.5){$\displaystyle{A=\int_{0}^{1} \left(\sqrt x- x^2\right)\; dx=\frac{1}{3}}$};
 
 \end{axis}
 \end{tikzpicture}
@@ -554,7 +556,7 @@ xticklabels={$-2$, $-1$, $0$, $1$, $2$}, title={Area between $y=x^2+x-3$ and $y=
 \node at (axis cs: 3.2,0){$x$};
 \node at (axis cs: -1.1,-.9){$-1$};
 \node at (axis cs: 2,-.9){$2$};
-\node at (axis cs: 0,-6.6){$\displaystyle{A=\int_{a}^{b} \left[f(x)-g(x)\right]\; dx=\frac{9}{2}}$};
+\node at (axis cs: 0,-6.6){$\displaystyle{A=\int_{-1}^{2} \left[(2x - 1) - (x^2 + x - 3)\right]\; dx=\frac{9}{2}}$};
 
 \end{axis}
 \end{tikzpicture}
