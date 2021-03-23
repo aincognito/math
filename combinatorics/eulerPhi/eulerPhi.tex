@@ -20,11 +20,11 @@ We present a formula for Euler's $\phi$ function.
 
 
 \begin{definition}[Relatively Prime]
-Two natural number $m$ and $n$ are called relatively prime if their greatest common divisor is 1, i.e., $gcd(m,n) = 1$
+Two natural numbers $m$ and $n$ are called relatively prime if their greatest common divisor is 1, i.e., $gcd(m,n) = 1$
 \end{definition}
 
 \begin{example}[example 1]
-The numbers 64 and 81 are relatively prime since the only number that divides evenly into both is 1, i.e., $gcd(64,81) = 1$.
+The numbers 64 and 81 are relatively prime since the only natural number that divides evenly into both is 1, i.e., $gcd(64,81) = 1$.
 \end{example}
 
 \begin{problem}(problem 1a)
@@ -32,11 +32,15 @@ List all pairs that are relatively prime from among the numbers 12, 14, 15, 25 a
 \end{problem}
 
 \begin{problem}(problem 1b)
-Explain why any two successive natural number are relatively prime.
+Explain why any two successive natural numbers are relatively prime.
 \end{problem}
 
 \begin{problem}(problem 1c)
 Explain why any two distinct prime numbers are relatively prime.
+\end{problem}
+
+\begin{problem}(problem 1d)
+Which natural numbers are relatively prime to themselves?
 \end{problem}
 
 \begin{theorem}[Fundamental Theorem of Arithmetic]
@@ -58,12 +62,36 @@ and we have $2345 = 5 \cdot 7 \cdot 47$. Since 47 is prime, this is the unique p
 \begin{problem}(problem 2)
 Find the prime factorizations of 1000, 1111, and 43125.
 \end{problem}
+
+
+
 \begin{definition}[Euler's $\phi$ function]
 For each natural number $n$, we define Euler's $\phi$ function (sometimes called the totient function) to be the 
 number of natural numbers less than $n$ which are relatively prime to $n$.
 \end{definition}
 
 
+\begin{example}[example 3]
+Find $\phi(10)$.\\
+Among the natural numbers less than 10 the following are relatively prime to 10: 1, 3, 7 and 9.
+Since there are 4 such numbers, $\phi(10) = 4$.
+\end{example}
+
+\begin{problem}(problem 3a)
+Find $\phi(4), \phi(6)$ and $\phi(9)$.\\
+\[
+\phi(4) = \answer{2} \;\; \phi(6) = \answer{2} \;\;\phi(9) = \answer{6}
+\]
+\end{problem}
+
+\begin{problem}(problem 3b)
+Find a formula $\phi(p)$ for any prime $p$.\\
+\begin{multipleChoice}
+\choice{p}\\
+\choice[correct]{p-1}\\
+\choice{1}
+\end{multipleChoice}
+\end{problem}
 
 
 We now state the main proposition of this section, whose proof utilizes the Inclusion-Exclusion Principle.
@@ -131,7 +159,7 @@ and
 It is now clear that $\phi(mn) = \phi(m) \phi(n)$.
 \end{proof}
 
-\begin{example}[example 3]
+\begin{example}[example 4]
 Use the proposition to compute $\phi(12)$ and $\phi(125)$ and then use the corollary to compute $\phi(1500)$.\\
 Since $12 = 2^2 3$, the proposition gives
 \[
@@ -147,7 +175,7 @@ Finally, since $1500 = 12 \cdot 125$, the corollary gives
 \]
 \end{example}
 
-\begin{problem}(problem 3a)
+\begin{problem}(problem 4a)
 Use the proposition to compute $\phi(50)$ and $\phi(189)$ and then use the corollary to compute 
 $\phi(9450)$.\\
 \[
@@ -155,14 +183,14 @@ $\phi(9450)$.\\
 \]
 \end{problem}
 
-\begin{problem}(problem 3b)
+\begin{problem}(problem 4b)
 Use the proposition to establish a formula for $\phi(p^\alpha)$ where $p$ is any prime and $\alpha$ is a positive integer.
 \end{problem}
 
 
 The proof of the proposition uses a factorization theorem. We explore this theorem in the next example and problem.
 
-\begin{example}[example 4]
+\begin{example}[example 5]
 Multiply
 \[
 (1-a)(1-b)(1-c)
@@ -188,7 +216,7 @@ b= \frac{1}{p_2}$ and $c = \frac{1}{p_3}$, we have
  \]
  \end{example}
  
- \begin{problem}(problem 4a)
+ \begin{problem}(problem 5a)
  Multiply
 \[
 (1-a)(1-b)(1-c)(1-d)
@@ -196,7 +224,7 @@ b= \frac{1}{p_2}$ and $c = \frac{1}{p_3}$, we have
 and use this to validate the factorization in the last step of the proof of the proposition in the case that $n$ has 4 distinct prime factors.
 \end{problem}
 
-\begin{problem}(problem 4b)
+\begin{problem}(problem 5b)
 Conjecture the factorization formula for
 \[
 1 - (a + b+c+d+e) + (ab+ac+ad+ae+bc+bd+be+cd+ce+de) 
@@ -209,12 +237,14 @@ Conjecture the factorization formula for
 \]
 \end{problem}
 
-\begin{problem}(problem 4c)
+\begin{problem}(problem 5c)
 Conjecture the factorization formula for
 \[
 1 - \sum_{i = 1}^n a_i + \sum_{1 = i <j}^n a_ia_j - \sum_{1 = i <j<k}^n a_ia_ja_k + \cdots + (-1)^n (a_1a_2\cdots a_n)
 \]
 \end{problem}
+
+
 
 \end{document}
 
@@ -226,16 +256,3 @@ Conjecture the factorization formula for
 
 
 
-
-The next proposition deals with an important formula in number theory. 
-The Euler $\phi$-function, $\phi(n)$, gives the 
-number of natural numbers less than $n$ which are relatively prime to $n$. 
-For example $\phi(10) = 4$ since the numbers 1, 3, 7 and 9 are less than 10 and relatively prime to 10,
-and for any prime number $p$, $\phi(p) = p-1$ since the numbers 1, 2, 3, ..., $(p-1)$ are less 
-than $p$ and relatively prime to $p$. To state the proposition, we need the Fundamental Theorem of 
-Arithmetic, which says that any natural number greater than 1 has a (unique) prime 
-factorization, i.e., if $n >1$ then there exists prime numbers
-$p_1, p_2, ...,p_l$ and positive integers $\alpha_1, \alpha_2, ..., \alpha_r$ such that
-\[
-n = p_1^{\alpha_1}p_2^{\alpha_2} \cdots p_r^{\alpha_l}
-\]
