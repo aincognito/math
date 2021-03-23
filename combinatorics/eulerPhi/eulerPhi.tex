@@ -1,0 +1,229 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\pgfplotsset{compat=1.13}
+
+\outcome{Introduce the Euler $phi$-function}
+
+\title{2.5 Euler $\phi$-function}
+
+\begin{document}
+
+
+
+\begin{abstract}
+We present a formula for the Euler $phi$-function.
+\end{abstract}
+
+\maketitle
+
+
+\begin{definition}[Relatively Prime]
+Two natural number $m$ and $n$ are called relatively prime if their greatest common divisor is 1, i.e., $gcd(m,n) = 1$
+\end{definition}
+
+\begin{example}[example 1]
+The numbers 64 and 81 are relatively prime since the only number that divides evenly into both is 1, i.e., $gcd(64,81) = 1$.
+\end{example}
+
+\begin{problem}(problem 1a)
+List all pairs that are relatively prime from among the numbers 12, 14, 15, 25 and 45
+\end{problem}
+
+\begin{problem}(problem 1b)
+Explain why any two successive natural number are relatively prime.
+\end{problem}
+
+\begin{theorem}[Fundamental Theorem of Arithmetic]
+Every natural number greater than 1 has a unique prime factorization, i.e., for $n >1$, there exists a 
+unique list of distinct primes
+$p_1, p_2, ..., p_r$ and a unique list of positive integers $\alpha_1, \alpha_2, ..., \alpha_r$ such that
+\[
+n = p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_r^{\alpha_r}
+\]
+\end{theorem}
+
+
+\begin{example}[example 2]
+Find the prime factorization of 2345.\\
+Since the number 2345 ends in 5, it must be divisible by 5.  Hence $2345 = 5 \cdot 469$. Now note that 469 is divisible by 7,
+and we have $2345 = 5 \cdot 7 \cdot 47$. Since 47 is prime, this is the unique prime factorization of 2345.
+\end{example}
+
+\begin{problem}(problem 2)
+Find the prime factorizations of 1000, 1111, and 43125.
+\end{problem}
+\begin{definition}[Euler $\phi$-function]
+For each natural number $n$, we define the Euler $\phi$-function (sometimes called the totient function) to be the 
+number of natural numbers less than $n$ which are relatively prime to $n$.
+\end{definition}
+
+
+
+
+We now state the main proposition of this section, whose proof utilizes the Inclusion-Exclusion Principle.
+
+
+
+
+
+\begin{proposition}[Euler $\phi$-function]
+Let $n$ be a natural number with prime factorization
+$n = p_1^{\alpha_1}p_2^{\alpha_2} \cdots p_r^{\alpha_r}$.  Then
+\[
+\phi(n) = n \prod_{i = 1}^r \left(1 - \frac{1}{p_i}\right)
+\]
+\end{proposition}
+
+
+
+\begin{proof}
+If $m$ is a natural number less than $n$ which is relatively prime to $n$, 
+then none of the primes $p_i$ will divide $m, i = 1, 2, ...,r$.
+So, for each $i = 1, 2, ..., r$, define 
+$A_i$ to be the set of numbers from $1$ to $n$ which are divisible by the prime $p_i$.
+Then $|A_i| = \frac{n}{p_i}$. Furthermore $|A_i \cap A_j| = \frac{n}{p_i p_j}$ for $i \neq j$, 
+$|A_i \cap A_j \cap A_k| = \frac{n}{p_i p_jp_k}$ and so on.
+Now, we use the Inclusion-Exclusion Principle to compute $\phi(n)$:
+\begin{align*}
+\phi(n) &= |A_1^c \cap A_2^c \cap \cdots \cap A_r^c|\\
+&= |S| - \sum|A_i| + \sum|A_i \cap A_j| + \sum|A_i \cap A_j \cap A_k| + \cdots + (-1)^r|A_1 \cap A_2 \cap \cdots \cap A_r|\\[7pt]
+&= n - \sum \frac{n}{p_i} + \sum \frac{n}{p_ip_j} - \sum \frac{n}{p_ip_jp_k} + \cdots + (-1)^r \frac{n}{p_1p_2 \cdots p_r}\\[7pt]
+&= n\left(1 - \sum \frac{1}{p_i} + \sum \frac{1}{p_ip_j} - \sum \frac{1}{p_ip_jp_k} + \cdots + (-1)^r \frac{1}{p_1p_2 \cdots p_r} \right)\\[7pt]
+&= n \prod_{i = 1}^r \left(1 - \frac{1}{p_i}\right)
+\end{align*}
+\end{proof}
+
+\begin{corollary}
+The Euler-$\phi$-function is multiplicative, i.e., if $m$ and $n$ are relatively prime, then
+\[
+\phi(mn) = \phi(m)\phi(n)
+\]
+\end{corollary}
+\begin{proof}
+Let the prime factorizations of $m$ and $n$ be
+\[
+m = p_1^{\alpha_1} p_2^{\alpha_2}\cdots p_r^{\alpha_r} \quad \text{and} \quad n = p_{r+1}^{\alpha_{r+1}} p_{r+2}^{\alpha_{r+2}}\cdots p_s^{\alpha_s}
+\]
+Since $m$ and $n$ are relatively prime, the prime factorization of $mn$ is given by
+\[
+mn = p_1^{\alpha_1} p_2^{\alpha_2}\cdots p_s^{\alpha_s}
+\]
+According to the proposition,
+\[
+\phi(m) = m \prod_{i = 1}^r \left(1 - \frac{1}{p_i}\right),
+\]
+\[
+\phi(n) = n \prod_{i = r+1}^s \left(1 - \frac{1}{p_i}\right),
+\]
+and
+\[
+\phi(mn) = mn \prod_{i = 1}^s \left(1 - \frac{1}{p_i}\right)
+\]
+It is now clear that $\phi(mn) = \phi(m) \phi(n)$.
+\end{proof}
+
+\begin{example}[example 3]
+Use the proposition to compute $\phi(12)$ and $\phi(125)$ and then use the corollary to compute $\phi(1500)$.\\
+Since $12 = 2^2 3$, the proposition gives
+\[
+\phi(12) = 12\left(1-\frac12\right)\left(1-\frac13\right) = 4
+\]
+and since $125 = 5^3$, the proposition gives
+\[
+\phi(125) = 125\left(1-\frac15\right) = 100
+\]
+Finally, since $1500 = 12 \cdot 125$, the corollary gives
+\[
+\phi(1500) = \phi(12)\phi(125) = 400
+\]
+\end{example}
+
+\begin{problem}(problem 3)
+Use the proposition to compute $\phi(50)$ and $\phi(189)$ and then use the corollary to compute 
+$\phi(9450)$.\\
+\[
+\phi(50) = \answer{20}, \;\; \phi(189) = \answer{108} \;\; \text{and} \;\; \phi(9450)= \answer{2160}
+\]
+\end{problem}
+
+The proof of the proposition uses a factorization theorem. We explore this theorem in the next example and problem.
+
+\begin{example}[example 4]
+Multiply
+\[
+(1-a)(1-b)(1-c)
+\]
+and use this to validate the factorization in the last step of the proof of the proposition in the case that $n$ has 3 distinct prime factors.\\
+The FPC tells us that there will be $2^3 = 8$ terms.  Further, we can group these terms according to how many of the variables $a, b, c$ are present. We have
+\[
+(1-a)(1-b)(1-c) = 1 - (a+b+c) + (ab+ac+bc) - (abc)
+\]
+Referring back to the proof of the proposition, suppose $n$ had three distinct prime factors, $p_1, p_2, p_3$.
+Then the Inclusion-Exclusion Principle gives
+\[
+\phi(n) = n\left(1 - \sum \frac{1}{p_i} + \sum \frac{1}{p_ip_j} - \frac{1}{p_1p_2p_3}\right)
+\]
+If we expand these sums, we obtain 
+\[
+n\left[1 - \left(\frac{1}{p_1} + \frac{1}{p_2}+\frac{1}{p_3}\right) + \left(\frac{1}{p_1p_2} + \frac{1}{p_1p_3} + \frac{1}{p_2p_3}\right) - \left(\frac{1}{p_1p_2p_3}\right)\right]
+\]
+Noting that the expression in the brackets has the same form as the expansion of $(1-a)(1-b)(1-c)$ with $a = \frac{1}{p_1},
+b= \frac{1}{p_2}$ and $c = \frac{1}{p_3}$, we have
+\[
+ \phi(n) = n\left(1 - \frac{1}{p_1}\right)\left(1 - \frac{1}{p_2}\right)\left(1 - \frac{1}{p_3}\right) = n \prod_{i = 1}^3\left(1 - \frac{1}{p_i}\right)
+ \]
+ \end{example}
+ 
+ \begin{problem}(problem 4a)
+ Multiply
+\[
+(1-a)(1-b)(1-c)(1-d)
+\]
+and use this to validate the factorization in the last step of the proof of the proposition in the case that $n$ has 4 distinct prime factors.
+\end{problem}
+
+\begin{problem}(problem 4b)
+Conjecture the factorization formula for
+\[
+1 - (a + b+c+d+e) + (ab+ac+ad+ae+bc+bd+be+cd+ce+de) 
+\]
+\[
+- (abc+abd+abe+acd+ace+ade+bcd+bce+bde+cde) 
+\]
+\[
+- (abcd+abce+abde+acde+bcde) + (abcde)
+\]
+\end{problem}
+
+\begin{problem}(problem 4c)
+Conjecture the factorization formula for
+\[
+1 - \sum_{i = 1}^n a_i + \sum_{1 = i <j}^n a_ia_j - \sum_{1 = i <j<k}^n a_ia_ja_k + \cdots + (-1)^n (a_1a_2\cdots a_n)
+\]
+\end{problem}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+The next proposition deals with an important formula in number theory. 
+The Euler $\phi$-function, $\phi(n)$, gives the 
+number of natural numbers less than $n$ which are relatively prime to $n$. 
+For example $\phi(10) = 4$ since the numbers 1, 3, 7 and 9 are less than 10 and relatively prime to 10,
+and for any prime number $p$, $\phi(p) = p-1$ since the numbers 1, 2, 3, ..., $(p-1)$ are less 
+than $p$ and relatively prime to $p$. To state the proposition, we need the Fundamental Theorem of 
+Arithmetic, which says that any natural number greater than 1 has a (unique) prime 
+factorization, i.e., if $n >1$ then there exists prime numbers
+$p_1, p_2, ...,p_l$ and positive integers $\alpha_1, \alpha_2, ..., \alpha_r$ such that
+\[
+n = p_1^{\alpha_1}p_2^{\alpha_2} \cdots p_r^{\alpha_l}
+\]

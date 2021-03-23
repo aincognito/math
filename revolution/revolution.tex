@@ -79,13 +79,15 @@ this will produce a disk (see the figure below).
 \node at (3, -1) {The radius of the disk is equal to the length of the vertical segment.};
 
 
-\draw[thick, brown] (2,0) -- (2,2) ;
+\draw[thick, brown!40] (2,0) -- (2,2) ;
 
 
 
-\filldraw[brown, thick] (6,1) circle(1);
+\filldraw[brown!40, thick] (6,1) circle(1);
 \filldraw (6,1) circle(0.04);
 \filldraw (2,0) circle(0.04);
+\filldraw[brown] (2,2) circle(0.04);
+\draw[brown] ((6,1) circle(1);
 %\filldraw[brown] (2,2) circle(0.04);
 
 
@@ -110,19 +112,21 @@ If the vertical segment does not touch the horizontal axis of revolution, then r
 \begin{image}
 \begin{tikzpicture}
 \draw[ <->, thick] (0,0) -- (3.9,0) ;
-\draw[thick, brown] (2, 1) -- (2, 2.5);
+\draw[thick, brown!40] (2, 1) -- (2, 2.5);
 \node at (3, -1) {\begin{tabular}{c} The radii depend on the distances from the endpoints \\ of the vertical 
 segment to the axis of revolution.\end{tabular}};
 
 
   
-\filldraw[brown]  (6,1) circle (1) ;
+\filldraw[brown!40]  (6,1) circle (1) ;
 \filldraw[white]  (6,1) circle (.5cm); 
 
 \filldraw[fill=black] (6,1) circle (0.03cm);
 \filldraw[fill=black] (2,0) circle (0.03cm);
-\filldraw[brown] (2,1) circle (0.03cm);
+\filldraw[teal] (2,1) circle (0.03cm);
 \filldraw[brown] (2,2.5) circle (0.03cm);
+\draw[teal, thick] (6,1) circle(.5);
+\draw[brown, thick] (6,1) circle(1);
 
 \draw [thin, ->] (0.6,0.4) to[out=180,in = 180] (.6,-.3)  to[out=0,in=-30] (0.7,.2);
 
@@ -139,20 +143,23 @@ revolution will produce the lateral surface of a cylinder (see the figure below)
 
 
 
-\draw[thick, brown] (2, 0) -- (2,2);
+\draw[thick, brown!40] (2, 0) -- (2,2);
+\filldraw[brown] (2,0) circle(.04);
+\filldraw[teal] (2,2) circle (.04);
 %\draw[scale = 2, thick, gray] (1, 0) -- (1,1);
 %\draw[scale = 2, thin] (0.6, 0.05) -- (0.6, -0.05) node[below] {$x$};
 %\draw[scale = 2, thin] (1, 0.05) -- (1, -0.05) node[below] {$1$};
 
-\draw[brown] (6,2) ellipse (1.25 and 0.3);
+%\filldraw[brown!30] (6,2) ellipse (1.25 and 0.3);
+\draw[teal, thick] (6,2) ellipse (1.25 and 0.3);
 %\draw (6.75,1.2) -- (6.75,-1.2);
-\draw[brown] (4.75,0) arc (180:360:1.25 and 0.3);
-\draw [brown, dashed] (4.75,0) arc (180:360:1.25 and -0.3) ;
+\draw[brown, thick] (4.75,0) arc (180:360:1.25 and 0.3);
+
 %\draw (9.25,-1.2) -- (9.25,1.2) node[right,midway]{$h$};  
-\fill [brown, opacity=0.8] (4.75,2) -- (4.75,0) arc (180:360:1.25 and 0.3) -- (7.25,2) arc (0:180:1.25 and -0.3);
+\fill [brown!40] (4.75,2) -- (4.75,0) arc (180:360:1.25 and 0.3) -- (7.25,2) arc (0:180:1.25 and -0.3);
 %\filldraw[fill=black] (6,1.2) circle (0.03cm);
 %\draw (8,1.2) -- (9.25, 1.2) node[midway,above, xshift=-.1cm, yshift=-.1cm]{$r$};
-
+\draw [brown, dashed, thick] (4.75,0) arc (180:360:1.25 and -0.3) ;
 
 
 
@@ -213,16 +220,19 @@ V = \frac{\pi}{4} \int_0^4 x^2 \, dx = \frac{\pi}{4} \cdot \frac{x^3}{3} \bigg |
 \begin{image}
 \begin{tikzpicture}
 \draw[ <->, thick] (0,2.5) -- (0,0) -- (4.5,0);
-
+\draw [draw=none, fill=brown!20] (0,0) -- (4,2) -- (4,0) -- cycle;
 \draw[thick, domain=0:4,smooth,variable=\x,brown] plot ({\x},{0.5*\x}) node at (2.5, 2) {$y = x/2$};
 
 \draw[thick, brown] (4,0) -- (4,2) node at (4.5,1) {$x = 4$};
-\draw[thick, teal] (8,1) -- (9,1);
+
 \draw[thick, teal] (2.5,0) -- (2.5,1.25);
 \draw[thin] (2.5, 0.05) -- (2.5, -0.05) node[below] {$x$};
 \draw[thin] (4, 0.05) -- (4, -0.05) node[below] {$4$};
 
+
+\filldraw[teal!10] (8,1) circle(1);
 \draw[brown, thick] (8,1) circle(1);
+\draw[thick, teal] (8,1) -- (9,1);
 \filldraw (8,1) circle(0.04);
 
 \filldraw[brown] (2.5,1.25) circle(0.04);
