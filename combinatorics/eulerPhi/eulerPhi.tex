@@ -4,16 +4,16 @@
 
 \pgfplotsset{compat=1.13}
 
-\outcome{Introduce the Euler $phi$-function}
+\outcome{Introduce Euler's $phi$ function}
 
-\title{2.5 Euler $\phi$-function}
+\title{2.5 Euler's $\phi$ function}
 
 \begin{document}
 
 
 
 \begin{abstract}
-We present a formula for the Euler $phi$-function.
+We present a formula for Euler's $\phi$ function.
 \end{abstract}
 
 \maketitle
@@ -35,6 +35,10 @@ List all pairs that are relatively prime from among the numbers 12, 14, 15, 25 a
 Explain why any two successive natural number are relatively prime.
 \end{problem}
 
+\begin{problem}(problem 1c)
+Explain why any two distinct prime numbers are relatively prime.
+\end{problem}
+
 \begin{theorem}[Fundamental Theorem of Arithmetic]
 Every natural number greater than 1 has a unique prime factorization, i.e., for $n >1$, there exists a 
 unique list of distinct primes
@@ -54,8 +58,8 @@ and we have $2345 = 5 \cdot 7 \cdot 47$. Since 47 is prime, this is the unique p
 \begin{problem}(problem 2)
 Find the prime factorizations of 1000, 1111, and 43125.
 \end{problem}
-\begin{definition}[Euler $\phi$-function]
-For each natural number $n$, we define the Euler $\phi$-function (sometimes called the totient function) to be the 
+\begin{definition}[Euler's $\phi$ function]
+For each natural number $n$, we define Euler's $\phi$ function (sometimes called the totient function) to be the 
 number of natural numbers less than $n$ which are relatively prime to $n$.
 \end{definition}
 
@@ -68,7 +72,7 @@ We now state the main proposition of this section, whose proof utilizes the Incl
 
 
 
-\begin{proposition}[Euler $\phi$-function]
+\begin{proposition}[Formula for Euler's $\phi$ function]
 Let $n$ be a natural number with prime factorization
 $n = p_1^{\alpha_1}p_2^{\alpha_2} \cdots p_r^{\alpha_r}$.  Then
 \[
@@ -80,11 +84,14 @@ $n = p_1^{\alpha_1}p_2^{\alpha_2} \cdots p_r^{\alpha_r}$.  Then
 
 \begin{proof}
 If $m$ is a natural number less than $n$ which is relatively prime to $n$, 
-then none of the primes $p_i$ will divide $m, i = 1, 2, ...,r$.
-So, for each $i = 1, 2, ..., r$, define 
-$A_i$ to be the set of numbers from $1$ to $n$ which are divisible by the prime $p_i$.
-Then $|A_i| = \frac{n}{p_i}$. Furthermore $|A_i \cap A_j| = \frac{n}{p_i p_j}$ for $i \neq j$, 
-$|A_i \cap A_j \cap A_k| = \frac{n}{p_i p_jp_k}$ and so on.
+then none of the primes $p_i$ will divide $m$.
+For each $i$, define 
+$A_i$ to be the subset of $S = \{1, 2, ..., n\}$ consisting of the multiples of the prime $p_i$.
+Then
+\[
+|A_i| = \frac{n}{p_i}, \;\;|A_i \cap A_j| = \frac{n}{p_i p_j}, \;\;|A_i \cap A_j \cap A_k| = \frac{n}{p_i p_jp_k}, \;\;\text{etc.}
+\]
+
 Now, we use the Inclusion-Exclusion Principle to compute $\phi(n)$:
 \begin{align*}
 \phi(n) &= |A_1^c \cap A_2^c \cap \cdots \cap A_r^c|\\
@@ -96,7 +103,7 @@ Now, we use the Inclusion-Exclusion Principle to compute $\phi(n)$:
 \end{proof}
 
 \begin{corollary}
-The Euler-$\phi$-function is multiplicative, i.e., if $m$ and $n$ are relatively prime, then
+Euler's $\phi$ function is multiplicative, i.e., if $m$ and $n$ are relatively prime, then
 \[
 \phi(mn) = \phi(m)\phi(n)
 \]
@@ -140,13 +147,18 @@ Finally, since $1500 = 12 \cdot 125$, the corollary gives
 \]
 \end{example}
 
-\begin{problem}(problem 3)
+\begin{problem}(problem 3a)
 Use the proposition to compute $\phi(50)$ and $\phi(189)$ and then use the corollary to compute 
 $\phi(9450)$.\\
 \[
 \phi(50) = \answer{20}, \;\; \phi(189) = \answer{108} \;\; \text{and} \;\; \phi(9450)= \answer{2160}
 \]
 \end{problem}
+
+\begin{problem}(problem 3b)
+Use the proposition to establish a formula for $\phi(p^\alpha)$ where $p$ is any prime and $\alpha$ is a positive integer.
+\end{problem}
+
 
 The proof of the proposition uses a factorization theorem. We explore this theorem in the next example and problem.
 
