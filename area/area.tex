@@ -189,8 +189,20 @@ xticklabels={$1$, $2$}, title={\textup{Area between the parabola} $y=x^2$ \textu
 Find the area of the region between the parabola $y = x^2 + 2$ and the horizontal line $y =1$ from $x = 0$ to $x = 3$.\\
 The top curve is: $y = \answer{x^2 + 2}$.\\
 The bottom curve is: $y = \answer{1}$.\\
-The definite integral that represents this area is: $\displaystyle{\int_0^{3}} \answer{x^2 + 1} \; dx$\\
-The area of the region is: $\answer{12}$.
+The definite integral that represents this area is:
+\begin{multipleChoice}
+\choice{$\int_0^3 (-1-x^2)\; dx$}\\
+\choice{$\int_0^3 (x^2 - 1) \; dx$}\\
+\choice[correct]{$\int_0^3 (x^2 + 1) \; dx$}\\
+\end{multipleChoice}
+
+The area of the region is: 
+\begin{multipleChoice}
+\choice{6}
+\choice{9}
+\choice[correct]{12}
+\end{multipleChoice}
+
 \end{problem}
 
 
@@ -332,17 +344,52 @@ xticklabels={$1$, $2$}, title={\textup{Area between the parabola} $y=5-x^2$ \tex
 Find the area of the region bounded between the curves $y = x^2$ and $y = x - 2$ from $x = 0$ to $x = 2$.\\
 The top curve is: $y = \answer{x^2}$.\\
 The bottom curve is: $y = \answer{x - 2}$.\\
-The definite integral that represents this area is: $\displaystyle{\int_0^2} \answer{x^2 - x + 2} \; dx$\\
-The area of the region is: $\answer{14/3}$.
+The definite integral that represents this area is: 
+
+\begin{multipleChoice}
+\choice{$\int_0^2 (-x^2 +x -2)\; dx$}\\
+\choice{$\int_0^2 (x^2 +x - 2) \; dx$}\\
+\choice[correct]{$\int_0^2 (x^2 -x + 2) \; dx$}\\
+\end{multipleChoice}
+
+The area of the region is: 
+\begin{multipleChoice}
+\choice{2}
+\choice{6}
+\choice[correct]{14/3}
+\end{multipleChoice}
+
 \end{problem}
 
 
 
 \begin{problem}(problem 3b)
-Find the area of the region bounded between the curves $y = (3x+2)^3$ and $y = 1 - x^2$ from $x = 0$ to $x = 1$.\\
+Find the area of the region bounded between the curves $y = (3x+2)^3$ and $y = (3x+2)^2$ from $x = 0$ to $x = 1$.\\
 The top curve is: $y = \answer{(3x+2)^3}$.\\
-The bottom curve is: $y = \answer{1-x^2}$.\\
-The definite integral that represents this area is: $\displaystyle{\int_0^1 } \answer{(3x+2)^3  + x^2 - 1} \; dx$\\
+The bottom curve is: $y = \answer{(3x+2)^2}$.\\
+The definite integral that represents this area is: 
+
+\begin{multipleChoice}
+\choice{$\int_0^1 \left[(3x+2)^2  -(3x+2)^3\right]\; dx$}\\
+\choice[correct]{$\int_0^1 \left[(3x+2)^3  -(3x+2)^2\right] \; dx$}\\
+\choice{$\int_0^1 (3x+2) \; dx$}\\
+\end{multipleChoice}
+
+The area of the region is: 
+\begin{hint}
+do $u$-substitution
+\end{hint}
+
+\begin{multipleChoice}
+\choice[correct]{453/4}
+\choice{410/9}
+\choice{19}
+\end{multipleChoice}
+
+
+
+
+$\displaystyle{\int_0^1 } \answer{(3x+2)^3  + x^2 - 1} \; dx$\\
 The area of the region is: $\answer{601/12}$.
 \end{problem}
 

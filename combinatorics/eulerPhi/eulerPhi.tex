@@ -73,23 +73,28 @@ number of natural numbers less than $n$ which are relatively prime to $n$.
 
 \begin{example}[example 3]
 Find $\phi(10)$.\\
-Among the natural numbers less than 10 the following are relatively prime to 10: 1, 3, 7 and 9.
+Among the natural numbers less than 10 the following are relatively prime to 10: 
+\[
+1, 3, 7 \;\; 
+\text{and} \;\; 9
+\]
+
 Since there are 4 such numbers, $\phi(10) = 4$.
 \end{example}
 
 \begin{problem}(problem 3a)
 Find $\phi(4), \phi(6)$ and $\phi(9)$.\\
 \[
-\phi(4) = \answer{2} \;\; \phi(6) = \answer{2} \;\;\phi(9) = \answer{6}
+\phi(4) = \answer{2} \quad \phi(6) = \answer{2} \quad \phi(9) = \answer{6}
 \]
 \end{problem}
 
 \begin{problem}(problem 3b)
 Find a formula $\phi(p)$ for any prime $p$.\\
 \begin{multipleChoice}
-\choice{p}\\
-\choice[correct]{p-1}\\
-\choice{1}
+\choice{$\phi(p) = p$}\\
+\choice[correct]{$\phi(p) = p-1$}\\
+\choice{$\phi(p) = 1$}
 \end{multipleChoice}
 \end{problem}
 
@@ -101,7 +106,7 @@ We now state the main proposition of this section, whose proof utilizes the Incl
 
 
 \begin{proposition}[Formula for Euler's $\phi$ function]
-Let $n$ be a natural number with prime factorization
+Let $n>1$ be a natural number with prime factorization
 $n = p_1^{\alpha_1}p_2^{\alpha_2} \cdots p_r^{\alpha_r}$.  Then
 \[
 \phi(n) = n \prod_{i = 1}^r \left(1 - \frac{1}{p_i}\right)
