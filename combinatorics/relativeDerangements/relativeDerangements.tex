@@ -122,9 +122,13 @@ In how many single file formations can the elephants resume their journey?\\
 \end{multipleChoice}
 \end{problem}
 
+
+\begin{problem}(problem 3) Use the Inclusion-Exclusion Principle to compute the number of relative derangements of ABCDE.
+\end{problem}
+
 It turns out that the relative derangement numbers, $Q_n$ are related to the derangement numbers $D_n$.
 
-\begin{problem}(problem 3a)  Show that for $k \geq 1$
+\begin{problem}(problem 4a)  Show that for $k \geq 1$
 \[
 (-1)^k \frac{n-k}{k!} = (-1)^k \frac{n}{k!} + (-1)^{k-1} \frac{1}{(k-1)!}
 \]
@@ -136,7 +140,7 @@ for $n \geq 2$.
 \end{problem}
 
 
-\begin{problem}(problem 3b) Use the result of problem 3a and the identity 
+\begin{problem}(problem 4b) Use the result of problem 4a and the identity 
 \[
 D_n = (n-1)(D_{n-1} + D_{n-2})
 \]
@@ -148,14 +152,14 @@ D_{n+1} = nQ_n
 
 We now turn to relative derangements in a circular setting.
 
-\begin{problem}(problem 4a)
+\begin{problem}(problem 5a)
 Alice, Bob, Charles and Diane sit at a round table (in that order) for lunch every weekday. One day, Bob suggests 
 that they change seats in such a way that no one is sitting to the left of the usual person.\\
 i) Determine the number of possible new seating arrangements by explicitly listing them. \\
 ii) Determine the number of new seating arrangements using the Inclusion-Exclusion Principle.
 \end{problem}
 
-\begin{problem}(problem 4b)
+\begin{problem}(problem 5b)
 Alice, Bob, Charles, Diane and Ethel sit at a round table (in that order) for lunch every weekday. One day, Bob suggests 
 that they change seats in such as way that no one is sitting to the left of the usual person.\\
 i) Determine the number of possible new seating arrangements by explicitly listing them. \\
@@ -163,7 +167,7 @@ ii) Determine the number of new seating arrangements using the Inclusion-Exclusi
 \end{problem}
 
 \begin{proposition}
-The number of relative derangements of a circular permutation of $[n] = \{1, 2, ..., n\}$ is given by
+Let $n \geq 2$. The number of relative derangements of a circular permutation of $[n] = \{1, 2, ..., n\}$ is given by
 \[
 C_n = n!\sum_{k=0}^{n-1} \frac{(-1)^k}{(n-k)k!} + (-1)^n
 \]
@@ -172,22 +176,74 @@ C_n = n!\sum_{k=0}^{n-1} \frac{(-1)^k}{(n-k)k!} + (-1)^n
 \begin{proof}
 Let $S$ be the set of all circular permutations of $[n]$. Let $A_i$ be the set of circular permutations 
 containing the string $i(i+1)$ for $i = 1, 2, ..., n-1$
-and let $A_n$ be the set containing $n1$. We seek $\dis \left|\bigcap_{i=1}^n A_i^c\right|$. We have
+and let $A_n$ be the set containing the string $n1$. We seek $\dis \left|\bigcap_{i=1}^n A_i^c\right|$. We have
 \begin{align*}
 \left|\bigcap_{i=1}^n A_i^c\right| &= |S| - \left|\bigcup_{i=1}^n A_i\right|\\
-&= (n-1)! - \sum |A_i| + \sum |A_i \cap A_j| - \sum |A_i \cap A_j \cap A_k| + \cdots (-1)^n \left|\bigcap_{i=1}^n A_i\right|\\
+&= (n-1)! - \sum |A_i| + \sum |A_i \cap A_j| - \sum |A_i \cap A_j \cap A_k| 
+    + \cdots + (-1)^n \left|\bigcap_{i=1}^n A_i\right|\\
 &= (n-1)! - \binom{n}{1} (n-2)! + \binom{n}{2} (n-3)! - \binom{n}{3} (n-4)! + \cdots \\
- & \qquad \qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad+ (-1)^{n-1} \binom{n}{n-1} (n-n)! + (-1)^n\\
-&= \sum_{k=0}^{n-1} (-1)^k \binom{n}{k} (n-k-1)! + (-1)^n\\
-&= \sum_{k=0}^{n-1} (-1)^k \frac{n!}{k!(n-k)!} (n-k-1)! + (-1)^n\\
-&= n! \sum_{k=0}^{n-1} (-1)^k \frac{1}{(n-k) k!} + (-1)^n
+ & \qquad \qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad+ (-1)^{n-1} \binom{n}{n-1} (n-n)! \;+ (-1)^n\\
+&= \sum_{k=0}^{n-1} (-1)^k \binom{n}{k} (n-k-1)! \;+ (-1)^n\\
+&= \sum_{k=0}^{n-1} (-1)^k \frac{n!}{k!(n-k)!} (n-k-1)! \;+ (-1)^n\\
+&= n! \sum_{k=0}^{n-1} (-1)^k \frac{1}{(n-k) k!} \;+ (-1)^n
 \end{align*}
 \end{proof}
 
 
-Conjecture:
+\begin{proposition}
+For $n \geq 2$
 \[
 D_n = C_n + C_{n+1}
 \]
+\end{proposition}
+
+\begin{proof}
+Note that since
+\[
+\frac{n!}{(n-k)k!} = \binom{n}{k}(n-k-1)!
+\]
+$C_n$ can be written using binomial coefficients as 
+\[
+C_n = \sum_{k=0}^{n-1} (-1)^{k} \binom{n}{k} (n-k-1)! + (-1)^{n}
+\]
+Replacing $n$ by $n+1$ in the formula for $C_n$, we have
+\begin{align*}
+C_{n+1} &= \sum_{k=0}^{n} (-1)^k\binom{n+1}{k}(n-k)! + (-1)^{n+1}\\
+        &= n! + \sum_{k=1}^{n} (-1)^k \binom{n+1}{k} (n-k)! + (-1)^{n+1}
+        &= n! + \sum_{k=0}^{n-1} (-1)^{k+1} \binom{n+1}{k+1} (n-k-1)! + (-1)^{n+1}
+\end{align*}
+Now we add and use Pascal's identity to combine the summands
+\begin{align*}
+C_n + C_{n+1} &= \sum_{k=0}^{n-1} (-1)^{k} \binom{n}{k} (n-k-1)! + (-1)^{n}
+                 + n! + \sum_{k=0}^{n-1} (-1)^{k+1} \binom{n+1}{k+1} (n-k-1)! + (-1)^{n+1}\\
+              &= n! + \sum_{k=0}^{n-1} (-1)^k \left[\binom{n}{k} - \binom{n+1}{k+1}\right] (n-k-1)!\\
+              &= n! + \sum_{k=0}^{n-1} (-1)^k \left[ - \binom{n}{k+1}\right] (n-k-1)!\\
+              & = n! - \sum_{k=0}^{n-1} (-1)^k \binom{n}{k+1} (n-k-1)!\\
+              &= n! - \sum_{k=1}^{n} (-1)^{k-1} \binom{n}{k} (n-k)!\\
+              &= n! + \sum_{k=1}^{n} (-1)^k \binom{n}{k} (n-k)!\\
+              &= n! + n!  \sum_{k=1}^{n} (-1)^k \frac{1}{k!}\\
+              & = n!  \sum_{k=0}^{n} (-1)^k \frac{1}{k!}\\
+              &= D_n
+\end{align*}
+\end{proof}
+
+
+
 
 \end{document}
+
+
+
+
+C_{n+1} &= (n+1)! \sum_{k=0}^{n} (-1)^k \frac{1}{(n-k+1 ) k!} + (-1)^{n+1} \\
+        &= n! + (n+1)!\sum_{k=1}^{n} (-1)^k \frac{1}{(n-k+1 ) k!} + (-1)^{n+1}\\
+        &= n! + (n+1)!\sum_{k=0}^{n-1} (-1)^{k+1} \frac{1}{(n-k ) (k+1)!} + (-1)^{n+1}\\
+        & = n! + \sum_{k=0}^{n-1} (-1)^{k+1} \frac{(n+1)!}{(n-k ) (k+1)!} + (-1)^{n+1}\\
+        & = n! + \sum_{k=0}^{n-1} (-1)^{k+1} \frac{(n+1)!}{(n-k)! (k+1)!} (n-k-1)!+ (-1)^{n+1}\\
+        & = n! + \sum_{k=0}^{n-1} (-1)^{k+1} \binom{n+1}{k+1} (n-k-1)! + (-1)^{n+1}
+\end{align*}
+
+\]
+
+\[
+C_n + C_{n+1} = n! \sum_{k=0}^{n-1} (-1)^k \frac{1}{(n-k) k!} + 
