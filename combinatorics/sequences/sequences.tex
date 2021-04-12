@@ -103,7 +103,7 @@ f_n = f_{n-2} + f_{n-1}\;\; \text{for}\;\; n \geq 3
 \]
 \end{definition}
 
-The first 10 terms of the Fibonacci sequences are
+The first 10 terms of the Fibonacci sequence are
 \[
 1, 1, 2, 3, 5, 8, 13, 21, 34, 55,...
 \]
@@ -162,45 +162,45 @@ and since $\varphi >0$, we have
 \varphi = \frac{1 + \sqrt 5}{2}
 \]
 This number $\varphi$ is called the \link[golden ratio]{https://en.wikipedia.org/wiki/Golden_ratio} and is value is approximately $1.618$. 
-The other root of the quadratic is important in what follows, so we will denote it by $\xi$:
+The other root of the quadratic is important in what follows, so we will denote it by $\psi$:
 \[
-\xi = \frac{1 - \sqrt 5}{2}
+\psi = \frac{1 - \sqrt 5}{2}
 \]
-Note that $\varphi + \xi = 1$ and $\varphi - \xi = \sqrt 5$.
+Note that $\varphi + \psi = 1$ and $\varphi - \psi = \sqrt 5$.
 
 \begin{proposition}
 The $n^{th}$ term of the Fibonacci sequence, $f_n$, can be written as 
 \[
-f_n = \frac{\varphi^n - \xi^n}{\varphi - \xi} = 
+f_n = \frac{\varphi^n - \psi^n}{\varphi - \psi} = 
 \frac{1}{\sqrt 5} \left(\frac{1+\sqrt 5}{2}\right)^n - \frac{1}{\sqrt 5} \left(\frac{1-\sqrt 5}{2}\right)^n
 \]
 \end{proposition}
 \begin{proof}
 We will prove the proposition by strong induction. Due to the nature of the recursive formula for the Fibonacci sequence, 
 we will need to assume that the formula holds in two successive cases, rather than just one.\\
-Base cases: if $n=1$ then the left-hand side is $f_1 =1$ and the right-hand side is $\frac{\varphi - \xi}{\varphi - \xi} = 1$, 
+Base cases: if $n=1$ then the left-hand side is $f_1 =1$ and the right-hand side is $\frac{\varphi - \psi}{\varphi - \psi} = 1$, 
 so the result holds. If $n=2$, then the left-hand side is $f_2 =1$ and the right-hand side is
 \[
-\frac{\varphi^2 - \xi^2}{\varphi - \xi} =\frac{(\varphi + \xi)(\varphi - \xi)}{\varphi - \xi} = \varphi + \xi = 1
+\frac{\varphi^2 - \psi^2}{\varphi - \psi} =\frac{(\varphi + \psi)(\varphi - \psi)}{\varphi - \psi} = \varphi + \psi = 1
 \]
 Inductive hypotheses: Suppose that for some $n \in \mathbb{N}$ we have both
 \[
-f_n = \frac{\varphi^n - \xi^n}{\varphi - \xi} \;\; \text{and} \;\; f_{n+1} = \frac{\varphi^{n+1} - \xi^{n+1}}{\varphi - \xi}
+f_n = \frac{\varphi^n - \psi^n}{\varphi - \psi} \;\; \text{and} \;\; f_{n+1} = \frac{\varphi^{n+1} - \psi^{n+1}}{\varphi - \psi}
 \]
 Inductive step: we need to show that
 \[
-f_{n+2} = \frac{\varphi^{n+2} - \xi^{n+2}}{\varphi - \xi}
+f_{n+2} = \frac{\varphi^{n+2} - \psi^{n+2}}{\varphi - \psi}
 \]
 By the recursive definition of the Fibonacci sequence and the inductive hypothesis, we have
 \begin{align*}
 f_{n+2} &= f_{n} + f_{n+1}\\
-  & = \frac{\varphi^n - \xi^n}{\varphi - \xi} + \frac{\varphi^{n+1} - \xi^{n+1}}{\varphi - \xi}\\
-  &= \frac{(\varphi^{n+1} + \varphi^n) - (\xi^{n+1}+ \xi^n)}{\varphi - \xi}\\
-  &= \frac{\varphi^n(\varphi + 1) - \xi^n(\xi + 1 )}{\varphi - \xi}\\
-  &= \frac{\varphi^n(\varphi ^2) - \xi^n(\xi^2 )}{\varphi - \xi}\\
-  &= \frac{\varphi^{n+2}  - \xi^{n+2}}{\varphi - \xi}
+  & = \frac{\varphi^n - \psi^n}{\varphi - \psi} + \frac{\varphi^{n+1} - \psi^{n+1}}{\varphi - \psi}\\
+  &= \frac{(\varphi^{n+1} + \varphi^n) - (\psi^{n+1}+ \psi^n)}{\varphi - \psi}\\
+  &= \frac{\varphi^n(\varphi + 1) - \psi^n(\psi + 1 )}{\varphi - \psi}\\
+  &= \frac{\varphi^n(\varphi ^2) - \psi^n(\psi^2 )}{\varphi - \psi}\\
+  &= \frac{\varphi^{n+2}  - \psi^{n+2}}{\varphi - \psi}
 \end{align*}
-Note that the penultimate step follows from the fact that both $\varphi$ and $\xi$ are solutions of the quadratic equation
+Note that the penultimate step follows from the fact that both $\varphi$ and $\psi$ are solutions of the quadratic equation
 $\alpha^2 - \alpha - 1$, which is equivalent to $\alpha^2 = \alpha + 1$.
 \end{proof}
 
@@ -260,6 +260,74 @@ Below is a visualization of the proposition (thanks to github user eankeen):
 \includegraphics[width=0.6\textwidth]{pascalfibonacci}
 \end{image}
 
+
+\section{Fibonacci, Dominoes and Chess Boards}
+We now investigate a counting problem that involves covering a chess board with dominoes. 
+A normal chess board is $8 \times 8$ with $64$ squares.  
+Our chess boards will be $2 \times n$ with $2n$ squares.  
+A domino will cover two squares on our board and the question is: how many ways are there to cover our board with $n$ dominoes?
+If $n=1$, the answer is obviously $1$.  If $n=2$ we see from the figure below that the answer is $2$.
+
+\begin{image}
+\begin{tikzpicture}
+\draw (0,0) rectangle (2,1);
+\draw (0,1) rectangle (2,2);
+\node at (2.5,1) {and};
+\draw (3,0) rectangle (4,2);
+\draw (4,0) rectangle (5,2);
+\node at (2.5,-0.5) {Covering a $2\times 2$ chess board with dominoes};
+\end{tikzpicture}
+\end{image}
+
+for $n=3$, there are 3 possibilities as shown below:
+
+
+\begin{image}
+\begin{tikzpicture}[scale = 0.7]
+\draw (0,0) rectangle (1,2);
+\draw (1,0) rectangle (3,1);
+\draw (1,1) rectangle (3,2);
+%\node at (3.5,1) {and};
+
+\draw (4,0) rectangle (5,2);
+\draw (5,0) rectangle (6,2);
+\draw (6,0) rectangle (7,2);
+%\node at (7.5,1) {and};
+\draw (8,0) rectangle (10,1);
+\draw (8,1) rectangle (10,2);
+\draw  (10,0) rectangle (11,2);
+\node at (5.5,-0.5) {Covering a $2\times 3$ chess board with dominoes};
+\end{tikzpicture}
+\end{image}
+
+\begin{proposition}
+The number of ways to cover a $\, 2 \times n$ chess board with $n$ dominoes is the $(n+1)^{st}$ Fibonacci number, $f_{n+1}$.
+\end{proposition}
+
+\begin{proof}
+We use strong induction. Suppose that the number of ways to cover a $2 \times n$ board is $f_{n+1}$ and that the number of ways to cover a 
+$2 \times (n+1)$ board is $f_{n+2}$. We have seen that this is true for $n = 1$, establishing our base cases.
+We now need to show that the number of coverings of a $2 \times (n+2)$ board is $f_{n+3}$. We partition the coverings into two groups.\\
+Group 1) The domino that covers the upper left hand square is vertical.  The number of coverings of 
+the $2 \times (n+2)$ board belonging to this group is simply the number of coverings of the $2 \times (n+1)$ board that 
+lies to the right of this vertical tile.  By our inductive hypotheses, this is $f_n+2$.\\
+Group 2) The domino that covers the upper left hand square is horizontal. This means that the domino below is also horizontal. 
+The remaining part of the board that is not yet covered is $2 \times n$ and by the inductive hypotheses, 
+the number of ways to complete the covering is $f_{n+1}$.\\
+Since every covering belongs to either group 1 or group 2 and these two groups do not have any coverings in 
+common (i.e. they form a partition of the set of all coverings), the number of coverings of a $2 \times (n+2)$ board 
+is $f_{n+2} + f_{n+1}$ which equals $f_{n+3}$ by the recursive definition of the Fibonacci sequence.
+
+\end{proof}
+
+\begin{problem}(problem 4) Show that the number of ways to cover a $1 \times n$ chess board with dominoes and monominoes is also $f_{n+1}$.
+\begin{hint}
+A monomino is a $1 \times 1$ square
+\end{hint}
+\begin{hint}
+Consider the first row of a covering of a $2 \times n$ board by dominoes
+\end{hint}
+\end{problem}
 \end{document}
 
 
