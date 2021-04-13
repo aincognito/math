@@ -109,7 +109,7 @@ The first 10 terms of the Fibonacci sequence are
 \]
 We now look at some interesting properties of the sequence which can be proven using induction.
 
-\begin{example}[example 3]
+\begin{example}[example 2]
 Use induction to prove that for each $n \in \mathbb{N}, f_{3n}$ is even.\\
 Base case: if $n=1$ then $f_{3n} = f_3 = f_1 + f_2 = 1+1 = 2$ which is even.\\
 Inductive Hypothesis: Suppose that $f_{3n}$ is even for some $n \in \mathbb{N}$.\\
@@ -119,13 +119,18 @@ By the recursive definition of the Fibonacci sequence, we have
 f_{3n+3} &= f_{3n+1} + f_{3n+2}\\
         &= f_{3n+1} + f_{3n} + f_{3n+1}\\
         &= f_{3n} + 2f_{3n+1}\\
-        &= \text{even} \; + \; \text{even}\\
-        &= \text{even}
+        &= 2k  +  2f_{3n+1}  \;\;\text{since} \; f_{3n} \; \text{is even})\\
+        &= 2(k + f_{3n+1})
 \end{align*}
+which is even (i.e., a multiple of 2).
 Hence, $f_{3n}$ is even for all $n \in \mathbb{N}$.
 \end{example} 
 
-\begin{problem}(problem 3)
+
+\begin{problem}(problem 2a)
+Use induction to prove that for each $n \in \mathbb{N}, f_{4n}$ is a multiple of 3.
+\end{problem} 
+\begin{problem}(problem 2b)
 Use induction to prove that for all  $n \in \mathbb{N}$,
 \[
 f_1 + f_2 + \cdots + f_n = f_{n+2} - 1
@@ -320,7 +325,8 @@ is $f_{n+2} + f_{n+1}$ which equals $f_{n+3}$ by the recursive definition of the
 
 \end{proof}
 
-\begin{problem}(problem 4) Show that the number of ways to cover a $1 \times n$ chess board with dominoes and monominoes is also $f_{n+1}$.
+\begin{problem}(problem 3a) 
+Show that the number of ways to cover a $1 \times n$ chess board with dominoes and monominoes is also $f_{n+1}$.
 \begin{hint}
 A monomino is a $1 \times 1$ square
 \end{hint}
@@ -328,8 +334,34 @@ A monomino is a $1 \times 1$ square
 Consider the first row of a covering of a $2 \times n$ board by dominoes
 \end{hint}
 \end{problem}
-\end{document}
 
+\begin{problem}(problem 3b) 
+Find a recursion relation that describes the number of ways to color the squares of a $1 \times n$ chess board if each square is colored either red or blue and consecutive squares may not be colored red.\\
+
+\begin{multipleChoice}
+\choice[correct]{$a_1 = 2, a_2 = 3, a_n = a_n-2 + a_n-1$, for $n\geq 3$}\\
+\choice{$a_1 = 2, a_2 = 4, a_n = a_n-2 + a_n-1$, for $n\geq 3$}\\
+\choice{$a_1 = 2, a_2 = 3, a_n = a_n-2 + 2a_n-1$, for $n\geq 3$}\\
+\end{multipleChoice}
+
+\end{problem}
+
+
+\begin{problem}(problem 3c) 
+Find a recursion relation that describes the number of ways to color the squares of a $1 \times n$ chess board if each square is colored either red, white or blue and consecutive squares may not be colored red.\\
+
+\begin{multipleChoice}
+\choice{$a_1 = 3, a_2 = 8, a_n = 2a_n-2 + a_n-1$, for $n\geq 3$}\\
+\choice{$a_1 = 3, a_2 = 5, a_n = 2a_n-2 + 2a_n-1$, for $n\geq 3$}\\
+\choice[correct]{$a_1 = 3, a_2 = 8, a_n = 2a_n-2 + 2a_n-1$, for $n\geq 3$}\\
+\end{multipleChoice}
+
+\end{problem}
+
+
+
+
+\end{document}
 
 
 
