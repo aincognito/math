@@ -40,8 +40,8 @@ The non-zero coefficients are binomial coefficients- the coefficient of $x^k$ is
 \begin{problem}
 Consider the generating function
 \[
-g_n(x) = \sum_{k=0}^n k!x^k  = 0!+ 1!x + 2!x^2 + \cdots + 
-k!x^k + \cdots + n! x^n
+g_n(x) = \sum_{k=0}^n \frac{n!}{(n-k)!}x^k  = \frac{n!}{n!}+ \frac{n!}{(n-1)!}x + \frac{n!}{(n-2)!}x^2 + \cdots + 
+\frac{n!}{(n-k)!}x^k + \cdots + \frac{n!}{(n-n)!} x^n
 \]
 Give an example of a counting problem whose solution is given by the coefficients of $g_n(x)$.
 \end{problem}
@@ -89,301 +89,25 @@ Use a computer algebra system to find the coefficient of $x^7$. Verify that this
 indeed the number of ways of obtaining a sum of $7$ by enumerating the possibilities.
 \end{problem}
 
-\end{document}
-
-
-
-\begin{example}[example 2]
-Use combinatorial reasoning to establish Pascal's Identity:
-\[
-\binom{n}{k-1} + \binom{n}{k} = \binom{n+1}{k}
-\]
-This identity is the basis for creating Pascal's triangle.\\
-To establish the identity we will use a double counting argument. 
-That is we will pose a counting problem and reason its 
-solution two different ways- one which yields the left hand side of the identity and the other which
- yields the right hand side. For the identity above, we begin with the right hand 
- side since it is simpler.  The quantity
- \[
- \binom{n+1}{k}
- \]
- counts the number of committees of $k$ people that can be selected from a group of $n+1$ people. 
- Hence, we must find another way of counting this same thing which yields the left hand side. 
- Reason as follows. Regard one of the $n+1$ people as special. 
- Then the committee either contains the special person or it does not.
- The number of committees which contain the special person is 
- \[
- \binom{n}{k-1}
- \]
- since $k-1$ other committee members must be selected from the other $n$ people.
- Then, the number of committees which do not contain the special person is 
- \[
- \binom{n}{k}
- \]
- since then entire $k$ person committee members must be selected from the other $n$ people.
- The total number of possible committees is thus
- \[
-\binom{n}{k-1} + \binom{n}{k}
-\]
-Since we have two different forms for the solution to the same problem, they must be equal:
-\[
-\binom{n}{k-1} + \binom{n}{k} = \binom{n+1}{k}
-\]
-and the identity is established.
-\end{example}
-
-\begin{example}[example 3]
-Use combinatorial reasoning to establish the identity
-\[
-k \binom{n}{k} = n\binom{n-1}{k-1}
-\]
-The left hand side represents the number of ways to select a committee of $k$ people from a group 
-of $n$ people times the number of ways to select one member from that committee to be the chair. 
-The right hand side represents the number of ways to select one person from the group of $n$ to be the 
-chair of a committee times the number of ways to select $k-1$ other committee members from 
-the remaining $n-1$ people.  In either case, we are counting the number of ways to selected 
-a chaired committee of $k$ people from a group of $n$ people.
-\end{example}
-
-\begin{problem}(problem 3)
-Use combinatorial reasoning to establish the identity
-\[
-\binom{n}{m} \binom{m}{k} = \binom{n}{k} \binom{n-m}{m-k}
-\]
-\begin{hint}
-Use a double counting argument
-\end{hint}
-\begin{hint}
-The left hand side represents the number of ways to select an $m$ member committee from a group of $n$ people and then 
-select $k$ committee members to be on a sub-committee
-\end{hint}
-
-\begin{hint}
-To get the right hand side, choose the sub-committee first
-\end{hint}
-\end{problem}
 
 \begin{example}[example 4]
-Use combinatorial reasoning to establish the identity
+Consider the number of non-negative integer solutions of the equation
 \[
-\sum_{k=0}^n \binom{n}{k} = 2^n
+x_1 + x_2 + \cdots + x_k = n
 \]
-Let $S = \{1,2,3,...,n\}$. The number of subsets of $S$ can be counted in two different ways.
-First, we can use the Fundamental Principle of Counting element by element. 
-In a given subset, an element is either in it or not in it, giving 2 choices. 
-Creating the subset requires making this decision for each of the elements in the set. 
-The number of subsets that can be created (including the empty set) 
-is $2 \cdot 2 \cdot \ldots \dot 2$ where there are $n$ factors of $2$ in the product.  
-Hence the number of possible subsets is $2^n$.
-On the other hand, we can create all of the possible subsets of $S$ by partitioning them 
-into groups of the same size.
-The number of subsets of $S$ of size $k$ is $\binom{n}{k}$ since we have to choose $k$ items from a 
-set of $n$ items without regard to the order of selection. Thus the total number of possible 
-subsets is obtained by summing over all possible values of $k$:
+Find the generating function $g_k(x)$ whose coefficients give the number of such solutions.\\
+Each variable $x_i$ can take on any value (up to the maximum possible $n$, which is unspecified) and so it will contribute 
+a factor of 
 \[
-\sum_{k=0}^n \binom{n}{k}
+1 + x + x^2 +x^3 + \cdots = \frac{1}{1-x}
 \]
-This double counting argument establishes the identity
+Hence
 \[
-\sum_{k=0}^n \binom{n}{k} = 2^n
+g_k(x) = (1+x+x^2 + cdots)^k = \frac{1}{(1-x)^k}
 \]
-
 \end{example}
-
-\begin{example}[example 5]
-Use combinatorial reasoning to establish the Hockey Stick Identity:
-\[
-\sum_{k=r}^{n}\binom{k}{r}=\binom{n+1}{r+1} %\qquad {\text{ for }}n,r\in \mathbb {N} ,\quad n\geq r
-\]
-The right hand side counts the number of ways to form a committee of $k+1$ people from a group of $n+1$ people.
-To establish this identity we will double count this by assigning each of the $n+1$ people a unique 
-integer from $1$ to $n+1$ and then partitioning the committees according to the largest number 
-assigned among its members.
-Since there are $r+1$ members on the committee, the largest number assigned among the 
-members in a particular committee ranges from $r+1$ to $n+1$.
-The number of committees that can be formed having largest number $k+1$ among its members
-is $\binom{k}{r}$ since we must choose
-$r$ other members (in addition to the member numbered $k+1$) from those numbered $1$ to $k$. 
-Since $k$ ranges 
-from $r$ to $n$ we have that the total number of possible committees is
-\[
-\sum_{k=r}^{n}\binom{k}{r}
-\]
-By double counting, we have established the identity
-\[
-\sum_{k=r}^{n}\binom{k}{r}=\binom{n+1}{r+1}
-\]
-This is called the hockey stick identity due to the shape of the binomial 
-coefficients involved when highlighted in Pascal's Triangle.
-\end{example}
-
-
-\begin{problem}(problem 1)
-Use combinatorial reasoning to establish the identity
-\[
-P(n,k) = k!\binom{n}{k}
-\]
-\begin{hint}
-Create the permutations by first creating a combination and then permuting the selected items
-\end{hint}
-\end{problem}
-
-
-
-\begin{problem}(problem 2)
-Use combinatorial reasoning to establish the identity
-\[
-\sum_{k=1}^n k\binom{n}{k} = n2^{n-1}
-\]
-\begin{hint}
-Use a double counting argument
-\end{hint}
-\begin{hint}
-The right hand side is the number of ways to select an element from a set of $n$ elements 
-followed by any subset of the remaining $n-1$ elements
-\end{hint}
-\begin{hint}
-Think of the element selected first as a committee chair
-\end{hint}
-\begin{hint}
-The committee can be of any size, from $1$ to $n$
-\end{hint}
-\begin{hint}
-Partition the committees according to the number of members (including the chair)
-\end{hint}
-\end{problem}
-
-
-\begin{problem}(problem 3)
-Use combinatorial reasoning to establish the identity
-\[
-\sum_{k=0}^n \binom{n}{k}^2 = \binom{2n}{n}
-\]
-\begin{hint}
-Use a double counting argument
-\end{hint}
-\begin{hint}
-The right hand side represents the number of committees of size $n$ that can be formed from $2n$ people
-\end{hint}
-\begin{hint}
-Assume that half of the people are men and half are women
-\end{hint}
-\begin{hint}
-Partition the possibile committees according to how many women are on it
-\end{hint}
-\begin{hint}
-Use the fact that $\dis \binom{n}{k} = \binom{n}{n-k}$
-\end{hint}
-\end{problem}
-
-\begin{problem}(problem 4)
-Use combinatorial reasoning to establish the identity
-\[
-\sum_{k=0}^n \binom{n_1}{k}\binom{n_2}{n-k} = \binom{n_1+n_2}{n}
-\]
-\begin{hint}
-Modify the argument for problem 3
-\end{hint}
-\begin{hint}
-Assume that there are $n_1$ men and $n_2$ women on the committee
-\end{hint}
-\end{problem}
-
-\begin{problem}(problem 3)
-Use combinatorial reasoning to establish the identity
-\[
-\sum_{k=0}^n k\binom{n}{k}^2 = n\binom{2n-1}{n-1}
-\]
-\begin{hint}
-Modify the argument for problem 3
-\end{hint}
-\begin{hint}
-Include a chairperson on the committee
-\end{hint}
-\end{problem}
 
 \end{document}
-
-
-
-
-
-
-
-
-
-\begin{problem}(problem 1a)
-Sam is getting dressed and wants to include a belt and a hat.  
-If Sam has three distinct belts and two distinct hats, how many ways
-can Sam accessorize? Include a tree diagram that illustrates the possibilities.\\
-Sam can accessorize in $\; \answer{6} \;$ different ways.
-\end{problem}
-
-\begin{problem}(problem 1b)
-A couple wants to go on a date.  They decide to  eat at a restaurant, walk in a park and then see a show.
-If there are two restaurants that the y both like, two nearby parks and two shows playing, 
-how many possibilities are there for their date? Make a tree diagram illustrating the possibilities.\\
-There are $\;\answer{8}\;$ different possibilities for their date.
-\end{problem}
-
-
-\begin{theorem}[Fundamental Principle of Counting]
-Suppose that $n$ decisions are to be made and that the number of choices for the $k^{th}$ decision is $d_k$.
-Then the total number of ways to make the $n$ decisions is
-\[
-\prod_{k=1}^n d_k = d_1 \cdot d_2 \cdot \ldots \cdot d_n
-\]
-\end{theorem}
-
-\begin{example}
-There are three types of Tesla Model 3: Standard Range, Long Range and Performance. 
-Each type can be painted one of 5 colors. Furthermore, two interior color schemes are available. 
-Given these parameters, how many choices are there for my Tesla Model 3 purchase?\\
-In total, three decisions must be made: the type, the paint color and the interior color scheme.
-The number of choices for each decision is 3, 5 and 2 respectively. 
-Hence, by the Fundamental Principle of Counting, the total number of ways to configure my new 
-Tesla Model 3 is $3 \cdot 5\cdot 2 = 30$.
-\begin{image}
-\begin{tikzpicture}
-
-\draw (0,0) -- (2,0) node[blue, below, midway]{Type} node[above, midway]{3} node[right]{$\times$};
-\draw (2.5,0) -- (4.5,0) node[blue, below, midway]{Paint} node[above, midway]{5} node[right]{$\times$};
-\draw (5,0) -- (7,0) node[blue, below, midway]{Interior} node[above, midway]{2} node[right]{$=$};
-\draw (7.5,0) -- (9.5,0) node[blue, below, midway]{Total} node[above, midway]{30} ;
-
-\end{tikzpicture}
-\end{image}
-\end{example}
-
-
-\begin{problem}(problem 2a)
-A three course meal consists of an appetizer, an entree and a dessert. 
-If a restaurant offers a dozen appetizers, a score of entrees and a bakers dozen desserts, 
-how many possible three course meals can be ordered?\\
-The total number of possible three course meals is $\answer{3120}$.
-\end{problem}
-
-\begin{problem}(problem 2b)
-A sixth grade class of 20 students would like to select a President, Vice-President, Secretary and Treasurer.
-If no student may serve in more than one post, in how many possible ways can the class officers be selected?\\
-The total number of ways to select the class officers is $\answer{116280}$.
-\end{problem}
-
-\end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
