@@ -18,35 +18,134 @@ We will define and interpret generating functions.
 
 \section{Generating Functions}
 
-\begin{definition}
-A \textbf{generating function} is a function of the form
+An infinite sequence $a_0, a_1, a_2, ... $ can be associated with an infinite series
 \[
-g(x) = \sum_{k=0}^\infty c_kx^k = c_0 + c_1 x + c_2 x^2 + \cdots
+a_0 + a_1 x + a_2 x^2 + \cdots
 \]
-whose coefficients $c_0, c_1, c_2, ...$ encode information related to a counting problem.
+A finite sequence can associated with a polynomial in a similar manner.
+This infinite series (or polynomial) is called the generating function of the sequence.
+\begin{definition}
+Given a sequence $a_0, a_1, a_2, ...$, the function 
+\[
+g(x) = \sum_{k=0}^\infty a_kx^k = a_0 + a_1 x + a_2 x^2 + \cdots
+\]
+is called the \textbf{generating function} of the sequence.
+If the sequence is finite: $a_0, a_1, ..., a_n$, the its generating function is the polynomial
+\[
+g(x) = \sum_{k=0}^n a_kx^k = a_0 + a_1 x + a_2 x^2 + \cdots + a_n x^n
+\]
 \end{definition}
 
+\begin{remark}
+In this section, we prefer to start our sequence with the term denoted $a_0$ rather than $a_1$ so as to 
+align the subscript in the generating function with the power of $x$.
+\end{remark}
+
+Before presenting examples of generating functions, it is important for us to recall two specific examples of power series.
+The first is the geometric power series
+\[
+\frac{1}{1-x} = \sum_{k=0}^\infty x^k = 1 + x + x^2 + \cdots
+\]
+and the second is the Maclaurin series for the exponential function
+\[
+e^x =  \sum_{k=0}^\infty \frac{x^k}{k!} = 1 + x + \frac{x^2}{2!} + cdots
+\]
+In the context of generating functions, we are not interested in the interval of convergence of these series, 
+but just the relationship between
+the series and the corresponding sequence of coefficients.
 
 \begin{example}[example 1]
-The function
+Find the generating function for the sequence 
 \[
-g_n(x) = \sum_{k=0}^n \binom{n}{k}x^k  = \binom{n}{0}+ \binom{n}{1}x + \binom{n}{2}x^2 + \cdots + 
-\binom{n}{k}x^k + \cdots + \binom{n}{n} x^n
+1, 0, 1, 0, 1, \cdots
 \]
-The coefficients $c_{n+1}, c_{n+2}, ...$ are all zero.
-The non-zero coefficients are binomial coefficients- the coefficient of $x^k$ is the number of subsets of an $n$-element set.
+and write it in a compact form.\\
+The generating function for this sequence is 
+\[
+g(x) = 1 + 0x + 1x^2 + 0x^3 + 1x^4 + \cdots = 1 + x^2 + x^4 + \cdots
+\]
+This is a geometric series with common ratio $x^2$, so it can be written more compactly as
+\[
+g(x) = \frac{1}{1 - x^2}
+\]
 \end{example}
 
-\begin{problem}
-Consider the generating function
-\[
-g_n(x) = \sum_{k=0}^n \frac{n!}{(n-k)!}x^k  = \frac{n!}{n!}+ \frac{n!}{(n-1)!}x + \frac{n!}{(n-2)!}x^2 + \cdots + 
-\frac{n!}{(n-k)!}x^k + \cdots + \frac{n!}{(n-n)!} x^n
-\]
-Give an example of a counting problem whose solution is given by the coefficients of $g_n(x)$.
+\begin{problem}(problem 1)
+Find the compact form of the generating function for each sequence:\\
+a) $1, -1, 1, -1, ...$
+\begin{multipleChoice}
+\choice{$\dis g(x) = \frac{1}{1-x}$}\\
+\choice[correct]{$\dis g(x) =  \frac{1}{1+x}$}\\
+\choice{$\dis g(x) =  \frac{1}{x-1}$}
+\end{multipleChoice}
+b) $0, 1, 0, 1, ...$
+\begin{multipleChoice}
+\choice[correct]{$\dis g(x) =  \frac{x}{1-x^2}$}\\
+\choice{$\dis g(x) =  \frac{1}{1-x^2}$}\\
+\choice{$\dis g(x) =  \frac{x}{1-x}$}
+\end{multipleChoice}
+c) $1, 2, 4, 8, ...$
+\begin{multipleChoice}
+\choice{$\dis g(x) =  \frac{2}{1-x}$}\\
+\choice{$\dis g(x) =  \frac{1}{2-x}$}\\
+\choice[correct]{$\dis g(x) =  \frac{1}{1-2x}$}
+\end{multipleChoice}
+
 \end{problem}
 
+
 \begin{example}[example 2]
+Find the generating function for the sequence 
+\[
+1, -1, \frac12, -\frac16, \frac{1}{24}, \cdots
+\]
+and write it in a compact form.\\
+Recognizing the numbers in the sequence as $\frac{(-1)^n}{n!}$, we have 
+\[
+g(x) = 1 - x + \frac{x^2}{2!} - \frac{x^3}{3!} + \frac{x^4}{4!} - \cdots = \sum_{n=0}^\infty (-1)^n\frac{x^n}{n!}
+\]
+This is the exponential function with $-x$ in the place of $x$ (since $(-1)^n x^n = (-x)^n$) and 
+hence the generating function can be written more compactly as
+\[
+g(x) = e^{-x}
+\]
+\end{example}
+
+\begin{problem}(problem 2)
+Find the compact form of the generating function for each sequence:\\
+a) $\dis 1, 2, \frac{4}{2!}, \frac{8}{3!}, \frac{16}{4!}, ...$
+\begin{multipleChoice}
+\choice{$\dis g(x) = 2e^x$}\\
+\choice{$\dis g(x) =  2^x$}\\
+\choice[correct]{$\dis g(x) =  e^{2x}$}
+\end{multipleChoice}
+b) $1, 0, -1, 0, \frac{1}{2!}, 0, -\frac{1}{3!}, ...$
+\begin{multipleChoice}
+\choice[correct]{$\dis g(x) =  e^{-x^2}$}\\
+\choice{$\dis g(x) =  x^2e^{-x}$}\\
+\choice{$\dis g(x) =  e^x + e^{-x}$}
+\end{multipleChoice}
+c) $0, 1, 1, \frac{1}{2!}, \frac{1}{3!} ...$
+\begin{multipleChoice}
+\choice{$\dis g(x) =  x+ e^x$}\\
+\choice[correct]{$\dis g(x) =  xe^x$}\\
+\choice{$\dis g(x) =  e^x$}
+\end{multipleChoice}
+d) $2, 0, \frac{2}{2!}, 0 , \frac{2}{4!}, 0,  ...$
+\begin{multipleChoice}
+\choice[correct]{$\dis g(x) =  e^x + e^{-x}$}\\
+\choice{$\dis g(x) =  e^x - e^{-x}$}\\
+\choice{$\dis g(x) =  e^{x^2}$}
+\end{multipleChoice}
+
+
+\end{problem}
+
+
+
+The next example investigates the relationship between generating functions and solutions to combinatorial problems.
+
+\begin{example}[example 3]
 Flip a coin and consider the function $g(x) = 1+x$.  The coefficient of $x^k, k = 0,1$ represents the number ways of 
 obtaining $k$ ``heads". Now flip the coin twice and consider the function $g_2(x) = (1+x)^2 = 1 + 2x + x^2$.
 Note that there is one way to get zero heads: TT. There are two ways to get one heads, HT and TH, 
@@ -55,20 +154,20 @@ get $k$ heads in two flips of the coin,
 where $k = 0, 1, 2$.
 \end{example}
 
-\begin{problem}(problem 2a)
+\begin{problem}(problem 3a)
 Based on the example above guess the generating function corresponding to counting the number of heads in 3 coin flips.
 Express your guess both as a power of $1+x$ as a proper generating function with numerical coefficients.
 Verify that your guess is correct. 
 \end{problem}
 
-\begin{problem}(problem 2b)
+\begin{problem}(problem 3b)
 Generalize your answer to the last problem by creating the generating function corresponding to the 
 number of heads in $n$ coin flips.
 Express your answer as a power of $1+x$ and verify your answer using the Binomial Theorem.
 \end{problem}
  
 
-\begin{example}[example 3]
+\begin{example}[example 4]
 Consider a six-sided die whose faces are numbered 1 through 6. If it is rolled once, the function
 \[
 g_1(x) = x + x^2 + x^3 + x^4 + x^5 + x^6
@@ -81,21 +180,21 @@ g_2(x) = x^2 + 2x^3 + 3x^4 + 4x^5 + 5x^6 + 6x^7 + 5x^8 + 4x^9+ 3x^{10} + 2x^{11}
 The coefficient of $x^k$ in $g_2(x)$ gives the number of ways of rolling a sum of $k$ (verify).
 \end{example}
 
-\begin{problem}(problem 3)
+\begin{problem}(problem 4)
 Consider a six-sided die whose faces are numbered 1 through 6. Roll the die 3 times and consider the sum.
 What are the minimum and maximum possible values of the sum? Create a generating function $g_3(x)$ whose coefficients 
 encode the the number of ways of rolling a sum of $k$.  Express your answer as a power of $g_1(x)$ from the example above.
-Use a computer algebra system to find the coefficient of $x^7$. Verify that this coefficient is 
+Find the coefficient of $x^7$. Verify that this coefficient is 
 indeed the number of ways of obtaining a sum of $7$ by enumerating the possibilities.
 \end{problem}
 
 
-\begin{example}[example 4]
-Consider the number of non-negative integer solutions of the equation
+\begin{example}[example 5]
+Consider the number of non-negative integer solutions of the following equation in $3$ variables:
 \[
-x_1 + x_2 + \cdots + x_k = n
+x_1 + x_2 +  + x_3 = n
 \]
-Find the generating function $g_k(x)$ whose coefficients give the number of such solutions.\\
+Find the generating function $g_3(x)$ whose coefficients give the number of such solutions.\\
 Each variable $x_i$ can take on any value (up to the maximum possible $n$, which is unspecified) and so it will contribute 
 a factor of 
 \[
@@ -103,12 +202,119 @@ a factor of
 \]
 Hence
 \[
-g_k(x) = (1+x+x^2 + \cdots)^k = \frac{1}{(1-x)^k}
+g_3(x) = (1+x+x^2 + \cdots)^3 = \frac{1}{(1-x)^3}
 \]
 \end{example}
 
+\begin{problem}(problem 5a)
+Find a compact form for the generating function whose coefficients give the number of non-negative integer solutions to the 
+following equation in $4$ variables:
+\[
+x_1 + x_2 + x_3 + x_4 = n
+\]
+\end{problem}
+
+
+\begin{problem}(problem 5b)
+Find a compact form for the generating function whose coefficients give the number of non-negative integer solutions to the 
+following equation in $k$ variables:
+\[
+x_1 + x_2 + x_3 + \cdots + x_k = n
+\]
+\end{problem}
+
+\begin{example}[example 6]
+Consider the number of non-negative integer solutions of the equation 
+\[
+x_1 + x_2 +  + x_3  + x^4 = n
+\]
+if the variables are subject to the following conditions:
+\[
+x_1 > 2, x_2 < 5, x_3 \; \text{ is even} \;\; \text{and} \;\; x_4 \; \text{ is a multiple of 3}
+\]
+Each variable will contribute a factor according the the condition it must satisfy.
+The variable $x_1$ will contribute the factor 
+\[
+x^3 + x^4 + x^5 + \cdots = x^3(1 + x + x^2 + \cdots) = \frac{x^3}{1-x}
+\]
+The variable $x_2$ will contribute the factor 
+\[
+1+x+x^2 + x^3 + x^4 = \frac{1-x^5}{1-x}
+\]
+The variable $x_3$ will contribute the factor 
+\[
+1 +  x^2 + x^4 +  \cdots = \frac{1}{1-x^2}
+\]
+and the variable $x_4$ will contribute the factor 
+\[
+1 + x^3 + x^6 + x^9 + \cdots  = \frac{1}{1-x^3}
+\]
+The generating function is the product of these factors:
+\[
+g(x) = \frac{x^3}{1-x} \frac{1-x^5}{1-x} \frac{1}{1-x^2} \frac{1}{1-x^3} = \frac{x^3(1-x^5)}{(1-x)^4(1+x)(1+x+x^2)}
+\]
+The coefficient of $x^n$ in the Maclaurin series expansion of this function gives the number of solutions to 
+the given equation whose variables satisfy the given conditions.
+
+\end{example}
+
+
+\begin{problem}(problem 6)
+Consider the number of non-negative integer solutions of the equation 
+\[
+x_1 + x_2 +  + x_3  + x^4 = n
+\]
+if the variables are subject to the following conditions:
+\[
+x_1 > 3, x_2 < 4, x_3 \; \text{ is even} \;\; \text{and} \;\; x_4 \; \text{ is a multiple of 4}
+\]
+%x^4 / 1-x  1-x^4/ 1-x  1/1-x^2 1 / 1-x^4
+\begin{multipleChoice}
+\choice{$\dis \frac{x^3(1-x^3)}{(1-x)^4(1+x)}$}\\
+\choice{$\dis \frac{x^4(1-x^4)}{(1-x)^4(1+x)}$}\\
+\choice[correct]{$\dis \frac{x^4}{(1-x)^3(1+x)}$}
+\end{multipleChoice}
+
+\end{problem}
+
 \end{document}
 
+Find the generating function $g_4(x)$ whose coefficients give the number of such solutions.\\
+Each variable $x_i$ can take on any value (up to the maximum possible $n$, which is unspecified) and so it will contribute 
+a factor of 
+\[
+1 + x + x^2 +x^3 + \cdots = \frac{1}{1-x}
+\]
+Hence
+\[
+g_3(x) = (1+x+x^2 + \cdots)^3 = \frac{1}{(1-x)^3}
+\]
+\end{example}
+
+
+\begin{example}[example 1]
+The function
+\[
+g_n(x) = \sum_{k=0}^n \binom{n}{k}x^k  = \binom{n}{0}+ \binom{n}{1}x + \binom{n}{2}x^2 + \cdots + 
+\binom{n}{k}x^k + \cdots + \binom{n}{n} x^n
+\]
+is the generating function for the finite sequence of binomial coefficients, $\binom{n}{k}$. The coefficients $c_{n+1}, c_{n+2}, ...$ are all zero.
+The non-zero coefficients are binomial coefficients- the coefficient of $x^k$ is the number of subsets of an $n$-element set.\\
+Furthermore, we learned from the Binomial Theorem, that this function can be written in the compact form
+\[
+g_n(x) = (1+x)^n
+\]
+\end{example}
+
+
+%\begin{problem}
+%Consider the generating function
+%\[
+%g_n(x) = \sum_{k=0}^n \frac{n!}{(n-k)!}x^k  = \frac{n!}{n!}+ \frac{n!}{(n-1)!}x + \frac{n!}{(n-2)!}x^2 + \cdots + 
+%\frac{n!}{(n-k)!}x^k + \cdots + \frac{n!}{(n-n)!} x^n
+%\]
+%Give an example of a counting problem whose solution is given by the coefficients of $g_n(x)$.
+%\end{problem}
 
 
 
