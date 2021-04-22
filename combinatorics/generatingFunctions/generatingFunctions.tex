@@ -175,7 +175,7 @@ g_1(x) = x + x^2 + x^3 + x^4 + x^5 + x^6
 encodes the number of ways of obtaining the outcome corresponding to the degree of a particular term.
 Now roll the die twice and consider the sum. It can be $2, 3, 4, ..., 11, 12$. Squaring $g_1(x)$ gives
 \[
-g_2(x) = x^2 + 2x^3 + 3x^4 + 4x^5 + 5x^6 + 6x^7 + 5x^8 + 4x^9+ 3x^{10} + 2x^{11} + x^{12} \;\; \text{verify}
+g_2(x) = x^2 + 2x^3 + 3x^4 + 4x^5 + 5x^6 + 6x^7 + 5x^8 + 4x^9+ 3x^{10} + 2x^{11} + x^{12} \;\;\; \text{(verify)}
 \]
 The coefficient of $x^k$ in $g_2(x)$ gives the number of ways of rolling a sum of $k$ (verify).
 \end{example}
@@ -192,7 +192,7 @@ indeed the number of ways of obtaining a sum of $7$ by enumerating the possibili
 \begin{example}[example 5]
 Consider the number of non-negative integer solutions of the following equation in $3$ variables:
 \[
-x_1 + x_2 +  + x_3 = n
+x_1 + x_2 +  x_3 = n
 \]
 Find the generating function $g_3(x)$ whose coefficients give the number of such solutions.\\
 Each variable $x_i$ can take on any value (up to the maximum possible $n$, which is unspecified) and so it will contribute 
@@ -226,7 +226,7 @@ x_1 + x_2 + x_3 + \cdots + x_k = n
 \begin{example}[example 6]
 Consider the number of non-negative integer solutions of the equation 
 \[
-x_1 + x_2 +  + x_3  + x^4 = n
+x_1 + x_2 +  + x_3  + x_4 = n
 \]
 if the variables are subject to the following conditions:
 \[
@@ -251,7 +251,7 @@ and the variable $x_4$ will contribute the factor
 \]
 The generating function is the product of these factors:
 \[
-g(x) = \frac{x^3}{1-x} \frac{1-x^5}{1-x} \frac{1}{1-x^2} \frac{1}{1-x^3} = \frac{x^3(1-x^5)}{(1-x)^4(1+x)(1+x+x^2)}
+g(x) = \frac{x^3}{1-x} \cdot \frac{1-x^5}{1-x}  \cdot \frac{1}{1-x^2} \cdot  \frac{1}{1-x^3} = \frac{x^3(1-x^5)}{(1-x)^4(1+x)(1+x+x^2)}
 \]
 The coefficient of $x^n$ in the Maclaurin series expansion of this function gives the number of solutions to 
 the given equation whose variables satisfy the given conditions.
@@ -262,7 +262,7 @@ the given equation whose variables satisfy the given conditions.
 \begin{problem}(problem 6)
 Consider the number of non-negative integer solutions of the equation 
 \[
-x_1 + x_2 +  + x_3  + x^4 = n
+x_1 + x_2 +  x_3  + x_4 = n
 \]
 if the variables are subject to the following conditions:
 \[
