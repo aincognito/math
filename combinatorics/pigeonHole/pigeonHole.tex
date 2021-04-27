@@ -18,9 +18,72 @@ We use the Pigeon Hole Principle
 
 \section{Pigeon Hole Principle}
 
+\begin{proposition}[Pigeonhole Principle]
+If $n+1$ pigeons are nesting in $n$ pigeonholes, then at least two pigeons are nesting in the same pigeonhole.
+\end{proposition}
+
+\begin{example}
+A drawer contains blue socks and brown socks.  How many socks must be selected to ensure that there are two of the same color?\\
+The two different colors represent the pigeonholes and the socks themselves represent the pigeons.  
+According to the PHP, if 2+1 = 3 socks are selected, then at least two of them must be the same color.
+\end{example}
+
+\begin{problem}(problem 1)
+A drawer contains red, green and purple socks. How many socks must be selected to ensure that there are two of the same color?\\
+$\answer{4}$
+\end{problem}
+
+
+\begin{example}[example 2]
+How many people are required to ensure that there are two with the same birthday in the group?\\
+The different possible birthdays are the pigeons and the people are the pigeonholes.  
+There are 366 possible birthdays (including leap day), so by the PHP, 367 people are required to be in the group to 
+ensure that two of them have the same birthday.
+\end{example}
+
+\begin{problem}(problem 2)
+Humans are known to have at most 200,00 hairs on their heads.  How large must the population of a city be in order to 
+ensure that at least 2 people have the same number of hairs on their heads?\\
+$\answer{200001}$
+\end{problem}
+
+\begin{example}[example 3]
+Use the Pigeonhole Principle to explain why in any graph with $n$ vertices (and no loops), there are always two vertices with the same degree.\\
+The degree of a vertex in a graph with $n$ vertices is a whole number from 0 to $n-1$.  Hence, it appears that there are $n$ possibilities 
+for the degrees of our $n$ vertices.  However, noting that it is impossible for the graph to have both a vertex of degree 0 and a vertex of 
+degree $n-1$, we see that there are really only $n-1$ possibilities for the degrees of our $n$ vertex. In other words, 
+there are $n-1$ pigeonholes (the possible vertex degrees) and there are $n$ pigeons (the vertices), so by the PHP, 
+there must be at least two vertices of the same degree.
+\end{example}
+
+\begin{problem}(problem 3)
+A group of $n$ people convenes and they begin shaking hands. Each pair of people can shake hands 0 or 1 times.
+Use the Pigeonhole Principle to explain why there must be at least 2 people who shake the same number of hands.
+\end{problem}
+
+\begin{proposition}[Pigeonhole Principle, Strong Form]
+If $kn+1$ pigeons are nesting in $n$ pigeonholes, then at least $k+1$ pigeons are nesting in the same pigeonhole.
+\end{proposition}
+
+\begin{proof}
+Suppose not.  That is, suppose that each of the $n$ pigeonholes contains fewer than $k+1$ pigeons.  Then the number of pigeons in each pigeonhole is no more than $k$
+and the total number of pigeons is no more than $nk$.  But this contradicts the assumption that there are $nk+1$ pigeons. Hence, there must be at least one pigeonhole containing 
+$k+1$ (or more) pigeons.
+\end{proof}
+
+\begin{example}[example 4]
+The edges of a graph are colored using 4 different colors.  How many edges must the graph have to ensure that there are at least 5 edges of the same color?\\
+The 4 colors represent the pigeonholes and the edges represent the pigeon holes. By the strong form of the PHP, the graph must contain $4\times 4 + 1= 17$ edges to
+ensure that there are $4+1=5$ of the same color.
+\end{example}
+
+\begin{problem}(problem 4)
+The edges of a graph are colored using 5 different colors.  How many edges must the graph have to ensure that there are at least 4 edges of the same color?\\
+$\answer{16}$
+\end{problem}
+
 
 \end{document}
-
 
 
 
