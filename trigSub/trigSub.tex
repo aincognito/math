@@ -1220,8 +1220,17 @@ The final answer is
 \end{center}
 
 
-
-
+\begin{problem}
+Use a trigonometric substitution to convert the integral into a trigonometric integral: $\dis \int x^3 \sqrt{x^1 -4} \; dx$\\
+We will make the substitution $x = \answer{2\sec \theta}$\\
+The resulting trig integral is
+\begin{center}
+\begin{multipleChoice}
+\choice[correct]{$32\dis \int \sec^4\theta \tan^2\theta \; d\theta$} \choice{$16\dis \int \sec^4\theta \tan^2\theta \; d\theta$}\\
+\choice{$32\dis \int \sec^3\theta \tan\theta \; d\theta$} \choice{$16\dis \int \sec^3\theta \tan\theta \; d\theta$}
+\end{multipleChoice}
+\end{center}
+\end{problem}
 
 \end{document}
 
@@ -1275,47 +1284,13 @@ Compute the following indefinite integrals:
 
 
 
-\begin{remark}
-In the previous example, we claimed that
-\[
-\sqrt{\sin^2(\theta)} = \sin(\theta).
-\]
-However, in general,
-\[
-\sqrt{\sin^2(\theta)} = |\sin(\theta)|.
-\]
-To resolve this difference, we go back to the original substitution,
-$x = \cos(\theta)$, and we add the additional stipulation
-$0 \leq \theta \leq \pi$. This interval allows $\cos(\theta)$ to 
-take on all of its values from $-1$ to $1$ with the additional benefit,
-that for values of $\theta$ in this interval, $\sin(\theta) \geq 0$.
-This last fact is what allows us to drop the absolute value bars and write
-\[
-\sqrt{\sin^2(\theta)} = \sin(\theta).
-\]
-\end{remark}
 
 
 
 
 
 
-\begin{example} %example #15
-Find $h'(x)$ if $h(x) = x^{\sin(x)}$.\\
-We will use the fact that the exponential and logarithm functions are inverses,
-\[e^{\ln(x)} = x,\]
-and the exponent property of logarithms, 
-\[\ln(x^n) = n\ln(x),\]
-to rewrite $h(x)$.  We have 
-\[h(x) = x^{\sin(x)} = e^{\ln(x^{\sin(x)})} = e^{\sin(x)\ln(x)}\]
-and we can now compute $h'(x)$ using a combination of the chain rule and product rule.
-We can write $h(x)$ as a composition, $f(g(x))$ with 
-\[g(x) = \sin(x)\ln(x) \quad \text{and} \quad f(x) = e^x.\]
-Then to find $g'(x)$ we us the product rule and we get $g'(x) = \frac{\sin(x)}{x} + \cos(x)\ln(x)$.
-Next $f'(x) = e^x$ and 
-hence $f'(g(x)) = e^{g(x)} = e^{\sin(x)\ln(x)} = x^{\sin(x)}$.
-We can then conclude $h'(x) = f'(g(x))g'(x) = x^{\sin(x)} \left[ \frac{\sin(x)}{x} + \cos(x)\ln(x)\right]$.
-\end{example}
+
 
 %more question formats below
 
