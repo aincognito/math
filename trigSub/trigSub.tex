@@ -1119,12 +1119,12 @@ Compute the indefinite integral
 Let $x = \frac43 \tan(\theta)$. Then $dx = \frac43 \sec^2(\theta) \, d\theta$.
 Substituting these, the integral becomes,
 \begin{align*}
-\int \sqrt{16 + 9x^2} \; dx &= \int \sqrt{16+16\tan^2(\theta)} \cdot \sec^2(\theta) \; d\theta\\[6pt]
-                            &= \int \sqrt{16\sec^2(\theta)} \cdot \sec^2(\theta) \; d\theta\\[6pt]
-                            &= \int 4\sec(\theta) \cdot \sec^2(\theta) \; d\theta\\[6pt]
-                            &= 4\int \sec^3(\theta) \; d\theta\\[6pt]
+\int \sqrt{16 + 9x^2} \; dx &= \int \sqrt{16+16\tan^2(\theta)} \cdot \frac43\sec^2(\theta) \;  d\theta\\[6pt]
+                            &= \frac43\int \sqrt{16\sec^2(\theta)} \cdot \sec^2(\theta) \; d\theta\\[6pt]
+                            &= \frac43\int 4\sec(\theta) \cdot \sec^2(\theta) \; d\theta\\[6pt]
+                            &= \frac{16}{3}\int \sec^3(\theta) \; d\theta\\[6pt]
                             &\;\;\;\;\;\text{(see the IBP section for this integral).}\\[6pt]
-                            &= 2 \sec(\theta) \tan(\theta) + 2 \ln|\sec(\theta) + \tan(\theta)| + C
+                            &= \frac{8}{3}\sec(\theta) \tan(\theta) + \frac{8}{3} \ln|\sec(\theta) + \tan(\theta)| + C
 \end{align*}
                             
 %need triangle with x = 4/3 tan(theta)
@@ -1152,12 +1152,12 @@ Substituting these, the integral becomes,
 
 From the triangle above, we can see that $\sec(\theta) = \frac{\sqrt{16+9x^2}}{4 }$. Back substitution gives
 \begin{align*}
-\int \sqrt{16 + 9x^2} \; dx &= 2 \sec(x) \tan(x) + 2 \ln|\sec(x) + \tan(x)| + C\\
-                            &=  2 \cdot\frac{\sqrt{16+9x^2}}{4 } \cdot \frac{3x}{4}  + 2 \ln\bigg|\frac{\sqrt{16+9x^2}}{4 } + \frac{3x}{4}\bigg| + C\\
-                            &=   \frac38 x\sqrt{16+9x^2}  + 2 \ln\left(3x +  \sqrt{16+9x^2}\right) + C\\
+\int \sqrt{16 + 9x^2} \; dx &= \frac{8}{3} \sec(x) \tan(x) + \frac{8}{3} \ln|\sec(x) + \tan(x)| + C\\
+                            &=  \frac{8}{3} \cdot\frac{\sqrt{16+9x^2}}{4 } \cdot \frac{3x}{4}  + \frac{8}{3} \ln\bigg|\frac{\sqrt{16+9x^2}}{4 } + \frac{3x}{4}\bigg| + C\\
+                            &=   \frac12 x\sqrt{16+9x^2}  + \frac83 \ln\left(3x +  \sqrt{16+9x^2}\right) + C\\
 \end{align*}
 Note that the absolute value bars were removed because $3x +  \sqrt{16+9x^2} > 0$ for any $x$. Also note that the $1/4$ was removed from inside the log 
-because $\ln(u/v) = \ln(u) - \ln(v)$ and $-2\ln(4)$ can be combined with the constant of integration.
+because $\ln(u/v) = \ln(u) - \ln(v)$ and $-\frac83\ln(4)$ can be combined with the constant of integration.
 \end{example}
 
 
