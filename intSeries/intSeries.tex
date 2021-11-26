@@ -63,11 +63,11 @@ The power series expansion for the function $\frac{1}{1+x}$ is
 \frac{1}{1+x} = \sum_{n=0}^\infty (-1)^n x^n, |x| < 1.
 \]
 Integrate the function and the series to obtain a power series representation for a logaritmic function.\\
-First note that
+First, note that
 \[
 \int \frac{1}{1+x} \, dx = \ln|1+x| + C.
 \]
-Next, integrate the power series:
+Integrating the power series:
 \[
 \int \left[\sum_{n=0}^\infty (-1)^n x^n \right] \, dx =  \sum_{n=0}^\infty \left[ \int(-1)^n x^n \, dx \right] = \sum_{n=0}^\infty  (-1)^n \frac{x^{n+1}}{n+1} +C.
 \]
@@ -75,27 +75,26 @@ Equating these two antiderivatives, we have
 \[
 \ln|1+x| = \sum_{n=0}^\infty  (-1)^n \frac{x^{n+1}}{n+1} +C, \; -1 < x \leq 1,
 \]
-which is a power series representation for a logarithmic function. Note that his series converges at $x = 1$.
-
-\begin{remark}[Remark 1]
 If we set $x = 0$, we can find $C$:
 \[
 \ln(1) = \sum_{n=0}^\infty  (-1)^n \frac{0^{n+1}}{n+1} +C = 0 + C,
 \]
-so $C = \ln(1) = 0$.
-\end{remark}
+so $C = \ln(1) = 0$. Hence,
+\[
+\ln|1+x| = \sum_{n=0}^\infty  (-1)^n \frac{x^{n+1}}{n+1}, \; -1 < x < 1,
+\]
+and we have a power series representiation for a logarithmic function.
 
-\begin{remark}[Remark 2]
-If we substitute $x = 1$ into both sides of the power series representation, we obtain:
+\begin{remark}[Remark 1]
+Note that the above series converges when $x = 1$ since it is the alternating harmonic series. Substituting $x = 1$ gives its sum:
 \[
 \ln(2) = \sum_{n=0}^\infty  (-1)^n \frac{1^{n+1}}{n+1} = \sum_{n=0}^\infty  (-1)^n \frac{1}{n+1} = 1 - \frac12 + \frac13 - \frac14 + \cdots
 \]
-The right side is the alternating harmonic series. We have previously learned that the alternating harmonic series converges 
-and now we have discovered that the sum of this series is $\ln(2) \approx 0.7$.
+Hence, the sum of the alternating harmonic series is $\ln(2) \approx 0.7$.
 \end{remark}
 
-\begin{remark}[Remark 3]
-Since $-1 < x\leq 1$ and so $0 < 1+x \leq 2$. Hence, we can remove the absolute value bars in the logarithm to obtain:
+\begin{remark}[Remark 2]
+Since $-1 < x\leq 1$ we have $0 < 1+x \leq 2$. Thus, the absolute value bars in the logarithm can be removed to obtain:
 \[
 \ln(1+x) = \sum_{n=0}^\infty  (-1)^n \frac{x^{n+1}}{n+1}, \; -1 < x \leq 1.
 \]
@@ -109,29 +108,27 @@ The power series representation for the function $\frac{1}{1+x^2}$ is
 \frac{1}{1+x^2} = \sum_{n=0}^\infty (-1)^n x^{2n}, \; |x| < 1.
 \]
 Integrate the function and the series to obtain a power series representation for an inverse trigonometric function.\\
-First note that
+We have
 \[
-\int \frac{1}{1+x^2} \, dx = \tan^{-1}(x) + C.
+\int \frac{1}{1+x^2} \, dx = \tan^{-1}(x) + C,
 \]
-Next, integrate the power series:
+and integrating the power series gives:
 \[
 \int \left[\sum_{n=0}^\infty (-1)^n x^{2n} \right] \, dx =  \sum_{n=0}^\infty \left[ \int(-1)^n x^{2n} \, dx \right] = \sum_{n=0}^\infty  (-1)^n \frac{x^{2n+1}}{2n+1} +C.
 \]
 Equating these two antiderivatives, we have
 \[
-\tan^{-1}(x) = \sum_{n=0}^\infty  (-1)^n \frac{x^{2n+1}}{2n+1} +C, \; |x| < 1,
+\tan^{-1}(x) = \sum_{n=0}^\infty  (-1)^n \frac{x^{2n+1}}{2n+1} +C, \; |x| < 1
 \]
-which is a power series representation for an inverse trigonometric function.
-
-\begin{remark}[Remark 1]
 If we set $x = 0$, we can find $C$:
 \[
 \tan^{-1}(0) = \sum_{n=0}^\infty  (-1)^n \frac{0^{2n+1}}{2n+1} +C = 0 + C,
 \]
-so $C = \tan^{-1}(0) = 0$.
-\end{remark}
-
-\begin{remark}[Remark 2]
+so $C = \tan^{-1}(0) = 0$ and we have the following power series representation for the inverse tangent function:
+\[
+\tan^{-1}(x) = \sum_{n=0}^\infty  (-1)^n \frac{x^{2n+1}}{2n+1} +C, \; |x| < 1
+\]
+\begin{remark}[Remark]
 If we substitute $x = 1$ into both sides of the power series representation, we obtain:
 \[
 \tan^{-1}(1) = \sum_{n=0}^\infty  (-1)^n \frac{1^{2n+1}}{2n+1} = \sum_{n=0}^\infty  (-1)^n \frac{1}{2n+1} 
