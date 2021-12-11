@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1639246176 "calcIIIBook.tex" "calcIIIBook.pdf" "calcIIIBook" 1639246176
+["pdflatex"] 1639246296 "calcIIIBook.tex" "calcIIIBook.pdf" "calcIIIBook" 1639246296
   "../preamble.tex" 0 -1 0 ""
   "/home/andrew/texmf/tex/latex/ximeraLatex/ximera.cls" 1531167858 28946 805eb0dd71d7f8f6597f9d8aa452fc80 ""
   "/home/andrew/texmf/tex/latex/ximeraLatex/xourse.cls" 1531167858 4541 62a0f4ae4735b555fda6f2ab2cd44b3a ""
@@ -184,11 +184,11 @@
   "/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty" 1536122179 4962 9c1069474ff71dbc47d5006555e352d3 ""
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1536122179 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1536255675 7908118 a16e2dd5947695aba15dfea80a46c11f ""
-  "calcIIIBook.aux" 1639246176 8 a94a2480d3289e625eea47cd1b285758 ""
-  "calcIIIBook.tex" 1639246176 815 c51ea8ae743a9f8be39d165bb35ef517 ""
+  "calcIIIBook.aux" 1639246296 8 a94a2480d3289e625eea47cd1b285758 ""
+  "calcIIIBook.tex" 1639246296 817 3ce24900af306039f7021327e0a5870b ""
   (generated)
-  "calcIIIBook.pdf"
-  "calcIIIBook.ids"
   "calcIIIBook.oc"
-  "calcIIIBook.jax"
   "calcIIIBook.log"
+  "calcIIIBook.ids"
+  "calcIIIBook.jax"
+  "calcIIIBook.pdf"
