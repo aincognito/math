@@ -19,7 +19,7 @@ In this section we create the distance formula in $\R^3$ and apply it to spheres
 
 \section{One Dimension}
 
-The real number line, denoted $\R$ or $\R^1$ consists of all real numbers.  In interval notation, we can write $\R = (-\infty, \infty)$.
+The real number line, denoted $\R$ (or $\R^1$ for emphasis) consists of all real numbers.  In interval notation, we can write $\R = (-\infty, \infty)$.
 The distance between two real numbers $x_1$ and $x_2$ is given by $d = |x_2 - x_1|$. Note that $d = 0$ if and only if $x_1 = x_2$.
 
 
@@ -35,6 +35,10 @@ The distance between two real numbers $x_1$ and $x_2$ is given by $d = |x_2 - x_
 \node[below] at (0,-.8) {$d = |x_2 - x_1|$};
 \end{tikzpicture}
 \end{center}
+
+\begin{problem}
+Use the distance formula in $\R^1$ to verify that the midpoint between the real numbers $x_1$ and $x_2$ is $\displaystyle \frac{x_1 +x_2}{2}$.
+\end{problem}
 
 \section{Two Dimensions}
 Two dimensional Euclidean space, denoted $\R^2$, is typically represented geometrically by the $xy$-plane. 
@@ -107,6 +111,7 @@ Hence, this is the equation of a circle with center $(1, -2)$ and radius $4$.
 
 \begin{problem}
 Find the center and radius of the circle $6y - 8x= 24 -x^2 - y^2$\\
+The center is $\answer{(4, -3)}$ and the radius is $\answer{7}$\\
 \end{problem}
 
 The distance formula can also be used to verify the fact that the midpoint of the line segment between the points 
@@ -117,7 +122,7 @@ $(x_1,y_1)$ and $(x_2, y_2)$ is given by
 
 In the following problem, you are asked to verify that the midpoint is indeed equidistant to each of the endpoints of the segment.
 \begin{problem}
-Show that the midpoint given above is equidistant to the points $(x_1, y_1)$ and $(x_2, y_2)$
+Show that the midpoint given above is equidistant to the points $(x_1, y_1)$ and $(x_2, y_2)$.
 \end{problem}
 In the next problem, you will verify that the midpoint is actually on the line segment by comparing slopes.
 \begin{problem}
@@ -141,7 +146,7 @@ The figure below shows the positive direction of each axis and the origin, $O = 
 \end{image}
 In addition to the coordinate axes, there are also three coordinate planes.  
 The $xy$-plane is the plane containing the $x$ and $xy$ axes.  
-The $z$ coordinate of each point in the $xy$-plane is zero, hence its equation is
+The $z$-coordinate of each point in the $xy$-plane is zero, hence its equation is
 \[
 z = 0 \;\; \text{(the $xy$-plane)}
 \]
@@ -249,13 +254,13 @@ This is the equation of a sphere with center $(-2, 3, -5)$ and radius $3$.
 
 \begin{example}
 Describe the intersection of the sphere in the previous examples with each of the coordinate planes.\\
-To find the intersection with the $xy$-plane, we set the $z$ coordinate equal to zero:
+To find the intersection with the $xy$-plane, we set the $z$-coordinate equal to zero:
 \[
 (x+2)^2 +(y-3)^2 + 5^2 = 9
 \]
 Subtracting 25 from both sides, we see that the right hand side is negative.  Since the sum of squares cannot be negative, this equation has no solutions.
 Geometrically, this means that the sphere does not intersect the $xy$-plane. 
-(This makes sense considering that the $z$ coordinate of the center is 5 units below the $xy$-plane and the radius of the sphere is only 3.)\\
+(This makes sense considering that the $z$-coordinate of the center is 5 units below the $xy$-plane and the radius of the sphere is only 3.)\\
 To find the intersection with the $xz$-plane, we set $y = 0$:
 \[
 (x+2)^2 + (-3)^2 + (z+5)^2 = 9
@@ -271,12 +276,12 @@ which becomes
 (y-3)^2 + (x+5)^2 = 5
 \]
 This is the equation of a circle in the $yz$-plane with center $(0, 3, -5)$ and radius $\sqrt 5$.\\
-In this example, we saw each of the three possiblities for the intersection of a plane and a sphere, namely a circle, a point and no intersection at all.
+In this example, we saw each of the three possibilities for the intersection of a plane and a sphere, namely a circle, a point and no intersection at all.
 \end{example}
 
 
 \begin{problem}
-Determine the center and radius of the sphere whose equation is given below.  Then describe its intersection with each of the coordiante planes.
+Determine the center and radius of the sphere whose equation is given below.  Then describe its intersection with each of the coordinate planes.
 \[
 x^2 - 2x + y^2 + 12y + z^2 - 8z +37 = 0
 \]
