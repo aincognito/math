@@ -223,12 +223,12 @@ the vector $c\avec{v}$ has the opposite direction as $\avec{v}$ as illustrated b
 
 
 \subsection{Vector Addition}
-Vector addition is done componentwise.  If $\avec{v_1} = \vector{x_1, y_1}$ and $\avec{v_2} = \vector{x_2, y_2}$
+Vector addition is done component-wise.  If $\avec{v_1} = \vector{x_1, y_1}$ and $\avec{v_2} = \vector{x_2, y_2}$
 then their sum is given by
 \[
 \avec{v_1 }+ \avec{ v_2}= \vector{x_1+x_2,  y_1+y_2}
 \]
-Vector subtraction is addition of the negative which results in componentwise subtraction:
+Vector subtraction is addition of the negative which results in component-wise subtraction:
 \[
 \avec{v_1 }- \avec{ v_2}= \avec{v_1 }+ \left(- \avec{ v_2}\right)  = \vector{x_1,y_1} + \vector{-x_2, -y_2} = \vector{x_1-x_2,  y_1-y_2}
 \]
@@ -249,7 +249,7 @@ c) $\avec{v}-\avec{u} = \vector{\answer{-3}, \answer{9}}$\\
 d) $3\avec{u}+5\avec{v} = \vector{\answer{1}, \answer{21}}$\\
 \end{problem}
 
-Graphically, vector addition can be performed using either the paralleogram method or the end to end method as pictured below.
+Graphically, vector addition can be performed using either the parallelogram method or the end to end method as pictured below.
 \begin{image}
 \begin{tikzpicture}
 \draw[blue, ->, thick] (0,0) -- (3, 1) node[midway, below]{$\avec{u}$};
@@ -332,9 +332,79 @@ Find a unit vector in the opposite direction of the vector $\avec{v} = \vector{9
 $\avec{u} = \vector{\answer{-3/5}, \answer{4/5}}$
 \end{problem}
 
+\section{Application}
+A force acting on an object has both a magnitude and a direction and hence it can be modeled using vectors.
+
+\begin{example}
+A box on the floor is being pulled to the right by a rope. The weight of the box is $20$ Newtons, the force due to friction is $8$ Newtons and the 
+force on the rope is $24$ Newtons at an angle of $30^\circ$ to the floor. Find the normal force, $\avec{N}$, acting on the box from the 
+floor and resultant force acting on the box, $\avec{F}$.\\
+\begin{image}  
+\begin{tikzpicture}
+\draw (0,0) -- (6,0) node[right]{floor};
+\draw (1.5, 0) -- (1.5, 2) -- (4.5, 2) -- (4.5, 0) node[midway, right]{box};
+\draw[red, ->] (3,0) -- (3, -1) node[below]{weight = $20$N};
+\draw[red, <-] (1, 1) node[left]{friction = $8$N} -- (1.5,1);
+\draw[red, ->] (4.5, 2) -- (6, 3) node[right]{rope force = $24$N};
+\draw[red, dashed] (4.5, 2) -- (5.7, 2) ;
+\node[red] at (5.3,2.2){$30^\circ$};
+\end{tikzpicture}
+\end{image}
+
+
+The resultant force on the box is the sum of the forces acting on the box, where each force is represented by a vector.
+The force of the weight of the box has a magnitude of $20$ and points in the direction of the negative $y$-axis.  
+This vector is $\avec{w} = \vector{0,-20}$.
+The friction force has a magnitude of $8$ and points in the direction of the negative $x$-axis.  This vector is $\avec{f} = \vector{-8,0}$.
+The force on the rope has a magnitude of $24$ and points in the direction $30^\circ$ above the $x$-axis. 
+Using trigonometry, we can deduce that the horizontal and vertical components of this force vector are $x = 24\cos(30^\circ) = 12\sqrt 3$
+and $y = 24\sin(30^\circ) = 12$ respectively. Hence, this force is $\avec r = \vector{12\sqrt 3, 12}$.  See the figure below.
+
+\begin{image}
+\begin{tikzpicture}
+\draw(0,0) -- (6.8,0) node[midway, below]{$24 \cos(30^\circ)$} ;
+\draw (6.8, 0) -- (6.8,4) node[midway,right]{$24\sin(30^\circ)$};
+\draw[red, ->] (0,0) -- (6.8, 4) node[midway, above left]{$|\avec{r}| = 24$};
+\node at (1, 0.25) {$30^\circ$};
+\node at (3.4, -1) {The force on the rope is $\avec r = \vector{12\sqrt 3, 12}$};
+\draw (6.5, 0) -- (6.5, 0.3) -- (6.8, 0.3);
+\end{tikzpicture}
+\end{image}
+
+Assuming that the vertical component of the rope force is not enough to overcome the weight of the box (and thus send it airborn), 
+the floor will exert an upward normal force on the box.  This force will have the form $\avec{N} = \vector{0, n}$ where the positive 
+number $n$ will be determined by the fact that the net vertical component of all forces acting on the box is zero. 
+The resultant force, $\avec{F}$, on the box is the sum of the vectors $\avec{f}, \avec{w}, \avec{N}$ and $\avec{r}$:
+\begin{align*}
+\avec{F} &= \avec{f} + \avec{w} + \avec{N} +  \avec{r} \\
+         &= \vector{-8,0} + \vector{0,-20} +\vector{0,n} + \vector{12\sqrt 3, 12} \\
+         &= \vector{12\sqrt 3 -8 , n-8}
+\end{align*}
+Since the vertical component of the resultant force $\avec{F}$ should be zero, we see that $n = 8$. 
+Thus $\avec{N} = \vector{0,8} = 8\avec{j}$ so that $\avec{F} = \vector{12\sqrt 3 -8, 0} \approx \vector{12.785,0} = 12.785\avec{i}$. Because of this force, 
+the box will slide along the floor to the right.
+
+% at a speed equal to the magnitude of this force: 
+%\[
+%|\avec{F}| = \left|\vector{12\sqrt 3 -8, 0}\right| = 12\sqrt 3 - 8 \approx 12.785\, \text{meters/second}
+%\]
+
+
+
+
+\end{example}
 \end{document}
 
+\begin{image}  
+\begin{tikzpicture}
 
+\draw[red, ->] (0,0) -- (0, -1) node[below]{W\\avec{w} = \vector{0, -20}};
+\draw[red, <-] (1, 1) node[left]{friction = $8$N} -- (1.5,1);
+\draw[red, ->] (4.5, 2) -- (6, 3) node[right]{rope force = $25$N};
+\draw[red, dashed] (4.5, 2) -- (5.7, 2) ;
+\node[red] at (5.3,2.2){$30^\circ$};
+\end{tikzpicture}
+\end{image}
 
 
 
