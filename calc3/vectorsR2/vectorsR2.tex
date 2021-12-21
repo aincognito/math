@@ -18,12 +18,12 @@ In this section we define vectors in two dimensions and study their algebraic an
 
 A {\bf vector} is a quantity that has both magnitude and direction. Examples include a force acting on an object and the velocity of an object in motion.
 Algebraically, vectors are represented in a manner very similar to points.  In two dimensions, a vector is written $\avec{v} = \vector{x,y}$  
-where $x$ and $y$ are the {\bf components} of $\vec{v}$.
+where $x$ and $y$ are the {\bf components} of $\avec{v}$.
 
 
 \section{Graphing Vectors in $\R^2$}
 The graphical representation of the vector $\avec{v} = \vector{x,y}$ in standard position
-is an arrow emanating from the origin (initial point) and terminating at the point $(x,y)$ (the final point).
+is an arrow emanating from the origin (initial point) and terminating at the point $(x,y)$ (final point).
 Below is a graphical representation of the vector $\vector{1,1}$ in standard position.
 
 \begin{image}
@@ -78,6 +78,7 @@ The vectors $\avec{i}$ and $\avec{j}$ are shown below.
 \draw[blue, fill] (0,0) circle (0.01);
 \draw[thin] (1, 0.1) -- (1, -0.1) node[below]{$1$};
 \draw[thin] (0.1,1) -- (-0.1,1) node[left]{$1$};
+\draw[white] (-1, -2) -- (1, -2);
 \end{tikzpicture}
 \end{image}
 
@@ -110,7 +111,7 @@ The vector with initial point $P(x_1, y_1)$ and final point $Q(x_2, y_2)$ has co
 \end{image}
 
 \begin{example}
-Find the components of the vector from $P(-2, 3)$ to the point $Q(1, 1)$ and draw two copies of this vector- the first from the point $P$ to the point $Q$
+Find the components of the vector from the point $P(-2, 3)$ to the point $Q(1, 1)$ and draw two copies of this vector- the first from the point $P$ to the point $Q$
 and the second in standard position.\\
 The components of $\avec{PQ}$ are $\vector{1-(-2), 1-3} = \vector{3, -2}$.
 The two copies of the vector are shown below.
@@ -221,6 +222,96 @@ the vector $c\avec{v}$ has the opposite direction as $\avec{v}$ as illustrated b
 \end{tikzpicture}
 \end{image}
 
+A vector with magnitude 1 is called a {\bf unit vector}. Given a vector $\avec{v}$, we will want to find a unit vector in the direction of $\avec{v}$.
+This unit vector will have the form $c\avec{v}$ for some positive scalar $c$.  
+\begin{proposition}
+The unit vector $\avec{u}$ in the same direction as the vector $\avec{v} \neq \avec{0}$ is given by 
+\[
+\avec{u} = \frac{1}{|\avec{v}|} \avec{v}
+\]
+\begin{proof}
+Since $|\avec{v}| \neq 0$, the scalar $\displaystyle \frac{1}{|\avec{v}|}$ is a positive real number.  Thus, the vector $\avec{u}$ points 
+in the same direction as $\avec{v}$, since it is a positive multiple of $\avec{v}$ . We must now show that $|\avec{u}| = 1$.  
+By the previous proposition, we have
+\begin{align*}
+|\avec{u}| &= \left| \frac{1}{|\avec{v}|} \avec{v} \right|\\
+           &= \left| \frac{1}{|\avec{v}|} \right| |\avec{v}|\\
+           &= \frac{1}{|\avec{v}|} |\avec{v}|\\
+           &= 1
+\end{align*}
+\end{proof}
+\end{proposition}
+
+\begin{example}
+Find a unit vector in the same direction as the vector $\avec{v} = \vector{3, -4}$.\\
+First we find the magnitude of $\avec{v}$:
+\[
+|\avec{v}| = |\vector{3, -4}| = \sqrt{3^2 + (-4)^2} = \sqrt{25} = 5
+\]
+By the proposition above, we have
+\[
+\avec{u} = \frac{1}{|\avec{v}|} \avec{v} = \frac15 \vector{3, -4} = \vector{\frac35, -\frac45}
+\]
+where $\avec{u}$ is a unit vector in the same direction as $\avec{v}$.
+\end{example}
+
+\begin{problem}
+Find a unit vector in the same direction as the vector $\avec{v} = \vector{-8, 15}$.\\
+$\avec{u} = \vector{\answer{-8/17}, \answer{15/17}}$
+\end{problem}
+
+\begin{problem}
+Find a unit vector in the opposite direction of the vector $\avec{v} = \vector{9, -12}$.\\
+$\avec{u} = \vector{\answer{-3/5}, \answer{4/5}}$
+\end{problem}
+
+Every non-zero vector in $\R^2$ can be written in terms of its magnitude and a direction angle, i.e. a polar form.
+
+\begin{proposition}
+Let $\avec{v} = \vector{x,y} \neq \vector{0,0}$.  Then there is an angle $\theta$ such that $\avec{v} = |\avec{v}| \vector{\cos \theta, \sin \theta}$.
+\begin{proof}
+Since $\cos^2\theta + \sin^2\theta = 1$ for any angle $\theta$, the vector $\vector{\cos \theta, \sin \theta}$ is a unit vector.
+By the previous proposition, the vector $|\avec{v}| \vector{\cos \theta, \sin \theta}$ has magnitude $|\avec{v}|$. 
+Now, if $\avec{v}$ is draw in standard position, and if $\theta$ is the (counterclockwise) angle between $\avec{v}$ and the positive $x$-axis, 
+then the components of $\avec{v}$ are $|\avec{v}|\cos \theta$ and $|\avec{v}|\sin \theta$.  See the figure below.
+
+
+\begin{image}
+\begin{tikzpicture}
+\draw[step=1.0,black,thin] (-3.5,-3.5) grid (3.5,3.5);
+\draw[thick, <->] (-3.5,0) -- (3.5, 0) node[right]{$x$};
+\draw[thick, <->] (0,-3.5) -- (0, 3.5) node[above]{$y$};
+\draw[->, blue, thick] (0,0) -- (-2.5, 2.5) node[above, right]{$\avec{v} = \vector{|\avec{v}|\cos\theta,|\avec{v}|\sin\theta}$};
+\draw[blue, fill] (0, 0) circle (0.03);
+\draw[red] (0,0) circle (1);
+\draw[red, fill] (-.707, .707) circle (0.03) node[above, left]{$(\cos \theta, \sin\theta)$};
+\draw[red] (.2,0) arc (0:135:0.2) node[red, midway, right]{$\theta$};
+\node at (2.1, -0.3){$2$};
+\node at (-2, -0.3){$-2$};
+\node at (-0.3,2){$2$};
+\node at (-0.3, -2){$-2$};
+\node[red] at (1.3, -1.5) {The Unit Circle};
+%\node at (0, -3.8) {Two copies of the vector $\avec{PQ} = \vector{3,-2}$};
+\end{tikzpicture}
+\end{image}
+
+
+\end{proof}
+\end{proposition}
+
+\begin{example}
+Find the polar form of the vectors $-2\avec{i}$ and $4\avec{i}-7\avec{j}$.\\
+The angle associate with the vector $-2\avec{i}$ is $\pi$ since the vector points in the direction of the negative $x$-axis.
+So $-2\avec{i} = |-2\avec{i}| \vector{\cos \pi, \sin \pi} = 2\vector{\cos \pi, \sin \pi} (= 2\vector{-1, 0} = \vector{-2, 0})$.\\
+The angle associated with the vector $4\avec{i}-7\avec{j}$ is $\theta = \tan^{-1}(-7/4)$, which is not a well known angle.
+The magnitude of $4\avec{i}-7\avec{j}$ is $\sqrt{16 +49} = \sqrt{65}$.  Hence, the polar form of $4\avec{i}-7\avec{j}$ is
+$\sqrt{65}\vector{\cos \theta, \sin\theta}$ where $\theta$ is as above. Note that if $\avec{v}$ is in the second or third quadrant, then 
+to find the angle we would add $\pi$ to the inverse tangent.
+\end{example}
+
+\begin{problem}
+Find the polar form of the vectors $-3\avec{j}$ and $-2\avec{i}+5\avec{j}$.\\
+\end{problem}
 
 \subsection{Vector Addition}
 Vector addition is done component-wise.  If $\avec{v_1} = \vector{x_1, y_1}$ and $\avec{v_2} = \vector{x_2, y_2}$
@@ -290,53 +381,13 @@ Given a vector $\avec{v} = \vector{x,y}$, we can use the addition and scalar mul
          &= x\avec{i} + y\avec{j}
 \end{align*}
 
-A vector with magnitude 1 is called a {\bf unit vector}. Given a vector $\avec{v}$, we will want to find a unit vector in the direction of $\avec{v}$.
-This unit vector will have the form $c\avec{v}$ for some positive scalar $c$.  
-\begin{proposition}
-The unit vector $\avec{u}$ in the same direction as the vector $\avec{v} \neq \avec{0}$ is given by 
-\[
-\avec{u} = \frac{1}{|\avec{v}|} \avec{v}
-\]
-\begin{proof}
-Since $|\avec{v}| \neq 0$, the scalar $\displaystyle \frac{1}{|\avec{v}|}$ is a positive real number.  Hence, the vector $\avec{u}$, being a positive multiple of 
-the vector $\avec{v}$ points in the same direction as $\avec{v}$. We must now show that $|\avec{u}| = 1$.  By the previous proposition, we have
-\begin{align*}
-|\avec{u}| &= \left| \frac{1}{|\avec{v}|} \avec{v} \right|\\
-           &= \left| \frac{1}{|\avec{v}|} \right| |\avec{v}|\\
-           &= \frac{1}{|\avec{v}|} |\avec{v}|\\
-           &= 1
-\end{align*}
-\end{proof}
-\end{proposition}
 
-\begin{example}
-Find a unit vector in the same direction as the vector $\avec{v} = \vector{3, -4}$.\\
-First we find the magnitude of $\avec{v}$:
-\[
-|\avec{v}| = |\vector{3, -4}| = \sqrt{3^2 + (-4)^2} = \sqrt{25} = 5
-\]
-By the proposition above, we have
-\[
-\avec{u} = \frac{1}{|\avec{v}|} \avec{v} = \frac15 \vector{3, -4} = \vector{\frac35, -\frac45}
-\]
-where $\avec{u}$ is a unit vector in the same direction as $\avec{v}$.
-\end{example}
-
-\begin{problem}
-Find a unit vector in the same direction as the vector $\avec{v} = \vector{-8, 15}$.\\
-$\avec{u} = \vector{\answer{-8/17}, \answer{15/17}}$
-\end{problem}
-
-\begin{problem}
-Find a unit vector in the opposite direction of the vector $\avec{v} = \vector{9, -12}$.\\
-$\avec{u} = \vector{\answer{-3/5}, \answer{4/5}}$
-\end{problem}
 
 \section{Application}
-A force acting on an object has both a magnitude and a direction and hence it can be modeled using vectors.
+Forces acting on an object have both magnitude and a direction and hence they can be modeled using vectors.
 
 \begin{example}
-A box on the floor is being pulled to the right by a rope. The weight of the box is $20$ Newtons, the force due to friction is $8$ Newtons and the 
+A box on the floor is being pulled to the right by a rope. The weight of the box is $20$ Newtons, the force due to friction is $8$ Newtons, and the 
 force on the rope is $24$ Newtons at an angle of $30^\circ$ to the floor. Find the normal force, $\avec{N}$, acting on the box from the 
 floor and resultant force acting on the box, $\avec{F}$.\\
 \begin{image}  
@@ -346,6 +397,7 @@ floor and resultant force acting on the box, $\avec{F}$.\\
 \draw[red, ->] (3,0) -- (3, -1) node[below]{weight = $20$N};
 \draw[red, <-] (1, 1) node[left]{friction = $8$N} -- (1.5,1);
 \draw[red, ->] (4.5, 2) -- (6, 3) node[right]{rope force = $24$N};
+\draw[red, ->] (3,2) -- (3, 2.5) node[above]{normal force, $\avec{N}$};
 \draw[red, dashed] (4.5, 2) -- (5.7, 2) ;
 \node[red] at (5.3,2.2){$30^\circ$};
 \end{tikzpicture}
