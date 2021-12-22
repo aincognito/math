@@ -1,0 +1,98 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\outcome{In this section we define the dot product and we use it to find the angle between vectors.}
+
+\title{1.4 The Dot Product}
+
+
+
+\begin{document}
+
+\begin{abstract}
+In this section we define the dot product and we use it to find the angle between vectors.
+\end{abstract}
+ 
+\maketitle
+The dot product is a special operation that helps us to find the angle between two vectors.
+\begin{definition}
+If $\avec{v_1}$ and $\avec{v_2}$ are vectors in $\R^2$ given by
+\[
+\avec{v_1} = \vector{x_1, y_1} \text{  and  } \avec{v_2} = \vector{x_2, y_2}
+\]
+then the dot product $\avec{v_1} \dotp \avec{v_2}$ is defined by
+\[
+\avec{v_1} \dotp \avec{v_2} = x_1x_2 + y_1y_2
+\]
+\end{definition}
+
+\begin{example}
+Find the indicated dot product: $\left(3\avec{i} -2\avec{j}\right) \dotp \left(2\avec{i} +5\avec{j}\right)$.\\
+According to the definition, we have
+\[
+\left(3\avec{i} -2\avec{j}\right) \dotp \left(2\avec{i} +5\avec{j}\right) = (3)(2)+(-2)(5) = 6-10 = -4
+\]
+\end{example}
+
+Note that the dot product of two vectors is a real number.  For this reason, the dot product is sometimes called the scalar product.
+
+\begin{problem}
+Find the indicated dot product: $\left(4\avec{i} + \avec{j}\right) \dotp \left(5\avec{i} -7\avec{j}\right) =\answer{13}$.\\
+\end{problem}
+
+It is interesting to compute the dot product of a vector with itself.  Let $\avec{v} = \vector{x, y}$. Then
+\[
+\avec{v} \dotp \avec{v} = x^2 + y^2 = |\avec{v}|^2
+\]
+We see that the dot product of a vector with itself gives the square of the magnitude of the vector.
+
+It is also interesting to compute the dot product between two unit vectors in polar form.
+If $\avec{u_1} = \vector{\cos \alpha, \sin \alpha}$ and $\avec{u_2} = \vector{\cos \beta, \sin \beta}$ then
+\[
+\avec{u_1} \dotp \avec{u_2} = \cos \alpha \cos \beta + \sin \alpha \sin \beta = \cos(\alpha - \beta)
+\]
+We see here that the dot product of unit vectors gives the cosine of the angle between the vectors.
+
+\begin{image}
+\begin{tikzpicture}
+\draw[<->] (-3, 0)--(3,0);
+\draw[<->] (0,-3)--(0,3);
+\draw[thin, red] (0,0) circle (2);
+\draw[->, thick, blue] (0,0) -- (-1.732, 1) node[above left]{$\avec{u_1}$};
+\draw[->, thick, blue] (0,0) -- (1.414, 1.414) node[above right]{$\avec{u_2}$};
+\draw[blue, thin] (0.3 ,0.3) arc (45:150: 0.42) node[midway, above]{$\alpha - \beta$};
+\node at(0, -3.5) {$\avec{u_1} = \vector{\cos \alpha, \sin \alpha}$ and $\avec{u_2} = \vector{\cos \beta, \sin \beta}$};
+\draw[thin] (2, 0.2) -- (2, -0.2) node[below right]{$1$};
+\draw[thin] (0.2, 2) -- (-0.2, 2) node[above left]{$1$};
+\end{tikzpicture}
+\end{image}
+
+In general, the dot product of two vectors is related to both the angle between the vectors and thier magnitudes.
+
+\begin{proposition}
+Given two non-zero vectors in $\R^2$, $\avec{v_1} = \vector{x_1, y_1}$ and $\avec{v_2} = \vector{x_2, y_2}$, we have
+\[
+\avec{v_1} \dotp \avec{v_2} = |\avec{v_1}| \cdot |\avec{v_2}| \cos \theta
+\]
+where $\theta$ is the angle between the two vectors.
+\begin{proof}
+Write the vectors in polar form: $\avec{v_1} = |\avec{v_1}| \vector{\cos \alpha, \sin \alpha}$ and 
+$\avec{v_2} = |\avec{v_2}| \vector{\cos \beta, \sin \beta}$. To calculuate the dot product, first multiply by the magnitudes:
+\begin{align*}
+\avec{v_1} \cdot \avec{v_2} & = \left(|\avec{v_1}| \vector{\cos \alpha, \sin \alpha}\right) \dotp \left( |\avec{v_2}| \vector{\cos \beta, \sin \beta} \right)\\
+                            &= \vector{|\avec{v_1}|\cos \alpha, |\avec{v_1}|\sin \alpha} \dotp   \vector{|\avec{v_2}|\cos \beta, |\avec{v_2}|\sin \beta} \\
+                            &= |\avec{v_1}| \cos \alpha |\avec{v_2}|\cos \beta + |\avec{v_1}|\sin \alpha |\avec{v_2}|\sin \beta\\
+                            &= |\avec{v_1}|\cdot |\avec{v_2}| \left(\cos \alpha \cos \beta + \sin \alpha \sin \beta\right)\\
+                            &= |\avec{v_1}| \cdot|\avec{v_2}| \cos(\alpha - \beta)\\
+                            &= |\avec{v_1}| \cdot |\avec{v_2}| \cos(\theta)
+\end{align*}
+where $\theta = \alpha - \beta$ is the angle between $\avec{v_1}$ and $\avec{v_2}$.
+\end{proof}
+\end{proposition}
+
+\end{document}
+
+
+
+
