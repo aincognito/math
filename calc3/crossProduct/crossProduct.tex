@@ -2,30 +2,33 @@
 
 \input{../preamble}
 
-\outcome{In this section we define the dot product and we use it to find the angle between vectors.}
+\outcome{In this section we define the cross product and we use it to create orthogonal vectors.}
 
-\title{1.4 The Dot Product}
+\title{1.5 The Cross Product}
 
 
 
 \begin{document}
 
 \begin{abstract}
-In this section we define the dot product and we use it to find the angle between vectors.
+In this section we define the cross product and we use it to create orthogonal vectors.
 \end{abstract}
  
 \maketitle
-The dot product is a special operation that helps us to find the angle between two vectors.
-\begin{definition}[Dot Product in $\R^3$]
-If $\avec{v_1}$ and $\avec{v_2}$ are vectors in $\R^2$ given by
+The cross product is a special operation that helps us to create a vector that is orthogonal to two given two vectors in $\R^3$.
+\begin{definition}[Cross Product in $\R^3$]
+If $\avec{v_1}$ and $\avec{v_2}$ are vectors in $\R^3$ given by
 \[
-\avec{v_1} = \vector{x_1, y_1} \text{  and   } \;\avec{v_2} = \vector{x_2, y_2}
+\avec{v_1} = \vector{x_1, y_1, z_1} \text{  and   } \;\avec{v_2} = \vector{x_2, y_2, z_2}
 \]
-then the dot product $\avec{v_1} \dotp \avec{v_2}$ is defined by
+then the cross product $\avec{v_1} \cross \avec{v_2}$ is defined by
 \[
-\avec{v_1} \dotp \avec{v_2} = x_1x_2 + y_1y_2
+\avec{v_1} \cross \avec{v_2} =  (y_1z_2 - z_1y_2) \avec{i} + (z_1x_2 - x_1z_2) \avec{j} + (x_1y_2 - y_1x_2) \avec{k} 
 \]
 \end{definition}
+
+\end{document}
+
 
 \begin{example}
 Find the indicated dot product: $\left(3\avec{i} -2\avec{j}\right) \dotp \left(2\avec{i} +5\avec{j}\right)$.\\
@@ -254,7 +257,6 @@ when the vectors $\avec{v}$ and $\avec{w}$ are parallel, i.e., when $\theta = 0$
 \path (1,0) ++(15:.75cm) node{$\alpha$};
 \path (1,0) ++(15:-.75cm) node{$\beta$};
 \end{tikzpicture}
-
 
 
 
