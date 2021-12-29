@@ -17,21 +17,21 @@ In this section we define the dot product and we use it to find the angle betwee
 \maketitle
 The dot product is a special operation that helps us to find the angle between two vectors.
 \begin{definition}[Dot Product in $\R^3$]
-If $\avec{v_1}$ and $\avec{v_2}$ are vectors in $\R^2$ given by
+If $\vec{v}_1$ and $\vec{v}_2r$ are vectors in $\R^2$ given by
 \[
-\avec{v_1} = \vector{x_1, y_1} \text{  and   } \;\avec{v_2} = \vector{x_2, y_2}
+\vec{v}_1 = \vector{x_1, y_1} \text{  and   } \;\avec{v_2} = \vector{x_2, y_2}
 \]
-then the dot product $\avec{v_1} \dotp \avec{v_2}$ is defined by
+then the dot product $\vec{v}_1 \dotp \avec{v_2}$ is defined by
 \[
-\avec{v_1} \dotp \avec{v_2} = x_1x_2 + y_1y_2
+\vec{v}_1 \dotp \avec{v_2} = x_1x_2 + y_1y_2
 \]
 \end{definition}
 
 \begin{example}
-Find the indicated dot product: $\left(3\avec{i} -2\avec{j}\right) \dotp \left(2\avec{i} +5\avec{j}\right)$.\\
+Find the indicated dot product: $\left(3\vec{i} -2\vec{j}\right) \dotp \left(2\vec{i} +5\vec{j}\right)$.\\
 According to the definition, we have
 \[
-\left(3\avec{i} -2\avec{j}\right) \dotp \left(2\avec{i} +5\avec{j}\right) = (3)(2)+(-2)(5) = 6-10 = -4
+\left(3\vec{i} -2\vec{j}\right) \dotp \left(2\vec{i} +5\vec{j}\right) = (3)(2)+(-2)(5) = 6-10 = -4
 \]
 \end{example}
 
@@ -75,19 +75,19 @@ In general, the dot product of two vectors is related to both the angle between 
 \begin{proposition}
 Given two non-zero vectors in $\R^2$, $\avec{v_1} = \vector{x_1, y_1}$ and $\avec{v_2} = \vector{x_2, y_2}$, we have
 \[
-\avec{v_1} \dotp \avec{v_2} = |\avec{v_1}| \cdot |\avec{v_2}| \cos \theta
+\vec{v}_1 \dotp \avec{v_2} = |\avec{v_1}| \cdot |\avec{v_2}| \cos \theta
 \]
 where $\theta$ is the angle between the two vectors.
 \begin{proof}
 Write the vectors in polar form: $\avec{v_1} = |\avec{v_1}| \vector{\cos \alpha, \sin \alpha}$ and 
 $\avec{v_2} = |\avec{v_2}| \vector{\cos \beta, \sin \beta}$. To calculate the dot product, first multiply by the magnitudes:
 \begin{align*}
-\avec{v_1} \cdot \avec{v_2} & = \left(|\avec{v_1}| \vector{\cos \alpha, \sin \alpha}\right) \dotp \left( |\avec{v_2}| \vector{\cos \beta, \sin \beta} \right)\\
+\vec{v}_1 \cdot \avec{v_2} & = \left(|\avec{v_1}| \vector{\cos \alpha, \sin \alpha}\right) \dotp \left( |\avec{v_2}| \vector{\cos \beta, \sin \beta} \right)\\
                             &= \vector{|\avec{v_1}|\cos \alpha, |\avec{v_1}|\sin \alpha} \dotp   \vector{|\avec{v_2}|\cos \beta, |\avec{v_2}|\sin \beta} \\
-                            &= |\avec{v_1}| \cos \alpha |\avec{v_2}|\cos \beta + |\avec{v_1}|\sin \alpha |\avec{v_2}|\sin \beta\\
-                            &= |\avec{v_1}|\cdot |\avec{v_2}| \left(\cos \alpha \cos \beta + \sin \alpha \sin \beta\right)\\
-                            &= |\avec{v_1}| \cdot|\avec{v_2}| \cos(\alpha - \beta)\\
-                            &= |\avec{v_1}| \cdot |\avec{v_2}| \cos \theta
+                            &= |\vec{v}_1| \cos \alpha |\avec{v_2}|\cos \beta + |\avec{v_1}|\sin \alpha |\avec{v_2}|\sin \beta\\
+                            &= |\vec{v}_1|\cdot |\avec{v_2}| \left(\cos \alpha \cos \beta + \sin \alpha \sin \beta\right)\\
+                            &= |\vec{v}_1| \cdot|\avec{v_2}| \cos(\alpha - \beta)\\
+                            &= |\vec{v}_1| \cdot |\avec{v_2}| \cos \theta
 \end{align*}
 where $\theta = \alpha - \beta$ is the angle between $\avec{v_1}$ and $\avec{v_2}$.
 \end{proof}
