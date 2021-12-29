@@ -235,7 +235,57 @@ where $\theta$ represents the angle between the vectors $\avec{v}$ and $\avec{w}
 \end{proposition}
 
 Note that the proof gives us a little bit more information about the inequality. If $\cos \theta = 1$, then the inequality becomes equality.  This happens precisely 
-when the vectors $\avec{v}$ and $\avec{w}$ are parallel, i.e., when $\theta = 0$. The result holds for vectors in $\R^2$ as well using the same proof.
+when the vectors $\avec{v}$ and $\avec{w}$ are in the same direction, i.e., when $\theta = 0$. The result holds for vectors in $\R^2$ as well using the same proof.
+
+\section{Projection}
+
+An important application of the dot product is to compute the projection of one vector onto another.
+The diagrams below show the projection of the vector $\avec{w}$ onto the vector $\avec{v}$. This projection vector is denoted $\proj_{\avec{v}} \avec{w}$
+and it is parallel to $\avec{v}$.
+
+\begin{image}
+\begin{tikzpicture}
+\draw[red, ->, thick] (0,0) -- (3, 0) node[right]{$\avec{v}$};
+\draw[blue, ->, thick] (0,0) -- (2, 4) node[midway, left]{$\avec{w}$};
+\draw[blue, ->, thin] (0,0) --(2,0) node[midway, below]{$\proj_{\avec{v}} \avec{w}$};
+\draw[blue, thin, dashed] (2, 4) -- (2, 0);
+\draw[blue, thin] (1.7, 0) -- ++(0, 0.3) -- + (0.3, 0);
+\node at (1.5, -1){Case 1: $\avec{v} \dotp \avec{w} > 0$};
+
+\draw[red, ->, thick] (8,0) -- (11, 0) node[right]{$\avec{v}$};
+\draw[red, thick, dashed] (8,0) -- (6, 0);
+\draw[blue, ->, thick] (8,0) -- (6, 4) node[midway, right]{$\avec{w}$};
+\draw[blue, ->] (8,0) -- (6, 0) node[below, midway]{$\proj_{\avec{v}} \avec{w}$};
+\draw[blue, thin, dashed] (6, 4) -- (6, 0);
+
+\draw[blue, thin] (6.3, 0) -- ++(0, 0.3) -- + (-0.3, 0);
+\node at (8.5, -1){Case 2: $\avec{v} \dotp \avec{w} < 0$};
+\end{tikzpicture}
+\end{image}
+
+\begin{proposition}[Projection Vector]
+Given vectors $\avec{v} \neq \avec{0}$ and $\avec{w}$ in $\R^3$ (or $\R^2$), the projection of $\avec{w}$ onto $\avec{v}$ is given by
+\[
+\proj_{\avec{v}} \avec{w} = \left(\frac{\avec{v} \dotp \avec{w}}{\avec{v} \dotp \avec{v}}\right) \avec{v}
+\]
+
+
+\begin{proof}
+Note that the projection vector is parallel to $\avec{v}$ so it has the form $\lambda \avec{v}$ for some scalar $\lambda$.
+To determine the value of $\lambda$, we will use the fact that the vectors $\avec{v}$ and $\avec{w} - \proj_{\avec{v}} \avec{w}$ are orthogonal, 
+so that their dot product is zero. We have
+\begin{align*}
+0 &= \avec{v} \dotp \left(\avec{w} - \proj_{\avec{v}} \avec{w} \right)\\
+  &= \avec{v} \dotp \left(\avec{w} - \lambda \avec{v}\right)\\
+  &= \avec{v} \dotp \avec{w} - \lambda \left( \avec{v} \dotp \avec{v} \right)
+\end{align*}
+Solving for $\lambda$ gives
+\[
+\lambda = \frac{\avec{v} \dotp \avec{w}}{\avec{v} \dotp \avec{v}}
+\]
+as desired.
+\end{proof}
+\end{proposition}
 
 \end{document}
 
@@ -254,7 +304,6 @@ when the vectors $\avec{v}$ and $\avec{w}$ are parallel, i.e., when $\theta = 0$
 \path (1,0) ++(15:.75cm) node{$\alpha$};
 \path (1,0) ++(15:-.75cm) node{$\beta$};
 \end{tikzpicture}
-
 
 
 

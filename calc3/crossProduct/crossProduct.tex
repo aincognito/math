@@ -27,236 +27,77 @@ then the cross product $\avec{v_1} \cross \avec{v_2}$ is defined by
 \]
 \end{definition}
 
-\end{document}
+The definition of the cross product of two vectors is easier to understand in the context of matrix determinants.
 
-
-\begin{example}
-Find the indicated dot product: $\left(3\avec{i} -2\avec{j}\right) \dotp \left(2\avec{i} +5\avec{j}\right)$.\\
-According to the definition, we have
+\begin{definition}[Determinant of $2 \times 2$ Matrix]
+The determinant of the $2 \times 2$ matrix 
 \[
-\left(3\avec{i} -2\avec{j}\right) \dotp \left(2\avec{i} +5\avec{j}\right) = (3)(2)+(-2)(5) = 6-10 = -4
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
 \]
-\end{example}
-
-Note that the dot product of two vectors is a real number.  For this reason, the dot product is sometimes called the scalar product.
-
-\begin{problem}
-Find the indicated dot product: $\left(4\avec{i} + \avec{j}\right) \dotp \left(5\avec{i} -7\avec{j}\right) =\answer{13}$.\\
-\end{problem}
-
-It is interesting to compute the dot product of a vector with itself.  Let $\avec{v} = \vector{x, y}$. Then
+is the number given by
 \[
-\avec{v} \dotp \avec{v} = x^2 + y^2 = |\avec{v}|^2
+\begin{vmatrix}
+a & b\\
+c & d
+\end{vmatrix}
+= ad-bc
 \]
-We see that the dot product of a vector with itself gives the square of the magnitude of the vector.
 
-It is also interesting to compute the dot product between two unit vectors in polar form.
-If $\avec{u_1} = \vector{\cos \alpha, \sin \alpha}$ and $\avec{u_2} = \vector{\cos \beta, \sin \beta}$ then
-\[
-\avec{u_1} \dotp \avec{u_2} = \cos \alpha \cos \beta + \sin \alpha \sin \beta = \cos(\alpha - \beta)
-\]
-We see here that the dot product of unit vectors gives the cosine of the angle between the vectors.
-
-\begin{image}
-\begin{tikzpicture}
-\draw[<->] (-3, 0)--(3,0);
-\draw[<->] (0,-3)--(0,3);
-\draw[thin] (0,0) circle (2);
-\draw[->, thick, blue] (0,0) -- (-1.732, 1) node[above left]{$\avec{u_1}$};
-\draw[->, thick, red] (0,0) -- (1.414, 1.414) node[above right]{$\avec{u_2}$};
-\draw[thin] (0.5 ,0.5) arc (45:150: 0.7) node[midway, above]{$\alpha - \beta$};
-\draw[blue, thin] (0.3, 0) arc (0:150: 0.3) node[midway, above]{$\alpha$};
-\draw[red, thin] (0.5, 0) arc (0:45: 0.5) node[midway, right]{$\beta$};
-\node at(0, -3.5) {$\avec{u_1} = \vector{\cos \alpha, \sin \alpha}$ and $\avec{u_2} = \vector{\cos \beta, \sin \beta}$};
-\draw[thin] (2, 0.2) -- (2, -0.2) node[below right]{$1$};
-\draw[thin] (0.2, 2) -- (-0.2, 2) node[above left]{$1$};
-\end{tikzpicture}
-\end{image}
-
-In general, the dot product of two vectors is related to both the angle between the vectors and their magnitudes.
-
-\begin{proposition}
-Given two non-zero vectors in $\R^2$, $\avec{v_1} = \vector{x_1, y_1}$ and $\avec{v_2} = \vector{x_2, y_2}$, we have
-\[
-\avec{v_1} \dotp \avec{v_2} = |\avec{v_1}| \cdot |\avec{v_2}| \cos \theta
-\]
-where $\theta$ is the angle between the two vectors.
-\begin{proof}
-Write the vectors in polar form: $\avec{v_1} = |\avec{v_1}| \vector{\cos \alpha, \sin \alpha}$ and 
-$\avec{v_2} = |\avec{v_2}| \vector{\cos \beta, \sin \beta}$. To calculate the dot product, first multiply by the magnitudes:
-\begin{align*}
-\avec{v_1} \cdot \avec{v_2} & = \left(|\avec{v_1}| \vector{\cos \alpha, \sin \alpha}\right) \dotp \left( |\avec{v_2}| \vector{\cos \beta, \sin \beta} \right)\\
-                            &= \vector{|\avec{v_1}|\cos \alpha, |\avec{v_1}|\sin \alpha} \dotp   \vector{|\avec{v_2}|\cos \beta, |\avec{v_2}|\sin \beta} \\
-                            &= |\avec{v_1}| \cos \alpha |\avec{v_2}|\cos \beta + |\avec{v_1}|\sin \alpha |\avec{v_2}|\sin \beta\\
-                            &= |\avec{v_1}|\cdot |\avec{v_2}| \left(\cos \alpha \cos \beta + \sin \alpha \sin \beta\right)\\
-                            &= |\avec{v_1}| \cdot|\avec{v_2}| \cos(\alpha - \beta)\\
-                            &= |\avec{v_1}| \cdot |\avec{v_2}| \cos \theta
-\end{align*}
-where $\theta = \alpha - \beta$ is the angle between $\avec{v_1}$ and $\avec{v_2}$.
-\end{proof}
-\end{proposition}
-
-
-In three dimensions, a vector does not have a polar form, but we can still use the dot product to find the angle between two vectors.
-\begin{definition}[Dot Product in $\R^3$]
-If $\avec{v_1}$ and $\avec{v_2}$ are vectors in $\R^3$ given by
-\[
-\avec{v_1} = \vector{x_1, y_1, z_1} \text{  and   } \;\avec{v_2} = \vector{x_2, y_2, z_2}
-\]
-then the dot product $\avec{v_1} \dotp \avec{v_2}$ is defined by
-\[
-\avec{v_1} \dotp \avec{v_2} = x_1x_2 + y_1y_2 + z_1z_2
-\]
 \end{definition}
 
-\begin{example}
-Compute the indicated dot products:\\
-a) $\vector{1, 2, 3} \dotp \vector{5, -2, 4} = (1)(5)+ (2)(-2) + (3)(4) = 13$\\
-b) $\left(3\avec{i} - 2\avec{k}\right) \dotp \left(4\avec{j} + 5\avec{k}\right) = (3)(0) + (0)(4) + (-2)(5) = -10$
-\end{example}
-
-\begin{problem}
-Compute the indicated dot products:\\
-a) $\vector{6, -1, 4} \dotp \vector{-3, 7, 2} = \answer{-17}$\\
-b) $\left(2\avec{i} + 4\avec{j} - 3\avec{k}\right) \dotp \left(\avec{i} -5\avec{j}\right) = \answer{-18}$
-\end{problem}
-
-\begin{proposition}[Properties of the Dot Product]
-Let $\avec{v} = \vector{x, y, z}, \avec{v_1} = \vector{x_1, y_1, z_1}, \avec{v_2} = \vector{x_2, y_2, z_2}$ and $c$ be any scalar. 
-Then the following properties hold for the dot product:\\
-i) $\avec{v_1} \dotp \avec{v_2} = \avec{v_2} \dotp \avec{v_1}$\\
-ii) $\left(c\avec{v_1}\right) \dotp \avec{v_2} = \avec{v_1} \dotp \left(c\avec{v_2}\right) = c\left(\avec{v_1} \dotp \avec{v_2}\right)$\\
-iii)  $\avec{v} \dotp \left(\avec{v_1} + \avec{v_2}\right) = \avec{v} \dotp \avec{v_1} + \avec{v} \dotp \avec{v_2}$\\
-iv) $\avec{v} \dotp \avec{0} = 0$\\
-v) $\avec{v} \dotp \avec{v} = |\avec{v}|^2$
-\end{proposition}
-
-Suppose that $\avec{v_1}=\vector{x_1, y_1, z_1}$ and $\avec{v_2}=\vector{x_2, y_2, z_2}$  are vectors in $\R^3$ placed in standard position.  
-Then the initial point of both vectors is the origin, $(0,0,0)$ and the final points are
-$(x_1, y_1, z_1)$ and $(x_2, y_2, z_2)$.  Together, these three points form a triangle in $\R^3$.  
-The angle between the vectors $\avec{v_1}$ and $\avec{v_2}$ is the angle in this triangle with vertex at the origin.
-
-\begin{proposition}
-Let $\avec{v_1} = \vector{x_1, y_1, z_1}$ and $\avec{v_2} = \vector{x_2, y_2, z_2}$
-be vectors in $\R^3$ and let $\theta$ denote the angle between these vectors.  Then, just as in $\R^2$, the dot product can be expressed in terms of the 
-magnitudes of the vectors $\avec{v_1}$ and $\avec{v_2}$ and the angle $\theta$ between them as follows:
+\begin{definition}[Determinant of $3 \times 3$ Matrix]
+The determinant of the $3 \times 3$ matrix 
 \[
-\avec{v_1} \dotp \avec{v_2} = |\avec{v_1}|\cdot |\avec{v_2}| \cos\theta
+\begin{bmatrix}
+a & b & c\\
+d & e & f\\
+g & h & i
+\end{bmatrix}
 \]
-\begin{proof}
-According to the Law of Cosines, 
+is the number given by
 \[
-|\avec{v_1} - \avec{v_2}|^2 = |\avec{v_1}|^2 + |\avec{v_2}|^2 - 2|\avec{v_1}|\cdot| \avec{v_2}|\cos \theta
+\begin{vmatrix}
+a & b & c\\
+d & e & f\\
+g & h & i
+\end{vmatrix}
+= a(ei-fh) - b(di-fg) + c(dh-eg)
 \]
-See the figure below. By property $(v)$ of the preceding proposition, 
-\[
-|\avec{v_1} - \avec{v_2}|^2 = \left(\avec{v_1} - \avec{v_2}\right)\dotp \left(\avec{v_1} - \avec{v_2}\right)
+Note that the quantites in the parentheses in the above definition are the determinants of the $2 \times 2$ matrices
+obtained by removing the first row and a column (the column of the coefficient of the quantity in the parentheses) from the original $3 \times 3$ matrix.
+\end{definition}
+ Now to create the cross product of two vectors, we use the determinant of a $3 \times 3$ matrix with the vectors $\avec{i}, \avec{j}$ and $\avec{k}$ in the first row.
+ So, if $\avec{v} = \vector{x_1, y_1, z_1}$ and $\avec{w} = \vector{x_2, y_2, z_2}$ then the cross product is given by
+ \[
+\avec{v} \cross \avec{w} = 
+ \begin{vmatrix}
+\avec{i} & \avec{j} & \avec{k}\\
+x_1 & y_1 & z_1\\
+x_2 & y_2 & z_2
+\end{vmatrix} = (y_1z_2 - z_1y_2)\avec{i} - (x_1z_2 - z_1x_2)\avec{j} + (x_1y_2-y_1x_2)\avec{k}
 \]
-which then by properties $(ii)$ and $(iii)$of that same proposition then equals
-\[
-\avec{v_1} \dotp \avec{v_1} + \avec{v_2} \dotp \avec{v_2} - 2\left(\avec{v_1} \dotp \avec{v_2}\right)
-\]
-Using property $(v)$ again, this can be rewritten using magnitudes as follows
-\[
-|\avec{v_1}|^2 + |\avec{v_2}|^2 - 2\left(\avec{v_1} \dotp \avec{v_2}\right)
-\]
-Comparing this with right hand side of the Law of Cosines we can see that
-\[
-- 2\left(\avec{v_1} \dotp \avec{v_2}\right) = - 2|\avec{v_1}|\cdot| \avec{v_2}|\cos \theta
-\]
-Diving through by $-2$ gives the final result.
+which agrees with the definition above after multiplying through by $-1$ in the middle term.
 
-\begin{image}
-\begin{tikzpicture}
-\draw[blue, ->, thick] (0,0) -- (3, 1) node[midway, below]{$\avec{v_1}$};
-\draw[blue, ->, thick] (0,0) -- (1, 4) node[midway, left]{$\avec{v_2}$};
-\draw[red, ->, thick] (1,4) -- (3, 1) node[midway,right]{$\avec{v_1} - \avec{v_2}$};
-\draw[blue] (0.8,.28) ++(2:0) arc (20:70:1);
-\path[blue] (0,0.33) ++(10:0.4cm) node{$\theta$};
-%\draw[blue] (0.5, 0.166) arc (20:70:.6) node[midway, above right]{$\theta$};
-\node at (1.5, -1){Law of Cosines:};
-\node at (1.5, -1.5){ $|\avec{v_1} - \avec{v_2}|^2 = |\avec{v_1}|^2 + |\avec{v_2}|^2 - 2|\avec{v_1}|\cdot| \avec{v_2}|\cos \theta$};
-%\draw[white] (-3, -1.5) -- (7, -1.5);
-\end{tikzpicture}
-\end{image}
-
-\end{proof}
-
-\end{proposition}
-
-From the above proposition, we see that the dot product of two vectors is zero under special conditions, i.e.,  if 
-\[
-\avec{v_1} \dotp \avec{v_2} = 0
-\]
-then either
-\[
-|\avec{v_1}| = 0, |\avec{v_2}| = 0 \; \text{or } \; \cos \theta = 0
-\]
-Noting that $\cos \theta = 0$ precisely when $\theta = 90^\circ$, we can conclude the following
-\begin{corollary} 
-Two non-zero vectors $\avec{v_1}$ and $\avec{v_2}$ are perpendicular if and only if $\avec{v_1} \dotp \avec{v_2} = 0$.
-\end{corollary}
-Perpendicular vectors are commonly called {\bf orthogonal}.\\
-
-
-The shortest distance between two points in $\R^3$ is a straight line.  This basic fact is illustrated in the following proposition.
-
-\begin{proposition}[Triangle Inequality]
-Let $\avec{v}$ and $\avec{w}$ be vectors in $\R^3$. Then the following inequality holds:
-\[
-|\avec{v} + \avec{w}| \leq |\avec{v}| +|\avec{w}| 
-\]
-
-
-
-\begin{proof}
-Using the properties of the dot product in $\R^3$, we can write the following
+The vector $\avec{v}\cross \avec{w}$ is orthogonal to both $\avec{v}$ and $\avec{w}$. To see this we compute the dot product:
 \begin{align*}
-|\avec{v} + \avec{w}|^2 &= \left(\avec{v} + \avec{w}\right) \dotp \left(\avec{v} + \avec{w}\right)\\
-                        &= \avec{v} \dotp \avec{v} + \avec{w}\dotp \avec{w} + 2\avec{v} \dotp \avec{w}\\
-                        &= |\avec{v}|^2 +|\avec{w}|^2 + 2|\avec{v}|\cdot |\avec{w}| \cos \theta\\
-                        &\leq |\avec{v}|^2 +|\avec{w}|^2 + 2|\avec{v}|\cdot |\avec{w}|\\
-                        &= \left(|\avec{v}| + |\avec{w}|\right)^2
+\left(\avec{v} \cross \avec{w} \right) \dotp \avec{v} &= \vector{y_1z_2 - z_1y_2, z_1x_2 - x_1z_2, x_1y_2 - y_1x_2} \dotp \vector{x_1, y_1, z_1}\\
+                                                &= x_1(y_1z_2 - z_1y_2) + y_1(z_1x_2 - x_1z_2) + z_1(x_1y_2 - y_1x_2)\\
+                                                &= x_1y_1z_2 - x_1y_2z_1 + x_2y_1z_1 - x_1y_1z_2 + x_1y_2z_1 - x_2y_1z_1\\
+                                                &= x_1y_1z_2 - x_1y_1z_2 + x_1y_2z_1 - x_1y_2z_1 + x_2y_1z_1 - x_2y_1z_1\\
+                                                &= 0
 \end{align*}
-where $\theta$ represents the angle between the vectors $\avec{v}$ and $\avec{w}$.  The result follows immediately by taking the square root.
-          
-\begin{image}
-\begin{tikzpicture}
-\draw[blue, ->, thick] (0,0) -- (3, 1) node[midway, below]{$\avec{v}$};
-\draw[red, ->, thick] (0,0) -- (1, 4) node[midway, left]{$\avec{v} +\avec{w}$};
-\draw[blue, <-, thick] (1,4) -- (3, 1) node[midway,right]{$\avec{w}$};
-%\draw[blue, ->, thick] (0,0) -- (2, 1) node[midway, below]{$\avec{v}$};
-%\draw[blue, ->, thick] (2, 1) -- (3, 3) node[midway, right]{$\avec{w}$};
-%\draw[red, ->, thick] (0,0) -- (3,3) node[midway, above left]{$\avec{v} + \avec{w}$};
-\node at (1.5, -1){Triangle Inequality: $|\avec{v} + \avec{w}| \leq |\avec{v}| +|\avec{w}| $};
-\end{tikzpicture}
-\end{image}
+Hence, $\avec{v} \cross \avec{w}$ and $\avec{v}$ are orthogonal.  The reader should perfrom a similar computation to verify that
+$\avec{v} \cross \avec{w}$ and $\avec{w}$ are also orthogonal.\\
 
-              
-\end{proof}
-
-\end{proposition}
-
-Note that the proof gives us a little bit more information about the inequality. If $\cos \theta = 1$, then the inequality becomes equality.  This happens precisely 
-when the vectors $\avec{v}$ and $\avec{w}$ are parallel, i.e., when $\theta = 0$. The result holds for vectors in $\R^2$ as well using the same proof.
+It should be noted that the cross product operation is not commutative.  In fact, it is anti-commutative:
+\[
+\avec{v} \cross \avec{w} = -(\avec{w} \cross \avec{v})
+\]
 
 \end{document}
-
-
-\begin{tikzpicture}[->]
-\draw (0,0) -- (xyz cs:x=1);
-\draw (0,0) -- (xyz cs:y=1);
-\draw (0,0) -- (xyz cs:z=1);
-\end{tikzpicture}
-
-\begin{tikzpicture}
-\draw (-1,0) -- +(3.5,0);
-\draw (1,0) ++(210:2cm) -- +(30:4cm);
-\draw (1,0) +(0:1cm) arc (0:30:1cm);
-\draw (1,0) +(180:1cm) arc (180:210:1cm);
-\path (1,0) ++(15:.75cm) node{$\alpha$};
-\path (1,0) ++(15:-.75cm) node{$\beta$};
-\end{tikzpicture}
 
 
 
