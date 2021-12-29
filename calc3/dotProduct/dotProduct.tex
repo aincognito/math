@@ -17,13 +17,13 @@ In this section we define the dot product and we use it to find the angle betwee
 \maketitle
 The dot product is a special operation that helps us to find the angle between two vectors.
 \begin{definition}[Dot Product in $\R^3$]
-If $\vec{v}_1$ and $\vec{v}_2r$ are vectors in $\R^2$ given by
+If $\vec{v}_1$ and $\vec{v}_2$ are vectors in $\R^2$ given by
 \[
-\vec{v}_1 = \vector{x_1, y_1} \text{  and   } \;\avec{v_2} = \vector{x_2, y_2}
+\vec{v}_1 = \vector{x_1, y_1} \text{  and   } \;\vec{v}_2 = \vector{x_2, y_2}
 \]
-then the dot product $\vec{v}_1 \dotp \avec{v_2}$ is defined by
+then the dot product $\vec{v}_1 \dotp \vec{v}_2$ is defined by
 \[
-\vec{v}_1 \dotp \avec{v_2} = x_1x_2 + y_1y_2
+\vec{v}_1 \dotp \vec{v}_2 = x_1x_2 + y_1y_2
 \]
 \end{definition}
 
@@ -38,19 +38,19 @@ According to the definition, we have
 Note that the dot product of two vectors is a real number.  For this reason, the dot product is sometimes called the scalar product.
 
 \begin{problem}
-Find the indicated dot product: $\left(4\avec{i} + \avec{j}\right) \dotp \left(5\avec{i} -7\avec{j}\right) =\answer{13}$.\\
+Find the indicated dot product: $\left(4\vec{i} + \vec{j}\right) \dotp \left(5\vec{i} -7\vec{j}\right) =\answer{13}$.\\
 \end{problem}
 
-It is interesting to compute the dot product of a vector with itself.  Let $\avec{v} = \vector{x, y}$. Then
+It is interesting to compute the dot product of a vector with itself.  Let $\vec{v} = \vector{x, y}$. Then
 \[
-\avec{v} \dotp \avec{v} = x^2 + y^2 = |\avec{v}|^2
+\vec{v} \dotp \vec{v} = x^2 + y^2 = |\vec{v}|^2
 \]
 We see that the dot product of a vector with itself gives the square of the magnitude of the vector.
 
 It is also interesting to compute the dot product between two unit vectors in polar form.
-If $\avec{u_1} = \vector{\cos \alpha, \sin \alpha}$ and $\avec{u_2} = \vector{\cos \beta, \sin \beta}$ then
+If $\vec{u}_1 = \vector{\cos \alpha, \sin \alpha}$ and $\vec{u}_2 = \vector{\cos \beta, \sin \beta}$ then
 \[
-\avec{u_1} \dotp \avec{u_2} = \cos \alpha \cos \beta + \sin \alpha \sin \beta = \cos(\alpha - \beta)
+\vec{u}_1 \dotp \vec{u_2} = \cos \alpha \cos \beta + \sin \alpha \sin \beta = \cos(\alpha - \beta)
 \]
 We see here that the dot product of unit vectors gives the cosine of the angle between the vectors.
 
@@ -59,12 +59,12 @@ We see here that the dot product of unit vectors gives the cosine of the angle b
 \draw[<->] (-3, 0)--(3,0);
 \draw[<->] (0,-3)--(0,3);
 \draw[thin] (0,0) circle (2);
-\draw[->, thick, blue] (0,0) -- (-1.732, 1) node[above left]{$\avec{u_1}$};
-\draw[->, thick, red] (0,0) -- (1.414, 1.414) node[above right]{$\avec{u_2}$};
+\draw[->, thick, blue] (0,0) -- (-1.732, 1) node[above left]{$\vec{u_1}$};
+\draw[->, thick, red] (0,0) -- (1.414, 1.414) node[above right]{$\vec{u_2}$};
 \draw[thin] (0.5 ,0.5) arc (45:150: 0.7) node[midway, above]{$\alpha - \beta$};
 \draw[blue, thin] (0.3, 0) arc (0:150: 0.3) node[midway, above]{$\alpha$};
 \draw[red, thin] (0.5, 0) arc (0:45: 0.5) node[midway, right]{$\beta$};
-\node at(0, -3.5) {$\avec{u_1} = \vector{\cos \alpha, \sin \alpha}$ and $\avec{u_2} = \vector{\cos \beta, \sin \beta}$};
+\node at(0, -3.5) {$\vec{u}_1 = \vector{\cos \alpha, \sin \alpha}$ and $\vec{u}_2 = \vector{\cos \beta, \sin \beta}$};
 \draw[thin] (2, 0.2) -- (2, -0.2) node[below right]{$1$};
 \draw[thin] (0.2, 2) -- (-0.2, 2) node[above left]{$1$};
 \end{tikzpicture}
@@ -73,106 +73,106 @@ We see here that the dot product of unit vectors gives the cosine of the angle b
 In general, the dot product of two vectors is related to both the angle between the vectors and their magnitudes.
 
 \begin{proposition}
-Given two non-zero vectors in $\R^2$, $\avec{v_1} = \vector{x_1, y_1}$ and $\avec{v_2} = \vector{x_2, y_2}$, we have
+Given two non-zero vectors in $\R^2$, $\vec{v}_1 = \vector{x_1, y_1}$ and $\vec{v}_2 = \vector{x_2, y_2}$, we have
 \[
-\vec{v}_1 \dotp \avec{v_2} = |\avec{v_1}| \cdot |\avec{v_2}| \cos \theta
+\vec{v}_1 \dotp \vec{v}_2 = |\vec{v}_1| \cdot |\vec{v}_2| \cos \theta
 \]
 where $\theta$ is the angle between the two vectors.
 \begin{proof}
-Write the vectors in polar form: $\avec{v_1} = |\avec{v_1}| \vector{\cos \alpha, \sin \alpha}$ and 
-$\avec{v_2} = |\avec{v_2}| \vector{\cos \beta, \sin \beta}$. To calculate the dot product, first multiply by the magnitudes:
+Write the vectors in polar form: $\vec{v}_1 = |\vec{v}_1| \vector{\cos \alpha, \sin \alpha}$ and 
+$\vec{v}_2 = |\vec{v}_2| \vector{\cos \beta, \sin \beta}$. To calculate the dot product, first multiply by the magnitudes:
 \begin{align*}
-\vec{v}_1 \cdot \avec{v_2} & = \left(|\avec{v_1}| \vector{\cos \alpha, \sin \alpha}\right) \dotp \left( |\avec{v_2}| \vector{\cos \beta, \sin \beta} \right)\\
-                            &= \vector{|\avec{v_1}|\cos \alpha, |\avec{v_1}|\sin \alpha} \dotp   \vector{|\avec{v_2}|\cos \beta, |\avec{v_2}|\sin \beta} \\
-                            &= |\vec{v}_1| \cos \alpha |\avec{v_2}|\cos \beta + |\avec{v_1}|\sin \alpha |\avec{v_2}|\sin \beta\\
-                            &= |\vec{v}_1|\cdot |\avec{v_2}| \left(\cos \alpha \cos \beta + \sin \alpha \sin \beta\right)\\
-                            &= |\vec{v}_1| \cdot|\avec{v_2}| \cos(\alpha - \beta)\\
-                            &= |\vec{v}_1| \cdot |\avec{v_2}| \cos \theta
+\vec{v}_1 \cdot \vec{v}_2 & = \left(|\vec{v}_1| \vector{\cos \alpha, \sin \alpha}\right) \dotp \left( |\vec{v}_2| \vector{\cos \beta, \sin \beta} \right)\\
+                            &= \vector{|\vec{v}_1|\cos \alpha, |\vec{v}_1|\sin \alpha} \dotp   \vector{|\vec{v}_2|\cos \beta, |\vec{v}_2|\sin \beta} \\
+                            &= |\vec{v}_1| \cos \alpha |\vec{v}_2|\cos \beta + |\vec{v}_1|\sin \alpha |\vec{v}_2|\sin \beta\\
+                            &= |\vec{v}_1|\cdot |\vec{v}_2| \left(\cos \alpha \cos \beta + \sin \alpha \sin \beta\right)\\
+                            &= |\vec{v}_1| \cdot|\vec{v}_2| \cos(\alpha - \beta)\\
+                            &= |\vec{v}_1| \cdot |\vec{v}_2| \cos \theta
 \end{align*}
-where $\theta = \alpha - \beta$ is the angle between $\avec{v_1}$ and $\avec{v_2}$.
+where $\theta = \alpha - \beta$ is the angle between $\vec{v}_1$ and $\vec{v}_2$.
 \end{proof}
 \end{proposition}
 
 
 In three dimensions, a vector does not have a polar form, but we can still use the dot product to find the angle between two vectors.
 \begin{definition}[Dot Product in $\R^3$]
-If $\avec{v_1}$ and $\avec{v_2}$ are vectors in $\R^3$ given by
+If $\vec{v}_1$ and $\vec{v}_2$ are vectors in $\R^3$ given by
 \[
-\avec{v_1} = \vector{x_1, y_1, z_1} \text{  and   } \;\avec{v_2} = \vector{x_2, y_2, z_2}
+\vec{v}_1 = \vector{x_1, y_1, z_1} \text{  and   } \;\vec{v}_2 = \vector{x_2, y_2, z_2}
 \]
-then the dot product $\avec{v_1} \dotp \avec{v_2}$ is defined by
+then the dot product $\vec{v}_1 \dotp \vec{v}_2$ is defined by
 \[
-\avec{v_1} \dotp \avec{v_2} = x_1x_2 + y_1y_2 + z_1z_2
+\vec{v}_1 \dotp \vec{v}_2 = x_1x_2 + y_1y_2 + z_1z_2
 \]
 \end{definition}
 
 \begin{example}
 Compute the indicated dot products:\\
 a) $\vector{1, 2, 3} \dotp \vector{5, -2, 4} = (1)(5)+ (2)(-2) + (3)(4) = 13$\\
-b) $\left(3\avec{i} - 2\avec{k}\right) \dotp \left(4\avec{j} + 5\avec{k}\right) = (3)(0) + (0)(4) + (-2)(5) = -10$
+b) $\left(3\vec{i} - 2\vec{k}\right) \dotp \left(4\vec{j} + 5\vec{k}\right) = (3)(0) + (0)(4) + (-2)(5) = -10$
 \end{example}
 
 \begin{problem}
 Compute the indicated dot products:\\
 a) $\vector{6, -1, 4} \dotp \vector{-3, 7, 2} = \answer{-17}$\\
-b) $\left(2\avec{i} + 4\avec{j} - 3\avec{k}\right) \dotp \left(\avec{i} -5\avec{j}\right) = \answer{-18}$
+b) $\left(2\vec{i} + 4\vec{j} - 3\vec{k}\right) \dotp \left(\vec{i} -5\vec{j}\right) = \answer{-18}$
 \end{problem}
 
 \begin{proposition}[Properties of the Dot Product]
-Let $\avec{v} = \vector{x, y, z}, \avec{v_1} = \vector{x_1, y_1, z_1}, \avec{v_2} = \vector{x_2, y_2, z_2}$ and $c$ be any scalar. 
+Let $\vec{v} = \vector{x, y, z}, \vec{v}_1 = \vector{x_1, y_1, z_1}, \vec{v}_2 = \vector{x_2, y_2, z_2}$ and $c$ be any scalar. 
 Then the following properties hold for the dot product:\\
-i) $\avec{v_1} \dotp \avec{v_2} = \avec{v_2} \dotp \avec{v_1}$\\
-ii) $\left(c\avec{v_1}\right) \dotp \avec{v_2} = \avec{v_1} \dotp \left(c\avec{v_2}\right) = c\left(\avec{v_1} \dotp \avec{v_2}\right)$\\
-iii)  $\avec{v} \dotp \left(\avec{v_1} + \avec{v_2}\right) = \avec{v} \dotp \avec{v_1} + \avec{v} \dotp \avec{v_2}$\\
-iv) $\avec{v} \dotp \avec{0} = 0$\\
-v) $\avec{v} \dotp \avec{v} = |\avec{v}|^2$
+i) $\vec{v}_1 \dotp \vec{v}_2 =\vec{v}_2 \dotp \vec{v}_1$\\
+ii) $\left(c\vec{v}_1\right) \dotp \vec{v}_2 =\vec{v}_1 \dotp \left(c\vec{v}_2\right) = c\left(\vec{v}_1 \dotp \vec{v}_2\right)$\\
+iii)  $\vec{v} \dotp \left(\vec{v}_1 +\vec{v}_2\right) =\vec{v} \dotp\vec{v}_1 +\vec{v}\dotp \vec{v}_2$\\
+iv) $\vec{v} \dotp \vec{0} = 0$\\
+v) $\vec{v} \dotp \vec{v} = |\vec{v}|^2$
 \end{proposition}
 
-Suppose that $\avec{v_1}=\vector{x_1, y_1, z_1}$ and $\avec{v_2}=\vector{x_2, y_2, z_2}$  are vectors in $\R^3$ placed in standard position.  
+Suppose that $\vec{v}_1=\vector{x_1, y_1, z_1}$ and $\vec{v}_2=\vector{x_2, y_2, z_2}$  are vectors in $\R^3$ placed in standard position.  
 Then the initial point of both vectors is the origin, $(0,0,0)$ and the final points are
 $(x_1, y_1, z_1)$ and $(x_2, y_2, z_2)$.  Together, these three points form a triangle in $\R^3$.  
-The angle between the vectors $\avec{v_1}$ and $\avec{v_2}$ is the angle in this triangle with vertex at the origin.
+The angle between the vectors $\vec{v}_1$ and $\vec{v}_2$ is the angle in this triangle with vertex at the origin.
 
 \begin{proposition}
-Let $\avec{v_1} = \vector{x_1, y_1, z_1}$ and $\avec{v_2} = \vector{x_2, y_2, z_2}$
+Let $\vec{v}_1 = \vector{x_1, y_1, z_1}$ and $\vec{v}_2 = \vector{x_2, y_2, z_2}$
 be vectors in $\R^3$ and let $\theta$ denote the angle between these vectors.  Then, just as in $\R^2$, the dot product can be expressed in terms of the 
-magnitudes of the vectors $\avec{v_1}$ and $\avec{v_2}$ and the angle $\theta$ between them as follows:
+magnitudes of the vectors $\vec{v}_1$ and $\vec{v}_2$ and the angle $\theta$ between them as follows:
 \[
-\avec{v_1} \dotp \avec{v_2} = |\avec{v_1}|\cdot |\avec{v_2}| \cos\theta
+\vec{v}_1\dotp\vec{v}_2 = |\vec{v}_1|\cdot |\vec{v}_2| \cos\theta
 \]
 \begin{proof}
 According to the Law of Cosines, 
 \[
-|\avec{v_1} - \avec{v_2}|^2 = |\avec{v_1}|^2 + |\avec{v_2}|^2 - 2|\avec{v_1}|\cdot| \avec{v_2}|\cos \theta
+|\vec{v}_1 - \vec{v}_2|^2 = |\vec{v}_1|^2 + |\vec{v}_2|^2 - 2|\vec{v}_1|\cdot| \vec{v}_2|\cos \theta
 \]
 See the figure below. By property $(v)$ of the preceding proposition, 
 \[
-|\avec{v_1} - \avec{v_2}|^2 = \left(\avec{v_1} - \avec{v_2}\right)\dotp \left(\avec{v_1} - \avec{v_2}\right)
+|\vec{v}_1 - \vec{v}_2|^2 = \left(\vec{v}_1 - \vec{v}_2\right)\dotp \left(\vec{v}_1 - \vec{v}_2\right)
 \]
 which then by properties $(ii)$ and $(iii)$of that same proposition then equals
 \[
-\avec{v_1} \dotp \avec{v_1} + \avec{v_2} \dotp \avec{v_2} - 2\left(\avec{v_1} \dotp \avec{v_2}\right)
+\vec{v}_1 \dotp \vec{v}_1 + \vec{v}_2 \dotp \vec{v}_2 - 2\left(\vec{v}_1 \dotp \vec{v}_2\right)
 \]
 Using property $(v)$ again, this can be rewritten using magnitudes as follows
 \[
-|\avec{v_1}|^2 + |\avec{v_2}|^2 - 2\left(\avec{v_1} \dotp \avec{v_2}\right)
+|\vec{v}_1|^2 + |\vec{v}_2|^2 - 2\left(\vec{v}_1 \dotp \vec{v}_2\right)
 \]
 Comparing this with right hand side of the Law of Cosines we can see that
 \[
-- 2\left(\avec{v_1} \dotp \avec{v_2}\right) = - 2|\avec{v_1}|\cdot| \avec{v_2}|\cos \theta
+- 2\left(\vec{v}_1 \dotp \vec{v}_2\right) = - 2|\vec{v}_1|\cdot| \vec{v}_2|\cos \theta
 \]
 Diving through by $-2$ gives the final result.
 
 \begin{image}
 \begin{tikzpicture}
-\draw[blue, ->, thick] (0,0) -- (3, 1) node[midway, below]{$\avec{v_1}$};
-\draw[blue, ->, thick] (0,0) -- (1, 4) node[midway, left]{$\avec{v_2}$};
-\draw[red, ->, thick] (1,4) -- (3, 1) node[midway,right]{$\avec{v_1} - \avec{v_2}$};
+\draw[blue, ->, thick] (0,0) -- (3, 1) node[midway, below]{$\vec{v}_1$};
+\draw[blue, ->, thick] (0,0) -- (1, 4) node[midway, left]{$\vec{v}_2$};
+\draw[red, ->, thick] (1,4) -- (3, 1) node[midway,right]{$\vec{v}_1 - \vec{v}_2$};
 \draw[blue] (0.8,.28) ++(2:0) arc (20:70:1);
 \path[blue] (0,0.33) ++(10:0.4cm) node{$\theta$};
 %\draw[blue] (0.5, 0.166) arc (20:70:.6) node[midway, above right]{$\theta$};
 \node at (1.5, -1){Law of Cosines:};
-\node at (1.5, -1.5){ $|\avec{v_1} - \avec{v_2}|^2 = |\avec{v_1}|^2 + |\avec{v_2}|^2 - 2|\avec{v_1}|\cdot| \avec{v_2}|\cos \theta$};
+\node at (1.5, -1.5){ $|\vec{v}_1 - \vec{v}_2|^2 = |\vec{v}_1|^2 + |\vec{v}_2|^2 - 2|\vec{v}_1|\cdot| \vec{v}_2|\cos \theta$};
 %\draw[white] (-3, -1.5) -- (7, -1.5);
 \end{tikzpicture}
 \end{image}
@@ -183,15 +183,15 @@ Diving through by $-2$ gives the final result.
 
 From the above proposition, we see that the dot product of two vectors is zero under special conditions, i.e.,  if 
 \[
-\avec{v_1} \dotp \avec{v_2} = 0
+\vec{v}_1 \dotp \vec{v}_2 = 0
 \]
 then either
 \[
-|\avec{v_1}| = 0, |\avec{v_2}| = 0 \; \text{or } \; \cos \theta = 0
+|\vec{v}_1| = 0, |\vec{v}_2| = 0 \; \text{or } \; \cos \theta = 0
 \]
 Noting that $\cos \theta = 0$ precisely when $\theta = 90^\circ$, we can conclude the following
 \begin{corollary} 
-Two non-zero vectors $\avec{v_1}$ and $\avec{v_2}$ are perpendicular if and only if $\avec{v_1} \dotp \avec{v_2} = 0$.
+Two non-zero vectors $\vec{v}_1$ and $\vec{v}_2$ are perpendicular if and only if $\vec{v}_1 \dotp \vec{v}_2 = 0$.
 \end{corollary}
 Perpendicular vectors are commonly called {\bf orthogonal}.\\
 
@@ -199,9 +199,9 @@ Perpendicular vectors are commonly called {\bf orthogonal}.\\
 The shortest distance between two points in $\R^3$ is a straight line.  This basic fact is illustrated in the following proposition.
 
 \begin{proposition}[Triangle Inequality]
-Let $\avec{v}$ and $\avec{w}$ be vectors in $\R^3$. Then the following inequality holds:
+Let $\vec{v}$ and $\vec{w}$ be vectors in $\R^3$. Then the following inequality holds:
 \[
-|\avec{v} + \avec{w}| \leq |\avec{v}| +|\avec{w}| 
+|\vec{v} + \vec{w}| \leq |\vec{v}| +|\vec{w}| 
 \]
 
 
@@ -209,23 +209,23 @@ Let $\avec{v}$ and $\avec{w}$ be vectors in $\R^3$. Then the following inequalit
 \begin{proof}
 Using the properties of the dot product in $\R^3$, we can write the following
 \begin{align*}
-|\avec{v} + \avec{w}|^2 &= \left(\avec{v} + \avec{w}\right) \dotp \left(\avec{v} + \avec{w}\right)\\
-                        &= \avec{v} \dotp \avec{v} + \avec{w}\dotp \avec{w} + 2\avec{v} \dotp \avec{w}\\
-                        &= |\avec{v}|^2 +|\avec{w}|^2 + 2|\avec{v}|\cdot |\avec{w}| \cos \theta\\
-                        &\leq |\avec{v}|^2 +|\avec{w}|^2 + 2|\avec{v}|\cdot |\avec{w}|\\
-                        &= \left(|\avec{v}| + |\avec{w}|\right)^2
+|\vec{v} + \vec{w}|^2 &= \left(\vec{v} + \vec{w}\right) \dotp \left(\vec{v} + \vec{w}\right)\\
+                        &= \vec{v} \dotp \vec{v} + \vec{w}\dotp \vec{w} + 2\vec{v} \dotp \vec{w}\\
+                        &= |\vec{v}|^2 +|\vec{w}|^2 + 2|\vec{v}|\cdot |\vec{w}| \cos \theta\\
+                        &\leq |\vec{v}|^2 +|\vec{w}|^2 + 2|\vec{v}|\cdot |\vec{w}|\\
+                        &= \left(|\vec{v}| + |\vec{w}|\right)^2
 \end{align*}
-where $\theta$ represents the angle between the vectors $\avec{v}$ and $\avec{w}$.  The result follows immediately by taking the square root.
+where $\theta$ represents the angle between the vectors $\vec{v}$ and $\vec{w}$.  The result follows immediately by taking the square root.
           
 \begin{image}
 \begin{tikzpicture}
-\draw[blue, ->, thick] (0,0) -- (3, 1) node[midway, below]{$\avec{v}$};
-\draw[red, ->, thick] (0,0) -- (1, 4) node[midway, left]{$\avec{v} +\avec{w}$};
-\draw[blue, <-, thick] (1,4) -- (3, 1) node[midway,right]{$\avec{w}$};
-%\draw[blue, ->, thick] (0,0) -- (2, 1) node[midway, below]{$\avec{v}$};
-%\draw[blue, ->, thick] (2, 1) -- (3, 3) node[midway, right]{$\avec{w}$};
-%\draw[red, ->, thick] (0,0) -- (3,3) node[midway, above left]{$\avec{v} + \avec{w}$};
-\node at (1.5, -1){Triangle Inequality: $|\avec{v} + \avec{w}| \leq |\avec{v}| +|\avec{w}| $};
+\draw[blue, ->, thick] (0,0) -- (3, 1) node[midway, below]{$\vec{v}$};
+\draw[red, ->, thick] (0,0) -- (1, 4) node[midway, left]{$\vec{v} +\vec{w}$};
+\draw[blue, <-, thick] (1,4) -- (3, 1) node[midway,right]{$\vec{w}$};
+%\draw[blue, ->, thick] (0,0) -- (2, 1) node[midway, below]{$\vec{v}$};
+%\draw[blue, ->, thick] (2, 1) -- (3, 3) node[midway, right]{$\vec{w}$};
+%\draw[red, ->, thick] (0,0) -- (3,3) node[midway, above left]{$\vec{v} + \vec{w}$};
+\node at (1.5, -1){Triangle Inequality: $|\vec{v} + \vec{w}| \leq |\vec{v}| +|\vec{w}| $};
 \end{tikzpicture}
 \end{image}
 
@@ -235,53 +235,53 @@ where $\theta$ represents the angle between the vectors $\avec{v}$ and $\avec{w}
 \end{proposition}
 
 Note that the proof gives us a little bit more information about the inequality. If $\cos \theta = 1$, then the inequality becomes equality.  This happens precisely 
-when the vectors $\avec{v}$ and $\avec{w}$ are in the same direction, i.e., when $\theta = 0$. The result holds for vectors in $\R^2$ as well using the same proof.
+when the vectors ${v}$ and $\vec{w}$ are in the same direction, i.e., when $\theta = 0$. The result holds for vectors in $\R^2$ as well using the same proof.
 
 \section{Projection}
 
 An important application of the dot product is to compute the projection of one vector onto another.
-The diagrams below show the projection of the vector $\avec{w}$ onto the vector $\avec{v}$. This projection vector is denoted $\proj_{\avec{v}} \avec{w}$
-and it is parallel to $\avec{v}$.
+The diagrams below show the projection of the vector $\vec{w}$ onto the vector $\vec{v}$. This projection vector is denoted $\proj_{\vec{v}} \vec{w}$
+and it is parallel to $\vec{v}$.
 
 \begin{image}
 \begin{tikzpicture}
-\draw[red, ->, thick] (0,0) -- (3, 0) node[right]{$\avec{v}$};
-\draw[blue, ->, thick] (0,0) -- (2, 4) node[midway, left]{$\avec{w}$};
-\draw[blue, ->, thin] (0,0) --(2,0) node[midway, below]{$\proj_{\avec{v}} \avec{w}$};
+\draw[red, ->, thick] (0,0) -- (3, 0) node[right]{$\vec{v}$};
+\draw[blue, ->, thick] (0,0) -- (2, 4) node[midway, left]{$\vec{w}$};
+\draw[blue, ->, thin] (0,0) --(2,0) node[midway, below]{$\proj_{\vec{v}} \vec{w}$};
 \draw[blue, thin, dashed] (2, 4) -- (2, 0);
 \draw[blue, thin] (1.7, 0) -- ++(0, 0.3) -- + (0.3, 0);
-\node at (1.5, -1){Case 1: $\avec{v} \dotp \avec{w} > 0$};
+\node at (1.5, -1){Case 1: $\vec{v} \dotp \vec{w} > 0$};
 
-\draw[red, ->, thick] (8,0) -- (11, 0) node[right]{$\avec{v}$};
+\draw[red, ->, thick] (8,0) -- (11, 0) node[right]{$\vec{v}$};
 \draw[red, thick, dashed] (8,0) -- (6, 0);
-\draw[blue, ->, thick] (8,0) -- (6, 4) node[midway, right]{$\avec{w}$};
-\draw[blue, ->] (8,0) -- (6, 0) node[below, midway]{$\proj_{\avec{v}} \avec{w}$};
+\draw[blue, ->, thick] (8,0) -- (6, 4) node[midway, right]{$\vec{w}$};
+\draw[blue, ->] (8,0) -- (6, 0) node[below, midway]{$\proj_{\vec{v}} \vec{w}$};
 \draw[blue, thin, dashed] (6, 4) -- (6, 0);
 
 \draw[blue, thin] (6.3, 0) -- ++(0, 0.3) -- + (-0.3, 0);
-\node at (8.5, -1){Case 2: $\avec{v} \dotp \avec{w} < 0$};
+\node at (8.5, -1){Case 2: $\vec{v} \dotp \vec{w} < 0$};
 \end{tikzpicture}
 \end{image}
 
 \begin{proposition}[Projection Vector]
-Given vectors $\avec{v} \neq \avec{0}$ and $\avec{w}$ in $\R^3$ (or $\R^2$), the projection of $\avec{w}$ onto $\avec{v}$ is given by
+Given vectors $\vec{v} \neq \vec{0}$ and $\vec{w}$ in $\R^3$ (or $\R^2$), the projection of $\vec{w}$ onto $\vec{v}$ is given by
 \[
-\proj_{\avec{v}} \avec{w} = \left(\frac{\avec{v} \dotp \avec{w}}{\avec{v} \dotp \avec{v}}\right) \avec{v}
+\proj_{\vec{v}} \vec{w} = \left(\frac{\vec{v} \dotp \vec{w}}{\vec{v} \dotp \vec{v}}\right) \vec{v}
 \]
 
 
 \begin{proof}
-Note that the projection vector is parallel to $\avec{v}$ so it has the form $\lambda \avec{v}$ for some scalar $\lambda$.
-To determine the value of $\lambda$, we will use the fact that the vectors $\avec{v}$ and $\avec{w} - \proj_{\avec{v}} \avec{w}$ are orthogonal, 
+Note that the projection vector is parallel to $\vec{v}$ so it has the form $\lambda \vec{v}$ for some scalar $\lambda$.
+To determine the value of $\lambda$, we will use the fact that the vectors $\vec{v}$ and $\vec{w} - \proj_{\vec{v}} \vec{w}$ are orthogonal, 
 so that their dot product is zero. We have
 \begin{align*}
-0 &= \avec{v} \dotp \left(\avec{w} - \proj_{\avec{v}} \avec{w} \right)\\
-  &= \avec{v} \dotp \left(\avec{w} - \lambda \avec{v}\right)\\
-  &= \avec{v} \dotp \avec{w} - \lambda \left( \avec{v} \dotp \avec{v} \right)
+0 &= \vec{v} \dotp \left(\vec{w} - \proj_{\vec{v}} \vec{w} \right)\\
+  &= \vec{v} \dotp \left(\vec{w} - \lambda \vec{v}\right)\\
+  &= \vec{v} \dotp \vec{w} - \lambda \left( \vec{v} \dotp \vec{v} \right)
 \end{align*}
 Solving for $\lambda$ gives
 \[
-\lambda = \frac{\avec{v} \dotp \avec{w}}{\avec{v} \dotp \avec{v}}
+\lambda = \frac{\vec{v} \dotp \vec{w}}{\vec{v} \dotp \vec{v}}
 \]
 as desired.
 \end{proof}

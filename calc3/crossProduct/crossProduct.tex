@@ -17,13 +17,13 @@ In this section we define the cross product and we use it to create orthogonal v
 \maketitle
 The cross product is a special operation that helps us to create a vector that is orthogonal to two given two vectors in $\R^3$.
 \begin{definition}[Cross Product in $\R^3$]
-If $\avec{v_1}$ and $\avec{v_2}$ are vectors in $\R^3$ given by
+If $\vec{v}_1$ and $\vec{v}_2$ are vectors in $\R^3$ given by
 \[
-\avec{v_1} = \vector{x_1, y_1, z_1} \text{  and   } \;\avec{v_2} = \vector{x_2, y_2, z_2}
+\vec{v}_1 = \vector{x_1, y_1, z_1} \text{  and   } \;\vec{v}_2 = \vector{x_2, y_2, z_2}
 \]
-then the cross product $\avec{v_1} \cross \avec{v_2}$ is defined by
+then the cross product $\vec{v}_1 \cross \vec{v}_2$ is defined by
 \[
-\avec{v_1} \cross \avec{v_2} =  (y_1z_2 - z_1y_2) \avec{i} + (z_1x_2 - x_1z_2) \avec{j} + (x_1y_2 - y_1x_2) \avec{k} 
+\vec{v}_1 \cross \vec{v}_2 =  (y_1z_2 - z_1y_2) \vec{i} + (z_1x_2 - x_1z_2) \vec{j} + (x_1y_2 - y_1x_2) \vec{k} 
 \]
 \end{definition}
 
@@ -66,35 +66,35 @@ g & h & i
 \end{vmatrix}
 = a(ei-fh) - b(di-fg) + c(dh-eg)
 \]
-Note that the quantites in the parentheses in the above definition are the determinants of the $2 \times 2$ matrices
+Note that the quantities in the parentheses in the above definition are the determinants of the $2 \times 2$ matrices
 obtained by removing the first row and a column (the column of the coefficient of the quantity in the parentheses) from the original $3 \times 3$ matrix.
 \end{definition}
- Now to create the cross product of two vectors, we use the determinant of a $3 \times 3$ matrix with the vectors $\avec{i}, \avec{j}$ and $\avec{k}$ in the first row.
- So, if $\avec{v} = \vector{x_1, y_1, z_1}$ and $\avec{w} = \vector{x_2, y_2, z_2}$ then the cross product is given by
+ Now to create the cross product of two vectors, we use the determinant of a $3 \times 3$ matrix with the vectors $\vec{i}, \vec{j}$ and $\vec{k}$ in the first row.
+ So, if $\vec{v} = \vector{x_1, y_1, z_1}$ and $\vec{w} = \vector{x_2, y_2, z_2}$ then the cross product is given by
  \[
-\avec{v} \cross \avec{w} = 
+\vec{v} \cross \vec{w} = 
  \begin{vmatrix}
-\avec{i} & \avec{j} & \avec{k}\\
+\vec{i} & \vec{j} & \vec{k}\\
 x_1 & y_1 & z_1\\
 x_2 & y_2 & z_2
-\end{vmatrix} = (y_1z_2 - z_1y_2)\avec{i} - (x_1z_2 - z_1x_2)\avec{j} + (x_1y_2-y_1x_2)\avec{k}
+\end{vmatrix} = (y_1z_2 - z_1y_2)\vec{i} - (x_1z_2 - z_1x_2)\vec{j} + (x_1y_2-y_1x_2)\vec{k}
 \]
 which agrees with the definition above after multiplying through by $-1$ in the middle term.
 
-The vector $\avec{v}\cross \avec{w}$ is orthogonal to both $\avec{v}$ and $\avec{w}$. To see this we compute the dot product:
+The vector $\vec{v}\cross \vec{w}$ is orthogonal to both $\vec{v}$ and $\vec{w}$. To see this we compute the dot product:
 \begin{align*}
-\left(\avec{v} \cross \avec{w} \right) \dotp \avec{v} &= \vector{y_1z_2 - z_1y_2, z_1x_2 - x_1z_2, x_1y_2 - y_1x_2} \dotp \vector{x_1, y_1, z_1}\\
+\left(\vec{v} \cross \vec{w} \right) \dotp \vec{v} &= \vector{y_1z_2 - z_1y_2, z_1x_2 - x_1z_2, x_1y_2 - y_1x_2} \dotp \vector{x_1, y_1, z_1}\\
                                                 &= x_1(y_1z_2 - z_1y_2) + y_1(z_1x_2 - x_1z_2) + z_1(x_1y_2 - y_1x_2)\\
                                                 &= x_1y_1z_2 - x_1y_2z_1 + x_2y_1z_1 - x_1y_1z_2 + x_1y_2z_1 - x_2y_1z_1\\
                                                 &= x_1y_1z_2 - x_1y_1z_2 + x_1y_2z_1 - x_1y_2z_1 + x_2y_1z_1 - x_2y_1z_1\\
                                                 &= 0
 \end{align*}
-Hence, $\avec{v} \cross \avec{w}$ and $\avec{v}$ are orthogonal.  The reader should perfrom a similar computation to verify that
-$\avec{v} \cross \avec{w}$ and $\avec{w}$ are also orthogonal.\\
+Hence, $\vec{v} \cross \vec{w}$ and $\vec{v}$ are orthogonal.  The reader should perform a similar computation to verify that
+$\vec{v} \cross \vec{w}$ and $\vec{w}$ are also orthogonal.\\
 
 It should be noted that the cross product operation is not commutative.  In fact, it is anti-commutative:
 \[
-\avec{v} \cross \avec{w} = -(\avec{w} \cross \avec{v})
+\vec{v} \cross \vec{w} = -(\vec{w} \cross \vec{v})
 \]
 
 \end{document}

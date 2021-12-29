@@ -6,7 +6,7 @@
 
 \title{1.3 Vectors in $\R^3$}
 %Vectors are represented graphically by arrows.
-%and in three dimensions we write $\avec{v} = \vector{x,y, z}$.
+%and in three dimensions we write $\vec{v} = \vector{x,y, z}$.
 %The length of the arrow represents the magnitude of the vector and the arrow points in the direction of the vector.
 \begin{document}
 
@@ -19,81 +19,80 @@ In this section we define vectors in three dimensions and study their algebraic 
 Just as in $\R^2$, a vector in $\R^3$ is a quantity that has both magnitude and direction.
 In $\R^3$, vectors have three components rather than two:
 \[
-\avec{v} = \vector{x, y, z}
+\vec{v} = \vector{x, y, z}
 \]
 The magnitude of a vector in $\R^3$ comes from the distance formula:
 \[
-|\avec{v}| = |\vector{x, y, z}| = \sqrt{x^2 + y^2 + z^2}
+|\vec{v}| = |\vector{x, y, z}| = \sqrt{x^2 + y^2 + z^2}
 \]
 The special basis vectors in $\R^3$ are
 \begin{align*}
-\avec{i} &= \vector{1, 0, 0}\\
-\avec{j} &= \vector{0, 1, 0}\\
-\avec{k} &= \vector{0, 0, 1}\\
+\vec{i} &= \vector{1, 0, 0}\\
+\vec{j} &= \vector{0, 1, 0}\\
+\vec{k} &= \vector{0, 0, 1}\\
 \end{align*}
 These are unit vectors in the direction of the positive $x, y$ and $z$-axes respectively.
 The zero vector in $\R^3$ is given by
 \[
-\avec{0} = \vector{0,0,0}
+\vec{0} = \vector{0,0,0}
 \]
 has a magnitude of $0$ and is not assigned a direction.
 As in $\R^2$, a vector in $\R^3$ has an initial point and a final point.  The vector is in standard position if its initial point is the origin.
 Also, as in $\R^2$, a the vector with initial point $P = (x_1, y_1, z_1)$ and final point $Q = (x_2, y_2, z_2)$ is given by the difference of the coordinates:
 \[
-\avec{PQ} = \vector{x_2 - x_1, y_2-y_1, z_2-z_1}
+\vec{PQ} = \vector{x_2 - x_1, y_2-y_1, z_2-z_1}
 \]
 The magnitude of this vector is the distance between the points $P$ and $Q$
 \[
-|\avec{PQ}| = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 +(z_2-z_1)^2} = d(P, Q)
+|\vec{PQ}| = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 +(z_2-z_1)^2} = d(P, Q)
 \]
 The operations of scalar multiplication and addition are performed analogously to those in $\R^2$.
-If $\avec{v} = \vector{x, y, z}$ and if $c$ is a scalar in $\R$, then
+If $\vec{v} = \vector{x, y, z}$ and if $c$ is a scalar in $\R$, then
 \[
-c\avec{v} \ c\vector{x, y, z} = \vector{cx, cy, cz}
+c\vec{v} \ c\vector{x, y, z} = \vector{cx, cy, cz}
 \]
-and if $\avec{v_1} = \vector{x_1, y_1, z_1}$ and $\avec{v_2} = \vector{x_2, y_2, z_2}$ are vectors in $\R^3$then
+and if $\vec{v}_1 = \vector{x_1, y_1, z_1}$ and $\vec{v}_2 = \vector{x_2, y_2, z_2}$ are vectors in $\R^3$then
 \[
-\avec{v_1} + \avec{v_2} = \vector{x_1+x_2, y_1+y_2, z_1+z_2}
+\vec{v}_1 + \vec{v}_2 = \vector{x_1+x_2, y_1+y_2, z_1+z_2}
 \]
 The effect on magnitude of multiplication by a scalar is the same in $\R^3$ as it was in $\R^2$:
 \[
-|c\avec{v}| = |c| |\avec{v}|
+|c\vec{v}| = |c| |\vec{v}|
 \]
-Because of this, a unit vector in the same direction as a non-zero vector $\avec{v}$ in $\R^3$ is given by
+Because of this, a unit vector in the same direction as a non-zero vector $\vec{v}$ in $\R^3$ is given by
 \[
-\avec{u} = \frac{1}{|\avec{v}|} \avec{v}
+\vec{u} = \frac{1}{|\vec{v}|} \vec{v}
 \]
 just as in $\R^2$.
 
 Due to their component-wise computation, the vector operations of scalar multiplication and addition have some familiar properties:
 \begin{align*}
-&\text{Distributive Property:} & &c(\avec{v_1} + \avec{v_2}) = c\avec{v_1} + c\avec{v_2}   \\
-& \text{Commutative Property:}& &\avec{v_1} + \avec{v_2} = \avec{v_2} + \avec{v_1} \\
-& \text{Associative Property:}&  &\avec{v_1} + (\avec{v_2}+ \avec{v_3}) =  (\avec{v_1} + \avec{v_2}) + \avec{v_3} \\
-&\text{Identity Property:} & &\avec{v} + \avec{0} = \avec{v} \\
-& \text{Additive Inverse Property:} & &\avec{v} + (-\avec{v}) = \avec{0} 
+&\text{Distributive Property:} & &c(\vec{v}_1 + \vec{v}_2) = c\vec{v}_1 + c\vec{v}_2   \\
+& \text{Commutative Property:}& &\vec{v}_1 + \vec{v}_2 = \vec{v}_2 + \vec{v}_1 \\
+& \text{Associative Property:}&  &\vec{v}_1 + (\vec{v}_2+ \vec{v}_3) =  (\vec{v}_1 + \vec{v}_2) + \vec{v}_3 \\
+&\text{Identity Property:} & &\vec{v} + \vec{0} = \vec{v} \\
+& \text{Additive Inverse Property:} & &\vec{v} + (-\vec{v}) = \vec{0} 
 \end{align*}
 
 \begin{example}
-Find a unit vector in the same direction as $\avec{v} = 2 \avec{i} - 3\avec{j} + 4\avec{k}$.\\
-The magnitude of $\avec{v}$ is
+Find a unit vector in the same direction as $\vec{v} = 2 \vec{i} - 3\vec{j} + 4\vec{k}$.\\
+The magnitude of $\vec{v}$ is
 \[
-|\avec{v}| = |\vector{2, -3, 4}| = \sqrt{4+9+16} = \sqrt{29}
+|\vec{v}| = |\vector{2, -3, 4}| = \sqrt{4+9+16} = \sqrt{29}
 \]
-Hence, a unit vector in the direction of $\avec{v}$ is
+Hence, a unit vector in the direction of $\vec{v}$ is
 \[
-\avec{u} = \frac{1}{\sqrt{29}}\avec{v} = \frac{2}{\sqrt{29}}\avec{i} - \frac{3}{\sqrt{29}}\avec{j} + \frac{4}{\sqrt{29}}\avec{k}
+\vec{u} = \frac{1}{\sqrt{29}}\vec{v} = \frac{2}{\sqrt{29}}\vec{i} - \frac{3}{\sqrt{29}}\vec{j} + \frac{4}{\sqrt{29}}\vec{k}
 \]
 \end{example}
 
 \begin{problem}
 Find each of the following:\\
 a) $3\vector{2, 4, -1} - 4\vector{5, -3, 2} = \vector{\answer{-14}, \answer{24}, \answer{-11}}$\\
-b) $|3\avec{i} - 5\avec{k}| = \answer{\sqrt{34}}$\\
+b) $|3\vec{i} - 5\vec{k}| = \answer{\sqrt{34}}$\\
 c) a unit vector in the direction of $\vector{1, -2, 2} = \vector{\answer{1/3}, \answer{-2/3}, \answer{2/3}}$
 \end{problem}
 
 
 \end{document}
-
 
