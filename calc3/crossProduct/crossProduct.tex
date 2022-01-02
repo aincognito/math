@@ -91,11 +91,110 @@ The vector $\vec{v}\cross \vec{w}$ is orthogonal to both $\vec{v}$ and $\vec{w}$
 \end{align*}
 Hence, $\vec{v} \cross \vec{w}$ and $\vec{v}$ are orthogonal.  The reader should perform a similar computation to verify that
 $\vec{v} \cross \vec{w}$ and $\vec{w}$ are also orthogonal.\\
+The cross product has a variety of interesting properties which we now briefly explore.\\
+The cross product of a vector with itself gives the zero vector:
+\[
+\vec{v} \cross \vec{v} = \vec{0}
+\]
 
-It should be noted that the cross product operation is not commutative.  In fact, it is anti-commutative:
+The cross product operation is not commutative.  In fact, it is anti-commutative:
 \[
 \vec{v} \cross \vec{w} = -(\vec{w} \cross \vec{v})
 \]
+Scalars can factor out of a cross product:
+\[
+(c\vec{v}) \cross \vec{w} = c(\vec{v} \cross \vec{w})
+\]
+and
+\[
+\vec{v} \cross (c\vec{w}) = c(\vec{v} \cross \vec{w})
+\]
+The cross product distributes over vector addition 
+(note that it is important to maintain the order of the vectors in the cross product due to its anticommutativity):
+\[
+\vec{u} \cross (\vec{v} + \vec{w}) = (\vec{u} \cross \vec{v}) + (\vec{u} \cross \vec{w})\quad \text{Left Distributive Property}
+\]
+and
+\[
+(\vec{u} + \vec{v}) \cross \vec{w} = (\vec{u} \cross \vec{w}) + (\vec{v} \cross \vec{w})\quad \text{Right Distributive Property}
+\]
+
+Cross products involving the special basis vectors are useful and easy enough to compute from the definition:
+\[
+\vec{i} \cross \vec{j}=
+ \begin{vmatrix}
+\vec{i} & \vec{j} & \vec{k}\\
+1 & 0 & 0\\
+0 & 1 & 0
+\end{vmatrix}
+= (0)\vec{i} - (0)\vec{j} + (1)\vec{k} = \vec{k}
+\]
+\[
+\vec{j} \cross \vec{k}=
+ \begin{vmatrix}
+\vec{i} & \vec{j} & \vec{k}\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{vmatrix}
+= (1)\vec{i} - (0)\vec{j} + (0)\vec{k} = \vec{i}
+\]
+and
+\[
+\vec{k} \cross \vec{i}=
+ \begin{vmatrix}
+\vec{i} & \vec{j} & \vec{k}\\
+0 & 0 & 1\\
+1 & 0 & 0
+\end{vmatrix}
+= (0)\vec{i} - (-1)\vec{j} + (1)\vec{k} = \vec{j}
+\]
+These results can be obtained with the aide of the following figure.
+\begin{image}
+\begin{tikzpicture}
+%\draw (0,0) circle (3);
+\node at (0,3.5){$\vec{i}$};
+\node at (3.2,-1.2){$\vec{j}$};
+\node at (-3.2,-1.2){$\vec{k}$};
+\draw[-<] (3,0) arc (0:30:3);
+\draw[-<] (3,0) arc (0:150:3);
+\draw[-<] (3,0) arc (0:270:3);
+\draw (3,0) arc (0:359.9:3);
+\node at (0,1){$\vec{i} \cross \vec{j} = \vec{k}$};
+\node at (0,0){$\vec{j} \cross \vec{k} = \vec{i}$};
+\node at (0,-1){$\vec{k} \cross \vec{i} = \vec{j}$};
+\node at (0, -3.5) {Follow the circle clockwise to compute the cross products};
+\end{tikzpicture}
+\end{image}
+
+\begin{remark}
+Since the cross product operation is anticommutative, we this example immediately yields the following additional results:
+\begin{align*}
+\vec{i} \cross \vec{k} &= \vec{-j}\\
+\vec{k} \cross \vec{j} &= \vec{-i}\\
+\vec{j} \cross \vec{i} &= \vec{-k}
+\end{align*}
+\end{remark}
+
+\begin{example}
+Compute the cross product: $(2\vec{i} - 3\vec{k}) \cross (\vec{j} + 4\vec{k})$.\\
+Using the properties listed above and the results of the cross products involving the special basis vectors, we have:
+\begin{align*}
+(2\vec{i} - 3\vec{k}) \cross (\vec{j} + 4\vec{k}) & = [(2\vec{i} - 3\vec{k}) \cross \vec{j}] + [(2\vec{i} - 3\vec{k}) \cross   4\vec{k}]\\
+                                  &= (2\vec{i} \cross \vec{j}) + [(-3\vec{k}) \cross \vec{j})] +(2\vec{i} \cross   4\vec{k}) + [ (- 3\vec{k}) \cross   4\vec{k}]\\
+                                  &= 2\vec{k} + 3 \vec{i} -8\vec{j} + \vec{0}\\
+                                  &= 3\vec{i} - 8\vec{j} +2\vec{k}\\
+                                  &= \vector{3, -8, 2}
+\end{align*}
+\end{example}
+
+\begin{problem}
+Use the properties of the cross product and the cross products of the special basis vectors to compute: 
+\[
+(\vec{i} + 2\vec{j}) \cross (3\vec{i} - \vec{k}) = \answer{\vector{-2,1,-6}}
+\]
+\end{problem}
+
+
 
 The magnitude of a cross product is of great interest in applications.
 \begin{proposition}
@@ -157,6 +256,10 @@ V = |\vec{u} \dotp \left(\vec{v} \cross \vec{w}\right)|
 \end{image}
 
 
+
+\end{document}
+
+
 The tangent and Inverse tangent graphs
 
 \begin{image}
@@ -203,7 +306,39 @@ The tangent and Inverse tangent graphs
 \end{tikzpicture}
 \end{image}
 
-\begin{tikzpicture} \draw[help lines] (0,0) grid (8,3); \draw    (1,0)      .. controls (4,2) ..    (7,0);   \end{tikzpicture}  \begin{tikzpicture} \draw[help lines] (0,0) grid (8,3); \draw    (1,0)      .. controls (3,2) and (5,2) ..    (7,0);   \end{tikzpicture}  \begin{tikzpicture} \draw[help lines] (0,0) grid (8,3); \draw[overlay]    (1,0)      .. controls (10,2) and (-2,2) ..    (7,0);   \end{tikzpicture}  \begin{tikzpicture} \draw[help lines] (0,-1) grid (8,1); \draw    (1,0)      .. controls (3,2) and (5,-2) ..    (7,0);   \end{tikzpicture} 
+\begin{tikzpicture} 
+\draw[help lines] (0,0) grid (8,3); \draw    (1,0)      .. controls (4,2) ..    (7,0);   
+\end{tikzpicture}  
+
+\begin{tikzpicture} 
+\draw[help lines] (0,0) grid (8,3); \draw    (1,0)      .. controls (3,2) and (5,2) ..    (7,0);   
+\end{tikzpicture} 
+ 
+\begin{tikzpicture} \draw[help lines] (0,0) grid (8,3); \draw[overlay]    (1,0)      .. controls (10,2) and (-2,2) ..    (7,0);   
+\end{tikzpicture}  
+\begin{tikzpicture} \draw[help lines] (0,-1) grid (8,1); \draw    (1,0)      .. controls (3,2) and (5,-2) ..    (7,0);   
+\end{tikzpicture} 
+
+
+
+
+
+\begin{tikzpicture}
+\draw (0,0) % [show curve controls] (0, 0) 
+  .. controls ++(165:-1) and ++(240: 1) .. ( 3, 2)
+  .. controls ++(240:-1) and ++(165:-1) .. ( 2, 4)
+  .. controls ++(165: 1) and ++(175:-2) .. (-1, 2)
+  .. controls ++(175: 2) and ++(165: 1) .. ( 0, 0);
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\draw (0,0) % [show curve controls] (0, 0) 
+  .. controls ++(180:-1) and ++(270: 1) .. ( 2, 2)
+  .. controls ++(90:1) and ++(180:-1) .. ( 0, 4)
+  .. controls ++(180: 1) and ++(270:-1) .. (-2, 2)
+  .. controls ++(270: 1) and ++(180: 1) .. ( 0, 0);
+\end{tikzpicture}
+
 
 \tikzset{
   show curve controls/.style={
@@ -263,6 +398,8 @@ The tangent and Inverse tangent graphs
   \end{tikzpicture}
 }
 
-\end{document}
+
+
+
 
 

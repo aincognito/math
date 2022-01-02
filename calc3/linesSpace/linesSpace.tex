@@ -2,19 +2,89 @@
 
 \input{../preamble}
 
-\outcome{In this section we define vectors in three dimensions and study their algebraic and geometric properties.}
+\outcome{In this section we describe lines in space analyically.}
 
-\title{1.3 Vectors in $\R^3$}
+\title{1.6 Lines in Space}
 %Vectors are represented graphically by arrows.
 %and in three dimensions we write $\vec{v} = \vector{x,y, z}$.
 %The length of the arrow represents the magnitude of the vector and the arrow points in the direction of the vector.
 \begin{document}
 
 \begin{abstract}
-In this section we define vectors in three dimensions and study their algebraic and geometric properties.
+In this section we describe lines in space analytically.
 \end{abstract}
  
 \maketitle
+
+A line in $\R^3$ is determined by two points. To describe the line analytically, i.e., to find the equation (or equations) of the line,
+we will need the vector associated with these two points and we will also need to take advantage of the end to end method for adding vecotrs.
+Suppose the line $L$ in $\R^3$ goes through the points $P(x_1, y_1, z_1)$ and $Q(x_2, y_2, z_2)$. The vector from $P$ to $Q$ is given by
+\[
+\vec{v} = \vec{PQ} = \vector{x_2-x_1,y_2-y_1,z_2-z_1}
+\]
+This vector is called the direction vector of the line. 
+A point on the line can be seen as the final point of and vector eminating from $P$ and parallel to $\vec{v}$.
+To describe such points, we rely on the end to end method of vector addition. A point $(x, y, z)$ lies on the line $L$ if
+it is the final point of a vector of the form:
+\[
+\vector{x_1, y_1, z_1} + t\vector{v}
+\]
+where $t$ is any scalar. See the figure below.
+
+\begin{image}
+\begin{tikzpicture}
+\draw[ ->] (0,0) -- (1, 2) ;
+\draw[red, ->] (1,2) -- (5, 3);
+\draw[blue, fill] (3, 2.5) circle (0.05) node[above]{$Q$};
+\draw[blue, fill] (1, 2) circle (0.05)node[above]{$P$};
+\draw[blue, fill] (0,0) circle (0.05) node[left]{$O$};
+\node at (2.5, -0.5) {The vector $\vector{x_1, y_1, z_1} + t\vec{v}$ (in red)};
+\end{tikzpicture}
+\end{image}
+ 
+If we associate the vector $\vector{x, y, z}$ with the point $(x, y, z)$, then by the end to end method of adding vectors, we see that
+\[
+\vector{x, y, z} = \vector{x_1, y_1, z_1} + t\vec{v}
+\]
+To simplify the notation somewhat, if the vector $\vec{v}$ has the form $\vector{a, b, c}$, then this equation becomes
+\[
+\vector{x, y, z} = \vector{x_1, y_1, z_1} + t\vector{a, b, c}
+\]
+This is called the {\bf vector form} of the equation of the line $L$ in $\R^3$ which passes through the 
+point $(x_1, y_1, z_1)$ and has direction vector $\vec{v} = \vector{a, b, c}$.\\
+Isolating the variables $x, y$ and $z$ by equating the components of the vector form, we obtain the {\bf parametric form} $L$:
+\begin{align*}
+x &= x_1 + at\\
+y &= y_1 + bt\\
+z &= z_1 + ct
+\end{align*}
+Solving these equations for $t$ (assuming $a, b$ and $c$ are all non-zero) we obtain the {\bf symmetric form} of $L$:
+\[
+\frac{x-x_1}{a} = \frac{y-y_1}{b} = \frac{z-z_1}{c}
+\]
+
+\begin{example}
+Find the vector form, parametric form and symmetric form for the line in $\R^3$ passing through the points $(2, 1, -4)$ and $(-3, 2, 5)$.\\
+The direction vector for the line is 
+\[
+\vec{v} = \vector{-3-2, 2-1, 5-(-4)} = \vector{-5, 1, 9}
+\]
+Note that any non-zero multiple of this vector would also serve as a suitable direction vector for $L$. Using the point $(2, 1, -4)$ we have
+\[
+\vector{x, y, z} = \vector{2, 1, 4} + t\vector{-5, 1, 9} \quad \text{(Vector form)}
+\]
+\begin{align*}
+x &= 2 -5t\\
+y &= 1 + t \quad\text{(Parametric form)}\\
+z &= 4 + 9t\\
+\end{align*}
+and
+\[
+\frac{x-2}{-5} = y-1 = \frac{z-4}{9} \quad \text{(Symmetric form)}
+\]
+\end{example}
+\end{document}
+ 
 
 Just as in $\R^2$, a vector in $\R^3$ is a quantity that has both magnitude and direction.
 In $\R^3$, vectors have three components rather than two:
