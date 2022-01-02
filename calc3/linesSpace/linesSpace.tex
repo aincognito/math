@@ -2,7 +2,7 @@
 
 \input{../preamble}
 
-\outcome{In this section we describe lines in space analyically.}
+\outcome{In this section we describe lines in space analytically.}
 
 \title{1.6 Lines in Space}
 %Vectors are represented graphically by arrows.
@@ -17,13 +17,13 @@ In this section we describe lines in space analytically.
 \maketitle
 
 A line in $\R^3$ is determined by two points. To describe the line analytically, i.e., to find the equation (or equations) of the line,
-we will need the vector associated with these two points and we will also need to take advantage of the end to end method for adding vecotrs.
+we will need the vector associated with these two points and we will also need to take advantage of the end to end method for adding vectors.
 Suppose the line $L$ in $\R^3$ goes through the points $P(x_1, y_1, z_1)$ and $Q(x_2, y_2, z_2)$. The vector from $P$ to $Q$ is given by
 \[
 \vec{v} = \vec{PQ} = \vector{x_2-x_1,y_2-y_1,z_2-z_1}
 \]
 This vector is called the direction vector of the line. 
-A point on the line can be seen as the final point of and vector eminating from $P$ and parallel to $\vec{v}$.
+A point on the line can be seen as the final point of and vector emanating from $P$ and parallel to $\vec{v}$.
 To describe such points, we rely on the end to end method of vector addition. A point $(x, y, z)$ lies on the line $L$ if
 it is the final point of a vector of the form:
 \[
@@ -86,87 +86,3 @@ and
 \end{document}
  
 
-Just as in $\R^2$, a vector in $\R^3$ is a quantity that has both magnitude and direction.
-In $\R^3$, vectors have three components rather than two:
-\[
-\vec{v} = \vector{x, y, z}
-\]
-The magnitude of a vector in $\R^3$ comes from the distance formula:
-\[
-|\vec{v}| = |\vector{x, y, z}| = \sqrt{x^2 + y^2 + z^2}
-\]
-The special basis vectors in $\R^3$ are
-\begin{align*}
-\vec{i} &= \vector{1, 0, 0}\\
-\vec{j} &= \vector{0, 1, 0}\\
-\vec{k} &= \vector{0, 0, 1}\\
-\end{align*}
-These are unit vectors in the direction of the positive $x, y$ and $z$-axes respectively.
-A vector in $\R^3$ can be expressed in terms of these vectors:
-\[
-\vec{v} = \vector{x, y, z} = x\vec{i} + y\vec{j} + z\vec{k}
-\]
-
-The zero vector in $\R^3$ is given by
-\[
-\vec{0} = \vector{0,0,0}
-\]
-has a magnitude of $0$ and is not assigned a direction.
-As in $\R^2$, a vector in $\R^3$ has an initial point and a final point.  The vector is in standard position if its initial point is the origin.
-Also, as in $\R^2$, a the vector with initial point $P = (x_1, y_1, z_1)$ and final point $Q = (x_2, y_2, z_2)$ is given by the difference of the coordinates:
-\[
-\vec{PQ} = \vector{x_2 - x_1, y_2-y_1, z_2-z_1}
-\]
-The magnitude of this vector is the distance between the points $P$ and $Q$
-\[
-|\vec{PQ}| = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 +(z_2-z_1)^2} = d(P, Q)
-\]
-The operations of scalar multiplication and addition are performed analogously to those in $\R^2$.
-If $\vec{v} = \vector{x, y, z}$ and if $c$ is a scalar in $\R$, then
-\[
-c\vec{v} = c\vector{x, y, z} = \vector{cx, cy, cz}
-\]
-and if $\vec{v}_1 = \vector{x_1, y_1, z_1}$ and $\vec{v}_2 = \vector{x_2, y_2, z_2}$ are vectors in $\R^3$ then
-\[
-\vec{v}_1 + \vec{v}_2 = \vector{x_1+x_2, y_1+y_2, z_1+z_2}
-\]
-The effect on magnitude of multiplication by a scalar is the same in $\R^3$ as it was in $\R^2$:
-\[
-|c\vec{v}| = |c| |\vec{v}|
-\]
-Because of this, a unit vector in the same direction as a non-zero vector $\vec{v}$ in $\R^3$ is given by
-\[
-\vec{u} = \frac{1}{|\vec{v}|} \vec{v}
-\]
-just as in $\R^2$.
-
-Due to their component-wise computation, the vector operations of scalar multiplication and addition have some familiar properties:
-\begin{align*}
-&\text{Distributive Property:} & &c(\vec{v}_1 + \vec{v}_2) = c\vec{v}_1 + c\vec{v}_2   \\
-& \text{Commutative Property:}& &\vec{v}_1 + \vec{v}_2 = \vec{v}_2 + \vec{v}_1 \\
-& \text{Associative Property:}&  &\vec{v}_1 + (\vec{v}_2+ \vec{v}_3) =  (\vec{v}_1 + \vec{v}_2) + \vec{v}_3 \\
-&\text{Identity Property:} & &\vec{v} + \vec{0} = \vec{v} \\
-& \text{Additive Inverse Property:} & &\vec{v} + (-\vec{v}) = \vec{0} 
-\end{align*}
-
-\begin{example}
-Find a unit vector in the same direction as $\vec{v} = 2 \vec{i} - 3\vec{j} + 4\vec{k}$.\\
-The magnitude of $\vec{v}$ is
-\[
-|\vec{v}| = |\vector{2, -3, 4}| = \sqrt{4+9+16} = \sqrt{29}
-\]
-Hence, a unit vector in the direction of $\vec{v}$ is
-\[
-\vec{u} = \frac{1}{\sqrt{29}}\vec{v} = \frac{2}{\sqrt{29}}\vec{i} - \frac{3}{\sqrt{29}}\vec{j} + \frac{4}{\sqrt{29}}\vec{k}
-\]
-\end{example}
-
-\begin{problem}
-Find each of the following:\\
-a) $3\vector{2, 4, -1} - 4\vector{5, -3, 2} = \vector{\answer{-14}, \answer{24}, \answer{-11}}$\\
-b) $|3\vec{i} - 5\vec{k}| = \answer{\sqrt{34}}$\\
-c) a unit vector in the direction of $\vector{1, -2, 2} = \vector{\answer{1/3}, \answer{-2/3}, \answer{2/3}}$
-\end{problem}
-
-
-\end{document}
