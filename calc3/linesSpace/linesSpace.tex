@@ -145,11 +145,190 @@ L_2: \vector{x, y, z} &= \vector{-3, 5, -1} + 3\vector{2, 1, -1} = \vector{3, 8,
 \end{align*}
 Since these agree, we can conclude definitively that the lines do indeed intersect and furthermore, the point of intersection is $(3, 8, -4)$.
 \end{example}
-Two lines in $\R^3$ which are not parallel but also do not intersect are called skew lines.  
-A basic problem is to find the distance between such skew lines 
-(finding the distance between parallel lines, while also interesting, turns out to be considerably easier).
-Of great importance in solving this problem is the cross product of the direction vectors of the two skew lines.
-Since the full solution to the problem involves planes, we will tackle it in the next section, which covers planes in $\R^3$.
+
+we next solve the classic problem of finding the distance between a point and a line.
+\begin{example}
+Find the distance between the line $\vector{x,y,z} = \vector{-2,3,1} + t \vector{4,-1,5}$ and the point $Q(1, 2, 3)$.\\
+First, we verify that the given point is not actually on the line. To this end, let's examine the parametric equation for the $x$-coordinate:
+\[
+x = -2 + 4t
+\]
+The $x$=coordinate of the given point is $1$ and setting these equal gives a value of $t$:
+\[
+1 = -2 + 4t
+\]
+\[
+t = \frac34
+\]
+Now we will compare the $y$-coordinates (and $z$ if necessary) when $t= 3/4$:
+\[
+y = 3 - t = 3 -\frac34 = \frac94 \neq 2
+\]
+Hence the point is not on the line.
+From the given vector form of the line, we can see that the point $P(-2, 3, 1)$ is on the line.  Consider the vector from this point to the point $Q$:
+\[
+\vec{w} = \vec{PQ} = \vector{3, -1, 2}
+\]
+Next, we project this vector onto the direction vector of the line, $\vec{v} = \vector{4, -1, 5}$ :
+\[
+\proj_{\vec{v}}\vec{w} = \frac{\vec{v} \dotp \vec{w}}{\vec{v} \dotp \vec{v}}\vec{v} = \frac{23}{14}\vector{4,-1,5}
+\]
+The distance between the point $Q(1, 2, 3)$ and the line is the magnitutde of the vector $\vec{n} = \vec{w} - \proj_{\vec{v}}\vec{w}$ (see the figure below)
+
+\begin{image}
+\begin{tikzpicture}
+\draw[orange!80!black, ->, thick] (0,0) -- (3, 0) node[right]{$\vec{v}$};
+\draw[blue!50!black, ->, thick] (0,0) -- (2, 4) node[midway, left]{$\vec{w}$};
+\draw[red!90!black, ->, thin] (0,0) --(2,0) node[midway, below]{$\proj_{\vec{v}} \vec{w}$};
+\draw[green!30!black, thick, <-] (2, 4) -- (2, 0) node[midway, right]{$\vec{n}= \vec{w} -  \proj_{\vec{v}} \vec{w}$};
+\draw[blue, thin] (1.7, 0) -- ++(0, 0.3) -- + (0.3, 0);
+\node at (1.5, -1){The distance is $|\vec{n}| $};
+\draw[fill, blue!50!black] (0,0) circle (0.05) node[left]{$P$};
+\draw[fill, blue!50!black] (2,4) circle (0.05) node[left]{$Q$};
+\end{tikzpicture}
+\end{image}
+
+\begin{image}
+\begin{tikzpicture}
+\draw[blue!60!white, ->, thick] (0,0) -- (3, 0) node[right]{$\vec{v}$};
+\draw[blue!85!white, ->, thick] (0,0) --(2,0) node[midway, below]{$\proj_{\vec{v}} \vec{w}$};
+\draw[blue!70!white, ->, thick] (0,0) -- (2, 4) node[midway, left]{$\vec{w}$};
+\draw[blue!90!white, thick, <-] (2, 4) -- (2, 0) node[midway, right]{$\vec{n}= \vec{w} -  \proj_{\vec{v}} \vec{w}$};
+\draw[blue, thin] (1.7, 0) -- ++(0, 0.3) -- + (0.3, 0);
+\node at (1.5, -1){The distance is $|\vec{n}| $};
+\draw[fill, blue!70!white] (0,0) circle (0.05) node[left]{$P$};
+\draw[fill, blue!70!white] (2,4) circle (0.05) node[left]{$Q$};
+\end{tikzpicture}
+\end{image}
+
+
+
+The vector $\vec{n}$ is given by
+\begin{align*}
+\vec{n} &= \vec{w} -  \proj_{\vec{v}} \vec{w}\\
+&=\vector{3, -1, 2} - \frac{23}{14}\vector{4,-1,5} \\
+&= \vector{-\frac{50}{14},\frac{9}{14},-\frac{87}{14}}
+\end{align*}
+and the distance we seek is
+\[
+|\vec{n}| = \sqrt{ \left(\frac{50}{14}\right)^2 +  \left(\frac{9}{14}\right)^2 + \left(\frac{87}{14}\right)^2} = \frac{\sqrt{10150}}{14}\approx 7.2
+\]
+
+\end{example}
+
+Another classic problem is to find the distance between two lines.
+Two lines in $\R^3$ which do not intersect are either parallel or {\bf skew}.  
+The distance between parallel lines can be found using the method of the previous example by taking any point from one of the lines,
+and finding its distance to the other line.
+The situation for skew lines is more complicated, involving cross products and planes.
+In the next section, we will study planes in $\R^3$ and at the end of that section we will get back to the 
+problem of finding the distance between two skew lines.
+
+
+\begin{image}
+\begin{tikzpicture}
+\draw[blue!10!white, thick] (0,10) -- (10, 10) ;
+\draw[blue!20!white, thick] (0,9) -- (10, 9) ;
+\draw[blue!30!white, thick] (0,8) -- (10, 8) ;
+\draw[blue!40!white, thick] (0,7) -- (10, 7) ;
+\draw[blue!50!white, thick] (0,6) -- (10, 6) ;
+\draw[blue!60!white, thick] (0,5) -- (10, 5) ;
+\draw[blue!70!white, thick] (0,4) -- (10, 4) ;
+\draw[blue!80!white, thick] (0,3) -- (10, 3) ;
+\draw[blue!90!white, thick] (0,2) -- (10, 2) ;
+\draw[blue, thick] (0,1) -- (10,1) node[right]{blue};
+
+\draw[blue!90!black, thick] (0,0) -- (10, 0) ;
+\draw[blue!80!black, thick] (0,-1) -- (10, -1) ;
+\draw[blue!70!black, thick] (0,-2) -- (10, -2) ;
+\draw[blue!60!black, thick] (0,-3) -- (10, -3) ;
+\draw[blue!50!black, thick] (0,-4) -- (10, -4) ;
+\draw[blue!40!black, thick] (0,-5) -- (10, -5) ;
+\draw[blue!30!black, thick] (0,-6) -- (10, -6) ;
+\draw[blue!20!black, thick] (0,-7) -- (10, -7) ;
+\draw[blue!10!black, thick] (0,-8) -- (10, -8) ;
+\end{tikzpicture}
+\end{image}
+
+\begin{image}
+\begin{tikzpicture}
+\draw[red!10!white, thick] (0,10) -- (10, 10) ;
+\draw[red!20!white, thick] (0,9) -- (10, 9) ;
+\draw[red!30!white, thick] (0,8) -- (10, 8) ;
+\draw[red!40!white, thick] (0,7) -- (10, 7) ;
+\draw[red!50!white, thick] (0,6) -- (10, 6) ;
+\draw[red!60!white, thick] (0,5) -- (10, 5) ;
+\draw[red!70!white, thick] (0,4) -- (10, 4) ;
+\draw[red!80!white, thick] (0,3) -- (10, 3) ;
+\draw[red!90!white, thick] (0,2) -- (10, 2) ;
+\draw[red, thick] (0,1) -- (10,1) node[right]{red};
+
+\draw[red!90!black, thick] (0,0) -- (10, 0) ;
+\draw[red!80!black, thick] (0,-1) -- (10, -1) ;
+\draw[red!70!black, thick] (0,-2) -- (10, -2) ;
+\draw[red!60!black, thick] (0,-3) -- (10, -3) ;
+\draw[red!50!black, thick] (0,-4) -- (10, -4) ;
+\draw[red!40!black, thick] (0,-5) -- (10, -5) ;
+\draw[red!30!black, thick] (0,-6) -- (10, -6) ;
+\draw[red!20!black, thick] (0,-7) -- (10, -7) ;
+\draw[red!10!black, thick] (0,-8) -- (10, -8) ;
+\end{tikzpicture}
+\end{image}
+
+
+\begin{image}
+\begin{tikzpicture}
+\draw[green!10!white, thick] (0,10) -- (10, 10) ;
+\draw[green!20!white, thick] (0,9) -- (10, 9) ;
+\draw[green!30!white, thick] (0,8) -- (10, 8) ;
+\draw[green!40!white, thick] (0,7) -- (10, 7) ;
+\draw[green!50!white, thick] (0,6) -- (10, 6) ;
+\draw[green!60!white, thick] (0,5) -- (10, 5) ;
+\draw[green!70!white, thick] (0,4) -- (10, 4) ;
+\draw[green!80!white, thick] (0,3) -- (10, 3) ;
+\draw[green!90!white, thick] (0,2) -- (10, 2) ;
+\draw[green, thick] (0,1) -- (10,1) node[right]{green};
+
+\draw[green!90!black, thick] (0,0) -- (10, 0) ;
+\draw[green!80!black, thick] (0,-1) -- (10, -1) ;
+\draw[green!70!black, thick] (0,-2) -- (10, -2) ;
+\draw[green!60!black, thick] (0,-3) -- (10, -3) ;
+\draw[green!50!black, thick] (0,-4) -- (10, -4) ;
+\draw[green!40!black, thick] (0,-5) -- (10, -5) ;
+\draw[green!30!black, thick] (0,-6) -- (10, -6) ;
+\draw[green!20!black, thick] (0,-7) -- (10, -7) ;
+\draw[green!10!black, thick] (0,-8) -- (10, -8) ;
+\end{tikzpicture}
+\end{image}
+
+
+
+\begin{image}
+\begin{tikzpicture}
+\draw[green!50!blue, thick] (0,9) -- (10, 9)  node[right]{green!50!blue};
+\draw[red!50!blue, thick] (0,8) -- (10, 8)  node[right]{red!50!blue};
+\draw[brown!50!blue, thick] (0,7) -- (10, 7)  node[right]{brown blue};
+\draw[orange!50!blue, thick] (0,6) -- (10, 6)  node[right]{orange blue};
+\draw[cyan!50!blue, thick] (0,5) -- (10, 5)  node[right]{cyan blue};
+\draw[purple!50!blue, thick] (0,4) -- (10, 4)  node[right]{purple blue};
+\draw[violet!50!blue, thick] (0,3) -- (10, 3)  node[right]{violet blue};
+\draw[yellow!50!blue, thick] (0,2) -- (10, 2)  node[right]{yellow blue};
+\draw[blue, thick] (0,1) -- (10,1) node[right]{blue};
+
+\draw[olive!50!blue, thick] (0,0) -- (10, 0)  node[right]{olive blue};
+\draw[pink!50!blue, thick] (0,-1) -- (10, -1)  node[right]{pink blue};
+\draw[teal!50!blue, thick] (0,-2) -- (10, -2)  node[right]{teal blue};
+\draw[magenta!50!blue, thick] (0,-3) -- (10, -3)  node[right]{magenta blue};
+\draw[lime!50!blue, thick] (0,-4) -- (10, -4)  node[right]{lime blue};
+\draw[black!50!blue, thick] (0,-5) -- (10, -5)  node[right]{black blue};
+\draw[gray!50!blue, thick] (0,-6) -- (10, -6)  node[right]{gray blue};
+\draw[white!50!blue, thick] (0,-7) -- (10, -7)  node[right]{white blue};
+\draw[darkgray!50!blue, thick] (0,-8) -- (10, -8)  node[right]{darkgray blue};
+\draw[lightgray!50!blue, thick] (0,-9) -- (10, -9)  node[right]{lightgray blue};
+\end{tikzpicture}
+\end{image}
+
+
 
 \end{document}
  
@@ -159,7 +338,6 @@ Since the full solution to the problem involves planes, we will tackle it in the
  
  
  
-
 
 
 
