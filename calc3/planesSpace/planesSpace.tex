@@ -2,21 +2,138 @@
 
 \input{../preamble}
 
-\outcome{In this section we describe lines in space analytically.}
+\outcome{In this section we describe planes in space analytically.}
 
-\title{1.6 Lines in Space}
+\title{1.7 Planes in Space}
 %Vectors are represented graphically by arrows.
 %and in three dimensions we write $\vec{v} = \vector{x,y, z}$.
 %The length of the arrow represents the magnitude of the vector and the arrow points in the direction of the vector.
 \begin{document}
 
 \begin{abstract}
-In this section we describe lines in space analytically.
+In this section we describe planes in space analytically.
 \end{abstract}
  
 \maketitle
 
-A line in $\R^3$ is determined by two points. To describe the line analytically, i.e., to find the equation (or equations) of the line,
+A plane in $\R^3$ is determined by three non collinear points. 
+However, this fundamental description is not the best starting point for creating the equation of a plane.
+Better is to recognize that a plane, $P$, in $\R^3$ is determined by a single point $Q(x_0, y_0, z_0)$ and a 
+vector $\vec{n} = \vector{a, b, c}$ which is perpendicular to the plane. 
+The vector $\vec{n}$ is called the {\bf normal} vector to the plane.
+In addition to orthogonal, normal is yet another word for perpendicular.
+See the figure below.
+
+\begin{image}
+\begin{tikzpicture}
+\filldraw[fill=blue!50!white, draw=blue] (0, 0) -- (5, 0) -- (8, 2) -- (3, 2) --(0,0);
+\draw[red, fill] (4, 1) circle (0.05) node[right]{$Q$};
+\draw[thick, red, ->] (4,1) -- (4, 4) node[right]{$\vec{n}$};
+\draw (3.7, 1) -- (3.7, 1.3) -- (4, 1.3);
+\node[blue] at (8, 1.5){$P$};
+\node at (4, -1) {The vector $\vec{n}$ is normal to the plane $P$ at the point $Q$};
+\end{tikzpicture}
+\end{image}
+
+Conceptualizing a plane using a point and a normal vector makes it remarkably easy to construct the equation of the plane.
+Consider a point $R(x, y, z)$ in $\R^3$.
+This point is in the plane $P$ passing through the point $Q(x_0, y_0, z_0)$ with normal vector $\vec{n} =\vector{a, b, c}$
+if and only if the vector $\vector{QR}$ is orthogonal to the normal vector $\vec{n}$.
+This condition can be written in terms of the dot product.
+The point $R(x, y, z)$ must satisfy the equation
+\[
+\vec{QR} \dotp \vec{n} = 0
+\]
+This amounts to 
+\[
+\vector{x - x_0, y-y_0, z-z_0} \dotp \vector{a, b, c} = 0
+\]
+From the definition of the dot product we can write
+\[
+a(x-x_0) + b(y-y_0) + c(z-z_0) = 0
+\]
+Hence we have the equation of a plane, and we can see how nicely the ingredients $\vec{n} = \vector{a,b,c}$
+and $Q(x_0, y_0, z_0)$ fit into it.
+Sometimes we prefer to distribute the $a, b$ and $c$ and write the constant on the other side of the equation:
+\[
+ax + by + cz = ax_0 + by_0 + cz_0
+\]
+Finally, we replace the clunky constant with $d$ to write the elegant
+\[
+ax + by + cz = d
+\]
+Thus a linear equation in three variables gives us the equation of a plane in $\R^3$.
+We summarize the results of the preceding computations in the following proposition.
+\begin{proposition}[Equation of a Plane in $\R^3$]
+Suppose that the vector $\vec{n} = \vector{a,b,c}$ is normal to the plane $P$ passing through the point $Q(x_0, y_0, z_0)$.
+Then the equation of the plane can be written as
+\[
+\vec{n} \dotp \vector{x-x_0, y-y_0, z-z_0} = 0 \quad \text{(Canonical vector form)}
+\]
+\[
+a(x-x_0) + b(y-y_0) + c(z-z_0) = 0 \quad \text{(Canonical linear form)}
+\]
+or using $d = ax_0 + by_0 + cz_0$,  we can write the more succinct
+\[
+\vec{n} \dotp \vector{x, y, z} = d \quad \text{(Standard vector form)}
+\]
+\[
+ax+by+cz = d \quad \text{(Standard linear form)}
+\]
+\end{proposition}
+
+\end{document}
+
+
+
+
+
+
+
+
+\begin{align*}
+\vec{n} \dotp \vector{x-x_0, y-y_0, z-z_0} &= 0 \\
+\vec{n} \dotp \vector{x, y, z} &= d \\
+a(x-x_0) + b(y-y_0) + c(z-z_0) &= 0\\
+ax+by+cz &= d
+\end{align*}
+\[
+\vec{n} \dotp \vector{x-x_0, y-y_0, z-z_0} = 0 \\
+\]
+\[
+\vec{n} \dotp \vector{x, y, z} = d \\
+\]
+\[
+a(x-x_0) + b(y-y_0) + c(z-z_0) = 0\\
+\]
+\[
+ax+by+cz = d
+\]
+\begin{align*}
+&\vec{n} \dotp \vector{x-x_0, y-y_0, z-z_0} = 0 \\
+&\vec{n} \dotp \vector{x, y, z} = d \\
+&a(x-x_0) + b(y-y_0) + c(z-z_0) = 0\\
+&ax+by+cz = d
+\end{align*}
+\[
+\vec{n} \dotp \vector{x-x_0, y-y_0, z-z_0} = 0 \\
+\]
+\[
+a(x-x_0) + b(y-y_0) + c(z-z_0) = 0\\
+\]
+\[
+\vec{n} \dotp \vector{x, y, z} = d \\
+\]
+\[
+ax+by+cz = d
+\]
+
+
+
+\end{document}
+
+
+To describe the line analytically, i.e., to find the equation (or equations) of the line,
 we will need the vector associated with these two points and we will also need to take advantage of the end to end method for adding vectors.
 Suppose the line $L$ in $\R^3$ goes through the points $P(x_1, y_1, z_1)$ and $Q(x_2, y_2, z_2)$. The vector from $P$ to $Q$ is given by
 \[
@@ -159,7 +276,6 @@ Since the full solution to the problem involves planes, we will tackle it in the
  
  
  
-
 
 
 
