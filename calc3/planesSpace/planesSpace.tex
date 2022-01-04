@@ -64,6 +64,7 @@ ax + by + cz = d
 \]
 Thus a linear equation in three variables gives us the equation of a plane in $\R^3$.
 We summarize the results of the preceding computations in the following proposition.
+
 \begin{proposition}[Equation of a Plane in $\R^3$]
 Suppose that the vector $\vec{n} = \vector{a,b,c}$ is normal to the plane $P$ passing through the point $Q(x_0, y_0, z_0)$.
 Then the equation of the plane can be written as
@@ -82,9 +83,135 @@ ax+by+cz = d \quad \text{(Standard linear form)}
 \]
 \end{proposition}
 
+To sketch a plane in $\R^3$ it is helpful to find the intersection of the plane with each of the coordinate planes.  
+These are called the {\bf traces} of the plane.
+
+\begin{example}
+Sketch the plane $P$ given by $2x + y + 3z = 6$ by sketching its traces.\\
+To find the trace of $P$ in the $xy$-plane, we set $z = 0$ and we get
+\[
+2x +y = 6
+\]
+which is the equation of a line in the $xy$-plane.
+To find the trace of $P$ in the $xz$-plane, we set $y = 0$ and we get
+\[
+2x +3z = 6
+\]
+which is the equation of a line in the $xz$-plane
+To find the trace of $P$ in the $yz$-plane, we set $x = 0$ and we get
+\[
+ y + 3z = 6
+\]
+which is also the equation of a line in the $yz$-plane.
+Sketching these three lines gives a triangle which determines the plane.
+See the figure below.
+
+\begin{image}
+\begin{tikzpicture}
+\filldraw[blue!20!white] (-4, -4)--  (8.2,-0.8) -- (3.7, 3.1) -- (-5.5, 1.2) -- (-4,-4);
+\filldraw[blue!30!white] (5.7, 0) -- (0, 2) -- (-2.4, -1.8) -- (5.7,0);
+\draw[thick, ->] (0,0) -- (6.3,0) node[right]{$y$};
+\draw[thick, ->] (0,0) -- (0,5.4) node[above]{$z$};
+\draw[thick, ->] (0,0) -- (-3.6,-2.7) node[below, left]{$x$};
+\node at (2.5, -4){The plane $2x+y+3z =6$ along with its traces} ;
+
+\draw[blue] (5.7, 0) -- (0, 2) -- (-2.4, -1.8) -- (5.7,0);
+
+\draw[blue, fill] (5.7, 0) circle (0.05) node[below]{$6$};
+\draw[blue, fill] (0,2) circle (0.05) node[left]{$2$};
+\draw[blue, fill] (-2.4, -1.8) circle (0.05) node[below right]{$3$};
+\end{tikzpicture}
+\end{image}
+
+\end{example}
+
+Two planes are either parallel or they intersect in a line.
+Parallel planes are easy to detect, since they will have the same normal vector and hence their standard forms
+will have the same left hand side
+\[
+ax+by+cz = d_1 \quad \text{and} \quad ax+by+cz = d_2
+\]
+are parallel planes if $d_1 \neq d_2$.
+
+\begin{example}
+Find the intersection of the planes $2x + y + 3z = 6$ and $x - y + z = 2$.\\
+If we can find two points in the intersection, then we can write the vector form of the equation of the line of intersection.
+We will choose two different $z$ values and determine the corresponding $x$ and $y$ coordinates.
+If $z = 0$ the equations of the planes becomes:
+\begin{align*}
+2x+y &= 6\\
+x -y &= 2
+\end{align*}
+Adding these equations gives
+\[
+3x = 8
+\]
+and hence $x = \frac83$.  Plugging this into the bottom equation, we can find $y$:
+\[
+x - y = 2 \Rightarrow \frac83 -y = 2 \Rightarrow y = \frac23
+\]
+Hence, one point of intersection of the two planes is $\left(\frac83, \frac23, 0\right)$.
+Now we let $z = 1$ (for example) in both of the plane equations we get the system
+\begin{align*}
+2x + y &= 3\\
+x - y &= 1
+\end{align*}
+Adding these gives
+\[
+3x = 4 \Rightarrow x = \frac43
+\]
+Again, using the bottom equation, we find $y$:
+\[
+x - y = 1 \Rightarrow \frac43 - y = 1 \Rightarrow y = \frac13
+\]
+Hence the second point of intersection is $\left(\frac43, \frac13, 1\right)$.
+The direction vector of the line of intersection of the two planes is 
+\[
+\vec{v} = \vector{\frac43 - \frac83, \frac13 - \frac23, 1-0} = \vector{-\frac43, -\frac13, 1}
+\]
+Choosing the first point, we can write the equation of the line of intersection of the two planes in vector form as
+\[
+\vector{x, y, z} = \vector{\frac83, \frac23, 0} + t \vector{-\frac43, -\frac13, 1}
+\]
+
+\end{example}
+
+Next, we find the distance between parallel planes.
+
+\begin{example}
+Find the distance between the planes $P_1: x +2y - z = 1$ and $P_2: x+2y-z = 4$.\\
+The normal vector to both planes is $\vec{n} = \vector{1, 2, -1}$. We need one point in each plane and the vector between them.
+On $P_1$ we can take the point $Q_1(1, 0, 0)$ and on $P_2$, we can take the point $Q_2(4, 0, 0)$. The vector between them is 
+\[
+\vec{v} = \vec{Q_1Q_2} = \vector{3,0,0} = 3\vec{i}
+\]
+The distance between the planes is the magnitude of the projection of the vector $\vec{v} = \vec{Q_1Q_2}$ onto the normal vector, $\vec{n}$. We have,
+\begin{align*}
+\text{distance} &= | \proj_{\vec{n}}\vec{v}| \\
+               &= \left| \frac{\vec{v}\dotp \vec{n}}{\vec{n}\dotp \vec{n}} \vec{n}\right|\\
+               &= \left|\frac{3}{9} \vector{1, 2, -1}\right|\\
+               &= \left| \vector{\frac13, \frac23, -\frac13}\right|\\
+               &= \sqrt{\left( \frac13\right)^2 + \left( \frac23\right)^2 + \left( \frac13\right)^2}\\
+               & = \frac{\sqrt{6}}{3}
+\end{align*}
+\end{example}
+
+\begin{image}
+\begin{tikzpicture}
+\filldraw[blue!40!white] (0,0) -- (6,0) -- (10, 2) node[blue!80!white, midway, below]{$P_1$} -- (4, 2) -- (0,0);
+\filldraw[blue!40!white] (2,4) -- (8,4) -- (12, 6) node[blue!80!white, midway, below]{$P_2$} -- (6, 6) -- (2,4);
+\draw[fill] (4,1.5) circle (0.05) node[black, left]{$Q_1$};
+\draw[fill] (8,5.5) circle (0.05) node[right]{$Q_2$};
+\draw[thick, ->] (4, 1.5) -- (8, 5.5) node[midway,below right]{$\vec{v} = \vec{Q_1Q_2}$};
+\draw[thick, ->, orange!80!white] (4, 1.5) -- (4, 5.5) node[above]{$\proj_{\vec{n}}\vec{v}$};
+\draw[red!80!white, ->, thick] (4, 1.5)  -- (4, 3) node[left]{$\vec{n}$};
+\end{tikzpicture}
+\end{image}
+
 \end{document}
 
 
+Distance between skew lines
 
 
 
@@ -276,7 +403,6 @@ Since the full solution to the problem involves planes, we will tackle it in the
  
  
  
-
 
 
 
