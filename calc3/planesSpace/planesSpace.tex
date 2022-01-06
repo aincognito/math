@@ -38,11 +38,11 @@ See the figure below.
 Conceptualizing a plane using a point and a normal vector makes it remarkably easy to construct the equation of the plane.
 Consider a point $R(x, y, z)$ in $\R^3$.
 This point is in the plane $P$ passing through the point $Q(x_0, y_0, z_0)$ with normal vector $\vec{n} =\vector{a, b, c}$
-if and only if the vector $\vector{QR}$ is orthogonal to the normal vector $\vec{n}$.
+if and only if the vector $\avec{QR}$ is orthogonal to the normal vector $\vec{n}$.
 This condition can be written in terms of the dot product.
 The point $R(x, y, z)$ must satisfy the equation
 \[
-\vec{QR} \dotp \vec{n} = 0
+\avec{QR} \dotp \vec{n} = 0
 \]
 This amounts to 
 \[
@@ -183,7 +183,7 @@ Find the distance between the planes $P_1: x +2y - z = 1$ and $P_2: x+2y-z = 4$.
 The normal vector to both planes is $\vec{n} = \vector{1, 2, -1}$. We need one point in each plane and the vector between them.
 On $P_1$ we can take the point $Q_1(1, 0, 0)$ and on $P_2$, we can take the point $Q_2(4, 0, 0)$. The vector between them is 
 \[
-\vec{v} = \vec{Q_1Q_2} = \vector{3,0,0} = 3\vec{i}
+\vec{v} = \avec{Q_1Q_2} = \vector{3,0,0} = 3\vec{i}
 \]
 The distance between the planes is the magnitude of the projection of the vector $\vec{v} = \vec{Q_1Q_2}$ onto the normal vector, $\vec{n}$. We have,
 \begin{align*}
@@ -208,10 +208,297 @@ The distance between the planes is the magnitude of the projection of the vector
 \end{tikzpicture}
 \end{image}
 
+
+\begin{tikzpicture}[
+tangent/.style={
+decoration={
+markings,% switch on markings
+mark=
+at position #1
+with
+{
+\coordinate (tangent point-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,0pt);
+\coordinate (tangent unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (1,0pt);
+\coordinate (tangent orthogonal unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,1);
+}
+},
+postaction=decorate
+},
+use tangent/.style={
+shift=(tangent point-#1),
+x=(tangent unit vector-#1),
+y=(tangent orthogonal unit vector-#1)
+},
+use tangent/.default=1
+]
+
+\draw[->] (-.5,0) -- (6.5,0) node(xline)[right] {$x$};
+\draw[->] (0,-.5) -- (0,5) node(yline)[right] {$y$};
+
+
+\draw (-.5,1.2) to[out=0, in=180] coordinate[pos=.5] (A) (5,2.8);
+\draw[dashed] (A) -- (A |- xline) node[below] {$a$};
+
+\end{tikzpicture}
+
+
+\begin{tikzpicture}[
+tangent/.style={
+decoration={
+markings,% switch on markings
+mark=
+at position #1
+with
+{
+\coordinate (tangent point-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,0pt);
+\coordinate (tangent unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (1,0pt);
+\coordinate (tangent orthogonal unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,1);
+}
+},
+postaction=decorate
+},
+use tangent/.style={
+shift=(tangent point-#1),
+x=(tangent unit vector-#1),
+y=(tangent orthogonal unit vector-#1)
+},
+use tangent/.default=1
+]
+
+\draw[->] (-.5,0) -- (6.5,0) node(xline)[right] {$x$};
+\draw[->] (0,-.5) -- (0,5) node(yline)[right] {$y$};
+
+
+\draw (.5,4) to[out=-90, in=90] coordinate[pos=.5] (B) (4,-.5);
+\draw[dashed] (B) -- (B |- xline) node[below] {$b$};
+
+\end{tikzpicture}
+
+\begin{tikzpicture}[
+tangent/.style={
+decoration={
+markings,% switch on markings
+mark=
+at position #1
+with
+{
+\coordinate (tangent point-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,0pt);
+\coordinate (tangent unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (1,0pt);
+\coordinate (tangent orthogonal unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,1);
+}
+},
+postaction=decorate
+},
+use tangent/.style={
+shift=(tangent point-#1),
+x=(tangent unit vector-#1),
+y=(tangent orthogonal unit vector-#1)
+},
+use tangent/.default=1
+]
+
+\draw[tangent=0.4] (1,1) to[out=70, in=200] (4,4);
+\filldraw[use tangent] (0,0) circle (2pt);
+\draw[use tangent] (-1,0) -- (1,0);
+\end{tikzpicture}
+
+\begin{tikzpicture}[
+tangent/.style={
+decoration={
+markings,% switch on markings
+mark=
+at position #1
+with
+{
+\coordinate (tangent point-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,0pt);
+\coordinate (tangent unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (1,0pt);
+\coordinate (tangent orthogonal unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,1);
+}
+},
+postaction=decorate
+},
+use tangent/.style={
+shift=(tangent point-#1),
+x=(tangent unit vector-#1),
+y=(tangent orthogonal unit vector-#1)
+},
+use tangent/.default=1
+]
+
+\draw[tangent=0.4] (.5,2)
+to[out=-60,in=170] (1.5,1)
+to[out=10,in=-120] (2.5,2);
+\filldraw[use tangent] (0,0) circle (2pt);
+\draw[use tangent] (-1,0) -- (1,0);
+
+\end{tikzpicture}
+
+
+\begin{tikzpicture}[
+tangent/.style={
+decoration={
+markings,% switch on markings
+mark=
+at position #1
+with
+{
+\coordinate (tangent point-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,0pt);
+\coordinate (tangent unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (1,0pt);
+\coordinate (tangent orthogonal unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,1);
+}
+},
+postaction=decorate
+},
+use tangent/.style={
+shift=(tangent point-#1),
+x=(tangent unit vector-#1),
+y=(tangent orthogonal unit vector-#1)
+},
+use tangent/.default=1
+]
+\draw[tangent=0.0] (0,0) sin (1,1) cos (2,0);
+\draw (0,0) sin (-1,-1) cos (-2,0);
+\draw[use tangent] (-2,0) -- (2,0);
+\end{tikzpicture}
+
+
+
+
+
+
+\begin{tikzpicture}[
+tangent/.style={
+decoration={
+markings,% switch on markings
+mark=
+at position #1
+with
+{
+\coordinate (tangent point-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,0pt);
+\coordinate (tangent unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (1,0pt);
+\coordinate (tangent orthogonal unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,1);
+}
+},
+postaction=decorate
+},
+use tangent/.style={
+shift=(tangent point-#1),
+x=(tangent unit vector-#1),
+y=(tangent orthogonal unit vector-#1)
+},
+use tangent/.default=1
+]
+
+
+\draw[->] (-.5,0) -- (6,0) node(xline)[right] {$x$};
+\draw[->] (0,-.5) -- (0,6) node(yline)[right] {$y$};
+\draw[tangent=0.2] (1,1) to[out=-30,in=270]
+coordinate[pos=0.2] (A)
+coordinate[pos=0.7] (B)
+(5,5) node[right] {$y=f(x)$};
+\draw[use tangent, name path=tan] (-2,0) -- (3.5,0) node[right] {$y=L(x)$};
+\draw[dashed] (A) -- (A |- xline) node(E)[below] {$a$};
+\draw[dashed, name path=horiz, shorten <= -.2cm]
+(A -| yline) node[left, xshift=-.2cm] {$f(a)$} -- (A -| B);
+\draw[dashed, name path=vert] (B) -- (B |- xline) node(F)[below] {$x$};
+\fill[name intersections={of=horiz and vert}] (intersection-1) circle (.2pt) coordinate(D);
+\fill[name intersections={of=tan and vert}] (intersection-1) circle (.2pt) coordinate(C);
+\draw[
+thick,
+decoration={brace, mirror, raise=.2cm},
+decorate
+] (E) -- node[below, yshift=-.3cm] {$x-a$} (F);
+\draw[
+thick,
+decoration={brace, raise=.2cm},
+decorate
+] (B) -- node[right, xshift=.2cm] {$E(x)$} (C);
+
+\draw[
+thick,
+decoration={brace, raise=.2cm},
+decorate
+] (C) -- node[right, xshift=.2cm] {$f’(a)(x-a)$} (D);
+
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}[
+tangent/.style={
+decoration={
+markings,% switch on markings
+mark=
+at position #1
+with
+{
+\coordinate (tangent point-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,0pt);
+\coordinate (tangent unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (1,0pt);
+\coordinate (tangent orthogonal unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,1);
+}
+},
+postaction=decorate
+},
+use tangent/.style={
+shift=(tangent point-#1),
+x=(tangent unit vector-#1),
+y=(tangent orthogonal unit vector-#1)
+},
+use tangent/.default=1
+]
+
+
+\draw[->] (-.5,0) -- (7,0) node(xline)[right] {$x$};
+\draw[->] (0,-.5) -- (0,5) node(yline)[right] {$y$};
+\draw[thick, blue, smooth, tangent=0.255, tangent=0.745] (1,2)
+to[out=-60, in=170] coordinate[pos=0.5] (A) (2,1)
+to[out=10, in=190] (5,4)
+to[out=-10, in=120] coordinate[pos=0.5] (B) (6,3) node[right] {$y=f(x)$};
+\fill (A) circle (2pt);
+\fill (B) circle (2pt);
+\draw[shorten <= -.5cm, shorten >= -.5cm] (A) -- (B);
+\draw[thick, use tangent] (-1,0) -- coordinate (C) (1,0);
+\draw[thick, use tangent=2] (-1,0) -- coordinate (D) (1,0);
+\fill (C) circle (2pt);
+\fill (D) circle (2pt);
+\draw[dashed] (A) -- (A |- xline) node[below] {$a$};
+\draw[dashed] (B) -- (B |- xline) node[below] {$b$};
+\draw[dashed] (C) -- (C |- xline) node[below] {$c_1$};
+\draw[dashed] (D) -- (D |- xline) node[below] {$c_2$};
+
+\end{tikzpicture}
+
+
 \end{document}
 
 
 Distance between skew lines
+
+
+
+
+
+\begin{image}
+\begin{tikzpicture}
+\draw (0,0) sin (1,1);
+\draw (2, 0) sin (3, -1);
+\draw  (4,0) cos (5, 1);
+\draw  (6,0) cos (7, -1);
+
+\draw (0, 3) sin (1, 4) cos (2, 3) sin (3, 2) cos (4, 3);
+\end{tikzpicture}
+\end{image}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -403,8 +690,6 @@ Since the full solution to the problem involves planes, we will tackle it in the
  
  
  
-
-
 
 
 
