@@ -25,13 +25,13 @@ In addition to orthogonal, normal is yet another word for perpendicular.
 See the figure below.
 
 \begin{image}
-\begin{tikzpicture}
-\filldraw[fill=blue!50!white, draw=blue] (0, 0) -- (5, 0) -- (8, 2) -- (3, 2) --(0,0);
-\draw[red, fill] (4, 1) circle (0.05) node[right]{$Q$};
-\draw[thick, red, ->] (4,1) -- (4, 4) node[right]{$\vec{n}$};
+\begin{tikzpicture}[rotate = 20]
+\filldraw[fill=blue!30!white, draw=blue] (0, 0) -- (5, 0) -- (8, 2) -- (3, 2) --(0,0);
+\draw[red!70!white, fill] (4, 1) circle (0.05) node[right]{$Q$};
+\draw[thick, red!70!white, ->] (4,1) -- (4, 4) node[right]{$\vec{n}$};
 \draw (3.7, 1) -- (3.7, 1.3) -- (4, 1.3);
 \node[blue] at (8, 1.5){$P$};
-\node at (4, -1) {The vector $\vec{n}$ is normal to the plane $P$ at the point $Q$};
+\node at (4, -1.8) {The vector $\vec{n}$ is normal to the plane $P$ at the point $Q$};
 \end{tikzpicture}
 \end{image}
 
@@ -185,7 +185,7 @@ On $P_1$ we can take the point $Q_1(1, 0, 0)$ and on $P_2$, we can take the poin
 \[
 \vec{v} = \avec{Q_1Q_2} = \vector{3,0,0} = 3\vec{i}
 \]
-The distance between the planes is the magnitude of the projection of the vector $\vec{v} = \vec{Q_1Q_2}$ onto the normal vector, $\vec{n}$. We have,
+The distance between the planes is the magnitude of the projection of the vector $\vec{v} = \avec{Q_1Q_2}$ onto the normal vector, $\vec{n}$. We have,
 \begin{align*}
 \text{distance} &= | \proj_{\vec{n}}\vec{v}| \\
                &= \left| \frac{\vec{v}\dotp \vec{n}}{\vec{n}\dotp \vec{n}} \vec{n}\right|\\
@@ -202,12 +202,74 @@ The distance between the planes is the magnitude of the projection of the vector
 \filldraw[blue!40!white] (2,4) -- (8,4) -- (12, 6) node[blue!80!white, midway, below]{$P_2$} -- (6, 6) -- (2,4);
 \draw[fill] (4,1.5) circle (0.05) node[black, left]{$Q_1$};
 \draw[fill] (8,5.5) circle (0.05) node[right]{$Q_2$};
-\draw[thick, ->] (4, 1.5) -- (8, 5.5) node[midway,below right]{$\vec{v} = \vec{Q_1Q_2}$};
+\draw[thick, ->] (4, 1.5) -- (8, 5.5) node[midway,below right]{$\vec{v} = \avec{Q_1Q_2}$};
 \draw[thick, ->, orange!80!white] (4, 1.5) -- (4, 5.5) node[above]{$\proj_{\vec{n}}\vec{v}$};
 \draw[red!80!white, ->, thick] (4, 1.5)  -- (4, 3) node[left]{$\vec{n}$};
 \end{tikzpicture}
 \end{image}
 
+
+\end{document}
+
+Distance between skew lines
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The pic (below) compiles but not sure if it bakes in xake
+\begin{tikzpicture}
+\begin{scope}[decoration={markings,
+    mark=at position 0.25 with {\arrow[blue,very thick]{>}},
+    mark=at position 0.75 with {\arrowreversed[blue,very thick]{>}}}
+              ]
+\draw[postaction={decorate},thick,->] (0, -3) -- (0,3) node [black,above] {$y$};
+\end{scope}
+\begin{scope}[decoration={markings,
+    mark=at position 0.25 with {\arrowreversed[blue,very thick]{>}},
+    mark=at position 0.75 with {\arrow[blue,very thick]{>}}}
+              ]
+\draw[postaction={decorate},thick,->] (-3, 0) -- (3,0) node [black,right] {$x$};
+\end{scope}
+\begin{scope}[decoration={markings,
+    mark=at position 22mm with {\arrow[red,very thick]{>}}}
+              ]
+\draw[postaction={decorate},thick] plot[domain=0.33:3]      (\x,{1/\x});
+\draw[postaction={decorate},thick] plot[domain=-0.33:-3]    ({\x},{1/\x});
+\draw[postaction={decorate},thick] plot[domain=0.33:3]      (\x,{-1/\x});
+\draw[postaction={decorate},thick] plot[domain=-0.33:-3]    (\x,{-1/\x});
+\end{scope}
+    \end{tikzpicture}
+    
+    
+
+
+
+The next few pics all bake in xake!
 
 \begin{tikzpicture}[
 tangent/.style={
@@ -469,10 +531,10 @@ to[out=-10, in=120] coordinate[pos=0.5] (B) (6,3) node[right] {$y=f(x)$};
 \end{tikzpicture}
 
 
-\end{document}
 
 
-Distance between skew lines
+
+
 
 
 
@@ -544,153 +606,13 @@ ax+by+cz = d
 
 
 
-\end{document}
 
 
-To describe the line analytically, i.e., to find the equation (or equations) of the line,
-we will need the vector associated with these two points and we will also need to take advantage of the end to end method for adding vectors.
-Suppose the line $L$ in $\R^3$ goes through the points $P(x_1, y_1, z_1)$ and $Q(x_2, y_2, z_2)$. The vector from $P$ to $Q$ is given by
-\[
-\vec{v} = \vec{PQ} = \vector{x_2-x_1,y_2-y_1,z_2-z_1}
-\]
-This vector is called the direction vector of the line. 
-A point on the line can be seen as the final point of and vector emanating from $P$ and parallel to $\vec{v}$.
-To describe such points, we rely on the end to end method of vector addition. A point $(x, y, z)$ lies on the line $L$ if
-it is the final point of a vector of the form:
-\[
-\vector{x_1, y_1, z_1} + t\vector{v}
-\]
-where $t$ is any scalar. See the figure below.
-
-\begin{image}
-\begin{tikzpicture}
-\draw[ ->] (0,0) -- (1, 2) ;
-\draw[red, ->] (1,2) -- (5, 3);
-\draw[blue, fill] (3, 2.5) circle (0.05) node[above]{$Q$};
-\draw[blue, fill] (1, 2) circle (0.05)node[above]{$P$};
-\draw[blue, fill] (0,0) circle (0.05) node[left]{$O$};
-\node at (2.5, -0.5) {The vector $\vector{x_1, y_1, z_1} + t\vec{v}$ (in red)};
-\end{tikzpicture}
-\end{image}
- 
-If we associate the vector $\vector{x, y, z}$ with the point $(x, y, z)$, then by the end to end method of adding vectors, we see that
-\[
-\vector{x, y, z} = \vector{x_1, y_1, z_1} + t\vec{v}
-\]
-To simplify the notation somewhat, if the vector $\vec{v}$ has the form $\vector{a, b, c}$, then this equation becomes
-\[
-\vector{x, y, z} = \vector{x_1, y_1, z_1} + t\vector{a, b, c}
-\]
-This is called the {\bf vector form} of the equation of the line $L$ in $\R^3$ which passes through the 
-point $(x_1, y_1, z_1)$ and has direction vector $\vec{v} = \vector{a, b, c}$.\\
-Isolating the variables $x, y$ and $z$ by equating the components of the vector form, we obtain the {\bf parametric form} $L$:
-\begin{align*}
-x &= x_1 + at\\
-y &= y_1 + bt\\
-z &= z_1 + ct
-\end{align*}
-Solving these equations for $t$ (assuming $a, b$ and $c$ are all non-zero) we obtain the {\bf symmetric form} of $L$:
-\[
-\frac{x-x_1}{a} = \frac{y-y_1}{b} = \frac{z-z_1}{c}
-\]
-
-\begin{example}
-Find the vector form, parametric form and symmetric form for the line in $\R^3$ passing through the points $(2, 1, -4)$ and $(-3, 2, 5)$.\\
-The direction vector for the line is 
-\[
-\vec{v} = \vector{-3-2, 2-1, 5-(-4)} = \vector{-5, 1, 9}
-\]
-Note that any non-zero multiple of this vector would also serve as a suitable direction vector for $L$. Using the point $(2, 1, -4)$ we have
-\[
-\vector{x, y, z} = \vector{2, 1, 4} + t\vector{-5, 1, 9} \quad \text{(Vector form)}
-\]
-\begin{align*}
-x &= 2 -5t\\
-y &= 1 + t \quad\text{(Parametric form)}\\
-z &= 4 + 9t\\
-\end{align*}
-and
-\[
-\frac{x-2}{-5} = y-1 = \frac{z-4}{9} \quad \text{(Symmetric form)}
-\]
-\end{example}
-
-\begin{example}
-Find the vector form, parametric form and symmetric form of the line with direction vector $\vec{v} = \vector{2, -7, 4}$ that goes through 
-the point $P = (-1, -3, 5)$. \\
-The vector form is 
-\[
-\vector{x, y, z} = \vector{-1, -3, 5} + t\vector{2, -7, 4}
-\]
-The parametric form is
-\begin{align*}
-x &= -1 +2t\\
-y &= -3 -7t \quad\text{(Parametric form)}\\
-z &= 5 + 4t\\
-\end{align*}
-and the symmetric form
-\[
-\frac{x+1}{2} = \frac{y+3}{-7} = \frac{z-5}{4} 
-\]
-\end{example}
-
-\begin{example}
-Find the point of intersection of the lines
-\[
-L_1: \vector{x, y, z} = \vector{4, 6, -2} + t\vector{1, -2, 2}
-\]
-and 
-\[
-L_2: \vector{x, y, z} = \vector{-3, 5, -1} + t\vector{2, 1, -1}
-\]
-To find the point of intersection, it will be helpful to distinguish between the parameters in the two lines.
-In $L_1$, replace $t$ with $t_1$ and likewise, replace $t$ by $t_2$ in $L_2$. At the point of intersection, the $x$-coordinates are equal.
-This leads to the following equation:
-\begin{align*}
-x-\text{coordinate of} L_1 &= x-\text{coordinate of} L_2\\
-4+t_1 &= -3 + 2t_2
-\end{align*}
-We wish to solve for $t_1$ and $t_2$, so we need another equation. Equating the $y$-coordinates, we get:
-\[
-6 -2t_1 = 5 + t_2
-\]
-Now, we solve the linear system
-\begin{align*}
-4+t_1 &= -3 + 2t_2\\
-6 -2t_1 &= 5 + t_2
-\end{align*}
-Solving the top equation for $t_1$ gives $t_1 = -7 + 2t_2$.  substituting this into the bottom equation gives
-\begin{align*}
-6 - 2(-7+2t_2) &= 5 + t_2\\
-6 + 14 - 4t_2 & = 5 + t_2\\
-15 &= 5t_2\\
-t_2 &=3
-\end{align*}
-Back substituting gives $t_1 = -7 + 2t_2 = -7 + 2(3) = -1$.
-Hence, if the lines intersect, it will be at the point where $t_1 = -1$ on $L_1$ and $t_2 = 3$ on $L_2$.
-Note that it is possible that the lines do not intersect- in which case, plugging these values in would give different $z$-coordinates.
-The vector associated with the point of intersection is
-\begin{align*}
-L_1: \vector{x, y, z} &= \vector{4, 6, -2} + (-1)\vector{1, -2, 2} = \vector{3, 8, -4}\\
-L_2: \vector{x, y, z} &= \vector{-3, 5, -1} + 3\vector{2, 1, -1} = \vector{3, 8, -4}
-\end{align*}
-Since these agree, we can conclude definitively that the lines do indeed intersect and furthermore, the point of intersection is $(3, 8, -4)$.
-\end{example}
-Two lines in $\R^3$ which are not parallel but also do not intersect are called skew lines.  
-A basic problem is to find the distance between such skew lines 
-(finding the distance between parallel lines, while also interesting, turns out to be considerably easier).
-Of great importance in solving this problem is the cross product of the direction vectors of the two skew lines.
-Since the full solution to the problem involves planes, we will tackle it in the next section, which covers planes in $\R^3$.
-
-\end{document}
  
  
  
  
  
- 
- 
-
 
 
 
