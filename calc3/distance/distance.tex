@@ -122,25 +122,34 @@ Squaring both sides of the distance formula, we get the following equation of th
 (x-h)^2 + (y-k)^2 = r^2
 \]
 
-\begin{example}
+\begin{example}[Example 3]
 Find the equation of the circle with center at $(2, -3)$ and radius $4$.\\
-Using the point $(2, -3)$ as $(h,k)$ in the formula above, we immediately obtain the equation of the circle:
+Substituting $h = 2, k = -3$ and $r =4$ into the formula
+\[
+(x-h)^2 + (y-k)^2 = r^2
+\]
+we obtain the equation of the circle:
 \[
 (x-2)^2 + (y+3)^2 = 16
 \]
 \end{example}
 
-\begin{problem}
+\begin{problem}(Problem 3)
 Find the equation of the circle with center at $(-1, 5)$ and radius $3$.
+\begin{multipleChoice}
+\choice{$(x-1)^2 + (y+5)^2 = 9$}
+\choice{$(x+1)^2 + (y-5)^2 = 3$}
+\choice[correct]{$(x+1)^2 + (y-5)^2 = 9$}
+\end{multipleChoice}
 \end{problem}
 
-\begin{example}
+\begin{example}[Example 4]
 Find the center and radius of the circle $x^2 + y^2 -11 = 2x - 4y$\\
 At first, it is not even clear that this equation represents a circle.  Rewrite the equation as
 \[
 x^2 - 2x + y^2 + 4y = 11
 \]
-and complete the squares in both variables. We get
+and {\bf complete the square} in both variables. We get
 \[
 x^2 - 2x + 1 + y^2 + 4y + 4 = 11 + 1 + 4
 \]
@@ -148,12 +157,22 @@ which can be written as
 \[
 (x-1)^2 +(y+2)^2 = 16
 \]
-Hence, this is the equation of a circle with center $(1, -2)$ and radius $4$.
+Comparing this to the standard form of the equation of a circle,
+\[
+(x-h)^2 + (y-k)^2 = r^2
+\]
+we see that this is the equation of a circle with 
+\[
+\text{center: } (1, -2) \quad  \text{and} \quad \text{radius} = 4
+\]
 \end{example}
 
-\begin{problem}
+\begin{problem}(Problem 4)
 Find the center and radius of the circle $6y - 8x= 24 -x^2 - y^2$\\
 The center is $\answer{(4, -3)}$ and the radius is $\answer{7}$\\
+\begin{hint}
+Enter the center in the form $(a,b)$
+\end{hint}
 \end{problem}
 
 The distance formula can also be used to verify the fact that the midpoint of the line segment between the points 
@@ -162,12 +181,29 @@ $(x_1,y_1)$ and $(x_2, y_2)$ is given by
 \text{midpoint} = \left(\frac{x_1+x_2}{2}, \frac{y_1+y_2}{2}\right)
 \]
 
+\begin{example}[Example 5]
+Find the midpoint of the line segment connecting the points $(,)$ and $(,)$.\\
+Following the formula above, the $x$-coordinate of the midpoint is
+\[
+x = \frac{ + }{2} = 
+\]
+and the $y$-coordinate is
+\[
+y = \frac{ + }{2} = 
+\]
+Hence the midpoint is
+\[
+(x,y) = (,)
+\]
+\end{example}
+
 In the following problem, you are asked to verify that the midpoint is indeed equidistant to each of the endpoints of the segment.
-\begin{problem}
+
+\begin{problem}(Problem 5a)
 Show that the midpoint given above is equidistant to the points $(x_1, y_1)$ and $(x_2, y_2)$.
 \end{problem}
 In the next problem, you will verify that the midpoint is actually on the line segment by comparing slopes.
-\begin{problem}
+\begin{problem}(Problem 5b)
 Show that the slopes of the segments from $(x_1, y_1)$ to the midpoint and from the midpoint to $(x_2, y_2)$ are equal.
 \end{problem}
 
@@ -253,7 +289,20 @@ d = \sqrt{d_1^2 +d_2^2} = \sqrt{(x_2 -x_1)^2+(y_2 -y_1)^2+(z_2 -z_1)^2}
 
 %\sqrt{ \sqrt{(x_2 -x_1)^2+(y_2 -y_1)^2}^2 + |z_2 -z_1|^2} 
 
-\begin{problem} Compute the distance between the points $(1, -2, 3)$ and $(-2, 5, 1)$.\\
+\begin{example}[Example 6]
+Compute the distance between the points $(4, 6, -7)$ and $(1,10, 3)$.\\
+Using the distance formula in $\R^3$, with $(x_1, y_1, z_1) = (4,6,-7)$ and $(x_2, y_2, z_2) = (1,10,3)$ we have
+\begin{align*}
+d &= \sqrt{(x_2 -x_1)^2+(y_2 -y_1)^2+(z_2 -z_1)^2}\\
+  &= \sqrt{(1-4)^2+(10-6 )^2+[3-(-7)]^2}\\
+  &= \sqrt{(-3)^2 + 4^2 +10^2}\\
+  &= \sqrt{125}\\
+  &= 5\sqrt 5
+\end{align*}
+
+\end{example}
+\begin{problem}(Problem 6) 
+Compute the distance between the points $(1, -2, 3)$ and $(-2, 5, 1)$.\\
 $d = \answer{\sqrt{62}}$
 \end{problem}
 
@@ -266,18 +315,18 @@ if and only if
 \]
 giving us the equation of a sphere.
 
-\begin{example}
+\begin{example}[Example 7]
 Identify the center and radius of the sphere $x^2 + (y-2)^2 + (z+3)^2 = 5$.\\
 The center is $(0, 2, -3)$ and the radius is $\sqrt 5$.
 \end{example}
 
-\begin{problem}
+\begin{problem}(Problem 7)
 Identify the center and radius of the sphere $(x+1)^2 + y^2 + (z-4)^2 = 144$.\\
 The center is $\answer{(-1, 0, 4)}$ and the radius is $\answer{12}$.
 \end{problem}
 
 
-\begin{example}
+\begin{example}[Example 8]
 Determine if the following equation is that of a sphere, and if it is, determine its center and radius:
 \[
 x^2 + 4x + y^2 - 6x + z^2 + 10z + 29 = 0
@@ -293,16 +342,29 @@ which yields
 This is the equation of a sphere with center $(-2, 3, -5)$ and radius $3$. 
 \end{example}
 
+\begin{problem}(Problem 8)
+Determine if the following equation is that of a sphere, and if it is, determine its center and radius:
+\[
+x^2 -8x + y^2 + 12x + z^2 + 2z + 20 = 0
+\]
+This is/is not the equation of a sphere.\\
+The center is $\answer{(4,-6,-1)}$ and the radius is $\answer{6}$
+\begin{hint}
+Enter the center in the form $(a, b, c)$
+\end{hint}
+\end{problem}
 
-\begin{example}
+\begin{example}[Example 9]
 Describe the intersection of the sphere in the previous examples with each of the coordinate planes.\\
 To find the intersection with the $xy$-plane, we set the $z$-coordinate equal to zero:
 \[
 (x+2)^2 +(y-3)^2 + 5^2 = 9
 \]
-Subtracting 25 from both sides, we see that the right hand side is negative.  Since the sum of squares cannot be negative, this equation has no solutions.
+Subtracting 25 from both sides, we see that the right hand side is negative.  
+Since the sum of squares cannot be negative, this equation has no solutions.
 Geometrically, this means that the sphere does not intersect the $xy$-plane. 
-(This makes sense considering that the $z$-coordinate of the center is 5 units below the $xy$-plane and the radius of the sphere is only 3.)\\
+(This makes sense considering that the $z$-coordinate of the center is 5 units 
+below the $xy$-plane and the radius of the sphere is only 3.)\\
 To find the intersection with the $xz$-plane, we set $y = 0$:
 \[
 (x+2)^2 + (-3)^2 + (z+5)^2 = 9
@@ -318,12 +380,14 @@ which becomes
 (y-3)^2 + (x+5)^2 = 5
 \]
 This is the equation of a circle in the $yz$-plane with center $(0, 3, -5)$ and radius $\sqrt 5$.\\
-In this example, we saw each of the three possibilities for the intersection of a plane and a sphere, namely a circle, a point and no intersection at all.
+In this example, we saw each of the three possibilities for the intersection of a 
+plane and a sphere, namely a circle, a point and no intersection at all.
 \end{example}
 
 
-\begin{problem}
-Determine the center and radius of the sphere whose equation is given below.  Then describe its intersection with each of the coordinate planes.
+\begin{problem}(Problem 9)
+Determine the center and radius of the sphere whose equation is given below.  
+Then describe its intersection with each of the coordinate planes.
 \[
 x^2 - 2x + y^2 + 12y + z^2 - 8z +37 = 0
 \]
@@ -358,8 +422,17 @@ In $\R^3$, the midpoint of the segment between the points $(x_1, y_1, z_1)$ and 
 \text{midpoint} = \left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}, \frac{z_1 + z_2}{2}\right)
 \]
 
-\begin{problem} 
-Use the distance formula to show that the midpoint is, in fact, equidistant to the two points $(x_1, y_1, z_1)$ and $(x_1, y_1, z_1)$.
+\begin{example}[Example 10]
+Find the midpooint of the line segment connecting the points $(0,3,-5)$ and $(5,-11,9)$ in $\R^3$.\\
+Letting $(x_1, y_1, z_1) = (0,3,-5)$ and $(x_2, y_2, z_2) = (5,-11,9)$ the midpoint formula gives
+\[
+\text{midpoint} = \left(\frac{0+5}{2}, \frac{3+(-11)}{2}, \frac{-5+9}{2}\right) = \left(\frac{5}{2}, -4,2\right)
+\]
+\end{example}
+
+\begin{problem}(Problem 10)
+Use the distance formula to show that the midpoint is, in fact, 
+equidistant to the two points $(x_1, y_1, z_1)$ and $(x_1, y_1, z_1)$.
 \end{problem}
 
 In two dimensions, we used slopes to verify that the midpoint was actually on the line segment connecting the endpoints.  
