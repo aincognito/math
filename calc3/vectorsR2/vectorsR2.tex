@@ -24,25 +24,25 @@ where $x$ and $y$ are the {\bf components} of $\vec{v}$.
 \section{Graphing Vectors in $\R^2$}
 The graphical representation of the vector $\vec{v} = \vector{x,y}$ in standard position
 is an arrow emanating from the origin (initial point) and terminating at the point $(x,y)$ (final point).
-Below is a graphical representation of the vector $\vector{1,1}$ in standard position.
+Below is a graphical representation of the vector $\vector{2,2}$ in standard position.
 
 \begin{image}
 \begin{tikzpicture}
 \draw[ ->] (0,0) -- (3.6, 0) node[right]{$x$};
 \draw[ ->] (0,0) -- (0, 3.6) node[above]{$y$};
-\draw[->, blue] (0,0) -- (2, 2) node[right]{$\vector{1,1}$};
+\draw[->, blue] (0,0) -- (2, 2) node[right]{$\vector{2,2}$};
 \draw[blue, fill] (0,0) circle (0.03);
-\draw[thin] (2, 0.15) -- (2, -0.15) node[below]{$1$};
-\draw[thin] (0.15,2) -- (-0.15,2) node[left]{$1$};
+\draw[thin] (2, 0.15) -- (2, -0.15) node[below]{$2$};
+\draw[thin] (0.15,2) -- (-0.15,2) node[left]{$2$};
 \end{tikzpicture}
 \end{image}
 
 It is not necessary to place a vector in standard position.  
 In practical applications of vectors, it is typical to place the initial point of a vector in a position of interest.  
 For example, if the vector represents the velocity of an object, then one would likely choose the initial point to be the location of the object.
-Below is a graphical representation of the vector, $\vector{1,1}$ placed in several different positions.
+Below is a graphical representation of the vector, $\vector{2,2}$ placed in several different positions.
 Since each of the arrows below are the same length and point in the same direction, they represent the same vector.
-Notice that in each copy of the vector, the final point is one unit to the right and one unit up from the initial point. 
+Notice that in each copy of the vector, the final point is two units to the right and two units up from the initial point. 
 \begin{image}
 \begin{tikzpicture}
 %\draw[step=1.0,black,thin] (-2.5,-2.5) grid (2.5,2.5);
@@ -71,7 +71,8 @@ Notice that in each copy of the vector, the final point is one unit to the right
 %\node at (-1.8, -0.3){$-2$};
 %\node at (-0.3,2){$2$};
 %\node at (-0.3, -2){$-2$};
-\node at (0, -3) {Multiple copies of the vector $\vector{1,1}$};
+\draw[step= 0.5 cm,color=gray] (-3,-3) grid (3,3);
+\node at (0, -3.5) {Multiple copies of the vector $\vector{2,2}$};
 \end{tikzpicture}
 \end{image}
 
@@ -84,8 +85,8 @@ The vectors $\vec{i}$ and $\vec{j}$ are shown below.
 \begin{tikzpicture}
 \draw[ <->] (-1.5,0) -- (1.8, 0) node[right]{$x$};
 \draw[<->] (0,-1.5) -- (0,1.8) node[above]{$y$};
-\draw[thick,->, blue] (0,0) -- (1, 0) node[above ]{$\vec{i}$};
-\draw[thick,->, blue] (0,0) -- (0,1) node[right]{$\vec{j}$};
+\draw[thick,->, blue!70!white] (0,0) -- (1, 0) node[midway, below ]{$\vec{i}$};
+\draw[thick,->, blue!70!white] (0,0) -- (0,1) node[midway, left]{$\vec{j}$};
 \draw[blue, fill] (0,0) circle (0.01);
 \draw[thin] (1, 0.1) -- (1, -0.1) node[below]{$1$};
 \draw[thin] (0.1,1) -- (-0.1,1) node[left]{$1$};
@@ -121,7 +122,7 @@ The vector with initial point $P(x_1, y_1)$ and final point $Q(x_2, y_2)$ has co
 \end{tikzpicture}
 \end{image}
 
-\begin{example}
+\begin{example}[Example 1]
 Find the components of the vector from the point $P(-2, 3)$ to the point $Q(1, 1)$ and draw two copies of this vector- the first from the point $P$ to the point $Q$
 and the second in standard position.\\
 The components of $\avec{PQ}$ are $\vector{1-(-2), 1-3} = \vector{3, -2}$.
@@ -146,7 +147,7 @@ The two copies of the vector are shown below.
 
 \end{example}
 
-\begin{problem}
+\begin{problem}(Problem 1)
 Find the components of the vector from $P(-3, 2)$ to the point $Q(2, -1)$ and draw two copies of this vector- the first from the point $P$ to the point $Q$
 and the second in standard position.\\
 \end{problem}
@@ -159,7 +160,7 @@ The magnitude of a vector $\vec{v} = \vector{x,y}$ in $\R^2$ is given by the dis
 |\vec{v}| = |\vector{x,y}| = \sqrt{x^2 +y^2}
 \]
 
-\begin{example}
+\begin{example}[Example 2]
 Find the magnitude of the vector $\vector{1,1}$.\\
 Its magnitude is
 \[
@@ -167,7 +168,7 @@ Its magnitude is
 \]
 \end{example}
 
-\begin{problem}
+\begin{problem}(Problem 2)
 Find the magnitudes of the following vectors:\\
 a) $|\vector{2,3}| = \answer{\sqrt{13}}$\\
 b) $|\vector{-4,2}| = \answer{2\sqrt{5}}$\\
@@ -196,7 +197,7 @@ The first thing to note is that if the scalar is 0, then the resulting vector wi
 \]
 
 The effect of multiplying a vector by a scalar on its magnitude is given in the following proposition.
-\begin{proposition}
+\begin{proposition}[Scaling]
 Given a vector $\vec{v} = \vector{x,y}$ in $\R^2$ and a scalar $c$ in $\R$,
 \[
 |c\vec{v}| = |c| |\vec{v}|
@@ -216,7 +217,7 @@ Write $\vec{v}$ in component form as $\vec{v} = \vector{x,y}$, then
 \end{proposition}
 
 When $c>0$, the vector $c\vec{v}$ has the same direction as $\vec{v}$, and when $c<0$, the
-the vector $c\vec{v}$ has the opposite direction as $\vec{v}$ as illustrated below.
+vector $c\vec{v}$ has the opposite direction as $\vec{v}$, as illustrated below.
 
 
 
@@ -235,7 +236,7 @@ the vector $c\vec{v}$ has the opposite direction as $\vec{v}$ as illustrated bel
 
 A vector with magnitude 1 is called a {\bf unit vector}. Given a vector $\vec{v}$, we will want to find a unit vector in the direction of $\vec{v}$.
 This unit vector will have the form $c\vec{v}$ for some positive scalar $c$.  
-\begin{proposition}
+\begin{proposition}[Unit Vectors]
 The unit vector $\vec{u}$ in the same direction as the vector $\vec{v} \neq \vec{0}$ is given by 
 \[
 \vec{u} = \frac{1}{|\vec{v}|} \vec{v}
@@ -253,7 +254,7 @@ By the previous proposition, we have
 \end{proof}
 \end{proposition}
 
-\begin{example}
+\begin{example}[Example 3]
 Find a unit vector in the same direction as the vector $\vec{v} = \vector{3, -4}$.\\
 First we find the magnitude of $\vec{v}$:
 \[
@@ -266,24 +267,24 @@ By the proposition above, we have
 where $\vec{u}$ is a unit vector in the same direction as $\vec{v}$.
 \end{example}
 
-\begin{problem}
+\begin{problem}(Problem 3a)
 Find a unit vector in the same direction as the vector $\vec{v} = \vector{-8, 15}$.\\
 $\vec{u} = \vector{\answer{-8/17}, \answer{15/17}}$
 \end{problem}
 
-\begin{problem}
+\begin{problem}(Problem 3b)
 Find a unit vector in the opposite direction of the vector $\vec{v} = \vector{9, -12}$.\\
 $\vec{u} = \vector{\answer{-3/5}, \answer{4/5}}$
 \end{problem}
 
 Every non-zero vector in $\R^2$ can be written in terms of its magnitude and a direction angle, i.e. a polar form.
 
-\begin{proposition}
+\begin{proposition}[Polar Form]
 Let $\vec{v} = \vector{x,y} \neq \vector{0,0}$.  Then there is an angle $\theta$ such that $\vec{v} = |\vec{v}| \vector{\cos \theta, \sin \theta}$.
 \begin{proof}
 Since $\cos^2\theta + \sin^2\theta = 1$ for any angle $\theta$, the vector $\vector{\cos \theta, \sin \theta}$ is a unit vector.
 By the previous proposition, the vector $|\vec{v}| \vector{\cos \theta, \sin \theta}$ has magnitude $|\vec{v}|$. 
-Now, if $\vec{v}$ is draw in standard position, and if $\theta$ is the (counterclockwise) angle between $\vec{v}$ and the positive $x$-axis, 
+Now, if $\vec{v}$ is drawn in standard position, and if $\theta$ is the (counterclockwise) angle between $\vec{v}$ and the positive $x$-axis, 
 then the components of $\vec{v}$ are $|\vec{v}|\cos \theta$ and $|\vec{v}|\sin \theta$.  See the figure below.
 
 
@@ -310,7 +311,7 @@ then the components of $\vec{v}$ are $|\vec{v}|\cos \theta$ and $|\vec{v}|\sin \
 \end{proof}
 \end{proposition}
 
-\begin{example}
+\begin{example}[Example 4]
 Find the polar form of the vectors $-2\vec{i}$ and $4\vec{i}-7\vec{j}$.\\
 The angle associate with the vector $-2\vec{i}$ is $\pi$ since the vector points in the direction of the negative $x$-axis.
 So $-2\vec{i} = |-2\vec{i}| \vector{\cos \pi, \sin \pi} = 2\vector{\cos \pi, \sin \pi} (= 2\vector{-1, 0} = \vector{-2, 0})$.\\
@@ -320,7 +321,7 @@ $\sqrt{65}\vector{\cos \theta, \sin\theta}$ where $\theta$ is as above. Note tha
 to find the angle we would add $\pi$ to the inverse tangent.
 \end{example}
 
-\begin{problem}
+\begin{problem}(Problem 4)
 Find the polar form of the vectors $-3\vec{j}$ and $-2\vec{i}+5\vec{j}$.\\
 \end{problem}
 
@@ -335,7 +336,7 @@ Vector subtraction is addition of the negative which results in component-wise s
 \vec{v}_1- \vec{v}_2= \vec{v}_1+ \left(- \vec{v}_2\right)  = \vector{x_1,y_1} + \vector{-x_2, -y_2} = \vector{x_1-x_2,  y_1-y_2}
 \]
 
-\begin{example}
+\begin{example}[Example 5]
 Let $\vec{u} = \vector{-4, 2}$ and $\vec{v} = \vector{5, -7}$.  Compute each of the following:\\
 a) $\vec{u}+\vec{v} = \vector{1, -5}$\\
 b) $\vec{u}-\vec{v} = \vector{-9, 9}$\\
@@ -343,7 +344,7 @@ c) $\vec{v}-\vec{u} = \vector{9, -9}$\\
 d) $2\vec{u}+3\vec{v} = \vector{7, -17}$\\
 \end{example}
 
-\begin{problem}
+\begin{problem}(Problem 5)
 Let $\vec{u} = \vector{2, -3}$ and $\vec{v} = \vector{-1, 6}$.  Compute each of the following:\\
 a) $\vec{u}+\vec{v} = \vector{\answer{1}, \answer{3}}$\\
 b) $\vec{u}-\vec{v} = \vector{\answer{3}, \answer{-9}}$\\
@@ -397,20 +398,20 @@ Given a vector $\vec{v} = \vector{x,y}$, we can use the addition and scalar mult
 \section{Application}
 Forces acting on an object have both magnitude and a direction and hence they can be modeled using vectors.
 
-\begin{example}
-A box on the floor is being pulled to the right by a rope. The weight of the box is $20$ Newtons, the force due to friction is $8$ Newtons, and the 
-force on the rope is $24$ Newtons at an angle of $30^\circ$ to the floor. Find the normal force, $\vec{N}$, acting on the box from the 
+\begin{example}[Example 6]
+A box on the floor is being pulled by a rope. The weight of the box is $20$ Newtons, the force due to friction is $8$ Newtons, and the 
+force on the rope is $24$ Newtons at an angle of $30^\circ$ to the floor. Find the normal force, $\vec{n}$, acting on the box from the 
 floor and resultant force acting on the box, $\vec{F}$.\\
 \begin{image}  
 \begin{tikzpicture}
 \draw (0,0) -- (6,0) node[right]{floor};
 \draw (1.5, 0) -- (1.5, 2) -- (4.5, 2) -- (4.5, 0) node[midway, right]{box};
-\draw[red, ->] (3,0) -- (3, -1) node[below]{weight = $20$N};
-\draw[red, <-] (1, 1) node[left]{friction = $8$N} -- (1.5,1);
-\draw[red, ->] (4.5, 2) -- (6, 3) node[right]{rope force = $24$N};
-\draw[red, ->] (3,2) -- (3, 2.5) node[above]{normal force, $\vec{N}$};
-\draw[red, dashed] (4.5, 2) -- (5.7, 2) ;
-\node[red] at (5.3,2.2){$30^\circ$};
+\draw[blue!70!white, ->] (3,0) -- (3, -1) node[below]{weight = $20$N};
+\draw[blue!70!white, <-] (1, 1) node[left]{friction = $8$N} -- (1.5,1);
+\draw[blue!70!white, ->] (4.5, 2) -- (6, 3) node[right]{rope force = $24$N};
+\draw[blue!70!white, ->] (3,2) -- (3, 2.5) node[above]{normal force, $\vec{n}$};
+\draw[blue!70!white, dashed] (4.5, 2) -- (5.7, 2) ;
+\node[blue!70!white] at (5.3,2.2){$30^\circ$};
 \end{tikzpicture}
 \end{image}
 
@@ -427,7 +428,7 @@ and $y = 24\sin(30^\circ) = 12$ respectively. Hence, this force is $\vec r = \ve
 \begin{tikzpicture}
 \draw(0,0) -- (6.8,0) node[midway, below]{$24 \cos(30^\circ)$} ;
 \draw (6.8, 0) -- (6.8,4) node[midway,right]{$24\sin(30^\circ)$};
-\draw[red, ->] (0,0) -- (6.8, 4) node[midway, above left]{$|\vec{r}| = 24$};
+\draw[blue!70!white, ->] (0,0) -- (6.8, 4) node[midway, above left]{$|\vec{r}| = 24$};
 \node at (1, 0.25) {$30^\circ$};
 \node at (3.4, -1) {The force on the rope is $\vec r = \vector{12\sqrt 3, 12}$};
 \draw (6.5, 0) -- (6.5, 0.3) -- (6.8, 0.3);
@@ -435,16 +436,16 @@ and $y = 24\sin(30^\circ) = 12$ respectively. Hence, this force is $\vec r = \ve
 \end{image}
 
 Assuming that the vertical component of the rope force is not enough to overcome the weight of the box (and thus send it airborne), 
-the floor will exert an upward normal force on the box.  This force will have the form $\vec{N} = \vector{0, n}$ where the positive 
-number $n$ will be determined by the fact that the net vertical component of all forces acting on the box is zero. 
-The resultant force, $\vec{F}$, on the box is the sum of the vectors $\vec{f}, \vec{w}, \vec{N}$ and $\vec{r}$:
+the floor will exert an upward normal force on the box.  This force will have the form $\vec{n} = \vector{0, s}$ where the positive 
+number $s$ will be determined by the fact that the net vertical component of all forces acting on the box is zero. 
+The resultant force, $\vec{F}$, on the box is the sum of the vectors $\vec{f}, \vec{w}, \vec{n}$ and $\vec{r}$:
 \begin{align*}
-\vec{F} &= \vec{f} + \vec{w} + \vec{N} +  \vec{r} \\
-         &= \vector{-8,0} + \vector{0,-20} +\vector{0,n} + \vector{12\sqrt 3, 12} \\
-         &= \vector{12\sqrt 3 -8 , n-8}
+\vec{F} &= \vec{f} + \vec{w} + \vec{n} +  \vec{r} \\
+         &= \vector{-8,0} + \vector{0,-20} +\vector{0,s} + \vector{12\sqrt 3, 12} \\
+         &= \vector{12\sqrt 3 -8 , k-8}
 \end{align*}
-Since the vertical component of the resultant force $\vec{F}$ should be zero, we see that $n = 8$. 
-Thus $\vec{N} = \vector{0,8} = 8\vec{j}$ so that $\vec{F} = \vector{12\sqrt 3 -8, 0} \approx \vector{12.785,0} = 12.785\vec{i}$. Because of this force, 
+Since the vertical component of the resultant force $\vec{F}$ should be zero, we see that $s = 8$. 
+Thus $\vec{n} = \vector{0,8} = 8\vec{j}$ so that $\vec{F} = \vector{12\sqrt 3 -8, 0} \approx \vector{12.785,0} = 12.785\vec{i}$. Because of this force, 
 the box will slide along the floor to the right.
 
 % at a speed equal to the magnitude of this force: 
@@ -457,6 +458,16 @@ the box will slide along the floor to the right.
 
 \end{example}
 \end{document}
+
+
+
+
+
+
+
+
+
+
 
 \begin{image}  
 \begin{tikzpicture}
