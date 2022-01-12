@@ -76,23 +76,7 @@ Notice that in each copy of the vector, the final point is two units to the righ
 \end{tikzpicture}
 \end{image}
 
-Two special vectors in $\R^2$ are $\vec{i} = \vector{1,0}$ and $\vec{j} = \vector{0,1}$.
-These vectors both have a magnitude of $1$, making them {\bf unit vectors}. 
-Vertical bars are used to indicate magnitude, so $|\vec{i}| = 1$ and $|\vec{j}| = 1$.
-The vectors $\vec{i}$ and $\vec{j}$ are shown below.
 
-\begin{image}
-\begin{tikzpicture}
-\draw[ <->] (-1.5,0) -- (1.8, 0) node[right]{$x$};
-\draw[<->] (0,-1.5) -- (0,1.8) node[above]{$y$};
-\draw[thick,->, blue!70!white] (0,0) -- (1, 0) node[midway, below ]{$\vec{i}$};
-\draw[thick,->, blue!70!white] (0,0) -- (0,1) node[midway, left]{$\vec{j}$};
-\draw[blue, fill] (0,0) circle (0.01);
-\draw[thin] (1, 0.1) -- (1, -0.1) node[below]{$1$};
-\draw[thin] (0.1,1) -- (-0.1,1) node[left]{$1$};
-\draw[white] (-1, -2) -- (1, -2);
-\end{tikzpicture}
-\end{image}
 
 Another special vector is the zero vector, $\vec{0} = \vector{0,0}$.  
 This vector has magnitude zero and no direction.  
@@ -234,7 +218,52 @@ vector $c\vec{v}$ has the opposite direction as $\vec{v}$, as illustrated below.
 \end{tikzpicture}
 \end{image}
 
-A vector with magnitude 1 is called a {\bf unit vector}. Given a vector $\vec{v}$, we will want to find a unit vector in the direction of $\vec{v}$.
+\subsection{Unit Vectors}
+
+A vector with magnitude 1 is called a {\bf unit vector}. Two special unit vectors in $\R^2$ are the {\bf standard basis} vectors:
+\[
+\vec{i} = \vector{1,0} \quad \text{and} \quad \vec{j} = \vector{0,1}
+\]
+
+The vectors $\vec{i}$ and $\vec{j}$ are shown below.
+
+\begin{image}
+\begin{tikzpicture}
+\draw[ <->] (-1.5,0) -- (1.8, 0) node[right]{$x$};
+\draw[<->] (0,-1.5) -- (0,1.8) node[above]{$y$};
+\draw[thick,->, blue!70!white] (0,0) -- (1, 0) node[midway, below ]{$\vec{i}$};
+\draw[thick,->, red!70!white] (0,0) -- (0,1) node[midway, left]{$\vec{j}$};
+\draw[blue, fill] (0,0) circle (0.01);
+\draw[thin] (1, 0.1) -- (1, -0.1) node[below]{$1$};
+\draw[thin] (0.1,1) -- (-0.1,1) node[left]{$1$};
+\node at (0, -2) {The standard basis vectors in $\R^2$};
+\draw[white] (-1, -2.5) -- (1, -2.5);
+\end{tikzpicture}
+\end{image}
+
+For any angle $\theta$, the identity 
+\[
+\cos^2 \theta + \sin^2 \theta = 1
+\]
+ implies that the vector 
+ \[
+ \vector{\cos \theta, \sin \theta}
+ \]
+is a unit vector. In $\R^2$, the angle $\theta$ between the positive $x$-axis and a vector placed in standard position can be used to describe the direction of the vector.  
+For this reason, unit vectors are also referred to as {\bf direction vectors}.
+
+\begin{image}
+\begin{tikzpicture}
+\draw[ <->] (-2,0) -- (2, 0) node[right]{$x$};
+\draw[<->] (0,-2) -- (0,2) node[above]{$y$};
+\draw (0,0) circle (1.5);
+\draw[blue!70, ->] (0,0) -- (-1.06, 1.06)  node[above, left]{$\vector{\cos \theta, \sin\theta}$};
+\draw[blue!70] (.2,0) arc (0:135:0.2) node[ midway, right]{$\theta$};
+\node at (0, -2.5) {A unit or {\it direction} vector};
+\end{tikzpicture}
+\end{image}
+
+Given a vector $\vec{v}$, we will want to find a unit vector in the direction of $\vec{v}$.
 This unit vector will have the form $c\vec{v}$ for some positive scalar $c$.  
 \begin{proposition}[Unit Vectors]
 The unit vector $\vec{u}$ in the same direction as the vector $\vec{v} \neq \vec{0}$ is given by 
@@ -282,28 +311,42 @@ Every non-zero vector in $\R^2$ can be written in terms of its magnitude and a d
 \begin{proposition}[Polar Form]
 Let $\vec{v} = \vector{x,y} \neq \vector{0,0}$.  Then there is an angle $\theta$ such that $\vec{v} = |\vec{v}| \vector{\cos \theta, \sin \theta}$.
 \begin{proof}
-Since $\cos^2\theta + \sin^2\theta = 1$ for any angle $\theta$, the vector $\vector{\cos \theta, \sin \theta}$ is a unit vector.
+%Since $\cos^2\theta + \sin^2\theta = 1$ for any angle $\theta$, the vector $\vector{\cos \theta, \sin \theta}$ is a unit vector.
 By the previous proposition, the vector $|\vec{v}| \vector{\cos \theta, \sin \theta}$ has magnitude $|\vec{v}|$. 
 Now, if $\vec{v}$ is drawn in standard position, and if $\theta$ is the (counterclockwise) angle between $\vec{v}$ and the positive $x$-axis, 
-then the components of $\vec{v}$ are $|\vec{v}|\cos \theta$ and $|\vec{v}|\sin \theta$.  See the figure below.
-
-
+then 
+\[
+\cos \theta = \frac{x}{|\vec v|} \quad \text{and} \quad \sin \theta = \frac{y}{|\vec v|}
+\]
+Hence, the components of $\vec{v}$ are 
+\[
+x = |\vec{v}|\cos \theta \quad \text{and} \quad y = |\vec{v}|\sin \theta, 
+\]
+which means that
+\[
+\vec v = \vector{x,y} = \vector{|\vec{v}|\cos\theta,|\vec{v}|\sin\theta} 
+\]
+Factoring out $|\vec v|$ we obtain
+\[
+\vec v = |\vec{v}|\vector{\cos\theta,\sin\theta}
+\]
+as desired. See the figure below.
 \begin{image}
 \begin{tikzpicture}
-\draw[step=1.0,black,thin] (-3.5,-3.5) grid (3.5,3.5);
+%\draw[step=1.0,black,thin] (-3.5,-3.5) grid (3.5,3.5);
 \draw[thick, <->] (-3.5,0) -- (3.5, 0) node[right]{$x$};
-\draw[thick, <->] (0,-3.5) -- (0, 3.5) node[above]{$y$};
-\draw[->, blue, thick] (0,0) -- (-2.5, 2.5) node[above, right]{$\vec{v} = \vector{|\vec{v}|\cos\theta,|\vec{v}|\sin\theta}$};
+\draw[thick, <->] (0,-3) -- (0, 3.5) node[above]{$y$};
+\draw[->, blue, thick] (0,0) -- (-2.5, 2.5) node[above]{$\vec{v} = \vector{|\vec{v}|\cos\theta,|\vec{v}|\sin\theta}$};
 \draw[blue, fill] (0, 0) circle (0.03);
 \draw[red] (0,0) circle (1);
-\draw[red, fill] (-.707, .707) circle (0.03) node[above, left]{$(\cos \theta, \sin\theta)$};
-\draw[red] (.2,0) arc (0:135:0.2) node[red, midway, right]{$\theta$};
+\draw[red, fill, ->] (-.707, .707) circle (0.03) node[above, left]{$(\cos \theta, \sin\theta)$};
+\draw (.3,0) arc (0:135:0.3) node[midway, above right]{$\theta$};
 \node at (2.1, -0.3){$2$};
 \node at (-2, -0.3){$-2$};
 \node at (-0.3,2){$2$};
 \node at (-0.3, -2){$-2$};
-\node[red] at (1.3, -1.5) {The Unit Circle};
-%\node at (0, -3.8) {Two copies of the vector $\vec{PQ} = \vector{3,-2}$};
+\node[red] at (1.3, -1.3) {$x^2 + y^2 = 1$};
+\node at (0, -3.4) {Polar form: $\vec{v} = |\vec{v}| \vector{\cos \theta, \sin \theta}$};
 \end{tikzpicture}
 \end{image}
 
