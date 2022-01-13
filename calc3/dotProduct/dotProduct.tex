@@ -16,12 +16,12 @@ In this section we define the dot product and we use it to find the angle betwee
  
 \maketitle
 The dot product is a special operation that helps us to find the angle between two vectors.
-\begin{definition}[Dot Product in $\R^3$]
+\begin{definition}[Dot Product in $\R^2$]
 If $\vec{v}_1$ and $\vec{v}_2$ are vectors in $\R^2$ given by
 \[
 \vec{v}_1 = \vector{x_1, y_1} \text{  and   } \;\vec{v}_2 = \vector{x_2, y_2}
 \]
-then the dot product $\vec{v}_1 \dotp \vec{v}_2$ is defined by
+then the {\bf dot product} $\vec{v}_1 \dotp \vec{v}_2$ is defined by
 \[
 \vec{v}_1 \dotp \vec{v}_2 = x_1x_2 + y_1y_2
 \]
@@ -29,13 +29,16 @@ then the dot product $\vec{v}_1 \dotp \vec{v}_2$ is defined by
 
 \begin{example}
 Find the indicated dot product: $\left(3\vec{i} -2\vec{j}\right) \dotp \left(2\vec{i} +5\vec{j}\right)$.\\
-According to the definition, we have
-\[
-\left(3\vec{i} -2\vec{j}\right) \dotp \left(2\vec{i} +5\vec{j}\right) = (3)(2)+(-2)(5) = 6-10 = -4
-\]
+Rewriting the vectors in component form and then using the definition of the dot product gives
+\begin{align*}
+\left(3\vec{i} -2\vec{j}\right) \dotp \left(2\vec{i} +5\vec{j}\right) &= \vector{3, -2} \dotp \vector{2, 5}\\
+                                                                      &= (3)(2)+(-2)(5)\\
+                                                                      & = 6-10\\
+                                                                      &= -4
+\end{align*}
 \end{example}
 
-Note that the dot product of two vectors is a real number.  For this reason, the dot product is sometimes called the scalar product.
+Note that the dot product of two vectors is a real number.  For this reason, the dot product is sometimes called the {\bf scalar product}.
 
 \begin{problem}
 Find the indicated dot product: $\left(4\vec{i} + \vec{j}\right) \dotp \left(5\vec{i} -7\vec{j}\right) =\answer{13}$.\\
@@ -141,7 +144,7 @@ magnitudes of the vectors $\vec{v}_1$ and $\vec{v}_2$ and the angle $\theta$ bet
 \vec{v}_1\dotp\vec{v}_2 = |\vec{v}_1|\cdot |\vec{v}_2| \cos\theta
 \]
 \begin{proof}
-According to the Law of Cosines, 
+According to the \link[law of cosines]{https://en.wikipedia.org/wiki/Law_of_cosines}, 
 \[
 |\vec{v}_1 - \vec{v}_2|^2 = |\vec{v}_1|^2 + |\vec{v}_2|^2 - 2|\vec{v}_1|\cdot| \vec{v}_2|\cos \theta
 \]
@@ -149,7 +152,7 @@ See the figure below. By property $(v)$ of the preceding proposition,
 \[
 |\vec{v}_1 - \vec{v}_2|^2 = \left(\vec{v}_1 - \vec{v}_2\right)\dotp \left(\vec{v}_1 - \vec{v}_2\right)
 \]
-which then by properties $(ii)$ and $(iii)$of that same proposition then equals
+which then by properties $(ii)$ and $(iii)$ of that same proposition then equals
 \[
 \vec{v}_1 \dotp \vec{v}_1 + \vec{v}_2 \dotp \vec{v}_2 - 2\left(\vec{v}_1 \dotp \vec{v}_2\right)
 \]
@@ -157,7 +160,7 @@ Using property $(v)$ again, this can be rewritten using magnitudes as follows
 \[
 |\vec{v}_1|^2 + |\vec{v}_2|^2 - 2\left(\vec{v}_1 \dotp \vec{v}_2\right)
 \]
-Comparing this with right hand side of the Law of Cosines we can see that
+Comparing this with right hand side of the law of cosines we can see that
 \[
 - 2\left(\vec{v}_1 \dotp \vec{v}_2\right) = - 2|\vec{v}_1|\cdot| \vec{v}_2|\cos \theta
 \]
@@ -207,7 +210,7 @@ Let $\vec{v}$ and $\vec{w}$ be vectors in $\R^3$. Then the following inequality 
 
 
 \begin{proof}
-Using the properties of the dot product in $\R^3$, we can write the following
+Let $\theta$ be the angle between $\vec v$ and $\vec w$. Using the properties of the dot product in $\R^3$, we can write the following
 \begin{align*}
 |\vec{v} + \vec{w}|^2 &= \left(\vec{v} + \vec{w}\right) \dotp \left(\vec{v} + \vec{w}\right)\\
                         &= \vec{v} \dotp \vec{v} + \vec{w}\dotp \vec{w} + 2\vec{v} \dotp \vec{w}\\
@@ -215,7 +218,7 @@ Using the properties of the dot product in $\R^3$, we can write the following
                         &\leq |\vec{v}|^2 +|\vec{w}|^2 + 2|\vec{v}|\cdot |\vec{w}|\\
                         &= \left(|\vec{v}| + |\vec{w}|\right)^2
 \end{align*}
-where $\theta$ represents the angle between the vectors $\vec{v}$ and $\vec{w}$.  The result follows immediately by taking the square root.
+The result follows immediately by taking the square root.
           
 \begin{image}
 \begin{tikzpicture}
@@ -235,7 +238,7 @@ where $\theta$ represents the angle between the vectors $\vec{v}$ and $\vec{w}$.
 \end{proposition}
 
 Note that the proof gives us a little bit more information about the inequality. If $\cos \theta = 1$, then the inequality becomes equality.  This happens precisely 
-when the vectors ${v}$ and $\vec{w}$ are in the same direction, i.e., when $\theta = 0$. The result holds for vectors in $\R^2$ as well using the same proof.
+when the vectors $\vec{v}$ and $\vec{w}$ are in the same direction, i.e., when $\theta = 0$. The result holds for vectors in $\R^2$ as well using the same proof.
 
 \section{Projection}
 
@@ -304,5 +307,4 @@ as desired.
 \path (1,0) ++(15:.75cm) node{$\alpha$};
 \path (1,0) ++(15:-.75cm) node{$\beta$};
 \end{tikzpicture}
-
 
