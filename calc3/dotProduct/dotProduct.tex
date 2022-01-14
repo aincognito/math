@@ -21,7 +21,7 @@ If $\vec{v}_1$ and $\vec{v}_2$ are vectors in $\R^2$ given by
 \[
 \vec{v}_1 = \vector{x_1, y_1} \text{  and   } \;\vec{v}_2 = \vector{x_2, y_2}
 \]
-then the {\bf dot product} $\vec{v}_1 \dotp \vec{v}_2$ is defined by
+then the \textbf{dot product} $\vec{v}_1 \dotp \vec{v}_2$ is defined by
 \[
 \vec{v}_1 \dotp \vec{v}_2 = x_1x_2 + y_1y_2
 \]
@@ -38,7 +38,7 @@ Rewriting the vectors in component form and then using the definition of the dot
 \end{align*}
 \end{example}
 
-Note that the dot product of two vectors is a real number.  For this reason, the dot product is sometimes called the {\bf scalar product}.
+Note that the dot product of two vectors is a real number.  For this reason, the dot product is sometimes called the \textbf{scalar product}.
 
 \begin{problem}(Problem 1)
 Find the indicated dot product: $\left(4\vec{i} + \vec{j}\right) \dotp \left(5\vec{i} -7\vec{j}\right) =\answer{13}$.\\
@@ -185,7 +185,7 @@ The angle between the vectors $\vec{v}_1$ and $\vec{v}_2$ is the angle in this t
 \begin{proposition}
 Let $\vec{v}_1 = \vector{x_1, y_1, z_1}$ and $\vec{v}_2 = \vector{x_2, y_2, z_2}$
 be vectors in $\R^3$ and let $\theta$ denote the angle between these vectors.  Then, just as in $\R^2$, the dot product can be expressed in terms of the 
-magnitudes of the vectors $\vec{v}_1$ and $\vec{v}_2$ and the angle $\theta$ between them as follows:
+magnitudes of the vectors $\vec{v}_1$ and $\vec{v}_2$ and the angle $\theta$ between them:
 \[
 \vec{v}_1\dotp\vec{v}_2 = |\vec{v}_1|\cdot |\vec{v}_2| \cos\theta
 \]
@@ -194,18 +194,14 @@ According to the \link[law of cosines]{https://en.wikipedia.org/wiki/Law_of_cosi
 \[
 |\vec{v}_1 - \vec{v}_2|^2 = |\vec{v}_1|^2 + |\vec{v}_2|^2 - 2|\vec{v}_1|\cdot| \vec{v}_2|\cos \theta
 \]
-See the figure below. By property $(v)$ of the preceding proposition, 
-\[
-|\vec{v}_1 - \vec{v}_2|^2 = \left(\vec{v}_1 - \vec{v}_2\right)\dotp \left(\vec{v}_1 - \vec{v}_2\right)
-\]
-which then by properties $(ii)$ and $(iii)$ of that same proposition then equals
-\[
-\vec{v}_1 \dotp \vec{v}_1 + \vec{v}_2 \dotp \vec{v}_2 - 2\left(\vec{v}_1 \dotp \vec{v}_2\right)
-\]
-Using property $(v)$ again, this can be rewritten using magnitudes as follows
-\[
-|\vec{v}_1|^2 + |\vec{v}_2|^2 - 2\left(\vec{v}_1 \dotp \vec{v}_2\right)
-\]
+See the figure below. On the other hand, using properties $ii, iii$ and $v$ of the previous propistion, we have
+%By property $(v)$ of the preceding proposition, 
+\begin{align*}
+|\vec{v}_1 - \vec{v}_2|^2 &= \left(\vec{v}_1 - \vec{v}_2\right)\dotp \left(\vec{v}_1 - \vec{v}_2\right)\\
+                          &= \vec{v}_1 \dotp \vec{v}_1 + \vec{v}_2 \dotp \vec{v}_2 - 2\left(\vec{v}_1 \dotp \vec{v}_2\right)\\
+                          &=|\vec{v}_1|^2 + |\vec{v}_2|^2 - 2\left(\vec{v}_1 \dotp \vec{v}_2\right)
+\end{align*}
+
 Comparing this with right hand side of the law of cosines we can see that
 \[
 - 2\left(\vec{v}_1 \dotp \vec{v}_2\right) = - 2|\vec{v}_1|\cdot| \vec{v}_2|\cos \theta
@@ -242,7 +238,12 @@ Noting that $\cos \theta = 0$ precisely when $\theta = 90^\circ$, we can conclud
 \begin{corollary} 
 Two non-zero vectors $\vec{v}_1$ and $\vec{v}_2$ are perpendicular if and only if $\vec{v}_1 \dotp \vec{v}_2 = 0$.
 \end{corollary}
-Perpendicular vectors are commonly called {\bf orthogonal}.\\
+Perpendicular vectors are commonly called \textbf{orthogonal}. However, orthogonality is slightly more general term. 
+The zero vector is considered orthogonal to every other vector since
+\[
+\vec 0 \dotp \vec v = 0
+\]
+for any vector $\vec v$.
 
 \begin{example}[Example 4]
 Find the value of $z$ that makes the vectors orthogonal:
@@ -351,17 +352,17 @@ Given vectors $\vec{v} \neq \vec{0}$ and $\vec{w}$ in $\R^3$ (or $\R^2$), the pr
 
 
 \begin{proof}
-Note that the projection vector is parallel to $\vec{v}$ so it has the form $\lambda \vec{v}$ for some scalar $\lambda$.
-To determine the value of $\lambda$, we will use the fact that the vectors $\vec{v}$ and $\vec{w} - \proj_{\vec{v}} \vec{w}$ are orthogonal, 
+Note that the projection vector is parallel to $\vec{v}$ so it has the form $c \vec{v}$ for some scalar $c$.
+To determine the value of $c$, we will use the fact that the vectors $\vec{v}$ and $\vec{w} - \proj_{\vec{v}} \vec{w}$ are orthogonal, 
 so that their dot product is zero. We have
 \begin{align*}
 0 &= \vec{v} \dotp \left(\vec{w} - \proj_{\vec{v}} \vec{w} \right)\\
-  &= \vec{v} \dotp \left(\vec{w} - \lambda \vec{v}\right)\\
-  &= \vec{v} \dotp \vec{w} - \lambda \left( \vec{v} \dotp \vec{v} \right)
+  &= \vec{v} \dotp \left(\vec{w} - c \vec{v}\right)\\
+  &= \vec{v} \dotp \vec{w} - c \left( \vec{v} \dotp \vec{v} \right)
 \end{align*}
-Solving for $\lambda$ gives
+Solving for $c$ gives
 \[
-\lambda = \frac{\vec{v} \dotp \vec{w}}{\vec{v} \dotp \vec{v}}
+c = \frac{\vec{v} \dotp \vec{w}}{\vec{v} \dotp \vec{v}}
 \]
 as desired.
 \end{proof}
