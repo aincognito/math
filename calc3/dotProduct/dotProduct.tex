@@ -27,8 +27,8 @@ then the {\bf dot product} $\vec{v}_1 \dotp \vec{v}_2$ is defined by
 \]
 \end{definition}
 
-\begin{example}
-Find the indicated dot product: $\left(3\vec{i} -2\vec{j}\right) \dotp \left(2\vec{i} +5\vec{j}\right)$.\\
+\begin{example}[Example 1]
+Find the indicated dot product: $\left(3\vec{i} -2\vec{j}\right) \dotp \left(2\vec{i} +5\vec{j}\right)$\\
 Rewriting the vectors in component form and then using the definition of the dot product gives
 \begin{align*}
 \left(3\vec{i} -2\vec{j}\right) \dotp \left(2\vec{i} +5\vec{j}\right) &= \vector{3, -2} \dotp \vector{2, 5}\\
@@ -40,7 +40,7 @@ Rewriting the vectors in component form and then using the definition of the dot
 
 Note that the dot product of two vectors is a real number.  For this reason, the dot product is sometimes called the {\bf scalar product}.
 
-\begin{problem}
+\begin{problem}(Problem 1)
 Find the indicated dot product: $\left(4\vec{i} + \vec{j}\right) \dotp \left(5\vec{i} -7\vec{j}\right) =\answer{13}$.\\
 \end{problem}
 
@@ -95,6 +95,52 @@ $\vec{v}_2 = |\vec{v}_2| \vector{\cos \beta, \sin \beta}$. To calculate the dot 
 where $\theta = \alpha - \beta$ is the angle between $\vec{v}_1$ and $\vec{v}_2$.
 \end{proof}
 \end{proposition}
+\begin{remark} The angle $\theta$ between two vectors is always taken to be between $0^\circ$ and $180^\circ$, i.e.
+\[
+0^\circ \leq \theta \leq 180^\circ \quad \text{or, in radians} \quad 0 \leq \theta \leq \pi
+\]
+\end{remark}
+
+\begin{example}[Example 2] Use the dot product to find the angle between the vectors 
+\[
+\vec v = \vector{-2,5} \quad \text{and} \quad \vec w = \vector{5,12}
+\]
+Round the answer to the nearest tenth of a degree.\\
+Solving the dot product formula in the previous proposition for $\cos \theta$ gives
+\[
+\cos \theta = \frac{\vec v \dotp \vec w}{|\vec v| \cdot |\vec w|}
+\]
+where $\theta$ is the angle between the vectors. The numerator is
+\[
+\vec v \dotp \vec w = (-2)(5) + (5)(12) = 50
+\]
+and the magnitudes in the denominator are 
+\[
+|\vec v| = \sqrt{ 4 + 25} = \sqrt{29} \quad \text{and} \quad |\vec w| = \sqrt{25 +144 } = 13
+\]
+Hence, the cosine of the angle is
+\[
+\cos \theta = \frac{50}{13\sqrt{29}}
+\]
+and $\theta$ is found using the inverse cosine:
+\[
+\theta = \cos^{-1}\left(\frac{50}{13\sqrt{29}} \right) \approx 44.4^\circ
+\]
+to the nearest tenth of a degree.
+\end{example}
+
+\begin{problem}(Problem 2) Use the dot product to find the angle between the vectors 
+\[
+\vec v = \vector{3,-6} \quad \text{and} \quad \vec w = \vector{2,4}
+\]
+Round the answer to the nearest tenth of a degree.\\
+\[
+\vec v \dotp \vec w = \answer{-18} \quad |v| = \answer{3\sqrt{5}} \quad |w| = \answer{2\sqrt{5}}
+\]
+\[
+\cos \theta = \answer{\frac{-3}{5}} \quad \theta \approx \answer{126.7} \text{ degrees}
+\]
+\end{problem}
 
 
 In three dimensions, a vector does not have a polar form, but we can still use the dot product to find the angle between two vectors.
@@ -109,20 +155,20 @@ then the dot product $\vec{v}_1 \dotp \vec{v}_2$ is defined by
 \]
 \end{definition}
 
-\begin{example}
+\begin{example}[Example 3]
 Compute the indicated dot products:\\
 a) $\vector{1, 2, 3} \dotp \vector{5, -2, 4} = (1)(5)+ (2)(-2) + (3)(4) = 13$\\
 b) $\left(3\vec{i} - 2\vec{k}\right) \dotp \left(4\vec{j} + 5\vec{k}\right) = (3)(0) + (0)(4) + (-2)(5) = -10$
 \end{example}
 
-\begin{problem}
+\begin{problem}(Problem 3)
 Compute the indicated dot products:\\
 a) $\vector{6, -1, 4} \dotp \vector{-3, 7, 2} = \answer{-17}$\\
 b) $\left(2\vec{i} + 4\vec{j} - 3\vec{k}\right) \dotp \left(\vec{i} -5\vec{j}\right) = \answer{-18}$
 \end{problem}
 
 \begin{proposition}[Properties of the Dot Product]
-Let $\vec{v} = \vector{x, y, z}, \vec{v}_1 = \vector{x_1, y_1, z_1}, \vec{v}_2 = \vector{x_2, y_2, z_2}$ and $c$ be any scalar. 
+Let $\vec{v} , \vec{v}_1 $ and $ \vec{v}_2$ be vectors in $\R^3$ and let $c$ be any scalar. 
 Then the following properties hold for the dot product:\\
 i) $\vec{v}_1 \dotp \vec{v}_2 =\vec{v}_2 \dotp \vec{v}_1$\\
 ii) $\left(c\vec{v}_1\right) \dotp \vec{v}_2 =\vec{v}_1 \dotp \left(c\vec{v}_2\right) = c\left(\vec{v}_1 \dotp \vec{v}_2\right)$\\
@@ -198,6 +244,34 @@ Two non-zero vectors $\vec{v}_1$ and $\vec{v}_2$ are perpendicular if and only i
 \end{corollary}
 Perpendicular vectors are commonly called {\bf orthogonal}.\\
 
+\begin{example}[Example 4]
+Find the value of $z$ that makes the vectors orthogonal:
+\[
+\vec v = \vector{-1,-2, 4} \quad \text{and} \quad \vec w = \vector{2,3, z}
+\]
+Computing the dot product gives
+\[
+\vec v \dotp \vec w = (-1)(2) + (-2)(3) + (4)(z) = -8+4z
+\]
+The corollary above tells us that the vectors $\vec v$ and $\vec w$ are orthogonal in $\R^3$ if and only if their 
+dot product is zero. Solving $-8 + 4z = 0$ for $z$
+gives $z = 2$. Hence the vectors $\vec v = \vector{-1,-2, 4}$ and $\vec w = \vector{2,3, 2}$ are orthogonal.
+\end{example}
+
+\begin{problem}(Problem 4a) 
+Find the value of $y$ that makes the vectors orthogonal:
+\[
+\vec v = \vector{3,8, 7} \quad \text{and} \quad \vec w = \vector{-4,y, 5}
+\]
+\[
+y = \answer{-\frac{23}{8}}
+\]
+\end{problem}
+
+\begin{problem}(Problem 4b) Find two vectors, not scalar multiples of one another, that are both orthogonal to the 
+vector $\vector{1,1,1}$ in $\R^3$.
+\end{problem}
+
 
 The shortest distance between two points in $\R^3$ is a straight line.  This basic fact is illustrated in the following proposition.
 
@@ -237,13 +311,16 @@ The result follows immediately by taking the square root.
 
 \end{proposition}
 
-Note that the proof gives us a little bit more information about the inequality. If $\cos \theta = 1$, then the inequality becomes equality.  This happens precisely 
-when the vectors $\vec{v}$ and $\vec{w}$ are in the same direction, i.e., when $\theta = 0$. The result holds for vectors in $\R^2$ as well using the same proof.
+Note that the proof gives us a little bit more information about the inequality. 
+If $\cos \theta = 1$, then the inequality becomes equality.  This happens precisely 
+when the vectors $\vec{v}$ and $\vec{w}$ are in the same direction, i.e., when $\theta = 0$. 
+The result holds for vectors in $\R^2$ as well using the same proof.
 
 \section{Projection}
 
 An important application of the dot product is to compute the projection of one vector onto another.
-The diagrams below show the projection of the vector $\vec{w}$ onto the vector $\vec{v}$. This projection vector is denoted $\proj_{\vec{v}} \vec{w}$
+The diagrams below show the projection of the vector $\vec{w}$ onto the vector $\vec{v}$. 
+This projection vector is denoted $\proj_{\vec{v}} \vec{w}$
 and it is parallel to $\vec{v}$.
 
 \begin{image}
@@ -290,6 +367,32 @@ as desired.
 \end{proof}
 \end{proposition}
 
+\begin{example}[Example 5]
+Let $\vec v = \vector{3,4,7}$ and $\vec w = \vector{8,6,-5}$. Find $\proj_{\vec{v}} \vec{w}$\\
+Computing the relevant dot products gives
+\[
+\vec v \dotp \vec w = 24+24 -35 = 13 \quad \text{and} \quad \vec v \dotp \vec v =9 + 16+49 = 74
+\]
+Hence
+\begin{align*}
+\proj_{\vec{v}} \vec{w} &= \left(\frac{\vec{v} \dotp \vec{w}}{\vec{v} \dotp \vec{v}}\right) \vec{v}\\
+                        &= \left(\frac{13}{74}\right) \vec v\\
+                        &= \frac{13}{74} \vector{3,4,7}\\
+                        &= \vector{\frac{39}{74},\frac{26}{37},\frac{91}{74}}
+\end{align*}
+\end{example}
+
+\begin{problem}(Problem 5)
+Let $\vec v = \vector{1,2,3}$ and $\vec w = \vector{2,5,10}$. Find $\proj_{\vec{v}} \vec{w}$\\
+\[
+\vec v \dotp \vec w = \answer{42} \quad \vec v \dotp \vec v = \answer{129} 
+\]
+\[
+ \proj_{\vec{v}} \vec{w} = \vector{\answer{\frac{42}{129}},\answer{\frac{84}{129}},\answer{\frac{126}{129}}}
+\]
+\end{problem}
+
+
 \end{document}
 
 
@@ -307,4 +410,3 @@ as desired.
 \path (1,0) ++(15:.75cm) node{$\alpha$};
 \path (1,0) ++(15:-.75cm) node{$\beta$};
 \end{tikzpicture}
-
