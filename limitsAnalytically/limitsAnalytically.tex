@@ -96,12 +96,13 @@ find
 \lim_{x \to 3} \left[x^2f(x) - 6g(x)\right].
 \]
 Using limit laws 2, 3, 5 and 6, we can write
-\[
-\lim_{x \to 3} \left[x^2f(x) - 6g(x)\right] = \lim_{x \to 3} x^2 \cdot \lim_{x \to 3}f(x) - 6\cdot\lim_{x \to 3} g(x) 
-\]
-\[
-= 9(-5) - 6(\tfrac12) = -48.
-\]
+\begin{align*}
+\lim_{x \to 3} \left[x^2f(x) - 6g(x)\right] &= \lim_{x \to 3} x^2 f(x) - \lim_{x \to 3} 6g(x) \quad \text{(law 5)} \\
+                                            &= \lim_{x \to 3} x^2 \cdot \lim_{x \to 3}f(x) - 6\cdot\lim_{x \to 3} g(x) \quad \text{(laws 6 and 3)}\\
+                                            &= \lim_{x \to 3} x \cdot \lim_{x \to 3} x \cdot \lim_{x \to 3}f(x) - 6\cdot\lim_{x \to 3} g(x) \quad \text{(law 6)}\\
+                                            &= 3(3) (-5) - 6(\tfrac12) \quad \text{(law 2)}\\
+                                            &= -48.
+\end{align*}
 \end{example}
 
 
