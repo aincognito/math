@@ -81,6 +81,7 @@ Given two non-zero vectors in $\R^2$, $\vec{v}_1 = \vector{x_1, y_1}$ and $\vec{
 \vec{v}_1 \dotp \vec{v}_2 = |\vec{v}_1| \cdot |\vec{v}_2| \cos \theta
 \]
 where $\theta$ is the angle between the two vectors.
+
 \begin{proof}
 Write the vectors in polar form: $\vec{v}_1 = |\vec{v}_1| \vector{\cos \alpha, \sin \alpha}$ and 
 $\vec{v}_2 = |\vec{v}_2| \vector{\cos \beta, \sin \beta}$. To calculate the dot product, first multiply by the magnitudes:
@@ -94,12 +95,15 @@ $\vec{v}_2 = |\vec{v}_2| \vector{\cos \beta, \sin \beta}$. To calculate the dot 
 \end{align*}
 where $\theta = \alpha - \beta$ is the angle between $\vec{v}_1$ and $\vec{v}_2$.
 \end{proof}
+
 \end{proposition}
+
 \begin{remark} The angle $\theta$ between two vectors is always taken to be between $0^\circ$ and $180^\circ$, i.e.
 \[
 0^\circ \leq \theta \leq 180^\circ \quad \text{or, in radians} \quad 0 \leq \theta \leq \pi
 \]
 \end{remark}
+
 
 \begin{example}[Example 2] Use the dot product to find the angle between the vectors 
 \[
@@ -128,6 +132,7 @@ and $\theta$ is found using the inverse cosine:
 \]
 to the nearest tenth of a degree.
 \end{example}
+
 
 \begin{problem}(Problem 2) Use the dot product to find the angle between the vectors 
 \[
@@ -167,6 +172,7 @@ a) $\vector{6, -1, 4} \dotp \vector{-3, 7, 2} = \answer{-17}$\\
 b) $\left(2\vec{i} + 4\vec{j} - 3\vec{k}\right) \dotp \left(\vec{i} -5\vec{j}\right) = \answer{-18}$
 \end{problem}
 
+
 \begin{proposition}[Properties of the Dot Product]
 Let $\vec{v} , \vec{v}_1 $ and $ \vec{v}_2$ be vectors in $\R^3$ and let $c$ be any scalar. 
 Then the following properties hold for the dot product:\\
@@ -184,7 +190,8 @@ The angle between the vectors $\vec{v}_1$ and $\vec{v}_2$ is the angle in this t
 
 \begin{proposition}
 Let $\vec{v}_1 = \vector{x_1, y_1, z_1}$ and $\vec{v}_2 = \vector{x_2, y_2, z_2}$
-be vectors in $\R^3$ and let $\theta$ denote the angle between these vectors.  Then, just as in $\R^2$, the dot product can be expressed in terms of the 
+be vectors in $\R^3$ and let $\theta$ denote the angle between these vectors.  
+Then, just as in $\R^2$, the dot product can be expressed in terms of the 
 magnitudes of the vectors $\vec{v}_1$ and $\vec{v}_2$ and the angle $\theta$ between them:
 \[
 \vec{v}_1\dotp\vec{v}_2 = |\vec{v}_1|\cdot |\vec{v}_2| \cos\theta
@@ -235,9 +242,11 @@ then either
 |\vec{v}_1| = 0, |\vec{v}_2| = 0 \; \text{or } \; \cos \theta = 0
 \]
 Noting that $\cos \theta = 0$ precisely when $\theta = 90^\circ$, we can conclude the following
+
 \begin{corollary} 
 Two non-zero vectors $\vec{v}_1$ and $\vec{v}_2$ are perpendicular if and only if $\vec{v}_1 \dotp \vec{v}_2 = 0$.
 \end{corollary}
+
 Perpendicular vectors are commonly called \textbf{orthogonal}. However, orthogonality is slightly more general term. 
 The zero vector is considered orthogonal to every other vector since
 \[
@@ -352,7 +361,7 @@ Given vectors $\vec{v} \neq \vec{0}$ and $\vec{w}$ in $\R^3$ (or $\R^2$), the pr
 
 
 \begin{proof}
-Note that the projection vector is parallel to $\vec{v}$ so it has the form $c \vec{v}$ for some scalar $c$.
+Since the projection vector is parallel to $\vec{v}$ so it has the form $c \vec{v}$ for some scalar $c$.
 To determine the value of $c$, we will use the fact that the vectors $\vec{v}$ and $\vec{w} - \proj_{\vec{v}} \vec{w}$ are orthogonal, 
 so that their dot product is zero. We have
 \begin{align*}
