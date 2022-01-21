@@ -50,24 +50,25 @@ Note that the determinant of a matrix is a number.
 
 \begin{definition}[Determinant of $3 \times 3$ Matrix]
 The determinant of a $3 \times 3$ matrix is given in terms of determinants of $2 \times 2$ sub-matrices:
-%\begin{align*}
 \[
 \begin{vmatrix}
 a & b & c\\
 d & e & f\\
 g & h & i
 \end{vmatrix}
-= a\begin{vmatrix}
+= a \cdot
+\begin{vmatrix}
  e & f\\
  h & i
 \end{vmatrix}
--b
+-b\cdot
 \begin{vmatrix}
 
 d  & f\\
 g  & i
 \end{vmatrix}
-+c\begin{vmatrix}
++c \cdot
+\begin{vmatrix}
 d & e \\
 g & h 
 \end{vmatrix}
