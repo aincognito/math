@@ -18,16 +18,18 @@ In this section we describe lines in space analytically.
 
 A line in $\R^3$ is determined by two points. To describe the line analytically, i.e., to find the equation (or equations) of the line,
 we will need the vector associated with these two points and we will also need to take advantage of the end to end method for adding vectors.
-Suppose the line $L$ in $\R^3$ goes through the points $P(x_1, y_1, z_1)$ and $Q(x_2, y_2, z_2)$. The vector from $P$ to $Q$ is given by
+Suppose the line $L$ in $\R^3$ goes through the points $P(x_0, y_0, z_0)$ and $Q(x_1, y_1, z_1)$. The vector from $P$ to $Q$ is given by
 \[
-\vec{v} = \avec{PQ} = \vector{x_2-x_1,y_2-y_1,z_2-z_1}
+\vec{v} = \avec{PQ} = \vector{x_1-x_0,y_1-y_0,z_1-z_0} = \vector{a,b,c}
 \]
-This vector is called the direction vector of the line. 
-A point on the line can be seen as the final point of and vector emanating from $P$ and parallel to $\vec{v}$.
+This vector $\vec v = \vector{a,b,c}$ is called the \textbf{direction vector} of the line. 
+A point $(x, y, z)$ on the line $L$ can be seen as the final point of a vector which is the sum of two vectors.
+The first vector is a vector from the origin to the point $P(x_0, y_0, z_0)$.
+The second vector is a multiple of the direction vector of the line, $\vec v = \vector{a, b, c}$.
 To describe such points, we rely on the end to end method of vector addition. A point $(x, y, z)$ lies on the line $L$ if
 it is the final point of a vector of the form:
 \[
-\vector{x_1, y_1, z_1} + t\vector{v}
+\vector{x_0, y_0, z_0} + t\vector{a, b, c}
 \]
 where $t$ is any scalar. See the figure below.
 
@@ -35,73 +37,111 @@ where $t$ is any scalar. See the figure below.
 \begin{tikzpicture}
 \draw[ ->] (0,0) -- (1, 2) ;
 \draw[red, ->] (1,2) -- (5, 3);
+\draw[blue, ->] (0,0) -- (5,3);
 \draw[blue, fill] (3, 2.5) circle (0.05) node[above]{$Q$};
 \draw[blue, fill] (1, 2) circle (0.05)node[above]{$P$};
 \draw[blue, fill] (0,0) circle (0.05) node[left]{$O$};
-\node at (2.5, -0.5) {The vector $\vector{x_1, y_1, z_1} + t\vec{v}$ (in red)};
+\draw[fill] (5, 3) circle (0.05) node[above]{$(x, y, z)$};
+\node at (2.5, -0.5) {The vector $\vector{x_0, y_0, z_0} + t\vector{a, b, c}$ (in blue)};%
 \end{tikzpicture}
 \end{image}
  
-If we associate the vector $\vector{x, y, z}$ with the point $(x, y, z)$, then by the end to end method of adding vectors, we see that
-\[
-\vector{x, y, z} = \vector{x_1, y_1, z_1} + t\vec{v}
-\]
-To simplify the notation somewhat, if the vector $\vec{v}$ has the form $\vector{a, b, c}$, then this equation becomes
-\[
-\vector{x, y, z} = \vector{x_1, y_1, z_1} + t\vector{a, b, c}
-\]
-This is called the {\bf vector form} of the equation of the line $L$ in $\R^3$ which passes through the 
-point $(x_1, y_1, z_1)$ and has direction vector $\vec{v} = \vector{a, b, c}$.\\
-Isolating the variables $x, y$ and $z$ by equating the components of the vector form, we obtain the {\bf parametric form} $L$:
-\begin{align*}
-x &= x_1 + at\\
-y &= y_1 + bt\\
-z &= z_1 + ct
-\end{align*}
-Solving these equations for $t$ (assuming $a, b$ and $c$ are all non-zero) we obtain the {\bf symmetric form} of $L$:
-\[
-\frac{x-x_1}{a} = \frac{y-y_1}{b} = \frac{z-z_1}{c}
-\]
+If we associate the vector $\vector{x, y, z}$ with the point $(x, y, z)$, then we obtain the vector form of the equation of a line in $R^3$.
 
-\begin{example}
-Find the vector form, parametric form and symmetric form for the line in $\R^3$ passing through the points $(2, 1, -4)$ and $(-3, 2, 5)$.\\
+\begin{definition}[Vector Form of a Line in Space]
+A point $(x, y, z)$ is on the line through the point $P(x_0, y_0, z_0)$ with direction vector $\vec v = \vector{a, b, c}$
+if
+\[
+\vector{x, y, z} = \vector{x_0, y_0, z_0} + t\vector{a, b, c}
+\]
+for some value of the parameter $t$.
+This is called the {\bf vector form} of the equation of a line in $\R^3$.
+\end{definition}
+
+If we equate the components of the vectors in the above definition, we obtain another way of describing the line.
+
+\begin{definition}[Parametric Form of the Equation of a Line in Space]
+The \textbf{parametric form} of the equation of a line in $R^3$ which passes through the point $(x_0, y_0, z_0)$ with 
+direction vector $\vector{a, b, c}$ is given by
+\begin{align*}
+x &= x_0 + at\\
+y &= y_0 + bt\\
+z &= z_0 + ct
+\end{align*}
+\end{definition}
+Note that the parametric form of the equation of a line in $R^3$ consists of three equations.
+There is yet another way to describe a line in space. If we solve each of the three equations in the parametric form for the parameter $t$, 
+we obtain the following.
+\begin{definition}[Symmetric Form of the Equation of a Line in Space]
+The \textbf{symmetric form} of the equation of a line in $R^3$ which passes through the point $(x_0, y_0, z_0)$ with 
+direction vector $\vector{a, b, c}$ is given by
+\[
+\frac{x-x_0}{a} = \frac{y-y_0}{b} = \frac{z-z_0}{c}
+\]
+\end{definition}
+\begin{remark}
+It is only possible to create the symmetric form of the equation of a line in space if \textbf{each} of the components of 
+the direction vector $\vector{a, b, c}$ are non-zero.
+\end{remark}
+
+
+\begin{example}[Example 1]
+Find the vector form, parametric form and symmetric form of the line with direction 
+vector $\vec{v} = \vector{2, -7, 4}$ that goes through the point $P(-1, -3, 5)$. \\
+Substituting $(-1, -3, 5)$ for $(x_0, y_0, z_0)$ and $\vector{2, -7, 4}$ for $\vector{a,b,c}$ gives the following.
+The vector form of the line is 
+\[
+\vector{x, y, z} = \vector{-1, -3, 5} + t\vector{2, -7, 4} \quad \text{(Vector form)}
+\]
+The parametric form of the line is
+\begin{align*}
+x &= -1 +2t\\
+y &= -3 -7t \quad\quad \text{(Parametric form)}\\
+z &= 5 + 4t\\
+\end{align*}
+The symmetric form of the line is
+\[
+\frac{x+1}{2} = \frac{y+3}{-7} = \frac{z-5}{4} \quad \text{(Symmetric form)}
+\]
+\end{example}
+
+\begin{problem}(Problem 1)
+Find the vector form, parametric form and symmetric form of the line with direction 
+vector $\vec{v} = \vector{-6, 12, 5}$ that goes through the point $P(13, 2, -7)$. \\
+\end{problem}
+
+\begin{example}[Example 2]
+Find the vector form, parametric form and symmetric form for the line in $\R^3$ passing 
+through the points $(2, 1, -4)$ and $(-3, 2, 5)$.\\
 The direction vector for the line is 
 \[
 \vec{v} = \vector{-3-2, 2-1, 5-(-4)} = \vector{-5, 1, 9}
 \]
-Note that any non-zero multiple of this vector would also serve as a suitable direction vector for $L$. Using the point $(2, 1, -4)$ we have
+Note that any non-zero multiple of this vector would also serve as a suitable direction vector for $L$. 
+Using the point $(2, 1, -4)$ we have
 \[
 \vector{x, y, z} = \vector{2, 1, 4} + t\vector{-5, 1, 9} \quad \text{(Vector form)}
 \]
 \begin{align*}
 x &= 2 -5t\\
-y &= 1 + t \quad\text{(Parametric form)}\\
+y &= 1 + t \quad\quad\text{(Parametric form)}\\
 z &= 4 + 9t\\
 \end{align*}
-and
 \[
 \frac{x-2}{-5} = y-1 = \frac{z-4}{9} \quad \text{(Symmetric form)}
 \]
 \end{example}
 
-\begin{example}
-Find the vector form, parametric form and symmetric form of the line with direction vector $\vec{v} = \vector{2, -7, 4}$ that goes through 
-the point $P = (-1, -3, 5)$. \\
-The vector form is 
-\[
-\vector{x, y, z} = \vector{-1, -3, 5} + t\vector{2, -7, 4}
-\]
-The parametric form is
-\begin{align*}
-x &= -1 +2t\\
-y &= -3 -7t \quad\text{(Parametric form)}\\
-z &= 5 + 4t\\
-\end{align*}
-and the symmetric form
-\[
-\frac{x+1}{2} = \frac{y+3}{-7} = \frac{z-5}{4} 
-\]
-\end{example}
+\begin{problem}(Problem 2a)
+Find the vector form, parametric form and symmetric form for the line in $\R^3$ passing 
+through the points $(8, -11, 17)$ and $(4, -9, 16)$.\\
+\end{problem}
+
+\begin{problem}(Problem 2b)
+Find the vector form, parametric form and symmetric form for the line in $\R^3$ passing through the origin 
+and parallel to the line passing though the points $(5, 6, 7)$ and $(2, 4, 6)$.\\
+\end{problem}
+
 
 \begin{example}
 Find the point of intersection of the lines
@@ -113,13 +153,12 @@ and
 L_2: \vector{x, y, z} = \vector{-3, 5, -1} + t\vector{2, 1, -1}
 \]
 To find the point of intersection, it will be helpful to distinguish between the parameters in the two lines.
-In $L_1$, replace $t$ with $t_1$ and likewise, replace $t$ by $t_2$ in $L_2$. At the point of intersection, the $x$-coordinates are equal.
-This leads to the following equation:
-\begin{align*}
-x-\text{coordinate of} L_1 &= x-\text{coordinate of} L_2\\
-4+t_1 &= -3 + 2t_2
-\end{align*}
-We wish to solve for $t_1$ and $t_2$, so we need another equation. Equating the $y$-coordinates, we get:
+In $L_1$, replace $t$ with $t_1$ and likewise, replace $t$ by $t_2$ in $L_2$. 
+At the point of intersection, the $x$-coordinates are equal:
+\[
+4+t_1 = -3 + 2t_2
+\]
+We wish to solve for $t_1$ and $t_2$, so we need another equation. Equating the $y$-coordinates gives:
 \[
 6 -2t_1 = 5 + t_2
 \]
@@ -128,7 +167,7 @@ Now, we solve the linear system
 4+t_1 &= -3 + 2t_2\\
 6 -2t_1 &= 5 + t_2
 \end{align*}
-Solving the top equation for $t_1$ gives $t_1 = -7 + 2t_2$.  substituting this into the bottom equation gives
+Solving the top equation for $t_1$ gives $t_1 = -7 + 2t_2$.  Substituting this into the bottom equation gives
 \begin{align*}
 6 - 2(-7+2t_2) &= 5 + t_2\\
 6 + 14 - 4t_2 & = 5 + t_2\\
@@ -137,19 +176,22 @@ t_2 &=3
 \end{align*}
 Back substituting gives $t_1 = -7 + 2t_2 = -7 + 2(3) = -1$.
 Hence, if the lines intersect, it will be at the point where $t_1 = -1$ on $L_1$ and $t_2 = 3$ on $L_2$.
-Note that it is possible that the lines do not intersect- in which case, plugging these values in would give different $z$-coordinates.
+Note that it is possible that the lines do not intersect- in which case, plugging these values in would 
+give different $z$-coordinates.
 The vector associated with the point of intersection is
 \begin{align*}
 L_1: \vector{x, y, z} &= \vector{4, 6, -2} + (-1)\vector{1, -2, 2} = \vector{3, 8, -4}\\
 L_2: \vector{x, y, z} &= \vector{-3, 5, -1} + 3\vector{2, 1, -1} = \vector{3, 8, -4}
 \end{align*}
-Since these agree, we can conclude definitively that the lines do indeed intersect and furthermore, the point of intersection is $(3, 8, -4)$.
+Since the $z$ components agree, we can conclude definitively that the lines do indeed intersect and furthermore, 
+the point of intersection is $(3, 8, -4)$.
 \end{example}
 
-we next solve the classic problem of finding the distance between a point and a line.
+Next, we solve the classic problem of finding the distance between a point and a line.
 \begin{example}
 Find the distance between the line $\vector{x,y,z} = \vector{-2,3,1} + t \vector{4,-1,5}$ and the point $Q(1, 2, 3)$.\\
-First, we verify that the given point is not actually on the line. To this end, let's examine the parametric equation for the $x$-coordinate:
+First, we verify that the given point is not actually on the line. 
+To this end, let's examine the parametric equation for the $x$-coordinate:
 \[
 x = -2 + 4t
 \]
@@ -165,15 +207,17 @@ Now we will compare the $y$-coordinates (and $z$ if necessary) when $t= 3/4$:
 y = 3 - t = 3 -\frac34 = \frac94 \neq 2
 \]
 Hence the point is not on the line.
-From the given vector form of the line, we can see that the point $P(-2, 3, 1)$ is on the line.  Consider the vector from this point to the point $Q$:
+From the given vector form of the line, we can see that the point $P(-2, 3, 1)$ is on the line.  
+Consider the vector from this point to the point $Q$:
 \[
 \vec{w} = \avec{PQ} = \vector{3, -1, 2}
 \]
-Next, we project this vector onto the direction vector of the line, $\vec{v} = \vector{4, -1, 5}$ :
+Project this vector onto the direction vector of the line, $\vec{v} = \vector{4, -1, 5}$ :
 \[
 \proj_{\vec{v}}\vec{w} = \frac{\vec{v} \dotp \vec{w}}{\vec{v} \dotp \vec{v}}\vec{v} = \frac{23}{14}\vector{4,-1,5}
 \]
-The distance between the point $Q(1, 2, 3)$ and the line is the magnitude of the vector $\vec{n} = \vec{w} - \proj_{\vec{v}}\vec{w}$ (see the figure below)
+The distance between the point $Q(1, 2, 3)$ and the line is the magnitude of the 
+vector $\vec{n} = \vec{w} - \proj_{\vec{v}}\vec{w}$ (see the figure below)
 
 \begin{image}
 \begin{tikzpicture}
@@ -218,13 +262,34 @@ and the distance we seek is
 
 Another classic problem is to find the distance between two lines.
 Two lines in $\R^3$ which do not intersect are either parallel or {\bf skew}.  
-The distance between parallel lines can be found using the method of the previous example by taking any point from one of the lines,
+The distance between parallel lines can be found using the method of the previous example by 
+taking any point from one of the lines,
 and finding its distance to the other line.
 The situation for skew lines is more complicated, involving cross products and planes.
 In the next section, we will study planes in $\R^3$ and at the end of that section we will get back to the 
 problem of finding the distance between two skew lines.
 
-
+\end{document}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 \begin{image}
 \begin{tikzpicture}
 \draw[blue!10!white, thick] (0,10) -- (10, 10) ;
@@ -330,15 +395,13 @@ problem of finding the distance between two skew lines.
 
 
 
-\end{document}
- 
- 
- 
- 
- 
- 
- 
 
+ 
+ 
+ 
+ 
+ 
+ 
 
 
 
