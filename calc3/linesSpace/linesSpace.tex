@@ -143,6 +143,26 @@ and parallel to the line passing though the points $(5, 6, 7)$ and $(2, 4, 6)$.\
 \end{problem}
 
 
+\begin{problem}(Problem 3c)
+Which of the following lines are parallel? Are any of them identical?
+\begin{align*}
+L_1:&\quad \vector{x, y, z} = \vector{3,-1,4} + t\vector{-2,7,-2}\\
+L_2:& \quad x = 5-4t,\; y = -8+ 14t,\; z = 6-4t\\
+L_3:& \quad \frac{x - 4 }{2} = \frac{3 -y}{7}= \frac{z - 8}{2}\\
+L_4:&\quad  \text{The line passing through the points} \;\; P(1, 6, 2)\;\; \text{and} \;\; Q(5, -8, 6)
+\end{align*}
+\begin{hint}
+Parallel lines have parallel direction vectors
+\end{hint}
+\begin{hint}
+The next hint contains the answer!
+\end{hint}
+\begin{hint}
+Lines $L_1, L_2$ and $L_4$ are identical and $L_3$ is parallel to them
+\end{hint}
+\end{problem}
+
+
 \begin{example}[Example 3]
 Find the point of intersection of the lines
 \[
@@ -187,9 +207,22 @@ Since the $z$ components agree, we can conclude definitively that the lines do i
 the point of intersection is $(3, 8, -4)$.
 \end{example}
 
+\begin{problem}(Problem 3)
+Find the point of intersection of the lines
+\[
+L_1: \vector{x, y, z} = \vector{-2, 1, 5} + t\vector{3, 1, -2}
+\]
+and 
+\[
+L_2: \vector{x, y, z} = \vector{3, -6, -3} + s\vector{1, -4, -3}
+\]
+The point of intersection is $\answer{(1, 2, 3)}$
+\end{problem}
+
+
 Next, we solve the classic problem of finding the distance between a point and a line.
 
-\begin{example}[4.]
+\begin{example}[Example 4]
 Find the distance between the line $\vector{x,y,z} = \vector{-2,3,1} + t \vector{4,-1,5}$ and the point $Q(1, 2, 3)$.\\
 First, we verify that the given point is not actually on the line. 
 To this end, let's examine the parametric equation for the $x$-coordinate:
@@ -270,13 +303,13 @@ The situation for skew lines is more complicated, involving cross products and p
 In the next section, we will study planes in $\R^3$ and at the end of that section we will get back to the 
 problem of finding the distance between two skew lines.
 We conclude this section with line segments and in particular, we will verify the 
-midpoint formula for $\R^3$ of section 1.1.  In problem XX of that section, we used the distance formula to 
+midpoint formula for $\R^3$ of section 1.1.  In problem 10 of that section, we were asked to use the distance formula to 
 show that the point 
 \[
 \text{M} = \left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}, \frac{z_1 + z_2}{2}\right)
 \]
 is equidistant to the points $P(x_1, y_1, z_1)$ and $Q(x_2, y_2, z_2)$. 
-It remains to show that the point M is on the line segment between P and Q.
+Having done that, it remains to show that the point M is on the line segment between P and Q.
 
 \begin{definition}
 The parametric form of the line segment between the points $P(x_1, y_1, z_1)$ and $Q(x_2, y_2, z_2)$
@@ -292,10 +325,11 @@ where the parameter $t$ is between 0 and 1, i.e., $0 \leq t \leq 1$.
 The reader should verify that this corresponds exactly to the equation of the line containg the points P and Q.
 In other words, the parametric equations of the line segment are identical to those of the line. 
 The only difference is the restriction of the paramenter $t$ to the interval $[0,1]$. 
-\begin{problem}(5.)
+
+\begin{problem}(Problem 5)
 Use the parametric equations of the line segment between the points  $P(x_1, y_1, z_1)$ and $Q(x_2, y_2, z_2)$
-to determine which points correspond the the $t$-values $0, 1/2, $ and $1$. I
-s one of these the midpoint,M, of the line segment?
+to determine which points correspond the the $t$-values $0, 1/2, $ and $1$. 
+Is one of these the midpoint,M, of the line segment?
 \end{problem}
  
 
