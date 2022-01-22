@@ -143,7 +143,7 @@ and parallel to the line passing though the points $(5, 6, 7)$ and $(2, 4, 6)$.\
 \end{problem}
 
 
-\begin{example}
+\begin{example}[Example 3]
 Find the point of intersection of the lines
 \[
 L_1: \vector{x, y, z} = \vector{4, 6, -2} + t\vector{1, -2, 2}
@@ -188,7 +188,8 @@ the point of intersection is $(3, 8, -4)$.
 \end{example}
 
 Next, we solve the classic problem of finding the distance between a point and a line.
-\begin{example}
+
+\begin{example}[4.]
 Find the distance between the line $\vector{x,y,z} = \vector{-2,3,1} + t \vector{4,-1,5}$ and the point $Q(1, 2, 3)$.\\
 First, we verify that the given point is not actually on the line. 
 To this end, let's examine the parametric equation for the $x$-coordinate:
@@ -268,6 +269,35 @@ and finding its distance to the other line.
 The situation for skew lines is more complicated, involving cross products and planes.
 In the next section, we will study planes in $\R^3$ and at the end of that section we will get back to the 
 problem of finding the distance between two skew lines.
+We conclude this section with line segments and in particular, we will verify the 
+midpoint formula for $\R^3$ of section 1.1.  In problem XX of that section, we used the distance formula to 
+show that the point 
+\[
+\text{M} = \left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}, \frac{z_1 + z_2}{2}\right)
+\]
+is equidistant to the points $P(x_1, y_1, z_1)$ and $Q(x_2, y_2, z_2)$. 
+It remains to show that the point M is on the line segment between P and Q.
+
+\begin{definition}
+The parametric form of the line segment between the points $P(x_1, y_1, z_1)$ and $Q(x_2, y_2, z_2)$
+is given by
+\begin{align*}
+x &= x_1 + t(x_2 - x_1)\\
+y &= y_1 + t(y_2 - y_1)\\
+z &= z_1 + t(z_2 - z_1)\\
+\end{align*}
+where the parameter $t$ is between 0 and 1, i.e., $0 \leq t \leq 1$.
+\end{definition}
+
+The reader should verify that this corresponds exactly to the equation of the line containg the points P and Q.
+In other words, the parametric equations of the line segment are identical to those of the line. 
+The only difference is the restriction of the paramenter $t$ to the interval $[0,1]$. 
+\begin{problem}(5.)
+Use the parametric equations of the line segment between the points  $P(x_1, y_1, z_1)$ and $Q(x_2, y_2, z_2)$
+to determine which points correspond the the $t$-values $0, 1/2, $ and $1$. I
+s one of these the midpoint,M, of the line segment?
+\end{problem}
+ 
 
 \end{document}
  
@@ -402,8 +432,6 @@ problem of finding the distance between two skew lines.
  
  
  
-
-
 
 
 
