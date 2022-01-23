@@ -140,8 +140,16 @@ Find the vector, parametric and symmetric forms for the line in $\R^3$ passing t
 and parallel to the line passing though the points $(5, 6, 7)$ and $(2, 4, 6)$.\\
 \end{problem}
 
-
 \begin{problem}(Problem 2c)
+Show that the vector form of the equation of the line passing through the 
+points $P(x_1, y_1, z_1)$ and $Q(x_2, y_2, z_2)$
+can be written as
+\[
+\vector{x,y,z} = (1-t)\vector{x_1, y_1, z_1} + t\vector{x_2, y_2, z_2}
+\]
+\end{problem}
+
+\begin{problem}(Problem 2d)
 Which of the following lines are parallel? Are any of them identical?
 \begin{align*}
 L_1:&\quad \vector{x, y, z} = \vector{3,-1,4} + t\vector{-2,7,-2}\\
@@ -180,7 +188,7 @@ We wish to solve for $t_1$ and $t_2$, so we need another equation. Equating the 
 \[
 6 -2t_1 = 5 + t_2
 \]
-Now, we solve the linear system
+Now, we solve the $2 \times 2$ linear system
 \begin{align*}
 4+t_1 &= -3 + 2t_2\\
 6 -2t_1 &= 5 + t_2
@@ -277,7 +285,18 @@ vector $\vec{n} = \vec{w} - \proj_{\vec{v}}\vec{w}$ (see the figure below)
 \end{tikzpicture}
 \end{image}
 
-
+\begin{image}
+\begin{tikzpicture}
+\draw[orange!80!black, ->, thick] (0,0) -- (3, 0) node[right]{$\vec{v}$};
+\draw[blue!50!black, ->, thick] (0,0) -- (2, 4) node[midway, left]{$\vec{w}$};
+\draw[red!90!black, ->, thin] (0,0) --(2,0) node[midway, below]{$\proj_{\vec{v}} \vec{w}$};
+\draw[red!90!black, thick, <-] (2, 4) -- (2, 0) node[midway, right]{$\vec{n}= \vec{w} -  \proj_{\vec{v}} \vec{w}$};
+\draw[blue, thin] (1.7, 0) -- ++(0, 0.3) -- + (0.3, 0);
+\node at (1.5, -1){The distance is $|\vec{n}| $};
+\draw[fill, blue!50!black] (0,0) circle (0.05) node[left]{$P$};
+\draw[fill, blue!50!black] (2,4) circle (0.05) node[left]{$Q$};
+\end{tikzpicture}
+\end{image}
 
 The vector $\vec{n}$ is given by
 \begin{align*}
@@ -319,7 +338,7 @@ taking any point from one of the lines,
 and finding its distance to the other line.
 The situation for skew lines is more complicated, involving cross products and planes.
 In the next section, we will study planes in $\R^3$ and at the end of that section we will get back to the 
-problem of finding the distance between two skew lines.
+problem of finding the distance between two skew lines.\\
 We conclude this section with line segments and in particular, we will verify the 
 midpoint formula for $\R^3$ of section 1.1.  In problem 10 of that section, we were asked to use the distance formula to 
 show that the point 
@@ -337,17 +356,18 @@ x &= x_1 + t(x_2 - x_1)\\
 y &= y_1 + t(y_2 - y_1)\\
 z &= z_1 + t(z_2 - z_1)\\
 \end{align*}
-where the parameter $t$ is between 0 and 1, i.e., $0 \leq t \leq 1$.
+where $t \in [0,1]$, i.e., $0 \leq t \leq 1$.
+%the parameter $t$ is between 0 and 1, 
 \end{definition}
 
-The reader should verify that this corresponds exactly to the equation of the line containg the points P and Q.
+The reader should verify that this corresponds exactly to the equation of the line containing the points P and Q.
 In other words, the parametric equations of the line segment are identical to those of the line. 
-The only difference is the restriction of the paramenter $t$ to the interval $[0,1]$. 
+The only difference is the restriction of the parameter $t$ to the interval $[0,1]$. 
 
 \begin{problem}(Problem 5)
 Use the parametric equations of the line segment between the points  $P(x_1, y_1, z_1)$ and $Q(x_2, y_2, z_2)$
 to determine which points correspond the the $t$-values $0, 1/2, $ and $1$. 
-Is one of these the midpoint,M, of the line segment?
+Is one of these the midpoint of the line segment?
 \end{problem}
  
 
