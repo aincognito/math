@@ -72,48 +72,105 @@ Then the equation of the plane can be written as
 \vec{n} \dotp \vector{x-x_0, y-y_0, z-z_0} = 0 %\quad \text{(Canonical vector form)}
 \]
 \[
-a(x-x_0) + b(y-y_0) + c(z-z_0) = 0 %\quad \text{(Canonical linear form)}
+\text{or} \quad a(x-x_0) + b(y-y_0) + c(z-z_0) = 0 %\quad \text{(Canonical linear form)}
 \]
-or using $d = ax_0 + by_0 + cz_0$,  we can write the more succinct
+Using $d = ax_0 + by_0 + cz_0$,  we can write the more succinct
 \[
-\vec{n} \dotp \vector{x, y, z} = d %\quad \text{(Standard vector form)}
+\vec{n} \dotp \vector{x, y, z} = d %\quad \text{(Vector form)}
 \]
 \[
-ax+by+cz = d \quad \text{(Standard form)}
+\text{or} \quad \quad ax+by+cz = d \quad\text{(Standard form)}
 \]
 \end{proposition}
 
-To sketch a plane in $\R^3$ it is helpful to find the intersection of the plane with each of the coordinate planes.  
-These are called the {\bf traces} of the plane.
+\begin{example}[Example 1] 
+Find the equation of the plane through the point $(3, 5, -7)$ with normal vector $\vector{1, -1, 2}$.\\
+A point $(x, y, z)$ is on the plane if and only if 
+\[
+\vector{1, -1, 2} \dotp \vector{x - 3, y-5, z+7} =0
+\]
+Hence, the equation of the plane is
+\[
+(x-3) - (y-5) + 2(z+7) = 0
+\]
+or, in standard form,
+\[
+x - y + 2z = -16
+\]
+\end{example}
 
-\begin{example}
-Sketch the plane $P$ given by $2x + y + 3z = 6$ by sketching its traces.\\
-To find the trace of $P$ in the $xy$-plane, we set $z = 0$ and we get
+\begin{problem}(Problem 1a)
+Find the equation of the plane through the point $(4, -2, 6)$ with normal vector $\vector{2, -3, -4}$\\
+The equation of the plane in standard form is $\answer{2x-3y-4z} = \answer{-10}$
+\end{problem}
+
+\begin{problem}(Problem 1b)
+Find the equation of the plane through the point $(8, 0, -3)$ which is parallel to the plane $3x - y + 6z = 14$\\
+\begin{hint}
+Parallel planes have the same normal vector
+\end{hint}
+The equation of the plane in standard form is $\answer{3x-y+6z} = \answer{6}$
+\end{problem}
+
+\begin{problem}(Problem 1c)
+Find the equation of the plane through the points $P(1, 4, 9), Q(4, -1, -7)$ and $R(5, 0, -3)$\\
+\begin{hint}
+The vectors $\avec{PQ}$ and $\avec{PR}$ lie in the plane
+\end{hint}
+\begin{hint}
+Use the cross product to find the normal vector
+\end{hint}
+The equation of the plane in standard form is $\answer{x+7y-2z} = \answer{11}$
+\begin{hint}
+Simplify the coefficients in your answer
+\end{hint}
+\end{problem}
+
+
+To sketch a plane in $\R^3$, plot its $x, y$ and $z$-intercepts.
+% it is helpful to find the intersection of the plane with each of the coordinate planes.  
+%These are called the {\bf traces} of the plane.
+
+
+\begin{example}[Example 2]
+Sketch the plane $P$ given by $2x + y + 3z = 6$ by finding its intercepts with each of the coordinate axes.\\
+%sketching its traces.\\
+To find the $x$-intercept, set $y$ and $z$ equal to $0$:
 \[
-2x +y = 6
+2x = 6 \quad \Rightarrow \quad x = 3
 \]
-which is the equation of a line in the $xy$-plane.
-To find the trace of $P$ in the $xz$-plane, we set $y = 0$ and we get
-\[
-2x +3z = 6
-\]
-which is the equation of a line in the $xz$-plane
-To find the trace of $P$ in the $yz$-plane, we set $x = 0$ and we get
-\[
- y + 3z = 6
-\]
-which is also the equation of a line in the $yz$-plane.
-Sketching these three lines gives a triangle which determines the plane.
+Similarly the $y$ and $z$-intercepts are $y=6$ and $z = 2$ respectively.
+The graph of the plane contains the triangle formed by the intercepts as well as the intercepts themselves.
 See the figure below.
+
+%The figure below shows the three intercepts along with the triangle formed by them.
+
+%To find the trace of $P$ in the $xy$-plane, we set $z = 0$ and we get
+%\[
+%2x +y = 6
+%\]
+%which is the equation of a line in the $xy$-plane.
+%To find the trace of $P$ in the $xz$-plane, we set $y = 0$ and we get
+%\[
+%2x +3z = 6
+%\]
+%which is the equation of a line in the $xz$-plane
+%To find the trace of $P$ in the $yz$-plane, we set $x = 0$ and we get
+%\[
+% y + 3z = 6
+%\]
+%which is also the equation of a line in the $yz$-plane.
+%Sketching these three lines gives a triangle which determines the plane.
+%See the figure below.
 
 \begin{image}
 \begin{tikzpicture}
 \filldraw[blue!20!white] (-4, -4)--  (8.2,-0.8) -- (3.7, 3.1) -- (-5.5, 1.2) -- (-4,-4);
 \filldraw[blue!30!white] (5.7, 0) -- (0, 2) -- (-2.4, -1.8) -- (5.7,0);
 \draw[thick, ->] (0,0) -- (6.3,0) node[right]{$y$};
-\draw[thick, ->] (0,0) -- (0,5.4) node[above]{$z$};
+\draw[thick, ->] (0,0) -- (0,4.4) node[above]{$z$};
 \draw[thick, ->] (0,0) -- (-3.6,-2.7) node[below, left]{$x$};
-\node at (2.5, -4){The plane $2x+y+3z =6$ along with its traces} ;
+\node at (2.5, -4){The plane $2x+y+3z =6$} ;
 
 \draw[blue] (5.7, 0) -- (0, 2) -- (-2.4, -1.8) -- (5.7,0);
 
@@ -125,67 +182,85 @@ See the figure below.
 
 \end{example}
 
+\begin{problem}(Problem 2)
+Sketch the plane $x - 2y - 4z = 4$ by plotting its $x, y$ and $z$-intercepts.
+\end{problem}
+
 Two planes are either parallel or they intersect in a line.
 Parallel planes are easy to detect, since they will have the same normal vector and hence their standard forms
-will have the same left hand side
+will have the same left hand side, i.e., the planes
 \[
 ax+by+cz = d_1 \quad \text{and} \quad ax+by+cz = d_2
 \]
-are parallel planes if $d_1 \neq d_2$.
+are parallel.
 
-\begin{example}
-Find the intersection of the planes $2x + y + 3z = 6$ and $x - y + z = 2$.\\
+
+\begin{example}[Example 3]
+Find the intersection of the planes 
+\[
+2x + y + 3z = 6 \quad \text{and} \quad x - y + z = 2
+\]
 If we can find two points in the intersection, then we can write the vector form of the equation of the line of intersection.
-We will choose two different $z$ values and determine the corresponding $x$ and $y$ coordinates.
-If $z = 0$ the equations of the planes becomes:
+We will choose a $z$-value for each point and then determine the corresponding $x$ and $y$-coordinates in the 
+intersection by solving a $2 \times 2$ linear system.\\
+For the first point, we can choose $z = 0$. Substituting this into the equations of the planes yields the
+following $2 \times 2$ linear system:
 \begin{align*}
 2x+y &= 6\\
 x -y &= 2
 \end{align*}
-Adding these equations gives
+Observe that adding these equations will eliminate the variable $y$,  giving
 \[
 3x = 8
 \]
-and hence $x = \frac83$.  Plugging this into the bottom equation, we can find $y$:
+and hence $x = \frac83$.  Plugging this into the bottom equation (or the top equation), we can find $y$:
 \[
-x - y = 2 \Rightarrow \frac83 -y = 2 \Rightarrow y = \frac23
+ \frac83 -y = 2 \quad \Rightarrow \quad y = \frac23
 \]
-Hence, one point of intersection of the two planes is $\left(\frac83, \frac23, 0\right)$.
-Now we let $z = 1$ (for example) in both of the plane equations we get the system
+Hence, one point of intersection of the two planes is $P\left(\frac83, \frac23, 0\right)$.\\
+For the second point, we can choose $z = 1$. Substituting this into the equations of the planes yields the 
+following $2 \times 2$ linear system:
 \begin{align*}
 2x + y &= 3\\
 x - y &= 1
 \end{align*}
-Adding these gives
+Adding these equations gives
 \[
-3x = 4 \Rightarrow x = \frac43
+3x = 4 \quad \Rightarrow \quad x = \frac43
 \]
-Again, using the bottom equation, we find $y$:
+Using the bottom equation (since it is simpler), we find $y$:
 \[
-x - y = 1 \Rightarrow \frac43 - y = 1 \Rightarrow y = \frac13
+\frac43 - y = 1 \quad \Rightarrow \quad y = \frac13
 \]
-Hence the second point of intersection is $\left(\frac43, \frac13, 1\right)$.
-The direction vector of the line of intersection of the two planes is 
+Hence, the second point of intersection is $Q\left(\frac43, \frac13, 1\right)$.
+The direction vector of the line of intersection of the two planes is the vector
 \[
-\vec{v} = \vector{\frac43 - \frac83, \frac13 - \frac23, 1-0} = \vector{-\frac43, -\frac13, 1}
+\avec{PQ} = \vector{\frac43 - \frac83, \frac13 - \frac23, 1-0} = \vector{-\frac43, -\frac13, 1}
 \]
-Choosing the first point, we can write the equation of the line of intersection of the two planes in vector form as
+Using the point $P$ and the direction vector $\avec{PQ}$, we can write the equation of the line of intersection:
 \[
 \vector{x, y, z} = \vector{\frac83, \frac23, 0} + t \vector{-\frac43, -\frac13, 1}
 \]
 
 \end{example}
 
+\begin{problem}(Problem 3)
+Find the intersection of the planes $2x + y + 3z = 6$ and $x - y + z = 2$.\\
+\end{problem}
+
+
 Next, we find the distance between parallel planes.
 
-\begin{example}
+\begin{example}[Example 4]
 Find the distance between the planes $P_1: x +2y - z = 1$ and $P_2: x+2y-z = 4$.\\
-The normal vector to both planes is $\vec{n} = \vector{1, 2, -1}$. We need one point in each plane and the vector between them.
+The normal vector to both planes is $\vec{n} = \vector{1, 2, -1}$. 
+We need one point in each plane and the vector between them.
 On $P_1$ we can take the point $Q_1(1, 0, 0)$ and on $P_2$, we can take the point $Q_2(4, 0, 0)$. The vector between them is 
 \[
 \vec{v} = \avec{Q_1Q_2} = \vector{3,0,0} = 3\vec{i}
 \]
-The distance between the planes is the magnitude of the projection of the vector $\vec{v} = \avec{Q_1Q_2}$ onto the normal vector, $\vec{n}$. We have,
+The distance between the planes is the magnitude of the projection of the vector $\vec{v} = \avec{Q_1Q_2}$ onto the 
+normal vector, $\vec{n}$. We have,
 \begin{align*}
 \text{distance} &= | \proj_{\vec{n}}\vec{v}| \\
                &= \left| \frac{\vec{v}\dotp \vec{n}}{\vec{n}\dotp \vec{n}} \vec{n}\right|\\
@@ -194,7 +269,7 @@ The distance between the planes is the magnitude of the projection of the vector
                &= \sqrt{\left( \frac13\right)^2 + \left( \frac23\right)^2 + \left( \frac13\right)^2}\\
                & = \frac{\sqrt{6}}{3}
 \end{align*}
-\end{example}
+
 
 \begin{image}
 \begin{tikzpicture}
@@ -208,7 +283,29 @@ The distance between the planes is the magnitude of the projection of the vector
 \end{tikzpicture}
 \end{image}
 
+\end{example}
 
+\begin{problem}(Problem 4a)
+Find the distance between the planes $P_1: 2x -5y + 3z = 6$ and $P_2: 2x-5y+3z = -2$.\\
+\end{problem}
+
+\begin{problem}(Problem 4b)
+Find the distance between the line and the plane .\\
+\end{problem}
+
+\begin{problem}(Problem 4c)
+Find the distance between the skew lines $\vector{1, 2, 3} + t\vector{4, 5, 6}$
+and  $\vector{3, 2, 1} + t\vector{6, 5, 4}$.\\
+\begin{hint}
+Skew lines are contained in parallel planes
+\end{hint}
+\begin{hint}
+Use the cross product of the direction vectors to find the normal vector
+\end{hint}
+\begin{hint}
+Write the equations of the parallel planes using oen point from each plane and the normal vector
+\end{hint}
+\end{problem}
 \end{document}
 
 Distance between skew lines
@@ -613,7 +710,6 @@ ax+by+cz = d
  
  
  
-
 
 
 
