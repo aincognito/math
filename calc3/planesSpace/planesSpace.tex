@@ -20,7 +20,7 @@ A plane in $\R^3$ is determined by three non collinear points.
 However, this fundamental description is not the best starting point for creating the equation of a plane.
 Better is to recognize that a plane, $P$, in $\R^3$ is determined by a single point $Q(x_0, y_0, z_0)$ and a 
 vector $\vec{n} = \vector{a, b, c}$ which is perpendicular to the plane. 
-The vector $\vec{n}$ is called the {\bf normal} vector to the plane.
+The vector $\vec{n}$ is called the \textbf{normal vector} to the plane.
 In addition to orthogonal, normal is yet another word for perpendicular.
 See the figure below.
 
@@ -67,20 +67,21 @@ We summarize the results of the preceding computations in the following proposit
 
 \begin{proposition}[Equation of a Plane in $\R^3$]
 Suppose that the vector $\vec{n} = \vector{a,b,c}$ is normal to the plane $P$ passing through the point $Q(x_0, y_0, z_0)$.
-Then the equation of the plane can be written as
+Then the equation of the plane can be written in the following ways:
 \[
 \vec{n} \dotp \vector{x-x_0, y-y_0, z-z_0} = 0 %\quad \text{(Canonical vector form)}
 \]
 \[
-\text{or} \quad a(x-x_0) + b(y-y_0) + c(z-z_0) = 0 %\quad \text{(Canonical linear form)}
+a(x-x_0) + b(y-y_0) + c(z-z_0) = 0 %\quad \text{(Canonical linear form)}
 \]
-Using $d = ax_0 + by_0 + cz_0$,  we can write the more succinct
+Using $d = ax_0 + by_0 + cz_0$,  we can write the equations of the plane more succinctly:
 \[
 \vec{n} \dotp \vector{x, y, z} = d %\quad \text{(Vector form)}
 \]
 \[
-\text{or} \quad \quad ax+by+cz = d \quad\text{(Standard form)}
+ax+by+cz = d 
 \]
+The equation $ax+by+cz =d$ is called the \textbf{standard form} for the equation of a plane.
 \end{proposition}
 
 \begin{example}[Example 1] 
@@ -245,7 +246,7 @@ Using the point $P$ and the direction vector $\avec{PQ}$, we can write the equat
 \end{example}
 
 \begin{problem}(Problem 3)
-Find the intersection of the planes $2x + y + 3z = 6$ and $x - y + z = 2$.\\
+Find the intersection of the planes $3x - y -4z = 3$ and $x - 4y + z = 2$.\\
 \end{problem}
 
 
@@ -321,12 +322,21 @@ Skew lines are contained in parallel planes
 Use the cross product of the direction vectors to find the normal vector
 \end{hint}
 \begin{hint}
-Write the equations of the parallel planes using oen point from each plane and the normal vector
+Write the equations of the parallel planes using one point from each plane and the normal vector
 \end{hint}
 \end{problem}
-\end{document}
 
-Distance between skew lines
+\begin{problem}(Problem 4d)
+Find the angle between the planes
+\[
+4x + 2y - z = 11 \quad \text{and} \quad 9x - 3y + 4z = 1
+\]
+\begin{hint}
+The angle between two planes is defined as the angle between their normal vectors
+\end{hint}
+\end{problem}
+
+\end{document}
 
 
 
@@ -728,7 +738,6 @@ ax+by+cz = d
  
  
  
-
 
 
 
