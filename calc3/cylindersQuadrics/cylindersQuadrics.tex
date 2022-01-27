@@ -193,12 +193,64 @@ The corresponding surfaces in $\R^3$ are the sphere, ellipsoid, paraboloid and h
 
 \link[Online 3D surface plotter]{https://academo.org/search/?q=surface}
 
+The general equation of a quadric surface is 
+\[
+Ax^2 + By^2 + Cz^2 + Dxy + Exz + Fyz + Gx + Hy + Iz + K = 0
+\]
+This equation can be simplified a bit if we "center" the surface at the origin and 
+align it with the $z$-axis where applicable. 
+Below we see a list of quadric surfaces and the simplest equation that can be used to describe them.\\
 
-The equation of an \textbf{ellipsoid} is given by 
+The equation of an \textbf{ellipsoid} centered at the origin with axes parallel to the coordinate axes, is given by 
 \[
 \frac{x^2}{a^2} + \frac{y^2}{b^2}+ \frac{z^2}{c^2} = 1
 \]
 Note that a sphere is a special ellipsoid with $ a=b=c$.
+The traces in planes parallel to the coordinate planes are ellipses.
+
+\begin{example}[Example 2]
+Describe the trace of the ellipsoid in the plane $z = 2$:
+\[
+\frac{x^2}{4} + \frac{y^2}{9}+ \frac{z^2}{16} = 1
+\]
+Setting $z = 2$ in the equation of the ellipsoid yields
+\[
+\frac{x^2}{4} + \frac{y^2}{9} = \frac34
+\]
+This can be put in the form
+\[
+\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1
+\]
+which is the equation of an ellipse centered at the origin. The precise values of $a$ and $b$ are
+\[
+a = \frac{\sqrt 3}{3} \quad \text{and} \quad b = \frac{3\sqrt 3}{2}
+\]
+The graph of this ellipse in the $xy$-plane is shown below.
+The actual trace is identical to this ellipse, except that it is in the plane $z = 2$, which is parallel to the $xy$-plane.
+
+\begin{image}
+\begin{tikzpicture}
+\draw[<->] (-1.4, 0) -- (1.4, 0) node[right]{$x$};
+\draw[<->] (0, -1.8) -- (0, 1.8) node[above]{$y$};
+\node[ellipse, draw = blue!70!white,
+    minimum width = 1.2cm, 
+    minimum height = 2cm] (e) at (0,0) {};
+\draw (0.15,1) -- (-0.15, 1) node[ left]{$b$};
+\draw (0.15,-1) -- (-0.15, -1) node[ left]{$-b$};
+\draw (0.6, 0.15) -- (0.6, -0.15) node[ right]{$a$};
+\draw (-0.6, 0.15) -- (-0.6, -0.15) node[left]{$-a$};
+\end{tikzpicture}
+\end{image}
+
+\end{example}
+
+\begin{problem}(Problem 2)
+Describe the trace of the ellipsoid in the plane $y = 2$:
+\[
+\frac{x^2}{36} + \frac{y^2}{8}+ \frac{z^2}{25} = 1
+\]
+The trace is \wordChoice{\choice{ a parabola}\choice[correct]{an ellipse} \choice{a tiger}}
+\end{problem}
 
 The equation of an \textbf{elliptic paraboloid} is given by 
 \[
