@@ -192,6 +192,7 @@ The corresponding surfaces in $\R^3$ are the sphere, ellipsoid, paraboloid and h
 
 
 \link[Online 3D surface plotter]{https://academo.org/search/?q=surface}
+\link[Another 3D grapher]{https://math.libretexts.org/Learning_Objects/CalcPlot3D_Interactive_Figures/CalcPlot3D}
 
 The general equation of a quadric surface is 
 \[
@@ -207,6 +208,66 @@ The equation of an \textbf{ellipsoid} centered at the origin with axes parallel 
 \]
 Note that a sphere is a special ellipsoid with $ a=b=c$.
 The traces in planes parallel to the coordinate planes are ellipses.
+\begin{image}
+\includegraphics{Ellipsoid.png}
+\end{image}
+
+
+\begin{image}
+\begin{tikzpicture}
+
+  \pgfmathsetmacro{\p}{1}
+  \pgfmathsetmacro{\q}{1.5}
+  \begin{axis}[
+    %xlabel = {$x$},
+    %ylabel = {$y$},
+    %zlabel = {$z$},
+    view = {60}{30},
+    domain = 0 : pi,
+    y domain = 0 : 2 * pi,
+    z buffer = sort,
+    unit vector ratio = 1 1,
+    hide axis,
+    colormap/violet,
+    declare function = {
+      xp(\x, \y) = sin(deg(\x)) * cos(deg(\y));
+      yp(\x, \y) = \p * sin(deg(\x)) * sin(deg(\y));
+      zp(\x, \y) = \q * cos(deg(\x));
+    }, ]
+    \addplot3[patch]({xp(x, y)}, {yp(x, y)}, {zp(x, y)});
+    %\draw[->] (1, 0, 0) -- (2, 0, 0) node[right]{$x$};
+    %\draw[->] (0, \p, 0) -- (0, 2, 0) node[right]{$y$};
+    %\draw[->] (0, 0, \q) -- (0, 0, 2) node[above]{$z$};
+  \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+
+  \pgfmathsetmacro{\p}{1.0}
+  \pgfmathsetmacro{\q}{0.5}
+  \begin{axis}[
+    xlabel = {$x$},
+    ylabel = {$y$},
+    zlabel = {$z$},
+    view = {60}{30},
+    domain = 0 : pi,
+    y domain = 0 : 2 * pi,
+    z buffer = sort,
+    unit vector ratio = 1 1,
+    hide axis,
+    colormap/violet,
+    declare function = {
+      xp(\x, \y) = sin(deg(\x)) * cos(deg(\y));
+      yp(\x, \y) = \p * sin(deg(\x)) * sin(deg(\y));
+      zp(\x, \y) = \q * cos(deg(\x));
+    }, ]
+    \addplot3[patch]({xp(x, y)}, {yp(x, y)}, {zp(x, y)});
+    %\draw[->] (1, 0, 0) -- (2, 0, 0) node[right]{$x$};
+    %\draw[->] (0, \p, 0) -- (0, 2, 0) node[right]{$y$};
+    %\draw[->] (0, 0, \q) -- (0, 0, 2) node[above]{$z$};
+  \end{axis}
+\end{tikzpicture}
+\end{image}
+
 
 \begin{example}[Example 2]
 Describe the trace of the ellipsoid in the plane $z = 2$:
@@ -244,7 +305,7 @@ The actual trace is identical to this ellipse, except that it is in the plane $z
 
 \end{example}
 
-\begin{problem}(Problem 2)
+\begin{problem}(Problem 2a)
 Describe the trace of the ellipsoid in the plane $y = 2$:
 \[
 \frac{x^2}{36} + \frac{y^2}{8}+ \frac{z^2}{25} = 1
@@ -256,16 +317,53 @@ The equation of an \textbf{elliptic paraboloid} is given by
 \[
 \frac{z}{c} = \frac{x^2}{a^2} + \frac{y^2}{b^2} 
 \]
+Traces of the elliptic paraboloid inplanes of the form $z = k$ are ellipses (so long as $k/c > 0$).
+On the other hand, traces in planes parallel to the $xz$ and $yz$ planes are parabolas.
+
+\begin{problem}[Problem 2b]
+Find the trace of elliptical paraboloid in the plane $y = 3$:
+\[
+z = 2x^2 + \frac{y^2}{36}
+\]
+\end{problem}
 
 The equation of a \textbf{hyperbolic paraboloid} is given by 
 \[
 \frac{z}{c} = \frac{x^2}{a^2} - \frac{y^2}{b^2} 
 \]
 
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[
+grid=major,
+axis lines=middle,
+inner axis line style={=>},
+ticks=none
+]
+\addplot3 [surf,shader=flat,fill opacity=.4,draw=black] {y^2-x^2};
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
+
 The equation of a \textbf{hyperboloid of one sheet} is given by 
 \[
 \frac{x^2}{a^2} + \frac{y^2}{b^2}- \frac{z^2}{c^2} = 1
 \]
+
+\begin{problem}[Problem 2c]
+Find and describe the trace of hyperboloid of one sheet in the plane $x = -1$:
+\[
+\frac{x^2}{4} + \frac{y^2}{9} - 4z^2 = 1
+\]
+\begin{hint}
+The graph of the equation
+\[
+\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1
+\]
+is a hyperbola in the $xy$-plane.
+\end{hint}
+\end{problem}
 
 The equation of a \textbf{hyperboloid of two sheets} is given by 
 \[
