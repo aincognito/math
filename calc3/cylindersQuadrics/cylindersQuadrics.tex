@@ -139,10 +139,9 @@ The corresponding surfaces in $\R^3$ are the sphere, ellipsoid, paraboloid and h
 \addplot3 [surf,shader=flat,draw=black] {x^2-y^2} ;
 \addlegendentry{$z = x^2 -y^2$};
 \end{axis}
-
-
 \end{tikzpicture}
 \end{image}
+
 
 \begin{image}
 \begin{tikzpicture}
@@ -152,6 +151,11 @@ The corresponding surfaces in $\R^3$ are the sphere, ellipsoid, paraboloid and h
 \end{axis}
 \end{tikzpicture}
 \end{image}
+
+
+
+
+
 
 
 \begin{image}
@@ -172,6 +176,7 @@ The corresponding surfaces in $\R^3$ are the sphere, ellipsoid, paraboloid and h
 \end{tikzpicture}
 \end{image}
 
+
 \begin{image}
 \begin{tikzpicture}
 \begin{axis}[title = A hyperboloid of two sheets (top half only)]
@@ -190,9 +195,6 @@ The corresponding surfaces in $\R^3$ are the sphere, ellipsoid, paraboloid and h
 \end{tikzpicture}
 \end{image}
 
-
-\link[Online 3D surface plotter]{https://academo.org/search/?q=surface}
-\link[Another 3D grapher]{https://math.libretexts.org/Learning_Objects/CalcPlot3D_Interactive_Figures/CalcPlot3D}
 
 The general equation of a quadric surface is 
 \[
@@ -308,25 +310,35 @@ The actual trace is identical to this ellipse, except that it is in the plane $z
 \end{example}
 
 \begin{problem}(Problem 2a)
-Describe the trace of the ellipsoid in the plane $y = 2$:
+Describe the trace of the ellipsoid in the given planes:
 \[
 \frac{x^2}{36} + \frac{y^2}{8}+ \frac{z^2}{25} = 1
 \]
-The trace is \wordChoice{\choice{ a parabola}\choice[correct]{an ellipse} \choice{a tiger}}
+The trace in the plane $y = 2$ is \wordChoice{\choice{ a parabola}\choice[correct]{an ellipse} \choice{a lion}}\\
+The trace in the plane $x = 1$ is \wordChoice{\choice[correct]{an ellipse} \choice{ a line}\choice{a tiger}}
+\begin{hint}
+The graph of the equation
+\[
+\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1
+\]
+is an ellipse in the $xy$-plane.
+\end{hint}
 \end{problem}
 
 The equation of an \textbf{elliptic paraboloid} is given by 
 \[
 \frac{z}{c} = \frac{x^2}{a^2} + \frac{y^2}{b^2} 
 \]
-Traces of the elliptic paraboloid inplanes of the form $z = k$ are ellipses (so long as $k/c > 0$).
+Traces of the elliptic paraboloid in planes of the form $z = k$ are ellipses (so long as $k/c > 0$).
 On the other hand, traces in planes parallel to the $xz$ and $yz$ planes are parabolas.
 
-\begin{problem}[Problem 2b]
-Find the trace of elliptical paraboloid in the plane $y = 3$:
+\begin{problem}(Problem 2b)
+Describe the trace of the elliptical paraboloid in the given planes:
 \[
 z = 2x^2 + \frac{y^2}{36}
 \]
+The trace in the plane $z = 3$ is \wordChoice{\choice{ a hyperbola}\choice[correct]{an ellipse} \choice{a whale}}\\
+The trace in the plane $y = -2$ is \wordChoice{\choice{ an ellipse}\choice[correct]{a parabola} \choice{a shark}}
 \end{problem}
 
 The equation of a \textbf{hyperbolic paraboloid} is given by 
@@ -348,16 +360,13 @@ ticks=none
 \end{image}
 
 
-The equation of a \textbf{hyperboloid of one sheet} is given by 
+\begin{problem}(Problem 2c)
+Describe the trace of the hyperbolic paraboloid in the given planes:
 \[
-\frac{x^2}{a^2} + \frac{y^2}{b^2}- \frac{z^2}{c^2} = 1
+z = \frac{x^2}{81} -  \frac{y^2}{36}
 \]
-
-\begin{problem}[Problem 2c]
-Find and describe the trace of hyperboloid of one sheet in the plane $x = -1$:
-\[
-\frac{x^2}{4} + \frac{y^2}{9} - 4z^2 = 1
-\]
+The trace in the plane $z = 3$ is \wordChoice{\choice[correct]{ a hyperbola}\choice{an ellipse} \choice{a rose}}\\
+The trace in the plane $y = -2$ is \wordChoice{\choice{ an ellipse}\choice[correct]{a parabola} \choice{a tulip}}
 \begin{hint}
 The graph of the equation
 \[
@@ -367,24 +376,45 @@ is a hyperbola in the $xy$-plane.
 \end{hint}
 \end{problem}
 
+
+The equation of a \textbf{hyperboloid of one sheet} is given by 
+\[
+\frac{x^2}{a^2} + \frac{y^2}{b^2}- \frac{z^2}{c^2} = 1
+\]
+
+\begin{image}
+ \begin{tikzpicture}
+        \begin{axis}[hide axis,axis equal]
+            \addplot3[surf,domain=0:360,y domain=-2:2]
+                ({cosh(y)*cos(x)},{2*cosh(y)*sin(x)},{sinh(y)});
+        \end{axis}
+    \end{tikzpicture}
+\end{image}
+
+\begin{problem}(Problem 2d)
+Describe the trace of the hyperboloid of one sheet in the given planes:
+\[
+\frac{x^2}{4} + \frac{y^2}{9} - 4z^2 = 1
+\]
+
+The trace in the plane $x = -1$ is \wordChoice{\choice[correct]{a hyperbola}\choice{ a parabola} \choice{an apple}}\\
+The trace in the plane $z = -2$ is \wordChoice{\choice{a hyperbola}\choice[correct]{an ellipse} \choice{an orange}}\\
+\end{problem}
+
 The equation of a \textbf{hyperboloid of two sheets} is given by 
 \[
 -\frac{x^2}{a^2} -\frac{y^2}{b^2} + \frac{z^2}{c^2} = 1
 \]
 
 
-\begin{problem}[Problem 2d]
-Find and describe the trace of hyperboloid of two sheets in the plane $z = -10$:
+\begin{problem}(Problem 2e)
+Describe the trace of the hyperboloid of two sheets in the given planes:
 \[
 -\frac{x^2}{16} - 9y^2 + \frac{z^2}{25} = 1
 \]
-\begin{hint}
-The graph of the equation
-\[
-\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1
-\]
-is an ellipse in the $xy$-plane.
-\end{hint}
+
+The trace in the plane $z = -10$ is \wordChoice{\choice{a parabola}\choice[correct]{an ellipse} \choice{a frog}}\\
+The trace in the plane $x = 4$ is \wordChoice{\choice[correct]{a hyperbola}\choice{a parabola} \choice{a turtle}}
 \end{problem}
 
 
@@ -394,98 +424,37 @@ The equation of a \textbf{cone} is given by
 \frac{z^2}{c^2} = \frac{x^2}{a^2} + \frac{y^2}{b^2}
 \]
 
-
-
-Note: the orientation of the above surfaces can be changed by interchanging the variables.
-
-\end{document}
-
-
-
-
-
-
-
-
+\begin{problem}(Problem 2f)
+Describe the trace of the cone in the given planes:
 \[
-\vec{v} = \vector{x, y, z}
-\]
-The magnitude of a vector in $\R^3$ comes from the distance formula:
-\[
-|\vec{v}| = |\vector{x, y, z}| = \sqrt{x^2 + y^2 + z^2}
-\]
-The special basis vectors in $\R^3$ are
-\begin{align*}
-\vec{i} &= \vector{1, 0, 0}\\
-\vec{j} &= \vector{0, 1, 0}\\
-\vec{k} &= \vector{0, 0, 1}\\
-\end{align*}
-These are unit vectors in the direction of the positive $x, y$ and $z$-axes respectively.
-A vector in $\R^3$ can be expressed in terms of these vectors:
-\[
-\vec{v} = \vector{x, y, z} = x\vec{i} + y\vec{j} + z\vec{k}
+\frac{z^2}{121} = \frac{x^2}{144} + \frac{y^2}{169}
 \]
 
-The zero vector in $\R^3$ is given by
-\[
-\vec{0} = \vector{0,0,0}
-\]
-has a magnitude of $0$ and is not assigned a direction.
-As in $\R^2$, a vector in $\R^3$ has an initial point and a final point.  The vector is in standard position if its initial point is the origin.
-Also, as in $\R^2$, a the vector with initial point $P = (x_1, y_1, z_1)$ and final point $Q = (x_2, y_2, z_2)$ is given by the difference of the coordinates:
-\[
-\avec{PQ} = \vector{x_2 - x_1, y_2-y_1, z_2-z_1}
-\]
-The magnitude of this vector is the distance between the points $P$ and $Q$
-\[
-|\avec{PQ}| = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 +(z_2-z_1)^2} = d(P, Q)
-\]
-The operations of scalar multiplication and addition are performed analogously to those in $\R^2$.
-If $\vec{v} = \vector{x, y, z}$ and if $c$ is a scalar in $\R$, then
-\[
-c\vec{v} = c\vector{x, y, z} = \vector{cx, cy, cz}
-\]
-and if $\vec{v}_1 = \vector{x_1, y_1, z_1}$ and $\vec{v}_2 = \vector{x_2, y_2, z_2}$ are vectors in $\R^3$ then
-\[
-\vec{v}_1 + \vec{v}_2 = \vector{x_1+x_2, y_1+y_2, z_1+z_2}
-\]
-The effect on magnitude of multiplication by a scalar is the same in $\R^3$ as it was in $\R^2$:
-\[
-|c\vec{v}| = |c| |\vec{v}|
-\]
-Because of this, a unit vector in the same direction as a non-zero vector $\vec{v}$ in $\R^3$ is given by
-\[
-\vec{u} = \frac{1}{|\vec{v}|} \vec{v}
-\]
-just as in $\R^2$.
-
-Due to their component-wise computation, the vector operations of scalar multiplication and addition have some familiar properties:
-\begin{align*}
-&\text{Distributive Property:} & &c(\vec{v}_1 + \vec{v}_2) = c\vec{v}_1 + c\vec{v}_2   \\
-& \text{Commutative Property:}& &\vec{v}_1 + \vec{v}_2 = \vec{v}_2 + \vec{v}_1 \\
-& \text{Associative Property:}&  &\vec{v}_1 + (\vec{v}_2+ \vec{v}_3) =  (\vec{v}_1 + \vec{v}_2) + \vec{v}_3 \\
-&\text{Identity Property:} & &\vec{v} + \vec{0} = \vec{v} \\
-& \text{Additive Inverse Property:} & &\vec{v} + (-\vec{v}) = \vec{0} 
-\end{align*}
-
-\begin{example}
-Find a unit vector in the same direction as $\vec{v} = 2 \vec{i} - 3\vec{j} + 4\vec{k}$.\\
-The magnitude of $\vec{v}$ is
-\[
-|\vec{v}| = |\vector{2, -3, 4}| = \sqrt{4+9+16} = \sqrt{29}
-\]
-Hence, a unit vector in the direction of $\vec{v}$ is
-\[
-\vec{u} = \frac{1}{\sqrt{29}}\vec{v} = \frac{2}{\sqrt{29}}\vec{i} - \frac{3}{\sqrt{29}}\vec{j} + \frac{4}{\sqrt{29}}\vec{k}
-\]
-\end{example}
-
-\begin{problem}
-Find each of the following:\\
-a) $3\vector{2, 4, -1} - 4\vector{5, -3, 2} = \vector{\answer{-14}, \answer{24}, \answer{-11}}$\\
-b) $|3\vec{i} - 5\vec{k}| = \answer{\sqrt{34}}$\\
-c) a unit vector in the direction of $\vector{1, -2, 2} = \vector{\answer{1/3}, \answer{-2/3}, \answer{2/3}}$
+The trace in the plane $z = 11$ is \wordChoice{\choice[correct]{an ellipse} \choice{a parabola}\choice{an eagle}}\\
+The trace in the plane $y = 13$ is \wordChoice{\choice{a parabola}\choice[correct]{a hyperbola} \choice{an owl}}
 \end{problem}
 
 
+The equations of the hyperboloid of one sheet, two sheets and the cone can all be put into the form:
+\[
+ \frac{x^2}{a^2} + \frac{y^2}{b^2} - \frac{z^2}{c^2} = d
+\]
+for various values of $d$.  If $d > 0$, we get a hyperboloid of one sheet; if $d< 0$, we get a 
+hyperboloid of two sheets; and if $d= 0$ we get a (double napped) cone.
+This \link[link]{http://www.supermath.info/ZooOfMathematicalCreatures.html} provides an 
+animation that shows how the shape changes as $d$ changes.\\
+
+
+\begin{remark}
+The orientation of the above surfaces can be changed by interchanging the variables.
+\end{remark}
+
+Here is a link to an online \link[3D surface plotter]{https://academo.org/search/?q=surface}\\
+Here is a link to another online \link[3D grapher]{https://math.libretexts.org/Learning_Objects/CalcPlot3D_Interactive_Figures/CalcPlot3D}
+
+
+
 \end{document}
+
+
+
