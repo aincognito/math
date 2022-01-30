@@ -371,6 +371,8 @@ and finally,
 \end{foldable}
 \end{center}
 
+
+
 \end{document}
 
 
@@ -378,45 +380,3 @@ and finally,
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\begin{image}
-\begin{tikzpicture}[scale = 1.2]
-\begin{axis}[axis x line=bottom, axis y line= middle, ymin=0, ymax=4,
- xtick={4}, xticklabels={$a$}, ytick={1}, yticklabels={$f(a)$},
-axis equal, title={Linear Approximation}]
-\addplot[domain=0:10, thick, blue!65]{-1 + x^(1/2)};
-\addplot[dashed, thick] coordinates{(4, 1)};
-\addplot[domain=0:10, thick]{1+(1/4)*(x-4)};
-\addplot[color=blue, mark=*] coordinates {(4,1)};
-\end{axis}
-\node at (8,4.5) {$y=L(x) = f(a) + f'(a)(x-a)$ };	
-\node at (4,.5) {$f(x) \approx L(x)$ for $x$ near $a$ };	
-\node at (7, 3) {$y = f(x)$};
-\node at (3,3.5) {$(a,f(a)$};
-\end{tikzpicture}
-\end{image}

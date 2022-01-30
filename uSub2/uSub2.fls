@@ -289,9 +289,9 @@ INPUT /usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
 INPUT /usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
 INPUT /usr/share/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 INPUT /usr/share/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
-OUTPUT uSub2.oc
 INPUT /usr/share/texmf-dist/fonts/map/fontname/texfonts.map
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/dummy/dummy.tfm
+OUTPUT uSub2.oc
 OUTPUT uSub2.ids
 OUTPUT uSub2.jax
 INPUT /usr/share/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty

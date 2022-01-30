@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1643508971 "angles.tex" "angles.pdf" "angles" 1643508981
+["pdflatex"] 1643514128 "angles.tex" "angles.pdf" "angles" 1643514138
   "../preamble.tex" 1607818112 4042 33be8a53d776c59e16d422dc3e6e6fc2 ""
   "/dev/null" 1643498154 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/home/andrew/texmf/tex/latex/ximeraLatex/ximera.cls" 1643320412 29587 2dd14e0e46062d120ad3bcdfe256c426 ""
@@ -307,14 +307,14 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1536122179 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1542735336 2756227 3af771b8c7802fcc4de3c67a29c4e776 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1536255675 7908118 a16e2dd5947695aba15dfea80a46c11f ""
-  "angles.aux" 1643508980 878 1e23e9164a6dfb3ac04ab1176157cfdd ""
-  "angles.out" 1643508980 132 c6e38b61bd52db7f16d64ebe9d7a367f ""
-  "angles.tex" 1643508960 6033 7afdd7429165dba6be263e7d493d8ae6 ""
+  "angles.aux" 1643514137 878 1e23e9164a6dfb3ac04ab1176157cfdd ""
+  "angles.out" 1643514137 132 c6e38b61bd52db7f16d64ebe9d7a367f ""
+  "angles.tex" 1643514127 3107 3a27ca83f33f23943d1d93e237cc420a ""
   (generated)
-  "angles.aux"
   "angles.log"
-  "angles.jax"
-  "angles.out"
   "angles.pdf"
+  "angles.out"
   "angles.oc"
+  "angles.jax"
   "angles.ids"
+  "angles.aux"

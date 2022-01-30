@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1626364286 "uSub2.tex" "uSub2.pdf" "uSub2" 1626364288
+["pdflatex"] 1643517627 "uSub2.tex" "uSub2.pdf" "uSub2" 1643517637
   "../preamble.tex" 1607818112 4042 33be8a53d776c59e16d422dc3e6e6fc2 ""
-  "/dev/null" 1626359276 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "/home/andrew/texmf/tex/latex/ximeraLatex/ximera.cls" 1531167858 28946 805eb0dd71d7f8f6597f9d8aa452fc80 ""
+  "/dev/null" 1643498154 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "/home/andrew/texmf/tex/latex/ximeraLatex/ximera.cls" 1643320412 29587 2dd14e0e46062d120ad3bcdfe256c426 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1536122179 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1536122179 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1536122179 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -317,14 +317,14 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1536122179 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1542735336 2756227 3af771b8c7802fcc4de3c67a29c4e776 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1536255675 7908118 a16e2dd5947695aba15dfea80a46c11f ""
-  "uSub2.aux" 1626364288 827 ddfff70d75f1d4564948dbb5c2a71b58 ""
-  "uSub2.out" 1626364288 102 655791cf8a8ea571fb340760ca45e8ac ""
-  "uSub2.tex" 1626364285 18222 2a86c2d2be178b5dc7df5c3fae2aafe2 ""
+  "uSub2.aux" 1643517636 827 ddfff70d75f1d4564948dbb5c2a71b58 ""
+  "uSub2.out" 1643517636 102 655791cf8a8ea571fb340760ca45e8ac ""
+  "uSub2.tex" 1643517615 15939 e29a1ba4303dac5277f1d0f81481a407 ""
   (generated)
-  "uSub2.pdf"
-  "uSub2.oc"
-  "uSub2.jax"
-  "uSub2.aux"
   "uSub2.ids"
+  "uSub2.jax"
   "uSub2.out"
+  "uSub2.aux"
+  "uSub2.oc"
+  "uSub2.pdf"
   "uSub2.log"

@@ -289,9 +289,9 @@ INPUT /usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
 INPUT /usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
 INPUT /usr/share/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 INPUT /usr/share/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
-OUTPUT improperIntegrals.oc
 INPUT /usr/share/texmf-dist/fonts/map/fontname/texfonts.map
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/dummy/dummy.tfm
+OUTPUT improperIntegrals.oc
 OUTPUT improperIntegrals.ids
 OUTPUT improperIntegrals.jax
 INPUT ../preamble.tex

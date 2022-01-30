@@ -415,79 +415,7 @@ Write the repeating decimal $0.\overline{45} = 0.454545...$ as a ratio of intege
 
 \end{document}
 
-\section{More Problems}
-
-\begin{example} %example #15
-Find $h'(x)$ if $h(x) = x^{\sin(x)}$.\\
-We will use the fact that the exponential and logarithm functions are inverses,
-\[e^{\ln(x)} = x,\]
-and the exponent property of logarithms, 
-\[\ln(x^n) = n\ln(x),\]
-to rewrite $h(x)$.  We have 
-\[h(x) = x^{\sin(x)} = e^{\ln(x^{\sin(x)})} = e^{\sin(x)\ln(x)}\]
-and we can now compute $h'(x)$ using a combination of the chain rule and product rule.
-We can write $h(x)$ as a composition, $f(g(x))$ with 
-\[g(x) = \sin(x)\ln(x) \quad \text{and} \quad f(x) = e^x.\]
-Then to find $g'(x)$ we us the product rule and we get $g'(x) = \frac{\sin(x)}{x} + \cos(x)\ln(x)$.
-Next $f'(x) = e^x$ and 
-hence $f'(g(x)) = e^{g(x)} = e^{\sin(x)\ln(x)} = x^{\sin(x)}$.
-We can then conclude $h'(x) = f'(g(x))g'(x) = x^{\sin(x)} \left[ \frac{\sin(x)}{x} + \cos(x)\ln(x)\right]$.
-\end{example}
-
-%more question formats below
 
 
 
 
-
-
-
-
-
-
-
-
-
-%\begin{verbatim}
-\begin{question}
-What is your favorite color?
-\begin{multipleChoice}
-\choice[correct]{Rainbow}
-\choice{Blue}
-\choice{Green}
-\choice{Red}
-\end{multipleChoice}
-\begin{freeResponse}
-Hello
-\end{freeResponse}
-\end{question}
-%\end{verbatim}
-
-
-
-
-
-\begin{question}
-  Which one will you choose?
-  \begin{multipleChoice}
-    \choice[correct]{I'm correct.}
-    \choice{I'm wrong.}
-    \choice{I'm wrong too.}
-  \end{multipleChoice}
-\end{question}
-
-
-\begin{question}
-  Which one will you choose?
-  \begin{selectAll}
-    \choice[correct]{I'm correct.}
-    \choice{I'm wrong.}
-    \choice[correct]{I'm also correct.}
-    \choice{I'm wrong too.}
-  \end{selectAll}
-\end{question}
-
-
-\begin{freeResponse}
-What is the chain rule used for?
-\end{freeResponse}
