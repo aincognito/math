@@ -1,0 +1,169 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\outcome{Describe a curve in space.}
+
+\title{2.1 Space Curves}
+
+
+
+\begin{document}
+
+\begin{abstract}
+In this section we create the describe curves in space.
+\end{abstract}
+
+\maketitle
+
+
+A curve in space can be described using a \textbf{vector-valued function}:
+\[
+\vec r(t) = \vector{f(t), g(t), h(t)}
+\]
+
+\begin{example}[Example 1]
+Express the line through the point $(3, -4, 1)$ with direction vector $\vector{2, 5, -8}$ using a vector-valued function.\\
+The vector equation of the line is 
+\[
+\vector{x, y, z} = \vector{3, -4, 1} + t\vector{2, 5, -8}
+\]
+Distributing the parameter $t$ and adding the vectors on the right hand side, we have
+\[
+\vector{x, y, z} = \vector{3+2t,-4+ 5t, 1-8t}
+\]
+Renaming the vector on the left hand side as $\vec r(t)$ we have
+\[
+\vec r(t) = \vector{3+2t,-4+ 5t, 1-8t}
+\]
+which is a vector-valued function.
+
+\end{example}
+
+\begin{remark}
+
+In general, a line with vector equation
+\[
+\vector{x, y, z} = \vector{x_0, y_0, z_0} + t\vector{a, b, c}
+\]
+can be expressed as a vector-valued function as follows:
+\[
+\vec r(t) = \vector{x_0 + at, y_0 + bt, z_0 + ct}
+\]
+\end{remark}
+
+\begin{problem}(Problem 1a)
+Express the line through the point $(6, 7, 2)$ with direction vector $\vector{9, -3, 5}$ as a vector-valued function.
+\end{problem}
+
+\begin{problem}(Problem 1b)
+Identify the space curve given by the vector-valued function:
+\[
+\vec r(t) = \vector{3 -t, -2 + 2t, 7t}
+\]
+\end{problem}  
+
+The domain of a space curve is the largest subset of $\R$ for which each of the component functions are defined.
+
+\begin{example}[Example 2]
+Find the domain of the space curve
+\[
+\vec r(t) = \vector{\frac{1}{t}, \sqrt t, \ln(1-t)}
+\]
+ The domain of $f(t) = 1/t$ is $t \neq 0$; the domain of $g(t) = \sqrt t$ is $t \geq 0$ and the domain
+ of $h(t) = \ln(t)$ is $1-t > 0$ or $t<1$.\\
+ The domain of $\vec r(t)$ must satisfy all three conditions:
+ \[
+ t\neq 0, \quad t \geq 0, \quad \text{and} \quad t <1
+ \]
+ Thus the domain of $\vec r(t)$ is the interval $(0, 1)$.
+ \end{example}
+ 
+\begin{problem}(Problem 2a)
+Find the domain of the space curve
+\[
+\vec r(t) = \vector{\frac{1}{t^2 - 4}, \sqrt{2- t}, \ln (t)}
+\]
+\end{problem}
+
+\begin{problem}(Problem 2b)
+Find the domain of the space curve
+\[
+\vec r(t) = \vector{\tan(t), \cot(t), \frac{1}{1+t^2}}
+\]
+\end{problem}
+
+
+The \textbf{orientation} of a space curve is in the direction of increasing values of the parameter $t$.
+
+
+
+A line segment from the point $P(x_1, y_1, z_1)$ to the point $Q(x_2, y_2, z_2)$ is a space curve that can be written as
+\begin{align*}
+\vec r(t) &= \vector{x_1, y_1, z_1} + t\vector{x_2-x_1, y_2-y_1, z_2-z_1} \\
+          &= (1-t)\vector{x_1, y_1, z_1} + t\vector{x_2, y_2, z_2}, 
+\end{align*}
+where $\; 0 \leq t \leq 1$.\\
+If we write the vector from the origin to $P$ as $\vec P$ and similarly for $\vec Q$, then the line segment has the elegant form 
+\[
+\vec r(t) = (1-t) \vec P + t \vec Q, \quad 0 \leq t \leq 1
+\]
+\begin{image}
+\begin{tikzpicture}
+
+\draw[thick, Circle->, blue!70!white] (0,0) node[left]{$P$} -- (2, 1);
+\draw[thick, ->, blue!70!white] (2,1) -- (4, 2) ;
+\draw[thick, ->, blue!70!white] (4, 2) node[below, rotate = 26.6, black]{orientation arrows point in the direction of increasing $t$} -- (6, 3);
+\draw[thick, -Circle, blue!70!white] (6,3) -- (8,4) node[right]{$Q$};
+\node at (4, -1) {The line segment from $P$ to $Q$};
+\node[rotate = 26.6] at (4, 2.7) {$\vec r(t) = (1-t)\vec P + t \vec Q, 0 \leq t \leq 1$};
+\end{tikzpicture}
+\end{image}
+
+\begin{example}[Example 3]
+Express the line segment from the point $P(1, 2, -1)$ to the point $Q(-2, -2, 1)$ as a vector-valued function.  
+Include the domain. Sketch the line segment with orientation arrows.\\
+The vector form of the line segment is
+\[
+\vec r(t) = (1-t)\vector{1, 2, -1} + t \vector{-2, -2, 1}
+\]
+and its domain is $0 \leq t \leq 1$. The sketch is below.
+\tdplotsetmaincoords{70}{110}
+\begin{image}
+\begin{tikzpicture}[tdplot_main_coords]
+    \draw[thick,->] (0,0,0) -- (2.3,0,0) node[anchor=north east]{$x$};
+    \draw[thick,->] (0,0,0) -- (0,2,0) node[anchor=north west]{$y$};
+    \draw[thick,->] (0,0,0) -- (0,0,2) node[anchor=south]{$z$};
+    \draw[thick, blue] (1, 2, -1) -- (-2, -2, 1);
+    \draw[thick, blue, Circle->] (1, 2, -1) node[right]{$P$}-- (0, 2/3, -1/3);
+    \draw[thick, blue, ->] (0, 2/3, -1/3)-- (-1, -2/3, 1/3) ;
+    \draw[thick, blue, -Circle] (-1, -2/3, 1/3) -- (-2, -2, 1) node[left]{$Q$};
+\end{tikzpicture}
+\end{image}
+
+\end{example}
+
+
+
+\begin{problem}(Problem 3)
+Express the line segment from the point $P(-1, -1, 2)$ to the point $Q(2, 3, -1)$ as a vector-valued function.  
+Include the domain. Sketch the line segment with orientation arrows.
+\end{problem}
+
+
+
+Other interesting space curves include the \textbf{helix}
+\[
+\vec r(t) = \vector{\cos t, \sin t, t}
+\]
+and the \textbf{twisted cubic}
+\[
+\vec r(t) = \vector{t, t^2, t^3}
+\]
+
+Plot both of these space curves using this online 
+\link[graph plotter]{https://math.libretexts.org/Learning_Objects/CalcPlot3D_Interactive_Figures/CalcPlot3D}
+
+\end{document}
+
+

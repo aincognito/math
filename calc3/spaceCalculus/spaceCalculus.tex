@@ -1,0 +1,136 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\outcome{Define limits, derivatives and integrals of vector-valued functions.}
+
+\title{2.2 Calculus of Space Curves}
+
+
+
+\begin{document}
+
+\begin{abstract}
+In this section we define limits, derivatives and integrals of vector-valued functions.
+\end{abstract}
+
+\maketitle
+
+\begin{definition}[Limit of a Vector-Valued Function]
+Limits of vector-valued functions are computed componentwise. If $\vec r(t) = \vector{f(t), g(t), h(t)}$ then
+\[
+\lim_{t \to c} \vec r(t) = \vector{\lim_{t \to c}f(t), \lim_{t \to c}g(t),\lim_{t \to c} h(t)}
+\]
+provided the limit of each component exists.
+\end{definition}
+
+\begin{example}[Example 1]
+Compute the indicated limit of the vector valued function:
+\[
+\lim_{t \to 0} \vector{\frac{\sin t}{t}, \frac{\ln t}{t}, \frac{e^t - t -1}{t^2}}
+\]
+Recall \textbf{L'Hopital's Rule}:
+\[
+\text{If}\; \lim_{x \to c} \frac{f(x)}{g(x)} = \frac00 \; \text{or} \; \frac{\infty}{\infty} 
+\]
+\[
+\text{then} \; \lim_{x \to c} \frac{f(x)}{g(x)} = \lim_{x \to c} \frac{f'(x)}{g'(x)}
+\]
+as long as $f$ and $g$ are differentiable in an open interval containing $x = c$ (but not necessarily at $x = c$ itself)
+and $g'(c) \neq 0$. We can apply this to the limit in each of the components:
+\[
+\lim_{t \to 0} \frac{\sin t}{t} = \frac00 = \lim_{t\to 0} \cos t = \cos 0  = 1
+\]
+\[
+\lim_{t \to 0} \frac{\ln(1+t)}{t} = \frac00 = \lim_{t\to 0} \frac{1}{1+t} = 1
+\]
+\[
+\lim_{t \to 0} \frac{e^t - t - 1}{t^2} = \frac00 = \lim_{t\to 0} \frac{e^t - 1}{2t} = \frac00 = \frac{e^t}{2}  = \frac12
+\]
+Hence the limit of the vector-valued function is the vector $\vector{1, 1, 1/2}$.
+\end{example}
+
+\begin{problem}(Problem 1)
+Compute the limit if the vector-valued function:
+\[
+\lim_{t \to 1} \vector{\frac{x^5 - 1}{x^3 - 1}, \frac{\tan(t-1)}{t-1}, \frac{1 - \sqrt x}{x-1}}
+\]
+\end{problem}
+
+\textbf{Continuity} of a vector-valued function is defined in terms of its components.
+
+\begin{definition}[Continuity of Vector-Valued Functions]
+A vector-valued function $\vec r(t) = \vector{f(t), g(t), h(t)}$ is
+\textbf{continuous} at $t = c$ if
+\[
+\lim_{t \to c} \vec r(t) = \vec r(c)
+\]
+\end{definition}
+
+\begin{example}[Example 1]
+Verify that the vector-valued function $\vec r(t) = \vector{\sin t, t \cos t, e^{-t}}$ is continuous at $t = 0$.\\
+Since
+\[
+\lim_{t \to 0} \sin t =  \sin 0 = 0
+\]
+\[
+\lim_{t \to 0} t \cos t =  0 \cdot \cos 0 = 0
+\]
+\[
+\lim_{t \to 0} e^{-t} =  e^0 = 1,
+\]
+we have
+\[
+\lim_{t \to 0} \vec r(t) = \vector{0, 0, 1} = \vec r(0)
+\]
+and hence the vector-valued function $\vec r(t)$ is continuous at $t = 0$.
+
+\end{example}
+
+Since continuity is determined componentwise, we can take advantage of our knowledge of 
+continuous functions of a single variable.
+
+\begin{proposition}[Continuity]
+If $f, g$ and $h$ are continuous at $c$, then the vector-valued function $\vec r(t) = \vector{f(t), g(t), h(t)}$
+is continuous at $t = c$
+\end{proposition}
+\begin{proof}
+The proof follows directly from the definitions of continuity of functions of a single 
+variable and vector-valued functions and the componentwise computation of limits of vector-valued functions.
+\end{proof}
+
+The derivative of a vector valued function is defined in a manner analogous to the derivative of a function of a single variable.
+
+\begin{definition}[Derivative of a Vector-Valued Function]
+Let $\vec r(t)$ be a vector-valued function. Its \textbf{derivative} is defined by
+\[
+\frac{d\vec r}{dt} = \vec r\, '(t) = \lim_{h \to 0} \frac{\vec r(t+h) - \vec r(t)}{h}
+\]
+provided the limit exists.
+\end{definition}
+
+\begin{remark}
+The vector 
+\[
+\frac{\vec r(t+h) - \vec r(t)}{h}
+\]
+is a scalar multiple of the vector between the points $\vec r(t+h)$ and $\vec r(t)$ on the space 
+curve defined by the vector-valued function $\vec r(t)$. 
+Hence, we can see that the vector $\vec r\,'(t)$, if it exists, 
+will be a vector that is tangent to the curve $\vec r(t)$. 
+\end{remark}
+
+\begin{definition}[Tangent Vector and Tangent Line]
+If the vector-valued function $\vec r(t)$ is differentiable at $t = t_0$ then the vector $\vec r\,'(t_0)$ is called the 
+\textbf{tangent vector} to the curve determined by $\vec r(t)$ at the point corresponding to $t = t_0$. 
+Furthermore, the equation of the \textbf{tangent line} to this curve at $ t= t_0$ is given by
+\[
+\vector{x, y, z} = \vec r(t_0) + t\,\vec r\,'(t_0)
+\]
+\end{definition}
+
+
+
+
+\end{document}
+
