@@ -128,9 +128,9 @@ The vector form of the line segment is
 \vec r(t) = (1-t)\vector{1, 2, -1} + t \vector{-2, -2, 1}
 \]
 and its domain is $0 \leq t \leq 1$. The sketch is below.
-\tdplotsetmaincoords{70}{110}
+%\tdplotsetmaincoords{70}{110}
 \begin{image}
-\begin{tikzpicture}[tdplot_main_coords]
+\begin{tikzpicture}%[tdplot_main_coords]
     \draw[thick,->] (0,0,0) -- (2.3,0,0) node[anchor=north east]{$x$};
     \draw[thick,->] (0,0,0) -- (0,2,0) node[anchor=north west]{$y$};
     \draw[thick,->] (0,0,0) -- (0,0,2) node[anchor=south]{$z$};
@@ -165,5 +165,4 @@ Plot both of these space curves using this online
 \link[graph plotter]{https://math.libretexts.org/Learning_Objects/CalcPlot3D_Interactive_Figures/CalcPlot3D}
 
 \end{document}
-
 
