@@ -110,7 +110,7 @@ If we write the vector from the origin to $P$ as $\vec P$ and similarly for $\ve
 \]
 \begin{image}
 \begin{tikzpicture}
-
+\draw[thick, blue!70!white] (0,0) -- (8,4);
 \draw[thick, Circle->, blue!70!white] (0,0) node[left]{$P$} -- (2, 1);
 \draw[thick, ->, blue!70!white] (2,1) -- (4, 2) ;
 \draw[thick, ->, blue!70!white] (4, 2) node[below, rotate = 26.6, black]{orientation arrows point in the direction of increasing $t$} -- (6, 3);
@@ -138,10 +138,10 @@ and its domain is $0 \leq t \leq 1$. The sketch is below.
 \draw[thick, ->] (0,0) -- (0,2) node[above]{$z$};
 \draw[thick, ->] (0,0) -- (-1.6,-1.2) node[below, left]{$x$};
 %\node at (0.1, -0.2){$O$} ;
-\draw[thick, blue, Circle-Circle] (2, -1.5) node[right]{$P$} -- (-1, 2) node[left]{$Q$};
-\draw[->, blue] (2, -1.5) -- (0.5, 0.25);
-\draw[->, blue] (2, -1.5) -- (1.25, -0.625);
-\draw[->, blue] (2, -1.5) -- (-.25, 1.125);
+\draw[thick, blue!70!white, Circle-Circle] (2, -1.5) node[right]{$P$} -- (-1, 2) node[left]{$Q$};
+\draw[->, blue!70!white] (2, -1.5) -- (0.5, 0.25);
+\draw[->, blue!70!white] (2, -1.5) -- (1.25, -0.625);
+\draw[->, blue!70!white] (2, -1.5) -- (-.25, 1.125);
 \end{tikzpicture}
 \end{image}
 
