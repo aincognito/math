@@ -16,8 +16,10 @@ In this section we define limits, derivatives and integrals of vector-valued fun
 
 \maketitle
 
+\section{Limits}
+Limits of vector-valued functions are computed componentwise. 
 \begin{definition}[Limit of a Vector-Valued Function]
-Limits of vector-valued functions are computed componentwise. If $\vec r(t) = \vector{f(t), g(t), h(t)}$ then
+If $\vec r(t) = \vector{f(t), g(t), h(t)}$ then
 \[
 \lim_{t \to c} \vec r(t) = \vector{\lim_{t \to c}f(t), \lim_{t \to c}g(t),\lim_{t \to c} h(t)}
 \]
@@ -57,7 +59,9 @@ Compute the limit if the vector-valued function:
 \]
 \end{problem}
 
-\textbf{Continuity} of a vector-valued function is defined in terms of its components.
+\section{Continuity}
+
+Continuity of a vector-valued function is defined in terms of its components.
 
 \begin{definition}[Continuity of Vector-Valued Functions]
 A vector-valued function $\vec r(t) = \vector{f(t), g(t), h(t)}$ is
@@ -67,7 +71,7 @@ A vector-valued function $\vec r(t) = \vector{f(t), g(t), h(t)}$ is
 \]
 \end{definition}
 
-\begin{example}[Example 1]
+\begin{example}[Example 2]
 Verify that the vector-valued function $\vec r(t) = \vector{\sin t, t \cos t, e^{-t}}$ is continuous at $t = 0$.\\
 Since
 \[
@@ -87,18 +91,33 @@ and hence the vector-valued function $\vec r(t)$ is continuous at $t = 0$.
 
 \end{example}
 
+\begin{problem}(Problem 2a)
+Show that the space curve is continuous at $t = 0$:
+\[
+\vec r(t) = \vector{|t|,\sqrt[3] t, \sec(t)}
+\]
+\end{problem}
+
 Since continuity is determined componentwise, we can take advantage of our knowledge of 
 continuous functions of a single variable.
 
 \begin{proposition}[Continuity]
 If $f, g$ and $h$ are continuous at $c$, then the vector-valued function $\vec r(t) = \vector{f(t), g(t), h(t)}$
-is continuous at $t = c$
+is continuous at $t = c$.
 \end{proposition}
 \begin{proof}
-The proof follows directly from the definitions of continuity of functions of a single 
-variable and vector-valued functions and the componentwise computation of limits of vector-valued functions.
+The proof follows directly from the definitions of continuity of vector-valued functions, continuity of functions of a single 
+variable, and the componentwise computation of limits of vector-valued functions.
 \end{proof}
 
+\begin{problem}(Problem 2b)
+Explain why the space curve is continuous on the interval $(0, \infty)$:
+\[
+\vec r(t) = \vector{ \sqrt t, \ln t, t^{-1}}
+\]
+\end{problem}
+
+\section{Differentiation}
 The derivative of a vector valued function is defined in a manner analogous to the derivative of a function of a single variable.
 
 \begin{definition}[Derivative of a Vector-Valued Function]
@@ -129,8 +148,117 @@ Furthermore, the equation of the \textbf{tangent line} to this curve at $ t= t_0
 \]
 \end{definition}
 
+\begin{example}[Example 3] 
+Find the unit tangent vector to the spiral helix
+\[
+\vec r(t) = \vector{\cos(2t), \sin(2t), t}
+\]
+at $t = \pi/2$.\\
+The tangent vector is given by
+\[
+\vec r\,'(t) = \vector{-2\sin(2t), 2\cos(2t), 1}
+\]
+At $t = \pi/2$ we have
+\[
+\vec r\,'(\pi/2) = \vector{-2\sin(\pi), 2\cos(pi), 1} = \vector{0, -2, 1}
+\]
+The unit tangent vector is
+\[
+\frac{r\,'(\pi/2)}{|r\,'(\pi/2)|} = \frac{1}{\sqrt 5}\vector{0, -2, 1} = \vector{0, -\frac{2}{\sqrt 5}, \frac{1}{\sqrt 5}}
+\]
+
+\end{example}
+
+\begin{problem}(Problem 3a)
+Find the unit tangent vector to the space curve
+\[
+\vec r(t) = \vector{2t, te^t, \tan(2t)}
+\]
+at $t = 0$.\\
+The tangent vector is $\vector{\answer{2}, \answer{1}, \answer{2}}$\\
+The unit tangent vector is $\vector{\answer{2/3}, \answer{1/3}, \answer{2/3}}$
+\end{problem}
+
+\begin{problem}(Problem 3b)
+Find the equation of the tangent line to the twisted cubic
+\[
+\vec r(t) = \vector{t, t^2, t^3}
+\]
+at $t = 1$.\\
+The vector form of the tangent line is $\vector{x, y, z} = \vector{1,1,1} + t\vector{1, \answer{2}, \answer{3}}$\\
+\end{problem}
+
+\section{Integration}
+
+As expected, the integral of a vector-valued function is computed componentwise.
+
+\begin{definition}[Integral of a Vector-Valued Function]
+If $\vec r = \vector{f(t), g(t), h(t)}$ is defined and continuous on the interval $[a, b]$, then the definite integral is defined by
+\[
+\int_a^b \vec r(t) \, dt = \int_a^b \vector{f(t), g(t), h(t)} \, dt =  \vector{\int_a^b f(t) \, dt,\int_a^b  g(t) \, dt,\int_a^b  h(t) \, dt}
+\]
+
+and the indefinite integral is defined by
+
+\[
+\int \vec r(t) \, dt = \int\vector{f(t), g(t), h(t)} \, dt =  \vector{\int f(t) \, dt,\int  g(t) \, dt,\int  h(t) \, dt}
+\]
+\end{definition}
+
+\begin{remark}
+The constant of integration of a vector-valued function is a vector.
+\end{remark}
+
+\begin{example}[Example 4]
+Let $\vec r(t) = \vector{te^t,t\cos(t^2),\csc^2(t)}.$ Compute the indefinite integral:
+\[
+\int \vec r(t) \, dt
+\]
+We will compute the integral of the components separately:
+To integrate $te^t$, we use integration by parts with $u = t$ and $dv = e^t \, dt$:
+\begin{align*}
+\int te^t \, dt &= \int u \, dv = uv - \int v \, du\\
+                 &= te^t - \int e^t \, dt\\
+                 & = te^t - e^t + C_1\\
+                 & = (t-1)e^t + C_1
+\end{align*}
+To integrate $t\cos(t^2)$ we use $u$-substitution with $ u = t^2$:
+\begin{align*}
+\int t\cos(t^2) \, dt &= \frac12 \int \cos(u) \, du \\
+                 &= \frac12 \sin(u) + C_2\\
+                 & = \frac12 \sin(t^2) + C_2
+\end{align*}
+To integrate $\csc^2(t)$, note that
+\[
+\frac{d}{dt} \cot(t) = -\csc^2(t)
+\]
+We have
+\[
+\int \csc^2(t) \, dt = -\cot(t) + C_3
+\]
+Hence, the indefinite integral of $\vec r(t)$ is
+\[
+\int \vec r(t) \, dt = \vector{(t-1)e^t,\frac12 \sin(t^2),-\cot(t)} + \vector{C_1, C_2, C_3}
+\]
+
+\end{example}
+
+\begin{problem}(Problem 4a)
+Let $\vec r(t) = \vector{t^2\ln(t),t\sqrt{1+t^2},\frac{1}{1+t^2}}.$ Compute the indefinite integral:
+\[
+\int \vec r(t) \, dt = \vector{\answer{\frac13 t^3 \ln(t) - \frac19 t^3},\answer{\frac13 (1+t^2)^3/2},\answer{\tan^{-1}(t)}} + \vector{C_1, C_2, C_3}
+\]
+
+\end{problem}
+
+\begin{problem}(Problem 4b)
+Let $\vec r(t) = \vector{\cos(2\pi t),|t|,e^{-t}}$. Compute the definite integral:
+\[
+\int_0^1 \vec r(t) \, dt = \vector{\answer{0}, \answer{1/2}, \answer{1 - 1/e}}
+\]
+\end{problem}
+
 
 
 
 \end{document}
-
