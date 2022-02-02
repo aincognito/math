@@ -1,0 +1,47 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\outcome{Compute arc length.}
+
+\title{2.4 Arc Length}
+
+
+
+\begin{document}
+
+\begin{abstract}
+In this section we compute arc length and we define the arc length parameter.
+\end{abstract}
+
+\maketitle
+
+
+\begin{definition}
+The arc length of the space curve
+\[
+\vec r(t) = \vector{x(t), y(t), z(t)}, \; a \leq t \leq b
+\]
+is given by
+\[
+L = \int_a^b |\vec r\,'(t)|\, dt = \int_a^b \sqrt{x'(t)^2 + y'(t)^2 +z'(t)^2}\, dt = \int_a^b \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 +\left(\frac{dz}{dt}\right)^2}\, dt
+\]
+\end{definition}
+
+
+Consider a space curve $\vec r(t), \; a \leq t \leq b$.  Subdivide the cruve into $n$ pieces, by subdividing the interval $[a, b]$ into $n$ equal 
+subintervals each of length $\Delta t = \frac{b-a}{n}$. Denote the endpoints of these $n$ subintervals by $a = t_0, t_1, t_2, ..., t_n = b$.
+The length of the line segment connecting the points $\vec r(t_i)$ and $\vec r(t_{i-1})$ is given by
+\[
+\Delta \vec r_i = \sqrt{(\Delta x_i) ^2 + (\Delta y_i)^2 + (\Delta z_i)^2}
+\]
+and the length of the curve is approximately
+\[
+\sum_{i = 1}^n \sqrt{(\Delta x_i) ^2 + (\Delta y_i)^2 + (\Delta z_i)^2}
+\]
+\[
+= \sum_{i = 1}^n \sqrt{\left(\frac{\Delta x_i}{\Delta t}\right)^2 + \left(\frac{\Delta y_i}{\Delta t}\right)^2 + \left(\frac{\Delta z_i}{\Delta t}\right)^2} \Delta t
+\]
+Taking the limit as $n \to \infty$ gives the arc length formula in the definition.
+
+\end{document}

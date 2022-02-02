@@ -19,9 +19,9 @@ In this section we define limits, derivatives and integrals of vector-valued fun
 \section{Limits}
 Limits of vector-valued functions are computed componentwise. 
 \begin{definition}[Limit of a Vector-Valued Function]
-If $\vec r(t) = \vector{f(t), g(t), h(t)}$ then
+If $\vec r(t) = \vector{x(t), y(t), z(t)}$ then
 \[
-\lim_{t \to c} \vec r(t) = \vector{\lim_{t \to c}f(t), \lim_{t \to c}g(t),\lim_{t \to c} h(t)}
+\lim_{t \to c} \vec r(t) = \vector{\lim_{t \to c}x(t), \lim_{t \to c}y(t),\lim_{t \to c} z(t)}
 \]
 provided the limit of each component exists.
 \end{definition}
@@ -64,7 +64,7 @@ Compute the limit if the vector-valued function:
 Continuity of a vector-valued function is defined in terms of its components.
 
 \begin{definition}[Continuity of Vector-Valued Functions]
-A vector-valued function $\vec r(t) = \vector{f(t), g(t), h(t)}$ is
+A vector-valued function $\vec r(t) = \vector{x(t), y(t), z(t)}$ is
 \textbf{continuous} at $t = c$ if
 \[
 \lim_{t \to c} \vec r(t) = \vec r(c)
@@ -102,7 +102,7 @@ Since continuity is determined componentwise, we can take advantage of our knowl
 continuous functions of a single variable.
 
 \begin{proposition}[Continuity]
-If $f, g$ and $h$ are continuous at $c$, then the vector-valued function $\vec r(t) = \vector{f(t), g(t), h(t)}$
+If $x(t), y(t)$ and $z(t)$ are continuous at $t = c$, then the vector-valued function $\vec r(t) = \vector{x(t), y(t), z(t)}$
 is continuous at $t = c$.
 \end{proposition}
 \begin{proof}
@@ -131,20 +131,20 @@ provided the limit exists.
 \begin{remark}
 The vector 
 \[
-\frac{\vec r(t+h) - \vec r(t)}{h}
+\frac{\vec r(a+h) - \vec r(a)}{h}
 \]
-is a scalar multiple of the vector between the points $\vec r(t+h)$ and $\vec r(t)$ on the space 
+is a scalar multiple of the vector between the points $\vec r(a+h)$ and $\vec r(a)$ on the space 
 curve defined by the vector-valued function $\vec r(t)$. 
-Hence, we can see that the vector $\vec r\,'(t)$, if it exists, 
-will be a vector that is tangent to the curve $\vec r(t)$. 
+Hence, we can see that the vector $\vec r\,'(a)$, if it exists, 
+will be a vector that is tangent to the curve $\vec r(t)$ at $t = a$. 
 \end{remark}
 
 \begin{definition}[Tangent Vector and Tangent Line]
-If the vector-valued function $\vec r(t)$ is differentiable at $t = t_0$ then the vector $\vec r\,'(t_0)$ is called the 
-\textbf{tangent vector} to the curve determined by $\vec r(t)$ at the point corresponding to $t = t_0$. 
-Furthermore, the equation of the \textbf{tangent line} to this curve at $ t= t_0$ is given by
+If the vector-valued function $\vec r(t)$ is differentiable at $t = a$ then the vector $\vec r\,'(a)$ is called the 
+\textbf{tangent vector} to the curve determined by $\vec r(t)$ at the point corresponding to $t = a$. 
+Furthermore, the equation of the \textbf{tangent line} to this curve at $ t= a$ is given by
 \[
-\vector{x, y, z} = \vec r(t_0) + t\,\vec r\,'(t_0)
+\vector{x, y, z} = \vec r(a) + t\,\vec r\,'(a)
 \]
 \end{definition}
 
@@ -160,7 +160,7 @@ The tangent vector is given by
 \]
 At $t = \pi/2$ we have
 \[
-\vec r\,'(\pi/2) = \vector{-2\sin(\pi), 2\cos(pi), 1} = \vector{0, -2, 1}
+\vec r\,'(\pi/2) = \vector{-2\sin(\pi), 2\cos(\pi), 1} = \vector{0, -2, 1}
 \]
 The unit tangent vector is
 \[
@@ -188,20 +188,42 @@ at $t = 1$.\\
 The vector form of the tangent line is $\vector{x, y, z} = \vector{1,1,1} + t\vector{1, \answer{2}, \answer{3}}$\\
 \end{problem}
 
+In applications where the space curve $\vec r(t)$ represents the path of a particle, the tangent vector $\vec r\,'(t)$ is sometimes referred to as the \textbf{velocity} vector
+of the particle and its magnitude, $|\vec r\,'(t)|$ is the \textbf{speed} of the particle.
+
+\begin{example}[Example 4]
+Find the speed of a particle whose position is given by $\vec r(t) = \vector{\cos(t), \sin(t), t}$ at $t = \pi$.\\
+The tangent vector at $ t = \pi$ is
+\[
+\vec r\,'(\pi) = \vector{-\sin(\pi), \cos(\pi), 1} = \vector{0, -1, 1}
+\]
+and the speed of the curve a t $t = \pi$ is
+\[
+\text{speed} = |\vec r\,'(\pi)| =|\vector{0, -1, 1}| = \sqrt{0^2 + (-1)^2 + 1^2} = \sqrt 2
+\]
+\end{example}
+
+\begin{problem}(Problem 4) 
+Find the speed of the particle with position $\vec r(t) = \vector{te^t, t^2e^{2t}, t^3e^{3t}}$ at $t = 0$.\\
+\[
+\text{speed} = |\vec r\,'(0)| = \answer{1}
+\]
+\end{problem}
+
 \section{Integration}
 
 As expected, the integral of a vector-valued function is computed componentwise.
 
 \begin{definition}[Integral of a Vector-Valued Function]
-If $\vec r = \vector{f(t), g(t), h(t)}$ is defined and continuous on the interval $[a, b]$, then the definite integral is defined by
+If $\vec r = \vector{x(t), y(t), z(t)}$ is defined and continuous on the interval $[a, b]$, then the definite integral is defined by
 \[
-\int_a^b \vec r(t) \, dt = \int_a^b \vector{f(t), g(t), h(t)} \, dt =  \vector{\int_a^b f(t) \, dt,\int_a^b  g(t) \, dt,\int_a^b  h(t) \, dt}
+\int_a^b \vec r(t) \, dt = \int_a^b \vector{x(t), y(t), z(t)} \, dt =  \vector{\int_a^b x(t) \, dt,\int_a^b  y(t) \, dt,\int_a^b  z(t) \, dt}
 \]
 
 and the indefinite integral is defined by
 
 \[
-\int \vec r(t) \, dt = \int\vector{f(t), g(t), h(t)} \, dt =  \vector{\int f(t) \, dt,\int  g(t) \, dt,\int  h(t) \, dt}
+\int \vec r(t) \, dt = \int\vector{x(t), y(t), z(t)} \, dt =  \vector{\int x(t) \, dt,\int  y(t) \, dt,\int  z(t) \, dt}
 \]
 \end{definition}
 
@@ -209,7 +231,7 @@ and the indefinite integral is defined by
 The constant of integration of a vector-valued function is a vector.
 \end{remark}
 
-\begin{example}[Example 4]
+\begin{example}[Example 5]
 Let $\vec r(t) = \vector{te^t,t\cos(t^2),\csc^2(t)}.$ Compute the indefinite integral:
 \[
 \int \vec r(t) \, dt
@@ -243,7 +265,7 @@ Hence, the indefinite integral of $\vec r(t)$ is
 
 \end{example}
 
-\begin{problem}(Problem 4a)
+\begin{problem}(Problem 5a)
 Let $\vec r(t) = \vector{t^2\ln(t),t\sqrt{1+t^2},\frac{1}{1+t^2}}.$ Compute the indefinite integral:
 \[
 \int \vec r(t) \, dt = \vector{\answer{\frac13 t^3 \ln(t) - \frac19 t^3},\answer{\frac13 (1+t^2)^3/2},\answer{\tan^{-1}(t)}} + \vector{C_1, C_2, C_3}
@@ -251,7 +273,7 @@ Let $\vec r(t) = \vector{t^2\ln(t),t\sqrt{1+t^2},\frac{1}{1+t^2}}.$ Compute the 
 
 \end{problem}
 
-\begin{problem}(Problem 4b)
+\begin{problem}(Problem 5b)
 Let $\vec r(t) = \vector{\cos(2\pi t),|t|,e^{-t}}$. Compute the definite integral:
 \[
 \int_0^1 \vec r(t) \, dt = \vector{\answer{0}, \answer{1/2}, \answer{1 - 1/e}}

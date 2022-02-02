@@ -1,0 +1,135 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\outcome{Derive differentitation rules for vector-valued functions.}
+
+\title{2.3 Differentiation Rules}
+
+
+
+\begin{document}
+
+\begin{abstract}
+In this section we will derive differentiation rules for vector-valued functions.
+\end{abstract}
+
+\maketitle
+
+\section{Sum and Difference Rules}
+
+
+The derivative of the sum or difference of two vector-valued functions is the sum or difference of their derivatives.
+
+\begin{proposition}[Sum and Difference Rules]
+Let $\vec r_1(t)$ and $\vec r_2(t)$ be vector-valued functions. Then
+\[
+\frac{d}{dt}\left[\vec r_1(t) \pm \vec r_2(t) \right] = \vec r_1\,'(t) \pm \vec r_2\,'(t)
+\]
+\end{proposition}
+The reader should verify that the previous proposition is a direct consequence of the 
+componentwise sum of vectors and the analogous differentiation rules for ordinary functions.
+
+\section{Product Rules}
+There are three types of multiplcation involving vectors: multiplication by a scalar, the dot priduct, and the cross product.
+We will use the product rule for ordinary functions to derive a product rule for all three of these operations.
+Recall the product rule for functions $f(x)$ and $g(x)$:
+\[
+\frac{d}{dx}\left[f(x)g(x)\right] = f(x)g'(x) + f'(x)g(x)
+\]
+We begin with scalar mutiplication.
+
+\begin{proposition}[Product Rule for Scalar Multiplication]
+Let $\vec r(t) = \vector{x(t), y(t),z(t)}$ be a vector-valued function with differentiable components, and let $f(t)$ be an ordinary, differentiable real-valued function.
+Then
+\[
+\frac{d}{dt}\left[f(t)\vec r(t)\right] = f(t)\vec r\,'(t)) + f'(t)\vec r(t)
+\]
+\end{proposition}
+
+\begin{proof}
+Multiplying $f(t)$ into each component of $\vec r(t)$ and then differentiating yields
+\begin{align*}
+\frac{d}{dt}\left[f(t)\vec r(t)\right] &= \frac{d}{dt} \left[ \vector{f(t)x(t), f(t)y(t),f(t)z(t)}\right]\\
+&=  \vector{\frac{d}{dt} \left[f(t)x(t)\right], \frac{d}{dt} \left[f(t)y(t)\right],\frac{d}{dt} \left[f(t)z(t)\right]}\\
+&= \vector{f(t)x'(t) + f'(t)x(t), f(t)y'(t) + f'(t)y(t), f(t)z'(t) + f'(t)z(t)}\\
+&=\vector{f(t)x'(t) , f(t)y'(t), f(t)z'(t)}+ \vector{f'(t)x(t), f'(t)y(t), f'(t)z(t)}\\
+&= f(t)\vector{x'(t), y'(t), z'(t)} + f'(t)\vector{x(t), y(t), z(t)}\\
+&= f(t)\vec r\,'(t)) + f'(t)\vec r(t)
+\end{align*}
+as claimed.
+\end{proof}
+
+\begin{proposition}[Product Rule for the Dot Product]
+Let $\vec r_1(t) = \vector{x_1(t), y_1(t),z_1(t)}$ and $\vec r_2(t) = \vector{x_2(t), y_2(t),z_2(t)}$ be vector-valued functions with differentiable components.
+Then
+\[
+\frac{d}{dt}\left[\vec r_1(t) \dotp \vec r_2(t)\right] = \vec r_1(t)\dotp \vec r_2\,'(t) + \vec r_1\,'(t)\dotp\vec r_2(t)
+\]
+\end{proposition}
+\begin{proof}
+Computing the dot product and then differentiating yields
+\begin{align*}
+\frac{d}{dt}\left[\vec r_1(t) \dotp \vec r_2(t)\right] &= \frac{d}{dt} \left[ \vector{x_1(t)x_2(t), y_1(t)y_2(t), z_1(t)z_2(t)}\right]\\
+&=  \vector{\frac{d}{dt} \left[x_1(t)x_2(t)\right], \frac{d}{dt} \left[y_1(t)y_2(t)\right],\frac{d}{dt} \left[z_1(t)z_2(t)\right]}\\
+&= \vector{x_1(t)x_2'(t) +x_1'(t)x_2(t), y_1(t)y_2'(t) +y_1'(t)y_2(t), z_1(t)z_2'(t) +z_1'(t)z_2(t)}\\
+&=\vector{x_1(t)x_2'(t) , y_1(t)y_2'(t), z_1(t)z_2'(t)}+ \vector{x_1'(t)x_2(t), y_1'(t)y_2(t), z_1'(t)z_2(t)}\\
+&= \vector{x_1(t), y_1(t), z_1(t)}\dotp \vector{x_2'(t), y_2'(t), z_2'(t)} + \vector{x_1'(t), y_1'(t), z_1'(t)}\dotp \vector{x_2(t), y_2(t), z_2(t)}\\
+&= \vec r_1(t) \dotp \vec r_2\,'(t) + \vec r_1\,'(t) \dotp \vec r_2(t)
+\end{align*}
+as claimed.
+\end{proof}
+
+\begin{proposition}[Product Rule for the Cross Product]
+Let $\vec r_1(t) = \vector{x_1(t), y_1(t),z_1(t)}$ and $\vec r_2(t) = \vector{x_2(t), y_2(t),z_2(t)}$ be vector-valued functions with differentiable components.
+Then
+\[
+\frac{d}{dt}\left[\vec r_1(t) \cross \vec r_2(t)\right] = \vec r_1(t) \cross \vec r_2\,'(t) + \vec r_1\,'(t) \cross \vec r_2(t)
+\]
+\end{proposition}
+\begin{proof}
+To simply the notation, we will suppress the variable and write $x_1$ and $x_1'$ in place of $x_1(t)$ and $x_1'(t)$ and simpilarly for $y_1$ and $z_1$.
+Recall the definition of the cross product:
+\[
+\vec{r}_1 \cross \vec{r}_2 =  \vector{y_1z_2 - z_1y_2, z_1x_2 - x_1z_2, x_1y_2 - y_1x_2}
+\]
+Computing the cross product and then differentiating yields:
+\begin{align*}
+\frac{d}{dt}\left[\vec r_1(t) \cross \vec r_2(t)\right] &= \frac{d}{dt} \left[ \vector{y_1z_2 - z_1y_2, z_1x_2 - x_1z_2, x_1y_2 - y_1x_2}\right]\\
+&=  \vector{\frac{d}{dt} \left[y_1z_2 - z_1y_2\right], \frac{d}{dt} \left[z_1x_2 - x_1z_2\right],\frac{d}{dt} \left[x_1y_2 - y_1x_2\right]}\\
+&= \vector{y_1z_2' + y_1'z_2- z_1y_2'  - z_1'y_2,  z_1x_2' + z_1'x_2- x_1z_2'  - x_1'z_2, x_1y_2' +x_1'y_2- y_1x_2'  - y_1'x_2      }\\
+&=\vector{y_1z_2' - z_1y_2'  ,  z_1x_2' - x_1z_2', x_1y_2' - y_1x_2'}+ \vector{ y_1'z_2  - z_1'y_2, z_1'x_2 - x_1'z_2, x_1'y_2 - y_1'x_2}\\
+&= \vector{x_1, y_1, z_1}\cross \vector{x_2', y_2', z_2'} + \vector{x_1', y_1', z_1'}\cross \vector{x_2, y_2, z_2}\\
+&= \vec r_1(t) \cross \vec r_2\,'(t) + \vec r_1\,'(t) \cross \vec r_2(t)
+\end{align*}
+as claimed.
+
+
+\end{proof}
+
+\section{Chain rule}
+Recall the chain rule for the derivative of a composition of two differentiable functions $f$ and $g$:
+\[
+\frac{d}{dx} f(g(x)) = f'(g(x)) \cdot g'(x)
+\]
+
+\begin{proposition}[Chain Rule for Vector-Valued Functions]
+Let $\vec r(t) = \vector{x(t), y(t),z(t)}$ be a vector-valued function with differentiable components, and let $g(t)$ be an ordinary, differentiable real-valued function.
+Then
+\[
+\frac{d}{dt}\vec r(g(t)) = g'(t)\,\vec r\,'(g(t))
+\]
+\end{proposition}
+\begin{proof}
+We write the composition in component form and then use the chain rule on each component:
+\begin{align*}
+\frac{d}{dt} \vec r(g(t)) &= \frac{d}{dt} \vector{x(g(t)), y(g(t)),z(g(t))}\\
+&= \vector{\frac{d}{dt} x(g(t)), \frac{d}{dt} y(g(t)), \frac{d}{dt} z(g(t))}\\
+&= \vector{x'(g(t)) g'(t), y'(g(t)) g'(t), z'(g(t)) g'(t)}\\
+&= g'(t)\vector{x'(g(t)), y'(g(t)), z'(g(t))}\\
+&= g'(t) \vec r\,'(g(t))
+\end{align*}
+as claimed.
+\end{proof}
+
+\end{document}
