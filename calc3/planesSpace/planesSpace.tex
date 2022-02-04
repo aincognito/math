@@ -297,6 +297,9 @@ Find the distance between the planes
 \[
 2x -5y + 3z = 6 \quad \text{and} \quad 2x-5y+3z = -2
 \]
+\[
+d = \answer{\frac{4}{19}\sqrt{38}}
+\]
 \end{problem}
 
 \begin{problem}(Problem 4b)
@@ -308,6 +311,9 @@ of the line into the equation of the plane
 \begin{hint}
 Find any point on the line and compute its distance to the plane
 \end{hint}
+\[
+d = \answer{\frac{11}{\sqrt{17}}}
+\]
 \end{problem}
 
 \begin{problem}(Problem 4c)
@@ -324,6 +330,9 @@ Use the cross product of the direction vectors to find the normal vector
 \begin{hint}
 Write the equations of the parallel planes using one point from each plane and the normal vector
 \end{hint}
+\[
+d = \answer{\frac{40}{\sqrt{1326}}}
+\]
 \end{problem}
 
 \begin{problem}(Problem 4d)
@@ -334,430 +343,17 @@ Find the angle between the planes
 \begin{hint}
 The angle between two planes is defined as the angle between their normal vectors
 \end{hint}
+\[
+\theta \approx \answer{56.6} \; \text{degrees (to one decimal place)}
+\]
 \end{problem}
+
+
 
 \end{document}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-The pic (below) compiles but not sure if it bakes in xake
-\begin{tikzpicture}
-\begin{scope}[decoration={markings,
-    mark=at position 0.25 with {\arrow[blue,very thick]{>}},
-    mark=at position 0.75 with {\arrowreversed[blue,very thick]{>}}}
-              ]
-\draw[postaction={decorate},thick,->] (0, -3) -- (0,3) node [black,above] {$y$};
-\end{scope}
-\begin{scope}[decoration={markings,
-    mark=at position 0.25 with {\arrowreversed[blue,very thick]{>}},
-    mark=at position 0.75 with {\arrow[blue,very thick]{>}}}
-              ]
-\draw[postaction={decorate},thick,->] (-3, 0) -- (3,0) node [black,right] {$x$};
-\end{scope}
-\begin{scope}[decoration={markings,
-    mark=at position 22mm with {\arrow[red,very thick]{>}}}
-              ]
-\draw[postaction={decorate},thick] plot[domain=0.33:3]      (\x,{1/\x});
-\draw[postaction={decorate},thick] plot[domain=-0.33:-3]    ({\x},{1/\x});
-\draw[postaction={decorate},thick] plot[domain=0.33:3]      (\x,{-1/\x});
-\draw[postaction={decorate},thick] plot[domain=-0.33:-3]    (\x,{-1/\x});
-\end{scope}
-    \end{tikzpicture}
-    
-    
-
-
-
-The next few pics all bake in xake!
-
-\begin{tikzpicture}[
-tangent/.style={
-decoration={
-markings,% switch on markings
-mark=
-at position #1
-with
-{
-\coordinate (tangent point-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,0pt);
-\coordinate (tangent unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (1,0pt);
-\coordinate (tangent orthogonal unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,1);
-}
-},
-postaction=decorate
-},
-use tangent/.style={
-shift=(tangent point-#1),
-x=(tangent unit vector-#1),
-y=(tangent orthogonal unit vector-#1)
-},
-use tangent/.default=1
-]
-
-\draw[->] (-.5,0) -- (6.5,0) node(xline)[right] {$x$};
-\draw[->] (0,-.5) -- (0,5) node(yline)[right] {$y$};
-
-
-\draw (-.5,1.2) to[out=0, in=180] coordinate[pos=.5] (A) (5,2.8);
-\draw[dashed] (A) -- (A |- xline) node[below] {$a$};
-
-\end{tikzpicture}
-
-
-\begin{tikzpicture}[
-tangent/.style={
-decoration={
-markings,% switch on markings
-mark=
-at position #1
-with
-{
-\coordinate (tangent point-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,0pt);
-\coordinate (tangent unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (1,0pt);
-\coordinate (tangent orthogonal unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,1);
-}
-},
-postaction=decorate
-},
-use tangent/.style={
-shift=(tangent point-#1),
-x=(tangent unit vector-#1),
-y=(tangent orthogonal unit vector-#1)
-},
-use tangent/.default=1
-]
-
-\draw[->] (-.5,0) -- (6.5,0) node(xline)[right] {$x$};
-\draw[->] (0,-.5) -- (0,5) node(yline)[right] {$y$};
-
-
-\draw (.5,4) to[out=-90, in=90] coordinate[pos=.5] (B) (4,-.5);
-\draw[dashed] (B) -- (B |- xline) node[below] {$b$};
-
-\end{tikzpicture}
-
-\begin{tikzpicture}[
-tangent/.style={
-decoration={
-markings,% switch on markings
-mark=
-at position #1
-with
-{
-\coordinate (tangent point-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,0pt);
-\coordinate (tangent unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (1,0pt);
-\coordinate (tangent orthogonal unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,1);
-}
-},
-postaction=decorate
-},
-use tangent/.style={
-shift=(tangent point-#1),
-x=(tangent unit vector-#1),
-y=(tangent orthogonal unit vector-#1)
-},
-use tangent/.default=1
-]
-
-\draw[tangent=0.4] (1,1) to[out=70, in=200] (4,4);
-\filldraw[use tangent] (0,0) circle (2pt);
-\draw[use tangent] (-1,0) -- (1,0);
-\end{tikzpicture}
-
-\begin{tikzpicture}[
-tangent/.style={
-decoration={
-markings,% switch on markings
-mark=
-at position #1
-with
-{
-\coordinate (tangent point-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,0pt);
-\coordinate (tangent unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (1,0pt);
-\coordinate (tangent orthogonal unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,1);
-}
-},
-postaction=decorate
-},
-use tangent/.style={
-shift=(tangent point-#1),
-x=(tangent unit vector-#1),
-y=(tangent orthogonal unit vector-#1)
-},
-use tangent/.default=1
-]
-
-\draw[tangent=0.4] (.5,2)
-to[out=-60,in=170] (1.5,1)
-to[out=10,in=-120] (2.5,2);
-\filldraw[use tangent] (0,0) circle (2pt);
-\draw[use tangent] (-1,0) -- (1,0);
-
-\end{tikzpicture}
-
-
-\begin{tikzpicture}[
-tangent/.style={
-decoration={
-markings,% switch on markings
-mark=
-at position #1
-with
-{
-\coordinate (tangent point-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,0pt);
-\coordinate (tangent unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (1,0pt);
-\coordinate (tangent orthogonal unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,1);
-}
-},
-postaction=decorate
-},
-use tangent/.style={
-shift=(tangent point-#1),
-x=(tangent unit vector-#1),
-y=(tangent orthogonal unit vector-#1)
-},
-use tangent/.default=1
-]
-\draw[tangent=0.0] (0,0) sin (1,1) cos (2,0);
-\draw (0,0) sin (-1,-1) cos (-2,0);
-\draw[use tangent] (-2,0) -- (2,0);
-\end{tikzpicture}
-
-
-
-
-
-
-\begin{tikzpicture}[
-tangent/.style={
-decoration={
-markings,% switch on markings
-mark=
-at position #1
-with
-{
-\coordinate (tangent point-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,0pt);
-\coordinate (tangent unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (1,0pt);
-\coordinate (tangent orthogonal unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,1);
-}
-},
-postaction=decorate
-},
-use tangent/.style={
-shift=(tangent point-#1),
-x=(tangent unit vector-#1),
-y=(tangent orthogonal unit vector-#1)
-},
-use tangent/.default=1
-]
-
-
-\draw[->] (-.5,0) -- (6,0) node(xline)[right] {$x$};
-\draw[->] (0,-.5) -- (0,6) node(yline)[right] {$y$};
-\draw[tangent=0.2] (1,1) to[out=-30,in=270]
-coordinate[pos=0.2] (A)
-coordinate[pos=0.7] (B)
-(5,5) node[right] {$y=f(x)$};
-\draw[use tangent, name path=tan] (-2,0) -- (3.5,0) node[right] {$y=L(x)$};
-\draw[dashed] (A) -- (A |- xline) node(E)[below] {$a$};
-\draw[dashed, name path=horiz, shorten <= -.2cm]
-(A -| yline) node[left, xshift=-.2cm] {$f(a)$} -- (A -| B);
-\draw[dashed, name path=vert] (B) -- (B |- xline) node(F)[below] {$x$};
-\fill[name intersections={of=horiz and vert}] (intersection-1) circle (.2pt) coordinate(D);
-\fill[name intersections={of=tan and vert}] (intersection-1) circle (.2pt) coordinate(C);
-\draw[
-thick,
-decoration={brace, mirror, raise=.2cm},
-decorate
-] (E) -- node[below, yshift=-.3cm] {$x-a$} (F);
-\draw[
-thick,
-decoration={brace, raise=.2cm},
-decorate
-] (B) -- node[right, xshift=.2cm] {$E(x)$} (C);
-
-\draw[
-thick,
-decoration={brace, raise=.2cm},
-decorate
-] (C) -- node[right, xshift=.2cm] {$f’(a)(x-a)$} (D);
-
-\end{tikzpicture}
-
-
-
-\begin{tikzpicture}[
-tangent/.style={
-decoration={
-markings,% switch on markings
-mark=
-at position #1
-with
-{
-\coordinate (tangent point-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,0pt);
-\coordinate (tangent unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (1,0pt);
-\coordinate (tangent orthogonal unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,1);
-}
-},
-postaction=decorate
-},
-use tangent/.style={
-shift=(tangent point-#1),
-x=(tangent unit vector-#1),
-y=(tangent orthogonal unit vector-#1)
-},
-use tangent/.default=1
-]
-
-
-\draw[->] (-.5,0) -- (7,0) node(xline)[right] {$x$};
-\draw[->] (0,-.5) -- (0,5) node(yline)[right] {$y$};
-\draw[thick, blue, smooth, tangent=0.255, tangent=0.745] (1,2)
-to[out=-60, in=170] coordinate[pos=0.5] (A) (2,1)
-to[out=10, in=190] (5,4)
-to[out=-10, in=120] coordinate[pos=0.5] (B) (6,3) node[right] {$y=f(x)$};
-\fill (A) circle (2pt);
-\fill (B) circle (2pt);
-\draw[shorten <= -.5cm, shorten >= -.5cm] (A) -- (B);
-\draw[thick, use tangent] (-1,0) -- coordinate (C) (1,0);
-\draw[thick, use tangent=2] (-1,0) -- coordinate (D) (1,0);
-\fill (C) circle (2pt);
-\fill (D) circle (2pt);
-\draw[dashed] (A) -- (A |- xline) node[below] {$a$};
-\draw[dashed] (B) -- (B |- xline) node[below] {$b$};
-\draw[dashed] (C) -- (C |- xline) node[below] {$c_1$};
-\draw[dashed] (D) -- (D |- xline) node[below] {$c_2$};
-
-\end{tikzpicture}
-
-
-
-
-
-
-
-
-
-
-
-\begin{image}
-\begin{tikzpicture}
-\draw (0,0) sin (1,1);
-\draw (2, 0) sin (3, -1);
-\draw  (4,0) cos (5, 1);
-\draw  (6,0) cos (7, -1);
-
-\draw (0, 3) sin (1, 4) cos (2, 3) sin (3, 2) cos (4, 3);
-\end{tikzpicture}
-\end{image}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\begin{align*}
-\vec{n} \dotp \vector{x-x_0, y-y_0, z-z_0} &= 0 \\
-\vec{n} \dotp \vector{x, y, z} &= d \\
-a(x-x_0) + b(y-y_0) + c(z-z_0) &= 0\\
-ax+by+cz &= d
-\end{align*}
-\[
-\vec{n} \dotp \vector{x-x_0, y-y_0, z-z_0} = 0 \\
-\]
-\[
-\vec{n} \dotp \vector{x, y, z} = d \\
-\]
-\[
-a(x-x_0) + b(y-y_0) + c(z-z_0) = 0\\
-\]
-\[
-ax+by+cz = d
-\]
-\begin{align*}
-&\vec{n} \dotp \vector{x-x_0, y-y_0, z-z_0} = 0 \\
-&\vec{n} \dotp \vector{x, y, z} = d \\
-&a(x-x_0) + b(y-y_0) + c(z-z_0) = 0\\
-&ax+by+cz = d
-\end{align*}
-\[
-\vec{n} \dotp \vector{x-x_0, y-y_0, z-z_0} = 0 \\
-\]
-\[
-a(x-x_0) + b(y-y_0) + c(z-z_0) = 0\\
-\]
-\[
-\vec{n} \dotp \vector{x, y, z} = d \\
-\]
-\[
-ax+by+cz = d
-\]
-
-
-
-
-\outcome{In this section we describe curves in space.}
-
-\title{2.1 Space Curves}
-
-
-
-\begin{abstract}
-In this section we describe curves in space.
-\end{abstract}
-
-\maketitle
-
-
-
-
-
-A curve in $\R^3$ is given by a vector valued function,
-\[
-\vec r(t) = \vector{f(t), g(t), h(t)}
-\]
-Note that this ia a vector equation.
- 
- 
- 
- 
- 
 
 
 
