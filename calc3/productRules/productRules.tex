@@ -80,6 +80,45 @@ Computing the dot product and then differentiating yields
 as claimed.
 \end{proof}
 
+\begin{proposition}
+Let $\vec r(t)$ be a vector-valued function and suppose $|\vec r(t)|$ is constant. Then $\vec r(t) \dotp \vec r\,'(t) = 0$.\\
+\end{proposition}
+\begin{proof}
+Since $|\vec r(t)|^2 = c$, a constant, we have
+\[
+\frac{d}{dt} |\vec r(t)|^2 = 0
+\]
+However, $|\vec r(t)|^2$ can be expressed using the dot product and computing this derivative using the product rule for the dot product gives,
+\begin{align*}
+0 &= \frac{d}{dt} |\vec r(t)|^2 \\
+&= \frac{d}{dt} \left[\vec r(t) \dotp \vec r(t)\right] \\
+  &= \vec r(t) \dotp \vec r\,'(t) + \vec r\,'(t) \dotp \vec r(t) \\
+  &= 2 \left[\vec r(t) \dotp \vec r\,'(t)\right]
+\end{align*}
+The last equation is due to the fact that the dot product is commutative. Hence $\vec r(t) \dotp \vec r\,'(t) = 0$
+\end{proof}
+
+\begin{remark}
+The geometric interpretation of the above proposition is that if the graph of space curve $\vec r(t)$ is contained 
+on the surface of a sphere with center at the origin,
+then its tangent vectors will be orthogonal to its position vectors.  
+This is due to the fact that for such a sphere, the position vector of any point on the sphere is 
+orthogonal to the plane tangent to the sphere at that point.
+\end{remark}
+
+
+\begin{corollary}
+Let $\vec r(t)$ be a vector valued function and let $\vec T(t)$ represent its unit tangent vector.
+Then 
+\[
+\frac{d}{dt}\left[\vec T(t) \dotp \vec T\,'(t)\right] = 0
+\]
+\end{corollary}
+\begin{proof}
+The magnitude of the unit tangent vector, $\vec T(t)$, is 1 and hence constant. The result then follows from the proposition.
+\end{proof}
+
+
 \begin{proposition}[Product Rule for the Cross Product]
 Let $\vec r_1(t) = \vector{x_1(t), y_1(t),z_1(t)}$ and $\vec r_2(t) = \vector{x_2(t), y_2(t),z_2(t)}$ be vector-valued functions with differentiable components.
 Then
@@ -106,6 +145,20 @@ as claimed.
 
 
 \end{proof}
+
+
+\begin{problem}(Problem 1)
+Let $\vec r(t)$ be a vector-valued function whose components are three times differentiable. Use the product rules for both the dot and cross products to show that
+\[
+\frac{d}{dt}\left[\vec r(t) \dotp \left(\vec r\,'(t) \cross \vec r\,''(t)\right)\right] = \vec r(t) \dotp \left(\vec r\,'(t) \cross \vec r\,'''(t)\right)
+\]
+\begin{hint}
+The cross product of two vectors is orthogonal to both of them
+\end{hint}
+\begin{hint}
+The cross product of parallel vectors is the zero vector
+\end{hint}
+\end{problem}
 
 \section{Chain rule}
 Recall the chain rule for the derivative of a composition of two differentiable functions $f$ and $g$:
