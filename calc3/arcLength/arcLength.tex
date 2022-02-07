@@ -137,15 +137,44 @@ We refer to $s$ as the \textbf{arc length parameter}.
 %In other words, using the arc length parameter $s$, the curve will have a constant speed of $1$ unit.
 
 The above expression for $s$ shows that $s$ is a function of $t$, i.e., $s = f(t)$.
-If $|\vec r,'(u)| \neq 0$ for all $u$, then the fuction $s = f(t)$ is strictly increasing and hence has an inverse.
+If $|\vec r\,'(u)| \neq 0$ for all $u$, then the function $s = f(t)$ is strictly increasing and hence has an inverse (which is also strictly increasing).
 Thus we can write $t = f^{-1}(s)$.
+
+\begin{example}[Example 2]
+Parameterize the spiral helix $\vec r(t) = \vector{\cos t, \sin t, t}$ using the arc length parameter.\\
+First, we compute $|\vec r\,'(t)|$:
+\[
+|\vec r\,'(t)| = |\vector{-\sin t, \cos t, 1}| = \sqrt{\sin^2 t + \cos^2 t + 1} = \sqrt 2
+\]
+Computing the arc length parameter, $s$, gives
+\[
+s = f(t) = \int_0^t |\vec r\,'(u)| \, du = \int_0^t \sqrt 2 \, du = t \sqrt 2
+\]
+Hence
+\[
+t = f^{-1}(s) = \frac{s}{\sqrt 2}
+\]
+and 
+\[
+\vec r(t) = \vec r(f^{-1}(s)) = \vector{\cos \left(\frac{s}{\sqrt 2}\right), \sin \left(\frac{s}{\sqrt 2}\right),\frac{s}{\sqrt 2}}
+\]
+\end{example}
+
+
+\begin{problem}[Problem 2]
+Parameterize the line $\vec r(t) =\vector{1+2t, 3+4t, 5+6t}$ using the arc length parameter.
+\[
+\vec r(t) = \vec r(f^{-1}(s)) = \vector{\answer{1 + s/\sqrt{14}}, \answer{3 + 2s/\sqrt{14}}, \answer{5 + 3s/\sqrt{14}}}
+\]
+\end{problem}
+
 \begin{proposition}
 Let  $\vec r(t) = \vector{x(t), y(t), z(t)} $ be a space curve for which $\vec r\,'(t) \neq 0$ for all $t$, i.e., $\vec r(t)$ is smooth.
 Define
 \[
 s = f(t) = \int_0^t |\vec r\,'(u)|\, du
 \]
-If we reparamertrize the curve using the \textbf{arc length parametrization}:
+If we reparameterize the curve using the \textbf{arc length parametrization}:
 \[
 \vec r(f^{-1}(s)) = \vector{x(f^{-1}(s)), y(f^{-1}(s)), z(f^{-1}(s))},
 \]
@@ -175,6 +204,67 @@ The above proposition shows that a change in the arc length parameter $s$ corres
 
 
 
+
+\begin{example}[Example 3]
+Verify the proposition above for the arc length parameterization of the spiral helix, $\vec r(t) = \vector{\cos t, \sin t, t}$.\\ 
+Reparameterize the curve using the arc length parameter from Example 2:
+\[
+\vec r(f^{-1}(s)) = \vector{\cos \left(\frac{s}{\sqrt 2}\right), \sin \left(\frac{s}{\sqrt 2}\right),\frac{s}{\sqrt 2}}
+\]
+Computing the definite integral in the proposition gives
+\begin{align*}
+\int_a^b \left| \frac{d}{du} \vec r(f^{-1}(u))\right| \, du &= \int_a^b \left| \frac{d}{du} \vector{\cos \left(\frac{u}{\sqrt 2}\right), \sin \left(\frac{u}{\sqrt 2}\right),\frac{u}{\sqrt 2}}\right|\, du\\
+&= \int_a^b \left| \vector{ -\frac{1}{\sqrt 2} \sin\left(\frac{u}{\sqrt 2}\right), \frac{1}{\sqrt 2} \cos\left(\frac{u}{\sqrt 2}\right), \frac{1}{\sqrt 2}}\right|\, du\\
+&= \int_a^b \frac{1}{\sqrt 2} \left|\vector{-\sin\left(\frac{u}{\sqrt 2}\right),\cos\left(\frac{u}{\sqrt 2}\right),1} \right|\, du\\
+&= \int_a^b \frac{1}{\sqrt 2} \left(\sqrt 2\right) \, du\\
+&= \int_a^b 1 \, du\\
+&= b - a
+\end{align*}
+which verifies the proposition.
+\end{example}
+
+\begin{problem}(Problem 3)
+Verify the proposition above for the arc length paramterization of the line, 
+\[
+\vec r(t) = \vector{1 + 2t, 3+4t, 5+6t}
+\]
+\end{problem}
+
+
+\begin{proposition}
+Let $\vec r(t)$ be a vector valued function and let $\vec r(f^{-1}(s))$ be its arc length parameterization.
+Then $\left| \frac{d}{ds} \vec r(f^{-1}(s))\right| = 1$.\\
+\end{proposition}
+\begin{proof}
+Since 
+\[
+s = f(t) = \int_0^t |\vec r \,'(u)|\, du
+\]
+it follows from the Fundamental Theorem of Calculus, part 2, that
+\[
+\frac{ds}{dt} = |\vec r \,'(t)|
+\]
+Now, by the chain rule,
+\[
+ \left| \frac{d}{ds} \vec r(f^{-1}(s)) \right| = \left|\vec r\,'(f^{-1}(s)) \frac{d}{ds} f^{-1}(s)\right|
+ \]
+ Rewriting, using $t = f^{-1}(s)$ gives
+ \begin{align*}
+ &= \left|\vec r\,'(t) \frac{dt}{ds} \right|\\
+ &= \left|\vec r\,'(t) \frac{1}{ds/dt} \right|\\
+ &=\left|\vec r\,'(t) \frac{1}{\vec r\,'(t)} \right| \\
+ &= 1
+\end{align*}
+as claimed.
+\end{proof}
+
+\begin{problem}(Problem 4a)
+Verify the conclusion of the above proposition for the spiral helix $\vec r(t) = \vector{\cos t, \sin t, t}$.
+\end{problem}
+
+\begin{problem}(Problem 4b)
+Verify the conclusion of the above proposition for the line $\vec r(t) = \vector{1+2t, 3+4t, 5+6t}$.
+\end{problem}
 
 
 \end{document}
