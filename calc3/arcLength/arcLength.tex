@@ -23,9 +23,12 @@ The arc length of the space curve
 \vec r(t) = \vector{x(t), y(t), z(t)}, \; a \leq t \leq b
 \]
 is given by
-\[
-L = \int_a^b |\vec r\,'(t)|\, dt = \int_a^b \sqrt{x'(t)^2 + y'(t)^2 +z'(t)^2}\, dt = \int_a^b \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 +\left(\frac{dz}{dt}\right)^2}\, dt
-\]
+\begin{align*}
+L &= \int_a^b |\vec r\,'(t)|\, dt = \int_a^b \sqrt{x'(t)^2 + y'(t)^2 +z'(t)^2}\, dt \\
+&= \int_a^b \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 +\left(\frac{dz}{dt}\right)^2}\, dt\\
+&= \int_a^b |\vec r\,'(t)| \, dt
+\end{align*}
+
 \end{definition}
 
 
@@ -40,8 +43,138 @@ and the length of the curve is approximately
 \sum_{i = 1}^n \sqrt{(\Delta x_i) ^2 + (\Delta y_i)^2 + (\Delta z_i)^2}
 \]
 \[
-= \sum_{i = 1}^n \sqrt{\left(\frac{\Delta x_i}{\Delta t}\right)^2 + \left(\frac{\Delta y_i}{\Delta t}\right)^2 + \left(\frac{\Delta z_i}{\Delta t}\right)^2} \Delta t
+= \sum_{i = 1}^n \sqrt{\left(\frac{\Delta x_i}{\Delta t}\right)^2 + \left(\frac{\Delta y_i}{\Delta t}\right)^2 + \left(\frac{\Delta z_i}{\Delta t}\right)^2}\, \Delta t
 \]
-Taking the limit as $n \to \infty$ gives the arc length formula in the definition.
+applying the Mean Value Theorem to each ratio in the radicand gives
+\[
+= \sum_{i = 1}^n \sqrt{x'(t_i^*)^2 + y'(t_i^{**})^2 + z'(t_i^{***})^2} \,\Delta t
+\]
+where $t_i^*, t_i^{**}, t_i^{***} \in [t_{i-1}, t_i]$.\\
+Taking the limit as $n \to \infty$ gives the arc length formula in the definition:
+\[
+\lim_{n \to \infty} \sum_{i = 1}^n \sqrt{x'(t_i^*)^2 + y'(t_i^{**})^2 + z'(t_i^{***})^2} \,\Delta t = \int_a^b |\vec r\,'(t)|\, dt = \int_a^b \sqrt{x'(t)^2 + y'(t)^2 +z'(t)^2}\, dt
+\]
+
+\begin{image}
+\begin{tikzpicture}
+\draw[thick] (-2, 2) to [out = 45, in = 210] (-1, 4) ;
+\draw[thick, blue!70!white, ->] (0,0) node[below left]{$O$} -- (-2, 2) node[above left]{$\vec r(t_0)$};
+\draw[thick, blue!70!white, ->] (0,0) -- (-1, 4) node[above]{$\vec r(t_1)$};
+\draw[thick] (-1,4) to [out = 20, in = 110] (0, 3);
+\draw[thick, blue!70!white, ->] (0,0) -- (0, 3) node[above right]{$\vec r(t_{i-1})$};
+\draw[thick] (0,3) to [out = 290, in= 180] (1,1);
+\draw[thick, blue!70!white, ->] (0,0) -- (1,1) node[above right]{$\vec r(t_i)$};
+\draw[thick] (1,1) to [out = 0, in= 100] (2,0) ;
+\draw[thick, blue!70!white, ->] (0,0) -- (2,0) node[right]{$\vec r(t_n)$};
+\draw[thick,red!70!black] (-2, 2) -- (-1, 4) -- (0, 3) -- (1, 1) node[midway, right]{$\Delta \vec r_i$}--(2, 0);
+\node at (0, -1) {Approximating arc length using line segments};
+\end{tikzpicture}
+\end{image}
+
+
+\begin{example}[Example 1]
+Find the arc length of the space curve given by $\vec r(t) = \vector{e^t, t\sqrt 2 , e^{-t}}$ from $t = 0$ to $t = 1$.\\
+According to the formula for arc length, we have
+\begin{align*}
+L &= \int_0^1 \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 + \left(\frac{dz}{dt}\right)^2} \, dt\\
+&= \int_0^1 \sqrt{ \left(e^t\right)^2 + \left( \sqrt 2\right)^2 + \left(-e^{-t}\right)^2} \, dt\\
+&= \int_0^1 \sqrt{ e^{2t} + 2 + e^{-2t} }\, dt\\
+&= \int_0^1 \sqrt{\left(e^t + e^{-t}\right)^2}\, dt\\
+&= \int_0^1 \left(e^{t} + e^{-t} \right) \, dt\\
+&=  e^{t} - e^{-t} \bigg|_0^1\\
+&=   e - \frac{1}{e}
+\end{align*}
+
+\end{example}
+
+\begin{problem}(Problem 1a)
+Find the arc length of the spiral helix 
+\[
+\vec r(t) = \vector{\cos(t), \sin(t), t}
+\]
+from $ t= 0$ to $t = 1$.
+\[
+L = \answer{\sqrt 2}
+\]
+\end{problem}
+
+
+\begin{problem}(Problem 1b)
+Find the arc length of the space curve given by
+\[
+\vec r(t) = \vector{t\cos(t), t\sin(t), \frac{2\sqrt 2}{3} t^{3/2}}
+\]
+from $ t= 0$ to $t = 4$.
+\[
+L = \answer{12}
+\]
+\end{problem}
+
+
+\begin{problem}(Problem 1c)
+Find the arc length of the space curve given by
+\[
+\vec r(t) = \vector{\frac92 t^2, t\sqrt 6, \ln(2t)}
+\]
+from $ t= 1$ to $t = e$.
+\[
+L = \answer{\frac{3e^2 -1}{2}}
+\]
+\end{problem}
+
+
+
+
+\subsection{Arc Length Parameter}
+
+Let $\vec r(t) $ be a space curve and let 
+\[
+s = \int_0^t |\vec r\,'(u)| \, du
+\]
+Then $s$ is the arc length of the space curve $\vec r(t)$ over the interval $[0, t]$.
+We refer to $s$ as the \textbf{arc length parameter}.
+%If we parameterize the space curve using $s$ instead of $t$, then the arc length of $\vec r(s)$ will be exactly $s$.
+%In other words, using the arc length parameter $s$, the curve will have a constant speed of $1$ unit.
+
+The above expression for $s$ shows that $s$ is a function of $t$, i.e., $s = f(t)$.
+If $|\vec r,'(u)| \neq 0$ for all $u$, then the fuction $s = f(t)$ is strictly increasing and hence has an inverse.
+Thus we can write $t = f^{-1}(s)$.
+\begin{proposition}
+Let  $\vec r(t) = \vector{x(t), y(t), z(t)} $ be a space curve for which $\vec r\,'(t) \neq 0$ for all $t$, i.e., $\vec r(t)$ is smooth.
+Define
+\[
+s = f(t) = \int_0^t |\vec r\,'(u)|\, du
+\]
+If we reparamertrize the curve using the \textbf{arc length parametrization}:
+\[
+\vec r(f^{-1}(s)) = \vector{x(f^{-1}(s)), y(f^{-1}(s)), z(f^{-1}(s))},
+\]
+then
+\[
+\int_a^b \left|\frac{d}{du} r(f^{-1} (u))\right| \, du = b-a
+\]
+\end{proposition}
+\begin{proof}
+Let $v = f^{-1}(u)$ then $dv = \frac{d}{du}f^{-1}(u) \, du = \left|\frac{d}{du}f^{-1}(u)\right| \, du$ since the function $f^{-1}$ is increasing.
+Now
+\begin{align*}
+\int_a^b \left|\frac{d}{du} r(f^{-1} (u))\right| \, du &= \int_a^b \left| r'(f^{-1} (u))\frac{d}{du}f^{-1} (u)\right| \, du\\
+&= \int_a^b | r'(f^{-1} (u))| \cdot \left|\frac{d}{du}f^{-1} (u)\right| \, du\\
+&= \int_{f^{-1}(a)}^{f^{-1}(b)} | r'(v)| \, dv\\
+&= \int_0^{f^{-1}(b)} | r'(v)| \, dv - \int_0^{f^{-1}(a)} | r'(v)| \, dv\\
+&= f(f^{-1}(b)) - f(f^{-1}(a))\\
+&= b -a
+\end{align*}
+as claimed.
+\end{proof}
+
+\begin{remark}
+The above proposition shows that a change in the arc length parameter $s$ corresponds to the exact same change in the length of the curve $\vec r = \vec r(f^{-1}(s))$.
+\end{remark}
+
+
+
+
+
 
 \end{document}

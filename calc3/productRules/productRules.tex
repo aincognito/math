@@ -106,9 +106,23 @@ This is due to the fact that for such a sphere, the position vector of any point
 orthogonal to the plane tangent to the sphere at that point.
 \end{remark}
 
+\begin{problem}(Problem 1)
+Let $\vec r(t)$ be a vector-valued function. Show that if $\vec r(t) \neq \vec 0$ then 
+\[
+\frac{d}{dt} |\vec r(t)| = \frac{1}{|\vec r(t)|} \vec r(t) \dotp \vec r\,'(t)
+\]
+\end{problem}
+
+\begin{definition}[Unit Tangent Vector]
+Let $\vec r(t)$ be a vector-valued function. Then the \bf{unit tangent vector}, $\vec t(t)$ is defined as
+\[
+\vec T(t) = \frac{\vec r\,'(t)}{|\vec r\,'(t)|}
+\]
+Note that $\vec T(t)$ is in fact a unit vector.
+\end{definition}
 
 \begin{corollary}
-Let $\vec r(t)$ be a vector valued function and let $\vec T(t)$ represent its unit tangent vector.
+Let $\vec r(t)$ be a vector valued function and let $\vec T(t)$ be the unit tangent vector.
 Then 
 \[
 \frac{d}{dt}\left[\vec T(t) \dotp \vec T\,'(t)\right] = 0
@@ -146,8 +160,17 @@ as claimed.
 
 \end{proof}
 
+\begin{problem}(Problem 2)
+Let $\vec r(t)$ be a vector-valued function whose components are twice differentiable. Use the product rule for the cross product to show that
+\[
+\frac{d}{dt}\left[\vec r(t) \cross \vec r\,'(t) \right] = \vec r\,'(t) \cross \vec r\,''(t)
+\]
+\begin{hint}
+The cross product of parallel vectors is the zero vector
+\end{hint}
+\end{problem}
 
-\begin{problem}(Problem 1)
+\begin{problem}(Problem 3)
 Let $\vec r(t)$ be a vector-valued function whose components are three times differentiable. Use the product rules for both the dot and cross products to show that
 \[
 \frac{d}{dt}\left[\vec r(t) \dotp \left(\vec r\,'(t) \cross \vec r\,''(t)\right)\right] = \vec r(t) \dotp \left(\vec r\,'(t) \cross \vec r\,'''(t)\right)
@@ -157,6 +180,20 @@ The cross product of two vectors is orthogonal to both of them
 \end{hint}
 \begin{hint}
 The cross product of parallel vectors is the zero vector
+\end{hint}
+\end{problem}
+
+\begin{problem}(Problem 4)
+Let $\vec u(t), \vec v(t)$ and $\vec w(t)$ be vector-valued functions. Find an expression for
+\[
+\frac{d}{dt}\left[ \vec u(t) \dotp \left(\vec v(t) \cross \vec w(t)\right)\right]
+\]
+Compare this to the derivative of a product of three ordinary functions.
+\begin{hint}
+For ordinary functions $,f, g$ and $h$
+\[
+\frac{d}{dx}\left[f(x)g(x)h(x)\right] = f(x)g(x)h'(x) + f(x)g'(x)h(x) + f'(x)g(x)h(x)
+\]
 \end{hint}
 \end{problem}
 
@@ -184,5 +221,13 @@ We write the composition in component form and then use the chain rule on each c
 \end{align*}
 as claimed.
 \end{proof}
+
+\begin{problem}(Problem 5)
+Let $g(t) = \sqrt t$ and let $\vec r(t) = \vector{t^2, \sec(t), \tan(t)}$. Find
+\[
+\frac{d}{dt} \vec r(g(t))
+\]
+\end{problem}
+ 
 
 \end{document}
