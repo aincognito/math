@@ -52,7 +52,7 @@ applying the Mean Value Theorem to each ratio in the radicand gives
 where $t_i^*, t_i^{**}, t_i^{***} \in [t_{i-1}, t_i]$.\\
 Taking the limit as $n \to \infty$ gives the arc length formula in the definition:
 \[
-\lim_{n \to \infty} \sum_{i = 1}^n \sqrt{x'(t_i^*)^2 + y'(t_i^{**})^2 + z'(t_i^{***})^2} \,\Delta t = \int_a^b |\vec r\,'(t)|\, dt = \int_a^b \sqrt{x'(t)^2 + y'(t)^2 +z'(t)^2}\, dt
+\lim_{n \to \infty} \sum_{i = 1}^n \sqrt{x'(t_i^*)^2 + y'(t_i^{**})^2 + z'(t_i^{***})^2} \,\Delta t  = \int_a^b \sqrt{x'(t)^2 + y'(t)^2 +z'(t)^2}\, dt  = \int_a^b |\vec r\,'(t)|\, dt
 \]
 
 \begin{image}
@@ -76,6 +76,14 @@ Taking the limit as $n \to \infty$ gives the arc length formula in the definitio
 \end{tikzpicture}
 \end{image}
 
+\begin{remark}
+The form
+\[
+L = \int_a^b |\vec r\,'(t)| \, dt
+\]
+has a nice physical interpretation.  If $\vec r(t)$ represents the path of a particle, then $|\vec r\,'(t)|$ represents the speed of the particle and
+the integrand then reflects the basic formula ``distance equals rate times time".
+\end{remark}
 
 \begin{example}[Example 1]
 Find the arc length of the space curve given by $\vec r(t) = \vector{e^t, t\sqrt 2 , e^{-t}}$ from $t = 0$ to $t = 1$.\\
