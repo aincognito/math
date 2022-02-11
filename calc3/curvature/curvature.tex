@@ -16,19 +16,57 @@ In this section we compute the curvature of a space curve.
 
 \maketitle
 
-
+Curvature is a scalar quantity that tells us how sharply a curve is bending.
+To measure curvature, we need to take into account the change in the tangent vector as we move along the curve.
+The tangent vector will change in two regards. First, we can expect its magnitude to change, 
+we would not expect this to be related to curvature.
+We can also expect a change in the direction of the tangent vector and it is this 
+that should account for how sharply the curve is bending.
+Recall that the tangent vector to a space curve $\vec r(t)$ is given by $\vec\,r'(t)$.
+When measuring curvature, we are interested in the rate of change of the tangent vector, but we do not want to take into account any change in magnitude.
+To eliminate change in magnitude from the situation, we consider the arc length parameterization of the curve.
+When a curve is parameterized using the arc length parameter, the tangent vector is always a unit vector.
+Now suppose $\vec r(s)$ represents the arc length parameterization of a space curve. Then its tangent vector is given by $\vec r\,'(s) = \vec T(s)$.
+Curvature is determined by the rate of change of this vector, which can be expressed as a derivative: $\frac{d}{ds} \vec T(s)$.  
+However, we wish curvature to be a scalar quantity, so we define it to be the magnitude of this vector.
 \begin{definition}[Curvature]
-The curvature of the space curve given by
-\[
-\vec r(t) = \vector{f(t), g(t), h(t)}
-\]
-is defined as
+Let $\vec r(s) = \vector{x(s), y(s), z(s)}$ where $s$ is the arc length parameter. Then the curvature of $\vec r(s)$ is given by 
 \[
 \kappa = \left|\frac{d\vec T}{ds}\right|
 \]
-where $\vec T$ is the unit tangent vector, $\vec T = \frac{\vec r\,'(t)}{|\vec r\,'(t)|}$ and $s$ is the 
-arc length parameter.
+where $\vec T(s)$ is the unit tangent vector, $\vec T(s) = \vec r\,'(s)$ 
 \end{definition}
 
+
+\begin{example}[example 1]
+Find the curvature of the line $\vec r(s) = \vector{2 + \frac{s}{\sqrt 2}, 3 + \frac{s}{\sqrt 3}, 3+ \frac{s}{\sqrt 6}}$\\
+Note that since $\vec r\,'(s) = \vector{\frac{1}{\sqrt 2}, \frac{1}{\sqrt 3}, \frac{1}{\sqrt 6}}$ is a unit vector, $s$ is indeed an arc length parameter.
+The curvature is then
+\[
+\kappa = \frac{d}{ds} \vec T(s) = \frac{d}{ds} \vec r\,'(s) = \frac{d}{ds}\vector{\frac{1}{\sqrt 2}, \frac{1}{\sqrt 3}, \frac{1}{\sqrt 6}} = 0
+\]
+It should come as no surprise that the curvature of a line is zero, since the tangent vector does not change direction as we move along the line.
+Note that it is possible to parameterize a line in such a way that the magnitude of the tangent vector does change! 
+\end{example}
+
+\begin{problem}(problem 1a)
+Let $\vector{a, b, c}$ be a unit vector.  Show that the line $\vec r(s) = \vector{x_0 + as, y_0 + bs, z_0 + cs}$ has zero curvature.
+\begin{hint}
+First show that $s$ is actually an arc length parameter
+\end{hint}
+\begin{hint}
+Compute $\kappa$ as in the example above
+\end{hint}
+\end{problem}
+
+\begin{problem}(Problem 1b)
+Show that the space curve $\vec r(t) = \vector{t^3, t^3, t^3}$ is a \textbf{line} whose tangent vectors are not of constant magnitude.\\
+\begin{hint}
+Compute the magnitude and note that it is a non-constant function of the parameter $t$
+\end{hint}
+\begin{hint}
+Show that this is the line $\vec r_1(\tau) \vector{\tau, \tau, \tau}$ by changing the parameter to $\tau$ by letting $\tau = t^3$
+\end{hint}
+\end{problem}
 
 \end{document}
