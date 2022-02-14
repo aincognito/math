@@ -18,16 +18,30 @@ In this section we compute the curvature of a space curve.
 
 Curvature is a scalar quantity that tells us how sharply a curve is bending.
 To measure curvature, we need to take into account the change in the tangent vector as we move along the curve.
-The tangent vector will change in two regards. First, we can expect its magnitude to change, 
-we would not expect this to be related to curvature.
+The tangent vector will change in two regards. First, we can expect its magnitude to change, but
+we would not expect this to be related to curvature. Moreover, curvature should be independent of the magnitude of the tangent vector.
 We can also expect a change in the direction of the tangent vector and it is this 
 that should account for how sharply the curve is bending.
 Recall that the tangent vector to a space curve $\vec r(t)$ is given by $\vec\,r'(t)$.
 When measuring curvature, we are interested in the rate of change of the tangent vector, but we do not want to take into account any change in magnitude.
-To eliminate change in magnitude from the situation, we consider the arc length parameterization of the curve.
-When a curve is parameterized using the arc length parameter, the tangent vector is always a unit vector.
-Now suppose $\vec r(s)$ represents the arc length parameterization of a space curve. Then its tangent vector is given by $\vec r\,'(s) = \vec T(s)$.
-Curvature is determined by the rate of change of this vector, which can be expressed as a derivative: $\frac{d}{ds} \vec T(s)$.  
+To eliminate change in magnitude from the situation, we could consider the unit tangent vector, 
+\[
+T(t) = \frac{\vec r\,'(t) }{|\vec r\,'(t)|}
+\]
+However the rate of change of this vector still depends on the magnitude of $\vec r\,'$ as we can see here:
+
+\begin{align*}
+\frac{d}{dt} T(t) &= \frac{d}{dt} \left(\frac{\vec r\,'(t) }{|\vec r\,'(t)|}\right) \\
+&= \frac{\vec r\,''(t) }{|\vec r\,'(t)|} + \frac{d}{dt} \left( \frac{1}{|\vec r\,'(t)|}\right)\vec r\,'(t)
+\end{align*}
+
+The way to resolve the issue is to consider the arc length parameterization of the curve.
+When a curve is parameterized using the arc length parameter, the tangent vector is always a unit vector, so that
+\[
+T(s) = \vec r\,'(s)
+\]
+%Now suppose $\vec r(s)$ represents the arc length parameterization of a space curve. Then its tangent vector is given by $\vec r\,'(s) = \vec T(s)$.
+Curvature is thus determined by the rate of change of this vector, which can be expressed as a derivative: $\frac{d}{ds} \vec T(s)$.  
 However, we wish curvature to be a scalar quantity, so we define it to be the magnitude of this vector.
 \begin{definition}[Curvature]
 Let $\vec r(s) = \vector{x(s), y(s), z(s)}$ where $s$ is the arc length parameter. Then the curvature of $\vec r(s)$ is given by 
@@ -68,5 +82,99 @@ Compute the magnitude and note that it is a non-constant function of the paramet
 Show that this is the line $\vec r_1(\tau) \vector{\tau, \tau, \tau}$ by changing the parameter to $\tau$ by letting $\tau = t^3$
 \end{hint}
 \end{problem}
+
+\subsection{Curvature of a Circle}
+A circle of radius $R$ centered at the origin in $\R^2$ can be parameterized as
+\[
+\vec r(t) = \vector{R\cos t, R\sin t}, \; 0\leq t \leq 2\pi
+\]
+We can embed the circle in $\R^3$ by letting $z = 0$ and write instead,
+\[
+\vec r(t) = \vector{R\cos t, R\sin t, 0}, \; 0\leq t \leq 2\pi
+\]
+We now reparameterizing the circle using the arc length parameter,
+\[
+s = \int_0^t |\vec r\,'(t)| \, dt = \int_0^t \sqrt{ (-R\sin t)^2 + (R\cos t)^2 + 0^2} \, dt = \int_0^t R \, dt = Rt
+\]
+Hence 
+\[
+t = f^{-1}(s) = \frac{s}{R}
+\]
+and the circle becomes
+\[
+\vec r(f^{-1}(s)) = \vector{R \cos\left(\frac{s}{R}\right), R \sin\left(\frac{s}{R}\right), 0}, \; 0 \leq s \leq \frac{2\pi}{R}
+\]
+\begin{example}[Example 2]
+Find the curvature of the circle of radius $R$ given by the arc length parameterization
+\[
+\vec r(s) = \vector{R \cos\left(\frac{s}{R}\right), R \sin\left(\frac{s}{R}\right), 0}
+\]
+Since $s$ is an arc length parameter, 
+\[
+T(s) = \vec r\,'(s) = \vector{-\sin\left(\frac{s}{R}\right), \cos\left(\frac{s}{R}\right), 0}
+\]
+and so the curvature is given by
+\[
+\kappa = \left|\frac{dT}{ds}\right| = \left|\vector{-\frac{1}{R}\cos\left(\frac{s}{R}\right), \frac{1}{R}\sin\left(\frac{s}{R}\right), 0}\right| = \frac{1}{R}
+\]
+In conclusion, the curvature of a circle of radius R is 
+\[
+\kappa = \frac{1}{R}
+\]
+\end{example}
+
+\begin{problem}(Problem 2)
+Compute the curvature of a circle of radius 3 using the \textbf{method} of example 2.
+\end{problem}
+
+\begin{example}[Example 3]
+Compute the curvature of the spiral helix $\vec r(t) = \vector{2\cos(3t), 2 \sin(3t), 5t}$.\\
+The arc length parameter is given by
+\[
+s = \int_0^t \sqrt{\left(-6\sin(3t) \right)^2+\left(6\cos(3t) \right)^2 + 25} \, du = \int_0^t \sqrt{61} \, du = t\sqrt 61
+\]
+Reparameterizing the helix by arc length, we have
+\[
+\vec r(s) = \vector{2\cos\left(\frac{3s}{\sqrt{61}}\right), 2 \sin\left(\frac{3s}{\sqrt{61}}\right), \frac{5s}{\sqrt{61}}}
+\]
+Then
+\[
+T(s) = \vec r'(s) = \vector{-\frac{6}{\sqrt{61}}\sin\left(\frac{3s}{\sqrt{61}}\right), \frac{6}{\sqrt{61}}\cos\left(\frac{3s}{\sqrt{61}}\right), \frac{5}{\sqrt{61}}}
+\]
+The curvature of the spiral helix is given by
+\[
+\kappa = \left| \frac{dT}{ds} \right| = \left|\vector{-\frac{18}{61}\cos\left(\frac{3s}{\sqrt{61}}\right), -\frac{18}{61}\sin\left(\frac{3s}{\sqrt{61}}\right), 0}\right| = \frac{18}{61}
+\]
+\end{example}
+
+
+\begin{problem}(Problem 3)
+Compute the curvature of spiral helix $\vec r(t) = \vector{4t, 5 \sin(2t),5\cos(2t)}$ using the method of example 3.\\
+The arc length parameter is given by $s = \answer{t\sqrt{116}}$\\
+The unit tangent vector is given by $T(s) = \vector{\answer{4/\sqrt{116}}, \answer{5/\sqrt{29} \sin(s/\sqrt{29})}, \answer{-5/\sqrt{29} \cos(s/\sqrt{29})}}$\\
+The curvature is $\kappa = \answer{5/29}$
+\end{problem}
+
+\begin{proposition}[First Alternate Form of Curvature]
+Let $\vec r(t)$ be a space curve. Then its curvature can be computed as follows:
+\[
+\kappa = \frac{|T'(t)|}{|\vec r\,'(t)|}
+\]
+\end{proposition}
+\begin{proof}
+Let $s = f(t)$ be the arc length parameter for $\vec r(t)$. By the chain rule
+\[
+\kappa = \left|\frac{dT}{ds}\right| = \left|\frac{dT}{dt} \cdot \frac{dt}{ds}\right| = \left|T'(t) \frac{1}{ds/dt}\right| = \frac{|T'(t)|}{|\vec r\,'(t)|}
+\]
+Here, we have used the fact that since
+\[
+s = f(t) = \int_0^t |\vec r'(u)| \, du
+\]
+we have
+\[
+\frac{ds}{dt} = |\vec r\,'(t)|
+\]
+\end{proof}
+
 
 \end{document}

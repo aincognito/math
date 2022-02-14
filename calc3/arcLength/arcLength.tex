@@ -101,6 +101,18 @@ L &= \int_0^1 \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 
 \end{example}
 
 \begin{problem}(Problem 1a)
+Find the arc length of the line segment 
+\[
+\vec r(t) = \vector{2 + 3t, 5- 2t, -4 + 6t}
+\]
+from $ t= 2$ to $t = 5$.
+\[
+L = \answer{21}
+\]
+\end{problem}
+
+
+\begin{problem}(Problem 1b)
 Find the arc length of the spiral helix 
 \[
 \vec r(t) = \vector{\cos(t), \sin(t), t}
@@ -112,7 +124,7 @@ L = \answer{\sqrt 2}
 \end{problem}
 
 
-\begin{problem}(Problem 1b)
+\begin{problem}(Problem 1c)
 Find the arc length of the space curve given by
 \[
 \vec r(t) = \vector{t\cos(t), t\sin(t), \frac{2\sqrt 2}{3} t^{3/2}}
@@ -124,7 +136,7 @@ L = \answer{12}
 \end{problem}
 
 
-\begin{problem}(Problem 1c)
+\begin{problem}(Problem 1d)
 Find the arc length of the space curve given by
 \[
 \vec r(t) = \vector{\frac92 t^2, t\sqrt 6, \ln(2t)}
@@ -135,7 +147,12 @@ L = \answer{\frac{3e^2 -1}{2}}
 \]
 \end{problem}
 
-
+We can find the formula for the arc length of a plane curve, $y = f(x)$ on the interval $[a,b]$, by considering it as a space curve with $z$-component equal to zero.
+Letting $t = x$ we have $\vec r(t) = \vector{t, f(t), 0}$ and the arc length formula for $a \leq t \leq b$ becomes
+\[
+L = \int_a^b |\vec r\,'(t)| \, dt = \int_a^b \sqrt{1+ f'(t)^2} \, dt
+\]
+which agrees with the formula given in a Calculus II course.
 
 
 \subsection{Arc Length Parameter}
@@ -271,12 +288,22 @@ Now, by the chain rule,
 as claimed.
 \end{proof}
 
+\begin{remark}
+It should be noted that if $\vec |r\,'(t)| = 1$ for all $t$, then $t$ is actually an arc-length parameter.
+\end{remark}
+
+
 \begin{problem}(Problem 4a)
 Verify the conclusion of the above proposition for the spiral helix $\vec r(t) = \vector{\cos t, \sin t, t}$.
 \end{problem}
 
 \begin{problem}(Problem 4b)
 Verify the conclusion of the above proposition for the line $\vec r(t) = \vector{1+2t, 3+4t, 5+6t}$.
+\end{problem}
+
+\begin{problem}(Problem 4c)
+Prove the statement in the remark by using the definition of arc length parameter, i.e., show that if
+$|\vec r\,'(t)|=1$ for all $t$, then $s = t$.
 \end{problem}
 
 
