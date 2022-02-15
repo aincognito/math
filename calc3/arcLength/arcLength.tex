@@ -198,67 +198,7 @@ Parameterize the line $\vec r(t) =\vector{1+2t, 3+4t, 5+6t}$ using the arc lengt
 \]
 \end{problem}
 
-\begin{proposition}
-Let  $\vec r(t) = \vector{x(t), y(t), z(t)} $ be a space curve for which $\vec r\,'(t) \neq 0$ for all $t$, i.e., $\vec r(t)$ is smooth.
-Define
-\[
-s = f(t) = \int_0^t |\vec r\,'(u)|\, du
-\]
-If we reparameterize the curve using the \textbf{arc length parametrization}:
-\[
-\vec r(f^{-1}(s)) = \vector{x(f^{-1}(s)), y(f^{-1}(s)), z(f^{-1}(s))},
-\]
-then
-\[
-\int_a^b \left|\frac{d}{du} r(f^{-1} (u))\right| \, du = b-a
-\]
-\end{proposition}
-\begin{proof}
-Let $v = f^{-1}(u)$ then $dv = \frac{d}{du}f^{-1}(u) \, du = \left|\frac{d}{du}f^{-1}(u)\right| \, du$ since the function $f^{-1}$ is increasing.
-Now
-\begin{align*}
-\int_a^b \left|\frac{d}{du} r(f^{-1} (u))\right| \, du &= \int_a^b \left| r'(f^{-1} (u))\frac{d}{du}f^{-1} (u)\right| \, du\\
-&= \int_a^b | r'(f^{-1} (u))| \cdot \left|\frac{d}{du}f^{-1} (u)\right| \, du\\
-&= \int_{f^{-1}(a)}^{f^{-1}(b)} | r'(v)| \, dv\\
-&= \int_0^{f^{-1}(b)} | r'(v)| \, dv - \int_0^{f^{-1}(a)} | r'(v)| \, dv\\
-&= f(f^{-1}(b)) - f(f^{-1}(a))\\
-&= b -a
-\end{align*}
-as claimed.
-\end{proof}
 
-\begin{remark}
-The above proposition shows that a change in the arc length parameter $s$ corresponds to the exact same change in the length of the curve $\vec r = \vec r(f^{-1}(s))$.
-\end{remark}
-
-
-
-
-
-\begin{example}[Example 3]
-Verify the proposition above for the arc length parameterization of the spiral helix, $\vec r(t) = \vector{\cos t, \sin t, t}$.\\ 
-Reparameterize the curve using the arc length parameter from Example 2:
-\[
-\vec r(f^{-1}(s)) = \vector{\cos \left(\frac{s}{\sqrt 2}\right), \sin \left(\frac{s}{\sqrt 2}\right),\frac{s}{\sqrt 2}}
-\]
-Computing the definite integral in the proposition gives
-\begin{align*}
-\int_a^b \left| \frac{d}{du} \vec r(f^{-1}(u))\right| \, du &= \int_a^b \left| \frac{d}{du} \vector{\cos \left(\frac{u}{\sqrt 2}\right), \sin \left(\frac{u}{\sqrt 2}\right),\frac{u}{\sqrt 2}}\right|\, du\\
-&= \int_a^b \left| \vector{ -\frac{1}{\sqrt 2} \sin\left(\frac{u}{\sqrt 2}\right), \frac{1}{\sqrt 2} \cos\left(\frac{u}{\sqrt 2}\right), \frac{1}{\sqrt 2}}\right|\, du\\
-&= \int_a^b \frac{1}{\sqrt 2} \left|\vector{-\sin\left(\frac{u}{\sqrt 2}\right),\cos\left(\frac{u}{\sqrt 2}\right),1} \right|\, du\\
-&= \int_a^b \frac{1}{\sqrt 2} \left(\sqrt 2\right) \, du\\
-&= \int_a^b 1 \, du\\
-&= b - a
-\end{align*}
-which verifies the proposition.
-\end{example}
-
-\begin{problem}(Problem 3)
-Verify the proposition above for the arc length paramterization of the line, 
-\[
-\vec r(t) = \vector{1 + 2t, 3+4t, 5+6t}
-\]
-\end{problem}
 
 
 \begin{proposition}
@@ -281,30 +221,97 @@ Now, by the chain rule,
  Rewriting, using $t = f^{-1}(s)$ gives
  \begin{align*}
  &= \left|\vec r\,'(t) \frac{dt}{ds} \right|\\
- &= \left|\vec r\,'(t) \frac{1}{ds/dt} \right|\\
- &=\left|\vec r\,'(t) \frac{1}{\vec r\,'(t)} \right| \\
- &= 1
+ %&= \left|\vec r\,'(t) \frac{1}{ds/dt} \right|\\
+ %&=\left|\vec r\,'(t) \frac{1}{\vec r\,'(t)} \right| \\
+ &= \left|  \vec r\,'(t)\right| \cdot \left|\frac{dt}{ds}\right|\\
+                                             &= \left|  \vec r\,'(t)\right| \cdot \left|\frac{1}{ds/dt}\right|\\
+                                             &= \left|  \vec r\,'(t)\right| \cdot \frac{1}{ds/dt}\\
+                                             &=\left|  \vec r\,'(t)\right| \cdot \frac{1}{ \left|  \vec r\,'(t)\right|}\\
+                                             &= 1
 \end{align*}
 as claimed.
 \end{proof}
 
+\begin{corollary}
+If $s = f(t)$ is the arc length parameter for the space curve $\vec r(t) = \vector{x(t), y(t), z(t)}$, then
+\[
+\int_a^b \left|\frac{d}{ds} r(f^{-1} (s))\right| \, ds = b-a
+\]
+\end{corollary}
+\begin{proof}
+The result follows immediately from the proceeding proposition since theintegrand is 1.
+\end{proof}
+
+
+
+%\begin{proposition}
+%Let  $\vec r(t) = \vector{x(t), y(t), z(t)} $ be a space curve for which $\vec r\,'(t) \neq 0$ for all $t$, i.e., $\vec r(t)$ is smooth.
+%Define
+%\[
+%s = f(t) = \int_0^t |\vec r\,'(u)|\, du
+%\]
+%If we reparameterize the curve using the \textbf{arc length parametrization}:
+%\[
+%\vec r(f^{-1}(s)) = \vector{x(f^{-1}(s)), y(f^{-1}(s)), z(f^{-1}(s))},
+%\]
+%then
+%\[
+%\int_a^b \left|\frac{d}{du} r(f^{-1} (u))\right| \, du = b-a
+%\]
+%\end{proposition}
+%\begin{proof}
+%Let $v = f^{-1}(u)$ then $dv = \frac{d}{du}f^{-1}(u) \, du = \left|\frac{d}{du}f^{-1}(u)\right| \, du$ since the function $f^{-1}$ is increasing.
+%Now
+%\begin{align*}
+%\int_a^b \left|\frac{d}{du} r(f^{-1} (u))\right| \, du &= \int_a^b \left| r'(f^{-1} (u))\frac{d}{du}f^{-1} (u)\right| \, du\\
+%&= \int_a^b | r'(f^{-1} (u))| \cdot \left|\frac{d}{du}f^{-1} (u)\right| \, du\\
+%&= \int_{f^{-1}(a)}^{f^{-1}(b)} | r'(v)| \, dv\\
+%&= \int_0^{f^{-1}(b)} | r'(v)| \, dv - \int_0^{f^{-1}(a)} | r'(v)| \, dv\\
+%&= f(f^{-1}(b)) - f(f^{-1}(a))\\
+%&= b -a
+%\end{align*}
+%as claimed.
+%\end{proof}
+
 \begin{remark}
-It should be noted that if $\vec |r\,'(t)| = 1$ for all $t$, then $t$ is actually an arc-length parameter.
+The corollary above shows that a change in the arc length parameter $s$ corresponds to the exact same change in the length of the curve $\vec r = \vec r(f^{-1}(s))$.
 \end{remark}
 
 
-\begin{problem}(Problem 4a)
-Verify the conclusion of the above proposition for the spiral helix $\vec r(t) = \vector{\cos t, \sin t, t}$.
+
+
+
+\begin{example}[Example 3]
+Verify the proposition above for the arc length parameterization of the spiral helix, $\vec r(t) = \vector{\cos t, \sin t, t}$.\\ 
+Reparameterize the curve using the arc length parameter from Example 2:
+\[
+\vec r(f^{-1}(s)) = \vector{\cos \left(\frac{s}{\sqrt 2}\right), \sin \left(\frac{s}{\sqrt 2}\right),\frac{s}{\sqrt 2}}
+\]
+Computing the magnitude of the tangent vector gives
+\begin{align*}
+\left| \frac{d}{ds} \vec r(f^{-1}(s))\right| &=\left| \frac{d}{ds} \vector{\cos \left(\frac{s}{\sqrt 2}\right), \sin \left(\frac{s}{\sqrt 2}\right),\frac{s}{\sqrt 2}}\right|\\
+&= \left| \vector{ -\frac{1}{\sqrt 2} \sin\left(\frac{s}{\sqrt 2}\right), \frac{1}{\sqrt 2} \cos\left(\frac{s}{\sqrt 2}\right), \frac{1}{\sqrt 2}}\right|\\
+&= \frac{1}{\sqrt 2} \left|\vector{-\sin\left(\frac{s}{\sqrt 2}\right),\cos\left(\frac{s}{\sqrt 2}\right),1} \right|\\
+&= \frac{1}{\sqrt 2} \left(\sqrt 2\right) \\
+&= 1
+\end{align*}
+which verifies the proposition.
+\end{example}
+
+\begin{problem}(Problem 3)
+Verify the proposition above for the arc length paramterization of the line, 
+\[
+\vec r(t) = \vector{1 + 2t, 3+4t, 5+6t}
+\]
 \end{problem}
 
-\begin{problem}(Problem 4b)
-Verify the conclusion of the above proposition for the line $\vec r(t) = \vector{1+2t, 3+4t, 5+6t}$.
-\end{problem}
 
-\begin{problem}(Problem 4c)
-Prove the statement in the remark by using the definition of arc length parameter, i.e., show that if
-$|\vec r\,'(t)|=1$ for all $t$, then $s = t$.
-\end{problem}
+
+
+\begin{remark}
+It should be noted that if $|\vec r\,'(t)| = 1$ for all $t$, then $t$ is actually an arc-length parameter.
+\end{remark}
+
 
 
 \end{document}
