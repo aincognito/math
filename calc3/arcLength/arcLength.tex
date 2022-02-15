@@ -23,24 +23,23 @@ The arc length of the space curve
 \vec r(t) = \vector{x(t), y(t), z(t)}, \; a \leq t \leq b
 \]
 is given by
-\begin{align*}
-L &= \int_a^b |\vec r\,'(t)|\, dt = \int_a^b \sqrt{x'(t)^2 + y'(t)^2 +z'(t)^2}\, dt \\
-&= \int_a^b \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 +\left(\frac{dz}{dt}\right)^2}\, dt\\
-&= \int_a^b |\vec r\,'(t)| \, dt
-\end{align*}
+\[
+L  = \int_a^b \sqrt{x'(t)^2 + y'(t)^2 +z'(t)^2}\, dt = \int_a^b |\vec r\,'(t)|\, dt
+\]
 
 \end{definition}
 
 
+We justify this definition with the following construction. 
 Consider a space curve $\vec r(t), \; a \leq t \leq b$.  Subdivide the curve into $n$ pieces, by subdividing the interval $[a, b]$ into $n$ equal 
 sub-intervals each of length $\Delta t = \frac{b-a}{n}$. Denote the endpoints of these $n$ sub-intervals by $a = t_0, t_1, t_2, ..., t_n = b$.
 The length of the line segment connecting the points $\vec r(t_i)$ and $\vec r(t_{i-1})$ is given by
 \[
-\Delta \vec r_i = \sqrt{(\Delta x_i) ^2 + (\Delta y_i)^2 + (\Delta z_i)^2}
+|\Delta \vec r_i| = \sqrt{(\Delta x_i) ^2 + (\Delta y_i)^2 + (\Delta z_i)^2}
 \]
 and the length of the curve is approximately
 \[
-\sum_{i = 1}^n \sqrt{(\Delta x_i) ^2 + (\Delta y_i)^2 + (\Delta z_i)^2}
+\sum_{i = 1}^n |\Delta \vec r_i| = \sum_{i = 1}^n \sqrt{(\Delta x_i) ^2 + (\Delta y_i)^2 + (\Delta z_i)^2}
 \]
 \[
 = \sum_{i = 1}^n \sqrt{\left(\frac{\Delta x_i}{\Delta t}\right)^2 + \left(\frac{\Delta y_i}{\Delta t}\right)^2 + \left(\frac{\Delta z_i}{\Delta t}\right)^2}\, \Delta t
@@ -89,7 +88,7 @@ the integrand then reflects the basic formula ``distance equals rate times time"
 Find the arc length of the space curve given by $\vec r(t) = \vector{e^t, t\sqrt 2 , e^{-t}}$ from $t = 0$ to $t = 1$.\\
 According to the formula for arc length, we have
 \begin{align*}
-L &= \int_0^1 \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 + \left(\frac{dz}{dt}\right)^2} \, dt\\
+L &= \int_0^1 \sqrt{x'(t)^2 + y'(t)^2 +z'(t)^2} \, dt\\
 &= \int_0^1 \sqrt{ \left(e^t\right)^2 + \left( \sqrt 2\right)^2 + \left(-e^{-t}\right)^2} \, dt\\
 &= \int_0^1 \sqrt{ e^{2t} + 2 + e^{-2t} }\, dt\\
 &= \int_0^1 \sqrt{\left(e^t + e^{-t}\right)^2}\, dt\\
@@ -239,7 +238,7 @@ If $s = f(t)$ is the arc length parameter for the space curve $\vec r(t) = \vect
 \]
 \end{corollary}
 \begin{proof}
-The result follows immediately from the proceeding proposition since theintegrand is 1.
+The result follows immediately from the proceeding proposition since the integrand is 1.
 \end{proof}
 
 
@@ -299,7 +298,7 @@ which verifies the proposition.
 \end{example}
 
 \begin{problem}(Problem 3)
-Verify the proposition above for the arc length paramterization of the line, 
+Verify the proposition above for the arc length parameterization of the line, 
 \[
 \vec r(t) = \vector{1 + 2t, 3+4t, 5+6t}
 \]
