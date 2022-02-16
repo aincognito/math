@@ -155,10 +155,15 @@ The unit tangent vector is given by $T(s) = \vector{\answer{4/\sqrt{116}}, \answ
 The curvature is $\kappa = \answer{5/29}$
 \end{problem}
 
-\begin{proposition}[First Alternate Form of Curvature]
-Let $\vec r(t)$ be a space curve. Then its curvature can be computed as follows:
+Recall that for a space curve $\vec r(t)$, the tangent vector is given by $\vec r\,'(t)$ and the unit tangent vector is given by
 \[
-\kappa = \frac{|T'(t)|}{|\vec r\,'(t)|}
+\vec T(t) = \frac{\vec r\,'(t)}{|\vec r\,'(t)|}
+\]
+
+\begin{proposition}[First Alternate Form of Curvature]
+Let $\vec r(t)$ be a smooth space curve, i.e., $\vec r\,'(t) \neq \vec 0$. Then curvature of $\vec r(t)$ can be computed as follows:
+\[
+\kappa = \frac{|\vec T\,'(t)|}{|\vec r\,'(t)|}
 \]
 \end{proposition}
 \begin{proof}
@@ -176,5 +181,69 @@ we have
 \]
 \end{proof}
 
+
+\begin{example}[Example 4]
+Use the first alternate form of curvature to compute $\kappa$ for the space curve $\vec r(t) = \vector{e^t, t\sqrt 2 , e^{-t}}$.\\
+We begin with
+\[
+|\vec r\,'(t)| = \left|\vector{e^t, \sqrt 2 , -e^{-t}}\right| = \sqrt{e^{2t} + 2 + e^{-2t}} = e^t + e^{-t}
+\]
+Next, we compute the unit tangent vector:
+\begin{align*}
+\vec T(t) &= \frac{\vec r\,'(t)}{|\vec r\,'(t)|}\\
+             &= \vector{\frac{e^t}{e^t + e^{-t}}, \frac{\sqrt 2}{e^t + e^{-t}} , \frac{e^{-t}}{e^t + e^{-t}}}\\
+             &= \vector{\frac{e^{2t}}{e^{2t} + 1}, \frac{e^t\sqrt 2}{e^{2t} + 1} , \frac{1}{e^{2t} + 1}}\\
+\end{align*}
+We use the quotient rule on each component to calculate the derivative of the unit tangent vector. The reader should verify that
+\[
+\vec T'(t) = \frac{1}{\left(e^{2t} +1\right)^2} \vector{2e^{2t}, e^t\sqrt 2 (1 - e^{2t}), -2e^{2t}} = \frac{e^t}{\left(e^{2t} +1\right)^2} \vector{2e^{t}, \sqrt 2 (1 - e^{2t}), -2e^{t}}
+\]
+Next, the magnitude of the derivative of the unit tangent vector is
+\begin{align*}
+\left|\vec T'(t)\right| &= \frac{e^t}{\left(e^{2t} +1\right)^2} \sqrt{4e^{2t} + 2 (1 - e^{2t})^2 + 4e^{2t}}\\
+          &= \frac{e^t}{\left(e^{2t} +1\right)^2} \sqrt{8e^{2t} + 2 (1 -2e^{2t}+ e^{4t})}\\
+        &= \frac{e^t \sqrt 2}{\left(e^{2t} +1\right)^2} \sqrt{4e^{2t} +  (1 -2e^{2t}+ e^{4t})}\\
+          &= \frac{e^t \sqrt 2}{\left(e^{2t} +1\right)^2} \sqrt{1 +2e^{2t}+ e^{4t}}\\
+          &= \frac{e^t \sqrt 2}{\left(e^{2t} +1\right)^2} \sqrt{(1 +e^{2t})^2}\\
+            &= \frac{e^t \sqrt 2}{e^{2t} +1}
+\end{align*}
+Finally, we obtain the curvature $\kappa$ by dividing the magnitude of the the derivative of the unit tangent vector by the magnitude of the tangent vector:
+\begin{align*}
+\kappa &= \frac{|\vec T\,'(t)|}{|\vec r\,'(t)|}\\
+       &= \frac{e^t \sqrt 2}{e^{2t} +1} \cdot \frac{1}{e^t + e^{-t}}\\
+      &= \frac{e^t \sqrt 2}{e^{2t} +1} \cdot \frac{e^t}{e^{2t} + 1}\\
+     &= \frac{e^{2t} \sqrt 2}{\left(e^{2t} +1\right)^2}
+\end{align*}
+\end{example}
+
+\begin{problem}(Problem 4)
+Use the first alternate form of curvature to compute $\kappa$ for the space curve $\vec r(t) = \vector{\frac32 t^2, t\sqrt 6 , \ln(2t)}$.
+
+
+\begin{hint}
+\[
+\left|\vec r\,'(t) \right| = 3t + \frac{1}{t}  \quad \text{and} \quad \frac{1}{\left|\vec r\,'(t) \right|} = \frac{t}{3t^2 + 1}
+\]
+\end{hint}
+
+\begin{hint}
+\[
+\vec T(t) = \vector{\frac{3t^2}{3t^2 +1},\frac{t\sqrt 6}{3t^2 +1} , \frac{1}{3t^2 +1}}
+\]
+\end{hint}
+
+\begin{hint}
+\[
+\vec T\,'(t) = \frac{1}{\left(3t^2 +1\right)^2} \vector{6t, \sqrt 6 (1 - 3t^2), -6t}
+\]
+\end{hint}
+
+\begin{hint}
+\[
+\kappa = \frac{t\sqrt 6}{\left(3t^2 +1\right)^2}
+\]
+\end{hint}
+
+\end{problem}
 
 \end{document}
