@@ -246,4 +246,40 @@ Use the first alternate form of curvature to compute $\kappa$ for the space curv
 
 \end{problem}
 
+
+\begin{proposition}[Second Alternate Form of Curvature]
+Let $\vec r(t)$ be a smooth space curve, i.e., $\vec r\,'(t) \neq \vec 0$. Then curvature of $\vec r(t)$ can be computed as follows:
+\[
+\kappa = \frac{|\vec r\,'(t) \cross \vec r\,''(t)|}{|\vec r\,'(t)|^3}
+\]
+\end{proposition}
+
+
+\begin{example}[Example 5]
+Use the second alternate form of curvature to compute the curvature of the twisted cubic $\vec r(t) = \vector{t, t^2, t^3}$.\\
+The derivatives are
+\[
+\vec r\,'(t) = \vector{1, 2t, 3t^2} \quad \text{and} \quad \vec r\,''(t) = \vector{0, 2, 6t}
+\]
+Now the cross product is
+ \begin{align*}
+ \vec  r\,'(t) \cross \vec r\,''(t) &= 
+ \begin{vmatrix}
+\vec{i} & \vec{j} & \vec{k}\\
+1 & 2t & 3t^2\\
+0 & 2 & 6t
+\end{vmatrix}\\
+&= (12t^2 - 6t^2) \vec{i} - (6t - 0) \vec{j} + (2-0) \vec{k}\\
+ &=6t^2 \vec{i} -6t \vec{j} + 2 \vec{k}\\
+ &=\vector{6t^2 - 6t +2}
+ \end{align*}
+Finally, according to the second alternate form of curvature, we have
+\begin{align*}
+\kappa &=  \frac{|\vec r\,'(t) \cross \vec r\,''(t)|}{|\vec r\,'(t)|^3}\\
+       &=  \frac{|\vector{6t^2,  -6t, 2}|}{|\vector{1, 2t, 3t^2}|^3}\\
+       &= \frac{\sqrt{36t^4 + 36t^2 + 4}}{(1 + 4t^2 + 9t^4)^{3/2}}\\
+       &= \frac{2\sqrt{1 + 9t^2 + 9t^4}}{(1 + 4t^2 + 9t^4)^{3/2}}
+\end{align*}
+\end{example}
+
 \end{document}
