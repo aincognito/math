@@ -350,4 +350,62 @@ Use the second alternate form of curvature to find $\kappa$ for the cycloid
 \end{problem}
 
 
+\begin{proposition}[Third Alternate Form of Curvature]
+Suppose $f(x)$ is a twice differentiable function. Then the curvature of the graph of $y = f(x)$ is given by
+\[
+\kappa = \frac{|f\,''(x)|}{\left[1+ f\,'(x)^2\right]^{3/2}}
+\]
+\end{proposition}
+
+\begin{proof}
+The graph of $y = f(x)$ can be expressed as a space curve with parameter $x$ as
+\[
+\vec r(x) = \vector{x, f(x), 0}
+\]
+We calculate $\kappa$ using the second alternate form of curvature. We have
+\[
+\vec r\,'(x) = \vector{1, f\,'(x), 0} \quad \text{and} \quad \vec r\,''(x) = \vector{0, f\,''(x), 0} 
+\]
+Verify that $\vec r\,'(x) \cross \vec r\,''(x) = \vector{0,0,f\,''(x)}$.
+Finally, the second alternate form of curvature gives
+\[
+\kappa = \frac{|\vec r\,'(t) \cross \vec r\,''(t)|}{|\vec r\,'(t)|^3} = \frac{|f\,''(x)|}{\left[1+ f\,'(x)^2\right]^{3/2}}
+\]
+\end{proof}
+
+\begin{example}[Example 6]
+Use the third alternate form of curvature to find the formula for the curvature of the graph of $y = e^x$.  At what point is the curvature a maximum?\\
+Plugging $f\,'(x) = e^x$ and $f\,''(x) = e^x$ into the third alternate form of curvature gives
+\[
+\kappa = \frac{e^x}{(1+e^{2x})^{3/2}}
+\]
+Noting that $\kappa$ is a function of $x$, we can find the point of maximum curvature by solving the equation $\kappa\,' = 0$ for $x$
+We have
+\[
+\kappa ' = \frac{e^x(1+e^{2x})^{3/2} - 3e^x(1+e^{2x})^{1/2}}{(1+e^{2x})^3} = \frac{e^x\left(e^{2x} - 2\right)}{(1+e^{2x})^{5/2}} = 0
+\]
+which gives
+\[
+ e^{2x} = 2
+\]
+whose solution is $ x = \frac12 \ln(2)$. We can verify that this gives a maximum by noting that $\kappa \,' (0) < 0$ and $\kappa \,' (\ln 2) > 0$. \\
+Thus the point of maximum curvature is $\left(\frac12 \ln(2), \sqrt 2\right)$.
+\end{example}
+
+\begin{problem}(Problem 6a)
+Use the third alternate form of curvature to find the formula for the curvature of the parabola $y = x^2$.  At what point is the curvature a maximum?\\
+\end{problem}
+
+\begin{problem}(Problem 6b)
+Use the third alternate form of curvature to find the formula for the curvature of the curve $y = \sin(x)$.  
+At what points on the interval $(0, 2\pi)$ is the curvature a maximum? a minimum?\\
+\end{problem}
+
+
+\begin{problem}(Problem 6c)
+Let $f(x)$ be a function with continuous second derivative. Explain why the curvature of the graph of $y = f(x)$ is zero at an inflection point.\\
+\begin{hint}
+An inflection point is a point on the graph where the concavity changes.
+\end{hint}
+\end{problem}
 \end{document}
