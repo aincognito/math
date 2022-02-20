@@ -28,29 +28,32 @@ In this section we present the derivatives of the functions we have seen previou
 \begin{center}
 \[
 \begin{array}{c|c|c}
-		Type & f(x)= & f'(x)=  \\
+		Type & f(x)= & f\,'(x)=  \\
 		\hline
-		\text{Constant} & c & 0 \\
-		\text{Linear} & mx & m  \\
-		\text{Power} & x^n & nx^{n-1}  \\
+		\text{Constant} & c & 0 \\[8pt]
+		\text{Linear} & mx & m  \\[8pt]
+		\text{Power} & x^n & nx^{n-1}  \\[8pt]
 		\hline
-		\text{Trig} & \sin(x) & \cos(x) \\
-		\text{Trig} & \cos(x) & -\sin(x) \\
+		\text{Power} & \sqrt x & \displaystyle \frac{1}{2\sqrt x}\\[8pt]
+		\text{Power} & \displaystyle \frac{1}{x} & -\displaystyle \frac{1}{x^2}\\[8pt]
+	  \hline
+		\text{Trig} & \sin(x) & \cos(x) \\[8pt]
+		\text{Trig} & \cos(x) & -\sin(x) \\[8pt]
 		\hline
-		\text{Trig} & \tan(x) & \sec^2(x) \\
-		\text{Trig} & \sec(x) & \sec(x)\tan(x) \\
+		\text{Trig} & \tan(x) & \sec^2(x) \\[8pt]
+		\text{Trig} & \sec(x) & \sec(x)\tan(x) \\[8pt]
 		\hline
-		\text{Trig} & \cot(x) & -\csc^2(x)\ \\
-		\text{Trig} & \csc(x) & -\csc(x)\cot(x) \\
+		\text{Trig} & \cot(x) & -\csc^2(x) \\[8pt]
+		\text{Trig} & \csc(x) & -\csc(x)\cot(x) \\[8pt]
 		\hline
-		\text{Inv Trig} & \sin^{-1}(x) & \displaystyle{\frac{1}{\sqrt{1-x^2}}} \\
-		\text{Inv Trig} & \cos^{-1}(x) & \displaystyle{-\frac{1}{\sqrt{1-x^2}}} \\
-		\text{Inv Trig} & \tan^{-1}(x) & \displaystyle{\frac{1}{1+x^2}} \\
+		\text{Inv Trig} & \sin^{-1}(x) & \displaystyle{\frac{1}{\sqrt{1-x^2}}} \\[8pt]
+		\text{Inv Trig} & \cos^{-1}(x) & \displaystyle{-\frac{1}{\sqrt{1-x^2}}} \\[8pt]
+		\text{Inv Trig} & \tan^{-1}(x) & \displaystyle{\frac{1}{1+x^2}} \\[8pt]
 		\hline
-		\text{Exponential} & e^x & e^x \\
-		\text{Exponential} & a^x & a^x\ln(a) \\
+		\text{Exponential} & e^x & e^x \\[8pt]
+		\text{Exponential} & a^x & a^x\ln(a) \\[8pt]
 		\hline
-		\text{Log} & \ln(x) & \displaystyle{\frac{1}{x}} \\
+		\text{Log} & \ln(x) & \displaystyle{\frac{1}{x}} \\[8pt]
 		\text{Log} & \log_a(x) & \displaystyle{\frac{1}{x\ln(a)}}
 	\end{array}
     \]
@@ -63,41 +66,74 @@ The following table consists of the chain rule versions of the basic derivative 
 \begin{center}
 \[
 \begin{array}{c|c|c}
-		Type & f(x)= & f'(x)=  \\
+		Type & f(x)= & f\,'(x)=  \\
 		\hline
-		\text{Power} & g^n(x) & ng^{n-1}(x)\cdot g'(x)  \\[6pt]
+		\text{Power} & g^n(x) & ng^{n-1}(x)\cdot g\,'(x)  \\[8pt]
 		\hline
-		\text{Trig} & \sin\left(g(x)\right) & \cos\left(g(x)\right) \cdot g'(x) \\[6pt]
-		\text{Trig} & \cos\left(g(x)\right) & -\sin\left(g(x)\right)\cdot g'(x)  \\[6pt]
+		\text{Trig} & \sin\left(g(x)\right) & \cos\left(g(x)\right) \cdot g\,'(x) \\[8pt]
+		\text{Trig} & \cos\left(g(x)\right) & -\sin\left(g(x)\right)\cdot g\,'(x)  \\[8pt]
 		\hline
-		\text{Trig} & \tan\left(g(x)\right) & \sec^2\left(g(x)\right) \cdot g'(x) \\[6pt]
-		\text{Trig} & \sec\left(g(x)\right) & \sec\left(g(x)\right)\tan\left(g(x)\right) \cdot g'(x) \\[6pt]
+		\text{Power} & \sqrt{g(x)} & \displaystyle \frac{g'(x)}{2\sqrt {g(x)}}\\[8pt]
+		\text{Power} & \displaystyle \frac{1}{g(x)} & -\displaystyle \frac{g\,'(x)}{g^2(x)}\\[8pt]
+	  \hline
+	  \text{Trig} & \tan\left(g(x)\right) & \sec^2\left(g(x)\right) \cdot g\,'(x) \\[8pt]
+		\text{Trig} & \sec\left(g(x)\right) & \sec\left(g(x)\right)\tan\left(g(x)\right) \cdot g\,'(x) \\[8pt]
 		\hline
-		\text{Trig} & \cot\left(g(x)\right) & -\csc^2\left(g(x)\right) \cdot g'(x)  \\[6pt]
-		\text{Trig} & \csc\left(g(x)\right) & -\csc\left(g(x)\right)\cot\left(g(x)\right) \cdot g'(x)  \\[6pt]
+		\text{Trig} & \cot\left(g(x)\right) & -\csc^2\left(g(x)\right) \cdot g\,'(x)  \\[8pt]
+		\text{Trig} & \csc\left(g(x)\right) & -\csc\left(g(x)\right)\cot\left(g(x)\right) \cdot g\,'(x)  \\[8pt]
 		\hline
-		\text{Inv Trig} & \sin^{-1}\left(g(x)\right) & \displaystyle{\frac{1}{\sqrt{1-g^2(x)}}} \cdot g'(x) = \frac{g'(x)}{\sqrt{1-g^2(x)}}  \\[6pt]
-		\text{Inv Trig} & \cos^{-1}\left(g(x)\right) & \displaystyle{-\frac{1}{\sqrt{1-g^2(x)}}} \cdot g'(x) = -\frac{g'(x)}{\sqrt{1-g^2(x)}}\\[6pt]
-		\text{Inv Trig} & \tan^{-1}\left(g(x)\right) & \displaystyle{\frac{1}{1+g^2(x)}} \cdot g'(x) = \frac{g'(x)}{1+g^2(x)} \\
+		\text{Inv Trig} & \sin^{-1}\left(g(x)\right) &  = \frac{g\,'(x)}{\sqrt{1-g^2(x)}}  \\[8pt]
+		\text{Inv Trig} & \cos^{-1}\left(g(x)\right) &  = -\frac{g\,'(x)}{\sqrt{1-g^2(x)}}\\[8pt]
+		\text{Inv Trig} & \tan^{-1}\left(g(x)\right) &  = \frac{g\,'(x)}{1+g^2(x)} \\[8pt]
 		\hline
-		\text{Exponential} & e^{g(x)} & e^{g(x)} \cdot g'(x) \\[6pt]
-		\text{Exponential} & a^{g(x)} & a^{g(x)}\ln(a) \cdot g'(x) \\[6pt]
+		\text{Exponential} & e^{g(x)} & e^{g(x)} \cdot g\,'(x) \\[8pt]
+		\text{Exponential} & a^{g(x)} & a^{g(x)}\ln(a) \cdot g\,'(x) \\[8pt]
 		\hline
-		\text{Log} & \ln\left(g(x)\right) & \displaystyle{\frac{1}{g(x)}}\cdot g'(x) = \frac{g'(x)}{g(x)} \\[6pt]
-		\text{Log} & \log_a\left(g(x)\right) & \displaystyle{\frac{1}{g(x)\ln(a)}}\cdot g'(x) = \frac{g'(x)}{g(x)\ln(a)}
+		\text{Log} & \ln\left(g(x)\right) &  = \frac{g\,'(x)}{g(x)} \\[8pt]
+		\text{Log} & \log_a\left(g(x)\right) &  = \frac{g\,'(x)}{g(x)\ln(a)}
 	\end{array}
     \]
 \end{center}
 
 
+\subsection{Differentiation Formulas}
 
-
-
-
-
+\begin{center}
+Constant Multiple rule
+\end{center}
+\[
+\frac{d}{dx} \left[ cf(x) \right] = c f\,'(x)
+\]
+\\
+\begin{center}
+Sum/Difference Rule
+\end{center}
+\[
+\frac{d}{dx} \left[ f(x) \pm g(x) \right] = f\,'(x) \pm g\,'(x)
+\]
+\\
+\begin{center}
+Product Rule
+\end{center}
+\[
+\frac{d}{dx} \left[ f(x) \cdot g(x) \right] = f(x) \cdot g\,'(x) + f\,'(x) \cdot g(x)
+\]
+\\
+\begin{center}
+Quotient Rule
+\end{center}
+\[
+\frac{d}{dx} \left[ \frac{f(x)}{g(x)} \right] = \frac{g(x) \cdot f\,'(x) - f(x) \cdot g\,'(x)}{g^2(x)} 
+\]
+\\
+\begin{center}
+Chain Rule
+\end{center}
+\[
+\frac{d}{dx} \left[ f(g(x)) \right] = f\,'(g(x)) \cdot g\,'(x)
+\]
 
 \end{document}
-
 
 
 

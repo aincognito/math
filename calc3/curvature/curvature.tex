@@ -255,6 +255,42 @@ Let $\vec r(t)$ be a smooth space curve, i.e., $\vec r\,'(t) \neq \vec 0$. Then 
 \end{proposition}
 
 
+\begin{proof}
+Since
+\[
+\vec T = \frac{\vec r\,'}{|\vec r\, '|} = \frac{\vec r\,'}{|ds/dt|}
+\]
+we have
+\[
+\vec r\,' = \left(\frac{ds}{dt}\right) \vec T
+\]
+Now, by the product rule,
+\[
+ \vec r\,''(t) = \left(\frac{d^2s}{dt^2}\right) \vec T + \left(\frac{ds}{dt}\right) \vec T\,'
+\]
+Noting that the cross product of a vector with itself is the zero vector, we have
+\[
+\vec r\,' \cross \vec r\,'' = \left(\frac{ds}{dt}\right)^2 \vec T \cross \vec T\,'
+\]
+We now wish to compute the magnitude of both sides of this equation.
+Recall that $\vec T$ and $\vec T\,'$ are orthogonal since $|\vec T| = 1$ so it is constant. Also recall that the 
+magnitude of the cross product is given by the product of the magnitudes times the sine of the angle between them. 
+Using these facts gives
+\[
+|\vec r\,' \cross \vec r\,''| = \left(\frac{ds}{dt}\right)^2 | \vec T|\cdot | \vec T\,'|\sin \theta =\left(\frac{ds}{dt}\right)^2 | \vec T\,'|
+\]
+which means that
+\[
+| \vec T\,'| = \frac{|\vec r\,' \cross \vec r\,''|}{|\vec r\,'|^2}
+\]
+since $\frac{ds}{dt} = |\vec r\,'|$.
+Finally,
+\[
+\kappa = \frac{| \vec T\,'|}{|\vec r\,'|} = \frac{|\vec r\,' \cross \vec r\,''|}{|\vec r\,'|^3}
+\]
+\end{proof}
+
+
 \begin{example}[Example 5]
 Use the second alternate form of curvature to compute the curvature of the twisted cubic $\vec r(t) = \vector{t, t^2, t^3}$.\\
 The derivatives are
@@ -281,5 +317,37 @@ Finally, according to the second alternate form of curvature, we have
        &= \frac{2\sqrt{1 + 9t^2 + 9t^4}}{(1 + 4t^2 + 9t^4)^{3/2}}
 \end{align*}
 \end{example}
+
+\begin{problem}(Problem 5a)
+Use the second alternate form of curvature to find $\kappa$ if 
+\[
+\vec r(t) = \vector{t, 2t, 3+t^2}
+\]
+
+\begin{multipleChoice}
+\choice{$\displaystyle \frac{\sqrt 5}{\sqrt{4t^2 + 6}}$}
+\choice{$\displaystyle \frac{\sqrt {10}}{\sqrt{4t^2 + 6}}$}
+\choice{$\displaystyle \frac{\sqrt 5}{\sqrt{2t^2 + 3}}$}
+\choice[correct]{$\displaystyle \frac{\sqrt {10}}{\sqrt{2t^2 + 3}}$}
+\end{multipleChoice}
+
+\end{problem}
+
+\begin{problem}(Problem 5b)
+A cycloid is a plane curve that traces the path of a point on a rolling circle.
+Use the second alternate form of curvature to find $\kappa$ for the cycloid 
+\[
+\vec r(t) = \vector{t - \sin t, 1 - \cos t, 0}
+\]
+
+\begin{multipleChoice}
+\choice{$\displaystyle \frac{\sqrt 2}{2 \sqrt{1 - \cos t}}$}
+\choice{$\displaystyle \frac{1}{4 \sqrt{1 - \cos t}}$}
+\choice{$\displaystyle \frac{\sqrt 2}{\sqrt{1 - \cos t}}$}
+\choice[correct]{$\displaystyle \frac{\sqrt 2}{4 \sqrt{1 - \cos t}}$}
+\end{multipleChoice}
+
+\end{problem}
+
 
 \end{document}
