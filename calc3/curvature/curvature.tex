@@ -22,7 +22,7 @@ The tangent vector will change in two regards. First, we can expect its magnitud
 we would not expect this to be related to curvature. Moreover, curvature should be independent of the magnitude of the tangent vector.
 We can also expect a change in the direction of the tangent vector and it is this 
 that should account for how sharply the curve is bending.
-Recall that the tangent vector to a space curve $\vec r(t)$ is given by $\vec\,r'(t)$.
+Recall that the tangent vector to a space curve $\vec r(t)$ is given by $\vec\,r\,'(t)$.
 When measuring curvature, we are interested in the rate of change of the tangent vector, but we do not want to take into account any change in magnitude.
 To eliminate change in magnitude from the situation, we could consider the unit tangent vector, 
 \[
@@ -160,7 +160,7 @@ Recall that for a space curve $\vec r(t)$, the tangent vector is given by $\vec 
 \vec T(t) = \frac{\vec r\,'(t)}{|\vec r\,'(t)|}
 \]
 
-\begin{proposition}[First Alternate Form of Curvature]
+\begin{proposition}[Second Form of Curvature]
 Let $\vec r(t)$ be a smooth space curve, i.e., $\vec r\,'(t) \neq \vec 0$. Then curvature of $\vec r(t)$ can be computed as follows:
 \[
 \kappa = \frac{|\vec T\,'(t)|}{|\vec r\,'(t)|}
@@ -169,11 +169,11 @@ Let $\vec r(t)$ be a smooth space curve, i.e., $\vec r\,'(t) \neq \vec 0$. Then 
 \begin{proof}
 Let $s = f(t)$ be the arc length parameter for $\vec r(t)$. By the chain rule
 \[
-\kappa = \left|\frac{dT}{ds}\right| = \left|\frac{dT}{dt} \cdot \frac{dt}{ds}\right| = \left|T'(t) \frac{1}{ds/dt}\right| = \frac{|T'(t)|}{|\vec r\,'(t)|}
+\kappa = \left|\frac{dT}{ds}\right| = \left|\frac{dT}{dt} \cdot \frac{dt}{ds}\right| = \left|T\,'(t) \frac{1}{ds/dt}\right| = \frac{|T\,'(t)|}{|\vec r\,'(t)|}
 \]
 Here, we have used the fact that since
 \[
-s = f(t) = \int_0^t |\vec r'(u)| \, du
+s = f(t) = \int_0^t |\vec r\,'(u)| \, du
 \]
 we have
 \[
@@ -183,7 +183,7 @@ we have
 
 
 \begin{example}[Example 4]
-Use the first alternate form of curvature to compute $\kappa$ for the space curve $\vec r(t) = \vector{e^t, t\sqrt 2 , e^{-t}}$.\\
+Use the second form of curvature to compute $\kappa$ for the space curve $\vec r(t) = \vector{e^t, t\sqrt 2 , e^{-t}}$.\\
 We begin with
 \[
 |\vec r\,'(t)| = \left|\vector{e^t, \sqrt 2 , -e^{-t}}\right| = \sqrt{e^{2t} + 2 + e^{-2t}} = e^t + e^{-t}
@@ -196,11 +196,11 @@ Next, we compute the unit tangent vector:
 \end{align*}
 We use the quotient rule on each component to calculate the derivative of the unit tangent vector. The reader should verify that
 \[
-\vec T'(t) = \frac{1}{\left(e^{2t} +1\right)^2} \vector{2e^{2t}, e^t\sqrt 2 (1 - e^{2t}), -2e^{2t}} = \frac{e^t}{\left(e^{2t} +1\right)^2} \vector{2e^{t}, \sqrt 2 (1 - e^{2t}), -2e^{t}}
+\vec T\,'(t) = \frac{1}{\left(e^{2t} +1\right)^2} \vector{2e^{2t}, e^t\sqrt 2 (1 - e^{2t}), -2e^{2t}} = \frac{e^t}{\left(e^{2t} +1\right)^2} \vector{2e^{t}, \sqrt 2 (1 - e^{2t}), -2e^{t}}
 \]
 Next, the magnitude of the derivative of the unit tangent vector is
 \begin{align*}
-\left|\vec T'(t)\right| &= \frac{e^t}{\left(e^{2t} +1\right)^2} \sqrt{4e^{2t} + 2 (1 - e^{2t})^2 + 4e^{2t}}\\
+\left|\vec T\,'(t)\right| &= \frac{e^t}{\left(e^{2t} +1\right)^2} \sqrt{4e^{2t} + 2 (1 - e^{2t})^2 + 4e^{2t}}\\
           &= \frac{e^t}{\left(e^{2t} +1\right)^2} \sqrt{8e^{2t} + 2 (1 -2e^{2t}+ e^{4t})}\\
         &= \frac{e^t \sqrt 2}{\left(e^{2t} +1\right)^2} \sqrt{4e^{2t} +  (1 -2e^{2t}+ e^{4t})}\\
           &= \frac{e^t \sqrt 2}{\left(e^{2t} +1\right)^2} \sqrt{1 +2e^{2t}+ e^{4t}}\\
@@ -217,7 +217,7 @@ Finally, we obtain the curvature $\kappa$ by dividing the magnitude of the the d
 \end{example}
 
 \begin{problem}(Problem 4)
-Use the first alternate form of curvature to compute $\kappa$ for the space curve $\vec r(t) = \vector{\frac32 t^2, t\sqrt 6 , \ln(2t)}$.
+Use the second form of curvature to compute $\kappa$ for the space curve $\vec r(t) = \vector{\frac32 t^2, t\sqrt 6 , \ln(2t)}$.
 
 
 \begin{hint}
@@ -247,7 +247,7 @@ Use the first alternate form of curvature to compute $\kappa$ for the space curv
 \end{problem}
 
 
-\begin{proposition}[Second Alternate Form of Curvature]
+\begin{proposition}[Third Form of Curvature]
 Let $\vec r(t)$ be a smooth space curve, i.e., $\vec r\,'(t) \neq \vec 0$. Then curvature of $\vec r(t)$ can be computed as follows:
 \[
 \kappa = \frac{|\vec r\,'(t) \cross \vec r\,''(t)|}{|\vec r\,'(t)|^3}
@@ -292,7 +292,7 @@ Finally,
 
 
 \begin{example}[Example 5]
-Use the second alternate form of curvature to compute the curvature of the twisted cubic $\vec r(t) = \vector{t, t^2, t^3}$.\\
+Use the third form of curvature to compute the curvature of the twisted cubic $\vec r(t) = \vector{t, t^2, t^3}$.\\
 The derivatives are
 \[
 \vec r\,'(t) = \vector{1, 2t, 3t^2} \quad \text{and} \quad \vec r\,''(t) = \vector{0, 2, 6t}
@@ -309,7 +309,7 @@ Now the cross product is
  &=6t^2 \vec{i} -6t \vec{j} + 2 \vec{k}\\
  &=\vector{6t^2 - 6t +2}
  \end{align*}
-Finally, according to the second alternate form of curvature, we have
+Finally, according to the third form of curvature, we have
 \begin{align*}
 \kappa &=  \frac{|\vec r\,'(t) \cross \vec r\,''(t)|}{|\vec r\,'(t)|^3}\\
        &=  \frac{|\vector{6t^2,  -6t, 2}|}{|\vector{1, 2t, 3t^2}|^3}\\
@@ -319,7 +319,7 @@ Finally, according to the second alternate form of curvature, we have
 \end{example}
 
 \begin{problem}(Problem 5a)
-Use the second alternate form of curvature to find $\kappa$ if 
+Use the third form of curvature to find $\kappa$ if 
 \[
 \vec r(t) = \vector{t, 2t, 3+t^2}
 \]
@@ -335,7 +335,7 @@ Use the second alternate form of curvature to find $\kappa$ if
 
 \begin{problem}(Problem 5b)
 A cycloid is a plane curve that traces the path of a point on a rolling circle.
-Use the second alternate form of curvature to find $\kappa$ for the cycloid 
+Use the third form of curvature to find $\kappa$ for the cycloid 
 \[
 \vec r(t) = \vector{t - \sin t, 1 - \cos t, 0}
 \]
@@ -350,7 +350,7 @@ Use the second alternate form of curvature to find $\kappa$ for the cycloid
 \end{problem}
 
 
-\begin{proposition}[Third Alternate Form of Curvature]
+\begin{proposition}[Fourth Form of Curvature]
 Suppose $f(x)$ is a twice differentiable function. Then the curvature of the graph of $y = f(x)$ is given by
 \[
 \kappa = \frac{|f\,''(x)|}{\left[1+ f\,'(x)^2\right]^{3/2}}
@@ -362,20 +362,20 @@ The graph of $y = f(x)$ can be expressed as a space curve with parameter $x$ as
 \[
 \vec r(x) = \vector{x, f(x), 0}
 \]
-We calculate $\kappa$ using the second alternate form of curvature. We have
+We calculate $\kappa$ using the third form of curvature. We have
 \[
 \vec r\,'(x) = \vector{1, f\,'(x), 0} \quad \text{and} \quad \vec r\,''(x) = \vector{0, f\,''(x), 0} 
 \]
 Verify that $\vec r\,'(x) \cross \vec r\,''(x) = \vector{0,0,f\,''(x)}$.
-Finally, the second alternate form of curvature gives
+Finally, the third form of curvature gives
 \[
 \kappa = \frac{|\vec r\,'(t) \cross \vec r\,''(t)|}{|\vec r\,'(t)|^3} = \frac{|f\,''(x)|}{\left[1+ f\,'(x)^2\right]^{3/2}}
 \]
 \end{proof}
 
 \begin{example}[Example 6]
-Use the third alternate form of curvature to find the formula for the curvature of the graph of $y = e^x$.  At what point is the curvature a maximum?\\
-Plugging $f\,'(x) = e^x$ and $f\,''(x) = e^x$ into the third alternate form of curvature gives
+Use the fourth form of curvature to find the formula for the curvature of the graph of $y = e^x$.  At what point is the curvature a maximum?\\
+Plugging $f\,'(x) = e^x$ and $f\,''(x) = e^x$ into the fourth form of curvature gives
 \[
 \kappa = \frac{e^x}{(1+e^{2x})^{3/2}}
 \]
@@ -393,11 +393,11 @@ Thus the point of maximum curvature is $\left(\frac12 \ln(2), \sqrt 2\right)$.
 \end{example}
 
 \begin{problem}(Problem 6a)
-Use the third alternate form of curvature to find the formula for the curvature of the parabola $y = x^2$.  At what point is the curvature a maximum?\\
+Use the fourth form of curvature to find the formula for the curvature of the parabola $y = x^2$.  At what point is the curvature a maximum?\\
 \end{problem}
 
 \begin{problem}(Problem 6b)
-Use the third alternate form of curvature to find the formula for the curvature of the curve $y = \sin(x)$.  
+Use the fourth form of curvature to find the formula for the curvature of the curve $y = \sin(x)$.  
 At what points on the interval $(0, 2\pi)$ is the curvature a maximum? a minimum?\\
 \end{problem}
 
