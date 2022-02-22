@@ -11,7 +11,7 @@
 \begin{document}
 
 \begin{abstract}
-In this section we determine the unit Normal and unit Binormal vectors.
+In this section we determine the unit Normal and Binormal vectors.
 \end{abstract}
 
 \maketitle
@@ -77,7 +77,7 @@ and the unit tangent vector is
 \vec T(t) = \frac{\vec r\,'(t)}{|\vec r\,'(t)|} = \frac{\vector{-6 \sin(3t), 6\cos(3t), 5}}{\sqrt{61}}
 \]
 
-To compute the unit normal vecotr, we differentiate the unit tangent vector:
+To compute the unit normal vector, we differentiate the unit tangent vector:
 \[
 \vec T\,'(t) = \frac{1}{\sqrt{61}} \vector{-18 \cos(3t), -18 \sin(3t), 0}
 \]
@@ -95,28 +95,28 @@ Finally, at the point $(-2, 0, 5\pi)$, we have
 \]
 \end{example}
 
-The unit binormal vector, $\vec B$, is orthogonal to both the unit tangent vector, $\vec T$, and the unit normal vector, $\vec N$. To define it, we use the cross product.
+The binormal vector, $\vec B$, is orthogonal to both the unit tangent vector, $\vec T$, and the unit normal vector, $\vec N$. To define it, we use the cross product.
 
-\begin{definition}[Unit Binormal Vector]
-The unit binormal vector is defined by
+\begin{definition}[Binormal Vector]
+The binormal vector is defined by
 \[
 \vec B(t) = \vec T(t) \cross \vec N(t)
 \]
 \end{definition}
 
 \begin{remark}
-The unit binormal vector is orthogonal to both $\vec T$ and $\vec N$. 
+The binormal vector is orthogonal to both $\vec T$ and $\vec N$. 
 \end{remark}
 
 \begin{remark}
-The unit binormal vector $\vec B$ is indeed a unit vector since $\vec T$ and $\vec N$ are orthogonal unit vectors:
+The binormal vector $\vec B$ is a \textbf{unit} vector since $\vec T$ and $\vec N$ are orthogonal unit vectors:
 \[
 |\vec B| = |\vec T| \cdot |\vec N| \sin \theta = 1 \cdot 1 \cdot 1 = 1.
 \]
 \end{remark}
 
 \begin{example}[Example 2]
-Find the unit binormal vector to the spiral helix $\vec r(t) =  \vector{2\cos(3t), 2\sin(3t), 5t}$ at the point $(-2, 0, 5\pi)$.\\
+Find the binormal vector to the spiral helix $\vec r(t) =  \vector{2\cos(3t), 2\sin(3t), 5t}$ at the point $(-2, 0, 5\pi)$.\\
 In example 1, we found that
 \[
 \vec T(t) = \frac{1}{\sqrt{61}} \vector{-6 \sin(3t), 6\cos(3t), 5} \quad \text{and} \quad \vec N(t) = \vector{-\cos(3t), -\sin(3t), 0}
