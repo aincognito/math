@@ -1,0 +1,144 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\outcome{Compute curvature.}
+
+\title{2.6 TNB Frames}
+
+
+
+\begin{document}
+
+\begin{abstract}
+In this section we determine the unit Normal and unit Binormal vectors.
+\end{abstract}
+
+\maketitle
+
+
+The unit tangent vector $\vec T$ to a smooth space curve $\vec r(t)$ is given by
+\[
+\vec T(t) = \frac{\vec r\,'(t)}{|\vec r\,'(t)|}
+\]
+Since $|\vec T(t)| = 1$ for all $t$, we have
+\[
+\vec T(t) \dotp \vec T\,'(t) = 0
+\]
+which means that the vector $\vec T\,'(t)$ is orthogonal to the unit tangent vector $\vec T(t)$.
+
+\begin{definition}[Unit Normal Vector]
+The unit normal vector $\vec N(t)$ is defined as
+\[
+\vec N(t) = \frac{\vec T\,'(t)}{|\vec T\,'(t)|}
+\]
+\end{definition}
+
+\begin{remark} The unit normal vector $\vec N$ points in the direction that the curve 
+$\vec r(t)$ is bending.
+\end{remark}
+
+\begin{image}
+\begin{tikzpicture}
+\draw[thick, ->] (0, 0) -- (0.01,0.4);
+\draw[thick] (0, 0) to [out = 90, in = 225] (.8, 2.1);
+\draw[thick, blue, ->] (.8,2.1) -- (1.5, 2.8) node[above]{$\vec T(t)$};
+\draw[thick, red, ->] (.8,2.1) -- (1.5, 1.4) node[below]{$\vec N(t)$};
+\draw[thick, ->] (.8, 2.1) to [out = 45, in = 180] (2, 2.5);
+\draw[thick, ] (1.95, 2.5) to [out = 0, in = 120] (4, 1);
+
+\draw[thick, blue, ->] (4,1) -- (4.5, .15) node[right]{$\vec T(t)$};
+\draw[thick, red, ->] (4,1) -- (3.15, 0.5) node[below]{$\vec N(t)$};
+
+
+ %TN vecs
+\draw[thick, ->] (4, 1) to [out = 300, in = 110] (4.5, -0.5);
+\draw[thick] (4.48, -0.46) to [out = 290, in = 180] (5.5, -1.5); %TN vecs
+\draw[thick, ->] (5.5, -1.5) to [out = 0, in = 250] (7, 1) node[right]{$\vec r(t)$}; %TN vecs
+
+\draw[thick, blue, ->] (5.5, -1.5) -- (6.5, -1.5) node[right]{$\vec T(t)$};
+\draw[thick, red, ->] (5.5, -1.5) -- (5.5, -0.5) node[right]{$\vec N(t)$};
+
+\node at (3.25, -2.5) {The unit tangent and unit normal vectors};
+
+\end{tikzpicture}
+\end{image}
+
+
+\begin{example}[example 1]
+Find the unit tangent and unit normal vectors to the spiral helix $\vec r(t) =  \vector{2\cos(3t), 2\sin(3t), 5t}$ at the point $(-2, 0, 5\pi)$.\\
+From the $z$-coordinate of the point, we can see that the point $(-2, 0, 5\pi)$ corresponds to $t = \pi$.\\
+The tangent vector is
+\[
+\vec r \,'(t) = \vector{-6 \sin(3t), 6\cos(3t), 5}
+\]
+and the unit tangent vector is
+\[
+\vec T(t) = \frac{\vec r\,'(t)}{|\vec r\,'(t)|} = \frac{\vector{-6 \sin(3t), 6\cos(3t), 5}}{\sqrt{61}}
+\]
+
+To compute the unit normal vecotr, we differentiate the unit tangent vector:
+\[
+\vec T\,'(t) = \frac{1}{\sqrt{61}} \vector{-18 \cos(3t), -18 \sin(3t), 0}
+\]
+The unit normal vector is given by
+\[
+\vec N(t) = \frac{\vec T\,'(t)}{|\vec T\,'(t)|} = \frac{1}{18} \vector{-18 \cos(3t), -18 \sin(3t), 0} = \vector{-\cos(3t), -\sin(3t), 0}
+\]
+Note that this vector points towards the $z$-axis.\\
+Finally, at the point $(-2, 0, 5\pi)$, we have
+\[
+\vec T(\pi) = \vector{0, -\frac{6}{\sqrt{61}}, \frac{5}{\sqrt{61}}}
+\]
+\[
+\vec N(\pi) = \vector{1, 0, 0}
+\]
+\end{example}
+
+The unit binormal vector, $\vec B$, is orthogonal to both the unit tangent vector, $\vec T$, and the unit normal vector, $\vec N$. To define it, we use the cross product.
+
+\begin{definition}[Unit Binormal Vector]
+The unit binormal vector is defined by
+\[
+\vec B(t) = \vec T(t) \cross \vec N(t)
+\]
+\end{definition}
+
+\begin{remark}
+The unit binormal vector is orthogonal to both $\vec T$ and $\vec N$. 
+\end{remark}
+
+\begin{remark}
+The unit binormal vector $\vec B$ is indeed a unit vector since $\vec T$ and $\vec N$ are orthogonal unit vectors:
+\[
+|\vec B| = |\vec T| \cdot |\vec N| \sin \theta = 1 \cdot 1 \cdot 1 = 1.
+\]
+\end{remark}
+
+\begin{example}[Example 2]
+Find the unit binormal vector to the spiral helix $\vec r(t) =  \vector{2\cos(3t), 2\sin(3t), 5t}$ at the point $(-2, 0, 5\pi)$.\\
+In example 1, we found that
+\[
+\vec T(t) = \frac{1}{\sqrt{61}} \vector{-6 \sin(3t), 6\cos(3t), 5} \quad \text{and} \quad \vec N(t) = \vector{-\cos(3t), -\sin(3t), 0}
+\]
+
+Hence
+\begin{align*}
+\vec B(t) &= \vec T(t) \cross \vec N(t)\\
+          &= \frac{1}{\sqrt{61}} \vector{-6 \sin(3t), 6\cos(3t), 5} \cross \vector{-\cos(3t), -\sin(3t), 0}\\
+          &= \frac{1}{\sqrt{61}} \vector{5 \sin(3t), -5 \cos(3t), 6} \quad \text{(verify)}
+\end{align*}
+It is a simple matter to check that 
+\[
+\vec T \dotp \vec B = 0, \quad \vec N \dotp \vec B = 0, \quad \text{and} \quad |\vec B| = 1
+\]
+for all $t$.\\
+Finally, at the point $(-2, 0, 5\pi)$ we have $t = \pi$ and
+\[
+\vec B(\pi) = \vector{0, \frac{5}{\sqrt {61}}, \frac{6}{\sqrt{61}}}
+\]
+\end{example}
+
+The three vectors $\vec T(t), \vec N(t)$ and $\vec B(t)$ form what is called a TNB frame at each point on the curve $\vec r(t)$.
+
+\end{document}
