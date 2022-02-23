@@ -382,14 +382,15 @@ Plugging $f\,'(x) = e^x$ and $f\,''(x) = e^x$ into the fourth form of curvature 
 Noting that $\kappa$ is a function of $x$, we can find the point of maximum curvature by solving the equation $\kappa\,' = 0$ for $x$
 We have
 \[
-\kappa ' = \frac{e^x(1+e^{2x})^{3/2} - 3e^x(1+e^{2x})^{1/2}}{(1+e^{2x})^3} = \frac{e^x\left(e^{2x} - 2\right)}{(1+e^{2x})^{5/2}} = 0
+\kappa ' = \frac{e^x(1+e^{2x})^{3/2} - 3e^x(1+e^{2x})^{1/2}e^{2x}}{(1+e^{2x})^3} = \frac{e^x\left(1- 2e^{2x}\right)}{(1+e^{2x})^{5/2}} = 0
 \]
 which gives
 \[
- e^{2x} = 2
+ e^{2x} = \frac12
 \]
-whose solution is $ x = \frac12 \ln(2)$. We can verify that this gives a maximum by noting that $\kappa \,' (0) < 0$ and $\kappa \,' (\ln 2) > 0$. \\
-Thus the point of maximum curvature is $\left(\frac12 \ln(2), \sqrt 2\right)$.
+whose solution is $ x = \frac12 \ln(1/2) = -\frac12 \ln(2)$. We can verify that this gives a maximum by 
+noting that  $\kappa \,' (-\ln 2) > 0$ and   $\kappa \,' (0) < 0$. \\
+Thus the point of maximum curvature is $\left(-\frac12 \ln(2), \frac{1}{\sqrt 2}\right)$.
 \end{example}
 
 \begin{problem}(Problem 6a)

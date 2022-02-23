@@ -92,6 +92,26 @@ Finally, at the point $(-2, 0, 5\pi)$, we have
 \]
 \end{example}
 
+
+\begin{problem}(Problem 1)
+Find the unit tangent and unit normal vectors to the spiral helix $\vec r(t) = \vector{4t, 5 \sin(2t),5\cos(2t)}$ at the point $(\pi, 5, 0)$.\\
+\[
+\vec T(t) = \vector{\answer{\frac{4}{\sqrt{116}}}, \answer{\frac{10}{\sqrt{116}}\cos(2t)}, \answer{-\frac{10}{\sqrt{116}}\sin(2t)}}
+\]
+\[
+\vec N(t) = \vector{\answer{0}, \answer{-\sin(2t)}, \answer{-\cos(2t)}}
+\]
+The value of $t$ corresponding to the point $(\pi, 5, 0)$ is $t = \answer{\pi /4}$\\
+
+At this point, the unit tangent vector is $\displaystyle \vec T = \vector{\answer{\frac{4}{\sqrt{116}}}, \answer{0}, \answer{-\frac{10}{\sqrt{116}}}}$\\
+At this point, the unit normal vector is $\displaystyle \vec N = \vector{\answer{0}, \answer{-1}, \answer{0}}$\\
+
+\end{problem}
+
+
+
+
+
 The binormal vector, $\vec B$, is orthogonal to both the unit tangent vector, $\vec T$, and the unit normal vector, $\vec N$. To define it, we use the cross product.
 
 \begin{definition}[Binormal Vector]
@@ -136,6 +156,54 @@ Finally, at the point $(-2, 0, 5\pi)$ we have $t = \pi$ and
 \]
 \end{example}
 
+\begin{problem}(Problem 2)
+Find the binormal vector to the spiral helix $\vec r(t) = \vector{4t, 5 \sin(2t),5\cos(2t)}$ at the point $(\pi, 5, 0)$\\
+\[
+\vec B(\pi/4) = \vector{\answer{-\frac{10}{\sqrt{116}}}, \answer{0}, \answer{-\frac{4}{\sqrt{116}}}}
+\]
+
+
+\end{problem}
+
+
 The three vectors $\vec T(t), \vec N(t)$ and $\vec B(t)$ form what is called a TNB frame at each point on the curve $\vec r(t)$.
+
+\section{The Osculating Plane and the Circle of Curvature}
+
+Associated with each point along a space curve is a plane called the osculating plane.  This is the plane that best fits the space curve at that point.  \
+For example, if the space curve happens lie entirely in one plane, then this plane will be the osculating plane for each point on the curve.
+
+\begin{definition}[Osculating Plane]
+The osculating plane at any point on the curve $\vec r(t)$ is the plane determined by the vectors $\vec T(t)$ and $N(t)$.
+\end{definition}
+
+\begin{remark}
+Since the osculating plane is determined by the vectors $\vec T(t)$ and $\vec N(t)$, the normal vector to the osculating plane is $\vec B(t)$.
+\end{remark}
+
+\begin{example}[Example 3]
+Find an equation for the osculating plane to the spiral helix $\vec r(t) =  \vector{2\cos(3t), 2\sin(3t), 5t}$ at the point $(-2, 0, 5\pi)$.\\
+To find an equation of the osculating plane, we need the normal vector to the plane at the point $(2, 0, 5\pi)$.
+According to the remark following the definition above, the normal vector to the osculating plane is the binormal vector found in example 2:
+\[
+\vec B(\pi) =   \vector{0, \frac{5}{\sqrt {61}}, \frac{6}{\sqrt{61}}}
+\]
+Hence the equation of the osculating plane is
+\[
+0x + \frac{5}{\sqrt {61}}y +\frac{6}{\sqrt{61}}z = d
+\]
+where $d$ is determined from the given point (which is in the plane).
+The final answer is thus
+\[
+\frac{5}{\sqrt {61}}y +\frac{6}{\sqrt{61}}z = \frac{30\pi}{\sqrt{61}} \quad \text{or} \quad 5y+6z = 30\pi
+\]
+\end{example}
+
+\begin{problem}(Problem 3)
+Find an equation for the osculating plane to the spiral helix $\vec r(t) = \vector{4t, 5 \sin(2t),5\cos(2t)}$ at the point $(\pi, 5, 0)$.\\
+\[
+\answer{5x + 2z } = 5\pi
+\]
+\end{problem}
 
 \end{document}
