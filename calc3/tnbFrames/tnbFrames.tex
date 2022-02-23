@@ -206,4 +206,34 @@ Find an equation for the osculating plane to the spiral helix $\vec r(t) = \vect
 \]
 \end{problem}
 
+\begin{definition}[Circle of Curvature]
+The circle of curvature (or osculating circle) at a point on the space curve $\vec r(t)$ is the circle in 
+the osculating plane that has the same tangent vector and curvature as $\vec r(t)$.  
+Further, the circle lies on the same side of the curve as the normal vector $\vec N$.
+\end{definition}
+
+\begin{example}[Example 4]
+Find the circle of curvature of the spiral helix $\vec r(t) =  \vector{2\cos(3t), 2\sin(3t), 5t}$ at the point $(-2, 0, 5\pi)$.\\
+
+Note that the tangent line to a point on a circle is perpendicular to its radius at that point. 
+Since the circle of curvature lies in the plane created by the unit tangent and unit normal vectors (the osculating plane),
+its center must lie on the line through the point of tangency in the direction of the unit normal vector, $\vec N$.\\
+
+In example 3 of section 2.5, we found the curvature of the spiral helix to be 
+\[
+\kappa = \frac{18}{61}
+\]
+Since the curvature of a circle is the reciprocal of its radius, the circle of curvature has a radius of $R = \frac{61}{18}$.\\
+
+In example 1, we determined that the unit normal to the helix at the point $(-2, 0, 5\pi)$ is
+\[
+\vec N = \vector{1, 0, 0}
+\]
+The center of the circle of curvature is the terminal point of the position vector 
+\[
+\vector{-2, 0, 5\pi} + \frac{61}{18}\vec N = \vector{-2, 0, 5\pi} + \vector{\frac{61}{18}, 0, 0} = \vector{\frac{25}{18} , 0, 5\pi}
+\]
+Thus the circle of curvature has center $(25/18, 0, 5\pi)$ and radius $61/18$ and goes through the point $(-2, 0, 5\pi)$.
+\end{example}
+
 \end{document}
