@@ -243,4 +243,106 @@ The center is $\left(\answer{\pi}, \answer{-4/5}, \answer{0}\right)$\\
 The radius is $R = \answer{29/5}$
 \end{problem}
 
+
+\section{Motion in Space}
+
+We now use TNB frames to as an aid to describing the velocity and acceleration of the path of a particle traveling in space.
+
+\begin{definition}[Velocity]
+The velocity vector of a particle traveling along the space curve $\vec r(t)$ is given by
+\[
+\vec v(t) = \vec r\,'(t)
+\]
+The \textbf{speed} of the particle is the scalar quantity given by the magnitude of the velocity.
+\end{definition}
+
+\begin{remark}
+We have the following relationship between speed, velocity and the unit tangent vector,
+\[
+\vec v(t) = |\vec v(t)| \vec T(t)
+\]
+That is, the velocity vector is speed times the unit tangent vector.
+\end{remark}
+
+\begin{definition}[Acceleration]
+The acceleration vector of a particle traveling along the space curve $\vec r(t)$ is given by
+\[
+\vec a(t) = \vec v\,'(t) = \vec r\,''(t)
+\]
+\end{definition}
+
+
+\begin{proposition}[Acceleration in terms of $\vec T$ and $\vec N$]
+The acceleration vector $\vec a(t)$ associated with the space curve $\vec r(t)$ can be decomposed into a tangential component and a normal component as follows:
+\[
+\vec a(t) = |\vec v(t)|' \vec T(t) + \kappa |\vec v(t)|^2 \vec N(t)
+\]
+where $\vec T$ is the unit tangent vector, $\vec N$ is the unit normal vector and $|\vec v(t)|'$ is the rate of change of speed.
+\end{proposition}
+\begin{proof}
+Using the fact in the remark above, we can write the acceleration as follows:
+\[
+\vec a(t) = \frac{d}{dt} \vec v(t) =  \frac{d}{dt} |\vec v(t)| \vec T(t)
+\]
+By the product rule we have
+\[
+\frac{d}{dt} |\vec v(t)| \vec T(t) = |\vec v(t)|' \vec T(t) + |\vec v(t)| \vec T\,'(t)
+\]
+By the definition of $\vec N$ as $\vec T\,' / |\vec T\,'|$, we have
+\[
+\vec a(t) = |\vec v(t)|' \vec T(t) + |\vec v(t)|\cdot |T\,'(t)| \vec N(t)
+\]
+Finally, the second form of curvature says
+\[
+\kappa = \frac{|\vec T\,'(t)|}{|\vec r\,'(t)|} = \frac{|\vec T\,'(t)|}{|\vec v(t)|}
+\]
+so that the coefficient of $N$ can be rewritten as
+\[
+|\vec v(t)|\cdot |T\,'(t)| = |\vec v(t)|\cdot |\vec v(t)| \kappa = |\vec v(t)|^2 \kappa
+\]
+Thus,
+\[
+\vec a(t) = |\vec v(t)|' \vec T(t) + \kappa |\vec v(t)|^2 \vec N(t)
+\]
+as claimed.
+\end{proof}
+
+
+\begin{example}[Example 5]
+Consider a particle moving along the spiral helix $\vec r(t) =  \vector{2\cos(3t), 2\sin(3t), 5t}$.
+Find the velocity and acceleration vectors and decompose the acceleration vector into its tangential and normal components.\\
+The velocity vector is
+\[
+\vec v(t) = \vec r\,'(t) = \vector{-6\sin(3t), 6\cos(3t), 5}
+\]
+The acceleration vector is
+\[
+\vec a(t) = \vec v\,'(t) = \vector{-18\cos(3t), -18\sin(3t), 0}
+\]
+To decompose the acceleration into its tangential and normal components, we need the magnitude of the velocity vector (i.e. the speed):
+\[
+|\vec v(t)| = \sqrt{[-6\sin(3t)]^2 + [6\cos(3t)]^2 + 5^2} = \sqrt{36 + 25} = \sqrt{61}
+\]
+Hence the particle is moving with constant speed and $|\vec v(t)|'$ = 0.
+Recall from section 2.5, example 3 that the curvature of this spiral helix is
+\[
+\kappa = \frac{18}{61}
+\]
+We can now decompose $\vec a(t)$ into its tangential and normal components:
+\begin{align*}
+\vec a(t) &= |\vec v(t)|' \vec T(t) + \kappa |\vec v(t)|^2 \vec N(t) \\
+          &= 0\cdot \vec T(t) + \frac{18}{61} \left(\sqrt{61}\right)^2 \vec N(t) \\
+          &= 18 \vec N(t)\\
+          &=18 \vector{-\cos(3t), -\sin(3t), 0}\\
+          &= \vector{-18\cos(3t), -18\sin(3t), 0}
+\end{align*}
+The second to last equation follows from example 1 above where we found that
+\[
+\vec N(t) = \vector{-\cos(3t), -\sin(3t), 0}
+\]
+
+\end{example}
+
+%add problem
+
 \end{document}
