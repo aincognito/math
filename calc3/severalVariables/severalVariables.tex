@@ -16,8 +16,111 @@ In this section we describe functions of two or more variables.
 
 \maketitle
 
+A function of two variables has the form
+\[
+z = f(x, y)
+\]
+The independent variables are $x$ and $y$ and the dependent variable is $z$. In section 1.8, we saw elliptic paraboloids like
+\[
+z = \frac{x^2}{4} + \frac{y^2}{9}
+\]
+In this equation, we can view $z$ as a function of $x$ and $y$.\\
+The area of a rectangle is length times width, so we can express are as a function of two variables:
+\[
+A = f(l, w)
+\]
+The price of a good is a function of supply and demand, so we may be able to write
+\[
+p = f(s, d)
+\]
+The depth of the ocean is a funcion of the location on its surface, leading to
+\[
+depth = f(latitude, longitude)
+\]
+The \textbf{domain} of $f(x, y)$ is the set of coordinate pairs $(x, y)$ in $\R^2$ for which the $f(x, y)$ is a valid mathematical expression.
+
+\begin{example}[Example 1]
+Find the domain of the function $f(x, y) = \sqrt{1 - x^2 - y^2}$.\\
+The function leads to a meaningful expression if $1 - x^2 - y^2 \geq 0$ which  is equivalent to 
+\[
+x^2 + y^2 \leq 1
+\]
+Points satisfying this inequality in $\R^2$ are either inside  or on the unit circle.
+The domain is thus the closed unit disk.
+
+\begin{image}
+\begin{tikzpicture}
+\filldraw[blue!30!white] (0, 0) circle (3.5);
+\draw[thick,blue!70!white] (0, 0) circle (3.5);
+\draw[thick, <->] (-5, 0) -- (5,0) node[right]{$x$};
+\draw[thick, <->] (0, -5) -- (0, 5) node[left]{$y$};
+\node at (3.8, -0.3) {$1$};
+\node at (-.3, 3.8) {$1$};
+\node at (0, -5.5) {The domain of $f(x, y)$ is the closed unit disk};
+\end{tikzpicture}
+\end{image}
 
 
+\end{example}
+
+The \textbf{graph} of a function of two variables $f(x, y)$ is the set of points in $\R^3$ of the form
+\[
+(x, y, f(x,y))
+\]
+and the graph is called a \textbf{surface}.
+
+\begin{example}[Example 2]
+Describe the graph of the function $z = \sqrt{1 - x^2 - y^2}$ in $\R^3$.\\
+As mentioned in example 1, the domain of $f$ is the set of all points $(x, y)$ in $\R^2$ such that
+\[
+x^2 + y^2 \leq 1
+\]
+which is the closed unit disc, i.e, the unit circle together with its interior.\\
+To recognize the surface, square both sides of the equation to get
+\[
+z^2 = 1 - x^2 - y^2
+\]
+which is equivalent to
+\[
+x^2 + y^2 + z^2 = 1
+\]
+This is the unit sphere in $\R^3$. In the original function, $z\geq 0$ since $z$ is defined using a positive square root. 
+Hence, the graph of $z = f(x, y) = \sqrt{1 - x^2 - y^2}$ is the ``northern" hemisphere of the unit sphere (including the equator).
+\end{example}
+
+
+
+\begin{problem}(Problem 1a)
+Describe the graph of the function $z = 3x - 4y$ in $\R^3$.\\
+\end{problem}
+
+\begin{problem}(Problem 1b)
+Describe the graph of the function $z = x^2 + y^2$ in $\R^3$.\\
+\end{problem}
+
+\begin{problem}(Problem 1c)
+Describe the graph of the function $z = \sqrt{x^2 + y^2}$ in $\R^3$.\\
+\begin{hint}
+REcall from section 1.8 that the graph of the equation
+\[
+\frac{x^2}{a^2} + \frac{y^2}{b^2} - \frac{z^2}{c^2} = 0
+\]
+is a cone.
+\end{hint}
+
+\end{problem}
+
+\section{Level Curves}
+A \textbf{level curve} for the surface $z = f(x, y)$ is the curve in the $xy$-plane given by
+\[
+f(x, y) = k
+\]
+for some real number $k$.\\
+Level curves are the basis for topographical maps like the one below.
+\begin{image}
+\includegraphics{topographicalmap.jpg}
+\end{image}
+In the map above, the contour curves are used to indicate elevation.
 
 
 \end{document}
