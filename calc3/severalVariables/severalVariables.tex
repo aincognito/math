@@ -90,24 +90,23 @@ Hence, the graph of $z = f(x, y) = \sqrt{1 - x^2 - y^2}$ is the ``northern" hemi
 
 
 
-\begin{problem}(Problem 1a)
-Describe the graph of the function $z = 3x - 4y$ in $\R^3$.\\
+\begin{problem}(Problem 2a)
+Describe the graph of the function $z = x - 2y$ in $\R^3$.\\
 \end{problem}
 
-\begin{problem}(Problem 1b)
-Describe the graph of the function $z = x^2 + y^2$ in $\R^3$.\\
+\begin{problem}(Problem 2b)
+Describe the graph of the function $z = x^2 + 4y^2$ in $\R^3$.\\
 \end{problem}
 
-\begin{problem}(Problem 1c)
+\begin{problem}(Problem 2c)
 Describe the graph of the function $z = \sqrt{x^2 + y^2}$ in $\R^3$.\\
 \begin{hint}
-REcall from section 1.8 that the graph of the equation
+Recall from section 1.8 that the graph of the equation
 \[
 \frac{x^2}{a^2} + \frac{y^2}{b^2} - \frac{z^2}{c^2} = 0
 \]
 is a cone.
 \end{hint}
-
 \end{problem}
 
 \section{Level Curves}
@@ -122,5 +121,87 @@ Level curves are the basis for topographical maps like the one below.
 \end{image}
 In the map above, the contour curves are used to indicate elevation.
 
+\begin{example}[Example 3]
+Describe the level curves of the function $z = f(x, y) = \sqrt{1-x^2 - y^2}$ and sketch 3 of them in the same $xy$-plane.\\
+The level curves have the form 
+\[
+\sqrt{1 - x^2 - y^2} = k
+\]
+for some constant, $k$, where $k \geq 0$ since it is equal to a positive square root function. To recognize the curve in the $xy$-plane, square both sides and rearrange to get:
+\[
+x^2 + y^2 = 1- k^2 
+\]
+If $0 \leq k < 1$ this is a circle in the $xy$-plane with center at the origin and radius $\sqrt{1-k^2}$\\
+If $k = 1$, this is just the single point $(0, 0)$ and if $k>1$ then the graph is the empty set.\\
+In the figure below, the chosen values for $k$ are $K = 0, \frac23, \frac{9}{10}$.  The corresponding radii of the circles are $r = 1, \frac{\sqrt{5}}{3}, \frac{\sqrt{19}}{10}$.
+
+\begin{image}
+\begin{tikzpicture}
+\draw[thick,blue!70!white] (0, 0) circle (3.5);
+\node[thick,blue!70!white] at (1.8, 3.4) {$k = 0$};
+\draw[thick,red!70!white] (0, 0) circle (2.5);
+\node[thick,red!70!white] at (1.34, 2.56) {$k = 2/3$};
+\draw[thick,green!70!black] (0, 0) circle (1.5);
+\node[thick,green!70!black] at (1, 1.6) {$k = 9/10$};
+\draw[thick, <->] (-5, 0) -- (5,0) node[right]{$x$};
+\draw[thick, <->] (0, -5) -- (0, 5) node[left]{$y$};
+\node at (3.8, -0.3) {$1$};
+\node at (-.3, 3.8) {$1$};
+\node at (0, -5.5) {Three level curves of $f(x, y)= \sqrt{1 - x^2 - y^2}$};
+\end{tikzpicture}
+\end{image}
+
+\end{example}
+
+\begin{problem}(Problem 3a)
+Describe the level curves of the function $f(x,y) = x - 2y$ and sketch 3 of them in the same $xy$-plane.\\
+\end{problem}
+
+\begin{problem}(Problem 3b)
+Describe the level curves of the function $f(x, y) = x^2 + 4y^2$ and sketch 3 of them in the same $xy$-plane.\\
+\end{problem}
+
+\begin{problem}(Problem 3c)
+Describe the level curves of the function $f(x, y) = \sqrt{x^2 + y^2}$ and sketch 3 of them in the same $xy$-plane.\\
+\end{problem}
+
+\begin{problem}(Problem 3d)
+Describe the level curves of the function $f(x,y) = y - e^x$ and sketch 3 of them in the same $xy$-plane.\\
+\end{problem}
+
+\section{Functions of Three Variables}
+The volume of a rectangular solid is length $\times$ width $\times $ height, so we can think of the volume as a function of three variables:
+\[
+Volume = f(length, width, height)
+\]
+In general a function of three variables looks like $f(x, y, z)$.
+The graph of such a function consists of the set of points in $\R^4$ of the form $(x, y, z, f(x, y, z)$.
+Our humanity limits us to three dimensions or fewer, so we are unable to produce the graph of a function of three variables.
+However, we can consider their level surfaces.
+
+\begin{example}[Example 4]
+Describe the level surfaces of the function $f(x, y, z) = x^2 + 4y^2 + 9 z^2$.\\
+The level surfaces are produced by the equation
+\[
+f(x, y, z) = k
+\]
+for constants, $k$.\\
+In this example, the corresponding equation is
+\[
+x^2 + 4y^2 + 9z^2 = k
+\]
+which is an ellisoid for $k >0$ (and just the single point $(0, 0, 0)$ for $k = 0$.
+For $k<0$, the level surface is the empty set.
+\end{example}
+
+\begin{problem}(Problem 4)
+Describe the level surfaces of the function $f(x, y, z) = x^2 + y^2 - z^2$.\\
+\begin{hint}
+Try $k = -1, 0, 1$
+\end{hint}
+\begin{hint}
+Refer back to the very end of section 1.8 for the equations of hyperboloids and cones
+\end{hint}
+\end{problem}
 
 \end{document}
