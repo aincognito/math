@@ -136,8 +136,8 @@ x^2 + y^2 = 1- k^2
 If $0 \leq k < 1$ this is a circle in the $xy$-plane with center at the origin and radius $\sqrt{1-k^2}$.\\
 If $k = 1$, this is just the single point $(0, 0)$ and \\
 if $k>1$ then the graph is the empty set.\\
-In the figure below, the chosen values for $k$ are $0, \frac23, \frac{9}{10}, 1$.\\
-The corresponding radii of the circles are $1, \frac{\sqrt{5}}{3}, \frac{\sqrt{19}}{10}, 0$.
+In the figure below, the chosen values for $k$ are: $\,0, \frac23, \frac{9}{10}$ and  $1$.
+The corresponding radii of the circles are: $\,1, \frac{\sqrt{5}}{3}, \frac{\sqrt{19}}{10}$ and $0$.
 
 \begin{image}
 \begin{tikzpicture}
@@ -148,7 +148,7 @@ The corresponding radii of the circles are $1, \frac{\sqrt{5}}{3}, \frac{\sqrt{1
 \draw[thick,green!70!black] (0, 0) circle (1.5);
 \node[thick,green!70!black] at (1, 1.6) {$k = 9/10$};
 \filldraw (0,0) circle (0.07);
-\node[thick] at (0.5, 0.4) {$k = 1$};
+\node[thick] at (0.5, 0.2) {$k = 1$};
 \draw[thick, <->] (-5, 0) -- (5,0) node[right]{$x$};
 \draw[thick, <->] (0, -5) -- (0, 5) node[left]{$y$};
 \node at (3.8, -0.3) {$1$};
@@ -176,8 +176,11 @@ Describe the level curves of the function $f(x,y) = y - e^x$ and sketch a contou
 \end{problem}
 
 \begin{remark}
-The graph of a function of one variable, $y= f(x)$ can be thought of as a level curve of the function of two variables given by $g(x, y) = y-f(x)$
-(corresponding to $k = 0$).
+The graph of a function of one variable, $y= f(x)$ can be thought of as the level curve of the function of two variables given by 
+\[
+g(x, y) = y-f(x)
+\]
+corresponding to $k = 0$.
 \end{remark}
 
 \section{Functions of Three Variables}
@@ -201,7 +204,7 @@ In this example, the corresponding equation is
 \[
 x^2 + 4y^2 + 9z^2 = k
 \]
-which is an ellipsoid for $k >0$ (and just the single point $(0, 0, 0)$ for $k = 0$.
+which is an ellipsoid for $k >0$, and just the single point $(0, 0, 0)$ for $k = 0$.
 For $k<0$, the level surface is the empty set.
 \end{example}
 
@@ -216,8 +219,11 @@ Refer back to the very end of section 1.8 for the equations of hyperboloids and 
 \end{problem}
 
 \begin{remark}
-The graph of a function of two variables, $z= f(x,y)$ can be thought of as a level surface of the function of three variables given by $g(x, y, z) = z-f(x,y)$
-(corresponding to $k = 0$).
+The graph of a function of two variables, $z= f(x,y)$ can be thought of as the level surface of the function of three variables given by 
+\[
+g(x, y, z) = z-f(x,y)
+\]
+corresponding to $k = 0$.
 \end{remark}
 
 \end{document}
