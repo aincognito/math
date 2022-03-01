@@ -332,17 +332,24 @@ We can now decompose $\vec a(t)$ into its tangential and normal components:
 \begin{align*}
 \vec a(t) &= |\vec v(t)|' \vec T(t) + \kappa |\vec v(t)|^2 \vec N(t) \\
           &= 0\cdot \vec T(t) + \frac{18}{61} \left(\sqrt{61}\right)^2 \vec N(t) \\
-          &= 18 \vec N(t)\\
-          &=18 \vector{-\cos(3t), -\sin(3t), 0}\\
-          &= \vector{-18\cos(3t), -18\sin(3t), 0}
+          &= 0 \cdot \vec T(t) + 18\cdot \vec N(t)\\
 \end{align*}
-The second to last equation follows from example 1 above where we found that
-\[
-\vec N(t) = \vector{-\cos(3t), -\sin(3t), 0}
-\]
 
 \end{example}
 
-%add problem
+\begin{problem}(Problem 5)
+Consider a particle moving along the spiral helix $\vec r(t) =  \vector{4t, 5 \sin(2t),5\cos(2t)}$.
+Find the velocity and acceleration vectors and decompose the acceleration vector into its tangential and normal components.\\
+\[
+\text{velocity,} \; \vec v(t) = \vector{\answer{4},\answer{10\cos(2t)},\answer{-10\sin(2t)}}
+\]
+\[
+\text{speed,} \;  |\vec v(t)| = \answer{\sqrt{116}}
+\]
+\[
+\text{acceleration,} \;  \vec a(t) = \answer{0} \vec T(t) + \answer{20} \vec N(t)
+\]
+
+\end{problem}
 
 \end{document}
