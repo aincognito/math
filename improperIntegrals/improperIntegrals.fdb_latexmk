@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1643515397 "improperIntegrals.tex" "improperIntegrals.pdf" "improperIntegrals" 1643515409
-  "../preamble.tex" 1607818112 4042 33be8a53d776c59e16d422dc3e6e6fc2 ""
-  "/dev/null" 1643498154 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1646183917 "improperIntegrals.tex" "improperIntegrals.pdf" "improperIntegrals" 1646183919
+  "../preamble.tex" 1643590513 4042 33be8a53d776c59e16d422dc3e6e6fc2 ""
+  "/dev/null" 1646183867 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/home/andrew/texmf/tex/latex/ximeraLatex/ximera.cls" 1643320412 29587 2dd14e0e46062d120ad3bcdfe256c426 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1536122179 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1536122179 1004 54797486969f23fa377b128694d548df ""
@@ -316,14 +316,14 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1536122179 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1542735336 2756227 3af771b8c7802fcc4de3c67a29c4e776 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1536255675 7908118 a16e2dd5947695aba15dfea80a46c11f ""
-  "improperIntegrals.aux" 1643515408 1105 9358ba90d1b965fbc165f79cd975cfe1 ""
-  "improperIntegrals.out" 1643515408 312 2b1622c304f635b15d67179dd72fbbb8 ""
-  "improperIntegrals.tex" 1643515385 14260 d872653988c089c4df33c03611cfd8b1 ""
+  "improperIntegrals.aux" 1646183918 1105 9358ba90d1b965fbc165f79cd975cfe1 ""
+  "improperIntegrals.out" 1646183918 312 2b1622c304f635b15d67179dd72fbbb8 ""
+  "improperIntegrals.tex" 1646183917 14265 300548b1100abd61aeea830f7e06bd70 ""
   (generated)
-  "improperIntegrals.pdf"
-  "improperIntegrals.oc"
-  "improperIntegrals.aux"
   "improperIntegrals.jax"
-  "improperIntegrals.ids"
-  "improperIntegrals.log"
+  "improperIntegrals.oc"
   "improperIntegrals.out"
+  "improperIntegrals.log"
+  "improperIntegrals.pdf"
+  "improperIntegrals.aux"
+  "improperIntegrals.ids"

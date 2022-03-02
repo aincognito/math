@@ -277,6 +277,43 @@ The inequality $0< |(x,y) - (a,b)|$ in the definition of a limit reflects the fa
 as it approaches the point $(a,b)$.
 \end{remark}
 
+\begin{example}[Example 6]
+Use the definition of limit to show that 
+\[
+\lim_{(x,y) \to (a,b)} x = a
+\]
+Let $\epsilon >0$.  We must find a number $\delta >0$ such that
+\[
+\text{if} \sqrt{(x-a)^2 + (y-b)^2} < \delta \quad \text{then} |x-a| < \epsilon
+\]
+If we let $\delta = \epsilon$ we have
+\[
+|x-a| = \sqrt{(x-a)^2} \leq \sqrt{(x-a)^2 + (y-b)^2} < \delta = \epsilon
+\]
+Hence, we can conclude from the definition of limit that
+\[
+\lim_{(x,y) \to (a,b)} x = a
+\]
+\end{example}
+
+\begin{problem}(Problem 6a)
+Use the definition of limit to show that 
+\[
+\lim_{(x,y) \to (a,b)} y = b
+\]
+\end{problem}
+
+\begin{problem}(Problem 6c)
+Use the definition of limit to show that the limit of a constant is the constant:
+\[
+\lim_{(x,y) \to (a,b)} c = c
+\]
+\begin{hint}
+Let $\epsilon >0$ and choose any positive value for $\delta$
+\end{hint}
+\end{problem}
+
+
 \section{Continuity}
 
 \begin{definition}[Continuity]
@@ -285,5 +322,112 @@ We say that the function $f(x,y)$ is continuous at the point $(a,b)$ if $(a,b)$ 
 \lim_{(x,y) \to (a,b)} f(x,y) = f(a,b)
 \]
 \end{definition}
+
+Example 6, problem 6a and problem 6b show that the functions $f(x,y) = x, f(x,y) = y$ and $f(x,y) = c$ are continuous at every point in $\R^2$.
+
+We can use the following limit laws to help us construct other continuous functions.
+
+\subsection{Limit Laws}
+Suppose that the following limits exist:
+\[
+\lim_{(x,y) \to (a,b)} f(x,y) \quad \text{and} \quad \lim_{(x,y) \to (a,b)} g(x,y)
+\]
+then we can conclude each of the following:
+\begin{center} 
+\textbf{Sum Law} 
+\end{center}
+\[
+\lim_{(x,y) \to (a,b)} [f(x,y) + g(x,y)] = \lim_{(x,y) \to (a,b)} f(x,y) +\lim_{(x,y) \to (a,b)}  g(x,y) 
+\]
+\begin{center} 
+\textbf{Constant Multiple Law} 
+\end{center}
+\[
+\lim_{(x,y) \to (a,b)} [cf(x,y) ] = c\lim_{(x,y) \to (a,b)} f(x,y) 
+\]
+\begin{center} 
+\textbf{Product Law}
+\end{center}
+\[
+\lim_{(x,y) \to (a,b)} [f(x,y)  g(x,y)] = \lim_{(x,y) \to (a,b)} f(x,y) \cdot \lim_{(x,y) \to (a,b)}  g(x,y)  
+\]
+\begin{center} 
+\textbf{Quotient Law} 
+\end{center}
+\[
+\lim_{(x,y) \to (a,b)} \frac{f(x,y)}{g(x,y)} = \frac{\lim_{(x,y) \to (a,b)} f(x,y)}{\lim_{(x,y) \to (a,b)}  g(x,y)}  
+\]
+Note that the quotient law is valid provided that the limit in the denominator is not zero.
+
+\begin{example}[Example 7]
+Use the limit laws to show that 
+\[
+\lim_{(x,y) \to (2,-1)} 5x^2y^3 = -20
+\]
+We have
+\begin{align*}
+\lim_{(x,y) \to (2,-1)} 5x^2y^3 &= 5\lim_{(x,y) \to (2,-1)} x^2y^3 \quad \text{Constant Multiple Law}\\
+  &= 5 \lim_{(x,y) \to (2,-1)} x^2 \cdot \lim_{(x,y) \to (2,-1)}y^3  \quad \text{Product Law}\\
+  &= 5 \left(\lim_{(x,y) \to (2,-1)} x\right)^2 \cdot \left(\lim_{(x,y) \to (2,-1)}y\right)^3  \quad \text{Product Law (3 times)}\\
+  &= 5(2)^2(-1)^3 \quad \text{Example 6 and Problem 6a}\\
+  &= -20
+\end{align*}
+Note that this calculation shows that the function $f(x,y) = 5x^2y^3$ is continuous at the point $(2, -1)$ since $f(2, -1) = -20$.
+\end{example}
+
+
+\begin{problem}(Problem 7)
+Use the limit laws to show that 
+\[
+\lim_{(x,y) \to (3,2)} (2x - y) = 4
+\]
+\begin{hint}
+Use the constant multiple law to change the subtraction into addition
+\end{hint}
+\end{problem}
+
+\subsection{Continuous Functions}
+A polynomial in the variables $x$ and $y$ is a function of the form
+\[
+\sum ax^ny^m
+\]
+where $n$ and $m$ are non-negative integers and the number of terms in the sum is finite.
+For example, the function
+\[
+f(x,y) = 3x + 2y - 5xy
+\]
+is a polynomial in $x$ and $y$. The next proposition follows from the limit laws.
+
+\begin{proposition}
+Polynomials in $x$ and $y$ are continuous at every point in $\R^2$.
+\end{proposition}
+
+A rational function in the variables $x$ and $y$ is a ratio of polynomials in the the variables $x$ and $y$.
+For example, the function
+\[
+f(x,y) = \frac{2x^2y^3 - 5}{x^4 + 3y^2}
+\]
+is a rational function in the variables $x$ and $y$.
+The next proposition follows from the limit laws.
+
+\begin{proposition}
+Rational functions in $x$ and $y$ are continuous at every point in $\R^2$ where the denominator is nonzero.
+\end{proposition}
+
+The next proposition involves a composition of a function of two variables with a function of a single variable.
+
+\begin{proposition}
+Suppose $f(x,y)$ is continuous at the point $(a,b)$ and $g(u)$ is continuous at the point $ c = f(a,b)$.
+The the function $g(f(x,y))$ is continuous at the point $(a,b)$.
+\end{proposition}
+
+The functions $\sin(x), \cos(x)$ and $e^x$ are continuous for all $x$.  Hence, the functions
+\[
+\sin(f(x,y)),\; \cos(f(x,y)) \quad \text{and} \quad e^{f(x,y)}
+\]
+are continuous at any point $(a,b)$ where the function $f$ is continuous. 
+The function $\ln(f(x,y))$ is continuous at any point $(a,b)$ where $f$ is continuous and positive.
+Where is the function $\sqrt{f(x,y)}$ continuous?
+
 
 \end{document}
