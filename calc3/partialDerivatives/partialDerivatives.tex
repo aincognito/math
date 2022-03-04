@@ -16,8 +16,220 @@ In this section we define and compute partial derivatives.
 
 \maketitle
 
+The derivative of a function $f(x)$ is defined by:
+
+\[
+f\,'(x) =  \frac{d}{dx} f(x) = \lim_{h \to 0} \frac{f(x+h) -f(x)}{h}
+\]
+
+The symbol $\frac{d}{dx}$ is called the derivative operator. If we state that $y = f(x)$, then the derivative can also be written as $\frac{dy}{dx}$.
+The expression in the limit is called the difference quotient and it gives the slope of a secant line.
+%The situation with a function of two variables is more complicated because at a point on the graph of $z = f(x,y)$ there are 
+%infinitely many directions to move rather than just two. 
+The partial derivatives of a function of two variables are defined analogously to the single variable case.
+
+\begin{definition}[Partial Derivatives]
+The partial derivative of $f(x,y)$ with respect to $x$, denoted $f_x(x,y)$ or $\ppx f(x,y)$, is defined by
+\[
+f_x(x,y)= \lim_{h \to 0} \frac{f(x+h, y) -f(x, y)}{h}
+\]
+
+The partial derivative with respect to $y$, denoted $f_y(x,y)$ or $\ppy f(x,y)$, is defined by
+
+
+\[
+f_y(x,y) = \lim_{h \to 0} \frac{f(x, y+h) -f(x, y)}{h}
+\]
+
+The symbols $\ppx$ and $\ppy$ are called partial derivative operators.
+
+\end{definition}
 
 
 
+\begin{example}[Example 1]
+Use the definition of partial derivative to compute $f_x(x,y)$ for the function
+\[
+f(x,y) = 2xy^2 + 4xy - 2x -1
+\]
+We compute $f(x+h, y)$ as an aside:
+\begin{align*}
+f(x+h, y) &= 2(x+h)y^2 + 4(x+h)y - 2(x+h)  -1\\
+          &= 2xy^2 + 2hy^2 + 4xy + 4hy - 2x - 2h - 1
+\end{align*}
+Note that among the 7 terms in this expression, 4 of them are exactly the terms in the original function.
+Hence, the numerator of the difference quotient will simplify to:
+\[
+f(x+h, y) - f(x,y) =  2hy^2 + 4hy - 2h
+\]
+Observe that each of these terms contains a factor of $h$. Thus the difference quotient simplifies to
+\[
+\frac{f(x+h, y) -f(x, y)}{h} = 2y^2 + 4y - 2
+\]
+Finally, we take the limit as $h \to 0$ to obtain the partial derivative with respect to $x$:
+\[
+f_x(x,y) = \lim_{h \to 0} \left(2y^2 + 4y - 2\right) = 2y^2 + 4y - 2
+\]
+
+\end{example}
+
+\begin{remark}
+Note that this result can be obtained by treating the variable $y$ as a constant and computing an ordinary derivative with respect to $x$.
+\end{remark}
+
+\begin{problem}(Problem 1)
+Use the definition of partial derivative to compute $f_x(x,y)$ for the function
+\[
+f(x,y) = 3x^2y + 5xy - 2y - 4
+\]
+Start by computing $f(x+h, y)$:
+\[
+f(x+h, y) = \answer{3(x+h)^2y + 5(x+h)y - 2y - 4}
+\]
+
+The numerator of the difference quotient is:
+\[
+f(x+h,y) - f(x,y) = \answer{6hxy + 3h^2y + 5hy}
+\]
+
+The difference quotient simplifies to:
+\[
+\frac{f(x+h,y) - f(x,y)}{h} = \answer{6xy + 3hy + 5y}
+\]
+
+
+The partial derivative with respect to $x$ is
+\[
+\ppx f(x,y) = \answer{6xy + 5y}
+\]
+
+\end{problem}
+
+\begin{example}[Example 2]
+Use the definition of partial derivative to compute $f_y(x,y)$ for the function
+\[
+f(x,y) = 2xy^2 + 4xy - 2x -1
+\]
+We compute $f(x, y+h)$ as an aside:
+\begin{align*}
+f(x, y+h) &= 2x(y+h)^2 + 4x(y+h) - 2x  -1\\
+          &= 2x(y^2 + 2hy + h^2) + 4xy + 4hx - 2x - 1\\
+          &= 2xy^2 + 4hxy + 2h^2x + 4xy + 4hx - 2x - 1
+\end{align*}
+Note that among the 7 terms in this expression, 4 of them are exactly the terms in the original function.
+Hence, the numerator of the difference quotient will simplify to:
+\[
+f(x+h, y) - f(x,y) =  4hxy + 2h^2x  + 4hx
+\]
+Observe that each of these terms contains a factor of $h$. Thus the difference quotient simplifies to
+\[
+\frac{f(x+h, y) -f(x, y)}{h} = 4xy + 2hx +4x
+\]
+Finally, we take the limit as $h \to 0$ to obtain the partial derivative with respect to $x$:
+\[
+f_x(x,y) = \lim_{h \to 0} \left(4xy + 2hx +4x\right) = 4xy + 4x
+\]
+
+\end{example}
+
+\begin{remark}
+Note that this result can be obtained by treating the variable $x$ as a constant and computing an ordinary derivative with respect to $y$.
+\end{remark}
+
+\begin{problem}(Problem 2)
+Use the definition of partial derivative to compute $f_y(x,y)$ for the function
+\[
+f(x,y) = 3x^2y + 5xy - 2y - 4
+\]
+
+Start by computing $f(x, y+h)$:
+\[
+f(x+h, y) = \answer{3x^2(y+h) + 5x(y+h) - 2(y+h) - 4}
+\]
+
+The numerator of the difference quotient is:
+\[
+f(x,y+h) - f(x,y) = \answer{3hx^2 + 5hx - 2h}
+\]
+
+The difference quotient simplifies to:
+\[
+\frac{f(x,y+h) - f(x,y)}{h} = \answer{3x^2 + 5x -2}
+\]
+
+The partial derivative with respect to $y$ is
+\[
+\ppy f(x,y) = \answer{3x^2 + 5x -2}
+\]
+\end{problem}
+
+As was noted in the remarks following each of the two previous examples, partial derivatives can be computed by considering one of the variables to be constant.
+
+\begin{example}[Example 3]
+Find $f_x(x,y)$ for the function 
+\[
+f(x,y) = x^4y^3 + 2xy + y\sin(x) - e^y
+\]
+
+Since we are trying to find the partial derivative with respect to $x$, we treat the variable $y$ as a constant.
+Differentiating term by term in this fashion gives:
+\[
+f_x(x,y) = 4x^3y^3 + 2y + y\cos(x)
+\]
+\end{example}
+
+\begin{problem}(Problem 3a)
+Find $f_x(x,y)$ for the function 
+\[
+f(x,y) = x^5y^2 - 3x\sqrt y + y\ln(x) + 3y
+\]
+
+\[
+f_x(x,y) = \answer{5x^4y^2 - 3\sqrt y + y/x}
+\]
+\end{problem}
+
+\begin{problem}(Problem 3b)
+Find $f_x(x,y)$ for the function $f(x,y) = \frac{2y}{x} + y^2\tan(x) + 4\sec(y)$.\\
+\[
+f_x(x,y) = \answer{-\frac{2y}{x^2} + y\sec^2(x)}
+\]
+\end{problem}
+
+
+\begin{example}[Example 4]
+Find $f_y(x,y)$ for the function 
+\[
+f(x,y) = x^4y^3 + 2x\sqrt{y} + y^2\cos(x) - e^y
+\]
+
+Since we are trying to find the partial derivative with respect to $y$, we treat the variable $x$ as a constant.
+Differentiating term by term in this fashion gives:
+\[
+f_y(x,y) = 3x^4y^2 + \frac{x}{\sqrt{y}} + 2y\cos(x) - e^y
+\]
+\end{example}
+
+\begin{problem}(Problem 4a)
+Find $f_y(x,y)$ for the function 
+\[
+f(x,y) = x^5y^2 - \frac{3x}{y} + y\ln(x) + 3y
+\]
+
+\[
+f_y(x,y) = \answer{2x^5 y + \frac{3x}{y^2} + \ln(x) + 3}
+\]
+\end{problem}
+
+\begin{problem}(Problem 4b)
+Find $f_y(x,y)$ for the function 
+\[
+f(x,y) = \frac{2y}{x} + y^2\tan(x) + 4\sec(y)
+\]
+
+\[
+f_y(x,y) = \answer{\frac{2}{x} + 2y\\tan(x) + 4\sec(y)\tan(y)}
+\]
+\end{problem}
 
 \end{document}
