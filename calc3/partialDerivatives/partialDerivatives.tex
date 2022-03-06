@@ -232,4 +232,70 @@ f_y(x,y) = \answer{\frac{2}{x} + 2y\tan(x) + 4\sec(y)\tan(y)}
 \]
 \end{problem}
 
+The next example uses the chain rule.  Recall that $\frac{d}{dx} \sqrt x = \frac{1}{2\sqrt x}$.
+
+\begin{example}[Example 5]
+Compute $f_x(x,t)$ and $f_t(x,t)$ for the function 
+\[
+f(x,t) = \sqrt{3x + 4t}
+\]
+First, note that the independent variables in the function $f$ are $x$ and $t$.
+The function $f$ can be written as a composition of two functions:
+\[
+f(x,t) = \sqrt {u}, \quad \text{where} \quad u= u(x,t) = 3x + 4t
+\]
+From the chain rule,
+\begin{align*}
+f_x(x,t) &= \frac{d}{du}\left( \sqrt u\right) \cdot u_x\\
+  & = \frac{1}{2\sqrt u} \cdot 3\\
+  &= \frac{3}{2\sqrt{3x + 4t}}
+\end{align*}
+Similarly:
+\begin{align*}
+f_t(x,t) &= \frac{d}{du} \sqrt u \cdot u_t\\
+  & = \frac{1}{2\sqrt u} \cdot 4\\
+  &= \frac{4}{2\sqrt{3x + 4t}}\\
+ &= \frac{2}{\sqrt{3x + 4t}}
+\end{align*}
+  
+\end{example}
+
+
+In the next example we use the product rule in addition to the chain rule.
+
+\begin{example}[Example 6]
+Compute $f_x(x,y)$ and $f_y(x,y)$ for the function 
+\[
+f(x,y) = x\sin(xy)
+\]
+Viewed as a function of $x$, $f$ is a product first and then a composition. We will need to use the product rule and then
+the chain rule to compute $f_x$.
+We have
+\begin{align*}
+f_x(x,y) &= \sin(x,y) + x \frac{\partial}{\partial x} \sin(xy)\\
+         & = \sin(x,y) + x \cos(xy) \cdot y\\
+         & = \sin(x,y) + xy \cos(xy)
+\end{align*}
+As a function of $y, f$ is a composition of the sine function and the function $xy$, so
+\[
+f_y(x,y) x \cos(xy) \cdot x = x^2 \cos(xy)
+\]
+
+\end{example}
+
+
+\section{Higher Order Derivatives}
+
+\begin{theorem}[Clairault's Theorem]
+If the mixed second order partial derivatives $f_{xy}(x,y)$ and $f_{yx}(x,y)$ are continuous in the neightbohood of a point, 
+then they are equal at that point.
+\end{theorem}
+
+
+\begin{remark}
+In practice, the functions we will be differentiating are continuous on their domains, 
+so we will freely interchange the order of differentiation.
+\end{remark}
+
+
 \end{document}
