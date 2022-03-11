@@ -260,6 +260,39 @@ f_t(x,t) &= \frac{d}{du} \sqrt u \cdot u_t\\
   
 \end{example}
 
+\begin{problem}(Problem 5a)
+Compute the partial derivatives $f_x$ and $f_y$ for the function
+\[
+f(x,y) = \cos(x^3y^4)
+\]
+\begin{hint}
+Both partial derivatives require the chain rule
+\end{hint}
+
+\[
+f_x = \answer{-3x^2y^4 \sin(x^3y^4)} \quad \text{and} \quad f_y = \answer{-4x^3y^3 \sin(x^3y^4)}
+\]
+\end{problem}
+
+\begin{problem}(Problem 5b)
+Compute the partial derivatives $f_x, f_y$ and $f_z$ for the function
+\[
+f(x,y,z) = \sqrt{x^2 + y^2 + z^2}
+\]
+\begin{hint}
+All three partial derivatives require the chain rule
+\end{hint}
+\[
+f_x = \answer{\frac{x}{\sqrt{x^2 + y^2 + z^2}}}
+\]
+\[
+f_y = \answer{\frac{y}{\sqrt{x^2 + y^2 + z^2}}}
+\]
+\[
+f_z = \answer{\frac{z}{\sqrt{x^2 + y^2 + z^2}}}
+\]
+
+\end{problem}
 
 In the next example we use the product rule in addition to the chain rule.
 
@@ -284,10 +317,76 @@ f_y(x,y) x \cos(xy) \cdot x = x^2 \cos(xy)
 \end{example}
 
 
+\begin{problem}(Problem 6a)
+Let $z = x\ln(x+ 2y)$. Compute the partial derivatives:
+\[
+\frac{\partial z}{\partial x} = \answer{\frac{x}{x+2y} + \ln(x+2y)}
+\]
+\[
+\frac{\partial z}{\partial y} = \answer{\frac{2x}{x+2y}}
+\]
+\end{problem}
+
+
+
+\begin{problem}(Problem 6b)
+Compute the partial derivatives $f_x, f_y$ and $f_z$ for the function
+\[
+f(x,y,z) = xy^2 e^{-xz}
+\]
+\begin{hint}
+$f_x$ requires the product rule and the chain rule
+\end{hint}
+
+\[
+f_x = \answer{y^2e^{-xz} - xy^2ze^{-xz}}
+\]
+\[
+f_y = \answer{2xye^{-xz}}
+\]
+\begin{hint}
+$f_z$ requires the chain rule
+\end{hint}
+
+\[
+f_z = \answer{-x^2y^2 e^{-xz}}
+\]
+\end{problem}
+
+
 \section{Higher Order Derivatives}
 
+\begin{example}[Example 7]
+Compute the mixed second order partial derivatives $f_{xy}$ and $f_{yx}$ for the function 
+\[
+f(x,y) = x^3y^4
+\]
+We will compute $f_{xy}$ first.  To do this, we compute the partial derivative of $f$ with respect to $x$ first and then compute the partial 
+derivative with respect to $y$.  In other words, $f_{xy} = (f_x)_y$.  We have:
+\[
+f_x(x,y) = 3x^2y^4 \quad \text{and} \quad f_{xy} = 12x^2y^3
+\]
+Next, we compute $f_{yx}$ by computing the partial derivative with respect to $y$ first and then $x$:
+\[
+f_y(x,y) = 4x^3y^3 \quad \text{and} \quad f_{yx} = 12x^2y^3
+\]
+Notice that in this example
+\[
+f_{xy} = f_{yx}
+\]
+\end{example}
+
+\begin{problem}(Problem 7)
+Compute the mixed second order partial derivatives $f_{xy}$ and $f_{yx}$ for the function 
+\[
+f(x,y) = x^5 y^3
+\]
+Are they equal?
+\end{problem}
+
+The next theorem asserts that as long as the mixed second order partial derivatives $f_{xy}$ and $f_{yx}$  are continuous then they are equal.
 \begin{theorem}[Clairault's Theorem]
-If the mixed second order partial derivatives $f_{xy}(x,y)$ and $f_{yx}(x,y)$ are continuous in the neightbohood of a point, 
+If the mixed second order partial derivatives $f_{xy}(x,y)$ and $f_{yx}(x,y)$ are continuous in a disc centered at a point, 
 then they are equal at that point.
 \end{theorem}
 
@@ -298,4 +397,69 @@ so we will freely interchange the order of differentiation.
 \end{remark}
 
 
+
+\subsection{Harmonic Functions}
+\begin{definition}[Harmonic]
+A function $f(x,y)$ is called harmonic if 
+\[
+\Delta f = f_{xx} + f_{yy} = 0
+\]
+for all $(x,y)$. The symbol $\Delta$ is called the Laplace operator or the Laplacian.
+\end{definition}
+
+\begin{example}[Example 8]
+Show that the function is harmonic:
+\[
+f(x,y) = \tan^{-1}\left(\frac{y}{x}\right)
+\]
+Recalling that 
+\[
+\frac{d}{dx}\tan^{-1}(x) = \frac{1}{1+x^2} \quad \text{and} \quad \frac{d}{dx} \left(\frac{1}{x}\right) = -\frac{1}{x^2}
+\]
+we begin with the partial derivatives with respect to $x$:
+\[
+f_x(x,y) = \frac{1}{1+\left(\frac{y}{x}\right)^2} \cdot \left(-\frac{y}{x^2}\right) = -\frac{y}{x^2 + y^2}
+\]
+The second derivative with respect to $x$ follows from the quotient rule:
+\[
+f_{xx}(x,y) = -\frac{(x^2 + y^2) \cdot 0 - y \cdot 2x}{(x^2 + y^2)^2} = \frac{2xy}{(x^2 + y^2)^2}
+\]
+Now for the partial derivatives with respect to $y$:
+\[
+f_y(x,y) = \frac{1}{1+\left(\frac{y}{x}\right)^2} \cdot \frac{1}{x} = \frac{1}{x + \frac{y^2}{x}} = \frac{x}{x^2 + y^2}
+\]
+And the second derivative with respect to $y$:
+\[
+f_{yy}(x,y) = \frac{(x^2+y^2)\cdot 0 - x \cdot 2y}{(x^2 + y^2)^2} = -\frac{2xy}{(x^2 + y^2)^2}
+\]
+Finally, we add the pure second derivatives to obtain the Laplacian:
+\[
+\Delta f(x,y) = f_{xx}(x,y) + f_{yy}(x,y) = \frac{2xy}{(x^2 + y^2)^2}-\frac{2xy}{(x^2 + y^2)^2} =0
+\]
+demonstrating that the original function is harmonic.
+\end{example}
+
+\begin{problem}(Problem 8a)
+Show that the function is harmonic:
+\[
+f(x,y) = x^2 + 4xy - y^2 + 5x - 6y +2
+\]
+
+\end{problem}
+
+\begin{problem}(Problem 8b)
+Show that the function is harmonic:
+\[
+f(x,y) = e^x \cos(y)
+\]
+
+\end{problem}
+
+\begin{problem}(Problem 8c)
+Show that the function is harmonic:
+\[
+f(x,y) = \ln(x^2 + y^2)
+\]
+
+\end{problem}
 \end{document}
