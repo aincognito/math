@@ -4,7 +4,7 @@
 
 \outcome{Compute the gradient vector and directional derivatives.}
 
-\title{3.6 The Gradient}
+\title{3.4 The Gradient Vector}
 
 
 
@@ -16,8 +16,135 @@ In this section we compute the gradient vector and directional derivatives.
 
 \maketitle
 
+\begin{definition}[Gradient Vector]
+For a function of two variables, $f(x,y)$, the gradient vector is defined by
+\[
+\grad f(x,y) = \vector{f_x(x,y), f_y(x,y)} \quad \text{or just} \quad \vector{f_x, f_y} \quad \text{for short}
+\]
+Similarly, for a function of three variables, $f(x,y, z)$, the gradient vector is defined by
+\[
+\grad f(x,y, z) = \vector{f_x, f_y, f_z}
+\]
+\end{definition}
+
+\begin{example}[Example 1]
+Find the gradient vector for 
+\[
+\text{a)} \;f(x,y) = x^2 + y^2\quad \text{and \;\;  b)} \;g(x, y, z) = xyz
+\]
+a) $\grad f(x,y) = \vector{f_x, f_y} = \vector{2x, 2y}$ \\
+b) $\grad g(x,y, z) = \vector{g_x, g_y, g_z}= \vector{yz, xz, yz}$
+\end{example}
+
+\begin{problem}(Problem 1)
+Find the gradient of each of the following:\\
+a) $\;f(x,y) = xy - y^2; \quad \quad \grad f(x,y) = \vector{\answer{y}, \answer{x - 3y^2}}$\\
+b) $\;g(x,y) = \sqrt{x^2 + y^2}; \quad \quad  \grad g(x,y) = \vector{\answer{\frac{x}{\sqrt{x^2 + y^2}}}, \answer{\frac{y}{\sqrt{x^2 + y^2}}}}$\\
+a) $\;h(x,y, z) = x\sin(yz); \quad \quad \grad h(x,y, z) = \vector{\answer{\sin(yz)}, \answer{xz\cos(yz)} , \answer{xy\cos(yz)} }$\\
+\end{problem}
+
+The gradient is used to find the slope of a surface in a particular direction.
+
+\begin{definition}[Directional Derivative]
+Let $f(x,y)$ be a function of two variables whose graph is a surface in $R^3$ and let $\vec u = \vector{a,b}$ be a unit vector in $\R^2$.
+The rate of change of $f$ in the direction of $\vec u$ is given by
+\[
+D_{\vec u} f(x,y) = \lim_{h \to 0} \frac{f(x + ah, y + bh) -f(x,y)}{h}
+\]
+\end{definition}
 
 
+\begin{remark}
+The partial derivative $f_x$ is the directional derivative in the direction of the unit vector $\vec i = \vector{1,0}$ and 
+the partial derivative $f_y$ is the directional derivative in the direction of the unit vector $\vec j = \vector{0,1}$
+\end{remark}
 
+\begin{proposition}
+Let $f(x,y)$ be a function of two variables and let $\vec u = \vector{a,b}$ be a unit vector in $\R^2$. Then
+\[
+D_{-\vec u} f(x,y) = -D_{\vec u} f(x,y)
+\]
+where the vector $-\vec u = \vector{-a, -b}$ is the negative of the vector $\vec u$.
+\end{proposition}
+
+\begin{proof}
+The proof follows from the definition of directional derivative:
+\begin{align*}
+D_{-\vec u} f(x,y) &= \lim_{h \to 0} \frac{f(x - ah, y - bh) -f(x,y)}{h} \\
+                   &= -\lim_{h \to 0} \frac{f(x - ah, y - bh) -f(x,y)}{-h} \\
+                   &= -\lim_{k \to 0} \frac{f(x + ak, y  + bk) -f(x,y)}{k} \\
+                   &= -D_{\vec u} f(x,y)
+\end{align*}
+\end{proof}
+
+The following theorem gives the relationship between the gradient vector and directional derivatives.
+
+\begin{theorem}
+Let $f(x,y)$ be a function of two variables with gradient vector $\grad f = \vector{f_x, f_y}$, and let $\vec u = \vector{a,b}$ be a unit vector.
+Then
+\[
+D_{\vec u} f(x,y) = \grad f \dotp \vec u = \vector{af_x, bf_y}
+\]
+\end{theorem}
+
+\begin{proof}
+A rigorous proof requires the chain rule which will be covered in a later section. 
+However, based solely on the definition, we present here a convincing argument for the conclusion of the theorem. 
+The definition of directional derivative gives:
+\begin{align*}
+D_{\vec u} f(x,y) &= \lim_{h \to 0} \frac{f(x + ah, y + bh) -f(x,y)}{h} \\
+                  &= \lim_{h \to 0} \frac{f(x + ah, y + bh) - f(x , y+ bh) + f(x, y+bh) -f(x,y)}{h} \\
+                  &= \lim_{h \to 0} \frac{f(x + ah, y + bh) - f(x , y+ bh)}{h} + \lim_{h \to 0} \frac{f(x , y+ bh) -f(x,y)}{h} \\
+                  &= a\cdot \lim_{h \to 0} \frac{f(x + ah, y + bh) - f(x , y+ bh)}{ah} + b\cdot \lim_{h \to 0} \frac{f(x , y+ bh) -f(x,y)}{bh} \\
+                  &= a\cdot \lim_{k \to 0} \frac{f(x + k, y + ck) - f(x , y+ ck)}{k} + b\cdot \lim_{l \to 0} \frac{f(x , y+ l) -f(x,y)}{l} \\
+                  &= (?) \; a f_x + bf_y
+\end{align*}
+In the second to the last line, the constant $c$ is replacing the fraction $b/a$.  The question mark in the last line is due to the fact that the first limit is not
+identical to the definition of $f_x$ since the $y$ coordinates are ``floating".  
+However, the $y$ coordinates are equal in the first limit and as $k \to 0$, they are approaching $y$.
+We next present a similar computation, changing only the term which was added and subtracted in the numerator:
+\begin{align*}
+D_{\vec u} f(x,y) &= \lim_{h \to 0} \frac{f(x + ah, y + bh) -f(x,y)}{h} \\
+                  &= \lim_{h \to 0} \frac{f(x + ah, y + bh) - f(x+ah , y) + f(x+ah, y) -f(x,y)}{h} \\
+                  &= \lim_{h \to 0} \frac{f(x + ah, y + bh) - f(x+ah, y)}{h} + \lim_{h \to 0} \frac{f(x+ah , y) -f(x,y)}{h} \\
+                  &= b\cdot \lim_{h \to 0} \frac{f(x + ah, y + bh) - f(x+ah , y)}{bh} + a\cdot \lim_{h \to 0} \frac{f(x+ah , y) -f(x,y)}{ah} \\
+                  &= b\cdot \lim_{k \to 0} \frac{f(x + k, y + ck) - f(x+k , y)}{k} + a\cdot \lim_{l \to 0} \frac{f(x+ cl , y+ l) -f(x,y)}{l} \\
+                  &= (?)\;  b f_y + af_x
+\end{align*}
+Here, in the second to the last line, the constant $c$ is replacing the fraction $a/b$.  The question mark in the last line is due to the fact that the first limit is not
+identical to the definition of $f_y$ since the $x$ coordinates are ``floating".  
+However, the $x$ coordinates are equal in the first limit and as $k \to 0$, they are approaching $x$.
+Each of the above computations gives us one of the partial derivatives exactly and the other one in a questionable format. 
+This is compelling evidence for the validity of the claim in the theorem.
+\end{proof}
+
+
+\begin{proposition}
+Let $f(x,y)$ be a function of two variables and suppose $\grad f \neq \vec 0$. Then, the rate of change of $f$ is greatest in the direction of the gradient vector.
+
+\end{proposition}
+
+\begin{proof}
+The direction of greatest increase is the vector $\vec u$ for which $D_{\vec u}$ is the largest. 
+Recall that the dot product of two vectors is the product of their magnitudes times the cosine of the angle between them.  
+Hence a dot product is maximized when the cosine is one, i.e., the angle between the vectors is zero.  In our context, this leads to the direction of greatest
+increase in $f$ as the direction of the gradient as follows:
+\begin{align*}
+D_{\vec u} f &= \grad f \dotp \vec u\\
+             &= |\grad f| \dot |\vec u| \cos \theta\\
+             &= |\grad f| \cos theta\\
+             &\leq |\grad f|
+\end{align*}
+where the last inequality is equality if $\cos \theta = 1$, i.e., if the angle between $\vec u$ and $\grad f$ is zero.
+But, this angle is zero if and only if $\vec u$ is in the same direction as $\grad f$.  hence, the directional derivative
+$D_{\vec u}$ is maximized when the vector $\vec u$ is a unit vector in the same direction as the gradient vector, $\grad f$.
+\end{proof}
+
+\begin{corollary}
+The direction of greatest decrease in $f$ is in the opposite direction of the gradient vector, $\grad f$.
+\end{corollary}
+\begin{proof}
+The result follows from the previous proposition and the fact that $D_{\vec -u} f = -D_{\vec u}$.
+\end{proof}
 
 \end{document}
