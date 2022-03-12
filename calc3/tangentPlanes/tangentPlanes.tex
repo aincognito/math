@@ -16,6 +16,66 @@ In this section we determine tangent planes to surfaces.
 
 \maketitle
 
+\begin{proposition}
+Let $f(x,y)$ be a function of two variables and let $(x_0, y_0)$ be a point on the (smooth) level curve $f(x,y) = k$, i.e. $f(x_0, y_0) = k$.
+Then, at this point, the gradient vector is perpendicular to the level curve.
+\end{proposition}
+\begin{proof}
+Let $\vec r(t)$ be a parameterization of the (smooth) level curve $f(x,y) = k$ and let $\vec u \neq \vec 0$ be the direction 
+vector for $\vec r(t)$ at the point $(x_0, y_0)$, i.e., 
+$\vec u = \vec T(t)$. Then the rate of change of $f(x,y)$ is zero, since $f(x,y)$ is constant on the level curve $f(x,y) = k$. Thus, the directional derivative
+$D_{\vec u} f(x_0, y_0)$ is equal to zero. Hence,
+\[
+0 = D_{\vec u} f(x_0, y_0)  = \grad f(x_0, y_0) \dotp \vec u
+\]
+which implies that the gradient is orthogonal to the level curve at the point $(x_0, y_0)$ as claimed.
+\end{proof}
+
+\begin{proposition}
+Let $f(x,y,z)$ be a function of three variables and let let $(x_0, y_0, z_0)$ be a point on the level surface $f(x,y, z) = k$, i.e. $f(x_0, y_0, z_0) = k$.
+Then, at this point, the gradient vector is perpendicular to the level surface.
+\end{proposition}
+\begin{proof}
+Let $\vec r(t)$ be any smooth curve on the level surface $f(x,y, z) = k$ passing through the point $(x_0, y_0, z_0)$ with direction vector $\vec u$ at this point.
+Since $f$ is constant on $\vec r(t)$, the directional derivative $D_{\vec u} f(x_0, y_0, z_0)$ is zero, and as in the proposition above, 
+$\grad f(x_0, y_0, z_0) \perp \vec u$.  
+Since the curve $\vec r(t)$ is an arbitrary curve on the surface passing through $(x_0, y_0, z_0)$, the gradient vector must be 
+orthogonal to the surface itself at this point.
+\end{proof}
+
+\begin{theorem}[Tangent Plane]
+The tangent plane to the surface $z = f(x,y)$ at the point $(x_0, y_0, z_0)$ is given by
+\[
+z = z_0 + f_x(x_0, y_0)(x - x_0) + f_y(x_0, y_0)(y - y_0)
+\]
+\end{theorem}
+\begin{proof}
+The surface $z = f(x,y)$ is the level surface $g(x,y,z) = 0$ where $g(x,y,z) = z - f(x,y)$.
+According to the previous proposition, the vector $\grad g(x_0, y_0, z_0)$ is orthogonal to the surface at the point $(x_0, y_0, z_0)$.
+Hence, this vector is the normal to the plane and the equation of the plane is
+\[
+g_x(x - x_0) + g_y(y-y_0) + g_z(z -z_0) = 0
+\]
+Since $\grad g(x_0, y_0, z_0) = \vector{g_x, g_y, g_z} = \vector{-f_x, -f_y, 1}$, the equation of the plane can be rewritten as
+\[
+-f_x(x-x_0) - f_y(y-y_0) + (z-z_0) = 0
+\]
+which in turn can be written as
+\[
+z = z_0 + f_x(x-x_0) + f_y(y-y_0)
+\]
+as claimed.
+\end{proof}
+
+
+\section{Linear Approximation}
+We can use the equation of the tangent plane to approximate the values of a function $f(x,y)$ near the point of tangnecy.
+
+Suppose the value $f(x_0, y_0)$ is known. The linear approximation to the function $f$ at a point $(x,y)$ near the point $(x_0, y_0)$
+is given by
+\[
+f(x,y) \approx f(x_0, y_0) + f_x(x_0, y_0)(x-x_0) + f_y(x_0, y_0)(y-y_0)
+\]
 
 
 
