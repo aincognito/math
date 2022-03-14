@@ -144,7 +144,7 @@ f(x,y) = 3x^2y + 5xy - 2y - 4
 
 Start by computing $f(x, y+h)$:
 \[
-f(x+h, y) = \answer{3x^2(y+h) + 5x(y+h) - 2(y+h) - 4}
+f(x, y+h) = \answer{3x^2(y+h) + 5x(y+h) - 2(y+h) - 4}
 \]
 
 The numerator of the difference quotient is:
@@ -190,7 +190,10 @@ f_x(x,y) = \answer{5x^4y^2 - 3\sqrt y + y/x}
 \end{problem}
 
 \begin{problem}(Problem 3b)
-Find $f_x(x,y)$ for the function $f(x,y) = \frac{2y}{x} + y^2\tan(x) + 4\sec(y)$.\\
+Find $f_x(x,y)$ for the function 
+\[
+f(x,y) = \frac{2y}{x} + y^2\tan(x) + 4\sec(y)
+\]
 \[
 f_x(x,y) = \answer{-\frac{2y}{x^2} + y\sec^2(x)}
 \]
@@ -260,7 +263,7 @@ f_t(x,t) &= \frac{d}{du} \sqrt u \cdot u_t\\
   
 \end{example}
 
-\begin{problem}(Problem 5a)
+\begin{problem}(Problem 5)
 Compute the partial derivatives $f_x$ and $f_y$ for the function
 \[
 f(x,y) = \cos(x^3y^4)
@@ -274,7 +277,29 @@ f_x = \answer{-3x^2y^4 \sin(x^3y^4)} \quad \text{and} \quad f_y = \answer{-4x^3y
 \]
 \end{problem}
 
-\begin{problem}(Problem 5b)
+In the next example, we compute the partial derivatives of a function of three variables.
+
+\begin{example}[Example 6]
+Find $w_x, w_y$ and $w_z$ for the function
+\[
+w = y\tan(x+2z)
+\]
+To find $w_x$, we treat $y$ and $z$ as constants:
+\[
+w_x = y\sec^2(x+2z) \cdot 1 = y\sec^2(x+2z)
+\]
+Note that we used the chain rule with inside function $x + 2z$, whose derivative with respect to $x$ is just $1$.\\
+To find $w_y$, we treat $x$ and $z$ as constants, so the factor $\tan(x+2z)$ is treated as constant and
+\[
+w_y = \tan(x+2z)
+\]
+Finally, to find $w_z$, we treat $x$ and $y$ as constants and we use the chain rule:
+\[
+w_z = y\sec^2(x+2z) \cdot 2 = 2y\sec^2(x+2z)
+\]
+\end{example}
+
+\begin{problem}(Problem 6)
 Compute the partial derivatives $f_x, f_y$ and $f_z$ for the function
 \[
 f(x,y,z) = \sqrt{x^2 + y^2 + z^2}
@@ -296,7 +321,7 @@ f_z = \answer{\frac{z}{\sqrt{x^2 + y^2 + z^2}}}
 
 In the next example we use the product rule in addition to the chain rule.
 
-\begin{example}[Example 6]
+\begin{example}[Example 7]
 Compute $f_x(x,y)$ and $f_y(x,y)$ for the function 
 \[
 f(x,y) = x\sin(xy)
@@ -309,15 +334,15 @@ f_x(x,y) &= \sin(x,y) + x \frac{\partial}{\partial x} \sin(xy)\\
          & = \sin(x,y) + x \cos(xy) \cdot y\\
          & = \sin(x,y) + xy \cos(xy)
 \end{align*}
-As a function of $y, f$ is a composition of the sine function and the function $xy$, so
+As a function of $y, f$ is a composition of the sine function and the function $xy$, so the chain rule gives:
 \[
-f_y(x,y) x \cos(xy) \cdot x = x^2 \cos(xy)
+f_y(x,y) = x \cos(xy) \cdot x = x^2 \cos(xy)
 \]
 
 \end{example}
 
 
-\begin{problem}(Problem 6a)
+\begin{problem}(Problem 7a)
 Let $z = x\ln(x+ 2y)$. Compute the partial derivatives:
 \[
 \frac{\partial z}{\partial x} = \answer{\frac{x}{x+2y} + \ln(x+2y)}
@@ -329,7 +354,7 @@ Let $z = x\ln(x+ 2y)$. Compute the partial derivatives:
 
 
 
-\begin{problem}(Problem 6b)
+\begin{problem}(Problem 7b)
 Compute the partial derivatives $f_x, f_y$ and $f_z$ for the function
 \[
 f(x,y,z) = xy^2 e^{-xz}
@@ -356,7 +381,7 @@ f_z = \answer{-x^2y^2 e^{-xz}}
 
 \section{Higher Order Derivatives}
 
-\begin{example}[Example 7]
+\begin{example}[Example 8]
 Compute the mixed second order partial derivatives $f_{xy}$ and $f_{yx}$ for the function 
 \[
 f(x,y) = x^3y^4
@@ -376,7 +401,7 @@ f_{xy} = f_{yx}
 \]
 \end{example}
 
-\begin{problem}(Problem 7)
+\begin{problem}(Problem 8)
 Compute the mixed second order partial derivatives $f_{xy}$ and $f_{yx}$ for the function 
 \[
 f(x,y) = x^5 y^3
@@ -396,7 +421,39 @@ In practice, the functions we will be differentiating are continuous on their do
 so we will freely interchange the order of differentiation.
 \end{remark}
 
+\begin{example}[Example 9]
+Verify that $f_{xy} = f_{yx}$ for the function $f(x,y) = e^{xy}\sin(y)$.\\
+We compute $f_{xy}$ first:
+\[
+f_x(x,y) = ye^{xy}\sin(y)
+\]
+and using the product rule (for three functions):
+\[
+f_{xy} = e^{xy}\sin(y) + xye^{xy}\sin(y) + ye^{xy}\cos(y)
+\]
+Next, we compute $f_{yx}$:
+\[
+f_y = xe^{xy}\sin(y) + e^{xy}\cos(y)
+\]
+and the product rule gives:
+\[
+f_{yx} = e^{xy}\sin(y) + xy e^{xy}\sin(y) +ye^{xy} \cos(y)
+\]
+Comparing, we can see that the result of Clairaut's Theorem holds, i.e., $f_{xy} = f_{yx}$.
+\end{example}
 
+\begin{problem}(Problem 9)
+Verify that $f_{xy} = f_{yx}$ for the function $f(x,y) = e^x\tan(xy)$.\\
+\[
+f_x(x,y) = \answer{e^x \tan(xy) + ye^x \sec^2(xy)}
+\]
+\[
+f_y(x,y) = \answer{xe^x\sec^2(xy)}
+\]
+\[
+f_{xy}(x,y) = f_{yx}(x,y) = \answer{e^x\sec^2(xy) + xe^x\sec^2(xy) + 2xye^x \sec^2(xy)\tan(xy)}
+\]
+\end{problem}
 
 \subsection{Harmonic Functions}
 \begin{definition}[Harmonic]
@@ -407,7 +464,7 @@ A function $f(x,y)$ is called harmonic if
 for all $(x,y)$. The symbol $\Delta$ is called the Laplace operator or the Laplacian.
 \end{definition}
 
-\begin{example}[Example 8]
+\begin{example}[Example 10]
 Show that the function is harmonic:
 \[
 f(x,y) = \tan^{-1}\left(\frac{y}{x}\right)
@@ -439,7 +496,7 @@ Finally, we add the pure second derivatives to obtain the Laplacian:
 demonstrating that the original function is harmonic.
 \end{example}
 
-\begin{problem}(Problem 8a)
+\begin{problem}(Problem 10a)
 Show that the function is harmonic:
 \[
 f(x,y) = x^2 + 4xy - y^2 + 5x - 6y +2
@@ -447,7 +504,7 @@ f(x,y) = x^2 + 4xy - y^2 + 5x - 6y +2
 
 \end{problem}
 
-\begin{problem}(Problem 8b)
+\begin{problem}(Problem 10b)
 Show that the function is harmonic:
 \[
 f(x,y) = e^x \cos(y)
@@ -455,7 +512,7 @@ f(x,y) = e^x \cos(y)
 
 \end{problem}
 
-\begin{problem}(Problem 8c)
+\begin{problem}(Problem 10c)
 Show that the function is harmonic:
 \[
 f(x,y) = \ln(x^2 + y^2)
