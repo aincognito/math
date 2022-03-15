@@ -30,7 +30,7 @@ Similarly, for a function of three variables, $f(x,y, z)$, the gradient vector i
 \begin{example}[Example 1]
 Find the gradient vector for 
 \[
-\text{a)} \;f(x,y) = x^2 + y^2\quad \text{and \;\;  b)} \;g(x, y, z) = xyz
+\text{a)} \;f(x,y) = x^2 + y^2\quad \text{and} \quad  \text{b)} \;g(x, y, z) = xyz
 \]
 a) $\grad f(x,y) = \vector{f_x, f_y} = \vector{2x, 2y}$ \\
 b) $\grad g(x,y, z) = \vector{g_x, g_y, g_z}= \vector{yz, xz, yz}$
@@ -43,6 +43,25 @@ b) $\;g(x,y) = \sqrt{x^2 + y^2}; \quad \quad  \grad g(x,y) = \vector{\answer{\fr
 a) $\;h(x,y, z) = x\sin(yz); \quad \quad \grad h(x,y, z) = \vector{\answer{\sin(yz)}, \answer{xz\cos(yz)} , \answer{xy\cos(yz)} }$\\
 \end{problem}
 
+
+\begin{example}[Example 2]
+Let $f(x,y) = x^2 + 3xy$.  Find $\grad f(2, -3)$.\\
+First we compute the gradient and then we plug in the point $(2, -3)$.  We have
+\[
+\grad f(x,y) = \vector{f_x(x,y), f_y(x,y)} = \vector{2x + 3y, 3x}
+\]
+At the given point, we have
+\[
+\grad f(2, -3) = \vector{2(2) + 3(-3), 3(2)} = \vector{-5, 6}
+\]
+\end{example}
+
+\begin{problem}(Problem 2)
+Let $f(x,y) = 2xy - y^3$.  Find $\grad f(-1, 2)$.\\
+\[
+\grad f(-1, 2) = \vector{\answer{4}, \answer{-14}}
+\]
+\end{problem}
 The gradient is used to find the slope of a surface in a particular direction.
 
 \begin{definition}[Directional Derivative]
@@ -99,7 +118,8 @@ D_{\vec u} f(x,y) &= \lim_{h \to 0} \frac{f(x + ah, y + bh) -f(x,y)}{h} \\
                   &= a\cdot \lim_{k \to 0} \frac{f(x + k, y + ck) - f(x , y+ ck)}{k} + b\cdot \lim_{l \to 0} \frac{f(x , y+ l) -f(x,y)}{l} \\
                   &= (?) \; a f_x + bf_y
 \end{align*}
-In the second to the last line, the constant $c$ is replacing the fraction $b/a$.  The question mark in the last line is due to the fact that the first limit is not
+In the second to the last line, the constant $c$ is replacing the fraction $b/a$.  
+The question mark in the last line is due to the fact that the first limit is not
 identical to the definition of $f_x$ since the $y$ coordinates are ``floating".  
 However, the $y$ coordinates are equal in the first limit and as $k \to 0$, they are approaching $y$.
 We next present a similar computation, changing only the term which was added and subtracted in the numerator:
@@ -111,7 +131,8 @@ D_{\vec u} f(x,y) &= \lim_{h \to 0} \frac{f(x + ah, y + bh) -f(x,y)}{h} \\
                   &= b\cdot \lim_{k \to 0} \frac{f(x + k, y + ck) - f(x+k , y)}{k} + a\cdot \lim_{l \to 0} \frac{f(x+ cl , y+ l) -f(x,y)}{l} \\
                   &= (?)\;  b f_y + af_x
 \end{align*}
-Here, in the second to the last line, the constant $c$ is replacing the fraction $a/b$.  The question mark in the last line is due to the fact that the first limit is not
+Here, in the second to the last line, the constant $c$ is replacing the fraction $a/b$.  
+The question mark in the last line is due to the fact that the first limit is not
 identical to the definition of $f_y$ since the $x$ coordinates are ``floating".  
 However, the $x$ coordinates are equal in the first limit and as $k \to 0$, they are approaching $x$.
 Each of the above computations gives us one of the partial derivatives exactly and the other one in a questionable format. 
@@ -119,24 +140,55 @@ This is compelling evidence for the validity of the claim in the theorem.
 \end{proof}
 
 
+\begin{example}[Example 3]
+Find the derivative of $f(x,y) = 2x + 5y$ in the direction of the vector $\vector{3,4}$ at the point $(-1, 2)$.\\
+Note that the surface $z = f(x,y) = 2x + 5y$ is a plane and at the point $(-1, 2)$ the height of the plane is $z = 2(-1) + 5(2) = 8$.
+Now we compute the directional derivative by taking the dot product of the gradient vector (at the given point) with a unit 
+vector in the direction of the given vector.
+The unit vector in the direction of $\vector{3,4}$ is
+\[
+\vec u = \frac{\vector{3,4}}{|\vector{3,4}|} = \vector{\frac35, \frac45}
+\]
+The gradient of $f$ at the point $(-1, 2)$ is
+\[
+\grad f(-1, 2) = \vector{f_x(-1,2), f_y(-1,2)} = \vector{2,5}
+\]
+The directional derivative is thus
+\[
+D_{\vec u} f (-1, 2) = \grad f(-1, 2) \dotp \vec u = 2 \cdot \frac35 + 5 \cdot \frac45 = \frac{26}{5}
+\]
+Conceptually, this means that the rate of change of $f$ in the direction of $\vec u$ at the point $(-1, 2)$ is $\frac{26}{5}$.
+Geometrically, this means that the slope of the plane $z = f(x,y) = 3x + 4y$ at the point $(-1, 2, 8)$ in the direction of $\vec u$ is $\frac{26}{5}$.
+\end{example}
+
+\begin{remark}
+Note that the directional derivative in the last example did not depend on the point $(-1, 2)$.  
+This is because our surface was a plane and the slope or rate of change of a plane in a particular direction is the same at every point in the plane.
+\end{remark}
+
+\begin{problem}(Problem 3)
+Find the derivative of $f(x,y) = 4x - 2y$ in the direction of the vector $\vector{4, -3}$ at the point $(0, 6)$.\\
+A unit vector in the direction of $\vector{4, -3}$ is $\vec u = \vector{\answer{4/5}, \answer{-3/5}}$\\
+The gradient vector at the point $(0,6)$ is $\grad f(0,6) = \vector{\answer{4}, \answer{-2}}$\\
+The directional derivative is $D_{\vec u} f(0,6) = \answer{2}$
+\end{problem}
+
 \begin{proposition}
 Let $f(x,y)$ be a function of two variables and suppose $\grad f \neq \vec 0$. Then, the rate of change of $f$ is greatest in the direction of the gradient vector.
 
 \end{proposition}
 
 \begin{proof}
-The direction of greatest increase is the vector $\vec u$ for which $D_{\vec u}$ is the largest. 
+The direction of greatest increase is the vector $\vec u$ for which $D_{\vec u}f$ is the largest. 
 Recall that the dot product of two vectors is the product of their magnitudes times the cosine of the angle between them.  
 Hence a dot product is maximized when the cosine is one, i.e., the angle between the vectors is zero.  In our context, this leads to the direction of greatest
 increase in $f$ as the direction of the gradient as follows:
 \begin{align*}
-D_{\vec u} f &= \grad f \dotp \vec u\\
-             &= |\grad f| \dot |\vec u| \cos \theta\\
-             &= |\grad f| \cos theta\\
-             &\leq |\grad f|
+D_{\vec u} f &= \grad f \dotp \vec u = |\grad f| \dot |\vec u| \cos \theta\\
+             &= |\grad f| \cos \theta \leq |\grad f|
 \end{align*}
 where the last inequality is equality if $\cos \theta = 1$, i.e., if the angle between $\vec u$ and $\grad f$ is zero.
-But, this angle is zero if and only if $\vec u$ is in the same direction as $\grad f$.  hence, the directional derivative
+But, this angle is zero if and only if $\vec u$ is in the same direction as $\grad f$.  Hence, the directional derivative
 $D_{\vec u}$ is maximized when the vector $\vec u$ is a unit vector in the same direction as the gradient vector, $\grad f$.
 \end{proof}
 
@@ -144,7 +196,7 @@ $D_{\vec u}$ is maximized when the vector $\vec u$ is a unit vector in the same 
 The direction of greatest decrease in $f$ is in the opposite direction of the gradient vector, $\grad f$.
 \end{corollary}
 \begin{proof}
-The result follows from the previous proposition and the fact that $D_{\vec -u} f = -D_{\vec u}$.
+The result follows from the previous proposition and the fact that $D_{-\vec u} f = -D_{\vec u}$.
 \end{proof}
 
 \end{document}
