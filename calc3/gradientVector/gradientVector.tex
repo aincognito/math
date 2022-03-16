@@ -187,12 +187,133 @@ This is because our surface was a plane and the slope or rate of change of a pla
 direction is the same at every point in the plane.
 \end{remark}
 
-\begin{problem}(Problem 3)
+\begin{problem}(Problem 4)
 Find the derivative of $f(x,y) = 4x - 2y$ in the direction of the vector $\vector{4, -3}$ at the point $(0, 6)$.\\
 A unit vector in the direction of $\vector{4, -3}$ is $\vec u = \vector{\answer{4/5}, \answer{-3/5}}$\\
 The gradient vector at the point $(0,6)$ is $\grad f(0,6) = \vector{\answer{4}, \answer{-2}}$\\
 The directional derivative is $D_{\vec u} f(0,6) = \answer{2}$
 \end{problem}
+
+
+\begin{example}[Example 5]
+Find the derivative of $f(x,y) = x+y$ at the point $(0,0)$ in the direction of the following vectors:
+\[
+\vec{i}, \vec{j}, \vector{1,1}, \vector{1, -1}, \vector{5, -12} \;\text{and} \; \vector{-5, 12}
+\]
+We begin by computing the gradient vector at the point $(0,0)$:
+\[
+\grad f(0,0) = \vector{f_x(0,0), f_y(0,0)} = \vector{1,1}
+\]
+Note that the gradient vector did not depend on the point.\\
+The derivative in the direction of $\vec i$ is
+\[
+D_{\vec i} f(0,0) = \grad f(0,0) \dotp \vec{i} = \vector{1,1} \dotp \vector{1,0} = 1
+\]
+The derivative in the direction of $\vec j$ is
+\[
+D_{\vec j} f(0,0) = \grad f(0,0) \dotp \vec{j} = \vector{1,1} \dotp \vector{0,1} = 1
+\]
+Next, the vector $\vector{1,1}$ is not a unit vector, so we divide it by its magnitude to get
+\[
+\vec u = \vector{\frac{1}{\sqrt 2}, \frac{1}{\sqrt 2}}
+\]
+The derivative in the direction of $\vec u$ is
+\[
+D_{\vec u} f(0,0) = \grad f(0,0) \dotp \vec{u} = \vector{1,1} \dotp \vector{\frac{1}{\sqrt 2}, \frac{1}{\sqrt 2}} = \sqrt 2
+\]
+Note that the vector $\vec u$ above is in the same direction as the gradient vector.
+
+Next, the vector $\vector{1,-1}$ is not a unit vector, so we divide it by its magnitude to get
+\[
+\vec v = \vector{\frac{1}{\sqrt 2}, -\frac{1}{\sqrt 2}}
+\]
+The derivative in the direction of $\vec v$ is
+\[
+D_{\vec v} f(0,0) = \grad f(0,0) \dotp \vec{v} = \vector{1,1} \dotp \vector{\frac{1}{\sqrt 2}, -\frac{1}{\sqrt 2}} = 0
+\]
+
+Next, the vector $\vector{5,-12}$ is not a unit vector, so we divide it by its magnitude to get
+\[
+\vec w_1 = \vector{\frac{5}{13}, -\frac{12}{13}}
+\]
+The derivative in the direction of $\vec{w_1}$ is
+\[
+D_{\vec{w_1}} f(0,0) = \grad f(0,0) \dotp \vec{w_1} = \vector{1,1} \dotp \vector{\frac{5}{13}, -\frac{12}{13}} = -\frac{7}{13}
+\]
+
+Finally, the vector $\vector{-5,12}$ is not a unit vector, so we divide it by its magnitude to get
+\[
+\vec w_2 = \vector{-\frac{5}{13}, \frac{12}{13}}
+\]
+The derivative in the direction of $\vec w_2$ is
+\[
+D_{\vec w_2} f(0,0) = \grad f(0,0) \dotp \vec{w_2} = \vector{1,1} \dotp \vector{-\frac{5}{13}, \frac{12}{13}} = \frac{7}{13}
+\]
+
+Note that the last two vectors, $\vec w_1$ and $\vec w_2$, are negatives of one another, and that the 
+derivatives in their respective directions are negatives of each other.\\
+Below, we show several level curves of the plane $z = f(x,y) = x+y$ along with the given (unitized) direction vectors.
+
+\begin{image}
+\begin{tikzpicture}
+\draw[thick, <->] (-5, 0) -- (5,0);
+\draw[thick, <->] (0,-5) -- (0,5);
+\draw[thick, blue!70!white] (-4, 4) -- (4, -4) node[below]{$k = 0$};
+\draw[thick, blue!70!white] (-3.5, 4.5) -- (4.5, -3.5) node[below]{$k = 1/2$};
+\draw[thick, blue!70!white] (-3, 5) -- (5, -3) node[below]{$k = 1$};
+\draw[thick, blue!70!white] (-2.5, 5.5) -- (5.5, -2.5) node[below]{$k = 3/2$};
+\draw[thick, blue!70!white] (-4.5, 3.5) -- (3.5, -4.5) node[below]{$k = -1/2$};
+\draw[thick, blue!70!white] (-5, 3) -- (3, -5) node[below]{$k = -1$};
+\draw[thick, blue!70!white] (-5.5, 2.5) -- (2.5, -5.5) node[below]{$k = -3/2$};
+
+\draw[red, ->] (0,0) -- (2,0) node[above,right]{$\vec i$};
+\draw[red, ->] (0,0) -- (0,2) node[above, right]{$\vec j$};
+\draw[red, ->] (0,0) -- (1.414, 1.414) node[above, right]{$\vec u$};
+\draw[red, ->] (0,0) -- (1.414, -1.414) node[below, right]{$\vec v$};
+\draw[red, ->] (0,0) -- (0.7692, -1.8461) node[below, right]{$\vec w_1$};
+\draw[red, ->] (0,0) -- (-0.7692, 1.8461) node[above, left]{$\vec w_2$};
+\node at (0, -6.5) {Note that the derivative in the direction of the level curves is 0};
+\node at (0, -7) {and that the gradient vector is perpendicular to the level curves};
+\end{tikzpicture}
+\end{image}
+
+
+\end{example}
+
+\begin{problem}[Problem 5]
+Find the derivative of $f(x,y) = x-y$ at the point $(0,0)$ in the direction of the following vectors:
+\[
+\vec{i}, \vec{j}, \vector{1,-1}, \vector{1, 1}, \vector{8, -15} \;\text{and} \; \vector{-8, 15}
+\]
+\[
+\grad f(0,0) = \vector{\answer{1}, \answer{-1}}
+\]
+\[
+D_{\vec i} f(0,0) = \answer{1}
+\]
+\[
+D_{\vec j} f(0,0) = \answer{-1}
+\]
+Let $\vec u$ represent the unit vector in the direction of $\vector{1,-1}$, then 
+\[
+D_{\vec u} f(0,0) = \answer{\sqrt 2}
+\]
+Let $\vec v$ represent the unit vector in the direction of $\vector{1,1}$, then 
+\[
+D_{\vec v} f(0,0) = \answer{0}
+\]
+Let $\vec w_1$ represent the unit vector in the direction of $\vector{8,-15}$, then 
+\[
+D_{\vec w_1} f(0,0) = \answer{23/17}
+\]
+Let $\vec w_2$ represent the unit vector in the direction of $\vector{-8,15}$, then 
+\[
+D_{\vec w_2} f(0,0) = \answer{-23/17}
+\]
+
+\end{problem}
+
+
 
 \begin{proposition}
 Let $f(x,y)$ be a function of two variables and suppose $\grad f \neq \vec 0$. 
