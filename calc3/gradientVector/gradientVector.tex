@@ -70,13 +70,27 @@ The rate of change of $f$ in the direction of $\vec u$ is given by
 \[
 D_{\vec u} f(x,y) = \lim_{h \to 0} \frac{f(x + ah, y + bh) -f(x,y)}{h}
 \]
+This is referred to as the derivative of $f$ in the direction of $\vec u$.
 \end{definition}
 
+\begin{example}[Example 3]
+Show that the derivative of $f(x,y)$ in the direction of the vector $\vec i = \vector{1,0}$ is the 
+partial derivative with respect to $x$, $f_x(x,y)$.\\
+Noting that $\vec i$ is a unit vector, we apply the definition of directional 
+derivative using $\vec u = \vec i = \vector{1,0}$ to obtain:
+\begin{align*}
+D_{\vec i} f(x,y) &= \lim_{h \to 0} \frac{f(x + 1h, y + 0h) -f(x,y)}{h}\\
+                  &= \lim_{h \to 0} \frac{f(x + h, y) -f(x,y)}{h}\\
+                  &= f_x(x,y)
+\end{align*}
+The last equation follows from the definition of the partial derivative of $f$ with respect to $x$.
+\end{example}
 
-\begin{remark}
-The partial derivative $f_x$ is the directional derivative in the direction of the unit vector $\vec i = \vector{1,0}$ and 
-the partial derivative $f_y$ is the directional derivative in the direction of the unit vector $\vec j = \vector{0,1}$
-\end{remark}
+\begin{problem}(Problem 3)
+Use the definition  to show that the derivative of $f(x,y)$ in the direction of 
+the vector $\vec j = \vector{0,1}$ is the partial derivative with respect to $y$, $f_y(x,y)$.
+\end{problem}
+
 
 \begin{proposition}
 Let $f(x,y)$ be a function of two variables and let $\vec u = \vector{a,b}$ be a unit vector in $\R^2$. Then
@@ -94,15 +108,17 @@ D_{-\vec u} f(x,y) &= \lim_{h \to 0} \frac{f(x - ah, y - bh) -f(x,y)}{h} \\
                    &= -\lim_{k \to 0} \frac{f(x + ak, y  + bk) -f(x,y)}{k} \\
                    &= -D_{\vec u} f(x,y)
 \end{align*}
+Note the change of the increment from $h$ to $k$ using $k = -h$.
 \end{proof}
 
 The following theorem gives the relationship between the gradient vector and directional derivatives.
 
 \begin{theorem}
-Let $f(x,y)$ be a function of two variables with gradient vector $\grad f = \vector{f_x, f_y}$, and let $\vec u = \vector{a,b}$ be a unit vector.
+Let $f(x,y)$ be a function of two variables with gradient vector $\grad f = \vector{f_x, f_y}$, 
+and let $\vec u = \vector{a,b}$ be a unit vector.
 Then
 \[
-D_{\vec u} f(x,y) = \grad f \dotp \vec u = \vector{af_x, bf_y}
+D_{\vec u} f(x,y) = \grad f(x,y) \dotp \vec u = \vector{af_x(x,y), bf_y(x,y)}
 \]
 \end{theorem}
 
@@ -121,8 +137,10 @@ D_{\vec u} f(x,y) &= \lim_{h \to 0} \frac{f(x + ah, y + bh) -f(x,y)}{h} \\
 In the second to the last line, the constant $c$ is replacing the fraction $b/a$.  
 The question mark in the last line is due to the fact that the first limit is not
 identical to the definition of $f_x$ since the $y$ coordinates are ``floating".  
-However, the $y$ coordinates are equal in the first limit and as $k \to 0$, they are approaching $y$, so perhaps this first limit is simply $af_x(x,y)$.
-We next present a similar computation, changing only the term which was added and subtracted in the numerator:
+However, the $y$ coordinates are equal in the first limit and as $k \to 0$, they are approaching $y$, 
+so perhaps this first limit is simply $af_x(x,y)$. 
+To strengthen our case for the result, we next present a similar computation, 
+changing only the term which was added and subtracted in the numerator:
 \begin{align*}
 D_{\vec u} f(x,y) &= \lim_{h \to 0} \frac{f(x + ah, y + bh) -f(x,y)}{h} \\
                   &= \lim_{h \to 0} \frac{f(x + ah, y + bh) - f(x+ah , y) + f(x+ah, y) -f(x,y)}{h} \\
@@ -134,13 +152,14 @@ D_{\vec u} f(x,y) &= \lim_{h \to 0} \frac{f(x + ah, y + bh) -f(x,y)}{h} \\
 Here, in the second to the last line, the constant $c$ is replacing the fraction $a/b$.  
 The question mark in the last line is due to the fact that the first limit is not
 identical to the definition of $f_y$ since the $x$ coordinates are ``floating".  
-However, the $x$ coordinates are equal in the first limit and as $k \to 0$, they are approaching $x$, so perhaps this first limit is simply $bf_y(x,y)$.
+However, the $x$ coordinates are equal in the first limit and as $k \to 0$, they are approaching $x$, 
+so perhaps this first limit is simply $bf_y(x,y)$.
 Each of the above computations gives us one of the partial derivatives exactly and the other one in a questionable format. 
 This is compelling evidence for the validity of the claim in the theorem.
 \end{proof}
 
 
-\begin{example}[Example 3]
+\begin{example}[Example 4]
 Find the derivative of $f(x,y) = 2x + 5y$ in the direction of the vector $\vector{3,4}$ at the point $(-1, 2)$.\\
 Note that the surface $z = f(x,y) = 2x + 5y$ is a plane and at the point $(-1, 2)$ the height of the plane is $z = 2(-1) + 5(2) = 8$.
 Now we compute the directional derivative by taking the dot product of the gradient vector (at the given point) with a unit 
@@ -158,12 +177,14 @@ The directional derivative is thus
 D_{\vec u} f (-1, 2) = \grad f(-1, 2) \dotp \vec u = 2 \cdot \frac35 + 5 \cdot \frac45 = \frac{26}{5}
 \]
 Conceptually, this means that the rate of change of $f$ in the direction of $\vec u$ at the point $(-1, 2)$ is $\frac{26}{5}$.
-Geometrically, this means that the slope of the plane $z = f(x,y) = 3x + 4y$ at the point $(-1, 2, 8)$ in the direction of $\vec u$ is $\frac{26}{5}$.
+Geometrically, this means that the slope of the plane $z = f(x,y) = 3x + 4y$ at the 
+point $(-1, 2, 8)$ in the direction of $\vec u$ is $\frac{26}{5}$.
 \end{example}
 
 \begin{remark}
 Note that the directional derivative in the last example did not depend on the point $(-1, 2)$.  
-This is because our surface was a plane and the slope or rate of change of a plane in a particular direction is the same at every point in the plane.
+This is because our surface was a plane and the slope or rate of change of a plane in a particular 
+direction is the same at every point in the plane.
 \end{remark}
 
 \begin{problem}(Problem 3)
@@ -174,14 +195,16 @@ The directional derivative is $D_{\vec u} f(0,6) = \answer{2}$
 \end{problem}
 
 \begin{proposition}
-Let $f(x,y)$ be a function of two variables and suppose $\grad f \neq \vec 0$. Then, the rate of change of $f$ is greatest in the direction of the gradient vector.
+Let $f(x,y)$ be a function of two variables and suppose $\grad f \neq \vec 0$. 
+Then, the rate of change of $f$ is greatest in the direction of the gradient vector.
 
 \end{proposition}
 
 \begin{proof}
 The direction of greatest increase is the vector $\vec u$ for which $D_{\vec u}f$ is the largest. 
 Recall that the dot product of two vectors is the product of their magnitudes times the cosine of the angle between them.  
-Hence a dot product is maximized when the cosine is one, i.e., the angle between the vectors is zero.  In our context, this leads to the direction of greatest
+Hence a dot product is maximized when the cosine is one, i.e., the angle between the vectors is zero.  
+In our context, this leads to the direction of greatest
 increase in $f$ as the direction of the gradient as follows:
 \begin{align*}
 D_{\vec u} f &= \grad f \dotp \vec u = |\grad f| \dot |\vec u| \cos \theta\\
