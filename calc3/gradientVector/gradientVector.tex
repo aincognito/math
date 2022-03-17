@@ -314,13 +314,135 @@ D_{\vec w_2} f(0,0) = \answer{-23/17}
 \end{problem}
 
 
-%add example with z = x^2 + y^2
-%add problems
+\begin{example}[Example 6]
+Find the derivative of $f(x,y) = \ln(x^2 + y^2)$ in the direction of the vector $\vector{2, 3}$ at the point $(1, -2)$.\\
+First the gradient vector is
+\[
+\grad f(x,y) = \vector{\frac{2x}{x^2 +y^2}, \frac{2y}{x^2 +y^2}}
+\]
+and at the given point this vector is
+\[
+\grad f(1,-2) = \vector{\frac{2}{5}, -\frac{4}{5}}
+\]
+Next, the vector $\vector{2, 3}$ is not a unit vector, so we divide it by its magnitude:
+\[
+\vec u = \frac{\vector{2, 3}}{|\vector{2, 3}|} = \vector{\frac{2}{\sqrt 13}, \frac{3}{\sqrt{13}}}
+\]
+Finally we can determine the directional derivative:
+\[
+D_{\vec u} f(1, -2) = \grad f(1,-2) \dotp \vec u = \vector{\frac{2}{5}, -\frac{4}{5}} \dotp \vector{\frac{2}{\sqrt 13}, \frac{3}{\sqrt{13}}} = -\frac{8}{5\sqrt{13}}
+\]
+\end{example}
+
+\begin{problem}(Problem 6a)
+Find the derivative of $f(x,y) = \ln(x^2 + y^2)$ in the direction of the vector $\vector{1, -4}$ at the point $(-2, 3)$.\\
+\[
+\grad f(-2, 3) = \vector{\answer{-\frac{4}{13}}, \answer{\frac{6}{13}}}
+\]
+The unit vector in the direction of $\vector{1, -4}$ is
+\[
+\vec u =  \vector{\answer{\frac{1}{\sqrt{17}}}, \answer{-\frac{4}{\sqrt{17}}}}
+\]
+The directional derivative is
+\[
+D_{\vec u} f(-2, 3) = \answer{-\frac{28}{sqrt{221}}}
+\]
+\end{problem}
+
+\begin{problem}(Problem 6b)
+Find the derivative of $f(x,y) = x^2 + 4y^2$ at the point $P(3, 5)$ in the direction of the point $Q(2,4)$.\\
+\[
+\grad f(3, 5) = \vector{\answer{6}, \answer{40}}
+\]
+The vector from the point $P$ to the point $Q$ is
+\[
+\vec PQ = \vector{\answer{-1}, \answer{-1}}
+\]
+The unit vector in the direction of $\vec PQ$ is
+\[
+\vec u = \vector{\answer{-1/\sqrt 2}, \answer{-1/\sqrt 2}}
+\]
+The directional derivative is
+\[
+D_{\vec u} f(3, 5) = \answer{-46/\sqrt 2}
+\]
+
+\end{problem}
+
+\begin{problem}(Problem 6c)
+Find the derivative of $f(x,y) = x^3 y^4$ at the point $(1,-1)$ in the same direction as the 
+unit vector that makes an angle of $\pi/3$ with the positive $x$-axis.\\
+\[
+\grad f(1, -1) = \vector{\answer{3}, \answer{-4}}
+\]
+The unit vector in the give direction is
+\[
+\vec u = \vector{1/2, \sqrt{3} /2}
+\]
+The directional derivative is
+\[
+D_{\vec u} f(1, -1) = \answer{\frac{3-4\sqrt 3}{2}}
+\]
+\end{problem}
+
+\begin{example}[Example 7]
+The altitude $A$ of a point on a mountain at coordinates $(x, y)$ is given by
+\[
+A = 3000 - 0.02x^2 - 0.05y^2
+\]
+where $x$ and $y$ are measured in feet.\\
+Find the rate of change of altitude at the point $(100, 200)$ in the northeast direction. 
+Assume that the positive $y$-axis is north and the positive $x$-axis is east.\\
+The rate of change of $A$ at the given point in the direction of the unit vector $\vec u$ is given by the directional derivative
+\[
+D_{\vec u} A(100, 200) = \grad A(100,200) \dotp \vec u.
+\]
+The gradient is
+\[
+\grad A(x,y) = \vector{-0.04x, -0.1y}
+\]
+and at the given point it is
+\[
+\grad A(10,20) = \vector{-4, -20}
+\]
+The vector that point northeast is $\vec i  + \vec j$ and the unit vector in this direction is
+\[
+\vec u = \vector{\frac{1}{\sqrt 2}, \frac{1}{\sqrt 2}}
+\]
+Hence the rate of change of altitude is given by
+\[
+D_{\vec u} A(100, 200) = \vector{-4, -20} \dotp \vector{\frac{1}{\sqrt 2}, \frac{1}{\sqrt 2}} = -\frac{24}{\sqrt 2} \approx -16.8
+\]
+Hence, moving northeast from the point $(100, 200)$ the altitude is decreasing at a rate of 
+$16.8$ meters for every meter moved in that direction.
+\end{example}
+
+\begin{problem}(Problem 7)
+The temperature $T$ in degrees Fahrenheit of a point $(x,y)$ on a metal plate is given by 
+\[
+T = 350 + 2x^2 - 4y^2
+\]
+where $x$ and $y$ are measured in inches.  Find the rate of change in the temperature at the origin in the direction of the vector $\vector{2,-1}$.\\
+The gradient of $T$ at the origin is given by
+\[
+\grad T(0,0) = \vector{\answer{350}, \answer{350}}
+\]
+The unit vector in the direction of $\vector{2, -1}$ is
+\[
+\vec u = \vector{\answer{2/\sqrt 5}, \answer{-1/\sqrt 5}}
+\]
+The rate of change of temperature at the origin in the direction of $\vec u$ is
+\[
+D_{\vec u} T(0,0) = \answer{350/ \sqrt 5} \; ^\circ F / in.
+\]
+\end{problem}
+
 
 
 \begin{proposition}
 Let $f(x,y)$ be a function of two variables and suppose $\grad f \neq \vec 0$. 
 Then, the rate of change of $f$ is greatest in the direction of the gradient vector.
+Moreover, that maximum rate of change of $f(x,y)$ is the magnitude of the gradient.
 
 \end{proposition}
 
@@ -331,21 +453,54 @@ Hence a dot product is maximized when the cosine is one, i.e., the angle between
 In our context, this leads to the direction of greatest
 increase in $f$ as the direction of the gradient as follows:
 \begin{align*}
-D_{\vec u} f &= \grad f \dotp \vec u = |\grad f| \dot |\vec u| \cos \theta\\
+D_{\vec u} f &= \grad f \dotp \vec u = |\grad f| \cdot |\vec u| \cos \theta\\
              &= |\grad f| \cos \theta \leq |\grad f|
 \end{align*}
 where the last inequality is equality if $\cos \theta = 1$, i.e., if the angle between $\vec u$ and $\grad f$ is zero.
 But, this angle is zero if and only if $\vec u$ is in the same direction as $\grad f$.  Hence, the directional derivative
 $D_{\vec u}$ is maximized when the vector $\vec u$ is a unit vector in the same direction as the gradient vector, $\grad f$.
+This also shows that the maximum rate of change of the function is equal to the magnitude of the gradient.
 \end{proof}
 
 \begin{corollary}
-The direction of greatest decrease in $f$ is in the opposite direction of the gradient vector, $\grad f$.
+The direction of greatest decrease in $f$ is in the opposite direction of the gradient vector, $\grad f$ and the rate of greatest decrease is given by
+the negative of the magnitude of the gradient.
 \end{corollary}
 \begin{proof}
 The result follows from the previous proposition and the fact that $D_{-\vec u} f = -D_{\vec u}$.
 \end{proof}
 
-%add example with hemisphere
-%add problem with z = x^2 + y^2 (and others)
+\begin{example}[Example 8]
+Find the maximum rate of change of $f(x,y) = \sqrt{100 - x^2 - y^2}$ at the point $(4, 6)$.\\
+The gradient is given by
+\[
+\grad f(x,y) = \vector{-\frac{x}{\sqrt{100 - x^2 - y^2}}, -\frac{y}{\sqrt{100 - x^2 - y^2}}}
+\]
+and at the given point, it is
+\[
+\grad f(4,6) = \vector{-\frac{4}{\sqrt{48}}, -\frac{6}{\sqrt{48}}} = \vector{-\frac{\sqrt 3}{3}, -\frac{\sqrt 3}{2}}
+\]
+The maximum rate of change of $f(x,y)$ occurs in this direction and it is given by the magnitude of the gradient:
+\[
+|\grad f(4,6)| = \sqrt{\frac13 + \frac34} = \frac{\sqrt{33}}{6}
+\]
+\end{example}
+
+\begin{problem}(Problem 8a)
+Find the maximum rate of increase in the function $f(x,y) = e^{xy}$ at the point $(1, 1)$.\\
+The maximum rate of increase is 
+\[
+|\grad f(1, 1)| = \answer{e\sqrt 2}
+\]
+\end{problem}
+
+\begin{problem}(Problem 8b)
+Find the maximum rate of decrease of the function $f(x,y) = y^2/x$ at the point $(3, 6)$.\\
+The maximum rate of increase is 
+\[
+-|\grad f(3, 6)| = \answer{-4\sqrt 2}
+\]
+\end{problem}
+
+
 \end{document}
