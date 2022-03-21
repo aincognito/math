@@ -316,7 +316,7 @@ D_{\vec w_2} f(0,0) = \answer{-23/17}
 
 \begin{example}[Example 6]
 Find the derivative of $f(x,y) = \ln(x^2 + y^2)$ in the direction of the vector $\vector{2, 3}$ at the point $(1, -2)$.\\
-First the gradient vector is
+First, the gradient vector is
 \[
 \grad f(x,y) = \vector{\frac{2x}{x^2 +y^2}, \frac{2y}{x^2 +y^2}}
 \]
@@ -326,11 +326,11 @@ and at the given point this vector is
 \]
 Next, the vector $\vector{2, 3}$ is not a unit vector, so we divide it by its magnitude:
 \[
-\vec u = \frac{\vector{2, 3}}{|\vector{2, 3}|} = \vector{\frac{2}{\sqrt 13}, \frac{3}{\sqrt{13}}}
+\vec u = \frac{\vector{2, 3}}{|\vector{2, 3}|} = \vector{\frac{2}{\sqrt{13}}, \frac{3}{\sqrt{13}}}
 \]
-Finally we can determine the directional derivative:
+Finally, we can determine the directional derivative:
 \[
-D_{\vec u} f(1, -2) = \grad f(1,-2) \dotp \vec u = \vector{\frac{2}{5}, -\frac{4}{5}} \dotp \vector{\frac{2}{\sqrt 13}, \frac{3}{\sqrt{13}}} = -\frac{8}{5\sqrt{13}}
+D_{\vec u} f(1, -2) = \grad f(1,-2) \dotp \vec u = \vector{\frac{2}{5}, -\frac{4}{5}} \dotp \vector{\frac{2}{\sqrt{13}}, \frac{3}{\sqrt{13}}} = -\frac{8}{5\sqrt{13}}
 \]
 \end{example}
 
@@ -392,8 +392,8 @@ A = 3000 - 0.02x^2 - 0.05y^2
 \]
 where $x$ and $y$ are measured in feet.\\
 Find the rate of change of altitude at the point $(100, 200)$ in the northeast direction. 
-Assume that the positive $y$-axis is north and the positive $x$-axis is east.\\
-The rate of change of $A$ at the given point in the direction of the unit vector $\vec u$ is given by the directional derivative
+(Assume that the positive $y$-axis is north and the positive $x$-axis is east.)\\
+The rate of change of $A$ at the given point in the direction of a unit vector $\vec u$ is given by the directional derivative
 \[
 D_{\vec u} A(100, 200) = \grad A(100,200) \dotp \vec u.
 \]
@@ -405,15 +405,15 @@ and at the given point it is
 \[
 \grad A(10,20) = \vector{-4, -20}
 \]
-The vector that point northeast is $\vec i  + \vec j$ and the unit vector in this direction is
+The vector that points northeast is $\vec i  + \vec j$ and the unit vector in this direction is
 \[
 \vec u = \vector{\frac{1}{\sqrt 2}, \frac{1}{\sqrt 2}}
 \]
-Hence the rate of change of altitude is given by
+Hence, the rate of change of altitude is given by
 \[
 D_{\vec u} A(100, 200) = \vector{-4, -20} \dotp \vector{\frac{1}{\sqrt 2}, \frac{1}{\sqrt 2}} = -\frac{24}{\sqrt 2} \approx -16.8
 \]
-Hence, moving northeast from the point $(100, 200)$ the altitude is decreasing at a rate of 
+Thus, moving northeast from the point $(100, 200)$ the altitude is decreasing at a rate of 
 $16.8$ meters for every meter moved in that direction.
 \end{example}
 
@@ -442,7 +442,7 @@ D_{\vec u} T(0,0) = \answer{350/ \sqrt 5} \; ^\circ F / in.
 \begin{proposition}
 Let $f(x,y)$ be a function of two variables and suppose $\grad f \neq \vec 0$. 
 Then, the rate of change of $f$ is greatest in the direction of the gradient vector.
-Moreover, that maximum rate of change of $f(x,y)$ is the magnitude of the gradient.
+Moreover, the maximum rate of change of $f(x,y)$ is the magnitude of the gradient, $|\grad f|$.
 
 \end{proposition}
 
@@ -496,7 +496,7 @@ The maximum rate of increase is
 
 \begin{problem}(Problem 8b)
 Find the maximum rate of decrease of the function $f(x,y) = y^2/x$ at the point $(3, 6)$.\\
-The maximum rate of increase is 
+The maximum rate of decrease is 
 \[
 -|\grad f(3, 6)| = \answer{-4\sqrt 2}
 \]

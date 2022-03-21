@@ -18,30 +18,91 @@ In this section we determine tangent planes to surfaces.
 
 \begin{proposition}
 Let $f(x,y)$ be a function of two variables and let $(x_0, y_0)$ be a point on the (smooth) level curve $f(x,y) = k$, i.e. $f(x_0, y_0) = k$.
-Then, at this point, the gradient vector is perpendicular to the level curve.
+Then, the gradient vector at this point, $\grad f(x_0, y_0)$ is orthogonal to the level curve.
 \end{proposition}
 \begin{proof}
 Let $\vec r(t)$ be a parameterization of the (smooth) level curve $f(x,y) = k$ and let $\vec u \neq \vec 0$ be the direction 
 vector for $\vec r(t)$ at the point $(x_0, y_0)$, i.e., 
-$\vec u = \vec T(t)$. Then the rate of change of $f(x,y)$ is zero, since $f(x,y)$ is constant on the level curve $f(x,y) = k$. Thus, the directional derivative
-$D_{\vec u} f(x_0, y_0)$ is equal to zero. Hence,
+$\vec u = \vec T(t)$. Then the rate of change of $f(x,y)$ in the direction of $\vec u$ at $(x_0, y_0)$ is zero since $f(x,y)$ is 
+constant on the level curve $f(x,y) = k$ which implies that
+\[
+D_{\vec u} f(x_0, y_0) = 0
+\]
+But,
 \[
 0 = D_{\vec u} f(x_0, y_0)  = \grad f(x_0, y_0) \dotp \vec u
 \]
-which implies that the gradient is orthogonal to the level curve at the point $(x_0, y_0)$ as claimed.
+from which we can conclude that the gradient is orthogonal to the level curve at the point $(x_0, y_0)$.
 \end{proof}
 
+
+\begin{example}[Example 1]
+Verify the proposition by showing directly that the gradient vector is orthogonal to the level curve of the paraboloid $z = f(x,y) = x^2 + y^2$ at any point $(x,y)$.\\
+The level curves have the form 
+\[
+x^2 + y^2 = k
+\]
+which (for $k >0$) is a circle centered at the origin with radius $\sqrt k$. 
+A basic fact from geometry is that at any point on a circle, the tangent line is perpendicular to the radius. 
+Now, note that the gradient vector is in the same direction as the radius vector at any point $(x, y)$:
+\[
+\grad f(x,y) = \vector{2x, 2y} = 2\vector{x,y}
+\]
+For the case $k = 0$, the level curve is just the origin and at the origin, the gradient is the zero vector 
+which is considered to be orthogonal to any vector.
+\end{example}
+
+\begin{problem}(Problem 1a)
+Verify the proposition by showing directly that the gradient is orthogonal to the level curve  of the plane $z = f(x,y) = ax + by$ at any point $(x,y)$.
+\begin{hint}
+To find the direction vector of the line $ax + by = k$ rewrite the line as $\vec r(x) = \vector{x, \frac{k-ax}{b}}$
+\end{hint}
+\end{problem}
+
+
+\begin{problem}(Problem 1b)
+Verify the proposition by showing directly that the gradient is orthogonal to the level curve  of the hemisphere $z = f(x,y) = \sqrt{1 - x^2 - y^2}$ at any point $(x,y)$.
+\begin{hint}
+At any point on a circle, the tangent line is perpendicular to the radius.
+\end{hint}
+\end{problem}
+
+To create the normal vector to a surface at a point, we need the analogue of the previous proposition for level surfaces.
+
 \begin{proposition}
-Let $f(x,y,z)$ be a function of three variables and let let $(x_0, y_0, z_0)$ be a point on the level surface $f(x,y, z) = k$, i.e. $f(x_0, y_0, z_0) = k$.
-Then, at this point, the gradient vector is perpendicular to the level surface.
+Let $f(x,y,z)$ be a function of three variables and let let $(x_0, y_0, z_0)$ be a point on the level surface $f(x,y, z) = k$.
+Then, the gradient vector at this point, $\grad f(x_0, y_0, z_0)$ is orthogonal to the level surface.
 \end{proposition}
 \begin{proof}
 Let $\vec r(t)$ be any smooth curve on the level surface $f(x,y, z) = k$ passing through the point $(x_0, y_0, z_0)$ with direction vector $\vec u$ at this point.
-Since $f$ is constant on $\vec r(t)$, the directional derivative $D_{\vec u} f(x_0, y_0, z_0)$ is zero, and as in the proposition above, 
+Since $f$ is constant on $\vec r(t)$, the directional derivative $D_{\vec u} f(x_0, y_0, z_0)$ is zero, and, as in the previous proposition, 
 $\grad f(x_0, y_0, z_0) \perp \vec u$.  
 Since the curve $\vec r(t)$ is an arbitrary curve on the surface passing through $(x_0, y_0, z_0)$, the gradient vector must be 
 orthogonal to the surface itself at this point.
 \end{proof}
+
+\begin{example}[Example 2]
+Verify the proposition by showing that the gradient vector is orthogonal to the level surfaces of $f(x, y, z) = x^2 + y^2 + z^2$ at any point.\\
+The level surfaces have the form
+\[
+x^2 + y^2 + z^2 = k
+\]
+which are spheres centered at the origin with radius $\sqrt k$ (for $k>0$).
+At any point $(x, y, z)$, the gradient vector is
+\[
+\grad f(x, y, z) = \vector{2x, 2y, 2z} = 2\vector{x, y, z}
+\]
+which is in the direction of the radius of the sphere at that point. Since the radius is orthogonal the sphere at any point,
+the gradient, $\grad f(x,y,z)$ is orthogonal to the level surface $f(x, y, z,) = k$ at any point, as claimed by the proposition.
+\end{example}
+
+\begin{problem}(Problem 2)
+Verify the preceding proposition by showing directly that the gradient is orthogonal to the level curve  of $f(x,y, z) = ax + by + cz$ at any point $(x,y, z)$.
+\begin{hint}
+The level curves are planes with normal vector $\vector{a, b, c}$
+\end{hint}
+\end{problem}
+
 
 \begin{theorem}[Tangent Plane]
 The tangent plane to the surface $z = f(x,y)$ at the point $(x_0, y_0, z_0)$ is given by
@@ -54,22 +115,49 @@ The surface $z = f(x,y)$ is the level surface $g(x,y,z) = 0$ where $g(x,y,z) = z
 According to the previous proposition, the vector $\grad g(x_0, y_0, z_0)$ is orthogonal to the surface at the point $(x_0, y_0, z_0)$.
 Hence, this vector is the normal to the plane and the equation of the plane is
 \[
-g_x(x - x_0) + g_y(y-y_0) + g_z(z -z_0) = 0
+\grad g(x_0, y_0, z_0) \dotp \vector{x- x_0, y-y_0, z-z_0} = 0
 \]
-Since $\grad g(x_0, y_0, z_0) = \vector{g_x, g_y, g_z} = \vector{-f_x, -f_y, 1}$, the equation of the plane can be rewritten as
+Since $\grad g(x_0, y_0, z_0) = \vector{-f_x(x_0, y_0), -f_y(x_0, y_0), 1}$, 
+the equation of the plane can be rewritten as
 \[
--f_x(x-x_0) - f_y(y-y_0) + (z-z_0) = 0
+-f_x(x_0, y_0)(x-x_0) - f_y(x_0, y_0)(y-y_0) + (z-z_0) = 0
 \]
 which in turn can be written as
 \[
-z = z_0 + f_x(x-x_0) + f_y(y-y_0)
+z = z_0 + f_x(x_0, y_0)(x-x_0) + f_y(x_0, y_0)(y-y_0)
 \]
 as claimed.
 \end{proof}
 
+\begin{corollary}
+The equation of the tangent plane to a surface of the form $g(x, y, x) = 0$ at the point $(x_0, y_0, z_0)$ is given by
+\[
+\grad g(x_0, y_0, z_0) \dotp \vector{x - x_0, y - y_0, z - z_0} = 0
+\]
+\end{corollary}
+
+\begin{example}[Example 3]
+Find the equation of the tangent plane to the paraboloid $z = x^2 + y^2$ at the point $(3, -4, 25)$.\\
+Write $g(x, y, z) = z - f(x,y) = 0$ and compute the gradient of $g$:
+\[
+\grad g(3, -4, 25) = \vector{-f_x(3, -4), -f_y(3, -4), 1} = \vector{-6, 8, 1}
+\]
+Then the equation of the tangent plane is
+\[
+\vector{-6, 8, 1} \dotp \vector{x-3, y+4, z-25} = 0
+\]
+which yields
+\[
+z = 25 + 6(x-3) - 8(y+4)
+\]
+or
+\[
+z = 6x - 8y - 25
+\]
+\end{example}
 
 \section{Linear Approximation}
-We can use the equation of the tangent plane to approximate the values of a function $f(x,y)$ near the point of tangnecy.
+We can use the equation of the tangent plane to approximate the values of a function $f(x,y)$ near the point of tangency.
 
 Suppose the value $f(x_0, y_0)$ is known. The linear approximation to the function $f$ at a point $(x,y)$ near the point $(x_0, y_0)$
 is given by
