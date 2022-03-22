@@ -156,6 +156,112 @@ z = 6x - 8y - 25
 \]
 \end{example}
 
+\begin{problem}(Problem 3a)
+Find the equation of the tangent plane to the paraboloid $z = x^2 + y^2$ at the point $(-2, 1, 5)$.\\
+\[
+z = \answer{-5-4x+2y}
+\]
+
+\end{problem}
+
+
+\begin{problem}(Problem 3b)
+Find the equation of the tangent plane to the elliptic paraboloid $z = x^2 + 4y^2$ at the point $(4, -1, 17)$.\\
+\[
+z = \answer{17 + 8(x-4) - 8(y+1) = -23 + 8x -8y}
+\]
+\end{problem}
+
+
+\begin{example}[Example 4]
+Find the equation of the tangent plane to the surface $z = \ln(x^2 + y^2)$ at the point $(-6, 8, 2\ln 10)$.\\
+Write $g(x, y, z) = z - f(x,y) = 0$ and compute the gradient of $g$:
+\[
+\grad g(-6, 8, 2\ln 10) = \vector{-f_x(-6, 8), -f_y(-6, 8), 1} = \vector{-\frac{3}{25}, \frac{4}{25}, 1}
+\]
+Then the equation of the tangent plane is
+\[
+\vector{-\frac{3}{25}, \frac{4}{25}, 1} \dotp \vector{x+6, y-8, z-2\ln 10} = 0
+\]
+which yields
+\[
+z = 2\ln 10 - \frac{3}{25}(x+6) +\frac{4}{25}(y-8)
+\]
+\end{example}
+
+\begin{problem}(Problem 4a)
+Find the equation of the tangent plane to the hemisphere $z = \sqrt{50 -x^2 - y^2}$ at the point $(3, 4, 5)$.\\
+\[
+z = \answer{10-\frac35 x - \frac45 y}
+\]
+
+\end{problem}
+
+
+\begin{problem}(Problem 4b)
+Find the equation of the tangent plane to the surface $z =e^{xy}$ at the point $(2, 1, e^2)$.\\
+\[
+z = \answer{-3e^2 + e^2 x + 2e^2 y}
+\]
+\end{problem}
+
+\begin{example}[Example 5]
+Find the equation of the tangent plane to the hyperboloid of 1 sheet given by 
+\[
+\frac{x^2}{4} + \frac{y^2}{9} - \frac{z^2}{16} = 1
+\]
+at the point $(2, 3, 4)$.\\
+Rewrite the surface as
+\[
+g(x,y,z) = \frac{x^2}{4} + \frac{y^2}{9} - \frac{z^2}{16} - 1 = 0
+\]
+Compute the gradient of $g$:
+\[
+\grad g(x,y,z) = \vector{\frac{x}{2} + \frac{2y}{9} - \frac{z}{8}}
+\]
+and evaluate it at the given point:
+\[
+\grad g(2,3,4) = \vector{1, \frac{2}{3}, \frac12}
+\]
+The equation of the tangent plane is given by 
+\[
+\grad g(2, 3, 4) \dotp \vector{x-2, y-3, z-4} = 0
+\]
+which gives
+\[
+(x-2) + \frac23 (y-3) + \frac12 (z-4) = 0
+\]
+or
+\[
+6x + 4y + 3z = 36
+\]
+\end{example}
+
+\begin{problem}(Problem 5a)
+Find the equation of the tangent plane to the ellipsoid given by 
+\[
+\frac{x^2}{12} + \frac{y^2}{6} + \frac{z^2}{8} = 1
+\]
+at the point $(2, -1, -2)$.\\
+\[
+\answer{2x-2y-3z} = 12
+\]
+\end{problem}
+
+\begin{problem}(Problem 5b)
+Find the equation of the tangent plane to the hyperboloid of 2 sheets given by 
+\[
+\frac{x^2}{8} + \frac{y^2}{32} - \frac{z^2}{8} = -1
+\]
+at the point $(2, 4, -4)$.\\
+\[
+\answer{2x+y + 4z} = -8
+\]
+\end{problem}
+
+
+
+
 \section{Linear Approximation}
 We can use the equation of the tangent plane to approximate the values of a function $f(x,y)$ near the point of tangency.
 
@@ -165,6 +271,51 @@ is given by
 f(x,y) \approx f(x_0, y_0) + f_x(x_0, y_0)(x-x_0) + f_y(x_0, y_0)(y-y_0)
 \]
 
+\begin{example}[Example 6]
+The temperature $T$ (in Celsius) at a point $(x,y)$ on a metal plate is given by 
+\[
+T = x^2 - xy + 3y^2
+\]
+Use a linear approximation to estimate the temperature at the point $(2.95, -0.96)$.\\
+The point $(2.95, -0.96)$ is near the point $(3,-1)$ where the temperature and its gradient are easily computed.
+We have
+\[
+\grad T(x,y) = \vector{2x - y, 6y - x}
+\]
+and at the point $(3, -1)$ the gradient is
+\[
+\grad T(3, -1) = \vector{7, -9}
+\]
+Since $T(3, -1) = 9 + 3 + 3 = 15$, the linear approximation is given by
+\begin{align*}
+T = f(x,y) &\approx T(3, -1) + \grad T(3, -1) \dotp \vector{x-3, y+1}
+           &= 15 + 7(x-3) - 9(y+1)\\
+\end{align*}
+Hence, the temperature at $(2.95, -0.96)$ is approximately
+\[
+T \approx 15 + 7(2.95 - 3) - 9(-0.96 + 1) = 14.29^\circ \text{C}
+\]
+\end{example}
+
+
+\begin{problem}(Problem 6)
+The body mass index $I$ of a person weighing $W$ kilograms that has a height $H$ meters is given by
+\[
+I = \frac{W}{H^2}
+\]
+Estimate the BMI of a person weighing $101.6$ kg with a height of $1.98$ meters.\\
+The BMI of a person weighing $100$ kg with a height of $2$ meters is $I = \answer{25}$
+\[
+\grad I(W,H) = \vector{\answer{1/H^2}, \answer{-2W/H^3}}
+\]
+\[
+\grad I(100, 2) = \vector{\answer{1/4}, \answer{-25}}
+\]
+The BMI of a person with weight $101.6$ kg and height $1.98$ meters is approximately (one decimal place)
+\[
+I \approx \answer{25.9}
+\]
+\end{problem}
 
 
 
