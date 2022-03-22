@@ -217,11 +217,11 @@ g(x,y,z) = \frac{x^2}{4} + \frac{y^2}{9} - \frac{z^2}{16} - 1 = 0
 \]
 Compute the gradient of $g$:
 \[
-\grad g(x,y,z) = \vector{\frac{x}{2} + \frac{2y}{9} - \frac{z}{8}}
+\grad g(x,y,z) = \vector{\frac{x}{2} , \frac{2y}{9}, - \frac{z}{8}}
 \]
 and evaluate it at the given point:
 \[
-\grad g(2,3,4) = \vector{1, \frac{2}{3}, \frac12}
+\grad g(2,3,4) = \vector{1, \frac{2}{3}, -\frac12}
 \]
 The equation of the tangent plane is given by 
 \[
@@ -229,11 +229,11 @@ The equation of the tangent plane is given by
 \]
 which gives
 \[
-(x-2) + \frac23 (y-3) + \frac12 (z-4) = 0
+(x-2) + \frac23 (y-3) - \frac12 (z-4) = 0
 \]
 or
 \[
-6x + 4y + 3z = 36
+6x + 4y - 3z = 12
 \]
 \end{example}
 
