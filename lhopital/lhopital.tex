@@ -36,14 +36,16 @@ The main indeterminate forms we will discuss are $\frac 00, \frac{\infty}{\infty
 
 
 \begin{example}[example 1]
-Compute the limit: $\displaystyle{\;\lim_{x \to 0} \frac{\sin(x)}{x}}.$
+Compute the limit: $\displaystyle{\;\lim_{x \to 0} \frac{\sin(3x)}{6x}}.$
 
 Plugging in the terminal value, $x=0$, yields 
 the indeterminate form $\frac00$, so L'Hopital's rule applies.
 
 We have 
 
-\[\lim_{x \to 0} \frac{\sin(x)}{x} = \lim_{x \to 0} \frac{\cos(x)}{1} = 1.\]
+\[
+\lim_{x \to 0} \frac{\sin(3x)}{6x} = \lim_{x \to 0} \frac{3\cos(3x)}{6} = \frac12
+\]
 \end{example}
 
 
@@ -129,11 +131,13 @@ Compute
 
 
 \begin{example}[example 2]
- Compute the limit:  $\displaystyle{\;\lim_{x \to 0} \frac{e^x - 1}{x}}.$\\
+ Compute the limit:  $\displaystyle{\;\lim_{x \to 0} \frac{e^{4x} - 1}{12x}}.$\\
 Plugging in the terminal value, $x=0$, yields 
 the indeterminate form $\frac00$, so L'Hopital's rule applies.
 We have 
-\[\lim_{x \to 0} \frac{e^x - 1}{x} = \lim_{x \to 0} \frac{e^x}{1} = 1.\]
+\[
+\lim_{x \to 0} \frac{e^{4x} - 1}{12x} = \lim_{x \to 0} \frac{4e^{4x}}{12} = \frac13
+\]
 \end{example}
 
 

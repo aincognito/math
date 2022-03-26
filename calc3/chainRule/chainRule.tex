@@ -16,8 +16,81 @@ In this section we compute partial derivatives using the chain rule.
 
 \maketitle
 
+For differentiable functions of one variable, the chain rule states that if $y = f(g(x))$, then 
+\[
+y' = \frac{d}{dx} f(g(x)) = f'(g(x)) \cdot g'(x)
+\]
+To extend this to the multi-variable setting, we will need to express this rule in Leibniz notation.
+If instead of writing $y = f(g(x))$ we write that $y = f(u)$ where $ u = g(x)$.
+Then the chain rule becomes
+\[
+\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}
+\]
+
+Now, we move to the multi-variable case. If $z = f(x,y)$ where $x$ and $y$ are functions of $t$, then ultimately, $z$ is a function of $t$.
+A change in $t$ causes a change in both $x$ and $y$ which in turn causes a change in $z$ leading to the following version of the chain rule:
+\[
+\frac{dz}{dt} = \frac{\partial z}{\partial x} \cdot \frac{dx}{dt} + \frac{\partial z}{\partial y} \cdot \frac{dy}{dt}
+\]
+
+\begin{example}[Example 1]
+Let $z = x^2 + y^2 + 3xy$ and let $x = 4\cos 5t$ and $y = 4\sin 5t$. Find $\frac{dz}{dt}$.\\
+From the chain rule, we have
+\begin{align*}
+\frac{dz}{dt} &= \frac{\partial z}{\partial x} \cdot \frac{dx}{dt} + \frac{\partial z}{\partial y} \cdot \frac{dy}{dt}\\
+              &= \left(2x + 3y\right) \cdot \left(-20 \sin 5t\right) + \left(2y + 3x\right) \cdot \left(20 \cos 5t\right)\\
+              &= -20(8 \cos 5t + 12 \sin 5t) \cdot \sin 5t  + 20 (8 \sin 5t + 12 \cos 5t) \cdot \cos 5t \\
+              &= -160 \cos 5t \sin 5t -240 \sin^2 5t + 160 \sin 5t \cos 5t + 240 \cos^2 5t\\
+              &= 240 (\cos^2 5t - \sin^2 5t)\\
+              &= 240 \cos 10t
+\end{align*}
+Note, that it may have been easier to find $\frac{dz}{dt}$ by writing $z$ as a function of $t$ at the outset:
+\[
+z = x^2 + y^2 + 3xy = 16 \cos^2 5t + 16 \sin^2 5t + 48 \cos 5t \sin 5t = 16 + 24 \sin 10t
+\]
+Now the single variable chain rule gives
+\[
+\frac{dz}{dt} = 240 \cos 10t
+\]
+which agrees with our previous answer.
+\end{example}
+
+%problem just like the example with sin cos
+
+%example with evaluation, no need to get to t in deriv
 
 
+We next look an an extension of the previous chain rule to the case  where $x$ and $y$ are themselves functions of two variables.
+Let $z$ be a function of $x$ and $y$ and let $x$ and $y$ both be functions of $s$ and $t$.  Then $z$ is ultimately a function of $s$ and $t$ and the chain rule says
+\[
+\frac{\partial z}{\partial s} = \frac{\partial z}{\partial x} \cdot \frac{\partial x}{\partial s} + \frac{\partial z}{\partial y} \cdot \frac{\partial y}{\partial s}
+\]
+\[
+\text{and}
+\]
+\[
+\frac{\partial z}{\partial t} = \frac{\partial z}{\partial x} \cdot \frac{\partial x}{\partial t} + \frac{\partial z}{\partial y} \cdot \frac{\partial y}{\partial t} 
+\]
+
+
+\subsection{Polar Coordinates}
+The polar coordinates $(r, \theta)$ of a point in the $xy$-plane give the distance from the origin and the angle from the positive $x$-axis. 
+The relationship to standard rectangular coordinates $(x,y)$ is given by
+\[
+x = r \cos \theta \quad \text{and} \quad y = r \sin \theta
+\]
+
+If $z = f(x,y)$, then we can rewrite $z$ using polar coordinates as $z = f(r\cos \theta, r \sin \theta)$ and we can use the chain rule to 
+compute the partial derivatives of $z$ with respect to $r$ and $\theta$:
+\begin{align*}
+\frac{\partial z}{\partial r} &= \frac{\partial z}{\partial x} \cdot \frac{\partial x}{\partial r} + \frac{\partial z}{\partial y} \cdot \frac{\partial y}{\partial r}\\
+                              &= \cos \theta \frac{\partial z}{\partial x} + \sin \theta \frac{\partial z}{\partial y}
+\end{align*}
+and
+\begin{align*}
+\frac{\partial z}{\partial \theta} &= \frac{\partial z}{\partial x} \cdot \frac{\partial x}{\partial \theta} + \frac{\partial z}{\partial y} \cdot \frac{\partial y}{\partial \theta}\\
+                              &= -r\sin \theta \frac{\partial z}{\partial x} + r \cos \theta \frac{\partial z}{\partial y}
+\end{align*}
 
 
 \end{document}
