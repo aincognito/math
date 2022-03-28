@@ -16,7 +16,42 @@ In this section we determine maxima and minima of a surface.
 
 \maketitle
 
+\begin{definition}[Critical Point]
+A critical point for the function $f(x,y)$ is a point $(x_0, y_0)$ in the domain of $f$ for which either
+\[
+\grad f(x_0, y_0) = \vec 0
+\]
+or one of $f_x$ or $f_y$ (or both) is undefined at $(x_0, y_0)$.
+\end{definition}
 
+\begin{example}[Example 1]
+Find the critical points of the function $f(x,y) = x^2 + y^2 - 6y$.\\
+We set the gradient equal to the zero vector and we solve for $x$ and $y$:
+\[
+\grad f = \vector{2x, 2y -6} = \vector{0,0}
+\]
+which gives $x = 0$ and $y = 3$.  So the only critical point of $f$ is $(0,3)$.
+\end{example}
+
+
+\begin{example}[Example 2]
+Find the critical points of the function $f(x,y) = 2x^2 - y^2 +2xy + 3x + y+ 5$.\\
+We set the gradient equal to the zero vector and we solve for $x$ and $y$:
+\[
+\grad f = \vector{4x+2y + 3, 2x - 2y + 1} = \vector{0,0}
+\]
+which gives the $2 \times 2$ linear system:
+\begin{align*}
+4x+2y + 3 &= 0\\
+2x -2y + 1 & = 0
+\end{align*}
+Adding the equations gives 
+\[
+6x + 4 = 0
+\]
+so $x = -2/3$. Plugging this into either of the original two equations gives $y = -1/6$.
+Hence, $f$ has one critical point: $(-2/3, -1/6)$.
+\end{example}
 
 
 
