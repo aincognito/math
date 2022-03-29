@@ -28,7 +28,7 @@ or one of $f_x$ or $f_y$ (or both) is undefined at $(x_0, y_0)$.
 Find the critical points of the function $f(x,y) = x^2 + y^2 - 6y$.\\
 We set the gradient equal to the zero vector and we solve for $x$ and $y$:
 \[
-\grad f = \vector{2x, 2y -6} = \vector{0,0}
+\grad f(x,y) = \vector{2x, 2y -6} = \vector{0,0}
 \]
 which gives $x = 0$ and $y = 3$.  So the only critical point of $f$ is $(0,3)$.
 \end{example}
@@ -38,7 +38,7 @@ which gives $x = 0$ and $y = 3$.  So the only critical point of $f$ is $(0,3)$.
 Find the critical points of the function $f(x,y) = 2x^2 - y^2 +2xy + 3x + y+ 5$.\\
 We set the gradient equal to the zero vector and we solve for $x$ and $y$:
 \[
-\grad f = \vector{4x+2y + 3, 2x - 2y + 1} = \vector{0,0}
+\grad f(x,y) = \vector{4x+2y + 3, 2x - 2y + 1} = \vector{0,0}
 \]
 which gives the $2 \times 2$ linear system:
 \begin{align*}
@@ -54,5 +54,54 @@ Hence, $f$ has one critical point: $(-2/3, -1/6)$.
 \end{example}
 
 
+\begin{example}[Example 3]
+Find the critical points of the function $f(x,y) = x^2y +xy^2 +3x + 4$.\\
+We set the gradient equal to the zero vector and we solve for $x$ and $y$:
+\[
+\grad f(x,y) = \vector{2xy + y^2 + 3, x^2 + 2xy} = \vector{0,0}
+\]
+which gives the $2 \times 2$ system:
+\begin{align*}
+2xy + y^2 +3  &= 0\\
+x^2 + 2xy & = 0
+\end{align*}
+Solving the bottom equation for $y$ gives $y = -\frac{x}{2}$ and substituting this into the top equation give
+\[
+2x(-\frac{x}{2} + \left(-\frac{x}{2}\right)^2 +3 = 0
+\]
+which simplifies to
+\[
+-x^2 + \frac14 x^2 + 3 =0
+\]
+\[
+\frac34 x^2 = 3
+\]
+\[
+x^2 = 4
+\]
+and finally, we have $x=\pm 2$. Since $y = -x/2$, when $x=2$ we have $y=-1$ and when $x = -2$ we have $y = 1$.
+Thus the two critical points are
+\[
+(2,-1) \quad \text{and} \quad (-2, 1)
+\]
+\end{example}
 
+\begin{example}[Example 4]
+Find the critical points of the function $f(x,y) = x^4 + y^3 + 2x^2y^2 -27y + 1$.\\
+We set the gradient equal to the zero vector and we solve for $x$ and $y$:
+\[
+\grad f(x,y) = \vector{4x^3 + 4xy^2, 3y^2 + 2x^2y -27} = \vector{0,0}
+\]
+which gives the $2 \times 2$ system:
+\begin{align*}
+4x^3 + 4xy^2 &= 0\\
+3y^2 + 2x^2y -27& = 0
+\end{align*}
+The first equation can be written as $4x(x^2 + y^2) = 0$ from which we can deduce that $x = 0$ or $(x, y) = (0,0)$. Letting $x = 0$ in the bottom equation gives
+\[
+3y^2 - 27 = 0
+\]
+from which we can conclude that $y = \pm 3$. We also see that $(0,0)$ is not a critical number.
+Hence the critical numbers are $(3,0)$ and $(-3,0)$.
+\end{example}
 \end{document}
