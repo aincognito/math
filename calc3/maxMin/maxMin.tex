@@ -11,7 +11,7 @@
 \begin{document}
 
 \begin{abstract}
-In this section we determine maxima and minima of a surface.
+In this section we determine local maxima and minima of a surface.
 \end{abstract}
 
 \maketitle
@@ -96,26 +96,149 @@ Thus the two critical points are
 \]
 \end{example}
 
+\begin{problem}(Problem 3)
+Find the critical points of the function $f(x,y) = 12xy - x^3 - y^3$.
+\end{problem}
+
+
+
 \begin{example}[Example 4]
 Find the critical points of the function $f(x,y) = x^4 + y^3 + 2x^2y^2 -27y + 1$.\\
 We set the gradient equal to the zero vector and we solve for $x$ and $y$:
 \[
-\grad f(x,y) = \vector{4x^3 + 4xy^2, 3y^2 + 2x^2y -27} = \vector{0,0}
+\grad f(x,y) = \vector{4x^3 + 4xy^2, 3y^2 + 4x^2y -27} = \vector{0,0}
 \]
 which gives the $2 \times 2$ system:
 \begin{align*}
 4x^3 + 4xy^2 &= 0\\
-3y^2 + 2x^2y -27& = 0
+3y^2 + 4x^2y -27 &= 0
 \end{align*}
-The first equation can be written as $4x(x^2 + y^2) = 0$ from which we can deduce that $x = 0$ or $(x, y) = (0,0)$. Letting $x = 0$ in the bottom equation gives
+The first equation can be written as $4x(x^2 + y^2) = 0$ from which we can deduce that $x = 0$ or $(x, y) = (0,0)$. 
+Letting $x = 0$ in the bottom equation gives
 \[
 3y^2 - 27 = 0
 \]
-from which we can conclude that $y = \pm 3$. We also see that $(0,0)$ is not a critical number.
-Hence the critical numbers are $(3,0)$ and $(-3,0)$.
+from which we can conclude that $y = \pm 3$. We also see that $(0,0)$ is not a critical point.
+Hence the critical points are $(3,0)$ and $(-3,0)$.
 \end{example}
 
 \begin{problem}(Problem 4)
 Find the critical points of the function $f(x,y) = 2-x^4 + 2x^2 - y^2$.
+\end{problem}
+
+\begin{theorem}[Fermat's Theorem]
+If $f(x,y)$ has a local extreme at the point $(x_0, y_0)$, then $(x_0, y_0)$ is a critical point for $f(x,y)$.
+\end{theorem}
+
+To determine the nature of $f(x,y)$ at a critical point, we use the second derivatives of $f$.
+
+\begin{theorem}[Second Derivatives Test]
+Let $(x_0, y_0)$ be a critical point for the function $f(x,y)$, and consider the discriminant,
+\[
+D(x,y) = f_{xx}(x,y) \cdot f_{yy}(x,y) - \left(f_{xy}(x,y)\right)^2
+\]
+1) If $D(x_0, y_0) > 0$ and $f_{xx}(x_0, y_0) > 0$, then $f(x,y)$ has a local minimum at $(x_0, y_0)$.\\
+2) If $D(x_0, y_0) > 0$ and $f_{xx}(x_0, y_0)< 0$, then $f(x,y)$ has a local maximum at $(x_0, y_0)$.\\
+3) If $D(x_0, y_0) < 0$, then $(x_0, y_0)$t is a saddle point.\\
+4) If $D(x_0, y_0) = 0$, then there is no conclusion about $f(x,y)$ at $(x_0, y_0)$.\\
+\end{theorem}
+
+\begin{remark}
+In parts 1 and 2 of the Second Derivatives Test, the condition $f_{xx}(x_0, y_0) > 0$ can be 
+replaced with $f_{yy}(x_0, y_0) > 0$ since they both have the same sign when the discriminant is positive.
+\end{remark}
+
+\begin{example}[Example 5]
+Determine the local extrema of  $f(x,y) = x^2 + y^2 - 6y$.\\
+In Example 1, we found that the only critical point of $f$ is $(0,3)$.
+The second derivatives are
+\[
+f_{xx} = 2,\; f_{yy} = 2 \quad \text{and} \quad f_{xy} = 0
+\]
+The discriminant is
+\[
+D(x,y) = f_{xx} f_{yy} - f_{xy}^2 = 4
+\]
+and at the critical point, it is
+\[
+D(0,3) = 4
+\]
+Since $D(0, 3) > 0$ and $f_{xx}(0,3) = 2 > 0$, the Second Derivatives Test tells us that $f(x,y) = x^2 + y^2 - 6y$
+has a local minimum at the critical point $(0,3)$.
+\end{example}
+
+\begin{problem}(Problem 5)
+Determine the local extrema of $f(x,y) = x+ y - xy$ (from Problem 1).\\
+\end{problem}
+
+\begin{example}[Example 6]
+Determine the local extrema of $f(x,y) = 2x^2 - y^2 +2xy + 3x + y+ 5$.\\
+In Example 2, we found that the only critical point of $f$ is $(-2/3,-1/6)$.
+The second derivatives are
+\[
+f_{xx} = 4,\; f_{yy} = -2 \quad \text{and} \quad f_{xy} = 2
+\]
+The discriminant is
+\[
+D(x,y) = f_{xx} f_{yy} - f_{xy}^2 = -8 -4 = -12
+\]
+and at the critical point, it is
+\[
+D(-2/3,-1/6) = -12
+\]
+Since $D(-2/3,-1/6) < 0$, the Second Derivatives Test tells us that $f(x,y) = 2x^2 - y^2 +2xy + 3x + y+ 5$
+has a saddle point at the critical point $(-2/3,-1/6)$.
+\end{example}
+
+\begin{problem}(Problem 6)
+Determine the local extrema of $f(x,y) = xy - 2x-2y-x^2 - y^2$ (from Problem 2).\\
+\end{problem}
+
+
+\begin{example}[Example 7]
+Determine the local extrema of  $f(x,y) = x^2y +xy^2 +3x + 4$.\\
+In Example 3, we found that the critical points of $f$ are $(2,-1)$ and $(-2, 1)$.
+The second derivatives are
+\[
+f_{xx} = 2y,\; f_{yy} = 2x \quad \text{and} \quad f_{xy} = 2x + 2y
+\]
+The discriminant is
+\[
+D(x,y) = f_{xx} f_{yy} - f_{xy}^2 = 4xy - (2x+2y)^2 = 4xy - 4x^2 - 8xy - 4y^2 = -4(x+y)^2
+\]
+and at the critical points, it is
+\[
+D(2, -1) = -4 \quad \text \quad D(-2, 1) = -4
+\]
+Since $D < 0$, at both critical points, the Second Derivatives Test tells us that $f(x,y) = x^2y +xy^2 +3x + 4$
+has saddle points at both of the critical points $(2,-1)$ and $(-2, 1)$.
+\end{example}
+
+
+\begin{problem}(Problem 7)
+Determine the local extrema of $f(x,y) = 12xy - x^3 - y^3$ (from Problem 3).\\
+\end{problem}
+
+
+
+\begin{example}[Example 8]
+Determine the local extrema of $f(x,y) = x^4 + y^3 + 2x^2y^2 -27y + 1$.\\
+In Example 4, we found that the critical points of $f$ are $(3,0)$ and $(-3,0)$.
+The second derivatives are
+\[
+f_{xx} = 12x^2 + 8y^2,\; f_{yy} = 6y + 8x^2 \quad \text{and} \quad f_{xy} = 8xy
+\]
+The discriminant is
+\[
+D(x,y) = f_{xx} f_{yy} - f_{xy}^2 = (12x^2 + 8y^2)(6y + 8x^2) - 64x^2y^2
+\]
+and at the critical points, it is
+\[
+D(3, 0) = D(-3,0) = (108)(72) - (0)^2 = 7776
+\]
+\end{example}
+
+\begin{problem}(Problem 8)
+Determine the local extrema of $f(x,y) = 2-x^4 + 2x^2 - y^2$ (from Problem 4).\\
 \end{problem}
 \end{document}
