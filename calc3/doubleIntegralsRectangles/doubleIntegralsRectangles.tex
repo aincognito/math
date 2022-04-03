@@ -1,0 +1,188 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\outcome{In this section we define the double integral over a rectangle.}
+
+\title{4.1 Double Integrals}
+
+
+
+\begin{document}
+
+\begin{abstract}
+In this section we define the double integral over a rectangle.
+\end{abstract}
+ 
+\maketitle
+
+
+Recall that for a function of one variable $f(x)$ defined and continuous on an interval $[a,b]$, we have the definite integral
+\[
+\int_a^b f(x) \, dx = \lim_{n \to \infty} \sum_{i = 1}^n f(x_i^*) \Delta x
+\]
+In other words, the definite integral is defined as a limit of Riemann Sums.  The points $f(x_i*)$ are called sample points and they are 
+distributed fairly evenly throughout the interval $[a,b]$.
+
+For double integrals, we modify this approach by considering a rectangle in the domain of continuity of a function of two variables, $f(x,y)$.
+Let $R$ be the rectangle defined by
+\[
+R = \{(x,y) | a\leq x \leq b, c\leq y \leq d\}
+\]
+
+\begin{definition}[Double Integral]
+Let $f(x,y)$ be a continuous function defined on the rectangle $R$ described above. The double integral of $f$ over $R$ is defined by
+\[
+\iint_R f(x,y) \, dA = \lim_{m, n \to \infty} \sum_{j = 1}^m\sum_{i = 1}^n f(x_{ij}^*, y_{ij}^*) \Delta x \Delta y
+\]
+where the points $(x_{ij}^*, y_{ij}^*)$ are sample points roughly evenly distributed in the Rectangle $R$.
+\end{definition}
+
+The double integral is thus defined as the limit of a double Riemann sum.
+
+\begin{remark}
+The double integral of a positive function $f(x,y)$ gives the volume of the solid situated above the rectangle $R$ and beneath the surface $z = f(x,y)$.
+\end{remark}
+
+
+\begin{example}[Example 1]
+Compute $\iint_R 5 \, dA$ where $R$ is the rectangle with $-1 \leq x \leq 3$ and $-2 \leq y \leq 1$.\\
+The function $f(x,y) = 5$ is continuous and positive on the rectangle $R$.  Since the function is constant and $R$ is a rectangle, the solid contained above $R$
+and beneath the graph of $f$ is a rectangular solid whose volume is length $\times$ width $\times$ height.
+Hence the value of the double integral is
+\[
+\iint_R 5 \, dA = 5[3-(-1)] \cdot [1-(-2)] = 5 \cdot 4 \cdot 3 = 60
+\]
+\end{example}
+
+\begin{problem}(Problem 1)
+Compute $\iint_R 40 \, dA$ where $R$ is the rectangle with $-20 \leq x \leq 20$ and $-5 \leq y \leq 15$.\\
+\[
+\iint_R 40 \, dA = \answer{32000}
+\]
+\end{problem}
+
+\begin{example}[Example 2]
+Compute $\iint_R \sqrt{4 - x^2} \, dA$ where $R$ is the square with $-2 \leq x \leq 2$ and $-2 \leq y \leq 2$.\\
+The function $f(x,y) = \sqrt{4-x^2}$ is continuous and positive on the rectangle $R$.  To determine the nature of the 
+surface $z = \sqrt{4-x^2}$, it is helpful to square both sides and rewrite as
+\[
+x^2 + z^2 = 4
+\]
+This is a circle of radius $2$ centered at the origin of the $xz$-plane.  In $\R^3$ this is a surface type called a cylinder (as discussed in section 1.8).
+In fact, this particular surface is a right circular cylinder of radius $2$ whose central axis is the $y$-axis. The surface intersects the $xy$-plane in the 
+band $-2 \leq x \leq 2$ which exactly matches the $x$-dimension of the square $R$.
+Thus the double integral in question is asking for the volume of half (since $z \geq 0$) of this cylinder from $y = -2$ to $ y = 2$. Thus
+\[
+\iint_R \sqrt{4 - x^2} \, dA = \frac12 \pi r^2 h = \frac12 \pi \cdot 2^2 \cdot 4 = 8\pi
+\]
+\end{example}
+
+
+\begin{problem}(Problem 2)
+Compute $\iint_R \sqrt{9 - y^2} \, dA$ where $R$ is the rectangle with $-1 \leq x \leq 5$ and $-3 \leq y \leq 3$.\\
+\[
+\iint_R 40 \, dA = \answer{27\pi}
+\]
+\end{problem}
+
+\begin{remark} If the function $f(x,y) \leq 0$ over the region $R$, then the double integral
+\[
+\iint_{R} f(x,y) dA \leq 0
+\]
+and its value represents the negative of the volume of the associated region.
+\end{remark}
+
+\begin{example}[Example 3]
+Compute $\iint_R (-2) \, dA$ where $R$ is the rectangle with $-1 \leq x \leq 3$ and $-2 \leq y \leq 1$.\\
+The function $f(x,y) = -2$ is continuous and negative on the rectangle $R$.  Since the function is constant and $R$ is a rectangle, the solid contained below $R$
+and above the graph of $f$ is a rectangular solid whose volume is length $\times$ width $\times$ height.
+Hence the value of the double integral is the negative of this volume
+\[
+\iint_R (-2) \, dA = (-2)[3-(-1)] \cdot [1-(-2)] = -2 \cdot 4 \cdot 3 = -24
+\]
+\end{example}
+
+\begin{problem}(Problem 3)
+Compute $\iint_R (-7) \, dA$ where $R$ is the rectangle with $-6 \leq x \leq -3$ and $-1 \leq y \leq 5$.\\
+\[
+\iint_R (-7) \, dA = \answer{-126}
+\]
+\end{problem}
+
+We now consider double integrals that we are not able to compute from purely geometric considerations.
+
+\subsection{Iterated Integrals}
+
+\begin{theorem}[Fubini's Theorem]
+If $f(x,y)$ is continuous on the rectangle $R$ given by $a \leq x \leq b$ and $c \leq y \leq d$
+then
+\[
+\iint_A f(x,y) \, dA = \int_a^b \int_c^d f(x,y) \, dy\, dx = \int_c^d \int_a^b f(x,y) \, dx \, dy
+\]
+\end{theorem}
+
+\begin{remark} The second and third integrals in Fubini's Theorem are called \textbf{iterated integrals}
+and they are computed in a manner similar to second order mixed partial derivatives. We compute the inner integral first, treating the 
+variable of the outer integral as a constant.  Then we compute the outer integral.
+\end{remark}
+
+\begin{example}[Example 4]
+Compute $\iint_R (x^2 + y^2) \, dA$ where $R$ is the rectangle with $0 \leq x \leq 2$ and $0 \leq y \leq 3$.\\
+The function $f(x,y) = x^2 + y^2$ is continuous on the rectangle $R$, so we can use Fubini's Theorem to compute the double integral.
+We have
+\begin{align*}
+\iint_R (x^2 + y^2) \, dA &= \int_0^2 \int_0^3 (x^2 + y^2) \, dy\, dx\\
+                          &= \int_0^2 \left(x^2 y + \frac13 y^3 \bigg|_0^3 \right) \, dx\\
+                          &= \int_0^2 \left[(3x^2 + 9) - (0+0) \right] \, dx\\
+                          &= \int_0^2 (3x^2 + 9) \, dx\\
+                          &= x^3 + 9x \bigg|_0^2\\
+                          &= 26
+\end{align*}
+We can also compute the iterated integral in the other order:
+\begin{align*}
+\iint_R (x^2 + y^2) \, dA &= \int_0^3 \int_0^2 (x^2 + y^2) \, dx\, dy\\
+                          &= \int_0^3 \left( \frac13 x^3 + xy^2 \bigg|_0^2 \right) \, dy\\
+                          &= \int_0^3 \left(\frac83 + 2y^2 \right) \, dy\\
+                          &= \frac83 y + \frac23 y^3 \bigg|_0^3\\
+                          &= 8 + 18 = 26
+\end{align*}
+\end{example}
+
+\begin{problem}(Problem 4)
+Compute $\iint_R (x^4 + y^4) \, dA$ where $R$ is the rectangle with $0 \leq x \leq 5$ and $0 \leq y \leq 1$.\\
+\[
+\iint_R (x^4 + y^4) \, dA = \answer{1275/2}
+\]
+\end{problem}
+
+\begin{example}[Example 5]
+Compute $\iint_R (x^3y^2 - 4xy) \, dA$ where $R$ is the unit square with $0 \leq x \leq 1$ and $0 \leq y \leq 1$.\\
+The function $f(x,y) = x^3y^2 - 4xy$ is continuous on the unit square, so we can use Fubini's Theorem to compute the double integral.
+We have
+\begin{align*}
+\iint_R (x^3y^2 - 4xy) \, dA &= \int_0^1 \int_0^1 (x^3y^2 - 4xy) \, dy\, dx\\
+                          &= \int_0^1 \left(\frac13 x^3 y^3  - 2xy^2 \bigg|_0^1 \right) \, dx\\
+                          &= \int_0^1 \left(\frac13 x^3 - 2x \right) \, dx\\
+                          &= \frac{1}{12} x^4 - x^2 \bigg|_0^1\\
+                          &= -\frac{11}{12}
+\end{align*}
+\end{example}
+
+\begin{remark}
+In general the value of a double integral gives the volume of the region above the $xy$-plane minus
+the volume of the region below the $xy$-plane.
+\end{remark}
+
+\begin{problem}(Problem 5)
+Compute $\iint_R (x^4 + y^4) \, dA$ where $R$ is the rectangle with $0 \leq x \leq 5$ and $0 \leq y \leq 1$.\\
+\[
+\iint_R (x^4 + y^4) \, dA = \answer{1275/2}
+\]
+\end{problem}
+
+
+
+\end{document}
+
+
