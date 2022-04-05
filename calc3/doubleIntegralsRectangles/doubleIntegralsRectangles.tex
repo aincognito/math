@@ -21,7 +21,7 @@ Recall that for a function of one variable $f(x)$ defined and continuous on an i
 \[
 \int_a^b f(x) \, dx = \lim_{n \to \infty} \sum_{i = 1}^n f(x_i^*) \Delta x
 \]
-In other words, the definite integral is defined as a limit of Riemann Sums.  The points $f(x_i*)$ are called sample points and they are 
+In other words, the definite integral is defined as a limit of Riemann Sums.  The points $f(x_i^*)$ are called sample points and they are 
 distributed fairly evenly throughout the interval $[a,b]$.
 
 For double integrals, we modify this approach by considering a rectangle in the domain of continuity of a function of two variables, $f(x,y)$.
@@ -35,7 +35,7 @@ Let $f(x,y)$ be a continuous function defined on the rectangle $R$ described abo
 \[
 \iint_R f(x,y) \, dA = \lim_{m, n \to \infty} \sum_{j = 1}^m\sum_{i = 1}^n f(x_{ij}^*, y_{ij}^*) \Delta x \Delta y
 \]
-where the points $(x_{ij}^*, y_{ij}^*)$ are sample points roughly evenly distributed in the Rectangle $R$.
+where the points $(x_{ij}^*, y_{ij}^*)$ are sample points roughly evenly distributed in the rectangle $R$.
 \end{definition}
 
 The double integral is thus defined as the limit of a double Riemann sum.
@@ -182,7 +182,40 @@ Compute $\iint_R (x^4 + y^4) \, dA$ where $R$ is the rectangle with $0 \leq x \l
 \end{problem}
 
 
+\begin{example}[Example 6]
+Compute $\iint_R xy\cos(x^2y) \, dA$ where $R$ is the unit square with $0 \leq x \leq 1$ and $0 \leq y \leq 1$.\\
+The function $f(x,y) = xy\cos(x^2y)$ is continuous on the unit square, so we can use Fubini's Theorem to compute the double integral.
+Thus the double integral can be written as either
+\[
+\int_0^1 \int_0^1 xy\cos(x^2y) \, dy\, dx \quad \text{or} \quad \int_0^1 \int_0^1 xy\cos(x^2y) \, dx\, dy
+\]
+and for this integral it makes a difference.
+Since the integral
+\[
+\int x \cos(x^2) \, dx
+\]
+can be computed using $u$-substitution and the integral
+\[
+\int y \cos (y) \, dy
+\]
+requires integration by parts, the first option is to be preferred.
+With the $u$-substitution $u = x^2y$, we have
+\begin{align*}
+\iint_R xy\cos(x^2y) \, dA &= \int_0^1 \int_0^1 xy\cos(x^2y) \, dx\, dy\\
+                          &= \frac12 \int_0^1 \int_0^y \cos(u) \, du \, dy\\
+                          &= \frac12 \int_0^1 \sin(y) \, dy\\
+                          &= -\frac12 \cos(y) \bigg|_0^1\\
+                          &= \frac12 \left(1 - \cos(1)\right)
+\end{align*}
+\end{example}
+
+
+\begin{problem}(Problem 6)
+Compute $\iint_R 2xy e^{xy^2} \, dA$ where $R$ is the unit square, $0 \leq x \leq 1$ and $0 \leq y \leq 1$.\\
+\[
+\iint_R 2xy e^{xy^2} \, dA = \answer{e-2}
+\]
+\end{problem}
 
 \end{document}
-
 
