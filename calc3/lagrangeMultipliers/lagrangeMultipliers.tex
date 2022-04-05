@@ -74,6 +74,50 @@ for some scalar $\lambda$.
 
 \begin{example}[Example 1]
 Find the absolute maximum and absolute minimum values of $f(x,y) = 8x - 6y$ subject to $x^2 + y^2 = 1$\\
+We calculate the gradients of $f(x,y) = 8x - 6y$ and $g(x,y) = x^2 + y^2$
+\[
+\grad f(x,y) = \vector{8, -6} \quad \text{and} \quad \grad g(x,y) = \vector{2x, 2y}
+\]
+According to the theory of Lagrange multipliers, the absolute maximum and absolute minimum of $f(x,y) = 8x - 6y$
+along the curve $g(x,y) = x^2 + y^2 = 1$ occur at points where $\grad f(x,y)$ and $\grad g(x,y)$ are parallel.  In other words at points where
+\[
+\grad f(x,y) = \lambda \grad g(x,y)
+\]
+for some constant $\lambda$.
+This equation gives the system
+\[
+8 = 2\lambda x \quad \text{and} -6 = 2\lambda y
+\]
+Solving both of these equations for $\lambda$ gives
+\[
+\lambda = \frac{8}{2x} = \frac{4}{x} \quad \text{and} \quad \lambda = -\frac{6}{2y} = -\frac{3}{y}
+\]
+Setting these expressions for $\lambda$ equal to each other gives
+\[
+\frac{4}{x} = -\frac{3}{y} \quad \text{so} \quad y = -\frac34 x
+\]
+Now, we substitute this expression for $y$ into the constraint curve $x^2 + y^2 = 1$ to obtain
+\[
+x^2 + \left(-\frac34 x\right)^2 = 1
+\]
+and solving for $x$, we have
+\[
+x^2 = \frac{16}{25} \quad \text{so} \quad x = \pm \frac45
+\]
+The corresponding $y$-coordinates on the unit circle come from 
+\[
+y = -\frac34 x = \mp \frac45 = \mp \frac35
+\]
+We now have two points on the unit circle where the absolute maximum and absolute minimum values of $f(x,y) - 8x - 6y$ can occur.
+They are
+\[
+\left(\frac45, -\frac35\right) \quad \text{and} \quad \left(-\frac45, \frac35\right)
+\]
+Plugging these points into $f$ gives
+\[
+f\left(\frac45, -\frac35\right) = 10 \quad \text{and} f\left(-\frac45, \frac35\right) = -10
+\]
+Hence, the absolute maximum value of $8x -6y$ on the unit circle is $10$ and the absolute minimum is $-10$.
 \end{example}
 
 \begin{problem}(Problem 1)
@@ -129,6 +173,55 @@ The absolute minimum is $\answer{-9}$
 
 \begin{example}[Example 3]
 Find the absolute maximum and absolute minimum values of $f(x,y) = xy$ subject to $x^2 + 4y^2 \leq 1$\\
+The critical points of $f$ are at
+\[
+\grad f(x,y) = \vector{y, x} = \vector{0,0}
+\]
+ which gives the lone critical point, $(0,0)$ which is inside the ellipse $x^2 + 4y^2 \leq 1$.\\
+ Extrema on the boundary curve $x^2 + 4y^2 = 1$ will occur when
+ \[
+ \grad f(x,y) = \lambda \grad g(x,y) = \lambda \vector{2x, 8y}
+ \]
+ yielding the system
+ \[
+ y = 2\lambda x, \; x = 8\lambda y
+ \]
+ Solving these equations for $\lambda$ gives
+ \[
+ \lambda = \frac{y}{2x} \quad \text{and} \quad \lambda = \frac{x}{8y}
+ \]
+ Setting these equal yields
+ \[
+ \frac{y}{2x} = \frac{x}{8y} \quad \text{so} \quad x^2 = 4y^2
+ \]
+Substituting this into the constrain curve gives
+\[
+2x^2 = 1 \quad \text{so} \quad x = \pm \frac{1}{\sqrt 2}
+\]
+The associated values of $y$ are 
+\[
+y = \pm \frac{1}{\sqrt 8} = \pm \frac{1}{2\sqrt 2}
+\]
+Thus, there are four points on the ellipse $x^2 + 4y^2$ where the absolute max and absolute min can occur.
+We now have a complete list of candidates for the location of the absolute extremes:
+ \[
+ (0,0), \; \left(-\frac{1}{\sqrt 2},-\frac{1}{2\sqrt 2} \right), \; \left(-\frac{1}{\sqrt 2},\frac{1}{2\sqrt 2} \right),
+  \; \left(\frac{1}{\sqrt 2},-\frac{1}{2\sqrt 2} \right), \;\text{and} \; \left(\frac{1}{\sqrt 2},\frac{1}{2\sqrt 2} \right)
+ \]
+ Plugging these into $f(x,y) = xy$ gives
+ \begin{align*}
+ f(0,0) &= 0\\
+ f\left(-\frac{1}{\sqrt 2},-\frac{1}{2\sqrt 2} \right) &= \frac14\\
+ f\left(-\frac{1}{\sqrt 2},\frac{1}{2\sqrt 2} \right) &= -\frac14\\
+ f\left(\frac{1}{\sqrt 2},-\frac{1}{2\sqrt 2} \right) &= -\frac14\\
+ f\left(\frac{1}{\sqrt 2},\frac{1}{2\sqrt 2} \right) &= \frac14
+ \end{align*}
+ Hence, the absolute maximum is $-1/4$ and it occurs at two of the 
+ boundary points, $\left(\pm \frac{1}{\sqrt 2}, \pm \frac{1}{2\sqrt 2}\right)$,
+ and the absolute minimum is $-1/4$ occurring at the other two 
+ boundary points, $\left(\pm \frac{1}{\sqrt 2}, \mp \frac{1}{2\sqrt 2}\right)$.
+ 
+ 
 \end{example}
 
 \begin{problem}(Problem 3)
