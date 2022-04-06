@@ -1,0 +1,94 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\outcome{In this section we compute double integral over various regions.}
+
+\title{4.2 More Double Integrals}
+
+
+
+\begin{document}
+
+\begin{abstract}
+In this section we compute double integrals over various regions.
+\end{abstract}
+ 
+\maketitle
+
+
+
+
+\begin{example}[Example 1]
+Compute $\iint_R xy \, dA$ where $R$ is the triangular region bounded by the lines $x = 0, y = 0$ and $y = 4-2x$\\
+\begin{image}
+\begin{tikzpicture}
+\filldraw[blue!30!white] (0,0) -- (2,0) -- (0,4)-- (0,0);\draw[thick, <->] (-0.75, 0) -- (3, 0) node[right]{$x$};
+\draw[thick, <->] (0,-.75) -- (0, 5) node[above]{$y$};
+\draw[thick] (0,4) node[left]{$4$} -- (2,0) node[below]{$2$};
+\node at (2, 2.3) {$y = 4-2x$};
+\node at (1, -1.25) {The triangular region, $R$};
+
+\end{tikzpicture}
+\end{image}
+
+The function $f(x,y) = xy$ is continuous the region $R$, so we can use Fubini's theorem and write the double integral as iterated integrals.
+The issue is how the triangular region affects the endpoints of integration. We will examine the situation for both orders of integration.
+We will first integrate $dy\, dx$. When computing the integral $dy$, we treat the variable $x$ as constant. 
+The possible $x$-values in the triangular region are $0 \leq x \leq 2$.  
+For each $x$ between $0$ and $2$, the values of $y$ will range from $0$ up to $4 - 2x$ which is the value of $y$ on the given line.
+Hence, the double integral can be computed as
+\begin{align*}
+\iint_R xy \, dA & = \int_0^2 \int_0^{4 - 2x} xy \, dy \, dx\\
+                 & = \int_0^2 \left(\frac12 xy^2 \right) \bigg|_{0}^{4 - 2x} \, dx\\
+                 & = \int_0^2 \frac12 x (4-2x)^2 \, dx\\
+                 &=  \int_0^2 \left(8x - 8x^2 + 2x^3\right) \, dx\\
+                 &= \left(4x^2 - \frac83 x^3 + \frac12 x^4 \right) \bigg|_0^2\\
+                 &= 16 - \frac{64}{3} + 8 = \frac83
+\end{align*}      
+\begin{image}
+\begin{tikzpicture}
+\filldraw[blue!30!white] (0,0) -- (2,0) -- (0,4)-- (0,0);\draw[thick, <->] (-.75, 0) -- (3, 0) node[right]{$x$};
+\draw[thick, <->] (0,-.75) -- (0, 5) node[above]{$y$};
+\draw[thick] (0,4) node[left]{$4$} -- (2,0) node[below]{$2$};
+\draw[thick] (1, 0) node[below]{$x$} -- (1, 2) node[above, right]{$y = 4 - 2x$};
+\node at (1, -1.25) {For each $x$ between $0$ and $2$,};
+\node at (1, -1.75) {$y$ varies from $0$ to $4 - 2x$};
+\end{tikzpicture}
+\end{image}
+We will now integrate in the other order, $dx \, dy$. To do so, it is helpful to rewrite the equation of the line $y = 4 - 2x$ in terms of $x$, which gives
+$x = 4 - \frac{y}{2}$. 
+We will compute the integral $dx$ first, treating the variable $y$ as constant. 
+The possible $y$-values in the triangular region are $0 \leq y \leq 4$.  
+For each $y$ between $0$ and $4$, the values of $x$ will range from $0$ up to $2 - \frac{y}{2}$ which is the value of $x$ on the given line.
+Hence, the double integral can be computed as
+\begin{align*}
+\iint_R xy \, dA & = \int_0^4 \int_0^{2 - \frac{y}{2}} xy \, dx \, dy\\
+                 & = \int_0^4 \left(\frac12 x^2y \right) \bigg|_{0}^{2 - \frac{y}{2}} \, dy\\
+                 & = \int_0^4 \frac12 y \left(2 - \frac{y}{2}\right)^2 \, dy\\
+                 &= \int_0^4 \left(2y - y^2 + \frac18 y^3\right) \, dy\\
+                 &= \left(y^2 - \frac13 y^3 + \frac{1}{32} y^4 \right) \bigg|_0^4\\
+                 &= 16 - \frac{64}{3} + 8 = \frac83
+\end{align*}      
+
+\begin{image}
+\begin{tikzpicture}
+\filldraw[blue!30!white] (0,0) -- (2,0) -- (0,4)-- (0,0);\draw[thick, <->] (-0.75, 0) -- (3, 0) node[right]{$x$};
+\draw[thick, <->] (0,-.75) -- (0, 5) node[above]{$y$};
+\draw[thick] (0,4) node[left]{$4$} -- (2,0) node[below]{$2$};
+\draw[thick] (0, 2) node[left]{$y$} -- (1, 2) node[above, right]{$x = 2 - \frac{y}{2}$};
+\node at (1, -1.25) {For each $y$ between $0$ and $4$,};
+\node at (1, -75) {$x$ varies from $0$ to $2 - \frac{y}{2}$};
+\end{tikzpicture}
+\end{image}
+
+\end{example}
+
+
+\begin{problem}(Problem 1)
+Compute $\iint_R xy \, dA$ where $R$ is the triangular region bounded by the lines $x = 0, y = 0$ and $y = 3-x$\\
+\[
+\iint_R xy \, dA = \answer{27/8}
+\]
+\end{problem}
+\end{document}
