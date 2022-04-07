@@ -27,7 +27,7 @@ Compute $\iint_R xy \, dA$ where $R$ is the triangular region bounded by the lin
 \draw[thick, <->] (0,-.75) -- (0, 5) node[above]{$y$};
 \draw[thick] (0,4) node[left]{$4$} -- (2,0) node[below]{$2$};
 \node at (2, 2.3) {$y = 4-2x$};
-\node at (1, -1.25) {The triangular region, $R$};
+\node at (1.1, -1.25) {The triangular region, $R$};
 
 \end{tikzpicture}
 \end{image}
@@ -52,10 +52,12 @@ Hence, the double integral can be computed as
 \draw[thick, <->] (0,-.75) -- (0, 5) node[above]{$y$};
 \draw[thick] (0,4) node[left]{$4$} -- (2,0) node[below]{$2$};
 \draw[thick] (1, 0) node[below]{$x$} -- (1, 2) node[above, right]{$y = 4 - 2x$};
-\node at (1, -1.25) {For each $x$ between $0$ and $2$,};
-\node at (1, -1.75) {$y$ varies from $0$ to $4 - 2x$};
+\node at (1.1, -1.25) {For each $x$ between $0$ and $2$,};
+\node at (1.1, -1.75) {$y$ varies from $0$ to $4 - 2x$};
 \end{tikzpicture}
 \end{image}
+
+
 We will now integrate in the other order, $dx \, dy$. To do so, it is helpful to rewrite the equation of the line $y = 4 - 2x$ in terms of $x$, which gives
 $x = 4 - \frac{y}{2}$. 
 We will compute the integral $dx$ first, treating the variable $y$ as constant. 
@@ -73,12 +75,13 @@ Hence, the double integral can be computed as
 
 \begin{image}
 \begin{tikzpicture}
-\filldraw[blue!30!white] (0,0) -- (2,0) -- (0,4)-- (0,0);\draw[thick, <->] (-0.75, 0) -- (3, 0) node[right]{$x$};
+\filldraw[blue!30!white] (0,0) -- (2,0) -- (0,4)-- (0,0);
+\draw[thick, <->] (-0.75, 0) -- (3, 0) node[right]{$x$};
 \draw[thick, <->] (0,-.75) -- (0, 5) node[above]{$y$};
 \draw[thick] (0,4) node[left]{$4$} -- (2,0) node[below]{$2$};
 \draw[thick] (0, 2) node[left]{$y$} -- (1, 2) node[above, right]{$x = 2 - \frac{y}{2}$};
-\node at (1, -1.25) {For each $y$ between $0$ and $4$,};
-\node at (1, -75) {$x$ varies from $0$ to $2 - \frac{y}{2}$};
+\node at (1.1, -1.25) {For each $y$ between $0$ and $4$,};
+\node at (1.1, -1.75) {$x$ varies from $0$ to $2 - \frac{y}{2}$};
 \end{tikzpicture}
 \end{image}
 
@@ -94,6 +97,45 @@ Compute $\iint_R xy \, dA$ where $R$ is the triangular region bounded by the lin
 
 \begin{example}[Example 2]
 Compute $\iint_R x \, dA$ where $R$ is the quarter circle in the first quadrant bounded by $x=0, y=0$ and $x^2 + y^2 = 4$
+
+\begin{image}
+\begin{tikzpicture}
+\filldraw[blue!30!white] (0,0) -- (3,0) arc (0: 90: 3) -- cycle;
+\draw[thick] (3,0) node[below]{$2$} arc (0: 90: 3) node[left]{$2$};
+\draw[thick, <->] (-0.75, 0) -- (4, 0) node[right]{$x$};
+\draw[thick, <->] (0,-.75) -- (0, 4) node[above]{$y$};
+\node at (3,3) {$y = \sqrt{4 - x^2}$};
+\node at (1.1, -1.25) {The circular region $R$};
+%\node at (1, -75) {$x$ varies from $0$ to $2 - \frac{y}{2}$};
+\end{tikzpicture}
+\end{image}
+
+\begin{image}
+\begin{tikzpicture}
+\filldraw[blue!30!white] (0,0) -- (3,0) arc (0: 90: 3) -- cycle;
+\draw[thick] (3,0) node[below]{$2$} arc (0: 90: 3) node[left]{$2$};
+\draw[thick, <->] (-0.75, 0) -- (4, 0) node[right]{$x$};
+\draw[thick, <->] (0,-.75) -- (0, 4) node[above]{$y$};
+\draw[thick] (1.8,0) node[below]{$x$} -- (1.8, 2.4) node[above right]{$y = \sqrt{4 - x^2}$};
+\node at (1.7, -1.25) {For each $x$ between $0$ and $2$,};
+\node at (1.7, -1.75) {$y$ varies from $0$ to $\sqrt{4 - x^2}$};
+\end{tikzpicture}
+\end{image}
+
+\begin{image}
+\begin{tikzpicture}
+\filldraw[blue!30!white] (0,0) -- (3,0) arc (0: 90: 3) -- cycle;
+\draw[thick] (3,0) node[below]{$2$} arc (0: 90: 3) node[left]{$2$};
+\draw[thick, <->] (-0.75, 0) -- (4, 0) node[right]{$x$};
+\draw[thick, <->] (0,-.75) -- (0, 4) node[above]{$y$};
+\draw[thick] (0, 1.8) node[left]{$y$} -- (2.4, 1.8) node[above right]{$x = \sqrt{4 - y^2}$};
+\node at (1.7, -1.25) {For each $y$ between $0$ and $2$,};
+\node at (1.7, -1.75) {$x$ varies from $0$ to $\sqrt{4 - y^2}$};
+\end{tikzpicture}
+\end{image}
+
+
+
 \end{example}
 
 \end{document}
