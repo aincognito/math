@@ -110,6 +110,17 @@ Compute $\iint_R x \, dA$ where $R$ is the quarter circle in the first quadrant 
 \end{tikzpicture}
 \end{image}
 
+\begin{align*}
+\iint_R x \, dA & = \int_0^2 \int_0^{\sqrt{4 - x^2}} x \, dy \, dx\\
+                 & = \int_0^2  xy \bigg|_{0}^{\sqrt{4 - x^2}} \, dx\\
+                 & = \int_0^2  x \sqrt{4-x^2}\, dx\\
+                 &= -\frac12 \int_4^0  \sqrt u \, du\\
+                 &= \frac12 \int_0^4 \sqrt u \, du\\
+                 &= \frac13 u^{3/2}  \bigg|_0^4\\
+                 &= \frac13 \cdot 8 = \frac{8}{3}
+\end{align*}  
+
+
 \begin{image}
 \begin{tikzpicture}
 \filldraw[blue!30!white] (0,0) -- (3,0) arc (0: 90: 3) -- cycle;
@@ -121,6 +132,14 @@ Compute $\iint_R x \, dA$ where $R$ is the quarter circle in the first quadrant 
 \node at (1.7, -1.75) {$y$ varies from $0$ to $\sqrt{4 - x^2}$};
 \end{tikzpicture}
 \end{image}
+
+\begin{align*}
+\iint_R x \, dA & = \int_0^2 \int_0^{\sqrt{4 - y^2}} x \, dx \, dy\\
+                 & = \int_0^2  \frac{x^2}{2} \bigg|_{0}^{\sqrt{4 - y^2}} \, dy\\
+                 & = \int_0^2  \frac12(4-y^2) \, dy\\
+                 &= \frac12 \left(4y - \frac{y^3}{3}\right)  \bigg|_0^2\\
+                 &= \frac12 \left(8 - \frac83\right) = \frac{8}{3}
+\end{align*} 
 
 \begin{image}
 \begin{tikzpicture}
@@ -141,7 +160,16 @@ Compute $\iint_R x \, dA$ where $R$ is the quarter circle in the first quadrant 
 
 \begin{example}[Example 3]
 Compute $\iint_R y^2 e^{xy} \, dA$ where $R$ is the triangle bounded by $y = x, y=4$ and $x=0$.\\
+\begin{align*}
+\iint_R y^2 e^{xy} \, dA & = \int_0^4 \int_0^{y} y^2 e^{xy} \, dx \, dy\\
+                 & = \int_0^4 y e^{xy} \bigg|_{0}^{y} \, dy\\
+                 & = \int_0^4  \left(ye^{y^2} - y \right)\, dy\\
+                 &= \frac12 \left(e^{y^2} - y^2\right) \bigg|_0^4\\
+                 &= \frac12 \left(e^{16} - 17\right)
+\end{align*} 
+
 \end{example}
+
 
 \begin{example}[Example 4]
 Compute $\iint_R x \, dA$ where $R$ is region bounded by $y = x^2 -x$ and $y = x+ 3$.\\
