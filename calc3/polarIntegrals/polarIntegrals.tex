@@ -15,14 +15,86 @@ In this section we compute double integrals using polar coordiantes.
 \end{abstract}
  
 \maketitle
+The area of a \textbf{sector} of a circle corresponding to the angle $\theta$ and radius $r$ is a proportion of the area of the circle itself:  
+\[
+\text{Area of sector}  = \frac{\theta}{2\pi} \cdot \text{Area of circle}
+\]
+See the figure below.
+\begin{image}
+\begin{tikzpicture}
+\filldraw[fill = blue!30!white, draw = black, thick] (0,0) -- (3,0) arc (0: 60: 3) -- cycle node[midway, above left]{$r$};
+\node at (0.38, 0.25) {$\theta$};
+%(2.6,3/2) -- (3.464, 2) 
+%arc (30: 45: 4) --  (2.12, 2.12) node[midway, above left]{$\Delta r$} arc (45:30: 3) node[midway, below left]{$\Delta \theta$};
+%\draw[thin] (3, 1.75) arc (30: 32: 3.5);
+%\draw[thin] (3, 1.75) arc (30: 28: 3.5) node[below right]{$r^*$};
+
+%\draw[thin, dashed] (0,0) -- (2.6, 1.5);
+%\draw[thin, dashed] (0,0) -- (2.12, 2.12);
+%\node at (1.5, 1.25) ;
+%\draw[thick] (3,0) node[below]{$2$} arc (0: 90: 3) node[left]{$2$};
+%\draw[thick, <->] (-0.75, 0) -- (4, 0) node[right]{$x$};
+%\draw[thick, <->] (0,-.75) -- (0, 4) node[above]{$y$};
+%\draw[thick] (1.8,0) node[below]{$x$} -- (1.8, 2.4) node[above right]{$y = \sqrt{4 - x^2}$};
+
+\node at (1.4, -.5) {$A = \frac12 r^2 \theta$};
+\end{tikzpicture}
+\end{image}
+
+Integrating in polar coordinates requires 
+knowledge of the area of a \textbf{polar rectangle}.
+A polar rectangle is a region in the $xy$-plane has the form 
+\[
+r_1 \leq r\leq r_2\quad \text{and} \quad \theta_1 \leq \theta \leq \theta_2
+\]
+\begin{image}
+\begin{tikzpicture}
+\filldraw[fill = blue!30!white, draw = black, thick] (2.6,3/2)  -- (3.464, 2) arc (30: 45: 4) --  (2.12, 2.12)  arc (45:30: 3);
+
+\draw[thin, dashed] (3,0) node[below]{$r_1$} arc(0:30:3);
+\draw[thin, dashed] (4,0) node[below]{$r_2$} arc(0:30:4);
+
+\draw[thin, dashed] (0,0) -- (2.6, 1.5);
+\draw[thin, dashed] (0,0) -- (2.12, 2.12);
+\draw[thick] (0,0) -- (4.5,0);
+\draw (0.7, 0) arc (0:30:0.7) node[midway, right]{$\theta_1$};
+\draw (1.5, 0) arc (0:45:1.5) node[midway, right]{$\theta_2$};
+
+%\node at (1.5, 1.25) ;
+%\draw[thick] (3,0) node[below]{$2$} arc (0: 90: 3) node[left]{$2$};
+%\draw[thick, <->] (-0.75, 0) -- (4, 0) node[right]{$x$};
+%\draw[thick, <->] (0,-.75) -- (0, 4) node[above]{$y$};
+%\draw[thick] (1.8,0) node[below]{$x$} -- (1.8, 2.4) node[above right]{$y = \sqrt{4 - x^2}$};
+\node at (2, -.75) {A polar rectangle};
+\end{tikzpicture}
+\end{image}
+
+Its area is computed as the difference of two sectors: 
+\begin{align*}
+S_1&: 0 \leq r\leq r_1, \; \theta_1 \leq \theta \leq \theta_2 \quad\text{and} \\
+S_2&: 0 \leq r\leq r_2, \; \theta_1 \leq \theta \leq \theta_2
+\end{align*}
+and is given by
+\begin{align*}
+A &= \frac12 (\theta_2 - \theta_1) r_2^2 - \frac12 (\theta_2 -\theta_1) r_1^2\\
+  &= \frac12 (\theta_2 - \theta_1) (r_2^2 - r_1^2)\\
+  &= \frac12 (\theta_2 - \theta_1) (r_2 - r_1)(r_2 + r_1)\\
+  &= \frac12(r_2 + r_1) \Delta \theta \Delta r \\
+  &= r^* \Delta r \Delta \theta
+\end{align*}
+where
+\[
+r^* = \frac{r_1 + r_2}{2}, \; \Delta r = r_2 - r_1 \; \text{and} \Delta \theta = \theta_2 - \theta_1
+\]
+See the figure below.
 
 \begin{image}
 \begin{tikzpicture}
-\filldraw[fill = blue!30!white, draw = black, thick] (2.6,3/2) -- (3.464, 2) 
+\filldraw[fill = blue!30!white, draw = black, thick] (2.6,3/2) -- (3.464, 2)
 arc (30: 45: 4) --  (2.12, 2.12) node[midway, above left]{$\Delta r$} arc (45:30: 3) node[midway, below left]{$\Delta \theta$};
 \draw[thin] (3, 1.75) arc (30: 32: 3.5);
 \draw[thin] (3, 1.75) arc (30: 28: 3.5) node[below right]{$r^*$};
-
+ 
 \draw[thin, dashed] (0,0) -- (2.6, 1.5);
 \draw[thin, dashed] (0,0) -- (2.12, 2.12);
 %\node at (1.5, 1.25) ;
@@ -30,10 +102,11 @@ arc (30: 45: 4) --  (2.12, 2.12) node[midway, above left]{$\Delta r$} arc (45:30
 %\draw[thick, <->] (-0.75, 0) -- (4, 0) node[right]{$x$};
 %\draw[thick, <->] (0,-.75) -- (0, 4) node[above]{$y$};
 %\draw[thick] (1.8,0) node[below]{$x$} -- (1.8, 2.4) node[above right]{$y = \sqrt{4 - x^2}$};
-\node at (1.7, -.25) {The area of the sector is:};
-\node at (1.7, -.75) {$A = r^* \Delta r \Delta \theta$};
+%\node at (1.7, -.25) {The area of the sector is:};
+\node at (1.7, -.25) {$A = r^* \Delta r \Delta \theta$};
 \end{tikzpicture}
 \end{image}
+
 %node[below]{$r_1$}
 
 \begin{example}[Example 2]
