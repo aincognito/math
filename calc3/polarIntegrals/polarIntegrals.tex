@@ -1,0 +1,121 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\outcome{In this section we compute double integrals using polar coordiantes.}
+
+\title{4.3 Polar Integrals}
+
+
+
+\begin{document}
+
+\begin{abstract}
+In this section we compute double integrals using polar coordiantes.
+\end{abstract}
+ 
+\maketitle
+
+
+
+
+\begin{example}[Example 2]
+Compute $\iint_R x \, dA$ where $R$ is the quarter circle in the first quadrant bounded by $x=0, y=0$ and $x^2 + y^2 = 4$
+
+\begin{image}
+\begin{tikzpicture}
+\filldraw[blue!30!white] (0,0) -- (3,0) arc (0: 90: 3) -- cycle;
+\draw[thick] (3,0) node[below]{$2$} arc (0: 90: 3) node[left]{$2$};
+\draw[thick, <->] (-0.75, 0) -- (4, 0) node[right]{$x$};
+\draw[thick, <->] (0,-.75) -- (0, 4) node[above]{$y$};
+\draw[thick] (1.8,0) node[below]{$x$} -- (1.8, 2.4) node[above right]{$y = \sqrt{4 - x^2}$};
+\node at (1.7, -1.25) {For each $x$ between $0$ and $2$,};
+\node at (1.7, -1.75) {$y$ varies from $0$ to $\sqrt{4 - x^2}$};
+\end{tikzpicture}
+\end{image}
+We first integrate $dy\, dx$.  From the figure above, we can determine the limits of integration on the iterated integrals.
+The computation requires a $u$-substitution, with $u = 4-x^2, \, du = -2x \, dx$
+\begin{align*}
+\iint_R x \, dA & = \int_0^2 \int_0^{\sqrt{4 - x^2}} x \, dy \, dx\\
+                 & = \int_0^2  xy \bigg|_{0}^{\sqrt{4 - x^2}} \, dx\\
+                 & = \int_0^2  x \sqrt{4-x^2}\, dx\\
+                 &= -\frac12 \int_4^0  \sqrt u \, du\\
+                 &= \frac12 \int_0^4 \sqrt u \, du\\
+                 &= \frac13 u^{3/2}  \bigg|_0^4\\
+                 &= \frac13 \cdot 8 = \frac{8}{3}
+\end{align*}  
+
+
+\begin{image}
+\begin{tikzpicture}
+\filldraw[blue!30!white] (0,0) -- (3,0) arc (0: 90: 3) -- cycle;
+\draw[thick] (3,0) node[below]{$2$} arc (0: 90: 3) node[left]{$2$};
+\draw[thick, <->] (-0.75, 0) -- (4, 0) node[right]{$x$};
+\draw[thick, <->] (0,-.75) -- (0, 4) node[above]{$y$};
+\draw[thick] (0, 1.8) node[left]{$y$} -- (2.4, 1.8) node[above right]{$x = \sqrt{4 - y^2}$};
+\node at (1.7, -1.25) {For each $y$ between $0$ and $2$,};
+\node at (1.7, -1.75) {$x$ varies from $0$ to $\sqrt{4 - y^2}$};
+\end{tikzpicture}
+\end{image}
+We next integrate $dx\, dy$.  From the figure above, we can determine the limits of integration on the iterated integrals.
+
+\begin{align*}
+\iint_R x \, dA & = \int_0^2 \int_0^{\sqrt{4 - y^2}} x \, dx \, dy\\
+                 & = \int_0^2  \frac{x^2}{2} \bigg|_{0}^{\sqrt{4 - y^2}} \, dy\\
+                 & = \int_0^2  \frac12(4-y^2) \, dy\\
+                 &= \frac12 \left(4y - \frac{y^3}{3}\right)  \bigg|_0^2\\
+                 &= \frac12 \left(8 - \frac83\right) = \frac{8}{3}
+\end{align*} 
+
+
+
+
+
+\end{example}
+
+
+
+\begin{example}[Example 4]
+Compute $\iint_R x \, dA$ where $R$ is region bounded by $y = x^2 -x$ and $y = x+ 3$.\\
+
+\begin{image}
+\begin{tikzpicture}
+\draw[color = blue!30!white, fill = blue!30!white] (.5, -0.25) parabola (3,6) -- (0.5, 3.5) --cycle;
+\draw[color = blue!30!white, fill = blue!30!white] (.5, -0.25) parabola (-1,2) -- (0.5, 3.5) --cycle;
+\draw[thick, <->] (-1.75, 0) -- (4, 0) node[right]{$x$};
+\draw[thick, <->] (0,-.75) -- (0, 6) node[above]{$y$};
+\draw[thick] (0.5, -0.25) parabola (3, 6);
+%\shade[blue!30!white] (0.5, -0.25) parabola (-1,2);
+%\shade[blue!30!white] (0.5, -0.25) parabola (3,6);
+\draw[thick] (0.5, -0.25) parabola (-1, 2);
+\draw[thick] (-1.5, 1.5) -- (3.5,6.5) ;
+\node at (1, 5){$y = x+3$};
+\node at (2.5, 0.75){$y = x^2 - x$};
+\draw[thick] (1.5, 4.5) -- (1.5, 0.75);
+\draw[thin] (1.5, 0.15) -- (1.5, -0.15) node[below] {$x$};
+\draw[thin] (-1, 0.15) -- (-1, -0.15) node[below] {$-1$};
+\draw[thin] (3, 0.15) -- (3, -0.15) node[below] {$3$};
+\node at (1.25, -1.25) {For each $x$ between $-1$ and $3$,};
+\node at (1.25, -1.75) {$y$ varies from $x^2 - x$ to $x+ 3$};
+\end{tikzpicture}
+\end{image}
+
+The nature of this region requires us to integrate $dy\, dx$.  
+From the figure above, we can determine the limits of integration on the iterated integrals.
+The computation requires a $u$-substitution, with $u = 4-x^2, \, du = -2x \, dx$
+\begin{align*}
+\iint_R x \, dA & = \int_{-1}^3 \int_{x^2 - x}^{x+3} x \, dy \, dx\\
+                 & = \int_{-1}^3  xy \bigg|_{x^2 - x}^{x+3} \, dx\\
+                 & = \int_{-1}^3  x\left[(x+3)-(x^2-x)\right]\, dx\\
+                 &= \int_{-1}^3 \left(3x+ 2x^2  -x^3\right) \, dx\\
+                 &= \left(\frac{3x^2}{2} + \frac{2x^3}{3} - \frac{x^4}{4}\right) \bigg|_{-1}^3\\
+                 &= \left(\frac{27}{2} + 18 - \frac{81}{4} \right) - \left( \frac32 - \frac23 - \frac14 \right)\\
+                 &= \frac{32}{3}
+\end{align*}  
+
+\end{example}
+
+
+
+
+\end{document}
