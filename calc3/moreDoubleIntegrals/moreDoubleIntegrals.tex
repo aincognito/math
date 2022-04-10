@@ -104,12 +104,13 @@ Compute $\iint_R x \, dA$ where $R$ is the quarter circle in the first quadrant 
 \draw[thick] (3,0) node[below]{$2$} arc (0: 90: 3) node[left]{$2$};
 \draw[thick, <->] (-0.75, 0) -- (4, 0) node[right]{$x$};
 \draw[thick, <->] (0,-.75) -- (0, 4) node[above]{$y$};
-\node at (3,3) {$y = \sqrt{4 - x^2}$};
-\node at (1.1, -1.25) {The circular region $R$};
-%\node at (1, -75) {$x$ varies from $0$ to $2 - \frac{y}{2}$};
+\draw[thick] (1.8,0) node[below]{$x$} -- (1.8, 2.4) node[above right]{$y = \sqrt{4 - x^2}$};
+\node at (1.7, -1.25) {For each $x$ between $0$ and $2$,};
+\node at (1.7, -1.75) {$y$ varies from $0$ to $\sqrt{4 - x^2}$};
 \end{tikzpicture}
 \end{image}
-
+We first integrate $dy\, dx$.  From the figure above, we can determine the limits of integration on the iterated integrals.
+The computation requires a $u$-substitution, with $u = 4-x^2, \, du = -2x \, dx$
 \begin{align*}
 \iint_R x \, dA & = \int_0^2 \int_0^{\sqrt{4 - x^2}} x \, dy \, dx\\
                  & = \int_0^2  xy \bigg|_{0}^{\sqrt{4 - x^2}} \, dx\\
@@ -127,11 +128,12 @@ Compute $\iint_R x \, dA$ where $R$ is the quarter circle in the first quadrant 
 \draw[thick] (3,0) node[below]{$2$} arc (0: 90: 3) node[left]{$2$};
 \draw[thick, <->] (-0.75, 0) -- (4, 0) node[right]{$x$};
 \draw[thick, <->] (0,-.75) -- (0, 4) node[above]{$y$};
-\draw[thick] (1.8,0) node[below]{$x$} -- (1.8, 2.4) node[above right]{$y = \sqrt{4 - x^2}$};
-\node at (1.7, -1.25) {For each $x$ between $0$ and $2$,};
-\node at (1.7, -1.75) {$y$ varies from $0$ to $\sqrt{4 - x^2}$};
+\draw[thick] (0, 1.8) node[left]{$y$} -- (2.4, 1.8) node[above right]{$x = \sqrt{4 - y^2}$};
+\node at (1.7, -1.25) {For each $y$ between $0$ and $2$,};
+\node at (1.7, -1.75) {$x$ varies from $0$ to $\sqrt{4 - y^2}$};
 \end{tikzpicture}
 \end{image}
+We next integrate $dx\, dy$.  From the figure above, we can determine the limits of integration on the iterated integrals.
 
 \begin{align*}
 \iint_R x \, dA & = \int_0^2 \int_0^{\sqrt{4 - y^2}} x \, dx \, dy\\
@@ -141,17 +143,7 @@ Compute $\iint_R x \, dA$ where $R$ is the quarter circle in the first quadrant 
                  &= \frac12 \left(8 - \frac83\right) = \frac{8}{3}
 \end{align*} 
 
-\begin{image}
-\begin{tikzpicture}
-\filldraw[blue!30!white] (0,0) -- (3,0) arc (0: 90: 3) -- cycle;
-\draw[thick] (3,0) node[below]{$2$} arc (0: 90: 3) node[left]{$2$};
-\draw[thick, <->] (-0.75, 0) -- (4, 0) node[right]{$x$};
-\draw[thick, <->] (0,-.75) -- (0, 4) node[above]{$y$};
-\draw[thick] (0, 1.8) node[left]{$y$} -- (2.4, 1.8) node[above right]{$x = \sqrt{4 - y^2}$};
-\node at (1.7, -1.25) {For each $y$ between $0$ and $2$,};
-\node at (1.7, -1.75) {$x$ varies from $0$ to $\sqrt{4 - y^2}$};
-\end{tikzpicture}
-\end{image}
+
 
 
 
@@ -160,6 +152,21 @@ Compute $\iint_R x \, dA$ where $R$ is the quarter circle in the first quadrant 
 
 \begin{example}[Example 3]
 Compute $\iint_R y^2 e^{xy} \, dA$ where $R$ is the triangle bounded by $y = x, y=4$ and $x=0$.\\
+
+\begin{image}
+\begin{tikzpicture}
+\filldraw[blue!30!white] (0,0) -- (0,4) node[black,left]{$4$} -- (4,4) -- cycle;
+\draw[thick] (0,0) -- (4,4) -- (0,4);
+\draw[thick, <->] (-0.75, 0) -- (4, 0) node[right]{$x$};
+\draw[thick, <->] (0,-.75) -- (0, 5) node[above]{$y$};
+\draw[thick] (0, 2.25) node[left]{$y$} -- (2.25, 2.25) node[below right]{$x = y$};
+\node at (1.7, -1.25) {For each $y$ between $0$ and $4$,};
+\node at (1.7, -1.75) {$x$ varies from $0$ to $y$};
+\end{tikzpicture}
+\end{image}
+
+To avoid using integration by parts (twice), we integrate $dx\, dy$.  
+The figure above is used to determine the limits of integration on the iterated integrals.
 \begin{align*}
 \iint_R y^2 e^{xy} \, dA & = \int_0^4 \int_0^{y} y^2 e^{xy} \, dx \, dy\\
                  & = \int_0^4 y e^{xy} \bigg|_{0}^{y} \, dy\\
@@ -196,7 +203,9 @@ Compute $\iint_R x \, dA$ where $R$ is region bounded by $y = x^2 -x$ and $y = x
 \end{tikzpicture}
 \end{image}
 
-
+The nature of this region requires us to integrate $dy\, dx$.  
+From the figure above, we can determine the limits of integration on the iterated integrals.
+The computation requires a $u$-substitution, with $u = 4-x^2, \, du = -2x \, dx$
 \begin{align*}
 \iint_R x \, dA & = \int_{-1}^3 \int_{x^2 - x}^{x+3} x \, dy \, dx\\
                  & = \int_{-1}^3  xy \bigg|_{x^2 - x}^{x+3} \, dx\\
@@ -211,6 +220,22 @@ Compute $\iint_R x \, dA$ where $R$ is region bounded by $y = x^2 -x$ and $y = x
 
 \begin{example}[Example 5]
 Compute $\iint_R y \, dA$ where $R$ is the triangle with vertices $(0,0), (1,1)$ and $(4,0)$.\\
+
+\begin{image}
+\begin{tikzpicture}
+\draw[black, fill = blue!30!white, thick] (0,0) -- (4,0) -- (1,1) -- cycle;
+\draw[thick, <->] (-0.75, 0) -- (5, 0) node[right]{$x$};
+\draw[thick, <->] (0,-.5) -- (0, 1.5) node[above]{$y$};
+\draw[thin] (0.15, 0.4) -- (-0.15, 0.4) node[left]{$y$};
+\draw[thin] (0.15, 1) -- (-0.15, 1) node[left]{$1$};
+\draw[thin] (4, 0.15) -- (4, -0.15) node[below]{$4$};
+\node at (1, 1.5) {$x = y$};
+\draw[thick] (0.4, 0.4) -- (2.8, 0.4) node[above right]{$x = 4-3y$};
+\draw[thin, ->] (0.8, 1.4) ..controls (0.5, 1.1)..  (0.65, 0.75);
+\node at (1.7, -1.25) {For each $y$ between $0$ and $1$,};
+\node at (1.7, -1.75) {$x$ varies from $y$ to $4-3y$};
+\end{tikzpicture}
+\end{image}
 
 \begin{align*}
 \iint_R x \, dA & = \int_0^1 \int_{y}^{4-3y} y \, dx \, dy\\
@@ -227,6 +252,37 @@ Compute $\iint_R y \, dA$ where $R$ is the triangle with vertices $(0,0), (1,1)$
 
 \begin{example}[Example 6]
 Compute $\int_0^2 \int_{y/2}^1 y\cos(x^3 -1) \,dx \, dy$ by changing the order of integration.\\
+
+\begin{image}
+\begin{tikzpicture}
+\draw[black, fill = blue!30!white, thick] (0,0) -- (2,4) -- (2,0) -- cycle;
+\draw[thick, <->] (-0.75, 0) -- (3, 0) node[right]{$x$};
+\draw[thick, <->] (0,-.5) -- (0, 4.5) node[above]{$y$};
+\draw[thin] (0.15, 1.5) -- (-0.15, 1.5) node[left]{$y$};
+\draw[thin] (0.15, 4) -- (-0.15, 4) node[left]{$2$};
+\draw[thin] (2, 0.15) -- (2, -0.15) node[below]{$1$};
+\draw[thick] (0.75, 1.5)  -- (2, 1.5);
+\node at (1, 3.5) {$x = y/2$};
+\draw[thin, ->] (0.8, 3.4) ..controls (0.5, 2.5)..  (0.75, 1.6);
+\node at (1.4, -1.25) {For each $y$ between $0$ and $2$,};
+\node at (1.4, -1.75) {$x$ varies from $y/2$ to $1$};
+
+
+\draw[black, fill = blue!30!white, thick] (5,0) -- (7,4) -- (7,0) -- cycle;
+\draw[thick, <->] (4.25, 0) -- (8, 0) node[right]{$x$};
+\draw[thick, <->] (5,-.5) -- (5, 4.5) node[above]{$y$};
+\draw[thin] (5.15, 4) -- (4.85, 4) node[left]{$2$};
+\draw[thin] (7, 0.15) -- (7, -0.15) node[below]{$1$};
+\draw[thick] (6.25, 0) node[below]{$x$} -- (6.25, 2.5) ;
+\node at (6, 3.25) {$y = 2x$};
+\node at (6.4, -1.25) {For each $x$ between $0$ and $1$,};
+\node at (6.4, -1.75) {$y$ varies from $0$ to $2x$};
+
+
+
+
+\end{tikzpicture}
+\end{image}
 
 \begin{align*}
 \iint_R x \, dA & = \int_0^1 \int_0^{2x} y \cos(x^3-1) \, dy \, dx\\
