@@ -191,6 +191,32 @@ In polar coordinates, the integral becomes
 \end{example}
 
 
+\begin{example}[Example 3]
+Find the volume of the region below the paraboloid $z = 1 - x^2 - y^2$ and above the $xy$-plane.\\
+
+\begin{image}
+\begin{tikzpicture}
+%\draw[thick] (0,0) ellipse (4 and 1) ;
+\draw[thick, dashed] (4,0) arc(0:180:4 and 1);
+\draw[thick] (4,0) arc(0:-180:4 and 1);
+
+\node at (1.75, -1.25){$x^2 + y^2 = 1$};
+%\draw (-4,0) parabola bend +(0, 4) ++ (4, 0);
+\draw[thick] plot[smooth, domain= -4: 4] (\x, {4-(\x/2)^2});
+\draw[thick, <->] (0,-2) -- (0, 5) node[above]{$z$};
+\draw[thick, <->] (-5,0) -- (5, 0) node[right]{$y$};
+\draw[thick, <->] (1.5*1.732, 1.5) -- (-1.5 * 1.732, -1.5) node[below, left]{$x$};
+\node at (3, 3.5) {$z = 1 - x^2 - y^2$};
+
+\end{tikzpicture}
+\end{image}
+
+\begin{align*}
+\iint_R (1-x^2 - y^2) \, dA &= \int_0^{2\pi} \int_0^1 (1-r^2) \cdot r \, dr \, d\theta\\
+                            &= 2\pi \left(\frac{r^2}{2} - \frac{r^4}{4}\right) \bigg|_0^1\\
+                            &= 2\pi \cdot \frac14 = \frac{\pi}{2}
+\end{align*}
+\end{example}
 
 
 \end{document}
