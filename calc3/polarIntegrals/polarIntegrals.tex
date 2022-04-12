@@ -218,5 +218,44 @@ Find the volume of the region below the paraboloid $z = 1 - x^2 - y^2$ and above
 \end{align*}
 \end{example}
 
+\begin{example}[Example 4]
+Compute the doubly improper integral
+\[
+\int_{-\infty}^{\infty} e^{-x^2} \, dx
+\]
+There is no known anti-derivative for the function $e^{-x^2}$ (without resorting to power series), but there is a way to compute this integral using polar coordinates.
+Recall that if a function is separable, then we can write a double integral over a rectangle as a product of definite integrals:
+\[
+\int_a^b \int_c^d f(x)g(y) \, dy\, dx = \left(\int_a^b f(x)\, dx  \right) \left(\int_c^d g(y) \, dy \right)
+\]
+Our tactic is to compute the square of the original integral, written in the form
+\[
+\left(\int_{-\infty}^{\infty} e^{-x^2} \, dx \right)^2 = \left(\int_{-\infty}^{\infty} e^{-x^2} \, dx \right) \left(\int_{-\infty}^{\infty} e^{-y^2} \, dy \right)
+\]
+Recombining these integrals into iterated integrals (using the fact that $e^{-x^2} \cdot e^{-y^2}= e^{-x^2- y^2}$) we have
+\[
+\left(\int_{-\infty}^{\infty} e^{-x^2} \, dx \right)^2  = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty} e^{-x^2 - y^2} \, dy\, dx
+\]
+Applying the polar coordinate transformation yields
+\begin{align*}
+\left(\int_{-\infty}^{\infty} e^{-x^2} \, dx \right)^2  &= \int_{-\infty}^{\infty}\int_{-\infty}^{\infty} e^{-x^2 - y^2} \, dy\, dx \\
+                                                        &= \int_0^{2\pi} \int_0^\infty e^{-r^2} \cdot r \, dr \, d\theta\\
+                                                        &= 2\pi \int_0^\infty r e^{-r^2}  \, dr\\
+                                                        &= -\pi \int_0^{-\infty} e^u \, du\\
+                                                        &= \pi \int_{-\infty}^0 e^u \, du\\
+                                                        &= \pi \lim_{t \to -\infty} \int_t^0 e^u \, du\\
+                                                        &= \pi \lim_{t \to -\infty} \left(1 - e^t\right)\\
+                                                        &= \pi (1-0) = \pi
+\end{align*}
+Thus, for the original integral, we have
+\[
+\int_{-\infty}^{\infty} e^{-x^2} \, dx = \sqrt \pi
+\]
+                                                        
+
+\end{example}
+
+
+
 
 \end{document}
