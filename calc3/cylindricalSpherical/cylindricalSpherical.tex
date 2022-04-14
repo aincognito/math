@@ -1,0 +1,72 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\outcome{In this section we compute triple integrals using cylindrical and spherical coordinates.}
+
+\title{4.5 Cylindrical and Spherical Coordinates}
+
+
+
+\begin{document}
+
+\begin{abstract}
+In this section we compute triple integrals using cylindrical and spherical coordinates.
+\end{abstract}
+ 
+\maketitle
+
+\section{Cylindrical Coordinates}
+Cylindrical coordinates are an extension of polar coordinates to $\R^3$ by directly adding the $z$ component of a point.
+Thus, a point in $\R^3$ can be represented in cylindrical coordinates as $(r, \theta, z)$ 
+where $r$ and $\theta$ are the corresponding polar coordinates of the point 
+$(x,y)$ in $\R^2$.  The point $(x,y)$ in $\R^2$ can be thought of as the projection of the point $(x,y,z)$ onto the $xy$-plane.
+See the figure below.
+
+\begin{image}
+\begin{tikzpicture}
+\draw[thick, ->] (0,0,0) -- (0,0, 5) node[below]{$x$};
+\draw[thick, ->] (0,0,0) -- (0, 5, 0) node[above]{$z$};
+\draw[thick, ->] (0,0,0) -- (5,0,0) node[right]{$y$};
+%\draw[thick, ->] (0, 0) -- (-2.3, -2.3) node[below, left]{$x$};
+\draw[thick, blue!70!white] (0,0) -- (2,3) node[above right, black]{$(r, \theta, z)$};
+\draw[dashed] (2, 3) -- (0, 3) node[left]{$z$};
+\draw[dashed] (2,3) -- (2, -1) node[right]{$(r, \theta)$} ;
+\draw[dashed] (0,0) -- (2,-1) node[midway, below]{$r$};
+\draw (-.35, -.35) arc(-135:-28:.495)node[midway, below]{$\theta$};
+\filldraw (2, -1) circle (0.05);
+\filldraw[blue!70!white] (2, 3) circle (0.05);
+
+
+\end{tikzpicture}
+\end{image}
+
+
+
+\section{Spherical Coordinates}
+Spherical coordinates locate a point in $\R^3$ using the distance from the origin to the point, $\rho$,  
+and two angles, $\theta$ and $\phi$. The angle $\theta$ is the same as the polar $\theta$ from polar and cylindrical coordinates.
+The new angle $\phi$ , called the angle of declination, is the angle between the $z$-axis and the vector from the origin to the point.
+See the figure below.
+\begin{image}
+\begin{tikzpicture}
+\draw[thick, ->] (0,0,0) -- (0,0, 5) node[below]{$x$};
+\draw[thick, ->] (0,0,0) -- (0, 5, 0) node[above]{$z$};
+\draw[thick, ->] (0,0,0) -- (5,0,0) node[right]{$y$};
+%\draw[thick, ->] (0, 0) -- (-2.3, -2.3) node[below, left]{$x$};
+\draw[thick, blue!70!white] (0,0) -- (2,3) node[above right, black]{$(\rho, \theta, \phi)$};
+\node at (1, 1.2) {$\rho$};
+%\draw[dashed] (2, 3) -- (0, 3) node[left]{$z$};
+\draw[dashed] (2,3) -- (2, -1) node[right]{$(r, \theta)$} ;
+\draw[dashed] (0,0) -- (2,-1) node[midway, below]{$r$};
+\draw (-.35, -.35) arc(-135:-28:.495)node[midway, below]{$\theta$};
+\draw (0, 2) arc(90:56.4:2)node[midway, above]{$\phi$};
+\filldraw (2, -1) circle (0.05);
+\filldraw[blue!70!white] (2, 3) circle (0.05);
+
+\end{tikzpicture}
+\end{image}
+
+\end{document}
+
+
