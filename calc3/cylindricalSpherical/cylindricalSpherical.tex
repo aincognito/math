@@ -223,5 +223,61 @@ dV = |J(\rho, \theta, \phi)| = \rho^2 \sin \phi
 \]
 Note that $\sin \phi \geq 0$ since $0 \leq \phi \leq \pi$.
 
+\begin{example}[Example 4]
+The density of a spherical object of radius 1 is given by $\delta(\rho, \theta, \phi) = \rho + \phi$. Find the mass of the object.\\
+Since the object is spherical with radius 1, the bounds on its coordinates are
+\[
+0\leq \rho \leq 1, \quad 0 \leq \theta \leq 2\pi \quad \text{and} \quad 0\leq \phi \leq \pi
+\]
+Using the fact that the volume element in spherical coordinates is 
+\[
+dV = \rho^2 \sin\phi \, d\rho\, d\theta\, d\phi
+\]
+we can compute the mass of the object as follows:
+\begin{align*}
+\text{Mass} &= \int_0^\pi \int_0^{2\pi}  \int_0^1 (\rho + \phi) \rho^2 \sin \phi  \, d\rho\, d\theta\, d\phi\\
+            &= 2\pi \int_0^\pi \int_0^1 (\rho^3 + \rho^2\phi)  \sin \phi  \, d\rho\, d\phi\\
+            &= 2\pi \int_0^\pi \left(\tfrac14\rho^4 + \tfrac13\rho^3 \phi\right) \bigg|_0^1 \sin \phi \, d\phi\\
+            &=2 \pi \int_0^\pi \left(\tfrac14 \sin \phi + \tfrac13 \phi \sin \phi\right) \, d\phi\\
+            &= 2\pi \left(-\tfrac14 \cos \phi -\tfrac13 \phi \cos \phi + \tfrac13\sin\phi \right)\bigg|_0^\pi\\
+            &=2\pi \left(\tfrac14 + \tfrac13 \pi +\tfrac14 \right)\\
+            &= \pi + \tfrac{2 }{3}\pi^2
+\end{align*}
+\end{example}
+            
 
+\begin{example}[Example 5]
+Find the volume of the solid bounded between the sphere $\rho = 4$ and the cone $\phi = \frac{\pi}{3}$.\\
+The coordinates of the solid satisfy the inequalities
+\[
+0 \leq \rho \leq 4, \quad 0 \leq \phi \leq \frac{\pi}{3} \quad \text{and} \quad 0\leq \theta \leq 2\pi
+\]
+The volume of the solid can be found by integrating the function $1$ over the solid as follows:
+\begin{align*}
+\text{Volume} &= \int_0^{\pi/3} \int_0^{2\pi}  \int_0^4 \rho^2 \sin \phi \, d\rho\, d\theta\, d\phi\\
+              &= 2\pi \left(\int_0^{\pi/3} \sin \phi \, d\phi\right) \cdot \left( \int_0^4 \rho^2 \, d\rho\right) \\
+              &= 2\pi \left( -\cos \phi \bigg|_0^{\pi/3} \right) \cdot \left( \frac{\rho^3}{3}\bigg|_0^4\right)\\
+              &= 2\pi \left(1 - \frac12\right) \cdot \left( \frac{64}{3}\right)\\
+              &= \frac{64\pi}{3}
+\end{align*}
+
+\begin{image}
+\begin{tikzpicture}
+\filldraw[thick, blue!70!white, fill = blue!10!white] (0,0) -- (30:4) arc (30:150:4) -- cycle;
+%\draw (-3.464,2) -- (0,0) -- (3.464, 2);
+%\draw (0,0) arc (0:180:4);
+\draw[thick, blue!70!white] (0, 2) ellipse (3.464 and 0.25);
+\draw[<->, thick] (0, -1) -- (0, 5) node[above]{$z$};
+\draw[thin] (0, 1) arc (90:30:1) node[midway, above]{$\pi/3$};
+\draw[thick] (0.25, 4) --(-0.25, 4) node[above left]{$4$};
+\draw[thick, <->] (-3, 0) -- (3, 0) node[right]{$y$};
+\draw[thick, ->] (0,0) -- (-1, -1) node[below left]{$x$};
+\draw[thick, ->, darkgray] (0,0) -- (1,1);
+\end{tikzpicture}
+\end{image}
+
+\end{example}
+
+       
+                      
 \end{document}
