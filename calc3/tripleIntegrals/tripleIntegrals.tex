@@ -45,11 +45,17 @@ be written as a product of three ordinary definite integrals. We have:
 \begin{problem}(Problem 1a)
 Compute $\iiint_R xyz \, dV$ where $R$ is the rectangular region bounded by the 
 planes $x = 1, x = 2, y = -1, y = 4, z = 0$ and $z = 3$.\\
+\[
+\iiint_R xyz \, dV = \answer{405/8}
+\]
 \end{problem}
 
 \begin{problem}(Problem 1b)
 Compute $\iiint_R \sin(2x)e^{-3y}\sqrt{1+ 2z} \, dV$ where $R$ is the rectangular region bounded by the 
 planes $x = 0, x = \pi/2, y = 0, y = 1, z = 0$ and $z = 4$.\\
+\[
+\iiint_R \sin(2x)e^{-3y}\sqrt{1+ 2z} \, dV = \answer{26/9 (1 - 1/e^3)}
+\]
 \end{problem}
 
 \begin{example}[Example 2]
@@ -89,6 +95,12 @@ The triple integral over the tetrahedron can now be written as iterated integral
 \begin{problem}(Problem 2)
 Compute $\iiint_R y \, dV$ where $R$ is the tetrahedron in the first octant with 
 vertices $(0,0,0), P(3, 0, 0), Q(0, 2, 0)$ and $R(0,0,1)$.\\
+\begin{hint}
+Integrate $dz \, dx \, dy$
+\end{hint}
+\[
+\iiint_R y \, dV = \answer{1/2}
+\]
 \end{problem}
 
 \begin{example}[Example 3]
@@ -115,8 +127,17 @@ We have:
 \end{example}
 
 \begin{problem}(Problem 3)
-Compute $\iiint_R  cos^{z/x} \, dV$ where $R$ is the region in the first octant below the 
+Compute $\iiint_R  cos(z/x) \, dV$ where $R$ is the region in the first octant below the 
 surface $z = xy$ and above the triangle in the $xy$-plane with vertices $(0,0), (\pi, 0))$ and $(\pi, \pi)$.\\
+\begin{hint}
+\[
+\int f(ax) \, dx = \frac{1}{a} F(ax) + C
+\]
+\end{hint}
+\[
+\iiint_R  cos(z/x) \, dV = \answer{2 +\frac{\pi^2}{2}}
+\]
+
 \end{problem}
 
 \end{document}
