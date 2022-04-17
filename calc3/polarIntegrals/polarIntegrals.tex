@@ -154,12 +154,21 @@ Using polar coordinates, we have
 
 \end{example}
 
-\begin{problem}(Problem 1)
+\begin{problem}(Problem 1a)
 Compute $\iint_R (x^2 + y^2)^3 \, dA$ where $R$ is the region between the circles $x^2 + y^2 = 1$ and $x^2 + y^2 = 4$.\\
 \[
 \iint_R (x^2 + y^2)^3 \, dA = \answer{31\pi/8}
 \]
 \end{problem}
+
+\begin{problem}(Problem 1b)
+Compute $\iint_R \cos(x^2 + y^2) \, dA$ where $R$ is the unit disk: $x^2 + y^2 \leq 1$.\\
+\[
+\iint_R \cos(x^2 + y^2) \, dA = \answer{\pi\sin(1)}
+\]
+\end{problem}
+
+
 
 
 \begin{example}[Example 2]
@@ -196,7 +205,7 @@ In polar coordinates, the integral becomes
 
 \end{example}
 
-\begin{problem}(Problem 2)
+\begin{problem}(Problem 2a)
 Compute $\iint_R \left(1 + \frac{y^2}{x^2}\right) \, dA$ where $R$ is the sector bounded by the lines $y = 0, y = x$ and the unit circle.\\
 \begin{hint}
 \[
@@ -208,7 +217,12 @@ Compute $\iint_R \left(1 + \frac{y^2}{x^2}\right) \, dA$ where $R$ is the sector
 \]
 \end{problem}
 
-
+\begin{problem}(Problem 2b)
+Compute $\iint_R xy \, dA$ where $R$  portion of the unit disk in the first quadrant: $x \geq 0, y\geq 0, x^2 + y^2 \leq 1$.\\
+\[
+\iint_R xy \, dA = \answer{1/8}
+\]
+\end{problem}
 
 
 \begin{example}[Example 3]
@@ -285,7 +299,94 @@ Thus, for the original integral, we have
 
 \end{example}
 
+\begin{problem}(Problem 4)
+Use the method of Example 4 to compute the improper integral
+\[
+\int_0^{\infty} e^{-x^2/2} \, dx = \answer{\sqrt{\pi/2}}
+\]
+\end{problem}
 
+
+\section{The Jacobian of a Transformation}
+In the double integral 
+\[
+\iint_R f(x,y) \, dA
+\]
+the area element $dA$ is equal to $dy \, dx$ when the double integral is written as iterated integrals.
+We noted that if we apply a polar coordinate transformation to the variables $x$ and $y$ 
+to obtain the variables $r$ and $\theta$, then the area element $dA$ in the double integral is
+\[
+dA = r \, dr \, d\theta
+\]
+In general, when $x$ and $y$ are transformed into two other variables, $s$ and $t$, the area element $dA$
+in the double integral becomes
+\[
+dA = |J(s, t)| \, ds \, dt
+\]
+where $J(s,t)$ is the Jacobian of the transformation, defined by the following matrix determinant:
+\[
+\begin{vmatrix}
+\pp[x]{s} & \pp[x]{t}\\[10pt]
+\pp[y]{s} & \pp[y]{t}\\
+\end{vmatrix}
+\]
+
+\begin{remark}
+The Jacobian can also be extended into higher dimensions, as we shall see when we study triple integrals in spherical coordinates.
+\end{remark}
+
+\begin{example}[Example 5]
+Let $x = r\cos \theta$ and $y = r\sin \theta$, i.e., the polar coordinate transformation. Compute the Jacobian, $J(r, \theta)$ and the corresponding area element, $dA$.\\
+The Jacobian is given by the determinant of the $2 \times 2$ matrix:
+\begin{align*}
+\begin{vmatrix}
+\pp[x]{r} & \pp[x]{\theta}\\[10pt]
+\pp[y]{r} & \pp[y]{\theta}\\
+\end{vmatrix}
+&= 
+\begin{vmatrix}
+\cos \theta & -r\sin\theta\\[10pt]
+\sin \theta & r\cos\theta\\
+\end{vmatrix}\\
+&= r \cos^2 \theta + r \sin^2 \theta\\
+&= r
+\end{align*}
+Hence, the area element is
+\[
+dA = |J(r, \theta)|= |r| = r
+\]
+\end{example}
+
+
+\begin{problem}(Problem 5a)
+Let $x = 2s + 3t$ and $y = s - t$. Compute the Jacobian, $J(s, t)$ and the corresponding area element, $dA$.\\
+\[
+J(s,t) = \answer{-5}
+\]
+\[
+dA = \answer{5}\, ds\, dt
+\]
+\end{problem}
+
+\begin{problem}(Problem 5b)
+Let $x = s^2 + t^2$ and $y = s^2 - t^2$. Compute the Jacobian, $J(s, t)$ and the corresponding area element, $dA$.\\
+\[
+J(s,t) = \answer{-8st}
+\]
+\[
+dA = \answer{8|st|}\, ds\, dt
+\]
+\end{problem}
+
+\begin{problem}(Problem 5c)
+Let $x = u/v$ and $y = uv$. Compute the Jacobian, $J(u,v)$ and the corresponding area element, $dA$.\\
+\[
+J(u,v) = \answer{2u/v}
+\]
+\[
+dA = \answer{2|u/v|}\, du\, dv
+\]
+\end{problem}
 
 
 \end{document}
