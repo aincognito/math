@@ -131,7 +131,7 @@ The mass of the solid is found by integrating the density function over the regi
 The density, $\delta$, can be expressed in cylindrical coordinates as $\delta(x, y, z) = k \sqrt{x^2+y^2} = kr$.
 Hence, the triple integral that gives the mass can be evaluated as
 \begin{align*}
-\iiint_R kr \, dV &=  \int_0^{2\pi} \int_0^4 \int_{2r}^{8-r^2} kr \cdot r \, dz \, dr \, d\theta \\
+\iiint_R kr \, dV &=  \int_0^{2\pi} \int_0^2 \int_{2r}^{8-r^2} kr \cdot r \, dz \, dr \, d\theta \\
                   &= 2\pi \int_0^2 kr^2 (8 - r^2 - 2r) \,dr\\
                   &= 2k\pi \left(\frac{8r^3}{3} - \frac{r^4}{2} - \frac{r^5}{5} \right)\bigg|_0^2 \\
                   &= 2k\pi \left(\frac{64}{3} - 8 - \frac{32}{5}\right)\\
@@ -209,10 +209,10 @@ When computing triple integrals, the volume element $dV$ can be expressed in ter
 \]
 \begin{align*}
 &= \sin \phi \cos \theta \left[-\rho^2 \sin^2\phi\cos\theta \right]\\
- &\;+\rho \sin \phi \sin \theta\left[-\rho\sin^2\phi\sin\theta- \rho\cos^2\phi\sin\theta\right]\\
- & \;+ \rho \cos \phi \cos \theta \left[-\rho \sin\phi\cos\phi\cos\theta\right]\\
+ &\quad+\rho \sin \phi \sin \theta\left[-\rho\sin^2\phi\sin\theta- \rho\cos^2\phi\sin\theta\right]\\
+ & \quad+ \rho \cos \phi \cos \theta \left[-\rho \sin\phi\cos\phi\cos\theta\right]\\
  &= -\rho^2 \sin^3\phi \cos^2\theta -\rho^2 \sin^3\phi \sin^2\theta \\
- & \; - \rho^2 \cos^2\phi \sin\phi \sin^2\theta - \rho^2 \cos^2\phi \sin\phi \cos^2\theta\\
+ & \quad - \rho^2 \cos^2\phi \sin\phi \sin^2\theta - \rho^2 \cos^2\phi \sin\phi \cos^2\theta\\
   &= -\rho^2\sin^3\phi - \rho^2\cos^2\phi\sin\phi\\
  &=-\rho^2 \sin \phi
 \end{align*}
