@@ -119,10 +119,10 @@ between the planes $z = -1$ and $z = 1$.\\
 Compute the triple integral $\iiint_R xyz \, dV$ where $R$ is the region inside the right circular cylinder $ x^2 + y^2 = 4$ from $z = 0 $ to $z = 3$.\\
 The cylinder can be described in cylindrical coordinates by $r = 2$. Using cylindrical coordinates to compute the triple integral gives
 \begin{align*}
-\iiint_R xyz \, dV &= \int_0^3 \int_0^{2\pi} \int_0^2 (r\cos \theta)(r\sin\theta) r \, dr\, d\theta\, dz \\
-                   &= 3 \left( \int_0^{2\pi} \cos \theta \sin \theta \, d\theta\right) \left( \int_0^2 r^3 \, dr\right)\\
-                   &= 3 \left(\frac12 \sin^2 \theta \bigg|_0^{2\pi} \right) \cdot \left( \frac{r^4}{4} \bigg|_0^2 \right)\\
-                   &= 3 (0) (4) = 0
+\iiint_R xyz \, dV &= \int_0^3 \int_0^{2\pi} \int_0^2 (r\cos \theta)(r\sin\theta)z r \, dr\, d\theta\, dz \\
+                   &= \left(\int_0^3 z\, dz\right) \left( \int_0^{2\pi} \cos \theta \sin \theta \, d\theta\right) \left( \int_0^2 r^3 \, dr\right)\\
+                   &= \left(\frac{z^2}{2} \bigg|_0^3\right) \left(\frac12 \sin^2 \theta \bigg|_0^{2\pi} \right) \cdot \left( \frac{r^4}{4} \bigg|_0^2 \right)\\
+                   &= (9/2) (0) (4) = 0
 \end{align*}
 \end{example}
 
