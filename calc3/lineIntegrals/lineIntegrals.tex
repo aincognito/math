@@ -1,0 +1,357 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\pgfplotsset{compat=1.13}
+
+\outcome{Compute line integrals}
+
+\title{4.6 Line Integrals and Work}
+
+\begin{document}
+
+\begin{abstract}
+We compute integrals of vector-valued functions along curves.
+\end{abstract}
+
+\maketitle
+
+
+\begin{definition}[Line Integral]
+Let $C$ be a curve in $\R^2$ parameterized by $\vec r(t) = \vector{x(t), y(t)}$ for $ \; a\leq t \leq b$ and let $\vec f(x, y)$ be a vector-valued function defined along $C$.
+Then the integral of $f$ along $C$ is defined by
+\[
+\int_C \vec f(x, y) \dotp d\vec r = \int_a^b \vec f(x(t), y(t)) \dotp \vec r\,'(t) dt
+\]
+\end{definition}
+%\begin{remark}
+%The value of a line integral depends on the orientation of the curve, $\vec r(t)$. 
+ 
+ 
+\begin{example}[example 1]
+Compute $\dis \int_C \vector{x, -y} \dotp d\vec r$ where $C$ is the line segment from $(-1, 0)$ to $(1,1)$.\\
+We first parameterize the line segment. Since the equation of the line in the $xy$-plane is $y = \frac12x + \frac12$,
+one possible parametrization of the line segment is
+\[
+\vec r(t) = \vector{x(t), y(t)} = \vector{t , \left(\frac{t}{2} + \frac12\right)}, \; -1 \leq t \leq 1
+\]
+The derivative of $\vec r(t)$ is 
+\[
+\vec r\,'(t) = \vector{1, \frac{1}{2}}
+\]
+Next, $f(x, y) = \vector{x, -y}$ and hence
+\[
+\vec f(x(t), y(t)) = \vector{x(t), -y(t)} = \vector{t , -\left(\frac{t}{2} + \frac12\right)}
+\]
+We are now ready to compute the contour integral:
+\begin{align*}
+\int_C \vec f(x, y) \dotp d\vec r &= \int_{-1}^1 \vec f(x(t), y(t)) \dotp \vec r\,'(t) \, dt\\
+                             &= \int_{-1}^1 \vector{t , -\left(\frac{t}{2} + \frac12\right)} \dotp  \vector{1, \frac{1}{2}} \, dt\\[6pt]
+                             &= \int_{-1}^1 \left(t -\frac{t}{4} - \frac14\right) \, dt\\[6pt]
+                             &= \int_{-1}^1 \left(\frac34 t - \frac14\right) \, dt\\[6pt]
+                             &= \left(\frac38 t^2 - \frac14 t\right)\bigg|_{-1}^1\\[6pt]
+                         &= \left(\frac38 - \frac14\right) - \left(\frac38 + \frac14\right)\\[6 pt]
+                        &= -\frac12
+\end{align*}
+
+An alternative method for parameterizing a line segment was discussed in chapter 1: if $P$ and $Q$ are the vector representation of points, the the line segment from 
+$P$ to $Q$ is:
+\[
+\vec r(t) = (1-t)P + tQ, \; 0 \leq t \leq 1
+\]
+Using $(-1, 0)$ and $(1,1)$ for $P$ and $Q$, respectively, we can parameterize the line segment as
+\[
+\vec r(t) = (1-t) \vector{-1, 0} + t\vector{1,1} = \vector{2t-1, t}, \; 0\leq t \leq 1
+\]
+Thus,
+\[
+x(t) = 2t-1 \quad \text{and} \quad y(t) = t
+\]
+and the vector function is
+\[
+\vec f(x(t), y(t)) = \vector{x(t), -y(t)} = \vector{2t-1, -t}
+\]
+We can now compute the line integral
+\begin{align*}
+\int_C \vec f(x, y) \dotp d\vec r &= \int_0^1 \vec f(x(t), y(t)) \dotp \vec r\,'(t) \, dt\\
+                             &= \int_0^1 \vector{2t-1, t} \dotp  \vector{2, 1} \, dt\\[6pt]
+                             &= \int_0^1 \left(4t-2 -t\right) \, dt\\[6pt]
+                             &= \int_0^1 \left(3t-2\right) \, dt\\[6pt]
+                             &= \left(\frac32 t^2 - 2 t\right)\bigg|_0^1\\[6pt]
+                        &= \frac32 - 2 = -\frac12
+\end{align*}
+as before.
+\end{example}
+\begin{remark}
+A line integral is independent of the choice of the parameterization for the curve $C$. 
+\end{remark}
+
+If the vector-valued function $\vec f(x,y)$ the force on an object at the point $(x,y)$, then the line integral
+\[
+\int_C \vec f(x,y) \dotp  d\vec r
+\]
+represents the \textbf{work} done by (or against) an object that travels along the curve $C$.
+
+\begin{example}[Example 2]
+The force due to gravity by a mass at the origin of $\R^2$ (two dimensions for simplicity) is given by
+\[
+\vec f(x,y) = \frac{k}{(x^2 + y^2)^{3/2}} \vector{-x, -y}
+\]
+where $k$ is a positive constant that depends on the masses of the objects involved. Find the work done 
+by this force as an object moves in a straight line from the point $(0,1)$ to the point $(1,1)$.\\
+The line segment from $(0,1)$ to $(1,1)$ can be parameterized by
+\[
+C: \vec r(t) = \vector{t, 1} \; \text{for}   \; 0 \leq t \leq 1
+\]
+The work done is the value of the line integral:
+\begin{align*}
+\text{Work} &= \int_C \vec f(x,y) \dotp d\vec r\\
+            &= \int_0^1 \vec f(x(t),y(t)) \dotp \vec r\,'(t) \, dt\\
+            &= \int_0^1 \vec f(t, 1) \dotp \vec r\,'(t) \, dt\\
+            &= \int_0^1 \frac{k}{(t^2 + 1^2)^{3/2}} \vector{-t,-1} \dotp \vector{1,0} \, dt\\
+            &= \int_0^1 -\frac{kt}{(t^2 + 1^2)^{3/2}} \, dt\\
+            &= \frac{k}{(t^2 +1)^{1/2}} \bigg|_0^1 \\
+            &= k\left(\frac{1}{\sqrt 2} - 1\right)
+\end{align*}
+Note that this answer is negative.  This means that work was done \textbf{against} the force rather than by the force.
+\end{example}
+
+
+\end{document}
+
+
+\begin{problem}(problem 1a)
+Use the parametrization given in the remark above to compute the integral in example 1.
+\end{problem}
+
+\begin{problem}(problem 1b)
+Let $C$ be the line segment from $0$ to $1+i$. Compute \\
+$\dis \int_C \overline{z} \, dz = \answer{1} $\\
+\end{problem}
+
+\begin{problem}(problem 1c)
+Let $C= C(0, 1)$ be the unit circle traversed in the counter-clockwise direction. Compute \\
+$\dis \int_C \overline{z} \, dz = \answer{2\pi i} $\\
+\begin{hint}
+To parametrize the circle $C(z_0, r)$ traversed in the counter-clockwise direction, use
+\[
+\gamma(t) = z_0 + re^{it}, \, 0 \leq t \leq 2\pi
+\]
+\end{hint}
+\end{problem}
+
+
+\begin{proposition}
+If the contour $C$ has two different parametrizations, $\gamma_1(t)\,$ with  $\, a_1 \leq t \leq b_1$ and $\gamma_2(t)\,$ with $ \, a_2 \leq t \leq b_2$, then
+\[
+\int_C f(z) \, dz = \int_{a_1}^{b_1} f(\gamma_1(t)) \gamma_1'(t) \, dt = \int_{a_2}^{b_2} f(\gamma_2(t)) \gamma_2'(t) \, dt
+\]
+That is, the value of a contour integral is independent of the parametrization used to describe the contour.
+\end{proposition}
+
+What happens if we reverse the direction of a contour , $C$?
+
+
+If $C$ is a contour parameterized by $\gamma(t) = x(t) + iy(t), \, a \leq t \leq b$ then the contour $-C$ which represents the 
+same points as $C$ but traced in the opposite 
+direction has parametrization $\zeta(s) = x(a+b-s) + iy(a+b-s), \, a \leq s \leq b$.
+
+
+\begin{proposition}
+Suppose $f$ is continuous along a contour $C$ %parameterized by $C: \gamma(t) = x(t) + iy(t), \, a \leq t \leq b$
+and suppose the contour $-C$ represents the same points as $C$ traced in the opposite direction, 
+then 
+\[
+\int_{-C} f(z) \, dz = -\int_C f(z) \, dz
+\]
+\end{proposition}
+\begin{proof}
+Using the substitution $t = a+b-s$, we have
+\begin{align*}
+\int_{-C} f(z) \, dz &= \int_a^b f(\zeta(s)) \zeta'(s) \, ds \\
+&= \int_a^b f\big(x(a+b-s) + iy(a+b-s)\big) \big[x'(a+b-s)(-1)+ iy'(a+b-s)(-1)\big]\, ds\\
+                     &= \int_b^a f\big(x(t)+iy(t)\big) \big[x'(t)+ iy'(t)\big] \, dt\\
+                     &= -\int_a^b f(\gamma(t)) \gamma'(t) \, dt\\
+                   &= - \int_C f(z) \, dz
+\end{align*}
+\end{proof}
+
+\begin{example}[example 2]
+Let $C$ be the semi-circle parametrized by $\gamma(t) = 2e^{it}, \, 0\leq t \leq \pi$. Compute
+\[
+\int_C \frac{1}{z} \, dz \quad \text{and} \quad \int_{-C }\frac{1}{z} \, dz
+\]
+and verify the the above proposition.\\
+Note that $\gamma'(t) = 2ie^{it}$. We begin with the integral along $C$:
+\[
+\int_C \frac{1}{z} \, dz = \int_0^\pi \frac{1}{\gamma(t)} \gamma'(t) \, dt = \int_0^\pi \frac{2ie^{it}}{2e^{it}} \, dt
+                        =\int_0^\pi i \, dt \,= \, it\, \bigg|_0^\pi \, = \pi i
+\]
+Next we integrate along $-C$.  To do this we parametrize $-C$ as $\zeta(t) = 2e^{i(\pi - t)}, \, 0\leq t \leq \pi$.
+Note that $\zeta'(t) = -2ie^{i(\pi - t)}$. Thus
+\[
+\int_{-C} \frac{1}{z} \, dz = \int_0^\pi \frac{1}{\zeta(t)} \zeta'(t) \, dt = \int_0^\pi \frac{-2ie^{i(\pi-t)}}{2e^{i(\pi -t)}} \, dt
+                        =\int_0^\pi -i \, dt
+                        = -it \bigg|_0^\pi
+                        = -\pi i
+\]
+From our calculations, we see that $\dis \int_C \frac{1}{z} \, dz = -\int_{-C} \frac{1}{z} \, dz$
+thereby verifying the conclusion of the previous proposition.
+\end{example}
+
+
+\begin{problem}(problem 2a)
+Let $C= C(0, 1)$ be the unit circle traversed in the counter-clockwise direction. Compute \\
+$\dis \int_C \frac{1}{z} \, dz = \answer{2\pi i} $\\
+\begin{hint}
+To parametrize the circle $C(z_0, r)$ traversed in the counter-clockwise direction, use
+\[
+\gamma(t) = z_0 + re^{it}, \, 0 \leq t \leq 2\pi
+\]
+\end{hint}
+\end{problem}
+
+\begin{problem}(problem 2b)
+Let $C= C(i, 2)$ be the circle centered at $i$ of radius $2$, traversed in the clockwise direction. Compute \\
+$\dis \int_C \frac{1}{z-i} \, dz = \answer{-2\pi i} $\\
+\begin{hint}
+To parametrize the circle $C(z_0, r)$ traversed in the counter-clockwise direction, use
+\[
+\gamma(t) = z_0 + re^{it}, \, 0 \leq t \leq 2\pi
+\]
+\end{hint}
+\end{problem}
+
+\begin{problem}(problem 2c)
+Let $C= C(z_0, r)$ be the circle centered at $z_0$ of radius $r$, traversed in the counter-clockwise direction. Compute \\
+$\dis \int_C \frac{1}{z-z_0} \, dz = \answer{2\pi i} $\\
+\begin{hint}
+To parametrize the circle $C(z_0, r)$ traversed in the counter-clockwise direction, use
+\[
+\gamma(t) = z_0 + re^{it}, \, 0 \leq t \leq 2\pi
+\]
+\end{hint}
+\end{problem}
+
+Compare your answers to problems 2b and 2c. Notice that they verify the proposition.
+
+\begin{problem}(problem 2d)
+Let $C= C(z_0, r)$ be the circle centered at $z_0$ of radius $r$, traversed in the counter-clockwise direction. Compute \\
+$\dis \int_C \frac{1}{(z-z_0)^2} \, dz = \answer{0} $\\
+\begin{hint}
+To parametrize the circle $C(z_0, r)$ traversed in the counter-clockwise direction, use
+\[
+\gamma(t) = z_0 + re^{it}, \, 0 \leq t \leq 2\pi
+\]
+\end{hint}
+\end{problem}
+
+\begin{proposition}
+Suppose $f(t) = u(t) + iv(t)$ is a continuous function of the real variable $t$. Then
+\[
+\left| \int_a^b f(t) \, dt \right| \leq \int_a^b \left| f(t) \right| \, dt
+\]
+\end{proposition}
+
+\begin{proposition}[$ML$-formula]
+Let $C$ be a contour and suppose $f$ is continuous along $C$. Then
+\[
+\left| \int_C f(z) \, dz \right| \leq ML
+\]
+where $M$ is the maximum value of $|f(z)|$ along $C$ and $L$ is the length of $C$. 
+\end{proposition}   
+
+\begin{proof}
+Suppose $C$ is parametrized by $\gamma(t), \, a \leq t \leq b$. Since $|f(z)| \leq M$ for all $z \in C$, the previous proposition implies
+\[
+\left| \int_C f(z) \, dz \right| = \left| \int_a^b f(\gamma(t))\gamma'(t) \, dt \right| \leq  \int_a^b \left|f(\gamma(t))\right| \cdot \left|\gamma'(t)\right| \, dt \leq M \int_a^b \left|\gamma'(t)\right| \, dt
+\]
+But this last integral is exactly $L$, the length of the curve $C$ and hence
+\[
+\left| \int_C f(z) \, dz \right| \leq M \int_a^b \left|\gamma'(t)\right| \, dt = ML
+\]
+\end{proof}
+
+\begin{example}[example 3]
+Use the $ML$-formula to estimate the modulus of the integral: $\dis \int_C z^\frac12 \, dz$,
+where $C$ is the circle centered at $3+4i$ of radius $4$.\\
+The length $L$ of the circle, $C$, is $L = 2\pi \cdot \text{radius} = 8\pi$. 
+In polar form, $z^\frac12 = r^\frac12 e^{i\theta/2}$ and hence $|z^\frac12| = r^\frac12 = |z|^\frac12$.
+From the triangle inequality, the modulus of any point $z$ on $C=C(3+4i, 4)$ can be estimated by
+\[
+|z| = |z-(3+4i) + (3+4i)| \leq |z-(3+4i)| + |3+4i| = 4+5 = 9.
+\]
+Hence for any $z$ on the circle, $|z^\frac12| \leq 9^\frac12 = 3 = M$.
+Finally, by the $ML$-formula,
+\[
+\left| \int_C z^\frac12 \, dz \right| \leq ML = (3)(8\pi) = 24\pi.
+\]
+\end{example}
+
+\begin{problem}(problem 3)
+Use the $ML$-formula to estimate the modulus of the integral: $\dis \int_C e^z \, dz$,
+where $C$ is the circle centered at $i$ of radius $2$.\\
+\begin{hint}
+$|e^z| = e^x$
+\end{hint}
+The maximum modulus of $e^z$ on $C$ is $M = \answer{e^2}$\\
+The length of $C$ is $L = \answer{4\pi}$\\
+By the $ML$-formula, $\dis \int_C e^z \, dz \leq \answer{4e^2 \pi}$
+\end{problem}
+If the function $f(z)$ is analytic at every point on the contour $C$, then the computation of the integral along $C$
+can be simplified as long as an anti-derivative of $f$ can be found.
+
+\begin{theorem}[Fundamental Theorem of Calculus]
+Suppose $C$ is a contour with initial point $z_1$ and terminal point $z_2$. If $f$ is analytic along $C$ and 
+if $F$ is an anti-derivative of $f$ along $C$, i.e., $F' = f$ at every $z \in C$,
+then
+\[
+\int_C f(z) \, dz = F(z_2) -F(z_1)
+\]
+\end{theorem}
+
+\begin{example}[example 4]
+Let $C$ be any contour from $0$ to $i$. Compute $\dis \int_C \cos z \, dz$.\\
+Since $\cos z$ is an entire function, it is analytic at every point on $C$. Moreover, since
+\[
+\frac{d}{dz} \sin z = \cos z \quad \text{for all} \,\, z \in \C
+\]
+we have an anti-derivative for $\cos z$ for any $z$ on $C$. Thus
+\[
+\int_C \cos z \, dz = \sin(i) - \sin(0) = \sin(i) = i\sinh(1).
+\]
+\end{example}
+
+\begin{problem}(problem 4)
+Let $C$ be any contour from $1$ to $1+i$ that does not cross the negative real axis or go through the origin. 
+Compute $\dis \int_C \frac{1}{z} \, dz$.\\
+\[
+\int_C \frac{1}{z} \, dz = \answer{\frac12 \ln 2+ i\pi/4}.
+\]
+\begin{hint}
+Use the principal branch of the logarithm, $\Log z$, as the anti-derivative on $C$.
+\end{hint}
+\end{problem}
+
+
+\end{document}
+
+
+                         
+                         
+
+
+
+                         
+
+
+
+
+
+
+
+
+
+
+
+
