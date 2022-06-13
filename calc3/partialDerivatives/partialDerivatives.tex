@@ -62,7 +62,7 @@ Hence, the numerator of the difference quotient will simplify to:
 \[
 f(x+h, y) - f(x,y) =  2hy^2 + 4hy - 2h
 \]
-Observe that each of these terms contains a factor of $h$. Thus the difference quotient simplifies to
+Observe that each of these terms contains a factor of $h$. Thus, the difference quotient simplifies to
 \[
 \frac{f(x+h, y) -f(x, y)}{h} = 2y^2 + 4y - 2
 \]
@@ -119,15 +119,15 @@ f(x, y+h) &= 2x(y+h)^2 + 4x(y+h) - 2x  -1\\
 Note that among the 7 terms in this expression, 4 of them are exactly the terms in the original function.
 Hence, the numerator of the difference quotient will simplify to:
 \[
-f(x+h, y) - f(x,y) =  4hxy + 2h^2x  + 4hx
+f(x, y+h) - f(x,y) =  4hxy + 2h^2x  + 4hx
 \]
-Observe that each of these terms contains a factor of $h$. Thus the difference quotient simplifies to
+Observe that each of these terms contains a factor of $h$. Thus, the difference quotient simplifies to
 \[
-\frac{f(x+h, y) -f(x, y)}{h} = 4xy + 2hx +4x
+\frac{f(x, y+h) -f(x, y)}{h} = 4xy + 2hx +4x
 \]
-Finally, we take the limit as $h \to 0$ to obtain the partial derivative with respect to $x$:
+Finally, we take the limit as $h \to 0$ to obtain the partial derivative with respect to $y$:
 \[
-f_x(x,y) = \lim_{h \to 0} \left(4xy + 2hx +4x\right) = 4xy + 4x
+f_y(x,y) = \lim_{h \to 0} \left(4xy + 2hx +4x\right) = 4xy + 4x
 \]
 
 \end{example}
@@ -330,9 +330,9 @@ Viewed as a function of $x$, $f$ is a product first and then a composition. We w
 the chain rule to compute $f_x$.
 We have
 \begin{align*}
-f_x(x,y) &= \sin(x,y) + x \frac{\partial}{\partial x} \sin(xy)\\
-         & = \sin(x,y) + x \cos(xy) \cdot y\\
-         & = \sin(x,y) + xy \cos(xy)
+f_x(x,y) &= \sin(xy) + x \frac{\partial}{\partial x} \sin(xy)\\
+         & = \sin(xy) + x \cos(xy) \cdot y\\
+         & = \sin(xy) + xy \cos(xy)
 \end{align*}
 As a function of $y, f$ is a composition of the sine function and the function $xy$, so the chain rule gives:
 \[
