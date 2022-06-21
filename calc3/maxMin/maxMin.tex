@@ -119,7 +119,7 @@ Letting $x = 0$ in the bottom equation gives
 3y^2 - 27 = 0
 \]
 from which we can conclude that $y = \pm 3$. We also see that $(0,0)$ is not a critical point.
-Hence the critical points are $(3,0)$ and $(-3,0)$.
+Hence the critical points are $(0, 3)$ and $(0, -3)$.
 \end{example}
 
 \begin{problem}(Problem 4)
@@ -139,7 +139,7 @@ D(x,y) = f_{xx}(x,y) \cdot f_{yy}(x,y) - \left(f_{xy}(x,y)\right)^2
 \]
 1) If $D(x_0, y_0) > 0$ and $f_{xx}(x_0, y_0) > 0$, then $f(x,y)$ has a local minimum at $(x_0, y_0)$.\\
 2) If $D(x_0, y_0) > 0$ and $f_{xx}(x_0, y_0)< 0$, then $f(x,y)$ has a local maximum at $(x_0, y_0)$.\\
-3) If $D(x_0, y_0) < 0$, then $(x_0, y_0)$t is a saddle point.\\
+3) If $D(x_0, y_0) < 0$, then $(x_0, y_0)$ is a saddle point.\\
 4) If $D(x_0, y_0) = 0$, then there is no conclusion about $f(x,y)$ at $(x_0, y_0)$.\\
 \end{theorem}
 
@@ -149,7 +149,7 @@ replaced with $f_{yy}(x_0, y_0) > 0$ since they both have the same sign when the
 \end{remark}
 
 \begin{example}[Example 5]
-Determine the local extrema of  $f(x,y) = x^2 + y^2 - 6y$.\\
+Use the Second Derivatives Test to determine the nature of $f(x,y) = x^2 + y^2 - 6y$ at its critical points.\\
 In Example 1, we found that the only critical point of $f$ is $(0,3)$.
 The second derivatives are
 \[
@@ -168,11 +168,11 @@ has a local minimum at the critical point $(0,3)$.
 \end{example}
 
 \begin{problem}(Problem 5)
-Determine the local extrema of $f(x,y) = x+ y - xy$ (from Problem 1).\\
+Use the Second Derivatives Test to determine the nature of $f(x,y) = x+ y - xy$ (from Problem 1) at its critical points.\\
 \end{problem}
 
 \begin{example}[Example 6]
-Determine the local extrema of $f(x,y) = 2x^2 - y^2 +2xy + 3x + y+ 5$.\\
+Use the Second Derivatives Test to determine the nature of $f(x,y) = 2x^2 - y^2 +2xy + 3x + y+ 5$ at its critical points.\\
 In Example 2, we found that the only critical point of $f$ is $(-2/3,-1/6)$.
 The second derivatives are
 \[
@@ -191,12 +191,13 @@ has a saddle point at the critical point $(-2/3,-1/6)$.
 \end{example}
 
 \begin{problem}(Problem 6)
-Determine the local extrema of $f(x,y) = xy - 2x-2y-x^2 - y^2$ (from Problem 2).\\
+Use the Second Derivatives Test to determine the nature of $f(x,y) = xy - 2x-2y-x^2 - y^2$ (from Problem 2)
+ at its critical points.\\
 \end{problem}
 
 
 \begin{example}[Example 7]
-Determine the local extrema of  $f(x,y) = x^2y +xy^2 +3x + 4$.\\
+Use the Second Derivatives Test to determine the nature of  $f(x,y) = x^2y +xy^2 +3x + 4$ at its critical points.\\
 In Example 3, we found that the critical points of $f$ are $(2,-1)$ and $(-2, 1)$.
 The second derivatives are
 \[
@@ -206,9 +207,9 @@ The discriminant is
 \[
 D(x,y) = f_{xx} f_{yy} - f_{xy}^2 = 4xy - (2x+2y)^2 = 4xy - 4x^2 - 8xy - 4y^2 = -4(x+y)^2
 \]
-and at the critical points, it is
+and at the critical points we have
 \[
-D(2, -1) = -4 \quad \text \quad D(-2, 1) = -4
+D(2, -1) = -4 \quad \text{and} \quad D(-2, 1) = -4
 \]
 Since $D < 0$, at both critical points, the Second Derivatives Test tells us that $f(x,y) = x^2y +xy^2 +3x + 4$
 has saddle points at both of the critical points $(2,-1)$ and $(-2, 1)$.
@@ -216,30 +217,39 @@ has saddle points at both of the critical points $(2,-1)$ and $(-2, 1)$.
 
 
 \begin{problem}(Problem 7)
-Determine the local extrema of $f(x,y) = 12xy - x^3 - y^3$ (from Problem 3).\\
+Use the Second Derivatives Test to determine the nature of  $f(x,y) = 12xy - x^3 - y^3$ 
+(from Problem 3) at its critical points.\\
 \end{problem}
 
 
 
 \begin{example}[Example 8]
-Determine the local extrema of $f(x,y) = x^4 + y^3 + 2x^2y^2 -27y + 1$.\\
-In Example 4, we found that the critical points of $f$ are $(3,0)$ and $(-3,0)$.
+Use the Second Derivatives Test to determine the nature of  $f(x,y) = x^4 + y^3 + 2x^2y^2 -27y + 1$ at its critical points.\\
+In Example 4, we found that the critical points of $f$ are $(0, 3)$ and $(0, -3)$.
 The second derivatives are
 \[
 f_{xx} = 12x^2 + 8y^2,\; f_{yy} = 6y + 8x^2 \quad \text{and} \quad f_{xy} = 8xy
 \]
 The discriminant is
 \[
-D(x,y) = f_{xx} f_{yy} - f_{xy}^2 = (12x^2 + 8y^2)(6y + 8x^2) - 64x^2y^2
+D(x,y) = f_{xx} f_{yy} - f_{xy}^2 = (12x^2 + 8y^2)(6y + 8x^2) - (8xy)^2
 \]
-and at the critical points, it is
+and at the critical points, we have
 \[
-D(3, 0) = D(-3,0) = (108)(72) - (0)^2 = 7776
+D(0, 3)  = (72)(18) - (0)^2 = 1296 > 0
 \]
+and
+\[
+D(0, -3)  = (72)(-18) - (0)^2 = -1296 < 0
+\]
+Since $D(0, 3) > 0$, the Second Derivatives Test tells us that $f$ has a local extreme at $(0, 3)$. Furthermore, since
+$f_{xx} (0,3) = 72 > 0$, it tells us that this local extreme is a local minimum. At the other critical point,
+since $D(0, -3) < 0$, the Second Derivatives Test tells us that $f$ has a saddle point at $(0, -3)$.
 \end{example}
 
 \begin{problem}(Problem 8)
-Determine the local extrema of $f(x,y) = 2-x^4 + 2x^2 - y^2$ (from Problem 4).\\
+Use the Second Derivatives Test to determine the nature of  $f(x,y) = 2-x^4 + 2x^2 - y^2$ 
+(from Problem 4) at its critical points.\\
 \end{problem}
 
 Use the \link[3D grapher]{https://math.libretexts.org/Learning_Objects/CalcPlot3D_Interactive_Figures/CalcPlot3D} to inspect
