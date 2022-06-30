@@ -204,7 +204,7 @@ Therefore definite integral is $2\pi$, i.e.,
 
 \begin{image}
 \begin{tikzpicture}
-\begin{axis}[axis x line=  middle, axis y line =middle,xtick={-1, -2, 0, 1, 2}, ytick={0, 1, 2}, 
+\begin{axis}[axis x line=  middle, axis y line =middle,xtick={-1, -2, 0, 1, 2}, ytick={0, 1, 2}, xmin= -2.5, xmax = 2.5,
 title={The area under $f(x)=\sqrt{4-x^2}$ on $[-2, 2]$}]
 \addplot[name path = A, domain=-2:2, 
     samples=100, color=black]{(4-x^2)^(1/2)};
@@ -274,7 +274,6 @@ As mentioned earlier, there is a more elegant method for solving this problem us
 
 
 \end{document}
-
 
 
 
