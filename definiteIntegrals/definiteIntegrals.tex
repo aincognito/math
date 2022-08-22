@@ -202,13 +202,37 @@ Therefore definite integral is $2\pi$, i.e.,
 
 
 
+%\begin{image}
+%\begin{tikzpicture}
+%\begin{axis}[axis x line=  middle, axis y line =middle,xtick={-1, -2, 0, 1, 2}, ytick={0, 1, 2}, ymin= -1.2,
+%title={The area under $f(x)=\sqrt{4-x^2}$ on $[-2, 2]$}]
+%\addplot[name path = A, domain=-2:2, 
+ %   samples=100, color=black]{(4-x^2)^(1/2)};
+%\addplot[->, thin, samples = 100, color=black] coordinates {(0,2.2) (0,-1.2)};
+%\addplot[<-, name path = B, domain=-2.1:2.1, samples=100, color=black]{0};
+%\addplot[blue!10] fill between[of=A and B];
+
+%\addplot[thick, color=black] coordinates {(-.05, 2) (.05, 2)};
+%\addplot[ultra thin, color=black] coordinates {(-.05, 1) (.05, 1)};
+%\addplot[ultra thin, color=black] coordinates {(1,-.05) (1, .05)};
+%\addplot[ultra thin, color=black] coordinates {(-1,-.05) (-1,.05)};
+
+%\node at (axis cs: 0,.5){Area = $2\pi$};
+
+%\end{axis}
+
+%\end{tikzpicture}
+%\end{image}
+
+
 \begin{image}
 \begin{tikzpicture}
-\begin{axis}[axis x line=  middle, axis y line =middle,xtick={-1, -2, 0, 1, 2}, ytick={0, 1, 2}, ymin= -1.2,
+\begin{axis}[axis x line=  middle, axis y line =middle,xtick={-1, -2, 0, 1, 2}, ytick={0, 1, 2}, 
+enlarge y limits = .15, ymin = -0.37,
 title={The area under $f(x)=\sqrt{4-x^2}$ on $[-2, 2]$}]
 \addplot[name path = A, domain=-2:2, 
     samples=100, color=black]{(4-x^2)^(1/2)};
-\addplot[->, thin, samples = 100, color=black] coordinates {(0,2.2) (0,-1.2)};
+\addplot[->, thin, samples = 100, color=black] coordinates {(0,2.2) (0,-0.76)};
 \addplot[<-, name path = B, domain=-2.1:2.1, samples=100, color=black]{0};
 \addplot[blue!10] fill between[of=A and B];
 
@@ -226,6 +250,8 @@ title={The area under $f(x)=\sqrt{4-x^2}$ on $[-2, 2]$}]
 %\legend{$y = f(x)$, , secant line, tangent line, };
 \end{tikzpicture}
 \end{image}
+
+
 
 \end{example}
 
