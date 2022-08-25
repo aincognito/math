@@ -397,7 +397,7 @@ we get an expression that is free of radicals:
 
 \[(\sqrt u + \sqrt v)(\sqrt u - \sqrt v) = (\sqrt u)^2 - (\sqrt v)^2 = u - v.\]
 
-We will now take advantage of this technique to find limits.
+We will now take advantage of this to find limits.
 
 \begin{example}[example 5]
 Compute the limit:
@@ -405,8 +405,8 @@ Compute the limit:
 
 To solve this limit problem, we will use the conjugate radical of the
 numerator, which is $\sqrt{x} + 2$.  In order to maintain the value of
-the expression given in the problem, we multiply by the conjugate radical
-over itself (which is equal to one):
+the expression given in the problem, we multiply by one in the form of the conjugate radical
+over itself:
 
 
 
@@ -424,7 +424,7 @@ In the last step, we plugged in the terminal value $x=4$ to get the final answer
 
 
 
-\begin{problem}(problem 5)
+\begin{problem}(problem 5a)
   Compute the limit:
   \[
   \lim_{x \to 9} \frac{\sqrt{x}-3}{x-9}
@@ -448,34 +448,7 @@ In the last step, we plugged in the terminal value $x=4$ to get the final answer
 		
 \end{problem}
 
-
-
-\begin{example}[example 6]
-Compute the limit:
-\[\lim_{x \to 1} \frac{x- \sqrt{x}}{x-1}.\]
-
-To solve this limit problem, we will use the conjugate radical of the
-numerator, which is $x+ \sqrt{x}$.  In order to not change the value of
-the expression given in the problem, we multiply by the conjugate radical
-divided by itself (which is equal to one):
-
-
-
-\begin{align*}
-\lim_{x \to 1} \frac{x- \sqrt{x}}{x-1} &=
-\lim_{x \to 1} \frac{x- \sqrt{x}}{x-1}\cdot \frac{x+ \sqrt{x}}{x+ \sqrt{x}} \\[.4 em]
- &= \lim_{x \to 1} \frac{x^2- x}{(x-1)(x+ \sqrt{x})} \\[.4 em]
-&= \lim_{x \to 1} \frac{x(x-1)}{(x-1)(x+ \sqrt{x})} \\[.4 em]
-&= \lim_{x \to 1}\frac{x}{x+ \sqrt{x}} \\[.4 em]
-&= \frac 12.
-\end{align*}
-
-In the last step, we plugged in the terminal value $x=1$ to get the final answer $\frac12$.
-
-\end{example}
-
-
-\begin{problem}(problem 6)
+\begin{problem}(problem 5b)
   Compute the limit:
   \[
   \lim_{x \to 2} \frac{x- \sqrt{2x}}{x-2}
@@ -498,6 +471,58 @@ In the last step, we plugged in the terminal value $x=1$ to get the final answer
 		 $\answer{\frac12}$
 		
 \end{problem}
+
+\begin{example}[example 6]
+Compute the limit:
+\[\lim_{h \to 0} \frac{\sqrt{9+h}-3}{h}.\]
+
+To solve this limit problem, we will use the conjugate radical of the
+numerator, which is $\sqrt{9+h}+3$.  In order to not change the value of
+the expression given in the problem, we multiply by one in the form of the conjugate radical
+divided by itself:
+
+
+
+\begin{align*}
+\lim_{h \to 0} \frac{\sqrt{9+h}-3}{h} &=
+\lim_{h \to 0} \frac{\sqrt{9+h}-3}{h}\cdot \frac{\sqrt{9+h}+3}{\sqrt{9+h}+3} \\[.4 em]
+ &= \lim_{h \to 0} \frac{(9+h) - 9}{h(\sqrt{9+h} + 3)} \\[.4 em]
+&= \lim_{h \to 0} \frac{h}{h(\sqrt{9+h} + 3)} \\[.4 em]
+&= \lim_{h \to 0}\frac{1}{\sqrt{9+h} + 3} \\[.4 em]
+&= \frac16.
+\end{align*}
+
+In the last step, we plugged in the terminal value $h=0$ to get the final answer $\frac16$.
+
+\end{example}
+
+\begin{problem} (problem 6)
+Compute the limit:
+  \[
+  \lim_{h \to 0} \frac{\sqrt{4-h}-2}{h}
+  \]
+  
+    \begin{hint}
+      When you plug in $h = 0$, you get $\frac00$
+    \end{hint}
+    \begin{hint}
+      Multiply by the conjugate radical
+    \end{hint}
+    \begin{hint}
+      $\sqrt a + \sqrt b$ and $\sqrt a - \sqrt b$ are conjugates
+    \end{hint}
+    \begin{hint}
+      Use the difference of squares formula in the numerator: $(a-b)(a+b) = a^2 - b^2$ 
+    \end{hint}
+    
+		The value of the limit is
+		 $\answer{-\frac14}$
+		
+\end{problem}
+
+
+
+
 
 
 
@@ -811,7 +836,6 @@ Using this in the limit, we get
 
 
 \end{document}
-
 
 
 
