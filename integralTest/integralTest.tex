@@ -260,7 +260,7 @@ which is negative if $x > e$. Hence $f(x)$ is eventually decreasing and we can u
 \int_2^\infty \frac{\ln(x)}{x} \; dx &= \lim_{t \to \infty} \int_2^t \frac{\ln(x)}{x} \; dx\\
 &= \lim_{t \to \infty} \int_{\ln(2)}^{\ln(t)} u \, du \;\; \left(\text{u-sub with $u = \ln(x), du = \frac{1}{x} dx$}\right)\\
 &= \lim_{t \to \infty} \frac{u^2}{2} \bigg|_{\ln(2)}^{\ln(t)}\\
-&= \lim_{t \to \infty} \left(\ln^2(t) - \ln^2(2) \right)\\
+&= \frac12\lim_{t \to \infty} \left(\ln^2(t) - \ln^2(2) \right)\\
 &= \infty.
 \end{align*}
 The improper integral diverges, so by the Integral Test, the associated infinite series
