@@ -61,11 +61,13 @@ if $f'(x)$ is decreasing on $I$, then $f(x)$ is \textbf{concave down} on $I$.
 %lies above its tangent lines, and if $f(x)$ is concave down on $I$, 
 %then the graph lies below its tangent lines.
 
-%The simplest examples to illustrate this are $f(x) = x^2$, which is concave up everywhere and $f(x) = -x^2$
+%The simplest examples to illustrate this are $f(x) = x^2$, which is concave up 
+%everywhere and $f(x) = -x^2$
 %which is concave down everywhere. 
 %Make a rough sketch of each of these functions including a few tangent lines to see this.
 
-The following theorem helps us to determine where a function is concave up and where it is concave down.\\
+The following theorem helps us to determine where a function is concave up and 
+where it is concave down.\\
 
 \begin{theorem}[Concavity]
 If $f''(x) > 0$ on an interval $I$, then $f(x)$ is concave up on $I$ and
@@ -75,20 +77,35 @@ if $f''(x) < 0$ on an interval $I$, then $f(x)$ is concave down on $I$.
 
 
 \begin{example}[example 1]
-Consider the function $f(x) = x^2$.  It is concave up on the interval $(-\infty, \infty)$ since $f''(x) = 2 > 0$
-for all $x$.
+Find intervals where the function $f(x) = x^2$ is concave up or concave down.\\
+The second derivative is given by
+\[
+f''(x) = 2
+\]
+Since $f''(x) > 0$ for all values of $x$, $f(x) = x^2$ is concave up on the 
+interval $(-\infty, \infty)$. This is clear based on the graph of $y = x^2$ as well.
 \end{example}
 
 \begin{example}[example 2]
-Consider the function $f(x) = e^x$.  It is concave up on the interval $(-\infty, \infty)$ since $f''(x) = e^x > 0$
-for all $x$.
+Find intervals where the function $f(x) = e^x$ is concave up or concave down.\\
+The second derivative is given by
+\[
+f''(x) = e^x
+\]
+Since $f''(x) > 0$ for all values of $x$, $f(x) = e^x$ is concave up on the 
+interval $(-\infty, \infty)$. This is clear based on the graph of $y = e^x$ as well.
 \end{example}
 
 
 \begin{example}[example 3]
-Consider the function $f(x) = x^3$.  Its second derivative is $f''(x) = 6x$ 
-which has the same sign as $x$ itself. Thus $f(x) = x^3$ is concave up on the interval $(0, \infty)$
-and concave down on the interval $(-\infty, 0)$.
+Find intervals where the function $f(x) = x^3$ is concave up or concave down.\\
+The second derivative is given by
+\[
+f''(x) = 6x
+\]
+Since $f''(x)$ has the same sign as $x$ itself, $f(x) = x^3$ is concave up on the 
+interval $(0, \infty)$ and concave down on the interval $(-\infty, 0)$. 
+This is clear based on the graph of $y = x^3$ as well.
 \end{example}
 
 
@@ -101,7 +118,8 @@ If $f(x)$ is continuous at $x=a$ and $f(x)$ changes concavity at $x = a$, then
 we say that $f(x)$ has an \textbf{inflection point} at $x = a$.
 \end{definition} 
 
-In the next two examples, we will discuss the curvature of the given functions and find their inflection points.
+In the next two examples, we will discuss the curvature of the given functions and 
+find their inflection points.
 
 
 \begin{image}
@@ -124,7 +142,8 @@ In the next two examples, we will discuss the curvature of the given functions a
  
 
 \begin{example}[example 4]
-Determine where the cubic polynomial $f(x) = x^3 + 12x^2 - 7x + 10$ is concave up, concave down and find the inflection points.\\
+Determine where the cubic polynomial $f(x) = x^3 + 12x^2 - 7x + 10$ is concave up, 
+concave down and find the inflection points.\\
 The second derivative of $f(x)$ is 
 $f''(x) = 6x + 24$.  To determine where $f''(x)$ is positive and where it is negative, 
 we will first determine where it is zero. Hence, we will solve the equation
@@ -135,9 +154,11 @@ We have $6x + 24 = 0$ so $x = -4$.
 This value breaks the real number line into two intervals, $(-\infty, -4)$ and $(-4, \infty)$.
 The second derivative maintains the same sign throughout each of these intervals.  
 To determine whether it is positive or negative, we choose a test point in each interval.
-For the interval, $(-\infty, -4)$, we choose $x = -5$.  Plugging this into the second derivative, we get
+For the interval, $(-\infty, -4)$, we choose $x = -5$.  
+Plugging this into the second derivative, we get
 $f''(-5) = 6(-5) + 24 = -6 < 0$. Next, we choose the test point 
-$x = 0$ for the interval $(-4, \infty)$.  Plugging this into the second derivative gives $f''(0) = 6(0) + 24 = 24 > 0$.
+$x = 0$ for the interval $(-4, \infty)$.  Plugging this into the second 
+derivative gives $f''(0) = 6(0) + 24 = 24 > 0$.
 We can use this information to create a sign chart for the second derivative, as shown below.
 
 
@@ -162,12 +183,14 @@ We can now use the concavity theorem to conclude that
 the original function,
 $f(x) = x^3 + 12x^2 - 7x +10$ is concave down on the interval $(-\infty, -4)$.
 and concave up on the interval $(-4, \infty)$.
-Finally, noting that the original polynomial is continuous everywhere and changes concavity at $x = -4$, we can say that
+Finally, noting that the original polynomial is continuous everywhere and changes 
+concavity at $x = -4$, we can say that
 $f(x) = x^3 + 12x^2 - 7x +10$ has an inflection point at $x = -4$.
 
 \begin{image}
 \begin{tikzpicture}
-\begin{axis}[axis lines = center,  axis y line=none, xmin=-10.5, xmax = 3.5,ymin = -50, ymax = 399, xtick={-4}, ytick={}, 
+\begin{axis}[axis lines = center,  axis y line=none, xmin=-10.5, xmax = 3.5,
+ymin = -50, ymax = 399, xtick={-4}, ytick={}, 
               title={Inflection point at $x = -4$}]
 \addplot[smooth,blue, domain=-10:3, thick] {x^3 + 12*x^2 - 7*x + 10};
 \addplot[blue, mark = *] coordinates{(-4,166)} node[right,blue] {inflection point};
@@ -225,8 +248,13 @@ $f(x) = x^3 + 12x^2 - 7x +10$ has an inflection point at $x = -4$.
 
 
 \begin{example}[example 5]
-Consider the cubic polynomial $f(x) = 2x^3 + 3x^2 - 36x +2$.  Its second derivative is 
-$f''(x) = 12x + 6$.  To determine where $f''(x)$ is positive and where it is negative, 
+Determine where the cubic polynomial $f(x) = 2x^3 + 3x^2 - 36x + 2$ is concave up, 
+concave down and find the inflection points.\\
+The second derivative of $f(x)$ is
+\[
+f''(x) = 12x + 6
+\]
+To determine where $f''(x)$ is positive and where it is negative, 
 we will first determine where it is zero. Hence, we will solve the equation
 \[f''(x) = 0\]
 for $x$.
@@ -235,7 +263,8 @@ We have $12x + 6 = 0$ so $x = -1/2$.
 This value breaks the real number line into two intervals, $(-\infty, -1/2)$ and $(-1/2, \infty)$.
 The second derivative maintains the same sign throughout each of these intervals.  
 To determine whether it is positive or negative, we choose a test point in each interval.
-For the interval, $(-\infty, -1/2)$, we choose $x = -1$.  Plugging this into the second derivative, we get
+For the interval, $(-\infty, -1/2)$, we choose $x = -1$.  
+Plugging this into the second derivative, we get
 $f''(-1) = 12(-1) + 6 = -6 < 0$.  
 
 Next, for the interval $(-1/2, \infty)$, we choose the test point 
@@ -247,10 +276,11 @@ $x = 0$.  Plugging this into the second derivative gives $f''(0) = 12(0) + 6 = 6
 
 \begin{image}
 \begin{tikzpicture}
-\begin{axis}[axis lines = center,  axis y line=none, xmin=-2.5, xmax = 1.5, xtick={-1/2}, xticklabels={$-\frac12$}, ytick={}]
+\begin{axis}[axis lines = center,  axis y line=none, xmin=-2.5, xmax = 1.5, 
+xtick={-1/2}, xticklabels={$-\frac12$}, ytick={}]
 \addplot[smooth,black, domain=-2.5:1.5, thick, <->] {0};
 %\addplot[blue, mark = *] coordinates{(-4,166)} node[right,blue] {inflection point};
-\node at (axis cs:-0.5, 0.45){Sign of $f''(x)$ };
+\node at (axis cs:-0.5, 0.45){Sign chart for $f''(x)$ };
 \node at (axis cs:-1.5, 0.15){ - \ - \ - \ - };
 \node at (axis cs:0.5, 0.15){ + \ + \ +  };
 %\node[blue] at (axis cs:0.2, 50){\begin{tabular}{c} concave\\up \end{tabular}};
@@ -264,7 +294,8 @@ We can now use the concavity theorem to conclude that
 the original function,
 $f(x) = 2x^3 + 3x^2 - 36x +2$ is concave down on the interval $(-\infty, -\frac12)$,
 and concave up on the interval $(-\frac12, \infty)$.
-Finally, noting that the original polynomial is continuous everywhere and changes concavity at $x = -\frac12$, 
+Finally, noting that the original polynomial is continuous everywhere and changes 
+concavity at $x = -\frac12$, 
 we can say that
 $f(x) = 2x^3 + 3x^2 - 36x +2$ has an inflection point at $x = -\frac12$.
 
@@ -330,7 +361,8 @@ ymax = 90, xtick={-0.5}, xticklabels={$-\frac12$},ytick={},
 	
 \end{problem}
 
-\begin{problem}(problem 5c) Find the intervals of increase/decrease, local extremes, intervals of concavity and inflection points for the function
+\begin{problem}(problem 5c) Find the intervals of increase/decrease, local extremes, 
+intervals of concavity and inflection points for the function
 \[
 f(x) = x^5 - 15x^3 + 40x + 11.
 \]
@@ -338,7 +370,9 @@ f(x) = x^5 - 15x^3 + 40x + 11.
 
 
 \begin{example}[example 6]
-Consider the function $f(x) = x^2e^{3x}$.  To find its second derivative, 
+Determine where the function $f(x) = x^2e^{3x}$ is concave up, concave down and find 
+the inflection points.\\
+To find $f''(x)$, 
 we will need to use the product rule twice. First, 
 \[f'(x) = x^2 \cdot 3e^{3x} + 2xe^{3x} = (3x^2 + 2x)e^{3x},\]
 and second
@@ -346,7 +380,8 @@ and second
 Now that we have the second derivative, we set it equal to zero.  Solve
 \[(9x^2 + 12x + 2)e^{3x}=0\]
 for $x$.
-Since the exponential $e^{3x}$ is never equal to zero, the only solutions come from setting the quadratic to zero:
+Since the exponential $e^{3x}$ is never equal to zero, the only solutions come from 
+setting the quadratic to zero:
 \[9x^2 + 12x + 2=0.\]
 This quadratic does not factor, so we need to use the quadratic formula.
 The solutions are 
@@ -374,7 +409,8 @@ and
 
 \begin{image}
 \begin{tikzpicture}
-\begin{axis}[axis lines = center,  axis y line=none, xmin=-2.66, xmax = 1.33, xtick={-1.138, -0.195}, xticklabels={$\alpha$, $\beta$}, ytick={}]
+\begin{axis}[axis lines = center,  axis y line=none, xmin=-2.66, xmax = 1.33, 
+xtick={-1.138, -0.195}, xticklabels={$\alpha$, $\beta$}, ytick={}]
 \addplot[smooth,black, domain=-2.66:1.33, thick, <->] {0};
 %\addplot[blue, mark = *] coordinates{(-4,166)} node[right,blue] {inflection point};
 \node at (axis cs:-0.66, 0.45){Sign of $f''(x)$ };
@@ -393,7 +429,8 @@ We can now use the concavity theorem to conclude that
 the original function, $f(x) = x^2 e^{3x}$ is concave up on the intervals $(-\infty, \alpha)$ 
 and $(\beta, \infty)$ and it is concave down on the interval 
 $(\alpha, \beta)$.
-Finally, we can infer from this that the continuous function $f(x) = x^2 e^{3x}$ has inflection points at 
+Finally, we can infer from this that the continuous function $f(x) = x^2 e^{3x}$ has 
+inflection points at 
 \[
 x = \alpha= \dfrac{-2 - \sqrt{2}}{3} \quad \text{and} \quad x = \beta = \dfrac{-2 + \sqrt{2}}{3}.
 \]
@@ -488,7 +525,8 @@ ymax = .2, xtick={-1.138, -0.195}, xticklabels={$\alpha$, $\beta$},ytick={},
       Is $f$ continuous there?
     \end{hint}  
 		List multiple answers in ascending order.\\
-	On the interval $[0, 2\pi]$, the function $f(x) = \cos(x)$ has inflection points at $x =\answer{\pi/2}$ and $x=\answer{3\pi/2}$.
+	On the interval $[0, 2\pi]$, the function $f(x) = \cos(x)$ has inflection 
+	points at $x =\answer{\pi/2}$ and $x=\answer{3\pi/2}$.
 		
 	
 \end{problem}
@@ -496,7 +534,9 @@ ymax = .2, xtick={-1.138, -0.195}, xticklabels={$\alpha$, $\beta$},ytick={},
 
 
 \begin{example}[example 7]
-Consider the function $f(x) = e^{-x^2}.$ By the chain rule, its derivative is 
+Determine where the function $f(x) = e^{-x^2}$ is concave up, concave down and find the 
+inflection points.\\
+By the chain rule, its derivative is 
 \[
 f'(x) = -2xe^{-x^2}
 \]
@@ -514,7 +554,8 @@ Solving for $x$ gives
 x^2 = \frac 12 \implies  x = \pm \frac{1}{\sqrt{2}} \approx \pm 0.707
 \]
 
-These two values of $x$ break the real number line into three intervals: $(-\infty, -\tfrac{1}{\sqrt 2}),
+These two values of $x$ break the real number line into three 
+intervals: $(-\infty, -\tfrac{1}{\sqrt 2}),
 (-\tfrac{1}{\sqrt 2}, \tfrac{1}{\sqrt 2})$ and $(\tfrac{1}{\sqrt 2}, \infty)$. 
 The sign of $f''(x)$ will remain the same on each of these intervals. 
 To determine the sign on each interval, we use the test points
@@ -537,7 +578,8 @@ f''(1) = (4(1)^2 - 2) e^{-(1)^2} = 2e^{-1} > 0.
 
 \begin{image}
 \begin{tikzpicture}
-\begin{axis}[axis lines = center,  axis y line=none, xmin=-3, xmax = 3, xtick={-0.707, 0.707}, xticklabels={$-\frac{1}{\sqrt 2}$, $\frac{1}{\sqrt 2}$}, ytick={}]
+\begin{axis}[axis lines = center,  axis y line=none, xmin=-3, xmax = 3, 
+xtick={-0.707, 0.707}, xticklabels={$-\frac{1}{\sqrt 2}$, $\frac{1}{\sqrt 2}$}, ytick={}]
 \addplot[smooth,black, domain=-3:3, thick, <->] {0};
 %\addplot[blue, mark = *] coordinates{(-4,166)} node[right,blue] {inflection point};
 \node at (axis cs:0, 0.45){Sign of $f''(x)$ };
@@ -616,18 +658,24 @@ ymax = 1.2, xtick={-.707, .707}, xticklabels={$-\frac{1}{\sqrt 2}$, $\frac{1}{\s
 
 
 \begin{example}[example 8]
-Consider the function $f(x) = \dfrac{1}{x}.$ Its derivative is 
+Determine where the cubic polynomial $f(x) = \dfrac{1}{x}$ is concave up, concave down and 
+find the inflection points.\\
+From the power rule with $n = -1$, we have 
 \[
 f'(x) = -\frac{1}{x^2}
 \]
-and its second derivative is
+and its second derivative is (power rule, $n = -2$)
 \[
 f''(x) = \frac{2}{x^3}.
 \]
-Now we make the observation that $x^3$ has the same sign as $x$ and so $f''(x)$ will have the same sign as $x$
-in this example. Thus $f''(x) > 0$ on the interval $(0, \infty)$ and $f''(x) < 0$ on the interval $(-\infty,0).$
-We conclude that $f(x)$ is concave up on $(0, \infty)$ and concave down on the interval $(-\infty, 0).$ 
-Since $f(x) = \frac{1}{x}$ is \textbf{not} continuous at $x=0$ (it has an infinite discontinuity there), 
+Now we make the observation that $x^3$ has the same sign as $x$ and so $f''(x)$ will have 
+the same sign as $x$
+in this example. Thus $f''(x) > 0$ on the interval $(0, \infty)$ and $f''(x) < 0$ on the 
+interval $(-\infty,0).$
+We conclude that $f(x)$ is concave up on $(0, \infty)$ and concave down on the 
+interval $(-\infty, 0).$ 
+Since $f(x) = \frac{1}{x}$ is \textbf{not} continuous at $x=0$ (it has an infinite 
+discontinuity there), 
 there is no inflection point there.  
 
 %\begin{image}
@@ -670,7 +718,8 @@ there is no inflection point there.
 \end{problem}
 
 \section{Using the graph of the derivative}
-In this section, we are given the graph of the derivative, $f'(x)$, and we are asked to make conclusions about the original function, $f(x)$.
+In this section, we are given the graph of the derivative, $f'(x)$, and we are 
+asked to make conclusions about the original function, $f(x)$.
 
 \begin{example}[example 9]
 Use the graph of $f'(x)$, shown below, to answer the following questions about the graph of $f(x)$.
@@ -698,17 +747,26 @@ Where is $f(x)$ concave up/down and where are its inflection points?
 \end{image}
 
 To answer the first question, recall that when $f'(x) > 0$, then $f(x)$ is increasing,
-and when $f'(x) < 0$, then $f(x)$ is decreasing.  From the graph, we see that $f'(x)$ is positive on the intervals 
-$(-\infty, -2)$ and $(2, \infty)$.  Hence, the graph of $f(x)$ is increasing on these intervals. We can also see that 
+and when $f'(x) < 0$, then $f(x)$ is decreasing.  From the graph, we see that $f'(x)$ is 
+positive on the intervals 
+$(-\infty, -2)$ and $(2, \infty)$.  Hence, the graph of $f(x)$ is increasing on 
+these intervals. We can also see that 
 $f'(x)$ is negative on the interval $(-2, 2)$ and therefore $f(x)$ is decreasing on this interval.
-We can now use the first derivative test to determine the nature of the local extremes. Since $f'(-2) = 0$ and $f'(x)$
-changes sign from positive to negative at $x = -2$, the function, $f(x)$, has a local maximum at $x = -2$.
+We can now use the first derivative test to determine the nature of the local extremes. 
+Since $f'(-2) = 0$ and $f'(x)$
+changes sign from positive to negative at $x = -2$, the function, $f(x)$, has a 
+local maximum at $x = -2$.
 Similarly, Since $f'(2) = 0$ and $f'(x)$
-changes sign from negative to positive at $x = 2$, the function, $f(x)$, has a local minimum at $x = 2$.\\
-To determine the concavity of $f(x)$,recall that $f(x)$ is concave up when $f'(x)$ is increasing and $f(x)$
-is concave down when $f'(x)$ is decreasing.  From the graph, we see that $f'(x)$ is increasing on the interval $(0, \infty)$,
-and decreasing on the interval $(-\infty, 0)$. Hence, the graph of $f(x)$ is concave up on $(0, \infty)$
-and concave down on $(-\infty, 0)$.  Finally, $f(x)$ has an inflection point at $x = 0$ due to the change in concavity there.
+changes sign from negative to positive at $x = 2$, the function, $f(x)$, has a 
+local minimum at $x = 2$.\\
+To determine the concavity of $f(x)$,recall that $f(x)$ is concave up when $f'(x)$ is 
+increasing and $f(x)$
+is concave down when $f'(x)$ is decreasing.  From the graph, we see that $f'(x)$ is 
+increasing on the interval $(0, \infty)$,
+and decreasing on the interval $(-\infty, 0)$. Hence, the graph of $f(x)$ is 
+concave up on $(0, \infty)$
+and concave down on $(-\infty, 0)$.  Finally, $f(x)$ has an inflection 
+point at $x = 0$ due to the change in concavity there.
 
 
 \end{example}
@@ -825,17 +883,28 @@ Where is $f(x)$ concave up/down and where are its inflection points?
 \end{image}
 
 To answer the first question, recall that when $f'(x) > 0$, then $f(x)$ is increasing,
-and when $f'(x) < 0$, then $f(x)$ is decreasing.  From the graph, we see that $f'(x)$ is positive on the intervals 
-$(0, 2)$ and $(2, \infty)$.  Hence, the graph of $f(x)$ is increasing on these intervals. We can also see that 
-$f'(x)$ is negative on the interval $(-\infty, 0)$ and therefore $f(x)$ is decreasing on this interval.
-We can now use the first derivative test to determine the nature of the local extremes. Since $f'(0) = 0$ and $f'(x)$
-changes sign from negative to positive at $x = 0$, the function, $f(x)$, has a local minimum at $x = 0$.
-The situation at $x = 2$ is different. From the graph, we see that $f'(2) = 0$ but $f'(x)$ does not change sign at $x = 2$- 
-it is positive on either side. Thus, $f(x)$ does not have a local extreme at the critical number, $x = 2$.\\
-To determine the concavity of $f(x)$,recall that $f(x)$ is concave up when $f'(x)$ is increasing and $f(x)$
-is concave down when $f'(x)$ is decreasing.  From the graph, we see that $f'(x)$ is increasing on the intervals $(-\infty, .7)$
-and $(2, \infty)$ and decreasing on the interval $(0.7, 2)$. Hence, the graph of $f(x)$ is concave up on $(-\infty, .7)$ and $(2, \infty)$
-and concave down on $(.7, 2)$.  Finally, $f(x)$ has an inflection points at $x = .7$ and $x = 2$ due to the changes in concavity at these points.
+and when $f'(x) < 0$, then $f(x)$ is decreasing.  From the graph, we see 
+that $f'(x)$ is positive on the intervals 
+$(0, 2)$ and $(2, \infty)$.  Hence, the graph of $f(x)$ is increasing on 
+these intervals. We can also see that 
+$f'(x)$ is negative on the interval $(-\infty, 0)$ and therefore $f(x)$ is 
+decreasing on this interval.
+We can now use the first derivative test to determine the nature of the local extremes. 
+Since $f'(0) = 0$ and $f'(x)$
+changes sign from negative to positive at $x = 0$, the function, $f(x)$, has a 
+local minimum at $x = 0$.
+The situation at $x = 2$ is different. From the graph, we see that $f'(2) = 0$ 
+but $f'(x)$ does not change sign at $x = 2$- 
+it is positive on either side. Thus, $f(x)$ does not have a local extreme at the 
+critical number, $x = 2$.\\
+To determine the concavity of $f(x)$,recall that $f(x)$ is concave up when $f'(x)$ is 
+increasing and $f(x)$
+is concave down when $f'(x)$ is decreasing.  From the graph, we see that $f'(x)$ is 
+increasing on the intervals $(-\infty, .7)$
+and $(2, \infty)$ and decreasing on the interval $(0.7, 2)$. Hence, the 
+graph of $f(x)$ is concave up on $(-\infty, .7)$ and $(2, \infty)$
+and concave down on $(.7, 2)$.  Finally, $f(x)$ has an inflection 
+points at $x = .7$ and $x = 2$ due to the changes in concavity at these points.
 
 
 \end{example}
@@ -983,7 +1052,8 @@ The critical numbers of $f(x)$ are $x = -2$ and $x = 3$ (verify).
 Next, $f''(x) = 12x - 6$ (verify).
 Plugging the critical numbers into the second derivative gives,
 \[f''(-2) = -30 < 0 \; \text{and} \; f''(3) = 30 >0.\]
-By the Second Derivative Test, $f(x) = 2x^3 - 3x^2 -36x +2$ has a local maximum at $x = -2$ and a local minimum at $x =3$.
+By the Second Derivative Test, $f(x) = 2x^3 - 3x^2 -36x +2$ has a local 
+maximum at $x = -2$ and a local minimum at $x =3$.
 
 \end{example}
 

@@ -24,7 +24,8 @@ We will also determine the local extremes of the function.
 
 
 \begin{definition}
-A function $f(x)$ is called \textbf{increasing} on an interval $I$ if given any two numbers, $x_1$ and $x_2$ in $I$ such that 
+A function $f(x)$ is called \textbf{increasing} on an interval $I$ if given any two 
+numbers, $x_1$ and $x_2$ in $I$ such that 
 $x_1 < x_2$, we have $f(x_1) < f(x_2)$.\\ 
 
 Similarly, $f(x)$ is called \textbf{decreasing} on an interval $I$ if given any two numbers,
@@ -40,8 +41,10 @@ $x_1 < x_2$, we have $f(x_1) > f(x_2)$.
 
 \begin{center}
 \begin{tikzpicture}
-\begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal, xtick={.75, 1.5},
-xticklabels={$x_1$, $x_2$}, ymin = -1, ytick={1.682, 2.828}, yticklabels={$f(x_1)$, $f(x_2)$}, title={$f(x)$ is increasing on $I$}]
+\begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, 
+axis equal, xtick={.75, 1.5},
+xticklabels={$x_1$, $x_2$}, ymin = -1, ytick={1.682, 2.828}, yticklabels={$f(x_1)$, $f(x_2)$}, 
+title={$f(x)$ is increasing on $I$}]
 
 \addplot[domain=-1:2, color=blue, thick]{2^x};
 \addplot[dashed, gray] coordinates{(0.75, 0)  (0.75, 1.682)};
@@ -59,8 +62,10 @@ xticklabels={$x_1$, $x_2$}, ymin = -1, ytick={1.682, 2.828}, yticklabels={$f(x_1
 \end{tikzpicture}
 \hspace{2 in}
 \begin{tikzpicture}
-\begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal,xmin=-1, xmax = 2.5, xtick={.5, 1.5},
-xticklabels={$x_1$, $x_2$},ymin=-0.1,ymax=1.5, ytick={1.007, 0.6536}, yticklabels={$f(x_1)$, $f(x_2)$}, title={$f(x)$ is decreasing on $I$}]
+\begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, 
+axis equal,xmin=-1, xmax = 2.5, xtick={.5, 1.5},
+xticklabels={$x_1$, $x_2$},ymin=-0.1,ymax=1.5, ytick={1.007, 0.6536}, 
+yticklabels={$f(x_1)$, $f(x_2)$}, title={$f(x)$ is decreasing on $I$}]
 
 \addplot[domain=-0.5:2, color=blue, thick]{0.3+ 1/2^x};
 \addplot[dashed, gray] coordinates{(0.5, 0)  (0.5, 1.007)};
@@ -101,7 +106,8 @@ xticklabels={$x_1$, $x_2$},ymin=-0.1,ymax=1.5, ytick={1.007, 0.6536}, yticklabel
 
 %\begin{image}
 %\begin{tikzpicture}
-%\begin{axis}[axis x line=  center, axis y line = none, xtick={-1, 0.5, 2}, xticklabels={$a$,$c$,$b$}, 
+%\begin{axis}[axis x line=  center, axis y line = none, 
+%xtick={-1, 0.5, 2}, xticklabels={$a$,$c$,$b$}, 
 %legend pos=outer north east, title={MVT for $f(x) $ on $[a,b]$}]
 %\addplot[domain=-1:2, 
  %   samples=100, color=black]{-x^2 + 5 };
@@ -120,11 +126,13 @@ xticklabels={$x_1$, $x_2$},ymin=-0.1,ymax=1.5, ytick={1.007, 0.6536}, yticklabel
 %\end{image}
 
 
-%insert desmos interactive to get the feel for positive derivative means increasing function and vise versa.
+%insert desmos interactive to get the feel for positive derivative means 
+%increasing function and vise versa.
 
 
-The derivative is used to determine the intervals where a function is either increasing or decreasing.
-The following theorem is a direct consequence of the cornerstone, Mean Value Theorem.
+The derivative is used to determine the intervals where a function is either 
+increasing or decreasing.
+The following theorem is a direct consequence of the cornerstone, Mean Value Theorem (section 3.5).
 
 
 \begin{theorem}[Increasing/Decreasing]
@@ -132,17 +140,21 @@ Suppose $f(x)$ is a differentiable function on an open interval $I$.
 
 %or:  Let $I$ be an open interval and suppose $f$ is differentiable on $I$.
  If $f'(x) > 0$ on $I$, 
-then $f(x)$ is increasing on $I$ and similarly, if $f'(x) < 0$ on $I$, then $f(x)$ is decreasing on $I$.
+then $f(x)$ is increasing on $I$ and,\\
+ if $f'(x) < 0$ on $I$, then $f(x)$ is 
+decreasing on $I$.
 \end{theorem}
 
 \begin{center}
 
 \begin{tikzpicture}
 
-\begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal, xtick={},
-xticklabels={}, ymin = -1, ytick={}, yticklabels={}, title={$f'(x)>0$  on an interval $I$}]
+\begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, 
+axis equal, xtick={},
+xticklabels={}, ymin = -1, ytick={}, yticklabels={}, title={$f'(x)>0$on an interval $I$}]
 
-\addplot[domain=-1:2, color=blue, thick]{2^x} node[pos=.5, below, sloped] {increasing} node[pos=.5, above, sloped] {$f'(x) > 0$};
+\addplot[domain=-1:2, color=blue, thick]{2^x} node[pos=.5, below, sloped] {increasing} 
+node[pos=.5, above, sloped] {$f'(x) > 0$};
 \addplot[thick, violet] coordinates{(2, 0) (-1, 0)} node[below left, violet]{$I$};
 \addplot[domain=.2:1.8,red,thin] {2*0.69*x + .62};
 \addplot[mark=*,fill=red] coordinates {(1,2)};
@@ -162,10 +174,12 @@ xticklabels={}, ymin = -1, ytick={}, yticklabels={}, title={$f'(x)>0$  on an int
 
 \begin{tikzpicture}
 
-\begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal,xmin=-1, xmax = 2.5, xtick={},
+\begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, 
+axis equal,xmin=-1, xmax = 2.5, xtick={},
 xticklabels={},ymin=-0.1,ymax=1.5, ytick={}, yticklabels={}, title={$f'(x)<0$ on an interval $I$}]
 
-\addplot[domain=-0.5:2, color=blue, thick]{0.3+1/2^x} node[pos=.5, below, sloped] {decreasing} node[pos=.5, above, sloped] {$f'(x) < 0$ on $I$};
+\addplot[domain=-0.5:2, color=blue, thick]{0.3+1/2^x} node[pos=.5, below, sloped] {decreasing} 
+node[pos=.5, above, sloped] {$f'(x) < 0$ on $I$};
 
 \addplot[thick, brown!75!black] coordinates{ (2, 0)(-0.5, 0)} node[below left, brown!75!black]{$I$};
 \addplot[domain=-.3:1.3,red,thin] {-1/2^0.5 * 0.69*(x-0.5)+ (0.3+1/2^0.5)};
@@ -183,22 +197,28 @@ xticklabels={},ymin=-0.1,ymax=1.5, ytick={}, yticklabels={}, title={$f'(x)<0$ on
 
 %Proof (Increasing case): Let $x_1$ and $x_2$ be in the interval $I$ with $x_1 < x_2$.  
 %Then since $f$ is differentiable on the closed interval 
-%$[x_1, x_2]$, it is also continuous there.  Hence we can apply the MVT on to $f(x)$ on $[x_1, x_2]$ and conclude that
+%$[x_1, x_2]$, it is also continuous there.  
+%Hence we can apply the MVT on to $f(x)$ on $[x_1, x_2]$ and conclude that
 %\[f(x_2) - f(x_1) = f'(c) (x_2 - x_1).\]
-%Both factors on the right hand side are positive, hence $f(x_2) - f(x_1)$ is positive and $f(x_2)> f(x_1)$.  
+%Both factors on the right hand side are positive, hence $f(x_2) - f(x_1)$ is 
+%positive and $f(x_2)> f(x_1)$.  
 %Hence $x_1 < x_2$implies $f(x_1)< f(x_2)$ which means that $f(x)$ is increasing on $I$.
 
-%We now use this theorem to determine intervals on which a given function is either increasing or decreasing.
+%We now use this theorem to determine intervals on which a given function is 
+%either increasing or decreasing.
 
 
 \begin{example}[example 1]
-Determine the intervals on which a function of the form $f(x) = mx + b$ is increasing or decreasing.\\
+Determine the intervals on which a function of the form $f(x) = mx + b$ is 
+increasing or decreasing.\\
 The graph of a function of this form is a straight line with slope, $m=f'(x) $.
-If $m > 0$, then $f(x) = mx+b$ is increasing on the interval $(-\infty, \infty)$  and if $m < 0$, then it is decreasing on $(-\infty, \infty)$ .
+If $m > 0$, then $f(x) = mx+b$ is increasing on the interval $(-\infty, \infty)$  
+and if $m < 0$, then it is decreasing on $(-\infty, \infty)$ .
 
 \begin{center}
 \begin{tikzpicture}
-\begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal, xtick={},
+\begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, 
+axis equal, xtick={},
 xticklabels={}, ytick={}, yticklabels={},xmax= 2.4, title={$f(x)= mx+b, m>0$}]
 
 \addplot[<->,domain=-2:1, color=blue, thick]{x+1};
@@ -211,7 +231,8 @@ xticklabels={}, ytick={}, yticklabels={},xmax= 2.4, title={$f(x)= mx+b, m>0$}]
 \end{tikzpicture}
 \hspace{1.5 in}
 \begin{tikzpicture}
-\begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal, xtick={},
+\begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, 
+axis equal, xtick={},
 xticklabels={}, ytick={}, yticklabels={}, ymin = -2, title={$f(x)= mx+b, m<0$}]
 
 \addplot[<->,domain=-1:2, color=blue, thick]{1-x};
@@ -234,7 +255,8 @@ Determine whether the function $f(x) = 3 - 4x$ is increasing or decreasing on $(
 \end{problem}
 
 \begin{problem}(problem 1b)
-Determine whether the function $f(x) = \frac{x}{5}$ is increasing or decreasing on $(-\infty, \infty)$.\\
+Determine whether the function $f(x) = \frac{x}{5}$ is increasing or 
+decreasing on $(-\infty, \infty)$.\\
 \begin{multipleChoice}
 \choice[correct]{increasing}
 \choice{decreasing}
@@ -246,12 +268,14 @@ Determine whether the function $f(x) = \frac{x}{5}$ is increasing or decreasing 
 Determine the intervals on which the function $f(x) = 2x + x^5$ is increasing or decreasing.\\
 The derivative of this polynomial is $f'(x) = 2 + 5x^4$. Since $x^4 \geq 0$ for all values of $x$, 
 
-$f'(x) > 0$ on the interval $(-\infty, \infty)$. Thus $f(x) = 2x + x^5$ is an increasing function on $(-\infty, \infty)$.
+$f'(x) > 0$ on the interval $(-\infty, \infty)$. Thus $f(x) = 2x + x^5$ is an increasing 
+function on $(-\infty, \infty)$.
 
 \end{example}
 
 \begin{problem}(problem 2a)
-Determine whether the function $f(x) = 2x + x^3$ is increasing or decreasing on $(-\infty, \infty)$.\\
+Determine whether the function $f(x) = 2x + x^3$ is increasing or 
+decreasing on $(-\infty, \infty)$.\\
 \begin{multipleChoice}
 \choice[correct]{increasing}
 \choice{decreasing}
@@ -259,7 +283,8 @@ Determine whether the function $f(x) = 2x + x^3$ is increasing or decreasing on 
 \end{problem}
 
 \begin{problem}(problem 2b)
-Determine whether the function $f(x) = -x - x^7$ is increasing or decreasing on $(-\infty, \infty)$.\\
+Determine whether the function $f(x) = -x - x^7$ is increasing or 
+decreasing on $(-\infty, \infty)$.\\
 \begin{multipleChoice}
 \choice{increasing}
 \choice[correct]{decreasing}
@@ -269,12 +294,15 @@ Determine whether the function $f(x) = -x - x^7$ is increasing or decreasing on 
 
 \begin{example}[example 3]
 Determine the intervals on which the function $f(x) = 4x - x^2$ is increasing or decreasing.\\
-The derivative of this polynomial is $f'(x) = 4 -  2x$. If $x > 2$, then $f'(x) <0$ which means that $f(x)$ is decreasing on the interval $(2, \infty)$.
+The derivative of this polynomial is $f'(x) = 4 -  2x$. If $x > 2$, then $f'(x) <0$ 
+which means that $f(x)$ is decreasing on the interval $(2, \infty)$.
 Similarly, if $x<2$, then $f'(x) >0$ and so $f(x)$ is increasing on the interval $(-\infty, 2)$.
 \begin{image}
 \begin{tikzpicture}
-\begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, axis equal, xtick={2},
-xticklabels={2}, ytick={4}, yticklabels={4},xmin = -1, xmax = 5, ymin = -2.5, ymax = 4.5, title={$f(x)= 4x-x^2$}]
+\begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, 
+axis equal, xtick={2},
+xticklabels={2}, ytick={4}, yticklabels={4},xmin = -1, xmax = 5, ymin = -2.5, ymax = 4.5, 
+title={$f(x)= 4x-x^2$}]
 
 \addplot[domain=-0.5:4.5, color=blue, thick]{4*x-x^2};
 \addplot[mark = *, blue] coordinates {(2,4)};
@@ -311,11 +339,13 @@ The domain of $e^{-x}$ is $(-\infty,\infty)$ and
 \[
 \frac{d}{dx} e^{-x} = -e^{-x} < 0 \text{ on the interval } (-\infty, \infty),
 \]
-since $e^{-x} > 0$ for all $x$. By the increasing/decreasing theorem, $f(x) = e^{-x}$ is decreasing on its domain, $(-\infty, \infty)$.
+since $e^{-x} > 0$ for all $x$. By the increasing/decreasing theorem, $f(x) = e^{-x}$ is 
+decreasing on its domain, $(-\infty, \infty)$.
 
 \begin{image}
 \begin{tikzpicture}
-\begin{axis}[axis lines = center, xmin=-1, xmax = 4.5, title={$f(x) = e^{-x}$ is decreasing on $(-\infty, \infty)$}]
+\begin{axis}[axis lines = center, xmin=-1, xmax = 4.5, title={$f(x) = e^{-x}$ is 
+decreasing on $(-\infty, \infty)$}]
 \addplot[smooth,blue, domain=-1:4, thick] {e^(-x)};
 \node[blue] at (axis cs:2, 1){$y = e^{-x}$};
 \end{axis}
@@ -357,12 +387,14 @@ The domain of $\tan^{-1}(x)$ is $(-\infty,\infty)$ and
 \[
 \frac{d}{dx} \tan^{-1}(x) = \frac{1}{1+x^2} > 0 \text{ on the interval } (-\infty, \infty).
 \]
-By the increasing/decreasing theorem, $f(x) = \tan^{-1}(x)$ is increasing on its domain, $(-\infty, \infty)$.
+By the increasing/decreasing theorem, $f(x) = \tan^{-1}(x)$ is increasing on its 
+domain, $(-\infty, \infty)$.
 
 \begin{image}
 \begin{tikzpicture}
 \begin{axis}[axis lines = center, xmin=-5.5, xmax = 5.5, ymin=-2, ymax = 2, ytick={-1.57, 1.57},
-yticklabels={$-\tfrac{\pi}{2}$, $\tfrac{\pi}{2}$}, title={$f(x) = \tan^{-1}(x)$ is increasing on $(-\infty, \infty)$}]
+yticklabels={$-\tfrac{\pi}{2}$, $\tfrac{\pi}{2}$}, title={$f(x) = \tan^{-1}(x)$ is 
+increasing on $(-\infty, \infty)$}]
 \addplot[smooth,blue, domain=-5:5, thick] {rad(atan(x))};
 \node[blue] at (axis cs:3, 0.7){$y = \tan^{-1}(x)$};
 \addplot[dashed,domain=-1.5: -5.5]{-1.57};
@@ -414,7 +446,9 @@ The function $\ln|x|:$
               
 \end{enumerate}
 To see the last property, let $x<0$ and use the chain rule:
-                 $$\frac{d}{dx} \ln|x|= \frac{d}{dx} \ln(-x) = \frac{1}{-x}\cdot(-1) = \frac{1}{x}. $$
+\[
+		\frac{d}{dx} \ln|x|= \frac{d}{dx} \ln(-x) = \frac{1}{-x}\cdot(-1) = \frac{1}{x}
+\]
 This derivative can now be used to determine the intervals of increase and decrease.
 Observe that
 $$ \frac{1}{x} > 0 \quad \text{ precisely when} \quad x >0  \;\;\text{ and},$$
@@ -453,7 +487,8 @@ Is $f(x) = 3\ln(x)$ increasing or decreasing on the interval $(0, \infty)$?
 
 \begin{example}[example 7]
 Determine intervals on which $f(x) = 2x^3 - 3x^2  - 36x + 2$ is increasing or decreasing.\\
-According to the theorem, we must determine where $f'(x)$ is positive and  where $f'(x)$ is negative. 
+According to the theorem, we must determine where $f'(x)$ is positive and  
+where $f'(x)$ is negative. 
 To do this, it is often easiest to first determine where $f'(x) = 0$ or 
 $f'(x)$ is undefined. In this example, 
 \[f'(x) = 6x^2 - 6x -36\] 
@@ -463,20 +498,24 @@ which yields
 \[6(x+2)(x-3) = 0\] 
 and hence, $x=-2$ or $x=3$. 
 Note that these are the critical numbers of $f(x)$.
-These two $x$-values break the real number line into three open intervals: $(-\infty, -2), (-2, 3)$ and $(3, \infty)$.
+These two $x$-values break the real number line into three open 
+intervals: $(-\infty, -2), (-2, 3)$ and $(3, \infty)$.
 On each of these intervals, $f'$ will be either strictly positive or strictly negative.  
 To determine which, we will use \textbf{test points}. 
-For the interval, $(-\infty, -2)$ we will use $x=-3$ as the test point (any number in the interval is acceptable). 
+For the interval, $(-\infty, -2)$ we will use $x=-3$ as the test 
+point (any number in the interval is acceptable). 
 Then we consider the derivative at this point: $f'(-3) = (-3)^2 - (-3) -6 = 6 >0$.
 This means that $f'(x) > 0$ for every $x$ value in the interval $(-\infty, -2)$ and by the theorem, 
 $f(x)$ is increasing on this interval.
 
-Next, for the interval $(-2, 3)$, we will use $x=0$ as the test point, and we have $f'(0) = (0)^2 - (0) -6 = -6 <0$. 
+Next, for the interval $(-2, 3)$, we will use $x=0$ as the test point, 
+and we have $f'(0) = (0)^2 - (0) -6 = -6 <0$. 
 This means that $f'(x) < 0$ for every $x$ value in the interval $(-2, 3)$ and by the theorem, 
 $f(x)$ is decreasing on this interval.
 
 
-Finally, for the interval $(3, \infty)$, we will use $x=4$ as the test point and we have $f'(4) = (4)^2 - (4) -6 = 10>0$. 
+Finally, for the interval $(3, \infty)$, we will use $x=4$ as the test point and we 
+have $f'(4) = (4)^2 - (4) -6 = 10>0$. 
 This means that $f'(x) > 0$ for every $x$ value in the interval $(3, \infty)$ and by the theorem, 
 $f(x)$ is increasing on this interval.
 
@@ -517,7 +556,8 @@ Select all that apply:
 
 \begin{example}[example 8]
 Determine intervals on which $f(x) = xe^{3x}$ is increasing or decreasing.\\
-According to the theorem, we must determine where $f'(x)$ is positive and  where $f'(x)$ is negative. 
+According to the theorem, we must determine where $f'(x)$ is positive and  
+where $f'(x)$ is negative. 
 To do this, it is often easiest to first determine where $f'(x) = 0$ or 
 $f'(x)$ is undefined. By the  product rule, 
 \[f'(x) = 3xe^{3x} + e^{3x} = (3x+1)e^{3x}\] 
@@ -526,17 +566,21 @@ which exists for all $x$. There is one solution to the equation,
 and that is  $x=-1/3$. 
 Note that $e^{3x} > 0$ for any value of $x$.
 
-This critical number breaks the real number line into two open intervals: $(-\infty, -1/3)$ and $(-1/3, \infty)$.
+This critical number breaks the real number line into two open 
+intervals: $(-\infty, -1/3)$ and $(-1/3, \infty)$.
 On each of these intervals, $f'$ will be either strictly positive or strictly negative.  
 To determine which, we will use \textbf{test points}. 
-For the interval, $(-\infty, -1/3)$ we will use $x=-1$ as the test point (any number in the interval is acceptable). 
+For the interval, $(-\infty, -1/3)$ we will use $x=-1$ as the test 
+point (any number in the interval is acceptable). 
 Then we consider the derivative at this point: $f'(-1) = (3(-1) + 1)e^{-3} = -2e^{-3} <0$.
-This means that $f'(x) < 0$ for every $x$ value in the interval $(-\infty, -1/3)$ and by the theorem, 
+This means that $f'(x) < 0$ for every $x$ value in the 
+interval $(-\infty, -1/3)$ and by the theorem, 
 $f(x)$ is decreasing on this interval.
 
 
 
-For the interval $(-1/3, \infty)$, we will use $x=0$ as the test point and we have $f'(0) = (3(0)+1)e^0 = 1>0$. 
+For the interval $(-1/3, \infty)$, we will use $x=0$ as the test point and we 
+have $f'(0) = (3(0)+1)e^0 = 1>0$. 
 This means that $f'(x) > 0$ for every $x$ value in the interval $(-1/3, \infty)$ and by the theorem, 
 $f(x)$ is increasing on this interval.
 
@@ -573,17 +617,20 @@ Select all that apply:
 
 
 
-The work that was done in the previous example can actually give us slightly more information about $f(x)$.  
+The work that was done in the previous example can actually give us slightly more 
+information about $f(x)$.  
 We can determine the \textbf{local extremes} of $f(x)$.
 
 \begin{definition}[Local Extremes]
-We say that $f(x)$ has a \textbf{local maximum} at $x = a$ if there is an open interval $I$ containing $a$ 
+We say that $f(x)$ has a \textbf{local maximum} at $x = a$ if there is an open 
+interval $I$ containing $a$ 
 such that $f(x) \leq f(a)$ for all values of $x$ in $I$.  Similarly, we say that $f(x)$ has a 
 \textbf{local minimum} at $x = a$ if there is an open interval $I$ containing $a$ 
 such that $f(x) \geq f(a)$ for all values of $x$ in $I$.
 \end{definition}
 
-Critical numbers can help us find the location and the nature of local extremes and the next theorem tells us how.
+Critical numbers can help us find the location and the nature of local 
+extremes and the next theorem tells us how.
 
 \begin{theorem}[First Derivative Test]
   %Suppose $x=a$ is a critical number of the function $f(x)$. \\
@@ -631,13 +678,17 @@ If $f'(x)$ changes sign from positive to negative $x=a$,
 
 \begin{example}[example 9]
 Find the local extremes of $f(x) =2x^3 - 3x^2 - 36x + 2 $.\\
-In a prior example, we found that the critical numbers for $f(x)$ are $-2$ and $3$.  We also noted that
+In a prior example, we found that the critical numbers for $f(x)$ are $-2$ and $3$.  
+We also noted that
 $f'(x)$ changed sign from positive to negative at $x = -2$ and from negative to positive at $x=3$.
-Hence, by the First Derivative Test, $f(x) = 2x^3 - 6x^2 - 36x + 2$ has a local maximum at $x = -2$ and a local minimum at $x=3$.
+Hence, by the First Derivative Test, $f(x) = 2x^3 - 6x^2 - 36x + 2$ has a local 
+maximum at $x = -2$ and a local minimum at $x=3$.
 \begin{image}
 \begin{tikzpicture}
-\begin{axis}[ axis x line = center,  axis y line = center, xtick = {-2, 3},ymin=-155, xmin = -5.25, xmax = 6.3, ytick={-79,46},  
-xticklabels = {-2, 3},yticklabels = {-79,46}, title = {Local maximum at $x = -2$ and local minimum at $x = 3$}]
+\begin{axis}[ axis x line = center,  axis y line = center, xtick = {-2, 3},ymin=-155, 
+xmin = -5.25, xmax = 6.3, ytick={-79,46},  
+xticklabels = {-2, 3},yticklabels = {-79,46}, title = {Local maximum at $x = -2$ and 
+local minimum at $x = 3$}]
 
 \addplot[<->,domain=-5:6,
     samples=100, color=blue, thick]{2*x^3 - 3*x^2 - 36*x + 2};
@@ -758,7 +809,8 @@ $f(x)$ has a local minimum at $x = \answer{-2}.$
 
 
 \begin{example}[example 10]
-Find intervals on which $f(x) = xe^{3x}$ is increasing or decreasing and find and describe the local extremes.\\
+Find intervals on which $f(x) = xe^{3x}$ is increasing or decreasing and find and 
+describe the local extremes.\\
 We begin by finding the critical numbers of $f(x)$. By the product and chain rules, 
 \[f'(x) = e^{3x} + xe^{3x}\cdot 3 = e^{3x}(1+3x).\]
 The derivative exists for all $x$.  Setting the derivative equal to zero gives
@@ -768,7 +820,8 @@ and the second equation has one solution, $x = -1/3$.
 This one critical number breaks the real number line into two intervals,$(-\infty, -1/3)$
 and $(-1/3, \infty)$.  
 By the Intermediate Value Theorem, the derivative will not change sign on these intervals. 
-We choose a test point from each interval to plug into $f'(x)$ to determine its sign on the corresponding interval.
+We choose a test point from each interval to plug into $f'(x)$ to determine its 
+sign on the corresponding interval.
 From $(-\infty, -\frac13)$, we will choose the $x = -1$ and from
 $(-\frac13, \infty)$ we will choose $x = 0$.
 Thus, 
@@ -790,12 +843,14 @@ This information is summarized in the sign chart below.
 \end{tikzpicture}
 \end{image}
 
-Applying the increasing/decreasing theorem, we can conclude that $f(x)$ is decreasing on the interval $(-\infty, -1/3)$
+Applying the increasing/decreasing theorem, we can conclude that $f(x)$ is 
+decreasing on the interval $(-\infty, -1/3)$
 and increasing on the interval $(-1/3, \infty)$.
 
 As for the local extremes, at the critical number $x = -1/3$,
 the derivative changes sign from negative to positive, so by the First Derivative Test,
-$f(x)$ has a local minimum at $x = -1/3$. There are no other critical numbers, so there are no other local extremes for this function.
+$f(x)$ has a local minimum at $x = -1/3$. There are no other critical numbers, 
+so there are no other local extremes for this function.
 \begin{image}
 \begin{tikzpicture}
 \begin{axis}[ axis x line = center,  axis y line = center, xtick = {-1/3}, ytick={-0.1226},  
@@ -883,7 +938,8 @@ is increasing or decreasing.
 
 \begin{image}
 \begin{tikzpicture} 
-\begin{axis}[ axis x line=middle, axis y line=middle, ymax=5, ymin=-5, xlabel=$x$,ylabel=$y$, title={Graph of the derivative, $y = f'(x)$} ] 
+\begin{axis}[ axis x line=middle, axis y line=middle, ymax=5, ymin=-5, xlabel=$x$,
+ylabel=$y$, title={Graph of the derivative, $y = f'(x)$} ] 
 \addplot[blue,mark=none, domain=-3:3,samples=40, thick] {4-x^2};
 \node[color=blue] at (axis cs: -2,3){$y=f'(x)$}; 
 
@@ -892,18 +948,24 @@ is increasing or decreasing.
 \end{image}
 
 
-First, recall that the Increasing/Decreasing Theorem states that $f(x)$ is increasing on intervals where $f'(x) > 0$ and
+First, recall that the Increasing/Decreasing Theorem states that $f(x)$ is 
+increasing on intervals where $f'(x) > 0$ and
 $f(x)$ is decreasing on intervals where $f'(x) < 0$.
-Such intervals can be determined from the graph of $f'(x)$ by noting when it is above or below the $x$-axis.
-This graph is above the $x$-axis on the interval $(-2, 2)$ and below the $x$-axis on the intervals $(-\infty, -2)$
+Such intervals can be determined from the graph of $f'(x)$ by noting when it is 
+above or below the $x$-axis.
+This graph is above the $x$-axis on the interval $(-2, 2)$ and below the $x$-axis on the 
+intervals $(-\infty, -2)$
 and $(2, \infty)$. When the graph of $f'(x)$ is above the $x$-axis, then $f'(x)>0$ and hence, $f(x)$
-is increasing. Likewise, when the graph of $f'(x)$ is below the $x$-axis, then $f'(x)<0$ and $f(x)$ is decreasing.
-We can now interpret the graph of $f'(x)$ to state that $f(x)$ is increasing on the interval $(-2, 2)$ 
+is increasing. Likewise, when the graph of $f'(x)$ is below the $x$-axis, 
+then $f'(x)<0$ and $f(x)$ is decreasing.
+We can now interpret the graph of $f'(x)$ to state that $f(x)$ is increasing on the 
+interval $(-2, 2)$ 
 and $f(x)$ is decreasing on the intervals $(-\infty, -2)$ and $(2, \infty)$.
 
 
 
-%From the graph of $f'(x)$, above, we can see that $f'(x) > 0$ on the interval $(-2, 2)$ and $f'(x) < 0$ on the intervals  
+%From the graph of $f'(x)$, above, we can see that $f'(x) > 0$ on the 
+%interval $(-2, 2)$ and $f'(x) < 0$ on the intervals  
 %Specifically, we have $f(x)$ is increasing 
 
 \end{example}
@@ -912,12 +974,14 @@ and $f(x)$ is decreasing on the intervals $(-\infty, -2)$ and $(2, \infty)$.
 
 
 \begin{problem}(problem 11)
-Use the graph of $y = f'(x)$ shown below to determine where $f(x)$ is increasing/decreasing and find the local extremes.
+Use the graph of $y = f'(x)$ shown below to determine where $f(x)$ is 
+increasing/decreasing and find the local extremes.
 
 \begin{image}
 \begin{tikzpicture} 
 \begin{axis}[ axis x line=middle, axis y line=middle, ymax=5, ymin=-5, xlabel=$x$,ylabel=$y$,
-xtick={-2, 2}, xticklabels= {$-3$, 3}, ytick={-4, 4}, yticklabels={$-6$, 6}, title={Graph of the derivative, $y = f'(x)$} ] 
+xtick={-2, 2}, xticklabels= {$-3$, 3}, ytick={-4, 4}, yticklabels={$-6$, 6}, 
+title={Graph of the derivative, $y = f'(x)$} ] 
 \addplot[blue,mark=none, domain=-3:3,samples=40, thick] {x^2 - 4};
 \node[color=blue] at (axis cs: 2,-3){$y=f'(x)$}; 
 
