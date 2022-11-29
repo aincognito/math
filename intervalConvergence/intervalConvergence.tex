@@ -20,8 +20,18 @@ We find the interval of convergence of a power series.
 
 We will find the interval of convergence of a power series.
 
+
+Loosely speaking, a power series is a polynomial of infinite degree. For example,
+\[
+\sum_{n=0}^\infty \frac{x^n}{n+1} = 1 + \frac{x}{2} + \frac{x^2}{3} + \frac{x^3}{4} + \cdots
+\]
+The name power series comes from the fact that we have an infinite series that contains 
+powers of the variable $x$. In the formal definition of a power series below, 
+we allow for powers of $x-a$ rather than just powers of $x$.  
+The number $a$ is called the center of the power series. 
+The power series in the example above has center at $0$.
 \begin{definition}[Power Series]
-A \textbf{power series} with center at $x = a$ is an infinite series of the form
+A \textbf{power series} with center at $a$ is an infinite series of the form
 \[
 \sum_{n=0}^\infty c_n(x-a)^n
 \]
@@ -29,20 +39,26 @@ A \textbf{power series} with center at $x = a$ is an infinite series of the form
 
 Some examples of power series are:
 \[ 
-\sum_{n=0}^\infty x^n, \; \sum_{n=0}^\infty \frac{x^n}{n!}, \;\text{and} \sum_{n=0}^\infty \frac{n^2(x+ 2)^n}{2^n}.
+\sum_{n=0}^\infty x^n, \;\;\; \sum_{n=0}^\infty \frac{x^n}{n!} 
+\;\;\;\text{and}\;\;\; \sum_{n=0}^\infty \frac{n^2(x+ 2)^n}{2^n}.
 \]
 The first two have center at $x = 0$ and the third is centered at $x = -2$. 
-The question we ask when confronted with a power series is, ``for which values of $x$ does the series converge?"
-The theory tells us that the power series will converge in an interval centered at the center of the power series.
+The question we ask when confronted with a power series is, 
+``for which values of $x$ does the power series converge?"
+The theory tells us that the power series will converge in an interval centered at the 
+center of the power series.
 To find this \textbf{interval of convergence}, we frequently use the ratio test.
 
 \begin{example}[example 1]
 Find the interval of convergence of the power series $\displaystyle{\sum_{n=0}^\infty x^n}$.\\
-Noting that this series happens to be a geometric series (with common ratio $x$), we can use the fact that this series will converge 
-if and only in $|x| < 1$.  This is equivalent to the interval $(-1, 1)$ and this is the interval of convergence of the power series.
+Noting that this series happens to be a geometric series (with common ratio $x$), 
+we can use the fact that this series will converge 
+if and only in $|x| < 1$.  This is equivalent to the interval $(-1, 1)$ and this is the 
+interval of convergence of the power series.
 In other words, for any value of $x$ in this interval, 
 the resulting series will converge and for any value of $x$ outside of this interval, 
-the series will diverge. Notice that the interval of convergence is centered around $x = 0$, which is the center of the power series.
+the series will diverge. Notice that the interval of convergence is centered 
+around $x = 0$, which is the center of the power series.
 \end{example}
 
 \begin{problem}(problem 1)
