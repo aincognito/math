@@ -23,11 +23,10 @@ distinct pieces and count the number of elements in each piece.
 
 \begin{definition}[Partition]
 A partition of a set $S$ is a collection of non-empty sets $S_1, S_2, ..., S_n$ satisfying the 
-following three properties:
+following two properties:
 \begin{align*}
-1) & S_i \subset S \text{ for } i = 1, 2, ..., n \text{ and} \\
-2) & S_i \cap S_j = \emptyset \text{ for } i \neq j \text{ with } 1 \leq i,j \leq n\\
-3) & S_1 \cup S_2 \cup \cdots \cup S_n = S
+1) & S_i \cap S_j = \emptyset \text{ for } i \neq j \text{ with } 1 \leq i,j \leq n\\
+2) & S_1 \cup S_2 \cup \cdots \cup S_n = S
 \end{align*}
 \end{definition}
 
@@ -45,7 +44,7 @@ following three properties:
 \end{tikzpicture}
 \end{image}
 \begin{remark}
-The second property states that the subsets of $S$ are pairwise disjoint.
+The first property states that the subsets $S_1, S_2, \dots, S_n$ of $S$ are pairwise disjoint.
 \end{remark}
 
 We will denote the number of elements in a set $S$ by $|S|$. The main result
