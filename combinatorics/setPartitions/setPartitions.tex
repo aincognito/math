@@ -18,15 +18,16 @@ We use partitions to enumerate sets.
 
 \section{Partitions}
 
-When counting the number of elements in a set, it is sometimes helpful to break the set into distinct pieces and 
-count the number of elements in each piece. 
+When counting the number of elements in a set, it is sometimes helpful to break the set into
+distinct pieces and count the number of elements in each piece. 
 
 \begin{definition}[Partition]
-A partition of a set $S$ is a collection of sets $S_1, S_2, ..., S_n$ satisfying the 
-following two properties:
+A partition of a set $S$ is a collection of non-empty sets $S_1, S_2, ..., S_n$ satisfying the 
+following three properties:
 \begin{align*}
 1) & S_i \subset S \text{ for } i = 1, 2, ..., n \text{ and} \\
 2) & S_i \cap S_j = \emptyset \text{ for } i \neq j \text{ with } 1 \leq i,j \leq n
+3) & S_1 \cup S_2 \cup \cdots \cup S_n = S
 \end{align*}
 \end{definition}
 
@@ -44,7 +45,7 @@ following two properties:
 \end{tikzpicture}
 \end{image}
 \begin{remark}
-The second property states that the subsets of $S$ are mutually disjoint.
+The second property states that the subsets of $S$ are pairwise disjoint.
 \end{remark}
 
 We will denote the number of elements in a set $S$ by $|S|$. The main result
@@ -83,13 +84,13 @@ The number of outcomes whose sum is at most 5 is $\answer{10}$.
 \begin{problem}(problem 1b)
 Two 6-sided dice are thrown, one of which is red and the other green.  
 In how many ways can their sum be a prime number?\\
-The number of outcomes whose is prime is $\answer{15}$.
+The number of outcomes whose sum is prime is $\answer{15}$.
 \end{problem}
 
 \begin{problem}(problem 1c)
 Two 6-sided dice are thrown, one of which is red and the other green.  
 In how many ways can their sum be an odd number?\\
-The number of outcomes whose is odd is $\answer{18}$.
+The number of outcomes whose sum is odd is $\answer{18}$.
 \end{problem}
 
 
