@@ -43,13 +43,14 @@ Now we can see that
 Compute 
 \[\int 2x\cos(x^2 + 1) \ dx.\]
 
-First, note that the function $cos(x^2 + 1)$ is a composition.  The inside function is $x^2 + 1$.
+First, note that the function $\cos(x^2 + 1)$ is a composition.  The inside function is $x^2 + 1$.
 Moreover, the derivative of the inside function is $2x$ which is also present in our integrand.
 These observations suggest that we should try the substitution $u = x^2 + 1$.
 If we let $u = x^2 + 1$, then using the differential form of the derivative,  we have
 \[du = 2x \ dx\]
 
-Now, the original integral which was in terms of the variable $x$ and the differential $dx$ can be rewritten in terms of the new variable $u$ and its differential $du$.  Substituting $u$ for $x^2 + 1$ and $du$ for $g'(x) dx$, the original integral becomes 
+Now, the original integral which was in terms of the variable $x$ and the differential $dx$ can be rewritten in terms of the new variable $u$ and its differential $du$.  
+Substituting $u$ for $x^2 + 1$ and $du$ for $2x \  dx$, the original integral becomes 
 \[\int 2x\cos(x^2 + 1) \ dx = \int \cos(x^2 + 1) \ 2x\  dx = \int \cos(u) \ du.\]
 We now have a basic integral in the variable $u$ which can easily be computed:
 \[\int \cos(u) \ du = \sin(u) + C,\]
