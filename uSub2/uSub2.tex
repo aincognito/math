@@ -1,5 +1,5 @@
 \documentclass[handout]{ximera}
-\usepackage{tcolorbox}
+
 \input{../preamble}
 
 \outcome{Compute an anti-derivative by reversing the chain rule.}
@@ -11,7 +11,7 @@
 \begin{document}
 
 \begin{abstract}
-In this section we learn to reverse the chain rule by making a substitution.
+In this section we reverse the chain rule by making a substitution.
 \end{abstract}
 
 \maketitle
@@ -43,18 +43,25 @@ Now we can see that
 Compute 
 \[\int 2x\cos(x^2 + 1) \ dx.\]
 
-Let $u = x^2 + 1$.  We have,
-\[u = x^2 + 1\]
+First, note that the function $cos(x^2 + 1)$ is a composition.  The inside function is $x^2 + 1$.
+Moreover, the derivative of the inside function is $2x$ which is also present in our integrand.
+These observations suggest that we should try the substitution $u = x^2 + 1$.
+If we let $u = x^2 + 1$, then using the differential form of the derivative,  we have
 \[du = 2x \ dx\]
 
-and the integral can be written as 
+Now, the original integral which was in terms of the variable $x$ and the differential $dx$ can be rewritten in terms of the new variable $u$ and its differential $du$.  Substituting $u$ for $x^2 + 1$ and $du$ for $g'(x) dx$, the original integral becomes 
 \[\int 2x\cos(x^2 + 1) \ dx = \int \cos(x^2 + 1) \ 2x\  dx = \int \cos(u) \ du.\]
-The last integral can be computed as 
+We now have a basic integral in the variable $u$ which can easily be computed:
 \[\int \cos(u) \ du = \sin(u) + C,\]
-and by back substituting, we have 
+This is essentially our answer except that it is in the wrong variable.  We must go back to $x$ using $u = x^2 + 1$: 
 \[\sin(u) + C = \sin(x^2 + 1) + C.\]
 Thus, using $u$-substitution we can conclude that
 \[\int 2x\cos(x^2 + 1) \ dx =  \sin(x^2 + 1) + C.\]
+As a final remark, we can check our answer by differentiation:
+\[
+\frac{d}{dx} \sin(x^2 + 1) = \cos(x^2 +1) \cdot 2x \;\; \text{by the chain rule}
+\]
+This agrees with our original integrand, so our answer is correct!
 \end{example}
 
 
@@ -96,7 +103,7 @@ Let $u = \answer{x^3 + 2}$. Then $du = \answer{3x^2 dx}$.\\
 \begin{hint}
 Don't forget the `dx' in your answer for `du'.
 \end{hint}
-Convert to an intergal in the variable $u$:
+Convert to an integral in the variable $u$:
 \[\int 3x^2(x^3 + 2)^6 \ dx = \int\answer{u^6 du}\]
 \begin{hint}
 Don't forget the `du' in your integral.
@@ -135,7 +142,7 @@ Don't forget the `dx' in your answer for `du'.
 \end{hint}
 If $x = 1$, then $u = \answer{-1}$ and \\
 if $x = 2$, then $u = \answer{-4}$\\
-Convert to a definite intergal in the variable $u$:
+Convert to a definite integral in the variable $u$:
 \[\int_1^2 -2xe^{-x^2} \ dx = \int_{\answer{-1}}^{\answer{-4}} \answer{e^u du}\]
 \begin{hint}
 Don't forget the `du' in your integral.
@@ -165,7 +172,7 @@ then $\;du = \answer{4x^3 dx}$\\
 \begin{hint}
 Don't forget the `dx' in your answer for `du'.
 \end{hint}
-Convert to an intergal in the variable $u$:
+Convert to an integral in the variable $u$:
 \[\int 4x^3 \sqrt{x^4 +2} \ dx = \int\answer{\sqrt u du}\]
 \begin{hint}
 Don't forget the `du' in your integral.
@@ -198,7 +205,7 @@ then $\;du = \answer{4x^3 dx}$.\\
 \begin{hint}
 Don't forget the `dx' in your answer for `du'.
 \end{hint}
-Convert to an intergal in the variable $u$:
+Convert to an integral in the variable $u$:
 \[\int \frac{4x^3}{x^4 +2} \ dx = \int\answer{1/u du}\]
 \begin{hint}
 Don't forget the `du' in your integral.
@@ -235,7 +242,7 @@ then $\;du = \answer{1/x dx}$\\
 \begin{hint}
 Don't forget the `dx' in your answer for `du'
 \end{hint}
-Convert to an intergal in the variable $u$:
+Convert to an integral in the variable $u$:
 \[\int \frac{\cos(\ln x)}{x} \ dx = \int\answer{\cos(u) du}\]
 \begin{hint}
 Don't forget the `du' in your integral
