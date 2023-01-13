@@ -378,16 +378,14 @@ Compute $du$
 
 
 \begin{example}[example 11] Compute 
-\[\int e^{\frac{x}{2}} \ dx.\]
-Let $u = \frac{x}{2}$.  Then we have,
-\[u = \frac{x}{2}\]
-\[du = \tfrac12 \ dx\]
-and the integral can be written as 
-\[\int e^{\frac{x}{2}} \ dx =  \int e^{\frac{x}{2}} \cdot 2\cdot \tfrac{1}{2}  \   dx =   \int 2e^u \ du.\]
+\[\int e^{x/2} \ dx.\]
+Let $u = \frac{x}{2}$, then $du = \tfrac12 \ dx$.
+Since $2 \cdot \frac12 = 1$, the integral can be written as 
+\[\int e^{x/2} \ dx =  2\int \tfrac{1}{2}e^{x/2}   \   dx =  2 \int e^u \ du.\]
 The last integral can be computed as 
-\[\int 2e^u \ du = 2 e^u + C,\]
+\[2\int e^u \ du = 2 e^u + C,\]
 and by back substituting, we have 
-\[2e^u + C = 2e^{\frac{x}{2}}+ C.\]
+\[2e^u + C = 2e^{x/2}+ C.\]
 Thus, using $u$-substitution we can conclude that
 \[\int e^{x/2} \ dx = 2e^{x/2} + C.\]
 \end{example}
