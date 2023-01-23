@@ -1,0 +1,325 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\pgfplotsset{compat=1.13}
+
+\outcome{Learn the laws of probability}
+
+\title{1.1 Probability}
+
+
+%\documentclass[11pt,fleqn]{article}
+
+%\usepackage{amssymb,amsmath,amsthm,amsfonts}
+%\usepackage{textcomp}
+%\usepackage{tikz}
+%\usepackage{color}
+%\usepackage{xcolor}
+%\usepackage{graphicx}
+%\usepackage{indentfirst}
+%\usepackage{multirow}
+%\usepackage{bbm}
+%\usepackage{float}
+%\usepackage[fleqn,tbtags]{mathtools}
+%\usepackage{hyperref}
+%\usepackage[hidelinks]{hyperref}
+
+%\hypersetup{
+ %   colorlinks = true,
+ %   linkcolor = blue,
+ %   linkbordercolor = {white}%,
+ %   }
+
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\evensidemargin}{0in}
+%\setlength{\textwidth}{6in}
+%\setlength{\textheight}{8in}
+
+\newcommand {\be} {\begin{equation}}
+\newcommand {\ee} {\end{equation}}
+\newcommand {\by} {\begin{eqnarray}}
+\newcommand {\ey} {\end{eqnarray}}
+\newcommand {\bs} {\begin{eqnarray*}}
+\newcommand {\es} {\end{eqnarray*}}
+\newcommand {\bc} {\begin{center}}
+\newcommand {\ec} {\end{center}}
+\newcommand {\bi} {\begin{itemize}}
+\newcommand {\ei} {\end{itemize}}
+\newcommand {\bn} {\begin{enumerate}}
+\newcommand {\en} {\end{enumerate}}
+\newcommand{\ds}{\displaystyle}
+
+\renewcommand \baselinestretch{1}
+\renewcommand{\theequation} {\arabic{section}.\arabic{equation}}
+
+
+\begin{document}
+
+\begin{abstract}
+We will learn the laws of probability to compute the probability of an event.
+\end{abstract}
+
+\maketitle
+\section*{Unit 1 (Part I): Probability}
+
+\bi
+
+\item \textbf{{\color{red} Question: What is Probability?}}
+
+\bi
+ \item Probability is the study of randomness.
+\ei
+
+\item \textbf{{\color{red} Question: What does it mean to say something is ``Random''?}}
+
+ \bi
+  \item Each outcome has the same chance of occurring.
+  \item We know the possible outcomes, just uncertain which will occur.
+  \item \textbf{{\color{green} Key: A pattern (distribution) of the outcomes emerges only in the ``Long-run''.}}
+ \ei
+
+\item \underline{Three Types of Probability:}
+  \bi
+   \item Subjective - based on opinions not fact or experiments.
+    \item Empirical - based on an experiment where the certain ``event (A)'' of interest is performed numerous times.
+      \bi
+        \item[] $P(A) =$ $\#$ of times $A$ occurred / $\#$ of trials.
+      \ei
+    \item Theoretical - based on the assumption that each outcome of an event is equally likely to occur.
+       \bi
+        \item[] $P(A) =$ Number of ways $A$ can occur / number of possible outcomes.
+       \ei
+   \ei
+
+ \item \textbf{{\color{blue} View Class applet: ``Empirical vs. Theoretical''}}
+
+ \vspace{1.5in}
+
+ \item \underline{Recap: Applet}
+     \bi
+      \item[]  empirical prob. (proportion) $\rightarrow$ theoretical probability as $n \rightarrow \infty$
+      \item[]  Sums [$\sum_{i=1}^n X_i$] or counts $\nrightarrow$ (No single point) as $n \rightarrow \infty$
+     \ei
+
+ \item \underline{Basic Definitions:}
+   \bi
+    \item Sample Space $(S)$ - Set of all possible outcomes.
+    \item Event $(E)$ - is an particular outcome or a set of outcomes.
+   \ei
+
+ \newpage
+
+ \item \underline{\textbf{{\color{blue} How do we use Probability in Statistics?:}}}
+   \bi
+    \item \underline{Rare Event Rule}: If, \underline{\makebox[3in][c]{ }}, the probability of a particular observed event is extremely small, we conclude that the assumption is probably \underline{\makebox[2in][c]{ }}.
+   \ei
+  \item[] \underline{Motivating Example}: Let $E$ denote the event of a student picking the number 3 from the set $A = \{1,2,3,4\}$. (a) What is the Theoretical Probability? (b) What is the Empirical Probability? (c) What is the Status Quo (Null Hypothesis)? (d) Does the Rare Event Rule apply in this Situation?
+
+\newpage
+
+
+ \item[] \underline{Example 1:} Suppose a family has 3 children where boy and girl are equally likely. What is the probability of having at least 2 girls?
+
+
+  \vspace{3.5in}
+
+
+ \item \underline{Probability Rules:}
+
+   \bi
+    \item[1.] $P(S) = 1$
+    \item[2.] $P(A) + P(\bar{A}) = 1$
+    \item[3.] $0 \leq P(A) \leq 1$
+   \ei
+
+ \item[1.] \underline{Complement Rule}:
+
+    \vspace{1.5in}
+    
+    \newpage
+
+ \item[2.] \underline{Addition Rule}:
+
+    \vspace{2.75in}
+
+ \item[3.] \underline{Disjoint (Mutually Exclusicve)}:
+
+    \vspace{2.75in}
+
+\newpage
+
+ \item[] \underline{Example 2:} Is the following Grade distribution valid?
+\begin{center}
+ \begin{tabular}{|c c c c c|}
+ \hline
+ A & B & C & D & F \\
+ \hline\hline
+ .40 & .20 & .30 & .07 & .05 \\
+ \hline
+\end{tabular}
+\end{center}
+
+\vspace{1.5in}
+
+ \item[] \underline{Example 3:} Let $S = \{1,2,3,4,5,6,7\}$, $A = \{1,2,3\}$, $B = \{3,7\}$, $C = \{1,2,4,6\}$. Develop equations to calculate the following probabilities.
+     \bi
+      \item[a)] $P(\bar{C})$
+
+       \vspace{1.75in}
+
+      \item[b)] $P(A \cup B)$
+
+       \vspace{1.75in}
+
+      \item[c)] $P(A \cap C)$
+
+       \vspace{1.75in}
+
+      \item[d)] $P(A \cap \bar{B})$
+
+       \vspace{1.75in}
+     \ei
+
+
+ \item \underline{Conditional Probability:}
+   \bi
+    \item For any two events $A$ and $B$, the conditional probability of $A$ given $B$ is defined by
+      \bs
+        P(A|B) = \frac{P(A \cap B)} {P(B)}.
+      \es
+
+    \vspace{2.25in}
+   \ei
+ \item \underline{Independence:}
+  \bi
+   \item Two events $A$ and $B$ are said to be \textit{independent} if the outcome of one event does not affect the outcome of the other event.
+   \item To verify that two events are independent
+     \bi
+      \item[1.] $P(A|B) = P(A)$
+      \item[2.] $P(A \cap B) = P(A) \cdot P(B)$
+     \ei
+  \ei
+
+\vspace{.2in}
+
+\newpage
+
+\item[] \underline{Example 4:} Consider a Basket with 3 red chips and 5 blue chips. Two chips are selected at random \textbf{without} replacement.
+     \bi
+      \item[a)] What is the probability of a red chip on the 1st draw?
+       \vspace{1.95in}
+      \item[b)] What is the probability of a red chip on the 2nd draw?
+        \vspace{1.95in}
+     \ei
+
+
+ \item[] \underline{Example 5:} Consider a standard deck of cards. $K = \{$ drawing a king $\}$, $A = \{$ drawing an Ace $\}$. Find the following probabilities.
+    \bi
+      \item[a)] $P(K)$
+
+      \vspace{1.4in}
+
+      \item[b)] $P(A)$
+
+      \vspace{1.4in}
+
+      \item[c)] $P(K|A)$
+
+      \vspace{1.4in}
+
+      \item[d)] Are the two events independent?
+
+      \vspace{1.4in}
+
+      \item[e)] How does the results in part (c) change when we use ``with'' replacement?
+
+      \vspace{1.4in}
+
+      \item[f)] $P(K \cap A)$
+
+      \vspace{1.4in}
+
+    \ei
+
+
+\item[] \underline{Mutually Exclusive:}
+   \bi
+    \item Two events are said to be mutually exclusive if the two events have nothing in common or cannot occur at the same time.
+    \item To verify that two events are mutually exclusive (disjoint)
+     \bi
+      \item[1.] $P(A|B) = 0$
+      \item[2.] $P(A \cap B) = 0$
+     \ei
+   \ei
+
+ \item[] \underline{Example 6:} Based on the data below, is there an association between speeding tickets and gender?
+
+   \vspace{4.5in}
+
+ \item[] \underline{General Probability Equations:}
+  \bi
+   \item[1.] $P(\bar{A}) = 1 - P(A)$
+   \item[2.] $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+   \item[3.] $P(A \cap \bar{B}) = P(A) - P(A \cap B)$
+   \item[4.] $P(A | B) = P(A \cap B)/P(B) $
+   \item[5.] $P(A \cap B) = P(A) \cdot P(B|A)$
+ \ei
+
+
+ \ei
+
+
+\end{document}
+
+
+
+
+
+
+ \item[] \underline{Example 5:} If $P(A) = 3/4, P(\bar{B}) = 1/2,$ can $A$ and $B$ be disjoint?
+
+  \vspace{.75in}
+
+  \item[] \underline{Example 6:} If $A$ and $B$ are independent show that $A$ and $\bar{B}$ are independent.
+
+  \vspace{1in}
+
+   \item[] \underline{Example 7:} (Total Law of Probability). A bag contains 4 white chips and 3 red chips. A second bag contains 3 white chips and 5 red chips. One chip is selected from the 1st bag and placed into the second bag. What is the probability that a red chip is drawn from the 2nd bag?
+
+
+   \vspace{2.25in}
+
+
+    \item[] \underline{Example 8:} (Bayes Rule). Suppose that we have two bags each containing red and white chips. One bag contains three times as many white chips as red. The other bag contains three times as many red chips as white. Suppose we choose one of these bags at random. For this bag we select five balls at random, replacing each ball after it has been selected. The result is that we find 4 white balls and one red. What is the probability that we were using the bag with mainly white balls?
+
+
+\newpage
+
+\item[] \underline{General Probability Equations:}
+  \bi
+   \item[1.] $P(\bar{A}) = 1 - P(A)$
+   \item[2.] $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+   \item[3.] $P(A \cap \bar{B}) = P(A) - P(A \cap B)$
+   \item[4.] $P(A | B) = P(A \cap B)/P(B) $
+   \item[5.] $P(A \cap B) = P(A) \cdot P(B|A)$
+   \item[6.] $P(A) = \sum_{i=1}^k P(B_i) \cdot P(A | B_i)$
+   \item[7.] $P(B_j|A) = P(B_j) \cdot P(A|B_j)/P(A)$
+ \ei
+
+
+
+
+
+ \ei
+
+
+
+\end{document}
+
+
+
+
+
+
+
