@@ -23,7 +23,9 @@ We define and enumerate combinations of multisets.
 \section{Multisets}
 
 \begin{definition}[Multiset]
-A multiset is a set in which one or more of the elements is repeated.  Multisets are typically denoted by listing the elements  of the set together with their repetition numbers:
+A multiset is a set in which one or more of the elements is repeated.  
+Multisets are typically denoted by listing the elements  of the set together with their 
+repetition numbers:
 \[
 S = \{n_1 \cdot a_1, n_2 \cdot a_2, \ldots, n_k \cdot a_k\}
 \]
@@ -36,7 +38,9 @@ S = \{n_1 \cdot a_1, n_2 \cdot a_2, \ldots, n_k \cdot a_k\}
  We allow repetition numbers to be $\infty$, in which case, we have $|S| = \infty$.
  \end{remark}
  
- At the end of section 1.5, we computed the number of permutations of words that had letters repeated.  In effect, we computed the number of permutations of the elements of a multiset. In general, the number of permutations of the 
+ At the end of section 1.5, we computed the number of permutations of words that had 
+letters repeated.  In effect, we computed the number of permutations of the 
+elements of a multiset. In general, the number of permutations of the 
  multiset $S = \{n_1 \cdot a_1, n_2 \cdot a_2, \ldots, n_k \cdot a_k\}$ is
  \[
  \frac{n!}{n_1! n_2! \cdots n_k!}
@@ -49,22 +53,34 @@ S = \{n_1 \cdot a_1, n_2 \cdot a_2, \ldots, n_k \cdot a_k\}
 \section{Combinations of Multisets}
 
 \begin{example}[example 1]
-A convenience store sells donuts of three types: chocolate, jelly and glazed.  If each type is in abundant supply,
+A convenience store sells donuts of three types: chocolate, jelly and glazed.  
+If each type is in abundant supply,
 how many ways are there to select half a dozen donuts?\\
-First, the order of selection of the donuts is not important, so we are discussing combinations here, not permutations.
-Next, since each type of donut is in abundant supply, we can assume that the set of available donuts is a multiset with repetition numbers $\infty$,
-i.e. $S = \{\infty \cdot C, \infty \cdot J, \infty \cdot G\}$, where C stands for chocolate, J for jelly and G for glazed.
-To compute the number of combinations of 6 elements of this multiset, consider the following string of stars and bars:
+First, the order of selection of the donuts is not important, so we are 
+discussing combinations here, not permutations.
+Next, since each type of donut is in abundant supply, we can assume that the set of 
+available donuts is a multiset with repetition numbers $\infty$,
+i.e. $S = \{\infty \cdot C, \infty \cdot J, \infty \cdot G\}$, where C stands for 
+chocolate, J for jelly and G for glazed.
+To compute the number of combinations of 6 elements of this multiset, consider the 
+following string of stars and bars:
 \[
 **|*|***
 \]
-This symbolic representation of stars and bars corresponds to a selection of 6 donuts: namely 2 chocolate, 1 jelly and 3 glazed. The vertical bars act as separators between the types of donuts, represented by the stars. Other examples include
+This symbolic representation of stars and bars corresponds to a 
+selection of 6 donuts: namely 2 chocolate, 1 jelly and 3 glazed. 
+The vertical bars act as separators between the types of donuts, represented by the stars. 
+Other examples include
 \[
 **|****|, \;\;\; |******|, \;\; \mbox{and} \;\; ******||
 \]
-which correspond to 2C, 4J; 6J; and 6C respectively. Thus the total number of ways to select half a dozen donuts 
-corresponds to the number of ways to arrange the 6 stars and 2 bars. We can count this according to our method of permutations of multisets, mentioned above, or by using combinations of 8 objects taken 6 at a time. In either case, we 
-arrive at the conclusion that the number of ways to select half a dozen donuts at this convenience store is
+which correspond to 2C, 4J; 6J; and 6C respectively. 
+Thus the total number of ways to select half a dozen donuts 
+corresponds to the number of ways to arrange the 6 stars and 2 bars. 
+We can count this according to our method of permutations of multisets, mentioned 
+above, or by using combinations of 8 objects taken 6 at a time. In either case, we 
+arrive at the conclusion that the number of ways to select half a dozen donuts at this 
+convenience store is
 \[
 C(8,6) = \frac{8!}{6! 2!} = 28
 \]
@@ -73,7 +89,8 @@ C(8,6) = \frac{8!}{6! 2!} = 28
 
 
 \begin{problem}(problem 1a)
-A bakery has 5 types of donuts, each in abundant supply. How many ways are there to select a dozen donuts?
+A bakery has 5 types of donuts, each in abundant supply. How many ways are there to 
+select a dozen donuts?
 $\; \answer{1820}$
 \end{problem}
 
@@ -90,11 +107,22 @@ How many ways are there to select 4 pastries $\; \answer{330}$
  
 
 \begin{example}[example 2]
-A convenience store sells donuts of three types: chocolate, jelly and glazed.  If the store has only 4 chocolate donuts available with the other two types being in abundant supply, how many ways are there to select half a dozen donuts?\\
+A convenience store sells donuts of three types: chocolate, jelly and glazed.  
+If the store has only 4 chocolate donuts available with the other two types 
+being in abundant supply, how many ways are there to select half a dozen donuts?\\
 In this case, we can think of the available donuts as the following multiset: 
-$S = \{4\cdot C, \infty \cdot J, \infty \cdot G\}$ To count the number of combinations of 6 elements of this multiset, we will use the rule for complements. We will count the number of ways to select 6 donuts that violate the restriction and subtract from the total (which we found in example 1).  Further, the violation of the restriction on the chocolate donuts can be partitioned into two possibilities- 5 chocolate donuts and 6 chocolate donuts- so we will use the sum rule to count these violations.\\
-The number of combinations of 6 donuts consisting of 6 chocolate donuts is 1. This is obvious.  The number of combinations of 6 donuts consisting of exactly 5 chocolate donuts is 2: 5C, 1J and 5C, 1G.  Hence there are a grand total of $1+2 =3$
-ways to violate the restriction that there were only 4 chocolate donuts available.  That leaves the total number of combinations of 6 donuts as $C(8,6) -3 = 28 - 3 = 25$.
+$S = \{4\cdot C, \infty \cdot J, \infty \cdot G\}$ To count the number of 
+combinations of 6 elements of this multiset, we will use the rule for complements. 
+We will count the number of ways to select 6 donuts that violate the restriction and 
+subtract from the total (which we found in example 1).  Further, the violation of the 
+restriction on the chocolate donuts can be partitioned into two possibilities- 5 chocolate 
+donuts and 6 chocolate donuts- so we will use the sum rule to count these violations.\\
+The number of combinations of 6 donuts consisting of 6 chocolate donuts is 1. 
+This is obvious.  The number of combinations of 6 donuts consisting of 
+exactly 5 chocolate donuts is 2: 5C, 1J and 5C, 1G.  
+Hence there are a grand total of $1+2 =3$
+ways to violate the restriction that there were only 4 chocolate donuts available.  
+That leaves the total number of combinations of 6 donuts as $C(8,6) -3 = 28 - 3 = 25$.
 Hence there are 25 ways to select a half a dozen donuts from this convenience store.
 \end{example}
 
@@ -116,11 +144,15 @@ the number of ways to do this is $C(5, 3) = 20$.
 \end{example}
 
 \begin{problem}(problem 3a)
-A bakery has 5 types of donuts, each in abundant supply. How many ways are there to select a dozen donuts if you must have at least one of each type? $\; \answer{330}$
+A bakery has 5 types of donuts, each in abundant supply. 
+How many ways are there to select a dozen donuts if you must have at least 
+one of each type? $\; \answer{330}$
 \end{problem}
 
-\begin{problem}(problem 3a)
-A bakery has 5 types of donuts (including chocolate), each in abundant supply. How many ways are there to select a dozen donuts if you must have at least two chocolate donuts and at least one of each other type? $\; \answer{210}$
+\begin{problem}(problem 3b)
+A bakery has 5 types of donuts (including chocolate), each in abundant supply. 
+How many ways are there to select a dozen donuts if you must have at least two 
+chocolate donuts and at least one of each of the other types? $\; \answer{210}$
 \end{problem}
 
 We now turn to examples involving the number of solutions to an equation, under the assumption that 
@@ -132,7 +164,9 @@ Find the number of integer solutions to the the equation
 x_1 + x_2 + x_3 + x_4 = 10
 \]
 if $x_i \geq 0$ for $i = 1, 2, 3, 4$.\\
-Note that this problem is equivalent to the problem of selecting 10 donuts if there are 4 types, each in abundant supply. In this case, there are 10 stars and 3 bars (one less than the number of types).  Hence the number of solutions is 
+Note that this problem is equivalent to the problem of selecting 10 donuts if 
+there are 4 types, each in abundant supply. In this case, there are 10 stars 
+and 3 bars (one less than the number of types).  Hence the number of solutions is 
 \[
 C(13, 10) = \frac{13!}{10! 3!} = \frac{13 \cdot 12 \cdot 11}{3 \cdot 2 \cdot 1} = 286
 \]
@@ -148,7 +182,7 @@ if $x_i \geq 0$  for $i = 1, 2, 3, 4, 5$? $\; \answer{495}$
 
 
 \begin{example}[example 5]
-Find the number of integer solutions to the the equation
+Find the number of integer solutions to the equation
 \[
 x_1 + x_2 + x_3 + x_4 = 20
 \]

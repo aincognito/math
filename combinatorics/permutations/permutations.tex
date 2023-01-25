@@ -19,24 +19,28 @@ We define and enumerate permutations.
 \section{Permutations}
 
 
-
 \begin{definition}[Permutation]
 A permutation of selection of objects in a particular order.
 \end{definition}
-The notation $P(n,k)$ represents the number of permutations of $k$ objects taken from a group of $n$ objects. Permutations are counted using the fundamental principle of counting.
+The notation $P(n,k)$ represents the number of permutations of $k$ objects taken 
+from a group of $n$ objects. 
+Permutations are counted using the fundamental principle of counting.
 
 
 \begin{example}[example 1]
-A fifth grade class consisting of 24 students wishes to elect a class president, vice-president, secretary and treasurer.
+A fifth grade class consisting of 24 students wishes to elect a class
+president, vice-president, secretary and treasurer.
 Assuming that no student can hold more than one office, in how many ways can these
 positions be filled?\\
 The selection of class officers can be thought of as a permutation because
 the order of the selection of the 4 students determines which office they will hold. 
-Thus, we seek the number of permutations of 24 objects taken 4 at a time, denoted $P(24, 4)$. By the FPC, we have
+Thus, we seek the number of permutations of 24 objects taken 4 at a time, 
+denoted $P(24, 4)$. By the FPC, we have
 \[
 P(24, 4) = 24 \times 23 \times 22 \times 21 = 255,024
 \]
-Thus, there are just over a quarter of a million possible outcomes for the selection of the class officers.
+Thus, there are just over a quarter of a million possible outcomes for the 
+selection of the class officers.
 \end{example}
 
 \begin{problem}(problem 1)
@@ -59,10 +63,14 @@ P(n,k) = n \cdot (n-1) \cdot (n-2) \cdot \ \ldots \ \cdot (n-k+1)
 
 \end{proposition}
 \begin{proof}
-The number of choices for the first object selected is $n$. The number of choices for the second object selected is $n-1$. And so on, until the $k$ object, for which there are $n-k+1$ choices remaining. The result then follows directly from the FPC. 
+The number of choices for the first object selected is $n$. 
+The number of choices for the second object selected is $n-1$. 
+And so on, until the $k$ object, for which there are $n-k+1$ choices remaining. 
+The result then follows directly from the FPC. 
 \end{proof}
 \begin{remark}
-Note that the list $n, n-1, n-1,  ...,  n-k+1$ consists of $k$ numbers, corresponding to the $k$ objects being selected.
+Note that the list $n, n-1, n-1,  ...,  n-k+1$ consists of $k$ numbers, 
+corresponding to the $k$ objects being selected.
 \end{remark}
 
 \begin{example}[example 2]
@@ -189,13 +197,16 @@ for if $n = k$ then the denominator is $0! = 1$.
 
 In this subsection, we examine permutations of $n$ objects taken $n$ at 
 a time in which the $n$ objects are not distinct.  The idea is that arranging non-distinct objects 
-among themselves does not produce a new permutation.  To count such permutations, we will combine the FPC with division.
+among themselves does not produce a new permutation.  
+To count such permutations, we will combine the FPC with division.
 
 \begin{example}[example 6]
 How many permutations are there of the word $AABC$?\\
-We have 2 non-distinct objects among our 4 objects- namely the two $A$'s.  We begin the counting process by 
+We have 2 non-distinct objects among our 4 objects- namely the two $A$'s.  
+We begin the counting process by 
 considering the 4 objects as distinct by placing subscripts on the repeated objects.  
-In other words, we consider the word $A_1A_2BC$, which has $P(4,4) = 4! = 24$ permutations. Among these 24 permutations, consider the following pairs of permutations:
+In other words, we consider the word $A_1A_2BC$, which has $P(4,4) = 4! = 24$ permutations. 
+Among these 24 permutations, consider the following pairs of permutations:
 \[
 A_1BA_2C \; \mbox{and} \; A_2BA_1C
 \]
@@ -207,14 +218,16 @@ BA_1CA_2 \; \mbox{and} \; BA_2CA_1
 \[
 A_1CBA_2 \; \mbox{and} \; A_2CBA_1
 \]
-Each of these three pairs of permutations of the 4 distinct objects, correspond to just a single permutation of the 
+Each of these three pairs of permutations of the 4 distinct objects, 
+correspond to just a single permutation of the 
 non-distinct objects $AABC$.  These pairs correspond to 
 \[
 ABAC, BACA \;\mbox{and} \;  ACBA
 \]
 respectively. In fact, the 24 permutations of $A_1A_2BC$ can be paired in the manner shown above, 
 with each pair yielding a single permutation of $AABC$. 
-This means that the number of permutations of $A_1A_2BC$ is twice the number of permutations of $AABC$.  
+This means that the number of permutations of $A_1A_2BC$ is twice the number of 
+permutations of $AABC$.  
 Thus, the number of permutations of $AABC$ is
 $24/2 = 12$.
 \end{example}
@@ -228,9 +241,14 @@ c) $\;BOOKS: \; \answer{60}$
 
 \begin{example}[example 7]
 How many permutations are there of the letters in the word $AAABC$?\\
-Again, we begin by considering the distinct letters $A_1A_2A_3BC$, which have $P(5,5) = 5! = 120$ permutations.
-Given any of these 120 permutations, there are $3! = 6$ ways to rearrange the letters $A_1, A_2$ and $A_3$ among themselves, leaving the B and C in the same position.
-These 6 permutations of $A_1A_2A_3BC$ all correspond to the same permutation of $AAABC$.  hence the number of permutations of $A_1A_2A_3$ is 6 times the number of permutations of $AAABC$.  Thus the number of permutations of $AAABC$ can be obtained by dividing 120 by 6, so there are 20 permutation of the letters in the word $AAABC$.
+Again, we begin by considering the distinct letters $A_1A_2A_3BC$, 
+which have $P(5,5) = 5! = 120$ permutations.
+Given any of these 120 permutations, there are $3! = 6$ ways to rearrange the 
+letters $A_1, A_2$ and $A_3$ among themselves, leaving the B and C in the same position.
+These 6 permutations of $A_1A_2A_3BC$ all correspond to the same permutation of $AAABC$.  
+Hence, the number of permutations of $A_1A_2A_3$ is 6 times the number of permutations of $AAABC$.
+Thus the number of permutations of $AAABC$ can be obtained by dividing 120 by 6, so 
+there are 20 permutation of the letters in the word $AAABC$.
 \end{example}
 
 \begin{problem}(problem 7)
@@ -242,10 +260,16 @@ c) $\;ASSESS: \; \answer{30}$
 
 \begin{example}[example 8]
 How many permutations are there of the letters in the word $AAABBC$?\\
-If the letters were all distinct, as in $A_1A_2A_3B_1B_2C$, then there would be $6! =720$ permutations.
+If the letters were all distinct, as in $A_1A_2A_3B_1B_2C$, then there 
+would be $6! =720$ permutations.
 However, the $A_k's$ in any such permutation can be permuted among themselves in $3! =6$ ways 
 without changing the permutation
-of the unsubscripted original letters.  Furthermore, the $B_k$'s can also be permuted among themselves in $2!= 2$ ways without changing the permutation of the original unsubscripted letters.  Thus the total number of permutations of $AAABBC$ can be found by dividing $6!$ first by $3!$ and then dividing that by $2!$. This is equivalent to dividing $6!$ by the product of $3!$ and $2!$.  Thus the number of permutations of the letters in the word $AAABBC$ is
+of the unsubscripted original letters.  Furthermore, the $B_k$'s can also be 
+permuted among themselves in $2!= 2$ ways without changing the permutation of the 
+original unsubscripted letters.  Thus the total number of permutations of $AAABBC$ can be 
+found by dividing $6!$ first by $3!$ and then dividing that by $2!$. 
+This is equivalent to dividing $6!$ by the product of $3!$ and $2!$.  
+Thus the number of permutations of the letters in the word $AAABBC$ is
 \[
 \frac{6!}{3!2!} = \frac{720}{12} = 60
 \]
