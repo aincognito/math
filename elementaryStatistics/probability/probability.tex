@@ -74,7 +74,7 @@ We will learn the laws of probability to compute the probability of an event.
 \item \textbf{{\color{red} Question: What does it mean to say something is ``Random''?}}
 
  \bi
-  \item Each outcome has the same chance of occurring.
+  \item Each outcome has some chance of occurring.
   \item We know the possible outcomes, just uncertain which will occur.
   \item \textbf{{\color{green} Key: A pattern (distribution) of the outcomes emerges only in the ``Long-run''.}}
  \ei
@@ -103,10 +103,115 @@ We will learn the laws of probability to compute the probability of an event.
      \ei
 
  \item \underline{Basic Definitions:}
+
    \bi
+	  \item Probability Experiment - an action whose outcomes can be determined and recorded.
     \item Sample Space $(S)$ - Set of all possible outcomes.
     \item Event $(E)$ - is an particular outcome or a set of outcomes.
    \ei
+	
+	\begin{example}
+	Roll a six-sided die and record the number on the top face.\\
+	This is a probability experiment because the outcomes can be determined and we can 
+	record them as numbers from 1 to 6.
+	The sample space of the experiment is 
+	\[
+	S = \{ 1, 2, 3, 4, 5, 6\}
+	\]
+	Any subset of the sample space $S$ is an event. For example, we can write
+	\[
+	E_1 = \{1, 2, 3\}
+	\]
+	or
+	\[
+	E_2: \mbox{roll a prime number}
+	\]
+	The event $E_2$ can also be described using set notation as
+	\[
+	E_2 = \{2, 3, 5\} \;\; \mbox{(note: 1 is not considered a prime number)}
+	\]
+	A single outcome is also considered an event:
+	\[
+	E_3: \mbox{roll a} \; 6, \;\mbox{i.e.}, \; E_3 = \{6\}
+	\]
+	An event consisting of a single outcome is sometimes called a simple event.
+	
+	\end{example}
+	
+	\begin{problem}
+	Consider the probability experiment of rolling a six-sided die and recording the number on the top face. Describe each of the following events as a subset of the sample space $S = \{1, 2, 3, 4, 5, 6\}$.\\
+	$E_1: \mbox{an even number}$
+	\begin{multipleChoice}
+	\choice{$E_1 = \{2\}$}\\
+	\choice{$E_1 = \{2, 4\}$}\\
+	\choice[correct]{$E_1 = \{2, 4, 6\}$}
+	\end{multipleChoice}
+	
+	$E_2: \mbox{at least 3}$
+	\begin{multipleChoice}
+	\choice{$E_2 = \{3, 6\}$}\\
+	\choice{$E_2 = \{4, 5, 6\}$}\\
+	\choice[correct]{$E_2 = \{3, 4, 5, 6\}$}
+	\end{multipleChoice}
+	
+	$E_3: \mbox{at most 4}$
+	\begin{multipleChoice}
+	\choice{$E_3 = \{1, 2, 3\}$}\\
+	\choice[correct]{$E_3 = \{1, 2, 3, 4\}$}\\
+	\choice{$E_3 = \{1, 4\}$}
+	\end{multipleChoice}
+	
+	\end{problem}
+	
+	
+	
+	\begin{example}
+	Flip a coin twice and record the sequence of heads and tails.\\
+	This is a probability experiment with sample space consisting of four outcomes:
+	\[
+	S = \{HH, HT, TH, TT\}
+	\]
+	One possible event is
+	\[
+	E: \mbox{at least one heads}
+	\]
+	As a subset of the sample space this event can be written as
+	\[
+	E = \{HH, HT, TH\}
+	\]
+	The event
+	\[
+	F: \mbox{two tails}
+	\]
+	is a simple event consisting of the single outcome TT.
+	
+	\end{example}
+	
+	\begin{example}
+	Select a card from a deck of 52 ordinary playing cards and record the cards type and suit.\\
+	The sample space of this probability experiment consists of the 52 individual cards in the deck described using a type and a suit.  Some examples of individual outcomes are:
+	\[
+	K\heartsuit, 5 \clubsuit \; \mbox {and} \; A\spadesuit
+	\]
+	An example event is
+	\[
+	E: \mbox{select a Queen}
+	\]
+	which can be represented as a subset of the sample space by
+	\[
+	E = \{Q\heartsuit, Q\diamondsuit, Q\clubsuit, Q\spadesuit\}
+	\]
+	Another example even is
+	\[
+ F: \mbox{select a club}
+\]
+This event can be represented by the set
+\[
+F = \{2\clubsuit,3\clubsuit,\dots,10\clubsuit,J\clubsuit,Q\clubsuit,K\clubsuit, A\clubsuit\}
+\]
+Note the use of the dots to continue the counting pattern from 3 to 10.
+	\end{example}
+	
 
  \newpage
 
@@ -143,7 +248,7 @@ We will learn the laws of probability to compute the probability of an event.
 
     \vspace{2.75in}
 
- \item[3.] \underline{Disjoint (Mutually Exclusicve)}:
+ \item[3.] \underline{Disjoint (Mutually Exclusive)}:
 
     \vspace{2.75in}
 
