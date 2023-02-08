@@ -17,17 +17,38 @@ Sample Tests for Chapter 1
 \section{Sample Test 1a}
 
 \begin{problem}(problem 1)
-Compute $\displaystyle \int \frac{\ln^3(x)}{x} \, dx$
+Compute $\displaystyle \int \frac{\ln^3(x)}{x} \, dx$ 
+
+\begin{hint}
+u-sub with $u = \ln(x)$
+\end{hint}
 
 \end{problem}
 
+
 \begin{problem}(problem 2)
 Compute $\displaystyle \int x^2(x^3 + 2)^7 \, dx$
+
+\begin{hint}
+u-sub with $u = x^3 + 2$
+\end{hint}
 
 \end{problem}
 
 \begin{problem}(problem 3)
 Compute $\displaystyle \int x^2\cos(4x) \, dx$
+
+\begin{hint}
+IBP $\int u dv = uv - \int v du$
+\end{hint}
+
+\begin{hint}
+LIATE
+\end{hint}
+
+\begin{hint}
+Need IBP twice- try Tabular Integration
+\end{hint}
 
 \end{problem}
 
@@ -35,47 +56,116 @@ Compute $\displaystyle \int x^2\cos(4x) \, dx$
 \begin{problem}(problem 4)
 Compute $\displaystyle \int \tan^{-1}(x) \, dx$
 
+\begin{hint}
+IBP $\int u dv = uv - \int v du$
+\end{hint}
+
+\begin{hint}
+LIATE
+\end{hint}
+
+\begin{hint}
+$\displaystyle \frac{d}{dx} \tan^{-1} (x) = \frac{1}{1+x^2}$
+\end{hint}
+
+
 \end{problem}
 
 \begin{problem}(problem 5)
 Compute $\displaystyle \int \sin^4(x) \, dx$
+
+\begin{hint}
+Use the half angle formula twice
+
+\[
+\sin^2 \theta = \frac{1-\cos(2\theta)}{2} \quad \mbox{and}  \cos^2 \theta = \frac{1+\cos(2\theta)}{2}
+\]
+\end{hint}
 
 \end{problem}
 
 \begin{problem}(problem 6)
 Compute $\displaystyle \int \tan^4(x) \sec^6(x) \, dx$
 
+\begin{hint}
+set aside $sec^2(x)$ to prepare for u-sub
+\end{hint}
+
+\begin{hint}
+convert remaining secants into tangents using
+\[
+1+ \tan^2(x) = sec^2(x)
+\]
+
+\end{hint}
 \end{problem}
 
 \begin{problem}(problem 7)
 Compute $\displaystyle \int x^3 \sqrt{1-x^2} \, dx$
+\begin{hint}
+trig sub with $x= \cos \theta$
+\end{hint}
 
 \end{problem}
 
 \begin{problem}(problem 8)
 Compute $\displaystyle \int \frac{1}{ \sqrt{x^2 - 4}} \, dx$
-
+\begin{hint}
+trig sub with $x= \cos \theta$
+\end{hint}
 \end{problem}
 
 
 \begin{problem}(problem 9)
 Compute $\displaystyle \int \frac{3}{x^2 + x} \, dx$
-
+\begin{hint}
+Partial Fraction (distinct linear factors)
+\end{hint}
 \end{problem}
 
 \begin{problem}(problem 10)
 Compute $\displaystyle \int \frac{3x-4}{x^3 +8x^2 +16x} \, dx$
+\begin{hint}
+Partial Fraction (repeated linear factor)
+\end{hint}
+
+\begin{hint}
+$x^2 + 8x + 16 = (x+4)^2$
+\end{hint}
 
 \end{problem}
 
 \begin{problem}(problem 11)
 Compute $\displaystyle \int_1^\infty 3e^{-2x} \, dx$
 
+\begin{hint}
+replace $\infty$ with $t$ and take the limit as $t$ approaches $\infty$
+\end{hint}
+
+\begin{hint}
+\int e^{ax} dx = \frac{1}{a} e^{ax} + C
+\end{hint}
+
+\begin{hint}
+to calculate the limit, remove the negative exponent
+\end{hint}
+
 \end{problem}
 
 
 \begin{problem}(problem 12)
 Compute $\displaystyle \int_{0}^2 \frac{5}{(x-2)^2} \, dx$
+
+\begin{hint}
+replace $2$ with $t$ and take the limit as $t$ approaches $2$ from the left
+\end{hint}
+
+
+\begin{hint}
+to calculate the limit, remove the negative exponent
+\end{hint}
+
+
 \end{problem}
 
 
