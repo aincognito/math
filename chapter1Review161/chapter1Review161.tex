@@ -211,10 +211,26 @@ answer: $\displaystyle \frac{x^3}{3} \ln(x) - \frac{x^3}{9} + C$
 \begin{problem}(problem 4)
 Compute $\displaystyle \int e^x \cos(x) \, dx$
 
+\begin{hint}
+use integration by parts twice to get back to the original integral `I'
+\end{hint}
+
+\begin{hint}
+answer: $I = \frac12 e^x \cos x + \frac12 e^x \sin x + C$
+\end{hint}
+
 \end{problem}
 
 \begin{problem}(problem 5)
 Compute $\displaystyle \int \sin^3(2x) \cos^3(2x) \, dx$
+
+\begin{hint}
+write $\cos^3(2x)$ as $\cos^2(2x) \cdot \cos(2x)$
+\end{hint}
+
+\begin{hint}
+let $u = \sin(2x)$, then $du = 2\cos(2x) \, dx$
+\end{hint}
 
 \end{problem}
 
@@ -230,20 +246,43 @@ answer: $\displaystyle \frac{\sec^5(x)}{5} + C$
 \begin{problem}(problem 7)
 Compute $\displaystyle \int \frac{x^3}{ \sqrt{1+x^2}} \, dx$
 
+\begin{hint}
+use trig sub with $x = \tan \theta$ and $dx =  \sec^2 \theta \, d\theta$
+\end{hint}
+
 \end{problem}
 
 \begin{problem}(problem 8)
 Compute $\displaystyle \int \frac{1}{x^2 \sqrt{x^2 - 25}} \, dx$
+
+\begin{hint}
+use trig sub with $x = 5\sec \theta$ and $dx = 5 \sec \theta \tan \theta \, d\theta$
+\end{hint}
 
 \end{problem}
 
 \begin{problem}(problem 9)
 Compute $\displaystyle \int \frac{x^2 - 2x+3}{x^3-x} \, dx$
 
+\begin{hint}
+$x^2 - 1$ is a difference of two squares so it factors as: $(x-1)(x+1)$
+\end{hint}
+
 \end{problem}
 
 \begin{problem}(problem 10)
 Compute $\displaystyle \int \frac{x^2 + 5x + 2}{x^3 + 16x} \, dx$
+
+\begin{hint}
+$x^2 + 16$ is an irreducible quadratic
+\end{hint}
+
+\begin{hint}
+\[
+\int \frac{1}{x^2 + a^2} \, dx = \frac{1}{a} \tan^{-1}\left(\frac{x}{a}\right)
+\]
+\end{hint}
+
 
 \end{problem}
 
@@ -254,6 +293,15 @@ Compute $\displaystyle \int_4^\infty \frac{4}{x^4} \, dx$
 
 \begin{problem}(problem 12)
 Compute $\displaystyle \int_1^5 \frac{3}{\sqrt{x-1}} \, dx$
+
+\begin{hint}
+the integrand has a vertical asymptote at $x = 1$
+\end{hint}
+
+\begin{hint}
+the integral converges
+\end{hint}
+
 \end{problem}
 \end{document}
 
