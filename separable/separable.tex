@@ -121,7 +121,7 @@ H(y) = F(x) + C,
 as before.
 
 \begin{example}[example 3]
-Solve the differential equation $y' = xy^2$.\\
+Find the general solution of the differential equation $y' = xy^2$ and then find the particular solution corresponding to the intial condition $y(0) = 1$.\\
 Rewrite the equation as 
 \[
 \frac{dy}{dx} = xy^2.
@@ -146,14 +146,24 @@ Note that $-C$ has been replaced by $+C$, as this makes no difference. Now take 
 \[
 y = \frac{1}{-\frac{x^2}{2} + C} = - \frac{2}{x^2 + C}.
 \]
-Note that $-2C$ was replaced by $+C$ as this makes no difference.
-We can check the differential equation by calculating $y'$ and observing that $y' = xy^2$.
+Note that $-2C$ was replaced by $+C$ as this makes no difference in the general solution.
+To find the particular solution, we substitute $x= 0$ and $y = 1$ into the general solution to find a value for $C$:
+\[
+1 = -\frac{2}{0^2 + C}
+\]
+which simplifies to $1 = -2/C$ and we conclude by inspection that $C = -2$.
+The particular solution is thus
+\[
+y = - \frac{2}{x^2 -2}  = \frac{2}{2-x^2}
+\]
+Note that we can check the general solution to the differential equation by 
+calculating $y'$ and observing that $y' = xy^2$.
 From the quotient rule, we have
 \[
 y' = \frac{(x^2 + C)\cdot 0 - (-2)(2x)}{(x^2 + C)^2} = \frac{4x}{(x^2 + C)^2} 
 \]
 \[
-= x \cdot \frac{4}{(x^2 + C)^2} = x \cdot \left[\frac{2}{x^2 + C}\right]^2 = xy^2.
+= x \cdot \frac{4}{(x^2 + C)^2} = x \cdot \left[\frac{2}{x^2 + C}\right]^2 = x(-y)^2 = xy^2.
 \]
 
 
@@ -358,8 +368,8 @@ The solution to the initial value problem is
 
 
 \begin{example}[example 5]
-A population of 2 million bacteria doubles in 1 hour. If we assume that the population is growing at a rate which is proportional to the number of bacteria present,
-write a differential equation that models the population at time $t$ and find the population after 90 minutes.\\
+A population of 2 million bacteria doubles in 1 hour. A natural assumption is that the population is growing at a rate which is proportional to the number of bacteria present. Use this information to
+write a differential equation that models the population, $P$, at time $t$. Solve the differential equation and find the population after 90 minutes.\\
 Let $P = P(t)$ denote the population of the bacteria (in millions) after $t$ hours.
 Since the rate of growth is proportional to the number present, we have
 \[
