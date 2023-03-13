@@ -128,6 +128,7 @@ Then
 Now, we use the Inclusion-Exclusion Principle to compute $\phi(n)$:
 \begin{align*}
 \phi(n) &= |A_1^c \cap A_2^c \cap \cdots \cap A_r^c|\\
+&= |(A_1 \cup A_2 \cup \cdots \cup A_r)^c|\\
 &= |S| -  |A_1 \cup A_2 \cup \cdots \cup A_r|\\
 &= |S| - \sum|A_i| + \sum|A_i \cap A_j| + \sum|A_i \cap A_j \cap A_k| + \cdots + (-1)^r|A_1 \cap A_2 \cap \cdots \cap A_r|\\[7pt]
 &= n - \sum \frac{n}{p_i} + \sum \frac{n}{p_ip_j} - \sum \frac{n}{p_ip_jp_k} + \cdots + (-1)^r \frac{n}{p_1p_2 \cdots p_r}\\[7pt]
