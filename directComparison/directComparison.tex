@@ -16,35 +16,56 @@ We will use the DCT to determine if an infinite series converges or diverges.
 
 \section{Direct Comparison Test}
 
-In this section, we will determine whether a given series converges or diverges by comparing it to a series whose behavior is known.
-Note that we will only be working with series of positive terms in this section. There are two ideas behind the Direct Comparison Test (DCT).
-The first is that if the (positive) terms of one series are less than the corresponding terms of another, 
-convergent series, then the original series must also converge. And conversely, if the terms of one series are greater than 
-the terms of another, divergent series, then the original series must diverge also.
-In short, the DCT can be summarized by saying ``less than a convergent series is convergent''
-and ``greater than a divergent series is divergent.''
-We state this formally in the theorem below, in which the original series is denoted by $\displaystyle{\sum_{n=0}^\infty a_n}$ 
-and the second series whose behavior is known is denoted by $\displaystyle{\sum_{n=0}^\infty b_n}$.
+In this section, we will determine whether a given series (with positive terms) 
+converges or diverges by comparing it to a series whose behavior is known. 
+Thus, it is important to recall the basic facts about $p$-series and geometric series: 
+\begin{itemize}
+\item
+ $p$-series: \; $\displaystyle \sum_{n=1}^\infty \frac{1}{n^p}$, 
+converges if $p<1$ and diverges if $p\geq 1$.
+\item
+geometric series:   $\sum_{n=0}^\infty ar^n$, converges if $|r|<1$ and 
+diverges if $|r|\geq 1$
+\end{itemize}
+
+In the statement of the theorem below, the series $\displaystyle \sum_{n=1}^\infty a_n$ is 
+given and we are to determine whether it converges or diverges. To that end, we will 
+compare the given series to a series of our choosing, denoted in the theorem 
+by $\displaystyle \sum_{n=1}^\infty b_n$.
 
 
 \begin{theorem}[Direct Comparison Test]
- Suppose $a_n \geq 0$ and $b_n \geq 0$ for all values of $n$.\\
-(Case 1: Convergence) If $\; \displaystyle{\sum_{n=0}^\infty b_n}$ converges, \textbf{and} if $a_n \leq b_n$ for all values of $n$,  
-then the series $\displaystyle{\sum_{n=0}^\infty a_n}$ also converges.\\
-(Case 2: Divergence) If $\; \displaystyle{\sum_{n=0}^\infty b_n}$ diverges, \textbf{and} if $a_n \geq b_n$ for all values of $n$,  
-then the series $\displaystyle{\sum_{n=0}^\infty a_n}$ also diverges.
+ Suppose $a_n, b_n \geq 0$ for all $n$.\\
+\begin{itemize}
+\item
+If $\; \displaystyle{\sum_{n=1}^\infty b_n}$ converges, and $a_n \leq b_n$ for all $n$,  
+then $\displaystyle{\sum_{n=1}^\infty a_n}$ converges.\\
+In words: less than a convergent series is convergent.\\
+\item
+If $\; \displaystyle{\sum_{n=1}^\infty b_n}$ diverges, and $a_n \geq b_n$ for all $n$,  
+then $\displaystyle{\sum_{n=1}^\infty a_n}$ diverges.\\
+In words: greater than a divergent series is divergent.\\
+\end{itemize}
 \end{theorem}
 
-
 \begin{remark}
-If \; $a_n \geq b_n \geq 0$ for all $n$ and $\displaystyle{\sum_{n=0}^\infty b_n}$ converges, then the DCT gives \textbf{no conclusion} about $\displaystyle{\sum_{n=0}^\infty a_n}$.
-Also, if \; $0 \leq a_n \leq b_n$ for all $n$ and $\displaystyle{\sum_{n=0}^\infty b_n}$ diverges, then the DCT gives \textbf{no conclusion} about $\displaystyle{\sum_{n=0}^\infty a_n}$.
+\begin{itemize}
+\item
+If $\; \displaystyle{\sum_{n=1}^\infty b_n}$ converges, and $a_n \geq b_n$ for all $n$,  
+then no conclusion can be made regarding $\displaystyle{\sum_{n=1}^\infty a_n}$ \\
+In words: greater than a convergent series is inconclusive.\\
+\item
+If $\; \displaystyle{\sum_{n=1}^\infty b_n}$ diverges, and $a_n \leq b_n$ for all $n$,  
+then no conclusion can be made regarding $\displaystyle{\sum_{n=1}^\infty a_n}$\\
+In words: less than a divergent series is inconclusive.\\
+\end{itemize}
 \end{remark}
+
 
 \begin{remark}
 The qualifying statement \textbf{for all $n$} associated with the
  conditions $a_n \leq b_n$ and $ a_n \geq b_n$ can be relaxed to
-  \textbf{forall $n$ sufficiently large}
+  \textbf{for $n$ sufficiently large}
 \end{remark}
 
 
