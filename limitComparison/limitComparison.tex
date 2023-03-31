@@ -22,7 +22,7 @@ another series whose behavior is known.  The idea is that if the limit of the ra
 will have the same behavior, as one of them is essentially a multiple of the other. We state this in the following theorem.
 
 \begin{theorem}[Limit Comparison Test]
-Suppose $a_n \geq 0$ and $b_n \geq 0$ for all values of $n$.
+Suppose $a_n, b_n > 0$ for all $n$.
 If 
 \[
 \lim_{n \to \infty} \frac{a_n}{b_n} = L
@@ -33,21 +33,24 @@ where
 \]
 then the two infinite series 
 \[
-\sum_{n=0}^\infty a_n \;\; \text{ and } \;\; \sum_{n=0}^\infty b_n
+\sum_{n=1}^\infty a_n \;\; \text{ and } \;\; \sum_{n=1}^\infty b_n
 \]
 have the same behavior, i.e., they either both converge or both diverge.
 \end{theorem}
 
 
 \begin{remark}
-In practical applications of the LCT, the given series is $\displaystyle{\sum_{n=0}^\infty a_n}$
-and the series we choose to compare it with is $\displaystyle{\sum_{n=0}^\infty b_n}$.
+In practical applications of the LCT, the given series is $\displaystyle{\sum_{n=1}^\infty a_n}$
+and the series we choose to compare it with is $\displaystyle{\sum_{n=1}^\infty b_n}$.
 \end{remark}
 
+The LCT is inconclusive if the limit DNE, but if the limit is zero or infinity, then there is a partial conclusion as mentioned in the following remark.
 
 \begin{remark}
-If $L = 0$ and $\displaystyle{\sum_{n=0}^\infty b_n}$ converges, then so does $\displaystyle{\sum_{n=0}^\infty a_n}$
-and if $L = \infty$ and $\displaystyle{\sum_{n=0}^\infty b_n}$ diverges, then so does $\displaystyle{\sum_{n=0}^\infty a_n}$.
+If $L = 0$ and $\displaystyle{\sum_{n=1}^\infty b_n}$ converges, 
+then so does $\displaystyle{\sum_{n=1}^\infty a_n}$
+and if $L = \infty$ and $\displaystyle{\sum_{n=1}^\infty b_n}$ diverges, 
+then so does $\displaystyle{\sum_{n=1}^\infty a_n}$.
 \end{remark}
 
 
@@ -72,7 +75,7 @@ converges, the series $\displaystyle{\sum_{n=1}^\infty \frac{n+2}{n^3}}$ also co
 
 
 \begin{problem}(problem 1)
-Consider the series $\displaystyle{\sum_{n=1}^\infty \frac{5n^2 + 1}{3n^4 - 2}}$.\\
+Determine if the series converges or diverges: $\displaystyle{\sum_{n=1}^\infty \frac{5n^2 + 1}{3n^4 - 2}}$\\
 Which series should we compare this to?
 
 \begin{multipleChoice}
@@ -124,7 +127,7 @@ converges, the series $\displaystyle{\sum_{n=0}^\infty \frac{2^n + 4}{3^n + 1}}$
 
 
 \begin{problem}(problem 2)
-Consider the series $\displaystyle{\sum_{n=0}^\infty \frac{5^n + 1}{2^n + 3}}$.\\
+Determine if the series converges or diverges: $\displaystyle{\sum_{n=0}^\infty \frac{5^n + 1}{2^n + 3}}$\\
 Which series should we compare this to?
 
 \begin{multipleChoice}
@@ -174,7 +177,7 @@ diverges, the series $\displaystyle{\sum_{n=1}^\infty \frac{n^2 + 5n + 12}{n^3 +
 
 
 \begin{problem}(problem 3)
-Consider the series $\displaystyle{\sum_{n=1}^\infty \frac{4n^3 -3}{5n^4 + n}}$.\\
+Determine if the series converges or diverges: $\displaystyle{\sum_{n=1}^\infty \frac{4n^3 -3}{5n^4 + n}}$\\
 Which series should we compare this to?
 
 \begin{multipleChoice}
@@ -224,7 +227,7 @@ diverges, the series $\displaystyle{\sum_{n=1}^\infty \frac{1}{\sqrt{n^2 + 1}}}$
 
 
 \begin{problem}(problem 4)
-Consider the series $\displaystyle{\sum_{n=1}^\infty \frac{1}{\sqrt{2n^6 - 1}}}$.\\
+Determine if the series converges or diverges: $\displaystyle{\sum_{n=1}^\infty \frac{1}{\sqrt{2n^6 - 1}}}$\\
 Which series should we compare this to?
 
 \begin{multipleChoice}
@@ -272,7 +275,7 @@ do not exist (due to oscillation), the LCT is generally not effective in problem
 
 
 \begin{problem}(problem 5)
-Consider the series $\displaystyle{\sum_{n=0}^\infty \frac{6^n + 5}{3^n + 2}}$.\\
+Determine if the series converges or diverges: $\displaystyle{\sum_{n=0}^\infty \frac{6^n + 5}{3^n + 2}}$\\
 Which series should we compare this to?
 
 \begin{multipleChoice}
@@ -301,7 +304,7 @@ Describe the behavior of the series $\displaystyle{\sum_{n=0}^\infty \frac{6^n +
 
 
 \begin{problem}(problem 6)
-Consider the series $\displaystyle{\sum_{n=1}^\infty \frac{3n^5 + 4}{2n^7 - 1}}$.\\
+Determine if the series converges or diverges: $\displaystyle{\sum_{n=1}^\infty \frac{3n^5 + 4}{2n^7 - 1}}$\\
 Which series should we compare this to?
 
 \begin{multipleChoice}
@@ -328,7 +331,7 @@ Describe the behavior of the series $\displaystyle{\sum_{n=1}^\infty \frac{3n^5 
 
 
 \begin{problem}(problem 7)
-Consider the series $\displaystyle{\sum_{n=1}^\infty \frac{n^2}{\sqrt{4n^8 - 3}}}$.\\
+Determine if the series converges or diverges: $\displaystyle{\sum_{n=1}^\infty \frac{n^2}{\sqrt{4n^8 - 3}}}$\\
 Which series should we compare this to?
 
 \begin{multipleChoice}
@@ -357,7 +360,7 @@ Describe the behavior of the series $\displaystyle{\sum_{n=1}^\infty \frac{n^2}{
 
 
 \begin{problem}(problem 8)
-Consider the series $\displaystyle{\sum_{n=1}^\infty \frac{3n^4 -2}{4n^5 + 3n^4}}$.\\
+Determine if the series converges or diverges: $\displaystyle{\sum_{n=1}^\infty \frac{3n^4 -2}{4n^5 + 3n^4}}$\\
 Which series should we compare this to?
 
 \begin{multipleChoice}
