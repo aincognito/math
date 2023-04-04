@@ -15,7 +15,7 @@ We use the Alternating Series Test to determine convergence of infinite series.
 \maketitle
 
 
-\section{The Alternating Series Test}
+
 
 An alternating series is an infinite series whose terms alternate signs.
 A typical \textbf{alternating series} has the form 
@@ -27,7 +27,7 @@ where $a_n > 0$ for all $n$. We will refer to the factor $(-1)^n$ as the \textbf
 Some examples of alternating series are
 \begin{itemize}
 
-\item $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{1}{n} = 1 - \frac12 + \frac13 - \frac14 + \cdots  }\, .$  This is the \textbf{Alternating Harmonic Series}.
+\item $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{1}{n} = 1 - \frac12 + \frac13 - \frac14 + \cdots  }\, .$  This is the \textbf{alternating harmonic series}.
 
 \item $\displaystyle{\sum_{n=0}^\infty \left(-\frac12\right)^n = 1 - \frac12 + \frac14 - \frac18 + \cdots }\, .$  This is an alternating geometric series with $r=-1/2$.
 Since $-1 < -\frac12 < 1$, we know from our earlier study of geometric series that this alternating series converges and 
@@ -40,10 +40,12 @@ S = \frac{a}{1-r} = \frac{1}{1-(-1/2)} = \frac23.
 In this example, $\cos(n\pi)$ could be replaced by the standard alternating symbol $(-1)^n$.
 
 
-\item $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{1}{n^p} = 1 - \frac{1}{2^p} + \frac{1}{3^p} - \frac{1}{4^p} + \cdots  }\, .$  This is an \textbf{Alternating $p$-Series}.
+\item $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{1}{n^p} = 1 - \frac{1}{2^p} + \frac{1}{3^p} - \frac{1}{4^p} + \cdots  }\, .$  This is an \textbf{alternating $p$-series}.
 
 
 \end{itemize}
+
+\section{The Alternating Series Test}
 
 \begin{theorem} Alternating Series Test (AST)\\
 The alternating series, 
@@ -71,23 +73,25 @@ The second condition can be weakened to say the terms, $a_n$, are eventually dec
 If the first condition is satisfied but the second condition is not, then the AST gives \textbf{no conclusion} about the alternating series.
 \end{remark}
 
-\begin{example}[example 1] The alternating harmonic series, 
-$\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{1}{n}}$ converges by the AST. 
-To see this, first, 
+\begin{example}[example 1] Determine if alternating harmonic series converges or diverges: 
+$\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{1}{n}}$\\ 
+First, 
 \[
 \lim_{n\to\infty} \frac{1}{n} = 0,
 \]
-and second,
-the terms are decreasing since 
+so the terms go to zero.\\
+Second,
 \[
 \frac{1}{n+1} < \frac{1}{n}
 \]
-for all $n \geq 1$. Since both conditions are satisfied, the alternating harmonic series converges by the AST.
-Moreover, it is known that the alternating harmonic series converges to the value $\ln(2)$, as we will see in the section on Power Series.
+for all $n \geq 1$, so the terms are decreasing. \\
+Since both conditions are satisfied, the alternating harmonic series converges by the AST.
+Moreover, it is known that the alternating harmonic series converges to the 
+value $\ln(2)$, as we will see in the section on Power Series.
 \end{example}
 
 \begin{problem}(problem 1a)
-Consider the series $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{1}{\sqrt n}}$.\\
+Determine whether the series converges or diverges: $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{1}{\sqrt n}}$\\
 First, find the limit:
 \[
 \lim_{n\to\infty} \frac{1}{\sqrt n} = \answer{0}.
@@ -112,7 +116,7 @@ Describe the behavior of the series $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} 
 
 
 \begin{problem}(problem 1b)
-Consider the series $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{1}{n^2}}$.\\
+Determine whether the series converges or diverges: $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{1}{n^2}}$\\
 First, find the limit:
 \[
 \lim_{n\to\infty} \frac{1}{n^2} = \answer{0}.
@@ -137,7 +141,8 @@ Describe the behavior of the series $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} 
 
 
 \begin{problem}(problem 1c)
-Consider the series $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{n}{n+1}}$.\\
+Determine whether the series converges or 
+diverges: $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{n}{n+1}}$\\
 First, find the limit:
 \[
 \lim_{n\to\infty} \frac{n}{n+1} = \answer{1}.
@@ -161,7 +166,8 @@ Describe the behavior of the series $\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} 
 
 
 \begin{problem}(problem 1d)
-Consider the series $\displaystyle{\sum_{n=2}^\infty (-1)^n \frac{1}{\ln n}}$.\\
+Determine whether the series converges or 
+diverges: $\displaystyle{\sum_{n=2}^\infty (-1)^n \frac{1}{\ln n}}$\\
 First, find the limit:
 \[
 \lim_{n\to\infty} \frac{1}{\ln n} = \answer{0}.
@@ -186,18 +192,20 @@ Describe the behavior of the series $\displaystyle{\sum_{n=2}^\infty (-1)^n \fra
 
 
 \begin{example}[example 2]
-For $p > 0$, the alternating $p$-series, 
-$\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{1}{n^p}}$ converges by the AST. 
-To see this, first, 
+Let $p > 0$. Determine whether the alternating $p$-series converges or diverges: 
+$\displaystyle{\sum_{n=1}^\infty (-1)^{n+1} \frac{1}{n^p}}$ \\
+First, 
 \[
 \lim_{n\to\infty} \frac{1}{n^p} = 0,
 \]
-and second,
-the terms are decreasing since 
+so the terms approach zero.\\
+Second,
+
 \[
 \frac{1}{(n+1)^p} < \frac{1}{n^p}
 \]
-for all $n \geq 1$. Since both conditions are satisfied, the alternating $p$-series converges by the AST.
+so the terms are decreasing for all $n \geq 1$. \\
+Since both conditions are satisfied, the alternating $p$-series converges by the AST.
 \end{example}
 
 \section{Absolute Versus Conditional Convergence}
@@ -224,15 +232,18 @@ where $a_n > 0$ for all $n$.
 \end{definition}
 
 \begin{example}[example 3]
-Consider the alternating $p$-series
+Determine whether the alternating $p$-series converges absolutely or conditionally:
 \[
 \sum_{n=1}^\infty (-1)^{n+1} \frac{1}{n^p},
 \]
-where $p > 0$. In our study of non-alternating $p$-series in the section on the Integral Test, we discovered that 
-the standard $p$-series, $\displaystyle{\sum_{n=1}^\infty \frac{1}{n^p}}$. converges if $p>1$ and diverges if $0 < p \leq 1$.
-In the above discussion, we noted that alternating $p$-series converge for all $p>0$. 
-Hence, in the terminology of absolute and conditional convergence, we can say that 
-if $p>1$, the alternating $p$-series converges absolutely and if $0<p\leq 1$, the alternating $p$-series converges conditionally.
+where $p > 0$.\\
+ In our study of non-alternating $p$-series in the section on the Integral Test, we 
+discovered that the standard $p$-series, $\displaystyle{\sum_{n=1}^\infty \frac{1}{n^p}}$, 
+converges if $p>1$ and diverges if $0 < p \leq 1$.
+In the previous example, we showed that alternating $p$-series converge for all $p>0$. 
+Hence, we can say that 
+if $p>1$, the alternating $p$-series converges absolutely and if $0<p\leq 1$, 
+the alternating $p$-series converges conditionally. In particular, the alternating harmonic series ($p = 1$) converges conditionally.
 \end{example}
 
 
@@ -247,13 +258,13 @@ First, we consider the non-alternating counterpart of the given series:
 \[
 \sum_{n=0}^\infty \frac{n^2 + 2}{n^3 + 3}.
 \]
-This series diverges by the Limit Comparison Test with the divergent Harmonic Series since,
+This series diverges by the Limit Comparison Test with the divergent harmonic series since,
 
 \[
 \lim_{n\to\infty} \frac{\left(\frac{n^2 + 2}{n^3 + 3} \right)}{\left(\frac{1}{n} \right)} = \lim_{n\to\infty} \frac{n^3 + 2n}{n^3 + 3} = 1,
 \]
 by the ratio of the leading coefficients. Since $0 < 1< \infty$, the non-alternating counterpart also diverges by the LCT.
-Next, we check for Conditional Convergence using the Alternating Series Test.
+Next, we check for conditional convergence using the Alternating Series Test.
 The first condition is satisfied since
 \[
 \lim_{n\to\infty} \frac{n^2 + 2}{n^3 + 3} = 0.
@@ -264,8 +275,10 @@ For the second condition, we must determine if the terms are (eventually) decrea
                                                             &= \frac{(2n^4 + 6n)-(3n^4+6n^2)}{(n^3 + 3)^2}\\
                                                             &= \frac{6n - 6n^2 - n^4}{(n^3 + 3)^2}.
 \end{align*}
-The derivative is negative for $n>1$ since the numerator is negative and the denominator is positive when $n>1$.
-Hence, the terms of the series are eventually decreasing, and the second condition is also satisfied. Finally, since both conditions of the AST are satisfied,
+The derivative is negative for $n>1$ since the numerator is negative and the 
+denominator is positive when $n>1$.
+Hence, the terms of the series are eventually decreasing, and the second 
+condition is also satisfied. Finally, since both conditions of the AST are satisfied,
 we can conclude that the original alternating series converges conditionally.
 
 \end{example}
@@ -286,7 +299,7 @@ Consider the series without the alternating symbol.
 
 Why?
 \begin{multipleChoice}
-\choice[correct]{Limit Comparison Test with the Harmonic Series}
+\choice[correct]{Limit Comparison Test with the harmonic series}
 \choice{$p$-series with $0 <  p \leq 1$}
 \choice{geometric series with $|r| \geq 1$}
 \end{multipleChoice}
@@ -453,7 +466,7 @@ Consider the series without the alternating symbol.
 
 Why?
 \begin{multipleChoice}
-\choice[correct]{Limit Comparison Test with the Harmonic Series}
+\choice[correct]{Limit Comparison Test with the harmonic series}
 \choice{$p$-series with $0 <  p \leq 1$}
 \choice{geometric series with $|r| \geq 1$}
 \end{multipleChoice}
