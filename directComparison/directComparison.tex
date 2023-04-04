@@ -68,7 +68,12 @@ The qualifying statement \textbf{for all $n$} associated with the
   \textbf{for $n$ sufficiently large}.
 \end{remark}
 
+Before we look at some examples, we review some basic facts about inequalities:
 
+\begin{enumerate}
+\item If $0 < a< b$ then $\frac{1}{a} > \frac{1}{b}$
+\item If $0<a<b$ and $c>0$ then $ac< bc$
+\end{enumerate}
 
 \begin{example}[example 1] %example #1
 Determine if the series 
@@ -85,11 +90,7 @@ To make the comparison, first note that
 \[
 2n^2 + 3 > n^2 > 0
 \]
- for all $n \geq 1$. Now we will take advantage of the fact that for positive numbers, $m$ and $n$ with $m>n$ we have 
- \[
- \frac{1}{m} < \frac{1}{n}.
- \]
- In other words, taking reciprocals reverses the sense of the inequality. In this case, taking reciprocals yields 
+ for all $n \geq 1$. Taking reciprocals yields 
 \[
 \frac{1}{2n^2 + 3} < \frac{1}{n^2} \; \; \text{ for } \; \; n \geq 1,
 \]
@@ -106,30 +107,28 @@ Determine if the series converges or
 diverges: $\;\displaystyle{\sum_{n=1}^\infty \frac{1}{n^3 + 1}}$ \\
 
 Which series should we compare this to?
-\begin{center}
+
 \begin{multipleChoice}
-\choice{\[\sum_{n=1}^\infty \frac{1}{n^2}\]}
-\choice[correct]{\[\sum_{n=1}^\infty \frac{1}{n^3}\]}
-\choice{\[\sum_{n=1}^\infty \frac{1}{3^n}\]}
+\choice{$\displaystyle \sum_{n=1}^\infty \frac{1}{n^2}$}
+\choice[correct]{$\displaystyle\sum_{n=1}^\infty \frac{1}{n^3}$}
+\choice{$\displaystyle\sum_{n=1}^\infty \frac{1}{3^n}$}
 \end{multipleChoice}
-\end{center}
 
 Which way does the comparison go?
-\begin{center}
+
 \begin{multipleChoice}
 \choice[correct]{ $\displaystyle{\frac{1}{n^3 + 1} \leq \frac{1}{n^3}}$ for $n \geq 1$}
 \choice{$\displaystyle{\frac{1}{n^3 + 1} \geq \frac{1}{n^3}}$ for $n \geq 1$}
 \end{multipleChoice}
-\end{center}
+
 
 Describe the behavior of the series $\displaystyle{\sum_{n=1}^\infty \frac{1}{n^3 + 1}:}$
-\begin{center}
 \begin{multipleChoice}
 \choice[correct]{Converges by DCT}
 \choice{Diverges by DCT}
 \choice{No Conclusion from DCT}
 \end{multipleChoice}
-\end{center}
+
 
 \end{problem}
 
@@ -168,9 +167,9 @@ Determine if the series converges or diverges: $\;\displaystyle \sum_{n=0}^\inft
 Which series should we compare this to?
 
 \begin{multipleChoice}
-\choice{$\sum_{n=0}^\infty \frac{1}{2^n}$}
-\choice{$\sum_{n=1}^\infty \frac{1}{n^3}$}
-\choice[correct]{$\sum_{n=0}^\infty \frac{1}{3^n}$}
+\choice{$\displaystyle \sum_{n=0}^\infty \frac{1}{2^n}$}
+\choice{$\displaystyle \sum_{n=1}^\infty \frac{1}{n^3}$}
+\choice[correct]{$\displaystyle \sum_{n=0}^\infty \frac{1}{3^n}$}
 \end{multipleChoice}
 
 Which way does the comparison go?
@@ -225,9 +224,9 @@ Determine if the series converges or diverges: $\sum_{n=0}^\infty \frac{\cos^2(n
 Which series should we compare this to?
 
 \begin{multipleChoice}
-\choice[correct]{$\sum_{n=0}^\infty \frac{1}{2^n}$}
-\choice{$\sum_{n=0}^\infty \frac{\cos^2(n)}{2^n}$}
-\choice{$\sum_{n=0}^\infty \frac{1}{3^n}$}
+\choice[correct]{$\displaystyle \sum_{n=0}^\infty \frac{1}{2^n}$}
+\choice{$\displaystyle \sum_{n=0}^\infty \frac{\cos^2(n)}{2^n}$}
+\choice{$\displaystyle \sum_{n=0}^\infty \frac{1}{3^n}$}
 \end{multipleChoice}
 
 Which way does the comparison go?
@@ -276,9 +275,9 @@ Determine if the series converges or diverges: $\displaystyle{\sum_{n=1}^\infty 
 Which series should we compare this to?
 
 \begin{multipleChoice}
-\choice[correct]{$\sum_{n=1}^\infty \frac{1}{n}$}
-\choice{$\sum_{n=1}^\infty \frac{1}{n^2}$}
-\choice{$\sum_{n=1}^\infty \frac{1}{n^3}$}
+\choice[correct]{$\displaystyle \sum_{n=1}^\infty \frac{1}{n}$}
+\choice{$\displaystyle \sum_{n=1}^\infty \frac{1}{n^2}$}
+\choice{$\displaystyle \sum_{n=1}^\infty \frac{1}{n^3}$}
 \end{multipleChoice}
 
 Which way does the comparison go?
@@ -323,9 +322,9 @@ Determine if the series converges or diverges: $\displaystyle{\sum_{n=1}^\infty 
 Which series should we compare this to?
 
 \begin{multipleChoice}
-\choice[correct]{$\sum_{n=1}^\infty \frac{1}{n}$}
-\choice{$\sum_{n=1}^\infty \frac{1}{n^2}$}
-\choice{$\sum_{n=1}^\infty \frac{3}{n^2}$}
+\choice[correct]{$\displaystyle \sum_{n=1}^\infty \frac{1}{n}$}
+\choice{$\displaystyle \sum_{n=1}^\infty \frac{1}{n^2}$}
+\choice{$\displaystyle \sum_{n=1}^\infty \frac{3}{n^2}$}
 \end{multipleChoice}
 
 Which way does the comparison go?
@@ -370,9 +369,9 @@ diverges: $\displaystyle{\sum_{n=0}^\infty \frac{5^n + 4}{3^n}}$\\
 Which series should we compare this to?
 
 \begin{multipleChoice}
-\choice{$\sum_{n=0}^\infty \left(\frac43\right)^n$}
-\choice[correct]{$\sum_{n=0}^\infty \left(\frac53\right)^n$}
-\choice{$\sum_{n=0}^\infty \left(\frac13\right)^n$}
+\choice{$\displaystyle \sum_{n=0}^\infty \left(\frac43\right)^n$}
+\choice[correct]{$\displaystyle \sum_{n=0}^\infty \left(\frac53\right)^n$}
+\choice{$\displaystyle \sum_{n=0}^\infty \left(\frac13\right)^n$}
 \end{multipleChoice}
 
 Which way does the comparison go?
@@ -439,9 +438,9 @@ Determine if the series converges or diverges: $\displaystyle{\sum_{n=1}^\infty 
 Which series should we compare this to?
 
 \begin{multipleChoice}
-\choice{$\sum_{n=1}^\infty \frac{1}{n^2}$}
-\choice[correct]{$\sum_{n=1}^\infty \frac{1}{n^3}$}
-\choice{$\sum_{n=1}^\infty \frac{3}{n^6}$}
+\choice{$\displaystyle \sum_{n=1}^\infty \frac{1}{n^2}$}
+\choice[correct]{$\displaystyle \sum_{n=1}^\infty \frac{1}{n^3}$}
+\choice{$\displaystyle \sum_{n=1}^\infty \frac{3}{n^6}$}
 \end{multipleChoice}
 
 Which way does the comparison go?
@@ -481,9 +480,9 @@ Determine if the series converges or diverges: $\displaystyle{\sum_{n=0}^\infty 
 Which series should we compare this to?
 
 \begin{multipleChoice}
-\choice[correct]{$\sum_{n=0}^\infty 2^n$}
-\choice{$\sum_{n=0}^\infty \left(\frac12\right)^n$}
-\choice{$\sum_{n=0}^\infty 4^n$}
+\choice[correct]{$\displaystyle \sum_{n=0}^\infty 2^n$}
+\choice{$\displaystyle \sum_{n=0}^\infty \left(\frac12\right)^n$}
+\choice{$\displaystyle \sum_{n=0}^\infty 4^n$}
 \end{multipleChoice}
 
 Which way does the comparison go?
@@ -509,9 +508,9 @@ Determine if the series converges or diverges: $\displaystyle{\sum_{n=0}^\infty 
 Which series should we compare this to?
 
 \begin{multipleChoice}
-\choice{$\sum_{n=0}^\infty \frac{1}{8^n}$}
-\choice{$\sum_{n=0}^\infty \frac{\sin^8(n)}{4^n}$}
-\choice[correct]{$\sum_{n=0}^\infty \frac{1}{4^n}$}
+\choice{$\displaystyle \sum_{n=0}^\infty \frac{1}{8^n}$}
+\choice{$\displaystyle \sum_{n=0}^\infty \frac{\sin^8(n)}{4^n}$}
+\choice[correct]{$\displaystyle \sum_{n=0}^\infty \frac{1}{4^n}$}
 \end{multipleChoice}
 
 Which way does the comparison go?
@@ -537,9 +536,9 @@ Determine if the series converges or diverges: $\displaystyle{\sum_{n=0}^\infty 
 Which series should we compare this to?
 
 \begin{multipleChoice}
-\choice[correct]{$\sum_{n=0}^\infty \frac{1}{2^n}$}
-\choice{$\sum_{n=1}^\infty \frac{1}{n^3}$}
-\choice{$\sum_{n=0}^\infty \frac{1}{3^n}$}
+\choice[correct]{$\displaystyle \sum_{n=0}^\infty \frac{1}{2^n}$}
+\choice{$\displaystyle \sum_{n=1}^\infty \frac{1}{n^3}$}
+\choice{$\displaystyle \sum_{n=0}^\infty \frac{1}{3^n}$}
 \end{multipleChoice}
 
 Which way does the comparison go?
@@ -566,9 +565,9 @@ Determine if the series converges or diverges: $\displaystyle{\sum_{n=1}^\infty 
 Which series should we compare this to?
 
 \begin{multipleChoice}
-\choice{$\sum_{n=1}^\infty \frac{1}{n^2}$}
-\choice{$\sum_{n=1}^\infty \frac{1}{n^3}$}
-\choice[correct]{$\sum_{n=1}^\infty \frac{1}{n^4}$}
+\choice{$\displaystyle \sum_{n=1}^\infty \frac{1}{n^2}$}
+\choice{$\displaystyle \sum_{n=1}^\infty \frac{1}{n^3}$}
+\choice[correct]{$\displaystyle \sum_{n=1}^\infty \frac{1}{n^4}$}
 \end{multipleChoice}
 
 Which way does the comparison go?
@@ -593,9 +592,9 @@ Determine if the series converges or diverges: $\displaystyle{\sum_{n=1}^\infty 
 Which series should we compare this to?
 
 \begin{multipleChoice}
-\choice[correct]{$\sum_{n=1}^\infty \frac{1}{n}$}
-\choice{$\sum_{n=1}^\infty \frac{4}{n^3}$}
-\choice{$\sum_{n=1}^\infty \frac{1}{n^4}$}
+\choice[correct]{$\displaystyle \sum_{n=1}^\infty \frac{1}{n}$}
+\choice{$\displaystyle \sum_{n=1}^\infty \frac{4}{n^3}$}
+\choice{$\displaystyle \sum_{n=1}^\infty \frac{1}{n^4}$}
 \end{multipleChoice}
 
 Which way does the comparison go?
@@ -622,9 +621,9 @@ Determine if the series converges or diverges: $\displaystyle{\sum_{n=1}^\infty 
 Which series should we compare this to?
 
 \begin{multipleChoice}
-\choice[correct]{$\sum_{n=1}^\infty \frac{1}{n}$}
-\choice{$\sum_{n=1}^\infty \frac{1}{n^4}$}
-\choice{$\sum_{n=1}^\infty \frac{1}{n^6}$}
+\choice[correct]{$\displaystyle \sum_{n=1}^\infty \frac{1}{n}$}
+\choice{$\displaystyle \sum_{n=1}^\infty \frac{1}{n^4}$}
+\choice{$\displaystyle \sum_{n=1}^\infty \frac{1}{n^6}$}
 \end{multipleChoice}
 
 Which way does the comparison go?
@@ -652,9 +651,9 @@ Determine if the series converges or diverges: $\displaystyle{\sum_{n=1}^\infty 
 Which series should we compare this to?
 
 \begin{multipleChoice}
-\choice[correct]{$\sum_{n=1}^\infty \frac{1}{n^2}$}
-\choice{$\sum_{n=1}^\infty \frac{1}{n^3}$}
-\choice{$\sum_{n=1}^\infty \frac{1}{3^n}$}
+\choice[correct]{$\displaystyle \sum_{n=1}^\infty \frac{1}{n^2}$}
+\choice{$\displaystyle \sum_{n=1}^\infty \frac{1}{n^3}$}
+\choice{$\displaystyle \sum_{n=1}^\infty \frac{1}{3^n}$}
 \end{multipleChoice}
 
 Which way does the comparison go?
