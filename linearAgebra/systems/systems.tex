@@ -1,0 +1,814 @@
+\documentclass[handout]{ximera}
+
+\input{../preamble}
+
+\outcome{In this section we solve linear systems of equations.}
+
+\title{1.1 Linear Systems}
+
+\begin{document}
+
+\begin{abstract}
+In this section we solve linear systems of equations.
+\end{abstract}
+ 
+\maketitle
+
+A {\bf linear equation} in two variables is an equation of the form 
+\[
+ax + by = c,
+\]
+where $a, b$ and $c$ are constants and $a$ and $b$ are not both $0$.
+Examples of linear equations include:
+\[
+2x+3y =5, 4x = 7 \;\text{and}\; y = 3x -2
+\]
+
+The graph of a linear equation in two variables is a straight line. The graphs of the three linear equations given above are shown below.
+
+
+\begin{image}
+\begin{tikzpicture}
+\draw[ ->] (-1,0) -- (3.6, 0) node[right]{$x$};
+\draw[ ->] (0,-1) -- (0, 3.6) node[above]{$y$};
+\draw[<->,blue] (1.75,-1) -- (1.75,3) node[right]{$4x=7$};
+\draw[<->,red] (-1,2.33) -- (3, -0.33) node[right]{$2x+3y=5$};
+\draw[<->,green] (1,1) -- (2, 4) node[right]{$y = 3x-2$};
+\end{tikzpicture}
+\end{image}
+
+
+
+\begin{image}
+\begin{tikzpicture}
+\draw[->] (-1,0) -- (3.6, 0) node[right]{$x$};
+\draw[->] (0,-1) -- (0, 3.6) node[above]{$y$};
+\draw[<->,blue] (1.75,-1) -- (1.75,4.3) node[left]{$4x=7$};
+\draw[<->,red] (-1,2.33) -- (3, -0.33) node[right]{$2x+3y=5$};
+\draw[<->,green] (0.5,-0.5) -- (2.25, 4.75) node[right]{$y = 3x-2$};
+\end{tikzpicture}
+\end{image}
+
+
+A {\bf system} of linear equations refers to more than one linear equation.
+The following is a system of 2 linear equations in 2 variables:
+\begin{align}
+2x+3y &= 5\\
+y &= 3x-2
+\end{align}
+
+{\bf Solving} a system of linear equations means finding all coordinate pairs $(x_0, y_0)$ 
+which satisfy all of the equations in the system. For example, the coordinate pair $(2,4)$ 
+satisfies the second equation in the above system, but not the first- so it 
+is {\bf not} a solution to the above system. However, the point $(1,1)$ 
+satisfies {\bf both} of the equations in the above system, and so it {\bf is} a 
+solution to the system.  Notice that this solution is represented geometrically by the 
+point of intersection of the two lines that make up the system (see the figure above). 
+Our goal is to systematically produce all of the solutions of a given linear system, if there are any.
+
+Here is an example of the elimination method created by Chatgpt(!).\\
+
+Solve the linear system:
+
+\begin{align*}
+x + 2y &= 5 \\
+3x - 5y &= 11
+\end{align*}
+
+To eliminate the variable $x$, we can multiply the first equation by 3 and the second equation by 1:
+
+\begin{align*}
+3(x + 2y) &= 3(5) \\
+1(3x - 5y) &= 1(11)
+\end{align*}
+
+Simplifying, we get:
+
+\begin{align*}
+3x + 6y &= 15 \\
+3x - 5y &= 11
+\end{align*}
+
+Next, we subtract the second equation from the first equation to eliminate the variable $x$:
+
+\begin{align*}
+(3x + 6y) - (3x - 5y) &= 15 - 11 \\
+3x + 6y - 3x + 5y &= 4 \\
+11y &= 4 \\
+y &= \frac{4}{11}
+\end{align*}
+
+Substituting the value of $y$ back into the first equation:
+
+\begin{align*}
+x + 2\left(\frac{4}{11}\right) &= 5 \\
+x + \frac{8}{11} &= 5 \\
+x &= 5 - \frac{8}{11} \\
+x &= \frac{27}{11}
+\end{align*}
+
+Therefore, the solution to the system of linear equations is $x = \frac{27}{11}$ and $y = \frac{4}{11}$.
+
+
+We can represent the given system of linear equations using an augmented matrix:
+
+\[
+\begin{bmatrix}
+1 & 2 & \vert & 5 \\
+3 & -5 & \vert & 11 \\
+\end{bmatrix}
+\]
+
+We'll perform row operations to transform the augmented matrix into reduced row-echelon form:
+
+\[
+\begin{array}{ccc|c}
+R_1 & R_2 &  &  \\
+\hline
+1 & 2 & \vert & 5 \\
+3 & -5 & \vert & 11 \\
+\end{array}
+\]
+
+We'll start by replacing $R_2$ with $R_2 - 3R_1$ to eliminate the coefficient of $x$ in the second equation:
+
+\[
+\begin{array}{ccc|c}
+R_1 & R_2 &  &  \\
+\hline
+1 & 2 & \vert & 5 \\
+0 & -11 & \vert & -4 \\
+\end{array}
+\]
+
+Next, we'll divide $R_2$ by $-11$ to make the leading coefficient $1$:
+
+\[
+\begin{array}{ccc|c}
+R_1 & R_2 &  &  \\
+\hline
+1 & 2 & \vert & 5 \\
+0 & 1 & \vert & \frac{4}{11} \\
+\end{array}
+\]
+
+Now, we'll replace $R_1$ with $R_1 - 2R_2$ to eliminate the coefficient of $y$ in the first equation:
+
+\[
+\begin{array}{ccc|c}
+R_1 & R_2 &  &  \\
+\hline
+1 & 0 & \vert & \frac{27}{11} \\
+0 & 1 & \vert & \frac{4}{11} \\
+\end{array}
+\]
+
+The augmented matrix is now in reduced row-echelon form. The solution to the system of linear equations is $x = \frac{27}{11}$ and $y = \frac{4}{11}$.
+
+
+
+We can represent the given system of linear equations using augmented matrices:
+
+\[
+\begin{bmatrix}
+1 & 2 \\
+3 & -5 \\
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+5 \\
+11 \\
+\end{bmatrix}
+\]
+
+We'll perform row operations to transform the augmented matrix into reduced row-echelon form:
+
+\[
+\begin{bmatrix}
+1 & 2 \\
+3 & -5 \\
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+5 \\
+11 \\
+\end{bmatrix}
+\]
+
+We'll start by replacing the second row with the second row minus 3 times the first row:
+
+\[
+\begin{bmatrix}
+1 & 2 \\
+0 & -11 \\
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+5 \\
+-4 \\
+\end{bmatrix}
+\]
+
+Next, we'll divide the second row by $-11$ to make the leading coefficient $1$:
+
+\[
+\begin{bmatrix}
+1 & 2 \\
+0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+5 \\
+-\frac{4}{11} \\
+\end{bmatrix}
+\]
+
+Now, we'll replace the first row with the first row minus 2 times the second row:
+
+\[
+\begin{bmatrix}
+1 & 0 \\
+0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{27}{11} \\
+\frac{4}{11} \\
+\end{bmatrix}
+\]
+
+The augmented matrix is now in reduced row-echelon form. The solution to the system of linear equations is $x = \frac{27}{11}$ and $y = \frac{4}{11}$.
+
+
+We can represent the given system of linear equations using matrices:
+
+\[
+\begin{bmatrix}
+1 & 2 \\
+3 & -5 \\
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+5 \\
+11 \\
+\end{bmatrix}
+\]
+
+We'll perform row operations to transform the augmented matrix into reduced row-echelon form:
+
+\[
+\left[
+\begin{array}{cc|c}
+1 & 2 & 5 \\
+3 & -5 & 11 \\
+\end{array}
+\right]
+\]
+
+We'll start by replacing the second row with the second row minus 3 times the first row:
+
+\[
+\left[
+\begin{array}{cc|c}
+1 & 2 & 5 \\
+0 & -11 & -4 \\
+\end{array}
+\right]
+\]
+
+Next, we'll divide the second row by $-11$ to make the leading coefficient $1$:
+
+\[
+\left[
+\begin{array}{cc|c}
+1 & 2 & 5 \\
+0 & 1 & \frac{4}{11} \\
+\end{array}
+\right]
+\]
+
+Now, we'll replace the first row with the first row minus 2 times the second row:
+
+\[
+\left[
+\begin{array}{cc|c}
+1 & 0 & \frac{27}{11} \\
+0 & 1 & \frac{4}{11} \\
+\end{array}
+\right]
+\]
+
+The augmented matrix is now in reduced row-echelon form. The solution to the system of linear equations is:
+
+\[
+\begin{aligned}
+x &= \frac{27}{11} \\
+y &= \frac{4}{11} \\
+\end{aligned}
+\]
+
+\end{document}
+
+\end{document}
+
+\end{document}
+
+
+
+
+It is not necessary to place a vector in standard position.  
+In practical applications of vectors, it is typical to place the initial point of a vector in a position of interest.  
+For example, if the vector represents the velocity of an object, then one would likely choose the initial point to be the location of the object.
+Below is a graphical representation of the vector, $\vector{2,2}$ placed in several different positions.
+Since each of the arrows below are the same length and point in the same direction, they represent the same vector.
+Notice that in each copy of the vector, the final point is two units to the right and two units up from the initial point. 
+\begin{image}
+\begin{tikzpicture}
+%\draw[step=1.0,black,thin] (-2.5,-2.5) grid (2.5,2.5);
+%\draw[thick, <->] (-2.5,0) -- (2.5, 0) node[right]{$x$};
+%\draw[thick, <->] (0,-2.5) -- (0, 2.5) node[above]{$y$};
+%\draw[->, blue] (0,0) -- (1, 1) ;
+\draw[->, blue] (-0.5, -0.5) -- (0.5, 0.5);
+\draw[->, blue] (1.5, 1.5) -- (2.5, 2.5);
+\draw[->, blue] (-2.5, -2.5) -- (-1.5,-1.5);
+\draw[->, blue] (-0.5, 1.5) -- (0.5, 2.5);
+\draw[->, blue]  (-2.5, -0.5)-- (-1.5, 0.5);
+\draw[->, blue] (-2.5, 1.5) -- (-1.5, 2.5);
+\draw[->, blue] (1.5, -0.5) -- (2.5, 0.5);
+\draw[->, blue]  (-0.5, -2.5)-- (0.5,-1.5);
+\draw[->, blue] (1.5, -2.5) -- (2.5, -1.5);
+%\draw[->] (-1,0)--(0,1);
+\draw[->, blue] (-0.5, 1.5) -- (0.5, 2.5);
+%\draw[->, blue] (-2,0) -- (-1, 1) ;
+%\draw[->, blue] (0,1) -- (1, 2) ;
+%\draw[->, blue] (-2,1) -- (-1, 2) ;
+%\draw[->, blue] (1,-2) -- (2, -1) ;
+%\draw[->, blue] (0,-1) -- (1, 0) ;
+%\draw[->, blue] (-2,-2) -- (-1, -1) ;
+%\draw[->, blue] (1,-1) -- (2, 0) ;
+%\node at (2.2, -0.3){$2$};
+%\node at (-1.8, -0.3){$-2$};
+%\node at (-0.3,2){$2$};
+%\node at (-0.3, -2){$-2$};
+\draw[step= 0.5 cm,color=gray] (-3,-3) grid (3,3);
+\node at (0, -3.5) {Multiple copies of the vector $\vector{2,2}$};
+\end{tikzpicture}
+\end{image}
+
+
+
+A special vector is the zero vector, $\vec{0} = \vector{0,0}$.  
+This vector has magnitude zero and no direction.  
+It is represented graphically by a single point.
+
+\begin{image}
+\begin{tikzpicture}
+\draw[ <->] (-2,0) -- (2, 0) node[right]{$x$};
+\draw[<->] (0,-2) -- (0, 2) node[above]{$y$};
+\draw[blue, fill] (0,0) circle (0.03) node[below right]{$\vec{0}$};
+%\draw[thin] (1, 0.15) -- (1, -0.15) node[below]{$1$};
+%\draw[thin] (0.15,1) -- (-0.15,1) node[left]{$1$};
+\end{tikzpicture}
+\end{image}
+
+The vector with initial point $P(x_1, y_1)$ and final point $Q(x_2, y_2)$ has components $\avec{PQ} = \vector{x_2 - x_1, y_2-y_1}$
+
+
+\begin{image}
+\begin{tikzpicture}
+\draw[ <->] (-2,0) -- (2, 0) node[right]{$x$};
+\draw[ <->] (0,-1) node[below]{The vector $\avec{PQ} = \vector{x_2 - x_1, y_2-y_1}$} -- (0, 2) node[above]{$y$};
+\draw[->, blue] (-1,0.5) node[left]{$P(x_1,y_1)$} -- (1.5, 1.5) node[right]{$Q(x_2,y_2)$};
+\draw[blue, fill] (-1, 0.5) circle (0.03);
+%\draw[thin] (2, 0.15) -- (2, -0.15) node[below]{$1$};
+%\draw[thin] (0.15,2) -- (-0.15,2) node[left]{$1$};
+\end{tikzpicture}
+\end{image}
+
+\begin{example}[Example 1]
+Find the components of the vector from the point $P(-2, 3)$ to the point $Q(1, 1)$ and draw two copies of this vector- the first from the point $P$ to the point $Q$
+and the second in standard position.\\
+The components of $\avec{PQ}$ are $\vector{1-(-2), 1-3} = \vector{3, -2}$.
+The two copies of the vector are shown below.
+
+\begin{image}
+\begin{tikzpicture}
+\draw[step=1.0,black,thin] (-3.5,-3.5) grid (3.5,3.5);
+\draw[thick, <->] (-3.5,0) -- (3.5, 0) node[right]{$x$};
+\draw[thick, <->] (0,-3.5) -- (0, 3.5) node[above]{$y$};
+\draw[->, blue, thick] (0,0) -- (3, -2) ;
+\draw[blue, fill] (0, 0) circle (0.03);
+\draw[->, blue, thick] (-2,3) node[above left]{$P$} -- (1, 1) node[right]{$Q$} ;
+\draw[blue, fill] (-2, 3) circle (0.03);
+\node at (2.1, -0.3){$2$};
+\node at (-2, -0.3){$-2$};
+\node at (-0.3,2){$2$};
+\node at (-0.3, -2){$-2$};
+\node at (0, -3.8) {Two copies of the vector $\avec{PQ} = \vector{3,-2}$};
+\end{tikzpicture}
+\end{image}
+
+\end{example}
+
+\begin{problem}(Problem 1)
+Find the components of the vector from $P(-3, 2)$ to the point $Q(2, -1)$ and draw two copies of this vector- the first from the point $P$ to the point $Q$
+and the second in standard position.\\
+\end{problem}
+
+
+\subsection{Magnitude of a Vector}
+
+The magnitude of a vector $\vec{v} = \vector{x,y}$ in $\R^2$ is given by the distance formula:
+\[
+|\vec{v}| = |\vector{x,y}| = \sqrt{x^2 +y^2}
+\]
+
+\begin{example}[Example 2]
+Find the magnitude of the vector $\vector{1,1}$.\\
+Its magnitude is
+\[
+|\vector{1,1}| = \sqrt{1^2 +1^2} = \sqrt 2
+\]
+\end{example}
+
+\begin{problem}(Problem 2)
+Find the magnitudes of the following vectors:\\
+a) $|\vector{2,3}| = \answer{\sqrt{13}}$\\
+b) $|\vector{-4,2}| = \answer{2\sqrt{5}}$\\
+c) $|\vector{12,-5}| = \answer{13}$
+\end{problem}
+
+The magnitude of the zero vector is $0$ and it is the only vector with magnitude zero
+\[
+|\vec{0}| = |\vector{0,0}| = \sqrt{0^2 +0^2} = 0
+\]
+
+\section{Vector Operations}
+In this section, we learn about two fundamental operations involving vectors: scalar multiplication and addition.
+The more advanced dot product and cross product operations will be handled in later sections.
+
+\subsection{Scalar Multiplication}
+Given a vector $\vec{v} = \vector{x,y}$ in $\R^2$ and a scalar $c$ in $\R$, we can multiply the scalar and the vector in the following
+natural way
+\[
+c\vec{v} = c\vector{x,y} = \vector{cx,cy}
+\]
+In words, we multiply a vector by a scalar by multiplying each component by the scalar.
+The first thing to note is that if the scalar is 0, then the resulting vector will be the zero vector:
+\[
+0\vec{v} = 0\vector{x,y} = \vector{0,0} = \vec{0}
+\]
+
+The effect of scalar multiplication on the magnitude of a vector is given in the following proposition.
+\begin{proposition}[Scaling]
+Given a vector $\vec{v} = \vector{x,y}$ in $\R^2$ and a scalar $c$ in $\R$,
+\[
+|c\vec{v}| = |c| |\vec{v}|
+\]
+\begin{proof}
+Write $\vec{v}$ in component form as $\vec{v} = \vector{x,y}$, then
+\begin{align*}
+|c\vec{v}| &= |c\vector{x,y}|\\
+            &= |\vector{cx,cy}|\\
+            &= \sqrt{(cx)^2 + (cy)^2}\\
+            &= \sqrt{c^2x^2 + c^2y^2}\\
+            &= \sqrt{c^2(x^2 + y^2)}\\
+            &= \sqrt{c^2} \sqrt{x^2 + y^2}\\
+            &= |c| |\vec{v}|
+\end{align*}
+\end{proof}
+\end{proposition}
+
+When $c>0$, the vector $c\vec{v}$ has the same direction as $\vec{v}$, and when $c<0$, the
+vector $c\vec{v}$ has the opposite direction as $\vec{v}$, as illustrated below.
+
+
+
+\begin{image}
+\begin{tikzpicture}
+\draw[blue, thick, ->] (-3,0) -- (-2,0) node[right]{$\vec{v}$};
+\draw[red, thick, <-] (-3,-1) node[left ]{$-\vec{v}$} -- (-2,-1) ;
+\draw[blue, thick, ->] (0,0) -- (2,0) node[right]{$2\vec{v}$};
+\draw[red, thick, <-] (0,-1) node[left]{$-2\vec{v}$} -- (2,-1);
+\draw[blue, thick, ->] (4,0) -- (4.5,0) node[right]{$\tfrac12\vec{v}$};
+\draw[red, thick, <-] (4,-1)node[left]{$-\tfrac12\vec{v}$} -- (4.5,-1) ;
+\node at (0.75, -2) {Multiplying $\vec{v}$ by positive and negative scalars};
+%\draw[white] (0,-4) -- (6, -4);
+\end{tikzpicture}
+\end{image}
+
+\subsection{Unit Vectors}
+
+A vector with magnitude 1 is called a {\bf unit vector}. Two special unit vectors in $\R^2$ are the {\bf standard basis} vectors:
+\[
+\vec{i} = \vector{1,0} \quad \text{and} \quad \vec{j} = \vector{0,1}
+\]
+
+The vectors $\vec{i}$ and $\vec{j}$ are shown below.
+
+\begin{image}
+\begin{tikzpicture}
+\draw[ <->] (-1.5,0) -- (1.8, 0) node[right]{$x$};
+\draw[<->] (0,-1.5) -- (0,1.8) node[above]{$y$};
+\draw[thick,->, blue!70!white] (0,0) -- (1, 0) node[midway, below ]{$\vec{i}$};
+\draw[thick,->, red!70!white] (0,0) -- (0,1) node[midway, left]{$\vec{j}$};
+\draw[blue, fill] (0,0) circle (0.01);
+\draw[thin] (1, 0.1) -- (1, -0.1) node[below]{$1$};
+\draw[thin] (0.1,1) -- (-0.1,1) node[left]{$1$};
+\node at (0, -2) {The standard basis vectors in $\R^2$};
+\draw[white] (-1, -2.5) -- (1, -2.5);
+\end{tikzpicture}
+\end{image}
+
+For any angle $\theta$, the identity 
+\[
+\cos^2 \theta + \sin^2 \theta = 1
+\]
+ implies that the vector 
+ \[
+ \vector{\cos \theta, \sin \theta}
+ \]
+is a unit vector. In $\R^2$, the angle $\theta$ between the positive $x$-axis and a vector placed in standard position can be used to describe the direction of the vector.  
+For this reason, unit vectors are also referred to as {\bf direction vectors}.
+
+\begin{image}
+\begin{tikzpicture}
+\draw[ <->] (-2,0) -- (2, 0) node[right]{$x$};
+\draw[<->] (0,-2) -- (0,2) node[above]{$y$};
+\draw (0,0) circle (1.5);
+\draw[blue!70, ->] (0,0) -- (-1.06, 1.06)  node[above, left]{$\vector{\cos \theta, \sin\theta}$};
+\draw[blue!70] (.2,0) arc (0:135:0.2) node[ midway, right]{$\theta$};
+\node at (0, -2.5) {A unit or {\it direction} vector};
+\end{tikzpicture}
+\end{image}
+
+Given a vector $\vec{v}$, we will want to find a unit vector in the direction of $\vec{v}$.
+This unit vector will have the form $c\vec{v}$ for some positive scalar $c$.  
+\begin{proposition}[Unit Vectors]
+The unit vector $\vec{u}$ in the same direction as the vector $\vec{v} \neq \vec{0}$ is given by 
+\[
+\vec{u} = \frac{1}{|\vec{v}|} \vec{v}
+\]
+\begin{proof}
+Since $|\vec{v}| \neq 0$, the scalar $\displaystyle \frac{1}{|\vec{v}|}$ is a positive real number.  Thus, the vector $\vec{u}$ points 
+in the same direction as $\vec{v}$, since it is a positive multiple of $\vec{v}$ . We must now show that $|\vec{u}| = 1$.  
+By the previous proposition, we have
+\begin{align*}
+|\vec{u}| &= \left| \frac{1}{|\vec{v}|} \vec{v} \right|\\
+           &= \left| \frac{1}{|\vec{v}|} \right| |\vec{v}|\\
+           &= \frac{1}{|\vec{v}|} |\vec{v}|\\
+           &= 1
+\end{align*}
+\end{proof}
+\end{proposition}
+
+\begin{example}[Example 3]
+Find a unit vector in the same direction as the vector $\vec{v} = \vector{3, -4}$.\\
+First we find the magnitude of $\vec{v}$:
+\[
+|\vec{v}| = |\vector{3, -4}| = \sqrt{3^2 + (-4)^2} = \sqrt{25} = 5
+\]
+By the proposition above, we have
+\[
+\vec{u} = \frac{1}{|\vec{v}|} \vec{v} = \frac15 \vector{3, -4} = \vector{\frac35, -\frac45}
+\]
+where $\vec{u}$ is a unit vector in the same direction as $\vec{v}$.
+\end{example}
+
+\begin{problem}(Problem 3a)
+Find a unit vector in the same direction as the vector $\vec{v} = \vector{-8, 15}$.\\
+$\vec{u} = \vector{\answer{-8/17}, \answer{15/17}}$
+\end{problem}
+
+\begin{problem}(Problem 3b)
+Find a unit vector in the opposite direction of the vector $\vec{v} = \vector{9, -12}$.\\
+$\vec{u} = \vector{\answer{-3/5}, \answer{4/5}}$
+\end{problem}
+
+Every non-zero vector in $\R^2$ can be written in terms of its magnitude and a direction angle, i.e. a polar form.
+
+\begin{proposition}[Polar Form]
+Let $\vec{v} = \vector{x,y} \neq \vector{0,0}$.  Then there is an angle $\theta$ such that $\vec{v} = |\vec{v}| \vector{\cos \theta, \sin \theta}$.
+\begin{proof}
+%Since $\cos^2\theta + \sin^2\theta = 1$ for any angle $\theta$, the vector $\vector{\cos \theta, \sin \theta}$ is a unit vector.
+By the previous proposition, the vector $|\vec{v}| \vector{\cos \theta, \sin \theta}$ has magnitude $|\vec{v}|$. 
+Now, if $\vec{v}$ is drawn in standard position, and if $\theta$ is the (counterclockwise) angle between $\vec{v}$ and the positive $x$-axis, 
+then 
+\[
+\cos \theta = \frac{x}{|\vec v|} \quad \text{and} \quad \sin \theta = \frac{y}{|\vec v|}
+\]
+Hence, the components of $\vec{v}$ are 
+\[
+x = |\vec{v}|\cos \theta \quad \text{and} \quad y = |\vec{v}|\sin \theta, 
+\]
+which means that
+\[
+\vec v = \vector{x,y} = \vector{|\vec{v}|\cos\theta,|\vec{v}|\sin\theta} 
+\]
+Factoring out $|\vec v|$ we obtain
+\[
+\vec v = |\vec{v}|\vector{\cos\theta,\sin\theta}
+\]
+as desired. See the figure below.
+\begin{image}
+\begin{tikzpicture}
+%\draw[step=1.0,black,thin] (-3.5,-3.5) grid (3.5,3.5);
+\draw[thick, <->] (-3.5,0) -- (3.5, 0) node[right]{$x$};
+\draw[thick, <->] (0,-3) -- (0, 3.5) node[above]{$y$};
+\draw[->, blue, thick] (0,0) -- (-2.5, 2.5) node[above]{$\vec{v} = \vector{|\vec{v}|\cos\theta,|\vec{v}|\sin\theta}$};
+\draw[blue, fill] (0, 0) circle (0.03);
+\draw[red] (0,0) circle (1);
+\draw[red, fill, ->] (-.707, .707) circle (0.03) node[above, left]{$(\cos \theta, \sin\theta)$};
+\draw (.3,0) arc (0:135:0.3) node[midway, above right]{$\theta$};
+\node at (2.1, -0.3){$2$};
+\node at (-2, -0.3){$-2$};
+\node at (-0.3,2){$2$};
+\node at (-0.3, -2){$-2$};
+\node[red] at (1.3, -1.3) {$x^2 + y^2 = 1$};
+\node at (0, -3.4) {Polar form: $\vec{v} = |\vec{v}| \vector{\cos \theta, \sin \theta}$};
+\end{tikzpicture}
+\end{image}
+
+
+\end{proof}
+\end{proposition}
+
+\begin{example}[Example 4]
+Find the polar form of the vectors $-2\vec{i}$ and $4\vec{i}-7\vec{j}$.\\
+The angle associated with the vector $-2\vec{i}$ is $\pi$ since the vector points in the direction of the negative $x$-axis.
+So $-2\vec{i} = |-2\vec{i}| \vector{\cos \pi, \sin \pi} = 2\vector{\cos \pi, \sin \pi} (= 2\vector{-1, 0} = \vector{-2, 0})$.\\
+The angle associated with the vector $4\vec{i}-7\vec{j}$ is $\theta = \tan^{-1}(-7/4)$, which is not a well known angle.
+The magnitude of $4\vec{i}-7\vec{j}$ is $\sqrt{16 +49} = \sqrt{65}$.  Hence, the polar form of $4\vec{i}-7\vec{j}$ is
+$\sqrt{65}\vector{\cos \theta, \sin\theta}$ where $\theta$ is as above. Note that if $\vec{v}$ is in the second or third quadrant, then 
+to find the angle we would add $\pi$ to the inverse tangent.
+\end{example}
+
+\begin{problem}(Problem 4)
+Find the polar form of the vectors $-3\vec{j}$ and $-2\vec{i}+5\vec{j}$.\\
+\end{problem}
+
+\subsection{Vector Addition}
+Vector addition is done component-wise.  If $\vec{v}_1 = \vector{x_1, y_1}$ and $\vec{v}_2 = \vector{x_2, y_2}$
+then their sum is given by
+\[
+\vec{v}_1+ \vec{v}_2= \vector{x_1+x_2,  y_1+y_2}
+\]
+Vector subtraction is addition of the negative which results in component-wise subtraction:
+\[
+\vec{v}_1- \vec{v}_2= \vec{v}_1+ \left(- \vec{v}_2\right)  = \vector{x_1,y_1} + \vector{-x_2, -y_2} = \vector{x_1-x_2,  y_1-y_2}
+\]
+
+\begin{example}[Example 5]
+Let $\vec{u} = \vector{-4, 2}$ and $\vec{v} = \vector{5, -7}$.  Compute each of the following:\\
+a) $\vec{u}+\vec{v} = \vector{1, -5}$\\
+b) $\vec{u}-\vec{v} = \vector{-9, 9}$\\
+c) $\vec{v}-\vec{u} = \vector{9, -9}$\\
+d) $2\vec{u}+3\vec{v} = \vector{7, -17}$\\
+\end{example}
+
+\begin{problem}(Problem 5)
+Let $\vec{u} = \vector{2, -3}$ and $\vec{v} = \vector{-1, 6}$.  Compute each of the following:\\
+a) $\vec{u}+\vec{v} = \vector{\answer{1}, \answer{3}}$\\
+b) $\vec{u}-\vec{v} = \vector{\answer{3}, \answer{-9}}$\\
+c) $\vec{v}-\vec{u} = \vector{\answer{-3}, \answer{9}}$\\
+d) $3\vec{u}+5\vec{v} = \vector{\answer{1}, \answer{21}}$\\
+\end{problem}
+
+Graphically, vector addition can be performed using either the parallelogram method or the end to end method as pictured below.
+\begin{image}
+\begin{tikzpicture}
+\draw[blue, ->, thick] (0,0) -- (3, 1) node[midway, below]{$\vec{u}$};
+\draw[blue, ->, thick] (0,0) -- (1, 4) node[midway, left]{$\vec{v}$};
+\draw[blue, thin, dashed] (3, 1) -- (4, 5);
+\draw[blue, thin, dashed] (1, 4) -- (4, 5);
+\draw[red, ->, thick] (0,0) -- (4, 5) node[above]{$\vec{u} + \vec{v}$};
+\node at (1.5, -1){Parallelogram Method};
+\draw[blue, ->, thick] (6,0) -- (9, 1) node[midway, below]{$\vec{u}$};
+\draw[blue, ->, thick] (9,1) -- (10, 5) node[midway, right]{$\vec{v}$};
+\draw[red, ->, thick] (6,0) -- (10, 5) node[above]{$\vec{u} + \vec{v}$};
+\node at (7.5, -1){End to End Method};
+\end{tikzpicture}
+\end{image}
+
+The difference $\vec{u} - \vec{v}$ is the vector from $\vec{v}$ to $\vec{u}$ as shown below.
+\begin{image}
+\begin{tikzpicture}
+\draw[blue, ->, thick] (0,0) -- (3, 1) node[midway, below]{$\vec{u}$};
+\draw[blue, ->, thick] (0,0) -- (1, 4) node[midway, left]{$\vec{v}$};
+\draw[red, ->, thick] (1,4) -- (3, 1) node[midway,right]{$\vec{u} - \vec{v}$};
+\node at (1.5, -1){The vector $\vec{u} - \vec{v}$};
+\draw[white] (-3, -1.5) -- (7, -1.5);
+\end{tikzpicture}
+\end{image}
+Note that in the figure above, if we add the vectors $\vec{v}$ and $\vec{u} -\vec{v}$ using the end to end method, 
+we get the vector $\vec{u}$, i.e.,
+\[
+\vec{v} + \left(\vec{u} -\vec{v}\right) = \vec{u}
+\]
+
+Vectors in $\R^2$ can be written using the {\bf standard basis} vectors $\vec{i} = \vector{1,0}$ and $\vec{j} = \vector{0,1}$.  
+Given a vector $\vec{v} = \vector{x,y}$, we can use the addition and scalar multiplication operations to rewrite it as
+\begin{align*}
+\vec{v} &= \vector{x,y}\\
+         &= \vector{x,0} + \vector{0,y}\\
+         &= x\vector{1,0} + y \vector{0,1}\\
+         &= x\vec{i} + y\vec{j}
+\end{align*}
+
+
+
+\section{Application}
+Forces acting on an object have both magnitude and a direction and hence they can be modeled using vectors.
+
+\begin{example}[Example 6]
+A box on the floor is being pulled by a rope. The weight of the box is $20$ Newtons, the force due to friction is $8$ Newtons, and the 
+force on the rope is $24$ Newtons at an angle of $30^\circ$ to the floor. Find the normal force, $\vec{n}$, acting on the box from the 
+floor and resultant force acting on the box, $\vec{F}$.\\
+\begin{image}  
+\begin{tikzpicture}
+\draw (0,0) -- (6,0) node[right]{floor};
+\draw (1.5, 0) -- (1.5, 2) -- (4.5, 2) -- (4.5, 0) node[midway, right]{box};
+\draw[blue!70!white, ->] (3,0) -- (3, -1) node[below]{weight = $20$N};
+\draw[blue!70!white, <-] (1, 1) node[left]{friction = $8$N} -- (1.5,1);
+\draw[blue!70!white, ->] (4.5, 2) -- (6, 3) node[right]{rope force = $24$N};
+\draw[blue!70!white, ->] (3,2) -- (3, 2.5) node[above]{normal force, $\vec{n}$};
+\draw[blue!70!white, dashed] (4.5, 2) -- (5.7, 2) ;
+\node[blue!70!white] at (5.3,2.2){$30^\circ$};
+\end{tikzpicture}
+\end{image}
+
+
+The resultant force on the box is the sum of the forces acting on the box, where each force is represented by a vector.
+The force of the weight of the box has a magnitude of $20$ and points in the direction of the negative $y$-axis.  
+This vector is $\vec{w} = \vector{0,-20}$.
+The friction force has a magnitude of $8$ and points in the direction of the negative $x$-axis.  This vector is $\vec{f} = \vector{-8,0}$.
+The force on the rope has a magnitude of $24$ and points in the direction $30^\circ$ above the $x$-axis. 
+Using trigonometry, we can deduce that the horizontal and vertical components of this force vector are $x = 24\cos(30^\circ) = 12\sqrt 3$
+and $y = 24\sin(30^\circ) = 12$ respectively. Hence, this force is $\vec r = \vector{12\sqrt 3, 12}$.  See the figure below.
+
+\begin{image}
+\begin{tikzpicture}
+\draw(0,0) -- (6.8,0) node[midway, below]{$24 \cos(30^\circ)$} ;
+\draw (6.8, 0) -- (6.8,4) node[midway,right]{$24\sin(30^\circ)$};
+\draw[blue!70!white, ->] (0,0) -- (6.8, 4) node[midway, above left]{$|\vec{r}| = 24$};
+\node at (1, 0.25) {$30^\circ$};
+\node at (3.4, -1) {The force on the rope is $\vec r = \vector{12\sqrt 3, 12}$};
+\draw (6.5, 0) -- (6.5, 0.3) -- (6.8, 0.3);
+\end{tikzpicture}
+\end{image}
+
+Assuming that the vertical component of the rope force is not enough to overcome the weight of the box (and thus send it airborne), 
+the floor will exert an upward normal force on the box.  This force will have the form $\vec{n} = \vector{0, s}$ where the positive 
+number $s$ will be determined by the fact that the net vertical component of all forces acting on the box is zero. 
+The resultant force, $\vec{F}$, on the box is the sum of the vectors $\vec{f}, \vec{w}, \vec{n}$ and $\vec{r}$:
+\begin{align*}
+\vec{F} &= \vec{f} + \vec{w} + \vec{n} +  \vec{r} \\
+         &= \vector{-8,0} + \vector{0,-20} +\vector{0,s} + \vector{12\sqrt 3, 12} \\
+         &= \vector{12\sqrt 3 -8 , s-8}
+\end{align*}
+Since the vertical component of the resultant force $\vec{F}$ should be zero, we see that $s = 8$. 
+Thus $\vec{n} = \vector{0,8} = 8\vec{j}$ so that $\vec{F} = \vector{12\sqrt 3 -8, 0} \approx \vector{12.785,0} = 12.785\vec{i}$. Because of this force, 
+the box will slide along the floor to the right.
+
+% at a speed equal to the magnitude of this force: 
+%\[
+%|\vec{F}| = \left|\vector{12\sqrt 3 -8, 0}\right| = 12\sqrt 3 - 8 \approx 12.785\, \text{meters/second}
+%\]
+
+
+
+
+\end{example}
+\end{document}
+
+
+
+
+
+
+
+
