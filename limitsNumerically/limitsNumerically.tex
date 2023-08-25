@@ -175,7 +175,7 @@ We can summarize this information in a table:
 
 The outputs appear to be approaching the number 11, leading us to conclude that
 
-\[\lim_{x \to 3^+} (x^2 + 2) = 11.\] 
+\[\lim_{x \to 3^+} (x^2 + 2) = 11\] 
  
 In this particular example, we could have arrived at the answer by simply plugging the number $x = 3$
 into the function $x^2 + 2$ since $3^2 + 2 = 11$.  
@@ -189,7 +189,7 @@ that number is usually the correct answer.
 \begin{problem}(problem 1)
 Compute the limit by plugging in the terminal value.
 \[
-\lim_{x \to -4} x^2 -3x -1.
+\lim_{x \to -4} (x^2 -3x -1)
 \]
 
 The limit is $\answer{27}$.
@@ -370,11 +370,11 @@ Now determine the limit:
 
 \begin{example}[example 4]
 Compute the following limit: 
-\[\lim_{x \to 0^+} \frac{\sin(x)}{x}.\]
+\[\lim_{x \to 0^+} \frac{\sin x}{x}.\]
 
 %This is a two-sided limit.  We begin be computing each of the corresponding one-sided limits.
 First, note that the shortcut of plugging $x=0$ into the 
-function $\displaystyle{f(x)= \frac{\sin(x)}{x}}$ yields the indeterminate form $\frac{0}{0}$.
+function $\displaystyle{f(x)= \frac{\sin x}{x}}$ yields the indeterminate form $\frac{0}{0}$.
 Hence, to compute this one-sided limit, we consider the following values for $x$: $0.1,\ 0.01,\ 0.001$ and $\ 0.0001$.
 Plugging these values into the function, we generate the following table of values:
 
@@ -383,13 +383,13 @@ Plugging these values into the function, we generate the following table of valu
 \begin{array}{ c | c | c | c | c }
   x & 0.1 & 0.01  & 0.001 & 0.0001 \\ 
 	\hline 
-	 \frac{\sin(x)}{x} & 0.9983 & 0.99998 & 0.9999998 & 0.999999998
+	 \frac{\sin x}{x} & 0.9983 & 0.99998 & 0.9999998 & 0.999999998
 \end{array}
 \]  
 
 Based on this numerical evidence, 
 it would be reasonable to guess that 
-\[\lim_{x \to 0^{+}} \frac{\sin(x)}{x} = 1.\]
+\[\lim_{x \to 0^{+}} \frac{\sin x}{x} = 1.\]
 
 %To compute the left side limit, we can consider the 
 %following values for $x$: $-0.1, -0.01, -0.001$ and $-0.0001$.
@@ -423,7 +423,7 @@ it would be reasonable to guess that
 
 \begin{problem}(problem 4a)
 Fill in the table below with 9 decimal places of accuracy and use it to find the limit:
-\[\lim_{x \to 0^-} \frac{\sin(x)}{x}.\]
+\[\lim_{x \to 0^-} \frac{\sin x}{x}.\]
 
 %\begin{prompt}
 \begin{center}
@@ -431,26 +431,26 @@ Fill in the table below with 9 decimal places of accuracy and use it to find the
 \begin{array}{ c | c | c }
   x & -0.1 & -0.01   \\ 
 	\hline 
-	 \frac{\sin(x)}{x} & \answer{0.998334166} & \answer{0.999983333} 
+	 \frac{\sin x}{x} & \answer{0.998334166} & \answer{0.999983333} 
 \end{array}
 \]
 \[
 \begin{array}{ c | c | c  }
   x  & -0.001 & -0.0001 \\ 
 	\hline 
-	 \frac{\sin(x)}{x}  & \answer{0.999999833} & \answer{0.999999998}
+	 \frac{\sin x}{x}  & \answer{0.999999833} & \answer{0.999999998}
 \end{array}
 \]
 \end{center}
 Now determine the limit:
 \[
-\lim_{x \to 0^-} \frac{\sin(x)}{x} = \answer{1}
+\lim_{x \to 0^-} \frac{\sin x}{x} = \answer{1}
 \]
 %\end{prompt}
 
 Based on the example above and the result of this problem, determine the two-sided limit:
 \[
-\lim_{x \to 0} \frac{\sin(x)}{x}.
+\lim_{x \to 0} \frac{\sin x}{x}.
 \]
 
 The limit is (DNE is a possibility) $\answer{1}$
@@ -460,7 +460,7 @@ The limit is (DNE is a possibility) $\answer{1}$
 
 \begin{problem}(problem 4b)
 Fill in the table below with 8 decimal places of accuracy and use it to find the limit:
-\[\lim_{x \to 0^+} \frac{\sin(3x)}{x}.\]
+\[\lim_{x \to 0^+} \frac{\sin 3x}{x}.\]
 
 %\begin{prompt}
 \begin{center}
@@ -468,20 +468,20 @@ Fill in the table below with 8 decimal places of accuracy and use it to find the
 \begin{array}{ c | c | c }
   x & 0.1 & 0.01   \\ 
 	\hline 
-	 \frac{\sin(3x)}{x} & \answer{2.95520207} & \answer{2.99955002} 
+	 \frac{\sin 3x}{x} & \answer{2.95520207} & \answer{2.99955002} 
 \end{array}
 \]
 \[
 \begin{array}{ c | c | c  }
   x  & 0.001 & 0.0001 \\ 
 	\hline 
-	 \frac{\sin(3x)}{x}  & \answer{2.99999550} & \answer{2.99999996}
+	 \frac{\sin 3x}{x}  & \answer{2.99999550} & \answer{2.99999996}
 \end{array}
 \]
 \end{center}
 Now determine the limit:
 \[
-\lim_{x \to 0^+} \frac{\sin(3x)}{x} = \answer{3}
+\lim_{x \to 0^+} \frac{\sin 3x}{x} = \answer{3}
 \]
 %\end{prompt}
 \end{problem}

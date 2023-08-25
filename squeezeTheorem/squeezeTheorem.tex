@@ -107,23 +107,23 @@ Since $\frac{1}{0}$ is undefined, plugging in $x=0$
 does not give a definitive answer.
 Using the fact that 
 \[
--1 \leq \sin(\theta) \leq 1
+-1 \leq \sin \theta \leq 1
 \]
 for all values of $\theta$, we can create a compound inequality for
 the function
 \[
-f(x) = x^2 \sin\Big(\frac{1}{x}\Big)
+f(x) = x^2 \sin \frac{1}{x} 
 \]
 and find the limit using the Squeeze Theorem.
 To begin, note that
 \[
--1 \leq \sin\Big(\frac{1}{x}\Big) \leq 1
+-1 \leq \sin \frac{1}{x}  \leq 1
 \]
 for all values of $x$ except $x=0$.
 Multiplying this compound inequality by the non-negative quantity, $x^2$,
 we have
 \[
--x^2 \leq x^2\sin\Big(\frac{1}{x}\Big) \leq x^2
+-x^2 \leq x^2\sin \frac{1}{x}  \leq x^2
 \]
 for all values of $x$ except $x=0$.
 Next, note that
@@ -136,7 +136,7 @@ and
 \]
 Finally, by the Squeeze Theorem, we can conclude that
 \[
-\lim_{x\to 0} x^2\sin\Big(\frac{1}{x}\Big) = 0
+\lim_{x\to 0} x^2\sin \frac{1}{x}  = 0
 \]
 as well. The graph below also shows that the limit is zero.
 Zoom in on the origin to get the full effect.
@@ -150,12 +150,12 @@ Zoom in on the origin to get the full effect.
 \begin{problem}(problem 2a)
 Find
 \[
-\lim_{x \to 0} x^4 \cos(2/x)
+\lim_{x \to 0} x^4 \cos \frac{2}{x}
 \]
 using the Squeeze Theorem.\\
 First, we need to find bounds. Since $-1 \leq \cos \theta \leq 1$ for all $\theta$, 
 \[
-\answer{-x^4} \; \leq x^4\cos(2/x) \leq \; \answer{x^4}
+\answer{-x^4} \; \leq x^4\cos \frac{2}{x} \leq \; \answer{x^4}
 \]
 for all $x$ except $x=0$.
 Next, we need to find the limits of those bounds:
@@ -164,7 +164,7 @@ Next, we need to find the limits of those bounds:
 \]
 Since these answers are the same, the Squeeze Theorem allows us to conclude that 
 \[
-\lim_{x \to 0} x^4\cos(2/x) = \answer{0} \quad \text{as well}.
+\lim_{x \to 0} x^4\cos \frac{2}{x} = \answer{0} \quad \text{as well}.
 \]
 
 \end{problem}
@@ -197,7 +197,7 @@ Since these answers are the same, the Squeeze Theorem allows us to conclude that
 \begin{example}[example 3]
 Use the Squeeze Theorem to find a special limit: 
 \[
-\lim_{\theta \to 0} \frac{\sin(\theta)}{\theta}.
+\lim_{\theta \to 0} \frac{\sin \theta}{\theta}.
 \]
 Consider the figure below.  It consists of a small triangle, a sector of a circle of radius,  $r = 1$, and a large triangle.
 
@@ -209,9 +209,9 @@ Consider the figure below.  It consists of a small triangle, a sector of a circl
 \draw[thin, blue]  (2.728, 0) -- (2.728, 0.1)-- (2.828, 0.1);
 \draw[thin, red] (4,0) arc (0: 45:4);
 \node[right] at (0.2,0.2) {$\theta$};
-\node[below, blue] at (1.5,0) {$\cos(\theta)$};
-\node[left, blue] at (2.8,1) {$\sin(\theta)$};
-\node[right] at (4.1,2) {$\tan(\theta)$};
+\node[below, blue] at (1.5,0) {$\cos\theta$};
+\node[left, blue] at (2.8,1) {$\sin\theta$};
+\node[right] at (4.1,2) {$\tan\theta$};
 \node[above, blue] at (1.3,1.4) {$1$};
 %\node[below] at (-.1,0) {$(0,0)$};
 %\node[below] at (4,0) {$1$};
@@ -226,7 +226,7 @@ Consider the figure below.  It consists of a small triangle, a sector of a circl
 
 The area of the small triangle is 
 \[
-A = \frac12 bh = \frac12 \cos(\theta) \sin(\theta).
+A = \frac12 bh = \frac12 \cos\theta \sin\theta.
 \]
 The area of the sector is 
 \[
@@ -234,63 +234,65 @@ A = \frac12 \theta r^2 = \frac12 \theta.
 \]
 The area of the large triangle is 
 \[
-A = \frac12 bh = \frac12 \cdot 1 \cdot \tan(\theta) = \frac12 \tan(\theta).
+A = \frac12 bh = \frac12 \cdot 1 \cdot \tan\theta = \frac12 \tan\theta.
 \]
 
 We can use the areas of these figures to create a compound inequality like the one found in the Squeeze Theorem.
 Since the area of the small triangle is less than the area of the sector which is less than the area of the large triangle, we have:
 \[
-\frac12 \cos(\theta) \sin(\theta) < \frac12 \theta < \frac12 \tan(\theta).
+\frac12 \cos\theta \sin\theta < \frac12 \theta < \frac12 \tan\theta.
 \]
 
 Multiply through by 2:
 
 \[
-\cos(\theta) \sin(\theta) < \theta < \tan(\theta).
+\cos\theta \sin\theta < \theta < \tan\theta.
 \]
 
-Divide through by $\sin(\theta)$.  Note that if $\theta$ is a small positive angle, then $\sin(\theta) >0$ so the direction of the inequality symbols remains unchanged:
+Divide through by $\sin\theta$.  Note that if $\theta$ is a small positive angle, 
+then $\sin\theta >0$ so the direction of the inequality symbols remains unchanged:
 
 \[
-\cos(\theta)  < \frac{ \theta}{\sin(\theta)} < \frac{1}{\cos(\theta)}.
+\cos\theta  < \frac{ \theta}{\sin\theta} < \frac{1}{\cos\theta}.
 \]
 
 Next we take reciprocals (this will change the direction of the inequality symbols):
 
 \[
-\frac{1}{\cos(\theta)}  > \frac{\sin(\theta)}{\theta} > \cos(\theta),
+\frac{1}{\cos\theta}  > \frac{\sin\theta}{\theta} > \cos\theta,
 \]
 which is equivalent to 
 
 \[
-\cos(\theta)  < \frac{\sin(\theta)}{\theta} < \frac{1}{\cos(\theta)}.
+\cos\theta  < \frac{\sin\theta}{\theta} < \frac{1}{\cos\theta}.
 \]
 
 We now compute the limits of the upper and lower bounds:
 \[
-\lim_{\theta \to 0^+} \cos(\theta) = \cos(0) = 1 \quad \text{and} \quad \lim_{\theta \to 0^+} \frac{1}{\cos(\theta)} = \frac{1}{\cos(0)} = 1. 
+\lim_{\theta \to 0^+} \cos\theta = \cos 0 = 1 \quad \text{and} 
+\quad \lim_{\theta \to 0^+} \frac{1}{\cos\theta} = \frac{1}{\cos 0} = 1. 
 \]
 
 Since the above limits are equal, by the Squeeze Theorem 
 \[
-\lim_{\theta \to 0^+} \frac{\sin(\theta)}{\theta} = 1 \;\; \text{  as well.}
+\lim_{\theta \to 0^+} \frac{\sin\theta}{\theta} = 1 \;\; \text{  as well.}
 \]
 
-To compute the left-hand limit, we recall that $\sin(-\theta) = -\sin(\theta)$ for any angle $\theta$.
+To compute the left-hand limit, we recall that $\sin(-\theta) = -\sin\theta$ for any angle $\theta$.
 Therefore,
 \[
-\frac{\sin(-\theta)}{-\theta} = \frac{-\sin(\theta)}{-\theta} = \frac{\sin(\theta)}{\theta},
+\frac{\sin(-\theta)}{-\theta} = \frac{-\sin\theta}{-\theta} = \frac{\sin\theta}{\theta},
 \]
 which implies that the left-hand limit and the right-hand limit are equal:
 
 \[
-\lim_{\theta \to 0^-} \frac{\sin(\theta)}{\theta} =\lim_{\theta \to 0^+} \frac{\sin(\theta)}{\theta} = 1. 
+\lim_{\theta \to 0^-} \frac{\sin\theta}{\theta} =\lim_{\theta \to 0^+} \frac{\sin\theta}{\theta} = 1 
 \]
 
 Thus the two-sided limit exists and
 
 \[
-\lim_{\theta \to 0} \frac{\sin(\theta)}{\theta} =1. 
+\lim_{\theta \to 0} \frac{\sin\theta}{\theta} =1
 \]
 
 

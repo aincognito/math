@@ -28,7 +28,7 @@ In this section we present the derivatives of the functions we have seen previou
 \begin{center}
 \[
 \begin{array}{c|c|c}
-		Type & f(x)= & f\,'(x)=  \\
+		Type & f(x) & f\,'(x)  \\
 		\hline
 		\text{Constant} & c & 0 \\[8pt]
 		\text{Linear} & mx & m  \\[8pt]
@@ -37,24 +37,24 @@ In this section we present the derivatives of the functions we have seen previou
 		\text{Power} & \sqrt x & \displaystyle \frac{1}{2\sqrt x}\\[8pt]
 		\text{Power} & \displaystyle \frac{1}{x} & -\displaystyle \frac{1}{x^2}\\[8pt]
 	  \hline
-		\text{Trig} & \sin(x) & \cos(x) \\[8pt]
-		\text{Trig} & \cos(x) & -\sin(x) \\[8pt]
+		\text{Trig} & \sin x & \cos x \\[8pt]
+		\text{Trig} & \cos x & -\sin x \\[8pt]
 		\hline
-		\text{Trig} & \tan(x) & \sec^2(x) \\[8pt]
-		\text{Trig} & \sec(x) & \sec(x)\tan(x) \\[8pt]
+		\text{Trig} & \tan x & \sec^2 x \\[8pt]
+		\text{Trig} & \sec x & \sec x\tan x \\[8pt]
 		\hline
-		\text{Trig} & \cot(x) & -\csc^2(x) \\[8pt]
-		\text{Trig} & \csc(x) & -\csc(x)\cot(x) \\[8pt]
+		\text{Trig} & \cot x & -\csc^2 x \\[8pt]
+		\text{Trig} & \csc x & -\csc x\cot x \\[8pt]
 		\hline
-		\text{Inv Trig} & \sin^{-1}(x) & \displaystyle{\frac{1}{\sqrt{1-x^2}}} \\[8pt]
-		\text{Inv Trig} & \cos^{-1}(x) & \displaystyle{-\frac{1}{\sqrt{1-x^2}}} \\[8pt]
-		\text{Inv Trig} & \tan^{-1}(x) & \displaystyle{\frac{1}{1+x^2}} \\[8pt]
+		\text{Inv Trig} & \sin^{-1} x & \displaystyle{\frac{1}{\sqrt{1-x^2}}} \\[8pt]
+		\text{Inv Trig} & \cos^{-1} x & \displaystyle{-\frac{1}{\sqrt{1-x^2}}} \\[8pt]
+		\text{Inv Trig} & \tan^{-1} x & \displaystyle{\frac{1}{1+x^2}} \\[8pt]
 		\hline
 		\text{Exponential} & e^x & e^x \\[8pt]
-		\text{Exponential} & a^x & a^x\ln(a) \\[8pt]
+		\text{Exponential} & a^x & a^x\ln a \\[8pt]
 		\hline
-		\text{Log} & \ln(x) & \displaystyle{\frac{1}{x}} \\[8pt]
-		\text{Log} & \log_a(x) & \displaystyle{\frac{1}{x\ln(a)}}
+		\text{Log} & \ln x & \displaystyle{\frac{1}{x}} \\[8pt]
+		\text{Log} & \log_a x & \displaystyle{\frac{1}{x\ln a}}
 	\end{array}
     \]
 \end{center}
@@ -66,31 +66,31 @@ The following table consists of the chain rule versions of the basic derivative 
 \begin{center}
 \[
 \begin{array}{c|c|c}
-		Type & f(x)= & f\,'(x)=  \\
+		Type & f(x) & f\,'(x)  \\
 		\hline
 		\text{Power} & g^n(x) & ng^{n-1}(x)\cdot g\,'(x)  \\[8pt]
 		\hline
-		\text{Trig} & \sin\left(g(x)\right) & \cos\left(g(x)\right) \cdot g\,'(x) \\[8pt]
-		\text{Trig} & \cos\left(g(x)\right) & -\sin\left(g(x)\right)\cdot g\,'(x)  \\[8pt]
+		\text{Trig} & \sin g(x)  & \cos g(x)  \cdot g\,'(x) \\[8pt]
+		\text{Trig} & \cos g(x)  & -\sin g(x)\cdot g\,'(x)  \\[8pt]
 		\hline
 		\text{Power} & \sqrt{g(x)} & \displaystyle \frac{g'(x)}{2\sqrt {g(x)}}\\[8pt]
 		\text{Power} & \displaystyle \frac{1}{g(x)} & -\displaystyle \frac{g\,'(x)}{g^2(x)}\\[8pt]
 	  \hline
-	  \text{Trig} & \tan\left(g(x)\right) & \sec^2\left(g(x)\right) \cdot g\,'(x) \\[8pt]
-		\text{Trig} & \sec\left(g(x)\right) & \sec\left(g(x)\right)\tan\left(g(x)\right) \cdot g\,'(x) \\[8pt]
+	  \text{Trig} & \tan g(x)  & \sec^2 g(x)  \cdot g\,'(x) \\[8pt]
+		\text{Trig} & \sec g(x)  & \sec g(x) \tan g(x)  \cdot g\,'(x) \\[8pt]
 		\hline
-		\text{Trig} & \cot\left(g(x)\right) & -\csc^2\left(g(x)\right) \cdot g\,'(x)  \\[8pt]
-		\text{Trig} & \csc\left(g(x)\right) & -\csc\left(g(x)\right)\cot\left(g(x)\right) \cdot g\,'(x)  \\[8pt]
+		\text{Trig} & \cot g(x)  & -\csc^2 g(x)  \cdot g\,'(x)  \\[8pt]
+		\text{Trig} & \csc g(x)  & -\csc g(x) \cot g(x)  \cdot g\,'(x)  \\[8pt]
 		\hline
-		\text{Inv Trig} & \sin^{-1}\left(g(x)\right) &   \displaystyle \frac{g\,'(x)}{\sqrt{1-g^2(x)}}  \\[8pt]
-		\text{Inv Trig} & \cos^{-1}\left(g(x)\right) &   \displaystyle -\frac{g\,'(x)}{\sqrt{1-g^2(x)}}\\[8pt]
-		\text{Inv Trig} & \tan^{-1}\left(g(x)\right) &   \displaystyle \frac{g\,'(x)}{1+g^2(x)} \\[8pt]
+		\text{Inv Trig} & \sin^{-1} g(x)  &   \displaystyle \frac{g\,'(x)}{\sqrt{1-g^2(x)}}  \\[8pt]
+		\text{Inv Trig} & \cos^{-1} g(x)  &   \displaystyle -\frac{g\,'(x)}{\sqrt{1-g^2(x)}}\\[8pt]
+		\text{Inv Trig} & \tan^{-1} g(x)  &   \displaystyle \frac{g\,'(x)}{1+g^2(x)} \\[8pt]
 		\hline
 		\text{Exponential} & e^{g(x)} & e^{g(x)} \cdot g\,'(x) \\[8pt]
-		\text{Exponential} & a^{g(x)} & a^{g(x)}\ln(a) \cdot g\,'(x) \\[8pt]
+		\text{Exponential} & a^{g(x)} & a^{g(x)}\ln a \cdot g\,'(x) \\[8pt]
 		\hline
-		\text{Log} & \ln\left(g(x)\right) &   \displaystyle \frac{g\,'(x)}{g(x)} \\[8pt]
-		\text{Log} & \log_a\left(g(x)\right) &   \displaystyle \frac{g\,'(x)}{g(x)\ln(a)}
+		\text{Log} & \ln g(x)  &   \displaystyle \frac{g\,'(x)}{g(x)} \\[8pt]
+		\text{Log} & \log_a g(x)  &   \displaystyle \frac{g\,'(x)}{g(x)\ln a}
 	\end{array}
     \]
 \end{center}
@@ -102,31 +102,31 @@ with the variable $u$ representing a function of $x$, i.e., $u = g(x)$.
 \begin{center}
 \[
 \begin{array}{c|c|c}
-		Type & f(x)= & f\,'(x)=  \\
+		Type & f(x) & f\,'(x)  \\
 		\hline
 		\text{Power} & u^n & nu^{n-1}\cdot u\,'  \\[8pt]
 		\hline
-		\text{Trig} & \sin\left(u\right) & \cos\left(u\right) \cdot u\,' \\[8pt]
-		\text{Trig} & \cos\left(u\right) & -\sin\left(u\right)\cdot u\,'  \\[8pt]
+		\text{Trig} & \sin u & \cos u \cdot u\,' \\[8pt]
+		\text{Trig} & \cos u & -\sin u\cdot u\,'  \\[8pt]
 		\hline
 		\text{Power} & \sqrt{u} & \displaystyle \frac{u\,' }{2\sqrt {u}}\\[8pt]
 		\text{Power} & \displaystyle \frac{1}{u} & -\displaystyle \frac{u\,' }{u^2}\\[8pt]
 	  \hline
-	  \text{Trig} & \tan\left(u\right) & \sec^2\left(u\right) \cdot u\,'  \\[8pt]
-		\text{Trig} & \sec\left(u\right) & \sec\left(u\right)\tan\left(u\right) \cdot u\,'  \\[8pt]
+	  \text{Trig} & \tan u & \sec^2 u \cdot u\,'  \\[8pt]
+		\text{Trig} & \sec u & \sec u\tan u \cdot u\,'  \\[8pt]
 		\hline
-		\text{Trig} & \cot\left(u\right) & -\csc^2\left(u\right) \cdot u\,'   \\[8pt]
-		\text{Trig} & \csc\left(u\right) & -\csc\left(u\right)\cot\left(u\right) \cdot u\,'   \\[8pt]
+		\text{Trig} & \cot u & -\csc^2 u \cdot u\,'   \\[8pt]
+		\text{Trig} & \csc u & -\csc u\cot u \cdot u\,'   \\[8pt]
 		\hline
-		\text{Inv Trig} & \sin^{-1}\left(u\right) &   \displaystyle \frac{u\,' }{\sqrt{1-u^2}}  \\[8pt]
-		\text{Inv Trig} & \cos^{-1}\left(u\right) &   \displaystyle -\frac{u\,' }{\sqrt{1-u^2}}\\[8pt]
-		\text{Inv Trig} & \tan^{-1}\left(u\right) &   \displaystyle \frac{u\,' }{1+u^2} \\[8pt]
+		\text{Inv Trig} & \sin^{-1} u &   \displaystyle \frac{u\,' }{\sqrt{1-u^2}}  \\[8pt]
+		\text{Inv Trig} & \cos^{-1} u &   \displaystyle -\frac{u\,' }{\sqrt{1-u^2}}\\[8pt]
+		\text{Inv Trig} & \tan^{-1} u &   \displaystyle \frac{u\,' }{1+u^2} \\[8pt]
 		\hline
 		\text{Exponential} & e^{u} & e^{u} \cdot u\,' \\[8pt]
-		\text{Exponential} & a^{u} & a^{u}\ln(a) \cdot u\,' \\[8pt]
+		\text{Exponential} & a^{u} & a^{u}\ln a \cdot u\,' \\[8pt]
 		\hline
-		\text{Log} & \ln\left(u\right) &   \displaystyle \frac{u\,'}{u} \\[8pt]
-		\text{Log} & \log_a\left(u\right) &   \displaystyle \frac{u\,'}{u\ln(a)}
+		\text{Log} & \ln u &   \displaystyle \frac{u\,'}{u} \\[8pt]
+		\text{Log} & \log_a u &   \displaystyle \frac{u\,'}{u\ln a}
 	\end{array}
     \]
 \end{center}

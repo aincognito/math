@@ -1,5 +1,5 @@
 \documentclass[handout]{ximera}
-\usepackage{tcolorbox}
+
 \input{../preamble}
 \outcome{Compute derivatives involving the basic trig functions.}
 
@@ -10,42 +10,42 @@
 \begin{document}
 
 \begin{abstract}
-In this section we compute derivatives involving $\sin(x)$ and $\cos(x)$.
+In this section we compute derivatives involving $\sin x$ and $\cos x$.
 \end{abstract}
 
 \maketitle
 
 %add in 4th derivatives of sin, cos and 51st derivatives too
 
-We begin by computing the derivative of the trigonometric function $f(x) = \sin(x)$.  
+We begin by computing the derivative of the trigonometric function $f(x) = \sin x$.  
 Two key trigonometric identities will be needed:
 \begin{enumerate}
 \item The Pythagorean Identity:
 \[
-\sin^2(\theta) + \cos^2(\theta) = 1,
+\sin^2 \theta  + \cos^2 \theta  = 1,
 \]
 \begin{center}
 and
 \end{center}
 \item The Sum Identity:
 \[
-\sin(\alpha + \beta) = \sin(\alpha)\cos(\beta) + \cos(\alpha)\sin(\beta).
+\sin(\alpha + \beta) = \sin \alpha \cos \beta  + \cos \alpha \sin \beta .
 \]
 \end{enumerate}
 
 We will also need the following limit, previously discussed in the Numerical Limits section and proved in the Squeeze Theorem section:
 \[
-\lim_{\theta \to 0} \frac{\sin(\theta)}{\theta} = 1.
+\lim_{\theta \to 0} \frac{\sin \theta }{\theta} = 1.
 \]
 
 We begin by using  the Pythagorean Identity and the above limit
 to compute a second important limit involving the cosine function:
 
 \begin{align*}
-\lim_{\theta \to 0} \frac{1 - \cos(\theta)}{\theta} &= \lim_{\theta \to 0} \frac{1 - \cos(\theta)}{\theta} \cdot \frac{1 + \cos(\theta)}{1 + \cos(\theta)}\\
-&= \lim_{\theta \to 0} \frac{1 - \cos^2(\theta)}{\theta[1 + \cos(\theta)]}\\
-&= \lim_{\theta \to 0} \frac{\sin^2(\theta)}{\theta[1 + \cos(\theta)]}\\
-&= \lim_{\theta \to 0} \frac{\sin(\theta)}{\theta} \cdot \frac{\sin(\theta)}{1 + \cos(\theta)}\\
+\lim_{\theta \to 0} \frac{1 - \cos \theta }{\theta} &= \lim_{\theta \to 0} \frac{1 - \cos \theta }{\theta} \cdot \frac{1 + \cos \theta }{1 + \cos \theta }\\
+&= \lim_{\theta \to 0} \frac{1 - \cos^2 \theta }{\theta[1 + \cos \theta ]}\\
+&= \lim_{\theta \to 0} \frac{\sin^2 \theta }{\theta[1 + \cos \theta ]}\\
+&= \lim_{\theta \to 0} \frac{\sin \theta }{\theta} \cdot \frac{\sin \theta }{1 + \cos \theta }\\
 &= 1 \cdot \frac{0}{2} = 0.
 \end{align*}
 
@@ -57,23 +57,24 @@ If $f(x) = \sin(x)$ then
 $\begin{aligned}
 %\begin{align*}
 f'(x) &= \lim_{h \to 0} \frac{f(x+h)-f(x)}{h} \\[5pt]
-&= \lim_{h \to 0} \frac{\sin(x+h) - \sin(x)}{h}\\[5pt]
-&=  \lim_{h \to 0} \frac{\sin(x)\cos(h) + \cos(x)\sin(h) - \sin(x)}{h}\\[5pt]
-&=  \lim_{h \to 0} \frac{\sin(x)\cos(h)  - \sin(x) + \cos(x)\sin(h)}{h}\\[5pt]
-&=  \lim_{h \to 0} \frac{\sin(x)[\cos(h) -1] + \cos(x)\sin(h)}{h}\\[5pt]
-&=  \lim_{h \to 0} \frac{\sin(x)[\cos(h) -1]}{h} + \frac{\cos(x)\sin(h)}{h}\\[5pt]
-&=  \sin(x) \cdot 0 + \cos(x) \cdot 1 \\[5pt]
-&= \cos(x).
+&= \lim_{h \to 0} \frac{\sin(x+h) - \sin x }{h}\\[5pt]
+&=  \lim_{h \to 0} \frac{\sin x \cos h + \cos x \sin h  - \sin x }{h}\\[5pt]
+&=  \lim_{h \to 0} \frac{\sin x \cos h  - \sin x  + \cos x \sin h }{h}\\[5pt]
+&=  \lim_{h \to 0} \frac{\sin x [\cos h  -1] + \cos x \sin h }{h}\\[5pt]
+&=  \lim_{h \to 0} \frac{\sin x [\cos h  -1]}{h} +\lim_{h \to 0} \frac{\cos x \sin h }{h}\\[5pt]
+&=  \sin x\lim_{h \to 0} \frac{ \cos h  -1}{h} +\cos x\lim_{h \to 0} \frac{ \sin h }{h}\\[5pt]
+&=  \sin x \cdot 0 + \cos x  \cdot 1 \\[5pt]
+&= \cos x.
 %\end{align*}
 \end{aligned}$
 \end{center}
 Thus the derivative of sine is cosine:
 \[
-\frac{d}{dx}\sin(x) = \cos(x).
+\frac{d}{dx}\sin x  = \cos x.
 \]
 In terms of the variables $\theta$ and $u$:
 \[
-\frac{d}{d\theta}\sin(\theta) = \cos(\theta) \text{  and  } \frac{d}{du}\sin(u) = \cos(u).
+\frac{d}{d\theta}\sin \theta  = \cos \theta  \text{  and  } \frac{d}{du}\sin u  = \cos u .
 \]
 \end{explanation}
 
@@ -81,7 +82,7 @@ In terms of the variables $\theta$ and $u$:
 
 \begin{problem}(problem 1)
 
-Find the equation of the tangent line to the graph of $f(x) = \sin(x)$ at $x=0.$
+Find the equation of the tangent line to the graph of $f(x) = \sin x$ at $x=0.$
 
 \begin{hint}
 The point of tangency is $(0, f(0))$
@@ -105,25 +106,25 @@ The equation of the tangent line is \ $y = \answer{x}$
   
 Compute 
 \[
-\frac{d}{dx} \left[5\sin(x)\right]
+\frac{d}{dx} \left[5\sin x\right]
 \]
   
 \begin{hint}
-The derivative of $\sin(x)$ is $\cos(x)$
+The derivative of $\sin x$ is $\cos x$
 \end{hint}
 \begin{hint}
 Don't forget to multiply by 5
 \end{hint}
 		
-The derivative of $5\sin(x)$ with respect to $x$ is
-$\answer{5\cos(x)}$
+The derivative of $5\sin x$ with respect to $x$ is
+$\answer{5\cos x}$
 
 \end{problem}
 
 
 \begin{problem}(problem 3)
 
-Find the equation of the tangent line to the graph of $f(x) = \sin(x)$ at $x=\pi/2.$
+Find the equation of the tangent line to the graph of $f(x) = \sin x$ at $x=\pi/2.$
 
 \begin{hint}
 The point of tangency is $(\pi/2, f(\pi/2))$
@@ -135,7 +136,7 @@ Use the derivative to find the slope, $m$
 Point slope form: $y-y_0 = m(x-x_0)$
 \end{hint}
 
-The equation of the tangent line is \ $y = \answer{1}$
+The equation of the tangent line is  $y = \answer{1}$
 
 \end{problem}
 
@@ -143,7 +144,8 @@ The equation of the tangent line is \ $y = \answer{1}$
 
 \begin{problem}(problem 4)
 
-Find $x$-values in the interval $[0, 2\pi]$ for which the tangent line to the graph of $f(x) = \sin(x)$ is horizontal.
+Find $x$-values in the interval $[0, 2\pi]$ for which the tangent line to the 
+graph of $f(x) = \sin x$ is horizontal.
 
 
 \begin{hint}
@@ -177,27 +179,27 @@ If $f(x) = \cos(x)$ then\\
 \begin{center}
 $\begin{aligned}
 f'(x) &= \lim_{h \to 0} \frac{f(x+h)-f(x)}{h} \\[5pt]
-&= \lim_{h \to 0} \frac{\cos(x+h) - \cos(x)}{h}\\[5pt]
-&=  \lim_{h \to 0} \frac{\cos(x)\cos(h) - \sin(x)\sin(h) - \cos(x)}{h}\\[5pt]
-&=  \lim_{h \to 0} \frac{\cos(x)\cos(h) - \cos(x) - \sin(x)\sin(h)}{h}\\[5pt]
-&=  \lim_{h \to 0} \frac{\cos(x)[\cos(h) -1] - \sin(x)\sin(h)}{h}\\[5pt]
-&=  \lim_{h \to 0} \frac{\cos(x)[\cos(h) -1]}{h} - \frac{\sin(x)\sin(h)}{h}\\[5pt]
-&=   \cos(x) \cdot 0 - \sin(x)\cdot 1\\[5pt]
+&= \lim_{h \to 0} \frac{\cos(x+h) - \cos x}{h}\\[5pt]
+&=  \lim_{h \to 0} \frac{\cos x\cos h - \sin x\sin(h) - \cos x}{h}\\[5pt]
+&=  \lim_{h \to 0} \frac{\cos x\cos h - \cos x - \sin x\sin h}{h}\\[5pt]
+&=  \lim_{h \to 0} \frac{\cos x[\cos h -1] - \sin x\sin h}{h}\\[5pt]
+&=  \lim_{h \to 0} \frac{\cos x[\cos h -1]}{h} - \frac{\sin x\sin h}{h}\\[5pt]
+&=   \cos(x) \cdot 0 - \sin x\cdot 1\\[5pt]
 &= -\sin(x).\\[5pt]
 \end{aligned}$
 \end{center}
 Using other variables, this can be written as
 \[
-\frac{d}{dt} \cos(t) = -\sin(t) \\
+\frac{d}{dt} \cos t = -\sin t \\
 \text{or}\\
-\frac{d}{du} \cos(u) = -\sin(u).
+\frac{d}{du} \cos u = -\sin u.
 \]
 
 \end{explanation}
 
 
 \begin{problem}(problem 5)
-Find the equation of the tangent line to the graph of $f(x) = \cos(x)$ at $x=\pi/2.$
+Find the equation of the tangent line to the graph of $f(x) = \cos x$ at $x=\pi/2.$
 
 
 \begin{hint}
@@ -216,9 +218,9 @@ The equation of the tangent line is \ $y = \answer{-x + \pi/2}$
 
 
 \begin{example}[example 6]
- If $f(x) = -3\cos(x)$ then we use the constant multiple rule with $c = -3$ and we get 
+ If $f(x) = -3\cos x$ then we use the constant multiple rule with $c = -3$ and we get 
 \[
-f'(x) = -3(-\sin(x)) = 3\sin(x).
+f'(x) = -3(-\sin x) = 3\sin x.
 \]
 \end{example}
 
@@ -227,18 +229,18 @@ f'(x) = -3(-\sin(x)) = 3\sin(x).
 \begin{problem}(problem 6a)
   Compute 
   \[
-  \frac{d}{dx} \left[\pi\cos(x)\right]
+  \frac{d}{dx} \left[\pi\cos x\right]
   \]
   
     \begin{hint}
-      The derivative of $\cos(x)$ is $-\sin(x)$
+      The derivative of $\cos x$ is $-\sin x$
     \end{hint}
 		\begin{hint}
 		  Don't forget to multiply by $\pi$
 		\end{hint}
 		
-		The derivative of $\pi\cos(x)$ with respect to $x$ is
-		 $\answer{-\pi\sin(x)}$
+		The derivative of $\pi\cos x$ with respect to $x$ is
+		 $\answer{-\pi\sin x}$
 	
 \end{problem}
 
@@ -246,7 +248,8 @@ f'(x) = -3(-\sin(x)) = 3\sin(x).
 
 \begin{problem}(problem 6b)
 
-Find $x$-values in the interval $[0, 2\pi]$ for which the tangent line to the graph of $f(x) = \cos(x)$ is horizontal.
+Find $x$-values in the interval $[0, 2\pi]$ for which the tangent line to the 
+graph of $f(x) = \cos x$ is horizontal.
 
 
 \begin{hint}
@@ -266,7 +269,7 @@ The $x$-values are:
 
 %\begin{center}
 \begin{foldable}
-\unfoldable{Below is a graph of $f(x) = \cos(x)$ (in blue) and its derivative, $f'(x) = -\sin(x)$ (in purple).
+\unfoldable{Below is a graph of $f(x) = \cos x$ (in blue) and its derivative, $f'(x) = -\sin x$ (in purple).
 Notice that the slope of the tangent line to $f(x)$ (in red) is the height of the corresponding 
 point on $f'(x)$. Use it to see a graphical representation of the answers to the problem above.}
 \includeinteractive{coswithderiv.js}
@@ -275,10 +278,10 @@ point on $f'(x)$. Use it to see a graphical representation of the answers to the
 
 
 \begin{example}[example 7]
- Find $f'(x)$ if $f(x) = 4\sin(x) + 5\cos(x).$ \\
+ Find $f'(x)$ if $f(x) = 4\sin x + 5\cos x.$ \\
  Using the sum and constant multiple rules, we get: 
 \[
-f'(x) = 4\cos(x) - 5\sin(x).
+f'(x) = 4\cos x - 5\sin x
 \]
 \end{example}
 
@@ -286,7 +289,7 @@ f'(x) = 4\cos(x) - 5\sin(x).
 \begin{problem}(problem 7)
   Compute 
   \[
-  \frac{d}{dx} \left[3\sin(x) + 7\cos(x)\right]
+  \frac{d}{dx} \left[3\sin x + 7\cos x\right]
   \]
   
 		\begin{hint}
@@ -298,17 +301,17 @@ f'(x) = 4\cos(x) - 5\sin(x).
       \frac{d}{dx} cf(x) = cf'(x)
       \]
     \end{hint}    
-		The derivative of $3\sin(x) + 7\cos(x)$ with respect to $x$ is
-		 $\answer{3\cos(x) - 7\sin(x)}$
+		The derivative of $3\sin x + 7\cos x$ with respect to $x$ is
+		 $\answer{3\cos x - 7\sin x}$
 	
 \end{problem}
 
 
 \begin{example}[example 8]
- Find $f'(x)$ if  $f(x) = 2\sin(x) - 3\cos(x).$\\
+ Find $f'(x)$ if  $f(x) = 2\sin x - 3\cos x.$\\
  Using the Difference and Constant Multiple Rules, we get:
  \[
- f'(x) = 2\cos(x) - (-3\sin(x)) = 2\cos(x) + 3\sin(x).
+ f'(x) = 2\cos x - (-3\sin x) = 2\cos x + 3\sin x
  \]
 \end{example}
 
@@ -316,7 +319,7 @@ f'(x) = 4\cos(x) - 5\sin(x).
 \begin{problem}(problem 8a)
   Compute 
   \[
-  \frac{d}{dx} \left[3\sin(x) - 7\cos(x)\right]
+  \frac{d}{dx} \left[3\sin x - 7\cos x\right]
   \]
   
 		\begin{hint}
@@ -328,15 +331,15 @@ f'(x) = 4\cos(x) - 5\sin(x).
       (cu)' = cu'
       \]
     \end{hint}    
-		The derivative of $3\sin(x) - 7\cos(x)$ with respect to $x$ is
-		 $\answer{3\cos(x) + 7\sin(x)}$
+		The derivative of $3\sin x - 7\cos x$ with respect to $x$ is
+		 $\answer{3\cos x + 7\sin x}$
 	
 \end{problem}
 
 \begin{problem}(problem 8b)
   Compute $y'$ if
   \[
-  y= \left[6\cos(x) - 8\sin(x)\right]
+  y= \left[6\cos x - 8\sin x\right]
   \]
   
 		\begin{hint}
@@ -349,7 +352,7 @@ f'(x) = 4\cos(x) - 5\sin(x).
       \]
     \end{hint}    
 		
-  $y' = \answer{-6\sin(x) - 8\cos(x)}$
+  $y' = \answer{-6\sin x - 8\cos x}$
 	
 \end{problem}
 
@@ -357,25 +360,25 @@ We close this section with an example involving rectilinear motion.
 
 \begin{example}[example 9, Rectilinear Motion]
 A point on a vibrating guitar string is moving vertically.
-The position, $s$, of the point at time $t$, is given by $s = 2\cos(t)$.  Find the velocity and acceleration of the point.\\
+The position, $s$, of the point at time $t$, is given by $s = 2\cos t$.  Find the velocity and acceleration of the point.\\
 The velocity of the point is given by 
 \[
-v = s' = -2\sin(t),
+v = s' = -2\sin t,
 \]
 and its acceleration is given by 
 \[
-a = s'' = -2\cos(t).
+a = s'' = -2\cos t
 \]
 
 \end{example}
 
 \begin{problem}(problem 9)
 A weight is suspended from a spring.
-The height, $s$, of the weight at time $t$, is given by $s = 10-\sin(t)$.  Find the velocity and acceleration of the weight.\\
+The height, $s$, of the weight at time $t$, is given by $s = 10-\sin t$.  Find the velocity and acceleration of the weight.\\
 The velocity of the point is given by\\
- $v = \answer{ -\cos(t)},$ \\
+ $v = \answer{ -\cos t},$ \\
 and its acceleration is given by\\
- $a = \answer{\sin(t)}.$
+ $a = \answer{\sin t}.$
 \end{problem}
 
 
