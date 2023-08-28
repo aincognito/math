@@ -376,25 +376,25 @@ In the next example, both powers are odd.  In this case, we have to choose which
 
 
 \begin{example}[example 4]
-Compute $\displaystyle{\int \sin^7(x)\cos^5(x) \; dx}$\\
+Compute $\displaystyle{\int \sin^7 x\cos^5 x \; dx}$\\
 
 Prepare for substitution by rewriting the smaller odd power.
 \[
-\cos^5(x) = \cos^4(x) \cos(x) = \left[1-\sin^2(x)\right]^2 \cos(x).
+\cos^5 x = \cos^4 x \cos x = \left[1-\sin^2 x\right]^2 \cos x
 \]
 
 Rewrite the original integral.
 \[
-\int \sin^7(x)\cos^5(x) \; dx = \int \sin^7(x)\left[1 - \sin^2(x)\right]^2 \cos(x) \; dx.
+\int \sin^7 x\cos^5 x \; dx = \int \sin^7 x\left[1 - \sin^2 x\right]^2 \cos x \; dx
 \]
 
-Make the substitution $u = \sin(x), \; du = \cos(x) \, dx$.
+Make the substitution $u = \sin x, \; du = \cos x \, dx$.
 \begin{align*}
-\int \sin^7(x)\cos^5(x) \; dx  &= \int u^7 (1-u^2)^2 \; du\\
+\int \sin^7 x\cos^5 x \; dx  &= \int u^7 (1-u^2)^2 \; du\\
    &= \int u^7(1 - 2u^2 + u^4) \; du\\
    &= \int (u^7 - 2u^9 + u^{11}) \; du\\
   &= \tfrac18 u^8 - \tfrac15 u^{10} + \tfrac{1}{12}u^{12}+ C \\
-  &= \tfrac18 \sin^8(x) - \tfrac15 \sin^{10}(x) + \tfrac{1}{12} \sin^{12}(x)+ C
+  &= \tfrac18 \sin^8 x - \tfrac15 \sin^{10} x + \tfrac{1}{12} \sin^{12} x+ C
 \end{align*}
 
 \end{example}
@@ -404,63 +404,63 @@ Make the substitution $u = \sin(x), \; du = \cos(x) \, dx$.
 
 
 \begin{problem}{\color{gray}(problem 4a)}
-Compute $\displaystyle{\int \sin^5(x)\cos^7(x) \; dx}$
+Compute $\displaystyle{\int \sin^5 x\cos^7 x \; dx}$
 
 Which trig function should be rewritten?
 
 \begin{multipleChoice}
-\choice[correct]{$\sin^5(x)$}
-\choice{$\cos^7(x)$}
+\choice[correct]{$\sin^5 x$}
+\choice{$\cos^7 x$}
 \end{multipleChoice}
 
 Rewrite the odd power of sine as:
 \begin{multipleChoice}
-\choice{$\sin^5(x) = \left[1 - \cos^4(x)\right] \sin(x)$}
-\choice{$\sin^5(x) = \left[\cos^4(x)- 1\right] \sin(x)$} 
-\choice[correct]{$\sin^5(x) = \left[1 - 2\cos^2(x) + \cos^4(x)\right] \sin(x)$}
+\choice{$\sin^5 x = \left[1 - \cos^4 x\right] \sin x$}
+\choice{$\sin^5 x = \left[\cos^4 x- 1\right] \sin x$} 
+\choice[correct]{$\sin^5 x = \left[1 - 2\cos^2 x + \cos^4 x\right] \sin x$}
 \end{multipleChoice}
 
-Next, let $u = \answer{\cos(x)}$ so that $du = \answer{-\sin(x) dx}$.\\
+Next, let $u = \answer{\cos x}$ so that $du = \answer{-\sin x dx}$.\\
 
 Substituting gives
 \[
-\int \sin^5(x)\cos^7(x) \; dx= \int \answer{-(1-2u^2 + u^4)u^7} \; du
+\int \sin^5 x\cos^7 x \; dx= \int \answer{-(1-2u^2 + u^4)u^7} \; du
 \]
 
 Finally
 \[
-\int \sin^5(x)\cos^7(x) \; dx= \answer{-\cos^8(x)/8 + \cos^{10}(x)/5 - \cos^{12}(x)/12} + C
+\int \sin^5 x\cos^7 x \; dx= \answer{-\cos^8 x/8 + \cos^{10}(x)/5 - \cos^{12}(x)/12} + C
 \]
 \end{problem}
 
 
 
 \begin{problem}(problem 4b)
-Compute $\displaystyle{\int \sin^9(x)\cos^3(x) \; dx}$\\
+Compute $\displaystyle{\int \sin^9 x\cos^3 x \; dx}$\\
 
 Which trig function should be rewritten?
 \begin{multipleChoice}
-\choice{$\sin^9(x)$}
-\choice[correct]{$\cos^3(x)$}
+\choice{$\sin^9 x$}
+\choice[correct]{$\cos^3 x$}
 \end{multipleChoice}
 
 Rewrite the odd power of cosine as:
 \begin{multipleChoice}
-\choice{$\cos^3(x) = \left[\sin^2(x)- 1\right] \cos(x)$} 
-\choice[correct]{$\cos^3(x) = \left[1 - \sin^2(x)\right] \cos(x)$}
-\choice{$\cos^3(x) = \left[1 - \sin(x)\right]^2 \cos(x)$}
+\choice{$\cos^3 x = \left[\sin^2 x- 1\right] \cos x$} 
+\choice[correct]{$\cos^3 x = \left[1 - \sin^2 x\right] \cos x$}
+\choice{$\cos^3 x = \left[1 - \sin x\right]^2 \cos x$}
 \end{multipleChoice}
 
-Next, let $u = \answer{\sin(x)}$ so that $du = \answer{\cos(x) dx}$.\\
+Next, let $u = \answer{\sin x}$ so that $du = \answer{\cos x dx}$.\\
 
 Substituting gives
 \[
-\int \sin^9(x)\cos^3(x) \; dx= \int \answer{u^9(1 - u^2)} \; du
+\int \sin^9 x\cos^3 x \; dx= \int \answer{u^9(1 - u^2)} \; du
 \]
 
 Finally
 \[
-\int \sin^9(x)\cos^3(x) \; dx= \answer{\sin^{10}(x)/(10) - \sin^{12}(x)/(12) } + C
+\int \sin^9 x\cos^3 x \; dx= \answer{\sin^{10}(x)/(10) - \sin^{12}(x)/(12) } + C
 \]
 \end{problem}
 
@@ -470,7 +470,7 @@ Finally
 \subsection{Case 2: $m$ and $n$ are both even}
 In this section, we compute integrals of the form
 \[
-\int \sin^m(x) \cos^n(x) \; dx
+\int \sin^m x \cos^n x \; dx
 \]
 where $m$ and $n$ are both even.\\
 We will use the half-angle formulas
@@ -479,18 +479,18 @@ We will use the half-angle formulas
 \]
 
 \begin{example}[example 5]
-Compute $\displaystyle{\int \sin^2(x) \; dx}$
+Compute $\displaystyle{\int \sin^2 x \; dx}$
 
 Rewrite the integral using a half-angle formula.
 
 \begin{align*}
-\int \sin^2(x) \; dx &= \int \left[\frac12- \frac12\cos(2x)\right]  \; dx\\
+\int \sin^2 x \; dx &= \int \left[\frac12- \frac12\cos(2x)\right]  \; dx\\
   &= \frac{x}{2}  - \frac{1}{4}\sin(2x) + C.
 \end{align*}
 \end{example}
 
 \begin{problem}(problem 5)
-Compute $\displaystyle{\int \cos^2(x) \; dx}$
+Compute $\displaystyle{\int \cos^2 x \; dx}$
 \begin{multipleChoice}
 \choice[correct]{$\frac{x}{2}  + \frac{1}{4}\sin(2x) + C$} 
 \choice{$\frac{x}{2}  - \frac{1}{4}\cos(2x) + C$}
@@ -501,12 +501,12 @@ Compute $\displaystyle{\int \cos^2(x) \; dx}$
 \begin{example}[example 6]
 Compute the indefinite integral:
 \[
-\int \sin^4(x) \; dx.
+\int \sin^4 x \; dx.
 \]
 Rewrite the integral using the half-angle formula for sine.
 
 \begin{align*}
-\int \sin^4(x) \; dx &= \int \left[\tfrac12- \tfrac12\cos(2x)\right] \cdot \left[\tfrac12 - \tfrac12\cos(2x)\right] \; dx\\
+\int \sin^4 x \; dx &= \int \left[\tfrac12- \tfrac12\cos(2x)\right] \cdot \left[\tfrac12 - \tfrac12\cos(2x)\right] \; dx\\
   &=  \int \left[\tfrac14 - \tfrac12\cos(2x) + \tfrac14\cos^2(2x)\right] \; dx \\
   &= \int \left( \tfrac14 - \tfrac12 \cos(2x) + \tfrac14 
   \left[\tfrac12 + \tfrac12\cos(4x)\right]\right) \; dx  \;\; \text{(half-angle again)} \\
@@ -520,10 +520,10 @@ Rewrite the integral using the half-angle formula for sine.
 
 
 \begin{problem}(problem 6a)
-Compute $\displaystyle{\int \cos^4(x) \; dx}$
+Compute $\displaystyle{\int \cos^4 x \; dx}$
 
 
-Use a half angle formula to rewrite: $\cos^4(x)=$
+Use a half angle formula to rewrite: $\cos^4 x=$
 
 \begin{multipleChoice}
 \choice{$\tfrac14  + \tfrac14\cos^2(2x)$}
@@ -531,7 +531,7 @@ Use a half angle formula to rewrite: $\cos^4(x)=$
 \choice[correct]{$\tfrac14 + \tfrac12\cos(2x) + \tfrac14\cos^2(2x)$}
 \end{multipleChoice}
 
-Use a half-angle formula again to obtain, $\cos^4(x) = $
+Use a half-angle formula again to obtain, $\cos^4 x = $
 
 \begin{multipleChoice}
 \choice{$\tfrac18 + \tfrac12\cos(2x) + \tfrac18 \cos(4x)$}
@@ -541,7 +541,7 @@ Use a half-angle formula again to obtain, $\cos^4(x) = $
 
 Finally,
 \[
-\int \cos^4(x) \; dx = \answer{\frac{3x}{8} +\frac14 \sin(2x) + \frac{1}{32}\sin(4x)} + C
+\int \cos^4 x \; dx = \answer{\frac{3x}{8} +\frac14 \sin(2x) + \frac{1}{32}\sin(4x)} + C
 \]
 \end{problem}
 
@@ -592,7 +592,7 @@ Finally,
 \section{Integrating Powers of Secant and Tangent}
 In this section, we compute integrals of the form
 \[
-\int \sec^m(x)\tan^n(x) \; dx,
+\int \sec^m x\tan^n x \; dx,
 \]
 where either $m$ is even or $n$ is odd. We will use the identity
 \[
@@ -603,14 +603,14 @@ to prepare a $u$-substitution.
 
 \subsection{Case 1: $m$ is even}
 \begin{example}[example 7]
-Compute $\displaystyle{\int \tan^4(x) \sec^2(x)\;dx}$
+Compute $\displaystyle{\int \tan^4 x \sec^2 x\;dx}$
 
-Make the substitution $u = \tan(x), \; du = \sec^2(x) \, dx$.
+Make the substitution $u = \tan x, \; du = \sec^2 x \, dx$.
 
 \begin{align*}
-\int \tan^4(x) \sec^2(x)\;dx &= \int u^4 du\\
+\int \tan^4 x \sec^2 x\;dx &= \int u^4 du\\
 &=  \frac{u^5}{5} + C  \\
-&= \frac15\tan^5(x)  + C
+&= \frac15\tan^5 x  + C
 \end{align*}
 \end{example} 
 
@@ -638,54 +638,54 @@ Finally
 
 
 \begin{example}[example 8]
-Compute $\displaystyle{\int \tan^4(x) \sec^6(x)\;dx}$
+Compute $\displaystyle{\int \tan^4 x \sec^6 x\;dx}$
 
 Prepare for $u$-substitution by rewriting the even power of secant.
 \[
-\sec^6(x) = \sec^4(x) \sec^2(x) = \left[1+\tan^2(x)\right]^2 \sec^2(x)
+\sec^6 x = \sec^4 x \sec^2 x = \left[1+\tan^2 x\right]^2 \sec^2 x
 \]
 
 Rewrite the original integral.
 
 \[
-\int \tan^4(x) \sec^6(x)\;dx = \int \tan^4(x) \left[1+\tan^2(x)\right]^2 \sec^2(x) \; dx
+\int \tan^4 x \sec^6 x\;dx = \int \tan^4 x \left[1+\tan^2 x\right]^2 \sec^2 x \; dx
 \]
 
-Make the substitution $u = \tan(x), \; du = \sec^2(x) \, dx$.
+Make the substitution $u = \tan x, \; du = \sec^2 x \, dx$.
 
 
 \begin{align*}
-\int \tan^4(x) \sec^6(x)\;dx &= \int u^4 (1+u^2)^2 du\\
+\int \tan^4 x \sec^6 x\;dx &= \int u^4 (1+u^2)^2 du\\
 &= \int u^4(1+2u^2 + u^4) \; du \\
 &= \int (u^4 + 2u^6 + u^8) \; du \\
 &=  \tfrac15 u^5 + \tfrac27 u^7 + \tfrac19 u^9 + C  \\
-&= \tfrac15\tan^5(x)  + \tfrac27 \tan^7(x) + \tfrac19 \tan^9(x) + C
+&= \tfrac15\tan^5 x  + \tfrac27 \tan^7 x + \tfrac19 \tan^9 x + C
 \end{align*}
 \end{example} 
 
 
 
 \begin{problem}(problem 8a)
-Compute $\displaystyle{\int \tan^6(x)\sec^4(x) \; dx}$\\
+Compute $\displaystyle{\int \tan^6 x\sec^4 x \; dx}$\\
 
 Rewrite the even power of secant as
 
 \begin{multipleChoice}
-\choice{$\sec^4(x) = \left[\tan^2(x)- 1\right] \sec^2(x)$} 
-\choice[correct]{$\sec^4(x) = \left[1 + \tan^2(x)\right] \sec^2(x)$}
-\choice{$\sec^4(x) = \left[1 - \tan^2(x)\right] \sec^2(x)$}
+\choice{$\sec^4 x = \left[\tan^2 x- 1\right] \sec^2 x$} 
+\choice[correct]{$\sec^4 x = \left[1 + \tan^2 x\right] \sec^2 x$}
+\choice{$\sec^4 x = \left[1 - \tan^2 x\right] \sec^2 x$}
 \end{multipleChoice}
 
-Next, let $u = \answer{\tan(x)}$ so that $du = \answer{\sec^2(x) dx}$.\\
+Next, let $u = \answer{\tan x}$ so that $du = \answer{\sec^2 x dx}$.\\
 
 Substituting gives 
 \[
-\int \tan^6(x)\sec^4(x) \; dx= \int \answer{u^6(1+u^2)} \; du
+\int \tan^6 x\sec^4 x \; dx= \int \answer{u^6(1+u^2)} \; du
 \]
 
 Finally 
 \[
-\int \tan^6(x)\sec^4(x) \; dx= \answer{\tan^7(x)/7 +  \tan^9(x)/9} + C
+\int \tan^6 x\sec^4 x \; dx= \answer{\tan^7(x)/7 +  \tan^9(x)/9} + C
 \]
 
 \end{problem}
@@ -695,27 +695,27 @@ Finally
 \begin{problem}(problem 8b)
 Compute the indefinite integral:
 \[
-\int \tan^{1/3}(x) \sec^4(x)\;dx = 
+\int \tan^{1/3} x \sec^4 x\;dx = 
 \]
 
 Rewrite the even power of secant as
 
 \begin{multipleChoice}
-\choice{$\sec^4(x) = \left[\tan^2(x)- 1\right] \sec^2(x)$} 
-\choice[correct]{$\sec^4(x) = \left[1 + \tan^2(x)\right] \sec^2(x)$}
-\choice{$\sec^4(x) = \left[1 - \tan^2(x)\right] \sec^2(x)$}
+\choice{$\sec^4 x = \left[\tan^2 x- 1\right] \sec^2 x$} 
+\choice[correct]{$\sec^4 x = \left[1 + \tan^2 x\right] \sec^2 x$}
+\choice{$\sec^4 x = \left[1 - \tan^2 x\right] \sec^2 x$}
 \end{multipleChoice}
 
-Next, let $u = \answer{\tan(x)}$ so that $du = \answer{\sec^2(x) dx}$.\\
+Next, let $u = \answer{\tan x}$ so that $du = \answer{\sec^2 x dx}$.\\
 
 Substituting gives 
 \[
-\int \tan^{1/3}(x)\sec^4(x) \; dx= \int \answer{u^{1/3}(1+u^2)} \; du
+\int \tan^{1/3} x\sec^4 x \; dx= \int \answer{u^{1/3}(1+u^2)} \; du
 \]
 
 Finally 
 \[
-\int \tan^{1/3}(x)\sec^4(x) \; dx= \answer{\frac34 \tan^{4/3}(x) + \frac{3}{10} \tan^{10/3}(x)} + C.
+\int \tan^{1/3} x\sec^4 x \; dx= \answer{\frac34 \tan^{4/3}(x) + \frac{3}{10} \tan^{10/3}(x)} + C.
 \]
 
 \end{problem}
@@ -759,32 +759,32 @@ Finally
 
 Compute
 \[
-\int \sec^5(x) \tan(x) \, dx.
+\int \sec^5 x \tan x \, dx.
 \]
-With an odd power of tangent, we prepare the substitution $u = \sec(x), \; du = \sec(x)\tan(x) \, dx$ by rewriting the integral as
+With an odd power of tangent, we prepare the substitution $u = \sec x, \; du = \sec x\tan x \, dx$ by rewriting the integral as
 \[
-\int \sec^5(x) \tan(x) \, dx = \int \sec^4(x) \sec(x) \tan(x) \, dx.
+\int \sec^5 x \tan x \, dx = \int \sec^4 x \sec x \tan x \, dx.
 \]
 Next we perform the substitution:
 \begin{align*}
-\int \sec^5(x) \tan(x) \, dx &= \int u^4 \, du\\
+\int \sec^5 x \tan x \, dx &= \int u^4 \, du\\
                              &= \frac{u^5}{5} + C\\
-                             &= \frac15 \sec^5(x) + C.
+                             &= \frac15 \sec^5 x + C.
 \end{align*}
 
 \end{example}
 
 
 \begin{problem}(problem 9)
-Compute $\displaystyle{\int \sec^3(x) \tan(x) \, dx}$\\
-Let $u = \answer{\sec(x)}$ then \, $du = \answer{\sec(x)\tan(x) dx}$\\
+Compute $\displaystyle{\int \sec^3 x \tan x \, dx}$\\
+Let $u = \answer{\sec x}$ then \, $du = \answer{\sec(x)\tan(x) dx}$\\
 Substituting gives 
 \[
-\int \sec^3(x) \tan(x) \, dx = \int \answer{u^2} \, du
+\int \sec^3 x \tan x \, dx = \int \answer{u^2} \, du
 \]
 Finally
 \[
-\int \sec^3(x) \tan(x) \, dx = \answer{1/3 \sec^3(x)} + C
+\int \sec^3 x \tan x \, dx = \answer{1/3 \sec^3(x)} + C
 \]
 
 \end{problem}
@@ -793,34 +793,34 @@ Finally
 \begin{example}[example 10]
 Compute the indefinite integral:
 \[
-\int \tan^5(x) \sec^3(x)\;dx.
+\int \tan^5 x \sec^3 x\;dx.
 \]
-Rewrite the integral to prepare for the substitution, $u = \sec(x), \;du = \sec(x) \tan(x) \; dx$.
+Rewrite the integral to prepare for the substitution, $u = \sec x, \;du = \sec x \tan x \; dx$.
 
 \[
-\int \tan^5(x) \sec^3(x)\;dx = \int \tan^4(x) \sec^2(x) \sec(x) \tan(x)\;dx.
+\int \tan^5 x \sec^3 x\;dx = \int \tan^4 x \sec^2 x \sec x \tan x\;dx.
 \]
 
 Next, convert tangents to secants, using $1+ \tan^2 \theta = \sec^2 \theta$
 
 \[
-\tan^4(x) = \left[\sec^2(x) - 1\right]^2
+\tan^4 x = \left[\sec^2 x - 1\right]^2
 \]
 
 The integral becomes
 
 \[
- \int \tan^4(x) \sec^2(x) \sec(x) \tan(x)\;dx = \int \left[\sec^2(x) -1\right]^2 \sec^2(x) \sec(x) \tan(x)\;dx
+ \int \tan^4 x \sec^2 x \sec x \tan x\;dx = \int \left[\sec^2 x -1\right]^2 \sec^2 x \sec x \tan x\;dx
 \]
 
-Now we are ready to substitute, $u = \sec(x), \; du = \sec(x) \tan(x) \, dx$
+Now we are ready to substitute, $u = \sec x, \; du = \sec x \tan x \, dx$
 
 \begin{align*}
-\int \tan^5(x) \sec^3(x)\;dx &= \int \left(u^2 -1\right)^2 u^2 \; du \\
+\int \tan^5 x \sec^3 x\;dx &= \int \left(u^2 -1\right)^2 u^2 \; du \\
                              &= \int \left(u^4 - 2u^2 +1\right) u^2 \; du \\
                              &= \int \left(u^6 - 2u^4 +u^2\right) \; du \\
                              &=  \frac{u^7}{7} - \frac{2u^5}{5} + \frac{u^3}{3} + C  \\
-                             &= \frac17\sec^7(x) - \frac25 \sec^5(x) + \frac13 \sec^3(x) + C
+                             &= \frac17\sec^7 x - \frac25 \sec^5 x + \frac13 \sec^3 x + C
 \end{align*}
 \end{example}
 
@@ -829,29 +829,29 @@ Now we are ready to substitute, $u = \sec(x), \; du = \sec(x) \tan(x) \, dx$
 \begin{problem}(problem 10a)
 Compute the indefinite integral:
 \[
-\int \tan^3(x) \sec^5(x)\;dx
+\int \tan^3 x \sec^5 x\;dx
 \]
 First rewrite the integral as
 \[
-\int \tan^3(x) \sec^5(x)\;dx = \int \tan^2(x) \sec^4(x) \sec(x) \tan(x) \; dx
+\int \tan^3 x \sec^5 x\;dx = \int \tan^2 x \sec^4 x \sec x \tan x \; dx
 \]
-Next, rewrite $\tan^2(x)$ as
+Next, rewrite $\tan^2 x$ as
 \begin{multipleChoice}
-\choice{$1+\sec^2(x)$}
-\choice{$1-\sec^2(x)$}
-\choice[correct]{$\sec^2(x) -1$}
+\choice{$1+\sec^2 x$}
+\choice{$1-\sec^2 x$}
+\choice[correct]{$\sec^2 x -1$}
 \end{multipleChoice}
 
 Let $u = \answer{\sec(x)}$, then \; $du = \answer{\sec(x) \tan(x) \, dx}$
 
 Substituting gives
 \[
-\int \tan^3(x) \sec^5(x)\;dx = \int \answer{(u^2 - 1)u^4} \; du
+\int \tan^3 x \sec^5 x\;dx = \int \answer{(u^2 - 1)u^4} \; du
 \]
 
 Finally
 \[
-\int \tan^3(x) \sec^5(x)\;dx = \answer{\frac17 \sec^7(x) - \frac15 \sec^5(x)} + C
+\int \tan^3 x \sec^5 x\;dx = \answer{\frac17 \sec^7(x) - \frac15 \sec^5(x)} + C
 \]
 \end{problem}
 
@@ -861,29 +861,29 @@ Finally
 \begin{problem}(problem 10b)
 Compute the indefinite integral:
 \[
-\int \tan^5(x) \sec^7(x)\;dx = 
+\int \tan^5 x \sec^7 x\;dx = 
 \]
 First rewrite the integral as
 \[
-\int \tan^5(x) \sec^7(x)\;dx = \int \tan^4(x) \sec^6(x) \sec(x) \tan(x) \; dx
+\int \tan^5 x \sec^7 x\;dx = \int \tan^4 x \sec^6 x \sec x \tan x \; dx
 \]
-Next, rewrite $\tan^4(x)$ as
+Next, rewrite $\tan^4 x$ as
 \begin{multipleChoice}
-\choice{$\left[\sec^2(x) + 1\right]^2$}
-\choice[correct]{$\left[\sec^2(x) -1\right]^2$}
-\choice{$\left[1-\sec^2(x)\right]^2$}
+\choice{$\left[\sec^2 x + 1\right]^2$}
+\choice[correct]{$\left[\sec^2 x -1\right]^2$}
+\choice{$\left[1-\sec^2 x\right]^2$}
 \end{multipleChoice}
 
-Let $u = \answer{\sec(x)}$, then \; $du = \answer{\sec(x) \tan(x) \, dx}$
+Let $u = \answer{\sec x}$, then \; $du = \answer{\sec(x) \tan(x) \, dx}$
 
 Substituting gives
 \[
-\int \tan^5(x) \sec^7(x)\;dx = \int \answer{(u^4 -2u^2 + 1) u^6} \; du
+\int \tan^5 x \sec^7 x\;dx = \int \answer{(u^4 -2u^2 + 1) u^6} \; du
 \]
 
 Finally
 \[
-\int \tan^5(x) \sec^7(x)\;dx =  \answer{\frac{1}{11} \sec^{11}(x) - \frac29 \sec^9(x) + \frac17 \sec^7(x)} + C.
+\int \tan^5 x \sec^7 x\;dx =  \answer{\frac{1}{11} \sec^{11}(x) - \frac29 \sec^9(x) + \frac17 \sec^7(x)} + C.
 \]
 \end{problem}
 
@@ -895,24 +895,24 @@ Finally
 \begin{example}
 Compute the indefinite integral:
 \[
-\int \sec(x) \; dx.
+\int \sec x \; dx.
 \]
 This integral is computed by using a $u$-substitution after rewriting the integrand
 by multiplying by 1 in the following way:
 \[
-\int \sec(x) \; dx = \int \sec(x) \cdot \frac{\sec(x) + \tan(x)}{\sec(x) + \tan(x)} \; dx.
+\int \sec x \; dx = \int \sec x \cdot \frac{\sec x + \tan x}{\sec x + \tan x} \; dx.
 \]
-After distributing $\sec(x)$ we get
+After distributing $\sec x$ we get
 \[
-\int \sec(x) \; dx = \int \frac{\sec^2(x) + \sec(x)\tan(x)}{\sec(x) + \tan(x)} \; dx.
+\int \sec x \; dx = \int \frac{\sec^2 x + \sec x\tan x}{\sec x + \tan x} \; dx.
 \]
 Now we observe that the numerator is the derivative of the denominator which suggests the substitution
-$u = \sec(x) + \tan(x)$. We have $du = [ \sec(x)\tan(x) + \sec^2(x)] \; dx$ and the integral becomes
+$u = \sec x + \tan x$. We have $du = [ \sec x\tan x + \sec^2 x] \; dx$ and the integral becomes
 \begin{align*}
-\int \sec(x) \; dx &= \int \frac{\sec^2(x) + \sec(x)\tan(x)}{\sec(x) + \tan(x)} \; dx\\
+\int \sec x \; dx &= \int \frac{\sec^2 x + \sec x\tan x}{\sec x + \tan x} \; dx\\
 &= \int \frac{1}{u} \; du\\
 &= \ln|u| + C\\
-&= \ln|\sec(x) + \tan(x)|.
+&= \ln|\sec x + \tan x|.
 \end{align*}
 
 \end{example}
@@ -924,28 +924,28 @@ $u = \sec(x) + \tan(x)$. We have $du = [ \sec(x)\tan(x) + \sec^2(x)] \; dx$ and 
 %\]
 Furthermore, IBP also gave a reduction formula for higher powers of $\sec(x)$:
 \[
-\int \sec^n(x) \; dx =  \frac{1}{n-1}\sec^{n-2}(x)\tan(x) + \frac{n-2}{n-1}\int \sec^{n-2}(x) \; dx. 
+\int \sec^n x \; dx =  \frac{1}{n-1}\sec^{n-2} x\tan x + \frac{n-2}{n-1}\int \sec^{n-2} x \; dx. 
 \]
 This formula is particularly useful if
 the power is odd, since if $n$ is odd, $n-2$ is also odd.  Therefore, if we repeat the formula enough times, 
-we will eventually be left with $\int \sec(x) \, dx$
+we will eventually be left with $\int \sec x \, dx$
 which we have just solved.
 
 \begin{example}
 Use the above reduction of powers formula twice to compute the indefinite integral
 \[
-\int \sec^5(x) \; dx.
+\int \sec^5 x \; dx.
 \]
 We have $n =5$, and the formula gives
 \[
-\int \sec^5(x) \; dx = \frac14 \sec^3(x)\tan(x) + \frac34 \int \sec^3(x) \; dx.
+\int \sec^5 x \; dx = \frac14 \sec^3 x\tan x + \frac34 \int \sec^3 x \; dx.
 \]
 We will use the reduction of powers formula once again, this time with $n=3$:
 \begin{align*}
-\int \sec^5(x) \; dx &= \frac14 \sec^3(x)\tan(x) + \frac34 \int \sec^3(x) \; dx\\
-&= \frac14 \sec^3(x)\tan(x) + \frac34\left(\frac12\sec(x)\tan(x) + \frac12\int \sec(x) \; dx\right)\\
-&=\frac14 \sec^3(x)\tan(x) + \frac38\sec(x)\tan(x) + \frac38 \int \sec(x) \; dx \\
-&=\frac14 \sec^3(x)\tan(x) + \frac38\sec(x)\tan(x) + \frac38\ln|\sec(x) + \tan(x)| + C
+\int \sec^5 x\; dx &= \frac14 \sec^3 x\tan x + \frac34 \int \sec^3 x \; dx\\
+&= \frac14 \sec^3 x\tan x + \frac34\left(\frac12\sec x\tan x + \frac12\int \sec x \; dx\right)\\
+&=\frac14 \sec^3 x\tan x + \frac38\sec x\tan x + \frac38 \int \sec x \; dx \\
+&=\frac14 \sec^3 x\tan x + \frac38\sec x\tan x + \frac38\ln|\sec x + \tan x| + C
 \end{align*}
 \end{example}
 
