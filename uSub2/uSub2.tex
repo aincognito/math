@@ -51,11 +51,11 @@ If we let $u = x^2 + 1$, then using the differential form of the derivative,  we
 
 Now, the original integral which was in terms of the variable $x$ and the differential $dx$ can be rewritten in terms of the new variable $u$ and its differential $du$.  
 Substituting $u$ for $x^2 + 1$ and $du$ for $2x \  dx$, the original integral becomes 
-\[\int 2x\cos(x^2 + 1) \ dx = \int \cos(x^2 + 1) \ 2x\  dx = \int \cos(u) \ du.\]
+\[\int 2x\cos(x^2 + 1) \ dx = \int \cos(x^2 + 1) \ 2x\  dx = \int \cos u \ du.\]
 We now have a basic integral in the variable $u$ which can easily be computed:
-\[\int \cos(u) \ du = \sin(u) + C,\]
+\[\int \cos u \ du = \sin u + C,\]
 This is essentially our answer except that it is in the wrong variable.  We must go back to $x$ using $u = x^2 + 1$: 
-\[\sin(u) + C = \sin(x^2 + 1) + C.\]
+\[\sin u + C = \sin(x^2 + 1) + C.\]
 Thus, using $u$-substitution we can conclude that
 \[\int 2x\cos(x^2 + 1) \ dx =  \sin(x^2 + 1) + C.\]
 As a final remark, we can check our answer by differentiation:
@@ -72,8 +72,8 @@ Let $u = \answer{x^5 - 7}$. Then $du = \answer{5x^4 dx}$.\\
 \begin{hint}
 Don't forget the `dx' in your answer for `du'.
 \end{hint}
-Convert to an intergal in the variable $u$:
-\[\int 5x^4\sin(x^5 -7) \ dx = \int\answer{\sin(u) du}\]
+Convert to an integral in the variable $u$:
+\[\int 5x^4\sin(x^5 -7) \ dx = \int\answer{\sin u du}\]
 \begin{hint}
 Don't forget the `du' in your integral.
 \end{hint}
@@ -226,9 +226,9 @@ We let $u = e^x$.  We have,
 and the integral can be written as 
 \[\int e^x\sin(e^x) \ dx = \int \sin(e^x) \cdot e^x \  dx = \int \sin(u) \ du.\]
 The last integral can be computed as 
-\[\int \sin(u) \ du = -\cos(u) + C,\]
+\[\int \sin u \ du = -\cos u + C,\]
 and by back substituting, we have 
-\[-\cos(u) + C = -\cos(e^x) + C.\]
+\[-\cos u + C = -\cos(e^x) + C.\]
 Thus, using $u$-substitution we can conclude that
 \[\int e^x\sin(e^x) \ dx =  -\cos(e^x) + C.\]
 \end{example}
@@ -244,7 +244,7 @@ then $\;du = \answer{1/x dx}$\\
 Don't forget the `dx' in your answer for `du'
 \end{hint}
 Convert to an integral in the variable $u$:
-\[\int \frac{\cos(\ln x)}{x} \ dx = \int\answer{\cos(u) du}\]
+\[\int \frac{\cos(\ln x)}{x} \ dx = \int\answer{\cos u du}\]
 \begin{hint}
 Don't forget the `du' in your integral
 \end{hint}
@@ -262,12 +262,12 @@ Let $u = x^3$.  Then we have,
 and the integral can be written as 
 \begin{align*}
 \int 3x^2\sec(x^3)\tan(x^3) \ dx &= \int \sec(x^3)\tan(x^3) \cdot 3x^2 \ dx\\
-&= \int \sec(u)\tan(u) \ du.
+&= \int \sec u\tan u \ du.
 \end{align*}
 The last integral can be computed as 
-\[\int \sec(u)\tan(u) \ du = \sec(u) + C,\]
+\[\int \sec u\tan u \ du = \sec u + C,\]
 and by back substituting, we have 
-\[\sec(u) + C = \sec(x^3) + C.\]
+\[\sec u + C = \sec(x^3) + C.\]
 Thus, using $u$-substitution we can conclude that
 \[\int 3x^2\sec(x^3)\tan(x^3) \ dx =  \sec(x^3) + C.\]
 \end{example}
@@ -293,12 +293,12 @@ and the integral can be written as
 \begin{align*}
 \int x^3\cos(x^4) \ dx &= \int \cos(x^4) \cdot x^3\  dx \\
 &=  \int \cos(x^4)\cdot \tfrac14 \cdot 4x^3\  dx\\
-&=  \int \tfrac14\cos(u) \ du.
+&=  \int \tfrac14\cos u \ du.
 \end{align*}
 The last integral can be computed as 
-\[\int \tfrac14 \cos(u) \ du = \tfrac14 \sin(u) + C,\]
+\[\int \tfrac14 \cos u \ du = \tfrac14 \sin u + C,\]
 and by back substituting, we have 
-\[\tfrac14 \sin(u) + C = \tfrac14 \sin(x^4) + C.\]
+\[\tfrac14 \sin u + C = \tfrac14 \sin(x^4) + C.\]
 Thus, using $u$-substitution we can conclude that
 \[\int x^3\cos(x^4) \ dx =  \tfrac14 \sin(x^4) + C.\]
 \end{example}
@@ -353,11 +353,11 @@ Let $u = 3x$.  Then we have,
 \[u = 3x\]
 \[du = 3 \ dx\]
 and the integral can be written as 
-\[\int\sin(3x) \ dx =  \int \sin(3x) \cdot \tfrac13\cdot 3 \   dx =   \int \tfrac13 \sin(u) \ du.\]
+\[\int\sin(3x) \ dx =  \int \sin(3x) \cdot \tfrac13\cdot 3 \   dx =   \int \tfrac13 \sin u \ du.\]
 The last integral can be computed as 
-\[ \int \tfrac13 \sin(u) \ du = -\tfrac13 \cos(u) + C,\]
+\[ \int \tfrac13 \sin u \ du = -\tfrac13 \cos u + C,\]
 and by back substituting, we have 
-\[-\tfrac13 \cos(u) + C = -\tfrac13 \cos(3x) + C.\]
+\[-\tfrac13 \cos u + C = -\tfrac13 \cos(3x) + C.\]
 Thus, using $u$-substitution we can conclude that
 \[\int \sin(3x) \ dx =  -\tfrac13 \cos(3x) + C.\]
 \end{example}
@@ -432,10 +432,10 @@ Compute $du$
 
 
 \begin{example}[example 13]
- Compute $\dis \int \frac{1}{x\ln^2(x)} \ dx.$\\
+ Compute $\dis \int \frac{1}{x\ln^2 x} \ dx.$\\
 Step 1) Transform the integral:
 \begin{align*}
-\int \frac{1}{x\ln^2(x)}& \ dx \, = \, \int \frac{1}{\ln^2(x)} \cdot \frac{1}{x} \, dx\,  = \, \int \frac{1}{u^2} \ du\\
+\int \frac{1}{x\ln^2 x}& \ dx \, = \, \int \frac{1}{\ln^2 x} \cdot \frac{1}{x} \, dx\,  = \, \int \frac{1}{u^2} \ du\\
 \text{let} \;\; u = & \ \ln(x)&  \\
 \text{then} \;\; du = & \ \frac{1}{x} \ dx&
 \end{align*}
@@ -445,114 +445,115 @@ Step 2) Anti-differentiate:
 \]
 Step 3) Back substitute:
 \[
--\frac{1}{u} + C \, =\, -\frac{1}{\ln(x)} + C
+-\frac{1}{u} + C \, =\, -\frac{1}{\ln x} + C
 \]
 Hence,
 \[
-\int \frac{1}{x\ln^2(x)} \ dx \,= \,-\frac{1}{\ln(x)} + C
+\int \frac{1}{x\ln^2 x} \ dx \,= \,-\frac{1}{\ln x} + C
 \]
 
-Let $u = \ln(x)$. Then we have,
-\[u = \ln(x)\]
+Let $u = \ln x$. Then we have,
+\[u = \ln x\]
 \[du = \tfrac1x \ dx\]
 and the integral can be written as 
-\[\int \frac{1}{x\ln^2(x)} \ dx = \int \frac{1}{\ln^2(x)} \cdot \frac{1}{x}\  dx = \int \frac{1}{u^2} \ du.\]
+\[\int \frac{1}{x\ln^2 x} \ dx = \int \frac{1}{\ln^2 x} \cdot \frac{1}{x}\  dx = \int \frac{1}{u^2} \ du.\]
 The last integral can be computed as 
 \[\int \frac{1}{u^2} \ du = \int u^{-2} \ du = \tfrac{u^{-1}}{-1} + C 
 = -\frac{1}{u} + C,\]
 and by back-substituting, we have 
-\[-\frac{1}{u} + C =  -\frac{1}{\ln(x)} + C.\]
+\[-\frac{1}{u} + C =  -\frac{1}{\ln x} + C.\]
 Thus, using $u$-substitution we can conclude that
-\[\int \frac{1}{x\ln^2(x)} \ dx =  -\frac{1}{\ln(x)} + C.\]
+\[\int \frac{1}{x\ln^2 x} \ dx =  -\frac{1}{\ln x} + C.\]
 \end{example}
 
 
 \begin{problem}(problem 13)
 \begin{hint}
-Let $u = \ln(x)$
+Let $u = \ln x$
 \end{hint}
 \begin{hint}
 Compute $du$
 \end{hint}
-\[\int \frac{1}{x\ln^3(x)} \ dx = \answer{- \ln^{-2}(x)/2} +C.\]
+\[\int \frac{1}{x\ln^3 x} \ dx = \answer{- \ln^{-2} x/2} +C.\]
 \end{problem}
 
 \begin{example}[example 14] Compute 
-\[\int \sin^4(x)\cos(x) \ dx.\]
-Let $u = \sin(x)$. Then we have,
-\[u = \sin(x)\]
-\[du = \cos(x) \ dx\]
+\[\int \sin^4 x\cos x \ dx.\]
+Let $u = \sin x$. Then we have,
+\[u = \sin x
+\[du = \cos x \ dx\]
 and the integral can be written as 
-\[\int \sin^4(x)\cos(x) \ dx  = \int u^4 \ du.\]
+\[\int \sin^4 x\cos x \ dx  = \int u^4 \ du.\]
 The last integral can be computed as 
 \[\int u^4 \ du = \tfrac{u^5}{5} + C,\]
 and by back-substituting, we have 
-\[\tfrac{u^5}{5} + C = \tfrac15 \sin^5(x) + C.\]
+\[\tfrac{u^5}{5} + C = \tfrac15 \sin^5 x + C.\]
 Thus, using $u$-substitution we can conclude that
-\[\int \sin^4(x)\cos(x) \ dx =  \tfrac15 \sin^5(x) + C.\]
+\[\int \sin^4 x\cos x \ dx =  \tfrac15 \sin^5 x + C.\]
 \end{example}
 
 
 
 \begin{problem}(problem 14)
 \begin{hint}
-Let $u = \tan(x)$
+Let $u = \tan x$
 \end{hint}
 \begin{hint}
 Compute $du$
 \end{hint}
-\[\int \tan^5(x)\sec^2(x) \ dx = \answer{\tan^6(x)/6} +C.\]
+\[\int \tan^5 x\sec^2 x \ dx = \answer{\tan^6 x/6} +C.\]
 \end{problem}
 
 \begin{example}[example 15] Compute 
-\[\int \tan(x) \ dx.\]
+\[\int \tan x \ dx.\]
 First rewrite the integral:
-\[\int \tan(x) \ dx =\int \frac{\sin(x)}{\cos(x)} \ dx.\]
-Now, let $u = \cos(x)$; then $du = -\sin(x) \ dx$
+\[\int \tan x \ dx =\int \frac{\sin x}{\cos x} \ dx.\]
+Now, let $u = \cos x$; then $du = -\sin x \ dx$
 and the integral can be written as
 \begin{align*}
-\int \frac{\sin(x)}{\cos(x)} \ dx &= \int \frac{1}{\cos(x)}\ \sin(x) \  dx \\
- &=  - \int \frac{1}{\cos(x)}\ \big(-\sin(x)\big) \  dx\\
+\int \frac{\sin x}{\cos x} \ dx &= \int \frac{1}{\cos x}\ \sin x \  dx \\
+ &=  - \int \frac{1}{\cos x}\ \big(-\sin(x)\big) \  dx\\
 &=-\int \frac{1}{u} \ du.
 \end{align*}
 The last integral can be computed as 
 \[-\int \frac{1}{u} \ du = -\ln|u| + C,\]
 and by back-substituting, we have 
-\[-\ln|u| + C = -\ln|\cos(x)| + C = \ln|\sec(x)| +C.\]
+\[-\ln|u| + C = -\ln|\cos x| + C = \ln|\sec x| +C.\]
 Thus, using $u$-substitution we can conclude that
-\[\int \tan(x) \ dx =  \ln|\sec(x)| + C.\]
+\[\int \tan x \ dx =  \ln|\sec x| + C.\]
 \end{example}
 
 \begin{problem}(problem 15)
 \begin{hint}
-Rewrite: $\cot(x) = \frac{\cos(x)}{\sin(x)}$
+Rewrite: $\cot x = \frac{\cos x}{\sin x}$
 \end{hint}
 \begin{hint}
-Let $u = \sin(x)$
+Let $u = \sin x$
 \end{hint}
 \begin{hint}
 Compute $du$
 \end{hint}
-\[\int \cot(x) \ dx = \answer{\ln|\sin(x)|} +C.\]
+\[\int \cot x \ dx = \answer{\ln|\sin(x)|} +C.\]
 
 
 \end{problem}
 
 
 \begin{example}[example 16] Compute 
-\[\int \sec(x) \ dx.\]
+\[\int \sec x \ dx.\]
 First rewrite the integral:
-\[\int \sec(x) \ dx =\int \sec(x)\frac{\sec(x)+\tan(x)}{\sec(x)+\tan(x)} \ dx.\]
+\[\int \sec x \ dx =\int \sec x\frac{\sec x+\tan x}{\sec x+\tan x} \ dx.\]
 Distributing in the numerator, we get
-\[\int \sec(x)\frac{\sec(x)+\tan(x)}{\sec(x)+\tan(x)} \ dx = \int \frac{\sec^2(x)+\sec(x)\tan(x)}{\sec(x)+\tan(x)} \ dx.\]
-Now, let $u = \sec(x) + \tan(x)$. Then $du = [\sec(x)\tan(x) + \sec^2(x)] \ dx$ and the integral can be rewritten as
-\[ \int \frac{\sec^2(x)+\sec(x)\tan(x)}{\sec(x)+\tan(x)} \ dx = \int \frac{1}{u} \ du.\]
+\[\int \sec x\frac{\sec x+\tan x}{\sec x+\tan x} \ dx 
+= \int \frac{\sec^2 x+\sec x\tan x}{\sec x+\tan x} \ dx.\]
+Now, let $u = \sec x + \tan x$. Then $du = [\sec x\tan x + \sec^2 x] \ dx$ and the integral can be rewritten as
+\[ \int \frac{\sec^2 x+\sec x\tan x}{\sec x+\tan x} \ dx = \int \frac{1}{u} \ du.\]
 The last integral can be computed as
 \[\int \frac{1}{u} \ du = \ln|u| + C,\]
 and by back-substituting, we have 
-\[\ln|u| + C = \ln|\sec(x) + \tan(x)| + C.\]
+\[\ln|u| + C = \ln|\sec x + \tan x| + C.\]
 Thus, using $u$-substitution we can conclude that
-\[\int \sec(x) \ dx =  \ln|\sec(x) + \tan(x)| + C.\]
+\[\int \sec x \ dx =  \ln|\sec x + \tan x| + C.\]
 \end{example}
 
 

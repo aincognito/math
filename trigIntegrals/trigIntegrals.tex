@@ -48,7 +48,7 @@ We will find the half-angle formulas useful for integrating even powers of sine 
 
 In this section, we compute integrals of the form
 \[
-\int \sin^m(x) \cos^n(x) \; dx
+\int \sin^m x \cos^n x \; dx
 \]
 The method we use depends on whether $m$ and $n$ are even or odd.
 
@@ -60,13 +60,13 @@ sines to cosines or vice-versa.
 \begin{example}[example 1]
 Compute
 \[
-\int \sin^4(x) \cos(x) \, dx
+\int \sin^4 x \cos x \, dx
 \]
 This problem is solved using the substitution $u = \sin(x)$, so that $du = \cos(x) \; dx$.
 \begin{align*}
-\int \sin^4(x) \cos(x) \, dx &= \int u^4 \, du\\
+\int \sin^4 x \cos x \, dx &= \int u^4 \, du\\
                              &= \frac{u^5}{5} + C\\
-                             &= \frac15 \sin^5(x) + C
+                             &= \frac15 \sin^5 x + C
 \end{align*}
 
 \end{example}
@@ -74,18 +74,18 @@ This problem is solved using the substitution $u = \sin(x)$, so that $du = \cos(
 
 
 \begin{problem}(problem 1a) 
-Compute $\displaystyle{\int \sin^6(x)\cos(x) \, dx}$\\
+Compute $\displaystyle{\int \sin^6 x\cos x \, dx}$\\
 
-Let $u = \answer{\sin(x)}$, \; then $du = \answer{\cos(x) dx}$.\\
+Let $u = \answer{\sin x}$, \; then $du = \answer{\cos x dx}$.\\
 
 Substituting gives
 \[
-\int \sin^6(x)\cos(x) \, dx = \int \answer{u^6} \; du
+\int \sin^6 x\cos x \, dx = \int \answer{u^6} \; du
 \]
 
 Finally
 \[
-\int \sin^{6}(x)\cos(x) \, dx = \answer{1/7 \sin^7(x)} + C
+\int \sin^{6} x\cos x \, dx = \answer{1/7 \sin^7 x} + C
 \]
 
 \end{problem}
@@ -93,18 +93,18 @@ Finally
 
 
 \begin{problem}(problem 1b) 
-Compute $\displaystyle{\int \sin(x)\cos^4(x) \, dx}$\\
+Compute $\displaystyle{\int \sin x \cos^4 x \, dx}$\\
 
-Let $u = \answer{\cos(x)}$, \; then $du = \answer{-\sin(x) dx}$.\\
+Let $u = \answer{\cos x}$, \; then $du = \answer{-\sin x dx}$.\\
 
 Substituting gives 
 \[
-\int \sin(x)\cos^4(x) \, dx = \int \answer{-u^4} \; du
+\int \sin x\cos^4 x \, dx = \int \answer{-u^4} \; du
 \]
 
 Finally 
 \[
-\int \sin(x)\cos^4(x) \, dx = \answer{-1/5 \cos^5(x)} + C
+\int \sin x\cos^4 x \, dx = \answer{-1/5 \cos^5 x} + C
 \]
 
 \end{problem}
@@ -135,24 +135,24 @@ In the next example, we need to prepare for the $u$-substitution.
 
 
 \begin{example}[example 2]
-Compute $\displaystyle{\int \sin^4(x)\cos^3(x) \; dx}$\\
+Compute $\displaystyle{\int \sin^4 x\cos^3 x \; dx}$\\
 
 
 Prepare for substitution by rewriting the odd power of cosine.
 \[
-\cos^3(x) = \cos^2(x) \cos(x) = \left[1 - \sin^2(x)\right] \cos(x).
+\cos^3 x = \cos^2 x \cos x = \left[1 - \sin^2 x\right] \cos x
 \]
 
 Rewrite the original integral.
 \[
-\int \sin^4(x)\cos^3(x) \; dx = \int \sin^4(x)\left[1 - \sin^2(x)\right] \cos(x) \; dx
+\int \sin^4 x\cos^3 x \; dx = \int \sin^4 x\left[1 - \sin^2 x\right] \cos(x) \; dx
 \]
-Make the substitution \, $u = \sin(x)$,  \, $du = \cos(x) \, dx$.
+Make the substitution \, $u = \sin x$,  \, $du = \cos x \, dx$.
 \begin{align*}
-\int \sin^4(x)\cos^3(x) \; dx &= \int u^4 (1-u^2) \; du\\
+\int \sin^4 x\cos^3 x \; dx &= \int u^4 (1-u^2) \; du\\
    &= \int (u^4 -u^6) \; du\\
   &= \frac{u^5}{5} - \frac{u^7}{7} + C \\
-  &= \frac15 \sin^5(x) - \frac17 \sin^7(x) + C
+  &= \frac15 \sin^5 x - \frac17 \sin^7 x + C
 \end{align*}
   
 \end{example}
@@ -160,26 +160,26 @@ Make the substitution \, $u = \sin(x)$,  \, $du = \cos(x) \, dx$.
 
 
 \begin{problem}(problem 2a)
-Compute $\displaystyle{\int \sin^6(x)\cos^3(x) \; dx}$\\
+Compute $\displaystyle{\int \sin^6 x\cos^3 x \; dx}$\\
 
 Rewrite the odd power of cosine as
 
 \begin{multipleChoice}
-\choice{$\cos^3(x) = \left[\sin^2(x)- 1\right] \cos(x)$} 
-\choice[correct]{$\cos^3(x) = \left[1 - \sin^2(x)\right] \cos(x)$}
-\choice{$\cos^3(x) = \left[1 - \sin(x)\right]^2 \cos(x)$}
+\choice{$\cos^3 x = \left[\sin^2 x- 1\right] \cos x$} 
+\choice[correct]{$\cos^3 x = \left[1 - \sin^2 x\right] \cos x$}
+\choice{$\cos^3 x = \left[1 - \sin x\right]^2 \cos x$}
 \end{multipleChoice}
 
-Next, let $u = \answer{\sin(x)}$ so that $du = \answer{\cos(x) dx}$.\\
+Next, let $u = \answer{\sin x}$ so that $du = \answer{\cos x dx}$.\\
 
 Substituting gives 
 \[
-\int \sin^6(x)\cos^3(x) \; dx= \int \answer{u^6(1-u^2)} \; du
+\int \sin^6 x\cos^3 x \; dx= \int \answer{u^6(1-u^2)} \; du
 \]
 
 Finally 
 \[
-\int \sin^6(x)\cos^3(x) \; dx= \answer{\sin^7(x)/7 -  \sin^9(x)/9} + C
+\int \sin^6 x\cos^3 x \; dx= \answer{\sin^7 x/7 -  \sin^9 x/9} + C
 \]
 
 \end{problem}
@@ -187,26 +187,26 @@ Finally
 
 
 \begin{problem}{\color{gray}(problem 2b)} 
-Compute $\displaystyle{\int \sin^3(x)\cos^2(x) \; dx}$\\
+Compute $\displaystyle{\int \sin^3 x\cos^2 x \; dx}$\\
 
 Rewrite the odd power of sine as:
 
 \begin{multipleChoice}
-\choice{$\sin^3(x) = \left[1 - \cos(x)\right]^2 \sin(x)$}
-\choice{$\sin^3(x) = \left[\cos^2(x)- 1\right] \sin(x)$} 
-\choice[correct]{$\sin^3(x) = \left[1 - \cos^2(x)\right] \sin(x)$}
+\choice{$\sin^3 x = \left[1 - \cos x\right]^2 \sin x$}
+\choice{$\sin^3 x = \left[\cos^2 x- 1\right] \sin x$} 
+\choice[correct]{$\sin^3 x = \left[1 - \cos^2 x\right] \sin x$}
 \end{multipleChoice}
 
-Next, let $u = \answer{\cos(x)}$ so that $du = \answer{-\sin(x) dx}$.\\
+Next, let $u = \answer{\cos x}$ so that $du = \answer{-\sin x dx}$.\\
 
 Substituting gives
 \[
-\int \sin^3(x)\cos^2(x) \; dx= \int \answer{-u^2(1-u^2)} \; du.
+\int \sin^3 x\cos^2 x \; dx= \int \answer{-u^2(1-u^2)} \; du.
 \]
 
 Finally
 \[
-\int \sin^3(x)\cos^2(x) \; dx= \answer{\cos^5(x)/5 - \cos^3(x)/3} + C.
+\int \sin^3 x\cos^2 x \; dx= \answer{\cos^5 x/5 - \cos^3 x/3} + C.
 \]
 
 \end{problem}
@@ -268,25 +268,25 @@ Finally
 
 
 \begin{example}[example 3]
-Compute $\displaystyle{\int \sin^8(x)\cos^5(x) \; dx}$\\
+Compute $\displaystyle{\int \sin^8 x\cos^5 x \; dx}$\\
 
 Prepare for substitution by rewriting the odd power of cosine.
 \[
-\cos^5(x) = \cos^4(x) \cos(x) = \left[1 - \sin^2(x)\right]^2 \cos(x).
+\cos^5 x = \cos^4 x \cos x = \left[1 - \sin^2 x\right]^2 \cos x
 \]
 
 Rewrite the original integral.
 \[
-\int \sin^8(x)\cos^5(x) \; dx = \int \sin^8(x)\left[1 - \sin^2(x)\right]^2 \cos(x) \; dx.
+\int \sin^8 x\cos^5 x \; dx = \int \sin^8 x\left[1 - \sin^2 x\right]^2 \cos x \; dx.
 \]
 
-Make the substitution $u = \sin(x), \; du = \cos(x) \, dx$.
+Make the substitution $u = \sin x, \; du = \cos x \, dx$.
 \begin{align*}
-\int \sin^8(x)\cos^5(x) \; dx &= \int u^8 (1-u^2)^2 \; du\\
+\int \sin^8 x\cos^5 x \; dx &= \int u^8 (1-u^2)^2 \; du\\
    &= \int u^8 (1-2u^2 + u^4) \; du\\
    &= \int (u^8 -2u^{10} + u^{12}) \; du\\
   &= \tfrac19 u^9 - \tfrac{2}{11}u^{11} + \tfrac{1}{13} u^{13} + C \\
-  &= \tfrac19 \sin^9(x) - \tfrac{2}{11} \sin^{11}(x)  + \tfrac{1}{13} \sin^{13}(x) + C.
+  &= \tfrac19 \sin^9 x - \tfrac{2}{11} \sin^{11} x  + \tfrac{1}{13} \sin^{13} x + C.
 \end{align*}
   
 \end{example}
@@ -294,26 +294,26 @@ Make the substitution $u = \sin(x), \; du = \cos(x) \, dx$.
 
 
 \begin{problem}(problem 3a) 
-Compute $\displaystyle{\int \sin^5(x)\cos^6(x) \; dx}$\\
+Compute $\displaystyle{\int \sin^5 x\cos^6 x \; dx}$\\
 
 Rewrite the odd power of sine as:
 
 \begin{multipleChoice}
-\choice{$\sin^5(x) = \left[1 - \cos^4(x)\right] \sin(x)$}
-\choice{$\sin^5(x) = \left[1 + \cos^4(x)\right] \sin(x)$} 
-\choice[correct]{$\sin^5(x) = \left[1 - 2\cos^2(x) + \cos^4(x)\right] \sin(x)$}
+\choice{$\sin^5 x = \left[1 - \cos^4 x\right] \sin x$}
+\choice{$\sin^5 x = \left[1 + \cos^4 x\right] \sin x$} 
+\choice[correct]{$\sin^5 x = \left[1 - 2\cos^2 x + \cos^4 x\right] \sin x$}
 \end{multipleChoice}
 
-Next, let $u = \answer{\cos(x)}$ so that $du = \answer{-\sin(x) dx}$.\\
+Next, let $u = \answer{\cos x}$ so that $du = \answer{-\sin x dx}$.\\
 
 Substituting gives
 \[
-\int \sin^5(x)\cos^6(x) \; dx= \int \answer{-u^6(1-2u^2 + u^4)} \; du
+\int \sin^5 x\cos^6 x \; dx= \int \answer{-u^6(1-2u^2 + u^4)} \; du
 \]
 
 Finally
 \[
-\int \sin^5(x)\cos^6(x) \; dx= \answer{-1/7 \cos^7(x) + 2/9 \cos^9(x) - 1/11 \cos^{11}(x)} + C
+\int \sin^5 x\cos^6 x \; dx= \answer{-1/7 \cos^7 x + 2/9 \cos^9 x - 1/11 \cos^{11} x} + C
 \]
 
 \end{problem}
@@ -347,26 +347,26 @@ Finally
 
 
 \begin{problem}{\color{gray}(problem 3c)} 
-Compute $\displaystyle{\int \sin^5(x) \; dx}$\\
+Compute $\displaystyle{\int \sin^5 x \; dx}$\\
 
 Rewrite the odd power of sine as:
 
 \begin{multipleChoice}
-\choice{$\sin^5(x) = \left[1 - \cos^4(x)\right] \sin(x)$}
-\choice{$\sin^5(x) = \left[1 + \cos^4(x)\right] \sin(x)$} 
-\choice[correct]{$\sin^5(x) = \left[1 - 2\cos^2(x) + \cos^4(x)\right] \sin(x)$}
+\choice{$\sin^5 x = \left[1 - \cos^4 x\right] \sin x$}
+\choice{$\sin^5 x = \left[1 + \cos^4 x\right] \sin x$} 
+\choice[correct]{$\sin^5 x = \left[1 - 2\cos^2 x + \cos^4 x\right] \sin x$}
 \end{multipleChoice}
 
-Next, let $u = \answer{\cos(x)}$ so that $du = \answer{-\sin(x) dx}$.\\
+Next, let $u = \answer{\cos x}$ so that $du = \answer{-\sin x dx}$.\\
 
 Substituting gives
 \[
-\int \sin^5(x) \; dx= \int \answer{-(1-2u^2 + u^4)} \; du
+\int \sin^5 x \; dx= \int \answer{-(1-2u^2 + u^4)} \; du
 \]
 
 Finally
 \[
-\int \sin^5(x) \; dx= \answer{- \cos(x) + 2/3 \cos^3(x) - 1/5 \cos^5(x)} + C
+\int \sin^5 x \; dx= \answer{- \cos(x) + 2/3 \cos^3(x) - 1/5 \cos^5(x)} + C
 \]
 
 \end{problem}

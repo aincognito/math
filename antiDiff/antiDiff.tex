@@ -33,53 +33,53 @@ comes directly from its corresponding differentiation formula.
 
 
 \item[1.] Constant functions:
-\[
+$\displaystyle
 \int k \; dx = kx + C,
-\]
+$
 where $k$ is any constant.
 
-\item[2.] Power functions:
-\[
-\int x^n \; dx = \frac{x^{n+1}}{n+1} + C, \quad \text{where $n\neq -1$.}
-\]
+\item[2.] Power functions ($n \neq -1$):
+$\displaystyle
+\int x^n \; dx = \frac{x^{n+1}}{n+1} + C
+$
 
 
-\item[3.] The case $n = -1$:
-\[
- \int \frac{1}{x} \; dx = \ln|x| + C.
-\]
+\item[3.] Power functions ($n = -1$):
+$\displaystyle
+ \int x^{-1} \, dx = \int \frac{1}{x} \; dx = \ln|x| + C.
+$
 
 \item[4.] Trigonometric functions:
 
 \begin{enumerate}
 
-\item[a.] $\displaystyle{\int \cos(x) \; dx = \sin(x) + C}$
-\item[b.] $\displaystyle{\int \sin(x) \; dx = -\cos(x) + C}$
-\item[c.] $\displaystyle{\int \sec^2(x) \; dx = \tan(x) + C}$
-\item[d.] $\displaystyle{\int \sec(x) \tan(x) \; dx = \sec(x) + C}$
-\item[e.] $\displaystyle{\int \csc^2(x) \; dx = -\cot(x) + C}$
-\item[f.] $\displaystyle{\int \csc(x) \cot(x) \; dx = -\csc(x) + C}$
+\item[a.] $\displaystyle{\int \cos x \; dx = \sin x + C}$
+\item[b.] $\displaystyle{\int \sin x \; dx = -\cos x + C}$
+\item[c.] $\displaystyle{\int \sec^2 x \; dx = \tan(x) + C}$
+\item[d.] $\displaystyle{\int \sec x \tan x \; dx = \sec x + C}$
+\item[e.] $\displaystyle{\int \csc^2 x \; dx = -\cot x + C}$
+\item[f.] $\displaystyle{\int \csc x \cot x \; dx = -\csc x + C}$
  
 \end{enumerate}
 
 
 \item[5.] Natural exponential function:
-\[
+$\displaystyle
 \int e^x \; dx = e^x + C.
-\]
+$
 
 \item[6.] General exponential function:
-\[
-\int a^x \; dx = \frac{a^x}{\ln(a)} + C,
-\]
+$\displaystyle
+\int a^x \; dx = \frac{a^x}{\ln a} + C,
+$
 where $a > 1$.
 
 \item[7.] Inverse trigonometric functions:
 
 \begin{enumerate}
 
-\item[a.] $\displaystyle{\int \frac{1}{\sqrt{1-x^2}} \; dx = \sin^{-1}(x) + C}$
-\item[b.] $\displaystyle{\int \frac{1}{1+x^2} \; dx = \tan^{-1}(x) + C}$
+\item[a.] $\displaystyle{\int \frac{1}{\sqrt{1-x^2}} \; dx = \sin^{-1} x + C}$
+\item[b.] $\displaystyle{\int \frac{1}{1+x^2} \; dx = \tan^{-1} x + C}$
 
 \end{enumerate}
 
@@ -122,7 +122,7 @@ We list the effects of such a modification on indefinite integrals.
 Compute
 \begin{hint}
 \[
-\frac{d}{dx} \cos(x) = -\sin(x)
+\frac{d}{dx} \cos x = -\sin x
 \]
 \end{hint}
 \begin{hint}
@@ -133,7 +133,7 @@ Do not add the +C to your answer
 
 \[
 \int \sin(x) \ dx =
-\answer[given]{-\cos(x)} \ + C
+\answer[given]{-\cos x} \ + C
 \]
 \end{problem}
 
@@ -169,7 +169,7 @@ Compute
 
 \begin{hint}
 \[
-\frac{d}{dx} \cot(x) = -\csc^2(x)
+\frac{d}{dx} \cot x = -\csc^2 x
 \]
 \end{hint}
 \begin{hint}
@@ -179,8 +179,8 @@ Do not add the +C to your answer
 \end{hint}
 
 \[
-\int \csc^2(x) \ dx =
-\answer[given]{-\cot(x)} \ + C
+\int \csc^2 x \ dx =
+\answer[given]{-\cot x} \ + C
 \]
 \end{problem}
 
@@ -221,7 +221,7 @@ Compute
 
 \begin{hint}
 \[
-\frac{d}{dx} \csc(x) = -\csc(x)\cot(x)
+\frac{d}{dx} \csc x = -\csc x\cot x
 \]
 \end{hint}
 \begin{hint}
@@ -231,8 +231,8 @@ Do not add the +C to your answer
 \end{hint}
 
 \[
-\int \csc(x)\cot(x) \ dx =
-\answer[given]{-\csc(x)} \ + C
+\int \csc x\cot x \ dx =
+\answer[given]{-\csc x} \ + C
 \]
 \end{problem}
 
@@ -248,7 +248,7 @@ Compute
 
 \begin{hint}
 \[
-\frac{d}{dx} 2^x = 2^x \ln(2)
+\frac{d}{dx} 2^x = 2^x \ln 2
 \]
 \end{hint}
 \begin{hint}
@@ -258,7 +258,7 @@ Do not add the +C to your answer
 \end{hint}
 
 \[
-\int 2^x \ln(2) \ dx =
+\int 2^x \ln 2 \ dx =
 \answer[given]{2^x} \ + C
 \]
 \end{problem}
@@ -385,7 +385,7 @@ Compute
 
 \begin{hint}
 \[
-\frac{d}{dx} \tan^{-1}(x) = \frac{1}{1+x^2}
+\frac{d}{dx} \tan^{-1} x = \frac{1}{1+x^2}
 \]
 \end{hint}
 \begin{hint}
@@ -414,7 +414,7 @@ Compute
 
 \begin{hint}
 \[
-\frac{d}{dx} \sin^{-1}(x) = \frac{1}{\sqrt{1 - x^2}}
+\frac{d}{dx} \sin^{-1} x = \frac{1}{\sqrt{1 - x^2}}
 \]
 \end{hint}
 \begin{hint}

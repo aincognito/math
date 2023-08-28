@@ -63,7 +63,7 @@ f'(x) &= \lim_{h \to 0} \frac{f(x+h)-f(x)}{h} \\[5pt]
 &=  \lim_{h \to 0} \frac{\sin x [\cos h  -1] + \cos x \sin h }{h}\\[5pt]
 &=  \lim_{h \to 0} \frac{\sin x [\cos h  -1]}{h} +\lim_{h \to 0} \frac{\cos x \sin h }{h}\\[5pt]
 &=  \sin x\lim_{h \to 0} \frac{ \cos h  -1}{h} +\cos x\lim_{h \to 0} \frac{ \sin h }{h}\\[5pt]
-&=  \sin x \cdot 0 + \cos x  \cdot 1 \\[5pt]
+&=  (\sin x) \cdot 0 + (\cos x)  \cdot 1 \\[5pt]
 &= \cos x.
 %\end{align*}
 \end{aligned}$
@@ -175,7 +175,7 @@ The $x$-values are:
 We now determine the derivative of the cosine function using the definition of the derivative.
 
 \begin{explanation}
-If $f(x) = \cos(x)$ then\\
+If $f(x) = \cos x$ then\\
 \begin{center}
 $\begin{aligned}
 f'(x) &= \lim_{h \to 0} \frac{f(x+h)-f(x)}{h} \\[5pt]
@@ -183,9 +183,10 @@ f'(x) &= \lim_{h \to 0} \frac{f(x+h)-f(x)}{h} \\[5pt]
 &=  \lim_{h \to 0} \frac{\cos x\cos h - \sin x\sin(h) - \cos x}{h}\\[5pt]
 &=  \lim_{h \to 0} \frac{\cos x\cos h - \cos x - \sin x\sin h}{h}\\[5pt]
 &=  \lim_{h \to 0} \frac{\cos x[\cos h -1] - \sin x\sin h}{h}\\[5pt]
-&=  \lim_{h \to 0} \frac{\cos x[\cos h -1]}{h} - \frac{\sin x\sin h}{h}\\[5pt]
-&=   \cos(x) \cdot 0 - \sin x\cdot 1\\[5pt]
-&= -\sin(x).\\[5pt]
+&=  \lim_{h \to 0} \frac{\cos x[\cos h -1]}{h} - \lim_{h \to 0}\frac{\sin x\sin h}{h}\\[5pt]
+&=  \cos x\lim_{h \to 0} \frac{\cos h -1}{h} - \sin x\lim_{h \to 0}\frac{\sin h}{h}\\[5pt]
+&=   \cos x \cdot 0 - \sin x\cdot 1\\[5pt]
+&= -\sin x.\\[5pt]
 \end{aligned}$
 \end{center}
 Using other variables, this can be written as
