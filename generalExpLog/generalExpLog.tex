@@ -1,5 +1,5 @@
 \documentclass[handout]{ximera}
-\usepackage{tcolorbox}
+
 \input{../preamble}
 \outcome{Compute derivatives involving general exponential and logarithmic functions.}
 
@@ -40,6 +40,22 @@ Now, by the chain rule,
 \dd{x} a^x = \dd{x} e^{x\ln(a)}  = e^{x\ln(a)}\cdot \ln(a) = a^x \ln(a).
 \]
 
+This gives us the following theorem:
+
+\begin{theorem}
+Let $a >1$, then
+\[
+\frac{d}{dx}\left(a^x\right) = a^x \ln (a)
+\]
+\end{theorem}
+
+\begin{remark}
+If $a = e$, then since $\ln(e) = 1$, we have 
+\[
+\frac{d}{dx}\left(e^x\right) = e^x \ln (e) =e^x
+\]
+which agrees with the formula we saw in section 2.3.
+\end{remark}
 
 
 \begin{example}[example 1]
@@ -183,6 +199,22 @@ Since the denominator in the above formula is a constant, we can use the Constan
 \dd{x} \left[\log_a(x)\right] = \dd{x} \left(\frac{\ln(x)}{\ln(a)}\right) = \frac{1}{\ln(a)}\cdot \dd{x} \left[\ln(x)\right] = \frac{1}{\ln(a)} \cdot \frac{1}{x} = \frac{1}{x\ln(a)}.
 \]
 
+This gives us the following theorem:
+
+\begin{theorem}
+Let $a >1$, then
+\[
+\frac{d}{dx}\left(\log_a(x)\right) = \frac{1}{x \ln (a)}
+\]
+\end{theorem}
+
+\begin{remark}
+If $a = e$, then since $\ln(e) = 1$, we have 
+\[
+\frac{d}{dx}\left(\ln x\right) = \frac{1}{x \ln (e)} = \frac{1}{x}
+\]
+which agrees with the formula we saw in section 2.3.
+\end{remark}
 
 \begin{example}[example 4]
 The common log has base 10 and is usually written $\log(x)$.
