@@ -25,7 +25,7 @@ over the interval $[a,b]$.
 \begin{image}
 \begin{tikzpicture}
 \begin{axis}[axis x line=  center, axis y line = none, xtick={-1, 1}, 
-xticklabels={$x=a$, $x=b$}, title={The Area Problem}] 
+xticklabels={$a$, $b$}, title={The Area Problem}] 
 
 \addplot[name path = A, domain=-1:1, samples = 100, color=black, thick]{x^3-x+1};
 \addplot[name path = B, domain=-1:1, samples=100, color=black]{0};
@@ -43,6 +43,7 @@ xticklabels={$x=a$, $x=b$}, title={The Area Problem}]
 \node at (axis cs: 0.2,1.25){$y = f(x)$};
 %\node at (axis cs: 1.6,0){$x$};
 \node at (axis cs: -1.5,2.1){$y$};
+\node at (axis cs: 1.45,-0.15){$x$};
 
 
 \end{axis}
@@ -184,12 +185,14 @@ The sum is $\answer{225}.$
 
 Let $f(x)$ be defined on a closed interval $[a,b]$. Partition the interval 
 $[a,b]$ into $n$ sub-intervals, each of width
-\[\Delta x = \frac{b-a}{n}.\]
+\[\Delta x = \frac{b-a}{n}\]
  Denote the endpoints of the sub-intervals by $x_i$, 
 so that 
 \[x_i =  a + i\cdot \Delta x,\]
- where $i = 0, 1, 2, \ldots, n$. (Note that $x_0 = a$ and $x_n = b$.)  
-
+ where $i = 0, 1, 2, \ldots, n$. Note that $x_0 = a + 0\cdot \Delta x = a$ and 
+\[
+x_n = a + n\Delta x = a + n \left( \frac{b-a}{n} \right) = a + (b-a) = b  
+\]
 \begin{image}
 \begin{tikzpicture}
 \node at (5,1.2) {A partition of $[a,b]$ into $n$ sub-intervals};
@@ -275,7 +278,7 @@ xticklabels={$x_1^*$, $x_2^*$, $x_3^*$,  $x_4^*$}, title={Riemann Sum}]
 \addplot[dashed, blue] coordinates {(0.8,0) (0.8, 0.71)};
 %axes
 \addplot[<->] coordinates {(-1.5,-.5) (-1.5, 2)};
-\addplot[<-] coordinates {(-2,0) (1.8, 0)};
+\addplot[<-] coordinates {(-2.02,0) (1.8, 0)};
 
 \node at (axis cs: -0.3,-.6){The height of the $i$-th rectangle is $f(x_i^*)$};
 \node at (axis cs: -.7,1.5){$y = f(x)$};
@@ -300,21 +303,26 @@ xticklabels={$x_1^*$, $x_2^*$, $x_3^*$,  $x_4^*$}, title={Riemann Sum}]
 \begin{definition}[Riemann Sum]
 The \textbf{Riemann Sum} of $f(x)$ on $[a,b]$ with $n$ sub-intervals is given by 
 \[\sum_{i = 1}^n \ f(x_i^*) \Delta x,\]
-where $x_{i-1} \leq x_i^* \leq x_i$.  The numbers $x_i^*$ are called \textbf{sample points} for the sub-intervals $[x_{i-1}, x_i]$.
+where $\Delta x = \frac{b-a}{n}, x_i = a + i\Delta x$ and $x_{i-1} \leq x_i^* \leq x_i$.  
 \end{definition}
 
 \begin{remark}
 For a function $f(x)$ which is positive on the interval $[a,b]$
 the Riemann Sum represents the sum of the areas of $n$ rectangles.  
-The heights of the rectangles are given by the function values at the sample points, $f(x_i^*)$ and the widths are given by $\Delta x = (b-a)/n$.
+The heights of the rectangles are given by the function values at the sample 
+points, $f(x_i^*)$, and the widths are given by $\Delta x = \dfrac{(b-a)}{n}$.
 \end{remark}
 
 
 \begin{example}[example 4]
-Below is an interactive graph of the parabola $y=x^2$.  The Riemann Sum uses the rectangles in the figure to approximate the area under the curve.
-The sample points $x_i^*$ are taken to be endpoints of the sub-interval $[x_{i-1}, x_i]$. The orange rectangles use $x_i^* = x_{i-1}$, i.e., 
-a \textbf{left-endpoint} approximation and the purple rectangles use a \textbf{right-endpoint} approximation with $x_i^* = x_i$.
-Use the slider to convince yourself that as the number of rectangles, $n$ increases, the width $\Delta x$ decreases and
+Below is an interactive graph of the parabola $y=x^2$.  
+The Riemann Sum uses the rectangles in the figure to approximate the area under the curve.
+The sample points $x_i^*$ are taken to be endpoints of the sub-interval $[x_{i-1}, x_i]$. 
+The orange rectangles use $x_i^* = x_{i-1}$, i.e., 
+a \textbf{left-endpoint} approximation and the purple rectangles 
+use a \textbf{right-endpoint} approximation with $x_i^* = x_i$.
+Use the slider to convince yourself that as the number of rectangles, $n$ increases, the 
+width $\Delta x$ decreases and
 the area of the rectangles approaches the area under the curve. 
 \begin{onlineOnly}
   \begin{center}
@@ -374,7 +382,7 @@ and left endpoints as the sample points.
 \begin{tikzpicture}
 \begin{axis}[axis x line=  bottom, axis y line = center, xtick={-1, -0.5, 0, 0.5, 1},  
 ytick={0, 1, 2}, title={Riemann Sum for $f(x)=e^{-x} $ on $[-1,1]$ with $n=4$ using Left Endpoints}]
-\addplot[domain=-1:1, 
+\addplot[domain=-1.2:1.2, 
     samples=100, color=black]{1/e^x};
 \addplot[smooth,mark=*,black] plot coordinates {(0,0)};
 \addplot[smooth,mark=*,blue] plot coordinates {(-1,e)};
@@ -446,7 +454,7 @@ and right endpoints as the sample points.
 \begin{tikzpicture}
 \begin{axis}[axis x line=  bottom, axis y line = center, xtick={-1, -0.5,0,0.5,1},  
 ytick={0, 1, 2}, title={Riemann Sum for $f(x)=e^{-x} $ on $[-1,1]$ with $n=4$ using Right Endpoints}]
-\addplot[domain=-1:1, 
+\addplot[domain=-1:1.1, 
     samples=100, color=black]{1/e^x};
 \addplot[smooth,mark=*,black] plot coordinates {(0,0)};
 \addplot[smooth,mark=*,purple] plot coordinates {(-0.5,sqrt e)}; 
