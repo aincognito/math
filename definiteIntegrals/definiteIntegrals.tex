@@ -60,7 +60,7 @@ and height $4$.  Thus the area is $12$ and the definite integral is 12, i.e.,
 \begin{image}
 \begin{tikzpicture}
 \begin{axis}[axis x line=  bottom, axis y line = left,xtick={0, 1, 2, 3, 4, 5}, ytick={0, 1, 2, 3, 4, 5}, title={The Area Under $f(x)=4$ on $[1,4]$}]
-\addplot[name path = A, domain=1:4, samples=100, color=black]{4};
+\addplot[name path = A, domain=1:4, samples=100, color=black]{4}node[below, midway]{$y = 4$} ;
 \addplot[name path = B, domain=1:4, samples=100, color=black]{0};
 \addplot[blue!10] fill between[of=A and B];
 \addplot[domain=0:1, samples=100, color=black]{0};
@@ -103,7 +103,7 @@ Therefore the area is $\frac12 bh = \frac12(3)(6) = 9$ and so
 \begin{axis}[axis x line=  bottom, axis y line = left,xtick={0, 1, 2, 3}, ytick={0, 1, 2, 3, 4,5, 6}, 
 title={The Area Under $f(x)=2x$ on $[0,3]$}]
 \addplot[name path = A, domain=0:3, 
-    samples=100, color=black]{2*x};
+    samples=100, color=black]{2*x} node[midway, above left]{$y = 2x$};
 \addplot[thin, samples = 100, color=black] coordinates {(3,0) (3,6)};
 \addplot[name path = B, domain=0:3, samples=100, color=black]{0};
 \addplot[blue!10] fill between[of=A and B];
@@ -149,7 +149,7 @@ Hence the definite integral is $4$, i.e.,
 \begin{axis}[axis x line=  bottom, axis y line = left,xtick={0, 1, 2, 3}, ytick={0, 1, 2, 3, 4,5, 6}, 
 title={The Area Under $f(x)=x+1$ on $[0,2]$}]
 \addplot[name path = A, domain=0:2, 
-    samples=100, color=black]{x+1};
+    samples=100, color=black]{x+1} node[midway, above left]{$y = x+1$};
 \addplot[thin, samples = 100, color=black] coordinates {(2,0) (2,3)};
 \addplot[name path = B, domain=0:2, samples=100, color=black]{0};
 \addplot[blue!10] fill between[of=A and B];
