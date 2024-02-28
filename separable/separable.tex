@@ -121,7 +121,7 @@ H(y) = F(x) + C,
 as before.
 
 \begin{example}[example 3]
-Find the general solution of the differential equation $y' = xy^2$ and then find the particular solution corresponding to the intial condition $y(0) = 1$.\\
+Find the general solution of the differential equation $y' = xy^2$ and then find the particular solution corresponding to the initial condition $y(0) = 1$.\\
 Rewrite the equation as 
 \[
 \frac{dy}{dx} = xy^2.
@@ -478,22 +478,30 @@ The doubling time is approximately
 A water tank contains 100 gallons of pure water. Salt water with a concentration of 0.2 lbs/gal is added to the tank at a rate of 3 gallons per minute.
 At the same time, water is drained from the tank at the same rate of 3 gallons per minute.
 Find an expression for the amount of salt in the tank at time $t$.\\
-Let $A = A(t)$ represent the amount of salt in the tank at time $t$, Then $A'(t)$ represents the change in the amount of salt at time $T$. Salt is entering the tank at a rate of 0.6 lb/min and 
+Let $A = A(t)$ represent the amount of salt in the tank at time $t$. Then $A'(t)$ represents the rate of change in the amount of salt at time $t$. Salt is entering the tank at a rate of 0.6 lb/min and 
 salt is leaving the tank at a rate of 0.03A lbs/min. This leads to the differential equation
 \[
-A' = 0.6 - 0.03A \text{  or  } \frac{dA}{dt} = 0.6 - 0.03A.
+A'(t) = 0.6 - 0.03A(t) 
+\]
+To solve this differential equation, we first rewrite the derivative on the left side:
+\[
+\frac{dA}{dt} = 0.6 - 0.03A
 \]
 Separating variables gives
 \[
-\frac{1}{0.6 -0.03A} \, dA = 1\, dt.
+\frac{1}{0.6 -0.03A} \, dA = 1\, dt
 \]
-Integrating gives
+Integrate both sides:
 \[
-\int \frac{1}{0.6 -0.03A} \, dA = \int 1 \, dt \implies -\frac{1}{0.03}\ln|0.6 - 0.03A|  = t + C.
+\int \frac{1}{0.6 -0.03A} \, dA = \int 1 \, dt
 \]
-Solving for $A$, we have
+Computing the anti-derivatives, we have
 \[
-\ln|0.6 - 0.03A|  = -0.03t + C \implies |0.6-0.03A| = e^{-0.03t + C} = e^C \cdot e^{-0.03t}.
+-\frac{1}{0.03}\ln|0.6 - 0.03A|  = t + C
+\]
+Solving for $A$, we obtain
+\[
+\ln|0.6 - 0.03A|  = -0.03t + C \implies |0.6-0.03A| = e^{-0.03t + C} = e^C \cdot e^{-0.03t}
 \]
 Removing the absolute value bars, we have
 \[
@@ -502,15 +510,15 @@ Removing the absolute value bars, we have
 where K is a nonzero constant.
 subtracting $0.6$ and dividing by $-0.03$ we have 
 \[
--0.03A = -0.6 + Ke^{-0.03t} \implies A = \frac{0.6}{0.03} - \frac{1}{0.03}Ke^{-0.03t}.
+-0.03A = -0.6 + Ke^{-0.03t} \implies A = \frac{0.6}{0.03} - \frac{1}{0.03}Ke^{-0.03t}
 \]
 We can find the value of $K$ since we know that at time $t = 0$ there was no salt in the tank, so that $A(0) = 0$:
 \[
-A(0) = \frac{0.6}{0.03} - \frac{1}{0.03}Ke^0 = 0 \implies  K = 0.6.
+A(0) = \frac{0.6}{0.03} - \frac{1}{0.03}Ke^0 = 0 \implies  K = 0.6
 \]
 Since $0.6/0.03 = 20$ we can write the amount of salt in the tank as
 \[
-A= A(t) = 20 - 20e^{-0.03t}.
+A= A(t) = 20 - 20e^{-0.03t}
 \]
 Note that as $t\to \infty$, $A(t) \to 20 - 0 = 20$ pounds of salt. 
 This makes sense since we are adding salt at a concentration of 0.2 lbs/gal to a 100 gallon tank and 0.2 lbs/gal $\cdot$ 100 gal = 20 lbs.
