@@ -17,7 +17,14 @@ We determine the convergence or divergence of a Telescoping Series.
 \section{Telescoping Series}
 
 A telescoping series is a special type of series whose terms cancel each out in such a way that it is relatively easy to determine the
-exact value of its partial sums. Creating the telescoping effect frequently involves a partial fraction decomposition.
+exact value of its partial sums. In general, such a series is formed as a sum of differences:
+\begin{align*}
+\sum_{n=1}^\infty \left(a_n -a_{n+1}\right) &= \lim_{N \to \infty} \sum_{n=1}^N \left(a_n -a_{n+1}\right)\\
+&=\lim_{N \to \infty}\left[\left(a_1 - a_2\right) + \left(a_2 - a_3\right) + \cdots + \left(a_N - a_{N+1}\right) \right]\\
+&= \lim_{N \to \infty}\left[a_1 - a_{N+1}\right]
+\end{align*}
+
+In practice, creating the telescoping effect frequently involves a partial fraction decomposition.
 
 \begin{example}[example 1]
 Consider the series
@@ -43,9 +50,21 @@ The decomposition is:
 with $A = 1$ and $B=-1$ (verify).
 Now rewrite the $N^{th}$ partial sum using this decomposition:
 \begin{align*}
-S_N = \sum_{n=1}^N \left(\frac{1}{n}-\frac{1}{n+1}\right)= \left(1  - \frac12 \right) &+ \left(\frac12 - \frac13 \right) + \left(\frac13 - \frac14 \right) + \cdots \\
+S_N = \sum_{n=1}^N \frac{1}{n^2 +n} =&\sum_{n=1}^N \left(\frac{1}{n}-\frac{1}{n+1}\right)\\
+=& \left(1  - \frac12 \right) + \left(\frac12 - \frac13 \right) + \left(\frac13 - \frac14 \right) + \cdots \\
 &+ \left(\frac{1}{N-1} - \frac{1}{N} \right) +\left(\frac{1}{N} - \frac{1}{N+1} \right) 
 \end{align*}
+
+
+\[
+S_N = \sum_{n=1}^N \frac{1}{n^2 +n} =&\sum_{n=1}^N \left(\frac{1}{n}-\frac{1}{n+1}\right)
+\]
+\[
+= \left(1  - \frac12 \right) + \left(\frac12 - \frac13 \right) + \left(\frac13 - \frac14 \right) + \cdots + \left(\frac{1}{N-1} - \frac{1}{N} \right) +\left(\frac{1}{N} - \frac{1}{N+1} \right) 
+\]
+
+
+
 Looking carefully at the terms in this sum, we see a lot of cancellation. The terms $-\frac12$ and $+\frac12$ cancel as do the pair
  $-\frac13$ and $+\frac13$ and the pair $-\frac{1}{N}$ and $+\frac{1}{N}$. The only fractions that don't cancel are the first, $1$, and the last $-1/(N+1)$.
  The series collapses like an old-time telescope and the $N^{th}$ partial sum is:
