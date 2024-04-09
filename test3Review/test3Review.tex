@@ -20,65 +20,87 @@ Test 3 Review
 
 
 
+%\begin{problem}(problem 1)
+%Find the sum of the infinite series, if it converges: $\displaystyle\sum_{n=1}^\infty \frac{1}{n^2 +n}$
+
+%\begin{hint}
+%Make a partial fraction decomposition
+%\end{hint}
+
+%\begin{hint}
+%Compute the $N^{th}$ partial sum, $S_N$
+%\end{hint}
+
+%\begin{hint}
+%Take the limit as $N \to \infty$ to find the sum of the series
+%\end{hint}
+
+%\end{problem}
+
+
+%\begin{problem}(problem 2)
+%Find the sum of the infinite series, if it converges: $\displaystyle \sum_{n=0}^\infty \frac{2^{2n}}{3^n}$
+%\begin{hint}
+%This is a geometric series with $r = 4/3$
+%\end{hint}
+
+%\begin{hint}
+%The series diverges since $|r| = 4/3 \geq 1$
+%\end{hint}
+
+%\end{problem}
+
+
+
 \begin{problem}(problem 1)
-Find the sum of the infinite series, if it converges: $\displaystyle\sum_{n=1}^\infty \frac{1}{n^2 +n}$
-
-\begin{hint}
-Make a partial fraction decomposition
-\end{hint}
-
-\begin{hint}
-Compute the $N^{th}$ partial sum, $S_N$
-\end{hint}
-
-\begin{hint}
-Take the limit as $N \to \infty$ to find the sum of the series
-\end{hint}
-
-\end{problem}
-
-
-\begin{problem}(problem 2)
-Find the sum of the infinite series, if it converges: $\displaystyle \sum_{n=0}^\infty \frac{2^{2n}}{3^n}$
-\begin{hint}
-This is a geometric series with $r = 4/3$
-\end{hint}
-
-\begin{hint}
-The series diverges since $|r| = 4/3 \geq 1$
-\end{hint}
-
-\end{problem}
-
-
-
-\begin{problem}(problem 3)
 Determine whether the infinite series converges or diverges: $\displaystyle \sum_{n=1}^\infty \frac{n+1}{2n+3}$
 
 \begin{hint}
 Use the Test for Divergence
 \end{hint}
 
+\begin{hint}
+Ratio of lead coeff: $\displaystyle \lim_{n \to \infty} a_n = \frac12 \neq 0$
+\end{hint}
+
 \end{problem}
 
-\begin{problem}(problem 4)
-Determine whether the infinite series converges or diverges: $\displaystyle \sum_{n=1}^\infty \frac{\sin^2(n)}{n^3}$
+\begin{problem}(problem 2)
+Determine whether the infinite series converges or diverges: 
+$\displaystyle \sum_{n=1}^\infty \frac{\sin^2(n)}{n^3}$
 
 \begin{hint}
 Use the Direct Comparison Test
 \end{hint}
 
-\end{problem}
-
-\begin{problem}(problem 5)
-Determine whether the infinite series converges or diverges: $\displaystyle \sum_{n=1}^\infty \frac{n^2 + 5n + 12}{n^3 + 6n^2 + 2n}$
 \begin{hint}
-Use the Limit Comparison Test
+$\displaystyle 0 \leq \sin^2(n) \leq 1$ for all $n$
+\end{hint}
+
+\begin{hint}
+Compare to $p$-series with $p = 3 > 1 \implies$ convergence
 \end{hint}
 
 \end{problem}
 
-\begin{problem}(problem 6)
+\begin{problem}(problem 3)
+Determine whether the infinite series converges or diverges: 
+$\displaystyle \sum_{n=1}^\infty \frac{n^2 + 5n + 12}{n^3 + 6n^2 + 2n}$
+\begin{hint}
+Use the Limit Comparison Test 
+\end{hint}
+
+\begin{hint}
+Compare with the divergent Harmonic Series 
+\end{hint}
+
+\begin{hint}
+$\displaystyle \lim_{n \to \infty} \frac{a_n}{b_n} = 1$ and $ 0 < 1 < \infty$
+\end{hint}
+
+\end{problem}
+
+\begin{problem}(problem 4)
 Determine whether the infinite series converges absolutely, converges conditionally or diverges: $\displaystyle \sum_{n=0}^\infty (-1)^n \frac{n^2 + 2}{n^3 + 3}$
 
 \begin{hint}
@@ -86,7 +108,7 @@ Use the Alternating Series Test to see that the series converges
 \end{hint}
 
 \begin{hint}
-Use the Limit Comparison Test (with the harmonic series) to see that the 
+Use the Limit Comparison Test (with the Harmonic Series) to see that the 
 non-alternating counterpart diverges
 \end{hint}
 
@@ -96,8 +118,9 @@ The alternating series converges conditionally
 
 \end{problem}
 
-\begin{problem}(problem 7)
-Determine whether the infinite series converges or diverges: $\displaystyle \sum_{n=1}^\infty (-1)^n\frac{n^2}{3^n}$
+\begin{problem}(problem 5)
+Determine whether the infinite series converges or diverges: 
+$\displaystyle \sum_{n=1}^\infty (-1)^n\frac{n^2}{3^n}$
 
 \begin{hint}
 Use the Ratio Test
@@ -107,23 +130,28 @@ Use the Ratio Test
 $L = 1/3 < 1$ so the series converges absolutely (this is an alternating series)
 \end{hint}
 
+\begin{hint}
+$\frac{3^n}{3^{n+1}} = \frac13$
+\end{hint}
+
 \end{problem}
 
 
-\begin{problem}(problem 8)
-Determine whether the infinite series converges or diverges: $\displaystyle \sum_{n=1}^\infty \left(\frac{n+ 2}{3n+1}\right)^n$
+\begin{problem}(problem 6)
+Determine whether the infinite series converges or diverges: 
+$\displaystyle \sum_{n=1}^\infty \left(\frac{n+ 2}{3n+1}\right)^n$
 
 \begin{hint}
 Use the Root Test
 \end{hint}
 
 \begin{hint}
-$L = 1/3 < 1$ so the series converges
+Ratio of lead coeff: $L = 1/3 < 1$ so the series converges
 \end{hint}
 
 \end{problem}
 
-\begin{problem} (problem 9)
+\begin{problem} (problem 7)
 Find the interval of convergence of the power series (be sure to check the endpoints):
 $\displaystyle \sum_{n=1}^\infty \frac{n(x-2)^n}{5^n}$
 
@@ -133,11 +161,14 @@ Use the Ratio Test
 \begin{hint}
 The endpoints are $-3$ and $7$
 \end{hint}
+\begin{hint}
+The series diverges at both endpoints by the test for divergence
+\end{hint}
 
 \end{problem}
 
 
-\begin{problem} (problem 10)
+\begin{problem} (problem 8)
 Find a power series representation for the function and include the interval of convergence in your answer:
 $\displaystyle f(x) = \frac{x^2}{3 + x}$
 
@@ -148,7 +179,10 @@ Factor $x^2$ from the numerator and $3$ from the denominator
 Use the formula: $\displaystyle \frac{1}{1-x} = \sum_{n = 0}^\infty x^n, \; |x| <1$\\
 with $-x/3$ in place of $x$
 \end{hint}
-
+\begin{hint}
+Answer: 
+$\displaystyle \frac{x^2}{3 + x} = \sum_{n = 0}^\infty (-1)^n \frac{x^{n+2}}{3^{n+1}}, \; |x| <3$
+\end{hint}
 \end{problem}
 
 
@@ -156,80 +190,99 @@ with $-x/3$ in place of $x$
 
 
 
+%\begin{problem}(problem 1)
+%Find the sum of the infinite series, if it converges: $\displaystyle \sum_{n=0}^\infty \frac{3}{2^n}$
+
+%\begin{hint}
+%This is a geometric series with $r = 1/2$
+%\end{hint}
+
+%\begin{hint}
+%The series converges since $|r| = 1/2 < 1$
+%\end{hint}
+
+%\begin{hint}
+%The sum of the series is 6
+%\end{hint}
+
+%\end{problem}
+
+
+%\begin{problem}(problem 2)
+%Find the sum of the infinite series, if it converges: $\displaystyle \sum_{n=1}^\infty \frac{1}{n^2 + 2n}$
+%\begin{hint}
+%Make a partial fraction decomposition
+%\end{hint}
+
+%\begin{hint}
+%Compute the $N^{th}$ partial sum, $S_N$
+%\end{hint}
+
+%\begin{hint}
+%Take the limit as $N \to \infty$ to find the sum of the series
+%\end{hint}
+
+%\end{problem}
+
+
 \begin{problem}(problem 1)
-Find the sum of the infinite series, if it converges: $\displaystyle \sum_{n=0}^\infty \frac{3}{2^n}$
+Determine whether the infinite series converges or diverges: 
+$\displaystyle \sum_{n=1}^\infty \sqrt[n] 2$
 
 \begin{hint}
-This is a geometric series with $r = 1/2$
+Use the Test for Divergence
 \end{hint}
 
 \begin{hint}
-The series converges since $|r| = 1/2 < 1$
-\end{hint}
-
-\begin{hint}
-The sum of the series is 6
+$\displaystyle \lim_{n \to \infty} a_n = 2^0 = 1 \neq 0$
 \end{hint}
 
 \end{problem}
 
 
 \begin{problem}(problem 2)
-Find the sum of the infinite series, if it converges: $\displaystyle \sum_{n=1}^\infty \frac{1}{n^2 + 2n}$
-\begin{hint}
-Make a partial fraction decomposition
-\end{hint}
+Determine whether the infinite series converges or diverges: 
+$\displaystyle \sum_{n=1}^\infty \frac{1}{\sqrt{n^2 + 1}}$
 
 \begin{hint}
-Compute the $N^{th}$ partial sum, $S_N$
+Use the Limit Comparison Test with the Harmonic Series
 \end{hint}
 
-\begin{hint}
-Take the limit as $N \to \infty$ to find the sum of the series
-\end{hint}
 
 \end{problem}
-
 
 \begin{problem}(problem 3)
-Determine whether the infinite series converges or diverges: $\displaystyle \sum_{n=1}^\infty \sqrt[n] 2$
-
-\begin{hint}
-Use the Test for Divergence
-\end{hint}
-
-\end{problem}
-
-
-\begin{problem}(problem 4)
-Determine whether the infinite series converges or diverges: $\displaystyle \sum_{n=1}^\infty \frac{1}{\sqrt{n^2 + 1}}$
-
-\begin{hint}
-Use the Limit Comparison Test
-\end{hint}
-
-\end{problem}
-
-\begin{problem}(problem 5)
 Determine whether the infinite series converges or diverges: $\displaystyle \sum_{n=1}^\infty \frac{\cos^4(n)}{n\sqrt{n}}$
 
 \begin{hint}
 Use the Direct Comparison Test
 \end{hint}
 
+\begin{hint}
+$\displaystyle 0 \leq \cos^4(n) \leq 1$ for all $n$
+\end{hint}
+
+\begin{hint}
+Since $n\sqrt n = n^{3/2}$, compare to $p$-series with $p = 3/2 > 1 \implies$ convergence
+\end{hint}
+
 \end{problem}
 
-\begin{problem}(problem 6)
-Determine whether the infinite series converges absolutely, converges conditionally or diverges: $\displaystyle \sum_{n=1}^\infty (-1)^{n+1} \frac{n^3}{n^4 + 2}$
+\begin{problem}(problem 4)
+Determine whether the infinite series converges absolutely, converges conditionally or diverges: 
+$\displaystyle \sum_{n=1}^\infty (-1)^{n+1} \frac{n^3}{n^4 + 2}$
 
 \begin{hint}
 Use the Alternating Series Test to see that the series converges
 \end{hint}
-
 \begin{hint}
-Use the Limit Comparison Test (with the harmonic series) to see that the 
+Use the derivative to show that the terms are decreasing
+\end{hint}
+\begin{hint}
+Use the Limit Comparison Test (with the Harmonic Series) to see that the 
 non-alternating counterpart diverges
 \end{hint}
+
 
 \begin{hint}
 The alternating series converges conditionally
@@ -237,8 +290,9 @@ The alternating series converges conditionally
 
 \end{problem}
 
-\begin{problem}(problem 7)
-Determine whether the infinite series converges or diverges: $\displaystyle \sum_{n=1}^\infty \frac{n^5 10^{n+1}}{(2n)!}$
+\begin{problem}(problem 5)
+Determine whether the infinite series converges or diverges: 
+$\displaystyle \sum_{n=1}^\infty \frac{n^5 10^{n+1}}{(2n)!}$
 
 \begin{hint}
 Use the Ratio Test
@@ -251,20 +305,21 @@ $L = 0 < 1$ so the series converges
 \end{problem}
 
 
-\begin{problem}(problem 8)
-Determine whether the infinite series converges or diverges: $\displaystyle \sum_{n=0}^\infty (-1)^n\left(\frac{n^2 + 2n+ 4}{4n^2 + 5}\right)^n$
+\begin{problem}(problem 6)
+Determine whether the infinite series converges or diverges: 
+$\displaystyle \sum_{n=0}^\infty (-1)^n\left(\frac{n^2 + 2n+ 4}{4n^2 + 5}\right)^n$
 
 \begin{hint}
 Use the Root Test
 \end{hint}
 
 \begin{hint}
-$L = 1/4 < 1$ so the series converges absolutely (this is an alternating series)
+Ratio of lead coeff: $L = 1/4 < 1$ so the series converges absolutely (this is an alternating series)
 \end{hint}
 
 \end{problem}
 
-\begin{problem} (problem 9)
+\begin{problem} (problem 7)
 Find the interval of convergence of the power series (be sure to check the endpoints):
 $\displaystyle \sum_{n=1}^\infty \frac{(x + 1)^n}{n 3^n}$
 
@@ -274,11 +329,14 @@ Use the Ratio Test
 \begin{hint}
 The endpoints are $-4$ and $2$
 \end{hint}
+\begin{hint}
+The series converges at $x = -4$ (alternating Harmonic) and diverges at $x = 2$ (Harmonic)
+\end{hint}
 
 \end{problem}
 
 
-\begin{problem} (problem 10)
+\begin{problem} (problem 8)
 Find a power series representation for the function and include the interval of convergence in your answer:
 $\displaystyle f(x) = \frac{4x}{1 - 4x^2}$
 
@@ -288,6 +346,11 @@ Factor $4x$ from the numerator
 \begin{hint}
 Use the formula: $\displaystyle \frac{1}{1-x} = \sum_{n = 0}^\infty x^n, \; |x| <1$\\
 with $-4x^2$ in place of $x$
+\end{hint}
+
+\begin{hint}
+Answer: 
+$\displaystyle \frac{4x}{1-4x^2} = \sum_{n = 0}^\infty 4^{n+1}x^{2n+1} , \; |x| <\frac12$
 \end{hint}
 
 \end{problem}

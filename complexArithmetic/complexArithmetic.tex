@@ -23,7 +23,7 @@ What is a complex number?  The core component of a complex number is the imagina
 \begin{definition}
 A {\bf complex number} is a number of the form $a+bi$ where $a,b \in \mathbb{R}$. 
 The set of all complex numbers is $\mathbb{C}= \{a+bi \,|\, a,b \in \mathbb{R}\}$. 
-The {\bf real part} of $a+bi$ is $a$ and the {\bf imaginary part} of $a+bi$ is $b$.
+The {\bf real part} of $\,a+bi\,$ is $`a'$ and the {\bf imaginary part} of $\,a+bi\,$ is $`b'$.
 \end{definition}
 
 \begin{remark}
@@ -155,9 +155,11 @@ Compute the each of the following powers: $i^3, i^4$ and $i^{75}$.
 \begin{align*}
 (i)& \quad i^3 = (i^2)(i) = (-1)(i) =-i\\
 (ii)& \quad i^4 = (i^2)(i^2) = (-1)(-1) = 1\\
-(iii)& \quad i^{75} = (i^{72})(i^3) = i^3 = -i
+(iii)& \quad i^{75} = (i^{72})(i^3) = (i^4)^{18} (i^3) = i^3 = -i
 \end{align*}
-Note that in part $(iii), i^{72} =1$ since $i^4 =1$ and $72$ is a multiple of $4$.
+Note that in part $(iii)$, a large power of $i$ was written in terms of $i^4$ which is $1$.
+In general $i^{4n+m} = i^m$, where $m$ and $n$ are integers.
+%Note that in part $(iii), i^{72} =1$ since $i^4 =1$ and $72$ is a multiple of $4$.
 \end{example}
 
 
@@ -205,14 +207,14 @@ Find the complex conjugate:
 
 If we multiply a complex number by its conjugate, we get a real number:
 \[
-(a+bi)  \cdot \overline{(a+bi)} = (a+bi)(a-bi) = a^2 +b^2
+(a+bi)  \cdot \overline{(a+bi)} = (a+bi)(a-bi) = a^2 - (bi)^2 = a^2 +b^2
 \]
 
 \begin{example}[Example 7]
 Multiply the complex conjugates:
 \begin{align*}
-(i)& \quad (2+5i) \overline {(2+5i)} = 2^2 + 5^2 = 29\\
-(ii)& \quad (1-i) \overline {(1-i)} = 1^2 + (-1)^2 = 2
+(i)& \quad (2+5i) \overline {(2+5i)} = (2+5i)(2-5i) = 2^2 + 5^2 = 29\\
+(ii)& \quad (1-i) \overline {(1-i)} = (1-i)(1+i) = 1^2 + (-1)^2 = 2
 \end{align*}
 \end{example}
 
@@ -237,11 +239,13 @@ Divide the complex numbers:
 \[
 \frac{3+2i}{4-5i} 
 \]
-Begin by multiplying the numerator and denominator by the conjugate of the denominator.
+Begin by multiplying the numerator and denominator by the conjugate of the denominator, 
+which is $\overline {4-5i} = 4+5i$.
 We have
 \begin{align*}
-\frac{3+2i}{4-5i} &= \frac{3+2i}{4-5i} \cdot \frac{{\overline{4-5i}}}{{\overline{4-5i}}} \\[9 pt]
-                  &= \frac{(3+2i)(4+5i)}{4^2 +(-5)^2}\\[8pt]
+\frac{3+2i}{4-5i} &= \frac{3+2i}{4-5i} \cdot \frac{4+5i}{4+5i} \\[9 pt]
+                  &= \frac{(3+2i)(4+5i)}{(4-5i)(4+5i)}\\[9pt]
+									&= \frac{(3+2i)(4+5i)}{4^2 +(-5)^2}\\[8pt]
                   &= \frac{2+23i}{41}\\[7pt]
                   &= \frac{2}{41} + \frac{23}{41}i
 \end{align*}
