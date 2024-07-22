@@ -92,9 +92,53 @@ and the conjugate of a product is the product of the conjugates:
 
 
 
+\begin{problem}(problem 1) Use mathematical induction to prove that the conjugate of a sum is the sum of the conjugates, i.e.,
+\[
+\overline{\sum_{i=1}^n z_i} =  \sum_{i=1}^n \overline{z_i}
+\]
+
+\end{problem}
+
+\begin{problem}(problem 2) Use mathematical induction to prove that the conjugate of a product is the product of the conjugates, i.e.,
+\[
+\overline{\Pi_{i=1}^n z_i} =  \Pi_{i=1}^n \overline{z_i}
+\]
+
+\end{problem}
+
+\section{Complex Polynomials}
+
+A polynomial (of degree $n$) in the variable $z$ has the form
+\[
+p(z) = a_n z^n + a_{n-1}z^{n-1} + \cdots + a_1 z + a_0
+\]
+where the coefficients $a_i$ are complex numbers for $i = 0, 1, 2, \dots, n$.
+
+A complex number $\alpha$ is called a root of a complex polynomial, $p(z)$, if $p(\alpha) = 0$.
+
+\begin{example}
+Show that $i$ is a root of the complex polynomial $p(z) = z^3 + i$.\\
+We must show that $p(i) = 0$. We have
+\[
+p(i) = i^3 + i = -i +i = 0
+\]
+Hence, $i$ is a root of $p(z) = z^3 + i$.
+\end{example}
+
+\begin{problem}(problem 3a)
+Show that $1+i$ is a root of the complex polynomial $p(z) = z^2 - 2i$.\\
+Can you guess another root of this polynomial?
+\end{problem}
+
+\begin{problem}(problem 3b) Prove that the roots of a polynomial with real coefficients 
+come in conjugate pairs, i.e., if $\alpha$ is a root of $p(z)$,then 
+$\overline{\alpha}$ is also a root.
+\end{problem}
 
 
-
-
+Here is a video solution for problem 3b:\\
+\begin{foldable}
+\youtube{R4JClD55EFQ}
+\end{foldable}
 
 \end{document}
