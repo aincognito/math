@@ -58,38 +58,38 @@ and the sum identity for the cosine is:
 \]
 We get the ball rolling by allowing an imaginary term in the sum identity:
 \[
-\cos(x+iy) = \cos x \cos iy - \sin x \sin iy
+\cos(x+iy) = \cos(x) \cos(iy) - \sin(x) \sin(iy)
 \]
 Next, we define the sine and cosine of a purely imaginary angle using their respective power series:
 %Substituting $iy$ for $x$ in the power series for the sine and cosine
 %yields a connection between  trig functions of purely imaginary angles and the hyperbolic functions: 
 \[
-\cos iy = \sum_{n=0}^\infty (-1)^n \frac{(iy)^{2n}}{(2n)!} 
+\cos(iy) = \sum_{n=0}^\infty (-1)^n \frac{(iy)^{2n}}{(2n)!} 
 \]
 and
 \[
-\sin iy = \sum_{n=0}^\infty (-1)^n \frac{(iy)^{2n+1}}{(2n+1)!} 
+\sin(iy) = \sum_{n=0}^\infty (-1)^n \frac{(iy)^{2n+1}}{(2n+1)!} 
 \]
 These power series can be simplified into hyperbolic functions (!) by noting that $(-1)^n i^{2n} = 1$ for all $n$: 
 \[
-\cos iy= \sum_{n=0}^\infty  \frac{y^{2n}}{(2n)!} = \cosh y
+\cos(iy) = \sum_{n=0}^\infty  \frac{y^{2n}}{(2n)!} = \cosh(y)
 \]
 and
 \[
-\sin iy= i\sum_{n=0}^\infty \frac {y^{2n+1}}{(2n+1)!}= i\sinh y
+\sin(iy) = i\sum_{n=0}^\infty \frac {y^{2n+1}}{(2n+1)!}= i\sinh(y)
 \]
 
 Substituting these into the sum identity establishes
 %the expressions for $\cos(iy)$ and $\sin(iy)$ into the sum identity for the cosine leads to
 \[
-\cos(x+iy) = \cos x \cosh y - i\sin x \sinh y
+\cos(x+iy) = \cos(x) \cosh(y) - i\sin(x) \sinh(y)
 \]
 We use this as our definition of the complex cosine.
 \begin{definition}[The Complex Cosine]
 For all $z \in \C$ we define the complex cosine by
 %$f(z) = \cos z: \C \to \C$
 \[
-\cos(z) = \cos(x+iy) = \cos x \cosh y - i\sin x \sinh y
+\cos(z) = \cos(x+iy) = \cos(x) \cosh(y) - i\sin(x) \sinh(y)
 \]
 \end{definition}
 
@@ -112,12 +112,12 @@ for all angles $\alpha$ and $\beta$.
 \end{hint}
 \begin{hint}
 \[
- \cos iy = \cosh y
+ \cos(iy) = \cosh(y)
 \]
 \end{hint}
 \begin{hint}
 \[
-\sin iy = i \sinh y
+\sin(iy) = i \sinh(y)
 \]
 \end{hint}
 
@@ -137,11 +137,11 @@ of the complex sine function $f(z) = \sin z$?
 Solve for $z: \; \sin(z) = 2$.\\
 Since
 \[
-\sin z = \sin x \cosh y + i\cos x \sinh y
+\sin(z) = \sin(x) \cosh(y) + i\cos(x) \sinh(y)
 \]
 we need 
 \[
-\sin x \cosh y =2 \;\; \mbox{and} \;\; \cos x \sinh y = 0
+\sin(x) \cosh(y) =2 \;\; \mbox{and} \;\; \cos(x) \sinh(y) = 0
 \]
 simultaneously. The second equation gives
 \[
@@ -151,14 +151,14 @@ We proceed on a case by case basis. If $y = 0$, then since
 \[
 \cosh 0 = 1
 \]
-we would be led to $\sin x = 2$ which has no solutions.\\
+we would be led to $\sin(x) = 2$ which has no solutions.\\
 Next, if $x = \pi/2 + n\pi$ where $n=2k$ is even, then 
 \[
-\sin x = \sin\left(\pi/2 + 2k\pi\right) = 1
+\sin(x) = \sin\left(\frac{\pi}{2} + 2k\pi\right) = 1
 \]
 and we arrive at 
 \[
-\cosh y = 2
+\cosh(y) = 2
 \]
 which has two solutions (verify)
 \[
@@ -166,14 +166,14 @@ y = \ln\left(2\pm \sqrt 3 \right)
 \]
 Finally, if $x = \pi/2 + n\pi$ where $n=2k+1$ is odd, then 
 \[
-\sin x = \sin\left(\pi/2 + (2k+1)\pi\right) = -1
+\sin(x) = \sin\left(\frac{\pi}{2} + (2k+1)\pi\right) = -1
 \]
 and we arrive at 
 \[
-\cosh y = -2
+\cosh(y) = -2
 \]
 which has no solutions (verify).
-Thus the equation $\sin z = 2$ has as its solutions
+Thus the equation $\sin(z) = 2$ has as its solutions
 \[
 z = \left[\frac{\pi}{2} + 2k\pi\right] + i\left[\ln\left(2\pm \sqrt 3\right)\right]
 \]
@@ -183,21 +183,26 @@ where $k$ is any integer.
 \begin{problem}(problem 1)
 Solve the following equations for $z$.
 \begin{align*}
-i) & \sin z = -5\\
-ii) & \sin z = i\\
-iii) & \cos z = 5\\
-iv) & \cos z = -2i\\
+i) & \; \sin(z) = -5\\
+ii) & \;  \sin(z) = i\\
+iii) & \;  \cos(z) = 5\\
+iv) & \;  \cos(z) = -2i\\
 \end{align*}
 \end{problem}
 
 
+Here is a video solution of one part of problem 1, part iv:\\
+\begin{foldable}
+\youtube{CX9sOecXTkw}
+\end{foldable}
+
 
 \section{Identities}
 \subsection{Periodicity}
-Since the real sine and cosine functions are $2\pi$ periodic, so are their complex extenstions.
+Since the real sine and cosine functions are $2\pi$ periodic, so are their complex extensions.
 \begin{proposition}
 \[
-\sin(z + 2\pi) = \sin z \;\; \mbox{and} \;\; \cos(z+2\pi) = \cos z
+\sin(z + 2\pi) = \sin(z) \;\; \mbox{and} \;\; \cos(z+2\pi) = \cos(z)
 \]
 \end{proposition}
 The periodicity follows immediately from the definition:
@@ -206,12 +211,12 @@ The periodicity follows immediately from the definition:
 \]
 The periodicity of the cosine is proved similarly (verify).\\
 \subsection{Evenness and Oddness}
-Recall that $\sin x$ and $\sinh x$ are odd functions and that $\cos x$ and $\cosh x$ are even functions.
-As a result, $\sin z$ is an odd function and $\cos z$ is an even function.
+Recall that $\sin(x)$ and $\sinh(x)$ are odd functions and that $\cos(x)$ and $\cosh(x)$ are even functions.
+As a result, $\sin(z)$ is an odd function and $\cos(z)$ is an even function.
 
 \begin{proposition}
 \[
-\sin(-z) = -\sin z \;\; \mbox{and} \;\; \cos(-z) = \cos z
+\sin(-z) = -\sin(z) \;\; \mbox{and} \;\; \cos(-z) = \cos(z)
 \]
 \end{proposition}
 To obtain the first equation, we have
@@ -224,7 +229,7 @@ The evenness of the complex cosine is demonstrated similarly (verify).
 \subsection{Shift by $\pi$}
 \begin{proposition}
 \[
-\sin(z + \pi) = -\sin z \;\; \mbox{and} \;\; \cos(z+\pi) = -\cos z
+\sin(z + \pi) = -\sin(z) \;\; \mbox{and} \;\; \cos(z+\pi) = -\cos(z)
 \]
 \end{proposition}
 The proof of these equations follows directly from their real counterparts (verify).
@@ -257,7 +262,7 @@ The proof of the second equation is similar (verify).
 \subsection{Co-functions}
 \begin{proposition}
 \[
-\sin\left(\frac{\pi}{2}-z\right) = \cos z \;\; \mbox{and} \;\; \cos\left(\frac{\pi}{2}-z\right) = \sin z
+\sin\left(\frac{\pi}{2}-z\right) = \cos(z) \;\; \mbox{and} \;\; \cos\left(\frac{\pi}{2}-z\right) = \sin(z)
 \]
 \end{proposition}
 These identities follow directly from their counterparts for the real sine and cosine functions.
@@ -310,21 +315,21 @@ The other four trigonometric functions are defined in terms of the sine and cosi
 
 \begin{definition}
 \[
-\tan z = \frac{\sin z}{\cos z} \;\; \mbox{and} \;\; \cot z = \frac{\cos z}{\sin z}
+\tan z = \frac{\sin(z)}{\cos(z)} \;\; \mbox{and} \;\; \cot(z) = \frac{\cos(z)}{\sin(z)}
 \]
 \[
-\sec z = \frac{1}{\cos z} \;\; \mbox{and} \;\; \csc z = \frac{1}{\cos z}
+\sec z = \frac{1}{\cos(z)} \;\; \mbox{and} \;\; \csc(z) = \frac{1}{\cos(z)}
 \]
 \end{definition}
-The functions $\tan z$ and $\cot z$ are $\pi$-periodic
-and the functions $\sec z$ and $\csc z$ are $2\pi$-periodic (verify).
+The functions $\tan(z)$ and $\cot(z)$ are $\pi$-periodic
+and the functions $\sec(z)$ and $\csc(z)$ are $2\pi$-periodic (verify).
 The Pythagorean Identity for the sine and cosine gives rise to two other Pythagorean identities:
 \[
-1+ \tan^2 z = \sec^2 z
+1+ \tan^2(z) = \sec^2(z)
 \]
 and
 \[
-1 + \cot^2 z = \csc^2 z
+1 + \cot^2(z) = \csc^2(z)
 \]
 
 \end{document}
