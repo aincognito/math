@@ -244,13 +244,16 @@ iv) & f(z) = i+\overline{z}
 \end{align*}
 \end{problem}
 
-
-To understand the mapping properties of $f(z) = \frac{1}{z}$ it is useful to rewrite it in the following way:
+The function $f(z) = \frac{1}{z}$ maps the punctured complex plane, $\C \setminus \{0\}$, to itself. Moreover, it is a bijection whose inverse is itself. 
+To understand the mapping properties of $f(z) = \frac{1}{z}$ it is useful to 
+rewrite it in the following way:
 \[
 \frac{1}{z} = \frac{1}{z} \cdot \frac{\overline{z}}{\overline{z}}= \frac{\overline{z}}{|z|^2}
 \]
-Thus the mapping $f(z) = \frac{1}{z}$ has both a reflecting property like the conjugate mapping and a scaling property
-due to the division of the positive real number $|z|^2$. As a result of the scaling, the image of a point inside the unit circle 
+Thus the mapping $f(z) = \frac{1}{z}$ has both a reflecting property like the 
+conjugate mapping and a scaling property
+due to the division of the positive real number $|z|^2$. 
+As a result of the scaling, the image of a point inside the unit circle 
 will map to a point outside of the circle and vice versa. This is shown in the figure below.
 
 \begin{image}
@@ -499,7 +502,7 @@ What is the formula for $\varphi^{-1} : S \setminus N \to \C$?
 \section{Exponential and Logs}
 Next, we turn to the exponential function, $f(z) = e^z$ and its mapping properties.
 Recall that $e^z$ is $2\pi i$ periodic.  As a result, the image of the band of complex numbers satisfying
-\(-\pi < \Imp z \leq \pi\) is its full image, $\C\{0\}$.
+\(-\pi < \Imp z \leq \pi\) is its full image, $\C \setminus \{0\}$.
 
 \begin{example}[example 6]
 Find the image of the vertical segment $x = 2, -\pi < y \leq \pi$ under the mapping $f(z) = e^z$.\\
@@ -528,7 +531,7 @@ Hence the image of the segment is the circle centered at the origin with radius 
 
 \draw[blue, thick, ->] (7.5,0) circle (2.2); %image
 \draw[dashed,thin,blue!80] (7.5,0) -- (9.1, 1.6) node[midway, below right]{$e^2$} ;
-\node[blue, thick] at (10.2, 1.7){$u^2 + v^2 = e^4$}; %image label
+\node[blue, thick] at (10.2, -1.7){$u^2 + v^2 = e^4$}; %image label
 
 \node at (3.75, -3.5){\large The effect of $f(z) = \frac{1}{z}$ on a vertical segment}; %caption
 \end{tikzpicture}
@@ -549,12 +552,15 @@ $-e^2 \leq u \leq e^2$ and similarly for $v$.
 \begin{problem}(problem 6)
 Find the image of the given line segment under the map $w = e^z$:
 \begin{align*}
-i)\; & \Rep z = 1, 0<\Imp z < \pi\\
-ii)\; & \Rep z = -1, \pi/2 < \Imp z < 3\pi/2
+i)\; & \Rep z = 1,\; 0<\Imp z < \pi \\
+ii)\; & \Rep z = -1,\; \pi/2 < \Imp z < 3\pi/2
 \end{align*}
 \end{problem}
 
-
+Here is a video solution of one part of problem 6, part ii:\\
+\begin{foldable}
+\youtube{V7-6_7eb9JE}
+\end{foldable}
 
 \begin{example}[example 7]
 Find the image of the horizontal line $y = \frac{\pi}{4}$ under the mapping $f(z) = e^z$.\\
@@ -575,7 +581,7 @@ ray, $\theta = \pi/4$ with $r>0$.
 
 \draw[blue, thick, <->] (-2, 1.6) -- (2, 1.6) ; %domain
 
-\node[blue, thick] at (1.5, 1.1){$ y = 2$}; %domain label
+\node[blue, thick] at (1.5, 1.1){$ y = \pi/4$}; %domain label
 
 \draw[->, thick, blue] (3,-1.5)--(5, -1.5) node[above,midway, blue]{$w = e^z$};
 %w-plane
@@ -665,13 +671,17 @@ Hence the range of values for $v$ is $(\pi/2, \pi] \cup (-\pi/2, -\pi)$
 \end{example}
 
 \begin{problem}(problem 8)
-Find the image of the given line under the map $w = \Log z$:
+Find the image of the given set under the map $w = \Log z$:
 \begin{align*}
-i)\; & C(0,1); \; \Log z\\
-ii)\; & \theta = -\pi/4; \; \Log z
+i)\; & \mbox{The unit circle,}\; C(0,1) \\
+ii)\; & \mbox{The ray}\; \theta = 7\pi/4
 \end{align*}
 \end{problem}
 
+Here is a video solution of one part of problem 8, part ii:\\
+\begin{foldable}
+\youtube{C6C_B5RKSAg}
+\end{foldable}
 
 Below is a Geogebra applet that shows the image of a line under $1/z, e^z$ and $z^2$.  
 Move the red line and observe the effects! 
@@ -751,6 +761,10 @@ iv)\; & \Imp z = 1; \; \sin z
 \end{align*}
 \end{problem}
 
+Here is a video solution of one part of problem 9, part iii:\\
+\begin{foldable}
+\youtube{nBjfyuz5LS8}
+\end{foldable}
 
 \end{document}
 
