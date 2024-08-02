@@ -65,13 +65,18 @@ Hence,
 
 \end{example}
 
-\begin{problem}(problem 1) Use the definition of limit to show each of the following:
+\begin{problem}(problem 1a) Use the definition of limit to show each of the following:
 \begin{align*}
 i) & \displaystyle \lim_{z \to i} z^2 = -1\\
 ii) & \displaystyle \lim_{z \to z_0} (az+b) = az_0 + b \;\;(a \neq 0)\\
 iii) & \displaystyle \lim_{z \to z_0} \overline{z} = \overline{z_0}
 \end{align*}
 \end{problem}
+
+Here is a video solution of problem 1a, part iii:\\
+\begin{foldable}
+\youtube{6gnoHj34QSA}
+\end{foldable}
 
 Complex limits have the same familiar properties as real limits.
 
@@ -135,14 +140,24 @@ as required.
 \end{proof}
 
 
-\begin{problem} 
+\begin{problem}(problem 1b) 
 Use the Reverse Triangle Inequality $\left(|z_2 - z_1| \geq |z_2| -|z_1|\right)$ to prove 
 that if $|g(z) - w_g| < \epsilon'$, then $|g(z)| > |w_g| - \epsilon'$.
 \end{problem}
 
-\begin{problem} 
+Here is a video solution of problem 1b:\\
+\begin{foldable}
+\youtube{0iA2lzjdJo0}
+\end{foldable}
+
+\begin{problem}(problem 1c) 
 Prove parts b and c of the theorem above.
 \end{problem}
+
+Here is a video solution of problem 1c (multiplication only):\\
+\begin{foldable}
+\youtube{v2YBmYYDKTo}
+\end{foldable}
 
 \begin{problem}
 Use parts a and b of the theorem above to show that the limit of a difference is the difference
@@ -255,7 +270,7 @@ which shows that
 
 Let's examine some limits of a real functions of two variables.
 
-\begin{example}
+\begin{example}[example 2]
 Find
 \[
 \lim_{(x,y) \to (0,0)} \frac{x^3}{x^2 + y^2}
@@ -285,17 +300,16 @@ we can use the Squeeze Theorem to can conclude that
 as well.
 \end{example}
 
-\begin{problem}
+\begin{problem}(problem 2a)
 Find
 \[
 \lim_{(x,y) \to (0,0)} \frac{x^2y}{x^2 + y^2} =\answer{0}
 \]
 if it exists.
-
 \end{problem}
 
 
-\begin{problem}
+\begin{problem}(problem 2b)
 Find
 \[
 \lim_{(x,y) \to (0,0)} \frac{2x^2y^3}{x^4 + y^4} =\answer{0}
@@ -307,12 +321,16 @@ $a^2 + b^2 \geq 2ab$ for any $a, b \in \R$
 
 \end{problem}
 
+Here is a video solution of problem 2b:\\
+\begin{foldable}
+\youtube{Avtmml-7rlk}
+\end{foldable}
 
 
 In the next example we show that a limit does not exist because different paths lead to different limits. This is akin to 
 a two-sided limit not existing in the single variable case when the one-sided are different.
 
-\begin{example}
+\begin{example}[example 3]
 Find
 \[
 \lim_{(x,y) \to (0,0)} \frac{xy}{x^2 + y^2}
@@ -327,7 +345,7 @@ We will let $(x,y)$ approach $(0,0)$ along different lines. If we let $y = mx, m
 Hence the limit depends on the path and so the limit does not exist.
 \end{example}
 
-\begin{problem}
+\begin{problem}(problem 3)
 Find the limit if it exists.
 \begin{align*}
 i) \; & \lim_{(x,y) \to (0,0)} \frac{y^2}{x^2 + y^2} \\
@@ -336,13 +354,19 @@ iii) \; & \lim_{(x,y) \to (0,0)} \frac{x^2y}{x^4 + y^2} \;\; \mbox{Hint: use par
 \end{align*}
 \end{problem}
 
+Here is a video solution of problem 3, part iii:\\
+\begin{foldable}
+\youtube{rw5q7qIq_5E}
+\end{foldable}
+
 \section{Continuity}
-A significant application of limits is to continuity. Recall that we define a function of a single real variable to be continuous at $x = x_0$
+A significant application of limits is to continuity. Recall that we define a function of a single real 
+variable to be continuous at $x = x_0$
 if 
 \[
 \lim_{x \to x_0} f(x) = f(x_0)
 \]
-We define continuity for a complex function analagously.
+We define continuity for a complex function analogously.
 
 \begin{definition}
 Let $f$ be a complex function defined on the disk $D(z_0, r)$ for some $r>0$. We say that $f$ is continuous ar $z_0$ if
@@ -351,7 +375,7 @@ Let $f$ be a complex function defined on the disk $D(z_0, r)$ for some $r>0$. We
 \]
 \end{definition}
 
-\begin{example}
+\begin{example}[example 4]
 If $p(z)$ is a polynomial (with complex coefficients), then $p$ is continuous in $\C$ (see the related problem above).
 \end{example}
 
@@ -363,7 +387,8 @@ $u(x,y)$ and $v(x,y)$ are continuous at $(x_0,y_0)$.
 The proof of this proposition is a direct application of the earlier proposition relating limits 
 of a complex function to the limits of its real and imaginary parts.\\
 Recalling that the real exponential and trigonometric functions are continuous on their domains makes it easy to see that their complex analogues are also continuous.
-\begin{example}
+
+\begin{example}[example 5]
 The complex exponential function $e^z$ is continuous on $\C$.\\
 Since
 \[
@@ -373,11 +398,11 @@ and the real functions $e^x \cos y$ and $e^x \sin y$ are continuous on $\R^2$,
 the complex exponential function, $e^z$, is continuous on $\C$.
 \end{example}
 
-\begin{problem}
+\begin{problem}(problem 5)
 Show that the functions $\sin z$ and $\cos z$ are continuous on $\C$.
 \end{problem}
 
-\begin{example}
+\begin{example}[example 6]
 The principal branch of the complex logarithm, $\Log z$ is not continuous on the non-positive real axis.\\
 To see this, first note that $\Log 0$ is undefined, so $\Log z$ is not continuous at $0$. Now let $c<0$ be any negative real number.
 Then $\Log c = \ln |c| + \pi i$, but if we compute the limit as $z \to c$ along a path in the third quadrant, we get
@@ -386,9 +411,14 @@ Then $\Log c = \ln |c| + \pi i$, but if we compute the limit as $z \to c$ along 
 \]
 \end{example}
 
-\begin{problem}
+\begin{problem}(problem 6)
 Show that the principal argument function $\Arg z$ is not continuous on the negative real axis.
 \end{problem}
+
+Here is a video solution of problem 6:\\
+\begin{foldable}
+\youtube{p3KdyhYc2hQ}
+\end{foldable}
 
 \end{document}
 
