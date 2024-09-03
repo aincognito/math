@@ -52,7 +52,7 @@ is a \textbf{closed} disk with center $z_0$ and radius $r$.
 \draw[<->, thick] (-3,0)--(3,0);
 
 \draw[<->, thick] (0, 3)--(0,-3) node[ below=10pt, blue]{\large The closed disk, $\overline{D}(1+i,2)$};
-
+\draw[white] (0,3.3) circle (0.2cm); %to add space above the figure
 
 \draw[thin] (1,.2)--(1,-.2) node[below]{$1$};
 \draw[thin] (-1,.2)--(-1,-.2) node[below]{$-1$};
@@ -75,14 +75,17 @@ is a \textbf{closed} disk with center $z_0$ and radius $r$.
 
 \begin{example}[example 4]
 The set of points satisfying the equation $\Imp(z) = c$ where $c \in \R$ is a horizontal line and
-The set of points satisfying the equation $\Rep(z) = c$ where $c \in \R$ is a vertical line.
-
+the set of points satisfying the equation $\Rep(z) = c$ where $c \in \R$ is a vertical line.
+We can also express these lines as $x = c$ and $y = c$ with the understanding that $z = x + iy$.
+Moreover, we can write $y = mx +b$ to represent a line in the complex plane with a
+slope of $m$ and intersecting the imaginary axis at $bi$. 
 \end{example}
 
 
 \begin{example}[example 5]
 The set of points satisfying the inequality $\Imp(z) < c$ where $c \in \R$ is a
-half plane. If $c=0$ this set is called the lower half plane (LHP).
+half plane. If $c=0$ this set is called the lower half plane (LHP). 
+
 \end{example}
 
 \begin{image}
@@ -91,7 +94,7 @@ half plane. If $c=0$ this set is called the lower half plane (LHP).
 \draw [draw=none, fill=blue!10] (1,-3) rectangle (3,3);
 \draw[<->, thick] (-3,0)--(3,0);
 \draw[<->, thick] (0, 3)--(0,-3) node[ below=10pt, blue]{\large The set $\Rep z > 1$};
-
+\draw[white] (0,3.3) circle (0.2cm); %to add space above the figure
 
 \draw[thin] (1,.2)--(1,-.2) node[below]{$1$};
 \draw[thin] (-1,.2)--(-1,-.2) node[below]{$-1$};
@@ -125,7 +128,7 @@ The set of points satisfying the equation
 \[
 |z-z_1| - |z-z_2| = d
 \]
-is a hyperbola if $d < |z_1 -z_2|$.
+is a hyperbola if $0 < d < |z_1 -z_2|$.
 \end{example}
 
 
@@ -163,7 +166,7 @@ The domain $I$ is called the interior of $C$, and the domain $E$ is called the e
 \draw[<->, thick] (-3,0)--(3,0);
 
 \draw[<->, thick] (0, 3)--(0,-3) node[ below=10pt, blue]{\large $I$, $E$ and $C$};
-
+\draw[white] (0,3.3) circle (0.2cm); %to add space above the figure
 
 \draw[thin] (1,.2)--(1,-.2) node[below]{$1$};
 \draw[thin] (-1,.2)--(-1,-.2) node[below]{$-1$};
