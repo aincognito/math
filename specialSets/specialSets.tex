@@ -160,14 +160,14 @@ A straight line segment from the point $z_1$ to the point $z_2$ is given by
 \]
 
 \begin{image}
-\begin{tikzpicture}
+\begin{tikzpicture} %an attempt to insert arrows along a path
 [decoration={markings, 
 	mark= at position 0.25 with {\arrow{stealth}},
 	mark= at position 2cm with {\arrow{stealth}}}
 ] 
 
 \draw [postaction={decorate}] (0,0) -- (2,2); 
-
+\draw (0,0) -- (1,1); %inserted just to make a change- remove later
 \end{tikzpicture}
 \end{image}
 \end{example}
