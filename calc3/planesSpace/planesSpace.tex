@@ -38,11 +38,11 @@ See the figure below.
 Conceptualizing a plane using a point and a normal vector makes it remarkably easy to construct the equation of the plane.
 Consider a point $R(x, y, z)$ in $\R^3$.
 This point is in the plane $P$ passing through the point $Q(x_0, y_0, z_0)$ with normal vector $\vec{n} =\vector{a, b, c}$
-if and only if the vector $\avec{QR}$ is orthogonal to the normal vector $\vec{n}$.
+if and only if the vector $\arrowvec{QR}$ is orthogonal to the normal vector $\vec{n}$.
 This condition can be written in terms of the dot product.
 The point $R(x, y, z)$ must satisfy the equation
 \[
-\avec{QR} \dotp \vec{n} = 0
+\arrowvec{QR} \dotp \vec{n} = 0
 \]
 This amounts to 
 \[
@@ -116,7 +116,7 @@ The equation of the plane in standard form is $\answer{3x-y+6z} = \answer{6}$
 \begin{problem}(Problem 1c)
 Find the equation of the plane through the points $P(1, 4, 9), Q(4, -1, -7)$ and $R(5, 0, -3)$\\
 \begin{hint}
-The vectors $\avec{PQ}$ and $\avec{PR}$ lie in the plane
+The vectors $\arrowvec{PQ}$ and $\arrowvec{PR}$ lie in the plane
 \end{hint}
 \begin{hint}
 Use the cross product to find the normal vector
@@ -236,9 +236,9 @@ Using the bottom equation (since it is simpler), we find $y$:
 Hence, the second point of intersection is $Q\left(\frac43, \frac13, 1\right)$.
 The direction vector of the line of intersection of the two planes is the vector
 \[
-\avec{PQ} = \vector{\frac43 - \frac83, \frac13 - \frac23, 1-0} = \vector{-\frac43, -\frac13, 1}
+\arrowvec{PQ} = \vector{\frac43 - \frac83, \frac13 - \frac23, 1-0} = \vector{-\frac43, -\frac13, 1}
 \]
-Using the point $P$ and the direction vector $\avec{PQ}$, we can write the equation of the line of intersection:
+Using the point $P$ and the direction vector $\arrowvec{PQ}$, we can write the equation of the line of intersection:
 \[
 \vector{x, y, z} = \vector{\frac83, \frac23, 0} + t \vector{-\frac43, -\frac13, 1}
 \]
@@ -262,9 +262,9 @@ We need one point in each plane and the vector between them.
 On $P_1$ we can take the point $Q_1(1, 0, 0)$ and on $P_2$, we can take the point $Q_2(4, 0, 0)$. 
 The vector between them is 
 \[
-\vec{v} = \avec{Q_1Q_2} = \vector{3,0,0} = 3\vec{i}
+\vec{v} = \arrowvec{Q_1Q_2} = \vector{3,0,0} = 3\vec{i}
 \]
-The distance between the planes is the magnitude of the projection of the vector $\vec{v} = \avec{Q_1Q_2}$ onto the 
+The distance between the planes is the magnitude of the projection of the vector $\vec{v} = \arrowvec{Q_1Q_2}$ onto the 
 normal vector, $\vec{n}$. We have,
 \begin{align*}
 \text{distance} &= | \proj_{\vec{n}}\vec{v}| \\
@@ -284,7 +284,7 @@ See the figure below.
 \draw[fill] (7,5.5) circle (0.05) node[right]{$Q_2$};
 \draw[fill] (4,5.5) circle (0.05) ;
 \draw[dashed] (4, 5.5)--(7, 5.5);
-\draw[thick, ->] (4, 1) -- (7, 5.5) node[midway,below right]{$\vec{v} = \avec{Q_1Q_2}$};
+\draw[thick, ->] (4, 1) -- (7, 5.5) node[midway,below right]{$\vec{v} = \arrowvec{Q_1Q_2}$};
 \draw[orange!80!white, ->, thick] (4, 1)  -- (4, 7) node[left]{$\vec{n}$};
 \draw[thick, ->, red!80!white] (4, 1) -- (4, 5.5) node[midway, left]{$\proj_{\vec{n}}\vec{v}$};
 \end{tikzpicture}
