@@ -136,7 +136,6 @@ is a hyperbola if $0 < d < |z_1 -z_2|$.
 \section{Other Curves}
 
 
-\begin{example}[example 8]
 If $x(t)$ and $y(t)$ are differentiable functions of the real variable $t$ and if $x'$ and $y'$ do not both vanish simultaneously,
 then
 \[
@@ -145,10 +144,36 @@ then
 is a smooth curve. Furthermore, if $\gamma(a) =\gamma(b)$, but $\gamma(t_1) \neq \gamma(t_2)$ for all $t_1,t_2 \in (a,b)$,
 then $\gamma$ is called a simple closed curve.
 
+
+\begin{example}[example 8]
+The arc of a circle of radius $r$ centered at $z_0 = x_0 + iy_0$ that goes from angle $\theta_1$ to angle $\theta_2$ traversed in the counter-clockwise 
+direction is given by
+\[
+\gamma(t) = x_0 + r\cos t + i(y_0 + r\sin t), \, \theta_1 \leq t \leq \theta_2
+\]
 \end{example}
 
+\begin{example}[example 9]
+A straight line segment from the point $z_1$ to the point $z_2$ is given by
+\[
+\gamma(t) = (1-t)z_1 + tz_2, \, 0 \leq t \leq 1
+\]
+
+\begin{image}
+\begin{tikzpicture} %an attempt to insert arrows along a path- attempt worked!
+[decoration={markings, 
+	mark= at position 0.25 with {\arrow{stealth}},
+	mark= at position 2cm with {\arrow{stealth}}}
+] 
+
+\draw [postaction={decorate}] (0,0) -- (2,2); 
+\end{tikzpicture}
+\end{image}
+\end{example}
+
+
 \begin{theorem}[Jordan Closed Curve Theorem]
-The complement of any simple closed curve $C$ can be partitioned into two mututally exclusive domains, $I$ and $E$, in such a way that $I$ is bounded,
+The complement of any simple closed curve $C$ can be partitioned into two mutually exclusive domains, $I$ and $E$, in such a way that $I$ is bounded,
 $E$ is unbounded, and $C$ is the boundary for both $I$ and $E$. In addition $I \cup E \cup C$ is the entire complex plane.
 The domain $I$ is called the interior of $C$, and the domain $E$ is called the exterior of $C$.
 \end{theorem}
