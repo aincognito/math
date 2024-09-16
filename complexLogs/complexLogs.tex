@@ -25,7 +25,9 @@ so that $w_0 = e^{x_0} \cis (y_0+ 2k\pi)$.  Then the modulus of $w_0$ is $e^{x_0
 
 
 \begin{image}
-\begin{tikzpicture}[show background rectangle]
+\begin{tikzpicture}[background rectangle/.style=
+    {double,ultra thick,draw=blue,rounded corners},
+       show background rectangle]
 \draw[<->, thick] (-3,0)--(1,0);
 
 \draw[<->, thick] (-1, 2)--(-1,-2) ;
