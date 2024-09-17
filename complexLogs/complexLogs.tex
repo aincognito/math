@@ -21,12 +21,15 @@ Consider the function $w = f(z) = e^z = e^x \cis y$. This function is $2\pi i$-p
 the complex logarithm is multivalued.  
 %For a given $w \in \C$, $z=\log w$ gives all of the values of $z$ so that $e^{z} = w$. 
 To define the complex log, consider a complex number $w_0$ in the image of $f(z) = e^z$, 
-so that $w_0 = e^{x_0} \cis (y_0+ 2k\pi)$.  
-
+so that $w_0 = e^{z_0}$. If $z_0 = x_0 + iy_0$, then
+\[
+w_0 = e^{x_0+iy_0} = e^{x_0} \cis (y_0) = e^{x_0} \cis (y_0+2k\pi).  
+\]
+See the figure below.
 
 \begin{image}
 \begin{tikzpicture}
-%[background rectangle/.style=    {double,thick,draw=blue,rounded corners},       show background rectangle]
+%[background rectangle/.style= {double,thick,draw=blue,rounded corners}, show background rectangle]
 \draw[<->, thick] (-3,0)--(1,0);
 
 \draw[<->, thick] (-1, 2)--(-1,-2) ;
