@@ -170,9 +170,10 @@ This is also commonly written as:
 	mark= at position 2cm with {\arrow{stealth}}}
 ] 
 
-\draw [postaction={decorate}] (0,0) -- (2,2); 
-\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(0,0)} node[above right, blue]{$z_1$};
+\draw [postaction={decorate}, blue] (0,0) -- (2,2); 
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(0,0)} node[below right, blue]{$z_1$};
 \draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(2,2)} node[above right, blue]{$z_2$};
+\node at (1,-0.5) {\text{The line segment from} $z_1$ \text{to} $z_2$};
 \end{tikzpicture}
 \end{image}
 \end{example}
