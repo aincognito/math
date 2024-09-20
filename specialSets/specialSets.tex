@@ -156,6 +156,10 @@ direction is given by
 \begin{example}[example 9]
 A straight line segment from the point $z_1$ to the point $z_2$ is given by
 \[
+\gamma(t) = z_1 + t(z_2-z_1), \, 0 \leq t \leq 1
+\]
+This is also commonly written as:
+\[
 \gamma(t) = (1-t)z_1 + tz_2, \, 0 \leq t \leq 1
 \]
 
@@ -167,6 +171,8 @@ A straight line segment from the point $z_1$ to the point $z_2$ is given by
 ] 
 
 \draw [postaction={decorate}] (0,0) -- (2,2); 
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(0,0)} node[above right, blue]{$z_1$};
+\draw[mark=*,mark size=1pt,mark options={color=blue}] plot coordinates {(2,2)} node[above right, blue]{$z_2$};
 \end{tikzpicture}
 \end{image}
 \end{example}
