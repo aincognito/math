@@ -52,15 +52,15 @@ The series of interest are:
 
 
 
-and the sum identity for the cosine is:
+The sum identity for the cosine is:
 \[
 \cos(\alpha + \beta) = \cos\alpha \cos \beta - \sin \alpha \sin \beta
 \]
-We get the ball rolling by allowing an imaginary term in the sum identity:
+We begin by allowing an imaginary term in the sum identity:
 \[
 \cos(x+iy) = \cos(x) \cos(iy) - \sin(x) \sin(iy)
 \]
-Next, we define the sine and cosine of a purely imaginary angle using their respective power series:
+Next, we define the sine and cosine of a purely imaginary input by using their respective Maclauren series:
 %Substituting $iy$ for $x$ in the power series for the sine and cosine
 %yields a connection between  trig functions of purely imaginary angles and the hyperbolic functions: 
 \[
@@ -70,7 +70,8 @@ and
 \[
 \sin(iy) = \sum_{n=0}^\infty (-1)^n \frac{(iy)^{2n+1}}{(2n+1)!} 
 \]
-These power series can be simplified into hyperbolic functions (!) by noting that $(-1)^n i^{2n} = 1$ for all $n$: 
+These power series can be simplified into the Maclauren series for the hyperbolic functions(!) by 
+noting that $i^{2n} = \left(i^2\right)^n = (-1)^n$ so that $(-1)^n i^{2n} = 1$ for all $n$: 
 \[
 \cos(iy) = \sum_{n=0}^\infty  \frac{y^{2n}}{(2n)!} = \cosh(y)
 \]
@@ -79,15 +80,14 @@ and
 \sin(iy) = i\sum_{n=0}^\infty \frac {y^{2n+1}}{(2n+1)!}= i\sinh(y)
 \]
 
-Substituting these into the sum identity establishes
+Substituting these into the sum identity establishes:
 %the expressions for $\cos(iy)$ and $\sin(iy)$ into the sum identity for the cosine leads to
 \[
 \cos(x+iy) = \cos(x) \cosh(y) - i\sin(x) \sinh(y)
 \]
 We use this as our definition of the complex cosine.
 \begin{definition}[The Complex Cosine]
-For all $z \in \C$ we define the complex cosine by
-%$f(z) = \cos z: \C \to \C$
+For all $z = x+iy \in \C$ we define the complex cosine by
 \[
 \cos(z) = \cos(x+iy) = \cos(x) \cosh(y) - i\sin(x) \sinh(y)
 \]
@@ -97,17 +97,17 @@ For all $z \in \C$ we define the complex cosine by
 \section{The Complex Sine}
 
 \begin{question}
-The sum identity for the sine function states that
+The sum identity for the sine function states that:
 \[
 \sin(\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta
 \]
-for all angles $\alpha$ and $\beta$.
+for all (real) inputs $\alpha$ and $\beta$.
 
 %Allowing an imaginary angle in the sum identity using an imaginary angle:
 %How would you define the complex sine function in light of the identity for the sin of a sum? \\
 \begin{hint}
 \[
-\sin{z} = \sin(x+iy) = \sin(x) \cos(iy) + \cos(x) \sin(iy) =
+\sin{z} = \sin(x+iy) = \sin(x) \cos(iy) + \cos(x) \sin(iy)
 \]
 \end{hint}
 \begin{hint}
@@ -143,18 +143,19 @@ we need
 \[
 \sin(x) \cosh(y) =2 \;\; \mbox{and} \;\; \cos(x) \sinh(y) = 0
 \]
-simultaneously. The second equation gives
+simultaneously. The second equation is eeasier to work with because we can use the zero product principle. 
+It gives:
 \[
-x = \pi/2 + n\pi \;\; \mbox{or} \;\; y = 0
+x = \pi/2 + k\pi \;\; \mbox{or} \;\; y = 0
 \]
-We proceed on a case by case basis. If $y = 0$, then since
+We substitute these results into the first equation one at at time. If $y = 0$, the first equation becomes:
 \[
-\cosh 0 = 1
+\sin(x)\cosh 0 = 2
 \]
-we would be led to $\sin(x) = 2$ which has no solutions.\\
-Next, if $x = \pi/2 + n\pi$ where $n=2k$ is even, then 
+Since $\cosh(0) = 1$, this leads to the equation $\sin(x) = 2$ which has no solutions.\\
+Next, if $x = \pi/2 + k\pi$ then $\sin(x) = \pm 1$. Thus we consider cases. If where $k$ is even, then 
 \[
-\sin(x) = \sin\left(\frac{\pi}{2} + 2k\pi\right) = 1
+\sin(x) = \sin\left(\frac{\pi}{2} + k\pi\right) = 1
 \]
 and we arrive at 
 \[
@@ -164,9 +165,9 @@ which has two solutions (verify)
 \[
 y = \ln\left(2\pm \sqrt 3 \right)
 \]
-Finally, if $x = \pi/2 + n\pi$ where $n=2k+1$ is odd, then 
+Finally, if $x = \pi/2 + k\pi$ where $k$ is odd, then 
 \[
-\sin(x) = \sin\left(\frac{\pi}{2} + (2k+1)\pi\right) = -1
+\sin(x) = \sin\left(\frac{\pi}{2} + k\pi\right) = -1
 \]
 and we arrive at 
 \[
@@ -175,9 +176,9 @@ and we arrive at
 which has no solutions (verify).
 Thus the equation $\sin(z) = 2$ has as its solutions
 \[
-z = \left[\frac{\pi}{2} + 2k\pi\right] + i\left[\ln\left(2\pm \sqrt 3\right)\right]
+z = \left[\frac{\pi}{2} + k\pi\right] + i\left[\ln\left(2\pm \sqrt 3\right)\right]
 \]
-where $k$ is any integer.
+where $k$ is an even integer.
 \end{example}
 
 \begin{problem}(problem 1)
@@ -232,15 +233,17 @@ The evenness of the complex cosine is demonstrated similarly (verify).
 \sin(z + \pi) = -\sin(z) \;\; \mbox{and} \;\; \cos(z+\pi) = -\cos(z)
 \]
 \end{proposition}
-The proof of these equations follows directly from their real counterparts (verify).
+The verification of these identities follows directly from their real counterparts (verify).
 
 \subsection{Relation to the Complex Exponential}
+The complex Cosine and sine functions are related to the complex exponential function!
 \begin{proposition}
+For all $z \in \C$, we have the following identities which relate the complex cosine and sine to the complex exponential function:
 \[
-\sin(z) = \frac{e^{iz} - e^{-iz}}{2i} \;\; \mbox{and} \;\;  \cos(z) = \frac{e^{iz} + e^{-iz}}{2}
+\cos(z) = \frac{e^{iz} + e^{-iz}}{2} \;\; \mbox{and} \;\;  \sin(z) = \frac{e^{iz} - e^{-iz}}{2i}
 \]
 \end{proposition}
-To prove the first equation, we begin with
+We will verify the second identity and leave the first to the reader. Using $z = x+iy$, the right hand side yields:
 \[
 e^{iz} = e^{-y+ix} = e^{-y}\cos(x) + ie^{-y}\sin(x)
 \]
