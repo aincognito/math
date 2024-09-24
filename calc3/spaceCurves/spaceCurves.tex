@@ -109,7 +109,8 @@ The \textbf{orientation} of a space curve is in the direction of increasing valu
 
 A line segment from the point $P(x_1, y_1, z_1)$ to the point $Q(x_2, y_2, z_2)$ is a space curve that can be written as
 \begin{align*}
-\vec r(t) &= \vector{x_1, y_1, z_1} + t\vector{x_2-x_1, y_2-y_1, z_2-z_1} \\
+\vec r(t) &= \vec P + t \arrowvec{PQ}, (\vec P \text{is the position vector of the point} \;P)\\
+          &=\vector{x_1, y_1, z_1} + t\vector{x_2-x_1, y_2-y_1, z_2-z_1} \\
           &= (1-t)\vector{x_1, y_1, z_1} + t\vector{x_2, y_2, z_2}, 
 \end{align*}
 where $\; 0 \leq t \leq 1$.\\
@@ -133,9 +134,11 @@ If we write the vector from the origin to $P$ as $\vec P$ and similarly for $\ve
 Express the line segment from the point $P(1, 2, -1)$ to the point $Q(-2, -2, 1)$ as a vector-valued function.  
 Include the domain. Sketch the line segment with orientation arrows.\\
 The vector form of the line segment is
-\[
-\vec r(t) = (1-t)\vector{1, 2, -1} + t \vector{-2, -2, 1}
-\]
+\begin{align*}
+    \vec r(t) &= (1-t)\vector{1, 2, -1} + t \vector{-2, -2, 1}\\
+              &= \vector{1-t, 2-2t, -1+t} + \vector{-2t, -2t, t}\\
+              &= \vector{1-3t, 2-4t, -1+2t}
+\end{align*}
 and its domain is $0 \leq t \leq 1$. The sketch is below.
 
 
@@ -164,7 +167,10 @@ Express the line segment from the point $P(-1, -1, 2)$ to the point $Q(2, 3, -1)
 Include the domain. Sketch the line segment with orientation arrows.
 \end{problem}
 
-
+Here is a video solution of problem 3:\\
+\begin{foldable}
+\youtube{l2aKZEo8-k0}
+\end{foldable}
 
 Other interesting space curves include the \textbf{helix}
 \[
