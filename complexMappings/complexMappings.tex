@@ -25,7 +25,7 @@ and the modulus and argument of $a$ are responsible for producing scaling and ro
 Find the image of the unit square under the mapping $f(z) = (1+i)z + i$.\\
 In this case, $a = 1+i$ which has modulus $\sqrt 2$ and argument $\pi/4$, and $b = i$.
 The effect on the square of multiplying by $1+i$ is to scale the square by a factor of $\sqrt 2$, rotate counter-clockwise by $\pi/4$ and then translate it
-by $i$. The scaling and the rotation can be done in either order, but the translation must come last.
+by $i$. Due to the order of operations, the scaling and the rotation are done first (in either order), and the translation is done last.
 
 
 \begin{image}
@@ -66,10 +66,10 @@ by $i$. The scaling and the rotation can be done in either order, but the transl
 \begin{problem}(problem 1)
 Find the image of the unit square under the given mapping:
 \begin{align*}
-i) & f(z) = iz\\
-ii) & f(z) = 2z\\
-iii) & f(z) = z+1\\
-iv) & f(z) = (1-i)z +i
+i) &  \; f(z) = iz\\
+ii) &  \; f(z) = 2z\\
+iii) &  \; f(z) = z+1\\
+iv) &  \; f(z) = (1-i)z +i
 \end{align*}
 \end{problem}
 
@@ -130,10 +130,10 @@ coordinate (alpha) -- (60:2.5) arc (60:180:2.5) node[below]{$-4$} -- cycle;
 \begin{problem}(problem 2)
 Find the image of the given set under the mapping $f(z) = z^2$:
 \begin{align*}
-i) & S = \left\{r\cis \theta : 1 < r < 2, \;0 < \theta < \frac{\pi}{4}\right\} \\
-ii) & S = \left\{r\cis \theta : 2 < r < 3, \;\frac{\pi}{2} < \theta < \frac{3\pi}{4}\right\}\\
-iii) & \mbox{Upper Half Plane}\; = \left\{ x+iy: y> 0\right\}\\
-iv) & \mbox{Quadrant IV}\; = \left\{ x+iy: x> 0, y< 0\right\}
+i) & \; S = \left\{r\cis \theta : 1 < r < 2, \;0 < \theta < \frac{\pi}{4}\right\} \\
+ii) &  \; S = \left\{r\cis \theta : 2 < r < 3, \;\frac{\pi}{2} < \theta < \frac{3\pi}{4}\right\}\\
+iii) & \;  \mbox{Upper Half Plane}\; = \left\{ x+iy: y> 0\right\}\\
+iv) &  \; \mbox{Quadrant IV}\; = \left\{ x+iy: x> 0, y< 0\right\}
 \end{align*}
 \end{problem}
 
@@ -184,10 +184,10 @@ which is a parabola in the $uv$-plane which opens to the left and has vertex at 
 \begin{problem}(problem 3)
 Find the image of the given line under the mapping $f(z) = z^2$:
 \begin{align*}
-i) & \Rep z = 2 \\
-ii) & \Rep z = -1\\
-iii) & \Imp z = 1\\
-iv) & \Imp z = -2
+i) &  \; \Rep z = 2 \\
+ii) & \;  \Rep z = -1\\
+iii) & \;  \Imp z = 1\\
+iv) &  \; \Imp z = -2
 \end{align*}
 \end{problem}
 
@@ -237,10 +237,10 @@ $D(z_0, r)$ is the disk of twice the radius, $D(2\overline{z_0}, 2r)$.
 \begin{problem}(problem 4)
 Find the image of the disk $D(1+i, 1)$ under the given mapping:
 \begin{align*}
-i) & f(z) = \overline{z} \\
-ii) & f(z) = -2\overline{z} \\
-iii) & f(z) = 3i\overline{z} \\
-iv) & f(z) = i+\overline{z} 
+i) & \;  f(z) = \overline{z} \\
+ii) &  \; f(z) = -2\overline{z} \\
+iii) & \;  f(z) = 3i\overline{z} \\
+iv) & \;  f(z) = i+\overline{z} 
 \end{align*}
 \end{problem}
 
@@ -330,23 +330,23 @@ Thus,
 \[
 x = \frac{u}{u^2+v^2} \quad \text{and} \quad y = -\frac{v}{u^2+v^2}
 \]
-Substituting $x = 1/2$, we have
+Later, we will use the fact that $v$ is negative since $y$ is positive. First, we substitute $x = 1/2$ into the first equation, yielding:
 \[
 \frac12 = \frac{u}{u^2+v^2}
 \]
-Rearranging we have
+Rearranging gives:
 \[
 u^2 - 2u + v^2 = 0
 \]
-Completing the square we get
+Finally, we complete the square by adding $1$ to both sides to obtain:
 \[
 (u-1)^2 + v^2 = 1
 \]
-which is the circle $C(1,1)$.
+This is the equation of a circle in the $w$-plane with center at $(1,0)$ and radius $1$, i.e., $C(1,1)$.
 
-Note $v < 0$ since $y > 0$.  Recalling that $v <0$
+Recalling that $v <0$,
 we conclude that the image of the ray $x = 1/2, y >0$ is a semi-circle in the lower half plane with 
-center at $1$ and radius $1$.
+center at $1$ and radius $1$. See the figure below.
 
 
 \begin{image}
@@ -399,7 +399,7 @@ In the complex plane this entire ring is considered to be ``$\infty$". Stereogra
 sphere $S\setminus N$ where $N$ is the north pole of the sphere (sorry Santa) and further, to identify ``$\infty$" with the north pole, $N$.
 %(North Pole, like batteries, not included).
 
-At the heart of stereographic projection lies a 1-1, onto map $\varphi: \C\to S\setminus N $ where $S$ is the sphere with 
+At the heart of stereographic projection lies a one-to-one, onto map $\varphi: \C\to S\setminus N $ where $S$ is the sphere with 
 center at $\left(0,0,\tfrac12\right)$ and radius $\tfrac12$, so that $N = (0,0,1)$. 
 
 
@@ -609,8 +609,10 @@ where $u$ and $v$ are both strictly positive. This gives the portion of the line
 Find the image of the line $\Imp z = \pi/3$ under the map $w = e^z$.
 \end{problem}
 
-
-
+The next example involves the principal logarithm which we recall is defined by:
+\[
+\Log z = \ln|z| + i\Arg z
+\]
 \begin{example}[example 8]
 Find the image of the semi-circle $z = 3\cis \theta, \; \pi/2 < \theta \leq 3\pi/2$ 
 under the mapping $f(z) = \Log z$.\\
@@ -620,7 +622,7 @@ w = \Log z = \ln 3 + i\Arg \theta
 \]
 Thus $u = \ln 3$ and so the image lies on a vertical line. By definition of $\Log z$, 
 the values of $v$ must lie in the interval $\left(-\pi, \pi\right]$.
-For $\pi/2 <\theta\leq \pi$ we have $\pi/2 <\Arg z \leq  \pi$ and for $\pi < \theta \leq 3\pi/2$ we have $-\pi/2 \geq \Arg z  > -\pi$.
+For $\pi/2 <\theta\leq \pi$ we have $\pi/2 < \Arg z \leq  \pi$ and for $\pi < \theta \leq 3\pi/2$ we have $-\pi/2 \geq \Arg z  > -\pi$.
 Hence the range of values for $v$ is $(\pi/2, \pi] \cup (-\pi/2, -\pi)$
 
 
