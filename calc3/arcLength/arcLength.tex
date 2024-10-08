@@ -164,16 +164,16 @@ which agrees with the formula given in a Calculus II course.
 
 Let $\vec r(t) $ be a space curve and let 
 \[
-s = \int_0^t |\vec r\,'(u)| \, du
+s = f(t) = \int_0^t |\vec r\,'(u)| \, du
 \]
 Then $s$ is the arc length of the space curve $\vec r(t)$ over the interval $[0, t]$.
 We refer to $s$ as the \textbf{arc length parameter}.
 %If we parameterize the space curve using $s$ instead of $t$, then the arc length of $\vec r(s)$ will be exactly $s$.
 %In other words, using the arc length parameter $s$, the curve will have a constant speed of $1$ unit.
 
-The above expression for $s$ shows that $s$ is a function of $t$, i.e., $s = f(t)$.
+%The above expression for $s$ shows that $s$ is a function of $t$, i.e., $s = f(t)$.
 If $|\vec r\,'(u)| \neq 0$ for all $u$, then the function $s = f(t)$ is strictly increasing and hence has an inverse (which is also strictly increasing).
-Thus we can write $t = f^{-1}(s)$.
+Thus, we can write $t = f^{-1}(s)$.
 
 \begin{example}[Example 2]
 Parameterize the spiral helix $\vec r(t) = \vector{\cos t, \sin t, t}$ using the arc length parameter.\\
@@ -288,7 +288,7 @@ The corollary above shows that a change in the arc length parameter $s$ correspo
 
 \begin{example}[Example 3]
 Verify the proposition above for the arc length parameterization of the spiral helix, $\vec r(t) = \vector{\cos t, \sin t, t}$.\\ 
-Reparameterize the curve using the arc length parameter from Example 2:
+Reparameterize the curve using the arc length parameter from example 2:
 \[
 \vec r(f^{-1}(s)) = \vector{\cos \left(\frac{s}{\sqrt 2}\right), \sin \left(\frac{s}{\sqrt 2}\right),\frac{s}{\sqrt 2}}
 \]
