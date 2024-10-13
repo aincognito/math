@@ -14,13 +14,15 @@ We apply the Mean Value Theorem.
 
 \maketitle
 
+
 \section{Rolle's Theorem}
+
 We begin with a special case of the Mean Value Theorem known as Rolle's Theorem.
 This theorem uses the Extreme Value Theorem to guarantee a critical number of a differentiable function under certain circumstances.
 
 \begin{theorem}[Rolle's Theorem]
 Suppose the function $f(x)$ is continuous on the closed interval $[a,b]$ and differentiable on the open interval $(a,b)$.
-If $f(a) = f(b)$, then there exists a number $c$ between $a$ and $b$ such that 
+If $f(a) = f(b)$, then there exists a number $c$ in the open interval $(a,b)$ such that 
 \[
 f'(c) = 0.
 \]
@@ -42,17 +44,16 @@ title={Rolle's Theorem for $f(x) $ on $[a,b]$}]
 \end{axis}
 \end{tikzpicture}
 \end{image}
-Since the function is continuous on the interval $[a,b]$, the Extreme Value Theorem applies.
-Thus $f(x)$ has an absolute minimum and an absolute maximum on the interval.
-Since $f(a) = f(b)$, $f(x)$ must have an absolute extreme on the interval $(a,b)$.
-Recall that $f(x)$ is differentiable on $(a,b)$ which implies that the derivative is zero at this extreme.
+If $f$ is a constant function on $[a,b]$, then $f'(x)= 0$ for all $x$ in the open interval $(a,b)$ and the theorem is true.
+Now, suppose that $f$ is not constant on the closed interval $[a,b]$.
+By hypothesis, $f$ is continuous on the closed interval $[a,b]$, and therefore we can apply to the Extreme Value Theorem (section 3.2) to conclude
+that $f$ has absolute extremes on $[a,b]$.
+Since the theorem requires that $f(a) = f(b)$, we can conclude that the non-constant function, $f$, must have an absolute extreme in the open interval $(a,b)$.
+By Fermat's Theorem (section 3.2), this absolute extreme occurs at a critical number, $x= c$. Finally, since $f$ is differentiable on $(a,b)$ (by hypothesis), we can conclude 
+that $f'(c) = 0$. Thus, the theorem is true in this case as well, and Rolle's Theorem is proved.
 
- critical number on the interval $(a,b)$. 
-At this value of our differentiable function, the derivative is zero.
 
-(and hence a critical number)
-
-\begin{example} Show that the function $f(x) = \sin(x)$ has a critical number in the interval $(0, \pi)$.\\
+\begin{example} [example 1] Use Rolle's theorem to show that the function $f(x) = \sin(x)$ has a critical number in the interval $(0, \pi)$.\\
 The function $\sin(x)$ is differentiable (and hence also continuous) on the interval $(-\infty, \infty)$ and since
 \[
 \sin 0 = \sin \pi = 0,
@@ -62,40 +63,48 @@ $f'(c) = 0$. That is, $f(x) = \sin(x)$ has a critical number in the interval $(0
 Moreover, we can find $c$ since $f'(x) = \cos(x)$ and the equation $\cos(x) = 0$ has $x = \pi/2$ as a solution in the interval.
 \end{example}
 
-\begin{example} Use Rolle's Theorem  to show that a cubic polynomial can have at most 3 roots.\\
-Recall that a root of a polynomial, $p(x)$, is a value $x = a$, such that $p(a) = 0$.
+\begin{problem} [problem 1] 
+Use Rolle's theorem to show that the function $f(x) = x^2 - \sqrt x$ has a critical number in the interval $(0, 1)$.
+Then find the value of this critical number.\\
+The critical number is 
+\[ 
+x = \answer{1/\sqrt[3]{16}}
+\]
+\end{problem} 
 
-Also recall that a quadratic polynomial has at most two roots, since if
+For the next example we need to recall that a \it{root} of a polynomial, $p(x)$, is a value $x = a$, such that $p(a) = 0$.
+We also need the fact that a quadratic polynomial has at most two roots, since if
 \[
 ax^2 + bx + c = 0
 \]
-then
+then by the quadratic formula
 \[
-x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 \]
+
+\begin{example}[example 2] Use Rolle's Theorem  to show that a cubic polynomial can have at most three roots.\\
+
+
+
 Let $p(x)$ be a cubic polynomial, i.e., 
 \[
 p(x) = ax^3 + bx^2 + cx + d, \;\; \text{where} \;\; a\neq 0.
 \]
-We will argue by contradiction to demonstrate that $p(x)$ can have at most 3 roots.
-%So we would like to show that an equation of the form $p(x) = 0$, where $p(x)$ is a cubic polynomial, 
-%We  suppose that $(p(x)$ can have 4 roots and draw from that an erroneous conclusion.
-%This contradiction implies that our supposition ``$p(x)$ can have 4 roots" is false.  Therefore we can conclude that $p(x)$ has at most 3 roots.
-
- %that a cubic polynomial can have at most 3 roots.
-Suppose that a cubic polynomial, $p(x)$, can have 4 roots.  From smallest to largest, we label the 4 roots $x_1, x_2, x_3$ and $x_4$.
-Then, by definition of root,
+We will argue by \it{contradiction} to demonstrate that $p(x)$ can have at most three roots.
+Suppose that there is cubic polynomial, $p(x)$, that has four roots.  Label these roots in ascending order: $x_1 <  x_2 < x_3 < x_4$.
+By definition of root, we have
 \[
 p(x_1) = p(x_2) = p(x_3) = p(x_4) = 0.
 \]
-We can now apply Rolle's Theorem to $p(x)$ on $[x_1, x_2], [x_2, x_3]$ and $[x_3, x_4]$ to conclude
-that $p'(x)$ has a root on each of these intervals. 
-
-That is, there exist numbers $c_1, c_2$ and $c_3$ such that
+We apply Rolle's Theorem to $p(x)$ on each of the three intervals $[x_1, x_2], [x_2, x_3]$ and $[x_3, x_4]$ to conclude that 
+there are values $c_1 < c_2 < c_3$ in these respective intervals such that
 \[
-p'(c_1) = p'(c_2) = p'(c_3) = 0,
+p'(c_1) = p'(c_2) = p'(c_3) = 0
 \]
-where: $x_1 < c_1 < x_2, \; x_2 < c_2 < x_3 \;$ and $\; x_3 < c_3 < x_4$.
+However, since $p$ is a polynomial of degree 3, $p'$ has degree 2, i.e., $p'(x)$ is a quadratic polynomial which can have at most two roots.
+This contradiction implies that a cubic polynomial having four roots cannot exist and thus a cubic polynomial has at most three roots, as claimed.
+
+See the figure below which shows polynomial with four roots and the corresponding values, $c_1, c_2$ and $c_3$ given by Rolle's Theorem.
 
 \begin{image}
 \begin{tikzpicture}
@@ -119,18 +128,22 @@ xticklabels={$x_1$,$c_1$,$x_2$,$c_2$,$x_3$,$c_3$,$x_4$}, title={By Rolle's Theor
 \end{tikzpicture}
 \end{image}
 
-This would mean that $p'(x)$ has 3 roots, which is not possible: 
- $p'(x)$ is a quadratic polynomial, and so $p'(x)$ has at most 2 roots.
- 
-This contradiction implies that a cubic polynomial cannot have 4 roots. Thus, a cubic polynomial can have at most 3 roots.
 
-In fact, a similar argument can be used to show that a polynomial of degree $n$ can have at most $n$ roots for any whole number, $n$.  
-%This can be proved similarly.
-%This can be proven using an argument similar to this one, combined with an advanced technique known as mathematical induction.
+  
+
 \end{example}
 
+\begin{remark} The fundamental Theorem of Algebra states that a polynomial of degree $n$ can have at most $n$ roots,
+	and this result can be proved using a technique called mathematical induction.
+\end{remark}
 
-
+\begin{problem}[problem 2]
+Use Rolle's Theorem and the fact that a polynomial of degree three has at most three 
+roots to prove that a polynomial of degree four has at most four roots.
+\begin{hint} 
+	Use the argument in example 2
+\end{hint}
+\end{problem}
 
 \section{The Mean Value Theorem}
 
@@ -176,19 +189,19 @@ node[label=below]{some label};
 \end{tikzpicture}
 \end{image}
 
-As an example of the conceptual interpretation of the theorem, consider a car that averages  a speed of 57.4 miles per hour on a long trip. 
-By the MVT the car must have been 
-traveling at exactly 57.4 miles per hour at some instant during the trip.
+As an example of the conceptual interpretation of the theorem, consider a car that averages a speed of, say, 47.4 miles per hour on a long trip. 
+Because the distance traveled is a continuous and differentiable function of time, the Mean Value Theorem tells us that the car must have been 
+traveling at exactly 47.4 miles per hour at some time during the trip.
 
-The MVT is considered an existence theorem because it asserts that there exists at least one value $c$ inside the interval $(a,b)$
+The Mean Value Theorem is an \it{existence} theorem because it asserts that there exists at least one value $x=c$ inside the interval $(a,b)$
 that satisfies the equation 
 \[f'(c) = \frac{f(b) - f(a)}{b-a}.\]
-In our examples, we will determine the exact value of $c$. 
+In our examples, we will determine this special value. 
 
-\begin{example}[example 1]
+\begin{example}[example 3]
 Verify that the function $f(x) = x^2$ satisfies the hypotheses of the Mean Value Theorem
-on the interval $[0,3]$. Then find all values that satisfy the conclusion of the theorem.\\
-Since $x^2$ is a polynomial, it is continuous on the closed interval $[0, 3]$ and differentiable on the open interval $(0, 3)$. 
+on the interval $[0,3]$. Then find all values of $x$ that satisfy the conclusion of the theorem.\\
+Since $x^2$ is a polynomial, it is continuous and differentiable everywhere. Therefore, $f$ is continuous on the closed interval $[0, 3]$ and differentiable on the open interval $(0, 3)$. 
 Thus, $f(x) = x^2$ satisfies the hypotheses of the MVT on $[0, 3]$. We now know that the equation
 \[
 f'(x) = \frac{f(b) - f(a)}{b-a}
@@ -197,19 +210,19 @@ has at least one solution in the interval $(0, 3)$. To find the solution(s),
 we first compute the value of the right-hand side using $a = 0$ and $b = 3$:
 \[\frac{f(b) - f(a)}{b-a} = \frac{f(3) - f(0)}{3-0} \]
 \[= \frac{3^2 - 0^2}{3}= \frac{9 - 0}{3} = 3.\]
-Since, $f'(x) = 2x$,
-the conclusion of the MVT guarantees that the equation
+Next, we compute the derivative, $f'(x) = 2x$.
+The conclusion of the MVT guarantees that the equation
 \[2x = 3\]
 has at least one solution in the open interval $(0,3)$.
 This is easily verified, since if $2x = 3$, then 
 \[x = \frac{3}{2},
 \]
-which is in the open interval $(0, 3)$.
-Furthermore, note that $3/2$ is actually the mid-point of the interval $(0, 3)$.
-When applying the MVT to a quadratic polynomial on any interval $[a, b]$ the point $c$ will always be the mid-point!
-% and so the special value, $c$, guaranteed to exist by the MVT,
-%is $\frac32$ in this example.
+which is in $(0, 3)$.
+Furthermore, $x 3/2$ is the mid-point of the interval $(0, 3)$.
+When applying the MVT to a quadratic polynomial on any interval $[a, b]$ the value of $x$ that satisfies the theorem will always be the mid-point!
 
+In the figure below, the secant line is in blue, 
+and the tangent line at $x = 3/2$ is in red. The Mean Value Theorem asserts that these lines are parallel, and the figure makes this clear.
 
 \begin{image}
 \begin{tikzpicture}
@@ -227,96 +240,97 @@ When applying the MVT to a quadratic polynomial on any interval $[a, b]$ the poi
 \end{tikzpicture}
 \end{image}
 
-In the above figure, the blue line in the secant line for $f(x) = x^2$ on the interval $[0, 3]$, 
-and the red line is the tangent line at $x = 3/2$. The Mean Value Theorem asserts that these lines are parallel.
+
 \end{example}
 
-\begin{problem}(problem 1a)
-  Given that the function $f(x) = x^2 + 2$ satisfies the hypotheses of the MVT on the
-	interval $[1,3]$, find the value of $c$ in the open interval $(1,3)$ which satisfies 
-	the conclusion of the theorem.
+\begin{problem}(problem 3a)
+  Is the function $f(x) = x^2 + 2$ continuous on the closed interval $[1,3]$ and differentiable on the open interval $(1,3)$? Why?
+  If so, find all values of $x$ in $(1,3)$ that satisfy the conclusion of the Mean Value Theorem for $f$ on the interval $[1,3]$.
 	
     \begin{hint}
       Compute $f'(x)$ and $\dfrac{f(3) - f(1)}{3-1}$
     \end{hint}
 		\begin{hint}
-		  Solve $f'(x) = \dfrac{f(3) - f(1)}{3-1}$
+		  Solve the equation: $f'(x) = \dfrac{f(3) - f(1)}{3-1}$ for $x$
 		\end{hint}
 		
-		The value of $c$ is:
+		The value of $x$ is:
 		 $\answer{2}$
+     What do you notice about this value of $x$ in relation to the given interval? Is this always the case?
 \end{problem}
 
-\begin{problem}(problem 1b)
-  Given that the function $f(x) = x^2 -3x + 5$ satisfies the hypotheses of the MVT on the
-	interval $[-1,2]$, find the value of $c$ in the open interval $(-1,2)$ which satisfies 
-	the conclusion of the theorem.
+\begin{problem}(problem 3b)
+  Is the function $f(x) = x^2 -3x + 5$ continuous on the closed interval $[-1,2]$ and differentiable on the open interval $(-1,2)$? Why?
+  If so, find all values of $x$ in $(-1,2)$ that satisfy the conclusion of the Mean Value Theorem for $f$ on the interval $[-1,2]$.
 	
     \begin{hint}
       Compute $f'(x)$ and $\dfrac{f(2) - f(-1)}{2-(-1)}$
     \end{hint}
 		\begin{hint}
-		  Solve $f'(x) = \dfrac{f(2) - f(-1)}{2-(-1)}$
+		  Solve the equation: $f'(x) = \dfrac{f(2) - f(-1)}{2-(-1)}$ for $x$
 		\end{hint}
 		
-		The value of $c$ is:
+		The value of $x$ is:
 		 $\answer{1/2}$
+ What do you notice about this value of $x$ in relation to the given interval? Is this always the case?
 \end{problem}
 
-\begin{problem}(problem 1c)
-  Given that the function $f(x) = 3x^2 -5x + 8$ satisfies the hypotheses of the MVT on the
-	interval $[1,6]$, find the value of $c$ in the open interval $(1,6)$ which satisfies 
-	the conclusion of the theorem.
+\begin{problem}(problem 3c)
+  Is the function $f(x) = 3x^2 -5x + 8$ continuous on the closed interval $[1,6]$ and differentiable on the open interval $(1,6)$? Why?
+  If so, find all values of $x$ in $(1,6)$ that satisfy the conclusion of the Mean Value Theorem for $f$ on the interval $[1,6]$.
 	
     \begin{hint}
       Compute $f'(x)$ and $\dfrac{f(6) - f(1)}{6-1}$
     \end{hint}
 		\begin{hint}
-		  Solve $f'(x) = \dfrac{f(6) - f(1)}{6-1}$
+		  Solve the equation: $f'(x) = \dfrac{f(6) - f(1)}{6-1}$ for $x$
 		\end{hint}
 		
-		The value of $c$ is:
+		The value of $x$ is:
 		 $\answer{7/2}$
+     What do you notice about this value of $x$ in relation to the given interval? Is this always the case?
 \end{problem}
 
-\begin{problem}(problem 1d)
-  Given that the function $f(x) = x^3 + 2x -9$ satisfies the hypotheses of the MVT on the
-	interval $[-2,2]$, find the values of $c$ in the open interval $(-2,2)$ which satisfy 
-	the conclusion of the theorem.
-	
+\begin{problem}(problem 3d)
+  Is the function $f(x) = x^3 + 2x -9$ continuous on the closed interval $[-2,2]$ and differentiable on the open interval $(-2,2)$? Why?
+  If so, find all values of $x$ in $(-2,2)$ that satisfy the conclusion of the Mean Value Theorem for $f$ on the interval $[-2,2]$.
+  	
     \begin{hint}
       Compute $f'(x)$ and $\dfrac{f(2) - f(-2)}{2-(-2)}$
     \end{hint}
 		\begin{hint}
-		  Solve $f'(x) = \dfrac{f(2) - f(-2)}{2-(-2)}$
+		  Solve the equation: $f'(x) = \dfrac{f(2) - f(-2)}{2-(-2)}$ for $x$
 		\end{hint}
 		
-		The values of $c$ in ascending order are:
+		The values of $x$ in ascending order are:
 		 $\answer{-2/\sqrt 3}$ and $\answer{2/\sqrt 3}$
+     are these values in the interval $(-2,2)$?
 \end{problem}
 
 
 
 
-\begin{example}[example 2]
-We will verify that the function $f(x) = \sqrt x$ satisfies the hypotheses of the MVT
-on the interval $[0,4]$ and we will find the special value of $c$ that satisfies the Mean Value Equation.
-The function $\sqrt x$ is continuous on the interval $[0, \infty)$  and differentiable on the interval $(0, \infty)$. 
+\begin{example}[example 4]
+Verify that the function $f(x) = \sqrt x$ satisfies the hypotheses of the Mean Value Theorem
+on the interval $[0,4]$. Then find all values of $x$ that satisfy the conclusion of the theorem for $f$ on this interval.
+The function $f(x) = \sqrt x$ is continuous on the interval $[0, \infty)$  and differentiable on the interval $(0, \infty)$. 
 Hence, it is continuous on the closed interval $[0, 4]$ and differentiable on the open interval $(0, 4)$. 
-Then, by the MVT,  the Mean Value Equation holds for some number 
-$c$ in the interval $(0, 4)$. To find $c$, we first compute
+To find the values of $x$ which satisfy the conclusion of the theorem, we first compute
 \[\frac{f(b) - f(a)}{b-a} = \frac{\sqrt 4 - \sqrt 0}{4-0} = \frac{2}{4} = \frac{1}{2}.\]
-Next we compute
+Next, we compute
 \[f'(x) = \frac{d}{dx} \sqrt x = \frac{d}{dx} x^{1/2} = (1/2)x^{-1/2} = \frac{1}{2\sqrt x}.\]
-Finally we solve the equation
+Finally, we solve the equation
 \[\frac{1}{2\sqrt x} = \frac{1}{2}\]
-which gives
+Take the reciprocal of both sides:
+\[2\sqrt x = 2\]
+Divide both sides by $2$: 
 \[\sqrt x = 1\]
-and so 
-\[ x=1.\]
-Note that the value $x = 1$ is in the interval $(0,4)$ and so the special value, $c$, guaranteed to exist by the MVT,
-is $1$ in this example.
+Squaring both sides yields the unique solution
+\[ x=1\]
+Note that the value $x = 1$ is in the interval $(0,4)$.
 
+In the figure below, the secant line is in blue, 
+and the tangent line at $x = 1$ is in red. The Mean Value Theorem asserts that these lines are parallel, and the figure makes this clear.
 
 \begin{image}
 \begin{tikzpicture}
@@ -334,15 +348,12 @@ is $1$ in this example.
 \end{tikzpicture}
 \end{image}
 
-In the above figure, the blue line in the secant line for $f(x) = \sqrt x$ on the interval $[0, 4]$, 
-and the red line is the tangent line at $x = 1$. The Mean Value Equation asserts that these lines are parallel, and this
-is clear in the figure.
+
 \end{example}
 
-\begin{problem}(problem 2a)
-  Given that the function $f(x) = \sqrt x$ satisfies the hypotheses of the MVT on the
-	interval $[0,9]$, find the value of $c$ in the open interval $(0,9)$ which satisfies 
-	the conclusion of the theorem.
+\begin{problem}(problem 4a)
+  Is the function $f(x) = \sqrt x$ continuous on the closed interval $[0,9]$ and differentiable on the open interval $(0,9)$? Why?
+  If so, find all values of $x$ in $(0,9)$ that satisfy the conclusion of the Mean Value Theorem for $f$ on the interval $[0,9]$.
 	
     \begin{hint}
       Compute $f'(x)$ and $\dfrac{f(9) - f(0)}{9-0}$
@@ -351,15 +362,15 @@ is clear in the figure.
 		  Solve $f'(x) = \dfrac{f(9) - f(0)}{9-0}$
 		\end{hint}
 		
-		The value of $c$ is:
+		The value of $x$ is:
 		 $\answer{9/4}$
+     Is this value in the interval $(0,9)$?
 \end{problem}
 
 
-\begin{problem}(problem 2b)
-  Given that the function $f(x) = \sqrt x$ satisfies the hypotheses of the MVT on the
-	interval $[4,16]$, find the value of $c$ in the open interval $(4,16)$ which satisfies 
-	the conclusion of the theorem.
+\begin{problem}(problem 4b)
+  Is the function $f(x) = \sqrt x$ continuous on the closed interval $[4,16]$ and differentiable on the open interval $(4,16)$? Why?
+  If so, find all values of $x$ in $(4,16)$ that satisfy the conclusion of the Mean Value Theorem for $f$ on the interval $[4,16]$.
 	
     \begin{hint}
       Compute $f'(x)$ and $\dfrac{f(16) - f(4)}{16-4}$
@@ -368,15 +379,19 @@ is clear in the figure.
 		  Solve $f'(x) = \dfrac{f(16) - f(4)}{16-4}$
 		\end{hint}
 		
-		The value of $c$ is:
+		The value of $x$ is:
 		 $\answer{9}$
+     Is this value in the interval $(4,16)$?
 \end{problem}
 
 
-\begin{problem}(problem 2c)
-  Given that the function $f(x) = \sqrt{2x+1}$ satisfies the hypotheses of the MVT on the
-	interval $[0,4]$, find the value of $c$ in the open interval $(0,4)$ which satisfies 
-	the conclusion of the theorem.
+\begin{problem}(problem 4c)
+  Is the function $f(x) = \sqrt{2x+1}$ continuous on the closed interval $[0,4]$ and differentiable on the open interval $(0,4)$? Why?
+  If so, find all values of $x$ in $(0,4)$ that satisfy the conclusion of the Mean Value Theorem for $f$ on the interval $[0,4]$.
+
+
+  Given that the function $f(x) = $ is continuous on the closed interval $[0,4]$ and differentiable on the open interval $(0,4)$,
+  find the values of $x$ which satisfy the conclusion of the Mean Value Theorem for $f$ on the interval $[0,4]$.
 	
     \begin{hint}
       Compute $f'(x)$ and $\dfrac{f(4) - f(0)}{4-0}$
@@ -385,30 +400,31 @@ is clear in the figure.
 		  Solve $f'(x) = \dfrac{f(4) - f(0)}{4-0}$
 		\end{hint}
 		
-		The value of $c$ is:
+		The value of $x$ is:
 		 $\answer{3/2}$
+     Is this value in the interval $(0,4)$?
 \end{problem}
 
 
 
-\begin{example}[example 3]
-We will verify that the function $f(x) = e^x$ satisfies the hypotheses of the MVT
-on the interval $[0,2]$ and we will find the special value of $c$ that satisfies the Mean Value Equation.
-The function $e^x$ is continuous and differentiable on the interval $(-\infty, \infty)$. 
-Hence, it is continuous on the closed interval $[0, 2]$ and differentiable on the open interval $(0, 2)$. 
-Then, by the MVT,  the Mean Value Equation holds for some number 
-$c$ in the interval $(0, 2)$. To find $c$, we first compute
-\[\frac{f(b) - f(a)}{b-a} = \frac{e^2 - e^0}{2-0} = \frac{e^2 - 1}{2}.\]
-Next we compute
+\begin{example}[example 5]
+Verify that the function $f(x) = e^x$ satisfies the hypotheses of the Mean Value Theorem
+on the interval $[0,2]$ and find all values of $x$ that satisfy the conclusion of the theorem for $f$ on this interval.
+The function $f(x) = e^x$ is continuous and differentiable on the interval $(-\infty, \infty)$. 
+Hence, $f$ is continuous on the closed interval $[0, 2]$ and differentiable on the open interval $(0, 2)$, and the hypotheses of the theorem are satisfied.
+To find the values of $x$ that satisfy the conclusion of the Mean Value Theorem, we compute
+\[\frac{f(b) - f(a)}{b-a} = \frac{e^2 - e^0}{2-0} = \frac{e^2 - 1}{2}\]
+and, we compute
 \[f'(x) = \frac{d}{dx} e^x = e^x.\]
-Finally we solve the equation
+We then set these equal and solve the resulting equation for $x$:
 \[e^x = \frac{e^2 - 1}{2}\]
-which gives
-\[ x = \ln(\frac{e^2 - 1}{2}) \approx 1.16.\]
+This gives the unique solution
+\[ x = \ln(\frac{e^2 - 1}{2}).\]
 
-Note that the value $\ln(\frac{e^2 - 1}{2})$ is in the interval $(0,2)$ and so the 
-special value, $c$, guaranteed to exist by the MVT, is $\ln(\frac{e^2 - 1}{2})$ in this example.
+Note that the value $\ln(\frac{e^2 - 1}{2}) \approx 1.1614$ is in the interval $(0,2)$.
 
+In the figure below, the secant line is in blue, 
+and the tangent line at $x = \ln(\frac{e^2 - 1}{2})$ is in red. The Mean Value Theorem asserts that these lines are parallel, and the figure makes this clear.
 
 \begin{image}
 \begin{tikzpicture}
@@ -426,49 +442,48 @@ special value, $c$, guaranteed to exist by the MVT, is $\ln(\frac{e^2 - 1}{2})$ 
 \end{tikzpicture}
 \end{image}
 
-In the above figure, the blue line in the secant line for $f(x) = e^x$ on the interval $[0, 2]$, 
-and the red line is the tangent line at $x = \ln(\frac{e^2 - 1}{2})$. 
-The Mean Value Equation asserts that these lines are parallel, and this
-is clear in the figure.
 \end{example}
 
 
-\begin{problem}(problem 3)
-  Given that the function $f(x) = e^{2x}$ satisfies the hypotheses of the MVT on the
-	interval $[0,1]$, find the value of $c$ in the open interval $(0,1)$ which satisfies 
-	the conclusion of the theorem.
-	
+\begin{problem}(problem 5)
+  Is the function $f(x) = e^{2x}$ continuous on the closed interval $[0,1]$ and differentiable on the open interval $(0,1)$? Why?
+  If so, find all values of $x$ in $(0,1)$ that satisfy the conclusion of the Mean Value Theorem for $f$ on the interval $[0,1]$.
+
     \begin{hint}
-      Compute $f'(x)$ and $\dfrac{f(1) - f(0)}{1-0}$
+      Compute both $f'(x)$ and $\dfrac{f(1) - f(0)}{1-0}$
     \end{hint}
 		\begin{hint}
-		  Solve $f'(x) = \dfrac{f(1) - f(0)}{1-0}$
+		  Solve the equation $f'(x) = \dfrac{f(1) - f(0)}{1-0}$ for $x$
 		\end{hint}
 		
-		The value of $c$ is:
+		The value of $x$ is:
 		 $\answer{(1/2) \ln((e^2 -1)/2)}$
+		 Is this value in the interval $(0,1)$?
 \end{problem}
 
 
-\begin{example}[example 4] %example 4
-We will verify that the function $f(x) = \ln(x)$ satisfies the hypotheses of the MVT
-on the interval $[1,e]$ and we will find the special value of $c$ that satisfies the Mean Value Equation.
+\begin{example}[example 6]
+Verify that the function $f(x) = \ln(x)$ satisfies the hypotheses of the Mean Value Theorem
+on the interval $[1,e]$, and we will find the values of $x$ that satisfies the Mean Value Equation for $f$ in $[1,e]$.\\
 The function $\ln(x)$ is continuous and differentiable on the interval $(0, \infty)$. 
-Hence, it is continuous on the closed interval $[1, e]$ and differentiable on the open interval $(1, e)$. 
-Then, by the MVT,  the Mean Value Equation holds for some number 
-$c$ in the interval $(1, e)$. To find $c$, we first compute
-\[\frac{f(b) - f(a)}{b-a} = \frac{\ln(e) - \ln(1)}{e-1} = \frac{1 - 0}{e-1} = \frac{1}{e-1}.\]
-Next we compute
-\[f'(x) = \frac{d}{dx} \ln(x) = \frac{1}{x}.\]
-Finally we solve the equation
+Hence, it is continuous on the closed interval $[1, e]$ and differentiable on the open interval $(1, e)$ and the hypotheses of the theorem are satisfied.
+To find the values of $x$ that satisfy the conclusion of the Mean Value Theorem, we compute
+\[
+\frac{f(b) - f(a)}{b-a} = \frac{\ln(e) - \ln(1)}{e-1} = \frac{1 - 0}{e-1} = \frac{1}{e-1}
+\]
+Next, we compute
+\[f'(x) = \frac{d}{dx} \ln(x) = \frac{1}{x}\]
+Finally, we solve the equation
 \[\frac{1}{x} = \frac{1}{e-1}\]
-which gives
-\[ x = e-1 \approx 1.72.\]
+Taking the reciprocal of both sides yields the unique solution
+\[ x = e-1\]
 
-Note that the value $x = e-1$ is in the interval $(1,e)$ and so the special value, $c$, 
-guaranteed to exist by the MVT,
-is $e-1$ in this example.
+Note that the value $x = e-1\approx 1.72$ is in the interval $(1,e)$.
 
+In the figure below, the secant line is in blue, 
+and the tangent line at $x = e-1$ is in red. 
+The Mean Value Theorem asserts that these lines are parallel, and the figure
+makes this clear.
 
 \begin{image}
 \begin{tikzpicture}
@@ -486,43 +501,63 @@ is $e-1$ in this example.
 \end{tikzpicture}
 \end{image}
 
-In the above figure, the blue line in the secant line for $f(x) = \ln(x)$ on the interval $[1, e]$, 
-and the red line is the tangent line at $x = e-1$. 
-The Mean Value Equation asserts that these lines are parallel, and this
-is clear in the figure.
+
 \end{example}
 
-\begin{problem}(problem 4a) 
-  Given that the function $f(x) = \ln(x)$ satisfies the hypotheses of the MVT on the
-	interval $[1,e]$, find the value of $c$ in the open interval $(1,e)$ which satisfies 
-	the conclusion of the theorem.
+\begin{problem}(problem 6a) 
+  Is the function $f(x) = ln(x)$ continuous on the closed interval $[1,e]$ and differentiable on the open interval $(1,e)$? Why?
+  If so, find all values of $x$ that satisfy the conclusion of the Mean Value Theorem for $f$ on the interval $[1,e]$.
 	
     \begin{hint}
       Compute $f'(x)$ and $\dfrac{f(e) - f(1)}{e-1}$
     \end{hint}
-		\begin{hint}
-		  Solve $f'(x) = \dfrac{f(e) - f(1)}{e-1}$
-		\end{hint}
-		
-		The value of $c$ is:
-		 $\answer{e-1}$
-\end{problem}
-%example with |x| to show MVE does not always have a solution
-
-\begin{problem}(problem 4b)
-  Given that the function $f(x) = \sin(x)$ satisfies the hypotheses of the MVT on the
-	interval $[0, \pi]$, find the value of $c$ in the open interval $(0, \pi)$ which satisfies 
-	the conclusion of the theorem.
-	
     \begin{hint}
-      Compute $f'(x)$ and $\dfrac{f(\pi) - f(0)}{\pi - 0}$
+    $\ln 1 = 0$ and $\ln e = 1$
     \end{hint}
 		\begin{hint}
-		  Solve $f'(c) = \dfrac{f(\pi) - f(0)}{\pi - 0}$
+		  Solve the equation $f'(x) = \dfrac{f(e) - f(1)}{e-1}$ for $x$
+		\end{hint}
+    \begin{hint}
+    Begin by taking the reciprocal of both sides
+    \end{hint}
+		
+		The value of $x$ is:
+		 $\answer{e-1}$
+     Is this value in the interval $(1,e)$?
+\end{problem}
+
+
+\begin{problem}(problem 6b)
+  Is the function $f(x) = \sin(x)$ continuous on the closed interval $[0, 3\pi]$ and differentiable on the open interval $(0, 3\pi)$? Why?
+  Find all values of $x$ that satisfy the conclusion of the Mean Value Theorem for $f$ on the interval $[0, 3\pi]$.
+	
+    \begin{hint}
+      Compute $f'(x)$ and $\dfrac{f(3\pi) - f(0)}{3\pi - 0}$
+    \end{hint}
+		\begin{hint}
+		  Solve the equation $f'(x) = \dfrac{f(3\pi) - f(0)}{3\pi - 0}$ for $x$
+		\end{hint}
+    \begin{hint}
+    Only consider solutions in the interval $(0, 3\pi)$
+    \end{hint}
+		
+		The values of $x$ are (in ascending order):
+		 $\answer{\pi /2}$, $\answer{3\pi /2}$ and $\answer{5\pi /2}$
+     Are these values in the interval $(0, 3\pi)$?
+\end{problem}
+
+\begin{problem}(problem 6c)
+  Is the function $f(x) = |x|$ continuous on the closed interval $[-2,2]$ and differentiable on the open interval $(-2,2)$? Why or why not?
+  Determine if there are any values of $x$ that satisfy the conclusion of the Mean Value Theorem for $f$ on the interval $[-2,2]$.
+	
+    \begin{hint}
+      Compute $f'(x)$ and $\dfrac{f(2) - f(-2)}{2 - (-2)}$
+    \end{hint}
+		\begin{hint}
+		  Solve the equation $f'(x) = \dfrac{f(2) - f(-2)}{2 - (-2)}$ for $x$ if possible
 		\end{hint}
 		
-		The value of $c$ is:
-		 $\answer{\pi /2}$
+		Were there any values of $x$? Does this contradict the Mean Value Theorem?
 \end{problem}
 
 \begin{center}
