@@ -142,7 +142,7 @@ xticklabels={$x_1$,$c_1$,$x_2$,$c_2$,$x_3$,$c_3$,$x_4$}, title={The roots of  $p
 \addplot[domain=4.3:5.7, 
     samples=100, color=red]{1} node[above]{$p'(c_3) = 0$};
     \node at (axis cs:3, -1.75) {The roots of $p'(x)$ are at $c_1, c_2$ and $c_3$};
-    \node at (axis cs:3, -1.75) {By Rolle's Theorem, $p'(x)$ has three roots};
+    %\node at (axis cs:3, -1.75) {By Rolle's Theorem, $p'(x)$ has three roots};
     \addplot[smooth,mark=*,white] plot coordinates {(3, -2)} ;  
 \end{axis}
 \end{tikzpicture}
