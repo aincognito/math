@@ -206,12 +206,19 @@ This slope indicates the average rate of change of $f$ over the interval $[a,b]$
 The MVT asserts that there is at least one point $c$ within the open interval $(a,b)$ where the slopes of these two lines are equal. 
 Thus, we can conclude that the instantaneous rate of change at $x=c$ is equal to the average rate of change over the interval $[a,b]$. 
 
+The Mean Value Theorem has both geometric and conceptual interpretations.
+Geometrically, the equation
+\[
+f'(c) = \frac{f(b) -f(a)}{b-a}
+\]
+asserts that the tangent line at $x = c$ and the secant line on $[a,b]$ are parallel, as shown in the figure below.
+Conceptually, the equation tells us that at the point $x=c$, the instantaneous rate of change of $f$ 
+is equal to the average rate of change of $f$ over the interval $[a,b]$.
 
 Geometrically, the left-hand side of the conclusion of the MVT represents the slope of the tangent line to $f$ at $x = c$.
 The right-hand side represents the slope of the secant line connecting the points $(a, f(a))$ and $(b, f(b))$. 
 These two lines are parallel since their slopes are equal.
-Conceptually, the left-hand side represents the instantaneous rate of change of $f$ at $x = c$, while the
-right-hand side represents the average rate of change of $f$ over the interval $[a,b]$. 
+
 Thus, the MVT says that there is at least one point where the instantaneous rate of change and the average rate of change are equal.
 
 \begin{image}
@@ -235,14 +242,16 @@ node[label=below]{some label};
 \end{tikzpicture}
 \end{image}
 
+Conceptually, the left-hand side represents the instantaneous rate of change of $f$ at $x = c$, while the
+right-hand side represents the average rate of change of $f$ over the interval $[a,b]$. 
 As an example of the conceptual interpretation of the theorem, consider a car that averages a speed of, say, 47.4 miles per hour on a long trip. 
-Because the distance traveled is a continuous and differentiable function of time, the Mean Value Theorem tells us that the car must have been 
+The Mean Value Theorem tells us that the car must have been 
 traveling at exactly 47.4 miles per hour at some time during the trip.
 
 The Mean Value Theorem is an {\it existence} theorem because it asserts that there exists at least one value $x=c$ inside the interval $(a,b)$
 that satisfies the equation 
 \[f'(c) = \frac{f(b) - f(a)}{b-a}.\]
-In our examples, we will determine this special value. 
+In the examples and problems below, we will determine this special value. 
 
 \begin{example}[example 3]
 Verify that the function $f(x) = x^2$ satisfies the hypotheses of the Mean Value Theorem
