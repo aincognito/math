@@ -158,7 +158,7 @@ xticklabels={$x_1$,$c_1$,$x_2$,$c_2$,$x_3$,$c_3$,$x_4$}, title={The roots of  $p
 Use Rolle's Theorem and the fact that a polynomial of degree three has at most three 
 roots to prove that a polynomial of degree four has at most four roots.
 \begin{hint} 
-	Use the argument in example 2
+	Use an argument similar to example 2
 \end{hint}
 \end{problem}
 
@@ -177,13 +177,23 @@ open interval $(a,b)$. Then there exists a number $c$ between $x = a$ and $x = b
 \end{theorem}
 
 
+The left-hand side of the conclusion of the Mean Value Theorem (MVT) represents the slope of the tangent 
+line to the function $f$ at the point $x=c$. This slope signifies the instantaneous rate of change of $f$ at that specific point, denoted by $f'(c)$.
 
-Geometrically, the left-hand side of the conclusion of the MVT represents the slope of the tangent line to $f(x)$ at $x = c$ 
-Meanwhile, the right-hand side represents the slope of the secant line connecting the points $(a, f(a))$ and $(b, f(b))$. 
-Since their slopes are equal, these two lines are parallel.
-Conceptually, the left-hand side represents the instantaneous rate of change of $f(x)$ at $x = c$ while the
-right-hand side represents the average rate of change of $f(x)$ over the interval from $x=a$ to $x=b$. 
-Thus, the MVT says that at some point, the instantaneous rate of change will be equal to the average rate of change.
+On the other hand, the right-hand side illustrates the slope of the secant line connecting the points 
+$(a,f(a))$ and $(b,f(b))$. 
+This slope indicates the average rate of change of $f$ over the interval $[a,b]$, calculated by the formula:
+\[\frac{f(b) - f(a)}{b-a}\]
+The MVT asserts that there is at least one point $c$ within the open interval $(a,b)$ where the slopes of these two lines are equal. 
+Thus, we can conclude that the instantaneous rate of change at $x=c$ is equal to the average rate of change over the interval $[a,b]$. 
+
+
+Geometrically, the left-hand side of the conclusion of the MVT represents the slope of the tangent line to $f$ at $x = c$.
+The right-hand side represents the slope of the secant line connecting the points $(a, f(a))$ and $(b, f(b))$. 
+These two lines are parallel since their slopes are equal.
+Conceptually, the left-hand side represents the instantaneous rate of change of $f$ at $x = c$, while the
+right-hand side represents the average rate of change of $f$ over the interval $[a,b]$. 
+Thus, the MVT says that there is at least one point where the instantaneous rate of change and the average rate of change are equal.
 
 \begin{image}
 \begin{tikzpicture}
@@ -217,7 +227,9 @@ In our examples, we will determine this special value.
 
 \begin{example}[example 3]
 Verify that the function $f(x) = x^2$ satisfies the hypotheses of the Mean Value Theorem
-on the interval $[0,3]$. Then find all values of $x$ that satisfy the conclusion of the theorem.\\
+on the interval $[0,3]$. 
+After confirming the hypotheses, find all values of $x$ within the interval that satisfy the conclusion of the theorem.\\
+%Then find all values of $x$ that satisfy the conclusion of the theorem.\\
 Since $x^2$ is a polynomial, it is continuous and differentiable everywhere. Therefore, $f$ is continuous on the closed interval $[0, 3]$ and differentiable on the open interval $(0, 3)$. 
 Thus, $f(x) = x^2$ satisfies the hypotheses of the MVT on $[0, 3]$. We now know that the equation
 \[
@@ -564,6 +576,11 @@ makes this clear.
 \end{problem}
 
 \begin{problem}(problem 6c)
+  Determine if the function $f(x) = |x|$ continuous on the closed interval $[-2,2]$ and differentiable on the open interval $(-2,2)$. 
+  Justify your reasoning for both continuity and differentiability. 
+  Additionally, assess whether there are any values of $x$ that satisfy the conclusion of the Mean Value Theorem for $f$ on the interval $[-2,2]$. 
+  Provide supporting explanations for your findings.
+
   Is the function $f(x) = |x|$ continuous on the closed interval $[-2,2]$ and differentiable on the open interval $(-2,2)$? Why or why not?
   Determine if there are any values of $x$ that satisfy the conclusion of the Mean Value Theorem for $f$ on the interval $[-2,2]$.
 	
