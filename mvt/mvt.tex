@@ -126,7 +126,7 @@ See the figure below which shows polynomial with four roots and the correspondin
 \begin{image}
 \begin{tikzpicture}
 \begin{axis}[axis x line=  center, axis y line = none, xmin= -0.5, xmax=6.5, xtick={0, 1, 2, 3, 4, 5, 6}, 
-xticklabels={$x_1$,$c_1$,$x_2$,$c_2$,$x_3$,$c_3$,$x_4$}, title={A Polynomial, $p(x)$, with Four Roots}] 
+xticklabels={$x_1$,$c_1$,$x_2$,$c_2$,$x_3$,$c_3$,$x_4$}, title={The roots of  $p(x)$ are $x_1, x_2, x_3$ and $x_4$}] 
 \addplot[domain=-0.5:6.5, 
     samples=100, color=black]{0};
 \addplot [samples=100,smooth,domain=0:6] {sin(deg(1.57*x))} ;
@@ -141,6 +141,7 @@ xticklabels={$x_1$,$c_1$,$x_2$,$c_2$,$x_3$,$c_3$,$x_4$}, title={A Polynomial, $p
 \addplot[domain=2.9:3, color=white]{-1.4} ;
 \addplot[domain=4.3:5.7, 
     samples=100, color=red]{1} node[above]{$p'(c_3) = 0$};
+    \node at (axis cs:3, -1.75) {The roots of $p'(x)$ are at $c_1, c_2$ and $c_3$};
     \node at (axis cs:3, -1.75) {By Rolle's Theorem, $p'(x)$ has three roots};
     \addplot[smooth,mark=*,white] plot coordinates {(3, -2)} ;  
 \end{axis}
