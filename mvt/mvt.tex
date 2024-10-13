@@ -18,7 +18,8 @@ We apply the Mean Value Theorem.
 \section{Rolle's Theorem}
 
 We begin with a special case of the Mean Value Theorem known as Rolle's Theorem.
-This theorem uses the Extreme Value Theorem to guarantee a critical number of a differentiable function under certain circumstances.
+This theorem uses the Extreme Value Theorem to guarantee the existence of a critical number for a differentiable 
+function on and interval in which the function is equal at the endpoints.
 
 \begin{theorem}[Rolle's Theorem]
 Suppose the function $f(x)$ is continuous on the closed interval $[a,b]$ and differentiable on the open interval $(a,b)$.
@@ -44,23 +45,33 @@ title={Rolle's Theorem for $f(x) $ on $[a,b]$}]
 \end{axis}
 \end{tikzpicture}
 \end{image}
-If $f$ is a constant function on $[a,b]$, then $f'(x)= 0$ for all $x$ in the open interval $(a,b)$ and the theorem is true.
-Now, suppose that $f$ is not constant on the closed interval $[a,b]$.
-By hypothesis, $f$ is continuous on the closed interval $[a,b]$, and therefore we can apply to the Extreme Value Theorem (section 3.2) to conclude
-that $f$ has absolute extremes on $[a,b]$.
-Since the theorem requires that $f(a) = f(b)$, we can conclude that the non-constant function, $f$, must have an absolute extreme in the open interval $(a,b)$.
-By Fermat's Theorem (section 3.2), this absolute extreme occurs at a critical number, $x= c$. Finally, since $f$ is differentiable on $(a,b)$ (by hypothesis), we can conclude 
-that $f'(c) = 0$. Thus, the theorem is true in this case as well, and Rolle's Theorem is proved.
+If $f$ is a constant function on $[a,b]$, then $f'(x)= 0$ for all $x$ in the open interval $(a,b)$ and so the theorem is true in this case.
+If $f$ is not constant on the closed interval $[a,b]$, the rationale for the verity of the theorem is more complicated.
+We argue as follows.
+Since $f$ is assumed to be continuous on the closed interval $[a,b]$, we can apply to the Extreme Value Theorem (section 3.2) to conclude
+that $f$ has absolute an absolute max and an absolute min on $[a,b]$.
+Furthermore, the hypotheses of the theorem require that $f(a) = f(b)$, so the endpoints of a non-constant function cannot be both the max and the min.
+We have therefore deduced that 
+$f$, must have at least one of its max or min in the open interval $(a,b)$.
+By Fermat's Theorem (section 3.2), this absolute extreme occurs at a critical number, $x= c$. 
+Finally, since $f$ is differentiable on $(a,b)$ (by hypothesis), we can conclude 
+that $f'(c) = 0$. 
+Thus, the theorem is true in this case as well, and Rolle's Theorem is proved.
 
 
 \begin{example} [example 1] Use Rolle's theorem to show that the function $f(x) = \sin(x)$ has a critical number in the interval $(0, \pi)$.\\
-The function $\sin(x)$ is differentiable (and hence also continuous) on the interval $(-\infty, \infty)$ and since
+The function $f(x) = \sin(x)$ is differentiable (and hence also continuous) on the interval $(-\infty, \infty)$ and since
 \[
 \sin 0 = \sin \pi = 0,
 \]
-we can apply Rolle's Theorem to $\sin(x)$ on the interval $[0, \pi]$. The theorem says that there exists a number $c$ between $0$ and $\pi$ such that 
+we can apply Rolle's Theorem to $f$ on the interval $[0, \pi]$. The theorem states that there exists a number $c$ between $0$ and $\pi$ such that 
 $f'(c) = 0$. That is, $f(x) = \sin(x)$ has a critical number in the interval $(0, \pi)$.
-Moreover, we can find $c$ since $f'(x) = \cos(x)$ and the equation $\cos(x) = 0$ has $x = \pi/2$ as a solution in the interval.
+Moreover, we can find $c$ by solving the equation
+\[
+f'(x) = \cos(x) = 0
+\]
+This equation has infinitely many solutions: $x = \pi/2 + k\pi$ where $k$ is any integer.
+The solution $x = \pi/2$ (corresponding to $k = 0$) is in the interval $(0, \pi)$.
 \end{example}
 
 \begin{problem} [problem 1] 
@@ -72,7 +83,7 @@ x = \answer{1/\sqrt[3]{16}}
 \]
 \end{problem} 
 
-For the next example we need to recall that a \it{root} of a polynomial, $p(x)$, is a value $x = a$, such that $p(a) = 0$.
+For the next example we need to recall that a {\it root} of a polynomial, $p(x)$, is a value $x = a$, such that $p(a) = 0$.
 We also need the fact that a quadratic polynomial has at most two roots, since if
 \[
 ax^2 + bx + c = 0
@@ -90,26 +101,31 @@ Let $p(x)$ be a cubic polynomial, i.e.,
 \[
 p(x) = ax^3 + bx^2 + cx + d, \;\; \text{where} \;\; a\neq 0.
 \]
-We will argue by \it{contradiction} to demonstrate that $p(x)$ can have at most three roots.
-Suppose that there is cubic polynomial, $p(x)$, that has four roots.  Label these roots in ascending order: $x_1 <  x_2 < x_3 < x_4$.
+We will argue by {\it contradiction} to demonstrate that $p(x)$ can have at most three roots.
+Suppose that $p(x)$ is some cubic polynomial that has four roots.  Label these roots in ascending order: $x_1 <  x_2 < x_3 < x_4$.
 By definition of root, we have
 \[
-p(x_1) = p(x_2) = p(x_3) = p(x_4) = 0.
+p(x_1) = p(x_2) = p(x_3) = p(x_4) = 0
 \]
 We apply Rolle's Theorem to $p(x)$ on each of the three intervals $[x_1, x_2], [x_2, x_3]$ and $[x_3, x_4]$ to conclude that 
 there are values $c_1 < c_2 < c_3$ in these respective intervals such that
 \[
 p'(c_1) = p'(c_2) = p'(c_3) = 0
 \]
-However, since $p$ is a polynomial of degree 3, $p'$ has degree 2, i.e., $p'(x)$ is a quadratic polynomial which can have at most two roots.
-This contradiction implies that a cubic polynomial having four roots cannot exist and thus a cubic polynomial has at most three roots, as claimed.
+The above equations are telling us that $p'$ has three distinct roots.
+However, since the degree of $p(x)$ is $3$, the Power Rule tells us that the degree of $p'(x)$ must be $2$.
+The quadratic formula tells us that a quadratic polynomial can have at most two roots.
+We see that the assumption that the cubic polynomial $p(x)$ has four roots has led to the absurdity that 
+the quadratic polynomial $p'(x)$ has three roots.
+This contradiction implies that a cubic polynomial having four roots cannot exist.
+From this we conclude that a cubic polynomial can have at most three roots.
 
 See the figure below which shows polynomial with four roots and the corresponding values, $c_1, c_2$ and $c_3$ given by Rolle's Theorem.
 
 \begin{image}
 \begin{tikzpicture}
 \begin{axis}[axis x line=  center, axis y line = none, xmin= -0.5, xmax=6.5, xtick={0, 1, 2, 3, 4, 5, 6}, 
-xticklabels={$x_1$,$c_1$,$x_2$,$c_2$,$x_3$,$c_3$,$x_4$}, title={By Rolle's Theorem, $p'(x)$ has 3 roots}]
+xticklabels={$x_1$,$c_1$,$x_2$,$c_2$,$x_3$,$c_3$,$x_4$}, title={A Polynomial, $p(x)$, with Four Roots}] 
 \addplot[domain=-0.5:6.5, 
     samples=100, color=black]{0};
 \addplot [samples=100,smooth,domain=0:6] {sin(deg(1.57*x))} ;
@@ -124,17 +140,15 @@ xticklabels={$x_1$,$c_1$,$x_2$,$c_2$,$x_3$,$c_3$,$x_4$}, title={By Rolle's Theor
 \addplot[domain=2.9:3, color=white]{-1.4} ;
 \addplot[domain=4.3:5.7, 
     samples=100, color=red]{1} node[above]{$p'(c_3) = 0$};
+    \node at (axis cs:3, -1.75) {By Rolle's Theorem, $p'(x)$ has three roots};
 \end{axis}
 \end{tikzpicture}
 \end{image}
 
-
-  
-
 \end{example}
 
-\begin{remark} The fundamental Theorem of Algebra states that a polynomial of degree $n$ can have at most $n$ roots,
-	and this result can be proved using a technique called mathematical induction.
+\begin{remark} The Fundamental Theorem of Algebra states that a polynomial of degree $n$ can have at most $n$ roots.
+	The proof of this result requires \link[mathematical induction]{https://en.wikipedia.org/wiki/Mathematical_induction}.
 \end{remark}
 
 \begin{problem}[problem 2]
@@ -193,7 +207,7 @@ As an example of the conceptual interpretation of the theorem, consider a car th
 Because the distance traveled is a continuous and differentiable function of time, the Mean Value Theorem tells us that the car must have been 
 traveling at exactly 47.4 miles per hour at some time during the trip.
 
-The Mean Value Theorem is an \it{existence} theorem because it asserts that there exists at least one value $x=c$ inside the interval $(a,b)$
+The Mean Value Theorem is an {\it existence} theorem because it asserts that there exists at least one value $x=c$ inside the interval $(a,b)$
 that satisfies the equation 
 \[f'(c) = \frac{f(b) - f(a)}{b-a}.\]
 In our examples, we will determine this special value. 
