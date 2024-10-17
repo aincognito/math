@@ -374,7 +374,7 @@ f'(z) &= \lim_{h+ik \to 0} {f(z+h+ik)-f(z)}{h+ik}\\[8pt]
       &= L_1+L2+ i(L_3 + L_4)\\[8pt]
       &= ( L_1+  iL_4) +(L2+ iL_3 )\\[8pt]
       &= \lim_{h+ik \to 0}\frac{u_x(x,y)(h+ik)}{h+ik} + i\lim_{h+ik \to 0}\frac{v_x(x,y)(h+ik)}{h+ik}\\[8pt]
-      &= u_x(x,y) + v_x(x,y)
+      &= u_x(x,y) + iv_x(x,y)
 \end{align*}
 Hence $f$ is differentiable at $z$.
 \end{proof}
@@ -403,14 +403,27 @@ u_y = -v_x \Rightarrow -2y = 2y \Rightarrow y=0
 
 
 \begin{problem}(problem 3)
-Show that the following functions are nowhere differentiable:
+Where are the following functions differentiable?
 \begin{align*}
 i) \;\; & f(z) = \overline{z} \\
 & u_x = \answer{1} \quad u_y = \answer{0} \\
 & v_x = \answer{0} \quad v_y = \answer{-1} \\
+\begin{hint}
+$f$ is nowhere differentiable since $u_x \neq v_y$ at any point $(x_0, y_0)$
+\end{hint}
 ii) \;\; & f(z) = e^{\overline{z}} \\
 & u_x = \answer{e^x \cos y} \quad u_y = \answer{-e^x \sin y} \\
 & v_x = \answer{-e^x \sin y} \quad v_y = \answer{-e^x \cos y} \\
+
+\begin{hint}
+$u_x = v_y$ implies $\cos y =0$
+\end{hint}
+\begin{hint}
+$u_y = -v_x$ implies $\sin y =0$
+\end{hint}
+\begin{hint}
+$f$ is nowhere differentiable since these equations are never satified simultaneously
+\end{hint}
 iii) \;\; & f(z) = \frac{x+iy}{x^2 + y^2} \\
 & u_x = \answer{\frac{y^2 -x^2}{(x^2 +y^2)^2}} \quad u_y = \answer{\frac{-2xy}{(x^2 +y^2)^2}}\\
 & v_x = \answer{\frac{-2xy}{(x^2 +y^2)^2}} \quad v_y = \answer{\frac{x^2 - y^2}{(x^2 +y^2)^2}} \\
@@ -418,6 +431,9 @@ iv) \;\; & f(z) = \sin x \cosh y - i \cos x \sinh y \\
 & u_x = \answer{\cos x \cosh y} \quad u_y = \answer{\sin x \sinh y} \\ 
 & v_x = \answer{\sin x \sinh y} \quad v_y = \answer{-\cos x \cosh y} 
 \end{align*}
+\begin{hint}
+$f$ is differentiable at the points $(\frac{\pi}{2} +k\pi, 0)$
+\end{hint}
 \end{problem}
 
 Here is a video solution to problem 3, part iii:\\
