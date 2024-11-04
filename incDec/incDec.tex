@@ -132,7 +132,7 @@ yticklabels={$f(x_1)$, $f(x_2)$}, title={$f(x)$ is decreasing on $I$}]
 
 The derivative is used to determine the intervals where a function is either 
 increasing or decreasing.
-The following theorem is a direct consequence of the cornerstone, Mean Value Theorem (section 3.5).
+The following theorem is a direct consequence of the cornerstone, Mean Value Theorem (section 3.3).
 
 
 \begin{theorem}[Increasing/Decreasing]
@@ -151,7 +151,7 @@ decreasing on $I$.
 
 \begin{axis}[axis x line=middle, axis y line= middle, xlabel={$x$}, ylabel={$y$}, 
 axis equal, xtick={},
-xticklabels={}, ymin = -1, ytick={}, yticklabels={}, title={$f'(x)>0$on an interval $I$}]
+xticklabels={}, ymin = -1, ytick={}, yticklabels={}, title={$f'(x)>0$ on an interval $I$}]
 
 \addplot[domain=-1:2, color=blue, thick]{2^x} node[pos=.5, below, sloped] {increasing} 
 node[pos=.5, above, sloped] {$f'(x) > 0$};
@@ -195,17 +195,26 @@ node[pos=.5, above, sloped] {$f'(x) < 0$ on $I$};
 \end{center}
 
 
-%Proof (Increasing case): Let $x_1$ and $x_2$ be in the interval $I$ with $x_1 < x_2$.  
-%Then since $f$ is differentiable on the closed interval 
-%$[x_1, x_2]$, it is also continuous there.  
-%Hence we can apply the MVT on to $f(x)$ on $[x_1, x_2]$ and conclude that
-%\[f(x_2) - f(x_1) = f'(c) (x_2 - x_1).\]
-%Both factors on the right hand side are positive, hence $f(x_2) - f(x_1)$ is 
-%positive and $f(x_2)> f(x_1)$.  
-%Hence $x_1 < x_2$implies $f(x_1)< f(x_2)$ which means that $f(x)$ is increasing on $I$.
 
-%We now use this theorem to determine intervals on which a given function is 
-%either increasing or decreasing.
+\begin{proof} (Increasing case): Let $x_1$ and $x_2$ be in the interval $I$ with $x_1 < x_2$.  
+Since $f$ is differentiable on the closed interval 
+$[x_1, x_2]$, it is also continuous there.  
+Hence, we can apply the MVT on to $f(x)$ on $[x_1, x_2]$ and conclude that there is a number $c$
+between $x_1$ and $x_2$ such that 
+\[
+f'(c) = \frac{f(x_2) - f(x_1)}{x_2 - x_1}\]
+Since $f'(x) > 0$ on the interval $I$ (by hypothesis), we know that $f'(c) >0$.
+We also know that $x_2 - x_1 > 0$ since $x_1 < x_2$. Therefore, we must have
+$f(x_2) - f(x_1) > 0$ which is the same as $f(x_1) < f(x_2)$.  
+We can now see that if $f'(x) > 0$ on $I$ and if $x_1$ and $x_2$ are any 
+two values in $I$ with $x_1 < x_2$ then we have $f(x_1) < f(x_2)$.
+This means that $f(x)$ is increasing on $I$.\\
+The decreasing case is proved similarly.
+\end{proof}
+
+
+We now use this theorem to determine intervals on which a given function is 
+either increasing or decreasing.
 
 
 \begin{example}[example 1]
@@ -712,7 +721,7 @@ local minimum at $x = 3$}]
 
 
 \begin{problem}(problem 9a)
-Find the local extremes of the function $f(x) = x^2 - 6x + 2.$\\
+Find the local extremes of the function $f(x) = x^2 - 6x + 2$\\
 \begin{hint}
 Find the critical numbers of $f(x)$
 \end{hint}
@@ -725,13 +734,13 @@ Use the First Derivative Test to determine the local extremes.
 \end{hint}
 
 If there are none, type ``none".\\
-$f(x)$ has a local maximum at $x = \answer{none}.$\\
-$f(x)$ has a local minimum at $x = \answer{3}.$
+$f(x)$ has a local maximum at $x = \answer{none}$\\
+$f(x)$ has a local minimum at $x = \answer{3}$
 \end{problem}
 
 
 \begin{problem}(problem 9b)
-Find the local extremes of the function $f(x) = x^3 - 3x^2 + 3.$\\
+Find the local extremes of the function $f(x) = x^3 - 3x^2 + 3$\\
 \begin{hint}
 Find the critical numbers of $f(x)$
 \end{hint}
@@ -744,13 +753,13 @@ Use the First Derivative Test to determine the local extremes.
 
 %3x^2 - 6x   3x(x-2)
 If there are none, type ``none".\\
-$f(x)$ has a local maximum at $x = \answer{0}.$\\
-$f(x)$ has a local minimum at $x = \answer{2}.$
+$f(x)$ has a local maximum at $x = \answer{0}$\\
+$f(x)$ has a local minimum at $x = \answer{2}$
 \end{problem}
 
 
 \begin{problem}(problem 9c)
-Find the local extremes of the function $f(x) = x^3 - 3x^2 +3x -1.$\\
+Find the local extremes of the function $f(x) = x^3 - 3x^2 +3x -1$\\
 \begin{hint}
 Find the critical numbers of $f(x)$
 \end{hint}
@@ -763,13 +772,13 @@ Use the First Derivative Test to determine the local extremes.
 
 %3x^2 - 6x +3  x^2 - 2x + 1  x = 1
 If there are none, type ``none".\\
-$f(x)$ has a local maximum at $x = \answer{none}.$\\
-$f(x)$ has a local minimum at $x = \answer{none}.$
+$f(x)$ has a local maximum at $x = \answer{none}$\\
+$f(x)$ has a local minimum at $x = \answer{none}$
 \end{problem}
 
 
 \begin{problem}(problem 9d)
-Find the local extremes of the function $f(x) = x^4 - 8x^2 + 1.$
+Find the local extremes of the function $f(x) = x^4 - 8x^2 + 1$
 \begin{hint}
 Find the critical numbers of $f(x)$
 \end{hint}
@@ -782,14 +791,14 @@ Use the First Derivative Test to determine the local extremes.
 
 If there are none, type ``none".\\
 If there is more than one local extreme, list them in ascending order.\\
-$f(x)$ has a local maximum at $x = \answer{0}.$\\
-$f(x)$ has a local minimum at $x = \answer{-2}.$\\
+$f(x)$ has a local maximum at $x = \answer{0}$\\
+$f(x)$ has a local minimum at $x = \answer{-2}$\\
 and at $x = \answer{2}.$
 \end{problem}
 
 
 \begin{problem}(problem 9e)
-Find the local extremes of the function $f(x) = 3x^4 +8x^3 - 5.$\\
+Find the local extremes of the function $f(x) = 3x^4 +8x^3 - 5$\\
 % f' = x^2 (x+2) = x^3 + 2x^2,  f = x^4/4 +2x^3/3 or 3x^4 +8x^3 - 5
 \begin{hint}
 Find the critical numbers of $f(x)$
@@ -802,8 +811,8 @@ Use the First Derivative Test to determine the local extremes.
 \end{hint}
 
 If there are none, type ``none".\\
-$f(x)$ has a local maximum at $x = \answer{none}.$\\
-$f(x)$ has a local minimum at $x = \answer{-2}.$
+$f(x)$ has a local maximum at $x = \answer{none}$\\
+$f(x)$ has a local minimum at $x = \answer{-2}$
 \end{problem}
 
 
@@ -878,7 +887,7 @@ xticklabels = {},yticklabels = {}, title = {Local minimum at $x = -\tfrac13$}]
 \end{example}
 
 \begin{problem}(problem 10a)
-Find the local extremes of the function $f(x) = xe^{2x}.$\\
+Find the local extremes of the function $f(x) = xe^{2x}$\\
 \begin{hint}
 Find the critical numbers of $f(x)$
 \end{hint}
@@ -890,13 +899,13 @@ Use the First Derivative Test to determine the local extremes.
 \end{hint}
 
 If there are none, type ``none".\\
-$f(x)$ has a local maximum at $x = \answer{none}.$\\
-$f(x)$ has a local minimum at $x = \answer{-1/2}.$
+$f(x)$ has a local maximum at $x = \answer{none}$\\
+$f(x)$ has a local minimum at $x = \answer{-1/2}$
 \end{problem}
 
 
 \begin{problem}(problem 10b)
-Find the local extremes of the function $f(x) = x^2e^{3x}.$\\
+Find the local extremes of the function $f(x) = x^2e^{3x}$\\
 \begin{hint}
 Find the critical numbers of $f(x)$
 \end{hint}
@@ -908,12 +917,12 @@ Use the First Derivative Test to determine the local extremes.
 \end{hint}
 
 If there are none, type ``none".\\
-$f(x)$ has a local maximum at $x = \answer{-2/3}.$\\
-$f(x)$ has a local minimum at $x = \answer{0}.$
+$f(x)$ has a local maximum at $x = \answer{-2/3}$\\
+$f(x)$ has a local minimum at $x = \answer{0}$
 \end{problem}
 
 \begin{problem}(problem 10c)
-Find the local extremes of the function $f(x) = \dfrac{3x}{x^2 + 4}.$\\
+Find the local extremes of the function $f(x) = \dfrac{3x}{x^2 + 4}$\\
 \begin{hint}
 Find the critical numbers of $f(x)$
 \end{hint}
@@ -925,8 +934,8 @@ Use the First Derivative Test to determine the local extremes.
 \end{hint}
 
 If there are none, type ``none".\\
-$f(x)$ has a local maximum at $x = \answer{2}.$\\
-$f(x)$ has a local minimum at $x = \answer{-2}.$
+$f(x)$ has a local maximum at $x = \answer{2}$\\
+$f(x)$ has a local minimum at $x = \answer{-2}$
 \end{problem}
 
 
