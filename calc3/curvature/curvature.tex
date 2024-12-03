@@ -44,7 +44,7 @@ T(s) = \vec r\,'(s)
 Curvature is thus determined by the rate of change of this vector, which can be expressed as a derivative: $\frac{d}{ds} \vec T(s)$.  
 However, we wish curvature to be a scalar quantity, so we define it to be the magnitude of this vector.
 \begin{definition}[Curvature]
-Let $\vec r(s) = \vector{x(s), y(s), z(s)}$ where $s$ is the arc length parameter. Then the curvature of $\vec r(s)$ is given by 
+Let $\vec r(s) = \vector{x(s), y(s), z(s)}$ where $s$ is the arc length parameter. The curvature of $\vec r(s)$ is given by 
 \[
 \kappa = \left|\frac{d\vec T}{ds}\right|
 \]
@@ -53,11 +53,11 @@ where $\vec T(s)$ is the unit tangent vector, $\vec T(s) = \vec r\,'(s)$
 
 
 \begin{example}[example 1]
-Find the curvature of the line $\vec r(s) = \vector{2 + \frac{s}{\sqrt 2}, 3 + \frac{s}{\sqrt 3}, 3+ \frac{s}{\sqrt 6}}$\\
+Find the curvature of the line $\displaystyle \vec r(s) = \vector{2 + \frac{s}{\sqrt 2}, 3 + \frac{s}{\sqrt 3}, 3+ \frac{s}{\sqrt 6}}$\\
 Note that since $\vec r\,'(s) = \vector{\frac{1}{\sqrt 2}, \frac{1}{\sqrt 3}, \frac{1}{\sqrt 6}}$ is a unit vector, $s$ is indeed an arc length parameter.
 The curvature is then
 \[
-\kappa = \frac{d}{ds} \vec T(s) = \frac{d}{ds} \vec r\,'(s) = \frac{d}{ds}\vector{\frac{1}{\sqrt 2}, \frac{1}{\sqrt 3}, \frac{1}{\sqrt 6}} = 0
+\kappa = \left|\frac{d}{ds} \vec T(s)\right| = \left|\frac{d}{ds} \vec r\,'(s)\right| = \left|\frac{d}{ds}\vector{\frac{1}{\sqrt 2}, \frac{1}{\sqrt 3}, \frac{1}{\sqrt 6}} \right|= 0
 \]
 It should come as no surprise that the curvature of a line is zero, since the tangent vector does not change direction as we move along the line.
 Note that it is possible to parameterize a line in such a way that the magnitude of the tangent vector does change! 
@@ -159,6 +159,11 @@ Recall that for a space curve $\vec r(t)$, the tangent vector is given by $\vec 
 \[
 \vec T(t) = \frac{\vec r\,'(t)}{|\vec r\,'(t)|}
 \]
+
+Here is a video solution of problems 1a, 2 and example 3:\\
+\begin{foldable}
+\youtube{z1jT8X1eHkI}
+\end{foldable}
 
 \begin{proposition}[Second Form of Curvature]
 Let $\vec r(t)$ be a smooth space curve, i.e., $\vec r\,'(t) \neq \vec 0$. Then curvature of $\vec r(t)$ can be computed as follows:
