@@ -163,6 +163,27 @@ The total number of combinations of males and females that Fluffy can have is
 $\answer{13}$
 \end{problem}
 
+\begin{example}[example 45]
+    A 20-sided die is rolled and a card is drawn. If the die roll is a prime number, then the suit of the card is noted. If the die roll is not prime, then the type of the card is noted instead.
+    Thus, the outcomes are recorded as either, (prime number, suit) or (not prime number, type). How many outcomes are possible?\\
+    There are 8 primes on a 20-sided die: 2,3,5,7,9,11,13,17 and 19. Playing cards come in 4 suits with 13 types in each suit.    
+    Let $S$ is the set of all possible outcomes and partition $S$ according to whether the die roll is prime or not. 
+    Let $S_p$ be the outcomes corresponding to a prime die roll and let $S_n$ correspond to the outcomes for which the die roll is not prime.
+    Then by the FPC, $|S_p| = 8 \cdot 4 = 32$ and $|S_n| = 12 \cdot 13 = 156$. 
+     By the partitioning principle, the total number of outcomes from the die roll and the card draw is
+     \[
+     |S| = |S_p|+|S_n|= 32 + 156 = 188
+     \]
+     \end{example}
+     
+    
+    \begin{problem}(problem 5)
+        A 12-sided die is rolled and a card is drawn. If the die roll is a prime number, then the color of the card (red or black) is noted. If the die roll is not prime, 
+        then the suit of the card is noted instead.  Thus, the outcomes are recorded as either: (prime number, color) or (not prime number, suit). How many such outcomes are possible?\\
+    The total number of outcomes is
+    $\answer{38}$
+    \end{problem}
+
 \end{document}
 
 
