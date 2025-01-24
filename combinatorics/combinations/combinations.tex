@@ -142,7 +142,7 @@ An ordinary deck of playing cards contains 52 cards broken into two colors, red 
 Each color is further subdivided into two suits (of 13 cards each)- red are evenly split between 
 hearts and diamonds, black between spades and clubs. 
 Finally, each suit is decomposed into 13 types labeled 2 through 10, then Jack, Queen, King and Ace.
-In the popular card game poker, each player is dealt 5 cards.  How many different 5 card hands are possible?\\
+In the popular card game poker, each player is dealt 5 cards.  How many 5 card hands are possible?\\
 The answer is simply $C(52, 5)$ since the order in which the cards are received is 
 irrelevant (and quickly becomes unknown when the holder organizes the cards in their hand).
 \end{example}
@@ -161,7 +161,7 @@ then choose the remaining two cards. To choose the 3 matching cards, there are 1
 then there are $C(4, 3) =4$ ways to choose the suits.  To choose the remaining two cards, 
 we first choose two different types in $C(12, 2)$ ways (one of the 13 types is accounted for, 
 so there are only 12 left), and then choose the suit of each card in $4^2$ ways.
-Putting all of this together, the number of "three of a kind's" is
+Putting all of this together, the number of ``three of a kind's" is
 \[
 13 \cdot 4 \cdot C(12, 2) \cdot 4^2 = 54, 912
 \]
