@@ -65,7 +65,7 @@ D_n = n!\sum_{k = 0}^n (-1)^k \frac{1}{k!}
 For each $j$ from $1$ to $n$, let $A_j$ be the set of permutations of $S$ that has $j$ in the $j^{th}$ position.
 Then $|S| = n!$ and $|A_j| = (n-1)!$ for each $j$. Furthermore, $|A_i \cap A_j| = (n-2)!$ and $|A_i \cap A_j \cap A_k| = (n-3)!$.
 We see that the number of elements in the intersection of $m$ of these sets will be $(n-m)!$.\\
-We seek $\dis D_n = |A_1^c \cap A_2^c \cap \cdots \cap A_n^c|$
+We seek $\dis D_n = |A_1^c \cap A_2^c \cap \cdots \cap A_n^c|$.
 By De Morgan's Law (for $n$ sets), the Rule for Complements and the Inclusion-Exclusion Principle, we have
 \begin{align*}
 D_n &= |A_1^c \cap A_2^c \cap \cdots \cap A_n^c| = |\left(A_1 \cup A_2 \cup \cdots \cup A_n\right)^c|
@@ -144,10 +144,10 @@ Case 1) $j$ is in the first position and $1$ is in the $j^{th}$ position.
 The number of such derangements is simply $D_{n-2}$ since the remaining $n-2$ elements can be permuted among themselves 
 in $D_{n-2}$ ways in order to obtain a derangement.\\
 Case 2) $j$ is in the first position and $1$ is not in the $j^{th}$ position. 
-The number of derangements in this case is the number of ways to permute $234...(j-1)1(j+1)...n$,
-(the 1 is in the $j^{th}$ position) such that 2 is not first, 
-3 is not second, ..., $1$ is not $j^{th}$, ..., and the $n$ is not last. 
-This is the number of derangements of the $n-1$ symbols $234...(j-1)i(j+1)...n$ and hence it is $D_{n-1}$.\\
+The number of derangements in this case is the number of derangements of the string: $234...(j-1)1(j+1)...n$, which is $D_{n-1}$.
+%(the 1 is in the $j^{th}$ position) such that 2 is not first, 
+%3 is not second, ..., $1$ is not $j^{th}$, ..., and the $n$ is not last. 
+%This is the number of derangements of the $n-1$ symbols $234...(j-1)1(j+1)...n$ and hence it is $D_{n-1}$.\\
 The result follows by noting that there are $n-1$ possibilities for the choice of $j$.
 \end{proof}
 
@@ -168,13 +168,13 @@ Use the recursive formula to compute $D_6, D_7, D_8, D_9$ and $D_{10}$.
 \end{problem}
 
 \begin{example}[example 4] (The hat check problem)\\
-$n$ people check their hats at an establishment. At closing time, the $n$ hats are returned at random to the $n$ people.
+Suppose that $n$ people check their hats at an establishment and that, at closing time, the $n$ hats are returned at random to the $n$ people.
 What is the probability that no one receives their own hat?\\
 The total number of ways to return the $n$ hats to the $n$ people is $n!$ and since each of 
 these $n!$ permutations is equally likely as the hats at returned at random, the probability of 
 any particular permutation of the returned hats is $\frac{1}{n!}$. The probability that no one 
-receives their own hat is thus $D_n*\frac{1}{n!} = \frac{D_n}{n!}$ since there are $D_n$ ways to return 
-the $n$ hats in this manner.
+receives their own hat is thus $D_n \cdot \frac{1}{n!} = \frac{D_n}{n!}$ since there are $D_n$ ways to return 
+the $n$ hats so that no one receives their own hat.
 \end{example}
 
 \begin{problem}(problem 4)
