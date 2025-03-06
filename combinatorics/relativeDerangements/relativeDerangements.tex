@@ -91,10 +91,11 @@ Q_n = (n-1)! \sum_{k = 0}^{n-1} (-1)^k \frac{n-k}{k!}
 
 
 \begin{proof}
-For each $j$ from $1$ to $n-1$, let $A_j$ be the set of permutations of $S$ that contain the string $j(j+1)$ 
-Then $|S| = n!$ and $|A_j| = (n-1)!$ for each $j$. Furthermore, based on the pattern we observed when computing $Q_5$,  $|A_i \cap A_j| = (n-2)!$ and $|A_i \cap A_j \cap A_k| = (n-3)!$ and in general, 
-the number of elements in the intersection of $m$ of these sets will be $(n-m)!$.\\
-We are now ready to compute $\dis Q_n = |A_1^c \cap A_2^c \cap \cdots \cap A_{n-1}^c|$
+For each $j$ from $1$ to $n-1$, let $A_j$ be the set of permutations of $S$ that contain the string $j(j+1)$. 
+Then, $|A_j| = (n-1)!$ for each $j$. Furthermore, based on the pattern we observed when computing $Q_5$,  $|A_i \cap A_j| = (n-2)!$ 
+and $|A_i \cap A_j \cap A_k| = (n-3)!$. In general, 
+the number of elements in the intersection of $m$ of these sets will be $(n-m)!$\\
+We are now ready to compute $\dis Q_n = |A_1^c \cap A_2^c \cap \cdots \cap A_{n-1}^c|$.\\
 By De Morgan's Law (for $n$ sets), the Rule for Complements and the Inclusion-Exclusion Principle, we have
 \begin{align*}
 Q_n &= |A_1^c \cap A_2^c \cap \cdots \cap A_{n-1}^c| = |\left(A_1 \cup A_2 \cup \cdots \cup A_{n-1}\right)^c|
@@ -104,7 +105,7 @@ Q_n &= |A_1^c \cap A_2^c \cap \cdots \cap A_{n-1}^c| = |\left(A_1 \cup A_2 \cup 
    &\hspace{2.5 in} - \cdots + (-1)^{n-2} |A_1 \cap A_2 \cap \cdots \cap A_{n-1}|\bigg]\\
    &= n! - \binom{n-1}{1}(n-1)! + \binom{n-1}{2}(n-2)! - \binom{n-1}{3}(n-3)! + \cdots + (-1)^{n-1} \binom{n-1}{n-1}(1)!\\
    &= (n-1)!\left[n -\frac{n-1}{1!} + \frac{n-2}{2!} - \frac{n-3}{3!} + \cdots + (-1)^{n-1} \frac{1}{(n-1)!}\right]\\
-   &= (n-1)! \cdot \sum_{k=0}^{n-1} (-1)^k \frac{n-k}{k!}
+   &= (n-1)! \sum_{k=0}^{n-1} (-1)^k \frac{n-k}{k!}
 \end{align*}
 
 
