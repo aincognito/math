@@ -352,14 +352,14 @@ Note that the critical number $x= -2$ is not in the interval $[0, 4]$.
 
 \section{Proof of Fermat's Theorem}
 Suppose that $f(x)$ is defined on the open interval $(a,b)$ and that $f(x)$ has an absolute max at $x=c$.
-Thus $f(c) \geq f(x)$ for all $x$ in $(a,b)$. If $f'(c)$ is undefined then, $x=c$ is a critical number for $f(x)$.
+Thus, $f(c) \geq f(x)$ for all $x$ in $(a,b)$. If $f'(c)$ is undefined then, $x=c$ is a critical number for $f(x)$.
 If $f'(c)$ is defined, then from the definition of the derivative we have
 \[
-f'(c) = \lim_{h \to 0^-} \frac{f(c+h) -f(c)}{h} = \lim_{h \to 0^-} \frac{f(c+h) -f(c)}{h}
+f'(c) = \lim_{h \to 0^-} \frac{f(c+h) -f(c)}{h} = \lim_{h \to 0^+} \frac{f(c+h) -f(c)}{h}
 \]
-The difference quotient in the left hand limit is positive (or zero) since the numerator is negative (or zero) and the denominator is negative.
-Thus $f'(c) \geq 0$.  But the difference quotient in the right hand limit is negative (or zero) and so $f'(c) \leq 0$.
-Hence $f'(c) = 0$ and the theorem is proved.
+The difference quotient in the left-hand limit is positive (or zero) since the numerator is negative (or zero) and the denominator is negative.
+Thus, $f'(c) \geq 0$.  But the difference quotient in the right-hand limit is negative (or zero) and so $f'(c) \leq 0$.
+Hence, $f'(c) = 0$ and the theorem is proved.
 
 \end{document}
 
