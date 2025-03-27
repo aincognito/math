@@ -67,9 +67,9 @@ We seek $|A \cup B \cup C|$. According to the proposition,
 \[
 |A \cup B \cup C| = |A| + |B| +|C| - |A \cap B|- |A \cap C|- |B \cap C| + |A \cap B \cap C|
 \]
-We have $|A| =500,|B| = 200$ and $|C| = 111$. Elements in $A \cap B$ are multiples of 10, so $|A\cap B| = 100$.
-Elements in $A \cap C$ are multiples of 18, so $|A\cap B| = 55$.
-Elements in $B \cap C$ are multiples of 45, so $|B\cap C| = 22$.  
+We have $|A| =500,|B| = 200$ and $|C| = 111$. The elements in $A \cap B$ are the multiples of 10, so $|A\cap B| = 100$.
+The elements in $A \cap C$ are the multiples of 18, so $|A\cap C| = 55$, and
+the elements in $B \cap C$ are the multiples of 45, so $|B\cap C| = 22$.  
 Lastly, elements in $A \cap B \cap C$ are multiples of 90, so $|A \cap B\cap C| = 11$. 
 Using the Inclusion-Exclusion Principle (for three sets), we can conclude 
 that the number of elements of $S$ that are either multiples of 2, 5 or 9 is
@@ -133,7 +133,7 @@ Combining the two equations above with the Inclusion-Exclusion Principle (for th
 \[
 |A^c \cap B^c \cap C^c| = |S| - |A| - |B| - |C| + |A\cap B|+ |A\cap C|+ |B\cap C|- |A\cap B \cap C|
 \]
-Each of the terms on the right hand side can be computed using the Fundamental Principle of Counting. Since there are
+Each of the terms on the right-hand side can be computed using the Fundamental Principle of Counting. Since there are
 70 different characters in total with 10 digits, 8 special symbols and 26 capital letters,
 \[
 |S| = 70^8, \; |A| = 60^8, \; |B| = 62^8, |C| = 44^8 \; \text{ and } 
@@ -332,7 +332,7 @@ We will prove the proposition by induction on the number of sets, $n$. The base 
 For the induction hypothesis, we assume that the result is true for some number of sets $n$. 
 We then wish to show that the result is true for $n+1$ sets. We will do this in a manner similar to the way we began
 this section, obtaining the Inclusion-Exclusion Principle for three sets as a consequence of the result for two sets.
-Thus, we consider the union of the first $n$ sets to be a single set and we obtain:
+Thus, we consider the union of the first $n$ sets to be a single set, and we obtain:
 \[
 |(A_1 \cup A_2 \cup \cdots \cup A_n) \cup A_{n+1}| 
 \]
@@ -384,15 +384,18 @@ The second term of the Inclusion-Exclusion Principle is
 \[
 -\sum_{1 =i < j}^n |A_i \cap A_j|
 \]
-and this term accounts for $x$ exactly $\binom{k}{2}$ times since for $x$ to be in $A_i \cap A_j$, both of these sets must be among the $k$ sets that contain $x$.
+and this term accounts for $x$ exactly $\binom{k}{2}$ times since for $x$ to be in $A_i \cap A_j$, 
+both of these sets must be among the $k$ sets that contain $x$.
 Similarly, the third term of the Inclusion-Exclusion Principle is 
 \[
 \sum_{1 =i < j< l}^n |A_i \cap A_j \cap A_l|
 \]
 and this term accounts for $x$ exactly $\binom{k}{3}$ times.
-Lastly, the $k^{th}$ term of the Inclusion-Exclusion Principle involves the intersections of $k$ of the $n$ sets. In this term,  $x$ is accounted  for $\binom{k}{k}$ times.
+Lastly, the $k^{th}$ term of the Inclusion-Exclusion Principle involves the intersections of $k$ of the $n$ sets. 
+In this term,  $x$ is accounted  for $\binom{k}{k}$ times.
 The remaining terms of the Inclusion-Exclusion formula contain more than $k$ intersections 
-and hence they will not account for $x$ at all (or zero times). In total, the number of times $x$ is accounted for by the Inclusion-Exclusion formula is
+and hence they will not account for $x$ at all (or zero times). In total, the number of times $x$ is accounted 
+for by the Inclusion-Exclusion formula is
 \[
 \binom{k}{1} - \binom{k}{2} + \binom{k}{3} - \cdots + (-1)^{k-1} \binom{k}{k} = \sum_{r=1}^k (-1)^{k-1} \binom{k}{r}
 \]
