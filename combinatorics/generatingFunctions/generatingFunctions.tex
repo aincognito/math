@@ -18,27 +18,29 @@ We will define, create and interpret generating functions.
 
 \section{Generating Functions}
 
-An infinite sequence $a_0, a_1, a_2, ... $ can be associated with an infinite series
+An infinite sequence, $a_0, a_1, a_2, ... $, can be associated with an infinite series
 \[
-a_0 + a_1 x + a_2 x^2 + \cdots
+    \sum_{k=0}^\infty a_k x^k = a_0 + a_1 x + a_2 x^2 + \cdots
 \]
-A finite sequence can associated with a polynomial in a similar manner.
-This infinite series (or polynomial) is called the generating function of the sequence.
+This infinite series is called the generating function of the sequence.
+A finite sequence can be associated with a polynomial similarly.
+
 \begin{definition}
 Given a sequence $a_0, a_1, a_2, ...$, the function 
 \[
-g(x) = \sum_{k=0}^\infty a_kx^k = a_0 + a_1 x + a_2 x^2 + \cdots
+g(x) = \sum_{k=0}^\infty a_k x^k = a_0 + a_1 x + a_2 x^2 + \cdots
 \]
 is called the \textbf{generating function} of the sequence.
-If the sequence is finite: $a_0, a_1, ..., a_n$, the its generating function is the polynomial
+If the sequence is finite: $a_0, a_1, ..., a_n$, then its generating function is the polynomial
 \[
-g(x) = \sum_{k=0}^n a_kx^k = a_0 + a_1 x + a_2 x^2 + \cdots + a_n x^n
+g(x) = \sum_{k=0}^n a_k x^k = a_0 + a_1 x + a_2 x^2 + \cdots + a_n x^n
 \]
 \end{definition}
 
 \begin{remark}
 In this section, we prefer to start our sequence with the term denoted $a_0$ rather than $a_1$ so as to 
-align the subscript in the generating function with the power of $x$.
+align the subscript in the generating function with the power of $x$. 
+In particular, the tern $f_0 = 0$ is added to the Fibonacci sequence.
 \end{remark}
 
 Before presenting examples of generating functions, it is important for us to recall two specific examples of power series.
@@ -50,9 +52,9 @@ and the second is the Maclaurin series for the exponential function
 \[
 e^x =  \sum_{k=0}^\infty \frac{x^k}{k!} = 1 + x + \frac{x^2}{2!} + \cdots
 \]
-In the context of generating functions, we are not interested in the interval of convergence of these series, 
-but just the relationship between
-the series and the corresponding sequence of coefficients.
+In the context of generating functions, we focus on the relationship between the series and its sequence of coefficients
+ rather than on the interval of convergence.
+
 
 \begin{example}[example 1]
 Find the generating function for the sequence 
@@ -149,7 +151,7 @@ The next example investigates the relationship between generating functions and 
 Flip a coin and consider the function $g(x) = 1+x$.  The coefficient of $x^k, k = 0,1$ represents the number ways of 
 obtaining $k$ ``heads". Now flip the coin twice and consider the function $g_2(x) = (1+x)^2 = 1 + 2x + x^2$.
 Note that there is one way to get zero heads: TT. There are two ways to get one heads, HT and TH, 
-and there is one way to get two heads, HH. Thus the function $g_2(x)$ encodes then number of ways to 
+and there is one way to get two heads, HH. Thus, the function $g_2(x)$ encodes then number of ways to 
 get $k$ heads in two flips of the coin, 
 where $k = 0, 1, 2$.
 \end{example}
@@ -183,7 +185,7 @@ The coefficient of $x^k$ in $g_2(x)$ gives the number of ways of rolling a sum o
 \begin{problem}(problem 4)
 Consider a six-sided die whose faces are numbered 1 through 6. Roll the die 3 times and consider the sum.
 What are the minimum and maximum possible values of the sum? Create a generating function $g_3(x)$ whose coefficients 
-encode the the number of ways of rolling a sum of $k$.  Express your answer as a power of $g_1(x)$ from the example above.
+encode the number of ways of rolling a sum of $k$.  Express your answer as a power of $g_1(x)$ from the example above.
 Find the coefficient of $x^7$. Verify that this coefficient is 
 indeed the number of ways of obtaining a sum of $7$ by enumerating the possibilities.
 \end{problem}
@@ -207,20 +209,23 @@ g_3(x) = (1+x+x^2 + \cdots)^3 = \frac{1}{(1-x)^3}
 \end{example}
 
 \begin{problem}(problem 5a)
-Find a compact form for the generating function whose coefficients give the number of non-negative integer solutions to the 
-following equation in $4$ variables:
-\[
-x_1 + x_2 + x_3 + x_4 = n
-\]
+    Use the geometric series approach to find a compact expression for the generating function whose coefficients count the 
+    number of non-negative integer solutions to the equation: 
+
+    \[
+    x_1 + x_2 + x_3 + x_4 = n.
+    \]
+For each value of $n$, this is the number of ways to put $n$ identical objects into $4$ bins.
 \end{problem}
 
 
 \begin{problem}(problem 5b)
-Find a compact form for the generating function whose coefficients give the number of non-negative integer solutions to the 
-following equation in $k$ variables:
+Use a geometric series approach to find a compact form for the generating function whose coefficients give the number of non-negative integer solutions to the 
+equation (in $k$ variables):
 \[
 x_1 + x_2 + x_3 + \cdots + x_k = n
 \]
+For each value of $n$, the number of solutions is the number of ways to put $n$ identical objects into $k$ bins.
 \end{problem}
 
 \begin{example}[example 6]
@@ -232,7 +237,7 @@ if the variables are subject to the following conditions:
 \[
 x_1 > 2, x_2 < 5, x_3 \; \text{ is even} \;\; \text{and} \;\; x_4 \; \text{ is a multiple of 3}
 \]
-Each variable will contribute a factor according the the condition it must satisfy.
+Each variable will contribute a factor according the condition it must satisfy.
 The variable $x_1$ will contribute the factor 
 \[
 x^3 + x^4 + x^5 + \cdots = x^3(1 + x + x^2 + \cdots) = \frac{x^3}{1-x}
