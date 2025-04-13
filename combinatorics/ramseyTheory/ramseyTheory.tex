@@ -35,7 +35,7 @@ they know each other (red) or not (blue).
 \end{tikzpicture}
 \end{image}
 
-The Pigeon Hole Principle suggests that in a $K_3$ with two colors, there must be two of the same color.
+The Pigeonhole Principle suggests that in a $K_3$ with two colors, there must be two of the same color.
 Hence, in a group of three people, there are at least 2 pairs of people that know each other or 
 two pairs of people that do not.
 
@@ -99,7 +99,7 @@ monochromatic $K_3$ is 6, i.e., $R(3,3) = 6$.
 \begin{proof}
 Consider a $K_6$ with edges colored red and blue. 
 We must show that it contains a monochromatic $K_3$. Let $V$ be any vertex in the $K_6$. 
-V has 5 edges emanating from it.  By the Pigeon Hole Principle, there must be at least 3 of the same color.
+V has 5 edges emanating from it.  By the Pigeonhole Principle, there must be at least 3 of the same color.
 
 \begin{image}
 \begin{tikzpicture}
@@ -131,17 +131,17 @@ What is the minimum value of $n$ that guarantees a monochromatic $K_3$? This Ram
 
 \begin{theorem}[$R(3,3,3) = 17$]
 Let $V$ be a vertex of $K_{17}$ with edges colored green, red and blue. There are 16 edges emanating from $V$.
-By the Pigeon Hole Principle, there must be at least 6 of one color (otherwise, we would have at most 5 of each color
-and 5+5+5 = 15 <16).  Which color this is is unimportant, so let's say it is green. Thus we can say that the vertex $V$ is 
+By the Pigeonhole Principle, there must be at least 6 of one color (otherwise, we would have at most 5 of each color
+and 5+5+5 = 15 <16).  Without loss of generality, let's say this color is green. Thus, we can say that the vertex $V$ is 
 joined to the vertices $A_1, A_2, A_3, A_4, A_5, A_6$ by green edges. Now, if any of the edges connecting an $A_i$
 with an $A_j$ are green, then $V, A_i, A_j$ would be a green $K_3$ and hence the $K_{17}$ would have a monochromatic 
 $K_3$ as claimed. So now we must consider the possibility that none of the edges connecting and $A_i$ to any other $A_j$
-is colored green.  In this case, all of the edges among the 6 vertices $A_1, A_2, ..., A_6$ would be 
-colored either red or blue.  Thus we would have a $K_6$ colored with two colors embedded in our $K_{17}$.  
+is colored green.  In this case, all the edges among the 6 vertices $A_1, A_2, ..., A_6$ would be 
+colored either red or blue.  Thus, we would have a $K_6$ colored with two colors embedded in our $K_{17}$.  
 By the previous theorem, $R(3,3) = 6$, so we are guaranteed that this embedded $K_6$ contains a monochromatic $K_3$.
 We can now conclude that $R(3,3,3) \leq 17$. To see that it is actually 17, we must exhibit a coloring of $K_{16}$ with three 
 colors that does not contain  a monochromatic $K_3$.  
-The standard example is pictured below. The three identical monochromatic subgraphs are know as the Clebsch graph.
+The standard example is pictured below. The three identical monochromatic subgraphs are known as the Clebsch graph.
 
 \begin{image}
 \includegraphics{K16}
