@@ -98,25 +98,28 @@ Compute the average value of $f(x) = e^{3x}$ on the interval $[-1,1]$.
 
 \subsection{Rectilinear Motion}
 
-Suppose that a projectile is launched vertically into the air.
-Then, the height of the object at time $t$, the velocity at time $t$, and the acceleration at time $t$ are related as follows:
-\[v(t) = s'(t)\]
-and
-\[a(t) = v'(t) = s''(t).\]
+Suppose that an object is moving along a straight path.
+The position, velocity, and acceleration functions governing the motion of the object 
+can be derived from each other in the following ways.\\
+If we start with the position function,$s(t)$,
+we can compute velocity and acceleration by differentiating:
+\[v(t) = s'(t)\quad \text{and} \quad a(t) = v'(t)\]
+On the other hand, if we start with the acceleration function, $a(t)$,
+we can compute velocity and position by integrating:
+\[v(t) = \int a(t) \ dt \quad \text{and} \quad s(t) = \int v(t) \ dt\]
+These indefinite integrals will contain a constant of integration, $C$, 
+which can be determined by using the initial conditions of the problem.\\
 
-We can also use indefinite integrals to express these relationships:
-\[s(t) = \int v(t) \ dt\]
-and
-\[v(t) = \int a(t) \ dt.\]
-
+In the following proposition, we see that definite integrals that can be used to compute the displacement 
+and distance traveled by an object moving along a straight path.\\
 
 \begin{proposition}
-Suppose that a vertical projectile has instantaneous velocity $v(t)$, then
+Suppose that an object moving along a straight path has instantaneous velocity $v(t)$, then
 \begin{enumerate}
-\item the displacement over the interval $[a,b]$ is given by 
+\item the displacement of the object over the interval $[a,b]$ is given by 
 \[\int_a^b v(t) \ dt\]
 and
-\item the distance traveled over the interval $[a,b]$ is given by 
+\item the distance traveled by the object over the interval $[a,b]$ is given by 
 \[\int_a^b |v(t)| \ dt.\]
 \end{enumerate}
 \end{proposition}
@@ -147,10 +150,10 @@ which implies $C = 16$.  Thus,
 \[s(t) = -16t^2 + 48t + 16\]
 
 Part (b): The displacement from $t= 0$ to $t = 2$, is $s(2) - s(0)$. We can use the formula for $s(t)$ to compute this:
-\[s(2) - s(0) = \left(-16(2)^2 + 48(2) + 16\right) - \left(-16(0)^2 + 48(0) + 16\right) = 32 \text{feet}\]
-Alternatively, we can compute the displacement using the proposition and the fact that $v(t) = -32t + 48$:
+\[s(2) - s(0) = \left(-16(2)^2 + 48(2) + 16\right) - \left(-16(0)^2 + 48(0) + 16\right) = 32 \text{ feet}\]
+Alternatively, we can compute the displacement using the proposition and the fact that $v(t) = -32t + 48$.
 The displacement from $t= 0$ to $t = 2$, is given by
-\[s(2) - s(0) = \int_0^2 v(t) \, dt = \left(-16t^2 + 48t\right)\bigg|_0^2 = 32 \text{feet}\]
+\[s(2) - s(0) = \int_0^2 v(t) \, dt = \left(-16t^2 + 48t\right)\bigg|_0^2 = 32 \text{ feet}\]
 
 Part (c): To find the total distance traveled from $t = 0$ to time $t = 2$,
 we need to integrate $|v(t)|$. To get a handle on $|v(t)|$, recall
