@@ -6,10 +6,6 @@
 
 \title{4.8 Applications of Definite Integrals}
 
-%\newcommand{\ffrac}[2]{\frac{\mbox{\footnotesize $#1$}}{\mbox{\footnotesize $#2$}}}
-%\newcommand{\vasymptote}[2][]{\draw [densely dashed,#1] 
-%({rel axis cs:0,0} -| {axis cs:#2,0}) -- ({rel axis cs:0,1} -| {axis cs:#2,0});}
-
 
 \begin{document}
 
@@ -72,7 +68,7 @@ f_{ave} &= \frac{1}{b-a}\int_a^b f(x) \ dx \\
 \begin{problem}(problem 2)
 Compute the average value of $f(x) = \cos(2x) + \sin(2x)$ on the interval $[0,\pi/2]$.
 \begin{hint}
-An anti-derivative of $\cos(2x) + \sin(2x)$ is  $\tfrac12\sin(2x) - \tfrac12\cos(2x)$
+An antiderivative of $\cos(2x) + \sin(2x)$ is  $\tfrac12\sin(2x) - \tfrac12\cos(2x)$
 \end{hint}
 \[f_{ave} = \answer{2/\pi}.\]
 \end{problem} 
@@ -136,26 +132,28 @@ An object is launched vertically from a height of $16 ft$ with an initial veloci
 \item Find the total distance traveled from time $t = 0$ to time $t = 2$.
 \end{enumerate}
 
-Assuming that $a(t) = -32 ft/sec^2$, as it is on the surface of the earth, 
+Part (a): Assuming that $a(t) = -32 ft/sec^2$, as it is on the surface of the earth, 
 we can compute $v(t)$ by using an indefinite integral:
-\[v(t) = \int a(t) \ dt = \int -32 \ dt = -32t + C.\]
+\[v(t) = \int a(t) \ dt = \int -32 \ dt = -32t + C\]
 To find the value of the constant $C$, we use the fact that the initial velocity was given as $48 ft/sec$:
 \[v(0) = -32(0) + C = 48,\]
-which implies that $C = 48$.  Thus
+which implies that $C = 48$.  Thus,
 \[v(t) = -32t + 48.\]
-Next, we repeat the process to find $s(t)$:
-\[s(t) = \int v(t) \ dt = \int (-32t + 48) \ dt = -16t^2 + 48t + C.\]
+We repeat the process to find $s(t)$:
+\[s(t) = \int v(t) \ dt = \int (-32t + 48) \ dt = -16t^2 + 48t + C\]
 To find $C$, we use the given information about the initial height of the object:
 \[s(0) = -16t^2 + 48(0) + C = 16,\]
 which implies $C = 16$.  Thus,
-\[s(t) = -16t^2 + 48t + 16.\]
-Next, to find the displacement from $t= 0$ to $t = 2$, we compute
-\[s(2) - s(0) = (-64+96+16)-(16) = 32 \text{feet}.\]
-Note that we could have computed $s(2) - s(0)$ as a definite integral:
-\[\int_0^2 v(t) \ dt = s(2) - s(0),\]
-since $s(t)$ is an anti-derivative of $v(t)$.
-Finally, to find the total distance traveled from $t = 0$ to time $t = 2$,
-we need integrate $|v(t)|$. To get a handle on $|v(t)|$, recall
+\[s(t) = -16t^2 + 48t + 16\]
+
+Part (b): The displacement from $t= 0$ to $t = 2$, is $s(2) - s(0)$. We can use the formula for $s(t)$ to compute this:
+\[s(2) - s(0) = \left(-16(2)^2 + 48(2) + 16\right) - \left(-16(0)^2 + 48(0) + 16\right) = 32 \text{feet}\]
+Alternatively, we can compute the displacement using the proposition and the fact that $v(t) = -32t + 48$:
+The displacement from $t= 0$ to $t = 2$, is given by
+\[s(2) - s(0) = \int_0^2 v(t) \, dt = \left(-16t^2 + 48t\right)\bigg|_0^2 = 32 \text{feet}\]
+
+Part (c): To find the total distance traveled from $t = 0$ to time $t = 2$,
+we need to integrate $|v(t)|$. To get a handle on $|v(t)|$, recall
 \[|x| = \left\{
      \begin{array}{rc}
        x & \ \text{if} \  x \geq 0 \\
@@ -173,7 +171,7 @@ Noting that $v(1.5) = -32(1.5) + 48 = 0$, we can see that
 
 
 Hence, the total distance traveled from $t=0$ to $t = 2$ is
-\[\int_0^2 |v(t)| \ dt = \int_0^{1.5} (-32t + 48) \ dt + \int_{1.5}^2 (32t -48) \ dt = 36 + 4 = 40 \ \text{feet}.\]
+\[\int_0^2 |v(t)| \ dt = \int_0^{1.5} (-32t + 48) \ dt + \int_{1.5}^2 (32t -48) \ dt = 36 + 4 = 40 \ \text{feet}\]
 
 
 \end{example}
