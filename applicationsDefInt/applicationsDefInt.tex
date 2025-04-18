@@ -20,78 +20,6 @@ In this section we use definite integrals to study rectilinear motion and comput
 \section{Applications of Definite Integrals}
 
 
-\subsection{Average Value}
-\begin{definition}[Average Value]
-If $f(x)$ is continuous on the interval $[a,b]$, then the average value 
-of $f(x)$ on $[a,b]$ is given by
-\[f_{ave} = \frac{1}{b-a}\int_a^b f(x) \ dx.\]
-\end{definition}
-
-
-
-\begin{example}[example 1]
-Compute the average value of $f(x) = x^2$ on the interval $[0,2]$.\\
-The average value is given by 
-\begin{align*}
-f_{ave} &= \frac{1}{b-a}\int_a^b f(x) \ dx \\
- & = \frac12\int_0^2 x^2 \ dx \\
- & = \frac{x^3}{6} \Bigg|_0^2 \\
-  & = \tfrac43
-\end{align*}
-\end{example}
-
-
-
-\begin{problem}(problem 1)
-Compute the average value of $f(x) = x(x+1) +1$ on the interval $[0,3]$.
-\begin{hint}
-Multiply first, then integrate
-\end{hint}
-\[f_{ave} = \answer{11/2}.\]
-\end{problem} 
-
-
-
-\begin{example}[example 2]
-Compute the average value of $f(x) = \sin(x)$ on the interval $[0,\pi]$.\\
-The average value is given by 
-\begin{align*}
-f_{ave} &= \frac{1}{b-a}\int_a^b f(x) \ dx \\
- & = \frac{1}{\pi}\int_0^\pi \sin(x) \ dx \\
- & = -\frac{1}{\pi} \cos(x) \Bigg|_0^\pi \\
-  & = \frac{2}{\pi}
-\end{align*}
-\end{example}
-
-
-
-\begin{problem}(problem 2)
-Compute the average value of $f(x) = \cos(2x) + \sin(2x)$ on the interval $[0,\pi/2]$.
-\begin{hint}
-An antiderivative of $\cos(2x) + \sin(2x)$ is  $\tfrac12\sin(2x) - \tfrac12\cos(2x)$
-\end{hint}
-\[f_{ave} = \answer{2/\pi}.\]
-\end{problem} 
-
-
-
-\begin{example}[example 3]
-Compute the average value of $f(x) = e^{2x}$ on the interval $[-1,1]$.\\
-The average value is given by 
-\begin{align*}
-f_{ave} &= \frac{1}{b-a}\int_a^b f(x) \ dx \\
- & = \frac12\int_{-1}^1 e^{2x} \ dx \\
- & = \frac14 e^{2x} \Bigg|_{-1}^1 \\
-  & = \frac{e^2 - e^{-2}}{4}
-\end{align*}
-\end{example}
-
-
-
-\begin{problem}(problem 3)
-Compute the average value of $f(x) = e^{3x}$ on the interval $[-1,1]$.
-\[f_{ave} = \answer{\frac{e^{3} - e^{-3}}{6}}.\]
-\end{problem} 
 
 
 
@@ -126,7 +54,7 @@ and
 
 
 
-\begin{example}[example 4]
+\begin{example}[example 1]
 An object is launched vertically from a height of $16 ft$ with an initial velocity of $48 ft/sec$.  
 \begin{enumerate}
 \item Find a formula, $s(t)$, for the height of the object at time $t$
@@ -181,7 +109,7 @@ Hence, the total distance traveled from $t=0$ to $t = 2$ is
 
 
 
-\begin{problem}(problem 4a)
+\begin{problem}(problem 1a)
 An object is launched vertically from a height of $24 ft$ with an initial velocity of $64 ft/sec$.  
 \begin{enumerate}
 \item Find a formula, $s(t)$, for the height of the object at time $t$
@@ -200,7 +128,7 @@ $\text{distance traveled} = \answer{80} \ ft.$
 
 
 
-\begin{problem}(problem 4b)
+\begin{problem}(problem 1b)
 An object is launched vertically from a height of $5 ft$ with an initial velocity of $16 ft/sec$.  
 \begin{enumerate}
 \item Find a formula, $s(t)$, for the height of the object at time $t$
@@ -214,5 +142,79 @@ $\text{maximum height} =\answer{9} \ ft.$\\
 
 
 \end{problem}
+
+
+\subsection{Average Value}
+\begin{definition}[Average Value]
+If $f(x)$ is continuous on the interval $[a,b]$, then the average value 
+of $f(x)$ on $[a,b]$ is given by
+\[f_{ave} = \frac{1}{b-a}\int_a^b f(x) \ dx.\]
+\end{definition}
+
+
+
+\begin{example}[example 2]
+Compute the average value of $f(x) = x^2$ on the interval $[0,2]$.\\
+The average value is given by 
+\begin{align*}
+f_{ave} &= \frac{1}{b-a}\int_a^b f(x) \ dx \\
+ & = \frac12\int_0^2 x^2 \ dx \\
+ & = \frac{x^3}{6} \Bigg|_0^2 \\
+  & = \tfrac43
+\end{align*}
+\end{example}
+
+
+
+\begin{problem}(problem 2)
+Compute the average value of $f(x) = x(x+1) +1$ on the interval $[0,3]$.
+\begin{hint}
+Multiply first, then integrate
+\end{hint}
+\[f_{ave} = \answer{11/2}.\]
+\end{problem} 
+
+
+
+\begin{example}[example 3]
+Compute the average value of $f(x) = \sin(x)$ on the interval $[0,\pi]$.\\
+The average value is given by 
+\begin{align*}
+f_{ave} &= \frac{1}{b-a}\int_a^b f(x) \ dx \\
+ & = \frac{1}{\pi}\int_0^\pi \sin(x) \ dx \\
+ & = -\frac{1}{\pi} \cos(x) \Bigg|_0^\pi \\
+  & = \frac{2}{\pi}
+\end{align*}
+\end{example}
+
+
+
+\begin{problem}(problem 3)
+Compute the average value of $f(x) = \cos(2x) + \sin(2x)$ on the interval $[0,\pi/2]$.
+\begin{hint}
+An antiderivative of $\cos(2x) + \sin(2x)$ is  $\tfrac12\sin(2x) - \tfrac12\cos(2x)$
+\end{hint}
+\[f_{ave} = \answer{2/\pi}.\]
+\end{problem} 
+
+
+
+\begin{example}[example 4]
+Compute the average value of $f(x) = e^{2x}$ on the interval $[-1,1]$.\\
+The average value is given by 
+\begin{align*}
+f_{ave} &= \frac{1}{b-a}\int_a^b f(x) \ dx \\
+ & = \frac12\int_{-1}^1 e^{2x} \ dx \\
+ & = \frac14 e^{2x} \Bigg|_{-1}^1 \\
+  & = \frac{e^2 - e^{-2}}{4}
+\end{align*}
+\end{example}
+
+
+
+\begin{problem}(problem 4)
+Compute the average value of $f(x) = e^{3x}$ on the interval $[-1,1]$.
+\[f_{ave} = \answer{\frac{e^{3} - e^{-3}}{6}}.\]
+\end{problem} 
 
 \end{document}
