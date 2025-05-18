@@ -43,8 +43,8 @@ The level curves have the form
 x^2 + y^2 = k
 \]
 which (for $k >0$) is a circle centered at the origin with radius $\sqrt k$. 
-A basic fact from geometry is that at any point on a circle, the tangent line is perpendicular to the radius. 
-Now, note that the gradient vector is in the same direction as the radius vector at any point $(x, y)$:
+A basic fact from geometry is that at any point on a circle, the radius drawn to that point is perpendicular to the tangent line at that point.
+To verify the proposition, note that the gradient vector is in the same direction as the radius vector at any point $(x, y)$:
 \[
 \grad f(x,y) = \vector{2x, 2y} = 2\vector{x,y}
 \]
@@ -67,10 +67,15 @@ At any point on a circle, the tangent line is perpendicular to the radius.
 \end{hint}
 \end{problem}
 
+Here is a video solution of problem 1:\\
+\begin{foldable}
+\youtube{QwuCfeUs2JU}
+\end{foldable}
+
 To create the normal vector to a surface at a point, we need the analogue of the previous proposition for level surfaces.
 
 \begin{proposition}
-Let $f(x,y,z)$ be a function of three variables and let let $(x_0, y_0, z_0)$ be a point on the level surface $f(x,y, z) = k$.
+Let $f(x,y,z)$ be a function of three variables and let $(x_0, y_0, z_0)$ be a point on the level surface $f(x,y, z) = k$.
 Then, the gradient vector at this point, $\grad f(x_0, y_0, z_0)$ is orthogonal to the level surface.
 \end{proposition}
 \begin{proof}
