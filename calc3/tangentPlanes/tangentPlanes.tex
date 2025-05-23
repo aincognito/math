@@ -282,7 +282,7 @@ We can use the equation of the tangent plane to approximate the values of a func
 Suppose the value $f(x_0, y_0)$ is known. The linear approximation to the function $f$ at a point $(x,y)$ near the point $(x_0, y_0)$
 is given by
 \[
-f(x,y) \approx f(x_0, y_0) + f_x(x_0, y_0)(x-x_0) + f_y(x_0, y_0)(y-y_0)
+f(x,y) \approx f(x_0, y_0) + \grad f(x,y) \dotp \vector{x - x_0, y-y_0}
 \]
 
 \begin{example}[Example 6]
@@ -302,8 +302,8 @@ and at the point $(3, -1)$ the gradient is
 \]
 Since $T(3, -1) = 9 + 3 + 3 = 15$, the linear approximation is given by
 \begin{align*}
-T = f(x,y) &\approx T(3, -1) + \grad T(3, -1) \dotp \vector{x-3, y+1}
-           &= 15 + 7(x-3) - 9(y+1)\\
+T = f(x,y) &\approx T(3, -1) + \grad T(3, -1) \dotp \vector{x-3, y+1}\\
+           &= 15 + 7(x-3) - 9(y+1)
 \end{align*}
 Hence, the temperature at $(2.95, -0.96)$ is approximately
 \[
@@ -331,6 +331,9 @@ I \approx \answer{25.9}
 \]
 \end{problem}
 
-
+Here is a video solution of problem 6:\\
+\begin{foldable}
+\youtube{1jtQ4GbVK1Q}
+\end{foldable}
 
 \end{document}
