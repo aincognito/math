@@ -201,20 +201,27 @@ Here is a video solution of problem 3b:\\
 If $z = f(x,y)$ where $x = r\cos \theta$ and $y = r \sin \theta$, find $z_{rr}$.\\
 We have already established that
 \[
-z_r = \cos \theta z_x + \sin \theta z_y
+z_r = z_x \cos \theta  + z_y \sin \theta 
 \]
-where $z_x$ and $z_y$ are each functions of both $x$ and $y$. Hence,
+where $z_x$ and $z_y$ are each functions of both $x$ and $y$. By the chain rule, we have
 \begin{align*}
 z_{rr} &= \cos \theta \frac{\partial}{\partial r} z_x + \sin \theta \frac{\partial}{\partial r} z_y\\
        &= \cos \theta \left[z_{xx}\cos \theta + z_{xy} \sin \theta \right] + 
        \sin \theta \left[ z_{yx} \cos \theta + z_{yy} \sin \theta  \right]\\
-       &= \cos^2 \theta z_{xx} + 2\cos \theta \sin \theta z_{xy} + \sin^2 \theta z_{yy}
+       &= z_{xx}\cos^2 \theta  + 2z_{xy}\cos \theta \sin \theta  + z_{yy}\sin^2 \theta 
 \end{align*}
 \end{example}
 
 \begin{problem}(Problem 4) 
 If $z = f(x,y)$ where $x = r\cos \theta$ and $y = r \sin \theta$, find $z_{\theta \theta}$.
 \end{problem}
+
+Here is a video solution of problem 4:\\
+\begin{foldable}
+\youtube{2TX6w9mBOf4}
+\end{foldable}
+
+
        
 \subsection{General Chain Rule}
 Suppose $z = f(x_1, x_2, ..., x_n)$ and each of the variables $x_i$ for $i = 1, 2, ..., n$ is a function of the variables
