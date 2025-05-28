@@ -16,24 +16,28 @@ In this section we use Lagrange multipliers to find absolute maxima and minima.
 
 \maketitle
 
-We now turn to the problem of finding the absolute maximum and absolute minimum values
-of a function of several variables on a closed and bounded subset of its domain.
-To say that a set is bounded means that it is a subset of some disk.  And to say that it is closed means that it contains 
-all of its boundary points. 
-Any disk around a boundary point contains points that are in the set as well as points that are not in the set.
-Points that are in the set $S$ which are not boundary points are called interior points.
+We now turn to the problem of finding the \textbf{absolute maximum} and \textbf{absolute minimum} values of a function of 
+several variables on a \textbf{closed and bounded} subset of its domain. To say that a set is \textbf{bounded} means that it is 
+contained within some disk of finite radius. That is, there exists a disk centered at the origin (or any point) such that the entire set lies within it.
+To say that a set is \textbf{closed} means that it contains all of its \textbf{boundary points}. A point is a 
+boundary point of a set $S \subseteq \mathbb{R}^2$ if every disk centered at that point contains points both in $S$ and not in $S$. 
+Points in $S$ that are not boundary points are called \textbf{interior points}.
+As an example, consider the \textbf{unit circle}, defined by the equation $x^2 + y^2 = 1$. This set is both closed and bounded. Moreover, every 
+point on the unit circle is a boundary point.
+The *\textbf{unit disk} (on the other hand) is the set of all points $(x, y) \in \mathbb{R}^2$ such that $x^2 + y^2 < 1$. It is also bounded set, 
+but it is \textbf{not} closed. This is because it does not include its boundary, which is the unit circle. 
+Every point within the unit disk is classified as an interior point.
 
-The unit circle is a closed and bounded subset of $\R^2$.  Every point on the circle is a boundary point.
-The unit disk is a bounded set, whose boundary is the unit circle. Every point within the unit disk is an interior point.
-The unit disk can be described by the inequality $x^2 + y^2 < 1$.
-The closed unit disk is the unit disk together with the unit circle and it can be described by $x^2 + y^2 \leq 1$.
+The \textbf{closed unit disk} is the union of the unit disk and the unit circle, and it is described by the inequality $x^2 + y^2 \leq 1$. 
+This set is both closed and bounded. In problems of optimization, such sets are particularly important because continuous functions always 
+attain maximum and minimum values on closed and bounded sets. 
 
 Let $S$ be a closed and bounded set in $\R^2$ and $f(x,y)$ a function defined on $S$. 
 We wish to find the absolute maximum and absolute minimum values of $f(x,y)$ on $S$.
 
 \begin{theorem}[Extreme Value Theorem]
 Let $f(x,y)$ be a continuous function defined on a closed and bounded set $S$.
-Then $f(x,y)$ has an absolute maximum and absolute minimum value on $S$.
+Then $f(x,y)$ attains an absolute maximum and absolute minimum value on $S$.
 \end{theorem}
 
 \begin{theorem}
@@ -41,23 +45,22 @@ The absolute maximum and absolute minimum values of a continuous function $f(x,y
 occur at either a critical point or a boundary point.
 \end{theorem}
 
-In the last section, we learned how to find critical points. 
-In this section, the focus will be on locating boundary points where the maximum and minimum values can occur.
-
+The previous section introduced the process of finding critical points of a function—points where the gradient is zero.
+This section shifts focus to boundary points, where maximum and minimum values can also occur.
 In practice, the boundary of the set $S$ will be a curve in $\R^2$ (for the unit disk, it was the unit circle).
 We will assume that the boundary curve is smooth and that it can be parameterized by $x = x(t), y = y(t)$.
 Then, along the boundary, the function will have the form, $f(x, y) = f(x(t), y(t))$, so that $f$ is a function of $t$.
 At a point on the boundary where $f$ has either a max or a min, $f$ will have a critical number at that point (with respect to the variable $t$).
-This means that $f\,'(t) = 0$ at this point. From the chain rule
+Hence, either $f\,'(t) = 0$ at this point (or $f\,'(t)$ is undefined at this point). From the chain rule
 \[
 0 = f\,'(t) = f_x(x, y) x'(t) + f_y(x,y) y'(t) = \grad f(x,y) \cdot \vector{x'(t), y'(t)}
 \]
-This means that at the max or min, the gradient of $f$ is orthogonal to the boundary curve.
+This means that at the absolute max or absolute min, the gradient of $f$ is orthogonal to the boundary curve.
 On the other hand, this boundary curve can be written in the form $g(x,y) = 0$. For example, the unit circle can be written as $g(x,y) = x^2 + y^2 - 1 = 0$,
 so that we can think of the boundary curve as the level curve of the surface $z = g(x,y)$. We have already seen, that the gradient of $g$ is orthogonal
 to its level curves.  Therefore, $\grad g(x,y)$ is also orthogonal to the boundary curve of the region $S$.
 Since both $\grad f(x,y)$ and $\grad g(x,y)$ are orthogonal to the boundary curve at the max and min, they must be parallel at these points.
-That means that at the maximum and minimum values of $f(x,y)$ along the boundary curve $g(x,y) = 0$ of the set $S$, 
+Thus, at the maximum and minimum values of $f(x,y)$ along the boundary curve $g(x,y) = 0$ of the set $S$, 
 \[
 \grad f(x,y) = \lambda \grad g(x,y)
 \]
@@ -159,7 +162,7 @@ The critical points of $f$ are at
  f(-2, -2\sqrt3) &= 8 + 36 +8-5 = 47\\
  f(-2, 2\sqrt3) &= 8 + 36 +8-5 = 47
  \end{align*}
- Hence, the absolute maximum is $47$ and it occurs at two different boundary points, $(-2, \pm 2\sqrt 3)$,
+ Hence, the absolute maximum is $47$, and it occurs at two different boundary points, $(-2, \pm 2\sqrt 3)$,
  and the absolute minimum is $-7$ occurring at the interior critical point $(1,0)$.
  
  
