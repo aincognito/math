@@ -169,7 +169,10 @@ Compute $\iint_R \cos(x^2 + y^2) \, dA$ where $R$ is the unit disk: $x^2 + y^2 \
 \end{problem}
 
 
-
+Here is a video solution of problems 1a and 1b:\\
+\begin{foldable}
+\youtube{5I6VKfrko9k}
+\end{foldable}
 
 \begin{example}[Example 2]
 Compute $\iint_R \tan^{-1}\left(\frac{y}{x}\right) \, dA$ where $R$ is polar rectangle $ 2 \leq r \leq 3$ and $-\pi/2 \leq \theta \leq \pi/2$.\\
@@ -218,11 +221,16 @@ Compute $\iint_R \left(1 + \frac{y^2}{x^2}\right) \, dA$ where $R$ is the sector
 \end{problem}
 
 \begin{problem}(Problem 2b)
-Compute $\iint_R xy \, dA$ where $R$  portion of the unit disk in the first quadrant: $x \geq 0, y\geq 0, x^2 + y^2 \leq 1$.\\
+Compute $\iint_R xy \, dA$ where $R$  is the portion of the unit disk in the first quadrant given by: $x \geq 0, y\geq 0, x^2 + y^2 \leq 1$.\\
 \[
 \iint_R xy \, dA = \answer{1/8}
 \]
 \end{problem}
+
+Here is a video solution of problems 2a and 2b:\\
+\begin{foldable}
+\youtube{Mvk0AeWZ9t8}
+\end{foldable}
 
 
 \begin{example}[Example 3]
@@ -262,12 +270,17 @@ The intersection of the paraboloids is a circle.
 \]
 \end{problem}
 
+Here is a video solution of problem 3:\\
+\begin{foldable}
+\youtube{zCfVEHz-n2g}
+\end{foldable}
+
 \begin{example}[Example 4]
 Compute the doubly improper integral
 \[
 \int_{-\infty}^{\infty} e^{-x^2} \, dx
 \]
-There is no known anti-derivative for the function $e^{-x^2}$ (without resorting to power series), but there is a way to compute this integral using polar coordinates.
+There is no known antiderivative for the function $e^{-x^2}$ (without resorting to power series), but there is a way to compute this integral using polar coordinates.
 Recall that if a function is separable, then we can write a double integral over a rectangle as a product of definite integrals:
 \[
 \int_a^b \int_c^d f(x)g(y) \, dy\, dx = \left(\int_a^b f(x)\, dx  \right) \left(\int_c^d g(y) \, dy \right)
@@ -305,6 +318,11 @@ Use the method of Example 4 to compute the improper integral
 \int_0^{\infty} e^{-x^2/2} \, dx = \answer{\sqrt{\pi/2}}
 \]
 \end{problem}
+
+Here is a video solution of problem 4:\\
+\begin{foldable}
+\youtube{Ly-FSnynQTs}
+\end{foldable}
 
 
 \section{The Jacobian of a Transformation}
@@ -353,8 +371,10 @@ The Jacobian is given by the determinant of the $2 \times 2$ matrix:
 \end{align*}
 Hence, the area element is
 \[
-dA = |J(r, \theta)|= |r| = r
+dA = |J(r, \theta)| \, dr\, d\theta = |r| \, dr\, d\theta = r\, dr\, d\theta 
 \]
+The last equality follows from the fact that $r \geq 0$.
+
 \end{example}
 
 
@@ -387,6 +407,11 @@ J(u,v) = \answer{2u/v}
 dA = \answer{2|u/v|}\, du\, dv
 \]
 \end{problem}
+
+Here is a video solution of problem 5c:\\
+\begin{foldable}
+\youtube{Z3O6-d5hPqc}
+\end{foldable}
 
 
 \end{document}

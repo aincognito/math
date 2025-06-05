@@ -17,6 +17,27 @@ In this section we use Lagrange multipliers to find absolute maxima and minima.
 \maketitle
 
 
+We now turn to the problem of finding the \textbf{absolute maximum} and \textbf{absolute minimum} values of a function of 
+several variables on a \textbf{closed and bounded} subset of its domain. To say that a set is \textbf{bounded} means that it is 
+contained within some disk of finite radius. That is, there exists a disk centered at the origin (or any point) such that the entire set lies within it.
+To say that a set is \textbf{closed} means that it contains all of its \textbf{boundary points}. A point is a 
+boundary point of a set $S \subseteq \mathbb{R}^2$ if every disk centered at that point contains points both in $S$ and not in $S$. 
+Points in $S$ that are not boundary points are called \textbf{interior points}.
+
+As an example, consider the \textbf{unit circle}, defined by the equation $x^2 + y^2 = 1$. This set is both closed and bounded. Moreover, every 
+point on the unit circle is a boundary point.
+
+The \textbf{unit disk} (on the other hand) is the set of all points $(x, y) \in \mathbb{R}^2$ such that $x^2 + y^2 < 1$. It is also bounded set, 
+but it is \textbf{not} closed. This is because it does not include its boundary, which is the unit circle. 
+Every point within the unit disk is classified as an interior point.
+
+The \textbf{closed unit disk} is the union of the unit disk and the unit circle, and it is described by the inequality $x^2 + y^2 \leq 1$. 
+This set is both closed and bounded. In problems of optimization, such sets are particularly important because continuous functions always 
+attain maximum and minimum values on closed and bounded sets. 
+
+Let $S$ be a closed and bounded set in $\R^2$ and $f(x,y)$ a function defined on $S$. 
+We wish to find the absolute maximum and absolute minimum values of $f(x,y)$ on $S$.
+
 \begin{theorem}[Extreme Value Theorem]
 Let $f(x,y)$ be a continuous function defined on a closed and bounded set $S$.
 Then $f(x,y)$ attains an absolute maximum and absolute minimum value on $S$.
@@ -221,6 +242,12 @@ The absolute maximum is $\answer{2^{4/3}}$\\
 The absolute minimum is $\answer{-2^{4/3}}$
 \end{problem}
 
+Here is a video solution of problem 3:\\
+\begin{foldable}
+\youtube{mWIZx7OWfcA}
+\end{foldable}
+
+
 \begin{theorem}[Lagrange Multipliers (for 3 variables)]
 The absolute maximum and minimum values of $f(x,y, z)$ on the bounded surface $g(x,y) = 0$ occur at 
 points where 
@@ -250,23 +277,4 @@ The absolute minimum is $\answer{-36}$
 \end{document}
 
 
-We now turn to the problem of finding the \textbf{absolute maximum} and \textbf{absolute minimum} values of a function of 
-several variables on a \textbf{closed and bounded} subset of its domain. To say that a set is \textbf{bounded} means that it is 
-contained within some disk of finite radius. That is, there exists a disk centered at the origin (or any point) such that the entire set lies within it.
-To say that a set is \textbf{closed} means that it contains all of its \textbf{boundary points}. A point is a 
-boundary point of a set $S \subseteq \mathbb{R}^2$ if every disk centered at that point contains points both in $S$ and not in $S$. 
-Points in $S$ that are not boundary points are called \textbf{interior points}.
 
-As an example, consider the \textbf{unit circle}, defined by the equation $x^2 + y^2 = 1$. This set is both closed and bounded. Moreover, every 
-point on the unit circle is a boundary point.
-
-The \textbf{unit disk} (on the other hand) is the set of all points $(x, y) \in \mathbb{R}^2$ such that $x^2 + y^2 < 1$. It is also bounded set, 
-but it is \textbf{not} closed. This is because it does not include its boundary, which is the unit circle. 
-Every point within the unit disk is classified as an interior point.
-
-The \textbf{closed unit disk} is the union of the unit disk and the unit circle, and it is described by the inequality $x^2 + y^2 \leq 1$. 
-This set is both closed and bounded. In problems of optimization, such sets are particularly important because continuous functions always 
-attain maximum and minimum values on closed and bounded sets. 
-
-Let $S$ be a closed and bounded set in $\R^2$ and $f(x,y)$ a function defined on $S$. 
-We wish to find the absolute maximum and absolute minimum values of $f(x,y)$ on $S$.
