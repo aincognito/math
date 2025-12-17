@@ -23,9 +23,11 @@ To find the average velocity of the object during the fall, we can use the formu
 \[
 v_{ave}[a,b] = \frac{\Delta h}{\Delta t} = \frac{h(b) - h(a)}{b-a}.
 \]
-We will use $a = 0$, and to determine the value for $b$, we must know how long it takes for the object to hit the ground. To do this, we set $h(t) = 0$ and solve for $t$:
+
+The Greek letter $\Delta$ (delta) represents ``change in", so $\Delta h$ is the change in height and $\Delta t$ is the change in time. To represent the entire 100-foot fall of the object, 
+we will use $a = 0$, and for $b$, we must know how long it takes for the object to hit the ground. To determine $b$, we set $h(t) = 0$ and solve for $t$:
 \[100-16t^2 = 0 \implies 16t^2 = 100 \implies t = \pm \sqrt{\frac{100}{16}} \implies t = \frac52\]
-Thus the object hits the ground after $2.5$ seconds, and we can compute the average velocity of the object 
+Thus the object hits the ground after $ b = 2.5$ seconds, and we can compute the average velocity of the object 
 during the fall:
 \[v_{ave}[0, 2.5] = \frac{h(2.5) - h(0)}{2.5 - 0} = \frac{0 - 100}{2.5 - 0} = \frac{-100}{2.5} = -40 \text{ ft/sec}.\] 
 The negative sign indicates that the object is falling.
@@ -55,24 +57,27 @@ Note that the negative sign in the average velocity indicates that the object is
 falling.
 \end{example}
 
-
-
 \begin{problem}(problem 1)
-The height of a vertically free-falling object at time $t$ seconds is given by $s(t) = 300 - 16t^2$ feet.
+The height of a vertically free-falling object, in feet after $t$ seconds is given by $h(t) = 400 - 16t^2$ feet.
+Find the average velocity of the object during its fall. 
+The initial height of the object is $\answer{400}$ feet.\\
+The object hits the ground after $\answer{4}$ seconds.\\
+The average velocity during the fall is $v_{ave}[0, 4] = \answer{-100}$ ft/sec.\\
+The negative sign  indicates that the object is \wordChoice{\choice{rising}
+\choice[correct]{falling}}.
+\end{problem}
+
+\begin{problem}(problem 2)
+The height of a vertically free-falling object, in feet after $t$ seconds is given by $h(t) = 300 - 16t^2$ feet.
 Find the average velocity of the object from time $t = 2$ seconds to time $t = 4$ seconds.\\
-The positions at times $t = 2$ and $t= 4$ are
+The heights at times $t = 2$ and $t= 4$ are
 \[
-s(2) = \answer{236}ft \; \text{and} \; s(4) = \answer{44}ft.
-\]
-The displacement is 
-\[
-s(4) - s(2) = \answer{-192}ft.
+h(2) = \answer{236}ft \; \text{and} \; h(4) = \answer{44}ft.
 \]
 The average velocity of the object over the time interval $[2,4]$ is 
 \[
-v_{ave} = \answer{-96}ft/sec.
+v_{ave}[2,4] = \answer{-96}ft/sec.
 \]
-
 \end{problem}
 
 
@@ -83,7 +88,7 @@ m = \frac{\text{rise}}{\text{run}} = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1
 \]
 Thus, if we make a graph of position versus time, with time on the horizontal axis and position on the vertical axis, then the average velocity 
 of a vertically free-falling object from time $t = a$ to time $t = b$ is the same as the slope of the line segment
-connecting the points $(a, s(a))$ and $(b, s(b))$. See the figure below.
+connecting the points $(a, h(a))$ and $(b, h(b))$. See the figure below.
 
 \begin{image}
 \begin{tikzpicture}
@@ -93,12 +98,12 @@ connecting the points $(a, s(a))$ and $(b, s(b))$. See the figure below.
 \draw[thin, dashed] (1,3) -- (1,0) node[below] {a};
 \draw[thin, dashed, gray] (3,1) -- (3,0) node[below, black] {b};
 
-\draw[->, thick] (0,0) -- (0,4.5) node[left] {$s(t)$};
-\draw[thin, dashed] (1,3) -- (0,3) node[left] {$s(a)$};
-\draw[thin, dashed, gray] (3,1) -- (0,1) node[left, black] {$s(b)$};
-\filldraw (1,3) circle(.05) node[right] {$(a,s(a))$};
-\filldraw (3,1) circle(.05) node[right] {$(b,s(b))$};
-\draw[thin, blue] (1,3) --(3,1) node[right, midway] {$m = \frac{s(b) -s(a)}{b-a} = $ average velocity};
+\draw[->, thick] (0,0) -- (0,4.5) node[left] {$h(t)$};
+\draw[thin, dashed] (1,3) -- (0,3) node[left] {$h(a)$};
+\draw[thin, dashed, gray] (3,1) -- (0,1) node[left, black] {$h(b)$};
+\filldraw (1,3) circle(.05) node[right] {$(a,h(a))$};
+\filldraw (3,1) circle(.05) node[right] {$(b,h(b))$};
+\draw[thin, blue] (1,3) --(3,1) node[right, midway] {$m = \frac{h(b) -h(a)}{b-a} = $ average velocity};
 
 \node at (2,-1) {The slope of the blue line is the average velocity};
 \node at (2, -1.5) {of the object from time $t = a$ to time $t = b$.};
