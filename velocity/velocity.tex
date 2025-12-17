@@ -18,6 +18,18 @@ We compute average velocity to estimate instantaneous velocity.
 %Give examples where the numerical table is already filled in
 
 \section{Average Velocity}
+Consider an object falling from a height of 100 feet. The height of the object, in feet, after $t$ seconds is given by the function $h(t)= 100 - 16t^2$.
+To find the average velocity of the object during the fall, we can use the formula
+\[
+v_{ave}[a,b] = \frac{\Delta h}{\Delta t} = \frac{h(b) - h(a)}{b-a}.
+\]
+We will use $a = 0$, and to determine the value for $b$, we must know how long it takes for the object to hit the ground. To do this, we set $h(t) = 0$ and solve for $t$:
+\[100-16t^2 = 0 \implies 16t^2 = 100 \implies t = \pm \sqrt{\frac{100}{16}} \implies t = \frac52\]
+Thus the object hits the ground after $2.5$ seconds, and we can compute the average velocity of the object 
+during the fall:
+\[v_{ave}[0, 2.5] = \frac{h(2.5) - h(0)}{2.5 - 0} = \frac{0 - 100}{2.5 - 0} = \frac{-100}{2.5} = -40 \text{ ft/sec}.\] 
+The negative sign indicates that the object is falling.
+
 We will consider an object moving along a straight line, such as a vertically free-falling object. If the position of the object at time $t$
 is denoted by $s(t)$, then the \textbf{average velocity} of the object from time $t = a$ to $t = b$ is given by 
 \[
