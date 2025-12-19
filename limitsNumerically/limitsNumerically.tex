@@ -428,91 +428,83 @@ Fill in the table below with 9 decimal places of accuracy and use it to find the
 \[\lim_{x \to 0^-} \frac{\sin x}{x}.\]
 
 %\begin{prompt}
-\begin{center}
 \[
-\begin{array}{ c | c | c }
-  x & -0.1 & -0.01   \\ 
+\begin{array}{ c | c }
+  x & \frac{\sin x}{x}\\
+  \hline
+  -0.1 & \answer{0.998334166} \\ 
 	\hline 
-	 \frac{\sin x}{x} & \answer{0.998334166} & \answer{0.999983333} 
+	  -0.01 & \answer{0.999983333}\\
+	  \hline
+	  -0.001 & \answer{0.999999833}\\
+	  \hline
+	  -0.0001 & \answer{0.999999998}
 \end{array}
 \]
-\[
-\begin{array}{ c | c | c  }
-  x  & -0.001 & -0.0001 \\ 
-	\hline 
-	 \frac{\sin x}{x}  & \answer{0.999999833} & \answer{0.999999998}
-\end{array}
-\]
-\end{center}
-Now determine the limit:
-\[
-\lim_{x \to 0^-} \frac{\sin x}{x} = \answer{1}
-\]
-%\end{prompt}
 
+Now determine the limit: $\displaystyle \lim_{x \to 0^-} \frac{\sin x}{x} = \answer{1}	$\\
 Based on the example above and the result of this problem, determine the two-sided limit:
 \[
-\lim_{x \to 0} \frac{\sin x}{x}.
+\lim_{x \to 0} \frac{\sin x}{x} =answer{1}	
 \]
 
-The limit is (DNE is a possibility) $\answer{1}$
 \end{problem}
 
 
 
 \begin{problem}(problem 4b)
-Fill in the table below with 8 decimal places of accuracy and use it to find the limit:
-\[\lim_{x \to 0^+} \frac{\sin 3x}{x}.\]
+Fill in the table below with 8 decimal places of accuracy and use it to find the limit: $\displaystyle \lim_{x \to 0^+} \frac{\sin 3x}{x}.$\\
 
-%\begin{prompt}
-\begin{center}
 \[
-\begin{array}{ c | c | c }
-  x & 0.1 & 0.01   \\ 
-	\hline 
-	 \frac{\sin 3x}{x} & \answer{2.95520207} & \answer{2.99955002} 
+\begin{array}{ c | c }
+	x& \frac{\sin 3x}{x} \\
+	\hline
+	0.1 & \answer{2.95520207} \\
+	\hline
+	0.01 & \answer{2.99955002}\\
+	\hline
+	0.001 & \answer{2.99999550}\\
+	\hline
+	0.0001 & \answer{2.99999996}
 \end{array}
 \]
-\[
-\begin{array}{ c | c | c  }
-  x  & 0.001 & 0.0001 \\ 
-	\hline 
-	 \frac{\sin 3x}{x}  & \answer{2.99999550} & \answer{2.99999996}
-\end{array}
-\]
-\end{center}
-Now determine the limit:
-\[
-\lim_{x \to 0^+} \frac{\sin 3x}{x} = \answer{3}
-\]
-%\end{prompt}
+
+Now determine the limit: $\displaystyle \lim_{x \to 0^+} \frac{\sin 3x}{x} = \answer{3}$
 \end{problem}
 
 
 
 \begin{example}[example 5]
-Consider the limit:
-\[\lim_{x \to -2^-} \frac{3}{x+2}. \]
-First we observe that plugging in the value $x=-2$ gives $\frac{3}{0}$ which is undefined. 
-Thus we are required to make a deeper analysis to determine the limit.
+Consider the limit: $\displaystyle \lim_{x \to -2^-} \frac{3}{x+2}.$\\
+First, we observe that plugging in the value $x=-2$ gives $\frac{3}{0}$ which is undefined. 
+Thus, we are required to make a deeper analysis to determine the limit.
 Since the values of $x$ are less than $-2$, we consider values for $x$ such as 
 $-2.1, -2.01, -2.001,$ and $-2.0001$ to make the following table of values:\\
 
 \[
-%\setlength{\extrarowheight}{5pt}
-\begin{array}{ c | c | c | c | c| c| c}
-  x & -2.1 & -2.01 & -2.001 & -2.0001 & -2.00001 & -2.000001\\ 
-	\hline  
-	 \frac{3}{x+2} & -30 & -300 & -3,000 & -30,000 & -300,000 & -3,000,000
+\begin{array}{ c | c}
+  x & \frac{3}{x+2}\\
+  \hline
+  -2.1 & -30 \\
+  \hline
+  -2.01 & -300 \\
+  \hline
+  -2.001 & -3,000 \\
+  \hline
+  -2.0001 & -30,000 \\
+  \hline
+  -2.00001 & -300,000 \\
+  \hline
+  -2.000001 & -3,000,000
 \end{array}
 \] 
 
 The numerical evidence suggests that as $x$ approaches $-2$ from the left, 
 the values of $f(x) = \frac{3}{x+2}$ are decreasing without bound. We conclude that 
 
-\[\lim_{x \to -2^-} \frac{3}{x+2} =  -\infty. \]
+\[\lim_{x \to -2^-} \frac{3}{x+2} =  -\infty \]
 
-This result has geometric significance.  
+This result has geometric significance.
 It means that the line $x=-2$ is a vertical asymptote for the graph of the function $f(x) = \frac{3}{x+2}.$
 \end{example}
 
@@ -522,34 +514,29 @@ It means that the line $x=-2$ is a vertical asymptote for the graph of the funct
 Fill in the table below and use it to find the limit:
 \[\lim_{x \to 3^+} \frac{x}{x-3}.\]
 
-%\begin{prompt}
-\begin{center}
 \[
-\begin{array}{ c | c | c }
-  x & 3.1 & 3.01   \\ 
-	\hline 
-	 \frac{x}{x-3} & \answer{31} & \answer{301} 
+\begin{array}{ c | c}
+  x & \frac{x}{x-3}\\
+  3.1 & \answer{31}\\
+  \hline
+  3.01 & \answer{301} \\ 
+  	\hline 
+	3.001 & \answer{3001} \\
+	\hline
+	3.0001 & \answer{30001}
 \end{array}
 \]
-\[
-\begin{array}{ c | c | c  }
-  x  & 3.001 & 3.0001 \\ 
-	\hline 
-	 \frac{x}{x-3}  & \answer{3001} & \answer{30001}
-\end{array}
-\]
-\end{center}
+
 Now determine the limit (type infinity for $\infty$ and -infinity for $-\infty$):
 \[
 \lim_{x \to 3^+} \frac{x}{x-3} = \answer{\infty}
 \]
-%\end{prompt}
+
 \end{problem}
 
 
-In the following example, we discuss limits as the input $\infty$.
-If $x \to \infty$ then $x$ is \textbf{increasing without bound} and we can use very large numbers for $x$ in our table.
-%Similarly, for $x \to -\infty$.
+In the following example, we discuss limits as the input goes to $\infty$.
+If $x \to \infty$ then $x$ is \textbf{increasing without bound}, and we can use very large numbers for $x$ in our table.
 
 \begin{example}[example 6]
 Consider the limit:
@@ -561,22 +548,27 @@ our table:
 
 \[
 %\setlength{\extrarowheight}{5pt}
-\begin{array}{ c | c | c | c | c|c}
-  x & 100 & 1{,}000 & 10{,}000 & 100{,}000 & 1{,}000{,}000\\ 
-	\hline
-	 \frac{3x-2}{x+3} & 2.8932 & 2.9890 & 2.9989 & 2.99989 & 2.999989
-	\end{array}
+\begin{array}{ c | c}
+  x & \frac{3x -2}{x + 3}\\
+  \hline
+  100 & 2.8932 \\
+  \hline
+  1000 & 2.9890 \\
+  \hline
+  10000 & 2.9989 \\
+  \hline
+  100000 & 2.99989 \\
+  \hline
+  1000000 & 2.999989
+\end{array}
 \] 
 
 The numerical evidence suggests that as $x$ approaches $\infty$, that is, 
 as $x$ increases without bound, the values of $\frac{3x -2}{x +3}$ are approaching the number $3$. Hence,
-
-
-
 \[\lim_{x \to \infty} \frac{3x -2}{x +3} = 3. \]
 
 This result has geometric significance.  It means that the line $y = 3$ is a horizontal 
-asymptote for the graph of the function $f(x) = \frac{3x -2}{x +3}.$
+asymptote (on the right end)for the graph of the function $f(x) = \frac{3x -2}{x +3}.$
 \end{example}
 
 
@@ -584,28 +576,29 @@ asymptote for the graph of the function $f(x) = \frac{3x -2}{x +3}.$
 Fill in the table below using \textbf{fractions} and use it to find the limit:
 \[\lim_{x \to \infty} \frac{3x-2}{5x+6}.\]
 
-%\begin{prompt}
-\begin{center}
+
 \[
-\begin{array}{ c | c | c }
-  x & 10 & 100   \\ 
+\begin{array}{ c | c }
+  x & \frac{3x-2}{5x+6}\\
+  \hline
+  10 & \answer{28/56}  \\ 
 	\hline 
-	 \frac{3x-2}{5x+6} & \answer{28/56} & \answer{298/506} 
+	100 & \answer{298/506}\\
+	\hline
+	1000 & \answer{2998/5006}	\\
+	\hline
+	10000 & \answer{29998/50006}\\
 \end{array}
 \]
-\[
-\begin{array}{ c | c | c  }
-  x  & 1000 & 10000 \\ 
-	\hline 
-	 \frac{3x-2}{5x+6}  & \answer{2998/5006} & \answer{29998/50006}
-\end{array}
-\]
-\end{center}
 Now determine the limit:
 \[
 \lim_{x \to \infty} \frac{3x-2}{5x+6} = \answer{3/5}
 \]
-%\end{prompt}
+This limit tells us that the line $y = \frac{3}{5}$ is a \wordChoice{
+\choice{vertical}
+\choice[correct]{horizontal}
+}
+asymptote for the graph of the function $f(x) = \frac{3x-2}{5x+6}$.	
 \end{problem}
 
 
