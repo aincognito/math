@@ -44,7 +44,7 @@ the indeterminate form $\frac00$, so L'Hopital's rule applies.
 We have 
 
 \[
-\lim_{x \to 0} \frac{\sin(3x)}{6x} \overset{\text{L'H}}{=} \lim_{x \to 0} \frac{3\cos(3x)}{6} = \frac12
+\lim_{x \to 0} \frac{\sin(3x)}{6x} \,\overset{\text{L'H}}{=}\, \lim_{x \to 0} \frac{3\cos(3x)}{6} = \frac12
 \]
 \end{example}
 
@@ -136,7 +136,7 @@ Plugging in the terminal value, $x=0$, yields
 the indeterminate form $\frac00$, so L'Hopital's rule applies.
 We have 
 \[
-\lim_{x \to 0} \frac{e^{4x} - 1}{12x} = \lim_{x \to 0} \frac{4e^{4x}}{12} = \frac13
+\lim_{x \to 0} \frac{e^{4x} - 1}{12x} \,\overset{\text{L'H}}{=}\, \lim_{x \to 0} \frac{4e^{4x}}{12} = \frac13
 \]
 \end{example}
 
@@ -215,7 +215,7 @@ Compute
 Plugging in the terminal value, $x=2$, gives 
 the indeterminate form $\frac00$, so we can use L'Hopital's Rule:
  
-\[\lim_{x \to 2} \frac{x^3 - 8}{x^5 - 32} = \lim_{x \to 2} \frac{3x^2}{5x^4} = \frac{12}{80} = \frac{3}{20}.\]
+\[\lim_{x \to 2} \frac{x^3 - 8}{x^5 - 32} \,\overset{\text{L'H}}{=}\, \lim_{x \to 2} \frac{3x^2}{5x^4} = \frac{12}{80} = \frac{3}{20}.\]
 \end{example}
 
 \begin{problem}(problem 3a)
@@ -290,9 +290,9 @@ Compute the limit:  $\displaystyle{\;\lim_{x \to 0} \frac{e^x - x - 1}{x^2}}.$
 Plugging in the terminal value, $x=0$, yields 
 the indeterminate form $\frac00$, so L'Hopital's rule applies.
 We have 
-\[\lim_{x \to 0} \frac{e^x - x - 1}{x^2} = \lim_{x \to 0} \frac{e^x -1}{2x} = \frac{0}{0}.\]
+\[\lim_{x \to 0} \frac{e^x - x - 1}{x^2} \,\overset{\text{L'H}}{=}\, \lim_{x \to 0} \frac{e^x -1}{2x} = \frac{0}{0}.\]
 Applying L'Hopital's Rule again gives
-\[\lim_{x \to 0} \frac{e^x -1}{2x} = \frac{e^x}{2} = \frac{1}{2}.\]
+\[\lim_{x \to 0} \frac{e^x -1}{2x} \,\overset{\text{L'H}}{=}\, \frac{e^x}{2} = \frac{1}{2}.\]
 Hence $\displaystyle{\lim_{x \to 0} \frac{e^x - x - 1}{x^2} = \frac 12}.$
 \end{example}
 
@@ -359,14 +359,14 @@ Compute the limit:  $\displaystyle{\;\lim_{x \to 0} \frac{\tan(x)-x}{x^3}}.$\\
 Plugging in the terminal value, $x=0$, yields 
 the indeterminate form $\frac00$, so L'Hopital's rule applies.
 We have 
-\[\lim_{x \to 0} \frac{\tan(x)-x}{x^3} = \lim_{x \to 0} \frac{\sec^2(x)-1}{3x^2} = \frac{0}{0}.\]
+\[\lim_{x \to 0} \frac{\tan(x)-x}{x^3} \,\overset{\text{L'H}}{=}\, \lim_{x \to 0} \frac{\sec^2(x)-1}{3x^2} = \frac{0}{0}.\]
 Applying L'Hopital's Rule again gives
-\[\lim_{x \to 0} \frac{\sec^2(x)-1}{3x^2} = \lim_{x \to 0} \frac{2\sec^2(x)\tan(x)}{6x} = \frac{0}{0}.\]	
+\[\lim_{x \to 0} \frac{\sec^2(x)-1}{3x^2} \,\overset{\text{L'H}}{=}\, \lim_{x \to 0} \frac{2\sec^2(x)\tan(x)}{6x} = \frac{0}{0}.\]	
 We need to apply L'Hopital's Rule again, but first, the numerator is complicated and 								
 \[\lim_{x \to 0} \sec(x) = 1 \neq 0\]
 so we take a simplifying step before applying the rule.
 \[\lim_{x \to 0} \frac{2\sec^2(x)\tan(x)}{6x} = 
-\lim_{x \to 0} \sec^2(x) \cdot \lim_{x \to 0} \frac{2\tan(x)}{6x}=\]
+\lim_{x \to 0} \sec^2(x) \cdot \lim_{x \to 0} \frac{2\tan(x)}{6x}\,\overset{\text{L'H}}{=}\,\]
  \[1\cdot \lim_{x \to 0} \frac{2\sec^2(x)}{6} =\frac{1}{3}.\]
 \end{example}
 
@@ -384,10 +384,10 @@ Compute the limit:  $\displaystyle{\;\lim_{x \to \infty} \frac{x^2}{e^x}}.$
 
 As $x$ approaches $\infty$ we get the indeterminate form $\frac{\infty}{\infty}$ so L'Hopital's Rule applies.
 We have 
-\[\lim_{x\to \infty} \frac{x^2}{e^x} = \lim_{x \to \infty} \frac{2x}{e^x} = \frac{\infty}{\infty}.\]
+\[\lim_{x\to \infty} \frac{x^2}{e^x} \,\overset{\text{L'H}}{=}\, \lim_{x \to \infty} \frac{2x}{e^x} = \frac{\infty}{\infty}.\]
 Applying L'Hopital again, we get
-\[\lim_{x \to \infty} \frac{2x}{e^x} = \lim_{\infty} \frac{2}{e^x} = 0.\]
-Hence $\lim_{x\to\infty}\frac{x^2}{e^x}=0$.  
+\[\lim_{x \to \infty} \frac{2x}{e^x} \,\overset{\text{L'H}}{=}\, \lim_{\infty} \frac{2}{e^x} = 0.\]
+Hence, $\lim_{x\to\infty}\frac{x^2}{e^x}=0$.  
 This limit can be generalized as follows:
 \[\lim_{x\to\infty}\frac{x^n}{e^x} =0\]
 for any exponent $n = 1, 2, 3, \dots$.
@@ -451,7 +451,7 @@ The interpretation of this limit is that the exponential function $e^x$ grows fa
 Compute the limit:  $\displaystyle{\;\lim_{x \to \infty} \frac{\sqrt{x}}{\ln(x)}}$.
 As $x \to \infty$ we get $\frac{\infty}{\infty}$, so L'Hopital's Rule applies.
 We have:
-\[\lim_{x \to \infty} \frac{\sqrt x}{\ln(x)} = 
+\[\lim_{x \to \infty} \frac{\sqrt x}{\ln(x)} \,\overset{\text{L'H}}{=}\,
 \lim_{x \to \infty}\frac{\left(\frac{1}{2\sqrt x}\right)}{\left(\frac{1}{x}\right)}\]
 which simplifies to 
 \[\lim_{x\to\infty} \frac{x}{2\sqrt x} = \lim_{x\to\infty}\frac{\sqrt x}{2} = \infty.\]
@@ -527,7 +527,7 @@ Also note that $x^{-2} =\frac{1}{x^2} \to \infty$ as $x\to 0^+$.
 Now, we can use L'Hopital's Rule because 
 \[\lim_{x \to 0+}\frac{\ln(x)}{x^{-2}}= \frac{-\infty}{\infty}.\]
 We get
-\[\lim_{x \to 0^+}\frac{\ln(x)}{x^{-2}}= \lim_{x\to 0^+} \frac{1/x}{-2x^{-3}}\]
+\[\lim_{x \to 0^+}\frac{\ln(x)}{x^{-2}}\,\overset{\text{L'H}}{=}\, \lim_{x\to 0^+} \frac{1/x}{-2x^{-3}}\]
 which simplifies to
 \[\lim_{x \to 0^+}-\frac{x^2}{2}= 0.\]
 Hence, 
