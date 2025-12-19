@@ -2,7 +2,7 @@
 %\usepackage{tcolorbox}
 \input{../preamble}
 
-\outcome{Compute limits using L'Hopital's Rule}
+\outcome{Compute limits using L'H\^{o}pital's Rule}
 
 \title{3.6 L'Hopital's Rule}
 
@@ -15,12 +15,12 @@ In this section we compute limits using L'H\^{o}pital's Rule which requires our 
 
 \maketitle
 
-\section{L'Hopital's Rule}
+\section{L'H\^{o}pital's Rule}
 
 L'H\^{o}pital's Rule uses the derivative to help us find limits involving indeterminate forms. 
 The main indeterminate forms we will discuss are $\frac 00, \frac{\infty}{\infty}, 0\cdot \infty, 1^\infty$ and $0^0$. We begin with the fractional forms.
 
-\begin{theorem}[L'Hopital's Rule]
+\begin{theorem}[L'H\^{o}pital's Rule]
 
 \[
 \text{If} \;\; \lim_{x \to c} \frac{f(x)}{g(x)} = \frac{0}{0} \; \text{or} \; \frac{\pm \infty}{\pm \infty},
@@ -39,7 +39,7 @@ The main indeterminate forms we will discuss are $\frac 00, \frac{\infty}{\infty
 Compute the limit: $\displaystyle{\;\lim_{x \to 0} \frac{\sin(3x)}{6x}}.$
 
 Plugging in the terminal value, $x=0$, yields 
-the indeterminate form $\frac00$, so L'Hopital's rule applies.
+the indeterminate form $\frac00$, so L'H\^{o}pital's rule applies.
 
 We have 
 
@@ -60,7 +60,7 @@ We have
       Plug in $x=0$
     \end{hint}
     \begin{hint}
-      If you got $\frac00$, use L'Hopital's Rule
+      If you got $\frac00$, use L'H\^{o}pital's Rule
     \end{hint}
     \begin{hint}
       Take the derivative of the numerator and denominator separately
@@ -85,7 +85,7 @@ We have
       Plug in $x=0$
     \end{hint}
     \begin{hint}
-      If you got $\frac00$, use L'Hopital's Rule
+      If you got $\frac00$, use L'H\^{o}pital's Rule
     \end{hint}
     \begin{hint}
       Take the derivative of the numerator and denominator separately
@@ -133,7 +133,7 @@ Compute
 \begin{example}[example 2]
  Compute the limit:  $\displaystyle{\;\lim_{x \to 0} \frac{e^{4x} - 1}{12x}}.$\\
 Plugging in the terminal value, $x=0$, yields 
-the indeterminate form $\frac00$, so L'Hopital's rule applies.
+the indeterminate form $\frac00$, so L'H\^{o}pital's rule applies.
 We have 
 \[
 \lim_{x \to 0} \frac{e^{4x} - 1}{12x} \,\overset{\scriptsize\text{L'H}}{=}\, \lim_{x \to 0} \frac{4e^{4x}}{12} = \frac13
@@ -151,7 +151,7 @@ We have
       Plug in $x=0$
     \end{hint}
     \begin{hint}
-      If you got $\frac00$, use L'Hopital's Rule
+      If you got $\frac00$, use L'H\^{o}pital's Rule
     \end{hint}
     \begin{hint}
       Take the derivative of the numerator and denominator separately
@@ -173,7 +173,7 @@ We have
       Plug in $x=0$
     \end{hint}
     \begin{hint}
-      If you got $\frac00$, use L'Hopital's Rule
+      If you got $\frac00$, use L'H\^{o}pital's Rule
     \end{hint}
     \begin{hint}
       Take the derivative of the numerator and denominator separately
@@ -213,7 +213,7 @@ Compute
         \]
             
 Plugging in the terminal value, $x=2$, gives 
-the indeterminate form $\frac00$, so we can use L'Hopital's Rule:
+the indeterminate form $\frac00$, so we can use L'H\^{o}pital's Rule:
  
 \[\lim_{x \to 2} \frac{x^3 - 8}{x^5 - 32} \,\overset{\scriptsize\text{L'H}}{=}\, \lim_{x \to 2} \frac{3x^2}{5x^4} = \frac{12}{80} = \frac{3}{20}.\]
 \end{example}
@@ -228,7 +228,7 @@ the indeterminate form $\frac00$, so we can use L'Hopital's Rule:
       Plug in $x=3$
     \end{hint}
     \begin{hint}
-      If you got $\frac00$, use L'Hopital's Rule
+      If you got $\frac00$, use L'H\^{o}pital's Rule
     \end{hint}
     \begin{hint}
       Take the derivative of the numerator and denominator separately
@@ -250,7 +250,7 @@ the indeterminate form $\frac00$, so we can use L'Hopital's Rule:
       Plug in $x=4$
     \end{hint}
     \begin{hint}
-      If you got $\frac00$, use L'Hopital's Rule
+      If you got $\frac00$, use L'H\^{o}pital's Rule
     \end{hint}
     \begin{hint}
       Take the derivative of the numerator and denominator separately
@@ -282,16 +282,16 @@ the indeterminate form $\frac00$, so we can use L'Hopital's Rule:
 
 
 
-Sometimes we have to use L'Hopital's Rule more than once.
+Sometimes we have to use L'H\^{o}pital's Rule more than once.
 
 \begin{example}[example 4]
 Compute the limit:  $\displaystyle{\;\lim_{x \to 0} \frac{e^x - x - 1}{x^2}}.$
 
 Plugging in the terminal value, $x=0$, yields 
-the indeterminate form $\frac00$, so L'Hopital's rule applies.
+the indeterminate form $\frac00$, so L'H\^{o}pital's rule applies.
 We have 
 \[\lim_{x \to 0} \frac{e^x - x - 1}{x^2} \,\overset{\scriptsize\text{L'H}}{=}\, \lim_{x \to 0} \frac{e^x -1}{2x} = \frac{0}{0}.\]
-Applying L'Hopital's Rule again gives
+Applying L'H\^{o}pital's Rule again gives
 \[\lim_{x \to 0} \frac{e^x -1}{2x} \,\overset{\scriptsize\text{L'H}}{=}\, \frac{e^x}{2} = \frac{1}{2}.\]
 Hence, $\displaystyle{\lim_{x \to 0} \frac{e^x - x - 1}{x^2} = \frac 12}.$
 \end{example}
@@ -307,7 +307,7 @@ Hence, $\displaystyle{\lim_{x \to 0} \frac{e^x - x - 1}{x^2} = \frac 12}.$
       Plug in $x=0$
     \end{hint}
     \begin{hint}
-      If you got $\frac00$, use L'Hopital's Rule
+      If you got $\frac00$, use L'H\^{o}pital's Rule
     \end{hint}
     \begin{hint}
       Take the derivative of the numerator and denominator separately
@@ -316,7 +316,7 @@ Hence, $\displaystyle{\lim_{x \to 0} \frac{e^x - x - 1}{x^2} = \frac 12}.$
       Compute the limit of the new fraction
     \end{hint}
 		\begin{hint}
-		 If you get $\frac00$, use L'Hopital's Rule again
+		 If you get $\frac00$, use L'H\^{o}pital's Rule again
     \end{hint}
 
 	
@@ -333,7 +333,7 @@ Hence, $\displaystyle{\lim_{x \to 0} \frac{e^x - x - 1}{x^2} = \frac 12}.$
       Plug in $x=0$
     \end{hint}
     \begin{hint}
-      If you got $\frac00$, use L'Hopital's Rule
+      If you got $\frac00$, use L'H\^{o}pital's Rule
     \end{hint}
     \begin{hint}
       Take the derivative of the numerator and denominator separately
@@ -345,7 +345,7 @@ Hence, $\displaystyle{\lim_{x \to 0} \frac{e^x - x - 1}{x^2} = \frac 12}.$
       Compute the limit of the new fraction
     \end{hint}
 		\begin{hint}
-		 If you get $\frac00$, use L'Hopital's Rule again
+		 If you get $\frac00$, use L'H\^{o}pital's Rule again
     \end{hint}
 		\begin{hint}
 		  Use the Product Rule to find the derivative of $\sec(x)\tan(x)$
@@ -357,12 +357,12 @@ Hence, $\displaystyle{\lim_{x \to 0} \frac{e^x - x - 1}{x^2} = \frac 12}.$
 \begin{example}[example 5]
 Compute the limit:  $\displaystyle{\;\lim_{x \to 0} \frac{\tan(x)-x}{x^3}}.$\\
 Plugging in the terminal value, $x=0$, yields 
-the indeterminate form $\frac00$, so L'Hopital's rule applies.
+the indeterminate form $\frac00$, so L'H\^{o}pital's rule applies.
 We have 
 \[\lim_{x \to 0} \frac{\tan(x)-x}{x^3} \,\overset{\scriptsize\text{L'H}}{=}\, \lim_{x \to 0} \frac{\sec^2(x)-1}{3x^2} = \frac{0}{0}.\]
-Applying L'Hopital's Rule again gives
+Applying L'H\^{o}pital's Rule again gives
 \[\lim_{x \to 0} \frac{\sec^2(x)-1}{3x^2} \,\overset{\scriptsize\text{L'H}}{=}\, \lim_{x \to 0} \frac{2\sec^2(x)\tan(x)}{6x} = \frac{0}{0}.\]	
-We need to apply L'Hopital's Rule again, but first, the numerator is complicated and 								
+We need to apply L'H\^{o}pital's Rule again, but first, the numerator is complicated and 								
 \[\lim_{x \to 0} \sec(x) = 1 \neq 0\]
 so we take a simplifying step before applying the rule.
 \[\lim_{x \to 0} \frac{2\sec^2(x)\tan(x)}{6x} = 
@@ -382,16 +382,16 @@ We next consider problems of the form $\frac{\infty}{\infty}$.  These are handle
 \begin{example}[example 6]
 Compute the limit:  $\displaystyle{\;\lim_{x \to \infty} \frac{x^2}{e^x}}.$
 
-As $x$ approaches $\infty$ we get the indeterminate form $\frac{\infty}{\infty}$ so L'Hopital's Rule applies.
+As $x$ approaches $\infty$ we get the indeterminate form $\frac{\infty}{\infty}$ so L'H\^{o}pital's Rule applies.
 We have 
 \[\lim_{x\to \infty} \frac{x^2}{e^x} \,\overset{\scriptsize\text{L'H}}{=}\, \lim_{x \to \infty} \frac{2x}{e^x} = \frac{\infty}{\infty}.\]
-Applying L'Hopital again, we get
+Applying L'H\^{o}pital again, we get
 \[\lim_{x \to \infty} \frac{2x}{e^x} \,\overset{\scriptsize\text{L'H}}{=}\, \lim_{\infty} \frac{2}{e^x} = 0.\]
 Hence, $\lim_{x\to\infty}\frac{x^2}{e^x}=0$.  
 This limit can be generalized as follows:
 \[\lim_{x\to\infty}\frac{x^n}{e^x} =0\]
 for any exponent $n = 1, 2, 3, \dots$.
-This general result comes from using L'Hopital's Rule $n$ times, yielding
+This general result comes from using L'H\^{o}pital's Rule $n$ times, yielding
 \[\lim_{x\to\infty} \frac{n!}{e^x} =0\]
 where $n! = n(n-1)(n-2)\cdot \dots \cdot 3\cdot 2\cdot 1$.
 The interpretation of this limit is that the exponential function $e^x$ grows faster than any power of $x$ as $x \to \infty$.
@@ -410,7 +410,7 @@ The interpretation of this limit is that the exponential function $e^x$ grows fa
       ``Plug in'' $x=\infty$
     \end{hint}
     \begin{hint}
-      If you got $\frac{\infty}{\infty}$, use L'Hopital's Rule
+      If you got $\frac{\infty}{\infty}$, use L'H\^{o}pital's Rule
     \end{hint}
     \begin{hint}
       Take the derivative of the numerator and denominator separately
@@ -432,7 +432,7 @@ The interpretation of this limit is that the exponential function $e^x$ grows fa
       ``Plug in'' $x=\infty$
     \end{hint}
     \begin{hint}
-      If you got $\frac{\infty}{\infty}$, use L'Hopital's Rule
+      If you got $\frac{\infty}{\infty}$, use L'H\^{o}pital's Rule
     \end{hint}
     \begin{hint}
       Take the derivative of the numerator and denominator separately
@@ -441,7 +441,7 @@ The interpretation of this limit is that the exponential function $e^x$ grows fa
       Compute the limit of the new fraction
     \end{hint}
 		\begin{hint}
-		  If you got $\frac{\infty}{\infty}$, use L'Hopital's Rule again
+		  If you got $\frac{\infty}{\infty}$, use L'H\^{o}pital's Rule again
 	  \end{hint}
 		
 \end{problem}
@@ -449,7 +449,7 @@ The interpretation of this limit is that the exponential function $e^x$ grows fa
 
 \begin{example}[example 7]
 Compute the limit:  $\displaystyle{\;\lim_{x \to \infty} \frac{\sqrt{x}}{\ln(x)}}$.
-As $x \to \infty$ we get $\frac{\infty}{\infty}$, so L'Hopital's Rule applies.
+As $x \to \infty$ we get $\frac{\infty}{\infty}$, so L'H\^{o}pital's Rule applies.
 We have:
 \[\lim_{x \to \infty} \frac{\sqrt x}{\ln(x)} \,\overset{\scriptsize\text{L'H}}{=}\,
 \lim_{x \to \infty}\frac{\left(\frac{1}{2\sqrt x}\right)}{\left(\frac{1}{x}\right)}\]
@@ -469,7 +469,7 @@ The interpretation of this limit is that $\sqrt x$ goes to $\infty$ faster than 
       ``Plug in'' $x=\infty$
     \end{hint}
     \begin{hint}
-      If you got $\frac{\infty}{\infty}$, use L'Hopital's Rule
+      If you got $\frac{\infty}{\infty}$, use L'H\^{o}pital's Rule
     \end{hint}
     \begin{hint}
       Take the derivative of the numerator and denominator separately
@@ -493,7 +493,7 @@ The interpretation of this limit is that $\sqrt x$ goes to $\infty$ faster than 
       ``Plug in'' $x=\infty$
     \end{hint}
     \begin{hint}
-      If you got $\frac{\infty}{\infty}$, use L'Hopital's Rule
+      If you got $\frac{\infty}{\infty}$, use L'H\^{o}pital's Rule
     \end{hint}
     \begin{hint}
       Take the derivative of the numerator and denominator separately
@@ -518,13 +518,13 @@ Examples of the $0\cdot\infty$ case.
 \begin{example}[example 8]
 Compute the limit:  $\displaystyle{\;\lim_{x \to 0^+}x^2 \ln(x)}$.
 
-As $x\to 0^+$ we get $0 \cdot (-\infty)$ which is an indeterminate form, but L'Hopital's Rule does not apply in this situation.
+As $x\to 0^+$ we get $0 \cdot (-\infty)$ which is an indeterminate form, but L'H\^{o}pital's Rule does not apply in this situation.
 We must rewrite the problem as a fraction, in the following way:
 \[\lim_{x \to 0^+}\frac{\ln(x)}{x^{-2}}.\]
 Notice that this is equivalent to the original problem since 
 \[x^2 = \frac{1}{x^{-2}}.\]
 Also note that $x^{-2} =\frac{1}{x^2} \to \infty$ as $x\to 0^+$.
-Now, we can use L'Hopital's Rule because 
+Now, we can use L'H\^{o}pital's Rule because 
 \[\lim_{x \to 0+}\frac{\ln(x)}{x^{-2}}= \frac{-\infty}{\infty}.\]
 We get
 \[\lim_{x \to 0^+}\frac{\ln(x)}{x^{-2}}\,\overset{\scriptsize\text{L'H}}{=}\, \lim_{x\to 0^+} \frac{1/x}{-2x^{-3}}\]
@@ -566,7 +566,7 @@ Hence,
 
 \begin{center}
 \begin{foldable}
-\unfoldable{Here is a detailed, lecture style video on L'Hopital's Rule:}
+\unfoldable{Here is a detailed, lecture style video on L'H\^{o}pital's Rule:}
 \youtube{fo2rJzeYarw}
 \end{foldable}
 \end{center}
