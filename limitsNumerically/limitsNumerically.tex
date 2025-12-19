@@ -245,7 +245,7 @@ We can summarize this information in a table:
   
 \[
 \begin{array}{ c | c }
-  x & f(x) \\
+  x & \frac{x^3 - 1}{x^2-1} \\
 	\hline
 	1.1 & 1.57619 \\
 	\hline
@@ -261,18 +261,18 @@ We can summarize this information in a table:
 
 The outputs appear to be approaching the number 1.5, leading us to conclude that
 
-\[\lim_{x \to 1^+} f(x) \lim_{x \to 1^+} \frac{x^3 - 1}{x^2-1} = 1.5.\] 
+\[\lim_{x \to 1^+} \frac{x^3 - 1}{x^2-1} = 1.5.\] 
  
  
 \end{example}
 
 
 \begin{problem}(problem 2)
-Fill in the table below with 5 decimal places of accuracy and use it to find the limit: $\displaystyle \lim_{x \to 2^+} f(x) = \lim_{x \to 2^+} \frac{x^3 - 8}{x^2 - 4}$\\
+Fill in the table below with 5 decimal places of accuracy and use it to find the limit: $\displaystyle \lim_{x \to 2^+} \frac{x^3 - 8}{x^2 - 4}$\\
 
 \[
 \begin{array}{ c | c}
-  x & f(x)   \\ 
+  x & \frac{x^3 - 8}{x^2 - 4}  \\ 
 	\hline 
 	2.1 &  \answer{3.07561}\\
 	\hline
@@ -300,7 +300,7 @@ generate a table are: $0.1, 0.01, 0.001$ and $0.0001.$
 
 \[
 \begin{array}{ c | c }
-  x & f(x)\\
+  x & \frac{e^x-1}{x}\\
   \hline
   0.1 & 1.052 \\
   \hline
@@ -314,7 +314,7 @@ generate a table are: $0.1, 0.01, 0.001$ and $0.0001.$
 
 Based on the numerical information provided in the table above, we conclude that $\displaystyle \lim_{x \to 0^+} \frac{e^x - 1}{x} = 1$	\\
 Observe that plugging $x=0$ into the 
-function $\displaystyle{f(x)= \frac{e^x -1}{x}}$ yields the indeterminate form $\frac{0}{0}$, which is not
+function $\displaystyle{\frac{e^x -1}{x}}$ yields the indeterminate form $\frac{0}{0}$, which is not
 the answer we sought.
 
 \end{example}
@@ -401,7 +401,7 @@ Now determine the limits:
 \begin{example}[example 4]
 Compute the following limit: $\displaystyle \lim_{x \to 0^{+}} \frac{\sin x}{x}$\\
 First, note that the shortcut of plugging $x=0$ into the 
-function $\displaystyle{f(x)= \frac{\sin x}{x}}$ yields the indeterminate form $\frac{0}{0}$.
+function $\displaystyle{\frac{\sin x}{x}}$ yields the indeterminate form $\frac{0}{0}$.
 Hence, to compute this one-sided limit, we consider the following values for $x$: $0.1,\ 0.01,\ 0.001$ and $\ 0.0001$.
 Plugging these values into the function, we generate the following table of values:
 
@@ -531,12 +531,12 @@ $-2.1, -2.01, -2.001,$ and $-2.0001$ to make the following table of values:\\
 \] 
 
 The numerical evidence suggests that as $x$ approaches $-2$ from the left, 
-the values of $f(x) = \frac{3}{x+2}$ are decreasing without bound. We conclude that 
+the values of $\frac{3}{x+2}$ are decreasing without bound. We conclude that 
 
 \[\lim_{x \to -2^-} \frac{3}{x+2} =  -\infty \]
 
 This result has geometric significance.
-It means that the line $x=-2$ is a vertical asymptote for the graph of the function $f(x) = \frac{3}{x+2}.$
+It means that the line $x=-2$ is a vertical asymptote for the graph of the equation $y = \frac{3}{x+2}.$
 \end{example}
 
 
@@ -599,7 +599,7 @@ as $x$ increases without bound, the values of $\frac{3x -2}{x +3}$ are approachi
 \[\lim_{x \to \infty} \frac{3x -2}{x +3} = 3. \]
 
 This result has geometric significance.  It means that the line $y = 3$ is a horizontal 
-asymptote (on the right end)for the graph of the function $f(x) = \frac{3x -2}{x +3}.$
+asymptote (on the right end)for the graph of the equation $y = \frac{3x -2}{x +3}.$
 \end{example}
 
 
@@ -629,7 +629,7 @@ This limit tells us that the line $y = \frac{3}{5}$ is a \wordChoice{
 \choice{vertical}
 \choice[correct]{horizontal}
 }
-asymptote for the graph of the function $f(x) = \frac{3x-2}{5x+6}$.	
+asymptote for the graph of the equation $y = \frac{3x-2}{5x+6}$.	
 \end{problem}
 
 
