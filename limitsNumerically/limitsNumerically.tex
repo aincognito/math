@@ -232,11 +232,11 @@ To determine the limit numerically,  we will plug these five values of $x$ into 
 look for a pattern in the outputs.
 
 Here is the analysis:\\
-If $x = 1.1$ then $f(x) = 1.57619}$.\\
-If $x = 1.01$ then $f(x) = 1.507512}$.\\
-If $x = 1.001$ then $f(x)= 1.500751}$.\\
-If $x = 1.0001$ then $f(x) = 1.5000750}$.\\
-If $x = 1.00001$ then $f(x) = 1.5000075}$.\\
+If $x = 1.1$ then $f(x) = 1.57619$.\\
+If $x = 1.01$ then $f(x) = 1.507512$.\\
+If $x = 1.001$ then $f(x)= 1.500751$.\\
+If $x = 1.0001$ then $f(x) = 1.5000750$.\\
+If $x = 1.00001$ then $f(x) = 1.5000075$.\\
 
 We can summarize this information in a table:
   
@@ -302,28 +302,10 @@ Fill in the table below with 5 decimal places of accuracy and use it to find the
 \]
 \end{center}
 
-
-\begin{center}
-\[
-\begin{array}{ c | c | c }
-  x & 2.1 & 2.01   \\ 
-	\hline 
-	 \frac{x^3 - 8}{x^2 - 4} & \answer{3.07561} & \answer{3.00751} 
-\end{array}
-\]
-\[
-\begin{array}{ c | c | c  }
-  x  & 2.001 & 2.0001 \\ 
-	\hline 
-	 \frac{x^3 - 8}{x^2 - 4}  & \answer{3.00075} & \answer{3.00008}
-\end{array}
-\]
-\end{center}
 Now determine the limit:
 \[
 \lim_{x \to 2^+} \frac{x^3 - 8}{x^2 - 4} = \answer{3}
 \]
-%\end{prompt}
 \end{problem}
 
 
@@ -416,22 +398,24 @@ Fill in the table below with 5 decimal places of accuracy and use it to find the
 \[\lim_{x \to 0^+} \frac{e^{2x} - 1}{x}.\]
 
 %\begin{prompt}
+
 \begin{center}
 \[
-\begin{array}{ c | c | c }
-  x & 0.1 & 0.01   \\ 
+\begin{array}{ c | c }
+  x & \frac{e^{2x} - 1}{x}  \\ 
 	\hline 
-	 \frac{e^{2x} - 1}{x} & \answer{2.21403} & \answer{2.02013} 
-\end{array}
-\]
-\[
-\begin{array}{ c | c | c  }
-  x  & 0.001 & 0.0001 \\ 
-	\hline 
-	 \frac{e^{2x} - 1}{x}  & \answer{2.00200} & \answer{2.00020}
+	0.1 &  \answer{2.21403}\\
+	\hline
+	0.01 &  \answer{2.02013}\\
+	\hline
+	0.001 &  \answer{2.00200}\\
+	\hline
+	0.0001 &  \answer{2.00020}
 \end{array}
 \]
 \end{center}
+
+
 Now determine the limit:
 \[
 \lim_{x \to 0^+} \frac{e^{2x} - 1}{x} = \answer{2}
