@@ -163,19 +163,19 @@ If $x = 3.0001$ then $x^2 + 2 = 11.00060001$.\\
 
 We can summarize this information in a table:
   
-\[
+%\[
 %\setlength{\extrarowheight}{5pt}
-\begin{array}{ c | c | c | c | c }
-  x & 3.1 & 3.01 & 3.001 & 3.0001 \\ 
-	\hline
-	x^2 + 2 & 11.61 & 11.0601 & 11.006001 & 11.00060001
-\end{array}
-\]
+%\begin{array}{ c | c | c | c | c }
+%  x & 3.1 & 3.01 & 3.001 & 3.0001 \\ 
+%	\hline
+%	x^2 + 2 & 11.61 & 11.0601 & 11.006001 & 11.00060001
+%\end{array}
+%\]
 
 \[
 %\setlength{\extrarowheight}{5pt}
 \begin{array}{ c | c }
-	X & x^2 + 2\\
+	x & x^2 + 2\\
 	\hline
 	3.1 & 11.61 \\
 	\hline
@@ -238,11 +238,33 @@ If $x = 1.001$ then $\displaystyle{\frac{x^3 - 1}{x^2-1}= 1.500751}$.\\
 If $x = 1.0001$ then $\displaystyle{\frac{x^3 - 1}{x^2-1}= 1.5000750}$.\\
 If $x = 1.00001$ then $\displaystyle{\frac{x^3 - 1}{x^2-1}= 1.5000075}$.\\
 
-We can summarize this information in a table:
+We can summarize this information in a table where $\displaystyle f(x) = \frac{x^3 - 1}{x^2-1}$:
   
 \[
 %\setlength{\extrarowheight}{5pt}
-\begin{array}{ c | c | c | c | c | c}
+\begin{array}{ c | c }
+  x & f(x) \\
+	\hline
+	1.1 & 1.57619 \\
+	\hline
+	1.01 & 1.507512 \\
+	\hline
+	1.001 & 1.500751 \\
+	\hline
+	1.0001 & 1.500075 \\
+	\hline
+	1.00001 & 1.5000075
+\end{array}
+\]
+%1.1 & 1.01 & 1.001 & 1.0001 & 1.00001\\ 
+%	\hline
+%	\frac{x^3 - 1}{x^2-1} & 1.57619 & 1.507512 & 1.500751 & 1.500075 & 1.5000075
+%\end{array}
+%\]
+
+\[
+%\setlength{\extrarowheight}{5pt}
+\begin{array}{ c | c | c | c | c | c }
   x & 1.1 & 1.01 & 1.001 & 1.0001 & 1.00001\\ 
 	\hline
 	\frac{x^3 - 1}{x^2-1} & 1.57619 & 1.507512 & 1.500751 & 1.500075 & 1.5000075
