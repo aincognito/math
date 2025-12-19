@@ -226,19 +226,19 @@ This means that the answer can be anything and so a deeper analysis is required.
 
 Since  $x \to 1^{+}$ we know that $x$ is approaching the number $1$ from the right side, so $x > 1$. 
 To represent this numerically, consider the following values for $x$: $1.1, 1.01, 1.001, 1.0001, 1.00001$.
-These numbers are each greater than 1 and they are getting closer to 1.
+These numbers are each greater than 1, and they are getting closer to 1.
  
-To determine the limit numerically,  we will plug these five values of $x$ into the function $\frac{x^3 - 1}{x^2-1}$ and  
+To determine the limit numerically,  we will plug these five values of $x$ into the function $f(x) =\frac{x^3 - 1}{x^2-1}$ and  
 look for a pattern in the outputs.
 
 Here is the analysis:\\
-If $x = 1.1$ then $\displaystyle{\frac{x^3 - 1}{x^2-1}= 1.57619}$.\\
-If $x = 1.01$ then $\displaystyle{\frac{x^3 - 1}{x^2-1} = 1.507512}$.\\
-If $x = 1.001$ then $\displaystyle{\frac{x^3 - 1}{x^2-1}= 1.500751}$.\\
-If $x = 1.0001$ then $\displaystyle{\frac{x^3 - 1}{x^2-1}= 1.5000750}$.\\
-If $x = 1.00001$ then $\displaystyle{\frac{x^3 - 1}{x^2-1}= 1.5000075}$.\\
+If $x = 1.1$ then $f(x) = 1.57619}$.\\
+If $x = 1.01$ then $f(x) = 1.507512}$.\\
+If $x = 1.001$ then $f(x)= 1.500751}$.\\
+If $x = 1.0001$ then $f(x) = 1.5000750}$.\\
+If $x = 1.00001$ then $f(x) = 1.5000075}$.\\
 
-We can summarize this information in a table where $\displaystyle f(x) = \frac{x^3 - 1}{x^2-1}$:
+We can summarize this information in a table:
   
 \[
 %\setlength{\extrarowheight}{5pt}
@@ -274,7 +274,7 @@ We can summarize this information in a table where $\displaystyle f(x) = \frac{x
 
 The outputs appear to be approaching the number 1.5, leading us to conclude that
 
-\[\lim_{x \to 1^+} \frac{x^3 - 1}{x^2-1} = 1.5.\] 
+\[\lim_{x \to 1^+} f(x) \lim_{x \to 1^+} \frac{x^3 - 1}{x^2-1} = 1.5.\] 
  
  
 \end{example}
@@ -282,9 +282,27 @@ The outputs appear to be approaching the number 1.5, leading us to conclude that
 
 \begin{problem}(problem 2)
 Fill in the table below with 5 decimal places of accuracy and use it to find the limit:
-\[\lim_{x \to 2^+} \frac{x^3 - 8}{x^2 - 4}.\]
+\[\lim_{x \to 2^+} f(x) = \lim_{x \to 2^+} \frac{x^3 - 8}{x^2 - 4}.\]
 
 %\begin{prompt}
+
+\begin{center}
+\[
+\begin{array}{ c | c}
+  x & f(x)   \\ 
+	\hline 
+	2.1 &  \answer{3.07561}\\
+	\hline
+	2.01 &  \answer{3.00751}\\
+	\hline
+	2.001 &  \answer{3.00075}\\
+	\hline
+	2.0001 &  \answer{3.00008}
+\end{array}
+\]
+\end{center}
+
+
 \begin{center}
 \[
 \begin{array}{ c | c | c }
