@@ -17,35 +17,6 @@ We find limits using numerical information.
 
 
 \section{Limit notation}
- 
-%Give examples where the table is already filled in
-
-\[
-\begin{array}{c|c} 
-	x & f(x)\\
-	\hline
-	0.1 & 1.98523 \\
-	\hline
-	0.01 & 1.99852 \\
-	\hline
-	0.001 & 1.99985 \\
-    \hline
-	0.0001 & 1.99998
-\end{array}
-\qquad
-\begin{array}{c|c} 
-	x & f(x) \\ 
-	\hline
-	-0.1 & 3.14327 \\
-	\hline
-	-0.01 & 3.01432 \\
-	\hline
-	-0.001 & 3.00143 \\
-	\hline
-	-0.0001 & 3.00014 
-\end{array}
-\]
-
 
 Limits are the backbone of calculus. A limit tells us the end of an infinite process. For example, consider the following infinite sequence of numbers:
 \[ 0.9, 0.99, 0.999, 0.9999, 0.99999, 0.999999, ... \]
@@ -64,20 +35,19 @@ $\infty$, $-\infty$, or that the limit does not exist.
 If the numerical value of the limit is $L$, then as the input variable $x$ approaches the value $c$, the outputs, $f(x)$ approach the value $L$, and we would write
 
 \[ 
-\lim_{x\to c} f(x) = L.
+\lim_{x\to c} f(x) = L
 \]
 
 If the value of the limit is $\infty$, then as $x \to c$, the outputs $f(x)$ are \textbf{increasing without bound},
 and we write
 \[
-\lim_{x \to c} f(x) = \infty.
+\lim_{x \to c} f(x) = \infty
 \]
   
 Similarly, if the limit is $-\infty$, that means the outputs are decreasing without bound, and we write
 \[
-\lim_{x \to c} f(x) = -\infty.
+\lim_{x \to c} f(x) = -\infty
 \]
-
 
 If none of the previous conclusions apply, we say that the limit \textbf{does not exist}, and we write
 \[
@@ -85,8 +55,8 @@ If none of the previous conclusions apply, we say that the limit \textbf{does no
 \] 
 
 In addition to writing $x \to c$, we can also write the expression
-$x \to c^-$ to indicate that $x$ is approaching $c$ from the left hand side and $x \to c^+$ to 
-indicate that $x$ is approaching $c$ from the right hand side.
+$x \to c^-$ to indicate that $x$ is approaching $c$ from the left-hand side and $x \to c^+$ to 
+indicate that $x$ is approaching $c$ from the right-hand side.
 
 The expression $x \to c^-$ can be understood visually using the following diagram:
 
@@ -201,7 +171,8 @@ We can summarize this information in a table:
 
 \[
 %\setlength{\extrarowheight}{5pt}
-\begin{array}{ c | c }
+\begin{array}{ |c | c |}
+	\hline
 	x & x^2 + 2\\
 	\hline
 	3.1 & 11.61 \\
@@ -210,7 +181,8 @@ We can summarize this information in a table:
 	\hline
 	3.001 & 11.006001 \\
 	\hline
-	3.0001 & 11.00060001
+	3.0001 & 11.00060001\\
+	\hline
 \end{array}
 \]
 
@@ -267,7 +239,8 @@ If $x = 1.00001$ then $f(x) = 1.5000075$.\\
 We can summarize this information in a table:
   
 \[
-\begin{array}{ c | c }
+\begin{array}{|c | c|}
+	\hline
   x & \frac{x^3 - 1}{x^2-1} \\
 	\hline
 	1.1 & 1.57619 \\
@@ -278,7 +251,6 @@ We can summarize this information in a table:
 	\hline
 	1.0001 & 1.500075 \\
 	\hline
-	1.00001 & 1.5000075
 \end{array}
 \]
 
@@ -322,7 +294,8 @@ In this example, $x$ is near $0$ and $x>0$.  The values of $x$ we will use to
 generate a table are: $0.1, 0.01, 0.001$ and $0.0001.$
 
 \[
-\begin{array}{ c | c }
+\begin{array}{|c | c|}
+	\hline
   x & \frac{e^x-1}{x}\\
   \hline
   0.1 & 1.052 \\
@@ -331,7 +304,8 @@ generate a table are: $0.1, 0.01, 0.001$ and $0.0001.$
   \hline
   0.001 & 1.0005 \\
   \hline
-  0.0001 & 1.00005
+  0.0001 & 1.00005\\
+	\hline
 \end{array}
 \]
 
@@ -487,7 +461,8 @@ Hence, to compute this one-sided limit, we consider the following values for $x$
 Plugging these values into the function, we generate the following table of values:
 
 \[
-\begin{array}{c | c}
+\begin{array}{|c | c|}
+	\hline
   x & \frac{\sin x}{x} \\ 
 	\hline 
 	0.1 & 0.9983 \\ 
@@ -496,7 +471,8 @@ Plugging these values into the function, we generate the following table of valu
 	\hline
 	0.001 & 0.9999998 \\ 
 	\hline
-	0.0001 & 0.999999998
+	0.0001 & 0.999999998\\
+	\hline
 
 \end{array}
 \]
@@ -594,7 +570,8 @@ Since the values of $x$ are less than $-2$, we consider values for $x$ such as
 $-2.1, -2.01, -2.001,$ and $-2.0001$ to make the following table of values:\\
 
 \[
-\begin{array}{ c | c}
+\begin{array}{ |c | c|}
+	\hline
   x & \frac{3}{x+2}\\
   \hline
   -2.1 & -30 \\
@@ -607,7 +584,6 @@ $-2.1, -2.01, -2.001,$ and $-2.0001$ to make the following table of values:\\
   \hline
   -2.00001 & -300,000 \\
   \hline
-  -2.000001 & -3,000,000
 \end{array}
 \] 
 
