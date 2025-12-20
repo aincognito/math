@@ -397,6 +397,7 @@ Use the tables below to determine the limits:
 \[
 \begin{array}{ c | c}
   x & \frac{\ln(1+x)}{x}\\ 
+  \hline
   0.1 & 0.953  \\ 
   \hline
 	  0.01 & 0.995  \\ 
@@ -408,6 +409,7 @@ Use the tables below to determine the limits:
 \qquad
 \begin{array}{ c | c}
   x & \frac{\ln(1+x)}{x}\\ 
+  \hline
   -0.1 & 1.054 \\ 
   \hline
 	 -0.01 & 1.005 \\ 
@@ -555,7 +557,7 @@ Fill in the table below with 9 decimal places of accuracy and use it to find the
 Now determine the limit: $\displaystyle \lim_{x \to 0^-} \frac{\sin x}{x} = \answer{1}	$\\
 Based on the example above and the result of this problem, determine the two-sided limit:
 \[
-\lim_{x \to 0} \frac{\sin x}{x} =answer{1}	
+\lim_{x \to 0} \frac{\sin x}{x} =\answer{1}	
 \]
 
 \end{problem}
@@ -654,10 +656,9 @@ Consider the limit:
 
 Since $x \to \infty$, we will use powers of ten to generate large values of $x$ when constructing 
 our table: 
-%$100,\; 1{,}000 ,\; 10{,}000,\; 100{,}000$ and $1{,}000{,}000$
+
 
 \[
-%\setlength{\extrarowheight}{5pt}
 \begin{array}{ c | c}
   x & \frac{3x -2}{x + 3}\\
   \hline
@@ -722,11 +723,6 @@ where $A$ represents the amount of money resulting from investing a principle $P
 the interest compounded $n$ times per year for $t$ years.  A basic fact about compound interest is that the more frequently 
 the interest is compounded, the faster the amount of money will grow. 
 So, a natural question is ``what happens as $n \to \infty?$''
-%To answer this question, we will simplify matters by letting $P = 1, r = 1$ and $t=1$.In this case, 
-%\[A = \left(1+\frac{1}{n}\right)^n,\]
-
-%and we will try to find
-%\[\lim_{n \to \infty} \left(1+\frac{1}{n}\right)^n.\]
 
 
 \begin{example}[example 7]
@@ -741,7 +737,7 @@ A = \left(1 + \frac{1}{n}\right)^n.
 \]
 
 Let's construct a table of values with large values of $n$ and look for a pattern in the outputs:
-%\setlength{\extrarowheight}{5pt}
+
 \[
 \begin{array}{ c | c }
   n & A\\
