@@ -300,19 +300,23 @@ The numerical evidence suggests that the limit is: $\displaystyle \lim_{x \to 3^
 
 
 
-The next problem gives the slope of the tangent line to the exponential function at $x=0$.
+The next example involves both 1-sided limits and the associated 2-sided limit. 
+Furthermore, the result can be interpreted as the slope of a tangent line to the graph of the exponential function $f(x) = e^x$ at $x=0$.
 
 
 
-\begin{problem}(problem 2c)
-Fill in the missing values in the tables to 3 decimal places.
+\begin{example}(Example 3)
+Use the tables below to determine the following limits:
+\[
+\lim_{x \to 0^-} \frac{e^x - 1}{x}; \quad \lim_{x \to 0^+} \frac{e^x - 1}{x}; \quad\mbox{and} \quad \lim_{x \to 0} \frac{e^x - 1}{x}
+\]
 
 \[
 \begin{array}{|c | c|}
 	\hline
   x & \frac{e^x-1}{x}\\
   \hline
-  0.1 & \answer{1.052} \\
+  0.1 & 1.052 \\
   \hline
   0.01 & 1.005 \\
   \hline
@@ -336,16 +340,20 @@ Fill in the missing values in the tables to 3 decimal places.
  \hline
 \end{array}\]
 
+To determine the first limit, we look at the second table where $x$ is approaching $0$ from the left. 
+The outputs appear to be approaching the number 1, leading us to conclude that
+\[\lim_{x \to 0^-} \frac{e^x - 1}{x} = 1.\]
+To determine the second limit, we look at the first table where $x$ is approaching $0$ from the right.
+The outputs again appear to be approaching the number 1, leading us to conclude that
+\[\lim_{x \to 0^+} \frac{e^x - 1}{x} = 1.\]
+Since the one-sided limits are equal, we conclude that the two-sided limit is also equal to 1:
+\[\lim_{x \to 0} \frac{e^x - 1}{x} = 1.\]
+Note that the fraction $\frac{e^x - 1}{x}$ is not defined at $x=0$ since plugging in $x=0$ yields the indeterminate form $\frac{0}{0}$.
+Moreover, the fraction $\frac{e^x - 1}{x}$ represents the slope of the secant line between the points $(0, e^0)$ and $(x, e^x)$ on the graph of $f(x) = e^x$.
+Thus, the limit $\lim_{x \to 0} \frac{e^x - 1}{x}$ represents the slope of the tangent line to the graph of $f(x) = e^x$ at the point $(0, e^0) = (0,1)$.
+\end{example}
 
-Now use the numerical information to guess the one-sided limits:\\
-$\displaystyle \lim_{x \to 0^-} \frac{e^x - 1}{x} = \answer{1} \quad \text{and} \quad \lim_{x \to 0^+} \frac{e^x - 1}{x} = \answer{1}$	\\
-Based on the one-sided limits, determine the two-sided limit: $\displaystyle \lim_{x \to 0} \frac{e^x - 1}{x} = \answer{1}$
-
-It should be noted that plugging $x=0$ into the 
-function $\displaystyle{\frac{e^x -1}{x}}$ yields the indeterminate form $\displaystyle\frac{0}{0}$, which is not a final answer
-\end{problem}
-
-The next problem gives the slope of the tangent line to the function $\sin x$ at $x=0$.
+The next problem gives the slope of the tangent line to the graph of the function $f(x) = \sin x$ at $x=0$.
 
 \begin{problem}(problem 2d)
 Fill in the missing values in the tables to 4 decimal places (make sure your calculator is in radian mode).
@@ -388,9 +396,9 @@ It should be noted that plugging $x=0$ into the
 function $\displaystyle{\frac{\sin x}{x}}$ yields the indeterminate form $\displaystyle\frac{0}{0}$, which is not a final answer.
 \end{problem}
 
-The next problem gives the slope of the tangent line to the natural logarithm function at $x=1$.
+The next problem gives the slope of the tangent line to the graph natural logarithm function $f(x) = \ln x$ at $x=1$.
 
-\begin{problem}(problem 2e)
+\begin{problem}(problem 3b)
 Fill in the missing values in the tables to 3 decimal places.
 \[
 \begin{array}{| c | c|}
@@ -428,7 +436,7 @@ function $\displaystyle{\frac{\ln(1+x)}{x}}$ yields the indeterminate form $\dis
 \end{problem}
 
 
-\begin{problem}(problem 2f)
+\begin{problem}(problem 3c)
 Fill in the table below with 5 decimal places of accuracy and use it to find the limit:
 \[\lim_{x \to 0^+} \frac{e^{2x} - 1}{x}.\]
 
@@ -453,8 +461,33 @@ Now determine the limit: $\displaystyle \lim_{x \to 0^+} \frac{e^{2x} - 1}{x} =\
 \end{problem}
 
 
-\begin{problem}(problem 2g)
-Use the tables below to determine the limits:
+
+
+
+
+
+\begin{problem}(problem 3d)
+Fill in the table below with 8 decimal places of accuracy and use it to find the limit: $\displaystyle \lim_{x \to 0^+} \frac{\sin 3x}{x}.$\\
+
+\[
+\begin{array}{ c | c }
+	x& \frac{\sin 3x}{x} \\
+	\hline
+	0.1 & \answer{2.95520207} \\
+	\hline
+	0.01 & \answer{2.99955002}\\
+	\hline
+	0.001 & \answer{2.99999550}\\
+	\hline
+	0.0001 & \answer{2.99999996}
+\end{array}
+\]
+
+Now determine the limit: $\displaystyle \lim_{x \to 0^+} \frac{\sin 3x}{x} = \answer{3}$
+\end{problem}
+
+\begin{example}(Example 4)
+Use the tables below to create limits.
 \[
 \begin{array}{c|c} 
 	x & f(x)\\
@@ -480,48 +513,61 @@ Use the tables below to determine the limits:
 	-0.0001 & 3.00014 
 \end{array}
 \]
-Now determine the limits:
+The first table suggests the limit
+
+
 \[
-\lim_{x \to 0^-} f(x) = \answer{3}
+\lim_{x \to 0^+} f(x) = 2
 \]
+
+The second table suggests the limit
 \[
-\lim_{x \to 0^+} f(x) = \answer{2}
+\lim_{x \to 0-} f(x) = 3
 \]
-\[
-\lim_{x \to 0} f(x) = \answer{DNE}
-\]
-\begin{hint}
+
 Since the one-sided limits are not equal, the two-sided limit does not exist.
-\end{hint}
-\begin{hint}
-Enter DNE if the limit does not exist
-\end{hint}
-\end{problem}
+we can express this by writing
+\[\lim_{x \to 0} f(x) \;\; \text{DNE}.\]
+\end{example}
+\begin{problem}(problem 4)
 
-
-
-
-\begin{problem}(problem 2h)
-Fill in the table below with 8 decimal places of accuracy and use it to find the limit: $\displaystyle \lim_{x \to 0^+} \frac{\sin 3x}{x}.$\\
-
+Fill in the tables below with 5 decimal places of accuracy and use them to find the following limits:
+\[
+\lim_{x \to 0^+} f(x) \quad \text{and} \quad \lim_{x \to 0^-} f(x)
+\]
 \[
 \begin{array}{ c | c }
-	x& \frac{\sin 3x}{x} \\
+	x & f(x) \\ 
 	\hline
-	0.1 & \answer{2.95520207} \\
+	0.1 & \answer{2.59374} \\
 	\hline
-	0.01 & \answer{2.99955002}\\
+	0.01 & \answer{2.99507} \\
 	\hline
-	0.001 & \answer{2.99999550}\\
+	0.001 & \answer{2.99950} \\
 	\hline
-	0.0001 & \answer{2.99999996}
+	0.0001 & \answer{2.99995}
+\end{array}
+\qquad
+\begin{array}{ c | c }
+	x & f(x) \\ 
+	\hline
+	-0.1 & \answer{4.10685} \\
+	\hline
+	-0.01 & \answer{4.00499} \\
+	\hline
+	-0.001 & \answer{4.00050} \\
+	\hline
+	-0.0001 & \answer{4.00005}
 \end{array}
 \]
-
-Now determine the limit: $\displaystyle \lim_{x \to 0^+} \frac{\sin 3x}{x} = \answer{3}$
+Now determine the limits:\\
+$\displaystyle \lim_{x \to 0^+} f(x) = \answer{3} \quad \text{and} \quad \lim_{x \to 0^-} f(x) = \answer{4}$
+Since the one-sided limits are not equal, the two-sided limit does not exist.
+\[\lim_{x \to 0} f(x) \;\; \text{DNE}.\]
+\begin{hint}
+Write DNE for does not exist.
+\end{hint}
 \end{problem}
-
-
 
 \begin{example}[example 5]
 Consider the limit: $\displaystyle \lim_{x \to -2^-} \frac{3}{x+2}.$\\
