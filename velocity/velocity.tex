@@ -18,6 +18,7 @@ We compute average velocity to estimate instantaneous velocity.
 %Give examples where the numerical table is already filled in
 
 \section{Average Velocity}
+\begin{example}[Example 1]
 Consider an object falling from a height of 100 feet. The height of the object, in feet, after $t$ seconds is given by the function $h(t)= 100 - 16t^2$.
 To find the average velocity of the object during the fall, we can use the formula
 \[
@@ -31,7 +32,7 @@ Thus the object hits the ground after $ b = 2.5$ seconds, and we can compute the
 during the fall:
 \[v_{ave}[0, 2.5] = \frac{h(2.5) - h(0)}{2.5 - 0} = \frac{0 - 100}{2.5 - 0} = \frac{-100}{2.5} = -40 \text{ ft/sec}.\] 
 The negative sign indicates that the object is falling.
-
+\end{example}
 %We will consider an object moving along a straight line, such as a vertically free-falling object. If the position of the object at time $t$
 %is denoted by $s(t)$, then the \textbf{average velocity} of the object from time $t = a$ to $t = b$ is given by 
 %\[
@@ -57,7 +58,7 @@ The negative sign indicates that the object is falling.
 %falling.
 %\end{example}
 
-\begin{problem}(problem 1)
+\begin{problem}(problem 1a)
 The height of a vertically free-falling object, in feet after $t$ seconds is given by $h(t) = 400 - 16t^2$ feet.
 Find the average velocity of the object during its fall. \\
 The initial height of the object is $\answer{400}$ feet.\\
@@ -67,7 +68,7 @@ The negative sign  indicates that the object is \wordChoice{\choice{rising}
 \choice[correct]{falling}}.
 \end{problem}
 
-\begin{problem}(problem 2)
+\begin{problem}(problem 1b)
 The height of a vertically free-falling object, in feet after $t$ seconds is given by $h(t) = 300 - 16t^2$ feet.
 Find the average velocity of the object from time $t = 2$ seconds to time $t = 4$ seconds.\\
 The heights at times $t = 2$ and $t= 4$ are
@@ -113,9 +114,9 @@ connecting the points $(a, h(a))$ and $(b, h(b))$. See the figure below.
 
 
 \begin{example}[example 2]
-In the last example, with $s(t) = 600 - 16t^2$, we found that $s(2) = 536$ft and $s(5) = 200$ft. If we plot the points
-$(2, 536)$ and $(5, 200)$ then the slope of the segment connecting them is the average velocity of the falling object from time
-$t = 2$ seconds to time $t = 5$ seconds, as shown in the figure below.
+In the last example, with $s(t) = 100 - 16t^2$, we found that $s(0) = 100$ft and $s(5/2) = 0$ft. If we plot the points
+$(0, 100)$ and $(5/2, 0)$ then the slope of the segment connecting them is the average velocity of the falling object from time
+$t = 0$ seconds to time $t = 5/2$ seconds, as shown in the figure below.
 
 
 \begin{image}
@@ -123,18 +124,15 @@ $t = 2$ seconds to time $t = 5$ seconds, as shown in the figure below.
 
 \node at (2,4.5) {Average Velocity and Slope};
 \draw[->, thick] (0,0) --(4,0)  node[below] {t};
-\draw[thin, dashed] (1,3) -- (1,0) node[below] {2};
-\draw[thin, dashed, gray] (3,1) -- (3,0) node[below, black] {5};
+\draw[thin, dashed, gray] (3,1) -- (3,0) node[below, black] {5/2};
 
 \draw[->, thick] (0,0) -- (0,4) node[left] {$s(t)$};
-\draw[thin, dashed] (1,3) -- (0,3) node[left] {$536$};
-\draw[thin, dashed, gray] (3,1) -- (0,1) node[left, black] {$200$};
-\filldraw (1,3) circle(.05) node[right] {$(2,536)$};
-\filldraw (3,1) circle(.05) node[right] {$(5,200)$};
-\draw[thin, blue] (1,3) --(3,1) node[midway,right] {$m = -112$ft/sec};
+\filldraw (0,3) circle(.05) node[left] {$100$};
+\filldraw (3,0) circle(.05) node[below] {$5/2$};
+\draw[thin, blue] (0,3) --(3,0) node[midway,right] {$m = -40$ft/sec};
 
 \node at (2,-1) {The slope of the blue line is the average velocity};
-\node at (2, -1.5) {of the object from time $t = 2$ to time $t = 5$.};
+\node at (2, -1.5) {of the object from time $t = 0$ to time $t = 5/2$.};
 
 \end{tikzpicture}
 \end{image}
