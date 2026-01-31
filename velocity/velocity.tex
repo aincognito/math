@@ -3,7 +3,7 @@
 
 \input{../preamble}
 
-\outcome{Estimate limits using numerical information}
+\outcome{Use average velocity to guess instantaneous velocity}
 
 \title{1.1 Average Velocity}
 
@@ -25,7 +25,9 @@ To find the average velocity of the object during the fall, we can use the formu
 v_{ave}[a,b] = \frac{\Delta h}{\Delta t} = \frac{h(b) - h(a)}{b-a}.
 \]
 
-The Greek letter $\Delta$ (delta) represents ``change in", so $\Delta h$ is the change in height and $\Delta t$ is the change in time. To represent the entire 100-foot fall of the object, 
+The Greek letter $\Delta$ (delta) represents ``change in", so $\Delta h$ is the change in 
+height and $\Delta t$ is the change in time. 
+To represent the entire 100-foot fall of the object, 
 we will use $a = 0$, and for $b$, we must know how long it takes for the object to hit the ground. To determine $b$, we set $h(t) = 0$ and solve for $t$:
 \[100-16t^2 = 0 \implies 16t^2 = 100 \implies t = \pm \sqrt{\frac{100}{16}} \implies t = \frac52\]
 Thus the object hits the ground after $ b = 2.5$ seconds, and we can compute the average velocity of the object 
@@ -243,15 +245,16 @@ of the object at time, $t = 1$ second.
 \]
 
 
-Instantaneous velocity at $t = 1$ second: $\answer{18}ft/sec$.\\
-The positive answer to this problem indicates that the projectile was rising at time $t= 1$ second.
+Instantaneous velocity at $t = 1$ second: $\answer{18}\text{ft/sec}$\\
+The positive answer indicates that the projectile was rising at time $t= 1$ second.
 
 \end{problem}
 
 \section{The Tangent Line}
-We saw that the average velocity of a falling object can be represented by the slope of a line. 
-The instantaneous velocity of a falling object can also be represented by the slope of a line.
-The graph below represents the position function for a falling object.  
+We saw that the average velocity of a falling object can be represented by the slope of a \textbf{secant line}. 
+The instantaneous velocity can also be represented by the slope of a \textbf{tangent line}.
+
+The function in the graph below represents the position function for a falling object.  
 The slope of the blue \textbf{secant line} represents the average velocity of the object over the time interval $[a,b]$.
 The slope of the red \textbf{tangent line} represents the instantaneous velocity of the object at time $t = b$.
 
