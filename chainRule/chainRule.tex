@@ -27,6 +27,7 @@ Some examples of compositions are:
 \item $\ln(x^4 + 1)$ is the composition of the inside function $g(x) = x^4 + 1$ and the outside function $f(x) = \ln(x)$.
 \item $\tan^3(x)$ is the composition of the inside function $g(x) = \tan(x)$ and the outside function $f(x) = x^3$.
 \end{itemize}
+Note that the inside function is the one that acts first on $x$ and the outside function is the one that acts last on $x$.
 The chain rule is a formula for computing the derivative of a composition.
 \begin{theorem}[Chain Rule] If $f(x)$ and $g(x)$ are differentiable functions, then
 \[
@@ -44,14 +45,14 @@ The function $\sqrt{x^2 + 9}$ is a composition with inside function $g(x) = x^2 
 \[g(x) = x^2 + 9   \quad \text{and} \quad  f(x) = \sqrt{x}.\]
 
 
-To find the derivative of $\sqrt{x^2 + 9}$ we need to use the chain rule.
-This requires us to find $f'(g(x))$ and $g'(x)$.
-The second is simpler, so we start with $g'(x) = 2x$.
+To find the derivative of $\sqrt{x^2 + 9}$ we use the chain rule, which requires us to find $f'(g(x))$ and $g'(x)$.
+The second is simpler: $g'(x) = 2x$.
 To find $f'(g(x))$ we must first find $f'(x)$, and then we substitute $g(x)$ for $x$. 
 We have, 
 \[
 f'(x) = \frac{1}{2\sqrt{x}} \qquad \mbox{so,} \qquad f'(g(x)) = \frac{1}{2\sqrt{x^2 + 9}}.  
 \]
+Notice that the inside of the original function is now inside its derivative.
 The chain rule now says that
 \[
 \frac{d}{dx}\left[\sqrt{x^2 + 9}\right] = f'(g(x))g'(x) = \frac{1}{2\sqrt{x^2 + 9}} \cdot 2x = \frac{x}{\sqrt{x^2 + 9}}.
