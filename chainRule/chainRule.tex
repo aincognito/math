@@ -35,7 +35,7 @@ The chain rule is a formula for computing the derivative of a composition.
 \]
 \end{theorem}
 The formula can be expressed by saying that the derivative of a composition is ``the derivative of the outside   
-times the derivative of the inside." It must be noted that the derivative of the outside is evaluated at the inside.  
+times the derivative of the inside." It must be noted that the derivative of the outside function is evaluated at the inside function.  
 
 
 
@@ -50,12 +50,12 @@ The second is simpler: $g'(x) = 2x$.
 To find $f'(g(x))$ we must first find $f'(x)$, and then we substitute $g(x)$ for $x$. 
 We have, 
 \[
-f'(x) = \frac{1}{2\sqrt{x}} \qquad \mbox{so,} \qquad f'(g(x)) = \frac{1}{2\sqrt{x^2 + 9}}.  
+f'(x) = \frac{1}{2\sqrt{x}} \qquad \mbox{so,} \qquad f'(g(x)) = \frac{1}{2\sqrt{g(x)}} = \frac{1}{2\sqrt{x^2 + 9}} 
 \]
 Notice that the inside of the original function is now inside its derivative.
-The chain rule now says that
+The chain rule now says that  
 \[
-\frac{d}{dx}\left[\sqrt{x^2 + 9}\right] = f'(g(x))g'(x) = \frac{1}{2\sqrt{x^2 + 9}} \cdot 2x = \frac{x}{\sqrt{x^2 + 9}}.
+\frac{d}{dx}\left[\sqrt{x^2 + 9}\right] = f'(g(x))g'(x) = \frac{1}{2\sqrt{x^2 + 9}} \cdot 2x = \frac{x}{\sqrt{x^2 + 9}}
 \]
 
 \end{example}
