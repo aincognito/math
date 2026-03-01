@@ -27,7 +27,23 @@ Some examples of compositions are:
 \item $\ln(x^4 + 1)$ is the composition of the inside function $g(x) = x^4 + 1$ and the outside function $f(x) = \ln(x)$.
 \item $\tan^3(x)$ is the composition of the inside function $g(x) = \tan(x)$ and the outside function $f(x) = x^3$.
 \end{itemize}
+
+Identify the inside and the outside functions in these compositions:
 Note that the inside function is the one that acts first on $x$ and the outside function is the one that acts last on $x$.
+
+\begin{problem}
+Identify the inside and the outside functions in these compositions: 
+
+\begin{itemize}
+
+\item $(x^3 + 1)^5$;  inside function: $g(x) = \answer{x^3 + 1}$ and outside function: $f(x) = \answer{x^5}$
+\item $\ln(\cos(x))$; inside function: $g(x) = \answer{\cos(x)}$ and outside function: $f(x) = \answer{\ln(x)}$
+\item $e^{\sqrt{x}}$; inside function: $g(x) = \answer{\sqrt{x}}$ and outside function: $f(x) = \answer{e^x}$
+
+\end{itemize}
+
+\end{problem}
+
 The chain rule is a formula for computing the derivative of a composition.
 \begin{theorem}[Chain Rule] If $f(x)$ and $g(x)$ are differentiable functions, then
 \[
@@ -89,19 +105,7 @@ We can now conclude that
 \[f'(g(x)) =\cos(g(x)) = \cos(2x).\]
 By the chain rule,
 \[h'(x) = f'(g(x))g'(x) = \cos(2x) \cdot 2 = 2\cos(2x).\]
-We can also solve this problem using Leibniz notation.  In that case, we let $u = 2x$, and $y=\sin(2x)$.
-Substituting $u$ for $2x$ in $y$, we can write 
-\[
-y = \sin(u),  \text{ where } \, u = 2x.
-\]
-Then the derivatives are
-\[
-\frac{dy}{du} = \cos(u)  \,\,\,\text{  and  }  \,\,\,\frac{du}{dx} = 2.
-\]
-Finally, the chain rule says to multiply these derivatives:
-\[
-\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = \cos(u) \cdot 2 = 2\cos(2x).
-\]
+
 
 Here is a video of example 1:
 \begin{foldable}
@@ -161,13 +165,12 @@ h'(x) = f'(g(x))g'(x) = e^{5x} \cdot 5 = 5e^{5x}.
 
 \end{example}
 
+Here is a video of example 2:
 
-\begin{center}
 \begin{foldable}
-\unfoldable{Here is a video of example 2}
 \youtube{BG63VLFnlsA} %vid of example 2
 \end{foldable}
-\end{center}
+
 
 
 
@@ -196,6 +199,60 @@ Compute
 		\end{hint}
     
 \end{problem}
+
+In the previous two examples, the inside function was a linear function, $mx$. In general, if $h(x) = f(mx)$, then $h'(x) = mf(mx)$.
+Use this idea to answer the following questions.
+
+\begin{problem}(problem 2b)
+What is the derivative of $e^{2x}$?
+\begin{multipleChoice}
+  \choice{$e^{2x}$}
+  \choice{$2e^x$}
+  \choice[correct]{$2e^{2x}$}
+  \choice{$-2e^{2x}$}
+\end{multipleChoice}
+\end{problem}
+
+\begin{problem}(problem 2c)
+What is the derivative of $\sin(4x)$?
+\begin{multipleChoice}
+  \choice{$\sin(4x)$}
+  \choice{$4\sin(x)$}
+  \choice[correct]{$4\cos(4x)$}
+  \choice{$-4\cos(4x)$} 
+\end{multipleChoice}
+\end{problem}
+
+\begin{problem}(problem 2d)
+What is the derivative of $\tan(5x)$?
+\begin{multipleChoice}
+  \choice{$5\sec^2(5x)$}
+  \choice{$\sec^2(5x)$}
+  \choice{$5\sec^2(x)$}
+  \choice[correct]{$5\sec^2(5x)$}
+\end{multipleChoice}
+\end{problem}
+
+\begin{problem}(problem 2e)
+What is the derivative of $\sec(3x)$?
+\begin{multipleChoice}
+  \choice{$3\sec(3x)\tan(3x)$}
+  \choice{$\sec(3x)\tan(3x)$}
+  \choice{$3\sec(x)\tan(x)$}
+  \choice[correct]{$3\sec(3x)\tan(3x)$}
+\end{multipleChoice}
+\end{problem}
+
+\begin{problem}(problem 2f)
+What is the derivative of $\ln(6x)$?
+\begin{multipleChoice}
+  \choice{$\frac{1}{6x}$}
+  \choice{$\frac{1}{x}$}
+  \choice[correct]{$\frac{1}{6x}$}
+  \choice{$\frac{1}{x}$}
+\end{multipleChoice}
+\end{problem}
+
 
 
 \begin{example}[example 3]
@@ -607,12 +664,11 @@ By the chain rule,
 \[h'(x) = f'(g(x))g'(x) = e^{-x^2} (-2x) \quad \text{or} \quad -2xe^{-x^2}.\]
 \end{example}
 
-\begin{center}
+Here is a video of example 10:
 \begin{foldable}
-\unfoldable{Here is a video of example 10}
 \youtube{ubKbCULGXDg} %vid of example 10
 \end{foldable}
-\end{center}
+
  
 
 \begin{problem}(problem 10)
@@ -655,12 +711,11 @@ By the chain rule,
 \[h'(x) = f'(g(x))g'(x) = \frac{1}{x^4 + 1} \cdot 4x^3 = \frac{4x^3}{x^4 + 1}.\]
 \end{example}
 
-\begin{center}
+Here is a video of example 11:
 \begin{foldable}
-\unfoldable{Here is a video of example 11}
 \youtube{7FOx5dq88NI} %vid of example 11
 \end{foldable}
-\end{center}
+
  
 
 
@@ -703,12 +758,11 @@ By the chain rule,
 \[h'(x) = f'(g(x))g'(x) = 5\ln^4(x)\cdot \frac{1}{x}  = \frac{5\ln^4(x)}{x}.\]
 \end{example}
 
-\begin{center}
+Here is a video of example 12:
 \begin{foldable}
-\unfoldable{Here is a video of example 12}
 \youtube{5Fb6cph_7jE} 
 \end{foldable}
-\end{center}
+
 
 
 \begin{problem}(problem 12)
@@ -855,7 +909,8 @@ Compute
 \section{Leibniz Notation for the Chain Rule}
 
 The chain rule can also be expressed in Leibniz notation.  A composition $y = f(g(x))$ can be written using a chain of variables 
-as: $y = f(u)$ where $u = g(x)$. The chain rule in this case is given by the elegant formula:
+as: $y = f(u)$ where $u = g(x)$. Observe that $\frac{dy}{du} = f'(u) = f'(g(x))$ and $\frac{du}{dx} = g'(x)$. 
+Thus, the chain rule in Leibniz notation is given by the elegant formula:
 \[
 \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx},
 \]
@@ -865,6 +920,20 @@ The chain rule states that the rate of change of $y$  with respect to $x$ is the
 respect to $x$ times the rate of change of $y$ with respect to $u$.
 For example, if $u$ is changing three times faster than $x$ and $y$ is changing four times faster than $u$, then $y$ is changing $3 \cdot 4 = 12$ times faster than $x$.
 
-
+\begin{example}
+Find $\frac{dy}{dx}$ if $y = \cos(x^3)$.\\
+ We unravel the composition by substituting $u$ for $x^3$ leading to the following chain of variables: 
+\[
+y = \cos(u),  \text{ where } \, u = x^3.
+\]
+Then the derivatives are
+\[
+\frac{dy}{du} = -\sin(u)  \,\,\,\text{  and  }  \,\,\,\frac{du}{dx} = 3x^2.
+\]
+Finally, the chain rule says to multiply these derivatives:
+\[
+\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = -\sin(u) \cdot 3x^2 = -3x^2\sin(x^3).
+\]
+\end{example}
 \end{document}
 
