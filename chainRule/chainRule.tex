@@ -16,41 +16,72 @@ We compute the derivative of  a composition.
 
 \section{The Chain Rule}
 
-Compositions are common in typical looking functions.
-For example, the hypotenuse of a right triangle with sides $x$ and $3$ is $\sqrt{x^2 + 9}$.  This function is a composition of the inside polynomial, $x^2 + 9,$
-and the square root on the outside, $\sqrt{x}$.
-Consider an exponential growth model with parameter $k$, $f(t) = ae^{kt}$, where $a>0$. The expression $e^{kt}$ is the composition of the inner linear function $kt$
-and the outer, exponential function $e^t$. In this section, we will learn how to differentiate such functions.
+Composition is an operation that is unique to functions and not to numbers.
+The composition of two functions $f$ and $g$ is the function $f \circ g$ defined by
+\[(f \circ g)(x) = f(g(x)).\]
+We can refer to $g$ as the ``inside'' function and $f$ as the ``outside'' function.  
+Some examples of compositions are:
+\begin{itemize}
+\item $\sqrt{x^2 + 9}$ is the composition of the inside function $g(x) =x^2 + 9$ and the outside function $f(x) = \sqrt{x}$.
+\item $e^{-x^2}$ is the composition of the inside function $g(x) = -x^2$ and the outside function $f(x) = e^x$.
+\item $\ln(x^4 + 1)$ is the composition of the inside function $g(x) = x^4 + 1$ and the outside function $f(x) = \ln(x)$.
+\item $\tan^3(x)$ is the composition of the inside function $g(x) = \tan(x)$ and the outside function $f(x) = x^3$.
+\end{itemize}
+The chain rule is a formula for computing the derivative of a composition.
 \begin{theorem}[Chain Rule] If $f(x)$ and $g(x)$ are differentiable functions and if $h(x) = f(g(x))$, then
 \[
-h'(x) = f'(g(x))g'(x).
+\frac{d}{dx}f(g(x)) = f'(g(x))g'(x)
 \]
-This can also be written as 
-\[
-\frac{d}{dx}f(g(x)) = f'(g(x))g'(x),
-\]
-
-or in Leibniz notation as 
-\[
-\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx},
-\]
-where $u = g(x)$ and $y= f(g(x))$.
 \end{theorem}
-
-
-
-In words, the derivative of a composition is the derivative of the outside (with the inside left in),   
-times the derivative of the inside.
+The formula can be expressed by saying that the derivative of a composition is ``the derivative of the outside   
+times the derivative of the inside." It must be noted that the derivative of the outside is evaluated at the inside.  
 
 
 
 \begin{example}[example 1]
-Find $h'(x)$ if $h(x) = \sin(2x)$.\\
-We write $h(x)$ as a composition: $h(x)=f(g(x))$ with
+Find $\dfrac{d}{dx}\left[\sqrt{x^2 + 9}\right]$.\\
+The function $\sqrt{x^2 + 9}$ is a composition with $g(x) = x^2 + 9$ inside and $f(x) = \sqrt{x}$ outside.
+\[g(x) = x^2 + 9   \quad \text{and} \quad  f(x) = \sqrt{x}.\]
+
+
+To find the derivative of $\sqrt{x^2 + 9}$ we need to use the chain rule.
+We need both $f'(g(x))$ and $g'(x)$. The second is simpler so we start there. We have, $g'(x) = 2x$.
+To find $f'(g(x))$ we first find $f'(x)$ and then substitute $g(x)$ for $x$. 
+We have, 
+\[
+f'(x) = \frac{1}{2\sqrt{x}} \qquad \mbox{so,} \qquad f'(g(x)) = \frac{1}{2\sqrt{x^2 + 9}}.  
+\]
+We can now conclude that
+\[
+\frac{d}{dx}\left[\sqrt{x^2 + 9}\right] = f'(g(x))g'(x) = \frac{1}{2\sqrt{x^2 + 9}} \cdot 2x = \frac{x}{\sqrt{x^2 + 9}}.
+\]
+
+\end{example}
+
+
+
+\begin{example}[example 1]
+Find $\dfrac{d}{dx}\left[\sin(2x)\right]$.\\
+The function $\sin(2x)$ is a composition with $g(x) = 2x$ inside and $f(x) = \sin(x)$ outside.
 \[g(x) = 2x   \quad \text{and} \quad  f(x) = \sin(x).\]
 
 
-To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$. We have,
+To find the derivative of $\sin(2x)$ we need to use the chain rule.
+We need both $f'(g(x))$ and $g'(x)$. The second is simpler so we start there. We have, $g'(x) = 2$.
+To find $f'(g(x))$ we first find $f'(x)$ and then substitute $g(x)$ for $x$. 
+We have, 
+\[
+f'(x) = \cos(x) \qquad \mbox{so,} \qquad f'(g(x)) = \cos(g(x)) = \cos(2x)
+\]
+We can now conclude that
+\[
+\frac{d}{dx}\left[\sin(2x)\right] = f'(g(x))g'(x) = \cos(2x) \cdot 2 = 2\cos(2x).
+\]
+
+\end{example}
+
+
+
 \[g'(x) = 2; \quad \text{next} \]
 \[f'(x) = \cos(x), \quad \text{so}\]
 \[f'(g(x)) =\cos(g(x)) = \cos(2x).\]
@@ -820,7 +851,18 @@ Compute
 \end{center}
 
 
+\section{Leibniz Notation for the Chain Rule}
 
+The chain rule can also be expressed in Leibniz notation.  A composition $y = f(g(x))$ can be written using a chain of variables 
+as: $y = f(u)$ where $u = g(x)$. The chain rule in this case is given by the elegant formula:
+\[
+\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx},
+\]
+In this format, the chain rule expresses the fact that ``rates of change multiply."  
+To see this, consider a small change in the variable $x$  This produces a change in $u$ which in turn produces a change in $y$.
+The chain rule states that the rate of change of $y$  with respect to $x$ is the rate of change of $u$ with 
+respect to $x$ times the rate of change of $y$ with respect to $u$.
+For example, if $u$ is changing three times faster than $x$ and $y$ is changing four times faster than $u$, then $y$ is changing $3 \cdot 4 = 12$ times faster than $x$.
 
 
 \end{document}
