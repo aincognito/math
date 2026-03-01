@@ -18,7 +18,7 @@ We compute the derivative of  a composition.
 
 Composition is an operation that is unique to functions and not to numbers.
 The composition of two functions $f$ and $g$ is the function $f \circ g$ defined by
-\[(f \circ g)(x) = f(g(x)).\]
+\[(f \circ g)(x) = f(g(x))\]
 We can refer to $g$ as the ``inside'' function and $f$ as the ``outside'' function.  
 Some examples of compositions are:
 \begin{itemize}
@@ -28,9 +28,9 @@ Some examples of compositions are:
 \item $\tan^3(x)$ is the composition of the inside function $g(x) = \tan(x)$ and the outside function $f(x) = x^3$.
 \end{itemize}
 The chain rule is a formula for computing the derivative of a composition.
-\begin{theorem}[Chain Rule] If $f(x)$ and $g(x)$ are differentiable functions and if $h(x) = f(g(x))$, then
+\begin{theorem}[Chain Rule] If $f(x)$ and $g(x)$ are differentiable functions, then
 \[
-\frac{d}{dx}f(g(x)) = f'(g(x))g'(x)
+\frac{d}{dx}\left[f(g(x))\right] = f'(g(x))g'(x).
 \]
 \end{theorem}
 The formula can be expressed by saying that the derivative of a composition is ``the derivative of the outside   
@@ -39,19 +39,20 @@ times the derivative of the inside." It must be noted that the derivative of the
 
 
 \begin{example}[example 1]
-Find $\dfrac{d}{dx}\left[\sqrt{x^2 + 9}\right]$.\\
-The function $\sqrt{x^2 + 9}$ is a composition with $g(x) = x^2 + 9$ inside and $f(x) = \sqrt{x}$ outside.
+Find $\dfrac{d}{dx}\left(\sqrt{x^2 + 9}\right)$.\\
+The function $\sqrt{x^2 + 9}$ is a composition with inside function $g(x) = x^2 + 9$  and outside function $f(x) = \sqrt{x}$.
 \[g(x) = x^2 + 9   \quad \text{and} \quad  f(x) = \sqrt{x}.\]
 
 
 To find the derivative of $\sqrt{x^2 + 9}$ we need to use the chain rule.
-We need both $f'(g(x))$ and $g'(x)$. The second is simpler so we start there. We have, $g'(x) = 2x$.
-To find $f'(g(x))$ we first find $f'(x)$ and then substitute $g(x)$ for $x$. 
+This requires us to find $f'(g(x))$ and $g'(x)$.
+The second is simpler, so we start with $g'(x) = 2x$.
+To find $f'(g(x))$ we must first find $f'(x)$, and then we substitute $g(x)$ for $x$. 
 We have, 
 \[
 f'(x) = \frac{1}{2\sqrt{x}} \qquad \mbox{so,} \qquad f'(g(x)) = \frac{1}{2\sqrt{x^2 + 9}}.  
 \]
-We can now conclude that
+The chain rule now says that
 \[
 \frac{d}{dx}\left[\sqrt{x^2 + 9}\right] = f'(g(x))g'(x) = \frac{1}{2\sqrt{x^2 + 9}} \cdot 2x = \frac{x}{\sqrt{x^2 + 9}}.
 \]
@@ -100,14 +101,13 @@ Finally, the chain rule says to multiply these derivatives:
 \[
 \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = \cos(u) \cdot 2 = 2\cos(2x).
 \]
-\end{example}
 
-\begin{center}
-\begin{foldable}
-\unfoldable{Here is a video of example 1}
+Here is a video of example 1:
+\begin{unfoldable}
 \youtube{Yy6QXnFlnXs} %vid of example 1
-\end{foldable}
-\end{center}
+\end{unfoldable}
+
+
 
 \begin{problem}(problem 1)
   
