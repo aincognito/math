@@ -22,22 +22,20 @@ Composition is an operation that is unique to functions.
 It involves taking the output of one function and using it as the input of another function.
 The composition of two functions $f$ and $g$ is the function $f \circ g$ defined by
 \[(f \circ g)(x) = f(g(x))\]
-We can refer to $g$ as the ``inside'' function and $f$ as the ``outside'' function.  
+We refer to $g$ as the ``inside'' function and $f$ as the ``outside'' function.  
 
 
 \begin{example}[example 1]
 Identify the inside and the outside functions in these compositions:
-\begin{itemize}
-\item[a)] The function \quad $\sqrt{x^2 + 9}$ \quad is the composition of the inside 
+\begin{enumerate}
+\item The function \quad $\sqrt{x^2 + 9}$ \quad is the composition of the inside 
 function $g(x) =x^2 + 9$ and the outside function $f(x) = \sqrt{x}$.
-\item[b)] The function \quad $e^{-x^2}$ \quad is the composition of the inside 
+\item The function \quad $e^{-x^2}$ \quad is the composition of the inside 
 function $g(x) = -x^2$ and the outside function $f(x) = e^x$.
-\item[c)] The function \quad $\ln(x^4 + 1)$ \quad is the composition of the inside 
-function $g(x) = x^4 + 1$ and the outside function $f(x) = \ln(x)$.
-\item[d)] The function \quad $\tan^3(x)$  \quad is the composition of the inside 
+\item The function \quad $\tan^3(x)$  \quad is the composition of the inside 
 function $g(x) = \tan(x)$ and the outside function $f(x) = x^3$.\\
 Note that the inside function is the one that acts first on $x$ and the outside function is the one that acts last on $x$.
-\end{itemize}
+\end{enumerate}
 \end{example}
 
 \begin{problem}(problem 1)
@@ -53,19 +51,20 @@ A composition can be written as a chain of variables: if $y = f(g(x))$, then we 
 $y = f(u)$ where $u = g(x)$. 
 \begin{example}[example 2]
 Write the following compositions as a chain of variables:
-\item[a)] The function \quad $y = \sqrt{x^2 + 9}$ \quad can be written as $y = \sqrt{u}$ where $u = x^2 + 9$
-\item[b)] The function \quad $y =e^{-x^2}$ \quad can be written as $y = e^u$ where $u = -x^2$
-\item[c)] The function \quad $\ln(x^4 + 1)$ \quad can be written as $y = \ln(u)$ where $u = x^4 + 1$
-\item[d)] The function \quad $\tan^3(x)$ \quad can be written as $y = u^3$ where $u = \tan(x)$
+\begin{enumerate}
+\item The function \quad $y = \sqrt{x^2 + 9}$ \quad can be written as $y = \sqrt{u}$ where $u = x^2 + 9$
+\item The function \quad $y =e^{-x^2}$ \quad can be written as $y = e^u$ where $u = -x^2$
+\item The function \quad $\tan^3(x)$ \quad can be written as $y = u^3$ where $u = \tan(x)$
+\end{enumerate}
 \end{example}
 
 \begin{problem}(problem 2)
 Write the following compositions as a chain of variables:
-\begin{itemize}
-\item[a)] $y = (x^3 + 1)^5$ can be written as $y = f(u) = \answer{u^5}$ where $u = g(x) = \answer{x^3 + 1}$
-\item[b)] $\ln(\cos(x))$; can be written as $y = f(u) = \answer{\ln(u)}$ where $u = g(x) = \answer{\cos(x)}$
-\item[c)] $e^{\sqrt{x}}$; can be written as $y = f(u) = \answer{e^u}$ where $u = g(x) = \answer{\sqrt{x}}$
-\end{itemize}
+\begin{enumerate}
+\item $y = (x^3 + 1)^5$ can be written as $y = f(u) = \answer{u^5}$ where $u = g(x) = \answer{x^3 + 1}$
+\item $\ln(\cos(x))$; can be written as $y = f(u) = \answer{\ln(u)}$ where $u = g(x) = \answer{\cos(x)}$
+\item $e^{\sqrt{x}}$; can be written as $y = f(u) = \answer{e^u}$ where $u = g(x) = \answer{\sqrt{x}}$
+\end{enumerate}
 \end{problem}
 
 \subsection{The Chain Rule in Prime Notation}
