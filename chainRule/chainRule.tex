@@ -62,8 +62,8 @@ Write the following compositions as a chain of variables:
 Write the following compositions as a chain of variables:
 \begin{enumerate}
 \item The single equation $y = (x^3 + 1)^5$ can be written as $y = f(u) = \answer{u^5}$ where $u = g(x) = \answer{x^3 + 1}$
-\item The single equation $\ln(\cos(x))$; can be written as $y = f(u) = \answer{\ln(u)}$ where $u = g(x) = \answer{\cos(x)}$
-\item The single equation $e^{\sqrt{x}}$; can be written as $y = f(u) = \answer{e^u}$ where $u = g(x) = \answer{\sqrt{x}}$
+\item The single equation $y = \ln(\cos(x))$; can be written as $y = f(u) = \answer{\ln(u)}$ where $u = g(x) = \answer{\cos(x)}$
+\item The single equation $y = e^{\sqrt{x}}$; can be written as $y = f(u) = \answer{e^u}$ where $u = g(x) = \answer{\sqrt{x}}$
 \end{enumerate}
 \end{problem}
 
@@ -78,25 +78,25 @@ The formula can be expressed by saying that the derivative of a composition is `
 times the derivative of the inside." It must be noted that the derivative of the outside function is evaluated at the inside function.  
 
 \begin{example}[example 3]
-Find $\dfrac{d}{dx}\left[\sin(x^3)\right]$.\\
-The function $\sin(x^3)$ is a composition with $g(x) = x^3$ inside and $f(x) = \sin(x)$ outside.
-To find the derivative of the composite function $\sin(x^3)$ we need to use the chain rule.
-The chain rule formula requires both $f'(g(x))$ and $g'(x)$. The second is simpler, so we start there: $g'(x) = 3x^2$.
+Find $\dfrac{d}{dx}\left[\sin(x^4)\right]$.\\
+The function $\sin(x^4)$ is a composition with $g(x) = x^4$ inside and $f(x) = \sin(x)$ outside.
+To find the derivative of the composite function $\sin(x^4)$ we need to use the chain rule.
+The chain rule formula requires both $f'(g(x))$ and $g'(x)$. The second is simpler, so we start there: $g'(x) = 4x^3$.
 To find $f'(g(x))$ we first find $f'(x)$ and then substitute $g(x)$ for $x$. 
 We have, 
 \[
-f'(x) = \cos(x) \qquad \mbox{so,} \qquad f'(g(x)) = \cos(g(x)) = \cos(x^3).
+f'(x) = \cos(x) \qquad \mbox{so,} \qquad f'(g(x)) = \cos(g(x)) = \cos(x^4).
 \]
 We can now conclude using the chain rule that
 \[
-\frac{d}{dx}\left[\sin(x^3)\right] = f'(g(x))g'(x) = \cos(x^3) \cdot 3x^2 = 3x^2\cos(x^3).
+\frac{d}{dx}\left[\sin(x^4)\right] = f'(g(x))g'(x) = \cos(x^4) \cdot 4x^3 = 4x^3\cos(x^4).
 \]
 \end{example}
 
-\begin{problem}(problem 3)
+\begin{problem}(problem 3a)
 Find the indicated derivative:
   \[
-  \frac{d}{dx} \sin(x^4) = \answer{4x^3\cos(x^4)}.
+  \frac{d}{dx} \sin(x^3) = \answer{3x^2\cos(x^3)}.
   \]
     \begin{hint}
       The chain rule says:
@@ -106,18 +106,44 @@ Find the indicated derivative:
     \end{hint}
     \begin{hint}
       The ``outside'' function is $f(x) = \sin(x)$ and the ``inside''
-      function is $g(x) = x^4$.
+      function is $g(x) = x^3$.
     \end{hint}
     \begin{hint}
 		  Leave the inside in, $f'(g(x))$
 		\end{hint}
 		\begin{hint}
 		  Multiply by the derivative of the inside, $g'(x)$
+		\end{hint} 
+\end{problem}
+Here is a video solution of  problem 3a:
+\begin{foldable}
+\youtube{rA8RotbzDJ0}
+\end{foldable}
+
+\begin{problem}(problem 3b)
+Find the indicated derivative:
+  \[
+  \frac{d}{dx} \tan(x^3 - 7) = \answer{3x^2 \sec^2(x^3 - 7)}.
+  \]
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The ``outside'' function is $f(x) = \tan(x)$ and the ``inside''
+      function is $g(x) = x^3 - 7$.
+    \end{hint}
+    \begin{hint}
+		  Leave the inside in, $f'(g(x))$
 		\end{hint}
-	 
+		\begin{hint}
+		  Multiply by the derivative of the inside, $g'(x)$
+		\end{hint} 
 \end{problem}
 
-\begin{example}[example 3]
+\begin{example}[example 4]
 Find $\dfrac{d}{dx}\left[e^{-x^2}\right]$.\\
 The function $e^{-x^2}$ is a composition with $g(x) = -x^2$ inside and $f(x) = e^x$ outside.
 To find the derivative of the composite function $e^{-x^2}$ we need to use the chain rule.
@@ -133,7 +159,7 @@ We can now conclude using the chain rule that
 \]
 \end{example}
 
-\begin{problem}(problem 3a)
+\begin{problem}(problem 4a)
   
 Compute
   \[
@@ -159,15 +185,185 @@ Compute
     
 \end{problem}
 
+\begin{problem}(problem 4b)
+  
+Compute
+  \[
+  \frac{d}{dx} e^{\cos(x)} = \answer{-e^{\cos(x)}\sin(x)}.
+  \]
+  
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      The outside function is $f(x) = e^x$ and the inside
+      function is $g(x) = \cos(x)$.
+    \end{hint}
+    \begin{hint}
+		  Leave the inside in, $f'(g(x))$
+		\end{hint}
+		\begin{hint}
+		  Multiply by the derivative of the inside, $g'(x)$
+		\end{hint}
+    
+\end{problem}
 
+\begin{example}[example 5]
+Find the values of $x$ where the tangent line to the graph of $y = (x^4 + x^2 + 1)^4$ is horizontal.\\
+The tangent line is horizontal where the derivative is zero. We write $y$ as a composition: $y = f(g(x))$ with
+\[
+g(x) = x^4 + x^2 + 1 \quad \text{and} \quad f(x) = x^4.
+\]
+To find $y'$ we need $f'(g(x))$ and $g'(x)$. We have,
+\[
+g'(x) = 4x^3 + 2x; \quad \text{next}
+\]
+\[
+f'(x) = 4x^3, \quad \text{so}
+\]
+\[
+f'(g(x)) = 4[g(x)]^3 = 4(x^4 + x^2 + 1)^3.
+\]
+By the chain rule,
+\[
+y' = f'(g(x))g'(x) = 4(x^4 + x^2 + 1)^3(4x^3 + 2x).
+\]
+The derivative is zero when $4(x^4 + x^2 + 1)^3(4x^3 + 2x) = 0$. 
+Since $4(x^4 + x^2 + 1)^3$ is never zero, we need to solve $4x^3 + 2x = 0$. 
+We can factor out $2x$ to get $2x(2x^2 + 1) = 0$. The only solution is $x = 0$.
+\end{example}
+
+\begin{problem}(problem 5)
+Find the values of $x$ where the tangent line to the graph of $y = (x^2 - 5x + 4)^5$ is horizontal.\\
+First we find the derivative: $y' = \answer{5(x^2 - 5x + 4)^4(2x - 5)}$\\
+\begin{hint}
+The inside function is $g(x) = x^2 - 5x + 4$ and the outside function is $f(x) = x^5$.
+\end{hint}
+\begin{hint}
+The tangent line is horizontal where the derivative is zero. 
+\end{hint}
+In increasing order, the $x$-values where the tangent line is horizontal are $x = \answer{1}$,$\answer{5/2}$, $x = \answer{4}$.
+\end{problem}
+
+\subsection{Leibniz Notation for the Chain Rule}
+
+The chain rule can also be expressed in Leibniz notation.  A composition $y = f(g(x))$ can be written using a chain of variables 
+as: $y = f(u)$ where $u = g(x)$. Observe that $\frac{dy}{du} = f'(u) = f'(g(x))$ and $\frac{du}{dx} = g'(x)$. 
+Thus, the chain rule in Leibniz notation is given by the elegant formula:
+\[
+\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx},
+\]
+In this format, the chain rule expresses the fact that ``rates of change multiply."  
+To see this, consider a small change in the variable $x$  This produces a change in $u$ which in turn produces a change in $y$.
+The chain rule states that the rate of change of $y$  with respect to $x$ is the rate of change of $u$ with 
+respect to $x$ times the rate of change of $y$ with respect to $u$.
+For example, if $u$ is changing three times faster than $x$ and $y$ is changing four times faster than $u$, then $y$ is changing $3 \cdot 4 = 12$ times faster than $x$.
+
+\begin{example}
+Find $\frac{dy}{dx}$ if $y = \cos(x^3)$.\\
+ We unravel the composition by substituting $u$ for $x^3$ leading to the following chain of variables: 
+\[
+y = \cos(u),  \text{ where } \, u = x^3.
+\]
+Then the derivatives are
+\[
+\frac{dy}{du} = -\sin(u)  \,\,\,\text{  and  }  \,\,\,\frac{du}{dx} = 3x^2.
+\]
+Finally, the chain rule says to multiply these derivatives:
+\[
+\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = -\sin(u) \cdot 3x^2 = -3x^2\sin(x^3).
+\]
+\end{example}
+
+\begin{example}
+Find the second derivative of $\tan(x)$.\\
+The derivative of $\tan(x)$ is $\sec^2(x)$. The second derivative is the derivative of the composition$\sec^2(x)$.\\
+We unravel the composition by substituting $u$ for $\sec(x)$ leading to the following chain of variables:
+\[
+y = u^2,  \text{ where } \, u = \sec(x).
+\]
+Then the derivatives are
+\[
+\frac{dy}{du} = 2u  \,\,\,\text{  and  }  \,\,\,\frac{du}{dx} = \sec(x)\tan(x).
+\]
+Finally, the chain rule says to multiply these derivatives:
+\[
+\frac{d}{dx}\left[\sec^2(x)\right] = \frac{dy}{du} \cdot \frac{du}{dx} = 2u \cdot \sec(x)\tan(x) = 2\sec(x) \cdot \sec(x)\tan(x) = 2\sec^2(x)\tan(x).
+\]
+\end{example}
+
+\begin{example}
+After $t$ years, the amount of carbon 14 left from a sample of 10 grams is given by the function
+\[
+C(t) = 10e^{-\frac{t}{5730}}.
+\]
+Find the rate at which carbon 14 is decaying after 1000 years.\\
+We write $C(t)$ as a composition: $C(t) = f(g(t))$ with
+\[
+g(t) = -\frac{t}{5730}  \quad \text{and} \quad  f(x) = 10e^x.
+\]
+To find $C'(t)$ we need $f'(g(t))$ and $g'(t)$. We have,
+\[
+g'(t) = -\frac{1}{5730}; \quad \text{next}
+\]
+\[
+f'(x) = 10e^x, \quad \text{so}
+\]
+\[
+f'(g(t))= 10e^{g(t)} = 10e^{-\frac{t}{5730}}.
+\]
+By the chain rule,
+\[
+C'(t) = f'(g(t))g'(t) = 10e^{-\frac{t}{5730}} \cdot \left(-\frac{1}{5730}\right) = -\frac{10}{5730}e^{-\frac{t}{5730}}.
+\]
+After 1000 years, the rate of decay is
+\[
+C'(1000) = -\frac{10}{5730}e^{-\frac{1000}{5730}} \approx -0.00175.
+\]
+This is a negative value, indicating that the amount of carbon 14 is decreasing over time.
+\end{example}
+
+\begin{problem}
+After $t$ million years, the amount of uranium 235 left from a sample of 20 grams is given by the function
+\[
+U(t) = 20e^{-\frac{5\ln(2)}{3519}t}.
+\]
+Find the rate at which uranium 235 is decaying after 2 million years.\\
+We write $U(t)$ as a composition: $U(t) = f(g(t))$ with
+\[
+g(t) = -\frac{5\ln(2)}{3519}t  \quad \text{and} \quad  f(x) = 20e^x.
+\]
+To find $U'(t)$ we need $f'(g(t))$ and $g'(t)$. We have,
+\[
+g'(t) = -\frac{5\ln(2)}{3519}; \quad \text{next}
+\]
+\[
+f'(x) = 20e^x, \quad \text{so}
+\]
+\[
+f'(g(t))= 20e^{g(t)} = 20e^{-\frac{5\ln(2)}{3519}t}.
+\]
+By the chain rule,
+\[
+U'(t) = f'(g(t))g'(t) = 20e^{-\frac{5\ln(2)}{3519}t} \cdot \left(-\frac{5\ln(2)}{3519}\right) = -\frac{100\ln(2)}{3519}e^{-\frac{5\ln(2)}{3519}t}.
+\]
+After 2 million years, the rate of decay is
+\[
+U'(2) = -\frac{100\ln(2)}{3519}e^{-\frac{5\ln(2)}{3519}(2)}.
+\]
+This is a negative value, indicating that the amount of uranium 235 is decreasing over time.
+\end{problem}
 
 \begin{problem}(problem 2b)
 What is the derivative of $e^{\tan(x)}$?
 \begin{multipleChoice}
-  \choice{$e^{2x}$}
-  \choice{$2e^x$}
-  \choice[correct]{$2e^{2x}$}
-  \choice{$-2e^{2x}$}
+  \choice{$e^{\tan(x)}\sec^2(x)$}
+  \choice{$e^{\tan(x)}\tan(x)$}
+  \choice[correct]{$e^{\tan(x)}\sec^2(x)$}
+  \choice{$-e^{\tan(x)}\sec^2(x)$}
 \end{multipleChoice}
 \end{problem}
 
@@ -184,7 +380,7 @@ What is the derivative of $\sin(4x)$?
 \begin{problem}(problem 2d)
 What is the derivative of $\tan(5x)$?
 \begin{multipleChoice}
-  \choice{$5\sec^2(5x)$}
+  \choice{$2\sec^2(5x)$}
   \choice{$\sec^2(5x)$}
   \choice{$5\sec^2(x)$}
   \choice[correct]{$5\sec^2(5x)$}
@@ -194,7 +390,7 @@ What is the derivative of $\tan(5x)$?
 \begin{problem}(problem 2e)
 What is the derivative of $\sec(3x)$?
 \begin{multipleChoice}
-  \choice{$3\sec(3x)\tan(3x)$}
+  \choice{$3\sec\tan(3x)$}
   \choice{$\sec(3x)\tan(3x)$}
   \choice{$3\sec(x)\tan(x)$}
   \choice[correct]{$3\sec(3x)\tan(3x)$}
@@ -205,9 +401,9 @@ What is the derivative of $\sec(3x)$?
 What is the derivative of $\ln(6x)$?
 \begin{multipleChoice}
   \choice{$\frac{1}{6x}$}
-  \choice{$\frac{1}{x}$}
-  \choice[correct]{$\frac{1}{6x}$}
-  \choice{$\frac{1}{x}$}
+  \choice{$\frac{6}{x}$}
+  \choice[correct]{$\frac{1}{x}$}
+  \choice{$\frac{1}{x}(6x)(6)$}
 \end{multipleChoice}
 \end{problem}
 
@@ -217,14 +413,14 @@ What is the derivative of $\sqrt{8x+4}$?
   \choice{$\frac{1}{2\sqrt{8x+4}}$}
   \choice{$\frac{4}{\sqrt{8x+4}}$}
   \choice[correct]{$\frac{4}{\sqrt{8x+4}}$}
-  \choice{$\frac{1}{2\sqrt{8x+4}}$}
+  \choice{$\frac{2}{\sqrt{8x+4}}$}
   \end{multipleChoice}  
 \end{problem} 
 
 \begin{problem}(problem 2h)
 What is the derivative of $\sqrt{9x-1}$?
 \begin{multipleChoice}
-  \choice{$\frac{1}{2\sqrt{9x-1}}$}
+  \choice{$\frac{1}{\sqrt{9x-1}}$}
   \choice{$\frac{9}{2\sqrt{9x-1}}$}
   \choice[correct]{$\frac{9}{2\sqrt{9x-1}}$}
   \choice{$\frac{1}{2\sqrt{9x-1}}$}
@@ -235,10 +431,10 @@ What is the derivative of $\sqrt{9x-1}$?
 What is the derivative of $\ln(x^3 + x^2)$?
 Simplify your answer as much as possible.
 \begin{multipleChoice}
-  \choice{$\frac{1}{7x+3}$}
-  \choice{$\frac{7}{7x+3}$}
-  \choice[correct]{$\frac{3x^2 + 2x}{x^3 + x^2}$}
-  \choice{$\frac{1}{x^3 + x}$}
+  \choice{$\frac{1}{x}(x^3 + x^2)(3x^2 + 2x)$}
+  \choice{$\frac{3x^2 + 2x}{x^3 + x^2}$}
+  \choice[correct]{$\frac{3x + 2}{x^2 + x}$}
+  \choice{$\frac{1}{x^3 + x^2}$}
   \end{multipleChoice}
 \end{problem}
 
@@ -269,7 +465,7 @@ h'(x) = f'(g(x))g'(x) = -\sin(x^2 + 1) \cdot 2x = -2x\sin(x^2 + 1).
 \begin{center}
 \begin{foldable}
 \unfoldable{Here is a video of example 3}
-\youtube{W1adUySCZxM} %vid of example 3
+\youtube{W1adUySCZxM} %cos(x^2 +1)
 \end{foldable}
 \end{center}
 
@@ -326,7 +522,7 @@ h'(x) = f'(g(x))g'(x) = 7(x^3 + 4x + 2)^6(3x^2 - 4)=7(3x^2 - 4)(x^3 - 4x + 2)^6.
 \begin{center}
 \begin{foldable}
 \unfoldable{Here is a video of example 4}
-\youtube{FKoN4Ul8XcM}  %vid of example 4
+\youtube{FKoN4Ul8XcM}  %(x^3 - 4x + 2)^7
 \end{foldable}
 \end{center}
 
@@ -390,7 +586,7 @@ h'(x) &= f'(g(x))g'(x)\\
 \begin{center}
 \begin{foldable}
 \unfoldable{Here is a video of example 5}
-\youtube{bmUe8uKxxos} %vid of example 5
+\youtube{bmUe8uKxxos} %sqrt{x^2 +4}
 \end{foldable}
 \end{center}
 
@@ -452,7 +648,7 @@ h'(x) = f'(g(x))g'(x) = \sec^2(3x) \cdot 3= 3\sec^2(3x).
 \begin{center}
 \begin{foldable}
 \unfoldable{Here is a video of example 6}
-\youtube{1L1z-e7yvRo} %vid of example 6
+\youtube{1L1z-e7yvRo} %tan(3x)
 \end{foldable}
 \end{center}
 
@@ -511,7 +707,7 @@ By the chain rule,
 \begin{center}
 \begin{foldable}
 \unfoldable{Here is a video of example 7}
-\youtube{kddUPQBZJEM} %vid of example 7
+\youtube{kddUPQBZJEM} %\frac{3}{(2x + 5)^4
 \end{foldable}
 \end{center}
 
@@ -557,10 +753,7 @@ By the chain rule,
 \end{example}
 
 \begin{center}
-\begin{foldable}
-\unfoldable{Here is a video of  example 8}
-\youtube{rA8RotbzDJ0} %vid of example 8
-\end{foldable}
+
 \end{center}
 
 
@@ -795,7 +988,7 @@ By the chain rule,
 \begin{center}
 \begin{foldable}
 \unfoldable{Here is a video of example 13}
-\youtube{sVXyra9ElKo} 
+\youtube{sVXyra9ElKo}%ln(sin x) 
 \end{foldable}
 \end{center}
 
@@ -873,7 +1066,7 @@ We use the above formula with $g(x) = x^3 + 2$ to get
 
 \begin{foldable}
 \unfoldable{Here is a video of example 14}
-\youtube{W1adUySCZxM}
+\youtube{W1adUySCZxM}%ln(x^3 +2)
 \end{foldable}
 
 \begin{problem}(problem 14)
@@ -893,35 +1086,7 @@ Compute
 \end{center}
 
 
-\subsection{Leibniz Notation for the Chain Rule}
 
-The chain rule can also be expressed in Leibniz notation.  A composition $y = f(g(x))$ can be written using a chain of variables 
-as: $y = f(u)$ where $u = g(x)$. Observe that $\frac{dy}{du} = f'(u) = f'(g(x))$ and $\frac{du}{dx} = g'(x)$. 
-Thus, the chain rule in Leibniz notation is given by the elegant formula:
-\[
-\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx},
-\]
-In this format, the chain rule expresses the fact that ``rates of change multiply."  
-To see this, consider a small change in the variable $x$  This produces a change in $u$ which in turn produces a change in $y$.
-The chain rule states that the rate of change of $y$  with respect to $x$ is the rate of change of $u$ with 
-respect to $x$ times the rate of change of $y$ with respect to $u$.
-For example, if $u$ is changing three times faster than $x$ and $y$ is changing four times faster than $u$, then $y$ is changing $3 \cdot 4 = 12$ times faster than $x$.
-
-\begin{example}
-Find $\frac{dy}{dx}$ if $y = \cos(x^3)$.\\
- We unravel the composition by substituting $u$ for $x^3$ leading to the following chain of variables: 
-\[
-y = \cos(u),  \text{ where } \, u = x^3.
-\]
-Then the derivatives are
-\[
-\frac{dy}{du} = -\sin(u)  \,\,\,\text{  and  }  \,\,\,\frac{du}{dx} = 3x^2.
-\]
-Finally, the chain rule says to multiply these derivatives:
-\[
-\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = -\sin(u) \cdot 3x^2 = -3x^2\sin(x^3).
-\]
-\end{example}
 
 
 In the previous two examples, the inside function was a linear function, $mx$. In general, if $h(x) = f(mx)$, then $h'(x) = mf(mx)$.
