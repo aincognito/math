@@ -16,35 +16,60 @@ We compute the derivative of  a composition.
 
 \section{The Chain Rule}
 
-Composition is an operation that is unique to functions and not to numbers.
+\subsection{Compositions}
+
+Composition is an operation that is unique to functions. 
+It involves taking the output of one function and using it as the input of another function.
 The composition of two functions $f$ and $g$ is the function $f \circ g$ defined by
 \[(f \circ g)(x) = f(g(x))\]
 We can refer to $g$ as the ``inside'' function and $f$ as the ``outside'' function.  
-Some examples of compositions are:
-\begin{itemize}
-\item $\sqrt{x^2 + 9}$ is the composition of the inside function $g(x) =x^2 + 9$ and the outside function $f(x) = \sqrt{x}$.
-\item $e^{-x^2}$ is the composition of the inside function $g(x) = -x^2$ and the outside function $f(x) = e^x$.
-\item $\ln(x^4 + 1)$ is the composition of the inside function $g(x) = x^4 + 1$ and the outside function $f(x) = \ln(x)$.
-\item $\tan^3(x)$ is the composition of the inside function $g(x) = \tan(x)$ and the outside function $f(x) = x^3$.
-\end{itemize}
 
+
+\begin{example}[example 1]
 Identify the inside and the outside functions in these compositions:
-Note that the inside function is the one that acts first on $x$ and the outside function is the one that acts last on $x$.
-
-\begin{problem}
-Identify the inside and the outside functions in these compositions: 
-
 \begin{itemize}
-
-\item $(x^3 + 1)^5$;  inside function: $g(x) = \answer{x^3 + 1}$ and outside function: $f(x) = \answer{x^5}$
-\item $\ln(\cos(x))$; inside function: $g(x) = \answer{\cos(x)}$ and outside function: $f(x) = \answer{\ln(x)}$
-\item $e^{\sqrt{x}}$; inside function: $g(x) = \answer{\sqrt{x}}$ and outside function: $f(x) = \answer{e^x}$
-
+\item[a)] The function \quad $\sqrt{x^2 + 9}$ \quad is the composition of the inside 
+function $g(x) =x^2 + 9$ and the outside function $f(x) = \sqrt{x}$.
+\item[b)] The function \quad $e^{-x^2}$ \quad is the composition of the inside 
+function $g(x) = -x^2$ and the outside function $f(x) = e^x$.
+\item[c)] The function \quad $\ln(x^4 + 1)$ \quad is the composition of the inside 
+function $g(x) = x^4 + 1$ and the outside function $f(x) = \ln(x)$.
+\item[d)] The function \quad $\tan^3(x)$  \quad is the composition of the inside 
+function $g(x) = \tan(x)$ and the outside function $f(x) = x^3$.\\
+Note that the inside function is the one that acts first on $x$ and the outside function is the one that acts last on $x$.
 \end{itemize}
+\end{example}
 
+\begin{problem}(problem 1)
+Identify the inside and the outside functions in these compositions: 
+\begin{itemize}
+\item[a)] $(x^3 + 1)^5$; \quad inside function: $g(x) = \answer{x^3 + 1}$ and outside function: $f(x) = \answer{x^5}$
+\item[b)] $\ln(\cos(x))$; \quad inside function: $g(x) = \answer{\cos(x)}$ and outside function: $f(x) = \answer{\ln(x)}$
+\item[c)] $e^{\sqrt{x}}$; \quad inside function: $g(x) = \answer{\sqrt{x}}$ and outside function: $f(x) = \answer{e^x}$
+\end{itemize}
 \end{problem}
 
-The chain rule is a formula for computing the derivative of a composition.
+A composition can be written as a chain of variables: if $y = f(g(x))$, then we can introduce a new variable, $u$ and we can write
+$y = f(u)$ where $u = g(x)$. 
+\begin{example}[example 2]
+Write the following compositions as a chain of variables:
+\item[a)] The function \quad $y = \sqrt{x^2 + 9}$ \quad can be written as $y = \sqrt{u}$ where $u = x^2 + 9$
+\item[b)] The function \quad $y =e^{-x^2}$ \quad can be written as $y = e^u$ where $u = -x^2$
+\item[c)] The function \quad $\ln(x^4 + 1)$ \quad can be written as $y = \ln(u)$ where $u = x^4 + 1$
+\item[d)] The function \quad $\tan^3(x)$ \quad can be written as $y = u^3$ where $u = \tan(x)$
+\end{example}
+
+\begin{problem}(problem 2)
+Write the following compositions as a chain of variables:
+\begin{itemize}
+\item[a)] $y = (x^3 + 1)^5$ can be written as $y = f(u) = \answer{u^5}$ where $u = g(x) = \answer{x^3 + 1}$
+\item[b)] $\ln(\cos(x))$; can be written as $y = f(u) = \answer{\ln(u)}$ where $u = g(x) = \answer{\cos(x)}$
+\item[c)] $e^{\sqrt{x}}$; can be written as $y = f(u) = \answer{e^u}$ where $u = g(x) = \answer{\sqrt{x}}$
+\end{itemize}
+\end{problem}
+
+\subsection{The Chain Rule in Prime Notation}
+The chain rule is the formula for computing the derivative of a composition.
 \begin{theorem}[Chain Rule] If $f(x)$ and $g(x)$ are differentiable functions, then
 \[
 \frac{d}{dx}\left[f(g(x))\right] = f'(g(x))g'(x).
@@ -53,72 +78,26 @@ The chain rule is a formula for computing the derivative of a composition.
 The formula can be expressed by saying that the derivative of a composition is ``the derivative of the outside   
 times the derivative of the inside." It must be noted that the derivative of the outside function is evaluated at the inside function.  
 
-
-
 \begin{example}[example 1]
-Find $\dfrac{d}{dx}\left(\sqrt{x^2 + 9}\right)$.\\
-The function $\sqrt{x^2 + 9}$ is a composition with inside function $g(x) = x^2 + 9$  and outside function $f(x) = \sqrt{x}$.
-\[g(x) = x^2 + 9   \quad \text{and} \quad  f(x) = \sqrt{x}.\]
-
-
-To find the derivative of $\sqrt{x^2 + 9}$ we use the chain rule, which requires us to find $f'(g(x))$ and $g'(x)$.
-The second is simpler: $g'(x) = 2x$.
-To find $f'(g(x))$ we must first find $f'(x)$, and then we substitute $g(x)$ for $x$. 
-We have, 
-\[
-f'(x) = \frac{1}{2\sqrt{x}} \qquad \mbox{so,} \qquad f'(g(x)) = \frac{1}{2\sqrt{g(x)}} = \frac{1}{2\sqrt{x^2 + 9}} 
-\]
-Notice that the inside of the original function is now inside its derivative.
-The chain rule now says that  
-\[
-\frac{d}{dx}\left[\sqrt{x^2 + 9}\right] = f'(g(x))g'(x) = \frac{1}{2\sqrt{x^2 + 9}} \cdot 2x = \frac{x}{\sqrt{x^2 + 9}}
-\]
-
-\end{example}
-
-
-
-\begin{example}[example 1]
-Find $\dfrac{d}{dx}\left[\sin(2x)\right]$.\\
-The function $\sin(2x)$ is a composition with $g(x) = 2x$ inside and $f(x) = \sin(x)$ outside.
-\[g(x) = 2x   \quad \text{and} \quad  f(x) = \sin(x).\]
-
-
-To find the derivative of $\sin(2x)$ we need to use the chain rule.
-We need both $f'(g(x))$ and $g'(x)$. The second is simpler so we start there. We have, $g'(x) = 2$.
+Find $\dfrac{d}{dx}\left[\sin(x^3)\right]$.\\
+The function $\sin(x^3)$ is a composition with $g(x) = x^3$ inside and $f(x) = \sin(x)$ outside.
+To find the derivative of the composite function$\sin(x^3)$ we need to use the chain rule.
+The chain rule formula requires both $f'(g(x))$ and $g'(x)$. The second is simpler, so we start there: $g'(x) = 3x^2$.
 To find $f'(g(x))$ we first find $f'(x)$ and then substitute $g(x)$ for $x$. 
 We have, 
 \[
-f'(x) = \cos(x) \qquad \mbox{so,} \qquad f'(g(x)) = \cos(g(x)) = \cos(2x)
+f'(x) = \cos(x) \qquad \mbox{so,} \qquad f'(g(x)) = \cos(g(x)) = \cos(x^3).
 \]
-We can now conclude that
+We can now conclude using the chain rule that
 \[
-\frac{d}{dx}\left[\sin(2x)\right] = f'(g(x))g'(x) = \cos(2x) \cdot 2 = 2\cos(2x).
+\frac{d}{dx}\left[\sin(x^3)\right] = f'(g(x))g'(x) = \cos(x^3) \cdot 3x^2 = 3x^2\cos(x^3).
 \]
-
 \end{example}
 
-
-
-\[g'(x) = 2; \quad \text{next} \]
-\[f'(x) = \cos(x), \quad \text{so}\]
-\[f'(g(x)) =\cos(g(x)) = \cos(2x).\]
-By the chain rule,
-\[h'(x) = f'(g(x))g'(x) = \cos(2x) \cdot 2 = 2\cos(2x).\]
-
-
-Here is a video of example 1:
-\begin{foldable}
-\youtube{Yy6QXnFlnXs} %vid of example 1
-\end{foldable}
-
-
-
 \begin{problem}(problem 1)
-  
-Compute
+Find the indicated derivative:
   \[
-  \frac{d}{dx} \sin(5x) = \answer{5\cos(5x)}.
+  \frac{d}{dx} \sin(x^4) = \answer{4x^3\cos(x^4)}.
   \]
     \begin{hint}
       The chain rule says:
@@ -128,7 +107,7 @@ Compute
     \end{hint}
     \begin{hint}
       The ``outside'' function is $f(x) = \sin(x)$ and the ``inside''
-      function is $g(x) = 5x$.
+      function is $g(x) = x^4$.
     \end{hint}
     \begin{hint}
 		  Leave the inside in, $f'(g(x))$
@@ -139,46 +118,27 @@ Compute
 	 
 \end{problem}
 
-
-
 \begin{example}[example 2]
-
-Find $h'(x)$ if $h(x) = e^{5x}$.\\
-We write $h(x)$ as a composition: $h(x)=f(g(x))$ with
+Find $\dfrac{d}{dx}\left[e^{-x^2}\right]$.\\
+The function $e^{-x^2}$ is a composition with $g(x) = -x^2$ inside and $f(x) = e^x$ outside.
+To find the derivative of the composite function $e^{-x^2}$ we need to use the chain rule.
+The chain rule formula requires both $f'(g(x))$ and $g'(x)$. The second is simpler, so we start there: $g'(x) = -2x$.
+To find $f'(g(x))$ we first find $f'(x)$ and then substitute $g(x)$ for $x$. 
+We have, 
 \[
-g(x) = 5x  \quad \text{and} \quad f(x) = e^x.
+f'(x) = e^x \qquad \mbox{so,} \qquad f'(g(x)) = e^{g(x)} = e^{-x^2}
 \]
-To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$. We have,
+We can now conclude using the chain rule that
 \[
-g'(x) = 5; \quad \text{and} 
+\frac{d}{dx}\left[e^{-x^2}\right] = f'(g(x))g'(x) = e^{-x^2} \cdot (-2x) = -2xe^{-x^2}
 \]
-\[
-f'(x) = e^x, \quad \text{so}
-\]
-\[
-f'(g(x)) =e^{g(x)} = e^{5x}.
-\]
-By the chain rule,
-\[
-h'(x) = f'(g(x))g'(x) = e^{5x} \cdot 5 = 5e^{5x}.
-\]
-
 \end{example}
 
-Here is a video of example 2:
-
-\begin{foldable}
-\youtube{BG63VLFnlsA} %vid of example 2
-\end{foldable}
-
-
-
-
-\begin{problem}(problem 2)
+\begin{problem}(problem 2a)
   
 Compute
   \[
-  \frac{d}{dx} e^{3x} = \answer{3e^{3x}}.
+  \frac{d}{dx} e^{\sqrt x} = \answer{\frac{e^{\sqrt x}}{2\sqrt x}}.
   \]
   
     \begin{hint}
@@ -189,7 +149,7 @@ Compute
     \end{hint}
     \begin{hint}
       The outside function is $f(x) = e^x$ and the inside
-      function is $g(x) = 3x$.
+      function is $g(x) = \sqrt{x}$.
     \end{hint}
     \begin{hint}
 		  Leave the inside in, $f'(g(x))$
@@ -200,11 +160,10 @@ Compute
     
 \end{problem}
 
-In the previous two examples, the inside function was a linear function, $mx$. In general, if $h(x) = f(mx)$, then $h'(x) = mf(mx)$.
-Use this idea to answer the following questions.
+
 
 \begin{problem}(problem 2b)
-What is the derivative of $e^{2x}$?
+What is the derivative of $e^{\tan(x)}$?
 \begin{multipleChoice}
   \choice{$e^{2x}$}
   \choice{$2e^x$}
@@ -964,5 +923,11 @@ Finally, the chain rule says to multiply these derivatives:
 \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = -\sin(u) \cdot 3x^2 = -3x^2\sin(x^3).
 \]
 \end{example}
+
+
+In the previous two examples, the inside function was a linear function, $mx$. In general, if $h(x) = f(mx)$, then $h'(x) = mf(mx)$.
+Use this idea to answer the following questions.
+
+
 \end{document}
 
