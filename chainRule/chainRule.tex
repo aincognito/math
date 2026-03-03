@@ -52,18 +52,18 @@ $y = f(u)$ where $u = g(x)$.
 \begin{example}[example 2]
 Write the following compositions as a chain of variables:
 \begin{enumerate}
-\item The function \quad $y = \sqrt{x^2 + 9}$ \quad can be written as $y = \sqrt{u}$ where $u = x^2 + 9$
-\item The function \quad $y =e^{-x^2}$ \quad can be written as $y = e^u$ where $u = -x^2$
-\item The function \quad $\tan^3(x)$ \quad can be written as $y = u^3$ where $u = \tan(x)$
+\item The function \quad $y = \sqrt{x^2 + 9}$ \quad can be written as $y = \sqrt{u}$ where $u = x^2 + 9$.
+\item The function \quad $y =e^{-x^2}$ \quad can be written as $y = e^u$ where $u = -x^2$.
+\item The function \quad $\tan^3(x)$ \quad can be written as $y = u^3$ where $u = \tan(x)$.
 \end{enumerate}
 \end{example}
 
 \begin{problem}(problem 2)
 Write the following compositions as a chain of variables:
 \begin{enumerate}
-\item $y = (x^3 + 1)^5$ can be written as $y = f(u) = \answer{u^5}$ where $u = g(x) = \answer{x^3 + 1}$
-\item $\ln(\cos(x))$; can be written as $y = f(u) = \answer{\ln(u)}$ where $u = g(x) = \answer{\cos(x)}$
-\item $e^{\sqrt{x}}$; can be written as $y = f(u) = \answer{e^u}$ where $u = g(x) = \answer{\sqrt{x}}$
+\item The single equation $y = (x^3 + 1)^5$ can be written as $y = f(u) = \answer{u^5}$ where $u = g(x) = \answer{x^3 + 1}$
+\item The single equation $\ln(\cos(x))$; can be written as $y = f(u) = \answer{\ln(u)}$ where $u = g(x) = \answer{\cos(x)}$
+\item The single equation $e^{\sqrt{x}}$; can be written as $y = f(u) = \answer{e^u}$ where $u = g(x) = \answer{\sqrt{x}}$
 \end{enumerate}
 \end{problem}
 
@@ -77,10 +77,10 @@ The chain rule is the formula for computing the derivative of a composition.
 The formula can be expressed by saying that the derivative of a composition is ``the derivative of the outside   
 times the derivative of the inside." It must be noted that the derivative of the outside function is evaluated at the inside function.  
 
-\begin{example}[example 1]
+\begin{example}[example 3]
 Find $\dfrac{d}{dx}\left[\sin(x^3)\right]$.\\
 The function $\sin(x^3)$ is a composition with $g(x) = x^3$ inside and $f(x) = \sin(x)$ outside.
-To find the derivative of the composite function$\sin(x^3)$ we need to use the chain rule.
+To find the derivative of the composite function $\sin(x^3)$ we need to use the chain rule.
 The chain rule formula requires both $f'(g(x))$ and $g'(x)$. The second is simpler, so we start there: $g'(x) = 3x^2$.
 To find $f'(g(x))$ we first find $f'(x)$ and then substitute $g(x)$ for $x$. 
 We have, 
@@ -93,7 +93,7 @@ We can now conclude using the chain rule that
 \]
 \end{example}
 
-\begin{problem}(problem 1)
+\begin{problem}(problem 3)
 Find the indicated derivative:
   \[
   \frac{d}{dx} \sin(x^4) = \answer{4x^3\cos(x^4)}.
@@ -117,7 +117,7 @@ Find the indicated derivative:
 	 
 \end{problem}
 
-\begin{example}[example 2]
+\begin{example}[example 3]
 Find $\dfrac{d}{dx}\left[e^{-x^2}\right]$.\\
 The function $e^{-x^2}$ is a composition with $g(x) = -x^2$ inside and $f(x) = e^x$ outside.
 To find the derivative of the composite function $e^{-x^2}$ we need to use the chain rule.
@@ -133,7 +133,7 @@ We can now conclude using the chain rule that
 \]
 \end{example}
 
-\begin{problem}(problem 2a)
+\begin{problem}(problem 3a)
   
 Compute
   \[
@@ -893,7 +893,7 @@ Compute
 \end{center}
 
 
-\section{Leibniz Notation for the Chain Rule}
+\subsection{Leibniz Notation for the Chain Rule}
 
 The chain rule can also be expressed in Leibniz notation.  A composition $y = f(g(x))$ can be written using a chain of variables 
 as: $y = f(u)$ where $u = g(x)$. Observe that $\frac{dy}{du} = f'(u) = f'(g(x))$ and $\frac{du}{dx} = g'(x)$. 
@@ -927,6 +927,36 @@ Finally, the chain rule says to multiply these derivatives:
 In the previous two examples, the inside function was a linear function, $mx$. In general, if $h(x) = f(mx)$, then $h'(x) = mf(mx)$.
 Use this idea to answer the following questions.
 
+\subsection{Proof of the Chain Rule}
+The chain rule is a consequence of the limit definition of the derivative.  
+We give a proof of the chain rule here.  
+\begin{theorem}[Chain Rule]
+If $f$ and $g$ are differentiable functions, then the composition $f(g(x))$ is differentiable and
+\[\frac{d}{dx} f(g(x)) = f'(g(x)) \cdot g'(x).\]
+\end{theorem} 
+\begin{proof}
+We start with the limit definition of the derivative:
+\[
+\frac{d}{dx} f(g(x)) = \lim_{h \to 0} \frac{f(g(x+h)) - f(g(x))}{h}
+\]
+We multiply and divide by $g(x+h) - g(x)$ to get
+\[
+\frac{d}{dx} f(g(x)) = \lim_{h \to 0} \frac{f(g(x+h)) - f(g(x))}{g(x+h) - g(x)} \cdot \frac{g(x+h) - g(x)}{h}.
+\]
+By the limit laws, this is equal to 
+\[\lim_{h \to 0} \frac{f(g(x+h)) - f(g(x))}{g(x+h) - g(x)} \cdot \lim_{h \to 0} \frac{g(x+h) - g(x)}{h}\]
+The second limit is $g'(x)$ by the definition of the derivative.  
+To find the first limit, we let $k = g(x+h) - g(x)$. By the continuity of $g$, we have $k \to 0$ as $h \to 0$.
+Thus, the first limit is
+\[
+\lim_{k \to 0} \frac{f(g(x) + k) - f(g(x))}{k} = f'(g(x)).
+\]
+Putting this all together, we have
+\[
+\frac{d}{dx} f(g(x)) = f'(g(x)) \cdot g'(x).
+\]
+Note that in this proof, we had to assume that $g(x+h) \neq g(x)$ for $h \neq 0$ close to $0$. 
+\end{proof} 
 
 \end{document}
 
