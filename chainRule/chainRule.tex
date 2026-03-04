@@ -357,6 +357,15 @@ U'(2) = -\frac{100\ln(2)}{3519}e^{-\frac{5\ln(2)}{3519}(2)}.
 This is a negative value, indicating that the amount of uranium 235 is decreasing over time.
 \end{problem}
 
+
+\begin{tikzpicture}
+\draw (0,0) -- (1,0) node[left]{$y$} node[right]{$u$};
+\draw (1.5, 0) -- (2.5,0) node[right]{$x$};
+\draw[ultra thick, ->] (0.5,0.5) arc (30:150:0.5) node[below, midway]{$\frac{dy}{du}$};
+\draw[ultra thick, ->] (2,0.5) arc (30:150:0.5) node[below, midway]{$\frac{du}{dx}$};
+\draw[ultra thick, ->] (1.5,0) arc (210:330:1.5) node[above, midway]{$\frac{dy}{dx}$};
+\end{tikzpicture}
+
 \begin{problem}(problem 2b)
 What is the derivative of $e^{\tan(x)}$?
 \begin{multipleChoice}
