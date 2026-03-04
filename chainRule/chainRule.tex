@@ -359,11 +359,11 @@ This is a negative value, indicating that the amount of uranium 235 is decreasin
 
 \begin{center}
 \begin{tikzpicture}
-\draw (0,0) -- (1,0) node[left]{$y$} node[right]{$u$};
+\draw (0,0) node[left]{$y$} -- (1,0)  node[right]{$u$};
 \draw (1.5, 0) -- (2.5,0) node[right]{$x$};
-\draw (0.5,-0.75) arc (210:330:0.5) node[below, midway]{$\frac{dy}{du}$};
-\draw (2,-0.75) arc (210:330:0.5) node[below, midway]{$\frac{du}{dx}$};
-\draw (1.5,.75) arc (30:150:1.5) node[above, midway]{$\frac{dy}{dx}$};
+\draw (0.5,-0.5) arc (210:330:0.75) node[below, midway]{$\frac{dy}{du}$};
+\draw (2,-0.5) arc (210:330:0.75) node[below, midway]{$\frac{du}{dx}$};
+\draw (1.75,.5) arc (30:150:1.5) node[above, midway]{$\frac{dy}{dx}$};
 \end{tikzpicture}
 \end{center}
 
