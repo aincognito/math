@@ -257,12 +257,21 @@ Thus, the chain rule in Leibniz notation is given by the elegant formula:
 \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx},
 \]
 In this format, the chain rule expresses the fact that ``rates of change multiply."  
-To see this, consider a small change in the variable $x$  This produces a change in $u$ which in turn produces a change in $y$.
+To see this, consider a small change in the variable $x$.  This produces a change in $u$ which in turn produces a change in $y$.
 The chain rule states that the rate of change of $y$  with respect to $x$ is the rate of change of $u$ with 
 respect to $x$ times the rate of change of $y$ with respect to $u$.
 For example, if $u$ is changing three times faster than $x$ and $y$ is changing four times faster than $u$, then $y$ is changing $3 \cdot 4 = 12$ times faster than $x$.
+\begin{center}
+\begin{tikzpicture}
+\draw (0,0) node[left]{$y$} -- (1,0)  node[right]{$u$};
+\draw (1.5, 0) -- (2.5,0) node[right]{$x$};
+\draw (-0.25,-0.4) arc (230:310:1) node[below, midway]{$\frac{dy}{du}$};
+\draw (1.35,-0.4) arc (230:310:1) node[below, midway]{$\frac{du}{dx}$};
+\draw (2.58,.4) arc (45:135:2) node[above, midway]{$\frac{dy}{dx}$};
+\end{tikzpicture}
+\end{center}
 
-\begin{example}
+\begin{example}[example 6]
 Find $\frac{dy}{dx}$ if $y = \cos(x^3)$.\\
  We unravel the composition by substituting $u$ for $x^3$ leading to the following chain of variables: 
 \[
@@ -278,9 +287,25 @@ Finally, the chain rule says to multiply these derivatives:
 \]
 \end{example}
 
-\begin{example}
-Find the second derivative of $\tan(x)$.\\
-The derivative of $\tan(x)$ is $\sec^2(x)$. The second derivative is the derivative of the composition$\sec^2(x)$.\\
+\begin{problem}(problem 6)
+Find $\frac{dy}{dx}$ if $y = \ln(x^3 +x^2)$ and simplify the answer.\\
+  We unravel the composition by substituting $u$ for $x^3 + x^2$ leading to the following chain of variables:
+\[
+y = \ln(u),  \text{ where } \, u = x^3 + x^2
+\]
+Then the derivatives are
+\[
+\frac{dy}{du} = \frac{1}{u}  \,\,\,\text{  and  }  \,\,\,\frac{du}{dx} = 3x^2 + 2x.
+\]
+Finally, the chain rule says to multiply these derivatives:
+\[
+\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = \frac{1}{u} \cdot (3x^2 + 2x) = \frac{3x^2 + 2x}{x^3 + x^2}
+\]
+which can be simplified to $\frac{3x + 2}{x^2 + x}$.
+\end{problem}
+
+\begin{example}[example 7]
+Find the second derivative of $\sec^2(x)$.\\
 We unravel the composition by substituting $u$ for $\sec(x)$ leading to the following chain of variables:
 \[
 y = u^2,  \text{ where } \, u = \sec(x).
@@ -291,11 +316,30 @@ Then the derivatives are
 \]
 Finally, the chain rule says to multiply these derivatives:
 \[
-\frac{d}{dx}\left[\sec^2(x)\right] = \frac{dy}{du} \cdot \frac{du}{dx} = 2u \cdot \sec(x)\tan(x) = 2\sec(x) \cdot \sec(x)\tan(x) = 2\sec^2(x)\tan(x).
+\frac{d}{dx}\left[\sec^2(x)\right] = \frac{dy}{du} \cdot \frac{du}{dx} = 2u \cdot 
+\sec(x)\tan(x) = 2\sec(x) \cdot \sec(x)\tan(x) = 2\sec^2(x)\tan(x).
 \]
+Note that the function $\sec^2(x)$ that we differentiated in this example is already the derivative of $\tan(x)$.
+Hence, we found that the second derivative of $\tan(x)$ is $2\sec^2(x)\tan(x)$.
 \end{example}
 
-\begin{example}
+\begin{problem}(problem 7)
+  Find the derivative of $\ln^4(x)$.\\
+  We unravel the composition by substituting $u$ for $\ln(x)$ leading to the following chain of variables:
+\[
+y = u^4,  \text{ where } \, u = \ln(x).
+\]
+Then the derivatives are
+\[
+\frac{dy}{du} = 4u  \,\,\,\text{  and  }  \,\,\,\frac{du}{dx} = \frac{1}{x}.
+\]
+Finally, the chain rule says to multiply these derivatives:
+\[
+\frac{d}{dx}\left[\ln^4(x)\right] = \frac{dy}{du} \cdot \frac{du}{dx} = 4u \cdot \frac{1}{x} = \frac{4\ln(x)}{x}.
+\]
+\end{problem}
+
+\begin{example}[example 8]
 After $t$ years, the amount of carbon 14 left from a sample of 10 grams is given by the function
 \[
 C(t) = 10e^{-\frac{t}{5730}}.
@@ -326,7 +370,7 @@ C'(1000) = -\frac{10}{5730}e^{-\frac{1000}{5730}} \approx -0.00175.
 This is a negative value, indicating that the amount of carbon 14 is decreasing over time.
 \end{example}
 
-\begin{problem}
+\begin{problem}(problem 8)
 After $t$ million years, the amount of uranium 235 left from a sample of 20 grams is given by the function
 \[
 U(t) = 20e^{-\frac{5\ln(2)}{3519}t}.
@@ -357,98 +401,10 @@ U'(2) = -\frac{100\ln(2)}{3519}e^{-\frac{5\ln(2)}{3519}(2)}.
 This is a negative value, indicating that the amount of uranium 235 is decreasing over time.
 \end{problem}
 
-\begin{center}
-\begin{tikzpicture}
-\draw (0,0) node[left]{$y$} -- (1,0)  node[right]{$u$};
-\draw (1.5, 0) -- (2.5,0) node[right]{$x$};
-\draw (-0.25,-0.4) arc (230:310:1) node[below, midway]{$\frac{dy}{du}$};
-\draw (1.35,-0.4) arc (230:310:1) node[below, midway]{$\frac{du}{dx}$};
-\draw (2.55,.4) arc (45:135:2) node[above, midway]{$\frac{dy}{dx}$};
-\end{tikzpicture}
-\end{center}
+\section{Additional Examples and Problems}
 
-\begin{problem}(problem 2b)
-What is the derivative of $e^{\tan(x)}$?
-\begin{multipleChoice}
-  \choice{$e^{\tan(x)}\sec^2(x)$}
-  \choice{$e^{\tan(x)}\tan(x)$}
-  \choice[correct]{$e^{\tan(x)}\sec^2(x)$}
-  \choice{$-e^{\tan(x)}\sec^2(x)$}
-\end{multipleChoice}
-\end{problem}
 
-\begin{problem}(problem 2c)
-What is the derivative of $\sin(4x)$?
-\begin{multipleChoice}
-  \choice{$\sin(4x)$}
-  \choice{$4\sin(x)$}
-  \choice[correct]{$4\cos(4x)$}
-  \choice{$-4\cos(4x)$} 
-\end{multipleChoice}
-\end{problem}
-
-\begin{problem}(problem 2d)
-What is the derivative of $\tan(5x)$?
-\begin{multipleChoice}
-  \choice{$2\sec^2(5x)$}
-  \choice{$\sec^2(5x)$}
-  \choice{$5\sec^2(x)$}
-  \choice[correct]{$5\sec^2(5x)$}
-\end{multipleChoice}
-\end{problem}
-
-\begin{problem}(problem 2e)
-What is the derivative of $\sec(3x)$?
-\begin{multipleChoice}
-  \choice{$3\sec\tan(3x)$}
-  \choice{$\sec(3x)\tan(3x)$}
-  \choice{$3\sec(x)\tan(x)$}
-  \choice[correct]{$3\sec(3x)\tan(3x)$}
-\end{multipleChoice}
-\end{problem}
-
-\begin{problem}(problem 2f)
-What is the derivative of $\ln(6x)$?
-\begin{multipleChoice}
-  \choice{$\frac{1}{6x}$}
-  \choice{$\frac{6}{x}$}
-  \choice[correct]{$\frac{1}{x}$}
-  \choice{$\frac{1}{x}(6x)(6)$}
-\end{multipleChoice}
-\end{problem}
-
-\begin{problem}(problem 2g)
-What is the derivative of $\sqrt{8x+4}$?
-\begin{multipleChoice}
-  \choice{$\frac{1}{2\sqrt{8x+4}}$}
-  \choice{$\frac{4}{\sqrt{8x+4}}$}
-  \choice[correct]{$\frac{4}{\sqrt{8x+4}}$}
-  \choice{$\frac{2}{\sqrt{8x+4}}$}
-  \end{multipleChoice}  
-\end{problem} 
-
-\begin{problem}(problem 2h)
-What is the derivative of $\sqrt{9x-1}$?
-\begin{multipleChoice}
-  \choice{$\frac{1}{\sqrt{9x-1}}$}
-  \choice{$\frac{9}{2\sqrt{9x-1}}$}
-  \choice[correct]{$\frac{9}{2\sqrt{9x-1}}$}
-  \choice{$\frac{1}{2\sqrt{9x-1}}$}
-  \end{multipleChoice}  
-\end{problem}
-
-\begin{problem}(problem 2i)
-What is the derivative of $\ln(x^3 + x^2)$?
-Simplify your answer as much as possible.
-\begin{multipleChoice}
-  \choice{$\frac{1}{x}(x^3 + x^2)(3x^2 + 2x)$}
-  \choice{$\frac{3x^2 + 2x}{x^3 + x^2}$}
-  \choice[correct]{$\frac{3x + 2}{x^2 + x}$}
-  \choice{$\frac{1}{x^3 + x^2}$}
-  \end{multipleChoice}
-\end{problem}
-
-\begin{example}[example 3]
+\begin{example}[example 9]
 Find $h'(x)$ if $h(x) = \cos(x^2 + 1)$.\\
 We write $h(x)$ as a composition: $h(x)=f(g(x))$ with
 \[
@@ -474,12 +430,12 @@ h'(x) = f'(g(x))g'(x) = -\sin(x^2 + 1) \cdot 2x = -2x\sin(x^2 + 1).
 
 \begin{center}
 \begin{foldable}
-\unfoldable{Here is a video of example 3}
+\unfoldable{Here is a video of example 9}
 \youtube{W1adUySCZxM} %cos(x^2 +1)
 \end{foldable}
 \end{center}
 
-\begin{problem}(problem 3)
+\begin{problem}(problem 9)
   Compute
   \[
   \frac{d}{dx} \cos(2-x^3) = \answer{3x^2\sin(2-x^3)}.
@@ -506,7 +462,7 @@ h'(x) = f'(g(x))g'(x) = -\sin(x^2 + 1) \cdot 2x = -2x\sin(x^2 + 1).
 
 
 
-\begin{example}[example 4]
+\begin{example}[example 10]
 
 Find $h'(x)$ if $h(x) = (x^3 - 4x + 2)^7$.\\
 We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
@@ -531,7 +487,7 @@ h'(x) = f'(g(x))g'(x) = 7(x^3 + 4x + 2)^6(3x^2 - 4)=7(3x^2 - 4)(x^3 - 4x + 2)^6.
 
 \begin{center}
 \begin{foldable}
-\unfoldable{Here is a video of example 4}
+\unfoldable{Here is a video of example 10}
 \youtube{FKoN4Ul8XcM}  %(x^3 - 4x + 2)^7
 \end{foldable}
 \end{center}
@@ -539,7 +495,7 @@ h'(x) = f'(g(x))g'(x) = 7(x^3 + 4x + 2)^6(3x^2 - 4)=7(3x^2 - 4)(x^3 - 4x + 2)^6.
 
 
 
-\begin{problem}(problem 4)
+\begin{problem}(problem 10)
   Compute
   \[
   \frac{d}{dx} (x^3 - 4x + 5)^8 = \answer{8(3x^2 - 4)(x^3 - 4x + 5)^7 }.
@@ -567,7 +523,7 @@ h'(x) = f'(g(x))g'(x) = 7(x^3 + 4x + 2)^6(3x^2 - 4)=7(3x^2 - 4)(x^3 - 4x + 2)^6.
 
 
 
-\begin{example}[example 5]
+\begin{example}[example 11]
 
 Find $h'(x)$ if $h(x) = \sqrt{x^2 + 4}$.\\
 We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
@@ -595,14 +551,14 @@ h'(x) &= f'(g(x))g'(x)\\
 
 \begin{center}
 \begin{foldable}
-\unfoldable{Here is a video of example 5}
+\unfoldable{Here is a video of example 11}
 \youtube{bmUe8uKxxos} %sqrt{x^2 +4}
 \end{foldable}
 \end{center}
 
 
 
-\begin{problem}(problem 5)
+\begin{problem}(problem 11)
   Compute
   \[
   \frac{d}{dx} \sqrt{x^2 - 3} = \answer{\frac{x}{\sqrt{x^2 - 3}}}.
@@ -631,7 +587,7 @@ h'(x) &= f'(g(x))g'(x)\\
 
 
 
-\begin{example}[example 6]
+\begin{example}[example 12]
 
 Find $h'(x)$ if $h(x) = \tan(3x)$.\\
 We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
@@ -657,13 +613,13 @@ h'(x) = f'(g(x))g'(x) = \sec^2(3x) \cdot 3= 3\sec^2(3x).
 
 \begin{center}
 \begin{foldable}
-\unfoldable{Here is a video of example 6}
+\unfoldable{Here is a video of example 12}
 \youtube{1L1z-e7yvRo} %tan(3x)
 \end{foldable}
 \end{center}
 
 
-\begin{problem}(problem 6a)
+\begin{problem}(problem 12a)
   Compute
   \[
   \frac{d}{dx} \tan(x^4) = \answer{4x^3 \sec^2(x^4)}.
@@ -688,7 +644,7 @@ h'(x) = f'(g(x))g'(x) = \sec^2(3x) \cdot 3= 3\sec^2(3x).
  	
 \end{problem}
 
-\begin{problem}(problem 6b)
+\begin{problem}(problem 12b)
 What is the derivative of $\sec(2x)$?
 \begin{multipleChoice}
   \choice{$\sec(2x)\tan(2x)$}
@@ -700,7 +656,7 @@ What is the derivative of $\sec(2x)$?
 
 
 
-\begin{example}[example 7]
+\begin{example}[example 13]
 Find $h'(x)$ if $h(x) = \frac{3}{(2x + 5)^4}$.\\
 We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
 \[
@@ -716,14 +672,14 @@ By the chain rule,
 
 \begin{center}
 \begin{foldable}
-\unfoldable{Here is a video of example 7}
+\unfoldable{Here is a video of example 13}
 \youtube{kddUPQBZJEM} %\frac{3}{(2x + 5)^4
 \end{foldable}
 \end{center}
 
 
 
-\begin{problem}(problem 7)
+\begin{problem}(problem 13)
   Compute
   \[
   \frac{d}{dx} \frac{2}{(3x - 8)^5} = \answer{\frac{-30}{(3x - 8)^6}}.
@@ -750,7 +706,7 @@ By the chain rule,
 \end{problem}
 
 
-\begin{example}[example 8]
+\begin{example}[example 14]
 Find $h'(x)$ if $h(x) = \sin(x^3)$.\\
 We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
 \[g(x) = x^3  \quad \text{and} \quad  f(x) = \sin(x).\] 
@@ -762,12 +718,8 @@ By the chain rule,
 \[h'(x) = f'(g(x))g'(x) = \cos(x^3)\cdot 3x^2 = 3x^2\cos(x^3).\]
 \end{example}
 
-\begin{center}
 
-\end{center}
-
-
-\begin{problem}(problem 8)
+\begin{problem}(problem 14)
   Compute
   \[
   \frac{d}{dx} \sin(3x^5) = \answer{\cos(3x^5)\cdot 15x^4}.
@@ -794,7 +746,7 @@ By the chain rule,
 
 
 
-\begin{example}[example 9]
+\begin{example}[example 15]
 Find $h'(x)$ if $h(x) = \sin^3(x)$.\\
 We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
 \[g(x) =\sin(x)   \quad \text{and} \quad  f(x) = x^3.\]
@@ -808,14 +760,14 @@ By the chain rule,
 
 \begin{center}
 \begin{foldable}
-\unfoldable{Here is a video of example 9}
-\youtube{2xh2g1f5Ysc} %vid of example 9
+\unfoldable{Here is a video of example 15}
+\youtube{2xh2g1f5Ysc} %sin^3 x
 \end{foldable}
 \end{center}
  
 
 
-\begin{problem}(problem 9)
+\begin{problem}(problem 15)
   Compute
   \[
   \frac{d}{dx} \sin^4(x) = \answer{4\sin^3(x)\cos(x)}.
@@ -842,7 +794,7 @@ By the chain rule,
 
 
 
-\begin{example}[example 10]
+\begin{example}[example 16]
 Find $h'(x)$ if $h(x) = e^{-x^2}$.\\
 We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
 \[g(x) = -x^2  \quad \text{and} \quad  f(x) =e^x.\]
@@ -854,14 +806,14 @@ By the chain rule,
 \[h'(x) = f'(g(x))g'(x) = e^{-x^2} (-2x) \quad \text{or} \quad -2xe^{-x^2}.\]
 \end{example}
 
-Here is a video of example 10:
+Here is a video of example 16:
 \begin{foldable}
-\youtube{ubKbCULGXDg} %vid of example 10
+\youtube{ubKbCULGXDg} %e^(-x^2)
 \end{foldable}
 
  
 
-\begin{problem}(problem 10)
+\begin{problem}(problem 16)
 
 Compute
   \[
@@ -889,7 +841,7 @@ Compute
 
 
 
-\begin{example}[example 11]
+\begin{example}[example 17]
 Find $h'(x)$ if $h(x) = \ln(x^4 +1)$.\\
 We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
 \[g(x) = x^4 + 1  \quad \text{and} \quad  f(x) = \ln(x).\]
@@ -901,15 +853,15 @@ By the chain rule,
 \[h'(x) = f'(g(x))g'(x) = \frac{1}{x^4 + 1} \cdot 4x^3 = \frac{4x^3}{x^4 + 1}.\]
 \end{example}
 
-Here is a video of example 11:
+Here is a video of example 17:
 \begin{foldable}
-\youtube{7FOx5dq88NI} %vid of example 11
+\youtube{7FOx5dq88NI} %ln(x^4 + 1)
 \end{foldable}
 
  
 
 
-\begin{problem}(problem 11)
+\begin{problem}(problem 17)
   Compute
   \[
   \frac{d}{dx} \ln(x^3 -2) = \answer{\frac{3x^2}{x^3 - 2}}.
@@ -936,7 +888,7 @@ Here is a video of example 11:
 
 
 
-\begin{example}[example 12]
+\begin{example}[example 18]
 Find $h'(x)$ if $h(x) = \ln^5(x)$.\\
 We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
 \[g(x) = \ln(x)  \quad \text{and} \quad  f(x) = x^5.\]
@@ -948,14 +900,14 @@ By the chain rule,
 \[h'(x) = f'(g(x))g'(x) = 5\ln^4(x)\cdot \frac{1}{x}  = \frac{5\ln^4(x)}{x}.\]
 \end{example}
 
-Here is a video of example 12:
+Here is a video of example 18:
 \begin{foldable}
-\youtube{5Fb6cph_7jE} 
+\youtube{5Fb6cph_7jE} %ln^5 x
 \end{foldable}
 
 
 
-\begin{problem}(problem 12)
+\begin{problem}(problem 19)
   
 Compute
   \[
@@ -983,7 +935,7 @@ Compute
 
 
 
-\begin{example}[example 13]
+\begin{example}[example 20]
 Find $h'(x)$ if $h(x) = \ln(\sin(x))$.\\
 We write $h(x)$ as a composition: $h(x)=f(g(x))$ with 
 \[g(x) = \sin(x)  \quad \text{and} \quad  f(x) = \ln(x).\]
@@ -997,13 +949,13 @@ By the chain rule,
 
 \begin{center}
 \begin{foldable}
-\unfoldable{Here is a video of example 13}
+\unfoldable{Here is a video of example 20}
 \youtube{sVXyra9ElKo}%ln(sin x) 
 \end{foldable}
 \end{center}
 
 
-\begin{problem}(problem 13a)
+\begin{problem}(problem 20a)
   Compute
   \[
   \frac{d}{dx} \ln(\sec(x)) = \answer{\tan(x)}
@@ -1029,7 +981,7 @@ By the chain rule,
 	
 \end{problem}
 
-\begin{problem}(problem 13b)
+\begin{problem}(problem 20b)
   Compute
   \[
   \frac{d}{dx} \cos(\ln(x)) = \answer{\frac{-\sin(\ln(x))}{x}}.
@@ -1065,7 +1017,7 @@ With $g(x)$ as the inside function, and we obtain the following formula for the 
 
 The above formula is both useful and important.  We will see it again in the Logarithmic Differentiation section.
 
-\begin{example}[example 14]
+\begin{example}[example 21]
  Find $\frac{d}{dx} \left[\ln(x^3 + 2)\right]$.\\
  
 We use the above formula with $g(x) = x^3 + 2$ to get
@@ -1075,32 +1027,99 @@ We use the above formula with $g(x) = x^3 + 2$ to get
 \end{example}
 
 \begin{foldable}
-\unfoldable{Here is a video of example 14}
+\unfoldable{Here is a video of example 21}
 \youtube{W1adUySCZxM}%ln(x^3 +2)
 \end{foldable}
 
-\begin{problem}(problem 14)
+\begin{problem}(problem 21)
 Compute 
 \[
 \frac{d}{dx} \left[\ln(x^4 + 3x - 1)\right] = \answer{\frac{4x^3 + 3}{x^4 + 3x -1}}.
 \]
 \end{problem}
 
-\begin{center}
-\begin{foldable}
-\unfoldable{Here are some detailed, lecture style videos on the chain rule:}
-\youtube{WkiZcDAwlYE}
-\youtube{DiXsWYXXI00}
-\youtube{hLAV8r9ARzU}
-\end{foldable}
-\end{center}
+\section{Chain Rule Formulas}
+\begin{problem}(problem 22)
+What is the derivative of $g^n(x)$?
+\begin{multipleChoice}
+  \choice{$ng^{n-1}(x)$}
+  \choice{$ng'^{n-1}(x)$}
+  \choice{$g^n(x) g'(x)$}
+  \choice[correct]{$ng^{n-1}(x)g'(x)$}
+\end{multipleChoice}
+\end{problem}
 
+\begin{problem}(problem 23)
+What is the derivative of $e^{g(x)}$?
+\begin{multipleChoice}
+  \choice{$g(x)e^{g(x)-1}$}
+  \choice{$e^{g'(x)}$}
+  \choice[correct]{$e^{g(x)}g'(x)$}
+  \choice{$e^{g(x)}$} 
+\end{multipleChoice}
+\end{problem}
 
+\begin{problem}(problem 24)
+What is the derivative of $\ln(g(x))$?
+\begin{multipleChoice}
+  \choice{$\frac{g'(x)}{x}$}
+  \choice{$\frac{1}{g(x)}$}
+  \choice{$\ln(g'(x))$}
+  \choice[correct]{$\frac{g'(x)}{g(x)}$}
+\end{multipleChoice}
+\end{problem}
 
+\begin{problem}(problem 25)
+What is the derivative of $\sin(g(x))$?
+\begin{multipleChoice}
+  \choice{$\cos(g(x))$}
+  \choice{$\sin(x) g'(x)$}
+  \choice{$sin(g(x))\cos(x)$}
+  \choice[correct]{$\cos(g(x))g'(x)$}
+\end{multipleChoice}
+\end{problem}
 
+\begin{problem}(problem 26)
+What is the derivative of $\cos(g(x))$?
+\begin{multipleChoice}
+  \choice{$\sin(g(x))$}
+  \choice{$-\sin(g(x))g'(x)$}
+  \choice{$\cos(x) g'(x)$}
+  \choice[correct]{$-\sin(g(x))g'(x)$}
+\end{multipleChoice}
+\end{problem}
 
-In the previous two examples, the inside function was a linear function, $mx$. In general, if $h(x) = f(mx)$, then $h'(x) = mf(mx)$.
-Use this idea to answer the following questions.
+\begin{problem}(problem 27)
+What is the derivative of $\tan(g(x))$?
+\begin{multipleChoice}
+  \choice{$\sec^2(g(x))$}
+  \choice{$\sec^2(x) g'(x)$}
+  \choice[correct]{$\sec^2(g(x))g'(x)$}
+  \choice{$\sec^2(g'(x))$}
+  \end{multipleChoice}  
+\end{problem} 
+
+\begin{problem}(problem 28)
+What is the derivative of $\sec(g(x))$?
+\begin{multipleChoice}
+  \choice{$\sec(g(x))\tan(g(x))$}
+  \choice{$\sec(g(x))\tan(g(x))g'(x)$}
+  \choice{$\sec(x)\tan(x)g'(x)$}
+  \choice[correct]{$\sec(g(x))\tan(g(x))g'(x)$}
+  \end{multipleChoice}  
+\end{problem}
+
+\begin{problem}(problem 29)
+What is the derivative of $\csc(g(x))$?
+Simplify your answer as much as possible.
+\begin{multipleChoice}
+  \choice{$\csc(g(x))\cot(g(x))$}
+  \choice{$\csc(g(x))\cot(g(x))g'(x)$}
+  \choice{$-\csc(x)\cot(x)g'(x)$}
+  \choice[correct]{$-\csc(g(x))\cot(g(x))g'(x)$}
+  \end{multipleChoice} 
+\end{problem}
+
 
 \subsection{Proof of the Chain Rule}
 The chain rule is a consequence of the limit definition of the derivative.  
@@ -1132,6 +1151,15 @@ Putting this all together, we have
 \]
 Note that in this proof, we had to assume that $g(x+h) \neq g(x)$ for $h \neq 0$ close to $0$. 
 \end{proof} 
+
+\begin{center}
+\begin{foldable}
+\unfoldable{Here are some detailed, lecture style videos on the chain rule:}
+\youtube{WkiZcDAwlYE}
+\youtube{DiXsWYXXI00}
+\youtube{hLAV8r9ARzU}
+\end{foldable}
+\end{center}
 
 \end{document}
 
