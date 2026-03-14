@@ -15,7 +15,7 @@
 \begin{document}
 
 \begin{abstract}
-In this section we learn the Extreme Value Theorem and we find the extremes of a function.
+In this section we learn the Extreme Value Theorem, and we find the extremes of a function.
 \end{abstract}
 
 \maketitle
@@ -30,11 +30,10 @@ If $f(x)$ is continuous on the closed interval $[a,b]$, then $f(x)$ has both an 
 on the interval.
 \end{theorem}
 
-It is important to note that the theorem contains two hypothesis.  
-The first is that $f(x)$ is continuous and the second is that the interval is closed.  
+It is important to note that the theorem contains two hypotheses.  
+The first is that $f(x)$ is continuous, and the second is that the interval is closed.  
 If either of these conditions fails to hold, then $f(x)$ {\it might} fail to have either an 
-absolute max or an absolute min (or both). It is also important to note that the theorem 
-tells us that the max and the min occur in the interval, but it does not tell us how to find them.  
+absolute max or an absolute min (or both). \\
 
 \begin{center}
 \begin{tikzpicture}
@@ -69,54 +68,65 @@ tells us that the max and the min occur in the interval, but it does not tell us
 \end{tikzpicture}
 \end{center}
 
-The main idea is finding the location of the absolute max and absolute min of a continuous function on a closed 
-interval is contained in the following theorem.
+The theorem tells us that the max and the min exist in the interval, 
+but it does not tell us how to find them.
+The next theorem, attributed to the $17^{th}$ century polymath and 
+mathematician \link[Pierre de Fermat]{https://en.wikipedia.org/wiki/Pierre_de_Fermat},
+gives us a way to find the location of the absolute max and absolute min of a continuous function on a closed interval.
+
+%To understand the theorem we must first define the term {\it local extreme}.
+%\begin{definition}[Local extreme]
+%A function $f(x)$ has a {\bf local maximum} at $x = c$ if there exists an open 
+%interval $(a,b)$ containing $c$ such that $f(c) \geq f(x)$ for all $x \in (a,b)$. 
+%Similarly, $f(x)$ has a \bf{local minimum} at $x = c$ if there exists an open interval $(a,b)$ 
+%containing $c$ such that $f(c) \leq f(x)$ for all $x \in (a,b)$.\\ 
+%Local maxima and local minima are called {\bf local extremes}.
+%\end{definition}
+
+
 \begin{theorem}[Fermat's Theorem]
 Suppose $f(x)$ is defined on the open interval $(a,b)$. If $f(x)$ has an absolute maximum or absolute minimum at 
-a point $x = c$ in the interval, then $c$ is a critical number for $f(x)$.
+a point $x = c$ inside the interval, then $c$ is a critical number for $f(x)$.
 \end{theorem}
-As a result of Fermat's Theorem, we can conclude that the absolute extremes of
-a continuous function on a closed interval must occur at the endpoints of the interval or at a critical numbers 
+Note that the theorem refers to what are called interior points of the interval, $[a,b]$, and not the endpoints.
+Thus, Fermat's Theorem tells us that the absolute extremes of
+a continuous function on a closed interval must occur at either the endpoints of the interval or at critical numbers 
 inside the interval.\\
 
 \section{Closed Interval Method}
 Finding the absolute extremes of a
-continuous function, $f(x)$, on a closed interval $[a,b]$ is a three 
-step process.
+continuous function, $f(x)$, on a closed interval $[a,b]$ is a three-step process.
 \begin{enumerate}
-\item[1.] Find the critical numbers of $f(x)$ inside the interval $[a, b]$.
-\item[2.] Compute the values of $f(x)$ at the critical numbers and 
-at the endpoints.
+\item[1.] Find the critical numbers of $f(x)$ inside the interval $(a, b)$.
+\item[2.] Compare the values of the function $f(x)$ at these critical numbers and at the endpoints.
 \item[3.] The largest of the values from step 2 is the absolute 
-maximum of $f(x)$ on the closed interval $[a,b]$, and the smallest 
-of these values is the absolute minimum.
+maximum of $f(x)$ on $[a,b]$, and the smallest is the absolute minimum.
 \end{enumerate}
 %The largest of these function values is the absolute max and the smallest is the absolute min of $f(x)$ on $[a,b]$. 
 
 
 \begin{example}[example 1] Find the absolute maximum and the absolute minimum values of $f(x) = x^2 - 4x + 5$ on the closed interval $[0, 3]$.
 
-Solution:  The function is a polynomial, so it is continuous, and the interval is closed, 
-so by the Extreme Value Theorem, we know that this function has an absolute maximum and an absolute minimum on the interval $[0,3]$.
-First, we find the critical numbers of $f(x)$ in the interval $(0, 3)$. 
-The derivative is 
+Solution: the function is a polynomial, so it is continuous everywhere, and the interval is of the form $[a,b]$, so it is closed. 
+The Extreme Value Theorem tells us that this function has an absolute maximum and an absolute minimum on the interval $[0,3]$.
+We find them by using the Closed Interval Method outlined above.\\
+To find the critical numbers of $f(x)$ in the interval $(0, 3)$, we need the derivative,  
 \[
 f'(x) = 2x - 4
 \]
 which exists for all values of $x$.
 Solving the equation $f'(x) =0$ gives $x=2$ as the only critical number of the function.
-Moreover, this critical number is in the interval $(0,3)$.
-By the closed interval method, we know that the absolute extremes occur at either the endpoints, $x=0$ and $x = 3$, or the critical number $x = 2$.  
-Plugging these values into the original function $f(x)$ yields:
+Moreover, this critical number is inside the interval $(0,3)$.
+We next compute the function values at the critical numbers inside the interval and the endpoints:
 \begin{eqnarray*}
 f(0) &=& 0^2 - 4(0) + 5 =5\\
 f(2) &=& 2^2 - 4(2) + 5 = 1\\
 f(3) &=& 3^2 - 4(3) + 5 = 2
 \end{eqnarray*}
-The largest of these values is 5, corresponding to $f(0)$, and the smallest is 1, corresponding to $f(2)$. 
-Thus, we conclude that the absolute maximum of $f(x)$ on the closed interval $[0,3]$ is $5$ occurring 
+The largest of these values is $f(0) = 5$, and the smallest is $f(2) = 1$. 
+Finally, the absolute maximum of $f(x)$ on $[0,3]$ is $5$ occurring 
 at the left endpoint $x = 0$ and the absolute minimum of $f(x)$ in the interval is $1$
-occurring at the critical number $x = 2$.
+occurring at the critical number $x = 2$. Below is a graph of the function on the interval $[0,3]$ which confirms our results.
 \begin{image}
 \begin{tikzpicture}
 \begin{axis}[ axis x line = bottom,  axis y line = left, xtick = {1,2, 3}, ytick={1, 2, 3, 4, 5, 6, 7}, title={Absolute min at $x=2$ and absolute max at $x = 0$}]
