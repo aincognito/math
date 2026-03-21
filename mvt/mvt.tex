@@ -83,6 +83,11 @@ x = \answer{16^{-1/3}}
 \]
 \end{problem} 
 
+Here is a video solution of problem 1:
+\begin{foldable}
+\youtube{kPViK25-U64}
+\end{foldable}
+
 For the next example we need to recall that a {\it root} of a polynomial, $p(x)$, is a value $x = a$, such that $p(a) = 0$.
 We also need the fact that a quadratic polynomial has at most two roots, since if
 \[
@@ -94,8 +99,6 @@ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 \]
 
 \begin{example}[example 2] Use Rolle's Theorem  to show that a cubic polynomial can have at most three roots.\\
-
-
 
 Let $p(x)$ be a cubic polynomial, i.e., 
 \[
@@ -248,11 +251,13 @@ node[label=below]{some label};
 
 Conceptually, the left-hand side represents the instantaneous rate of change of $f$ at $x = c$, while the
 right-hand side represents the average rate of change of $f$ over the interval $[a,b]$. 
-As an example of the conceptual interpretation of the theorem, consider a car that averages a speed of, say, 47.4 miles per hour on a long trip. 
+As an example of the conceptual interpretation of the theorem, consider a car that 
+averages a speed of 47.4 miles per hour on a long trip. 
 The Mean Value Theorem tells us that the car must have been 
 traveling at exactly 47.4 miles per hour at some time during the trip.
 
-The Mean Value Theorem is an {\it existence} theorem because it asserts that there exists at least one value $x=c$ inside the interval $(a,b)$
+The Mean Value Theorem is an {\it existence} theorem because it asserts that there exists at least one 
+value $x=c$ inside the interval $(a,b)$
 that satisfies the equation 
 \[f'(c) = \frac{f(b) - f(a)}{b-a}.\]
 In the examples and problems below, we will determine this special value. 
@@ -271,7 +276,7 @@ has at least one solution in the interval $(0, 3)$. To find the solution(s),
 we first compute the value of the right-hand side using $a = 0$ and $b = 3$:
 \[\frac{f(b) - f(a)}{b-a} = \frac{f(3) - f(0)}{3-0} \]
 \[= \frac{3^2 - 0^2}{3}= \frac{9 - 0}{3} = 3.\]
-Next, we compute the derivative, $f'(x) = 2x$, and set it equal to this value:
+Next, we compute the derivative, $f'(x) = 2x$, and set it equal to this value.
 The conclusion of the MVT guarantees that the equation
 \[2x = 3\]
 has at least one solution in the open interval $(0,3)$.
@@ -279,22 +284,24 @@ This is easily verified, since if $2x = 3$, then
 \[x = \frac{3}{2},
 \]
 which is in $(0, 3)$.
-Furthermore, $x 3/2$ is the mid-point of the interval $(0, 3)$.
-When applying the MVT to a quadratic polynomial on any interval $[a, b]$ the value of $x$ that satisfies the theorem will always be the mid-point!
+Furthermore, $x = 3/2$ is the mid-point of the interval $(0, 3)$.
+When applying the MVT to a quadratic polynomial on any interval $[a, b]$ the value of $x$ that satisfies the 
+theorem will always be the mid-point!
 
 In the figure below, the secant line is in blue, 
-and the tangent line at $x = 3/2$ is in red. The Mean Value Theorem asserts that these lines are parallel, and the figure makes this clear.
+and the tangent line at $x = 3/2$ is in red. The Mean Value Theorem asserts that these lines are parallel, 
+and the figure makes this clear.
 
 \begin{image}
 \begin{tikzpicture}
 \begin{axis}[axis lines = center, legend pos=outer north east, title={MVT for $f(x) = x^2$ on $[0,3]$}]
 \addplot[domain=0:3, 
     samples=100, color=black, thick]{x^2};
-\addplot[smooth,mark=*,blue, thin] plot coordinates {(0,0)  (3,9)};
+\addplot[smooth,mark=*,blue] plot coordinates {(0,0)  (3,9)};
 \addplot[domain=0:3, 
-    samples=100, color=blue, thin]{3*x};
+    samples=100, color=blue]{3*x};
 \addplot[domain=0.8:2.2, 
-    samples=100, color=red, thin]{3*x - 2.25 };
+    samples=100, color=red]{3*x - 2.25 };
 \addplot[smooth,mark=*,red] plot coordinates {(1.5, 2.25)};
 \legend{$y=x^2$, , \text{secant line}, \text{tangent line}, }
 \end{axis}
