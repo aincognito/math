@@ -20,7 +20,8 @@ We find extremes of functions which model real world situations.
  
 
 \begin{example}[example 1]
-Farmer Bob has 2400 linear feet of fence. He wishes to build a rectangular enclosure with a partition fence parallel to one of the sides.  
+Farmer Bob has 2400 linear feet of fence. He wishes to build a rectangular enclosure with a partition fence 
+parallel to one of the sides.  
 What are the dimensions, $(x,y)$, that maximize the total area of the enclosure? What is the maximum area?
 
 % Farmer Bob can enclose if he has 2400 linear feet of fence at his disposal?
@@ -38,7 +39,9 @@ What are the dimensions, $(x,y)$, that maximize the total area of the enclosure?
 Let $x$ be the length of the enclosure and $y$ the width.  The total area of the enclosure is then
 \[A= xy.\]
 This is called the {\it objective} equation.
-To maximize the area, Farmer Bob should use all 2400 linear feet of fence.  Since there are two horizontal segments of length $x$ and three vertical segments of length $y$ (because of the partition), we get the {\it constraint} equation:
+To maximize the area, Farmer Bob should use all 2400 linear feet of fence.  Since there are two horizontal 
+segments of length $x$ and three vertical segments of length $y$ (because of the partition), we 
+get the {\it constraint} equation:
 \[2x+3y=2400.\]
 In the standard language of optimization, we can now state the problem as follows.
 
@@ -52,15 +55,17 @@ In this case, solving the constraint for $y$ gives
 \[y = 800 - \frac23 x. \;\; \text{(verify)}\]
 We {\it substitute} this expression of $y$ into the objective function to get 
 \[A(x) = x\left(800 - \frac23 x\right) = 800x - \frac23 x^2.\]
-Since $x$ represents a length of fence, we have $x \geq 0$. Furthermore, since we have 2400 feet of fence $2x \leq 2400$ which implies $x\leq 1200$.
-Thus we would like find the absolute maximum of $A(x)$ on the interval $[0, 1200]$. Since $A(x)$ is a continuous function, the EVT says that it has an abs max on the closed interval $[0, 1200]$.  We use the closed interval method of section 3.1 to find the abs max.
+Since $x$ represents a length of fence, we have $x \geq 0$. Furthermore, since we have 2400 feet of 
+fence $2x \leq 2400$ which implies $x\leq 1200$.
+Thus, we would like to find the absolute maximum of $A(x) = 800x - \frac23 x^2$ on the interval $[0, 1200]$.
+We use the closed interval method of section 3.2 to find the absolute maximum.
 
 The critical numbers are:
 \[A'(x) = 800 - \frac43 x = 0 \]
 which yields
 \[x= 600 \,\mbox{ft.}\]
 which is in the interval. Comparing values, we have $A(0) = 0, A(600) = 240000$ and $A(1200) = 0$.
-Thus the abs max occurs when $x = 600$. 
+Thus, the absolute maximum area occurs when $x = 600$ ft. 
 %We now use the second derivative test to verify that this is a maximum:
 %\[
 %A'' = -\frac43.
@@ -84,7 +89,7 @@ We can also note that $x = 600$ gives a maximum since the graph of $A(x)$ is a p
 \end{image}
 
 
-We next find $y$ by plugging $x = 600$ into the constraint:
+Plugging $x = 600$ into the constraint equations gives us the corresponding $y$-value:
 \[y = 800 - \frac23 x = 800 - \frac23(600) = 400 \,\mbox{ft.}\]
 Finally the maximum area of the enclosure is
 \[A = xy = (600)(400) = 240{,}000 \,\mbox{ft$^2$}.\]
@@ -103,7 +108,7 @@ Finally the maximum area of the enclosure is
 
 \begin{problem}(problem 1a)
 Farmer Bob has 1000 linear feet of fence with which to build a rectangular enclosure.  
-What dimensions will maximize the total area covered by the enclosure and what is the maximum area?
+What dimensions will maximize the total area covered by the enclosure, and what is the maximum area?
 
 \begin{hint}
 Let $x$ be the length and $y$ the width
@@ -128,7 +133,7 @@ The maximum area is $\answer{62500}$ sq. ft.
 
 \begin{problem}(problem 1b)
 Farmer Bob has 3200 linear feet of fence with which to build a rectangular enclosure with two partitions, as shown below.
-What dimensions will maximize the total area covered by the enclosure and what is the maximum area?
+What dimensions will maximize the total area covered by the enclosure, and what is the maximum area?
 
 \begin{center}
 \begin{tikzpicture}
@@ -160,7 +165,7 @@ The maximum area is $\answer{320000}$ sq. ft.
 Farmer Bob has 400 linear feet of fence with which to build a 
 rectangular enclosure along the bank of a straight river, as shown below.  
 If no fence is required along the river bank, what dimensions will maximize the total area 
-covered by the enclosure and what is the maximum area?
+covered by the enclosure, and what is the maximum area?
 \begin{center}
 \text{river}\\
 \begin{tikzpicture}
@@ -281,11 +286,13 @@ The maximum volume is $ \answer{62500}$ cubic inches.
 \end{problem}
 
 In some problems, the objective function involves a composition, $f(g(x))$.  
-If the outsode function $f$ is strictly increasing, then the max or min of the composition occurs at the same $x$-value as the max/min of $g(x)$. 
+If the outside function $f$ is strictly increasing, then the max or min of the composition 
+occurs at the same $x$-value as the max/min of $g(x)$. 
 We will see this in the next example.
 \begin{example}[example 3]
 Scientist Sam wants to know how close a comet moving in a parabolic trajectory will get to the sun. 
-We will assume that the sun is located at the origin and that the path of the comet follows the parabola $y = x^2 - 5$. The units 
+We will assume that the sun is located at the origin and that the path of the comet 
+follows the parabola $y = x^2 - 5$. The units 
 are in millions of miles.
 
 \begin{center}
@@ -385,7 +392,8 @@ How much fence will he need?
 \end{tikzpicture}
 \end{center}
 
-Let $x$ be the length of the enclosure and $y$ the width. Because of the partitions, there are 3 horizontal and 3 vertical sections of fence. Hence the total amount of fence needed can be expressed as 
+Let $x$ be the length of the enclosure and $y$ the width. Because of the partitions, there 
+are three horizontal and three vertical sections of fence. Hence, the total amount of fence needed can be expressed as 
 \[F = 3x + 3y.\]
  This is our objective function. Since the area of the enclosure needs to be 1600 sq. ft., we have the constraint 
 \[xy = 1600.\]
@@ -429,11 +437,14 @@ The minimum amount of fence needed is $\answer{120}$ ft.
 
 
 \begin{example}[example 5]
-A cheetah is on the bank of a 50 meter wide, straight river.   The cheetah spots prey on the opposite bank of the river, 100 meters upstream. 
-The cheetah decides to walk along the rivers edge for part of the way before swimming directly at the prey. If the cheetah walks at 2 m/s and swims at 1 m/s,
+A cheetah is on the bank of a 50-meter wide, straight river.   The cheetah spots prey on the opposite 
+bank of the river, 100 meters upstream. 
+The cheetah decides to walk along the rivers edge for part of the way before swimming directly at the prey. 
+If the cheetah walks at 2 m/s and swims at 1 m/s,
 how far should the cheetah walk before swimming so as to minimize the total time to get to the prey?\\
 
-Let $x$ meters be the distance that the cheetah walks and $y$ meters the distance that the cheetah swims, as shown in the figure below. 
+Let $100 -x$ meters be the distance that the cheetah walks and $y$ meters the distance that the cheetah swims, 
+as shown in the figure below. 
 
 
 \begin{image}
@@ -443,8 +454,8 @@ Let $x$ meters be the distance that the cheetah walks and $y$ meters the distanc
 \draw[blue, thick] (2,0) --(2, 4);
 \draw[thin] (0, 2.5) --(2,2.5) node[below, midway]{$50$};
 \draw[thin, dashed] (0, 2.5) --(2,4);
-\node at (2.7, 3.25) {$100-x$};
-\node at (-0.3, 1.25) {$x$};
+\node at (2.7, 3.25) {$x$};
+\node at (-0.3, 1.25) {$100 -x$};
 \filldraw[brown] (0, 0) circle (1pt) node[left]{Cheetah};
 \filldraw[brown] (0, 2.5) circle (1pt) node[left]{start swim};
 \filldraw[brown] (2, 4) circle (1pt) node[right]{Prey};
@@ -460,49 +471,47 @@ The total time for the trip is the time walking plus the time swimming. Since
 \]
 the total time is 
 \[
-T = \frac{x}{2} + \frac{y}{1}.
+T = \frac{100-x}{2} + \frac{y}{1}.
 \]
 This is the objective equation.
-The constraint comes from the Pythagorean Theorem, since the swim portion of the trip is along the hypotenuse of a right triangle 
-with legs parallel and perpendicular to the river bank. One leg of the triangle is $50$ and the other is $100-x$.  So 
+The constraint comes from the Pythagorean Theorem. The swim portion of the trip is along the hypotenuse of a right triangle 
+with legs parallel and perpendicular to the river bank. One leg of the triangle is $50$ and the other is $x$.  
+So the constraint equation is
 \[
-y = \sqrt{50^2 + (100-x)^2}.
+y = \sqrt{50^2 + x^2}.
 \]
 Substituting this into the objective gives:
 \[
-T(x) = \frac{x}{2} + \sqrt{50^2 + (100-x)^2},\]
-where $x$ is between $0$ and $100$.
+T(x) = \frac{100-x}{2} + \sqrt{50^2 + x^2},\]
+where $0 \leq x \leq 100$.
 To find the minimum value of $T$, we find the critical numbers (using the chain rule):
 \[
-T' = \frac12 +  \frac{2(100-x)(-1)}{2\sqrt{50^2 + (100-x)^2}} = \frac12 - \frac{100-x}{\sqrt{50^2 + (100-x)^2}} = 0
+T'  = -\frac12 + \frac{x}{\sqrt{50^2 + x^2}} = 0
 \]
 
 Solving for $x$ gives
 \[
-\frac{100 - x}{\sqrt{50^2 + (100-x)^2}} = \frac12
+\frac{x}{\sqrt{50^2 + x^2}} = \frac12
 \]
 \[
-2(100 - x) = \sqrt{50^2 + (100-x)^2}.
+2x = \sqrt{50^2 + x^2}.
 \]
 Square both sides:
 \[
-4(100-x)^2 = 50^2 + (100-x)^2
+4x^2 = 50^2 + x^2
 \]
 \[
-3(100-x)^2 = 50^2
+3x^2 = 50^2
 \]
 \[
-100-x = \frac{50}{\sqrt{3}} = \frac{50\sqrt{3}}{3}.
+x = \frac{50}{\sqrt{3}} \approx 28.87 \text{meters}.
 \]
-Hence
+
+
+To verify that this is $x$-value gives the minimum time, we can use the closed interval method from section 3.2 (Extreme Value Theorem).
+We compare the values of $T$ at the critical number and the endpoints of the interval:
 \[
-x = 100 - \frac{50\sqrt{3}}{3} \approx 71 \text{meters}.
-\]
-To verify that this is indeed the minimum time, we can use the closed interval method from section 3.2 (Extreme Value Theorem).
-This is because our independent variable $x$ must be between $0$ and $100$. Thus we compare $T(0), T(100)$ and $T(50/\sqrt 3)$.
-We have 
-\[
-T(0) = \frac02 +  \sqrt{50^2 + 100^2} = \sqrt{12500} \approx 111,
+T(0) = \frac02 +  \sqrt{50^2 + 100^2} = \sqrt{12500} \approx 111.80,
 \]
 \[
 T(100) = \frac{100}{2} +  \sqrt{50^2 + 0} = 50 + 50 = 100, \text{and}
@@ -510,15 +519,15 @@ T(100) = \frac{100}{2} +  \sqrt{50^2 + 0} = 50 + 50 = 100, \text{and}
 \[
 T(50/\sqrt 3) = \frac12 \cdot \left(100- \frac{50}{\sqrt 3}\right) +  \sqrt{50^2 + (50/\sqrt 3)^2} \approx 93.3
 \]
-Hence the minimum time to reach the prey is approximately $T=93.3$ seconds and this is achieved by walking approximately $x =71$ meters, 
-then swimming the rest of the way.
+The minimum time to reach the prey is  $T \approx 93.3$ seconds and this is achieved by walking $100 -x \approx 71.13$ meters, and
+then swimming directly towards the prey.
 \end{example}
 
 
 \begin{problem}(problem 5)
 A woman launches her boat from a point on the bank of a straight river, 3 km wide. 
 She wants to reach a point 8 km downstream on the other side of the river via a combination of rowing and running.
-What is the minimum amount of time it will take her to reach her destination if she runs at 8km/hr and rows at 6km/hr?
+What is the minimum amount of time it will take her to reach her destination if she runs at 8 km/hr and rows at 6 km/hr?
 
 
 \begin{hint}
