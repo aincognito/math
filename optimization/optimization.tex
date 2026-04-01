@@ -504,23 +504,25 @@ Square both sides:
 3x^2 = 50^2
 \]
 \[
-x = \frac{50}{\sqrt{3}} \approx 28.87 \text{meters}.
+x = \frac{50}{\sqrt{3}} \approx 28.87 \text{ meters}.
 \]
 
 
-To verify that this is $x$-value gives the minimum time, we can use the closed interval method from section 3.2 (Extreme Value Theorem).
-We compare the values of $T$ at the critical number and the endpoints of the interval:
+To verify that this is $x$-value gives the minimum time, we can use the closed interval method from 
+section 3.2 (Extreme Value Theorem).
+We compare the values of $T = \frac{100-x}{2} + \sqrt{50^2 + x^2}$ at the critical number and the endpoints of the interval:
 \[
-T(0) = \frac02 +  \sqrt{50^2 + 100^2} = \sqrt{12500} \approx 111.80,
+T(0) = 50 +  50 = 100 
 \]
 \[
-T(100) = \frac{100}{2} +  \sqrt{50^2 + 0} = 50 + 50 = 100, \text{and}
+T(100) =  \sqrt{50^2 + 100^2} = 50\sqrt 5 \approx 111.80
 \]
 \[
-T(50/\sqrt 3) = \frac12 \cdot \left(100- \frac{50}{\sqrt 3}\right) +  \sqrt{50^2 + (50/\sqrt 3)^2} \approx 93.3
+T(50/\sqrt 3) = 50 - \frac{25}{\sqrt{3}} +  \sqrt{50^2 + \frac{50^2}{3}} = 50 + \frac{25}{\sqrt{3}} \approx 93.3
 \]
-The minimum time to reach the prey is  $T \approx 93.3$ seconds and this is achieved by walking $100 -x \approx 71.13$ meters, and
-then swimming directly towards the prey.
+The minimum time to reach the prey is  $T \approx 93.3$ seconds, achieved when the cheetah 
+walks $100 -x \approx 71.13$ meters, and
+then swims directly towards the prey.
 \end{example}
 
 
