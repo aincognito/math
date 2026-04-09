@@ -360,29 +360,28 @@ points, $f(x_i^*)$, and the widths are given by $\Delta x = \dfrac{(b-a)}{n}$.
 
 
 \begin{example}[example 4]
-
 Find the Riemann Sum for the curve $y = e^{-x}$ over the interval $[-1,1]$ using $n=4$ rectangles 
 and left endpoints as the sample points.\\
 First, we compute $\Delta x$ and the sample points $x_i^*$:
 \[
-\Delta x = \frac{b-a}{n} =\frac{1 - (-1)}{4} = \frac{2}{4} = 0.5
+\Delta x = \frac{b-a}{n} =\frac{1 - (-1)}{4} = \frac{1}{2}
 \]
-The sub-intervals are $[-1, -0.5], [-0.5, 0], [0, 0.5]$ and $[0.5, 1]$. 
+The sub-intervals are $[-1, -\tfrac12], [-\tfrac12, 0], [0, \tfrac12]$ and $[\tfrac12, 1]$. 
 Since we are using left endpoints as the sample points, we have
 \[
-x_1^* = -1,\;  x_2^* = -0.5,\; x_3^* = 0,\; \mbox{and}\; x_4^* = 0.5
+x_1^* = -1,\;  x_2^* = -1/2,\; x_3^* = 0,\; \mbox{and}\; x_4^* = 1/2
 \]
 Now, with $f(x) = e^{-x}$, the value of the Riemann sum is 
 \begin{align*}
 \sum_{i=1}^4 f(x_i*)\Delta x &= f(x_1^*)\Delta x + f(x_2^*)\Delta x + f(x_3^*)\Delta x + f(x_4^*)\Delta x\\
-&= f(-1) \Delta x + f(-0.5) \Delta x +f(0) \Delta x +f(0.5) \Delta x\\
-&= e^{1} (0.5) + e^{0.5} (0.5) + e^0 (0.5) + e^{-0.5} (0.5) \\
+&= f(-1) \Delta x + f(-1/2) \Delta x +f(0) \Delta x +f(1/2) \Delta x\\
+&= e^{1} (\frac12) + e^{1/2} (\frac12) + e^0 (\frac12) + e^{-1/2} (\frac12) \\
 &\approx 2.987
 \end{align*}
 
 \begin{image}
 \begin{tikzpicture}
-\begin{axis}[axis x line=  bottom, axis y line = center, xtick={-1, -0.5, 0, 0.5, 1},  
+\begin{axis}[axis x line=  bottom, axis y line = center, xtick={-1, -\tfrac12, 0, \tfrac12, 1},  
 ytick={0, 1, 2}, title={Riemann Sum for $y=e^{-x} $ on $[-1,1]$ with $n=4$ using Left Endpoints}]
 \addplot[domain=-1.2:1.2, 
     samples=100, color=black]{1/e^x};
@@ -405,17 +404,20 @@ ytick={0, 1, 2}, title={Riemann Sum for $y=e^{-x} $ on $[-1,1]$ with $n=4$ using
 \end{axis}
 \end{tikzpicture}
 \end{image}
-
 \end{example}
-
 
 \begin{problem}(problem 4a)
 Find the Riemann Sum for the curve $y = x^2 + 1$ over the interval $[0,1]$ using $n=5$ rectangles 
-and left endpoints as the sample points.
+and left endpoints as the sample points.\\
+
+The width of each rectangle is $\Delta x = \answer{1/5}$\\
+The sample points are $x_1^* = \answer{0}$, $x_2^* = \answer{1/5}$, 
+$x_3^* = \answer{2/5}$, $x_4^* = \answer{3/5}$ and $x_5^* = \answer{4/5}$.\\
+The Riemann Sum is $\answer{1.24}$.
 
 \begin{image}
 \begin{tikzpicture}
-\begin{axis}[axis x line=  bottom, axis y line = left, xtick={0, 0.2, 0.4, 0.6, 0.8, 1},  
+\begin{axis}[axis x line=  bottom, axis y line = left, xtick={0, \tfrac15, \tfrac25, \tfrac35, \tfrac45, 1},  
 ytick={0, 1, 2}, title={Riemann Sum for $y=x^2 + 1 $ on $[0,1]$ with $n=5$ using Left Endpoints}]
 \addplot[domain=0:1, 
     samples=100, color=black]{x^2 + 1};
@@ -440,39 +442,40 @@ ytick={0, 1, 2}, title={Riemann Sum for $y=x^2 + 1 $ on $[0,1]$ with $n=5$ using
 \end{tikzpicture}
 \end{image}
 
-The Riemann Sum is $\answer{1.24}$.
 \end{problem} 
 
 \begin{problem} (problem 4b)
 Find the Riemann Sum for the curve $y = x^3 $ over the interval $[1,3]$ using $n=4$ rectangles 
 and left endpoints as the sample points.\\
-
+The width of each rectangle is $\Delta x = \answer{1/2}$\\
+The sample points are $x_1^* = \answer{1}$, $x_2^* = \answer{3/2}$, 
+$x_3^* = \answer{2}$ and $x_4^* = \answer{5/2}$.\\
 The Riemann Sum is $\answer{14}$.
 \end{problem}
 
-\begin{example}[example 6]
+\begin{example}[example 5]
 Find the Riemann Sum for the curve $y = e^{-x}$ over the interval $[-1,1]$ using $n=4$ rectangles
 and right endpoints as the sample points.\\
 First we compute $\Delta x$ and the sample points $x_i^*$.
 \[
-\Delta x = \frac{b-a}{n} =\frac{1 - (-1)}{4} = \frac{2}{4} = 0.5
+\Delta x = \frac{b-a}{n} =\frac{1 - (-1)}{4} = \frac{1}{2}
 \]
-The sub-intervals are $[-1, -0.5], [-0.5, 0], [0, 0.5]$ and $[0.5, 1]$. 
+The sub-intervals are $[-1, -\tfrac12], [-\tfrac12, 0], [0, \tfrac12]$ and $[\tfrac12, 1]$. 
 Since we are using right endpoints as the sample points, we have
 \[
-x_1^* = -0.5,\;  x_2^* = 0,\; x_3^* = 0.5,\; \mbox{and}\; x_4^* = 1
+x_1^* = -\frac12,\;  x_2^* = 0,\; x_3^* = \frac12,\; \mbox{and}\; x_4^* = 1
 \]
 Now, with $f(x) = e^{-x}$, the value of the Riemann sum is 
 \begin{align*}
 \sum_{i=1}^4 f(x_i*)\Delta x &= f(x_1^*)\Delta x + f(x_2^*)\Delta x + f(x_3^*)\Delta x + f(x_4^*)\Delta x\\
-&= f(-0.5) \Delta x + f(0) \Delta x +f(0.5) \Delta x +f(1) \Delta x\\
-&= e^{0.5} (0.5) + e^0 (0.5) + e^{-0.5} (0.5) +  e^{-1} (0.5) \\
+&= f(-\tfrac12) \Delta x + f(0) \Delta x +f(\tfrac12) \Delta x +f(1) \Delta x\\
+&= e^{\tfrac12} (\frac12) + e^0 (\frac12) + e^{-\tfrac12} (\frac12) +  e^{-1} (\frac12) \\
 &\approx 1.812
 \end{align*}
 
 \begin{image}
 \begin{tikzpicture}
-\begin{axis}[axis x line=  bottom, axis y line = center, xtick={-1, -0.5,0,0.5,1},  
+\begin{axis}[axis x line=  bottom, axis y line = center, xtick={-1, -\tfrac12, 0, \tfrac12, 1},  
 ytick={0, 1, 2}, title={Riemann Sum for $y=e^{-x} $ on $[-1,1]$ with $n=4$ using Right Endpoints}]
 \addplot[domain=-1:1.1, 
     samples=100, color=black]{1/e^x};
@@ -501,8 +504,11 @@ ytick={0, 1, 2}, title={Riemann Sum for $y=e^{-x} $ on $[-1,1]$ with $n=4$ using
 
 \begin{problem}(problem 5a)
 Find the Riemann Sum for the curve $y = x^2 + 1$ over the interval $[0,1]$ using 5 rectangles 
-and right endpoints as the sample points.
-
+and right endpoints as the sample points.\\
+The width of each rectangle is $\Delta x = \answer{1/5}$\\
+The sample points are $x_1^* = \answer{1/5}$, $x_2^* = \answer{2/5}$, 
+$x_3^* = \answer{3/5}$, $x_4^* = \answer{4/5}$ and $x_5^* = \answer{1}$.\\
+The Riemann Sum is $\answer{1.44}$.
 \begin{image}
 \begin{tikzpicture}
 \begin{axis}[axis x line=  bottom, axis y line = left, xtick={0, 0.2,0.4,0.6,0.8,1},  
@@ -531,13 +537,14 @@ ytick={0, 1, 2}, title={Riemann Sum for $y=x^2 + 1 $ on $[0,1]$ with $n=5$ using
 \end{tikzpicture}
 \end{image}
 
-The Riemann Sum is $\answer{1.44}$.
 \end{problem} 
 
 \begin{problem}(problem 5b)
 Find the Riemann Sum for the curve $y = x^3 $ over the interval $[1,3]$ using $n=4$ rectangles 
 and right endpoints as the sample points.\\
-
+The width of each rectangle is $\Delta x = \answer{1/2}$\\
+The sample points are $x_1^* = \answer{3/2}$, $x_2^* = \answer{2}$, 
+$x_3^* = \answer{5/2}$ and $x_4^* = \answer{3}$.\\
 The Riemann Sum is $\answer{27}$.
 \end{problem}
 
