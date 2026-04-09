@@ -315,22 +315,7 @@ points, $f(x_i^*)$, and the widths are given by $\Delta x = \dfrac{(b-a)}{n}$.
 \end{remark}
 
 
-\begin{example}[example 4]
-Below is an interactive graph of the parabola $y=x^2$.  
-The Riemann Sum uses the rectangles in the figure to approximate the area under the curve.
-The sample points $x_i^*$ are taken to be endpoints of the sub-interval $[x_{i-1}, x_i]$. 
-The orange rectangles use $x_i^* = x_{i-1}$, i.e., 
-a \textbf{left-endpoint} approximation and the purple rectangles 
-use a \textbf{right-endpoint} approximation with $x_i^* = x_i$.
-Use the slider to convince yourself that as the number of rectangles, $n$ increases, the 
-width $\Delta x$ decreases and
-the area of the rectangles approaches the area under the curve. 
-\begin{onlineOnly}
-  \begin{center}
-    \desmos{j9hdqgwiwg}{800}{600}
-  \end{center}
-\end{onlineOnly}
-\end{example}
+
 
 
 
@@ -374,7 +359,7 @@ the area of the rectangles approaches the area under the curve.
 
 
 
-\begin{example}[example 5]
+\begin{example}[example 4]
 
 Find the Riemann Sum for the curve $y = e^{-x}$ over the interval $[-1,1]$ using $n=4$ rectangles 
 and left endpoints as the sample points.\\
@@ -424,7 +409,7 @@ ytick={0, 1, 2}, title={Riemann Sum for $y=e^{-x} $ on $[-1,1]$ with $n=4$ using
 \end{example}
 
 
-\begin{problem}(problem 5a)
+\begin{problem}(problem 4a)
 Find the Riemann Sum for the curve $y = x^2 + 1$ over the interval $[0,1]$ using $n=5$ rectangles 
 and left endpoints as the sample points.
 
@@ -458,7 +443,7 @@ ytick={0, 1, 2}, title={Riemann Sum for $y=x^2 + 1 $ on $[0,1]$ with $n=5$ using
 The Riemann Sum is $\answer{1.24}$.
 \end{problem} 
 
-\begin{problem} (problem 5b)
+\begin{problem} (problem 4b)
 Find the Riemann Sum for the curve $y = x^3 $ over the interval $[1,3]$ using $n=4$ rectangles 
 and left endpoints as the sample points.\\
 
@@ -514,7 +499,7 @@ ytick={0, 1, 2}, title={Riemann Sum for $y=e^{-x} $ on $[-1,1]$ with $n=4$ using
 \end{example}
 
 
-\begin{problem}(problem 6a)
+\begin{problem}(problem 5a)
 Find the Riemann Sum for the curve $y = x^2 + 1$ over the interval $[0,1]$ using 5 rectangles 
 and right endpoints as the sample points.
 
@@ -549,12 +534,31 @@ ytick={0, 1, 2}, title={Riemann Sum for $y=x^2 + 1 $ on $[0,1]$ with $n=5$ using
 The Riemann Sum is $\answer{1.44}$.
 \end{problem} 
 
-\begin{problem}(problem 6b)
+\begin{problem}(problem 5b)
 Find the Riemann Sum for the curve $y = x^3 $ over the interval $[1,3]$ using $n=4$ rectangles 
 and right endpoints as the sample points.\\
 
 The Riemann Sum is $\answer{27}$.
 \end{problem}
+
+
+\begin{example}[example 6]
+Below is an interactive graph of the parabola $y=x^2$.  
+The Riemann Sum uses the rectangles in the figure to approximate the area under the curve.
+The sample points $x_i^*$ are taken to be endpoints of the sub-interval $[x_{i-1}, x_i]$. 
+The orange rectangles use $x_i^* = x_{i-1}$, i.e., 
+a \textbf{left-endpoint} approximation and the purple rectangles 
+use a \textbf{right-endpoint} approximation with $x_i^* = x_i$.
+Use the slider to convince yourself that as the number of rectangles, $n$ increases, the 
+width $\Delta x$ decreases and
+the area of the rectangles approaches the area under the curve. 
+\begin{onlineOnly}
+  \begin{center}
+    \desmos{j9hdqgwiwg}{800}{600}
+  \end{center}
+\end{onlineOnly}
+\end{example}
+
 
 \end{document}
 
