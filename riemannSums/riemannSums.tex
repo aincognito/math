@@ -369,13 +369,13 @@ First, we compute $\Delta x$ and the sample points $x_i^*$:
 The sub-intervals are $[-1, -\tfrac12], [-\tfrac12, 0], [0, \tfrac12]$ and $[\tfrac12, 1]$. 
 Since we are using left endpoints as the sample points, we have
 \[
-x_1^* = -1,\;  x_2^* = -1/2,\; x_3^* = 0,\; \mbox{and}\; x_4^* = 1/2
+x_1^* = -1,\;  x_2^* = -\frac12,\; x_3^* = 0,\; \mbox{and}\; x_4^* = \frac12
 \]
 Now, with $f(x) = e^{-x}$, the value of the Riemann sum is 
 \begin{align*}
 \sum_{i=1}^4 f(x_i*)\Delta x &= f(x_1^*)\Delta x + f(x_2^*)\Delta x + f(x_3^*)\Delta x + f(x_4^*)\Delta x\\
 &= f(-1) \Delta x + f(-1/2) \Delta x +f(0) \Delta x +f(1/2) \Delta x\\
-&= e^{1} (\frac12) + e^{1/2} (\frac12) + e^0 (\frac12) + e^{-1/2} (\frac12) \\
+&= e^{1} \left(\frac12\right) + e^{1/2} \left(\tfrac12\right) + e^0 \left(\tfrac12\right) + e^{-1/2} \left(\tfrac12\right) \\
 &\approx 2.987
 \end{align*}
 
