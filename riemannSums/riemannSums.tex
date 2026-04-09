@@ -376,13 +376,28 @@ the area of the rectangles approaches the area under the curve.
 
 \begin{example}[example 5]
 
-Find the Riemann Sum for the curve $f(x) = e^{-x}$ over the interval $[-1,1]$ using $n=4$ rectangles 
-and left endpoints as the sample points.
+Find the Riemann Sum for the curve $y = e^{-x}$ over the interval $[-1,1]$ using $n=4$ rectangles 
+and left endpoints as the sample points.\\
+First we compute $\Delta x$ and the sample points $x_i^*$:
+\begin{align*}
+\Delta x &= \frac{1 - (-1)}{4} = \frac{2}{4} = 0.5,\\
+x_1^* &= -1,\\
+x_2^* &= -0.5,\\
+x_3^* &= 0,\\
+x_4^* &= 0.5.
+\end{align*}
+With $f(x) = e^{-x}$, the value of the Riemann sum is 
+\begin{align*}
+\sum_{i=1}^4 f(x_i*)\Delta x &= f(x_1^*)\Delta x + f(x_2^*)\Delta x + f(x_3^*)\Delta x + f(x_4^*)\Delta x\\
+&= f(-1) \Delta x + f(-0.5) \Delta x +f(0) \Delta x +f(0.5) \Delta x\\
+&= e^{1} (0.5) + e^{0.5} (0.5) + e^0 (0.5) + e^{-0.5} (0.5) \\
+&\approx 2.987
+\end{align*}
 
 \begin{image}
 \begin{tikzpicture}
 \begin{axis}[axis x line=  bottom, axis y line = center, xtick={-1, -0.5, 0, 0.5, 1},  
-ytick={0, 1, 2}, title={Riemann Sum for $f(x)=e^{-x} $ on $[-1,1]$ with $n=4$ using Left Endpoints}]
+ytick={0, 1, 2}, title={Riemann Sum for $y=e^{-x} $ on $[-1,1]$ with $n=4$ using Left Endpoints}]
 \addplot[domain=-1.2:1.2, 
     samples=100, color=black]{1/e^x};
 \addplot[smooth,mark=*,black] plot coordinates {(0,0)};
@@ -412,13 +427,13 @@ which equals
 
 
 \begin{problem}(problem 5a)
-Find the Riemann Sum for the curve $f(x) = x^2 + 1$ over the interval $[0,1]$ using $n=5$ rectangles 
+Find the Riemann Sum for the curve $y = x^2 + 1$ over the interval $[0,1]$ using $n=5$ rectangles 
 and left endpoints as the sample points.
 
 \begin{image}
 \begin{tikzpicture}
 \begin{axis}[axis x line=  bottom, axis y line = left, xtick={0, 0.2, 0.4, 0.6, 0.8, 1},  
-ytick={0, 1, 2}, title={Riemann Sum for $f(x)=x^2 + 1 $ on $[0,1]$ with $n=5$ using Left Endpoints}]
+ytick={0, 1, 2}, title={Riemann Sum for $y=x^2 + 1 $ on $[0,1]$ with $n=5$ using Left Endpoints}]
 \addplot[domain=0:1, 
     samples=100, color=black]{x^2 + 1};
 \addplot[smooth,mark=*,black] plot coordinates {(0,0)};
@@ -446,21 +461,21 @@ The Riemann Sum is $\answer{1.24}$.
 \end{problem} 
 
 \begin{problem}(problem 5b)
-Find the Riemann Sum for the curve $f(x) = x^3 $ over the interval $[1,3]$ using $n=4$ rectangles 
+Find the Riemann Sum for the curve $y = x^3 $ over the interval $[1,3]$ using $n=4$ rectangles 
 and left endpoints as the sample points.\\
 
 The Riemann Sum is $\answer{14}$.
 \end{problem}
 
 \begin{example}[example 6]
-Find the Riemann Sum for the curve $f(x) = e^{-x}$ over the interval $[-1,1]$ using $n=4$ rectangles
+Find the Riemann Sum for the curve $y = e^{-x}$ over the interval $[-1,1]$ using $n=4$ rectangles
 and right endpoints as the sample points.
 
 
 \begin{image}
 \begin{tikzpicture}
 \begin{axis}[axis x line=  bottom, axis y line = center, xtick={-1, -0.5,0,0.5,1},  
-ytick={0, 1, 2}, title={Riemann Sum for $f(x)=e^{-x} $ on $[-1,1]$ with $n=4$ using Right Endpoints}]
+ytick={0, 1, 2}, title={Riemann Sum for $y=e^{-x} $ on $[-1,1]$ with $n=4$ using Right Endpoints}]
 \addplot[domain=-1:1.1, 
     samples=100, color=black]{1/e^x};
 \addplot[smooth,mark=*,black] plot coordinates {(0,0)};
@@ -490,13 +505,13 @@ which equals
 
 
 \begin{problem}(problem 6a)
-Find the Riemann Sum for the curve $f(x) = x^2 + 1$ over the interval $[0,1]$ using 5 rectangles 
+Find the Riemann Sum for the curve $y = x^2 + 1$ over the interval $[0,1]$ using 5 rectangles 
 and right endpoints as the sample points.
 
 \begin{image}
 \begin{tikzpicture}
 \begin{axis}[axis x line=  bottom, axis y line = left, xtick={0, 0.2,0.4,0.6,0.8,1},  
-ytick={0, 1, 2}, title={Riemann Sum for $f(x)=x^2 + 1 $ on $[0,1]$ with $n=5$ using Right Endpoints}]
+ytick={0, 1, 2}, title={Riemann Sum for $y=x^2 + 1 $ on $[0,1]$ with $n=5$ using Right Endpoints}]
 \addplot[domain=0:1, 
     samples=100, color=black]{x^2 + 1};
 \addplot[smooth,mark=*,black] plot coordinates {(0,0)};
@@ -525,7 +540,7 @@ The Riemann Sum is $\answer{1.44}$.
 \end{problem} 
 
 \begin{problem}(problem 6b)
-Find the Riemann Sum for the curve $f(x) = x^3 $ over the interval $[1,3]$ using $n=4$ rectangles 
+Find the Riemann Sum for the curve $y = x^3 $ over the interval $[1,3]$ using $n=4$ rectangles 
 and right endpoints as the sample points.\\
 
 The Riemann Sum is $\answer{27}$.
