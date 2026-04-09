@@ -419,10 +419,7 @@ ytick={0, 1, 2}, title={Riemann Sum for $y=e^{-x} $ on $[-1,1]$ with $n=4$ using
 \end{axis}
 \end{tikzpicture}
 \end{image}
-The value of this Left Riemann Sum is 
-\[f(-1) \Delta x + f(-0.5) \Delta x +f(0) \Delta x +f(0.5) \Delta x,\]
-which equals
-\[e^{1} (0.5) + e^{0.5} (0.5) + e^0 (0.5) + e^{-0.5} (0.5) \approx 2.987.\]
+
 \end{example}
 
 
@@ -471,6 +468,21 @@ The Riemann Sum is $\answer{14}$.
 Find the Riemann Sum for the curve $y = e^{-x}$ over the interval $[-1,1]$ using $n=4$ rectangles
 and right endpoints as the sample points.
 
+First we compute $\Delta x$ and the sample points $x_i^*$:
+\begin{align*}
+\Delta x &= \frac{1 - (-1)}{4} = \frac{2}{4} = 0.5,\\
+x_1^* &= -0.5,\\
+x_2^* &= 0,\\
+x_3^* &= 0.5,\\
+x_4^* &= 1.
+\end{align*}
+With $f(x) = e^{-x}$, the value of the Riemann sum is 
+\begin{align*}
+\sum_{i=1}^4 f(x_i*)\Delta x &= f(x_1^*)\Delta x + f(x_2^*)\Delta x + f(x_3^*)\Delta x + f(x_4^*)\Delta x\\
+&= f(-0.5) \Delta x + f(0) \Delta x +f(0.5) \Delta x +f(1) \Delta x\\
+&= e^{0.5} (0.5) + e^0 (0.5) + e^{-0.5} (0.5) +  e^{-1} (0.5) \\
+&\approx 1.812
+\end{align*}
 
 \begin{image}
 \begin{tikzpicture}
@@ -497,10 +509,7 @@ ytick={0, 1, 2}, title={Riemann Sum for $y=e^{-x} $ on $[-1,1]$ with $n=4$ using
 %\legend{$y = f(x)$, , secant line, tangent line, };
 \end{tikzpicture}
 \end{image}
-The value of this Right Riemann Sum is 
-\[ f(-0.5) \Delta x + f(0) \Delta x +f(0.5) \Delta x + f(1) \Delta x ,\]
-which equals
-\[e^{0.5} (0.5) + e^0 (0.5) + e^{-0.5} (0.5) +  e^{-1} (0.5) \approx 1.812.\]
+
 \end{example}
 
 
