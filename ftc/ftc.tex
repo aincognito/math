@@ -25,26 +25,27 @@ In this section we learn to compute the value of a definite integral using the f
 
 We begin by recalling the definition of the definite integral:
 \[
-\int_a^b f(x) \ dx \equiv \lim_{n\to \infty} \sum_{i=1}^n f(x_i^*)\Delta x.
+\int_a^b f(x) \ dx \equiv \lim_{n\to \infty} \sum_{i=1}^n f(x_i^*)\Delta x,
 \]
 where $\Delta x = (b-a)/n$ and $x_i^*$ is a sample point for the $i$-th sub-interval, $[x_{i-1}, x_i]$.
 
 
 Computing the value of a definite integral from this definition can be cumbersome and 
 require knowledge of special summation formulas.  Fortunately, there is a theorem which states 
-that computing definite integrals can done via anti-differentiation!
+that computing definite integrals can be done via anti-differentiation!
 
 
 \begin{theorem}[Fundamental Theorem of Calculus]
 If $f(x)$ is continuous on the interval $[a, b]$ and if $F(x)$ is an 
-anti-derivative of $f(x)$, i.e., $F'(x) = f(x)$, then
+antiderivative of $f(x)$, i.e., $F'(x) = f(x)$, then
 \[
 \int_a^b f(x) \ dx = F(b) - F(a).
 \]
 \end{theorem}
 
 
-The proof of the Fundamental Theorem of Calculus can be obtained by applying the Mean Value Theorem to $F(x)$ on each of the sub-intervals $[x_{i-1}, x_i]$
+The proof of the Fundamental Theorem of Calculus can be obtained by applying the Mean Value Theorem 
+to $F(x)$ on each of the sub-intervals $[x_{i-1}, x_i]$
 and using the value of $c$ in each case as the sample point.
 
 %using the values of $`c'$ from the Mean Value Theorem 
@@ -52,12 +53,13 @@ and using the value of $c$ in each case as the sample point.
 %the definition of the definite integral.
 
 The process of calculating the numerical value of a definite integral is performed in 
-two main steps: first, find the anti-derivative
+two main steps: first, find the antiderivative
 $F(x)$ and  second, plug the endpoints of integration, $a$ and $b$ to compute $F(b) - F(a)$. 
 To symbolize the steps, we use a vertical evaluation bar:
 
 \[\int_a^b f(x) \ dx = F(x)\Big|_a^b = F(b) - F(a)\]
-In the first step, the function $F(x)$ is introduced and in the second step, the difference of the values $F(b)$ and $F(a)$ is computed.
+In the first step, the function $F(x)$ is introduced and in the second step, the difference 
+of the values $F(b)$ and $F(a)$ is computed.
 
 In the following examples, we compute definite integrals using the FTC in order to solve the area problem.
 Recall that the definite integral of a non-negative function gives the area under the curve.
@@ -118,7 +120,7 @@ The area is $\answer{1/4}$
   \]
 \end{hint}
     \begin{hint}
-      Use the power rule to find an anti-derivative of $x^3$
+      Use the power rule to find an antiderivative of $x^3$
     \end{hint}
     
     \begin{hint}
@@ -135,7 +137,8 @@ The area is $\answer{1/4}$
 
 \begin{example}[example 2]
 Find the exact area under the curve $y = \cos(x)$ from $x=0$ to $x= \pi/2$.\\
-Since the function $\cos(x)$ is non-negative on the interval $[0, \frac{\pi}{2}]$, the exact area can be expressed as the definite integral
+Since the function $\cos(x)$ is non-negative on the interval $[0, \frac{\pi}{2}]$, the exact area can be 
+expressed as the definite integral
 \[\int_0^{\pi/2} \cos(x) \ dx.\]
 We can use the Fundamental Theorem of Calculus to compute the value of this definite integral as follows:
 \[\int_0^{\pi/2} \cos(x) \ dx = \sin(x) \Big|_0^{\pi/2} = \sin(\tfrac{\pi}{2}) - \sin(0)= 1- 0 = 1.\]
@@ -143,7 +146,8 @@ We can use the Fundamental Theorem of Calculus to compute the value of this defi
 
 \begin{image}
 \begin{tikzpicture}
-\begin{axis}[axis x line=  bottom, axis y line = left,xtick={0, 0.785, 1.57}, xticklabels={$0$, $\frac{\pi}{4}$,$\frac{\pi}{2}$}, ytick={0, .5, 1}, title={The area under $f(x)=\cos(x)$ on $[0,\pi/2]$}]
+\begin{axis}[axis x line=  bottom, axis y line = left,xtick={0, 0.785, 1.57}, 
+  xticklabels={$0$, $\frac{\pi}{4}$,$\frac{\pi}{2}$}, ytick={0, .5, 1}, title={The area under $f(x)=\cos(x)$ on $[0,\pi/2]$}]
 \addplot[name path = A, domain=0:1.57, 
     samples=100, color=black]{cos(deg(x))};
 \addplot[name path = B, domain=0:1.57, samples=100, color=black]{0};
@@ -170,7 +174,7 @@ The area is $\answer{2}$
   \]
 \end{hint}
     \begin{hint}
-      An anti-derivative of $\sin(x)$ is $-\cos(x)$
+      An antiderivative of $\sin(x)$ is $-\cos(x)$
     \end{hint}
     
     \begin{hint}
@@ -196,7 +200,8 @@ We can use the Fundamental Theorem of Calculus to compute the value of this defi
 
 \begin{image}
 \begin{tikzpicture}
-\begin{axis}[axis x line=  bottom, axis y line = left,xtick={0, .5, 1}, ytick={0, .5, 1,1.5, 2, 2.5}, title={The area under $f(x)=e^x$ on $[0,1]$}]
+\begin{axis}[axis x line=  bottom, axis y line = left,xtick={0, .5, 1}, ytick={0, .5, 1,1.5, 2, 2.5}, 
+  title={The area under $f(x)=e^x$ on $[0,1]$}]
 \addplot[name path = A, domain=0:1, 
     samples=100, color=black]{e^x};
 \addplot[name path = B, domain=0:1, samples=100, color=black]{0};
@@ -220,7 +225,7 @@ The area is $\answer{5-e}$.
   \]
   \end{hint}
     \begin{hint}
-      An anti-derivative of $e^x$ is itself
+      An antiderivative of $e^x$ is itself
     \end{hint}
     
     \begin{hint}
@@ -250,7 +255,7 @@ The area is $\answer{60}$.
   \]
   \end{hint}
     \begin{hint}
-      An anti-derivative of $x^3$ is $x^4 /4$
+      An antiderivative of $x^3$ is $x^4 /4$
     \end{hint}
     \begin{hint}
       The Fundamental Theorem says:
@@ -276,7 +281,8 @@ We can use the Fundamental Theorem of Calculus to compute the value of this defi
 
 \begin{image}
 \begin{tikzpicture}
-\begin{axis}[axis x line=  bottom, axis y line = left, xtick={0,1,2,2.72, 3}, xticklabels ={0, 1, 2, $e$, 3}, ytick={0, .5, 1}, title={The Area Under $f(x)=\dfrac{1}{x}$ on $[1,e]$}]
+\begin{axis}[axis x line=  bottom, axis y line = left, xtick={0,1,2,2.72, 3}, xticklabels ={0, 1, 2, $e$, 3}, 
+  ytick={0, .5, 1}, title={The Area Under $f(x)=\dfrac{1}{x}$ on $[1,e]$}]
 \addplot[name path = A, domain=1:e, 
     samples=100, color=black]{1/x};
 		\addplot[domain=0:1, 
@@ -311,7 +317,7 @@ The area is $\answer{\ln(5/2)}$.
   \]
   \end{hint}
     \begin{hint}
-      An anti-derivative of $1/x$ is $\ln(x)$
+      An antiderivative of $1/x$ is $\ln(x)$
     \end{hint}
     \begin{hint}
       The Fundamental Theorem says:
@@ -347,7 +353,7 @@ The area is $\answer{10}$.
   \]
  \end{hint}
     \begin{hint}
-      An anti-derivative of $4x-3$ is $2x^2 - 3x$
+      An antiderivative of $4x-3$ is $2x^2 - 3x$
     \end{hint}
     \begin{hint}
       The Fundamental Theorem says:
@@ -362,7 +368,8 @@ The area is $\answer{10}$.
 
 \begin{example}[example 6]
 Find the exact area under the curve $y = \sec^2(x)$ from $x=0$ to $x= \pi/4$.\\
-Since the function $\cos(x)$ is non-negative on the interval $[0, \frac{\pi}{4}]$, the exact area can be expressed as the definite integral
+Since the function $\cos(x)$ is non-negative on the interval $[0, \frac{\pi}{4}]$, the exact area can be 
+expressed as the definite integral
 \[\int_0^{\pi/4} \sec^2(x) \ dx.\]
 We can use the Fundamental Theorem of Calculus to compute the value of this definite integral as follows:
 \[
@@ -399,7 +406,7 @@ The area is $\answer{1}$.
   \]
 \end{hint}  
     \begin{hint}
-      An anti-derivative of $\csc^2(x)$ is $-\cot(x)$
+      An antiderivative of $\csc^2(x)$ is $-\cot(x)$
     \end{hint}
     
     \begin{hint}
@@ -417,7 +424,8 @@ The area is $\answer{1}$.
 
 \begin{example}[example 7]
 Find the exact area under the curve $y = \dfrac{1}{1+x^2}$ from $x=0$ to $x= 1$.\\
-Since the function $\frac{1}{1+x^2}$ is non-negative on the interval $[0, 1]$, the exact area can be expressed as the definite integral
+Since the function $\frac{1}{1+x^2}$ is non-negative on the interval $[0, 1]$, the exact area can be expressed as the definite 
+integral
 \[\int_0^{1} \frac{1}{1+x^2} \ dx.\]
 We can use the Fundamental Theorem of Calculus to compute the value of this definite integral as follows:
 \[
@@ -428,7 +436,8 @@ We can use the Fundamental Theorem of Calculus to compute the value of this defi
 
 \begin{image}
 \begin{tikzpicture}
-\begin{axis}[axis x line=  bottom, axis y line = center,xtick={-3, -2, -1, 0, 1, 2, 3}, ytick={0, .5, 1,1.5, 2, 2.5}, title={The Area Under $f(x)=\dfrac{1}{1+x^2}$ on $[0,1]$}]
+\begin{axis}[axis x line=  bottom, axis y line = center,xtick={-3, -2, -1, 0, 1, 2, 3}, ytick={0, .5, 1,1.5, 2, 2.5}, 
+  title={The Area Under $f(x)=\dfrac{1}{1+x^2}$ on $[0,1]$}]
 \addplot[name path = A, domain=0:1, 
     samples=100, color=black]{1/(1+x^2)};
 \addplot[domain=0:1, 
@@ -449,15 +458,15 @@ We can use the Fundamental Theorem of Calculus to compute the value of this defi
 \end{example}
 
 \begin{problem}(problem 7)
-Find the exact area under the graph of $y = \dfrac{1}{\sqrt{1-x^2}}$ from $x = 0$ to $x = 1$.\\
+Find the exact area under the graph of $y = \dfrac{1}{\sqrt{1-x^2}}$ from $x = 0$ to $x = 1/2$.\\
 The area is $\answer{\pi/2}$.
  \begin{hint}
   \[
-  \text{Area} =  \int_0^1 \frac{1}{\sqrt{1-x^2}} \ dx
+  \text{Area} =  \int_0^{1/2} \frac{1}{\sqrt{1-x^2}} \ dx
   \]
  \end{hint} 
     \begin{hint}
-      An anti-derivative of $\frac{1}{\sqrt{1-x^2}}$ is $\sin^{-1}(x)$
+      An antiderivative of $\frac{1}{\sqrt{1-x^2}}$ is $\sin^{-1}(x)$
     \end{hint}
     
     \begin{hint}
@@ -467,12 +476,16 @@ The area is $\answer{\pi/2}$.
       \]
     \end{hint}    
 		\begin{hint}
-      $\sin^{-1}(0) = 0$ and $\sin^{-1}(1) = \frac{\pi}{2}$ 
+      $\sin^{-1}(0) = 0$ and $\sin^{-1}(1) = \frac{\pi}{6}$ 
     \end{hint}
 		
 		
 \end{problem}
 
+Here is a video solution to problem 7.
+\begin{foldable}
+\youtube{Z7SoAsa1Eow} 
+\end{foldable}
 
 We now consider the definite integral of negative functions.
 If $f(x) \leq 0$ for all $x$ in the interval $[a,b]$, then 
@@ -500,12 +513,13 @@ To put it another way, if $f(x) \leq 0$ on $[a,b]$ then
 
 \begin{example}[example 8]
 Find the exact area above the graph of $y = x^3$ from $x = -1$ to $x = 0$. \\
-Since the function $x^3$ is negative (or zero) on the interval $[-1, 0]$ , the exact area above the curve is the negative of the definite integral 
+Since the function $x^3$ is negative (or zero) on the interval $[-1, 0]$ , the exact area above the curve is the 
+negative of the definite integral 
 \[\int_{-1}^0 x^3 \ dx.\]
 We can compute the value of this definite integral using the Fundamental Theorem of Calculus as follows:
 \[\int_{-1}^0 x^3 \ dx = \frac{x^4}{4} \Big|_{-1}^0 = \frac{0^4}{4} - \frac{(-1)^4}{4} = -\frac14.\]
 
-Hence the area of the region above the curve is $\frac14$.
+Hence, the area of the region above the curve is $\frac14$.
 
 
 \begin{image}
@@ -541,12 +555,13 @@ Area above the curve $= -\int_a^b f(x) \ dx$
 
 \begin{example}[example 9]
 Find the exact area above the graph of $y = x^2 - 2$ from $x = 0$ to $x = 1$. \\
-Since the function $x^2 - 2 \leq 0$  on the interval $[0,1]$ , the exact area above the curve \textit{is the negative of} the definite integral 
+Since the function $x^2 - 2 \leq 0$  on the interval $[0,1]$ , the exact area above the curve \textit{is the negative of} the 
+definite integral 
 \[\int_0^1 (x^2 -2) \ dx.\]
 We can compute the value of this definite integral using the Fundamental Theorem of Calculus as follows:
 \[\int_0^1 (x^2 -2) \ dx = \left(\frac{x^3}{3}-2x\right) \Bigg|_{0}^1 = \left(\frac{1^3}{3}-2(1)\right) - \left(\frac{0^3}{3}- 2(0)\right) = \frac13 - 2 =-\frac53.\]
 
-Hence the area of the region above the curve is $-\left(-\frac53\right) = \frac53$.
+Hence, the area of the region above the curve is $-\left(-\frac53\right) = \frac53$.
 
 %xticklabel pos=upper,
 \begin{image}
@@ -583,12 +598,13 @@ Area above the curve $= -\int_a^b f(x) \ dx$
 
 \begin{example}[example 10]
 Find the exact area above the graph of $y = -\sin(x)$ from $x = 0$ to $x = \pi$. \\
-Since the function $-\sin(x) \leq 0$ on the interval $[0, \pi]$ , the exact area above the curve is \textit{the negative of} the definite integral 
+Since the function $-\sin(x) \leq 0$ on the interval $[0, \pi]$ , the exact area above the curve 
+is \textit{the negative of} the definite integral 
 \[\int_{0}^\pi -\sin(x) \ dx.\]
 We can compute the value of this definite integral using the Fundamental Theorem of Calculus as follows:
 \[\int_0^\pi -\sin(x) \ dx = \cos(x) \Big|_{0}^\pi = \cos(\pi) - \cos(0) = -1 -1 = -2.\]
 
-Hence the area of the region above the curve is $2$.
+Hence, the area of the region above the curve is $2$.
 
 
 \begin{image}
@@ -634,6 +650,10 @@ Area above the curve $= -\int_a^b f(x) \ dx$
 \end{problem}
 
 
+Here is a video solution to problem 10b.
+\begin{foldable}
+\youtube{Gh-q_L4U6zQ} 
+\end{foldable}
 
 \begin{center}
 \begin{foldable}
@@ -656,7 +676,10 @@ Area above the curve $= -\int_a^b f(x) \ dx$
 \end{enumerate}
 \end{problem}
 
-
+Here is a video solution to problems 11a, d and e.
+\begin{foldable}
+\youtube{UidDJBP47tA} 
+\end{foldable}
 
 \section{Definite Integrals and Substitution}
 We now compute definite integrals that require a u-substitution. The key is to change the limits of integration when we change the variable.
