@@ -10,14 +10,14 @@
 \begin{document}
 
 \begin{abstract}
-In this section we use definite integrals to study rectilinear motion and compute average value.
+In this section we use definite integrals to study rectilinear motion.
 \end{abstract}
 
 \maketitle
 
 
 
-\section{Applications of Definite Integrals}
+\section{Definite Integrals and Rectilinear Motion}
 
 
 
@@ -45,7 +45,7 @@ and distance traveled by an object moving along a straight path.\\
 Suppose that an object moving along a straight path has instantaneous velocity $v(t)$, then
 \begin{enumerate}
 \item the displacement of the object over the interval $[a,b]$ is given by 
-\[\int_a^b v(t) \ dt\]
+\[s(b) - s(a) =\int_a^b v(t) \ dt\]
 and
 \item the distance traveled by the object over the interval $[a,b]$ is given by 
 \[\int_a^b |v(t)| \ dt.\]
@@ -55,55 +55,61 @@ and
 
 
 \begin{example}[example 1]
-An object is launched vertically from a height of $16 ft$ with an initial velocity of $48 ft/sec$.  
+An object is launched vertically from a height with an initial velocity of $48 ft/sec$.  
 \begin{enumerate}
-\item Find a formula, $s(t)$, for the height of the object at time $t$
- seconds.
 \item Find the displacement of the object from time $t = 0$ to time $t = 2$.
 \item Find the total distance traveled from time $t = 0$ to time $t = 2$.
 \end{enumerate}
 
-Part (a): Assuming that $a(t) = -32 ft/sec^2$, as it is on the surface of the earth, 
-we can compute $v(t)$ by using an indefinite integral:
+Part (a): We fist find the velocity function:
 \[v(t) = \int a(t) \ dt = \int -32 \ dt = -32t + C\]
 To find the value of the constant $C$, we use the fact that the initial velocity was given as $48 ft/sec$:
 \[v(0) = -32(0) + C = 48,\]
 which implies that $C = 48$.  Thus,
-\[v(t) = -32t + 48.\]
-We repeat the process to find $s(t)$:
-\[s(t) = \int v(t) \ dt = \int (-32t + 48) \ dt = -16t^2 + 48t + C\]
-To find $C$, we use the given information about the initial height of the object:
-\[s(0) = -16t^2 + 48(0) + C = 16,\]
-which implies $C = 16$.  Thus,
-\[s(t) = -16t^2 + 48t + 16\]
-
-Part (b): The displacement from $t= 0$ to $t = 2$, is $s(2) - s(0)$. We can use the formula for $s(t)$ to compute this:
-\[s(2) - s(0) = \left(-16(2)^2 + 48(2) + 16\right) - \left(-16(0)^2 + 48(0) + 16\right) = 32 \text{ feet}\]
-Alternatively, we can compute the displacement using the proposition and the fact that $v(t) = -32t + 48$.
+\[v(t) = -32t + 48 or 48 - 32t.\]
 The displacement from $t= 0$ to $t = 2$, is given by
-\[s(2) - s(0) = \int_0^2 v(t) \, dt = \left(-16t^2 + 48t\right)\bigg|_0^2 = 32 \text{ feet}\]
+\begin{align*}
+s(2) - s(0) & = \int_0^2 v(t) \ dt \\
+ & = \int_0^2 (48 - 32t) \ dt \\
+ & = (48t - 16t^2)\bigg|_0^2 \\
+ & = 32 \text{ feet}
+\end{align*}
 
-Part (c): To find the total distance traveled from $t = 0$ to time $t = 2$,
-we need to integrate $|v(t)|$. To get a handle on $|v(t)|$, recall
-\[|x| = \left\{
+Part (b): To find the total distance traveled from $t = 0$ to time $t = 2$,
+we need to integrate $|v(t)|$. To remove the absolute value bars, we analyze the 
+sign of the velocity function, $v(t) = 48-32t$. Setting $v(t) = 0$, we find that $t = 3/2$ seconds.
+For $t < 3/2$, we have $v(t) > 0$ and for $t > 3/2$, we have $v(t) < 0$.\\
+Thus,
+\[|v(t)| = \left\{
      \begin{array}{rc}
-       x & \ \text{if} \  x \geq 0 \\
-			 -x & \ \text{if} \ x <0
+       v(t) & \ \text{if} \  t < 3/2 \\
+			 -v(t) & \ \text{if} \ t > 3/2
      \end{array}
    \right.
 \]
-Noting that $v(1.5) = -32(1.5) + 48 = 0$, we can see that
-\[|v(t)| = |-32t + 48| = \left\{\begin{array}{rc}
-       -32t + 48  &\ \text{if} \  t \leq 1.5 \\
-			 32t - 48  &\ \text{if} \ t > 1.5
-     \end{array}
-   \right.
-\]
+The distance traveled from $t= 0$ to $t = 2$, is given by
+\begin{align*}
+  \int_0^2 |v(t)| \ dt &= \int_0^{3/2} |v(t)| \ dt + \int_{3/2}^2 |v(t)| \ dt\\
+  &= \int_0^{3/2} v(t) \ dt - \int_{3/2}^2 v(t) \ dt
+\end{align*}
 
-
-Hence, the total distance traveled from $t=0$ to $t = 2$ is
-\[\int_0^2 |v(t)| \ dt = \int_0^{1.5} (-32t + 48) \ dt + \int_{1.5}^2 (32t -48) \ dt = 36 + 4 = 40 \ \text{feet}\]
-
+We will compute these integrals separately. The first integral is
+\begin{align*}
+\int_0^{3/2} v(t) \ dt & = \int_0^{3/2}(48 - 32t) \ dt \\
+ & = (48t - 16t^2)\bigg|_0^{3/2} \\
+ & = 36 \text{ feet}
+\end{align*}
+The second integral is
+\begin{align*}
+\int_{3/2}^2 v(t) \ dt & = \int_{3/2}^2(48 - 32t) \ dt \\
+ & = (48t - 16t^2)\bigg|_{3/2}^2 \\
+ & = 32 - 36 = -4 \text{ feet}
+\end{align*}
+Subtracting gives the total distance traveled:
+\begin{align*}
+\int_0^2 |v(t)| \ dt & = \int_0^{3/2} v(t) \ dt - \int_{3/2}^2 v(t) \ dt \\
+ & = 36 - (-4) = 40 \text{ feet}
+\end{align*}
 
 \end{example}
 
