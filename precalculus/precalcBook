@@ -1,0 +1,39 @@
+\documentclass[12pt,handout,twocolumn,twoside,wordchoicegiven]{xourse}
+
+\input{../preamble.tex}
+
+\title{Precalculus, by Andrew Incognito}
+
+\begin{document}
+
+\maketitle
+
+\setcounter{tocdepth}{2}
+%\chapterstyle
+
+
+%% Understanding Functions
+
+%\sectionstyle
+
+
+\part{Chapter 1: Functions}
+\sectionstyle
+\activity{../vectorsR2/vectorsR2.tex}
+
+
+
+\part{Chapter 2: Polynomials}
+
+
+
+
+\part{Chapter 3: Exponentials}
+
+
+
+
+\part{Chapter 4: Trigonometry}
+
+
+\end{document}
