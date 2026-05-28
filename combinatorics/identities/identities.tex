@@ -27,7 +27,7 @@ We will use bijective reasoning, i.e., we will show a one-to-one correspondence 
 conclude that they must be equal in number.
 Suppose a group of $n$ people is split into two groups. If the first group consists of $k$ people, 
 then the second group must consist of $n-k$ people and vice versa.
- Hence groups of size $k$ and $n-k$ taken from a group of size $n$ must be equal in number. Thus
+ Hence, groups of size $k$ and $n-k$ taken from a group of size $n$ must be equal in number. Thus
 \[
 \binom{n}{k}  = \binom{n}{n-k}
 \]
@@ -43,14 +43,14 @@ Use combinatorial reasoning to establish Pascal's Identity:
 This identity is the basis for creating Pascal's triangle.\\
 To establish the identity we will use a double counting argument. 
 That is we will pose a counting problem and reason its 
-solution two different ways- one which yields the left hand side of the identity and the other which
- yields the right hand side. For the identity above, we begin with the right hand 
+solution two different ways- one which yields the left-hand side of the identity and the other which
+ yields the right-hand side. For the identity above, we begin with the right-hand 
  side since it is simpler.  The quantity
  \[
  \binom{n+1}{k}
  \]
  counts the number of committees of $k$ people that can be selected from a group of $n+1$ people. 
- Hence, we must find another way of counting this same thing which yields the left hand side. 
+ Hence, we must find another way of counting this same thing which yields the left-hand side. 
  Reason as follows. Regard one of the $n+1$ people as special. 
  Then the committee either contains the special person or it does not.
  The number of committees which contain the special person is 
@@ -79,9 +79,9 @@ Use combinatorial reasoning to establish the identity
 \[
 k \binom{n}{k} = n\binom{n-1}{k-1}
 \]
-The left hand side represents the number of ways to select a committee of $k$ people from a group 
+The left-hand side represents the number of ways to select a committee of $k$ people from a group 
 of $n$ people times the number of ways to select one member from that committee to be the chair. 
-The right hand side represents the number of ways to select one person from the group of $n$ to be the 
+The right-hand side represents the number of ways to select one person from the group of $n$ to be the 
 chair of a committee times the number of ways to select $k-1$ other committee members from 
 the remaining $n-1$ people.  In either case, we are counting the number of ways to select 
 a chaired committee of $k$ people from a group of $n$ people.
@@ -100,11 +100,11 @@ In a given subset, an element is either in it or not in it, giving 2 choices.
 Creating the subset requires making this decision for each of the elements in the set. 
 The number of subsets that can be created (including the empty set) 
 is $2 \cdot 2 \cdot \ldots \cdot 2$ where there are $n$ factors of $2$ in the product.  
-Hence the number of possible subsets is $2^n$.
-On the other hand, we can create all of the possible subsets of $S$ by partitioning them 
+Hence, the number of possible subsets is $2^n$.
+On the other hand, we can create all the possible subsets of $S$ by partitioning them 
 into groups of the same size.
 The number of subsets of $S$ of size $k$ is $\binom{n}{k}$ since we have to choose $k$ items from a 
-set of $n$ items without regard to the order of selection. Thus the total number of possible 
+set of $n$ items without regard to the order of selection. Thus, the total number of possible 
 subsets is obtained by summing over all possible values of $k$:
 \[
 \sum_{k=0}^n \binom{n}{k}
@@ -121,7 +121,7 @@ Use combinatorial reasoning to establish the Hockey Stick Identity:
 \[
 \sum_{k=r}^{n}\binom{k}{r}=\binom{n+1}{r+1} %\qquad {\text{ for }}n,r\in \mathbb {N} ,\quad n\geq r
 \]
-The right hand side counts the number of ways to form a committee of $k+1$ people from a group of $n+1$ people.
+The right-hand side counts the number of ways to form a committee of $r+1$ people from a group of $n+1$ people.
 To establish this identity we will double count this by assigning each of the $n+1$ people a unique 
 integer from $1$ to $n+1$ and then partitioning the committees according to the largest number 
 assigned among its members.
@@ -163,12 +163,12 @@ Use combinatorial reasoning to establish the identity
 Use a double counting argument, i.e., count the same thing two different ways
 \end{hint}
 \begin{hint}
-The left hand side represents the number of ways to select an $m$ member committee from a group of $n$ people and then 
+The left-hand side represents the number of ways to select an $m$ member committee from a group of $n$ people and then 
 select $k$ committee members to be on a sub-committee
 \end{hint}
 
 \begin{hint}
-To get the right hand side, choose the sub-committee first
+To get the right-hand side, choose the sub-committee first
 \end{hint}
 \end{problem}
 
@@ -181,7 +181,7 @@ Use combinatorial reasoning to establish the identity
 Use a double counting argument
 \end{hint}
 \begin{hint}
-The right hand side is the number of ways to select an element from a set of $n$ elements 
+The right-hand side is the number of ways to select an element from a set of $n$ elements 
 followed by any subset of the remaining $n-1$ elements
 \end{hint}
 \begin{hint}
@@ -205,7 +205,7 @@ Use combinatorial reasoning to establish the identity
 Use a double counting argument
 \end{hint}
 \begin{hint}
-The right hand side represents the number of committees of size $n$ that can be formed from $2n$ people
+The right-hand side represents the number of committees of size $n$ that can be formed from $2n$ people
 \end{hint}
 \begin{hint}
 Assume that half of the people are men and half are women
