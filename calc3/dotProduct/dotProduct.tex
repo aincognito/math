@@ -42,38 +42,22 @@ Rewriting the vectors in component form and then using the definition of the dot
 Note that the dot product of two vectors is a real number.  For this reason, the dot product is sometimes called the \textbf{scalar product}.
 
 \begin{problem}(Problem 1a)
-Find the indicated dot product: $\left(4\vec{i} + \vec{j}\right) \dotp \left(5\vec{i} -7\vec{j}\right) =\answer{13}$.\\
+Find the indicated dot product: \\
+$\vector{7, 4} \dotp \vector{8, -6} = \answer{32}$.
 \end{problem}
 
-\begin{problem}(Problem 1b)
-To see the relationship between the dot product and the angle between the vectors, compute the dot product of these generic unit vectors:
-\[\vector{\cos \alpha, \sin \alpha} \dotp \vector{\cos \beta, \sin \beta}  =\]
-\begin{hint}
-The Sum/Difference Formulas:
-\[\sin\left(\alpha + \beta\right) = \sin\alpha \cos \beta + \cos \alpha\sin\beta \]
-\[\sin\left(\alpha - \beta\right) = \sin\alpha \cos \beta - \cos \alpha\sin\beta \]
-\[\cos\left(\alpha + \beta\right) = \cos\alpha \cos \beta - \sin \alpha\sin\beta \]
-\[\cos\left(\alpha - \beta\right) = \cos\alpha \cos \beta + \sin \alpha\sin\beta \]
-\end{hint}
-\begin{multipleChoice}
-\choice{$\sin\left(\alpha + \beta\right)$}
-\choice{$\sin\left(\alpha - \beta\right)$}
-\choice{$\cos\left(\alpha + \beta\right)$}
-\choice[correct]{$\cos\left(\alpha - \beta\right)$}
-\end{multipleChoice}
-
-
-
+\begin{problem}(Problem 1b) 
+  Find the indicated dot product: \\
+$\left(4\vec{i} + \vec{j}\right) \dotp \left(5\vec{i} -7\vec{j}\right) =\answer{13}$.
 \end{problem}
 
-It is interesting to compute the dot product of a vector with itself.  Let $\vec{v} = \vector{x, y}$. Then
-\[
-\vec{v} \dotp \vec{v} = x^2 + y^2 = |\vec{v}|^2
-\]
-We see that the dot product of a vector with itself gives the square of the magnitude of the vector.
 
-It is also interesting to compute the dot product between two unit vectors in polar form.
-If $\vec{u}_1 = \vector{\cos \alpha, \sin \alpha}$ and $\vec{u}_2 = \vector{\cos \beta, \sin \beta}$ then
+
+
+
+We now see how the dot product relates to the angle between two vecors. 
+To do this, we compute the dot product between two unit vectors that are given in polar form.
+Let $\vec{u}_1 = \vector{\cos \alpha, \sin \alpha}$ and $\vec{u}_2 = \vector{\cos \beta, \sin \beta}$ then
 \[
 \vec{u}_1 \dotp \vec{u_2} = \cos \alpha \cos \beta + \sin \alpha \sin \beta = \cos(\alpha - \beta)
 \]
@@ -86,14 +70,20 @@ We see here that the dot product of unit vectors gives the cosine of the angle b
 \draw[thin] (0,0) circle (2);
 \draw[->, thick, blue] (0,0) -- (-1.732, 1) node[above left]{$\vec{u_1}$};
 \draw[->, thick, red] (0,0) -- (1.414, 1.414) node[above right]{$\vec{u_2}$};
-\draw[thin] (0.5 ,0.5) arc (45:150: 0.7) node[midway, above]{$\alpha - \beta$};
-\draw[blue, thin] (0.3, 0) arc (0:150: 0.3) node[midway, above]{$\alpha$};
-\draw[red, thin] (0.5, 0) arc (0:45: 0.5) node[midway, right]{$\beta$};
+\draw[thin] (0.5 ,0.5) arc (45:150: 0.9) node[pos=0.75, above]{$\alpha - \beta$};
+\draw[blue, thin] (0.3, 0) arc (0:150: 0.45) node[pos=0.75, above]{$\alpha$};
+\draw[red, thin] (0.5, 0) arc (0:45: 0.65) node[pos=0.75, right]{$\beta$};
 \node at(0, -3.5) {$\vec{u}_1 = \vector{\cos \alpha, \sin \alpha}$ and $\vec{u}_2 = \vector{\cos \beta, \sin \beta}$};
 \draw[thin] (2, 0.2) -- (2, -0.2) node[below right]{$1$};
 \draw[thin] (0.2, 2) -- (-0.2, 2) node[above left]{$1$};
 \end{tikzpicture}
 \end{image}
+
+The dot product of a vector with itself yields a useful result.  Let $\vec{v} = \vector{x, y}$. Then
+\[
+\vec{v} \dotp \vec{v} = x^2 + y^2 = |\vec{v}|^2
+\]
+We see that the dot product of a vector with itself gives the square of the magnitude of the vector.
 
 In general, the dot product of two vectors is related to both the angle between the vectors and their magnitudes.
 
@@ -103,7 +93,7 @@ Given two non-zero vectors in $\R^2$, $\vec{v}_1 = \vector{x_1, y_1}$ and $\vec{
 \vec{v}_1 \dotp \vec{v}_2 = |\vec{v}_1| \cdot |\vec{v}_2| \cos \theta
 \]
 where $\theta$ is the angle between the two vectors.
-
+\end{proposition}
 \begin{proof}
 Write the vectors in polar form: $\vec{v}_1 = |\vec{v}_1| \vector{\cos \alpha, \sin \alpha}$ and 
 $\vec{v}_2 = |\vec{v}_2| \vector{\cos \beta, \sin \beta}$. To calculate the dot product, first multiply by the magnitudes:
@@ -118,9 +108,8 @@ $\vec{v}_2 = |\vec{v}_2| \vector{\cos \beta, \sin \beta}$. To calculate the dot 
 where $\theta = \alpha - \beta$ is the angle between $\vec{v}_1$ and $\vec{v}_2$.
 \end{proof}
 
-\end{proposition}
 
-\begin{remark} The angle $\theta$ between two vectors is always taken to be between $0^\circ$ and $180^\circ$, i.e.
+\begin{remark} The angle $\theta$ between two vectors is always taken to be in the indicated interval:
 \[
 0^\circ \leq \theta \leq 180^\circ \quad \text{or, in radians} \quad 0 \leq \theta \leq \pi
 \]
