@@ -16,17 +16,13 @@ In this section we define the dot product, and we use it to find the angle betwe
  
 \maketitle  
 
-The dot product is a special operation that helps us find the angle between two vectors.
+The \textbf{dot product} is a special operation that is closely related to the angle between two vectors.
 \begin{definition}[Dot Product in $\R^2$]
 If $\vec{v}_1$ and $\vec{v}_2$ are vectors in $\R^2$ given by
 \[
 \vec{v}_1 = \vector{x_1, y_1} \text{  and   } \;\vec{v}_2 = \vector{x_2, y_2}
 \]
-then the \textbf{dot product}, $\vec{v}_1 \dotp \vec{v}_2$,\\
-$\vec{v}_1 \bullet \vec{v}_2$ or $\vec{v}_1 \boldsymbol{\cdot} \vec{v}_2$
-\\
-
- is defined by
+then the \textbf{dot product} is defined by
 \[
 \vec{v}_1 \dotp \vec{v}_2 = x_1x_2 + y_1y_2
 \]
@@ -45,8 +41,29 @@ Rewriting the vectors in component form and then using the definition of the dot
 
 Note that the dot product of two vectors is a real number.  For this reason, the dot product is sometimes called the \textbf{scalar product}.
 
-\begin{problem}(Problem 1)
+\begin{problem}(Problem 1a)
 Find the indicated dot product: $\left(4\vec{i} + \vec{j}\right) \dotp \left(5\vec{i} -7\vec{j}\right) =\answer{13}$.\\
+\end{problem}
+
+\begin{problem}(Problem 1b)
+To see the relationship between the dot product and the angle between the vectors, compute the dot product of these generic unit vectors:
+\[\vector{\cos \alpha, \sin \alpha} \dotp \vector{\cos \beta, \sin \beta}  =\]
+\begin{hint}
+The Sum/Difference Formulas:
+\[\sin\left(\alpha + \beta\right) = \sin\alpha \cos \beta + \cos \alpha\sin\beta \]
+\[\sin\left(\alpha - \beta\right) = \sin\alpha \cos \beta - \cos \alpha\sin\beta \]
+\[\cos\left(\alpha + \beta\right) = \cos\alpha \cos \beta - \sin \alpha\sin\beta \]
+\[\cos\left(\alpha - \beta\right) = \cos\alpha \cos \beta + \sin \alpha\sin\beta \]
+\end{hint}
+\begin{multipleChoice}
+\choice{$\sin\left(\alpha + \beta\right)$}
+\choice{$\sin\left(\alpha - \beta\right)$}
+\choice{$\cos\left(\alpha + \beta\right)$}
+\choice[correct]{$\cos\left(\alpha - \beta\right)$}
+\end{multipleChoice}
+
+
+
 \end{problem}
 
 It is interesting to compute the dot product of a vector with itself.  Let $\vec{v} = \vector{x, y}$. Then
