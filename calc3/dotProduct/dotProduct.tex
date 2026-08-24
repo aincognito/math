@@ -81,6 +81,28 @@ This is illustrated in the figure below.
 \end{tikzpicture}
 \end{image}
 
+\begin{tikzpicture}
+  \def\r{2} % radius
+  \def\startangle{0}
+  \def\endangle{180}
+  \def\steps{50}
+
+  \pgfmathsetmacro{\stepsize}{(\endangle-\startangle)/\steps}
+
+  \foreach \i in {0,...,\the\numexpr\steps-1\relax} {
+    \pgfmathsetmacro{\a}{\startangle + \i*\stepsize}
+    \pgfmathsetmacro{\b}{\startangle + (\i+1)*\stepsize}
+    \pgfmathsetmacro{\redpct}{100 * (1 - \i/\steps)}
+    \pgfmathsetmacro{\bluepct}{100 * \i/\steps}
+
+    \draw[
+      line width=2mm,
+      color=red!\redpct!blue
+    ] (\a:\r) arc (\a:\b:\r);
+  }
+\end{tikzpicture}
+
+
 The dot product of a vector,  $\vec{v} = \vector{x, y}$, with itself is the square of its magnitude:
 \[
 \vec{v} \dotp \vec{v} = x^2 + y^2 = |\vec{v}|^2
