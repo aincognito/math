@@ -55,13 +55,15 @@ $\left(4\vec{i} + \vec{j}\right) \dotp \left(5\vec{i} -7\vec{j}\right) =\answer{
 
 
 
-We now see how the dot product relates to the angle between two vecors. 
-To do this, we compute the dot product between two unit vectors that are given in polar form.
-Let $\vec{u}_1 = \vector{\cos \alpha, \sin \alpha}$ and $\vec{u}_2 = \vector{\cos \beta, \sin \beta}$ then
+We now investigate the relationship between the dot product and the angle between two vectors.
+To do this, we compute the dot product between two unit vectors given in polar form.
+Let $\vec{u}_1 = \vector{\cos \alpha, \sin \alpha}$ and $\vec{u}_2 = \vector{\cos \beta, \sin \beta}$.
+Thanks to an identity for the cosine of a difference, 
 \[
 \vec{u}_1 \dotp \vec{u_2} = \cos \alpha \cos \beta + \sin \alpha \sin \beta = \cos(\alpha - \beta)
 \]
-We see here that the dot product of unit vectors gives the cosine of the angle between the vectors.
+Thus, the dot product of two unit vectors is the cosine of the angle between them. 
+This is illustrated in the figure below.
 
 \begin{image}
 \begin{tikzpicture}
@@ -83,7 +85,7 @@ The dot product of a vector with itself yields a useful result.  Let $\vec{v} = 
 \[
 \vec{v} \dotp \vec{v} = x^2 + y^2 = |\vec{v}|^2
 \]
-We see that the dot product of a vector with itself gives the square of the magnitude of the vector.
+Hence, the dot product of a vector with itself is the square of its magnitude.
 
 In general, the dot product of two vectors is related to both the angle between the vectors and their magnitudes.
 
@@ -115,7 +117,7 @@ where $\theta = \alpha - \beta$ is the angle between $\vec{v}_1$ and $\vec{v}_2$
 \]
 \end{remark}
 
-
+In the next example, we will use the inverse cosine function on the dot product to find the angle btween two vecotrs.
 \begin{example}[Example 2] Use the dot product to find the angle between the vectors 
 \[
 \vec v = \vector{-2,5} \quad \text{and} \quad \vec w = \vector{5,12}
@@ -137,15 +139,27 @@ Hence, the cosine of the angle is
 \[
 \cos \theta = \frac{50}{13\sqrt{29}}
 \]
-and $\theta$ is found using the inverse cosine:
+and $\theta$ is found by taking the inverse cosine of both sides:
 \[
 \theta = \cos^{-1}\left(\frac{50}{13\sqrt{29}} \right) \approx 44.4^\circ
 \]
 to the nearest tenth of a degree.
 \end{example}
 
+\begin{problem}(Problem 2a) Use the dot product to find the angle between the vectors 
+\[
+\vec v = \vector{7,-8} \quad \text{and} \quad \vec w = \vector{16,14}
+\]
 
-\begin{problem}(Problem 2) Use the dot product to find the angle between the vectors 
+\[
+\vec v \dotp \vec w = \answer{0} \quad |v| = \answer{\sqrt{113}} \quad |w| = \answer{2\sqrt{113}}
+\]
+\[
+\cos \theta = \answer{0} \quad \theta = \answer{90} \text{ degrees}
+\]
+\end{problem}
+
+\begin{problem}(Problem 2b) Use the dot product to find the angle between the vectors 
 \[
 \vec v = \vector{3,-6} \quad \text{and} \quad \vec w = \vector{2,4}
 \]
@@ -158,7 +172,7 @@ Round the answer to the nearest tenth of a degree.\\
 \]
 \end{problem}
 
-Here is a video solution of problem 2:\\
+Here is a video solution of problem 2b:\\
 \begin{foldable}
 \youtube{I6Ct3B5pYAg}
 \end{foldable}
@@ -255,7 +269,7 @@ From the above proposition, we see that the dot product of two vectors is zero u
 \]
 then either
 \[
-|\vec{v}_1| = 0, |\vec{v}_2| = 0 \; \text{or } \; \cos \theta = 0
+|\vec{v}_1| = 0 \; \text{or } |\vec{v}_2| = 0 \; \text{or } \; \cos \theta = 0
 \]
 Noting that $\cos \theta = 0$ precisely when $\theta = 90^\circ$, we can conclude the following
 
