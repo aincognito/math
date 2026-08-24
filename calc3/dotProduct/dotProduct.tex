@@ -82,9 +82,9 @@ This is illustrated in the figure below.
 \end{image}
 
 \begin{tikzpicture}
-  \def\r{2} % radius
-  \def\startangle{0}
-  \def\endangle{180}
+  \def\r{1} % radius
+  \def\startangle{45}
+  \def\endangle{150}
   \def\steps{50}
 
   \pgfmathsetmacro{\stepsize}{(\endangle-\startangle)/\steps}
@@ -96,7 +96,7 @@ This is illustrated in the figure below.
     \pgfmathsetmacro{\bluepct}{100 * \i/\steps}
 
     \draw[
-      line width=2mm,
+      thin,
       color=red!\redpct!blue
     ] (\a:\r) arc (\a:\b:\r);
   }
