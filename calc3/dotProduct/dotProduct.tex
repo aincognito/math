@@ -73,6 +73,24 @@ This is illustrated in the figure below.
 \draw[->, thick, blue] (0,0) -- (-1.732, 1) node[above left]{$\vec{u_1}$};
 \draw[->, thick, red] (0,0) -- (1.414, 1.414) node[above right]{$\vec{u_2}$};
 \draw[thin] (0.7 ,0.7) arc (45:150: 1) node[pos=0.85, above = 3pt]{$\alpha - \beta$};
+\def\r{1} % radius
+  \def\startangle{45}
+  \def\endangle{150}
+  \def\steps{50}
+
+  \pgfmathsetmacro{\stepsize}{(\endangle-\startangle)/\steps}
+
+  \foreach \i in {0,...,\the\numexpr\steps-1\relax} {
+    \pgfmathsetmacro{\a}{\startangle + \i*\stepsize}
+    \pgfmathsetmacro{\b}{\startangle + (\i+1)*\stepsize}
+    \pgfmathsetmacro{\redpct}{100 * (1 - \i/\steps)}
+    \pgfmathsetmacro{\bluepct}{100 * \i/\steps}
+
+    \draw[
+      thin,
+      color=red!\redpct!blue
+    ] (\a:\r) arc (\a:\b:\r);
+  }
 \draw[blue, thin] (0.45, 0) arc (0:150: 0.45) node[pos=0.85, above]{$\alpha$};
 \draw[red, thin] (0.65, 0) arc (0:45: 0.65) node[pos=0.5, right]{$\beta$};
 \node at(0, -3.5) {$\vec{u}_1 = \vector{\cos \alpha, \sin \alpha}$ and $\vec{u}_2 = \vector{\cos \beta, \sin \beta}$};
