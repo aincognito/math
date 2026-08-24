@@ -89,25 +89,25 @@ The dot product of a vector,  $\vec{v} = \vector{x, y}$, with itself is the squa
 In general, the dot product is related to both the angle between the vectors and their magnitudes.
 
 \begin{proposition}
-Given two non-zero vectors in $\R^2$, $\vec{v}_1 = \vector{x_1, y_1}$ and $\vec{v}_2 = \vector{x_2, y_2}$, 
-thier dot product can be expressed as
+Given two non-zero vectors $\vec{v} $ and $\vec{w}$, in $\R^2$, 
+their dot product can be expressed as
 \[
-\vec{v}_1 \dotp \vec{v}_2 = |\vec{v}_1| \cdot |\vec{v}_2| \cos \theta
+\vec{v} \dotp \vec{w} = |\vec{v}| \cdot |\vec{w}| \cos \theta
 \]
 where $\theta$ is the angle between the two vectors.
 \end{proposition}
 \begin{proof}
-Write the vectors in polar form: $\vec{v}_1 = |\vec{v}_1| \vector{\cos \alpha, \sin \alpha}$ and 
-$\vec{v}_2 = |\vec{v}_2| \vector{\cos \beta, \sin \beta}$. To calculate the dot product, first multiply by the magnitudes:
+Write the vectors in polar form: $\vec{v} = |\vec{v}| \vector{\cos \alpha, \sin \alpha}$ and 
+$\vec{w} = |\vec{w}| \vector{\cos \beta, \sin \beta}$. To calculate the dot product, first multiply by the magnitudes:
 \begin{align*}
-\vec{v}_1 \dotp \vec{v}_2 & = \left(|\vec{v}_1| \vector{\cos \alpha, \sin \alpha}\right) \dotp \left( |\vec{v}_2| \vector{\cos \beta, \sin \beta} \right)\\
-                            &= \vector{|\vec{v}_1|\cos \alpha, |\vec{v}_1|\sin \alpha} \dotp   \vector{|\vec{v}_2|\cos \beta, |\vec{v}_2|\sin \beta} \\
-                            &= |\vec{v}_1| \cos \alpha |\vec{v}_2|\cos \beta + |\vec{v}_1|\sin \alpha |\vec{v}_2|\sin \beta\\
-                            &= |\vec{v}_1|\cdot |\vec{v}_2| \left(\cos \alpha \cos \beta + \sin \alpha \sin \beta\right)\\
-                            &= |\vec{v}_1| \cdot|\vec{v}_2| \cos(\alpha - \beta)\\
-                            &= |\vec{v}_1| \cdot |\vec{v}_2| \cos \theta
+\vec{v} \dotp \vec{w} & = \left(|\vec{v}| \vector{\cos \alpha, \sin \alpha}\right) \dotp \left( |\vec{w}| \vector{\cos \beta, \sin \beta} \right)\\
+                            &= \vector{|\vec{v}|\cos \alpha, |\vec{v}|\sin \alpha} \dotp   \vector{|\vec{w}|\cos \beta, |\vec{w}|\sin \beta} \\
+                            &= |\vec{v}| \cos \alpha |\vec{w}|\cos \beta + |\vec{v}|\sin \alpha |\vec{w}|\sin \beta\\
+                            &= |\vec{v}|\cdot |\vec{w}| \left(\cos \alpha \cos \beta + \sin \alpha \sin \beta\right)\\
+                            &= |\vec{v}| \cdot|\vec{w}| \cos(\alpha - \beta)\\
+                            &= |\vec{v}| \cdot |\vec{w}| \cos \theta
 \end{align*}
-where $\theta = \alpha - \beta$ is the angle between $\vec{v}_1$ and $\vec{v}_2$.
+where $\theta = \alpha - \beta$ is the angle between $\vec{v}$ and $\vec{w}$.
 \end{proof}
 
 
@@ -118,6 +118,7 @@ where $\theta = \alpha - \beta$ is the angle between $\vec{v}_1$ and $\vec{v}_2$
 \end{remark}
 
 In the next example, we will use the inverse cosine function on the dot product to find the angle btween two vecotrs.
+Note that the inverse cosine always outputs and angle in the afforementioned interval.
 \begin{example}[Example 2] Use the dot product to find the angle between the vectors 
 \[
 \vec v = \vector{-2,5} \quad \text{and} \quad \vec w = \vector{5,12}
@@ -207,11 +208,11 @@ b) $\left(2\vec{i} + 4\vec{j} - 3\vec{k}\right) \dotp \left(\vec{i} -5\vec{j}\ri
 
 
 \begin{proposition}[Properties of the Dot Product]
-Let $\vec{v} , \vec{v}_1 $ and $ \vec{v}_2$ be vectors in $\R^3$ and let $c$ be any scalar. 
+Let $\vec{v}$ and $ \vec{w}$ be vectors in $\R^3$ and let $c$ be any scalar. 
 Then the following properties hold for the dot product:\\
-i) $\vec{v}_1 \dotp \vec{v}_2 =\vec{v}_2 \dotp \vec{v}_1$\\
-ii) $\left(c\vec{v}_1\right) \dotp \vec{v}_2 =\vec{v}_1 \dotp \left(c\vec{v}_2\right) = c\left(\vec{v}_1 \dotp \vec{v}_2\right)$\\
-iii)  $\vec{v} \dotp \left(\vec{v}_1 +\vec{v}_2\right) =\vec{v} \dotp\vec{v}_1 +\vec{v}\dotp \vec{v}_2$\\
+i) $\vec{v} \dotp \vec{w} =\vec{w} \dotp \vec{v}$\\
+ii) $\left(c\vec{v}\right) \dotp \vec{w} =\vec{v} \dotp \left(c\vec{w}\right) = c\left(\vec{v} \dotp \vec{w}\right)$\\
+iii)  $\vec{v} \dotp \left(\vec{w}_1 +\vec{w}_2\right) =\vec{v} \dotp\vec{w}_1 +\vec{v}\dotp \vec{w}_2$\\
 iv) $\vec{v} \dotp \vec{0} = 0$\\
 v) $\vec{v} \dotp \vec{v} = |\vec{v}|^2$
 \end{proposition}
@@ -222,42 +223,42 @@ $(x_1, y_1, z_1)$ and $(x_2, y_2, z_2)$.  Together, these three points form a tr
 The angle between the vectors $\vec{v}_1$ and $\vec{v}_2$ is the angle in this triangle with vertex at the origin.
 
 \begin{proposition}
-Let $\vec{v}_1 = \vector{x_1, y_1, z_1}$ and $\vec{v}_2 = \vector{x_2, y_2, z_2}$
+Let $\vec{v}$ and $\vec{w}$
 be vectors in $\R^3$ and let $\theta$ denote the angle between these vectors.  
 Then, just as in $\R^2$, the dot product can be expressed in terms of the 
-magnitudes of the vectors $\vec{v}_1$ and $\vec{v}_2$ and the angle $\theta$ between them:
+magnitudes of the vectors $\vec{v}$ and $\vec{w}$ and the angle $\theta$ between them:
 \[
-\vec{v}_1\dotp\vec{v}_2 = |\vec{v}_1|\cdot |\vec{v}_2| \cos\theta
+\vec{v}\dotp\vec{w} = |\vec{v}|\cdot |\vec{w}| \cos\theta
 \]
 \begin{proof}
 According to the \link[law of cosines]{https://en.wikipedia.org/wiki/Law_of_cosines}, 
 \[
-|\vec{v}_1 - \vec{v}_2|^2 = |\vec{v}_1|^2 + |\vec{v}_2|^2 - 2|\vec{v}_1|\cdot| \vec{v}_2|\cos \theta
+|\vec{v} - \vec{w}|^2 = |\vec{v}|^2 + |\vec{w}|^2 - 2|\vec{v}|\cdot| \vec{w}|\cos \theta
 \]
 See the figure below. On the other hand, using properties $ii, iii$ and $v$ of the previous proposition, we have
 %By property $(v)$ of the preceding proposition, 
 \begin{align*}
-|\vec{v}_1 - \vec{v}_2|^2 &= \left(\vec{v}_1 - \vec{v}_2\right)\dotp \left(\vec{v}_1 - \vec{v}_2\right)\\
-                          &= \vec{v}_1 \dotp \vec{v}_1 + \vec{v}_2 \dotp \vec{v}_2 - 2\left(\vec{v}_1 \dotp \vec{v}_2\right)\\
-                          &=|\vec{v}_1|^2 + |\vec{v}_2|^2 - 2\left(\vec{v}_1 \dotp \vec{v}_2\right)
+|\vec{v} - \vec{w}|^2 &= \left(\vec{v} - \vec{w}\right)\dotp \left(\vec{v} - \vec{w}\right)\\
+                          &= \vec{v} \dotp \vec{v} + \vec{w} \dotp \vec{w} - 2\left(\vec{v} \dotp \vec{w}\right)\\
+                          &=|\vec{v}|^2 + |\vec{w}|^2 - 2\left(\vec{v} \dotp \vec{w}\right)
 \end{align*}
 
 Comparing this with the right-hand side of the law of cosines we can see that
 \[
-- 2\left(\vec{v}_1 \dotp \vec{v}_2\right) = - 2|\vec{v}_1|\cdot| \vec{v}_2|\cos \theta
+- 2\left(\vec{v} \dotp \vec{w}\right) = - 2|\vec{v}|\cdot| \vec{w}|\cos \theta
 \]
 Dividing through by $-2$ gives the final result.
 
 \begin{image}
 \begin{tikzpicture}
-\draw[blue, ->, thick] (0,0) -- (3, 1) node[midway, below]{$\vec{v}_1$};
-\draw[blue, ->, thick] (0,0) -- (1, 4) node[midway, left]{$\vec{v}_2$};
-\draw[red, ->, thick] (1,4) -- (3, 1) node[midway,right]{$\vec{v}_1 - \vec{v}_2$};
+\draw[blue, ->, thick] (0,0) -- (3, 1) node[midway, below]{$\vec{v}$};
+\draw[blue, ->, thick] (0,0) -- (1, 4) node[midway, left]{$\vec{w}$};
+\draw[red, ->, thick] (1,4) -- (3, 1) node[midway,right]{$\vec{v} - \vec{w}$};
 \draw[blue] (0.8,.28) ++(2:0) arc (20:70:1);
 \path[blue] (0,0.33) ++(10:0.4cm) node{$\theta$};
 %\draw[blue] (0.5, 0.166) arc (20:70:.6) node[midway, above right]{$\theta$};
 \node at (1.5, -1){Law of Cosines:};
-\node at (1.5, -1.5){ $|\vec{v}_1 - \vec{v}_2|^2 = |\vec{v}_1|^2 + |\vec{v}_2|^2 - 2|\vec{v}_1|\cdot| \vec{v}_2|\cos \theta$};
+\node at (1.5, -1.5){ $|\vec{v} - \vec{w}|^2 = |\vec{v}|^2 + |\vec{w}|^2 - 2|\vec{v}|\cdot| \vec{w}|\cos \theta$};
 %\draw[white] (-3, -1.5) -- (7, -1.5);
 \end{tikzpicture}
 \end{image}
@@ -268,16 +269,16 @@ Dividing through by $-2$ gives the final result.
 
 From the above proposition, we see that the dot product of two vectors is zero under special conditions, i.e.,  if 
 \[
-\vec{v}_1 \dotp \vec{v}_2 = 0
+\vec{v} \dotp \vec{w} = 0
 \]
 then either
 \[
-|\vec{v}_1| = 0 \; \text{or } |\vec{v}_2| = 0 \; \text{or } \; \cos \theta = 0
+|\vec{v}| = 0 \; \text{or } |\vec{w}| = 0 \; \text{or } \; \cos \theta = 0
 \]
 Noting that $\cos \theta = 0$ precisely when $\theta = 90^\circ$, we can conclude the following
 
 \begin{corollary} 
-Two non-zero vectors $\vec{v}_1$ and $\vec{v}_2$ are perpendicular if and only if $\vec{v}_1 \dotp \vec{v}_2 = 0$.
+Two non-zero vectors $\vec{v}$ and $\vec{w}$ are perpendicular if and only if $\vec{v} \dotp \vec{w} = 0$.
 \end{corollary}
 
 Perpendicular vectors are commonly called \textbf{orthogonal} which is a more general term. 
