@@ -29,7 +29,7 @@ provided the limit of each component exists.
 \begin{example}[Example 1]
 Compute the indicated limit of the vector valued function:
 \[
-\lim_{t \to 0} \vector{\frac{\sin t}{t}, \frac{\ln t}{t}, \frac{e^t - t -1}{t^2}}
+\lim_{t \to 0} \vector{\frac{\sin t}{t}, \frac{\ln(1+t)}{t}, \frac{e^t - t -1}{t^2}}
 \]
 Recall \textbf{L'Hopital's Rule}:
 \[
@@ -41,15 +41,16 @@ Recall \textbf{L'Hopital's Rule}:
 as long as $f$ and $g$ are differentiable in an open interval containing $x = c$ (but not necessarily at $x = c$ itself)
 and $g'(c) \neq 0$. We can apply this to the limit in each of the components:
 \[
-\lim_{t \to 0} \frac{\sin t}{t} = \frac00 = \lim_{t\to 0} \cos t = \cos 0  = 1
+\lim_{t \to 0} \frac{\sin t}{t} = \frac00 \,\overset{\scriptsize\text{L'H}}{=}\, \lim_{t\to 0} \cos t = \cos 0  = 1
 \]
 \[
-\lim_{t \to 0} \frac{\ln(1+t)}{t} = \frac00 = \lim_{t\to 0} \frac{1}{1+t} = 1
+\lim_{t \to 0} \frac{\ln(1+t)}{t} = \frac00 \,\overset{\scriptsize\text{L'H}}{=}\, \lim_{t\to 0} \frac{1}{1+t} = 1
 \]
 \[
-\lim_{t \to 0} \frac{e^t - t - 1}{t^2} = \frac00 = \lim_{t\to 0} \frac{e^t - 1}{2t} = \frac00 = \frac{e^t}{2}  = \frac12
+\lim_{t \to 0} \frac{e^t - t - 1}{t^2} = \frac00 \,\overset{\scriptsize\text{L'H}}{=}\, \lim_{t\to 0} \frac{e^t - 1}{2t} 
+\,\overset{\scriptsize\text{L'H}}{=}\, \frac00 = \frac{e^t}{2}  = \frac12
 \]
-Hence the limit of the vector-valued function is the vector $\vector{1, 1, 1/2}$.
+Hence, the limit of the vector-valued function is the vector $\vector{1, 1, 1/2}$.
 \end{example}
 
 \begin{problem}(Problem 1)
@@ -99,8 +100,8 @@ Show that the space curve is continuous at $t = 0$:
 \]
 \end{problem}
 
-Since continuity is determined componentwise, we can take advantage of our knowledge of 
-continuous functions of a single variable.
+Since continuity is determined componentwise, we can take advantage of our knowledge of ordinary
+continuous functions to determine the continuity of a vector-valued function.
 
 \begin{proposition}[Continuity]
 If $x(t), y(t)$ and $z(t)$ are continuous at $t = c$, then the vector-valued function $\vec r(t) = \vector{x(t), y(t), z(t)}$
@@ -182,6 +183,11 @@ The unit tangent vector is
 
 \end{example}
 
+\begin{center}
+\desmosThreeD{hzooegooi5}{800}{600}
+\end{center}
+
+
 \begin{problem}(Problem 3a)
 Find the unit tangent vector to the space curve
 \[
@@ -205,6 +211,12 @@ Find the equation of the tangent line to the twisted cubic
 at $t = 1$.\\
 The vector form of the tangent line is $\vector{x, y, z} = \vector{1,1,1} + t\vector{1, \answer{2}, \answer{3}}$\\
 \end{problem}
+
+\begin{center}
+\desmosThreeD{gqtm36fy8h}{800}{600}
+\end{center}
+
+
 
 In applications where the space curve $\vec r(t)$ represents the path of a particle, the tangent vector $\vec r\,'(t)$ is sometimes referred to as the \textbf{velocity} vector
 of the particle and its magnitude, $|\vec r\,'(t)|$ is the \textbf{speed} of the particle.
