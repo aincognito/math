@@ -152,7 +152,6 @@ Below, we see the space curve $\vec r(t)$ with the vectors $\vec r(a+h) - \vec r
 \end{tikzpicture}
 \end{image}
 
-
 \begin{definition}[Tangent Vector and Tangent Line]
 If the vector-valued function $\vec r(t)$ is differentiable at $t = a$ then the vector $\vec r\,'(a)$ is called the 
 \textbf{tangent vector} to the curve determined by $\vec r(t)$ at the point corresponding to $t = a$. 
@@ -162,8 +161,31 @@ Furthermore, the equation of the \textbf{tangent line} to this curve at $ t= a$ 
 \]
 \end{definition}
 
+The following theorem tells us that we can compute the derivative of a vector-valued function componentwise.
+
+\begin{theorem}
+If $\vec{r}(t) = \vector{x(t), y(t), z(t)}$ is differentiable, then $\vec{r'}(t)$ is computed via componentwise differentiation, i.e.,
+\[
+\vec{r'}(t) = \vector{x'(t), y'(t), z'(t)}
+\] 
+\end{theorem}
+
+\begin{proof}
+
+\begin{align*}
+\vec{r\,'}(t) &= \lim_{h \to 0} \dfrac{\vec{r}(t+h)-\vec{r}(t)}{h}\\
+&= \lim_{h \to 0}\dfrac{1}{h}\left[\vector{x(t+h), y(t+h), z(t+h)} - \vector{x(t), y(t), z(t) } \right]\\
+  &=\lim_{h \to 0} \vector{\dfrac{x(t+h)-x(t)}{h},  \dfrac{y(t+h)-y(t)}{h},\dfrac{z(t+h)-z(t)}{h}}\\
+  &= \vector{x\,'(t), y\,'(t), z\,'(t)}
+\end{align*}
+
+\end{proof}
+
+
+
+
 \begin{example}[Example 3] 
-Find the unit tangent vector to the spiral helix
+Find both the equation of the tangent line and the unit tangent vector to the helix
 \[
 \vec r(t) = \vector{\cos(2t), \sin(2t), t}
 \]
@@ -176,7 +198,16 @@ At $t = \pi/2$ we have
 \[
 \vec r\,'(\pi/2) = \vector{-2\sin(\pi), 2\cos(\pi), 1} = \vector{0, -2, 1}
 \]
-The unit tangent vector is
+
+Hence, the equation of the tangent line (in vector form) is given by
+\begin{align*}
+\vector{x, y, z} &= \vec r(a) + t\,\vec r\,'(a)\\
+&= \vec r(\pi/2) + t\,\vec r\,'(\pi/2)\\
+  &= \vector{-1, 0, \pi/2}  +t\vector{0, -2, 1}
+\end{align*}
+
+Next, recall that the unit vector in the same direction as $\vec{v}$ is given by $\vec{u} = \frac{\vec{v}}{|\vec{v}|}$.
+Hence, the unit tangent vector is
 \[
 \frac{r\,'(\pi/2)}{|r\,'(\pi/2)|} = \frac{1}{\sqrt 5}\vector{0, -2, 1} = \vector{0, -\frac{2}{\sqrt 5}, \frac{1}{\sqrt 5}}
 \]
