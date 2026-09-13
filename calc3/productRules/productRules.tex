@@ -71,9 +71,9 @@ Then
 Computing the dot product and then differentiating yields
 \begin{align*}
 \frac{d}{dt}\left[\vec r_1(t) \dotp \vec r_2(t)\right] &= \frac{d}{dt} \left[ \vector{x_1(t)x_2(t), y_1(t)y_2(t), z_1(t)z_2(t)}\right]\\
-&=  \vector{\frac{d}{dt} \left[x_1(t)x_2(t)\right], \frac{d}{dt} \left[y_1(t)y_2(t)\right],\frac{d}{dt} \left[z_1(t)z_2(t)\right]}\\
-&= \vector{x_1(t)x_2'(t) +x_1'(t)x_2(t), y_1(t)y_2'(t) +y_1'(t)y_2(t), z_1(t)z_2'(t) +z_1'(t)z_2(t)}\\
-&=\vector{x_1(t)x_2'(t) , y_1(t)y_2'(t), z_1(t)z_2'(t)}+ \vector{x_1'(t)x_2(t), y_1'(t)y_2(t), z_1'(t)z_2(t)}\\
+&=  \frac{d}{dt} \left[x_1(t)x_2(t)\right]+ \frac{d}{dt} \left[y_1(t)y_2(t)\right]+\frac{d}{dt} \left[z_1(t)z_2(t)\right]\\
+&= x_1(t)x_2'(t) +x_1'(t)x_2(t)+ y_1(t)y_2'(t) +y_1'(t)y_2(t)+ z_1(t)z_2'(t) +z_1'(t)z_2(t)\\
+&= x_1(t)x_2'(t) + y_1(t)y_2'(t)+ z_1(t)z_2'(t) + x_1'(t)x_2(t)+ y_1'(t)y_2(t)+ z_1'(t)z_2(t)\\
 &= \vector{x_1(t), y_1(t), z_1(t)}\dotp \vector{x_2'(t), y_2'(t), z_2'(t)} + \vector{x_1'(t), y_1'(t), z_1'(t)}\dotp \vector{x_2(t), y_2(t), z_2(t)}\\
 &= \vec r_1(t) \dotp \vec r_2\,'(t) + \vec r_1\,'(t) \dotp \vec r_2(t)
 \end{align*}
