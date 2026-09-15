@@ -73,7 +73,7 @@ Computing the dot product and then differentiating yields
 \frac{d}{dt}\left[\vec r_1(t) \dotp \vec r_2(t)\right] &= \frac{d}{dt} \left[ x_1(t)x_2(t)+ y_1(t)y_2(t)+ z_1(t)z_2(t)\right]\\[6pt]
 &=  \frac{d}{dt} \left[x_1(t)x_2(t)\right]+ \frac{d}{dt} \left[y_1(t)y_2(t)\right]+\frac{d}{dt} \left[z_1(t)z_2(t)\right]\\[6pt]
 &= x_1(t)x_2'(t) +x_1'(t)x_2(t)+ y_1(t)y_2'(t) +y_1'(t)y_2(t)+ z_1(t)z_2'(t) +z_1'(t)z_2(t)\\[6pt]
-&= x_1(t)x_2'(t) + y_1(t)y_2'(t)+ z_1(t)z_2'(t) + x_1'(t)x_2(t)+ y_1'(t)y_2(t)+ z_1'(t)z_2(t)\\[6pt]
+&= \left[x_1(t)x_2'(t) + y_1(t)y_2'(t)+ z_1(t)z_2'(t)\right] + \left[x_1'(t)x_2(t)+ y_1'(t)y_2(t)+ z_1'(t)z_2(t)\right]\\[6pt]
 &= \vector{x_1(t), y_1(t), z_1(t)}\dotp \vector{x_2'(t), y_2'(t), z_2'(t)} + \vector{x_1'(t), y_1'(t), z_1'(t)}\dotp \vector{x_2(t), y_2(t), z_2(t)}\\[6pt]
 &= \vec r_1(t) \dotp \vec r_2\,'(t) + \vec r_1\,'(t) \dotp \vec r_2(t)
 \end{align*}
@@ -146,7 +146,7 @@ Then
 \]
 \end{corollary}
 \begin{proof}
-The magnitude of the unit tangent vector, $\vec T(t)$, is 1 and hence constant. The result then follows from the proposition.
+The magnitude of the unit tangent vector, $\vec T(t)$, is one, and hence constant. The result then follows from the previous proposition.
 \end{proof}
 
 \begin{problem}(Problem 2)
