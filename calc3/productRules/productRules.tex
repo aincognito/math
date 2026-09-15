@@ -50,11 +50,11 @@ Then
 \begin{proof}
 Multiplying $f(t)$ into each component of $\vec r(t)$ and then differentiating yields
 \begin{align*}
-\frac{d}{dt}\left[f(t)\vec r(t)\right] &= \frac{d}{dt} \left[ \vector{f(t)x(t), f(t)y(t),f(t)z(t)}\right]\\
-&=  \vector{\frac{d}{dt} \left[f(t)x(t)\right], \frac{d}{dt} \left[f(t)y(t)\right],\frac{d}{dt} \left[f(t)z(t)\right]}\\
-&= \vector{f(t)x'(t) + f'(t)x(t), f(t)y'(t) + f'(t)y(t), f(t)z'(t) + f'(t)z(t)}\\
-&=\vector{f(t)x'(t) , f(t)y'(t), f(t)z'(t)}+ \vector{f'(t)x(t), f'(t)y(t), f'(t)z(t)}\\
-&= f(t)\vector{x'(t), y'(t), z'(t)} + f'(t)\vector{x(t), y(t), z(t)}\\
+\frac{d}{dt}\left[f(t)\vec r(t)\right] &= \frac{d}{dt} \left[ \vector{f(t)x(t), f(t)y(t),f(t)z(t)}\right]\\[6pt]
+&=  \vector{\frac{d}{dt} \left[f(t)x(t)\right], \frac{d}{dt} \left[f(t)y(t)\right],\frac{d}{dt} \left[f(t)z(t)\right]}\\[6pt]
+&= \vector{f(t)x'(t) + f'(t)x(t), f(t)y'(t) + f'(t)y(t), f(t)z'(t) + f'(t)z(t)}\\[6pt]
+&=\vector{f(t)x'(t) , f(t)y'(t), f(t)z'(t)}+ \vector{f'(t)x(t), f'(t)y(t), f'(t)z(t)}\\[6pt]
+&= f(t)\vector{x'(t), y'(t), z'(t)} + f'(t)\vector{x(t), y(t), z(t)}\\[6pt]
 &= f(t)\vec r\,'(t) + f'(t)\vec r(t)
 \end{align*}
 as claimed.
@@ -70,11 +70,11 @@ Then
 \begin{proof}
 Computing the dot product and then differentiating yields
 \begin{align*}
-\frac{d}{dt}\left[\vec r_1(t) \dotp \vec r_2(t)\right] &= \frac{d}{dt} \left[ x_1(t)x_2(t)+ y_1(t)y_2(t)+ z_1(t)z_2(t)\right]\\
-&=  \frac{d}{dt} \left[x_1(t)x_2(t)\right]+ \frac{d}{dt} \left[y_1(t)y_2(t)\right]+\frac{d}{dt} \left[z_1(t)z_2(t)\right]\\
-&= x_1(t)x_2'(t) +x_1'(t)x_2(t)+ y_1(t)y_2'(t) +y_1'(t)y_2(t)+ z_1(t)z_2'(t) +z_1'(t)z_2(t)\\
-&= x_1(t)x_2'(t) + y_1(t)y_2'(t)+ z_1(t)z_2'(t) + x_1'(t)x_2(t)+ y_1'(t)y_2(t)+ z_1'(t)z_2(t)\\
-&= \vector{x_1(t), y_1(t), z_1(t)}\dotp \vector{x_2'(t), y_2'(t), z_2'(t)} + \vector{x_1'(t), y_1'(t), z_1'(t)}\dotp \vector{x_2(t), y_2(t), z_2(t)}\\
+\frac{d}{dt}\left[\vec r_1(t) \dotp \vec r_2(t)\right] &= \frac{d}{dt} \left[ x_1(t)x_2(t)+ y_1(t)y_2(t)+ z_1(t)z_2(t)\right]\\[6pt]
+&=  \frac{d}{dt} \left[x_1(t)x_2(t)\right]+ \frac{d}{dt} \left[y_1(t)y_2(t)\right]+\frac{d}{dt} \left[z_1(t)z_2(t)\right]\\[6pt]
+&= x_1(t)x_2'(t) +x_1'(t)x_2(t)+ y_1(t)y_2'(t) +y_1'(t)y_2(t)+ z_1(t)z_2'(t) +z_1'(t)z_2(t)\\[6pt]
+&= x_1(t)x_2'(t) + y_1(t)y_2'(t)+ z_1(t)z_2'(t) + x_1'(t)x_2(t)+ y_1'(t)y_2(t)+ z_1'(t)z_2(t)\\[6pt]
+&= \vector{x_1(t), y_1(t), z_1(t)}\dotp \vector{x_2'(t), y_2'(t), z_2'(t)} + \vector{x_1'(t), y_1'(t), z_1'(t)}\dotp \vector{x_2(t), y_2(t), z_2(t)}\\[6pt]
 &= \vec r_1(t) \dotp \vec r_2\,'(t) + \vec r_1\,'(t) \dotp \vec r_2(t)
 \end{align*}
 as claimed.
@@ -169,11 +169,11 @@ Recall the definition of the cross product:
 \]
 Computing the cross product and then differentiating yields:
 \begin{align*}
-\frac{d}{dt}\left[\vec r_1(t) \cross \vec r_2(t)\right] &= \frac{d}{dt} \left[ \vector{y_1z_2 - z_1y_2, z_1x_2 - x_1z_2, x_1y_2 - y_1x_2}\right]\\
-&=  \vector{\frac{d}{dt} \left[y_1z_2 - z_1y_2\right], \frac{d}{dt} \left[z_1x_2 - x_1z_2\right],\frac{d}{dt} \left[x_1y_2 - y_1x_2\right]}\\
-&= \vector{y_1z_2' + y_1'z_2- z_1y_2'  - z_1'y_2,  z_1x_2' + z_1'x_2- x_1z_2'  - x_1'z_2, x_1y_2' +x_1'y_2- y_1x_2'  - y_1'x_2      }\\
-&=\vector{y_1z_2' - z_1y_2'  ,  z_1x_2' - x_1z_2', x_1y_2' - y_1x_2'}+ \vector{ y_1'z_2  - z_1'y_2, z_1'x_2 - x_1'z_2, x_1'y_2 - y_1'x_2}\\
-&= \vector{x_1, y_1, z_1}\cross \vector{x_2', y_2', z_2'} + \vector{x_1', y_1', z_1'}\cross \vector{x_2, y_2, z_2}\\
+\frac{d}{dt}\left[\vec r_1(t) \cross \vec r_2(t)\right] &= \frac{d}{dt} \left[ \vector{y_1z_2 - z_1y_2, z_1x_2 - x_1z_2, x_1y_2 - y_1x_2}\right]\\[6pt]
+&=  \vector{\frac{d}{dt} \left[y_1z_2 - z_1y_2\right], \frac{d}{dt} \left[z_1x_2 - x_1z_2\right],\frac{d}{dt} \left[x_1y_2 - y_1x_2\right]}\\[6pt]
+&= \vector{y_1z_2' + y_1'z_2- z_1y_2'  - z_1'y_2,  z_1x_2' + z_1'x_2- x_1z_2'  - x_1'z_2, x_1y_2' +x_1'y_2- y_1x_2'  - y_1'x_2      }\\[6pt]
+&=\vector{y_1z_2' - z_1y_2'  ,  z_1x_2' - x_1z_2', x_1y_2' - y_1x_2'}+ \vector{ y_1'z_2  - z_1'y_2, z_1'x_2 - x_1'z_2, x_1'y_2 - y_1'x_2}\\[6pt]
+&= \vector{x_1, y_1, z_1}\cross \vector{x_2', y_2', z_2'} + \vector{x_1', y_1', z_1'}\cross \vector{x_2, y_2, z_2}\\[6pt]
 &= \vec r_1(t) \cross \vec r_2\,'(t) + \vec r_1\,'(t) \cross \vec r_2(t)
 \end{align*}
 as claimed.
@@ -256,10 +256,10 @@ Then
 \begin{proof}
 We write the composition in component form and then use the chain rule on each component:
 \begin{align*}
-\frac{d}{dt} \vec r(g(t)) &= \frac{d}{dt} \vector{x(g(t)), y(g(t)),z(g(t))}\\
-&= \vector{\frac{d}{dt} x(g(t)), \frac{d}{dt} y(g(t)), \frac{d}{dt} z(g(t))}\\
-&= \vector{x'(g(t)) g'(t), y'(g(t)) g'(t), z'(g(t)) g'(t)}\\
-&= g'(t)\vector{x'(g(t)), y'(g(t)), z'(g(t))}\\
+\frac{d}{dt} \vec r(g(t)) &= \frac{d}{dt} \vector{x(g(t)), y(g(t)),z(g(t))}\\[6pt]
+&= \vector{\frac{d}{dt} x(g(t)), \frac{d}{dt} y(g(t)), \frac{d}{dt} z(g(t))}\\[6pt]
+&= \vector{x'(g(t)) g'(t), y'(g(t)) g'(t), z'(g(t)) g'(t)}\\[6pt]
+&= g'(t)\vector{x'(g(t)), y'(g(t)), z'(g(t))}\\[6pt]
 &= g'(t) \vec r\,'(g(t))
 \end{align*}
 as claimed.
