@@ -43,5 +43,6 @@
             "description": "Start local server.",
             "tooltip": "Start local server."
         },
-    ]
+    ],
+    "chat.disableAIFeatures": false
 }

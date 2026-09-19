@@ -357,6 +357,49 @@ f'(x) = 4\cos x - 5\sin x
 	
 \end{problem}
 
+
+
+\subsection{Higher Order Derivatives of Sine and Cosine}
+
+The derivative of f(x) is denoted by $f'(x)$. In most circumstances, $f'$ is a differentiable function. Its derivative is called
+ the second derivative, and denoted by $f''(x)$. 
+ We can continue this recursively to create the third derivative, denoted by $f'''(x)$, and the fourth derivative, 
+ denoted by $f^{(4)}(x)$.  In general, the $n$th derivative of $f(x)$ is denoted by $f^{(n)}(x)$. 
+
+\begin{example}[example 9]
+Find the first four derivatives of $f(x) = \sin x$, and then find the 51st derivative, $f^{(51)}(x)$.\\
+\begin{align*}
+f'(x) &= \cos x\\
+f''(x) &= -\sin x\\
+f'''(x) &= -\cos x\\
+f^{(4)}(x) &= \sin x
+\end{align*}  
+Note that the fourth derivative is the same as the original function.  
+This pattern will continue for all higher derivatives of $f(x) = \sin x$.  \\
+We can use this pattern to find the 51st derivative.  Since $51 = 4(12) + 3$, we have
+\[
+f^{(51)}(x) = f^{(4(12)+3)}(x) = f^{(3)}(x) = -\cos x.
+\]
+
+  
+
+
+\end{example}
+
+
+\begin{problem}(problem 9)
+Find the first four derivatives of $f(x) = \cos x$, and then find the 38th derivative, $f^{(38)}(x)$.
+\begin{align}
+f'(x) &= \answer{-\sin x}\\
+f''(x) &= \answer{-\cos x}\\
+f'''(x) &= \answer{\sin x}\\
+f^{(4)}(x) &= \answer{\cos x}\\
+f^{(38)}(x) &= \answer{-\cos x}
+\end{align}
+
+\end{problem}
+
+
 We close this section with an example involving rectilinear motion.
 
 \begin{example}[example 9, Rectilinear Motion]

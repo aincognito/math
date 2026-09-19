@@ -563,7 +563,42 @@ point on $f'(x)$.}
 \end{foldable}
 \end{center}
 
+\subsection{Higher Order Derivatives of Power Functions}
 
+The derivative of f(x) is denoted by $f'(x)$. In most circumstances, $f'$ is a differentiable function. Its derivative is called
+ the second derivative, and denoted by $f''(x)$. 
+ We can continue this recursively to create the third derivative, denoted by $f'''(x)$, and the fourth derivative, 
+ denoted by $f^{(4)}(x)$.  In general, the $n$th derivative of $f(x)$ is denoted by $f^{(n)}(x)$. 
+
+ \begin{example}[example 9]
+Find the first four derivatives of $f(x) = x^4$, and then find $f^{(n)}(x)$ for $n \geq 5$.\\
+\begin{align*}
+f'(x) &= 4x^3\\
+f''(x) &= 12x^2\\
+f'''(x) &= 24x\\
+f^{(4)}(x) &= 24
+\end{align*}  
+Since the fourth derivative is a constant, all higher derivatives are 0.  
+Hence, for $n \geq 5$, we have $f^{(n)}(x) = 0$.
+
+\end{example}
+
+
+\begin{problem}(problem 9)
+Find the first five derivatives of $f(x) = x^5$, and then find $f^{(n)}(x)$ for $n \geq 6$.
+\begin{align}
+f'(x) &= \answer{5x^4}\\
+f''(x) &= \answer{20x^3}\\
+f'''(x) &= \answer{60x^2}\\
+f^{(4)}(x) &= \answer{120x}\\
+f^{(5)}(x) &= \answer{120}\\
+f^{(n)}(x) &= \answer{0} \text{ for } n \geq \answer{6}
+\end{align}
+
+A number of factorials appear in the derivatives. Recall that $n! = n(n-1)(n-2)\cdots(3)(2)(1)$, and $0! = 1$.
+In the previous two examples, we have seen the constants $4! = 24$ and $5! = 120$ appear in the fourth and fifth derivatives, respectively. 
+In general, for a power function $f(x) = x^n$ where $n$ is a positive integer, the $n$th derivative is $f^{(n)}(x) = n!$, and all higher derivatives are 0. 
+\end{problem}
 
 
 \end{document}
