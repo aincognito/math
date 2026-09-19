@@ -261,6 +261,60 @@ point on $f'(x)$.}
 \end{foldable}
 %\end{center}
 
+\subsection{Higher Order Derivatives of the Natural Exponential and Logarithm}
+
+The derivative of f(x) is denoted by $f'(x)$. In most circumstances, $f'$ is a differentiable function. Its derivative is called
+ the second derivative, and denoted by $f''(x)$. 
+ We can continue this recursively to create the third derivative, denoted by $f'''(x)$, and the fourth derivative, 
+ denoted by $f^{(4)}(x)$.  In general, the $n$th derivative of $f(x)$ is denoted by $f^{(n)}(x)$. 
+
+\begin{example}[example 4]
+Find the first five derivatives of $f(x) = \ln x$, and then find a formula for $f^{(n)}(x)$.\\
+\begin{align*}
+f'(x) &= \frac{1}{x} = x^{-1}\\
+f''(x) &= -x^{-2} = -\frac{1}{x^2}\\
+f'''(x) &= 2x^{-3} = \frac{2}{x^3}\\
+f^{(4)}(x) &= -6x^{-4} = -\frac{6}{x^4}\\
+f^{(5)}(x) &= 24x^{-5} = \frac{24}{x^5}
+\end{align*}  
+Noting the pattern, we can write a formula for the $n$th derivative of $f(x) = \ln x$:
+\[
+f^{(n)}(x) = (-1)^{n+1}(n-1)!x^{-n} = (-1)^{n+1}\frac{(n-1)!}{x^n}.
+\]
+\end{example}
+
+\begin{problem}(problem 4a)
+Find the first five derivatives of $f(x) = \ln|x|$, and then find a formula for $f^{(n)}(x)$.\\
+\begin{align}
+f'(x) &= \answer{1/x}\\
+f''(x) &= \answer{-1/x^2}\\
+f'''(x) &= \answer{2/x^3}\\
+f^{(4)}(x) &= \answer{-6/x^4}\\
+f^{(5)}(x) &= \answer{24/x^5}\\
+\end{align}
+$f^{(n)}(x) = $
+\begin{multipleChoice}
+\choice{$(-1)^{n}(n-1)!/x^n$}
+\choice{$(-1)^{n+1}(n)!/x^n$}
+\choice{$(-1)^{n}(n)!/x^n$}
+\choice[correct]{$(-1)^{n+1}(n-1)!/x^n$}
+\end{multipleChoice}
+
+\end{problem}
+
+
+\begin{problem}(problem 4b)
+Find the first three derivatives of $f(x) = 3e^x$, and then find a formula for $f^{(n)}(x)$.\\
+\begin{align}
+f'(x) &= \answer{3e^x}\\
+f''(x) &= \answer{3e^x}\\
+f'''(x) &= \answer{3e^x}\\
+f^{(n)}(x) &= \answer{3e^x}
+\end{align}
+
+\end{problem}
+
+
 
 \end{document}
 
