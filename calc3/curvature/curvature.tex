@@ -131,7 +131,7 @@ Compute the curvature of a circle of radius 3 using the \textbf{method} of examp
 Compute the curvature of the spiral helix $\vec r(t) = \vector{2\cos(3t), 2 \sin(3t), 5t}$.\\
 The arc length parameter is given by
 \[
-s = \int_0^t \sqrt{\left(-6\sin(3t) \right)^2+\left(6\cos(3t) \right)^2 + 25} \, du = \int_0^t \sqrt{61} \, du = t\sqrt 61
+s = \int_0^t \sqrt{\left(-6\sin(3t) \right)^2+\left(6\cos(3t) \right)^2 + 25} \, du = \int_0^t \sqrt{61} \, du = t\sqrt{61}
 \]
 Reparameterizing the helix by arc length, we have
 \[
@@ -196,9 +196,9 @@ We begin with
 \]
 Next, we compute the unit tangent vector:
 \begin{align*}
-\vec T(t) &= \frac{\vec r\,'(t)}{|\vec r\,'(t)|}\\
-             &= \vector{\frac{e^t}{e^t + e^{-t}}, \frac{\sqrt 2}{e^t + e^{-t}} , \frac{e^{-t}}{e^t + e^{-t}}}\\
-             &= \vector{\frac{e^{2t}}{e^{2t} + 1}, \frac{e^t\sqrt 2}{e^{2t} + 1} , \frac{1}{e^{2t} + 1}}\\
+\vec T(t) &= \frac{\vec r\,'(t)}{|\vec r\,'(t)|}\\[10pt]
+             &= \vector{\frac{e^t}{e^t + e^{-t}}, \frac{\sqrt 2}{e^t + e^{-t}} , \frac{e^{-t}}{e^t + e^{-t}}}\\[10pt]
+             &= \vector{\frac{e^{2t}}{e^{2t} + 1}, \frac{e^t\sqrt 2}{e^{2t} + 1} , \frac{1}{e^{2t} + 1}}
 \end{align*}
 We use the quotient rule on each component to calculate the derivative of the unit tangent vector. The reader should verify that
 \[
@@ -206,18 +206,18 @@ We use the quotient rule on each component to calculate the derivative of the un
 \]
 Next, the magnitude of the derivative of the unit tangent vector is
 \begin{align*}
-\left|\vec T\,'(t)\right| &= \frac{e^t}{\left(e^{2t} +1\right)^2} \sqrt{4e^{2t} + 2 (1 - e^{2t})^2 + 4e^{2t}}\\
-          &= \frac{e^t}{\left(e^{2t} +1\right)^2} \sqrt{8e^{2t} + 2 (1 -2e^{2t}+ e^{4t})}\\
-        &= \frac{e^t \sqrt 2}{\left(e^{2t} +1\right)^2} \sqrt{4e^{2t} +  (1 -2e^{2t}+ e^{4t})}\\
-          &= \frac{e^t \sqrt 2}{\left(e^{2t} +1\right)^2} \sqrt{1 +2e^{2t}+ e^{4t}}\\
-          &= \frac{e^t \sqrt 2}{\left(e^{2t} +1\right)^2} \sqrt{(1 +e^{2t})^2}\\
+\left|\vec T\,'(t)\right| &= \frac{e^t}{\left(e^{2t} +1\right)^2} \sqrt{4e^{2t} + 2 (1 - e^{2t})^2 + 4e^{2t}}\\[10pt]
+          &= \frac{e^t}{\left(e^{2t} +1\right)^2} \sqrt{8e^{2t} + 2 (1 -2e^{2t}+ e^{4t})}\\[10pt]
+        &= \frac{e^t \sqrt 2}{\left(e^{2t} +1\right)^2} \sqrt{4e^{2t} +  (1 -2e^{2t}+ e^{4t})}\\[10pt]
+          &= \frac{e^t \sqrt 2}{\left(e^{2t} +1\right)^2} \sqrt{1 +2e^{2t}+ e^{4t}}\\[10pt]
+          &= \frac{e^t \sqrt 2}{\left(e^{2t} +1\right)^2} \sqrt{(1 +e^{2t})^2}\\[10pt]
             &= \frac{e^t \sqrt 2}{e^{2t} +1}
 \end{align*}
 Finally, we obtain the curvature $\kappa$ by dividing the magnitude of the the derivative of the unit tangent vector by the magnitude of the tangent vector:
 \begin{align*}
-\kappa &= \frac{|\vec T\,'(t)|}{|\vec r\,'(t)|}\\
-       &= \frac{e^t \sqrt 2}{e^{2t} +1} \cdot \frac{1}{e^t + e^{-t}}\\
-      &= \frac{e^t \sqrt 2}{e^{2t} +1} \cdot \frac{e^t}{e^{2t} + 1}\\
+\kappa &= \frac{|\vec T\,'(t)|}{|\vec r\,'(t)|}\\[10pt]
+       &= \frac{e^t \sqrt 2}{e^{2t} +1} \cdot \frac{1}{e^t + e^{-t}}\\[10pt]
+      &= \frac{e^t \sqrt 2}{e^{2t} +1} \cdot \frac{e^t}{e^{2t} + 1}\\[10pt]
      &= \frac{e^{2t} \sqrt 2}{\left(e^{2t} +1\right)^2}
 \end{align*}
 \end{example}
@@ -321,9 +321,9 @@ Now the cross product is
  \end{align*}
 Finally, according to the third form of curvature, we have
 \begin{align*}
-\kappa &=  \frac{|\vec r\,'(t) \cross \vec r\,''(t)|}{|\vec r\,'(t)|^3}\\
-       &=  \frac{|\vector{6t^2,  -6t, 2}|}{|\vector{1, 2t, 3t^2}|^3}\\
-       &= \frac{\sqrt{36t^4 + 36t^2 + 4}}{(1 + 4t^2 + 9t^4)^{3/2}}\\
+\kappa &=  \frac{|\vec r\,'(t) \cross \vec r\,''(t)|}{|\vec r\,'(t)|^3}\\[10pt]
+       &=  \frac{|\vector{6t^2,  -6t, 2}|}{|\vector{1, 2t, 3t^2}|^3}\\[10pt]
+       &= \frac{\sqrt{36t^4 + 36t^2 + 4}}{(1 + 4t^2 + 9t^4)^{3/2}}\\[10pt]
        &= \frac{2\sqrt{1 + 9t^2 + 9t^4}}{(1 + 4t^2 + 9t^4)^{3/2}}
 \end{align*}
 \end{example}
