@@ -188,6 +188,41 @@ we have
 \end{proof}
 
 
+%\begin{example}[Example 4]
+%Use the second form of curvature to compute $\kappa$ for the space curve $\vec r(t) = \vector{e^t, t\sqrt 2 , e^{-t}}$.\\
+%We begin with
+%\[
+%|\vec r\,'(t)| = \left|\vector{e^t, \sqrt 2 , -e^{-t}}\right| = \sqrt{e^{2t} + 2 + e^{-2t}} = e^t + e^{-t}
+%\]
+%Next, we compute the unit tangent vector:
+%\begin{align*}
+%\vec T(t) &= \frac{\vec r\,'(t)}{|\vec r\,'(t)|}\\[10pt]
+%             &= \vector{\frac{e^t}{e^t + e^{-t}}, \frac{\sqrt 2}{e^t + e^{-t}} , \frac{e^{-t}}{e^t + e^{-t}}}\\[10pt]
+%             &= \vector{\frac{e^{2t}}{e^{2t} + 1}, \frac{e^t\sqrt 2}{e^{2t} + 1} , \frac{1}{e^{2t} + 1}}
+%\end{align*}
+%We use the quotient rule on each component to calculate the derivative of the unit tangent vector. The reader should verify that
+%\[
+%\vec T\,'(t) = \frac{1}{\left(e^{2t} +1\right)^2} \vector{2e^{2t}, e^t\sqrt 2 (1 - e^{2t}), -2e^{2t}} = \frac{e^t}{\left(e^{2t} +1\right)^2} \vector{2e^{t}, \sqrt 2 (1 - e^{2t}), -2e^{t}}
+%\]
+%Next, the magnitude of the derivative of the unit tangent vector is
+%\begin{align*}
+%\left|\vec T\,'(t)\right| &= \frac{e^t}{\left(e^{2t} +1\right)^2} \sqrt{4e^{2t} + 2 (1 - e^{2t})^2 + 4e^{2t}}\\[10pt]
+ %         &= \frac{e^t}{\left(e^{2t} +1\right)^2} \sqrt{8e^{2t} + 2 (1 -2e^{2t}+ e^{4t})}\\[10pt]
+ %       &= \frac{e^t \sqrt 2}{\left(e^{2t} +1\right)^2} \sqrt{4e^{2t} +  (1 -2e^{2t}+ e^{4t})}\\[10pt]
+ %         &= \frac{e^t \sqrt 2}{\left(e^{2t} +1\right)^2} \sqrt{1 +2e^{2t}+ e^{4t}}\\[10pt]
+ %         &= \frac{e^t \sqrt 2}{\left(e^{2t} +1\right)^2} \sqrt{(1 +e^{2t})^2}\\[10pt]
+ %           &= \frac{e^t \sqrt 2}{e^{2t} +1}
+%\end{align*}
+%Finally, we obtain the curvature $\kappa$ by dividing the magnitude of the the derivative of the unit tangent vector by the magnitude of the tangent vector:
+%\begin{align*}
+%\kappa &= \frac{|\vec T\,'(t)|}{|\vec r\,'(t)|}\\[10pt]
+ %      &= \frac{e^t \sqrt 2}{e^{2t} +1} \cdot \frac{1}{e^t + e^{-t}}\\[10pt]
+ %     &= \frac{e^t \sqrt 2}{e^{2t} +1} \cdot \frac{e^t}{e^{2t} + 1}\\[10pt]
+ %    &= \frac{e^{2t} \sqrt 2}{\left(e^{2t} +1\right)^2}
+%\end{align*}
+%\end{example}
+
+
 \begin{example}[Example 4]
 Use the second form of curvature to compute $\kappa$ for the space curve $\vec r(t) = \vector{e^t, t\sqrt 2 , e^{-t}}$.\\
 We begin with
@@ -195,32 +230,30 @@ We begin with
 |\vec r\,'(t)| = \left|\vector{e^t, \sqrt 2 , -e^{-t}}\right| = \sqrt{e^{2t} + 2 + e^{-2t}} = e^t + e^{-t}
 \]
 Next, we compute the unit tangent vector:
-\begin{align*}
-\vec T(t) &= \frac{\vec r\,'(t)}{|\vec r\,'(t)|}\\[10pt]
-             &= \vector{\frac{e^t}{e^t + e^{-t}}, \frac{\sqrt 2}{e^t + e^{-t}} , \frac{e^{-t}}{e^t + e^{-t}}}\\[10pt]
-             &= \vector{\frac{e^{2t}}{e^{2t} + 1}, \frac{e^t\sqrt 2}{e^{2t} + 1} , \frac{1}{e^{2t} + 1}}
-\end{align*}
+\[
+\vec T(t) = \frac{\vec r\,'(t)}{|\vec r\,'(t)|} = \vector{\frac{e^t}{e^t + e^{-t}}, \frac{\sqrt 2}{e^t + e^{-t}} , \frac{-e^{-t}}{e^t + e^{-t}}}\\[10pt]
+\]
+  Note that the difference between the first and third components is 1. This implies that their derivatives are equal!          
+
 We use the quotient rule on each component to calculate the derivative of the unit tangent vector. The reader should verify that
 \[
-\vec T\,'(t) = \frac{1}{\left(e^{2t} +1\right)^2} \vector{2e^{2t}, e^t\sqrt 2 (1 - e^{2t}), -2e^{2t}} = \frac{e^t}{\left(e^{2t} +1\right)^2} \vector{2e^{t}, \sqrt 2 (1 - e^{2t}), -2e^{t}}
+\vec T\,'(t) = \frac{1}{\left(e^{t} +e^{-t}\right)^2} \vector{2, \sqrt 2 (e^t - e^{-t}), 2} 
 \]
 Next, the magnitude of the derivative of the unit tangent vector is
 \begin{align*}
-\left|\vec T\,'(t)\right| &= \frac{e^t}{\left(e^{2t} +1\right)^2} \sqrt{4e^{2t} + 2 (1 - e^{2t})^2 + 4e^{2t}}\\[10pt]
-          &= \frac{e^t}{\left(e^{2t} +1\right)^2} \sqrt{8e^{2t} + 2 (1 -2e^{2t}+ e^{4t})}\\[10pt]
-        &= \frac{e^t \sqrt 2}{\left(e^{2t} +1\right)^2} \sqrt{4e^{2t} +  (1 -2e^{2t}+ e^{4t})}\\[10pt]
-          &= \frac{e^t \sqrt 2}{\left(e^{2t} +1\right)^2} \sqrt{1 +2e^{2t}+ e^{4t}}\\[10pt]
-          &= \frac{e^t \sqrt 2}{\left(e^{2t} +1\right)^2} \sqrt{(1 +e^{2t})^2}\\[10pt]
-            &= \frac{e^t \sqrt 2}{e^{2t} +1}
+\left|\vec T\,'(t)\right| &= \frac{1}{\left(e^{t} +e^{-t}\right)^2} \sqrt{4 + 2 (e^t - e^{-t})^2 + 4}\\[10pt]
+          &= \frac{1}{\left(e^{t} +e^{-t}\right)^2} \sqrt{2(e^{t} +e^{-t})^2}\\[10pt]
+            &= \frac{ \sqrt 2}{e^{t} +e^{-t}}
 \end{align*}
-Finally, we obtain the curvature $\kappa$ by dividing the magnitude of the the derivative of the unit tangent vector by the magnitude of the tangent vector:
+Finally, we obtain the curvature $\kappa$:
 \begin{align*}
 \kappa &= \frac{|\vec T\,'(t)|}{|\vec r\,'(t)|}\\[10pt]
-       &= \frac{e^t \sqrt 2}{e^{2t} +1} \cdot \frac{1}{e^t + e^{-t}}\\[10pt]
-      &= \frac{e^t \sqrt 2}{e^{2t} +1} \cdot \frac{e^t}{e^{2t} + 1}\\[10pt]
-     &= \frac{e^{2t} \sqrt 2}{\left(e^{2t} +1\right)^2}
+       &= \frac{ \sqrt 2}{e^{t} +e^{-t}} \cdot \frac{1}{e^t + e^{-t}}\\[10pt]
+      &= \frac{ \sqrt 2}{(e^{t} +e^{-t})^2}
 \end{align*}
 \end{example}
+
+
 
 \begin{problem}(Problem 4)
 Use the second form of curvature to compute $\kappa$ for the space curve $\vec r(t) = \vector{\frac32 t^2, t\sqrt 6 , \ln(2t)}$.
