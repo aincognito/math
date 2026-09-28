@@ -387,5 +387,44 @@ Here is a video solution of problem 5:\\
     \youtube{WItToO6w8EE}
 \end{foldable}
 
+\begin{problem}(Problem 6)
+    Determine each of the following for the helix:  $\vec r(t) = \vector{a\cos(bt), a\sin(bt), ct}$. \\
+    The tangent vector is:
+    \[
+    \vec r'(t) = \vector{\answer{-ab\sin(bt)}, \answer{ab\cos(bt)}, \answer{c}} \qquad\mbox{and}\qquad |\vec r'(t)| = \answer{\sqrt{a^2b^2 + c^2}}
+    \]
+    The unit tangent vector is: 
+    \[
+    \vec T(t) = \frac{\vec r'(t)}{|\vec r'(t)|} = \vector{\answer{-\frac{ab}{\sqrt{a^2b^2 + c^2}}\sin(bt)}, 
+    \answer{\frac{ab}{\sqrt{a^2b^2 + c^2}}\cos(bt)}, \answer{\frac{c}{\sqrt{a^2b^2 + c^2}}}}
+    \]
+    The derivative of the unit tangent vector is:
+    \[
+    \vec T'(t) = \vector{\answer{-\frac{a b^2}{\sqrt{a^2b^2 + c^2}}\cos(bt)}, \answer{-\frac{a b^2}{\sqrt{a^2b^2 + c^2}}\sin(bt)}, \answer{0}}
+    \]
+    The magnitute of the derivative of the unit tangent vector is:
+    \[
+    \|T'(t)\| = \answer{\frac{a b^2}{\sqrt{a^2b^2 + c^2}}}
+    \]
+    The curvature is
+    \[
+    \kappa = \frac{\|T'(t)\|}{|\vec r'(t)|} = \answer{\frac{ab^2}{a^2b^2 + c^2}}
+    \]
+    The radius of the osculating circe at any $T$ is:
+     \[
+        R = \frac{1}{\kappa} = \answer{\frac{a^2b^2 + c^2}{ab^2}}   
+        \]
+    The center of the osculating circle at any $t$ is:
+    \[
+    \vector{x, y, z}= \vec r(t) + R\vec N(t) = \vector{\frac{a^2b^2+\sqrt{a^2b^2 + c^2}}{ab^2}\cos(bt) + \frac{a^2b^2+\sqrt{a^2b^2 + c^2}}{ab^2}\sin(bt), ct}
+    \]
+    The unit normal vector is
+     \[
+     \vec N(t) = \frac{\vec T'(t)}{|\vec T'(t)|}= \vector{\answer{\cos(bt)}, \answer{\sin(bt)}, \answer{0}}
+     \]
+    The binormal vector is
+     \[
+     \vec B(t)=\vec T(t)\cross \vec N(t) = \vector{\answer{-\frac{c}{\sqrt{a^2b^2 + c^2}}\sin(bt)}, \answer{\frac{c}{\sqrt{a^2b^2 + c^2}}\cos(bt)}, \answer{\frac{-ab}{\sqrt{a^2b^2 + c^2}}}}
+     \]
+\end{problem}
 
-\end{document}
