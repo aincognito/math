@@ -140,7 +140,8 @@ Along lines $ y = mx$, we have
 \[
 \lim_{x\to 0} \frac{mx^3}{x^4 + m^2x^2} = \lim_{x\to 0} \frac{mx}{x^2 + m^2} = 0
 \]
-All the paths so far yield the same limit.  Now, however, consider a parabolic path toward the origin in which $y = x^2$.
+All the paths so far yield the same limit.  Now, however, consider a parabolic path 
+toward the origin in which $y = x^2$.
 Along this path the limit becomes
 \[
 \lim_{(x,y) \to (0,0)} \frac{x^2y}{x^4 + y^2} =  \lim_{x \to 0} \frac{x^4}{2x^4} = \frac12
@@ -167,7 +168,23 @@ Here is a video solution of problem 3:\\
 
 
 
-We now look at a limit that does exist, and we will use the squeeze theorem to determine its value.
+We now look at a limit that does exist, and we will need to use the Squeeze Theorem to 
+determine its value.
+
+\begin{theorem}[Squeeze Theorem]
+Suppose that $f(x,y) \leq g(x,y) \leq h(x,y)$ for all $(x,y)$ in some 
+open disk centered at $(a,b)$, except possibly at $(a,b)$ itself.
+If the limits of $f$ and $h$ as $(x,y) \to (a,b)$ are equal to the 
+same number, $L$, i.e.,
+\[
+\lim_{(x,y) \to (a,b)} f(x,y) = \lim_{(x,y) \to (a,b)} h(x,y) = L  
+\]
+then
+\[
+\lim_{(x,y) \to (a,b)} g(x,y) = L
+\]
+as well.
+\end{theorem}
 
 \begin{example}[Example 4]
 Compute the following limit:
@@ -198,7 +215,7 @@ Clearly,
 \[
 \lim_{(x,y) \to (0,0)} (-|x|) = \lim_{(x,y) \to (0,0)} |x| = 0
 \]
-and so by the squeeze theorem, 
+and so by the Squeeze Theorem, 
 \[
 \lim_{(x,y) \to (0,0)} \frac{xy^2}{x^2 + y^2} =0
 \]
@@ -214,7 +231,7 @@ Compute the following limit:
 Use $-|y| \leq y \leq |y|$ to create a compound inequality
 \end{hint}
 \begin{hint}
-Use the squeeze theorem
+Use the Squeeze Theorem
 \end{hint}
 \end{problem}
 
@@ -261,10 +278,13 @@ Hence,
 \[
 -|x| \leq \frac{x^3y^2}{x^4 + y^4} \leq |x|
 \]
-and as in example 4, the squeeze theorem implies
+and, since the limits 
+$\displaystyle \lim_{(x,y) \to (0,0)} (-|x|) = \lim_{(x,y) \to (0,0)} |x| = 0$, 
+the Squeeze Theorem  implies
 \[
 \lim_{(x,y) \to (0,0)} \frac{x^3y^2}{x^4 + y^4} = 0
 \]
+as well.
 \end{example}
 
 
@@ -280,7 +300,7 @@ First show that $x^4y^4 \leq x^8 + y^8$
 Use $-|x| \leq x \leq |x|$ to create a compound inequality
 \end{hint}
 \begin{hint}
-Use the squeeze theorem
+Use the Squeeze Theorem
 \end{hint}
 \end{problem}
 
@@ -290,7 +310,8 @@ The preceding examples and problems require your intuition about limits.  That i
 \[
 \lim_{(x,y) \to (a,b)} f(x,y) = L
 \]
-means that if the point $(x,y)$ is ``near" the point $(a,b)$, then the value of the function $f(x, y)$ is ``near" $L$.
+means that if the point $(x,y)$ is ``near" the point $(a,b)$, then 
+the value of the function $f(x, y)$ is ``near" $L$.
 The next definition makes this precise.
 
 
@@ -360,25 +381,32 @@ We say that the function $f(x,y)$ is continuous at a point $(a,b)$ in the domain
 \]
 \end{definition}
 
-Example 6, problem 6a and problem 6b show that the functions $f(x,y) = x, f(x,y) = y$ and $f(x,y) = c$ are continuous at every point in $\R^2$.
+Example 6, problem 6a and problem 6b show that 
+the functions $f(x,y) = x, f(x,y) = y$ and $f(x,y) = c$ are 
+continuous at every point in $\R^2$.
 
-We can use the following limit laws to help us construct other continuous functions.
+We can use the following limit laws to help us 
+construct other continuous functions.
 
 \subsection{Limit Laws}
-In each of the following limit laws, the point $(x,y)$ approaches the point $(a,b)$. For ease of readability, 
-we abbreviate $\lim_{(x,y) \to (a,b)} f(x,y)$ with $\lim f(x,y)$.\\
+In each of the following limit laws, 
+the point $(x,y)$ approaches the point $(a,b)$. 
+For ease of readability, 
+we abbreviate $\lim_{(x,y) \to (a,b)} f(x,y)$ 
+with $\lim f(x,y)$ in what follows\\
 
-Suppose that $\lim f(x,y)$ and $\lim g(x,y)$ exist, then we can conclude each of the following:\\
-
-\textbf{Sum Law} $\quad \displaystyle  \lim [f(x,y) + g(x,y)] = \lim f(x,y) +\lim g(x,y) $\\
+if $\lim f(x,y)$ and $\lim g(x,y)$ exist, then:\\
 
 \textbf{Constant Multiple Law} $\quad \displaystyle \lim[cf(x,y) ] = c\lim f(x,y) $\\
+
+\textbf{Sum Law} $\quad \quad  \displaystyle  \lim [f(x,y) + g(x,y)] 
+= \lim f(x,y) +\lim g(x,y) $\\
 
 \textbf{Product Law} $\quad \displaystyle \lim[f(x,y) \cdot g(x,y)] = \lim f(x,y) \cdot \lim g(x,y)$\\ 
  
 \textbf{Quotient Law} $\quad \displaystyle \lim \frac{f(x,y)}{g(x,y)} = \frac{\lim f(x,y)}{\lim g(x,y)} $\\
 
-Note that the quotient law is valid provided that the limit in the denominator is not zero.
+Note that the Quotient Law is valid provided that the limit in the denominator is not zero.
 
 
 \begin{example}[Example 7]
@@ -434,23 +462,27 @@ is a rational function in the variables $x$ and $y$.
 The next proposition follows from the limit laws.
 
 \begin{proposition}
-Rational functions in $x$ and $y$ are continuous at every point in $\R^2$ where the denominator is nonzero.
+Rational functions in $x$ and $y$ are continuous at every 
+point in $\R^2$ where the denominator is nonzero.
 \end{proposition}
 
-The next proposition involves a composition of a function of two variables with a function of a single variable.
+The next proposition involves a composition of a function of two variables 
+with a function of a single variable.
 
 \begin{proposition}
-Suppose $f(x,y)$ is continuous at the point $(a,b)$ and $g(u)$ is continuous at the point $ c = f(a,b)$.
+Suppose $f(x,y)$ is continuous at the point $(a,b)$ 
+and $g(u)$ is continuous at the point $ c = f(a,b)$.
 Then the function $g(f(x,y))$ is continuous at the point $(a,b)$.
 \end{proposition}
 
-The functions $\sin(x), \cos(x)$ and $e^x$ are continuous for all $x$.  Hence, the functions
+The functions $\sin(x), \cos(x)$ and $e^x$ are continuous for all $x$.  
+By the above proposition, the functions
 \[
 \sin(f(x,y)),\; \cos(f(x,y)) \quad \text{and} \quad e^{f(x,y)}
 \]
 are continuous at any point $(a,b)$ where the function $f$ is continuous. 
-The function $\ln(f(x,y))$ is continuous at any point $(a,b)$ where $f$ is continuous and positive.
-Where is the function $\sqrt{f(x,y)}$ continuous?
+The function $\ln(f(x,y))$ is continuous at any point $(a,b)$ where $f$ is continuous 
+and positive. Where is the function $\sqrt{f(x,y)}$ continuous?
 
 
 \end{document}
