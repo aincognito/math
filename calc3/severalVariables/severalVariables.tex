@@ -20,12 +20,20 @@ A function of two variables has the form
 \[
 z = f(x, y)
 \]
-The independent variables are $x$ and $y$ and the dependent variable is $z$. In section 1.8, we saw elliptic paraboloids like
+The independent variables are $x$ and $y$ and the dependent variable is $z$. 
+Can you guess which quadric surface this is? 
+%In section 1.8, we saw elliptic paraboloids like
 \[
 z = \frac{x^2}{4} + \frac{y^2}{9}
 \]
-In this equation, we can view $z$ as a function of $x$ and $y$.\\
-The area of a rectangle is length times width, so we can express area as a function of two variables:
+In this equation, we can view $z$ as a function of $x$ and $y$, and write
+\[
+z = f(x, y) = \frac{x^2}{4} + \frac{y^2}{9}
+\]
+The surface is a $\wordChoice{\choice[correct]{elliptic paraboloid}
+\choice{hyperbolic paraboloid}\choice{ellipsoid}\choice{cone}}$.\\
+The area of a rectangle is length times width, so we can express area 
+as a function of two variables:
 \[
 A = f(l, w) = lw
 \]
@@ -38,7 +46,8 @@ The depth of the ocean is a function of the location on its surface, leading to
 \mbox{depth} = f(\mbox{latitude, longitude})
 \]
 The \textbf{domain} of $f(x, y)$ is the set of coordinate pairs $(x, y)$ in $\R^2$ for 
-which $f(x, y)$ is a valid mathematical expression.
+which $f(x, y)$ is a valid mathematical expression. 
+As such, the domain is a subset of $\R^2$.
 
 \begin{example}[Example 1]
 Find the domain of the function $f(x, y) = \sqrt{1 - x^2 - y^2}$.\\
@@ -78,9 +87,10 @@ Find the domain of the function $f(x, y) = \ln(xy)$.\\
 \end{problem}
 
 
-The \textbf{graph} of a function of two variables $z = f(x, y)$ is the set of points in $\R^3$ of the form
+The \textbf{graph} of a function of two variables $z = f(x, y)$ is the 
+set of points in $\R^3$ of the form $(x, y, f(x,y))$, i.e.
 \[
-(x, y, f(x,y))
+\{(x, y, f(x,y)) \,|\, (x, y) \in \text{domain of } f\}
 \]
 and the graph is called a \textbf{surface}.
 
