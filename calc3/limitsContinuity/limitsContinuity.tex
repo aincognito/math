@@ -20,7 +20,7 @@ On the real number line, $\R$, there are two directions for a variable $x$ to ap
 the left, denoted $x \to a^-$, or from the right, denoted $x \to a^+$.
 As a result, we say that the limit as $x \to a$ exists for a function of one variable, $f(x)$, if
 \[
-\lim_{x \to a^-} f(x) = \lim_{x \to a^+}
+\lim_{x \to a^-} f(x) = \lim_{x \to a^+} f(x)
 \]
 For a function of two variables, the situation is much more complicated. 
 Consider a variable coordinate pair $(x, y)$ in $\R^2$
@@ -162,7 +162,7 @@ Finally, we get a different limit and only now we can conclude that
 \]
 
 \end{example}
-Below is the surface from Example 4.  Investigate it near the origin in the 
+Below is the surface from Example 3.  Investigate it near the origin in the 
 desmos 3D graphing calculator.  
 You can rotate the surface and zoom in to see the behavior of the surface near the origin.
 Note that most paths yield the same limit of $0$.  
@@ -207,11 +207,13 @@ as well.
 \end{theorem}
 Applying the Squeeze Theorem will require the use of two important facts:
 \begin{itemize}
-    \item The absolute value inequality: For any real number $x$, we have 
+    \item The absolute value inequality: for any real number $x$, we have 
     \[-|x| \leq x \leq |x|\]
-
-    \item The multiplication property of inequalities: For real numbers $a, b$ and $c$, if
-    \[a\leq b \quad \text{and} \quad c\geq 0, \quad \text{then} \quad ac \leq bc\]  
+Note that either $x = |x|$ or $x = -|x|$.
+    \item The multiplication property of inequalities:  for $c > 0$
+    \[\text{if} \qquad a\leq b  \qquad \text{then} \qquad ac \leq bc\]
+    and for $c < 0$
+    \[\text{if} \qquad a\leq b  \qquad \text{then} \qquad ac \geq bc\]  
 \end{itemize} 
 
 \begin{example}[Example 4]
@@ -220,17 +222,13 @@ Compute the following limit:
 \lim_{(x,y) \to (0,0)} \frac{xy^2}{x^2 + y^2}
 \]
 We will use the Squeeze Theorem to compute this limit.
-\begin{align*}
-\frac{xy^2}{x^2 + y^2} &\leq \frac{|x|y^2}{x^2 + y^2}  \text{by the absolute value inequality}\\
-&\leq \frac{|x|(x^2 + y^2)}{x^2 + y^2} \text{by the multiplication property of inequalities}\\
-&= |x|
-\end{align*}
-and
-\begin{align*}
-\frac{xy^2}{x^2 + y^2} &\geq -\frac{|x|y^2}{x^2 + y^2} \text{by the absolute value inequality}\\
-&\geq -\frac{|x|(x^2 + y^2)}{x^2 + y^2} \text{by the multiplication property of inequalities}\\
-&= -|x|
-\end{align*}
+Note that for $(x,y) \neq (0,0)$,
+\[\frac{y^2}{x^2+y^2} \leq 1\]
+Now, by the absolute value inequality follwed by the multiplication property of inequalities, we have
+we have
+\[\frac{xy^2}{x^2 + y^2}\leq \frac{|x|y^2}{x^2 + y^2}\leq |x|\]
+Similarly, we have
+\[\frac{xy^2}{x^2 + y^2} \geq -\frac{|x|y^2}{x^2 + y^2} \geq -|x|\]
 Putting these two inequalities together, we have a compound 
 inequality of the form needed to apply the Squeeze Theorem:
 \[
@@ -238,7 +236,8 @@ inequality of the form needed to apply the Squeeze Theorem:
 \]
 Finally, since the limits of the bounding functions are equal, i.e., 
 \[
-\lim_{(x,y) \to (0,0)} -|x| = \lim_{(x,y) \to (0,0)} |x| = 0
+\lim_{(x,y) \to (0,0)} -|x| = 0  \qquad \text{and} \qquad 
+\lim_{(x,y) \to (0,0)} |x| = 0
 \]
 the Squeeze Theorem impliesthat, 
 \[
