@@ -51,7 +51,8 @@ As such, the domain is a subset of $\R^2$.
 
 \begin{example}[Example 1]
 Find the domain of the function $f(x, y) = \sqrt{1 - x^2 - y^2}$.\\
-The square root leads to a meaningful expression only if $1 - x^2 - y^2 \geq 0$. This is equivalent to 
+The square root leads to a meaningful expression only if $1 - x^2 - y^2 \geq 0$. 
+This is equivalent to 
 \[
 x^2 + y^2 \leq 1
 \]
@@ -98,7 +99,8 @@ and the graph is called a \textbf{surface}.
 
 \begin{example}[Example 2]
 Describe the graph of the function $z = \sqrt{1 - x^2 - y^2}$ in $\R^3$.\\
-As mentioned in example 1, the domain of $f$ is the set of all points $(x, y)$ in $\R^2$ such that
+As mentioned in example 1, the domain of $f$ is the set of all points $(x, y)$ 
+in $\R^2$ such that
 \[
 x^2 + y^2 \leq 1
 \]
@@ -111,8 +113,10 @@ which is equivalent to
 \[
 x^2 + y^2 + z^2 = 1
 \]
-This is the unit sphere in $\R^3$. In the original function, $z\geq 0$ since $z$ is defined using a positive square root. 
-Hence, the graph of $z = f(x, y) = \sqrt{1 - x^2 - y^2}$ is the ``northern" hemisphere of the unit sphere (including the equator).
+This is the unit sphere in $\R^3$. In the original function, $z\geq 0$ since $z$ is 
+defined using a positive square root. 
+Hence, the graph of $z = f(x, y) = \sqrt{1 - x^2 - y^2}$ is the ``northern" hemisphere 
+of the unit sphere (including the equator).
 \end{example}
 
 
@@ -139,7 +143,8 @@ is a cone.
 
 
 \section{Level Curves}
-A \textbf{level curve} for the surface $z = f(x, y)$ is the curve in the $xy$-plane given by
+A \textbf{level curve} for the surface $z = f(x, y)$ is the curve in 
+the $xy$-plane given by
 \[
 f(x, y) = k
 \]
@@ -149,10 +154,12 @@ Level curves are the basis for topographical maps like the one below.
 \includegraphics{topographicalmap.jpg}
 \end{image}
 In the map above, the contour curves are used to indicate elevation.\\
-When several level curves of $f(x, y)$ are sketched in the same $xy$-plane, the figure is called a \textbf{contour map}.
+When several level curves of $f(x, y)$ are sketched in the same $xy$-plane, 
+the figure is called a \textbf{contour map}.
 
 \begin{example}[Example 3]
-Describe the level curves of the function $z = f(x, y) = \sqrt{1-x^2 - y^2}$ and sketch a contour map consisting of at least 3 level curves.\\
+Describe the level curves of the function $z = f(x, y) = \sqrt{1-x^2 - y^2}$ and 
+sketch a contour map consisting of at least 3 level curves.\\
 The level curves have the form 
 \[
 \sqrt{1 - x^2 - y^2} = k
@@ -162,46 +169,53 @@ To recognize the curve in the $xy$-plane, square both sides and rearrange to get
 \[
 x^2 + y^2 = 1- k^2 
 \]
-If $0 \leq k < 1$ this is a circle in the $xy$-plane with center at the origin and radius $\sqrt{1-k^2}$.\\
+If $0 \leq k < 1$ this is a circle in the $xy$-plane with 
+center at the origin and radius $\sqrt{1-k^2}$.\\
 If $k = 1$, this is just the single point $(0, 0)$ and \\
 if $k>1$ then the graph is the empty set.\\
 In the figure below, the chosen values for $k$ are: $\,0, \frac23, \frac{9}{10}$ and  $1$.
-The corresponding radii of the circles are: $\,1, \frac{\sqrt{5}}{3}, \frac{\sqrt{19}}{10}$ and $0$.
+The corresponding radii of the 
+circles are: $\,1, \frac{\sqrt{5}}{3}, \frac{\sqrt{19}}{10}$ and $0$.
 
 \begin{image}
 \begin{tikzpicture}
-\draw[thick,blue!70!white] (0, 0) circle (3.5);
+\draw[ultra thick,blue!70!white] (0, 0) circle (3.5);
 \node[thick,blue!70!white] at (1.8, 3.4) {$k = 0$};
-\draw[thick,red!70!white] (0, 0) circle (2.5);
-\node[thick,red!70!white] at (1.34, 2.56) {$k = 2/3$};
-\draw[thick,green!70!black] (0, 0) circle (1.5);
-\node[thick,green!70!black] at (1, 1.6) {$k = 9/10$};
+\draw[ultra thick,blue!50!white] (0, 0) circle (2.5);
+\node[thick,blue!50!white] at (1.34, 2.56) {$k = 2/3$};
+\draw[ultra thick,blue!30!white] (0, 0) circle (1.5);
+\node[thick,blue!30!white] at (1, 1.6) {$k = 9/10$};
 \filldraw (0,0) circle (0.07);
 \node[thick] at (0.5, 0.2) {$k = 1$};
 \draw[thick, <->] (-5, 0) -- (5,0) node[right]{$x$};
 \draw[thick, <->] (0, -5) -- (0, 5) node[left]{$y$};
 \node at (3.8, -0.3) {$1$};
 \node at (-.3, 3.8) {$1$};
-\node at (0, -5.5) {A contour map consisting of level curves of $f(x, y)= \sqrt{1 - x^2 - y^2}$};
+\node at (0, -5.5) {A contour map consisting of level 
+curves of $f(x, y)= \sqrt{1 - x^2 - y^2}$};
 \end{tikzpicture}
 \end{image}
 
 \end{example}
 
 \begin{problem}(Problem 3a)
-Describe the level curves of the function $f(x,y) = x - 2y$ and sketch a contour map consisting of at least 3 level curves.\\
+Describe the level curves of the function $f(x,y) = x - 2y$ and sketch a contour 
+map consisting of at least 3 level curves.\\
 \end{problem}
 
 \begin{problem}(Problem 3b)
-Describe the level curves of the function $f(x, y) = x^2 + 4y^2$ and sketch a contour map consisting of at least 3 level curves.\\
+Describe the level curves of the function $f(x, y) = x^2 + 4y^2$ and sketch a contour 
+map consisting of at least 3 level curves.\\
 \end{problem}
 
 \begin{problem}(Problem 3c)
-Describe the level curves of the function $f(x, y) = \sqrt{x^2 + y^2}$ and sketch a contour map consisting of at least 3 level curves.\\
+Describe the level curves of the function $f(x, y) = \sqrt{x^2 + y^2}$ and 
+sketch a contour map consisting of at least 3 level curves.\\
 \end{problem}
 
 \begin{problem}(Problem 3d)
-Describe the level curves of the function $f(x,y) = y - e^x$ and sketch a contour map consisting of at least 3 level curves.\\
+Describe the level curves of the function $f(x,y) = y - e^x$ and sketch a contour 
+map consisting of at least 3 level curves.\\
 \end{problem}
 
 Here is a video solution of problem 3, parts a, b and c:\\
@@ -212,7 +226,8 @@ Here is a video solution of problem 3, parts a, b and c:\\
 
 
 \begin{remark}
-The graph of a function of one variable, $y= f(x)$ can be thought of as the level curve of the function of two variables given by 
+The graph of a function of one variable, $y= f(x)$ can be thought of as the level 
+curve of the function of two variables given by 
 \[
 g(x, y) = y-f(x)
 \]
@@ -223,13 +238,16 @@ corresponding to $k = 0$.
 
 
 \section{Functions of Three Variables}
-The volume of a rectangular solid is length $\times$ width $\times $ height, so we can think of the volume as a function of three variables:
+The volume of a rectangular solid is length $\times$ width $\times $ height, 
+so we can think of the volume as a function of three variables:
 \[
 \mbox{Volume} = f(\mbox{length}, \mbox{width}, \mbox{height})
 \]
 In general a function of three variables looks like $f(x, y, z)$.
-The graph of such a function consists of the set of points in $\R^4$ of the form $(x, y, z, f(x, y, z))$.
-Our humanity limits us to three dimensions or fewer, so we are unable to produce the graph of a function of three variables.
+The graph of such a function consists of the set of points in $\R^4$ of the 
+form $(x, y, z, f(x, y, z))$.
+Our humanity limits us to three dimensions or fewer, so we are unable to produce 
+the graph of a function of three variables.
 However, we can consider their level surfaces.
 
 \begin{example}[Example 4]
@@ -264,7 +282,8 @@ The level surfaces of the function in problem 4.
 \end{center}
 
 \begin{remark}
-The graph of a function of two variables, $z= f(x,y)$ can be thought of as the level surface of the function of three variables given by 
+The graph of a function of two variables, $z= f(x,y)$ can be thought of as the level 
+surface of the function of three variables given by 
 \[
 g(x, y, z) = z-f(x,y)
 \]
