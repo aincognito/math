@@ -22,26 +22,29 @@ The derivative of a function $f(x)$ is defined by:
 f\,'(x) =  \frac{d}{dx} f(x) = \lim_{h \to 0} \frac{f(x+h) -f(x)}{h}
 \]
 
-The symbol $\frac{d}{dx}$ is called the derivative operator. If we state that $y = f(x)$, then the derivative can also be written as $\frac{dy}{dx}$.
-The expression in the limit is called the difference quotient and it gives the slope of a secant line.
-%The situation with a function of two variables is more complicated because at a point on the graph of $z = f(x,y)$ there are 
+The symbol $\frac{d}{dx}$ is called the differentiation operator. 
+If we state that $y = f(x)$, then the derivative can also be written as $\frac{dy}{dx}$.
+The expression in the limit is called the difference quotient and it gives 
+the slope of a secant line.
+%The situation with a function of two variables is more complicated 
+%because at a point on the graph of $z = f(x,y)$ there are 
 %infinitely many directions to move rather than just two. 
-The partial derivatives of a function of two variables are defined analogously to the single variable case.
+The partial derivatives of a function of two variables are defined 
+analogously to the single variable case.
 
 \begin{definition}[Partial Derivatives]
-The partial derivative of $f(x,y)$ with respect to $x$, denoted $f_x(x,y)$ or $\frac{\partial}{\partial x} f(x,y)$, is defined by
+The partial derivative of $f(x,y)$ with respect to $x$, denoted $f_x(x,y)$ 
+or $\frac{\partial}{\partial x} f(x,y)$, is defined by
 \[
 f_x(x,y)= \lim_{h \to 0} \frac{f(x+h, y) -f(x, y)}{h}
 \]
-
-The partial derivative with respect to $y$, denoted $f_y(x,y)$ or $\frac{\partial}{\partial y} f(x,y)$, is defined by
-
-
+The partial derivative with respect to $y$, denoted $f_y(x,y)$ 
+or $\frac{\partial}{\partial y} f(x,y)$, is defined by
 \[
 f_y(x,y) = \lim_{h \to 0} \frac{f(x, y+h) -f(x, y)}{h}
 \]
-
-The symbols $\frac{\partial}{\partial x}$ and $\frac{\partial}{\partial y}$ are called partial derivative operators.
+The symbols $\frac{\partial}{\partial x}$ and $\frac{\partial}{\partial y}$ are called 
+partial differentiation operators.
 
 \end{definition}
 
@@ -57,16 +60,19 @@ We compute $f(x+h, y)$ as an aside:
 f(x+h, y) &= 2(x+h)y^2 + 4(x+h)y - 2(x+h)  -1\\
           &= 2xy^2 + 2hy^2 + 4xy + 4hy - 2x - 2h - 1
 \end{align*}
-Note that among the 7 terms in this expression, 4 of them are exactly the terms in the original function.
+Note that among the 7 terms in this expression, 4 of them are exactly the 
+terms in the original function.
 Hence, the numerator of the difference quotient will simplify to:
 \[
 f(x+h, y) - f(x,y) =  2hy^2 + 4hy - 2h
 \]
-Observe that each of these terms contains a factor of $h$. Thus, the difference quotient simplifies to
+Observe that each of these terms contains a factor of $h$. 
+Thus, the difference quotient simplifies to
 \[
 \frac{f(x+h, y) -f(x, y)}{h} = 2y^2 + 4y - 2
 \]
-Finally, we take the limit as $h \to 0$ to obtain the partial derivative with respect to $x$:
+Finally, we take the limit as $h \to 0$ to obtain the partial derivative 
+with respect to $x$:
 \[
 f_x(x,y) = \lim_{h \to 0} \left(2y^2 + 4y - 2\right) = 2y^2 + 4y - 2
 \]
@@ -74,7 +80,8 @@ f_x(x,y) = \lim_{h \to 0} \left(2y^2 + 4y - 2\right) = 2y^2 + 4y - 2
 \end{example}
 
 \begin{remark}
-Note that this result can be obtained by treating the variable $y$ as a constant and computing an ordinary derivative with respect to $x$.
+Note that this result can be obtained by treating the variable $y$ as a 
+constant and computing an ordinary derivative with respect to $x$.
 \end{remark}
 
 \begin{problem}(Problem 1)
@@ -122,16 +129,19 @@ f(x, y+h) &= 2x(y+h)^2 + 4x(y+h) - 2x  -1\\
           &= 2x(y^2 + 2hy + h^2) + 4xy + 4hx - 2x - 1\\
           &= 2xy^2 + 4hxy + 2h^2x + 4xy + 4hx - 2x - 1
 \end{align*}
-Note that among the 7 terms in this expression, 4 of them are exactly the terms in the original function.
+Note that among the 7 terms in this expression, 4 of them are exactly the 
+terms in the original function.
 Hence, the numerator of the difference quotient will simplify to:
 \[
 f(x, y+h) - f(x,y) =  4hxy + 2h^2x  + 4hx
 \]
-Observe that each of these terms contains a factor of $h$. Thus, the difference quotient simplifies to
+Observe that each of these terms contains a factor of $h$. 
+Thus, the difference quotient simplifies to
 \[
 \frac{f(x, y+h) -f(x, y)}{h} = 4xy + 2hx +4x
 \]
-Finally, we take the limit as $h \to 0$ to obtain the partial derivative with respect to $y$:
+Finally, we take the limit as $h \to 0$ to obtain the partial 
+derivative with respect to $y$:
 \[
 f_y(x,y) = \lim_{h \to 0} \left(4xy + 2hx +4x\right) = 4xy + 4x
 \]
@@ -139,7 +149,8 @@ f_y(x,y) = \lim_{h \to 0} \left(4xy + 2hx +4x\right) = 4xy + 4x
 \end{example}
 
 \begin{remark}
-Note that this result can be obtained by treating the variable $x$ as a constant and computing an ordinary derivative with respect to $y$.
+The result of the previous example can be obtained by treating the 
+variable $x$ as a constant and computing an ordinary derivative with respect to $y$.
 \end{remark}
 
 \begin{problem}(Problem 2)
@@ -169,7 +180,8 @@ The partial derivative with respect to $y$ is
 \]
 \end{problem}
 
-As was noted in the remarks following each of the two previous examples, partial derivatives can be computed by considering one of the variables to be constant.
+As was noted in the remarks following each of the two previous examples, 
+partial derivatives can be computed by considering one of the variables to be constant.
 
 \begin{example}[Example 3]
 Find $f_x(x,y)$ for the function 
@@ -177,7 +189,8 @@ Find $f_x(x,y)$ for the function
 f(x,y) = x^4y^3 + 2xy + y\sin(x) - e^y
 \]
 
-Since we are trying to find the partial derivative with respect to $x$, we treat the variable $y$ as a constant.
+Since we are trying to find the partial derivative with respect to $x$, we treat 
+the variable $y$ as a constant.
 Differentiating term by term in this fashion gives:
 \[
 f_x(x,y) = 4x^3y^3 + 2y + y\cos(x)
@@ -212,7 +225,8 @@ Find $f_y(x,y)$ for the function
 f(x,y) = x^4y^3 + 2x\sqrt{y} + y^2\cos(x) - e^y
 \]
 
-Since we are trying to find the partial derivative with respect to $y$, we treat the variable $x$ as a constant.
+Since we are trying to find the partial derivative with respect to $y$, we treat 
+the variable $x$ as a constant.
 Differentiating term by term in this fashion gives:
 \[
 f_y(x,y) = 3x^4y^2 + \frac{x}{\sqrt{y}} + 2y\cos(x) - e^y
@@ -248,7 +262,8 @@ Here is a video solution of problems 3 and 4:\\
 
 
 
-The next example uses the chain rule.  Recall that $\frac{d}{dx} \sqrt x = \frac{1}{2\sqrt x}$.
+The next example uses the chain rule.  
+Recall that $\frac{d}{dx} \sqrt x = \frac{1}{2\sqrt x}$.
 
 \begin{example}[Example 5]
 Compute $f_x(x,t)$ and $f_t(x,t)$ for the function 
@@ -286,7 +301,8 @@ Both partial derivatives require the chain rule
 \end{hint}
 
 \[
-f_x = \answer{-3x^2y^4 \sin(x^3y^4)} \quad \text{and} \quad f_y = \answer{-4x^3y^3 \sin(x^3y^4)}
+f_x = \answer{-3x^2y^4 \sin(x^3y^4)} \quad \text{and} 
+\quad f_y = \answer{-4x^3y^3 \sin(x^3y^4)}
 \]
 \end{problem}
 
@@ -301,8 +317,10 @@ To find $w_x$, we treat $y$ and $z$ as constants:
 \[
 w_x = y\sec^2(x+2z) \cdot 1 = y\sec^2(x+2z)
 \]
-Note that we used the chain rule with inside function $x + 2z$, whose derivative with respect to $x$ is just $1$.\\
-To find $w_y$, we treat $x$ and $z$ as constants, so the factor $\tan(x+2z)$ is treated as constant and
+Note that we used the chain rule with inside function $x + 2z$, whose derivative 
+with respect to $x$ is just $1$.\\
+To find $w_y$, we treat $x$ and $z$ as constants, so the factor $\tan(x+2z)$ is 
+treated as constant and
 \[
 w_y = \tan(x+2z)
 \]
@@ -339,7 +357,8 @@ Compute $f_x(x,y)$ and $f_y(x,y)$ for the function
 \[
 f(x,y) = x\sin(xy)
 \]
-Viewed as a function of $x$, $f$ is a product first and then a composition. We will need to use the product rule and then
+Viewed as a function of $x$, $f$ is a product first and then a composition. 
+We will need to use the product rule and then
 the chain rule to compute $f_x$.
 We have
 \begin{align*}
@@ -347,7 +366,8 @@ f_x(x,y) &= \sin(xy) + x \frac{\partial}{\partial x} \sin(xy)\\
          & = \sin(xy) + x \cos(xy) \cdot y\\
          & = \sin(xy) + xy \cos(xy)
 \end{align*}
-As a function of $y, f$ is a composition of the sine function and the function $xy$, so the chain rule gives:
+As a function of $y, f$ is a composition of the sine function and the 
+function $xy$, so the chain rule gives:
 \[
 f_y(x,y) = x \cos(xy) \cdot x = x^2 \cos(xy)
 \]
@@ -399,12 +419,14 @@ Compute the mixed second order partial derivatives $f_{xy}$ and $f_{yx}$ for the
 \[
 f(x,y) = x^3y^4
 \]
-We will compute $f_{xy}$ first.  To do this, we compute the partial derivative of $f$ with respect to $x$ first and then compute the partial 
+We will compute $f_{xy}$ first.  To do this, we compute the partial 
+derivative of $f$ with respect to $x$ first and then compute the partial 
 derivative with respect to $y$.  In other words, $f_{xy} = (f_x)_y$.  We have:
 \[
 f_x(x,y) = 3x^2y^4 \quad \text{and} \quad f_{xy} = 12x^2y^3
 \]
-Next, we compute $f_{yx}$ by computing the partial derivative with respect to $y$ first and then $x$:
+Next, we compute $f_{yx}$ by computing the partial derivative with 
+respect to $y$ first and then $x$:
 \[
 f_y(x,y) = 4x^3y^3 \quad \text{and} \quad f_{yx} = 12x^2y^3
 \]
@@ -422,15 +444,18 @@ f(x,y) = x^5 y^3
 Are they equal?
 \end{problem}
 
-The next theorem asserts that as long as the mixed second order partial derivatives $f_{xy}$ and $f_{yx}$  are continuous then they are equal.
+The next theorem asserts that as long as the mixed second order 
+partial derivatives $f_{xy}$ and $f_{yx}$  are continuous then they are equal.
 \begin{theorem}[Clairault's Theorem]
-If the mixed second order partial derivatives $f_{xy}(x,y)$ and $f_{yx}(x,y)$ are continuous in a disc centered at a point, 
+If the mixed second order partial derivatives $f_{xy}(x,y)$ and $f_{yx}(x,y)$ are 
+continuous in a disc centered at a point, 
 then they are equal at that point.
 \end{theorem}
 
 
 \begin{remark}
-In practice, the functions we will be differentiating are continuous on their domains, 
+In practice, the functions we will be dealing with have continuous 
+derivatives of all orders on their domains, 
 so we will freely interchange the order of differentiation.
 \end{remark}
 
@@ -464,7 +489,8 @@ f_x(x,y) = \answer{e^x \tan(xy) + ye^x \sec^2(xy)}
 f_y(x,y) = \answer{xe^x\sec^2(xy)}
 \]
 \[
-f_{xy}(x,y) = f_{yx}(x,y) = \answer{e^x\sec^2(xy) + xe^x\sec^2(xy) + 2xye^x \sec^2(xy)\tan(xy)}
+f_{xy}(x,y) = f_{yx}(x,y) = \answer{e^x\sec^2(xy) + xe^x\sec^2(xy) + 
+2xye^x \sec^2(xy)\tan(xy)}
 \]
 \end{problem}
 
@@ -484,27 +510,33 @@ f(x,y) = \tan^{-1}\left(\frac{y}{x}\right)
 \]
 Recalling that 
 \[
-\frac{d}{dx}\tan^{-1}(x) = \frac{1}{1+x^2} \quad \text{and} \quad \frac{d}{dx} \left(\frac{1}{x}\right) = -\frac{1}{x^2}
+\frac{d}{dx}\tan^{-1}(x) = \frac{1}{1+x^2} \quad \text{and} \quad 
+\frac{d}{dx} \left(\frac{1}{x}\right) = -\frac{1}{x^2}
 \]
 we begin with the partial derivatives with respect to $x$:
 \[
-f_x(x,y) = \frac{1}{1+\left(\frac{y}{x}\right)^2} \cdot \left(-\frac{y}{x^2}\right) = -\frac{y}{x^2 + y^2}
+f_x(x,y) = \frac{1}{1+\left(\frac{y}{x}\right)^2} \cdot 
+\left(-\frac{y}{x^2}\right) = -\frac{y}{x^2 + y^2}
 \]
 The second derivative with respect to $x$ follows from the quotient rule:
 \[
-f_{xx}(x,y) = -\frac{(x^2 + y^2) \cdot 0 - y \cdot 2x}{(x^2 + y^2)^2} = \frac{2xy}{(x^2 + y^2)^2}
+f_{xx}(x,y) = -\frac{(x^2 + y^2) \cdot 0 - y \cdot 2x}{(x^2 + y^2)^2} = 
+\frac{2xy}{(x^2 + y^2)^2}
 \]
 Now for the partial derivatives with respect to $y$:
 \[
-f_y(x,y) = \frac{1}{1+\left(\frac{y}{x}\right)^2} \cdot \frac{1}{x} = \frac{1}{x + \frac{y^2}{x}} = \frac{x}{x^2 + y^2}
+f_y(x,y) = \frac{1}{1+\left(\frac{y}{x}\right)^2} \cdot \frac{1}{x} = 
+\frac{1}{x + \frac{y^2}{x}} = \frac{x}{x^2 + y^2}
 \]
 And the second derivative with respect to $y$:
 \[
-f_{yy}(x,y) = \frac{(x^2+y^2)\cdot 0 - x \cdot 2y}{(x^2 + y^2)^2} = -\frac{2xy}{(x^2 + y^2)^2}
+f_{yy}(x,y) = \frac{(x^2+y^2)\cdot 0 - x \cdot 2y}{(x^2 + y^2)^2} = 
+-\frac{2xy}{(x^2 + y^2)^2}
 \]
 Finally, we add the pure second derivatives to obtain the Laplacian:
 \[
-\Delta f(x,y) = f_{xx}(x,y) + f_{yy}(x,y) = \frac{2xy}{(x^2 + y^2)^2}-\frac{2xy}{(x^2 + y^2)^2} =0
+\Delta f(x,y) = f_{xx}(x,y) + f_{yy}(x,y) = 
+\frac{2xy}{(x^2 + y^2)^2}-\frac{2xy}{(x^2 + y^2)^2} =0
 \]
 demonstrating that the original function is harmonic.
 \end{example}

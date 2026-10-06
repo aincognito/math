@@ -239,7 +239,7 @@ Finally, since the limits of the bounding functions are equal, i.e.,
 \lim_{(x,y) \to (0,0)} -|x| = 0  \qquad \text{and} \qquad 
 \lim_{(x,y) \to (0,0)} |x| = 0
 \]
-the Squeeze Theorem impliesthat, 
+the Squeeze Theorem implies that, 
 \[
 \lim_{(x,y) \to (0,0)} \frac{xy^2}{x^2 + y^2} =0
 \]
@@ -479,11 +479,12 @@ Use the constant multiple law to change the subtraction into addition
 \end{problem}
 
 \subsection{Continuous Functions}
-A polynomial in the variables $x$ and $y$ is a function of the form
+A monomial in the variables $x$ and $y$ is a function of the form
 \[
-\sum ax^ny^m
+f(x,y)= ax^ny^m
 \]
-where $n$ and $m$ are non-negative integers and the number of terms in the sum is finite.
+where $n$ and $m$ are non-negative integers.  
+A polynomial in the variables $x$ and $y$ is a finite sum of monomials.
 For example, the function
 \[
 f(x,y) = 3x + 2y - 5xy
@@ -494,7 +495,8 @@ is a polynomial in $x$ and $y$. The next proposition follows from the limit laws
 Polynomials in $x$ and $y$ are continuous at every point in $\R^2$.
 \end{proposition}
 
-A rational function in the variables $x$ and $y$ is a ratio of polynomials in the variables $x$ and $y$.
+A rational function in the variables $x$ and $y$ is a ratio of polynomials in the 
+variables $x$ and $y$.
 For example, the function
 \[
 f(x,y) = \frac{2x^2y^3 - 5}{x^4 + 3y^2}
