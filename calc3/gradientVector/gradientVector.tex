@@ -19,13 +19,12 @@ In this section we compute the gradient vector and directional derivatives.
 \begin{definition}[Gradient Vector]
 For a function of two variables, $f(x,y)$, the gradient vector is defined by
 \[
-\grad f(x,y) = \vector{f_x(x,y), f_y(x,y)} \quad \text{or just} 
-\quad \vector{f_x, f_y} \quad \text{for short}
+\grad f(x,y) = \vector{f_x(x,y), f_y(x,y)} 
 \]
 Similarly, for a function of three variables, $f(x,y, z)$, the gradient 
 vector is defined by
 \[
-\grad f(x,y, z) = \vector{f_x, f_y, f_z}
+\grad f = \vector{f_x, f_y, f_z}
 \]
 \end{definition}
 
@@ -131,16 +130,16 @@ Note the change of the increment from $h$ to $k$ using $k = -h$.
 The following theorem gives the relationship between the gradient vector and 
 directional derivatives.
 
-\begin{theorem}
-Let $f(x,y)$ be a function of two variables with gradient vector 
-$\grad f = \vector{f_x, f_y}$, 
+\begin{theorem}[Directional Derivative]
+Let $f(x,y)$ be a function of two variables 
 and let $\vec u = \vector{a,b}$ be a unit vector.
-Then
+Then the directional derivative of $f$ in the direction of $\vec u$ is given by
 \[
 D_{\vec u} f(x,y) = \grad f(x,y) \dotp \vec u = af_x(x,y) + bf_y(x,y)
 \]
 \end{theorem}
-
+with gradient vector 
+$\grad f = \vector{f_x, f_y}$, 
 \begin{proof}
 A rigorous proof requires the chain rule which will be covered in a later section. 
 However, based solely on the definition, we present here a convincing 
@@ -156,7 +155,7 @@ D_{\vec u} f(x,y) &= \lim_{h \to 0} \frac{f(x + ah, y + bh) -f(x,y)}{h} \\[6pt]
                   b\cdot \lim_{h \to 0} \frac{f(x , y+ bh) -f(x,y)}{bh} \\[6pt]
                   &= a\cdot \lim_{k \to 0} \frac{f(x + k, y + ck) - f(x , y+ ck)}{k} + 
                   b\cdot \lim_{l \to 0} \frac{f(x , y+ l) -f(x,y)}{l} \\[6pt]
-                  &= (?) \; a f_x + bf_y
+                  &= (?) \; a f_x(x,y) + bf_y(x,y)
 \end{align*}
 In the second to the last line, the constant $c$ is replacing the fraction $b/a$.  
 The question mark in the last line is due to the fact that the first limit is not
@@ -176,7 +175,7 @@ D_{\vec u} f(x,y) &= \lim_{h \to 0} \frac{f(x + ah, y + bh) -f(x,y)}{h} \\[6pt]
                   a\cdot \lim_{h \to 0} \frac{f(x+ah , y) -f(x,y)}{ah} \\[6pt]
                   &= b\cdot \lim_{k \to 0} \frac{f(x + k, y + ck) - f(x+k , y)}{k} + 
                   a\cdot \lim_{l \to 0} \frac{f(x+ cl , y+ l) -f(x,y)}{l} \\[6pt]
-                  &= (?)\;  b f_y + af_x
+                  &= (?)\;  b f_y(x,y) + af_x(x,y)
 \end{align*}
 Here, in the second to the last line, the constant $c$ is replacing the fraction $a/b$.  
 The question mark in the last line is due to the fact that the first limit is not
