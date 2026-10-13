@@ -17,11 +17,11 @@ In this section we compute the gradient vector and directional derivatives.
 \maketitle
 
 \begin{definition}[Gradient Vector]
-For a function of two variables, $f(x,y)$, the gradient vector is defined by
+For a differentiable function of two variables, $f(x,y)$, the gradient vector is defined by
 \[
 \grad f(x,y) = \vector{f_x(x,y), f_y(x,y)} 
 \]
-Similarly, for a function of three variables, $f(x,y, z)$, the gradient 
+Similarly, for a differentiable function of three variables, $f(x,y, z)$, the gradient 
 vector is defined by
 \[
 \grad f = \vector{f_x, f_y, f_z}
@@ -237,69 +237,74 @@ The directional derivative is $D_{\vec u} f(0,6) = \answer{22/5}$
 \begin{example}[Example 5]
 Find the derivative of $f(x,y) = x+y$ at the point $(0,0)$ in the direction 
 of the following vectors:
-\[
-\vec{i}, \vec{j}, \vector{1,1}, \vector{1, -1}, \vector{5, -12} \;\text{and} 
-\; \vector{-5, 12}
-\]
+\begin{itemize}
+\item[a)] $\vec{i} = \vector{1,0}$, 
+\item[b)] $\vec{j} = \vector{0,1}$, 
+\item[c)] $\vec{v_1} = \vector{1,1}$,
+\item[d)] $\vec{v_2} = \vector{1, -1}$,
+\item[e)] $\vec{v_3} = \vector{5, -12}$, and
+\item[f)] $\vec{v_4} = \vector{-5, 12}$.
+\end{itemize}
+%\vec{i}, \vec{j}, \vector{1,1}, \vector{1, -1}, \vector{5, -12} \;\text{and} 
+%\; \vector{-5, 12}
+
 We begin by computing the gradient vector at the point $(0,0)$:
 \[
 \grad f(0,0) = \vector{f_x(0,0), f_y(0,0)} = \vector{1,1}
 \]
 Note that the gradient vector did not depend on the point.\\
-The derivative in the direction of $\vec i$ is
+a) The derivative in the direction of $\vec i$ is
 \[
 D_{\vec i} f(0,0) = \grad f(0,0) \dotp \vec{i} = \vector{1,1} \dotp \vector{1,0} = 1
 \]
-The derivative in the direction of $\vec j$ is
+b)The derivative in the direction of $\vec j$ is
 \[
 D_{\vec j} f(0,0) = \grad f(0,0) \dotp \vec{j} = \vector{1,1} \dotp \vector{0,1} = 1
 \]
-Next, the vector $\vector{1,1}$ is not a unit vector, so we divide it by its 
+c) The vector $\vec{v_1} = \vector{1,1}$ is not a unit vector, so we divide it by its 
 magnitude to get
 \[
-\vec u = \vector{\frac{1}{\sqrt 2}, \frac{1}{\sqrt 2}}
+\vec u_1 = \vector{\frac{1}{\sqrt 2}, \frac{1}{\sqrt 2}}
 \]
-The derivative in the direction of $\vec u$ is
+The derivative in the direction of $\vec v_1$ is
 \[
-D_{\vec u} f(0,0) = \grad f(0,0) \dotp \vec{u} = \vector{1,1} \dotp 
+D_{\vec u_1} f(0,0) = \grad f(0,0) \dotp \vec{u_1} = \vector{1,1} \dotp 
 \vector{\frac{1}{\sqrt 2}, \frac{1}{\sqrt 2}} = \sqrt 2
 \]
-Note that the vector $\vec u$ above is in the same direction as the gradient vector.
+Note that the vector $\vec v_1$ above is in the same direction as the gradient vector.
 
-Next, the vector $\vector{1,-1}$ is not a unit vector, so we divide it by its 
+d) The vector $\vec{v_2} = \vector{1,-1}$ is not a unit vector, so we divide it by its 
 magnitude to get
 \[
-\vec v = \vector{\frac{1}{\sqrt 2}, -\frac{1}{\sqrt 2}}
+\vec u_2 = \vector{\frac{1}{\sqrt 2}, -\frac{1}{\sqrt 2}}
 \]
-The derivative in the direction of $\vec v$ is
+The derivative in the direction of $\vec v_2$ is
 \[
-D_{\vec v} f(0,0) = \grad f(0,0) \dotp \vec{v} = \vector{1,1} \dotp 
+D_{\vec u_2} f(0,0) = \grad f(0,0) \dotp \vec{u_2} = \vector{1,1} \dotp 
 \vector{\frac{1}{\sqrt 2}, -\frac{1}{\sqrt 2}} = 0
 \]
-
-Next, the vector $\vector{5,-12}$ is not a unit vector, so we divide 
+e) The vector $\vec{v_3}\vector{5,-12}$ is not a unit vector, so we divide 
 it by its magnitude to get
 \[
-\vec w_1 = \vector{\frac{5}{13}, -\frac{12}{13}}
+\vec u_3 = \vector{\frac{5}{13}, -\frac{12}{13}}
 \]
-The derivative in the direction of $\vec{w_1}$ is
+The derivative in the direction of $\vec{v_3}$ is
 \[
-D_{\vec{w_1}} f(0,0) = \grad f(0,0) \dotp \vec{w_1} = \vector{1,1} \dotp 
+D_{\vec{u_3}} f(0,0) = \grad f(0,0) \dotp \vec{u_3} = \vector{1,1} \dotp 
 \vector{\frac{5}{13}, -\frac{12}{13}} = -\frac{7}{13}
 \]
-
-Finally, the vector $\vector{-5,12}$ is not a unit vector, so we divide 
+f) The vector $\vec{v_4} = \vector{-5,12}$ is not a unit vector, so we divide 
 it by its magnitude to get
 \[
-\vec w_2 = \vector{-\frac{5}{13}, \frac{12}{13}}
+\vec u_4 = \vector{-\frac{5}{13}, \frac{12}{13}}
 \]
-The derivative in the direction of $\vec w_2$ is
+The derivative in the direction of $\vec{v_4}$ is
 \[
-D_{\vec w_2} f(0,0) = \grad f(0,0) \dotp \vec{w_2} = \vector{1,1} \dotp 
+D_{\vec{u_4}} f(0,0) = \grad f(0,0) \dotp \vec{u_4} = \vector{1,1} \dotp 
 \vector{-\frac{5}{13}, \frac{12}{13}} = \frac{7}{13}
 \]
 
-Note that the last two vectors, $\vec w_1$ and $\vec w_2$, are negatives 
+Note that the last two vectors, $\vec v_3$ and $\vec v_4$, are negatives 
 of one another, and that the 
 derivatives in their respective directions are negatives of each other.\\
 Below, we show several level curves of the plane $z = f(x,y) = x+y$ along with 
@@ -319,10 +324,10 @@ the given (unitized) direction vectors.
 
 \draw[red, ->] (0,0) -- (2,0) node[above,right]{$\vec i$};
 \draw[red, ->] (0,0) -- (0,2) node[above, right]{$\vec j$};
-\draw[red, ->] (0,0) -- (1.414, 1.414) node[above, right]{$\vec u$};
-\draw[red, ->] (0,0) -- (1.414, -1.414) node[below, right]{$\vec v$};
-\draw[red, ->] (0,0) -- (0.7692, -1.8461) node[below, right]{$\vec w_1$};
-\draw[red, ->] (0,0) -- (-0.7692, 1.8461) node[above, left]{$\vec w_2$};
+\draw[red, ->] (0,0) -- (1.414, 1.414) node[above, right]{$\vec u_1$};
+\draw[red, ->] (0,0) -- (1.414, -1.414) node[below, right]{$\vec u_2$};
+\draw[red, ->] (0,0) -- (0.7692, -1.8461) node[below, right]{$\vec u_3$};
+\draw[red, ->] (0,0) -- (-0.7692, 1.8461) node[above, left]{$\vec u_4$};
 \node at (0, -6.5) {Note that the derivative in the direction of the level curves is 0};
 \node at (0, -7) {and that the gradient vector is perpendicular to the level curves};
 \end{tikzpicture}
