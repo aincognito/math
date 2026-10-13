@@ -108,7 +108,7 @@ to $y$, $f_y(x,y)$.
 
 
 \begin{proposition}
-Let $f(x,y)$ be a function of two variables and let $\vec u = \vector{a,b}$ 
+Let $f(x,y)$ be a differentiable function of two variables and let $\vec u = \vector{a,b}$ 
 be a unit vector in $\R^2$. Then
 \[
 D_{-\vec u} f(x,y) = -D_{\vec u} f(x,y)
@@ -131,15 +131,14 @@ The following theorem gives the relationship between the gradient vector and
 directional derivatives.
 
 \begin{theorem}[Directional Derivative]
-Let $f(x,y)$ be a function of two variables 
+Let $f(x,y)$ be a differentiable function of two variables 
 and let $\vec u = \vector{a,b}$ be a unit vector.
 Then the directional derivative of $f$ in the direction of $\vec u$ is given by
 \[
 D_{\vec u} f(x,y) = \grad f(x,y) \dotp \vec u = af_x(x,y) + bf_y(x,y)
 \]
 \end{theorem}
-with gradient vector 
-$\grad f = \vector{f_x, f_y}$, 
+
 \begin{proof}
 A rigorous proof requires the chain rule which will be covered in a later section. 
 However, based solely on the definition, we present here a convincing 
