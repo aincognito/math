@@ -67,23 +67,19 @@ At the given point, we have
 
 \begin{problem}(Problem 2)
 Evaluate the gradient vector as indicated:\\
-a) \;$f(x,y) = 2xy - y^3, qquad \grad f(-1, 2)= \vector{\answer{4}, \answer{-14}}$\\
-b) \;$g(x, y, z) = x^2y + 3yz^2 \qquad \grad g(-1,2,3) = \vector{\answer{-4}, \answer{28}, \answer{36}}$\\
-
-\[
-\text{a)} \grad f(-1, 2) \;\text{for} \;f(x,y) = 2xy - y^3\quad  \quad  
-\text{b)} \grad g(-1, 2, 3) \;\text{for} \;g(x, y, z) = x^2y + 3yz^2
-\]
-\[
-\grad f(-1, 2) = \vector{\answer{4}, \answer{-14}}
-\]
-\[
-\grad g(-1,2,3) = \vector{\answer{-4}, \answer{28}, \answer{36}}
-\]
+a) \;$f(x,y) = 2xy - y^3; \qquad \grad f(-1, 2)= \vector{\answer{4}, \answer{-14}}$\\
+b) \;$g(x, y, z) = x^2y + 3yz^2; \qquad \grad g(-1,2,3) = 
+\vector{\answer{-4}, \answer{28}, \answer{36}}$\\
 \end{problem}
 
-The gradient of a function of two variables, $\grad f(x,y)$, is used to find 
-the slope of the surface $z = f(x,y)$ in a particular direction.
+The partial derivatives $f_x$ and $f_y$ found in the gradient can be interpreted as 
+the slopes of tangent lines to the surface $z = f(x,y)$ in the directions of 
+the unit vectors $\vec i$ and $\vec j$, respectively. 
+We will see that the gradient vector 
+can help us find the slope of the surface in any direction. 
+We first need the notion of a directional derivative.
+
+
 
 \begin{definition}[Directional Derivative]
 Let $z = f(x,y)$ be a function of two variables whose graph is a surface in $R^3$ and 
@@ -113,13 +109,14 @@ of $f$ with respect to $x$.
 \end{example}
 
 \begin{problem}(Problem 3)
-Use the definition  to show that the derivative of $f(x,y)$ in the direction of 
+Show that the derivative of $f(x,y)$ in the direction of 
 the vector $\vec j = \vector{0,1}$ is the partial derivative with respect 
-to $y$, $f_y(x,y)$.
+to $y$, i.e.,
+\[D_{\vec j} f(x,y) = f_y(x,y)\]
 \end{problem}
 
 
-\begin{proposition}
+\begin{proposition}(Opposite Directions)
 Let $f(x,y)$ be a differentiable function of two variables and let $\vec u = \vector{a,b}$ 
 be a unit vector in $\R^2$. Then
 \[
@@ -139,8 +136,10 @@ D_{-\vec u} f(x,y) &= \lim_{h \to 0} \frac{f(x - ah, y - bh) -f(x,y)}{h} \\[6pt]
 Note the change of the increment from $h$ to $k$ using $k = -h$.
 \end{proof}
 
-The following theorem gives the relationship between the gradient vector and 
-directional derivatives.
+The gradient of a function of two variables, $\grad f(x,y)$, is used to find 
+the slope of the surface $z = f(x,y)$ in a particular direction.
+The following theorem uses the dot product to express the relationship between 
+the gradient vector and directional derivatives.
 
 \begin{theorem}[Directional Derivative]
 Let $f(x,y)$ be a differentiable function of two variables 
