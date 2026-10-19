@@ -45,7 +45,10 @@ partial differential operators.
 
 \end{definition}
 
-
+\begin{definition}[Differentiability]
+A function $f(x,y)$ is differentiable at the point $(x_0, y_0)$ if it 
+has continuous partial derivatives in some disk centered at that point
+\end{definition}
 
 \begin{example}[Example 1]
 Use the definition of partial derivative to compute $f_x(x,y)$ for the function
@@ -145,10 +148,7 @@ f_y(x,y) = \lim_{h \to 0} \left(4xy + 2hx +4x\right) = 4xy + 4x
 
 \end{example}
 
-\begin{remark}
-The result of the previous example can be obtained by treating the 
-variable $x$ as a constant and computing an ordinary derivative with respect to $y$.
-\end{remark}
+
 
 \begin{problem}(Problem 2)
 Use the definition of partial derivative to compute $f_y(x,y)$ for the function
@@ -177,8 +177,15 @@ The partial derivative with respect to $y$ is
 \]
 \end{problem}
 
-As was noted in the remarks following each of the two previous examples, 
-partial derivatives can be computed by considering one of the variables to be constant.
+\begin{remark}
+Looking back at the results of the previous examples and problems, we can infer
+the following shortcut to calculating partial derivatives: \\
+when computing $f_x(x,y)$, treat the variable $y$ as a constant  and,\\
+when computing $f_y(x,y)$, treat the variable $x$ as a constant .
+\end{remark}
+
+Henceforth, we shall use the above remark to compute partial derivatives.
+
 
 \begin{example}[Example 3]
 Find $f_x(x,y)$ for the function 
@@ -497,15 +504,15 @@ f_{xy}(x,y) = f_{yx}(x,y) = \answer{e^x\sec^2(xy) + xe^x\sec^2(xy) +
 
 \subsection{Harmonic Functions}
 \begin{definition}[Harmonic]
-A function $f(x,y)$ is called harmonic if 
+A function $f(x,y)$ is called harmonic in some subset of the plane if 
 \[
-\Delta f = f_{xx} + f_{yy} = 0
+\Delta f(x,y) = f_{xx}(x,y) + f_{yy}(x,y) = 0
 \]
-for all $(x,y)$. The symbol $\Delta$ is called the Laplace operator or the Laplacian.
+for all $(x,y)$ in that subset. The symbol $\Delta$ is called the Laplace operator or the Laplacian.
 \end{definition}
 
 \begin{example}[Example 10]
-Show that the function is harmonic:
+Show that the function is harmonic at all points $(x,y)$ with $x \neq 0$:
 \[
 f(x,y) = \tan^{-1}\left(\frac{y}{x}\right)
 \]
@@ -539,11 +546,11 @@ Finally, we add the pure second derivatives to obtain the Laplacian:
 \Delta f(x,y) = f_{xx}(x,y) + f_{yy}(x,y) = 
 \frac{2xy}{(x^2 + y^2)^2}-\frac{2xy}{(x^2 + y^2)^2} =0
 \]
-demonstrating that the original function is harmonic.
+demonstrating that the original function is harmonic at all points $(x,y)$ with $x \neq 0$ .
 \end{example}
 
 \begin{problem}(Problem 10a)
-Show that the function is harmonic:
+Show that the function is harmonic at all points $(x,y)$:
 \[
 f(x,y) = x^2 + 4xy - y^2 + 5x - 6y +2
 \]
@@ -551,7 +558,7 @@ f(x,y) = x^2 + 4xy - y^2 + 5x - 6y +2
 \end{problem}
 
 \begin{problem}(Problem 10b)
-Show that the function is harmonic:
+Show that the function is harmonic at all points $(x,y)$:
 \[
 f(x,y) = e^x \cos(y)
 \]
@@ -559,7 +566,8 @@ f(x,y) = e^x \cos(y)
 \end{problem}
 
 \begin{problem}(Problem 10c)
-Show that the function is harmonic:
+Show that the function is harmonic at all points $(x,y) \neq (0,0)$ 
+(this is called the punctured plane):
 \[
 f(x,y) = \ln(x^2 + y^2)
 \]

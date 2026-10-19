@@ -16,11 +16,13 @@ In this section we compute partial derivatives using the chain rule.
 
 \maketitle
 
-For differentiable functions of one variable, the chain rule states that if $y = f(g(x))$, then 
+For differentiable functions of one variable, the chain rule states that 
+if $y = f(g(x))$, then 
 \[
 y' = \frac{d}{dx} f(g(x)) = f'(g(x)) \cdot g'(x)
 \]
-To extend this to the multi-variable setting, we will need to express this rule in Leibniz notation.
+To extend this to the multi-variable setting, we will need to express this rule 
+in Leibniz notation.
 If instead of writing $y = f(g(x))$ we write that $y = f(u)$ where $ u = g(x)$.
 Then the chain rule becomes
 \[
@@ -31,14 +33,17 @@ Then the chain rule becomes
 
 
 
-Now, we move to the multi-variable case. If $z = f(x,y)$ where $x$ and $y$ are functions of $t$, then ultimately, $z$ is a function of $t$.
-A change in $t$ causes a change in both $x$ and $y$ which in turn causes a change in $z$ leading to the following version of the chain rule:
+Now, we move to the multi-variable case. If $z = f(x,y)$ where $x$ and $y$ are 
+functions of $t$, then ultimately, $z$ is a function of $t$.
+A change in $t$ causes a change in both $x$ and $y$ which in turn causes a 
+change in $z$ leading to the following version of the chain rule:
 \[
 \frac{dz}{dt} = \frac{\partial z}{\partial x} \cdot \frac{dx}{dt} + \frac{\partial z}{\partial y} \cdot \frac{dy}{dt}
 \]
 
 \begin{example}[Example 1]
-Let $z = x^2 + y^2 + 3xy$ and let $x = 4\cos 5t$ and $y = 4\sin 5t$. Find $\frac{dz}{dt}$.\\
+Let $z = x^2 + y^2 + 3xy$ and let $x = 4\cos 5t$ and $y = 4\sin 5t$. 
+Find $\frac{dz}{dt}$.\\
 From the chain rule, we have
 \begin{align*}
 \frac{dz}{dt} &= \frac{\partial z}{\partial x} \cdot \frac{dx}{dt} + \frac{\partial z}{\partial y} \cdot \frac{dy}{dt}\\
@@ -48,7 +53,8 @@ From the chain rule, we have
               &= 240 (\cos^2 5t - \sin^2 5t)\\
               &= 240 \cos 10t
 \end{align*}
-Note, that it may have been easier to find $\frac{dz}{dt}$ by writing $z$ as a function of $t$ at the outset:
+Note, that it may have been easier to find $\frac{dz}{dt}$ by writing $z$ as a 
+function of $t$ at the outset:
 \begin{align*}
 z &= x^2 + y^2 + 3xy \\
    &= 16 \cos^2 5t + 16 \sin^2 5t + 48 \cos 5t \sin 5t\\
@@ -69,20 +75,25 @@ which agrees with our previous answer.
 
 
 \begin{problem}(Problem 1a)
-Let $z = x^2 + y^2 + 4xy$ and let $x = \cos t$ and $y = \sin t$. Use the chain rule to find $\frac{dz}{dt}$
+Let $z = x^2 + y^2 + 4xy$ and let $x = \cos t$ and $y = \sin t$. Use the chain 
+rule to find $\frac{dz}{dt}$
 \end{problem}
 
 
 \begin{problem}(Problem 1b)
-Let $z = x^3 y^3 + 3x - 3y$ and let $x = 2\cos \pi t$ and $y = 2\sin \pi t$. Find $\frac{dz}{dt}\bigg|_{t = 0}$
+Let $z = x^3 y^3 + 3x - 3y$ and let $x = 2\cos \pi t$ and $y = 2\sin \pi t$. 
+Find $\frac{dz}{dt}\bigg|_{t = 0}$
 \end{problem}
 
 
 
 
 
-We next look at an extension of the previous chain rule to the case  where $x$ and $y$ are themselves functions of two variables.
-Let $z$ be a function of $x$ and $y$ and let $x$ and $y$ both be functions of $s$ and $t$.  Then $z$ is ultimately a function of $s$ and $t$ and the chain rule says
+We next look at an extension of the previous chain rule to the case  
+where $x$ and $y$ are themselves functions of two variables.
+Let $z$ be a function of $x$ and $y$ and let $x$ and $y$ both be 
+functions of $s$ and $t$.  Then $z$ is ultimately a function of $s$ and $t$ and 
+the chain rule says
 \[
 \frac{\partial z}{\partial s} = \frac{\partial z}{\partial x} \cdot \frac{\partial x}{\partial s} + \frac{\partial z}{\partial y} \cdot \frac{\partial y}{\partial s}
 \]
@@ -94,7 +105,9 @@ and
 \]
 
 \begin{example}[Example 2]
-Let $z = x^3 + xy^4, x = se^t$ and $y = \ln(st)$. Find $\frac{\partial z}{\partial s}\bigg|_{s = 1, t = 2}$ and $\frac{\partial z}{\partial t}\bigg|_{s = 1, t = 2}$.\\
+Let $z = x^3 + xy^4, x = se^t$ and $y = \ln(st)$. 
+Find $\frac{\partial z}{\partial s}\bigg|_{s = 1, t = 2}$ 
+and $\frac{\partial z}{\partial t}\bigg|_{s = 1, t = 2}$.\\
 
 
 
@@ -126,7 +139,8 @@ and
 
 \begin{problem}(Problem 2)
 Let $z = e^x \sin y$ where $x = s^2 - t^2 - s - t$ and $y = \pi st$. 
-Find $\frac{\partial z}{\partial s}\bigg|_{s = 2, t = 1}$ and $\frac{\partial z}{\partial t}\bigg|_{s = 2, t = 1}$
+Find $\frac{\partial z}{\partial s}\bigg|_{s = 2, t = 1}$ 
+and $\frac{\partial z}{\partial t}\bigg|_{s = 2, t = 1}$
 \end{problem}
 
 Here is a video solution of problem 2:\\
@@ -135,13 +149,15 @@ Here is a video solution of problem 2:\\
 \end{foldable}
 
 \subsection{Polar Coordinates}
-The polar coordinates $(r, \theta)$ of a point in the $xy$-plane give the distance from the origin and the angle from the positive $x$-axis. 
+The polar coordinates $(r, \theta)$ of a point in the $xy$-plane give 
+the distance from the origin and the angle from the positive $x$-axis. 
 The relationship to standard rectangular coordinates $(x,y)$ is given by
 \[
 x = r \cos \theta \quad \text{and} \quad y = r \sin \theta
 \]
 
-If $z = f(x,y)$, then we can rewrite $z$ using polar coordinates as $z = f(r\cos \theta, r \sin \theta)$ and we can use the chain rule to 
+If $z = f(x,y)$, then we can rewrite $z$ using polar coordinates 
+as $z = f(r\cos \theta, r \sin \theta)$ and we can use the chain rule to 
 compute the partial derivatives of $z$ with respect to $r$ and $\theta$:
 \begin{align*}
 \frac{\partial z}{\partial r} &= \frac{\partial z}{\partial x} \cdot \frac{\partial x}{\partial r} + \frac{\partial z}{\partial y} \cdot \frac{\partial y}{\partial r}\\
@@ -156,7 +172,8 @@ and
 
 
 \begin{example}[Example 3]
-Let $z = \ln(x^2 + y^2)$ where $x = r\cos \theta$ and $y = r\sin \theta$.  Find $\frac{\partial z}{\partial r}$ and $\frac{\partial z}{\partial \theta}$.\\
+Let $z = \ln(x^2 + y^2)$ where $x = r\cos \theta$ and $y = r\sin \theta$.  
+Find $\frac{\partial z}{\partial r}$ and $\frac{\partial z}{\partial \theta}$.\\
 Working directly with the chain rule, we have
 \[
 \frac{\partial z}{\partial r} = \frac{2x}{x^2+y^2} \cos \theta + \frac{2y}{x^2+y^2} \sin \theta
@@ -165,8 +182,10 @@ and
 \[
 \frac{\partial z}{\partial \theta} = \frac{2x}{x^2+y^2} (-r\sin \theta) + \frac{2y}{x^2+y^2} (r\cos \theta)
 \]
-Using the relations $x = r\cos \theta$ and $y = r\sin \theta$, we can simplify each of these derivatives.
-However, we can also use these relations before applying the chain rule to write $z$ in terms of $r$ and $\theta$.
+Using the relations $x = r\cos \theta$ and $y = r\sin \theta$, we can simplify 
+each of these derivatives.
+However, we can also use these relations before applying the chain rule to 
+write $z$ in terms of $r$ and $\theta$.
 Noting that
 \[
 x^2 + y^2 = r^2 \cos^2 \theta + r^2 \sin^2 \theta = r^2
@@ -180,13 +199,17 @@ we have $z = \ln(r^2) = 2\ln r$ and hence
 
 \begin{problem}(Problem 3a)
 Let $z = e^{-(x^2 + y^2)}$ where $x = r\cos \theta$ and $y = r\sin \theta$.  
-Find $\frac{\partial z}{\partial r}$ and $\frac{\partial z}{\partial \theta}$ using the chain rule, 
-and then again, by first writing $z$ as a function of $r$ and $\theta$ directly. Compare your answers.
+Find $\frac{\partial z}{\partial r}$ and $\frac{\partial z}{\partial \theta}$ using 
+the chain rule, 
+and then again, by first writing $z$ as a function of $r$ and $\theta$ directly. 
+Compare your answers.
 \end{problem}
 
 \begin{problem}(Problem 3b)
-Let $z = \tan^{-1}\left(\frac{y}{x}\right)$ where $x = r\cos \theta$ and $y = r\sin \theta$.  
-Find $\frac{\partial z}{\partial r}$ and $\frac{\partial z}{\partial \theta}$ using the chain rule, and then again, 
+Let $z = \tan^{-1}\left(\frac{y}{x}\right)$ where $x = r\cos \theta$ 
+and $y = r\sin \theta$.  
+Find $\frac{\partial z}{\partial r}$ and $\frac{\partial z}{\partial \theta}$ using 
+the chain rule, and then again, 
 by first writing $z$ as a function of $r$ and $\theta$ directly.
 Compare your answers.
 \end{problem}
@@ -213,7 +236,8 @@ z_{rr} &= \cos \theta \frac{\partial}{\partial r} z_x + \sin \theta \frac{\parti
 \end{example}
 
 \begin{problem}(Problem 4) 
-If $z = f(x,y)$ where $x = r\cos \theta$ and $y = r \sin \theta$, find $z_{\theta \theta}$.
+If $z = f(x,y)$ where $x = r\cos \theta$ and $y = r \sin \theta$, 
+find $z_{\theta \theta}$.
 \end{problem}
 
 Here is a video solution of problem 4:\\
@@ -221,10 +245,10 @@ Here is a video solution of problem 4:\\
 \youtube{2TX6w9mBOf4}
 \end{foldable}
 
-
        
 \subsection{General Chain Rule}
-Suppose $z = f(x_1, x_2, ..., x_n)$ and each of the variables $x_i$ for $i = 1, 2, ..., n$ is a function of the variables
+Suppose $z = f(x_1, x_2, ..., x_n)$ and each of the variables $x_i$ 
+for $i = 1, 2, ..., n$ is a function of the variables
 $t_1, t_2,..., t_m$. Then for $1 \leq j \leq m$,
 \begin{align*}
 \frac{\partial z}{\partial t_j} &= \frac{\partial z}{\partial x_1}\frac{\partial x_1}{\partial t_j} 
@@ -235,7 +259,8 @@ $t_1, t_2,..., t_m$. Then for $1 \leq j \leq m$,
 
 
 \begin{example}[Example 5]
-Suppose $w = f(x, y, z)$ where $x, y$ and $z$ are functions of $r, s$ and $t$. Find an expression for $\frac{\partial w}{\partial t}$.\\
+Suppose $w = f(x, y, z)$ where $x, y$ and $z$ are functions of $r, s$ and $t$. 
+Find an expression for $\frac{\partial w}{\partial t}$.\\
 Using the general form of the chain rule, we have
 \[
 \frac{\partial w}{\partial t}= \frac{\partial w}{\partial x}\frac{\partial x}{\partial t}+\frac{\partial w}{\partial y}\frac{\partial y}{\partial t}
@@ -244,12 +269,47 @@ Using the general form of the chain rule, we have
 \end{example}
 
 \begin{problem}(Problem 5a)
-Suppose $w = f(x, y, z)$ where $x, y$ and $z$ are functions of $r, s$ and $t$. Find an expression for $\frac{\partial w}{\partial s}$.
+Suppose $w = f(x, y, z)$ where $x, y$ and $z$ are functions of $r, s$ and $t$. 
+Find an expression for $\frac{\partial w}{\partial s}$.
 \end{problem}
 
 \begin{problem}(Problem 5b)
-Suppose $v = f(w, x, y, z)$ where $w, x, y$ and $z$ are functions of $s$ and $t$. Find an expression for $\frac{\partial v}{\partial t}$.
+Suppose $v = f(w, x, y, z)$ where $w, x, y$ and $z$ are functions of $s$ and $t$. 
+Find an expression for $\frac{\partial v}{\partial t}$.
 \end{problem}
 
+\subsection{Proof of the Directional Derivative Theorem}
+\begin{definition}[Directional Derivative]
+The \textbf{derivative of} $\mathbf{f(x,y)}$ \textbf{in the direction of} 
+$\mathbf{\vec u}$ is given by
+\[
+D_{\vec u} f(x,y) = \lim_{h \to 0} \frac{f(x + ah, y + bh) -f(x,y)}{h}
+\]
+This derivative gives the \textbf{rate of change of} $\mathbf{f(x,y)}$ 
+\textbf{in the direction of} $\mathbf{\vec u}$.
+\end{definition}
+\begin{theorem}[Directional Derivative]
+Let $f(x,y)$ be a differentiable function of two variables 
+and let $\vec u = \vector{a,b}$ be a unit vector.
+Then the directional derivative of $f$ in the direction of $\vec u$ is given by
+\[
+D_{\vec u} f(x,y) = \grad f(x,y) \dotp \vec u = af_x(x,y) + bf_y(x,y)
+\]
+\end{theorem}
+\begin{proof}
+Let $g(h) = f(x_0 + ah, y_0 + bh)$, then $g(0) = f(x_0,y_0)$ and
+\[
+D_{\vec u} f(x_0,y_0) = \lim_{h \to 0} \frac{g(h) - g(0)}{h} = g'(0)
+\]
+By the chain rule, we have
+\[
+g'(h) = f_x(x_0 + ah, y_0 + bh) \cdot a + f_y(x_0 + ah, y_0 + bh) \cdot b
+\]
+and hence
+\[
+D_{\vec u} f(x_0,y_0) = g'(0) =
+f_x(x_0, y_0) \cdot a + f_y(x_0, y_0) \cdot b = \grad f(x_0,y_0) \dotp \vec u
+\]
 
+\end{proof}
 \end{document}
