@@ -28,7 +28,16 @@ Then the chain rule becomes
 \[
 \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}
 \]
-
+See the figure below.
+\begin{image}
+\begin{tikzpicture}
+\draw (0,0) node[below] {$x$}--(0, 1.6) node[above] {$u$} 
+node[midway,  left] {$\frac{du}{dx}$};
+\draw (0, 2.1)--(0, 3.7) node[above] {$y$}
+node[midway, left] {$\frac{dy}{du}$};
+\end{tikzpicture}
+\end{image}
+Multiply along the path from $y$ to $x$ to get $\frac{dy}{dx}$.\\
 
 
 
@@ -60,7 +69,7 @@ node[midway, above right] {$\frac{\partial z}{\partial y}$};
 \end{image}
 
 There are also two paths from $z$ to $t$. Multiply along each path and 
-add to get $\frac{\partial z}{\partial t}$.
+add to get $\frac{dz}{dt}$.
 \begin{example}[Example 1]
 Let $z = x^2 + y^2 + 3xy$ and let $x = 4\cos 5t$ and $y = 4\sin 5t$. 
 Find $\frac{dz}{dt}$.\\
