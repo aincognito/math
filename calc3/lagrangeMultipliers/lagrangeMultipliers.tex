@@ -228,9 +228,9 @@ We now have a complete list of candidates for the location of the absolute extre
  f\left(\frac{1}{\sqrt 2},-\frac{1}{2\sqrt 2} \right) &= -\frac14\\
  f\left(\frac{1}{\sqrt 2},\frac{1}{2\sqrt 2} \right) &= \frac14
  \end{align*}
- Hence, the absolute maximum is $-1/4$, and it occurs at two of the 
+ Hence, the absolute maximum is $\frac{1}{4}$, and it occurs at two of the 
  boundary points, $\left(\pm \frac{1}{\sqrt 2}, \pm \frac{1}{2\sqrt 2}\right)$,
- and the absolute minimum is $-1/4$ occurring at the other two 
+ and the absolute minimum is $-\frac{1}{4}$ occurring at the other two 
  boundary points, $\left(\pm \frac{1}{\sqrt 2}, \mp \frac{1}{2\sqrt 2}\right)$.
  
  
@@ -258,7 +258,62 @@ for some scalar $\lambda$.
 \end{theorem}
 
 \begin{example}[Example 4]
-Find the absolute maximum and absolute minimum values of $f(x,y, z) = x^2 + y^2 + z^2$ subject to $x^4 + y^4 + z^4  = 5$.\\
+Find the absolute maximum and absolute minimum values 
+of $f(x,y, z) = x^2 + y^2 + z^2$ subject to $x^4 + y^4 + z^4  = 5$.\\
+The gradients of $f$ and $g$ are
+\[
+\grad f(x,y, z) = \vector{2x, 2y, 2z} \quad \text{and} \quad \grad g(x,y, z) = \vector{4x^3, 4y^3, 4z^3}
+\]
+According to the theory of Lagrange multipliers, the absolute maximum and 
+absolute minimum of $f(x,y, z) = x^2 + y^2 + z^2$
+along the surface $g(x,y, z) = x^4 + y^4 + z^4 - 5 = 0$ occur at points 
+where $\grad f(x,y, z)$ and $\grad g(x,y, z)$ are parallel.  
+In other words at points where
+\[
+\vector{2x, 2y, 2z} = \lambda \vector{4x^3, 4y^3, 4z^3}
+\]
+for some scalar $\lambda$.  
+This vector equation gives the system
+\[
+2x = 4\lambda x^3, \quad 2y = 4\lambda y^3, \quad 2z = 4\lambda z^3
+\]
+Each variable could be zero individually, or in pairs, but the constraint prohibits
+all three variables from being zero. 
+For the non-zero variables, solving for $\lambda$ shows that their squares are equal. 
+Moreover, since their squares are equal, so are their fourth powers.
+Combining this with the fact that some of the variables can be zero, 
+the points of interest will have nonzero coordiates that satify one of the 
+followoing equations:
+\[3x^4 = 5, \quad 2x^4 = 5, \quad x^4 = 5\]
+corresponding to whether there are zero, one or two nonzero variables.
+Thus the points where the gradients are parallel fall 
+into three categories depending on how many of the variables are zero.  
+The points of interest are:
+Eight points of the form
+\[ 
+(\pm (5/3)^{1/4}, \pm (5/3)^{1/4}, \pm (5/3)^{1/4})
+\]
+Twelve points of the form
+\[
+ (\pm (5/2)^{1/4}, \pm (5/2)^{1/4}, 0)
+\]
+And six points of the form
+\[
+ (\pm 5^{1/4}, 0, 0)
+\]
+The corresponding values of the objective function are
+\[
+ f(\pm (5/3)^{1/4}, \pm (5/3)^{1/4}, \pm (5/3)^{1/4}) = \sqrt{15}
+\]
+\[
+f(\pm (5/2)^{1/4}, \pm (5/2)^{1/4}, 0) = \sqrt{10}
+\]
+\[
+f(\pm 5^{1/4}, 0, 0) = \sqrt 5
+\]
+Thus, the absolute maximum is $\sqrt{15}$ and the absolute minimum is $\sqrt{5}$.  
+Moreover, the maximum occurs when none of the variables is zero, 
+and the minimum occurs when two of the variables are zero.            
 \end{example}
 
 \begin{problem}(Problem 4a)
