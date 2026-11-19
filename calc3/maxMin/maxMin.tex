@@ -210,14 +210,20 @@ f_{xx} = 2y,\; f_{yy} = 2x \quad \text{and} \quad f_{xy} = 2x + 2y
 \]
 The discriminant is
 \[
-D(x,y) = f_{xx} f_{yy} - f_{xy}^2 = 4xy - (2x+2y)^2 = 4xy - 4x^2 - 8xy - 4y^2 = -4(x+y)^2
+D(x,y) = f_{xx} f_{yy} - f_{xy}^2 = 4xy - (2x+2y)^2 = -4(x^2 + xy +y^2)
 \]
-and at the critical points we have
+Next, we plug the critical points into the discriminant and draw some conclusions:
 \[
-D(2, -1) = -4 \quad \text{and} \quad D(-2, 1) = -4
+D(2, -1) = -4(4 -2 +1) = -4(3) = -12 
 \]
-Since $D < 0$, at both critical points, the Second Derivatives Test tells us that $f(x,y) = x^2y +xy^2 +3x + 4$
-has saddle points at both of the critical points $(2,-1)$ and $(-2, 1)$.
+Since $D(2,-1)  < 0$, the Second Derivatives Test tells us 
+that the graph of $f$ has a saddle point at the critical point $(2,-1)$.
+At the other critical point $(-2, 1)$, we have
+\[
+\quad D(-2, 1) = -4(4 -2 +1) = -4(3) = -12
+\]
+The discriminant is negative here as well, 
+so the graph of $f$ has a second saddle point at $(-2, 1)$.
 \end{example}
 
 
